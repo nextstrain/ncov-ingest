@@ -1,0 +1,8 @@
+# Ignore all data files 
+data/
+
+# Ignore all fasta files
+*.fasta
+
+# Ignore data downloaded from GISAID
+corona2020_*
