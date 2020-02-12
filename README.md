@@ -9,6 +9,7 @@ Install the required dependencies using the exported `environment.yml` file.
 * `AWS_DEFAULT_REGION`
 * `AWS_ACCESS_KEY_ID`
 * `AWS_SECRET_ACCESS_KEY`
+* `SLACK_INCOMING_WEBHOOK`
 
 Steps:
 1. run `./bin/fetch-data`

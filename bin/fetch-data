@@ -7,6 +7,7 @@
 #  * GISAID_API_ENDPOINT - the URL used to GET nCoV data from GISAID
 #  * GISAID_USERNAME_AND_PASSWORD - a username:password combination for basic
 #                                   authentication to the GISAID API endpoint.
+#  * SLACK_INCOMING_WEBHOOK - an incoming webhook used to send Slack messages.
 #
 # Options:
 #  * --help - View this help message.
@@ -62,6 +63,31 @@ main() {
     echo "Unzipping the downloaded data"
     bunzip2 -kf "data/$NCOV_ZIP_FILE"
     echo
+
+    echo "Diffing the recently downloaded data against what's stored on S3"
+
+    # Digest the old nCoV file on s3
+    hash="$(aws s3 cp s3://nextstrain-ncov-private/corona2020_fulldump.json - | sha256sum | cut -d ' ' -f 1)"
+
+    # Compare the digest of the old nCoV file with the recently downloaded one
+    if [[ "$hash" != "$(sha256sum "data/$NCOV_DATA_FILE" | cut -d ' ' -f 1)" ]]; then
+        echo "The remote GISAID dataset does not match the most recent download. Alerting via Slack"
+        curl -X POST -H 'Content-type: application/json' \
+            --data \
+            '{
+                "text": "@channel: New nCoV data found on GISAID.",
+                "blocks": [{
+                    "type": "section",
+                    "text": {
+                        "type": "mrkdwn",
+                        "text": ":rotating_light: @channel New nCoV data found on GISAID."
+                    }
+                }]
+            }' \
+            $SLACK_INCOMING_WEBHOOK
+        echo
+    fi
+
 
     if [[ $UPLOAD -eq 1 ]]; then
         echo "Uploading latest nCoV data from GISAID to private S3 bucket"
