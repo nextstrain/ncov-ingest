@@ -3,6 +3,7 @@ Parse the GISAID JSON load into a metadata tsv and a FASTA file.
 """
 import argparse
 import json
+import fsspec
 import pandas as pd
 from pathlib import Path
 
@@ -64,7 +65,7 @@ def write_fasta_file(sequence_data: pd.DataFrame):
     """ """
     sequence_data['sequence'] = sequence_data['sequence'].str.replace('\n', '')
 
-    with open(args.output_fasta, 'wt') as fastafile:
+    with fsspec.open(args.output_fasta, 'wt') as fastafile:
         for index, row in sequence_data.iterrows():
             fastafile.write(f">{row['strain']}\n")
             fastafile.write(f"{row['sequence']}\n\n")
