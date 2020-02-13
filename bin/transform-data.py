@@ -13,6 +13,24 @@ METADATA_COLUMNS = [  # Ordering of columns in the existing metadata.tsv in the 
     'submitting_lab', 'authors', 'url', 'title'
 ]
 
+def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
+    """
+    Renames columns and abbreviate strain name in a given *gisaid_data*
+    DataFrame, returning the modified DataFrame.
+    """
+    mapper = {
+        'covv_virus_name'   : 'strain',
+        'covv_accession_id' : 'gisaid_epi_isl',
+        'covv_subm_date'    : 'date',
+        'covv_host'         : 'host',
+        'covv_orig_lab'     : 'originating_lab',
+        'covv_subm_lab'     : 'submitting_lab',
+        'covv_authors'      : 'authors',
+    }
+    gisaid_data.rename(mapper, axis="columns", inplace=True)
+
+    return gisaid_data
+
 def parse_geographic_columns(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     """
     Expands the string found in the column named `covv_location` in the given
@@ -71,16 +89,7 @@ if __name__ == '__main__':
 
     gisaid_data = pd.read_json(args.gisaid_data, lines=True)
 
-    mapper = {
-        'covv_virus_name'   : 'strain',
-        'covv_accession_id' : 'gisaid_epi_isl',
-        'covv_subm_date'    : 'date',
-        'covv_host'         : 'host',
-        'covv_orig_lab'     : 'originating_lab',
-        'covv_subm_lab'     : 'submitting_lab',
-        'covv_authors'      : 'authors',
-    }
-    gisaid_data.rename(mapper, axis="columns", inplace=True)
+    gisaid_data = preprocess(gisaid_data)
 
     write_fasta_file(gisaid_data)
 
