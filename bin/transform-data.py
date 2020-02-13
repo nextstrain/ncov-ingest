@@ -70,6 +70,22 @@ def write_fasta_file(sequence_data: pd.DataFrame):
             fastafile.write(f">{row['strain']}\n")
             fastafile.write(f"{row['sequence']}\n\n")
 
+def update_metadata(curated_gisaid_data: pd.DataFrame) -> pd.DataFrame:
+    """ """
+    # Add hardcoded metadata which, among other columns, may be replaced by user
+    hardcoded_metadata = generate_hardcoded_metadata(curated_gisaid_data)
+    curated_gisaid_data.update(hardcoded_metadata)
+    curated_gisaid_data = curated_gisaid_data.merge(hardcoded_metadata)
+
+    if args.metadata:
+        # Merge the curated metadata dataframe, updating shared columns in the
+        # original dataframe with the new values
+        manually_curated_metadata = pd.read_csv(args.metadata, sep="\t")
+        curated_gisaid_data.update(manually_curated_metadata)
+        curated_gisaid_data = curated_gisaid_data.merge(manually_curated_metadata)
+
+    return curated_gisaid_data
+
 
 if __name__ == '__main__':
     base = Path(__file__).resolve().parent.parent
@@ -96,20 +112,7 @@ if __name__ == '__main__':
 
     gisaid_data = parse_geographic_columns(gisaid_data)
 
-
-    curated_gisaid_data = gisaid_data.copy(deep=True)
-
-    # Add hardcoded metadata which, among other columns, may be replaced by user
-    hardcoded_metadata = generate_hardcoded_metadata(gisaid_data)
-    curated_gisaid_data.update(hardcoded_metadata)
-    curated_gisaid_data = curated_gisaid_data.merge(hardcoded_metadata)
-
-    if args.metadata:
-        # Merge the curated metadata dataframe, updating shared columns in the
-        # original dataframe with the new values
-        manually_curated_metadata = pd.read_csv(args.metadata, sep="\t")
-        curated_gisaid_data.update(manually_curated_metadata)
-        curated_gisaid_data = curated_gisaid_data.merge(manually_curated_metadata)
+    curated_gisaid_data = update_metadata(gisaid_data)
 
     # Reorder columns consistent with the existing metadata on GitHub
     curated_gisaid_data = curated_gisaid_data[METADATA_COLUMNS]
