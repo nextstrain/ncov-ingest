@@ -1,5 +1,8 @@
 # nCoV Ingestion Pipeline
 
+## Required dependencies
+Install the required dependencies using the exported `environment.yml` file.
+
 ## Required environment variables
 * `GISAID_API_ENDPOINT`
 * `GISAID_USERNAME_AND_PASSWORD`
