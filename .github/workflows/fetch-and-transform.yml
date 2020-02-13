@@ -1,0 +1,25 @@
+name: Fetch nCoV data from GISAID. Transform and push to staging if new
+
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '*/15 * * * *'
+
+jobs:
+  fetch-data:
+    name: Fetch and upload latest nCoV data from GISAID
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Fetch and upload latest nCoV data from GISAID
+      run:
+        ./bin/fetch-data --upload
+      env:
+        GISAID_API_ENDPOINT: ${{ secrets.GISAID_API_ENDPOINT }}
+        GISAID_USERNAME_AND_PASSWORD: ${{ secrets.GISAID_USERNAME_AND_PASSWORD }}
+        SLACK_INCOMING_WEBHOOK: ${{ secrets.SLACK_INCOMING_WEBHOOK }}
+
+env:
+  AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
