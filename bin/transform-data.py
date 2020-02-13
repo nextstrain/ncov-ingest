@@ -30,6 +30,9 @@ def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     }
     gisaid_data.rename(mapper, axis="columns", inplace=True)
 
+    # Abbreviate strain names by removing the prefix
+    gisaid_data['strain'] = gisaid_data['strain'].str.replace(r'^BetaCoV/', '', n=1, case=False)
+
     return gisaid_data
 
 def parse_geographic_columns(gisaid_data: pd.DataFrame) -> pd.DataFrame:
