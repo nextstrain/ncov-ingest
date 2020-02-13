@@ -5,6 +5,7 @@ import argparse
 import json
 import fsspec
 import pandas as pd
+from argparse import RawTextHelpFormatter
 from pathlib import Path
 
 # Note: 'sequence' should NEVER appear in this list!
@@ -75,17 +76,16 @@ def write_fasta_file(sequence_data: pd.DataFrame):
 
 def update_metadata(curated_gisaid_data: pd.DataFrame) -> pd.DataFrame:
     """ """
-    # Add hardcoded metadata which, among other columns, may be replaced by user
+    # Add hardcoded metadata which is *almost* always true
     hardcoded_metadata = generate_hardcoded_metadata(curated_gisaid_data)
     curated_gisaid_data.update(hardcoded_metadata)
     curated_gisaid_data = curated_gisaid_data.merge(hardcoded_metadata)
 
     if args.metadata:
-        # Merge the curated metadata dataframe, updating shared columns in the
-        # original dataframe with the new values
-        manually_curated_metadata = pd.read_csv(args.metadata, sep="\t")
-        curated_gisaid_data.update(manually_curated_metadata)
-        curated_gisaid_data = curated_gisaid_data.merge(manually_curated_metadata)
+        # Use the curated metadata tsv to update any column values
+        user_provided_metadata = pd.read_csv(args.metadata, header=None, sep='\t')
+        for index, row in user_provided_metadata.iterrows():
+            curated_gisaid_data.loc[curated_gisaid_data['strain'] == row[0], row[1]] = row[2]
 
     return curated_gisaid_data
 
@@ -95,10 +95,19 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(
         description="Parse a GISAID JSON load into a metadata tsv and FASTA file.",
-        formatter_class=argparse.ArgumentDefaultsHelpFormatter
+        formatter_class=argparse.RawTextHelpFormatter
     )
     parser.add_argument("gisaid_data", help="Newline-delimited GISAID JSON data")
-    parser.add_argument("--metadata", help="Optional manually curated metadata tsv")
+    parser.add_argument("--metadata",
+        help="Optional manually curated metadata TSV.\n"
+            "The TSV file should have no header and exactly three columns which contain:\n\t"
+            "1. the strain ID\n\t"
+            "2. the column name to replace from the generated `metadata.tsv` file\n\t"
+            "3. the replacement data\n"
+        "e.g.\n\t"
+        "USA-MA1/2020    location    Boston\n\t"
+        "USA/CA1/2020    genbank_accession   MN994467\n\t"
+        "Wuhan-Hu-1/2019 collection_date 2019-12-26")
     parser.add_argument("--output-metadata",
         default=base / "data/metadata.tsv",
         help="Output location of generated metadata tsv. Defaults to `data/metadata.tsv`")
