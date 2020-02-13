@@ -96,13 +96,20 @@ if __name__ == '__main__':
 
     gisaid_data = parse_geographic_columns(gisaid_data)
 
-    if not args.metadata:
-        curated_metadata = generate_hardcoded_metadata(gisaid_data)
-    else:
-        curated_metadata = pd.read_csv(args.metadata, sep="\t")
 
-    curated_gisaid_data = gisaid_data.merge(curated_metadata)
+    curated_gisaid_data = gisaid_data.copy(deep=True)
 
+    # Add hardcoded metadata which, among other columns, may be replaced by user
+    hardcoded_metadata = generate_hardcoded_metadata(gisaid_data)
+    curated_gisaid_data.update(hardcoded_metadata)
+    curated_gisaid_data = curated_gisaid_data.merge(hardcoded_metadata)
+
+    if args.metadata:
+        # Merge the curated metadata dataframe, updating shared columns in the
+        # original dataframe with the new values
+        manually_curated_metadata = pd.read_csv(args.metadata, sep="\t")
+        curated_gisaid_data.update(manually_curated_metadata)
+        curated_gisaid_data = curated_gisaid_data.merge(manually_curated_metadata)
 
     # Reorder columns consistent with the existing metadata on GitHub
     curated_gisaid_data = curated_gisaid_data[METADATA_COLUMNS]
