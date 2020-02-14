@@ -31,8 +31,10 @@ def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     }
     gisaid_data.rename(mapper, axis="columns", inplace=True)
 
-    # Abbreviate strain names by removing the prefix
-    gisaid_data['strain'] = gisaid_data['strain'].str.replace(r'^BetaCoV/', '', n=1, case=False)
+    # Abbreviate strain names by removing the prefix. Strip spaces, too.
+    gisaid_data['strain'] = gisaid_data['strain'] \
+        .str.replace(r'^BetaCoV/', '', n=1, case=False) \
+        .str.replace(r'\s', '')
 
     return gisaid_data
 
