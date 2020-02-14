@@ -38,7 +38,7 @@ def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
         .str.replace(r'^BetaCoV/', '', n=1, case=False) \
         .str.replace(r'\s', '')
 
-    return gisaid_data
+    return gisaid_data.drop_duplicates(subset='strain')
 
 def parse_geographic_columns(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     """
