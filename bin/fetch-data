@@ -11,6 +11,7 @@
 #
 # Options:
 #  * --help - View this help message.
+#  * --slack - Send a Slack notification to #ncov if there are new nCoV data.
 #  * --upload - Upload the fetched GISAID data to a private S3 bucket.
 #
 
@@ -21,6 +22,7 @@ GISAID_API_ENDPOINT=${GISAID_API_ENDPOINT:-'http://'}
 GISAID_USERNAME_AND_PASSWORD=${GISAID_USERNAME_AND_PASSWORD:-'username:password'}
 
 main() {
+    local SLACK=0
     local UPLOAD=0
 
     for arg; do
@@ -28,6 +30,10 @@ main() {
             -h|--help)
                 print-help
                 exit
+                ;;
+            --slack)
+                SLACK=1
+                shift
                 ;;
             --upload)
                 UPLOAD=1
@@ -71,20 +77,24 @@ main() {
 
     # Compare the digest of the old nCoV file with the recently downloaded one
     if [[ "$hash" != "$(sha256sum "data/$NCOV_DATA_FILE" | cut -d ' ' -f 1)" ]]; then
-        echo "The remote GISAID dataset does not match the most recent download. Alerting via Slack"
-        curl -X POST -H 'Content-type: application/json' \
-            --data \
-            '{
-                "text": "@channel: New nCoV data found on GISAID.",
-                "blocks": [{
-                    "type": "section",
-                    "text": {
-                        "type": "mrkdwn",
-                        "text": ":rotating_light: @channel New nCoV data found on GISAID."
-                    }
-                }]
-            }' \
-            $SLACK_INCOMING_WEBHOOK
+        echo "The remote GISAID dataset does not match the most recent download"
+
+        if [[ $SLACK -eq 1 ]]; then
+            echo "Alerting via Slack"
+            curl -X POST -H 'Content-type: application/json' \
+                --data \
+                '{
+                    "text": "@channel: New nCoV data found on GISAID.",
+                    "blocks": [{
+                        "type": "section",
+                        "text": {
+                            "type": "mrkdwn",
+                            "text": ":rotating_light: @channel New nCoV data found on GISAID."
+                        }
+                    }]
+                }' \
+                $SLACK_INCOMING_WEBHOOK
+        fi
         echo
     fi
 
