@@ -15,6 +15,8 @@ METADATA_COLUMNS = [  # Ordering of columns in the existing metadata.tsv in the 
     'submitting_lab', 'authors', 'url', 'title'
 ]
 
+assert 'sequence' not in METADATA_COLUMNS, "Sequences should not appear in metadata!"
+
 def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     """
     Renames columns and abbreviate strain name in a given *gisaid_data*
