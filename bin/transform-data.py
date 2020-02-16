@@ -2,11 +2,9 @@
 Parse the GISAID JSON load into a metadata tsv and a FASTA file.
 """
 import argparse
-import json
+from pathlib import Path
 import fsspec
 import pandas as pd
-from argparse import RawTextHelpFormatter
-from pathlib import Path
 
 # Note: 'sequence' should NEVER appear in this list!
 METADATA_COLUMNS = [  # Ordering of columns in the existing metadata.tsv in the ncov repo
@@ -58,6 +56,24 @@ def parse_geographic_columns(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     gisaid_data['division']    = geographic_data[2]
     gisaid_data['location']    = geographic_data[3]
 
+    return gisaid_data
+
+def parse_authors(gisaid_data: pd.DataFrame) -> pd.DataFrame:
+    """
+    Abbreviates the column named `authors` to be "Zhang et al" rather than a
+    full list
+    """
+    # Fix accents and non-standard commas
+    gisaid_data['authors'] = gisaid_data['authors'].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
+    # Strip to string before first comma
+    gisaid_data['authors'] = gisaid_data['authors'].str.replace(r"^([^,]+),.+", lambda m: m.group(1))
+    # Convert this string to last name
+    gisaid_data['authors'] = gisaid_data['authors'].str.replace(r" [A-Z]\.? ", ' ')
+    gisaid_data['authors'] = gisaid_data['authors'].str.replace(r"^[A-Z][a-z]+\-?[A-Z]?[a-z]* ([A-Z][a-z]+) *$", lambda m: m.group(1))
+    gisaid_data['authors'] = gisaid_data['authors'].str.replace(r" [A-Z]\.?[A-Z]?\.?$", '')
+    gisaid_data['authors'] = gisaid_data['authors'].str.replace(r" [A-Z]-[A-Z]$", '')
+    # Add et al
+    gisaid_data['authors'] = gisaid_data['authors'].astype(str) + ' et al'
     return gisaid_data
 
 def generate_hardcoded_metadata(hardcoded_metadata: pd.DataFrame) -> pd.DataFrame:
@@ -128,15 +144,13 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     gisaid_data = pd.read_json(args.gisaid_data, lines=True)
-
     gisaid_data = preprocess(gisaid_data)
-
     write_fasta_file(gisaid_data)
 
     gisaid_data = parse_geographic_columns(gisaid_data)
-
-    curated_gisaid_data = update_metadata(gisaid_data)
+    gisaid_data = parse_authors(gisaid_data)  
+    gisaid_data = update_metadata(gisaid_data)
 
     # Reorder columns consistent with the existing metadata on GitHub
-    curated_gisaid_data = curated_gisaid_data[METADATA_COLUMNS]
-    curated_gisaid_data.to_csv(args.output_metadata, sep='\t', na_rep='?', index=False)
+    gisaid_data = gisaid_data[METADATA_COLUMNS]
+    gisaid_data.to_csv(args.output_metadata, sep='\t', na_rep='?', index=False)
