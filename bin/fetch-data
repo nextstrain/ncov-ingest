@@ -77,7 +77,7 @@ main() {
 
     # Compare the digest of the old nCoV file with the recently downloaded one
     if [[ "$hash" != "$(sha256sum "data/$NCOV_DATA_FILE" | cut -d ' ' -f 1)" ]]; then
-        echo "The remote GISAID dataset does not match the most recent download"
+        echo "The remote GISAID dataset does not match the S3 dataset"
 
         if [[ $SLACK -eq 1 ]]; then
             echo "Alerting via Slack"
@@ -96,6 +96,8 @@ main() {
                 $SLACK_INCOMING_WEBHOOK
         fi
         echo
+    else
+      echo "The remote GISAID dataset matches the S3 dataset"
     fi
 
 
