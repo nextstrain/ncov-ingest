@@ -58,6 +58,32 @@ def parse_geographic_columns(gisaid_data: pd.DataFrame) -> pd.DataFrame:
 
     return gisaid_data
 
+def parse_originating_lab(gisaid_data: pd.DataFrame) -> pd.DataFrame:
+    """
+    Parses originating lab
+    """
+    # Fix accents and non-standard commas
+    gisaid_data['originating_lab'] = gisaid_data['originating_lab'].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
+    # Strip left and right whitespace
+    gisaid_data['originating_lab'] = gisaid_data['originating_lab'].str.lstrip().str.rstrip()
+    # Fix common spelling mistakes
+    gisaid_data['originating_lab'] = gisaid_data['originating_lab'].str.replace('Contorl', 'Control')
+    gisaid_data['originating_lab'] = gisaid_data['originating_lab'].str.replace('Dieases', 'Disease')    
+    return gisaid_data
+
+def parse_submitting_lab(gisaid_data: pd.DataFrame) -> pd.DataFrame:
+    """
+    Parses submitting lab
+    """
+    # Fix accents and non-standard commas
+    gisaid_data['submitting_lab'] = gisaid_data['submitting_lab'].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
+    # Strip left and right whitespace
+    gisaid_data['submitting_lab'] = gisaid_data['submitting_lab'].str.lstrip().str.rstrip()
+    # Fix common spelling mistakes
+    gisaid_data['submitting_lab'] = gisaid_data['submitting_lab'].str.replace('Contorl', 'Control')
+    gisaid_data['submitting_lab'] = gisaid_data['submitting_lab'].str.replace('Dieases', 'Disease')
+    return gisaid_data
+
 def parse_authors(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     """
     Abbreviates the column named `authors` to be "Zhang et al" rather than a
@@ -148,7 +174,9 @@ if __name__ == '__main__':
     write_fasta_file(gisaid_data)
 
     gisaid_data = parse_geographic_columns(gisaid_data)
-    gisaid_data = parse_authors(gisaid_data)  
+    gisaid_data = parse_originating_lab(gisaid_data)
+    gisaid_data = parse_submitting_lab(gisaid_data)
+    gisaid_data = parse_authors(gisaid_data)
     gisaid_data = update_metadata(gisaid_data)
 
     # Reorder columns consistent with the existing metadata on GitHub
