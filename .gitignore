@@ -1,0 +1,28 @@
+# Ignore all data files
+data/
+
+# Ignore all fasta files
+*.fasta
+
+# Ignore data downloaded from GISAID
+corona2020_*
+
+# Ignore environment shell script
+environment*.sh
+
+# For Python #
+##############
+*.pyc
+.tox/
+.cache/
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db

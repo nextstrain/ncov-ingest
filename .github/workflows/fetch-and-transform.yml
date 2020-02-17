@@ -1,0 +1,40 @@
+name: Fetch nCoV data from GISAID. Transform and push to staging if new
+
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '*/15 * * * *'
+
+jobs:
+  fetch-data:
+    name: Fetch and upload latest nCoV data from GISAID
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Fetch and upload latest nCoV data from GISAID
+      run:
+        ./bin/fetch-data --slack --upload
+      env:
+        GISAID_API_ENDPOINT: ${{ secrets.GISAID_API_ENDPOINT }}
+        GISAID_USERNAME_AND_PASSWORD: ${{ secrets.GISAID_USERNAME_AND_PASSWORD }}
+        SLACK_INCOMING_WEBHOOK: ${{ secrets.SLACK_INCOMING_WEBHOOK }}
+
+  transform-data:
+    name: Transform nCoV data from GISAID into metadata.tsv and sequences.fasta files
+    needs: fetch-data
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Transform nCoV data from GISAID into metadata.tsv and sequences.fasta files
+      run: |
+        python3 -m pip install --upgrade pip
+        python3 -m pip install -r requirements.txt
+        S3_BUCKET="s3://nextstrain-ncov-private"
+        python3 ./bin/transform-data.py "$S3_BUCKET/corona2020_fulldump.json" \
+          --output-metadata "$S3_BUCKET/metadata.tsv" \
+          --output-fasta "$S3_BUCKET/sequences.fasta"
+
+env:
+  AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
