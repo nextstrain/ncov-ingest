@@ -1,6 +1,9 @@
 name: Fetch nCoV data from GISAID. Transform and push to staging if new
 
 on:
+  push:
+    branches:
+      - master
   schedule:
     # * is a special character in YAML so you have to quote this string
     - cron:  '*/15 * * * *'
