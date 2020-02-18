@@ -33,7 +33,7 @@ jobs:
         python3 -m pip install --upgrade pip
         python3 -m pip install -r requirements.txt
         S3_BUCKET="s3://nextstrain-ncov-private"
-        python3 ./bin/transform-data.py "$S3_BUCKET/corona2020_fulldump.json" \
+        ./bin/transform-data "$S3_BUCKET/corona2020_fulldump.json" \
           --output-metadata "$S3_BUCKET/metadata.tsv" \
           --output-fasta "$S3_BUCKET/sequences.fasta"
 

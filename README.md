@@ -2,7 +2,7 @@
 
 ## Running locally
 1. Run `./bin/fetch-data`
-2. Run `python ./bin/transform-data.py s3://nextstrain-ncov-private/corona2020_fulldump.json`
+2. Run `./bin/transform-data s3://nextstrain-ncov-private/corona2020_fulldump.json`
 
 ## Running automatically
 The fetch and transform pipeline exists as a GitHub workflow at `.github/workflows/fetch-and-transform.yml`.
