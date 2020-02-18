@@ -9,9 +9,13 @@ The fetch and transform pipeline exists as a GitHub workflow at `.github/workflo
 It is scheduled to run every 15 minutes and on pushes to `master`.
 
 ## Updating manual annotations
-Manual annotations should be added to `source-data/annotations.tsv`. A common pattern should be
-running https://github.com/nextstrain/ncov, discovering metadata that needs fixing, updating
-`annotations.tsv`, pushing this change to `master` and redownloading `metadata.tsv`.
+Manual annotations should be added to `source-data/annotations.tsv`.
+A common pattern is expected to be:
+
+ 1. Run <https://github.com/nextstrain/ncov>.
+ 2. Discover metadata that needs fixing.
+ 3. Update `source-data/annotations.tsv`.
+ 4. Push changes to `master` and re-download `metadata.tsv`.
 
 ## Required dependencies
 Install the required dependencies using the exported `environment.yml` file.
