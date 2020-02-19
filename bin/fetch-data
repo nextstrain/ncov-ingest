@@ -51,23 +51,16 @@ main() {
         exit 1
     fi
 
-    NCOV_ZIP_FILE="corona2020_fulldump.json.bz2"
-    NCOV_DATA_FILE="corona2020_fulldump.json"
+    NCOV_DATA_FILE="data/corona2020_fulldump.json"
 
-    if [[ ! -d "data" ]]; then
-        mkdir data
-    fi
-
-    trap "rm 'data/$NCOV_ZIP_FILE'" EXIT
+    mkdir -p data
 
     echo "Retrieving latest nCoV data from GISAID"
-    curl -X GET $GISAID_API_ENDPOINT \
-        -u "$GISAID_USERNAME_AND_PASSWORD" \
-        --output "data/$NCOV_ZIP_FILE"
-    echo
-
-    echo "Unzipping the downloaded data"
-    bunzip2 -kf "data/$NCOV_ZIP_FILE"
+    curl "$GISAID_API_ENDPOINT" \
+        --user "$GISAID_USERNAME_AND_PASSWORD" \
+        --fail --silent --show-error \
+        | bunzip2 \
+        > "$NCOV_DATA_FILE"
     echo
 
     echo "Diffing the recently downloaded data against what's stored on S3"
@@ -76,7 +69,7 @@ main() {
     hash="$(aws s3 cp s3://nextstrain-ncov-private/corona2020_fulldump.json - | shasum)"
 
     # Compare the digest of the old nCoV file with the recently downloaded one
-    if [[ "$hash" != "$(shasum "data/$NCOV_DATA_FILE")" ]]; then
+    if [[ "$hash" != "$(shasum "$NCOV_DATA_FILE")" ]]; then
         echo "The remote GISAID dataset does not match the S3 dataset. Continuing."
 
         if [[ $SLACK -eq 1 ]]; then
@@ -98,7 +91,7 @@ main() {
 
         if [[ $UPLOAD -eq 1 ]]; then
             echo "Uploading latest nCoV data from GISAID to private S3 bucket."
-            aws s3 cp "data/$NCOV_DATA_FILE" s3://nextstrain-ncov-private/
+            aws s3 cp "$NCOV_DATA_FILE" s3://nextstrain-ncov-private/
             echo
         fi
 
