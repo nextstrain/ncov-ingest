@@ -72,21 +72,29 @@ main() {
     if [[ "$hash" != "$(shasum "$NCOV_DATA_FILE")" ]]; then
         echo "The remote GISAID dataset does not match the S3 dataset. Continuing."
 
+        slack_message='
+            {
+                "text": "@channel: New nCoV data found on GISAID.",
+                "blocks": [{
+                    "type": "section",
+                    "text": {
+                        "type": "mrkdwn",
+                        "text": ":rotating_light: @channel New nCoV data found on GISAID."
+                    }
+                }]
+            }
+        '
+
+        echo "Prepared Slack message:"
+        echo "$slack_message"
+
         if [[ $SLACK -eq 1 ]]; then
             echo "Alerting via Slack"
             curl -X POST -H 'Content-type: application/json' \
-                --data \
-                '{
-                    "text": "@channel: New nCoV data found on GISAID.",
-                    "blocks": [{
-                        "type": "section",
-                        "text": {
-                            "type": "mrkdwn",
-                            "text": ":rotating_light: @channel New nCoV data found on GISAID."
-                        }
-                    }]
-                }' \
+                --data "$slack_message" \
                 $SLACK_INCOMING_WEBHOOK
+        else
+            echo "Not alerting via Slack because not running with --slack."
         fi
 
         if [[ $UPLOAD -eq 1 ]]; then
