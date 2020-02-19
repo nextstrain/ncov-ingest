@@ -18,8 +18,8 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-GISAID_API_ENDPOINT=${GISAID_API_ENDPOINT:-'http://'}
-GISAID_USERNAME_AND_PASSWORD=${GISAID_USERNAME_AND_PASSWORD:-'username:password'}
+: ${GISAID_API_ENDPOINT:?The GISAID_API_ENDPOINT environment variable is required.}
+: ${GISAID_USERNAME_AND_PASSWORD:?The GISAID_USERNAME_AND_PASSWORD environment variable is required.}
 
 main() {
     local SLACK=0
