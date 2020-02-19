@@ -73,10 +73,10 @@ main() {
     echo "Diffing the recently downloaded data against what's stored on S3"
 
     # Digest the old nCoV file on s3
-    hash="$(aws s3 cp s3://nextstrain-ncov-private/corona2020_fulldump.json - | sha256sum | cut -d ' ' -f 1)"
+    hash="$(aws s3 cp s3://nextstrain-ncov-private/corona2020_fulldump.json - | shasum)"
 
     # Compare the digest of the old nCoV file with the recently downloaded one
-    if [[ "$hash" != "$(sha256sum "data/$NCOV_DATA_FILE" | cut -d ' ' -f 1)" ]]; then
+    if [[ "$hash" != "$(shasum "data/$NCOV_DATA_FILE")" ]]; then
         echo "The remote GISAID dataset does not match the S3 dataset. Continuing."
 
         if [[ $SLACK -eq 1 ]]; then
@@ -107,6 +107,11 @@ main() {
       echo "The remote GISAID dataset matches the S3 dataset. Stopping here."
     fi
 
+}
+
+shasum() {
+    # Grab just the hex digest, ignoring the echoed input filename
+    sha256sum "$@" | cut -d ' ' -f 1
 }
 
 print-help() {
