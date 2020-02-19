@@ -11,7 +11,7 @@
 #
 # Options:
 #  * --help - View this help message.
-#  * --slack - Send a Slack notification to #ncov if there are new nCoV data.
+#  * --slack - Send a Slack notification to #ncov-gisaid-updates if there are new nCoV data.
 #  * --upload - Upload the fetched GISAID data to a private S3 bucket.
 #
 
