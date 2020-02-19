@@ -1,0 +1,10 @@
+#!/bin/bash
+set -euo pipefail
+
+: "${GISAID_API_ENDPOINT:?The GISAID_API_ENDPOINT environment variable is required.}"
+: "${GISAID_USERNAME_AND_PASSWORD:?The GISAID_USERNAME_AND_PASSWORD environment variable is required.}"
+
+curl "$GISAID_API_ENDPOINT" \
+    --user "$GISAID_USERNAME_AND_PASSWORD" \
+    --fail --silent --show-error \
+    | bunzip2
