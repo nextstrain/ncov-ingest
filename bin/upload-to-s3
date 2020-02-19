@@ -15,6 +15,10 @@ echo "$dst_hash $dst"
 if [[ $src_hash != $dst_hash ]]; then
     echo "Uploading $src → $dst"
     aws s3 cp "$src" "$dst"
+
+    if ! "$bin"/notify-slack "Updated $dst available."; then
+        echo "Notifying Slack failed, but exiting with success anyway."
+    fi
 else
     echo "Files are identical, skipping upload"
 fi
