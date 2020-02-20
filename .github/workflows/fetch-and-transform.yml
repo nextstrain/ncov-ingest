@@ -28,11 +28,9 @@ jobs:
           --output-metadata data/metadata.tsv \
           --output-fasta data/sequences.fasta
         
+        ./bin/notify-on-metadata-change data/metadata.tsv "$S3_BUCKET/metadata.tsv"
         ./bin/upload-to-s3 data/metadata.tsv "$S3_BUCKET/metadata.tsv"
         ./bin/upload-to-s3 data/sequences.fasta "$S3_BUCKET/sequences.fasta"
-        
-        # XXX TODO: Notify about changes to metadata.tsv and sequences.fasta
-        # using csv-diff or daff-diff.
 
 env:
   AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
