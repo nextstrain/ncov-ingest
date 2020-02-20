@@ -5,18 +5,7 @@ set -euo pipefail
 
 text="${1:?Some message text is required as the first and only argument.}"
 
-slack_message="$(jq --arg text "$text" --null-input '
-    {
-        "text": $text,
-        "blocks": [{
-            "type": "section",
-            "text": {
-                "type": "mrkdwn",
-                "text": $text
-            }
-        }]
-    }
-')"
+slack_message="$(jq --arg text "$text" --null-input '{"text": $text}')"
 
 echo "Prepared Slack message:"
 echo "$slack_message"
