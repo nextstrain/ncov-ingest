@@ -18,6 +18,8 @@ jobs:
         python3 -m pip install --upgrade pip setuptools
         python3 -m pip install -r requirements.txt
         
+        PATH="$HOME/.local/bin:$PATH"
+        
         S3_BUCKET="s3://nextstrain-ncov-private"
         
         ./bin/fetch-from-gisaid > data/gisaid.ndjson
