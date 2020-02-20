@@ -1,8 +1,9 @@
 # nCoV Ingestion Pipeline
 
 ## Running locally
-1. Run `./bin/fetch-data`
-2. Run `./bin/transform-data s3://nextstrain-ncov-private/corona2020_fulldump.json`
+1. Run `./bin/fetch-from-gisaid > data/gisaid.ndjson`
+2. Run `./bin/transform data/gisaid.ndjson`
+3. Look at `data/sequences.fasta` and `data/metadata.tsv`
 
 ## Running automatically
 The fetch and transform pipeline exists as a GitHub workflow at `.github/workflows/fetch-and-transform.yml`.

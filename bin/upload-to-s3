@@ -1,0 +1,24 @@
+#!/bin/bash
+set -euo pipefail
+
+bin="$(dirname "$0")"
+
+src="${1:?A source file is required as the first argument.}"
+dst="${2:?A destination s3:// URL is required as the second argument.}"
+
+src_hash="$("$bin/sha256sum" < "$src")"
+dst_hash="$("$bin/sha256sum" < <(aws s3 cp "$dst" -))"
+
+echo "$src_hash $src"
+echo "$dst_hash $dst"
+
+if [[ $src_hash != $dst_hash ]]; then
+    echo "Uploading $src → $dst"
+    aws s3 cp "$src" "$dst"
+
+    if ! "$bin"/notify-slack "Updated $dst available."; then
+        echo "Notifying Slack failed, but exiting with success anyway."
+    fi
+else
+    echo "Files are identical, skipping upload"
+fi

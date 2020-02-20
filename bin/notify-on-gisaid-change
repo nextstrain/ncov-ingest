@@ -1,0 +1,28 @@
+#!/bin/bash
+set -euo pipefail
+
+: "${SLACK_INCOMING_WEBHOOK:?The SLACK_INCOMING_WEBHOOK environment variable is required.}"
+
+bin="$(dirname "$0")"
+
+src="${1:?A source GISAID ndjson file is required as the first argument.}"
+dst="${2:?A destination GISAID ndjson s3:// URL is required as the second argument.}"
+
+src_record_count="$(wc -l < "$src")"
+dst_record_count="$(wc -l < <(aws s3 cp "$dst" -))"
+added_records="$(( $src_record_count - $dst_record_count ))"
+
+printf "%'4d %s\n" "$src_record_count" "$src"
+printf "%'4d %s\n" "$dst_record_count" "$dst"
+printf "%'4d added records\n" "$added_records"
+
+if [[ $added_records -gt 0 ]]; then
+    echo "Notifying Slack about added records (n=$added_records)"
+    "$bin"/notify-slack ":rotating_light: @channel New nCoV records (n=$added_records) found on GISAID."
+
+elif [[ $added_records -lt 0 ]]; then
+    echo "New file has fewer records‽"
+
+else
+    echo "Files have the same number of records, skipping notification"
+fi
