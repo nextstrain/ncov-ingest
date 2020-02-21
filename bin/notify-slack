@@ -1,0 +1,17 @@
+#!/bin/bash
+set -euo pipefail
+
+: "${SLACK_INCOMING_WEBHOOK:?The SLACK_INCOMING_WEBHOOK environment variable is required.}"
+
+text="${1:?Some message text is required as the first and only argument.}"
+
+slack_message="$(jq --arg text "$text" --null-input '{"text": $text}')"
+
+echo "Prepared Slack message:"
+echo "$slack_message"
+
+curl "$SLACK_INCOMING_WEBHOOK" \
+    --header 'Content-type: application/json' \
+    --data-raw "$slack_message" \
+    --fail --silent --show-error \
+    --include

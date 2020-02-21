@@ -1,0 +1,5 @@
+# This gitignore serves as a placeholder to commit data/ as an otherwise empty
+# directory, thus allowing its use in workflow paths and documentation without
+# ensuring it exists first.
+/*
+!/.gitignore
