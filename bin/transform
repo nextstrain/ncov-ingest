@@ -133,6 +133,8 @@ def parse_sex(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^M$", 'Male')
     gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^female$", 'Female')
     gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^F$", 'Female')
+    # Fix spelling
+    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^Femal$", 'Female')
     # Cleanup unknowns
     gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^unknown$", '?')
     gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^N/A$", '?')
