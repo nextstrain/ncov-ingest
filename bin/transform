@@ -10,8 +10,8 @@ import pandas as pd
 # Note: 'sequence' should NEVER appear in this list!
 METADATA_COLUMNS = [  # Ordering of columns in the existing metadata.tsv in the ncov repo
     'strain', 'virus', 'gisaid_epi_isl', 'genbank_accession', 'date', 'region',
-    'country', 'division', 'location', 'segment', 'host', 'originating_lab',
-    'submitting_lab', 'authors', 'url', 'title'
+    'country', 'division', 'location', 'segment', 'host', 'age', 'sex',
+    'originating_lab', 'submitting_lab', 'authors', 'url', 'title'
 ]
 
 assert 'sequence' not in METADATA_COLUMNS, "Sequences should not appear in metadata!"
@@ -28,7 +28,9 @@ def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
         'covv_host'             : 'host',
         'covv_orig_lab'         : 'originating_lab',
         'covv_subm_lab'         : 'submitting_lab',
-        'covv_authors'          : 'authors'
+        'covv_authors'          : 'authors',
+        'covv_patient_age'      : 'age',
+        'covv_gender'           : 'sex'
     }
     gisaid_data.rename(mapper, axis="columns", inplace=True)
 
@@ -69,7 +71,7 @@ def parse_originating_lab(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     gisaid_data['originating_lab'] = gisaid_data['originating_lab'].str.lstrip().str.rstrip()
     # Fix common spelling mistakes
     gisaid_data['originating_lab'] = gisaid_data['originating_lab'].str.replace('Contorl', 'Control')
-    gisaid_data['originating_lab'] = gisaid_data['originating_lab'].str.replace('Dieases', 'Disease')    
+    gisaid_data['originating_lab'] = gisaid_data['originating_lab'].str.replace('Dieases', 'Disease')
     return gisaid_data
 
 def parse_submitting_lab(gisaid_data: pd.DataFrame) -> pd.DataFrame:
@@ -101,6 +103,39 @@ def parse_authors(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     gisaid_data['authors'] = gisaid_data['authors'].str.replace(r" [A-Z]-[A-Z]$", '')
     # Add et al
     gisaid_data['authors'] = gisaid_data['authors'].astype(str) + ' et al'
+    return gisaid_data
+
+def parse_age(gisaid_data: pd.DataFrame) -> pd.DataFrame:
+    """
+    Parse patient age.
+    """
+    # Fix accents and non-standard commas
+    gisaid_data['age'] = gisaid_data['age'].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
+    # Convert "60s" or "50's" to "?"
+    gisaid_data['age'] = gisaid_data['age'].str.replace(r"^\d+\'?[A-Za-z]", '?')
+    # Cleanup unknowns
+    gisaid_data['age'] = gisaid_data['age'].str.replace(r"^0$", '?')
+    gisaid_data['age'] = gisaid_data['age'].str.replace(r"^unknown$", '?')
+    gisaid_data['age'] = gisaid_data['age'].str.replace(r"^N/A$", '?')
+    gisaid_data['age'] = gisaid_data['age'].str.replace(r"^NA$", '?')
+    return gisaid_data
+
+def parse_sex(gisaid_data: pd.DataFrame) -> pd.DataFrame:
+    """
+    Parse patient sex.
+    """
+    # Fix accents and non-standard commas
+    gisaid_data['sex'] = gisaid_data['sex'].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
+    # Casing and abbreviations
+    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^male$", 'Male')
+    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^M$", 'Male')
+    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^female$", 'Female')
+    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^F$", 'Female')
+    # Cleanup unknowns
+    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^unknown$", '?')
+    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^N/A$", '?')
+    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^NA$", '?')
+    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^not applicable$", '?')
     return gisaid_data
 
 def generate_hardcoded_metadata(hardcoded_metadata: pd.DataFrame) -> pd.DataFrame:
@@ -178,6 +213,8 @@ if __name__ == '__main__':
     gisaid_data = parse_originating_lab(gisaid_data)
     gisaid_data = parse_submitting_lab(gisaid_data)
     gisaid_data = parse_authors(gisaid_data)
+    gisaid_data = parse_age(gisaid_data)
+    gisaid_data = parse_sex(gisaid_data)
     gisaid_data = update_metadata(gisaid_data)
 
     # Reorder columns consistent with the existing metadata on GitHub
