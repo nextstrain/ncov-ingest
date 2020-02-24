@@ -18,7 +18,7 @@ printf "%'4d added records\n" "$added_records"
 
 if [[ $added_records -gt 0 ]]; then
     echo "Notifying Slack about added records (n=$added_records)"
-    "$bin"/notify-slack ":rotating_light: @channel New nCoV records (n=$added_records) found on GISAID."
+    "$bin"/notify-slack ":rotating_light: <!channel> New nCoV records (n=$added_records) found on GISAID."
 
 elif [[ $added_records -lt 0 ]]; then
     echo "New file has fewer records‽"
