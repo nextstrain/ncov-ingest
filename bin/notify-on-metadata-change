@@ -10,8 +10,8 @@ dst="${2:?A destination metadata TSV s3:// URL is required as the second argumen
 
 diff="$(
     csv-diff \
-        "$src" \
         <(aws s3 cp "$dst" -) \
+        "$src" \
         --format tsv \
         --key gisaid_epi_isl \
         --singular sequence \
