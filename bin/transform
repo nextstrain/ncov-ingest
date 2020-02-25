@@ -10,7 +10,7 @@ import pandas as pd
 # Note: 'sequence' should NEVER appear in this list!
 METADATA_COLUMNS = [  # Ordering of columns in the existing metadata.tsv in the ncov repo
     'strain', 'virus', 'gisaid_epi_isl', 'genbank_accession', 'date', 'region',
-    'country', 'division', 'location', 'segment', 'host', 'age', 'sex',
+    'country', 'division', 'location', 'segment', 'length', 'host', 'age', 'sex',
     'originating_lab', 'submitting_lab', 'authors', 'url', 'title'
 ]
 
@@ -30,7 +30,8 @@ def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
         'covv_subm_lab'         : 'submitting_lab',
         'covv_authors'          : 'authors',
         'covv_patient_age'      : 'age',
-        'covv_gender'           : 'sex'
+        'covv_gender'           : 'sex',
+        'sequence_length'       : 'length'
     }
     gisaid_data.rename(mapper, axis="columns", inplace=True)
 
@@ -39,10 +40,11 @@ def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
         .str.replace(r'^BetaCoV/', '', n=1, case=False) \
         .str.replace(r'\s', '')
 
-    # Dropping duplicates
-    gisaid_data.drop_duplicates(subset='strain', inplace=True)
+    # Drop duplicates, prefer longest sequence
+    gisaid_data.sort_values('length', ascending=False, inplace=True)
+    gisaid_data.drop_duplicates('strain', inplace=True)
 
-    # Sorting by strain name
+    # Sort by strain name
     gisaid_data.sort_values(by=['strain'], inplace=True)
 
     return gisaid_data
