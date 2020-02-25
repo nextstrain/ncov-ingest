@@ -4,8 +4,21 @@ set -euo pipefail
 : "${SLACK_INCOMING_WEBHOOK:?The SLACK_INCOMING_WEBHOOK environment variable is required.}"
 
 text="${1:?Some message text is required as the first and only argument.}"
+data=""
 
-slack_message="$(jq --arg text "$text" --null-input '{"text": $text}')"
+# If stdin isn't an interactive terminal, then read data from it.
+if [[ ! -t 0 ]]; then
+    data="$(< /dev/stdin)"
+fi
+
+if [[ -z "$data" ]]; then
+    slack_message="$(jq '{"text": $text}' --arg text "$text" --null-input)"
+else
+    slack_message="$(jq '{"text": $text, "attachments": [{"text": "```\($data)```", "fallback": ($data | split("\n\n") | .[0])}]}' \
+        --arg text "$text" \
+        --arg data "$data" \
+        --null-input)"
+fi
 
 echo "Prepared Slack message:"
 echo "$slack_message"
