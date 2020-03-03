@@ -1,0 +1,16 @@
+#!/bin/bash
+set -euo pipefail
+
+: "${SLACK_INCOMING_WEBHOOK:?The SLACK_INCOMING_WEBHOOK environment variable is required.}"
+
+bin="$(dirname "$0")"
+
+git clone https://github.com/nextstrain/ncov.git
+
+nextstrain build --aws-batch --detach \
+    ncov deploy_to_staging \
+    --config slack_webhook="$SLACK_INCOMING_WEBHOOK"
+
+# XXX TODO: notify slack with the build/job id so anyone who wants to follow
+# along can with `nextstrain build --attach …`
+#   -trs, 3 March 2020

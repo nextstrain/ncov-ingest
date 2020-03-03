@@ -7,6 +7,9 @@ corona2020_*
 # Ignore environment shell script
 environment*.sh
 
+# Ignore cloned ncov repo
+ncov/
+
 # For Python #
 ##############
 *.pyc
