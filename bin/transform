@@ -120,11 +120,12 @@ def parse_age(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     gisaid_data['age'] = gisaid_data['age'].str.replace(r"^\d+\'?[A-Za-z]", '?')
     # Convert to just number
     gisaid_data['age'] = gisaid_data['age'].str.replace(r"^(\d+) years$", lambda m: m.group(1))
+    # Convert months to years
+    gisaid_data['age'] = gisaid_data['age'].str.replace(r"^(\d+) months", lambda m: str(int(m.group(1))/12.0))
     # Cleanup unknowns
     gisaid_data['age'] = gisaid_data['age'].str.replace(r"^0$", '?')
-    gisaid_data['age'] = gisaid_data['age'].str.replace(r"^unknown$", '?')
-    gisaid_data['age'] = gisaid_data['age'].str.replace(r"^N/A$", '?')
-    gisaid_data['age'] = gisaid_data['age'].str.replace(r"^NA$", '?')
+    # Catch all non-numeric values
+    gisaid_data['age'] = gisaid_data['age'].apply(lambda x: x if x.isnumeric() else '?')
     return gisaid_data
 
 def parse_sex(gisaid_data: pd.DataFrame) -> pd.DataFrame:
