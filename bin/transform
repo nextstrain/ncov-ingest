@@ -125,7 +125,7 @@ def parse_age(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     # Cleanup unknowns
     gisaid_data['age'] = gisaid_data['age'].str.replace(r"^0$", '?')
     # Catch all non-numeric values
-    gisaid_data['age'] = gisaid_data['age'].apply(lambda x: x if x.isnumeric() else '?')
+    gisaid_data['age'] = pd.to_numeric(gisaid_data['age'], errors='coerce').fillna('?')
     return gisaid_data
 
 def parse_sex(gisaid_data: pd.DataFrame) -> pd.DataFrame:
