@@ -10,8 +10,9 @@ import pandas as pd
 # Note: 'sequence' should NEVER appear in this list!
 METADATA_COLUMNS = [  # Ordering of columns in the existing metadata.tsv in the ncov repo
     'strain', 'virus', 'gisaid_epi_isl', 'genbank_accession', 'date', 'region',
-    'country', 'division', 'location', 'segment', 'length', 'host', 'age', 'sex',
-    'originating_lab', 'submitting_lab', 'authors', 'url', 'title'
+    'country', 'division', 'division_exposure', 'location', 'segment',
+    'length', 'host', 'age', 'sex', 'originating_lab', 'submitting_lab',
+    'authors', 'url', 'title'
 ]
 
 assert 'sequence' not in METADATA_COLUMNS, "Sequences should not appear in metadata!"
@@ -64,6 +65,9 @@ def parse_geographic_columns(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     gisaid_data['division']    = geographic_data[2]
     gisaid_data['location']    = geographic_data[3]
 
+    # Assume division of exposure is the same as division of sampling
+    # This can get updated by updating division_exposure in annotations.tsv
+    gisaid_data['division_exposure'] = gisaid_data['division']
     return gisaid_data
 
 def parse_originating_lab(gisaid_data: pd.DataFrame) -> pd.DataFrame:
