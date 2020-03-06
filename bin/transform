@@ -65,9 +65,6 @@ def parse_geographic_columns(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     gisaid_data['division']    = geographic_data[2]
     gisaid_data['location']    = geographic_data[3]
 
-    # Assume division of exposure is the same as division of sampling
-    # This can get updated by updating division_exposure in annotations.tsv
-    gisaid_data['division_exposure'] = gisaid_data['division']
     return gisaid_data
 
 def parse_originating_lab(gisaid_data: pd.DataFrame) -> pd.DataFrame:
@@ -190,12 +187,12 @@ def update_metadata(curated_gisaid_data: pd.DataFrame) -> pd.DataFrame:
         user_provided_annotations = pd.read_csv(args.annotations, header=None, sep='\t')
         for index, row in user_provided_annotations.iterrows():
             curated_gisaid_data.loc[curated_gisaid_data['strain'] == row[0], row[1]] = row[2]
-            # Change `division_exposure` if `division` is changed by annotations
-            #  And if `division_exposure` is not being changed by annotations
-            if (row[1] == 'division' and
-                # This is checking that `division_exposure` is not already updated within annotations
-                not ((user_provided_annotations[0] == row[0]) & (user_provided_annotations[1] == 'division_exposure')).any()):
-                curated_gisaid_data.loc[curated_gisaid_data['strain'] == row[0], 'division_exposure'] = row[2]
+
+    # Set `division_exposure` equal to `division` if it wasn't added by annotations
+    if 'division_exposure' in curated_gisaid_data:
+        curated_gisaid_data['division_exposure'].fillna(curated_gisaid_data['division'], inplace=True)
+    else:
+        curated_gisaid_data['division_exposure'] = curated_gisaid_data['division']
 
     return curated_gisaid_data
 
