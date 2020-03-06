@@ -31,7 +31,9 @@ jobs:
           --output-fasta data/sequences.fasta
 
         ./bin/notify-on-metadata-change data/metadata.tsv "$S3_BUCKET/metadata.tsv"
+        ./bin/notify-on-additional-info-change data/additional_info.tsv "$S3_BUCKET/additional_info.tsv"
         ./bin/upload-to-s3 data/metadata.tsv "$S3_BUCKET/metadata.tsv"
+        ./bin/upload-to-s3 data/additional_info.tsv "$S3_BUCKET/additional_info.tsv"
         ./bin/upload-to-s3 data/sequences.fasta "$S3_BUCKET/sequences.fasta"
 
 env:
