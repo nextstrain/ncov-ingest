@@ -17,19 +17,19 @@ jobs:
       run: |
         python3 -m pip install --upgrade pip setuptools
         python3 -m pip install -r requirements.txt
-        
+
         PATH="$HOME/.local/bin:$PATH"
-        
+
         S3_BUCKET="s3://nextstrain-ncov-private"
-        
+
         ./bin/fetch-from-gisaid > data/gisaid.ndjson
         ./bin/notify-on-gisaid-change data/gisaid.ndjson "$S3_BUCKET/gisaid.ndjson"
         ./bin/upload-to-s3 data/gisaid.ndjson "$S3_BUCKET/gisaid.ndjson"
-        
+
         ./bin/transform data/gisaid.ndjson \
           --output-metadata data/metadata.tsv \
           --output-fasta data/sequences.fasta
-        
+
         ./bin/notify-on-metadata-change data/metadata.tsv "$S3_BUCKET/metadata.tsv"
         ./bin/upload-to-s3 data/metadata.tsv "$S3_BUCKET/metadata.tsv"
         ./bin/upload-to-s3 data/sequences.fasta "$S3_BUCKET/sequences.fasta"
