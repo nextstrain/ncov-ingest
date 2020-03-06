@@ -7,14 +7,17 @@ from pathlib import Path
 import fsspec
 import pandas as pd
 
-# Note: 'sequence' should NEVER appear in this list!
+
+# Note: 'sequence' should NEVER appear in these lists!
 METADATA_COLUMNS = [  # Ordering of columns in the existing metadata.tsv in the ncov repo
     'strain', 'virus', 'gisaid_epi_isl', 'genbank_accession', 'date', 'region',
     'country', 'division', 'location', 'segment', 'length', 'host', 'age', 'sex',
     'originating_lab', 'submitting_lab', 'authors', 'url', 'title'
 ]
+ADDITIONAL_INFO_COLUMNS = ['gisaid_epi_isl', 'strain', 'additional_host_info']
 
 assert 'sequence' not in METADATA_COLUMNS, "Sequences should not appear in metadata!"
+assert 'sequence' not in ADDITIONAL_INFO_COLUMNS, "Sequences should not appear in additional info!"
 
 def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     """
@@ -26,6 +29,7 @@ def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
         'covv_accession_id'     : 'gisaid_epi_isl',
         'covv_collection_date'  : 'date',
         'covv_host'             : 'host',
+        'covv_add_host_info'    : 'additional_host_info',
         'covv_orig_lab'         : 'originating_lab',
         'covv_subm_lab'         : 'submitting_lab',
         'covv_authors'          : 'authors',
@@ -215,6 +219,9 @@ if __name__ == '__main__':
     parser.add_argument("--output-fasta",
         default=base / "data/sequences.fasta",
         help="Output location of generated FASTA file. Defaults to `data/sequences.fasta`")
+    parser.add_argument("--output-additional-info",
+        default=base / "data/additional_info.tsv",
+        help="Output location of additional info tsv. Defaults to `data/additional_info.tsv`")
     args = parser.parse_args()
 
     gisaid_data = pd.read_json(args.gisaid_data, lines=True)
@@ -228,6 +235,10 @@ if __name__ == '__main__':
     gisaid_data = parse_age(gisaid_data)
     gisaid_data = parse_sex(gisaid_data)
     gisaid_data = update_metadata(gisaid_data)
+
+    # Export additional info
+    gisaid_data[ADDITIONAL_INFO_COLUMNS] \
+        .to_csv(args.output_additional_info, sep='\t', na_rep='?', index=False)
 
     # Reorder columns consistent with the existing metadata on GitHub
     gisaid_data = gisaid_data[METADATA_COLUMNS]
