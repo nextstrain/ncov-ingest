@@ -37,7 +37,7 @@ def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
 
     # Abbreviate strain names by removing the prefix. Strip spaces, too.
     gisaid_data['strain'] = gisaid_data['strain'] \
-        .str.replace(r'^BetaCoV/', '', n=1, case=False) \
+        .str.replace(r'^hCoV-19/', '', n=1, case=False) \
         .str.replace(r'\s', '')
 
     # Drop entries with length less than 15kb
