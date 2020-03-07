@@ -1,0 +1,26 @@
+#!/bin/bash
+set -euo pipefail
+
+: "${SLACK_INCOMING_WEBHOOK:?The SLACK_INCOMING_WEBHOOK environment variable is required.}"
+
+bin="$(dirname "$0")"
+
+src="${1:?A source metadata TSV file is required as the first argument.}"
+dst="${2:?A destination metadata TSV s3:// URL is required as the second argument.}"
+
+diff="$(
+    csv-diff \
+        <(aws s3 cp "$dst" -) \
+        "$src" \
+        --format tsv \
+        --key gisaid_epi_isl \
+        --singular sequence \
+        --plural sequences
+)"
+
+if [[ -n "$diff" ]]; then
+    echo "Notifying Slack about metadata change."
+    "$bin"/notify-slack "Metadata changes" <<<"$diff"
+else
+    echo "No metadata change."
+fi
