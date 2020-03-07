@@ -10,8 +10,9 @@ import pandas as pd
 # Note: 'sequence' should NEVER appear in this list!
 METADATA_COLUMNS = [  # Ordering of columns in the existing metadata.tsv in the ncov repo
     'strain', 'virus', 'gisaid_epi_isl', 'genbank_accession', 'date', 'region',
-    'country', 'division', 'location', 'segment', 'length', 'host', 'age', 'sex',
-    'originating_lab', 'submitting_lab', 'authors', 'url', 'title'
+    'country', 'division', 'division_exposure', 'location', 'segment',
+    'length', 'host', 'age', 'sex', 'originating_lab', 'submitting_lab',
+    'authors', 'url', 'title'
 ]
 
 assert 'sequence' not in METADATA_COLUMNS, "Sequences should not appear in metadata!"
@@ -186,6 +187,12 @@ def update_metadata(curated_gisaid_data: pd.DataFrame) -> pd.DataFrame:
         user_provided_annotations = pd.read_csv(args.annotations, header=None, sep='\t')
         for index, row in user_provided_annotations.iterrows():
             curated_gisaid_data.loc[curated_gisaid_data['strain'] == row[0], row[1]] = row[2]
+
+    # Set `division_exposure` equal to `division` if it wasn't added by annotations
+    if 'division_exposure' in curated_gisaid_data:
+        curated_gisaid_data['division_exposure'].fillna(curated_gisaid_data['division'], inplace=True)
+    else:
+        curated_gisaid_data['division_exposure'] = curated_gisaid_data['division']
 
     return curated_gisaid_data
 
