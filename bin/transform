@@ -186,7 +186,8 @@ def update_metadata(curated_gisaid_data: pd.DataFrame) -> pd.DataFrame:
         # Use the curated annotations tsv to update any column values
         user_provided_annotations = pd.read_csv(args.annotations, header=None, sep='\t', comment="#")
         for index, row in user_provided_annotations.iterrows():
-            curated_gisaid_data.loc[curated_gisaid_data['strain'] == row[0], row[1]] = row[2]
+            # Strip any whitespace remaining from inline comments after the final column.
+            curated_gisaid_data.loc[curated_gisaid_data['strain'] == row[0], row[1]] = row[2].rstrip()
 
     # Set `division_exposure` equal to `division` if it wasn't added by annotations
     if 'division_exposure' in curated_gisaid_data:
