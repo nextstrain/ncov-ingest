@@ -14,6 +14,9 @@ METADATA_COLUMNS = [  # Ordering of columns in the existing metadata.tsv in the 
     'country', 'division', 'location', 'segment', 'length', 'host', 'age', 'sex',
     'originating_lab', 'submitting_lab', 'authors', 'url', 'title'
 ]
+
+# Preserve the ordering of these columns for ease when generating Slack
+# notifications on change
 ADDITIONAL_INFO_COLUMNS = ['gisaid_epi_isl', 'strain', 'additional_host_info']
 
 assert 'sequence' not in METADATA_COLUMNS, "Sequences should not appear in metadata!"

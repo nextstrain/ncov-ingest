@@ -5,22 +5,24 @@ set -euo pipefail
 
 bin="$(dirname "$0")"
 
-src="${1:?A source metadata TSV file is required as the first argument.}"
-dst="${2:?A destination metadata TSV s3:// URL is required as the second argument.}"
+src="${1:?A source additional info TSV file is required as the first argument.}"
+dst="${2:?A destination additional info TSV s3:// URL is required as the second argument.}"
 
+# Remove rows where column 3 (additional_host_info) is empty and compare the S3
+# version with the local version
 diff="$(
     csv-diff \
-        <(aws s3 cp "$dst" -) \
-        "$src" \
+        <(awk 'BEGIN {FS="\t"}; { if ($3 != "") { print }}' <(aws s3 cp "$dst" -)) \
+        <(awk 'BEGIN {FS="\t"}; { if ($3 != "") { print }}' "$src") \
         --format tsv \
         --key gisaid_epi_isl \
-        --singular sequence \
-        --plural sequences
+        --singular "additional info" \
+        --plural "additional info"
 )"
 
 if [[ -n "$diff" ]]; then
-    echo "Notifying Slack about metadata change."
-    "$bin"/notify-slack "Metadata changes" <<<"$diff"
+    echo "Notifying Slack about additional info change."
+    "$bin"/notify-slack "Additional info changes" <<<"$diff"
 else
-    echo "No metadata change."
+    echo "No additional info change."
 fi
