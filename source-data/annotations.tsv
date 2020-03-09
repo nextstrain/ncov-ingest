@@ -1,5 +1,4 @@
 
-
 Australia/NSW01/2020	division_exposure	Hubei
 Australia/NSW05/2020	division_exposure	Iran
 Australia/NSW06/2020	division_exposure	Iran
@@ -19,6 +18,7 @@ Belgium/GHB-03021/2020	division	Flanders
 Belgium/GHB-03021/2020	location	Leuven
 Brazil/SPBR-01/2020	division_exposure	Lombardy
 Brazil/SPBR-02/2020	division_exposure	Lombardy
+Cambodia/0012/2020	division_exposure	Hubei
 Canada/BC_37_0-2/2020	division_exposure	Iran
 Canada/ON-PHL2445/2020	division_exposure	Hubei
 Canada/ON-VIDO-01/2020	division_exposure	Hubei
@@ -37,14 +37,15 @@ England/01/2020	division	England
 England/01/2020	division_exposure	Hubei
 England/02/2020	country	United Kingdom
 England/02/2020	division	England
+England/02/2020	division_exposure	Hubei
 England/03/2020	country	United Kingdom
 England/03/2020	division	England
 England/09c/2020	country	United Kingdom
 England/09c/2020	division	England
+Finland/1/2020	division_exposure	Hubei
 Finland/1/2020	genbank_accession	MT020781
 Finland/1/2020	location	Rovaniemi
 Finland/FIN-25/2020	division_exposure	Lombardy
-France/IDF0372-isl/2020	division	Ile de France
 France/IDF0372-isl/2020	division	Ile de France
 France/IDF0372/2020	division	Ile de France
 France/IDF0373/2020	division	Ile de France
@@ -179,6 +180,7 @@ Singapore/2/2020	location	Singapore
 Singapore/3/2020	division	Singapore
 Singapore/3/2020	location	Singapore
 Singapore/4/2020	division	Singapore
+Singapore/4/2020	division_exposure	Hubei
 Singapore/4/2020	location	Singapore
 Singapore/5/2020	division	Singapore
 Singapore/5/2020	location	Singapore
@@ -213,6 +215,7 @@ SouthKorea/SNU01/2020	genbank_accession	MT039890
 Sweden/01/2020	division	Småland
 Sweden/01/2020	genbank_accession	MT093571
 Sweden/01/2020	location	Jönköping
+Sydney/2/2020	division_exposure	Hubei
 Taiwan/2/2020	division	Taiwan
 Taiwan/2/2020	location	Kaohsiung
 Taiwan/3/2020	division	Taiwan
@@ -239,38 +242,41 @@ USA/CA2/2020	division_exposure	Hubei
 USA/CA2/2020	genbank_accession	MN994468
 USA/CA3/2020	genbank_accession	MT027062
 USA/CA4/2020	genbank_accession	MT027063
+USA/CA5/2020	division_exposure	Hubei
 USA/CA5/2020	genbank_accession	MT027064
 USA/CA6/2020	division_exposure	Hubei
 USA/CA6/2020	genbank_accession	MT044258
+USA/CA7/2020	division_exposure	Hubei
 USA/CA7/2020	genbank_accession	MT106052
 USA/CA8/2020	genbank_accession	MT106053
 USA/CA9/2020	genbank_accession	MT118835
 USA/CA9/2020	location	Solano County
-USA/CruiseA-1/2020	division	Cruise ship
-USA/CruiseA-2/2020	division	Cruise ship
-USA/CruiseA-3/2020	division	Cruise ship
-USA/CruiseA-4/2020	division	Cruise ship
-USA/CruiseA-5/2020	division	Cruise ship
-USA/CruiseA-6/2020	division	Cruise ship
-USA/CruiseA-7/2020	division	Cruise ship
-USA/CruiseA-8/2020	division	Cruise ship
-USA/CruiseA-9/2020	division	Cruise ship
-USA/CruiseA-10/2020	division	Cruise ship
-USA/CruiseA-11/2020	division	Cruise ship
-USA/CruiseA-12/2020	division	Cruise ship
-USA/CruiseA-13/2020	division	Cruise ship
-USA/CruiseA-14/2020	division	Cruise ship
-USA/CruiseA-15/2020	division	Cruise ship
-USA/CruiseA-16/2020	division	Cruise ship
-USA/CruiseA-17/2020	division	Cruise ship
-USA/CruiseA-18/2020	division	Cruise ship
+USA/CruiseA-1/2020	division	Diamond Princess
+USA/CruiseA-2/2020	division	Diamond Princess
+USA/CruiseA-3/2020	division	Diamond Princess
+USA/CruiseA-4/2020	division	Diamond Princess
+USA/CruiseA-5/2020	division	Diamond Princess
+USA/CruiseA-6/2020	division	Diamond Princess
+USA/CruiseA-7/2020	division	Diamond Princess
+USA/CruiseA-8/2020	division	Diamond Princess
+USA/CruiseA-9/2020	division	Diamond Princess
+USA/CruiseA-10/2020	division	Diamond Princess
+USA/CruiseA-11/2020	division	Diamond Princess
+USA/CruiseA-12/2020	division	Diamond Princess
+USA/CruiseA-13/2020	division	Diamond Princess
+USA/CruiseA-14/2020	division	Diamond Princess
+USA/CruiseA-15/2020	division	Diamond Princess
+USA/CruiseA-16/2020	division	Diamond Princess
+USA/CruiseA-17/2020	division	Diamond Princess
+USA/CruiseA-18/2020	division	Diamond Princess
 USA/IL1/2020	division_exposure	Hubei
 USA/IL1/2020	genbank_accession	MN988713
+USA/IL2/2020	division_exposure	Hubei
 USA/IL2/2020	genbank_accession	MT044257
-USA/MA1/2020	division_exposure	Hubei
 USA/MA1/2020	division_exposure	Hubei
 USA/MA1/2020	genbank_accession	MT039888
 USA/MA1/2020	location	Boston
+USA/TX1/2020	division_exposure	Hubei
 USA/TX1/2020	genbank_accession	MT106054
 USA/WA1-A12/2020	genbank_accession	MT020880
 USA/WA1-F6/2020	genbank_accession	MT020881
