@@ -5,7 +5,13 @@ set -euo pipefail
 
 bin="$(dirname "$0")"
 
-git clone https://github.com/nextstrain/ncov.git
+if [[ -d "ncov" ]]; then
+    echo "Downloading latest version of the ncov repo (master branch)"
+    (cd ncov; git pull)
+else
+    echo "Cloning the ncov repo"
+    git clone https://github.com/nextstrain/ncov.git
+fi
 
 nextstrain build --aws-batch --detach \
     ncov deploy_to_staging \
