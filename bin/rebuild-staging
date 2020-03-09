@@ -13,10 +13,17 @@ else
     git clone https://github.com/nextstrain/ncov.git
 fi
 
-nextstrain build --aws-batch --detach \
-    ncov deploy_to_staging \
-    --config slack_webhook="$SLACK_INCOMING_WEBHOOK"
 
-# XXX TODO: notify slack with the build/job id so anyone who wants to follow
-# along can with `nextstrain build --attach …`
-#   -trs, 3 March 2020
+output=$(
+    nextstrain build --aws-batch --detach \
+        ncov deploy_to_staging \
+        --config slack_webhook="$SLACK_INCOMING_WEBHOOK"
+)
+
+echo "$output"
+
+# Extract the AWS job ID from the `nextstrain build --aws-batch --detach` output
+aws_batch_job_id=$(grep "AWS Batch Job ID" <<<"$output" | cut -d ' ' -f 5)
+
+echo "Notifying Slack about metadata change."
+"$bin"/notify-slack "A new batch job has started. Follow along with" <<<"nextstrain build --aws-batch --attach $aws_batch_job_id"
