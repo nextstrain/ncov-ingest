@@ -184,7 +184,7 @@ def update_metadata(curated_gisaid_data: pd.DataFrame) -> pd.DataFrame:
 
     if args.annotations:
         # Use the curated annotations tsv to update any column values
-        user_provided_annotations = pd.read_csv(args.annotations, header=None, sep='\t')
+        user_provided_annotations = pd.read_csv(args.annotations, header=None, sep='\t', comment="#")
         for index, row in user_provided_annotations.iterrows():
             curated_gisaid_data.loc[curated_gisaid_data['strain'] == row[0], row[1]] = row[2]
 
@@ -212,10 +212,12 @@ if __name__ == '__main__':
             "1. the strain ID\n\t"
             "2. the column name to replace from the generated `metadata.tsv` file\n\t"
             "3. the replacement data\n"
+        "Lines or parts of lines starting with '#' are treated as comments.\n"
         "e.g.\n\t"
         "USA/MA1/2020    location    Boston\n\t"
+        "# First Californian sample\n\t"
         "USA/CA1/2020    genbank_accession   MN994467\n\t"
-        "Wuhan-Hu-1/2019 collection_date 2019-12-26")
+        "Wuhan-Hu-1/2019 collection_date 2019-12-26 # Manually corrected date")
     parser.add_argument("--output-metadata",
         default=base / "data/metadata.tsv",
         help="Output location of generated metadata tsv. Defaults to `data/metadata.tsv`")
