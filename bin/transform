@@ -19,7 +19,8 @@ METADATA_COLUMNS = [  # Ordering of columns in the existing metadata.tsv in the 
 # Preserve the ordering of these columns for ease when generating Slack
 # notifications on change
 ADDITIONAL_INFO_COLUMNS = [
-    'gisaid_epi_isl', 'strain', 'additional_host_info'
+    'gisaid_epi_isl', 'strain', 'additional_host_info',
+    'additional_location_info'
 ]
 
 assert 'sequence' not in METADATA_COLUMNS, "Sequences should not appear in metadata!"
@@ -42,6 +43,7 @@ def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
         'covv_gender'           : 'sex',
         'sequence_length'       : 'length',
         'covv_add_host_info'    : 'additional_host_info',
+        'covv_add_location'     : 'additional_location_info',
     }
     gisaid_data.rename(mapper, axis="columns", inplace=True)
 
