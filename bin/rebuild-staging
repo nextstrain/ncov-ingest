@@ -42,6 +42,8 @@ else
     git clone https://github.com/nextstrain/ncov.git
 fi
 
+unset AWS_ACCESS_KEY_ID
+unset AWS_SECRET_ACCESS_KEY
 
 output=$(
     nextstrain build --aws-batch --detach \
