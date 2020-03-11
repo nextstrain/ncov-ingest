@@ -1,0 +1,58 @@
+#!/bin/bash
+set -euo pipefail
+
+: "${SLACK_INCOMING_WEBHOOK:?The SLACK_INCOMING_WEBHOOK environment variable is required.}"
+
+bin="$(dirname "$0")"
+
+metadata_src="${1:?A source metadata TSV file is required as the third argument.}"
+metadata_dst="${2:?A destination metadata TSV s3:// URL is required as the fourth argument.}"
+
+sequences_src="${3:?A source sequences fasta file is required as the first argument.}"
+sequences_dst="${4:?A destination sequences fasta s3:// URL is required as the second argument.}"
+
+# Returns 1 if both files match (have identical hashes). Else returns 0.
+hashes_match() {
+    src_hash="$("$bin/sha256sum" < "$1")"
+    dst_hash="$("$bin/sha256sum" < <(aws s3 cp "$2" -))"
+
+    if [[ $src_hash = $dst_hash ]]; then
+        echo 1
+    else
+        echo 0
+    fi
+}
+
+metadata_match=$(hashes_match $metadata_src $metadata_dst)
+sequences_match=$(hashes_match $sequences_src $sequences_dst)
+
+if [[ $metadata_match -eq 1 && $sequences_match -eq 1 ]]; then
+    echo "No metadata or sequence changes"
+    echo "Exiting"
+    exit 0
+fi
+
+echo "Changes detected in metadata or sequences. Continuing"
+
+if [[ -d "ncov" ]]; then
+    echo "Downloading latest version of the ncov repo (master branch)"
+    (cd ncov; git pull)
+else
+    echo "Cloning the ncov repo"
+    git clone https://github.com/nextstrain/ncov.git
+fi
+
+
+output=$(
+    nextstrain build --aws-batch --detach \
+        ncov deploy_to_staging \
+        --config slack_webhook="$SLACK_INCOMING_WEBHOOK"
+)
+
+echo "$output"
+
+# Extract the AWS job ID from the `nextstrain build --aws-batch --detach` output
+aws_batch_job_id=$(grep "AWS Batch Job ID" <<<"$output" | cut -d ' ' -f 5)
+
+echo "Notifying Slack about metadata change."
+"$bin"/notify-slack "A new batch job has started. Follow along in your local ncov repo with" <<<"nextstrain build --aws-batch --attach $aws_batch_job_id ."
