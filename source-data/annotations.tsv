@@ -14,20 +14,18 @@ Australia/NSW13/2020	division	New South Wales
 Australia/NSW13/2020	division_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW14/2020	division	New South Wales
 # Australia/NSW14/2020	is a close contact of Australia/NSW05/2020 and suspected direct transmission
-Australia/NSW14/2020	division_exposure	New South Wales
-Australia/QLD01/2020	division_exposure	Hubei
-Australia/VIC01/2020	division_exposure	Hubei
+Australia/NSW14/2020	division_exposure	New South Wales # ?
+Australia/QLD01/2020	division_exposure	Hubei # ?
+Australia/VIC01/2020	division_exposure	Hubei # ?
 Australia/VIC01/2020	genbank_accession	MT007544
 Belgium/GHB-03021/2020	division	Flanders
 Belgium/GHB-03021/2020	location	Leuven
-Brazil/SPBR-01/2020	division_exposure	Lombardy
-Brazil/SPBR-02/2020	division_exposure	Lombardy
-Cambodia/0012/2020	division_exposure	Hubei
-Canada/BC_37_0-2/2020	division_exposure	Iran
-Canada/ON-PHL2445/2020	division_exposure	Hubei
-Canada/ON-VIDO-01/2020	division_exposure	Hubei
-Canada/ON/PHL2445/2020	division_exposure	Hubei
-Canada/ON/VIDO-01/2020	division_exposure	Hubei
+Brazil/SPBR-01/2020	division_exposure	Lombardy # GISAID
+Brazil/SPBR-02/2020	division_exposure	Lombardy # GISAID
+Cambodia/0012/2020	division_exposure	Hubei # GISAID
+Canada/BC_37_0-2/2020	division_exposure	Iran # GISAID
+Canada/ON-PHL2445/2020	division_exposure	Hubei # GISAID
+Canada/ON-VIDO-01/2020	division_exposure	Hubei # GISAID
 China/IQTC02/2020	division	Guangdong
 China/IQTC02/2020	location	Guangzhou
 China/WF0001/2020	date	2020-01-XX
@@ -78,20 +76,20 @@ China/WHU02/2020	genbank_accession	MN988669
 Chongqing/YC01/2020	division	Chongqing
 England/01/2020	country	United Kingdom
 England/01/2020	division	England
-England/01/2020	division_exposure	Hubei
+England/01/2020	division_exposure	Hubei # first cases were reported in media as being son & mother from China
 England/02/2020	country	United Kingdom
 England/02/2020	division	England
-England/02/2020	division_exposure	Hubei
+England/02/2020	division_exposure	Hubei # first cases were reported in media as being son & mother from China
 England/03/2020	country	United Kingdom
 England/03/2020	division	England
 England/09c/2020	country	United Kingdom
 England/09c/2020	division	England
-England/09c/2020	division_exposure	Hubei
-Finland/1/2020	division_exposure	Hubei
+England/09c/2020	division_exposure	Hubei #recently arrived from china https://www.theguardian.com/world/2020/feb/13/london-coronavirus-patient-turned-up-hospital-uber-taxi
+Finland/1/2020	division_exposure	Hubei # ?
 Finland/1/2020	genbank_accession	MT020781
 Finland/1/2020	location	Rovaniemi
-Finland/FIN-25/2020	division_exposure	Lombardy
-Finland/FIN03032020C/2020	division_exposure	Italy
+Finland/FIN-25/2020	division_exposure	Lombardy # GISAID
+Finland/FIN03032020C/2020	division_exposure	Italy # GISAID
 France/IDF0372-isl/2020	division	Ile de France
 France/IDF0372/2020	division	Ile de France
 France/IDF0373/2020	division	Ile de France
@@ -100,11 +98,11 @@ France/IDF0386-islP3/2020	division	Ile de France
 France/IDF0386/2020	division	Ile de France
 France/IDF0515-isl/2020	division	Ile de France
 France/IDF0515/2020	division	Ile de France
-France/IDF0515/2020	division_exposure	Hubei
+France/IDF0515/2020	division_exposure	Hubei # ? media?
 France/IDF0571/2020	division	Ile de France
 France/IDF0626/2020	division	Ile de France
 France/RA739/2020	division	Auvergne Rhone Alpes
-Germany/Baden-Wuerttemberg-1/2020	division_exposure	Lombardy
+Germany/Baden-Wuerttemberg-1/2020	division_exposure	Lombardy # GISAID
 Germany/BavPat1/2020	location	Starnberg
 Guangdong/20SF012/2020	division	Guangdong
 Guangdong/20SF013/2020	division	Guangdong
@@ -116,7 +114,7 @@ HongKong/VM20001988/2020	division	Hong Kong
 Italy/CDG1/2020	division	Lombardy
 Italy/INMI1-cs/2020	date	2020-01-29
 Italy/INMI1-cs/2020	division	Lazio
-Italy/INMI1-cs/2020	division_exposure	Hubei
+Italy/INMI1-cs/2020	division_exposure	Hubei # GISAID
 Italy/INMI1-cs/2020	location	Rome
 Italy/INMI1-isl/2020	division	Lazio
 Italy/INMI1-isl/2020	location	Rome
@@ -142,8 +140,8 @@ Korea/KCDC12/2020	location	Gyeonggi
 Korea/KCDC24/2020	division	Chungcheongnam
 Korea/KCDC24/2020	location	Chungcheongnam
 Luxembourg/Lux1/2020	division	Luxembourg
-Mexico/CDMX/InDRE_01/2020	division_exposure	Lombardy
-Nepal/61/2020	division_exposure	Hubei
+Mexico/CDMX/InDRE_01/2020	division_exposure	Lombardy # GISAID
+Nepal/61/2020	division_exposure	Hubei # ?
 Nepal/61/2020	genbank_accession	MT072688
 Nepal/61/2020	location	Kathmandu
 Netherlands/Andel_1365066/2020	division	North Brabant
@@ -204,12 +202,12 @@ Netherlands/Zeewolde_1365080/2020	division	Flevoland
 Netherlands/Zeewolde_1365080/2020	location	Zeewolde
 NetherlandsL/Houten_1363498/2020	division	Utrecht
 NetherlandsL/Houten_1363498/2020	location	Houten
-NewZealand/01/2020	division_exposure	Iran
+NewZealand/01/2020	division_exposure	Iran # GISAID
 NewZealand/01/2020	location	Auckland
 Nigeria/Lagos01/2020	division_exposure	Italy
-Nonthaburi/61/2020	division_exposure	Hubei
+Nonthaburi/61/2020	division_exposure	Hubei # GISAID
 Nonthaburi/61/2020	location	Bangkok
-Nonthaburi/74/2020	division_exposure	Hubei
+Nonthaburi/74/2020	division_exposure	Hubei # GISAID
 Nonthaburi/74/2020	location	Bangkok
 Portugal/CV62/2020	division	Portugal
 Portugal/CV63/2020	division	Portugal
@@ -237,7 +235,7 @@ Singapore/2/2020	location	Singapore
 Singapore/3/2020	division	Singapore
 Singapore/3/2020	location	Singapore
 Singapore/4/2020	division	Singapore
-Singapore/4/2020	division_exposure	Hubei
+Singapore/4/2020	division_exposure	Hubei # ?
 Singapore/4/2020	location	Singapore
 Singapore/5/2020	division	Singapore
 Singapore/5/2020	location	Singapore
@@ -274,9 +272,9 @@ Sweden/01/2020	genbank_accession	MT093571
 Sweden/01/2020	location	Jönköping
 Switzerland/AG0361/2020	division	Aargau
 Switzerland/TI9486/2020	division	Ticino
-Switzerland/GE3895/2020	division_exposure	Lombardy #received from submitters
-Switzerland/GE9586/2020	division_exposure	Lombardy #received from submitters
-Sydney/2/2020	division_exposure	Hubei
+Switzerland/GE3895/2020	division_exposure	Lombardy # received from submitters
+Switzerland/GE9586/2020	division_exposure	Lombardy # received from submitters
+Sydney/2/2020	division_exposure	Hubei # ?
 Taiwan/2/2020	division	Taiwan
 Taiwan/2/2020	location	Kaohsiung
 Taiwan/3/2020	division	Taiwan
@@ -292,32 +290,33 @@ Taiwan/NTU02/2020	division	Taiwan
 Taiwan/NTU02/2020	genbank_accession	MT066176
 Taiwan/NTU02/2020	location	Taipei
 Taiwan/NTU03/2020	division	Taiwan
-Taiwan/NTU03/2020	location	Taipei
+Taiwan/NTU03/2020	location	Taipei 
+#Taiwan/NT03/2020 travel history from GISAID: Dubai (1/29-2/10 of 2020) and Egypt (2/11-2/21 of 2020) 
 USA-CA9/2020	genbank_accession	MT118835
-USA/AZ1/2020	division_exposure	Hubei
+USA/AZ1/2020	division_exposure	Hubei # ?
 USA/AZ1/2020	genbank_accession	MN997409
 USA/CA-CDPH-UC1/2020	date	2020-02-26
-USA/CA1/2020	division_exposure	Hubei
+USA/CA1/2020	division_exposure	Hubei # ?
 USA/CA1/2020	genbank_accession	MN994467
-USA/CA2/2020	division_exposure	Hubei
+USA/CA2/2020	division_exposure	Hubei # ?
 USA/CA2/2020	genbank_accession	MN994468
 USA/CA3/2020	genbank_accession	MT027062
 USA/CA4/2020	genbank_accession	MT027063
-USA/CA5/2020	division_exposure	Hubei
+USA/CA5/2020	division_exposure	Hubei # ?
 USA/CA5/2020	genbank_accession	MT027064
 USA/CA6/2020	division_exposure	Hubei
 USA/CA6/2020	genbank_accession	MT044258
-USA/CA7/2020	division_exposure	Hubei
+USA/CA7/2020	division_exposure	Hubei # ?
 USA/CA7/2020	genbank_accession	MT106052
 USA/CA8/2020	genbank_accession	MT106053
 USA/CA9/2020	genbank_accession	MT118835
 USA/CA9/2020	location	Solano County
-USA/CA-CDPH-UC1/2020	division	Grand Princess
-USA/CA-CDPH-UC5/2020	division	Grand Princess
-USA/CA-CDPH-UC6/2020	division	Grand Princess
-USA/CA-CDPH-UC7/2020	division	Grand Princess
-USA/CA-CDPH-UC8/2020	division	Grand Princess
-USA/CA-CDPH-UC9/2020	division	Grand Princess
+USA/CA-CDPH-UC1/2020	division	Grand Princess # from GISAID
+USA/CA-CDPH-UC5/2020	division	Grand Princess # from GISAID
+USA/CA-CDPH-UC6/2020	division	Grand Princess # from GISAID
+USA/CA-CDPH-UC7/2020	division	Grand Princess # from GISAID
+USA/CA-CDPH-UC8/2020	division	Grand Princess # from GISAID
+USA/CA-CDPH-UC9/2020	division	Grand Princess # from GISAID
 USA/CruiseA-1/2020	division	Diamond Princess
 USA/CruiseA-2/2020	division	Diamond Princess
 USA/CruiseA-3/2020	division	Diamond Princess
@@ -336,24 +335,24 @@ USA/CruiseA-15/2020	division	Diamond Princess
 USA/CruiseA-16/2020	division	Diamond Princess
 USA/CruiseA-17/2020	division	Diamond Princess
 USA/CruiseA-18/2020	division	Diamond Princess
-USA/IL1/2020	division_exposure	Hubei
+USA/IL1/2020	division_exposure	Hubei # ?
 USA/IL1/2020	genbank_accession	MN988713
-USA/IL2/2020	division_exposure	Hubei
+USA/IL2/2020	division_exposure	Hubei # ?
 USA/IL2/2020	genbank_accession	MT044257
-USA/MA1/2020	division_exposure	Hubei
+USA/MA1/2020	division_exposure	Hubei # ?
 USA/MA1/2020	genbank_accession	MT039888
 USA/MA1/2020	location	Boston
-USA/TX1/2020	division_exposure	Hubei
+USA/TX1/2020	division_exposure	Hubei # ?
 USA/TX1/2020	genbank_accession	MT106054
 USA/WA1-A12/2020	genbank_accession	MT020880
 USA/WA1-F6/2020	genbank_accession	MT020881
-USA/WA1/2020	division_exposure	Hubei
+USA/WA1/2020	division_exposure	Hubei # ?
 USA/WA1/2020	genbank_accession	MN985325
 USA/WA1/2020	location	Snohomish County
-USA/WA3-UW1/2020	division_exposure	South Korea
-USA/WI1/2020	division_exposure	Hubei
+USA/WA3-UW1/2020	division_exposure	South Korea # shared with Trevor
+USA/WI1/2020	division_exposure	Hubei # ?
 USA/WI1/2020	genbank_accession	MT039887
-Vietnam/VR03-38142/2020	division_exposure	Hubei
+Vietnam/VR03-38142/2020	division_exposure	Hubei # ?
 Wuhan-Hu-1/2019	date	2019-12-26
 Wuhan-Hu-1/2019	division	Hubei
 Wuhan-Hu-1/2019	genbank_accession	MN908947
