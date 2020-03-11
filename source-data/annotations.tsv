@@ -1,15 +1,19 @@
 # strain	key	value
 Australia/NSW01/2020	division_exposure	Hubei
-Australia/NSW05/2020	division_exposure	Iran
-Australia/NSW06/2020	division_exposure	Iran
+Australia/NSW05/2020	division_exposure	Iran # James: data via direct contact with Aus lab
+Australia/NSW06/2020	division_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW08/2020	division	New South Wales
 Australia/NSW09/2020	division	New South Wales
 Australia/NSW09/2020	division_exposure	New South Wales
 Australia/NSW10/2020	division	New South Wales
 Australia/NSW11/2020	division	New South Wales
+Australia/NSW11/2020	division_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW12/2020	division	New South Wales
+Australia/NSW12/2020	division_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW13/2020	division	New South Wales
+Australia/NSW13/2020	division_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW14/2020	division	New South Wales
+# Australia/NSW14/2020	is a close contact of Australia/NSW05/2020 and suspected direct transmission
 Australia/NSW14/2020	division_exposure	New South Wales
 Australia/QLD01/2020	division_exposure	Hubei
 Australia/VIC01/2020	division_exposure	Hubei
