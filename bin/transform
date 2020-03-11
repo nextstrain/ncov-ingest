@@ -59,8 +59,8 @@ def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     gisaid_data.sort_values('length', ascending=False, inplace=True)
     gisaid_data.drop_duplicates('strain', inplace=True)
 
-    # Sort by unique identifier
-    gisaid_data.sort_values(by=['gisaid_epi_isl'], inplace=True)
+    # Sort by strain name
+    gisaid_data.sort_values(by=['strain'], inplace=True)
 
     return gisaid_data
 
