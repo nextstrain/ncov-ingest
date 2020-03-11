@@ -19,9 +19,13 @@ Australia/QLD01/2020	division_exposure	Hubei # ?
 Australia/VIC01/2020	division_exposure	Hubei # ?
 Australia/VIC01/2020	genbank_accession	MT007544
 Belgium/GHB-03021/2020	division	Flanders
+Belgium/GHB-03021/2020	division_exposure	Hubei # GISAID
 Belgium/GHB-03021/2020	location	Leuven
 Brazil/SPBR-01/2020	division_exposure	Lombardy # GISAID
 Brazil/SPBR-02/2020	division_exposure	Lombardy # GISAID
+Brazil/SPBR-04/2020	division_exposure	Italy # GISAID
+# Brazil/SPBR-03/2020	division_exposure # GISAID lists as: Austria, Germany, Italy, Spain
+# Brazil/SPBR-06/2020 & Brazil/SPBR-05/2020 # GISAID contact of SPBR-01
 Cambodia/0012/2020	division_exposure	Hubei # GISAID
 Canada/BC_37_0-2/2020	division_exposure	Iran # GISAID
 Canada/ON-PHL2445/2020	division_exposure	Hubei # GISAID
@@ -108,16 +112,19 @@ Guangdong/20SF012/2020	division	Guangdong
 Guangdong/20SF013/2020	division	Guangdong
 Guangdong/20SF014/2020	division	Guangdong
 Hangzhou/HZ-1/2020	genbank_accession	MT039873
+Hangzhou/HZ-1/2020	division_exposure	Hubei # GISAID
+Hangzhou/HZCDC0001/2020	division_exposure	Hubei # GISAID
 HongKong/VB20026565/2020	division	Hong Kong
 HongKong/VM20001061/2020	division	Hong Kong
 HongKong/VM20001988/2020	division	Hong Kong
 Italy/CDG1/2020	division	Lombardy
 Italy/INMI1-cs/2020	date	2020-01-29
 Italy/INMI1-cs/2020	division	Lazio
-Italy/INMI1-cs/2020	division_exposure	Hubei # GISAID
+Italy/INMI1-cs/2020	division_exposure	Hubei # GISAID - Chinese tourist from Hubei
 Italy/INMI1-cs/2020	location	Rome
 Italy/INMI1-isl/2020	division	Lazio
 Italy/INMI1-isl/2020	location	Rome
+Italy/INMI1-isl/2020	division_exposure	Hubei # GISAID - Chinese tourist from Hubei
 Italy/SPL1/2020	division	Lazio
 Italy/SPL1/2020	location	Rome
 Japan/AI/I-004/2020	genbank_accession	LC521925
@@ -126,12 +133,14 @@ Japan/Hu_DP_Kng_19-020/2020	division	Kanagawa
 Japan/Hu_DP_Kng_19-027/2020	division	Kanagawa
 Japan/KY-V-029/2020	genbank_accession	LC522972
 Japan/KY-V-029/2020	location	Kyoto
+# Japan/TK/20-31-3/2020	division_exposure	Diamond Princess # GISAID
 Japan/TY-WK-012/2020	genbank_accession	LC522973
 Japan/TY-WK-012/2020	location	Tokyo
 Japan/TY-WK-501/2020	genbank_accession	LC522974
 Japan/TY-WK-501/2020	location	Tokyo
 Japan/TY-WK-521/2020	genbank_accession	LC522975
 Japan/TY-WK-521/2020	location	Tokyo
+Jingzhou/HBCDC-HB-01/2020	division_exposure	Hubei # GISAID
 Korea/KCDC05/2020	location	Seoul
 Korea/KCDC06/2020	location	Seoul
 Korea/KCDC07/2020	location	Seoul
@@ -204,7 +213,7 @@ NetherlandsL/Houten_1363498/2020	division	Utrecht
 NetherlandsL/Houten_1363498/2020	location	Houten
 NewZealand/01/2020	division_exposure	Iran # GISAID
 NewZealand/01/2020	location	Auckland
-Nigeria/Lagos01/2020	division_exposure	Italy
+Nigeria/Lagos01/2020	division_exposure	Italy # GISAID
 Nonthaburi/61/2020	division_exposure	Hubei # GISAID
 Nonthaburi/61/2020	location	Bangkok
 Nonthaburi/74/2020	division_exposure	Hubei # GISAID
@@ -230,6 +239,7 @@ Shenzhen/SZTH-003/2020	division	Guangdong
 Shenzhen/SZTH-004/2020	division	Guangdong
 Singapore/1/2020	division	Singapore
 Singapore/1/2020	location	Singapore
+Singapore/1/2020	division_exposure	Hubei # GISAID
 Singapore/2/2020	division	Singapore
 Singapore/2/2020	location	Singapore
 Singapore/3/2020	division	Singapore
@@ -267,6 +277,7 @@ SouthKorea/KUMC06/2020	division	South Korea
 SouthKorea/SNU01/2020	date	2020-01-XX
 SouthKorea/SNU01/2020	division	South Korea
 SouthKorea/SNU01/2020	genbank_accession	MT039890
+SouthKorea/SNU01/2020	division_exposure	Hubei # GISAID
 Sweden/01/2020	division	Småland
 Sweden/01/2020	genbank_accession	MT093571
 Sweden/01/2020	location	Jönköping
@@ -286,9 +297,11 @@ Taiwan/CGMH-CGU-01/2020	location	Taoyuan
 Taiwan/NTU01/2020	division	Taiwan
 Taiwan/NTU01/2020	genbank_accession	MT066175
 Taiwan/NTU01/2020	location	Taipei
+Taiwan/NTU01/2020	division_exposure	Hubei # GISAID
 Taiwan/NTU02/2020	division	Taiwan
 Taiwan/NTU02/2020	genbank_accession	MT066176
 Taiwan/NTU02/2020	location	Taipei
+Taiwan/NTU02/2020	division_exposure	Hubei # GISAID "part time worker in Wuhan"
 Taiwan/NTU03/2020	division	Taiwan
 Taiwan/NTU03/2020	location	Taipei 
 #Taiwan/NT03/2020 travel history from GISAID: Dubai (1/29-2/10 of 2020) and Egypt (2/11-2/21 of 2020) 
