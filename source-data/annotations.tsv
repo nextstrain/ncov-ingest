@@ -90,6 +90,10 @@ England/03/2020	division	England
 England/09c/2020	country	United Kingdom
 England/09c/2020	division	England
 England/09c/2020	division_exposure	Hubei #recently arrived from china https://www.theguardian.com/world/2020/feb/13/london-coronavirus-patient-turned-up-hospital-uber-taxi
+England/Sheff01/2020	country	United Kingdom
+England/Sheff01/2020	division	England
+England/Sheff01/2020	division_exposure	England
+England/Sheff01/2020	location	Yorkshire # choosing this over sheffield
 Finland/1/2020	division_exposure	Hubei # ?
 Finland/1/2020	genbank_accession	MT020781
 Finland/1/2020	location	Rovaniemi
@@ -118,6 +122,9 @@ Hangzhou/HZCDC0001/2020	division_exposure	Hubei # GISAID
 HongKong/VB20026565/2020	division	Hong Kong
 HongKong/VM20001061/2020	division	Hong Kong
 HongKong/VM20001988/2020	division	Hong Kong
+Ireland/COR-20134/2020	division	Ireland # Shifting division to Ireland as n=1. Can modify once we get more genomes, if necessary.
+Ireland/COR-20134/2020	division_exposure	Ireland
+Ireland/COR-20134/2020	location	Cork # In GISAID this is division
 Italy/CDG1/2020	division	Lombardy
 Italy/INMI1-cs/2020	date	2020-01-29
 Italy/INMI1-cs/2020	division	Lazio
@@ -380,6 +387,15 @@ USA/CruiseA-15/2020	division	Diamond Princess
 USA/CruiseA-16/2020	division	Diamond Princess
 USA/CruiseA-17/2020	division	Diamond Princess
 USA/CruiseA-18/2020	division	Diamond Princess
+USA/CruiseA-19/2020	division	Diamond Princess
+USA/CruiseA-20/2020	division	Diamond Princess
+USA/CruiseA-21/2020	division	Diamond Princess
+USA/CruiseA-22/2020	division	Diamond Princess
+USA/CruiseA-23/2020	division	Diamond Princess
+USA/CruiseA-24/2020	division	Diamond Princess
+USA/CruiseA-25/2020	division	Diamond Princess
+USA/CruiseA-26/2020	division	Diamond Princess
+
 USA/IL1/2020	division_exposure	Hubei # ?
 USA/IL1/2020	genbank_accession	MN988713
 USA/IL2/2020	division_exposure	Hubei # ?
