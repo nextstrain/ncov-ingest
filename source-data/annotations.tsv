@@ -1,4 +1,10 @@
+# Australia/NSW14/2020	is a close contact of Australia/NSW05/2020 and suspected direct transmission
+# Brazil/SPBR-03/2020	division_exposure # GISAID lists as: Austria, Germany, Italy, Spain
+# Brazil/SPBR-06/2020 & Brazil/SPBR-05/2020 # GISAID contact of SPBR-01
+# Japan/TK/20-31-3/2020	division_exposure	Diamond Princess # GISAID
 # strain	key	value
+# Switzerland/1000477806/2020	division_exposure	no travel history but open-plan office with someone who visited Lombardy & tested positive (from submitters)
+#Taiwan/NT03/2020 travel history from GISAID: Dubai (1/29-2/10 of 2020) and Egypt (2/11-2/21 of 2020) 
 Australia/NSW01/2020	division_exposure	Hubei
 Australia/NSW05/2020	division_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW06/2020	division_exposure	Iran # James: data via direct contact with Aus lab
@@ -13,7 +19,6 @@ Australia/NSW12/2020	division_exposure	Iran # James: data via direct contact wit
 Australia/NSW13/2020	division	New South Wales
 Australia/NSW13/2020	division_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW14/2020	division	New South Wales
-# Australia/NSW14/2020	is a close contact of Australia/NSW05/2020 and suspected direct transmission
 Australia/NSW14/2020	division_exposure	New South Wales # ?
 Australia/QLD01/2020	division_exposure	Hubei # ?
 Australia/VIC01/2020	division_exposure	Hubei # ?
@@ -24,8 +29,6 @@ Belgium/GHB-03021/2020	location	Leuven
 Brazil/SPBR-01/2020	division_exposure	Lombardy # GISAID
 Brazil/SPBR-02/2020	division_exposure	Lombardy # GISAID
 Brazil/SPBR-04/2020	division_exposure	Italy # GISAID
-# Brazil/SPBR-03/2020	division_exposure # GISAID lists as: Austria, Germany, Italy, Spain
-# Brazil/SPBR-06/2020 & Brazil/SPBR-05/2020 # GISAID contact of SPBR-01
 Cambodia/0012/2020	division_exposure	Hubei # GISAID
 Canada/BC_37_0-2/2020	division_exposure	Iran # GISAID
 Canada/ON-PHL2445/2020	division_exposure	Hubei # GISAID
@@ -115,22 +118,23 @@ France/RA739/2020	division	Auvergne Rhone Alpes
 Germany/Baden-Wuerttemberg-1/2020	division_exposure	Lombardy # GISAID
 Germany/BavPat1/2020	location	Starnberg
 Germany/BavPat2/2020	division	Bavaria
-Germany/BavPat3/2020	division	Bavaria
-Germany/BavPat2/2020	location	Munich
 Germany/BavPat2/2020	division_exposure	Iran # GISAID
+Germany/BavPat2/2020	location	Munich
+Germany/BavPat3/2020	division	Bavaria
 Germany/BavPat3/2020	location	Munich
 Guangdong/20SF012/2020	division	Guangdong
 Guangdong/20SF013/2020	division	Guangdong
 Guangdong/20SF014/2020	division	Guangdong
-Hangzhou/HZ-1/2020	genbank_accession	MT039873
 Hangzhou/HZ-1/2020	division_exposure	Hubei # GISAID
+Hangzhou/HZ-1/2020	genbank_accession	MT039873
 Hangzhou/HZCDC0001/2020	division_exposure	Hubei # GISAID
+HongKong/case85_VM20002868/2020	division	Hong Kong
+HongKong/case90_VM20002907/2020	division	Hong Kong
 HongKong/VB20024950/2020	division	Hong Kong
 HongKong/VB20026565/2020	division	Hong Kong
 HongKong/VM20001061/2020	division	Hong Kong
 HongKong/VM20001988/2020	division	Hong Kong
-HongKong/case85_VM20002868/2020	division	Hong Kong
-HongKong/case90_VM20002907/2020	division	Hong Kong
+Ireland/COR-20134/2020	division	Cork
 Ireland/COR-20134/2020	division	Ireland # Shifting division to Ireland as n=1. Can modify once we get more genomes, if necessary.
 Ireland/COR-20134/2020	division_exposure	Ireland
 Ireland/COR-20134/2020	location	Cork # In GISAID this is division
@@ -140,8 +144,8 @@ Italy/INMI1-cs/2020	division	Lazio
 Italy/INMI1-cs/2020	division_exposure	Hubei # GISAID - Chinese tourist from Hubei
 Italy/INMI1-cs/2020	location	Rome
 Italy/INMI1-isl/2020	division	Lazio
-Italy/INMI1-isl/2020	location	Rome
 Italy/INMI1-isl/2020	division_exposure	Hubei # GISAID - Chinese tourist from Hubei
+Italy/INMI1-isl/2020	location	Rome
 Italy/SPL1/2020	division	Lazio
 Italy/SPL1/2020	location	Rome
 Japan/AI/I-004/2020	genbank_accession	LC521925
@@ -150,7 +154,6 @@ Japan/Hu_DP_Kng_19-020/2020	division	Kanagawa
 Japan/Hu_DP_Kng_19-027/2020	division	Kanagawa
 Japan/KY-V-029/2020	genbank_accession	LC522972
 Japan/KY-V-029/2020	location	Kyoto
-# Japan/TK/20-31-3/2020	division_exposure	Diamond Princess # GISAID
 Japan/TY-WK-012/2020	genbank_accession	LC522973
 Japan/TY-WK-012/2020	location	Tokyo
 Japan/TY-WK-501/2020	genbank_accession	LC522974
@@ -200,6 +203,45 @@ Netherlands/Naarden_1364774/2020	division	North Holland
 Netherlands/Naarden_1364774/2020	location	Naarden
 Netherlands/Nieuwendijk_1363582/2020	division	North Brabant
 Netherlands/Nieuwendijk_1363582/2020	location	Nieuwendijk
+Netherlands/NoordBrabant_1/2020	division	North Brabant
+Netherlands/NoordBrabant_2/2020	division	North Brabant
+Netherlands/NoordBrabant_3/2020	division	North Brabant
+Netherlands/NoordBrabant_4/2020	division	North Brabant
+Netherlands/NoordBrabant_5/2020	division	North Brabant
+Netherlands/NoordBrabant_6/2020	division	North Brabant
+Netherlands/NoordBrabant_10/2020	division	North Brabant
+Netherlands/NoordBrabant_11/2020	division	North Brabant
+Netherlands/NoordBrabant_12/2020	division	North Brabant
+Netherlands/NoordBrabant_13/2020	division	North Brabant
+Netherlands/NoordBrabant_14/2020	division	North Brabant
+Netherlands/NoordBrabant_15/2020	division	North Brabant
+Netherlands/NoordBrabant_16/2020	division	North Brabant
+Netherlands/NoordBrabant_17/2020	division	North Brabant
+Netherlands/NoordBrabant_18/2020	division	North Brabant
+Netherlands/NoordBrabant_19/2020	division	North Brabant
+Netherlands/NoordBrabant_20/2020	division	North Brabant
+Netherlands/NoordBrabant_21/2020	division	North Brabant
+Netherlands/NoordBrabant_22/2020	division	North Brabant
+Netherlands/NoordBrabant_23/2020	division	North Brabant
+Netherlands/NoordBrabant_24/2020	division	North Brabant
+Netherlands/NoordBrabant_25/2020	division	North Brabant
+Netherlands/NoordBrabant_26/2020	division	North Brabant
+Netherlands/NoordBrabant_27/2020	division	North Brabant
+Netherlands/NoordBrabant_28/2020	division	North Brabant
+Netherlands/NoordBrabant_29/2020	division	North Brabant
+Netherlands/NoordBrabant_30/2020	division	North Brabant
+Netherlands/NoordBrabant_31/2020	division	North Brabant
+Netherlands/NoordBrabant_32/2020	division	North Brabant
+Netherlands/NoordBrabant_33/2020	division	North Brabant
+Netherlands/NoordBrabant_34/2020	date	2020-03-XX
+Netherlands/NoordBrabant_34/2020	division	North Brabant
+Netherlands/NoordBrabant_35/2020	division	North Brabant
+Netherlands/NoordBrabant_36/2020	division	North Brabant
+Netherlands/NoordBrabant_37/2020	division	North Brabant
+Netherlands/NoordBrabant_38/2020	division	North Brabant
+Netherlands/NoordBrabant_39/2020	division	North Brabant
+Netherlands/NoordHolland_1/2020	division	North Holland
+Netherlands/NoordHolland_2/2020	division	North Holland
 Netherlands/Nootdorp_1364222/2020	division	South Holland
 Netherlands/Nootdorp_1364222/2020	location	Nootdorp
 Netherlands/Oisterwijk_1364072/2020	division	North Brabant
@@ -226,68 +268,29 @@ Netherlands/Utrecht_1364066/2020	division	Utrecht
 Netherlands/Utrecht_1364066/2020	location	Utrecht
 Netherlands/Zeewolde_1365080/2020	division	Flevoland
 Netherlands/Zeewolde_1365080/2020	location	Zeewolde
-NetherlandsL/Houten_1363498/2020	division	Utrecht
-NetherlandsL/Houten_1363498/2020	location	Houten
-Netherlands/NoordBrabant_1/2020	division	North Brabant
-Netherlands/NoordBrabant_10/2020	division	North Brabant
-Netherlands/NoordBrabant_11/2020	division	North Brabant
-Netherlands/NoordBrabant_12/2020	division	North Brabant
-Netherlands/NoordBrabant_13/2020	division	North Brabant
-Netherlands/NoordBrabant_14/2020	division	North Brabant
-Netherlands/NoordBrabant_15/2020	division	North Brabant
-Netherlands/NoordBrabant_16/2020	division	North Brabant
-Netherlands/NoordBrabant_17/2020	division	North Brabant
-Netherlands/NoordBrabant_18/2020	division	North Brabant
-Netherlands/NoordBrabant_19/2020	division	North Brabant
-Netherlands/NoordBrabant_2/2020	division	North Brabant
-Netherlands/NoordBrabant_3/2020	division	North Brabant
-Netherlands/NoordBrabant_4/2020	division	North Brabant
-Netherlands/NoordBrabant_5/2020	division	North Brabant
-Netherlands/NoordBrabant_6/2020	division	North Brabant
-Netherlands/NoordHolland_1/2020	division	North Holland
 Netherlands/ZuidHolland_1/2020	division	South Holland
-Netherlands/ZuidHolland_10/2020	division	South Holland
-Netherlands/ZuidHolland_11/2020	division	South Holland
-Netherlands/ZuidHolland_13/2020	division	South Holland
-Netherlands/ZuidHolland_14/2020	division	South Holland
+Netherlands/ZuidHolland_2/2020	division	South Holland
 Netherlands/ZuidHolland_5/2020	division	South Holland
 Netherlands/ZuidHolland_6/2020	division	South Holland
 Netherlands/ZuidHolland_7/2020	division	South Holland
 Netherlands/ZuidHolland_8/2020	division	South Holland
 Netherlands/ZuidHolland_9/2020	division	South Holland
-Netherlands/NoordBrabant_34/2020	date	2020-03-XX
-Netherlands/NoordBrabant_20/2020	division	North Brabant
-Netherlands/NoordBrabant_21/2020	division	North Brabant
-Netherlands/NoordBrabant_22/2020	division	North Brabant
-Netherlands/NoordBrabant_23/2020	division	North Brabant
-Netherlands/NoordBrabant_24/2020	division	North Brabant
-Netherlands/NoordBrabant_25/2020	division	North Brabant
-Netherlands/NoordBrabant_26/2020	division	North Brabant
-Netherlands/NoordBrabant_27/2020	division	North Brabant
-Netherlands/NoordBrabant_28/2020	division	North Brabant
-Netherlands/NoordBrabant_29/2020	division	North Brabant
-Netherlands/NoordBrabant_30/2020	division	North Brabant
-Netherlands/NoordBrabant_31/2020	division	North Brabant
-Netherlands/NoordBrabant_32/2020	division	North Brabant
-Netherlands/NoordBrabant_33/2020	division	North Brabant
-Netherlands/NoordBrabant_34/2020	division	North Brabant
-Netherlands/NoordBrabant_35/2020	division	North Brabant
-Netherlands/NoordBrabant_36/2020	division	North Brabant
-Netherlands/NoordBrabant_37/2020	division	North Brabant
-Netherlands/NoordBrabant_38/2020	division	North Brabant
-Netherlands/NoordBrabant_39/2020	division	North Brabant
+Netherlands/ZuidHolland_10/2020	division	South Holland
+Netherlands/ZuidHolland_11/2020	division	South Holland
+Netherlands/ZuidHolland_13/2020	division	South Holland
+Netherlands/ZuidHolland_14/2020	division	South Holland
 Netherlands/ZuidHolland_15/2020	division	South Holland
 Netherlands/ZuidHolland_16/2020	division	South Holland
 Netherlands/ZuidHolland_17/2020	division	South Holland
 Netherlands/ZuidHolland_18/2020	division	South Holland
 Netherlands/ZuidHolland_19/2020	division	South Holland
-Netherlands/ZuidHolland_2/2020	division	South Holland
 Netherlands/ZuidHolland_20/2020	division	South Holland
 Netherlands/ZuidHolland_21/2020	division	South Holland
 Netherlands/ZuidHolland_22/2020	division	South Holland
 Netherlands/ZuidHolland_23/2020	division	South Holland
 Netherlands/ZuidHolland_24/2020	division	South Holland
-Netherlands/NoordHolland_2/2020	division	North Holland
+NetherlandsL/Houten_1363498/2020	division	Utrecht
+NetherlandsL/Houten_1363498/2020	location	Houten
 NewZealand/01/2020	division_exposure	Iran # GISAID
 NewZealand/01/2020	location	Auckland
 Nigeria/Lagos01/2020	division_exposure	Italy # GISAID
@@ -299,14 +302,14 @@ Portugal/CV62/2020	division	Portugal
 Portugal/CV63/2020	division	Portugal
 Scotland/CVR01/2020	country	United Kingdom
 Scotland/CVR01/2020	division	Scotland
-Scotland/CVR02/2020	division	Scotland
-Scotland/CVR03/2020	division	Scotland
-Scotland/CVR04/2020	division	Scotland
-Scotland/CVR05/2020	division	Scotland
 Scotland/CVR02/2020	country	United Kingdom
+Scotland/CVR02/2020	division	Scotland
 Scotland/CVR03/2020	country	United Kingdom
+Scotland/CVR03/2020	division	Scotland
 Scotland/CVR04/2020	country	United Kingdom
+Scotland/CVR04/2020	division	Scotland
 Scotland/CVR05/2020	country	United Kingdom
+Scotland/CVR05/2020	division	Scotland
 Shenzhen/HKU-SZ-001/2020	division	Guangdong
 Shenzhen/HKU-SZ-002/2020	genbank_accession	MN938384
 Shenzhen/HKU-SZ-005/2020	genbank_accession	MN975262
@@ -315,8 +318,8 @@ Shenzhen/SZTH-002/2020	division	Guangdong
 Shenzhen/SZTH-003/2020	division	Guangdong
 Shenzhen/SZTH-004/2020	division	Guangdong
 Singapore/1/2020	division	Singapore
-Singapore/1/2020	location	Singapore
 Singapore/1/2020	division_exposure	Hubei # GISAID
+Singapore/1/2020	location	Singapore
 Singapore/2/2020	division	Singapore
 Singapore/2/2020	location	Singapore
 Singapore/3/2020	division	Singapore
@@ -341,6 +344,10 @@ Singapore/11/2020	location	Singapore
 SouthKorea/KCDC03/2020	country	South Korea
 SouthKorea/KCDC03/2020	division	Gyeonggi
 SouthKorea/KCDC03/2020	location	Gyeonggi
+SouthKorea/KCDC12/2020	division	Gyeonggi
+SouthKorea/KCDC12/2020	location	Gyeonggi
+SouthKorea/KCDC24/2020	division	Chungcheongnam
+SouthKorea/KCDC24/2020	location	Chungcheongnam
 SouthKorea/KUMC01/2020	division	South Korea
 SouthKorea/KUMC02/2020	division	South Korea
 SouthKorea/KUMC03/2020	country	South Korea
@@ -351,24 +358,19 @@ SouthKorea/KUMC05/2020	country	South Korea
 SouthKorea/KUMC05/2020	division	South Korea
 SouthKorea/KUMC06/2020	country	South Korea
 SouthKorea/KUMC06/2020	division	South Korea
-SouthKorea/KCDC12/2020	division	Gyeonggi
-SouthKorea/KCDC12/2020	location	Gyeonggi
-SouthKorea/KCDC24/2020	location	Chungcheongnam
-SouthKorea/KCDC24/2020	division	Chungcheongnam
 SouthKorea/SNU01/2020	date	2020-01-XX
 SouthKorea/SNU01/2020	division	South Korea
-SouthKorea/SNU01/2020	genbank_accession	MT039890
 SouthKorea/SNU01/2020	division_exposure	Hubei # GISAID
+SouthKorea/SNU01/2020	genbank_accession	MT039890
 Sweden/01/2020	division	Småland
 Sweden/01/2020	genbank_accession	MT093571
 Sweden/01/2020	location	Jönköping
-Switzerland/AG0361/2020	division	Aargau
-Switzerland/TI9486/2020	division	Ticino
-Switzerland/GE3895/2020	division_exposure	Lombardy # received from submitters
-Switzerland/GE9586/2020	division_exposure	Lombardy # received from submitters
 Switzerland/1000477796/2020	division_exposure	Lombardy # received from submitters
 Switzerland/1000477797/2020	division_exposure	Lombardy # received from submitters
-# Switzerland/1000477806/2020	division_exposure	no travel history but open-plan office with someone who visited Lombardy & tested positive (from submitters)
+Switzerland/AG0361/2020	division	Aargau
+Switzerland/GE3895/2020	division_exposure	Lombardy # received from submitters
+Switzerland/GE9586/2020	division_exposure	Lombardy # received from submitters
+Switzerland/TI9486/2020	division	Ticino
 Sydney/2/2020	division_exposure	Hubei # ?
 Taiwan/2/2020	division	Taiwan
 Taiwan/2/2020	location	Kaohsiung
@@ -379,20 +381,25 @@ Taiwan/4/2020	location	Taipei
 Taiwan/CGMH-CGU-01/2020	division	Taiwan
 Taiwan/CGMH-CGU-01/2020	location	Taoyuan
 Taiwan/NTU01/2020	division	Taiwan
+Taiwan/NTU01/2020	division_exposure	Hubei # GISAID
 Taiwan/NTU01/2020	genbank_accession	MT066175
 Taiwan/NTU01/2020	location	Taipei
-Taiwan/NTU01/2020	division_exposure	Hubei # GISAID
 Taiwan/NTU02/2020	division	Taiwan
+Taiwan/NTU02/2020	division_exposure	Hubei # GISAID "part time worker in Wuhan"
 Taiwan/NTU02/2020	genbank_accession	MT066176
 Taiwan/NTU02/2020	location	Taipei
-Taiwan/NTU02/2020	division_exposure	Hubei # GISAID "part time worker in Wuhan"
 Taiwan/NTU03/2020	division	Taiwan
 Taiwan/NTU03/2020	location	Taipei 
-#Taiwan/NT03/2020 travel history from GISAID: Dubai (1/29-2/10 of 2020) and Egypt (2/11-2/21 of 2020) 
 USA-CA9/2020	genbank_accession	MT118835
 USA/AZ1/2020	division_exposure	Hubei # ?
 USA/AZ1/2020	genbank_accession	MN997409
 USA/CA-CDPH-UC1/2020	date	2020-02-26
+USA/CA-CDPH-UC1/2020	division	Grand Princess # from GISAID
+USA/CA-CDPH-UC5/2020	division	Grand Princess # from GISAID
+USA/CA-CDPH-UC6/2020	division	Grand Princess # from GISAID
+USA/CA-CDPH-UC7/2020	division	Grand Princess # from GISAID
+USA/CA-CDPH-UC8/2020	division	Grand Princess # from GISAID
+USA/CA-CDPH-UC9/2020	division	Grand Princess # from GISAID
 USA/CA1/2020	division_exposure	Hubei # ?
 USA/CA1/2020	genbank_accession	MN994467
 USA/CA2/2020	division_exposure	Hubei # ?
@@ -408,13 +415,6 @@ USA/CA7/2020	genbank_accession	MT106052
 USA/CA8/2020	genbank_accession	MT106053
 USA/CA9/2020	genbank_accession	MT118835
 USA/CA9/2020	location	Solano County
-USA/CA-CDPH-UC1/2020	division	Grand Princess # from GISAID
-USA/CA-CDPH-UC5/2020	division	Grand Princess # from GISAID
-USA/CA-CDPH-UC6/2020	division	Grand Princess # from GISAID
-USA/CA-CDPH-UC7/2020	division	Grand Princess # from GISAID
-USA/CA-CDPH-UC8/2020	division	Grand Princess # from GISAID
-USA/CA-CDPH-UC9/2020	division	Grand Princess # from GISAID
-USA/UC-CDPH-UC11/2020	division	Grand Princess # from GISAID
 USA/CruiseA-1/2020	division	Diamond Princess
 USA/CruiseA-2/2020	division	Diamond Princess
 USA/CruiseA-3/2020	division	Diamond Princess
@@ -451,6 +451,7 @@ USA/MA1/2020	location	Boston
 USA/NY1-PV08001/2020	division_exposure	Iran # GISAID
 USA/TX1/2020	division_exposure	Hubei # ?
 USA/TX1/2020	genbank_accession	MT106054
+USA/UC-CDPH-UC11/2020	division	Grand Princess # from GISAID
 USA/WA1-A12/2020	genbank_accession	MT020880
 USA/WA1-F6/2020	genbank_accession	MT020881
 USA/WA1/2020	division_exposure	Hubei # ?
