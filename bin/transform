@@ -13,7 +13,7 @@ METADATA_COLUMNS = [  # Ordering of columns in the existing metadata.tsv in the 
     'strain', 'virus', 'gisaid_epi_isl', 'genbank_accession', 'date', 'region',
     'country', 'division', 'division_exposure', 'location', 'segment',
     'length', 'host', 'age', 'sex', 'originating_lab', 'submitting_lab',
-    'authors', 'url', 'title'
+    'authors', 'url', 'title', 'date_submitted'
 ]
 
 # Preserve the ordering of these columns for ease when generating Slack
@@ -44,6 +44,7 @@ def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
         'sequence_length'       : 'length',
         'covv_add_host_info'    : 'additional_host_info',
         'covv_add_location'     : 'additional_location_info',
+        'covv_subm_date'        : 'date_submitted',
     }
     gisaid_data.rename(mapper, axis="columns", inplace=True)
 
