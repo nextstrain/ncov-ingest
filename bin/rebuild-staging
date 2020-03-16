@@ -44,7 +44,7 @@ fi
 
 
 output=$(
-    nextstrain build --aws-batch --detach \
+    nextstrain build --aws-batch --detach --aws-batch-cpus 36 --aws-batch-memory 64800 \
         ncov deploy_to_staging \
         --config slack_webhook="$SLACK_INCOMING_WEBHOOK"
 )
