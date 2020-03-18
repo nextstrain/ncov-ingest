@@ -56,8 +56,11 @@ def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     # Drop entries with length less than 15kb
     gisaid_data.drop(gisaid_data[gisaid_data.length < 15000].index, inplace=True)
 
-    # Drop duplicates, prefer longest sequence
-    gisaid_data.sort_values('length', ascending=False, inplace=True)
+    # Drop duplicates, prefer longest and earliest sequence (assuming accessions
+    # are chronological)
+    gisaid_data.sort_values(['strain', 'length', 'gisaid_epi_isl'],
+        ascending=[True, False, True], inplace=True)
+
     gisaid_data.drop_duplicates('strain', inplace=True)
 
     # Sort by strain name
