@@ -42,6 +42,15 @@ else
     git clone https://github.com/nextstrain/ncov.git
 fi
 
+# Run on these exact data files by uploading them with the build context for
+# the Batch job, instead of roundtripping them through S3.
+#
+# Since the Batch job is submitted before the rest of the GitHub workflow
+# updates the files on S3, this also avoids a narrow race condition if AWS
+# Batch is quick or the upload to S3 slow.
+mkdir -p ncov/data/
+cp -v "$metadata_src" "$sequences_src" ncov/data/
+
 
 output=$(
     nextstrain build --aws-batch --detach \
