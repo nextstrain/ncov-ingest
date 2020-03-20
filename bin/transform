@@ -45,7 +45,15 @@ def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
         'covv_add_host_info'    : 'additional_host_info',
         'covv_add_location'     : 'additional_location_info',
         'covv_subm_date'        : 'date_submitted',
+        'covv_location'         : 'location',
     }
+
+    # If an expected field is missing, fill it with NAs so the rest of the
+    # script can assume it exists.
+    for field in mapper:
+        if field not in gisaid_data:
+            gisaid_data[field] = pd.NA
+
     gisaid_data.rename(mapper, axis="columns", inplace=True)
 
     # Abbreviate strain names by removing the prefix. Strip spaces, too.
@@ -70,10 +78,10 @@ def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
 
 def parse_geographic_columns(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     """
-    Expands the string found in the column named `covv_location` in the given
+    Expands the string found in the column named `location` in the given
     *df*, creating four new columns. Returns the modified ``pd.DataFrame``.
     """
-    geographic_data = gisaid_data['covv_location'].str.split('\s*/\s*', expand=True)
+    geographic_data = gisaid_data['location'].str.split('\s*/\s*', expand=True)
 
     gisaid_data['region']      = geographic_data[0]
     gisaid_data['country']     = geographic_data[1]
@@ -130,46 +138,40 @@ def parse_age(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     """
     Parse patient age.
     """
-    if 'age' in gisaid_data:
-        # Fix accents and non-standard commas
-        gisaid_data['age'] = gisaid_data['age'].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
-        # Convert "60s" or "50's" to "?"
-        gisaid_data['age'] = gisaid_data['age'].str.replace(r"^\d+\'?[A-Za-z]", '?')
-        # Convert to just number
-        gisaid_data['age'] = gisaid_data['age'].str.replace(r"^(\d+) years$", lambda m: m.group(1))
-        # Convert months to years
-        gisaid_data['age'] = gisaid_data['age'].str.replace(r"^(\d+) months", lambda m: str(int(m.group(1))/12.0))
-        # Cleanup unknowns
-        gisaid_data['age'] = gisaid_data['age'].str.replace(r"^0$", '?')
-        # Catch all non-numeric values
-        gisaid_data['age'] = pd.to_numeric(gisaid_data['age'], errors='coerce').fillna('?')
-        # Convert numeric values to int
-        gisaid_data['age'] = gisaid_data['age'].apply(lambda x: x if x=='?' else int(x))
-    else:
-        gisaid_data['age'] = ''
+    # Fix accents and non-standard commas
+    gisaid_data['age'] = gisaid_data['age'].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
+    # Convert "60s" or "50's" to "?"
+    gisaid_data['age'] = gisaid_data['age'].str.replace(r"^\d+\'?[A-Za-z]", '?')
+    # Convert to just number
+    gisaid_data['age'] = gisaid_data['age'].str.replace(r"^(\d+) years$", lambda m: m.group(1))
+    # Convert months to years
+    gisaid_data['age'] = gisaid_data['age'].str.replace(r"^(\d+) months", lambda m: str(int(m.group(1))/12.0))
+    # Cleanup unknowns
+    gisaid_data['age'] = gisaid_data['age'].str.replace(r"^0$", '?')
+    # Catch all non-numeric values
+    gisaid_data['age'] = pd.to_numeric(gisaid_data['age'], errors='coerce').fillna('?')
+    # Convert numeric values to int
+    gisaid_data['age'] = gisaid_data['age'].apply(lambda x: x if x=='?' else int(x))
     return gisaid_data
 
 def parse_sex(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     """
     Parse patient sex.
     """
-    if 'sex' in gisaid_data:
-        # Fix accents and non-standard commas
-        gisaid_data['sex'] = gisaid_data['sex'].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
-        # Casing and abbreviations
-        gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^male$", 'Male')
-        gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^M$", 'Male')
-        gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^female$", 'Female')
-        gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^F$", 'Female')
-        # Fix spelling
-        gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^Femal$", 'Female')
-        # Cleanup unknowns
-        gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^unknown$", '?')
-        gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^N/A$", '?')
-        gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^NA$", '?')
-        gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^not applicable$", '?')
-    else:
-        gisaid_data['sex'] = ''
+    # Fix accents and non-standard commas
+    gisaid_data['sex'] = gisaid_data['sex'].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
+    # Casing and abbreviations
+    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^male$", 'Male')
+    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^M$", 'Male')
+    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^female$", 'Female')
+    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^F$", 'Female')
+    # Fix spelling
+    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^Femal$", 'Female')
+    # Cleanup unknowns
+    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^unknown$", '?')
+    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^N/A$", '?')
+    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^NA$", '?')
+    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^not applicable$", '?')
     return gisaid_data
 
 def generate_hardcoded_metadata(hardcoded_metadata: pd.DataFrame) -> pd.DataFrame:
@@ -265,19 +267,10 @@ if __name__ == '__main__':
     gisaid_data = parse_sex(gisaid_data)
     gisaid_data = update_metadata(gisaid_data)
 
-    #temp fix
-    gisaid_data['additional_host_info'] = ''
-    gisaid_data['additional_location_info'] = ''
-
-    #if pd.Series(ADDITIONAL_INFO_COLUMNS).isin(gisaid_data.columns).all():
     # Export additional info
-    columns_to_use_add = [value for value in ADDITIONAL_INFO_COLUMNS if value in gisaid_data.columns]
-    #gisaid_data[ADDITIONAL_INFO_COLUMNS] \
-    gisaid_data[columns_to_use_add] \
+    gisaid_data[ADDITIONAL_INFO_COLUMNS] \
         .to_csv(args.output_additional_info, sep='\t', na_rep='?', index=False)
 
     # Reorder columns consistent with the existing metadata on GitHub
-    # gisaid_data = gisaid_data[METADATA_COLUMNS]
-    columns_to_use = [value for value in METADATA_COLUMNS if value in gisaid_data.columns]
-    gisaid_data = gisaid_data[columns_to_use]
+    gisaid_data = gisaid_data[METADATA_COLUMNS]
     gisaid_data.to_csv(args.output_metadata, sep='\t', na_rep='?', index=False)

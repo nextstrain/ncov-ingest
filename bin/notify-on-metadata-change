@@ -8,7 +8,6 @@ bin="$(dirname "$0")"
 src="${1:?A source metadata TSV file is required as the first argument.}"
 dst="${2:?A destination metadata TSV s3:// URL is required as the second argument.}"
 
-echo "Inside metadata-change"
 diff="$(
     csv-diff \
         <(aws s3 cp "$dst" -) \
