@@ -265,6 +265,10 @@ if __name__ == '__main__':
     gisaid_data = parse_sex(gisaid_data)
     gisaid_data = update_metadata(gisaid_data)
 
+    #temp fix
+    gisaid_data['additional_host_info'] = ''
+    gisaid_data['additional_location_info'] = ''
+
     #if pd.Series(ADDITIONAL_INFO_COLUMNS).isin(gisaid_data.columns).all():
     # Export additional info
     columns_to_use_add = [value for value in ADDITIONAL_INFO_COLUMNS if value in gisaid_data.columns]
