@@ -254,9 +254,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     gisaid_data = pd.read_json(args.gisaid_data, lines=True)
-    #import ipdb; ipdb.set_trace()
     gisaid_data = preprocess(gisaid_data)
-    #import ipdb; ipdb.set_trace()
     write_fasta_file(gisaid_data)
 
     gisaid_data = parse_geographic_columns(gisaid_data)
@@ -276,5 +274,4 @@ if __name__ == '__main__':
     # gisaid_data = gisaid_data[METADATA_COLUMNS]
     columns_to_use = [value for value in METADATA_COLUMNS if value in gisaid_data.columns]
     gisaid_data = gisaid_data[columns_to_use]
-    import ipdb; ipdb.set_trace()
     gisaid_data.to_csv(args.output_metadata, sep='\t', na_rep='?', index=False)
