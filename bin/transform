@@ -45,7 +45,15 @@ def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
         'covv_add_host_info'    : 'additional_host_info',
         'covv_add_location'     : 'additional_location_info',
         'covv_subm_date'        : 'date_submitted',
+        'covv_location'         : 'location',
     }
+
+    # If an expected field is missing, fill it with NAs so the rest of the
+    # script can assume it exists.
+    for field in mapper:
+        if field not in gisaid_data:
+            gisaid_data[field] = pd.NA
+
     gisaid_data.rename(mapper, axis="columns", inplace=True)
 
     # Abbreviate strain names by removing the prefix. Strip spaces, too.
@@ -70,10 +78,10 @@ def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
 
 def parse_geographic_columns(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     """
-    Expands the string found in the column named `covv_location` in the given
+    Expands the string found in the column named `location` in the given
     *df*, creating four new columns. Returns the modified ``pd.DataFrame``.
     """
-    geographic_data = gisaid_data['covv_location'].str.split('\s*/\s*', expand=True)
+    geographic_data = gisaid_data['location'].str.split('\s*/\s*', expand=True)
 
     gisaid_data['region']      = geographic_data[0]
     gisaid_data['country']     = geographic_data[1]
