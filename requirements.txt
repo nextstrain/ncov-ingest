@@ -2,10 +2,7 @@ boto3==1.11.15
 botocore==1.14.15
 certifi==2019.11.28
 Click==7.0
-# This is my fork of Simon Willison's csv-diff to add TSV support.  I've
-# submitted a PR and expect to get it merged into Simon's version so we can
-# use a standard copy from PyPi eventually.
-git+https://github.com/tsibley/csv-diff.git@tsv#egg=csv_diff
+csv-diff>=0.6
 dictdiffer==0.8.1
 docutils==0.15.2
 fsspec==0.6.2
