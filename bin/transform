@@ -273,4 +273,4 @@ if __name__ == '__main__':
 
     # Reorder columns consistent with the existing metadata on GitHub
     gisaid_data = gisaid_data[METADATA_COLUMNS]
-    gisaid_data.to_csv(args.output_metadata, sep='\t', na_rep='?', index=False)
+    gisaid_data.to_csv(args.output_metadata, sep='\t', na_rep='', index=False)
