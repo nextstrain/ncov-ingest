@@ -16,10 +16,9 @@ if [[ -z "$data" ]]; then
 else
     slack_message="$(jq '{"text": $text, "attachments": [{"text": "```\($data)```", "fallback": ($data | split("\n\n") | .[0])}]}' \
         --arg text "$text" \
-        --arg data "data" \
+        --arg data "$data" \
         --null-input)"
 fi
-#"$data" \
 
 echo "Prepared Slack message:"
 echo "$slack_message"
