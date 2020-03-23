@@ -55,8 +55,8 @@ Canada/BC_78548/2020	division_exposure	Europe # Travel to Paris, Rotterdam, Ital
 Canada/ON-PHL2445/2020	division_exposure	Hubei # GISAID
 Canada/ON-VIDO-01/2020	division_exposure	Hubei # GISAID
 canine/HongKong/20-02756/2020	division	Hong Kong
-China/IQTC02/2020	division	Guangdong
 China/IQTC02/2020	location	Guangzhou
+China/IQTC02/2020	division	Guangdong
 China/WF0001/2020	date	2020-01-XX
 China/WF0001/2020	division	Shandong
 China/WF0002/2020	date	2020-01-XX
@@ -223,6 +223,15 @@ Japan/TY-WK-501/2020	location	Tokyo
 Japan/TY-WK-521/2020	genbank_accession	LC522975
 Japan/TY-WK-521/2020	location	Tokyo
 Jingzhou/HBCDC-HB-01/2020	division_exposure	Hubei # GISAID
+## Kuwait samples have their division set to what should be the location
+Kuwait/KU12/2020	division	Kuwait
+Kuwait/KU12/2020	location	Hawali
+Kuwait/KU17/2020	division	Kuwait
+Kuwait/KU17/2020	location	Dasman
+Kuwait/KU18/2020	division	Kuwait
+Kuwait/KU18/2020	location	Dasman
+Kuwait/KU09/2020	division	Kuwait
+Kuwait/KU09/2020	location	Dasman
 SouthKorea/KCDC05/2020	location	Seoul
 SouthKorea/KCDC06/2020	location	Seoul
 SouthKorea/KCDC07/2020	location	Seoul
@@ -233,6 +242,12 @@ SouthKorea/KCDC24/2020	location	Chungcheongnam
 Luxembourg/Lux1/2020	division	Luxembourg
 Mexico/CDMX-InDRE_01/2020	division_exposure	Lombardy # GISAID
 nCoV-19/USA/UPHL-03/2020	strain	USA/UPHL-03/2020
+USA/UPHL-01/2020	division_exposure	Diamond Princess # duncan
+#note UPHL-03 and -04 are same patient
+USA/UPHL-03/2020	division_exposure	Grand princess # duncan
+USA/UPHL-04/2020	division_exposure	Grand Princess # duncan
+#note UPHL-05 and -06 are same patient
+# USA/UPHL-05/2020 and USA/UPHL-06/2020 have Caribean cruise exposure - Jamaica & FLorida - duncan
 Nepal/61/2020	division_exposure	Hubei # ?
 Nepal/61/2020	genbank_accession	MT072688
 Nepal/61/2020	location	Kathmandu
@@ -652,6 +667,7 @@ USA/WA6-UW3/2020	genbank_accession	MT163718
 USA/WA7-UW4/2020	genbank_accession	MT163719
 USA/WI1/2020	division_exposure	Hubei # ?
 USA/WI1/2020	genbank_accession	MT039887
+USA/WI2/2020	region	North America
 Vietnam/VR03-38142/2020	division_exposure	Hubei # ?
 Vietnam/CM295/2020	division	Red River Delta
 Vietnam/CM295/2020	location	Hanoi
@@ -660,6 +676,7 @@ Vietnam/CM296/2020	location	Hanoi
 Vietnam/38142/2020	division	Thanh Hoa
 Vietnam/CM296/2020	division	Red River Delta
 Vietnam/CM296/2020	location	Hanoi
+Wales/PHW04/2020	host	Human # fix casing
 Wuhan-Hu-1/2019	date	2019-12-26
 Wuhan-Hu-1/2019	division	Hubei
 Wuhan-Hu-1/2019	genbank_accession	MN908947
