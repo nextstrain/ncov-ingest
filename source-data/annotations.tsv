@@ -242,6 +242,12 @@ SouthKorea/KCDC24/2020	location	Chungcheongnam
 Luxembourg/Lux1/2020	division	Luxembourg
 Mexico/CDMX-InDRE_01/2020	division_exposure	Lombardy # GISAID
 nCoV-19/USA/UPHL-03/2020	strain	USA/UPHL-03/2020
+USA/UPHL-01/2020	division_exposure	Diamond Princess # duncan
+#note UPHL-03 and -04 are same patient
+USA/UPHL-03/2020	division_exposure	Grand princess # duncan
+USA/UPHL-04/2020	division_exposure	Grand Princess # duncan
+#note UPHL-05 and -06 are same patient
+# USA/UPHL-05/2020 and USA/UPHL-06/2020 have Caribean cruise exposure - Jamaica & FLorida - duncan
 Nepal/61/2020	division_exposure	Hubei # ?
 Nepal/61/2020	genbank_accession	MT072688
 Nepal/61/2020	location	Kathmandu
