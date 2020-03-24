@@ -7,8 +7,12 @@
 # Panama/328677 data via email from Alexander Martinez (who did the sequencing)	
 # strain	key	value
 # Switzerland/1000477806/2020	division_exposure	no travel history but open-plan office with someone who visited Lombardy & tested positive (from submitters)
-# Taiwan/NTU03/2020 travel history from GISAID: Dubai (1/29-2/10 of 2020) and Egypt (2/11-2/21 of 2020) 		
 # Taiwan/NTU03/2020 patient travelled to Dubai (1/29/2020-2/10/2020) and Egypt (2/11/2020-2/21/2020) (from GISAID)		
+# Taiwan/NTU03/2020 travel history from GISAID: Dubai (1/29-2/10 of 2020) and Egypt (2/11-2/21 of 2020) 		
+# USA/UPHL-05/2020 and USA/UPHL-06/2020 have Caribean cruise exposure - Jamaica & FLorida - duncan
+## Kuwait samples have their division set to what should be the location
+#note UPHL-03 and -04 are same patient
+#note UPHL-05 and -06 are same patient
 Australia/NSW01/2020	division_exposure	Hubei
 Australia/NSW05/2020	division_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW06/2020	division_exposure	Iran # James: data via direct contact with Aus lab
@@ -55,8 +59,8 @@ Canada/BC_78548/2020	division_exposure	Europe # Travel to Paris, Rotterdam, Ital
 Canada/ON-PHL2445/2020	division_exposure	Hubei # GISAID
 Canada/ON-VIDO-01/2020	division_exposure	Hubei # GISAID
 canine/HongKong/20-02756/2020	division	Hong Kong
-China/IQTC02/2020	location	Guangzhou
 China/IQTC02/2020	division	Guangdong
+China/IQTC02/2020	location	Guangzhou
 China/WF0001/2020	date	2020-01-XX
 China/WF0001/2020	division	Shandong
 China/WF0002/2020	date	2020-01-XX
@@ -115,6 +119,7 @@ England/03/2020	division	England
 England/09c/2020	country	United Kingdom
 England/09c/2020	division	England
 England/09c/2020	division_exposure	Hubei #recently arrived from china https://www.theguardian.com/world/2020/feb/13/london-coronavirus-patient-turned-up-hospital-uber-taxi
+England/SHEF-BFD36/2020	division	Nottinghamshire
 England/Sheff01/2020	country	United Kingdom
 England/Sheff01/2020	division	England
 England/Sheff01/2020	division_exposure	England
@@ -134,6 +139,9 @@ Finland/FIN-318/2020	division	Finland
 Finland/FIN-455/2020	division	Finland
 Finland/FIN-508/2020	division	Finland
 Finland/FIN03032020C/2020	division_exposure	Italy # GISAID
+France/Bourg-en-Bresse_06678/2020	division	Auvergne-Rhône-Alpes
+France/Clermont-Ferrand_650/2020	division	Auvergne-Rhône-Alpes
+France/Clermont-Ferrand_651/2020	division	Auvergne-Rhône-Alpes
 France/GE1583/2020	division	Grand Est
 France/GE1973/2020	division	Grand Est
 France/GE1977/2020	division	Grand Est
@@ -152,7 +160,24 @@ France/IDF0571/2020	division	Ile de France
 France/IDF0626/2020	division	Ile de France
 France/IDF1980/2020	division	Ile de France
 France/IDF2075/2020	division	Ile de France
+France/Lyon_487/2020	division	Auvergne-Rhône-Alpes
+France/Lyon_487/2020	division	Auvergne-Rhône-Alpes
+France/Lyon_508/2020	division	Auvergne-Rhône-Alpes
+France/Lyon_508/2020	division	Auvergne-Rhône-Alpes
+France/Lyon_683/2020	division	Auvergne-Rhône-Alpes
+France/Lyon_683/2020	division	Auvergne-Rhône-Alpes
+France/Lyon_0693/2020	division	Auvergne-Rhône-Alpes
+France/Lyon_0693/2020	division	Auvergne-Rhône-Alpes
+France/Lyon_06464/2020	division	Auvergne-Rhône-Alpes
+France/Lyon_06464/2020	division	Auvergne-Rhône-Alpes
+France/Lyon_06487/2020	division	Auvergne-Rhône-Alpes
+France/Lyon_06487/2020	division	Auvergne-Rhône-Alpes
+France/Lyon_06531/2020	division	Auvergne-Rhône-Alpes
+France/Lyon_06531/2020	division	Auvergne-Rhône-Alpes
+France/Pollionay_1733/2020	division	Auvergne-Rhône-Alpes
 France/RA739/2020	division	Auvergne Rhone Alpes
+France/Valence_425/2020	division	Auvergne-Rhône-Alpes
+France/Valence_532/2020	division	Auvergne-Rhône-Alpes
 Germany/Baden-Wuerttemberg-1/2020	division_exposure	Lombardy # GISAID
 Germany/BavPat1/2020	location	Starnberg
 Germany/BavPat2/2020	division	Bavaria
@@ -168,16 +193,16 @@ Hangzhou/HZ-1/2020	genbank_accession	MT039873
 Hangzhou/HZCDC0001/2020	division_exposure	Hubei # GISAID
 Hangzhou/ZJU-01/2020	division	Zhejiang
 Hangzhou/ZJU-01/2020	location	Hangzhou
+Hangzhou/ZJU-02/2020	division	Zhejiang
+Hangzhou/ZJU-02/2020	location	Hangzhou
+Hangzhou/ZJU-03/2020	division	Zhejiang
+Hangzhou/ZJU-03/2020	location	Hangzhou
+Hangzhou/ZJU-04/2020	division	Zhejiang
+Hangzhou/ZJU-04/2020	location	Hangzhou
 Hangzhou/ZJU-05/2020	division	Zhejiang
 Hangzhou/ZJU-05/2020	location	Hangzhou
-Hangzhou/ZJU-02/2020	location	Hangzhou
-Hangzhou/ZJU-02/2020	division	Zhejiang
-Hangzhou/ZJU-03/2020	location	Hangzhou
-Hangzhou/ZJU-04/2020	location	Hangzhou
-Hangzhou/ZJU-06/2020	location	Hangzhou
-Hangzhou/ZJU-03/2020	division	Zhejiang
-Hangzhou/ZJU-04/2020	division	Zhejiang
 Hangzhou/ZJU-06/2020	division	Zhejiang
+Hangzhou/ZJU-06/2020	location	Hangzhou
 Hangzhou/ZJU-07/2020	division	Zhejiang
 Hangzhou/ZJU-07/2020	location	Hangzhou
 HongKong/case42_VM20002493/2020	division	Hong Kong
@@ -223,31 +248,17 @@ Japan/TY-WK-501/2020	location	Tokyo
 Japan/TY-WK-521/2020	genbank_accession	LC522975
 Japan/TY-WK-521/2020	location	Tokyo
 Jingzhou/HBCDC-HB-01/2020	division_exposure	Hubei # GISAID
-## Kuwait samples have their division set to what should be the location
+Kuwait/KU09/2020	division	Kuwait
+Kuwait/KU09/2020	location	Dasman
 Kuwait/KU12/2020	division	Kuwait
 Kuwait/KU12/2020	location	Hawali
 Kuwait/KU17/2020	division	Kuwait
 Kuwait/KU17/2020	location	Dasman
 Kuwait/KU18/2020	division	Kuwait
 Kuwait/KU18/2020	location	Dasman
-Kuwait/KU09/2020	division	Kuwait
-Kuwait/KU09/2020	location	Dasman
-SouthKorea/KCDC05/2020	location	Seoul
-SouthKorea/KCDC06/2020	location	Seoul
-SouthKorea/KCDC07/2020	location	Seoul
-SouthKorea/KCDC12/2020	division	Gyeonggi
-SouthKorea/KCDC12/2020	location	Gyeonggi
-SouthKorea/KCDC24/2020	division	Chungcheongnam
-SouthKorea/KCDC24/2020	location	Chungcheongnam
 Luxembourg/Lux1/2020	division	Luxembourg
 Mexico/CDMX-InDRE_01/2020	division_exposure	Lombardy # GISAID
 nCoV-19/USA/UPHL-03/2020	strain	USA/UPHL-03/2020
-USA/UPHL-01/2020	division_exposure	Diamond Princess # duncan
-#note UPHL-03 and -04 are same patient
-USA/UPHL-03/2020	division_exposure	Grand princess # duncan
-USA/UPHL-04/2020	division_exposure	Grand Princess # duncan
-#note UPHL-05 and -06 are same patient
-# USA/UPHL-05/2020 and USA/UPHL-06/2020 have Caribean cruise exposure - Jamaica & FLorida - duncan
 Nepal/61/2020	division_exposure	Hubei # ?
 Nepal/61/2020	genbank_accession	MT072688
 Nepal/61/2020	location	Kathmandu
@@ -275,8 +286,6 @@ Netherlands/Helmond_1363548/2020	division	North Brabant
 Netherlands/Helmond_1363548/2020	location	Helmond
 Netherlands/Houten_1363498/2020	division	Utrecht
 Netherlands/Houten_1363498/2020	location	Houten
-NetherlandsL/Houten_1363498/2020	division	Utrecht
-NetherlandsL/Houten_1363498/2020	location	Houten
 Netherlands/Loon_op_zand_1363512/2020	division	North Brabant
 Netherlands/Loon_op_zand_1363512/2020	location	Loon op zand
 Netherlands/NA_1/2020	division	Netherlands
@@ -389,8 +398,8 @@ Netherlands/Oisterwijk_1364072/2020	division	North Brabant
 Netherlands/Oisterwijk_1364072/2020	location	Oisterwijk
 Netherlands/Oss_1363500/2020	division	North Brabant
 Netherlands/Oss_1363500/2020	location	Oss
-Netherlands/Rotterdam_1363790/2020	location	Rotterdam
 Netherlands/Rotterdam_1363790/2020	division	South Holland
+Netherlands/Rotterdam_1363790/2020	location	Rotterdam
 Netherlands/Rotterdam_1364040/2020	division	South Holland
 Netherlands/Rotterdam_1364040/2020	location	Rotterdam
 Netherlands/Rotterdam_1364740/2020	division	South Holland
@@ -438,6 +447,8 @@ Netherlands/ZuidHolland_29/2020	division	South Holland
 Netherlands/ZuidHolland_30/2020	division	South Holland
 Netherlands/ZuidHolland_31/2020	division	South Holland
 NetherlandsL/Houten_1363498/2020	division	Utrecht
+NetherlandsL/Houten_1363498/2020	division	Utrecht
+NetherlandsL/Houten_1363498/2020	location	Houten
 NetherlandsL/Houten_1363498/2020	location	Houten
 NewZealand/01/2020	division_exposure	Iran # GISAID
 NewZealand/01/2020	location	Auckland
@@ -501,9 +512,16 @@ Singapore/14/2020	location	Singapore
 SouthKorea/KCDC03/2020	country	South Korea
 SouthKorea/KCDC03/2020	division	Gyeonggi
 SouthKorea/KCDC03/2020	location	Gyeonggi
+SouthKorea/KCDC05/2020	location	Seoul
+SouthKorea/KCDC06/2020	location	Seoul
+SouthKorea/KCDC07/2020	location	Seoul
+SouthKorea/KCDC12/2020	division	Gyeonggi
 SouthKorea/KCDC12/2020	division	Gyeonggi
 SouthKorea/KCDC12/2020	location	Gyeonggi
+SouthKorea/KCDC12/2020	location	Gyeonggi
 SouthKorea/KCDC24/2020	division	Chungcheongnam
+SouthKorea/KCDC24/2020	division	Chungcheongnam
+SouthKorea/KCDC24/2020	location	Chungcheongnam
 SouthKorea/KCDC24/2020	location	Chungcheongnam
 SouthKorea/KUMC01/2020	division	South Korea
 SouthKorea/KUMC02/2020	division	South Korea
@@ -522,6 +540,11 @@ SouthKorea/SNU01/2020	genbank_accession	MT039890
 Spain/Valencia1/2020	genbank_accession	MT198653
 Spain/Valencia2/2020	genbank_accession	MT198651
 Spain/Valencia3/2020	genbank_accession	MT198652
+Spain/Valencia4/2020	division	Comunitat Valenciana
+Spain/Valencia5/2020	division	Comunitat Valenciana
+Spain/Valencia6/2020	division	Comunitat Valenciana
+Spain/Valencia7/2020	division	Comunitat Valenciana
+Spain/Valencia8/2020	division	Comunitat Valenciana
 Sweden/01/2020	division	Småland
 Sweden/01/2020	genbank_accession	MT093571
 Sweden/01/2020	location	Jönköping
@@ -568,7 +591,6 @@ Taiwan/NTU02/2020	genbank_accession	MT066176
 Taiwan/NTU02/2020	location	Taipei
 Taiwan/NTU03/2020	division	Taiwan
 Taiwan/NTU03/2020	location	Taipei 
-USA/CA9/2020	genbank_accession	MT118835
 USA/AZ1/2020	division_exposure	Hubei # ?
 USA/AZ1/2020	genbank_accession	MN997409
 USA/CA-CDPH-UC1/2020	date	2020-02-26
@@ -592,6 +614,7 @@ USA/CA6/2020	genbank_accession	MT044258
 USA/CA7/2020	division_exposure	Hubei # ?
 USA/CA7/2020	genbank_accession	MT106052
 USA/CA8/2020	genbank_accession	MT106053
+USA/CA9/2020	genbank_accession	MT118835
 USA/CA9/2020	genbank_accession	MT118835
 USA/CA9/2020	location	Solano County
 USA/CruiseA-1/2020	division	Diamond Princess
@@ -640,6 +663,9 @@ USA/NY1-PV08001/2020	division_exposure	Iran # GISAID
 USA/TX1/2020	division_exposure	Hubei # ?
 USA/TX1/2020	genbank_accession	MT106054
 USA/UC-CDPH-UC11/2020	division	Grand Princess # from GISAID
+USA/UPHL-01/2020	division_exposure	Diamond Princess # duncan
+USA/UPHL-03/2020	division_exposure	Grand princess # duncan
+USA/UPHL-04/2020	division_exposure	Grand Princess # duncan
 USA/WA-UW22/2020	location	King County
 USA/WA-UW23/2020	location	Pierce County
 USA/WA-UW24/2020	location	King County
@@ -655,6 +681,15 @@ USA/WA-UW32/2020	country	USA
 USA/WA-UW32/2020	division	Washington
 USA/WA-UW33/2020	country	USA
 USA/WA-UW33/2020	division	Washington
+USA/WA-UW72/2020	division	Washington
+USA/WA-UW112/2020	division	Washington
+USA/WA-UW113/2020	division	Washington
+USA/WA-UW122/2020	division	Washington
+USA/WA-UW134/2020	division	Washington
+USA/WA-UW136/2020	division	Washington
+USA/WA-UW137/2020	division	Washington
+USA/WA-UW138/2020	division	Washington
+USA/WA-UW144/2020	division	Washington
 USA/WA1-A12/2020	genbank_accession	MT020880
 USA/WA1-F6/2020	genbank_accession	MT020881
 USA/WA1/2020	division_exposure	Hubei # ?
@@ -667,15 +702,17 @@ USA/WA6-UW3/2020	genbank_accession	MT163718
 USA/WA7-UW4/2020	genbank_accession	MT163719
 USA/WI1/2020	division_exposure	Hubei # ?
 USA/WI1/2020	genbank_accession	MT039887
+USA/WI2/2020	division	Wisconsin
 USA/WI2/2020	region	North America
-Vietnam/VR03-38142/2020	division_exposure	Hubei # ?
+USA/WI4/2020	division	Wisconsin
+Vietnam/38142/2020	division	Thanh Hoa
 Vietnam/CM295/2020	division	Red River Delta
 Vietnam/CM295/2020	location	Hanoi
-Vietnam/CM296/2020 	division	Red River Delta
-Vietnam/CM296/2020	location	Hanoi
-Vietnam/38142/2020	division	Thanh Hoa
 Vietnam/CM296/2020	division	Red River Delta
 Vietnam/CM296/2020	location	Hanoi
+Vietnam/CM296/2020	location	Hanoi
+Vietnam/CM296/2020 	division	Red River Delta
+Vietnam/VR03-38142/2020	division_exposure	Hubei # ?
 Wales/PHW04/2020	host	Human # fix casing
 Wuhan-Hu-1/2019	date	2019-12-26
 Wuhan-Hu-1/2019	division	Hubei
@@ -700,31 +737,3 @@ Wuhan/WIV07/2019	genbank_accession	MN996531
 Yunnan/IVDC-YN-003/2020	genbank_accession	MT049951
 Zhejiang/WZ-01/2020	location	Hangzhou
 Zhejiang/WZ-02/2020	location	Hangzhou
-USA/WI2/2020	division	Wisconsin
-USA/WI4/2020	division	Wisconsin
-Spain/Valencia5/2020	division	Comunitat Valenciana
-Spain/Valencia6/2020	division	Comunitat Valenciana
-Spain/Valencia7/2020	division	Comunitat Valenciana
-Spain/Valencia8/2020	division	Comunitat Valenciana
-Spain/Valencia4/2020	division	Comunitat Valenciana
-England/SHEF-BFD36/2020	division	Nottinghamshire
-France/Bourg-en-Bresse_06678/2020	division	Auvergne-Rhône-Alpes
-France/Clermont-Ferrand_650/2020	division	Auvergne-Rhône-Alpes
-France/Clermont-Ferrand_651/2020	division	Auvergne-Rhône-Alpes
-France/Lyon_06464/2020	division	Auvergne-Rhône-Alpes
-France/Lyon_06487/2020	division	Auvergne-Rhône-Alpes
-France/Lyon_06531/2020	division	Auvergne-Rhône-Alpes
-France/Lyon_0693/2020	division	Auvergne-Rhône-Alpes
-France/Lyon_487/2020	division	Auvergne-Rhône-Alpes
-France/Lyon_508/2020	division	Auvergne-Rhône-Alpes
-France/Lyon_683/2020	division	Auvergne-Rhône-Alpes
-France/Pollionay_1733/2020	division	Auvergne-Rhône-Alpes
-France/Valence_425/2020	division	Auvergne-Rhône-Alpes
-France/Valence_532/2020	division	Auvergne-Rhône-Alpes
-France/Lyon_06464/2020	division	Auvergne-Rhône-Alpes
-France/Lyon_06487/2020	division	Auvergne-Rhône-Alpes
-France/Lyon_06531/2020	division	Auvergne-Rhône-Alpes
-France/Lyon_0693/2020	division	Auvergne-Rhône-Alpes
-France/Lyon_487/2020	division	Auvergne-Rhône-Alpes
-France/Lyon_508/2020	division	Auvergne-Rhône-Alpes
-France/Lyon_683/2020	division	Auvergne-Rhône-Alpes
