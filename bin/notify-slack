@@ -13,9 +13,8 @@ if [[ ! -t 0 ]]; then
     curl https://slack.com/api/files.upload \
         --header "Authorization: Bearer $SLACK_TOKEN" \
         --form-string channels="$SLACK_CHANNELS" \
-        --form-string initial_comment="$text" \
+        --form-string title="$text" \
         --form file=@/dev/stdin \
-        --form filename="👀" \
         --form filetype=text \
         --fail --silent --show-error \
         --include
