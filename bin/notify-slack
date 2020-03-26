@@ -5,10 +5,19 @@ set -euo pipefail
 : "${SLACK_TOKEN:?The SLACK_TOKEN environment variable is required.}"
 : "${SLACK_CHANNELS:=#ncov-gisaid-updates}"
 
-text="${1:?Some message text is required as the first and only argument.}"
+upload=0
 
-# If stdin isn't an interactive terminal, then read data from it.
-if [[ ! -t 0 ]]; then
+for arg; do
+    case "$arg" in
+        --upload)
+            upload=1
+            shift;;
+    esac
+done
+
+text="${1:?Some message text is required.}"
+
+if [[ "$upload" == 1 ]]; then
     echo "Uploading data to Slack with the message: $text"
     curl https://slack.com/api/files.upload \
         --header "Authorization: Bearer $SLACK_TOKEN" \

@@ -20,7 +20,7 @@ diff="$(
 
 if [[ -n "$diff" ]]; then
     echo "Notifying Slack about metadata change."
-    "$bin"/notify-slack "Metadata changes" <<<"$diff"
+    "$bin"/notify-slack --upload "Metadata changes" <<<"$diff"
 else
     echo "No metadata change."
 fi
