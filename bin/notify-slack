@@ -2,29 +2,30 @@
 set -euo pipefail
 
 : "${SLACK_INCOMING_WEBHOOK:?The SLACK_INCOMING_WEBHOOK environment variable is required.}"
+: "${SLACK_TOKEN:?The SLACK_TOKEN environment variable is required.}"
+: "${SLACK_CHANNELS:=#ncov-gisaid-updates}"
 
 text="${1:?Some message text is required as the first and only argument.}"
-data=""
 
 # If stdin isn't an interactive terminal, then read data from it.
 if [[ ! -t 0 ]]; then
-    data="$(< /dev/stdin)"
-fi
-
-if [[ -z "$data" ]]; then
-    slack_message="$(jq '{"text": $text}' --arg text "$text" --null-input)"
+    echo "Uploading data to Slack with the message: $text"
+    curl https://slack.com/api/files.upload \
+        --header "Authorization: Bearer $SLACK_TOKEN" \
+        --form-string channels="$SLACK_CHANNELS" \
+        --form-string initial_comment="$text" \
+        --form file=@/dev/stdin \
+        --form filename="👀" \
+        --form filetype=text \
+        --fail --silent --show-error \
+        --include
 else
-    slack_message="$(jq '{"text": $text, "attachments": [{"text": "```\($data)```", "fallback": ($data | split("\n\n") | .[0])}]}' \
-        --arg text "$text" \
-        --arg data "$data" \
-        --null-input)"
+    slack_message="$(jq '{"text": $text}' --arg text "$text" --null-input)"
+
+    echo "Posting Slack message: $slack_message"
+    curl "$SLACK_INCOMING_WEBHOOK" \
+        --header 'Content-type: application/json' \
+        --data-raw "$slack_message" \
+        --fail --silent --show-error \
+        --include
 fi
-
-echo "Prepared Slack message:"
-echo "$slack_message"
-
-curl "$SLACK_INCOMING_WEBHOOK" \
-    --header 'Content-type: application/json' \
-    --data-raw "$slack_message" \
-    --fail --silent --show-error \
-    --include
