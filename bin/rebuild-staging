@@ -55,7 +55,8 @@ cp -v "$metadata_src" "$sequences_src" ncov/data/
 output=$(
     nextstrain build --aws-batch --detach \
         ncov deploy_to_staging \
-        --config slack_webhook="$SLACK_INCOMING_WEBHOOK"
+        --config slack_webhook="$SLACK_INCOMING_WEBHOOK" \
+        --cores "${NEXTSTRAIN_AWS_BATCH_CPUS:-4}"
 )
 
 echo "$output"
