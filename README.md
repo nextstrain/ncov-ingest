@@ -30,3 +30,4 @@ Install the required dependencies using the exported `environment.yml` file.
 * `AWS_ACCESS_KEY_ID`
 * `AWS_SECRET_ACCESS_KEY`
 * `SLACK_INCOMING_WEBHOOK`
+* `SLACK_TOKEN`
