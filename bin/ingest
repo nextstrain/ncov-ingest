@@ -1,0 +1,24 @@
+#!/bin/bash
+set -euo pipefail
+
+: "${S3_BUCKET:=s3://nextstrain-ncov-private}"
+
+cd "$(dirname "$0")/.."
+
+./bin/fetch-from-gisaid > data/gisaid.ndjson
+./bin/notify-on-gisaid-change data/gisaid.ndjson "$S3_BUCKET/gisaid.ndjson"
+./bin/upload-to-s3 data/gisaid.ndjson "$S3_BUCKET/gisaid.ndjson" --quiet
+
+./bin/transform data/gisaid.ndjson \
+  --output-metadata data/metadata.tsv \
+  --output-fasta data/sequences.fasta
+
+./bin/notify-on-metadata-change data/metadata.tsv "$S3_BUCKET/metadata.tsv"
+./bin/notify-on-additional-info-change data/additional_info.tsv "$S3_BUCKET/additional_info.tsv"
+
+./bin/rebuild-staging data/metadata.tsv "$S3_BUCKET/metadata.tsv" \
+  data/sequences.fasta "$S3_BUCKET/sequences.fasta"
+
+./bin/upload-to-s3 data/metadata.tsv "$S3_BUCKET/metadata.tsv"
+./bin/upload-to-s3 data/additional_info.tsv "$S3_BUCKET/additional_info.tsv"
+./bin/upload-to-s3 data/sequences.fasta "$S3_BUCKET/sequences.fasta"
