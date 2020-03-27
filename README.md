@@ -9,7 +9,7 @@
 The fetch and transform pipeline exists as a GitHub workflow at `.github/workflows/fetch-and-transform.yml`.
 It is scheduled to run every 15 minutes and on pushes to `master`.
 
-AWS credentials are stored in this repository's secrets and are associated with the `nextstrain-ncov-ingest-uploader` IAM user in the Bedford Lab AWS account, which is locked down to reading and publishing only the `gisand.ndjson`, `metadata.tsv`, and `sequences.fasta` files in the `nextstrain-ncov-private` S3 bucket.
+AWS credentials are stored in this repository's secrets and are associated with the `nextstrain-ncov-ingest-uploader` IAM user in the Bedford Lab AWS account, which is locked down to reading and publishing only the `gisaid.ndjson`, `metadata.tsv`, and `sequences.fasta` files in the `nextstrain-ncov-private` S3 bucket.
 
 ## Updating manual annotations
 Manual annotations should be added to `source-data/annotations.tsv`.
