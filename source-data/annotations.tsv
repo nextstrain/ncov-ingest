@@ -17,52 +17,89 @@
 ## Kuwait samples have their division set to what should be the location
 #note UPHL-03 and -04 are same patient
 #note UPHL-05 and -06 are same patient
+Australia/NSW01/2020	country_exposure	China
 Australia/NSW01/2020	division_exposure	Hubei
+Australia/NSW05/2020	country_exposure	China # James: data via direct contact with Aus lab
+Australia/NSW05/2020	country_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW05/2020	division_exposure	Iran # James: data via direct contact with Aus lab
+Australia/NSW06/2020	country_exposure	China # James: data via direct contact with Aus lab
+Australia/NSW06/2020	country_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW06/2020	division_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW08/2020	division	New South Wales
 Australia/NSW09/2020	division	New South Wales
-Australia/NSW09/2020	division_exposure	New South Wales
 Australia/NSW10/2020	division	New South Wales
+Australia/NSW11/2020	country_exposure	Iran # James: data via direct contact with Aus lab
+Australia/NSW11/2020	country_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW11/2020	division	New South Wales
 Australia/NSW11/2020	division_exposure	Iran # James: data via direct contact with Aus lab
+Australia/NSW12/2020	country_exposure	Iran # James: data via direct contact with Aus lab
+Australia/NSW12/2020	country_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW12/2020	division	New South Wales
 Australia/NSW12/2020	division_exposure	Iran # James: data via direct contact with Aus lab
+Australia/NSW13/2020	country_exposure	Iran # James: data via direct contact with Aus lab
+Australia/NSW13/2020	country_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW13/2020	division	New South Wales
 Australia/NSW13/2020	division_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW14/2020	division	New South Wales
-Australia/NSW14/2020	division_exposure	New South Wales # ?
+Australia/QLD01/2020	country_exposure	China # ?
 Australia/QLD01/2020	division_exposure	Hubei # ?
+Australia/VIC01/2020	country_exposure	China # ?
 Australia/VIC01/2020	division_exposure	Hubei # ?
 Australia/VIC01/2020	genbank_accession	MT007544
+Belgium/BM-03012/2020	country_exposure	Italy # from GISAID, annotated as holiday in Italy
 Belgium/BM-03012/2020	division_exposure	Italy # from GISAID, annotated as holiday in Italy
+Belgium/GHB-03021/2020	country_exposure	China # GISAID
 Belgium/GHB-03021/2020	division	Flanders
 Belgium/GHB-03021/2020	division_exposure	Hubei # GISAID
 Belgium/GHB-03021/2020	location	Leuven
+Brazil/SP0105/2020	country_exposure	Brazil
 Brazil/SP0105/2020	division_exposure	Sao Paulo
+Brazil/SP0111/2020	country_exposure	Brazil
 Brazil/SP0111/2020	division_exposure	Sao Paulo
+Brazil/SPBR-01/2020	country_exposure	Italy # GISAID
 Brazil/SPBR-01/2020	division_exposure	Lombardy # GISAID
+Brazil/SPBR-02/2020	country_exposure	Italy # GISAID
 Brazil/SPBR-02/2020	division_exposure	Lombardy # GISAID
 Brazil/SPBR-02/2020	genbank_accession	MT126808
+Brazil/SPBR-04/2020	country_exposure	Italy # GISAID
 Brazil/SPBR-04/2020	division_exposure	Italy # GISAID
+Brazil/SPBR-07/2020	country_exposure	Italy
 Brazil/SPBR-07/2020	division_exposure	Italy
+Brazil/SPBR-11/2020	country_exposure	United Kingdom
 Brazil/SPBR-11/2020	division_exposure	United Kingdom
+Brazil/SPBR-12/2020	country_exposure	USA
 Brazil/SPBR-12/2020	division_exposure	USA
+Brazil/SPBR-14/2020	country_exposure	Italy
 Brazil/SPBR-14/2020	division_exposure	Italy
+Cambodia/0012/2020	country_exposure	China # GISAID
 Cambodia/0012/2020	division_exposure	Hubei # GISAID
+Canada/BC_37_0-2/2020	country_exposure	Iran # GISAID
 Canada/BC_37_0-2/2020	division_exposure	Iran # GISAID
+Canada/BC_02421/2020	country_exposure	Iran # GISAID
 Canada/BC_02421/2020	division_exposure	Iran # GISAID
+Canada/BC_13297/2020	country_exposure	Iran # GISAID
 Canada/BC_13297/2020	division_exposure	Iran # GISAID
+Canada/BC_17397/2020	country_exposure	Iran # GISAID
 Canada/BC_17397/2020	division_exposure	Iran # GISAID
+Canada/BC_25211/2020	country_exposure	Iran # GISAID CONTACT OF IRAN CASE
 Canada/BC_25211/2020	division_exposure	Iran # GISAID CONTACT OF IRAN CASE
+Canada/BC_35720/2020	country_exposure	Hong Kong # GISAID
 Canada/BC_35720/2020	division_exposure	Hong Kong # GISAID
+Canada/BC_40860/2020	country_exposure	Iran # GISAID
 Canada/BC_40860/2020	division_exposure	Iran # GISAID
+Canada/BC_64686/2020	country_exposure	USA # GISAID
 Canada/BC_64686/2020	division_exposure	Grand Princess # GISAID
+Canada/BC_65034/2020	country_exposure	Iran # GISAID CONTACT OF IRAN CASE
 Canada/BC_65034/2020	division_exposure	Iran # GISAID CONTACT OF IRAN CASE
+Canada/BC_66353/2020	country_exposure	Iran # GISAID
 Canada/BC_66353/2020	division_exposure	Iran # GISAID
+Canada/BC_69243/2020	country_exposure	Iran # GISAID CONTACT OF IRAN CASE
 Canada/BC_69243/2020	division_exposure	Iran # GISAID CONTACT OF IRAN CASE
+Canada/BC_78548/2020	country_exposure	Europe # Travel to Paris, Rotterdam, Italy, Rome
 Canada/BC_78548/2020	division_exposure	Europe # Travel to Paris, Rotterdam, Italy, Rome
+Canada/ON-PHL2445/2020	country_exposure	China # GISAID
 Canada/ON-PHL2445/2020	division_exposure	Hubei # GISAID
+Canada/ON-VIDO-01/2020	country_exposure	China # GISAID
 Canada/ON-VIDO-01/2020	division_exposure	Hubei # GISAID
 canine/HongKong/20-02756/2020	division	Hong Kong
 China/IQTC02/2020	division	Guangdong
@@ -113,16 +150,20 @@ China/WH-09/2020	location	Wuhan
 China/WHU01/2020	genbank_accession	MN988668
 China/WHU02/2020	genbank_accession	MN988669
 Chongqing/YC01/2020	division	Chongqing
+CzechRepublic/951/2020	country_exposure	Italy # GISAID - probably infected during holiday to italy
 CzechRepublic/951/2020	division_exposure	Italy # GISAID - probably infected during holiday to italy
 England/01/2020	country	United Kingdom
+England/01/2020	country_exposure	China # first cases were reported in media as being son & mother from China
 England/01/2020	division	England
 England/01/2020	division_exposure	Hubei # first cases were reported in media as being son & mother from China
 England/02/2020	country	United Kingdom
+England/02/2020	country_exposure	China # first cases were reported in media as being son & mother from China
 England/02/2020	division	England
 England/02/2020	division_exposure	Hubei # first cases were reported in media as being son & mother from China
 England/03/2020	country	United Kingdom
 England/03/2020	division	England
 England/09c/2020	country	United Kingdom
+England/09c/2020	country_exposure	China #recently arrived from china https://www.theguardian.com/world/2020/feb/13/london-coronavirus-patient-turned-up-hospital-uber-taxi
 England/09c/2020	division	England
 England/09c/2020	division_exposure	Hubei #recently arrived from china https://www.theguardian.com/world/2020/feb/13/london-coronavirus-patient-turned-up-hospital-uber-taxi
 England/SHEF-BFCB1/2020	country	United Kingdom
@@ -151,16 +192,21 @@ England/SHEF-BFD45/2020	division	England
 England/SHEF-BFD54/2020	country	United Kingdom
 England/SHEF-BFD54/2020	division	England
 England/Sheff01/2020	country	United Kingdom
+England/Sheff01/2020	country_exposure	United Kingdom
 England/Sheff01/2020	division	England
 England/Sheff01/2020	division_exposure	England
 England/Sheff01/2020	location	Yorkshire # choosing this over sheffield
+Finland/1/2020	country_exposure	China # Based on timing
 Finland/1/2020	division	Finland
 Finland/1/2020	division_exposure	Hubei # Based on timing
 Finland/1/2020	genbank_accession	MT020781
 Finland/1/2020	location	Rovaniemi
+Finland/FIN-25/2020	country_exposure	Italy # GISAID
 Finland/FIN-25/2020	division_exposure	Lombardy # GISAID
+Finland/FIN-114/2020	country_exposure	Italy
 Finland/FIN-114/2020	division	Finland
 Finland/FIN-114/2020	division_exposure	Italy
+Finland/FIN-266/2020	country_exposure	Iran
 Finland/FIN-266/2020	division	Finland
 Finland/FIN-266/2020	division_exposure	Iran
 Finland/FIN-274/2020	division	Finland
@@ -168,6 +214,7 @@ Finland/FIN-313/2020	division	Finland
 Finland/FIN-318/2020	division	Finland
 Finland/FIN-455/2020	division	Finland
 Finland/FIN-508/2020	division	Finland
+Finland/FIN03032020C/2020	country_exposure	Italy # GISAID
 Finland/FIN03032020C/2020	division_exposure	Italy # GISAID
 France/Bourg-en-Bresse_06678/2020	division	Auvergne-Rhône-Alpes
 France/Bourg-en-Bresse_06813/2020	division	Auvergne-Rhône-Alpes
@@ -185,6 +232,7 @@ France/IDF0386-islP1/2020	division	Ile de France
 France/IDF0386-islP3/2020	division	Ile de France
 France/IDF0386/2020	division	Ile de France
 France/IDF0515-isl/2020	division	Ile de France
+France/IDF0515/2020	country_exposure	China # ? media?
 France/IDF0515/2020	division	Ile de France
 France/IDF0515/2020	division_exposure	Hubei # ? media?
 France/IDF0571/2020	division	Ile de France
@@ -217,8 +265,10 @@ France/Pollionay_1733/2020	division	Auvergne-Rhône-Alpes
 France/RA739/2020	division	Auvergne Rhone Alpes
 France/Valence_425/2020	division	Auvergne-Rhône-Alpes
 France/Valence_532/2020	division	Auvergne-Rhône-Alpes
+Germany/Baden-Wuerttemberg-1/2020	country_exposure	Italy # GISAID
 Germany/Baden-Wuerttemberg-1/2020	division_exposure	Lombardy # GISAID
 Germany/BavPat1/2020	location	Starnberg
+Germany/BavPat2/2020	country_exposure	China # GISAID
 Germany/BavPat2/2020	division	Bavaria
 Germany/BavPat2/2020	division_exposure	Iran # GISAID
 Germany/BavPat2/2020	location	Munich
@@ -227,8 +277,10 @@ Germany/BavPat3/2020	location	Munich
 Guangdong/20SF012/2020	division	Guangdong
 Guangdong/20SF013/2020	division	Guangdong
 Guangdong/20SF014/2020	division	Guangdong
+Hangzhou/HZ-1/2020	country_exposure	China # GISAID
 Hangzhou/HZ-1/2020	division_exposure	Hubei # GISAID
 Hangzhou/HZ-1/2020	genbank_accession	MT039873
+Hangzhou/HZCDC0001/2020	country_exposure	China # GISAID
 Hangzhou/HZCDC0001/2020	division_exposure	Hubei # GISAID
 Hangzhou/ZJU-01/2020	division	Zhejiang
 Hangzhou/ZJU-01/2020	location	Hangzhou
@@ -281,177 +333,345 @@ HongKong/XM-PII-S4/2020	division	Hong Kong
 HongKong/XM-PII-S4/2020	location	Hong Kong
 Hungary/mbl1/2020	division	Central Hungary
 Hungary/mbl1/2020	location	Budapest
+Iceland/1/2020	country_exposure	Netherlands # GISAID
 Iceland/1/2020	division_exposure	Netherlands # GISAID
+Iceland/3/2020	country_exposure	Italy # GISAID
 Iceland/3/2020	division_exposure	Italy # GISAID
-Iceland/4/2020	division_exposure	UK # GISAID
+Iceland/4/2020	country_exposure	United Kingdom # GISAID
+Iceland/4/2020	division_exposure	United Kingdom # GISAID
+Iceland/9/2020	country_exposure	USA # GISAID
 Iceland/9/2020	division_exposure	USA # GISAID
+Iceland/12/2020	country_exposure	Italy # GISAID
 Iceland/12/2020	division_exposure	Italy # GISAID
+Iceland/13/2020	country_exposure	Italy # GISAID
 Iceland/13/2020	division_exposure	Italy # GISAID
+Iceland/14/2020	country_exposure	Italy # GISAID
 Iceland/14/2020	division_exposure	Italy # GISAID
+Iceland/15/2020	country_exposure	Italy # GISAID
 Iceland/15/2020	division_exposure	Italy # GISAID
+Iceland/16/2020	country_exposure	Italy # GISAID
 Iceland/16/2020	division_exposure	Italy # GISAID
+Iceland/17/2020	country_exposure	Italy # GISAID
 Iceland/17/2020	division_exposure	Italy # GISAID
+Iceland/18/2020	country_exposure	Austria # GISAID
 Iceland/18/2020	division_exposure	Austria # GISAID
+Iceland/19/2020	country_exposure	Italy # GISAID
 Iceland/19/2020	division_exposure	Italy # GISAID
+Iceland/20/2020	country_exposure	Italy # GISAID
 Iceland/20/2020	division_exposure	Italy # GISAID
+Iceland/21/2020	country_exposure	Italy # GISAID
 Iceland/21/2020	division_exposure	Italy # GISAID
+Iceland/22/2020	country_exposure	Italy # GISAID
 Iceland/22/2020	division_exposure	Italy # GISAID
+Iceland/23/2020	country_exposure	Italy # GISAID
 Iceland/23/2020	division_exposure	Italy # GISAID
+Iceland/24/2020	country_exposure	Italy # GISAID
 Iceland/24/2020	division_exposure	Italy # GISAID
+Iceland/25/2020	country_exposure	Austria # GISAID
 Iceland/25/2020	division_exposure	Austria # GISAID
+Iceland/26/2020	country_exposure	Italy # GISAID
 Iceland/26/2020	division_exposure	Italy # GISAID
+Iceland/27/2020	country_exposure	Austria # GISAID
 Iceland/27/2020	division_exposure	Austria # GISAID
+Iceland/28/2020	country_exposure	Italy # GISAID
 Iceland/28/2020	division_exposure	Italy # GISAID
+Iceland/29/2020	country_exposure	USA # GISAID
 Iceland/29/2020	division_exposure	USA # GISAID
+Iceland/30/2020	country_exposure	Austria # GISAID
 Iceland/30/2020	division_exposure	Austria # GISAID
+Iceland/31/2020	country_exposure	Austria # GISAID
 Iceland/31/2020	division_exposure	Austria # GISAID
+Iceland/32/2020	country_exposure	Italy # GISAID
 Iceland/32/2020	division_exposure	Italy # GISAID
+Iceland/33/2020	country_exposure	Italy # GISAID
 Iceland/33/2020	division_exposure	Italy # GISAID
+Iceland/34/2020	country_exposure	Italy # GISAID
 Iceland/34/2020	division_exposure	Italy # GISAID
+Iceland/35/2020	country_exposure	Italy # GISAID
 Iceland/35/2020	division_exposure	Italy # GISAID
+Iceland/36/2020	country_exposure	Austria # GISAID
 Iceland/36/2020	division_exposure	Austria # GISAID
+Iceland/37/2020	country_exposure	Italy # GISAID
 Iceland/37/2020	division_exposure	Italy # GISAID
-Iceland/38/2020	division_exposure	UK # GISAID
+Iceland/38/2020	country_exposure	United Kingdom # GISAID
+Iceland/38/2020	division_exposure	United Kingdom # GISAID
+Iceland/39/2020	country_exposure	Austria # GISAID
 Iceland/39/2020	division_exposure	Austria # GISAID
+Iceland/40/2020	country_exposure	Austria # GISAID
 Iceland/40/2020	division_exposure	Austria # GISAID
+Iceland/41/2020	country_exposure	Austria # GISAID
 Iceland/41/2020	division_exposure	Austria # GISAID
+Iceland/42/2020	country_exposure	Austria # GISAID
 Iceland/42/2020	division_exposure	Austria # GISAID
+Iceland/43/2020	country_exposure	Austria # GISAID
 Iceland/43/2020	division_exposure	Austria # GISAID
+Iceland/44/2020	country_exposure	Austria # GISAID
 Iceland/44/2020	division_exposure	Austria # GISAID
+Iceland/45/2020	country_exposure	Austria # GISAID
 Iceland/45/2020	division_exposure	Austria # GISAID
+Iceland/46/2020	country_exposure	Italy # GISAID
 Iceland/46/2020	division_exposure	Italy # GISAID
+Iceland/47/2020	country_exposure	Austria # GISAID
 Iceland/47/2020	division_exposure	Austria # GISAID
+Iceland/48/2020	country_exposure	Austria # GISAID
 Iceland/48/2020	division_exposure	Austria # GISAID
+Iceland/49/2020	country_exposure	Italy # GISAID
 Iceland/49/2020	division_exposure	Italy # GISAID
+Iceland/51/2020	country_exposure	Austria # GISAID
 Iceland/51/2020	division_exposure	Austria # GISAID
+Iceland/52/2020	country_exposure	Austria # GISAID
 Iceland/52/2020	division_exposure	Austria # GISAID
+Iceland/53/2020	country_exposure	Austria # GISAID
 Iceland/53/2020	division_exposure	Austria # GISAID
+Iceland/56/2020	country_exposure	Italy # GISAID
 Iceland/56/2020	division_exposure	Italy # GISAID
+Iceland/58/2020	country_exposure	Asia # GISAID
 Iceland/58/2020	division_exposure	Asia # GISAID
+Iceland/59/2020	country_exposure	Austria # GISAID
 Iceland/59/2020	division_exposure	Austria # GISAID
+Iceland/60/2020	country_exposure	Austria # GISAID
 Iceland/60/2020	division_exposure	Austria # GISAID
+Iceland/63/2020	country_exposure	Austria # GISAID
 Iceland/63/2020	division_exposure	Austria # GISAID
+Iceland/68/2020	country_exposure	Italy # GISAID
 Iceland/68/2020	division_exposure	Italy # GISAID
+Iceland/69/2020	country_exposure	Italy # GISAID
 Iceland/69/2020	division_exposure	Italy # GISAID
+Iceland/70/2020	country_exposure	Italy # GISAID
 Iceland/70/2020	division_exposure	Italy # GISAID
+Iceland/71/2020	country_exposure	Italy # GISAID
 Iceland/71/2020	division_exposure	Italy # GISAID
+Iceland/72/2020	country_exposure	Italy # GISAID
 Iceland/72/2020	division_exposure	Italy # GISAID
+Iceland/73/2020	country_exposure	Italy # GISAID
 Iceland/73/2020	division_exposure	Italy # GISAID
+Iceland/74/2020	country_exposure	Austria # GISAID
 Iceland/74/2020	division_exposure	Austria # GISAID
+Iceland/78/2020	country_exposure	Italy # GISAID
 Iceland/78/2020	division_exposure	Italy # GISAID
+Iceland/82/2020	country_exposure	Italy # GISAID
 Iceland/82/2020	division_exposure	Italy # GISAID
+Iceland/83/2020	country_exposure	Italy # GISAID
 Iceland/83/2020	division_exposure	Italy # GISAID
+Iceland/84/2020	country_exposure	Austria # GISAID
 Iceland/84/2020	division_exposure	Austria # GISAID
+Iceland/85/2020	country_exposure	Switzerland # GISAID
 Iceland/85/2020	division_exposure	Switzerland # GISAID
+Iceland/86/2020	country_exposure	Italy # GISAID
 Iceland/86/2020	division_exposure	Italy # GISAID
+Iceland/88/2020	country_exposure	Austria # GISAID
 Iceland/88/2020	division_exposure	Austria # GISAID
+Iceland/90/2020	country_exposure	Austria # GISAID
 Iceland/90/2020	division_exposure	Austria # GISAID
+Iceland/92/2020	country_exposure	Austria # GISAID
 Iceland/92/2020	division_exposure	Austria # GISAID
+Iceland/93/2020	country_exposure	Italy # GISAID
 Iceland/93/2020	division_exposure	Italy # GISAID
+Iceland/94/2020	country_exposure	Switzerland # GISAID
 Iceland/94/2020	division_exposure	Switzerland # GISAID
+Iceland/95/2020	country_exposure	Austria # GISAID
 Iceland/95/2020	division_exposure	Austria # GISAID
+Iceland/96/2020	country_exposure	Austria # GISAID
 Iceland/96/2020	division_exposure	Austria # GISAID
+Iceland/99/2020	country_exposure	Switzerland # GISAID
 Iceland/99/2020	division_exposure	Switzerland # GISAID
+Iceland/101/2020	country_exposure	Denmark # GISAID
 Iceland/101/2020	division_exposure	Denmark # GISAID
+Iceland/102/2020	country_exposure	Switzerland # GISAID
 Iceland/102/2020	division_exposure	Switzerland # GISAID
+Iceland/103/2020	country_exposure	Italy # GISAID
 Iceland/103/2020	division_exposure	Italy # GISAID
+Iceland/105/2020	country_exposure	USA # GISAID
 Iceland/105/2020	division_exposure	USA # GISAID
+Iceland/106/2020	country_exposure	Austria # GISAID
 Iceland/106/2020	division_exposure	Austria # GISAID
+Iceland/107/2020	country_exposure	Austria # GISAID
 Iceland/107/2020	division_exposure	Austria # GISAID
+Iceland/108/2020	country_exposure	Italy # GISAID
 Iceland/108/2020	division_exposure	Italy # GISAID
+Iceland/109/2020	country_exposure	Austria # GISAID
 Iceland/109/2020	division_exposure	Austria # GISAID
+Iceland/110/2020	country_exposure	Germany # GISAID
 Iceland/110/2020	division_exposure	Germany # GISAID
+Iceland/111/2020	country_exposure	Italy # GISAID
 Iceland/111/2020	division_exposure	Italy # GISAID
+Iceland/112/2020	country_exposure	Switzerland # GISAID
 Iceland/112/2020	division_exposure	Switzerland # GISAID
+Iceland/113/2020	country_exposure	Italy # GISAID
 Iceland/113/2020	division_exposure	Italy # GISAID
-Iceland/123/2020	division_exposure	UK # GISAID
+Iceland/123/2020	country_exposure	United Kindom # GISAID
+Iceland/123/2020	division_exposure	United Kingdom # GISAID
+Iceland/125/2020	country_exposure	Denmark # GISAID
 Iceland/125/2020	division_exposure	Denmark # GISAID
-Iceland/127/2020	division_exposure	UK # GISAID
+Iceland/127/2020	country_exposure	United Kingdom # GISAID
+Iceland/127/2020	division_exposure	United Kingdom # GISAID
+Iceland/132/2020	country_exposure	Austria # GISAID
 Iceland/132/2020	division_exposure	Austria # GISAID
-Iceland/133/2020	division_exposure	UK # GISAID
+Iceland/133/2020	country_exposure	United Kingdom # GISAID
+Iceland/133/2020	division_exposure	United Kingdom # GISAID
+Iceland/136/2020	country_exposure	USA # GISAID
 Iceland/136/2020	division_exposure	USA # GISAID
+Iceland/137/2020	country_exposure	Switzerland # GISAID
 Iceland/137/2020	division_exposure	Switzerland # GISAID
+Iceland/138/2020	country_exposure	USA # GISAID
 Iceland/138/2020	division_exposure	USA # GISAID
+Iceland/140/2020	country_exposure	USA # GISAID
 Iceland/140/2020	division_exposure	USA # GISAID
+Iceland/141/2020	country_exposure	Switzerland # GISAID
 Iceland/141/2020	division_exposure	Switzerland # GISAID
-Iceland/142/2020	division_exposure	UK # GISAID
+Iceland/142/2020	country_exposure	United Kingdom # GISAID
+Iceland/142/2020	division_exposure	United Kingdom # GISAID
+Iceland/146/2020	country_exposure	Austria # GISAID
 Iceland/146/2020	division_exposure	Austria # GISAID
+Iceland/148/2020	country_exposure	Switzerland # GISAID
 Iceland/148/2020	division_exposure	Switzerland # GISAID
+Iceland/149/2020	country_exposure	Italy # GISAID
 Iceland/149/2020	division_exposure	Italy # GISAID
+Iceland/150/2020	country_exposure	Austria # GISAID
 Iceland/150/2020	division_exposure	Austria # GISAID
+Iceland/156/2020	country_exposure	Austria # GISAID
 Iceland/156/2020	division_exposure	Austria # GISAID
+Iceland/157/2020	country_exposure	Austria # GISAID
 Iceland/157/2020	division_exposure	Austria # GISAID
+Iceland/163/2020	country_exposure	Italy # GISAID
 Iceland/163/2020	division_exposure	Italy # GISAID
+Iceland/164/2020	country_exposure	Italy # GISAID
 Iceland/164/2020	division_exposure	Italy # GISAID
+Iceland/166/2020	country_exposure	Austria # GISAID
 Iceland/166/2020	division_exposure	Austria # GISAID
+Iceland/173/2020	country_exposure	Italy # GISAID
 Iceland/173/2020	division_exposure	Italy # GISAID
+Iceland/178/2020	country_exposure	Austria # GISAID
 Iceland/178/2020	division_exposure	Austria # GISAID
+Iceland/182/2020	country_exposure	USA # GISAID
 Iceland/182/2020	division_exposure	USA # GISAID
+Iceland/183/2020	country_exposure	Austria # GISAID
 Iceland/183/2020	division_exposure	Austria # GISAID
+Iceland/184/2020	country_exposure	Germany # GISAID
 Iceland/184/2020	division_exposure	Germany # GISAID
+Iceland/190/2020	country_exposure	USA # GISAID
 Iceland/190/2020	division_exposure	USA # GISAID
+Iceland/191/2020	country_exposure	USA # GISAID
 Iceland/191/2020	division_exposure	USA # GISAID
+Iceland/193/2020	country_exposure	Spain # GISAID
 Iceland/193/2020	division_exposure	Spain # GISAID
+Iceland/194/2020	country_exposure	Austria # GISAID
 Iceland/194/2020	division_exposure	Austria # GISAID
+Iceland/195/2020	country_exposure	USA # GISAID
 Iceland/195/2020	division_exposure	USA # GISAID
+Iceland/198/2020	country_exposure	Austria # GISAID
 Iceland/198/2020	division_exposure	Austria # GISAID
+Iceland/199/2020	country_exposure	Austria # GISAID
 Iceland/199/2020	division_exposure	Austria # GISAID
+Iceland/200/2020	country_exposure	Austria # GISAID
 Iceland/200/2020	division_exposure	Austria # GISAID
-Iceland/203/2020	division_exposure	UK # GISAID
+Iceland/203/2020	country_exposure	United Kingdom # GISAID
+Iceland/203/2020	division_exposure	United Kingdom # GISAID
+Iceland/209/2020	country_exposure	Austria # GISAID
 Iceland/209/2020	division_exposure	Austria # GISAID
+Iceland/210/2020	country_exposure	Italy # GISAID
 Iceland/210/2020	division_exposure	Italy # GISAID
-Iceland/214/2020	division_exposure	UK # GISAID
+Iceland/214/2020	country_exposure	United Kingdom # GISAID
+Iceland/214/2020	division_exposure	United Kingdom # GISAID
+Iceland/215/2020	country_exposure	Austria # GISAID
 Iceland/215/2020	division_exposure	Austria # GISAID
+Iceland/216/2020	country_exposure	Austria # GISAID
 Iceland/216/2020	division_exposure	Austria # GISAID
+Iceland/218/2020	country_exposure	Austria # GISAID
 Iceland/218/2020	division_exposure	Austria # GISAID
+Iceland/222/2020	country_exposure	Austria # GISAID
 Iceland/222/2020	division_exposure	Austria # GISAID
+Iceland/225/2020	country_exposure	Spain # GISAID
 Iceland/225/2020	division_exposure	Spain # GISAID
-Iceland/226/2020	division_exposure	UK # GISAID
-Iceland/233/2020	division_exposure	UK # GISAID
+Iceland/226/2020	country_exposure	United Kingdom # GISAID
+Iceland/226/2020	division_exposure	United Kingdom # GISAID
+Iceland/233/2020	country_exposure	United Kingdom # GISAID
+Iceland/233/2020	division_exposure	United Kingdom # GISAID
+Iceland/234/2020	country_exposure	Netherlands # GISAID
 Iceland/234/2020	division_exposure	Netherlands # GISAID
-Iceland/235/2020	division_exposure	UK # GISAID
+Iceland/235/2020	country_exposure	United Kingdom # GISAID
+Iceland/235/2020	division_exposure	United Kingdom # GISAID
+Iceland/237/2020	country_exposure	Spain # GISAID
 Iceland/237/2020	division_exposure	Grand Canary Islands # GISAID
-Iceland/239/2020	division_exposure	UK # GISAID
-Iceland/242/2020	division_exposure	UK # GISAID
+Iceland/239/2020	country_exposure	United Kingdom # GISAID
+Iceland/239/2020	division_exposure	United Kingdom # GISAID
+Iceland/242/2020	country_exposure	United Kingdom # GISAID
+Iceland/242/2020	division_exposure	United Kingdom # GISAID
+Iceland/246/2020	country_exposure	Spain # GISAID
 Iceland/246/2020	division_exposure	Spain # GISAID
-Iceland/248/2020	division_exposure	UK # GISAID
+Iceland/248/2020	country_exposure	United Kingdom # GISAID
+Iceland/248/2020	division_exposure	United Kingdom # GISAID
+Iceland/253/2020	country_exposure	Austria # GISAID
 Iceland/253/2020	division_exposure	Austria # GISAID
+Iceland/254/2020	country_exposure	Austria # GISAID
 Iceland/254/2020	division_exposure	Austria # GISAID
-Iceland/256/2020	division_exposure	UK # GISAID
-Iceland/257/2020	division_exposure	UK # GISAID
+Iceland/256/2020	country_exposure	United Kingdom # GISAID
+Iceland/256/2020	division_exposure	United Kingdom # GISAID
+Iceland/257/2020	country_exposure	United Kingdom # GISAID
+Iceland/257/2020	division_exposure	United Kingdom # GISAID
+Iceland/259/2020	country_exposure	USA # GISAID
 Iceland/259/2020	division_exposure	USA # GISAID
+Iceland/261/2020	country_exposure	Spain # GISAID
 Iceland/261/2020	division_exposure	Spain # GISAID
+Iceland/263/2020	country_exposure	Netherlands # GISAID
 Iceland/263/2020	division_exposure	Netherlands # GISAID
+Iceland/265/2020	country_exposure	Switzerland # GISAID
 Iceland/265/2020	division_exposure	Switzerland # GISAID
+Iceland/266/2020	country_exposure	Austria # GISAID
 Iceland/266/2020	division_exposure	Austria # GISAID
-Iceland/267/2020	division_exposure	UK # GISAID
+Iceland/267/2020	country_exposure	United Kingdom # GISAID
+Iceland/267/2020	division_exposure	United Kingdom # GISAID
+Iceland/281/2020	country_exposure	Spain # GISAID
 Iceland/281/2020	division_exposure	Spain # GISAID
+Iceland/282/2020	country_exposure	Austria # GISAID
 Iceland/282/2020	division_exposure	Austria # GISAID
+Iceland/287/2020	country_exposure	USA # GISAID
 Iceland/287/2020	division_exposure	USA # GISAID
+Iceland/288/2020	country_exposure	USA # GISAID
 Iceland/288/2020	division_exposure	USA # GISAID
+Iceland/289/2020	country_exposure	Austria # GISAID
 Iceland/289/2020	division_exposure	Austria # GISAID
+Iceland/293/2020	country_exposure	Austria # GISAID
 Iceland/293/2020	division_exposure	Austria # GISAID
+Iceland/308/2020	country_exposure	France # GISAID
 Iceland/308/2020	division_exposure	France # GISAID
+Iceland/312/2020	country_exposure	Austria # GISAID
 Iceland/312/2020	division_exposure	Austria # GISAID
+Iceland/313/2020	country_exposure	Austria # GISAID
 Iceland/313/2020	division_exposure	Austria # GISAID
+Iceland/314/2020	country_exposure	Austria # GISAID
 Iceland/314/2020	division_exposure	Austria # GISAID
+Iceland/318/2020	country_exposure	Croatia # GISAID
 Iceland/318/2020	division_exposure	Croatia # GISAID
+Iceland/319/2020	country_exposure	Spain # GISAID
 Iceland/319/2020	division_exposure	Spain # GISAID
+Iceland/325/2020	country_exposure	Austria # GISAID
 Iceland/325/2020	division_exposure	Austria # GISAID
+Iceland/328/2020	country_exposure	Germany # GISAID
 Iceland/328/2020	division_exposure	Germany # GISAID
+Iceland/333/2020	country_exposure	Germany # GISAID
 Iceland/333/2020	division_exposure	Germany # GISAID
-Iceland/334/2020	division_exposure	UK # GISAID
+Iceland/334/2020	country_exposure	United Kingdom # GISAID
+Iceland/334/2020	division_exposure	United Kingdom # GISAID
+Iceland/336/2020	country_exposure	USA # GISAID
 Iceland/336/2020	division_exposure	USA # GISAID
-Iceland/337/2020	division_exposure	UK # GISAID
+Iceland/337/2020	country_exposure	United Kingdom # GISAID
+Iceland/337/2020	division_exposure	United Kingdom # GISAID
+Iceland/338/2020	country_exposure	Austria # GISAID
 Iceland/338/2020	division_exposure	Austria # GISAID
+Iceland/LUH-01/2020	country_exposure	Netherlands
 Iceland/LUH-01/2020	division_exposure	Netherlands
+India/1-27/2020	country_exposure	China # GISAID
 India/1-27/2020	division_exposure	China # GISAID
+India/1-31/2020	country_exposure	China # GISAID
 India/1-31/2020	division_exposure	China # GISAID
 Italy/CDG1/2020	division	Lombardy
+Italy/INMI1-cs/2020	country_exposure	China # GISAID - Chinese tourist from Hubei
 Italy/INMI1-cs/2020	date	2020-01-29
 Italy/INMI1-cs/2020	division	Lazio
 Italy/INMI1-cs/2020	division_exposure	Hubei # GISAID - Chinese tourist from Hubei
 Italy/INMI1-cs/2020	location	Rome
+Italy/INMI1-isl/2020	country_exposure	China # GISAID - Chinese tourist from Hubei
 Italy/INMI1-isl/2020	division	Lazio
 Italy/INMI1-isl/2020	division_exposure	Hubei # GISAID - Chinese tourist from Hubei
 Italy/INMI1-isl/2020	location	Rome
@@ -469,6 +689,7 @@ Japan/TY-WK-501/2020	genbank_accession	LC522974
 Japan/TY-WK-501/2020	location	Tokyo
 Japan/TY-WK-521/2020	genbank_accession	LC522975
 Japan/TY-WK-521/2020	location	Tokyo
+Jingzhou/HBCDC-HB-01/2020	country_exposure	China # GISAID
 Jingzhou/HBCDC-HB-01/2020	division_exposure	Hubei # GISAID
 Kuwait/KU09/2020	division	Kuwait
 Kuwait/KU09/2020	location	Dasman
@@ -479,9 +700,11 @@ Kuwait/KU17/2020	location	Dasman
 Kuwait/KU18/2020	division	Kuwait
 Kuwait/KU18/2020	location	Dasman
 Luxembourg/Lux1/2020	division	Luxembourg
+Mexico/CDMX-InDRE_01/2020	country_exposure	Italy # GISAID
 Mexico/CDMX-InDRE_01/2020	division_exposure	Lombardy # GISAID
 NanChang/JX216/2020	division	Jiangxi
 nCoV-19/USA/UPHL-03/2020	strain	USA/UPHL-03/2020
+Nepal/61/2020	country_exposure	China # ?
 Nepal/61/2020	division_exposure	Hubei # ?
 Nepal/61/2020	genbank_accession	MT072688
 Nepal/61/2020	location	Kathmandu
@@ -673,16 +896,22 @@ NetherlandsL/Houten_1363498/2020	division	Utrecht
 NetherlandsL/Houten_1363498/2020	division	Utrecht
 NetherlandsL/Houten_1363498/2020	location	Houten
 NetherlandsL/Houten_1363498/2020	location	Houten
+NewZealand/01/2020	country_exposure	Iran # GISAID
 NewZealand/01/2020	division_exposure	Iran # GISAID
 NewZealand/01/2020	location	Auckland
+Nigeria/Lagos01/2020	country_exposure	Italy # GISAID
 Nigeria/Lagos01/2020	division_exposure	Italy # GISAID
+Nonthaburi/61/2020	country_exposure	China # GISAID
 Nonthaburi/61/2020	division_exposure	Hubei # GISAID
 Nonthaburi/61/2020	location	Bangkok
+Nonthaburi/74/2020	country_exposure	China # GISAID
 Nonthaburi/74/2020	division_exposure	Hubei # GISAID
 Nonthaburi/74/2020	location	Bangkok
+Pakistan/Gilgit1/2020	country_exposure	Iran # GISAID - travel history to Iran, returned to Pakistan 5d before sample
 Pakistan/Gilgit1/2020	division	Gilgit Baltistan
-Pakistan/Gilgit1/2020	division_exposure	Iran # GISAID - travel history to Iran, returned to Pakistan 5 d before sample
+Pakistan/Gilgit1/2020	division_exposure	Iran # GISAID - travel history to Iran, returned to Pakistan 5d before sample
 Pakistan/Gilgit1/2020	location	Gilgit
+Panama/328677/2020	country_exposure	Spain
 Panama/328677/2020	division	Panama City
 Panama/328677/2020	division_exposure	Comunitat Valenciana
 Portugal/CV62/2020	division	Portugal
@@ -705,6 +934,7 @@ Shenzhen/SZTH-001/2020	division	Guangdong
 Shenzhen/SZTH-002/2020	division	Guangdong
 Shenzhen/SZTH-003/2020	division	Guangdong
 Shenzhen/SZTH-004/2020	division	Guangdong
+Singapore/1/2020	country_exposure	China # GISAID
 Singapore/1/2020	division	Singapore
 Singapore/1/2020	division_exposure	Hubei # GISAID
 Singapore/1/2020	location	Singapore
@@ -712,6 +942,7 @@ Singapore/2/2020	division	Singapore
 Singapore/2/2020	location	Singapore
 Singapore/3/2020	division	Singapore
 Singapore/3/2020	location	Singapore
+Singapore/4/2020	country_exposure	China # ?
 Singapore/4/2020	division	Singapore
 Singapore/4/2020	division_exposure	Hubei # ?
 Singapore/4/2020	location	Singapore
@@ -735,6 +966,7 @@ Singapore/13/2020	division	Singapore
 Singapore/13/2020	location	Singapore
 Singapore/14/2020	division	Singapore
 Singapore/14/2020	location	Singapore
+Slovakia/SK-BMC5/2020	country_exposure	France # GISAID - Travel history to Paris, France
 Slovakia/SK-BMC5/2020	division_exposure	Ile de France # GISAID - Travel history to Paris, France
 SouthAfrica/R03006-20/2020	division	KwaZulu-Natal
 SouthKorea/KCDC03/2020	country	South Korea
@@ -761,6 +993,7 @@ SouthKorea/KUMC05/2020	country	South Korea
 SouthKorea/KUMC05/2020	division	South Korea
 SouthKorea/KUMC06/2020	country	South Korea
 SouthKorea/KUMC06/2020	division	South Korea
+SouthKorea/SNU01/2020	country_exposure	France # GISAID
 SouthKorea/SNU01/2020	date	2020-01-XX
 SouthKorea/SNU01/2020	division	South Korea
 SouthKorea/SNU01/2020	division_exposure	Hubei # GISAID
@@ -778,7 +1011,9 @@ Spain/Valencia10/2020	division	Comunitat Valenciana
 Sweden/01/2020	division	Småland
 Sweden/01/2020	genbank_accession	MT093571
 Sweden/01/2020	location	Jönköping
+Switzerland/1000477796/2020	country_exposure	Italy # received from submitters
 Switzerland/1000477796/2020	division_exposure	Lombardy # received from submitters
+Switzerland/1000477797/2020	country_exposure	Italy # received from submitters
 Switzerland/1000477797/2020	division_exposure	Lombardy # received from submitters
 Switzerland/AG0361/2020	division	Aargau
 Switzerland/AG7120/2020	division	Aargau #assumed from name
@@ -789,11 +1024,13 @@ Switzerland/GE0199(2020	division	Geneva #assumed from name
 Switzerland/GE0199/2020	division	Geneva #assumed from name
 Switzerland/GE1402/2020	division	Geneva #assumed from name
 Switzerland/GE1422/2020	division	Geneva #assumed from name
+Switzerland/GE3895/2020	country_exposure	Italy # received from submitters
 Switzerland/GE3895/2020	division_exposure	Lombardy # received from submitters
 Switzerland/GE4135/2020	division	Geneva #assumed from name
 Switzerland/GE4984/2020	division	Geneva #assumed from name
 Switzerland/GE6679/2020	division	Geneva #assumed from name
 Switzerland/GE8102/2020	division	Geneva #assumed from name
+Switzerland/GE9586/2020	country_exposure	Italy # received from submitters
 Switzerland/GE9586/2020	division_exposure	Lombardy # received from submitters
 Switzerland/GE062072020	division	Geneva #assumed from name
 Switzerland/GR2988/2020	division	Graubünden #assumed from name
@@ -802,6 +1039,7 @@ Switzerland/SZ1417/2020	division	Schwyz #assumed from name
 Switzerland/TI2045/2020	division	Ticino #assumed from name
 Switzerland/TI9486/2020	division	Ticino
 Switzerland/VD0503/2020	division	Geneva
+Sydney/2/2020	country_exposure	China # ?
 Sydney/2/2020	division_exposure	Hubei # ?
 Taiwan/2/2020	division	Taiwan
 Taiwan/2/2020	location	Kaohsiung
@@ -811,16 +1049,19 @@ Taiwan/4/2020	division	Taiwan
 Taiwan/4/2020	location	Taipei
 Taiwan/CGMH-CGU-01/2020	division	Taiwan
 Taiwan/CGMH-CGU-01/2020	location	Taoyuan
+Taiwan/NTU01/2020	country_exposure	China # GISAID
 Taiwan/NTU01/2020	division	Taiwan
 Taiwan/NTU01/2020	division_exposure	Hubei # GISAID
 Taiwan/NTU01/2020	genbank_accession	MT066175
 Taiwan/NTU01/2020	location	Taipei
+Taiwan/NTU02/2020	country_exposure	China # GISAID "part time worker in Wuhan"
 Taiwan/NTU02/2020	division	Taiwan
 Taiwan/NTU02/2020	division_exposure	Hubei # GISAID "part time worker in Wuhan"
 Taiwan/NTU02/2020	genbank_accession	MT066176
 Taiwan/NTU02/2020	location	Taipei
 Taiwan/NTU03/2020	division	Taiwan
 Taiwan/NTU03/2020	location	Taipei 
+USA/AZ1/2020	country_exposure	China # ?
 USA/AZ1/2020	division_exposure	Hubei # ?
 USA/AZ1/2020	genbank_accession	MN997409
 USA/CA-CDPH-UC1/2020	date	2020-02-26
@@ -831,16 +1072,21 @@ USA/CA-CDPH-UC7/2020	division	Grand Princess # from GISAID
 USA/CA-CDPH-UC8/2020	division	Grand Princess # from GISAID
 USA/CA-CDPH-UC9/2020	division	Grand Princess # from GISAID
 USA/CA-PC101P/2020	genbank_accession	MT192765
+USA/CA1/2020	country_exposure	China # ?
 USA/CA1/2020	division_exposure	Hubei # ?
 USA/CA1/2020	genbank_accession	MN994467
+USA/CA2/2020	country_exposure	China # ?
 USA/CA2/2020	division_exposure	Hubei # ?
 USA/CA2/2020	genbank_accession	MN994468
 USA/CA3/2020	genbank_accession	MT027062
 USA/CA4/2020	genbank_accession	MT027063
+USA/CA5/2020	country_exposure	China # ?
 USA/CA5/2020	division_exposure	Hubei # ?
 USA/CA5/2020	genbank_accession	MT027064
+USA/CA6/2020	country_exposure	China
 USA/CA6/2020	division_exposure	Hubei
 USA/CA6/2020	genbank_accession	MT044258
+USA/CA7/2020	country_exposure	China # ?
 USA/CA7/2020	division_exposure	Hubei # ?
 USA/CA7/2020	genbank_accession	MT106052
 USA/CA8/2020	genbank_accession	MT106053
@@ -873,16 +1119,21 @@ USA/CruiseA-23/2020	division	Diamond Princess
 USA/CruiseA-24/2020	division	Diamond Princess
 USA/CruiseA-25/2020	division	Diamond Princess
 USA/CruiseA-26/2020	division	Diamond Princess
+USA/IL1/2020	country_exposure	China # ?
 USA/IL1/2020	division_exposure	Hubei # ?
 USA/IL1/2020	genbank_accession	MN988713
+USA/IL2/2020	country_exposure	China # ?
 USA/IL2/2020	division_exposure	Hubei # ?
 USA/IL2/2020	genbank_accession	MT044257
+USA/MA1/2020	country_exposure	China # ?
 USA/MA1/2020	division_exposure	Hubei # ?
 USA/MA1/2020	genbank_accession	MT039888
 USA/MA1/2020	location	Boston
+USA/MN1-MDH1/2020	country_exposure	USA # exposure on Grand Princess https://minnesota.cbslocal.com/2020/03/09/we-can-survive-this-minnesotan-couple-on-grand-princess-cruise-ship-speaks-about-coronavirus-outbreak/
 USA/MN1-MDH1/2020	division_exposure	Grand Princess # exposure on Grand Princess https://minnesota.cbslocal.com/2020/03/09/we-can-survive-this-minnesotan-couple-on-grand-princess-cruise-ship-speaks-about-coronavirus-outbreak/
 USA/MN1-MDH1/2020	genbank_accession	MT188341
 USA/MN2-MDH2/2020	genbank_accession	MT188340
+USA/MN3-MDH3/2020	country_exposure	USA # exposure on Grand Princess https://minnesota.cbslocal.com/2020/03/09/we-can-survive-this-minnesotan-couple-on-grand-princess-cruise-ship-speaks-about-coronavirus-outbreak/
 USA/MN3-MDH3/2020	division_exposure	Grand Princess # exposure on Grand Princess https://minnesota.cbslocal.com/2020/03/09/we-can-survive-this-minnesotan-couple-on-grand-princess-cruise-ship-speaks-about-coronavirus-outbreak/
 USA/MN3-MDH3/2020	genbank_accession	MT188339
 USA/NY-NYUMC1/2020	country	USA
@@ -892,12 +1143,17 @@ USA/NY-NYUMC1/2020	region	North America
 USA/NY-NYUMC2/2020	division	New York
 USA/NY-NYUMC3/2020	division	New York
 USA/NY-NYUMC4/2020	division	New York
+USA/NY1-PV08001/2020	country_exposure	Iran # GISAID
 USA/NY1-PV08001/2020	division_exposure	Iran # GISAID
+USA/TX1/2020	country_exposure	China # ?
 USA/TX1/2020	division_exposure	Hubei # ?
 USA/TX1/2020	genbank_accession	MT106054
 USA/UC-CDPH-UC11/2020	division	Grand Princess # from GISAID
+USA/UPHL-01/2020	country_exposure	Japan # duncan
 USA/UPHL-01/2020	division_exposure	Diamond Princess # duncan
+USA/UPHL-03/2020	country_exposure	USA # duncan
 USA/UPHL-03/2020	division_exposure	Grand Princess # duncan
+USA/UPHL-04/2020	country_exposure	USA # duncan
 USA/UPHL-04/2020	division_exposure	Grand Princess # duncan
 USA/WA-UW22/2020	location	King County
 USA/WA-UW23/2020	location	Pierce County
@@ -925,9 +1181,11 @@ USA/WA-UW138/2020	division	Washington
 USA/WA-UW144/2020	division	Washington
 USA/WA1-A12/2020	genbank_accession	MT020880
 USA/WA1-F6/2020	genbank_accession	MT020881
+USA/WA1/2020	country_exposure	China # ?
 USA/WA1/2020	division_exposure	Hubei # ?
 USA/WA1/2020	genbank_accession	MN985325
 USA/WA1/2020	location	Snohomish County
+USA/WA3-UW1/2020	country_exposure	South Korea # shared with Trevor
 USA/WA3-UW1/2020	division_exposure	South Korea # shared with Trevor
 USA/WA3-UW1/2020	genbank_accession	MT163716
 USA/WA4-UW2/2020	genbank_accession	MT163717
@@ -953,6 +1211,7 @@ USA/WI-21/2020	location	Dane County
 USA/WI-22/2020	location	Dane County
 USA/WI-23/2020	location	Dane County
 USA/WI-24/2020	location	Dane County
+USA/WI1/2020	country_exposure	China # ?
 USA/WI1/2020	division_exposure	Hubei # ?
 USA/WI1/2020	genbank_accession	MT039887
 USA/WI2/2020	division	Wisconsin
@@ -966,6 +1225,7 @@ Vietnam/CM296/2020	division	Red River Delta
 Vietnam/CM296/2020	location	Hanoi
 Vietnam/CM296/2020	location	Hanoi
 Vietnam/CM296/2020 	division	Red River Delta
+Vietnam/VR03-38142/2020	country_exposure	China # ?
 Vietnam/VR03-38142/2020	division_exposure	Hubei # ?
 Wales/PHW04/2020	host	Human # fix casing
 Wuhan-Hu-1/2019	date	2019-12-26
