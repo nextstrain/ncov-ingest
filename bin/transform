@@ -125,6 +125,8 @@ def parse_authors(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     gisaid_data['authors'] = gisaid_data['authors'].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
     # Strip to string before first comma
     gisaid_data['authors'] = gisaid_data['authors'].str.replace(r"^([^,]+),.+", lambda m: m.group(1))
+    # Strip to string before first semicolon
+    gisaid_data['authors'] = gisaid_data['authors'].str.replace(r"^([^;]+);.+", lambda m: m.group(1))
     # Convert this string to last name
     gisaid_data['authors'] = gisaid_data['authors'].str.replace(r" [A-Z]\.? ", ' ')
     gisaid_data['authors'] = gisaid_data['authors'].str.replace(r"^[A-Z][a-z]+\-?[A-Z]?[a-z]* ([A-Z][a-z]+) *$", lambda m: m.group(1))
