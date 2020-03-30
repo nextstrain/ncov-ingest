@@ -21,12 +21,11 @@ jobs:
         python3 -m pip install pipenv
         pipenv sync
         pipenv run ./bin/ingest
-
-env:
-  AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
-  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  GISAID_API_ENDPOINT: ${{ secrets.GISAID_API_ENDPOINT }}
-  GISAID_USERNAME_AND_PASSWORD: ${{ secrets.GISAID_USERNAME_AND_PASSWORD }}
-  SLACK_INCOMING_WEBHOOK: ${{ secrets.SLACK_INCOMING_WEBHOOK }}
-  SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+      env:
+        AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        GISAID_API_ENDPOINT: ${{ secrets.GISAID_API_ENDPOINT }}
+        GISAID_USERNAME_AND_PASSWORD: ${{ secrets.GISAID_USERNAME_AND_PASSWORD }}
+        SLACK_INCOMING_WEBHOOK: ${{ secrets.SLACK_INCOMING_WEBHOOK }}
+        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
