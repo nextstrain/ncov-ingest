@@ -1,0 +1,64 @@
+#!/bin/bash
+set -euo pipefail
+
+: "${S3_SRC:=s3://nextstrain-ncov-private}"
+: "${S3_DST:=$S3_SRC}"
+
+# Determine where to save data files based on if we're running as a result of a
+# push to master or to another branch (or locally, outside of the GitHub
+# workflow).  Files are always compared to the default/primary paths in the
+# source S3 bucket.
+#
+silent=
+branch=
+
+case "${GITHUB_REF:-}" in
+    refs/heads/master)
+        # Do nothing different; defaults above are good.
+        branch=master
+        ;;
+    refs/heads/*)
+        # Save data files under a per-branch prefix
+        silent=yes
+        branch="${GITHUB_REF##refs/heads/}"
+        S3_DST="$S3_DST/branch/$branch"
+        ;;
+    "")
+        # Save data files under a tmp prefix
+        silent=yes
+        S3_DST="$S3_DST/tmp"
+        ;;
+    *)
+        echo "Skipping ingest for ref $GITHUB_REF"
+        exit 0
+        ;;
+esac
+
+echo "S3_SRC is $S3_SRC"
+echo "S3_DST is $S3_DST"
+
+cd "$(dirname "$0")/.."
+
+set -x
+
+./bin/fetch-from-gisaid > data/gisaid.ndjson
+if [[ "$branch" == master ]]; then
+    ./bin/notify-on-gisaid-change data/gisaid.ndjson "$S3_SRC/gisaid.ndjson"
+fi
+./bin/upload-to-s3 --quiet data/gisaid.ndjson "$S3_DST/gisaid.ndjson"
+
+./bin/transform data/gisaid.ndjson \
+  --output-metadata data/metadata.tsv \
+  --output-fasta data/sequences.fasta
+
+if [[ "$branch" == master ]]; then
+    ./bin/notify-on-metadata-change data/metadata.tsv "$S3_SRC/metadata.tsv"
+    ./bin/notify-on-additional-info-change data/additional_info.tsv "$S3_SRC/additional_info.tsv"
+
+    ./bin/rebuild-staging data/metadata.tsv "$S3_SRC/metadata.tsv" \
+      data/sequences.fasta "$S3_SRC/sequences.fasta"
+fi
+
+./bin/upload-to-s3 ${silent:+--quiet} data/metadata.tsv "$S3_DST/metadata.tsv"
+./bin/upload-to-s3 ${silent:+--quiet} data/additional_info.tsv "$S3_DST/additional_info.tsv"
+./bin/upload-to-s3 ${silent:+--quiet} data/sequences.fasta "$S3_DST/sequences.fasta"

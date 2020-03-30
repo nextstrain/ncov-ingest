@@ -1,6 +1,8 @@
 # nCoV Ingestion Pipeline
 
 ## Running locally
+If you're using Pipenv (see below), then run commands from `./bin/…` inside a `pipenv shell` or wrapped with `pipenv run ./bin/…`.
+
 1. Run `./bin/fetch-from-gisaid > data/gisaid.ndjson`
 2. Run `./bin/transform data/gisaid.ndjson`
 3. Look at `data/sequences.fasta` and `data/metadata.tsv`
@@ -21,7 +23,9 @@ A common pattern is expected to be:
  4. Push changes to `master` and re-download `metadata.tsv`.
 
 ## Required dependencies
-Install the required dependencies using the exported `environment.yml` file.
+Run `pipenv sync` to setup an isolated Python 3.6 environment using the pinned dependencies.
+
+If you don't have Pipenv, [install it](https://pipenv.pypa.io/en/latest/install/#installing-pipenv) first with `brew install pipenv` or `python3 -m pip install pipenv`.
 
 ## Required environment variables
 * `GISAID_API_ENDPOINT`

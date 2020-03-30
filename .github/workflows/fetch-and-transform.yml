@@ -2,8 +2,6 @@ name: Ingest 2019-nCov/SARS-CoV-2 data from GISAID for nextstrain.org/ncov
 
 on:
   push:
-    branches:
-      - master
   schedule:
     # * is a special character in YAML so you have to quote this string
     - cron:  '*/30 * * * *'
@@ -15,37 +13,16 @@ jobs:
     - uses: actions/checkout@v1
     - name: ingest
       run: |
-        python3 -m pip install --upgrade pip setuptools
-        python3 -m pip install -r requirements.txt
-
         PATH="$HOME/.local/bin:$PATH"
-
-        S3_BUCKET="s3://nextstrain-ncov-private"
-
-        ./bin/fetch-from-gisaid > data/gisaid.ndjson
-        ./bin/notify-on-gisaid-change data/gisaid.ndjson "$S3_BUCKET/gisaid.ndjson"
-        ./bin/upload-to-s3 data/gisaid.ndjson "$S3_BUCKET/gisaid.ndjson" --quiet
-
-        ./bin/transform data/gisaid.ndjson \
-          --output-metadata data/metadata.tsv \
-          --output-fasta data/sequences.fasta
-
-        ./bin/notify-on-metadata-change data/metadata.tsv "$S3_BUCKET/metadata.tsv"
-        ./bin/notify-on-additional-info-change data/additional_info.tsv "$S3_BUCKET/additional_info.tsv"
-
-        ./bin/rebuild-staging data/metadata.tsv "$S3_BUCKET/metadata.tsv" \
-          data/sequences.fasta "$S3_BUCKET/sequences.fasta"
-
-        ./bin/upload-to-s3 data/metadata.tsv "$S3_BUCKET/metadata.tsv"
-        ./bin/upload-to-s3 data/additional_info.tsv "$S3_BUCKET/additional_info.tsv"
-        ./bin/upload-to-s3 data/sequences.fasta "$S3_BUCKET/sequences.fasta"
-
-
-env:
-  AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
-  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  GISAID_API_ENDPOINT: ${{ secrets.GISAID_API_ENDPOINT }}
-  GISAID_USERNAME_AND_PASSWORD: ${{ secrets.GISAID_USERNAME_AND_PASSWORD }}
-  SLACK_INCOMING_WEBHOOK: ${{ secrets.SLACK_INCOMING_WEBHOOK }}
-  SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        python3 -m pip install --upgrade pip setuptools
+        python3 -m pip install pipenv
+        pipenv sync
+        pipenv run ./bin/ingest
+      env:
+        AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        GISAID_API_ENDPOINT: ${{ secrets.GISAID_API_ENDPOINT }}
+        GISAID_USERNAME_AND_PASSWORD: ${{ secrets.GISAID_USERNAME_AND_PASSWORD }}
+        SLACK_INCOMING_WEBHOOK: ${{ secrets.SLACK_INCOMING_WEBHOOK }}
+        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}

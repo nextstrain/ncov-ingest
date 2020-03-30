@@ -3,9 +3,6 @@ set -euo pipefail
 
 bin="$(dirname "$0")"
 
-src="${1:?A source file is required as the first argument.}"
-dst="${2:?A destination s3:// URL is required as the second argument.}"
-
 main() {
     local quiet=0
 
@@ -14,18 +11,23 @@ main() {
             --quiet)
                 quiet=1
                 shift;;
+            *)
+                break;;
         esac
     done
 
-    src_hash="$("$bin/sha256sum" < "$src")"
-    dst_hash="$("$bin/sha256sum" < <(aws s3 cp "$dst" -))"
+    local src="${1:?A source file is required as the first argument.}"
+    local dst="${2:?A destination s3:// URL is required as the second argument.}"
+
+    local src_hash="$("$bin/sha256sum" < "$src")"
+    local dst_hash="$("$bin/sha256sum" < <(aws s3 cp --no-progress "$dst" -))"
 
     echo "$src_hash $src"
     echo "$dst_hash $dst"
 
     if [[ $src_hash != $dst_hash ]]; then
         echo "Uploading $src → $dst"
-        aws s3 cp "$src" "$dst"
+        aws s3 cp --no-progress "$src" "$dst"
 
         if [[ $quiet == 1 ]]; then
             echo "Quiet mode. No Slack notification sent."

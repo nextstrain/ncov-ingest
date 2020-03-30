@@ -14,7 +14,7 @@ sequences_dst="${4:?A destination sequences fasta s3:// URL is required as the s
 # Returns 1 if both files match (have identical hashes). Else returns 0.
 hashes_match() {
     src_hash="$("$bin/sha256sum" < "$1")"
-    dst_hash="$("$bin/sha256sum" < <(aws s3 cp "$2" -))"
+    dst_hash="$("$bin/sha256sum" < <(aws s3 cp --no-progress "$2" -))"
 
     if [[ $src_hash = $dst_hash ]]; then
         echo 1
