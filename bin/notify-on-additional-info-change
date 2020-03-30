@@ -12,7 +12,7 @@ dst="${2:?A destination additional info TSV s3:// URL is required as the second 
 # Compare the S3 version with the local version.
 diff="$(
     csv-diff \
-        <(awk 'BEGIN {FS="\t"}; { if ($3 != "" || $4 != "") { print }}' <(aws s3 cp "$dst" -)) \
+        <(awk 'BEGIN {FS="\t"}; { if ($3 != "" || $4 != "") { print }}' <(aws s3 cp --no-progress "$dst" -)) \
         <(awk 'BEGIN {FS="\t"}; { if ($3 != "" || $4 != "") { print }}' "$src") \
         --format tsv \
         --key gisaid_epi_isl \
