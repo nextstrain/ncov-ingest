@@ -7,7 +7,7 @@ cd "$(dirname "$0")/.."
 
 ./bin/fetch-from-gisaid > data/gisaid.ndjson
 ./bin/notify-on-gisaid-change data/gisaid.ndjson "$S3_BUCKET/gisaid.ndjson"
-./bin/upload-to-s3 data/gisaid.ndjson "$S3_BUCKET/gisaid.ndjson" --quiet
+./bin/upload-to-s3 --quiet data/gisaid.ndjson "$S3_BUCKET/gisaid.ndjson"
 
 ./bin/transform data/gisaid.ndjson \
   --output-metadata data/metadata.tsv \
