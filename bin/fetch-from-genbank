@@ -1,0 +1,40 @@
+#!/usr/bin/env python3
+import pandas as pd
+from Bio import Entrez
+from os import environ
+from shutil import copyfileobj
+from sys import argv, exit, stdin, stdout, stderr
+
+Entrez.email = environ.get("NCBI_EMAIL", "hello@nextstrain.org")
+
+if not argv[1:]:
+    print(f"Reading metadata.tsv from stdin", file = stderr)
+    metadata_file = stdin
+
+elif len(argv[1:]) == 1:
+    print(f"Reading metadata.tsv from {argv[1]!r}", file = stderr)
+    metadata_file = argv[1]
+
+else:
+    print(f"usage: {__file__} [<metadata.tsv>]", file = stderr)
+    exit(1)
+
+metadata = pd.read_table(metadata_file)
+
+accessions = list(
+    metadata["genbank_accession"]
+        .replace("?", pd.NA)
+        .dropna()
+        .drop_duplicates()
+)
+
+print(f"Fetching {len(accessions):,} accessions from GenBank", file = stderr)
+
+sequences = Entrez.efetch(
+    db = "nucleotide",
+    id = accessions,
+    rettype = "fasta",
+    retmode = "text",
+)
+
+copyfileobj(sequences, stdout)
