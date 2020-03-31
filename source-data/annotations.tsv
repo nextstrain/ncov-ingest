@@ -1,18 +1,18 @@
 # A lot of the Wisconsin genomes had location "Dane" or "Dane county" instead of "Dane County"
-# Australia/NSW14/2020	is a close contact of Australia/NSW05/2020 and suspected direct transmission	
-# Brazil/SPBR-03/2020	division_exposure # GISAID lists as: Austria, Germany, Italy, Spain	
-# Brazil/SPBR-06/2020 & Brazil/SPBR-05/2020 # GISAID contact of SPBR-01		
-# Canada/BC_83109/2020	# contact of a Canada case, no travel history	
-# Canada/BC_83163/2020	# contact of a Canada case, no travel history	
+# Australia/NSW14/2020	is a close contact of Australia/NSW05/2020 and suspected direct transmission
+# Brazil/SPBR-03/2020	division_exposure # GISAID lists as: Austria, Germany, Italy, Spain
+# Brazil/SPBR-06/2020 & Brazil/SPBR-05/2020 # GISAID contact of SPBR-01
+# Canada/BC_83109/2020	# contact of a Canada case, no travel history
+# Canada/BC_83163/2020	# contact of a Canada case, no travel history
 # Japan/TK/20-31-3/2020	division_exposure	Diamond Princess # GISAID
-# Panama/328677 data via email from Alexander Martinez (who did the sequencing)	
+# Panama/328677 data via email from Alexander Martinez (who did the sequencing)
 # Slovakia/SK-BMC1/2020 contact with a confirmed COVID-19 case with travel history to Italy - GISAID
 # Slovakia/SK-BMC2/2020 contact with a confirmed COVID-19 case in Austria, travel history also to Prague, Czech Republic
 # Slovakia/SK-BMC6/2020 Recognized in Martin, Slovakia but residence in Prague, Czech Republic, travel history to Austria - GISAID
 # strain	key	value
 # Switzerland/1000477806/2020	division_exposure	no travel history but open-plan office with someone who visited Lombardy & tested positive (from submitters)
-# Taiwan/NTU03/2020 patient travelled to Dubai (1/29/2020-2/10/2020) and Egypt (2/11/2020-2/21/2020) (from GISAID)		
-# Taiwan/NTU03/2020 travel history from GISAID: Dubai (1/29-2/10 of 2020) and Egypt (2/11-2/21 of 2020) 		
+# Taiwan/NTU03/2020 patient travelled to Dubai (1/29/2020-2/10/2020) and Egypt (2/11/2020-2/21/2020) (from GISAID)
+# Taiwan/NTU03/2020 travel history from GISAID: Dubai (1/29-2/10 of 2020) and Egypt (2/11-2/21 of 2020)
 # USA/UPHL-05/2020 and USA/UPHL-06/2020 have Caribean cruise exposure - Jamaica & FLorida - duncan
 ## Kuwait samples have their division set to what should be the location
 #note UPHL-03 and -04 are same patient
@@ -107,9 +107,9 @@ Canada/ON-VIDO-01/2020	country_exposure	China # GISAID
 Canada/ON-VIDO-01/2020	division_exposure	Hubei # GISAID
 Canada/MB_10/2020	division	Manitoba
 Canada/MB_8/2020	division	Manitoba
-Canada/NB_6/2020	division	New Bruswick
+Canada/NB_6/2020	division	New Brunswick
 Canada/NS_13/2020	division	Nova Scotia
-Canada/SK_4/2020	division	Saskatchewan 
+Canada/SK_4/2020	division	Saskatchewan
 canine/HongKong/20-02756/2020	division	Hong Kong
 China/IQTC02/2020	division	Guangdong
 China/IQTC02/2020	location	Guangzhou
@@ -1249,7 +1249,7 @@ Taiwan/NTU02/2020	division_exposure	Hubei # GISAID "part time worker in Wuhan"
 Taiwan/NTU02/2020	genbank_accession	MT066176
 Taiwan/NTU02/2020	location	Taipei
 Taiwan/NTU03/2020	division	Taiwan
-Taiwan/NTU03/2020	location	Taipei 
+Taiwan/NTU03/2020	location	Taipei
 USA/AZ1/2020	country_exposure	China # ?
 USA/AZ1/2020	division_exposure	Hubei # ?
 USA/AZ1/2020	genbank_accession	MN997409
@@ -1451,4 +1451,3 @@ Wuhan/WIV07/2019	genbank_accession	MN996531
 Yunnan/IVDC-YN-003/2020	genbank_accession	MT049951
 Zhejiang/WZ-01/2020	location	Hangzhou
 Zhejiang/WZ-02/2020	location	Hangzhou
-
