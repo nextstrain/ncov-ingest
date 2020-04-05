@@ -11,9 +11,10 @@ import pandas as pd
 # Note: 'sequence' should NEVER appear in these lists!
 METADATA_COLUMNS = [  # Ordering of columns in the existing metadata.tsv in the ncov repo
     'strain', 'virus', 'gisaid_epi_isl', 'genbank_accession', 'date', 'region',
-    'country', 'division', 'location', 'country_exposure', 'division_exposure',
-    'segment', 'length', 'host', 'age', 'sex', 'originating_lab',
-    'submitting_lab', 'authors', 'url', 'title', 'date_submitted'
+    'country', 'division', 'location', 'region_exposure', 'country_exposure',
+    'division_exposure', 'segment', 'length', 'host', 'age', 'sex',
+    'originating_lab', 'submitting_lab', 'authors', 'url', 'title',
+    'date_submitted'
 ]
 
 # Preserve the ordering of these columns for ease when generating Slack
@@ -215,6 +216,12 @@ def update_metadata(curated_gisaid_data: pd.DataFrame) -> pd.DataFrame:
             if isinstance(value, str):
                 value = value.rstrip()
             curated_gisaid_data.loc[curated_gisaid_data['strain'] == strain, key] = value
+
+    # Set `region_exposure` equal to `region` if it wasn't added by annotations
+    if 'region_exposure' in curated_gisaid_data:
+        curated_gisaid_data['region_exposure'].fillna(curated_gisaid_data['region'], inplace=True)
+    else:
+        curated_gisaid_data['region_exposure'] = curated_gisaid_data['region']
 
     # Set `country_exposure` equal to `country` if it wasn't added by annotations
     if 'country_exposure' in curated_gisaid_data:
