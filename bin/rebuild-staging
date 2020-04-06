@@ -57,7 +57,7 @@ output=$(
         ncov deploy_to_staging \
         --config slack_webhook="$SLACK_INCOMING_WEBHOOK" \
         --cores "${NEXTSTRAIN_AWS_BATCH_CPUS:-4}" \
-        --snakefile Snakefile_Regions all_regions
+        --snakefile Snakefile_Regions
 )
 
 echo "$output"
