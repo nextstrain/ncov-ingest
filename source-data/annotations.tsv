@@ -4,6 +4,8 @@
 # Brazil/SPBR-06/2020 & Brazil/SPBR-05/2020 # GISAID contact of SPBR-01
 # Canada/BC_83109/2020	# contact of a Canada case, no travel history
 # Canada/BC_83163/2020	# contact of a Canada case, no travel history
+# India/777/2020 #indian contact of italian tourist (GISAID)
+# India/c32/2020 # Indian contact of Indian Patient having travel history to Italy (GISAID)
 # Japan/TK/20-31-3/2020	division_exposure	Diamond Princess # GISAID
 # Panama/328677 data via email from Alexander Martinez (who did the sequencing)
 # Slovakia/SK-BMC1/2020 contact with a confirmed COVID-19 case with travel history to Italy - GISAID
@@ -83,84 +85,84 @@ Austria/CeMM0007/2020	region_exposure	Europe # GISAID
 Austria/CeMM0015/2020	country_exposure	Germany # GISAID
 Austria/CeMM0015/2020	division_exposure	Germany # GISAID
 Austria/CeMM0015/2020	region_exposure	Europe # GISAID
-Belgium/AC-030982/2020	location	Saive
 Belgium/AC-030982/2020	division	Blegny
+Belgium/AC-030982/2020	location	Saive
 Belgium/AGR-0324174/2020	division	Belgium # division did not correspond to country
-Belgium/AKM-030670/2020	location	Winksele
 Belgium/AKM-030670/2020	division	Herent
-Belgium/BDW-030694/2020	location	Geluwe
+Belgium/AKM-030670/2020	location	Winksele
 Belgium/BDW-030694/2020	division	Wervik
+Belgium/BDW-030694/2020	location	Geluwe
 Belgium/BEG-0324149/2020	division	Colfontaine # Typo
-Belgium/BJ-0324192/2020	location	Koersel
 Belgium/BJ-0324192/2020	division	Beringen
+Belgium/BJ-0324192/2020	location	Koersel
 Belgium/BM-03012/2020	country_exposure	Italy # from GISAID, annotated as holiday in Italy
 Belgium/BM-03012/2020	division_exposure	Italy # from GISAID, annotated as holiday in Italy
 Belgium/BM-03012/2020	region_exposure	Europe # from GISAID, annotated as holiday in Italy
-Belgium/BS-0325183/2020	location	Kain
 Belgium/BS-0325183/2020	division	Tournai
-Belgium/CD-030679/2020	location	Bierset
+Belgium/BS-0325183/2020	location	Kain
 Belgium/CD-030679/2020	division	Liège
+Belgium/CD-030679/2020	location	Bierset
 Belgium/CJM-0323175/2020	division	Belgium # division did not correspond to country
-Belgium/CK-0324150/2020	location	Quevaucamps
 Belgium/CK-0324150/2020	division	Mouscron
-Belgium/DCB-0324163/2020	location	Forchies-la-marche
+Belgium/CK-0324150/2020	location	Quevaucamps
 Belgium/DCB-0324163/2020	division	Charleroi
-Belgium/DCS-0325158/2020	location	Montignies-Sur-Sambre
+Belgium/DCB-0324163/2020	location	Forchies-la-marche
 Belgium/DCS-0325158/2020	division	Charleroi
-Belgium/DD-030593/2020	location	Haulchin
+Belgium/DCS-0325158/2020	location	Montignies-Sur-Sambre
 Belgium/DD-030593/2020	division	Estinnes
-Belgium/DLDJ-030569/2020	location	Poppel
+Belgium/DD-030593/2020	location	Haulchin
 Belgium/DLDJ-030569/2020	division	Ravels
-Belgium/DPG-0325123/2020	location	Jemappes
+Belgium/DLDJ-030569/2020	location	Poppel
 Belgium/DPG-0325123/2020	division	Mons
-Belgium/DVBJ-030468/2020	location	Braine-le-Chateau
+Belgium/DPG-0325123/2020	location	Jemappes
 Belgium/DVBJ-030468/2020	division	Walloon Brabant
-Belgium/EBN-0323116/2020	location	Couillet
+Belgium/DVBJ-030468/2020	location	Braine-le-Chateau
 Belgium/EBN-0323116/2020	division	Charleroi
-Belgium/ECC-030686/2020	location	Temploux
+Belgium/EBN-0323116/2020	location	Couillet
 Belgium/ECC-030686/2020	division	Namur
-Belgium/FAE-030948/2020	location	Wandre
+Belgium/ECC-030686/2020	location	Temploux
 Belgium/FAE-030948/2020	division	Liège
-Belgium/FFJ-0324124/2020	location	Saisinne
+Belgium/FAE-030948/2020	location	Wandre
 Belgium/FFJ-0324124/2020	division	Mons
-Belgium/FM-030592/2020	location	Havre
+Belgium/FFJ-0324124/2020	location	Saisinne
 Belgium/FM-030592/2020	division	Mons
-Belgium/GE-0317105/2020	location	Villerot
+Belgium/FM-030592/2020	location	Havre
 Belgium/GE-0317105/2020	division	Saint-Ghislain
+Belgium/GE-0317105/2020	location	Villerot
 Belgium/GHB-03021/2020	country_exposure	China # GISAID
 Belgium/GHB-03021/2020	division	Flanders
 Belgium/GHB-03021/2020	division_exposure	Hubei # GISAID
 Belgium/GHB-03021/2020	location	Leuven
 Belgium/GHB-03021/2020	region_exposure	Asia # GISAID
-Belgium/GLA-0324179/2020	location	Jumet
 Belgium/GLA-0324179/2020	division	Charleroi
-Belgium/MCW-030574/2020	location	Neerpelt
+Belgium/GLA-0324179/2020	location	Jumet
 Belgium/MCW-030574/2020	division	Pelt
-Belgium/NJC-0324126/2020	location	Bassilly
+Belgium/MCW-030574/2020	location	Neerpelt
 Belgium/NJC-0324126/2020	division	Silly
-Belgium/NKMA-0324172/2020	location	Ladeuze
+Belgium/NJC-0324126/2020	location	Bassilly
 Belgium/NKMA-0324172/2020	division	Leuven
+Belgium/NKMA-0324172/2020	location	Ladeuze
 Belgium/NL-030447/2020	division	Brussels
 Belgium/OS-0325137/2020	division	Sint-Pieters-Woluwe
 Belgium/OT-0319109/2020	division	Liège
-Belgium/QL-0324173/2020	location	Cuesmes
 Belgium/QL-0324173/2020	division	Mons
-Belgium/RHA-0324177/2020	location	Tertre
+Belgium/QL-0324173/2020	location	Cuesmes
 Belgium/RHA-0324177/2020	division	Saint-Ghislain
-Belgium/RJ-030552/2020	location	Heverlee
+Belgium/RHA-0324177/2020	location	Tertre
 Belgium/RJ-030552/2020	division	Leuven
-Belgium/RS-0324138/2020	location	Trazegnies
+Belgium/RJ-030552/2020	location	Heverlee
 Belgium/RS-0324138/2020	division	Courcelles
-Belgium/RYR-030649/2020	location	Yernee-fraineux
+Belgium/RS-0324138/2020	location	Trazegnies
 Belgium/RYR-030649/2020	division	Liège
+Belgium/RYR-030649/2020	location	Yernee-fraineux
 Belgium/SJ-030583/2020	division	Limburg
-Belgium/TG-030757/2020	location	Arbre
 Belgium/TG-030757/2020	division	Ath
-Belgium/VLG-0325162/2020	location	Winksele
+Belgium/TG-030757/2020	location	Arbre
 Belgium/VLG-0325162/2020	division	Herent
+Belgium/VLG-0325162/2020	location	Winksele
 Belgium/VRJM-0323114/2020	division	Hemiksem # Typo
-Belgium/ZF-0325152/2020	location	Blandain
 Belgium/ZF-0325152/2020	division	Tournai
+Belgium/ZF-0325152/2020	location	Blandain
 Brazil/SP0104/2020	division	Sao Paulo
 Brazil/SP0105/2020	country_exposure	Brazil
 Brazil/SP0105/2020	division	Sao Paulo
@@ -448,42 +450,15 @@ England/SHEF-BFFE5/2020	location	South Yorkshire
 England/SHEF-BFFF4/2020	country	United Kingdom
 England/SHEF-BFFF4/2020	division	England
 England/SHEF-BFFF4/2020	location	South Yorkshire
-England/SHEF-C000C/2020	country	United Kingdom
-England/SHEF-C000C/2020	division	England
-England/SHEF-C000C/2020	location	South Yorkshire
-England/SHEF-C001B/2020	country	United Kingdom
-England/SHEF-C001B/2020	division	England
-England/SHEF-C001B/2020	location	South Yorkshire
-England/SHEF-C002A/2020	country	United Kingdom
-England/SHEF-C002A/2020	division	England
-England/SHEF-C002A/2020	location	South Yorkshire
-England/SHEF-C0039/2020	country	United Kingdom
-England/SHEF-C0039/2020	division	England
-England/SHEF-C0039/2020	location	South Yorkshire
-England/SHEF-C0048/2020	country	United Kingdom
-England/SHEF-C0048/2020	division	England
-England/SHEF-C0048/2020	location	South Yorkshire
-England/SHEF-C0057/2020	country	United Kingdom
-England/SHEF-C0057/2020	division	England
-England/SHEF-C0057/2020	location	South Yorkshire
-England/SHEF-C0066/2020	country	United Kingdom
-England/SHEF-C0066/2020	division	England
-England/SHEF-C0066/2020	location	South Yorkshire
-England/SHEF-C0075/2020	country	United Kingdom
-England/SHEF-C0075/2020	division	England
-England/SHEF-C0075/2020	location	South Yorkshire
-England/SHEF-C0084/2020	country	United Kingdom
-England/SHEF-C0084/2020	division	England
-England/SHEF-C0084/2020	location	South Yorkshire
-England/SHEF-C0093/2020	country	United Kingdom
-England/SHEF-C0093/2020	division	England
-England/SHEF-C0093/2020	location	South Yorkshire
 England/SHEF-C00A2/2020	country	United Kingdom
 England/SHEF-C00A2/2020	division	England
 England/SHEF-C00A2/2020	location	South Yorkshire
 England/SHEF-C00B1/2020	country	United Kingdom
 England/SHEF-C00B1/2020	division	England
 England/SHEF-C00B1/2020	location	South Yorkshire
+England/SHEF-C000C/2020	country	United Kingdom
+England/SHEF-C000C/2020	division	England
+England/SHEF-C000C/2020	location	South Yorkshire
 England/SHEF-C00C0/2020	country	United Kingdom
 England/SHEF-C00C0/2020	division	England
 England/SHEF-C00C0/2020	location	South Yorkshire
@@ -496,6 +471,249 @@ England/SHEF-C00EE/2020	location	South Yorkshire
 England/SHEF-C00FD/2020	country	United Kingdom
 England/SHEF-C00FD/2020	division	England
 England/SHEF-C00FD/2020	location	South Yorkshire
+England/SHEF-C01AF/2020	country	United Kingdom
+England/SHEF-C01AF/2020	division	England
+England/SHEF-C01AF/2020	location	Derbyshire
+England/SHEF-C001B/2020	country	United Kingdom
+England/SHEF-C001B/2020	division	England
+England/SHEF-C001B/2020	location	South Yorkshire
+England/SHEF-C01BE/2020	country	United Kingdom
+England/SHEF-C01BE/2020	division	England
+England/SHEF-C01BE/2020	location	South Yorkshire
+England/SHEF-C01CD/2020	country	United Kingdom
+England/SHEF-C01CD/2020	division	England
+England/SHEF-C01CD/2020	location	South Yorkshire
+England/SHEF-C01DC/2020	country	United Kingdom
+England/SHEF-C01DC/2020	division	England
+England/SHEF-C01DC/2020	location	South Yorkshire
+England/SHEF-C01EB/2020	country	United Kingdom
+England/SHEF-C01EB/2020	division	England
+England/SHEF-C01EB/2020	location	South Yorkshire
+England/SHEF-C01FA/2020	country	United Kingdom
+England/SHEF-C01FA/2020	division	England
+England/SHEF-C01FA/2020	location	South Yorkshire
+England/SHEF-C002A/2020	country	United Kingdom
+England/SHEF-C002A/2020	division	England
+England/SHEF-C002A/2020	location	South Yorkshire
+England/SHEF-C02AC/2020	country	United Kingdom
+England/SHEF-C02AC/2020	division	England
+England/SHEF-C02AC/2020	location	South Yorkshire
+England/SHEF-C02BB/2020	country	United Kingdom
+England/SHEF-C02BB/2020	division	England
+England/SHEF-C02BB/2020	location	South Yorkshire
+England/SHEF-C02CA/2020	country	United Kingdom
+England/SHEF-C02CA/2020	division	England
+England/SHEF-C02CA/2020	location	South Yorkshire
+England/SHEF-C02D9/2020	country	United Kingdom
+England/SHEF-C02D9/2020	division	England
+England/SHEF-C02D9/2020	location	South Yorkshire
+England/SHEF-C02E8/2020	country	United Kingdom
+England/SHEF-C02E8/2020	division	England
+England/SHEF-C02E8/2020	location	South Yorkshire
+England/SHEF-C02F7/2020	country	United Kingdom
+England/SHEF-C02F7/2020	division	England
+England/SHEF-C02F7/2020	location	South Yorkshire
+England/SHEF-C03B8/2020	country	United Kingdom
+England/SHEF-C03B8/2020	division	England
+England/SHEF-C03B8/2020	location	South Yorkshire
+England/SHEF-C03C7/2020	country	United Kingdom
+England/SHEF-C03C7/2020	division	England
+England/SHEF-C03C7/2020	location	South Yorkshire
+England/SHEF-C03D6/2020	country	United Kingdom
+England/SHEF-C03D6/2020	division	England
+England/SHEF-C03D6/2020	location	South Yorkshire
+England/SHEF-C03E5/2020	country	United Kingdom
+England/SHEF-C03E5/2020	division	England
+England/SHEF-C03E5/2020	location	South Yorkshire
+England/SHEF-C03F4/2020	country	United Kingdom
+England/SHEF-C03F4/2020	division	England
+England/SHEF-C03F4/2020	location	South Yorkshire
+England/SHEF-C04A6/2020	country	United Kingdom
+England/SHEF-C04A6/2020	division	England
+England/SHEF-C04A6/2020	location	South Yorkshire
+England/SHEF-C04B5/2020	country	United Kingdom
+England/SHEF-C04B5/2020	division	England
+England/SHEF-C04B5/2020	location	South Yorkshire
+England/SHEF-C04C4/2020	country	United Kingdom
+England/SHEF-C04C4/2020	division	England
+England/SHEF-C04C4/2020	location	South Yorkshire
+England/SHEF-C04D3/2020	country	United Kingdom
+England/SHEF-C04D3/2020	division	England
+England/SHEF-C04D3/2020	location	South Yorkshire
+England/SHEF-C04E2/2020	country	United Kingdom
+England/SHEF-C04E2/2020	division	England
+England/SHEF-C04E2/2020	location	South Yorkshire
+England/SHEF-C04F1/2020	country	United Kingdom
+England/SHEF-C04F1/2020	division	England
+England/SHEF-C04F1/2020	location	South Yorkshire
+England/SHEF-C05A3/2020	country	United Kingdom
+England/SHEF-C05A3/2020	division	England
+England/SHEF-C05A3/2020	location	South Yorkshire
+England/SHEF-C05B2/2020	country	United Kingdom
+England/SHEF-C05B2/2020	division	England
+England/SHEF-C05B2/2020	location	South Yorkshire
+England/SHEF-C05C1/2020	country	United Kingdom
+England/SHEF-C05C1/2020	division	England
+England/SHEF-C05C1/2020	location	South Yorkshire
+England/SHEF-C05D0/2020	country	United Kingdom
+England/SHEF-C05D0/2020	division	England
+England/SHEF-C05D0/2020	location	South Yorkshire
+England/SHEF-C05FE/2020	country	United Kingdom
+England/SHEF-C05FE/2020	division	England
+England/SHEF-C05FE/2020	location	South Yorkshire
+England/SHEF-C06A0/2020	country	United Kingdom
+England/SHEF-C06A0/2020	division	England
+England/SHEF-C06A0/2020	location	South Yorkshire
+England/SHEF-C06BF/2020	country	United Kingdom
+England/SHEF-C06BF/2020	division	England
+England/SHEF-C06BF/2020	location	South Yorkshire
+England/SHEF-C06CE/2020	country	United Kingdom
+England/SHEF-C06CE/2020	division	England
+England/SHEF-C06CE/2020	location	South Yorkshire
+England/SHEF-C06DD/2020	country	United Kingdom
+England/SHEF-C06DD/2020	division	England
+England/SHEF-C06DD/2020	location	South Yorkshire
+England/SHEF-C06FB/2020	country	United Kingdom
+England/SHEF-C06FB/2020	division	England
+England/SHEF-C06FB/2020	location	South Yorkshire
+England/SHEF-C07AD/2020	country	United Kingdom
+England/SHEF-C07AD/2020	division	England
+England/SHEF-C07AD/2020	location	South Yorkshire
+England/SHEF-C07BC/2020	country	United Kingdom
+England/SHEF-C07BC/2020	division	England
+England/SHEF-C07BC/2020	location	South Yorkshire
+England/SHEF-C07CB/2020	country	United Kingdom
+England/SHEF-C07CB/2020	division	England
+England/SHEF-C07CB/2020	location	South Yorkshire
+England/SHEF-C07DA/2020	country	United Kingdom
+England/SHEF-C07DA/2020	division	England
+England/SHEF-C07DA/2020	location	South Yorkshire
+England/SHEF-C07E9/2020	country	United Kingdom
+England/SHEF-C07E9/2020	division	England
+England/SHEF-C07E9/2020	location	South Yorkshire
+England/SHEF-C07F8/2020	country	United Kingdom
+England/SHEF-C07F8/2020	division	England
+England/SHEF-C07F8/2020	location	South Yorkshire
+England/SHEF-C08AA/2020	country	United Kingdom
+England/SHEF-C08AA/2020	division	England
+England/SHEF-C08AA/2020	location	South Yorkshire
+England/SHEF-C08B9/2020	country	United Kingdom
+England/SHEF-C08B9/2020	division	England
+England/SHEF-C08B9/2020	location	South Yorkshire
+England/SHEF-C08C8/2020	country	United Kingdom
+England/SHEF-C08C8/2020	division	England
+England/SHEF-C08C8/2020	location	South Yorkshire
+England/SHEF-C08E6/2020	country	United Kingdom
+England/SHEF-C08E6/2020	division	England
+England/SHEF-C08E6/2020	location	South Yorkshire
+England/SHEF-C08F5/2020	country	United Kingdom
+England/SHEF-C08F5/2020	division	England
+England/SHEF-C08F5/2020	location	South Yorkshire
+England/SHEF-C027F/2020	country	United Kingdom
+England/SHEF-C027F/2020	division	England
+England/SHEF-C027F/2020	location	South Yorkshire
+England/SHEF-C028E/2020	country	United Kingdom
+England/SHEF-C028E/2020	division	England
+England/SHEF-C028E/2020	location	South Yorkshire
+England/SHEF-C029D/2020	country	United Kingdom
+England/SHEF-C029D/2020	division	England
+England/SHEF-C029D/2020	location	South Yorkshire
+England/SHEF-C034F/2020	country	United Kingdom
+England/SHEF-C034F/2020	division	England
+England/SHEF-C034F/2020	location	South Yorkshire
+England/SHEF-C035E/2020	country	United Kingdom
+England/SHEF-C035E/2020	division	England
+England/SHEF-C035E/2020	location	South Yorkshire
+England/SHEF-C036D/2020	country	United Kingdom
+England/SHEF-C036D/2020	division	England
+England/SHEF-C036D/2020	location	South Yorkshire
+England/SHEF-C037C/2020	country	United Kingdom
+England/SHEF-C037C/2020	division	England
+England/SHEF-C037C/2020	location	South Yorkshire
+England/SHEF-C038B/2020	country	United Kingdom
+England/SHEF-C038B/2020	division	England
+England/SHEF-C038B/2020	location	South Yorkshire
+England/SHEF-C0039/2020	country	United Kingdom
+England/SHEF-C0039/2020	division	England
+England/SHEF-C0039/2020	location	South Yorkshire
+England/SHEF-C039A/2020	country	United Kingdom
+England/SHEF-C039A/2020	division	England
+England/SHEF-C039A/2020	location	South Yorkshire
+England/SHEF-C041F/2020	country	United Kingdom
+England/SHEF-C041F/2020	division	England
+England/SHEF-C041F/2020	location	South Yorkshire
+England/SHEF-C042E/2020	country	United Kingdom
+England/SHEF-C042E/2020	division	England
+England/SHEF-C042E/2020	location	South Yorkshire
+England/SHEF-C043D/2020	country	United Kingdom
+England/SHEF-C043D/2020	division	England
+England/SHEF-C043D/2020	location	South Yorkshire
+England/SHEF-C044C/2020	country	United Kingdom
+England/SHEF-C044C/2020	division	England
+England/SHEF-C044C/2020	location	South Yorkshire
+England/SHEF-C045B/2020	country	United Kingdom
+England/SHEF-C045B/2020	division	England
+England/SHEF-C045B/2020	location	South Yorkshire
+England/SHEF-C046A/2020	country	United Kingdom
+England/SHEF-C046A/2020	division	England
+England/SHEF-C046A/2020	location	South Yorkshire
+England/SHEF-C0048/2020	country	United Kingdom
+England/SHEF-C0048/2020	division	England
+England/SHEF-C0048/2020	location	South Yorkshire
+England/SHEF-C050D/2020	country	United Kingdom
+England/SHEF-C050D/2020	division	England
+England/SHEF-C050D/2020	location	South Yorkshire
+England/SHEF-C051C/2020	country	United Kingdom
+England/SHEF-C051C/2020	division	England
+England/SHEF-C051C/2020	location	South Yorkshire
+England/SHEF-C052B/2020	country	United Kingdom
+England/SHEF-C052B/2020	division	England
+England/SHEF-C052B/2020	location	South Yorkshire
+England/SHEF-C053A/2020	country	United Kingdom
+England/SHEF-C053A/2020	division	England
+England/SHEF-C053A/2020	location	South Yorkshire
+England/SHEF-C0057/2020	country	United Kingdom
+England/SHEF-C0057/2020	division	England
+England/SHEF-C0057/2020	location	South Yorkshire
+England/SHEF-C060A/2020	country	United Kingdom
+England/SHEF-C060A/2020	division	England
+England/SHEF-C060A/2020	location	South Yorkshire
+England/SHEF-C0066/2020	country	United Kingdom
+England/SHEF-C0066/2020	division	England
+England/SHEF-C0066/2020	location	South Yorkshire
+England/SHEF-C0075/2020	country	United Kingdom
+England/SHEF-C0075/2020	division	England
+England/SHEF-C0075/2020	location	South Yorkshire
+England/SHEF-C078F/2020	country	United Kingdom
+England/SHEF-C078F/2020	division	England
+England/SHEF-C078F/2020	location	South Yorkshire
+England/SHEF-C079E/2020	country	United Kingdom
+England/SHEF-C079E/2020	division	England
+England/SHEF-C079E/2020	location	South Yorkshire
+England/SHEF-C0084/2020	country	United Kingdom
+England/SHEF-C0084/2020	division	England
+England/SHEF-C0084/2020	location	South Yorkshire
+England/SHEF-C086E/2020	country	United Kingdom
+England/SHEF-C086E/2020	division	England
+England/SHEF-C086E/2020	location	South Yorkshire
+England/SHEF-C087D/2020	country	United Kingdom
+England/SHEF-C087D/2020	division	England
+England/SHEF-C087D/2020	location	South Yorkshire
+England/SHEF-C088C/2020	country	United Kingdom
+England/SHEF-C088C/2020	division	England
+England/SHEF-C088C/2020	location	South Yorkshire
+England/SHEF-C089B/2020	country	United Kingdom
+England/SHEF-C089B/2020	division	England
+England/SHEF-C089B/2020	location	South Yorkshire
+England/SHEF-C092F/2020	country	United Kingdom
+England/SHEF-C092F/2020	division	England
+England/SHEF-C092F/2020	location	South Yorkshire
+England/SHEF-C0093/2020	country	United Kingdom
+England/SHEF-C0093/2020	division	England
+England/SHEF-C0093/2020	location	South Yorkshire
+England/SHEF-C093E/2020	country	United Kingdom
+England/SHEF-C093E/2020	division	England
+England/SHEF-C093E/2020	location	South Yorkshire
 England/SHEF-C0109/2020	country	United Kingdom
 England/SHEF-C0109/2020	division	England
 England/SHEF-C0109/2020	location	South Yorkshire
@@ -523,24 +741,6 @@ England/SHEF-C0181/2020	location	South Yorkshire
 England/SHEF-C0190/2020	country	United Kingdom
 England/SHEF-C0190/2020	division	England
 England/SHEF-C0190/2020	location	Derbyshire
-England/SHEF-C01AF/2020	country	United Kingdom
-England/SHEF-C01AF/2020	division	England
-England/SHEF-C01AF/2020	location	Derbyshire
-England/SHEF-C01BE/2020	country	United Kingdom
-England/SHEF-C01BE/2020	division	England
-England/SHEF-C01BE/2020	location	South Yorkshire
-England/SHEF-C01CD/2020	country	United Kingdom
-England/SHEF-C01CD/2020	division	England
-England/SHEF-C01CD/2020	location	South Yorkshire
-England/SHEF-C01DC/2020	country	United Kingdom
-England/SHEF-C01DC/2020	division	England
-England/SHEF-C01DC/2020	location	South Yorkshire
-England/SHEF-C01EB/2020	country	United Kingdom
-England/SHEF-C01EB/2020	division	England
-England/SHEF-C01EB/2020	location	South Yorkshire
-England/SHEF-C01FA/2020	country	United Kingdom
-England/SHEF-C01FA/2020	division	England
-England/SHEF-C01FA/2020	location	South Yorkshire
 England/SHEF-C0206/2020	country	United Kingdom
 England/SHEF-C0206/2020	division	England
 England/SHEF-C0206/2020	location	South Yorkshire
@@ -562,33 +762,6 @@ England/SHEF-C0251/2020	location	South Yorkshire
 England/SHEF-C0260/2020	country	United Kingdom
 England/SHEF-C0260/2020	division	England
 England/SHEF-C0260/2020	location	South Yorkshire
-England/SHEF-C027F/2020	country	United Kingdom
-England/SHEF-C027F/2020	division	England
-England/SHEF-C027F/2020	location	South Yorkshire
-England/SHEF-C028E/2020	country	United Kingdom
-England/SHEF-C028E/2020	division	England
-England/SHEF-C028E/2020	location	South Yorkshire
-England/SHEF-C029D/2020	country	United Kingdom
-England/SHEF-C029D/2020	division	England
-England/SHEF-C029D/2020	location	South Yorkshire
-England/SHEF-C02AC/2020	country	United Kingdom
-England/SHEF-C02AC/2020	division	England
-England/SHEF-C02AC/2020	location	South Yorkshire
-England/SHEF-C02BB/2020	country	United Kingdom
-England/SHEF-C02BB/2020	division	England
-England/SHEF-C02BB/2020	location	South Yorkshire
-England/SHEF-C02CA/2020	country	United Kingdom
-England/SHEF-C02CA/2020	division	England
-England/SHEF-C02CA/2020	location	South Yorkshire
-England/SHEF-C02D9/2020	country	United Kingdom
-England/SHEF-C02D9/2020	division	England
-England/SHEF-C02D9/2020	location	South Yorkshire
-England/SHEF-C02E8/2020	country	United Kingdom
-England/SHEF-C02E8/2020	division	England
-England/SHEF-C02E8/2020	location	South Yorkshire
-England/SHEF-C02F7/2020	country	United Kingdom
-England/SHEF-C02F7/2020	division	England
-England/SHEF-C02F7/2020	location	South Yorkshire
 England/SHEF-C0303/2020	country	United Kingdom
 England/SHEF-C0303/2020	division	England
 England/SHEF-C0303/2020	location	South Yorkshire
@@ -601,60 +774,9 @@ England/SHEF-C0321/2020	location	South Yorkshire
 England/SHEF-C0330/2020	country	United Kingdom
 England/SHEF-C0330/2020	division	England
 England/SHEF-C0330/2020	location	South Yorkshire
-England/SHEF-C034F/2020	country	United Kingdom
-England/SHEF-C034F/2020	division	England
-England/SHEF-C034F/2020	location	South Yorkshire
-England/SHEF-C035E/2020	country	United Kingdom
-England/SHEF-C035E/2020	division	England
-England/SHEF-C035E/2020	location	South Yorkshire
-England/SHEF-C036D/2020	country	United Kingdom
-England/SHEF-C036D/2020	division	England
-England/SHEF-C036D/2020	location	South Yorkshire
-England/SHEF-C037C/2020	country	United Kingdom
-England/SHEF-C037C/2020	division	England
-England/SHEF-C037C/2020	location	South Yorkshire
-England/SHEF-C038B/2020	country	United Kingdom
-England/SHEF-C038B/2020	division	England
-England/SHEF-C038B/2020	location	South Yorkshire
-England/SHEF-C039A/2020	country	United Kingdom
-England/SHEF-C039A/2020	division	England
-England/SHEF-C039A/2020	location	South Yorkshire
-England/SHEF-C03B8/2020	country	United Kingdom
-England/SHEF-C03B8/2020	division	England
-England/SHEF-C03B8/2020	location	South Yorkshire
-England/SHEF-C03C7/2020	country	United Kingdom
-England/SHEF-C03C7/2020	division	England
-England/SHEF-C03C7/2020	location	South Yorkshire
-England/SHEF-C03D6/2020	country	United Kingdom
-England/SHEF-C03D6/2020	division	England
-England/SHEF-C03D6/2020	location	South Yorkshire
-England/SHEF-C03E5/2020	country	United Kingdom
-England/SHEF-C03E5/2020	division	England
-England/SHEF-C03E5/2020	location	South Yorkshire
-England/SHEF-C03F4/2020	country	United Kingdom
-England/SHEF-C03F4/2020	division	England
-England/SHEF-C03F4/2020	location	South Yorkshire
 England/SHEF-C0400/2020	country	United Kingdom
 England/SHEF-C0400/2020	division	England
 England/SHEF-C0400/2020	location	South Yorkshire
-England/SHEF-C041F/2020	country	United Kingdom
-England/SHEF-C041F/2020	division	England
-England/SHEF-C041F/2020	location	South Yorkshire
-England/SHEF-C042E/2020	country	United Kingdom
-England/SHEF-C042E/2020	division	England
-England/SHEF-C042E/2020	location	South Yorkshire
-England/SHEF-C043D/2020	country	United Kingdom
-England/SHEF-C043D/2020	division	England
-England/SHEF-C043D/2020	location	South Yorkshire
-England/SHEF-C044C/2020	country	United Kingdom
-England/SHEF-C044C/2020	division	England
-England/SHEF-C044C/2020	location	South Yorkshire
-England/SHEF-C045B/2020	country	United Kingdom
-England/SHEF-C045B/2020	division	England
-England/SHEF-C045B/2020	location	South Yorkshire
-England/SHEF-C046A/2020	country	United Kingdom
-England/SHEF-C046A/2020	division	England
-England/SHEF-C046A/2020	location	South Yorkshire
 England/SHEF-C0479/2020	country	United Kingdom
 England/SHEF-C0479/2020	division	England
 England/SHEF-C0479/2020	location	South Yorkshire
@@ -664,36 +786,6 @@ England/SHEF-C0488/2020	location	South Yorkshire
 England/SHEF-C0497/2020	country	United Kingdom
 England/SHEF-C0497/2020	division	England
 England/SHEF-C0497/2020	location	South Yorkshire
-England/SHEF-C04A6/2020	country	United Kingdom
-England/SHEF-C04A6/2020	division	England
-England/SHEF-C04A6/2020	location	South Yorkshire
-England/SHEF-C04B5/2020	country	United Kingdom
-England/SHEF-C04B5/2020	division	England
-England/SHEF-C04B5/2020	location	South Yorkshire
-England/SHEF-C04C4/2020	country	United Kingdom
-England/SHEF-C04C4/2020	division	England
-England/SHEF-C04C4/2020	location	South Yorkshire
-England/SHEF-C04D3/2020	country	United Kingdom
-England/SHEF-C04D3/2020	division	England
-England/SHEF-C04D3/2020	location	South Yorkshire
-England/SHEF-C04E2/2020	country	United Kingdom
-England/SHEF-C04E2/2020	division	England
-England/SHEF-C04E2/2020	location	South Yorkshire
-England/SHEF-C04F1/2020	country	United Kingdom
-England/SHEF-C04F1/2020	division	England
-England/SHEF-C04F1/2020	location	South Yorkshire
-England/SHEF-C050D/2020	country	United Kingdom
-England/SHEF-C050D/2020	division	England
-England/SHEF-C050D/2020	location	South Yorkshire
-England/SHEF-C051C/2020	country	United Kingdom
-England/SHEF-C051C/2020	division	England
-England/SHEF-C051C/2020	location	South Yorkshire
-England/SHEF-C052B/2020	country	United Kingdom
-England/SHEF-C052B/2020	division	England
-England/SHEF-C052B/2020	location	South Yorkshire
-England/SHEF-C053A/2020	country	United Kingdom
-England/SHEF-C053A/2020	division	England
-England/SHEF-C053A/2020	location	South Yorkshire
 England/SHEF-C0549/2020	country	United Kingdom
 England/SHEF-C0549/2020	division	England
 England/SHEF-C0549/2020	location	South Yorkshire
@@ -709,24 +801,6 @@ England/SHEF-C0585/2020	location	South Yorkshire
 England/SHEF-C0594/2020	country	United Kingdom
 England/SHEF-C0594/2020	division	England
 England/SHEF-C0594/2020	location	South Yorkshire
-England/SHEF-C05A3/2020	country	United Kingdom
-England/SHEF-C05A3/2020	division	England
-England/SHEF-C05A3/2020	location	South Yorkshire
-England/SHEF-C05B2/2020	country	United Kingdom
-England/SHEF-C05B2/2020	division	England
-England/SHEF-C05B2/2020	location	South Yorkshire
-England/SHEF-C05C1/2020	country	United Kingdom
-England/SHEF-C05C1/2020	division	England
-England/SHEF-C05C1/2020	location	South Yorkshire
-England/SHEF-C05D0/2020	country	United Kingdom
-England/SHEF-C05D0/2020	division	England
-England/SHEF-C05D0/2020	location	South Yorkshire
-England/SHEF-C05FE/2020	country	United Kingdom
-England/SHEF-C05FE/2020	division	England
-England/SHEF-C05FE/2020	location	South Yorkshire
-England/SHEF-C060A/2020	country	United Kingdom
-England/SHEF-C060A/2020	division	England
-England/SHEF-C060A/2020	location	South Yorkshire
 England/SHEF-C0619/2020	country	United Kingdom
 England/SHEF-C0619/2020	division	England
 England/SHEF-C0619/2020	location	South Yorkshire
@@ -754,21 +828,6 @@ England/SHEF-C0682/2020	location	South Yorkshire
 England/SHEF-C0691/2020	country	United Kingdom
 England/SHEF-C0691/2020	division	England
 England/SHEF-C0691/2020	location	South Yorkshire
-England/SHEF-C06A0/2020	country	United Kingdom
-England/SHEF-C06A0/2020	division	England
-England/SHEF-C06A0/2020	location	South Yorkshire
-England/SHEF-C06BF/2020	country	United Kingdom
-England/SHEF-C06BF/2020	division	England
-England/SHEF-C06BF/2020	location	South Yorkshire
-England/SHEF-C06CE/2020	country	United Kingdom
-England/SHEF-C06CE/2020	division	England
-England/SHEF-C06CE/2020	location	South Yorkshire
-England/SHEF-C06DD/2020	country	United Kingdom
-England/SHEF-C06DD/2020	division	England
-England/SHEF-C06DD/2020	location	South Yorkshire
-England/SHEF-C06FB/2020	country	United Kingdom
-England/SHEF-C06FB/2020	division	England
-England/SHEF-C06FB/2020	location	South Yorkshire
 England/SHEF-C0707/2020	country	United Kingdom
 England/SHEF-C0707/2020	division	England
 England/SHEF-C0707/2020	location	South Yorkshire
@@ -787,30 +846,6 @@ England/SHEF-C0752/2020	location	South Yorkshire
 England/SHEF-C0770/2020	country	United Kingdom
 England/SHEF-C0770/2020	division	England
 England/SHEF-C0770/2020	location	South Yorkshire
-England/SHEF-C078F/2020	country	United Kingdom
-England/SHEF-C078F/2020	division	England
-England/SHEF-C078F/2020	location	South Yorkshire
-England/SHEF-C079E/2020	country	United Kingdom
-England/SHEF-C079E/2020	division	England
-England/SHEF-C079E/2020	location	South Yorkshire
-England/SHEF-C07AD/2020	country	United Kingdom
-England/SHEF-C07AD/2020	division	England
-England/SHEF-C07AD/2020	location	South Yorkshire
-England/SHEF-C07BC/2020	country	United Kingdom
-England/SHEF-C07BC/2020	division	England
-England/SHEF-C07BC/2020	location	South Yorkshire
-England/SHEF-C07CB/2020	country	United Kingdom
-England/SHEF-C07CB/2020	division	England
-England/SHEF-C07CB/2020	location	South Yorkshire
-England/SHEF-C07DA/2020	country	United Kingdom
-England/SHEF-C07DA/2020	division	England
-England/SHEF-C07DA/2020	location	South Yorkshire
-England/SHEF-C07E9/2020	country	United Kingdom
-England/SHEF-C07E9/2020	division	England
-England/SHEF-C07E9/2020	location	South Yorkshire
-England/SHEF-C07F8/2020	country	United Kingdom
-England/SHEF-C07F8/2020	division	England
-England/SHEF-C07F8/2020	location	South Yorkshire
 England/SHEF-C0804/2020	country	United Kingdom
 England/SHEF-C0804/2020	division	England
 England/SHEF-C0804/2020	location	South Yorkshire
@@ -826,42 +861,9 @@ England/SHEF-C0831/2020	location	South Yorkshire
 England/SHEF-C0840/2020	country	United Kingdom
 England/SHEF-C0840/2020	division	England
 England/SHEF-C0840/2020	location	South Yorkshire
-England/SHEF-C086E/2020	country	United Kingdom
-England/SHEF-C086E/2020	division	England
-England/SHEF-C086E/2020	location	South Yorkshire
-England/SHEF-C087D/2020	country	United Kingdom
-England/SHEF-C087D/2020	division	England
-England/SHEF-C087D/2020	location	South Yorkshire
-England/SHEF-C088C/2020	country	United Kingdom
-England/SHEF-C088C/2020	division	England
-England/SHEF-C088C/2020	location	South Yorkshire
-England/SHEF-C089B/2020	country	United Kingdom
-England/SHEF-C089B/2020	division	England
-England/SHEF-C089B/2020	location	South Yorkshire
-England/SHEF-C08AA/2020	country	United Kingdom
-England/SHEF-C08AA/2020	division	England
-England/SHEF-C08AA/2020	location	South Yorkshire
-England/SHEF-C08B9/2020	country	United Kingdom
-England/SHEF-C08B9/2020	division	England
-England/SHEF-C08B9/2020	location	South Yorkshire
-England/SHEF-C08C8/2020	country	United Kingdom
-England/SHEF-C08C8/2020	division	England
-England/SHEF-C08C8/2020	location	South Yorkshire
-England/SHEF-C08E6/2020	country	United Kingdom
-England/SHEF-C08E6/2020	division	England
-England/SHEF-C08E6/2020	location	South Yorkshire
-England/SHEF-C08F5/2020	country	United Kingdom
-England/SHEF-C08F5/2020	division	England
-England/SHEF-C08F5/2020	location	South Yorkshire
 England/SHEF-C0901/2020	country	United Kingdom
 England/SHEF-C0901/2020	division	England
 England/SHEF-C0901/2020	location	South Yorkshire
-England/SHEF-C092F/2020	country	United Kingdom
-England/SHEF-C092F/2020	division	England
-England/SHEF-C092F/2020	location	South Yorkshire
-England/SHEF-C093E/2020	country	United Kingdom
-England/SHEF-C093E/2020	division	England
-England/SHEF-C093E/2020	location	South Yorkshire
 England/Sheff01/2020	country	United Kingdom
 England/Sheff01/2020	country_exposure	United Kingdom
 England/Sheff01/2020	division	England
@@ -1681,17 +1683,15 @@ India/1-31/2020	country_exposure	China # GISAID
 India/1-31/2020	division_exposure	China # GISAID
 India/1-31/2020	region_exposure	Asia # GISAID
 India/763/2020	country_exposure	Italy #GISAID (Italian tourist)
-India/770/2020	country_exposure	Italy #GISAID (Italian tourist)
-India/772/2020	country_exposure	Italy #GISAID (Italian tourist)
-India/773/2020	country_exposure	Italy #GISAID (Italian tourist)
-India/781/2020	country_exposure	Italy #GISAID (Italian tourist)
 India/763/2020	region_exposure	Europe #GISAID (Italian tourist)
+India/770/2020	country_exposure	Italy #GISAID (Italian tourist)
 India/770/2020	region_exposure	Europe #GISAID (Italian tourist)
+India/772/2020	country_exposure	Italy #GISAID (Italian tourist)
 India/772/2020	region_exposure	Europe #GISAID (Italian tourist)
+India/773/2020	country_exposure	Italy #GISAID (Italian tourist)
 India/773/2020	region_exposure	Europe #GISAID (Italian tourist)
+India/781/2020	country_exposure	Italy #GISAID (Italian tourist)
 India/781/2020	region_exposure	Europe #GISAID (Italian tourist)
-# India/777/2020 #indian contact of italian tourist (GISAID)
-# India/c32/2020 # Indian contact of Indian Patient having travel history to Italy (GISAID)
 Italy/CDG1/2020	division	Lombardy
 Italy/INMI1-cs/2020	country_exposure	China # GISAID - Chinese tourist from Hubei
 Italy/INMI1-cs/2020	date	2020-01-29
@@ -2161,6 +2161,8 @@ Singapore/2/2020	division	Singapore
 Singapore/2/2020	location	Singapore
 Singapore/3/2020	division	Singapore
 Singapore/3/2020	location	Singapore
+Singapore/3Clin/2020	division	Singapore
+Singapore/3Clin/2020	location	Singapore
 Singapore/4/2020	country_exposure	China # ?
 Singapore/4/2020	division	Singapore
 Singapore/4/2020	division_exposure	Hubei # ?
@@ -2182,10 +2184,54 @@ Singapore/11/2020	division	Singapore
 Singapore/11/2020	location	Singapore
 Singapore/12/2020	division	Singapore
 Singapore/12/2020	location	Singapore
+Singapore/12Clin/2020	division	Singapore
+Singapore/12Clin/2020	location	Singapore
 Singapore/13/2020	division	Singapore
 Singapore/13/2020	location	Singapore
 Singapore/14/2020	division	Singapore
 Singapore/14/2020	location	Singapore
+Singapore/14Clin/2020	division	Singapore
+Singapore/14Clin/2020	location	Singapore
+Singapore/15/2020	division	Singapore
+Singapore/15/2020	location	Singapore
+Singapore/16/2020	division	Singapore
+Singapore/16/2020	location	Singapore
+Singapore/17/2020	division	Singapore
+Singapore/17/2020	location	Singapore
+Singapore/18/2020	division	Singapore
+Singapore/18/2020	location	Singapore
+Singapore/19/2020	division	Singapore
+Singapore/19/2020	location	Singapore
+Singapore/20/2020	division	Singapore
+Singapore/20/2020	location	Singapore
+Singapore/21/2020	division	Singapore
+Singapore/21/2020	location	Singapore
+Singapore/22/2020	division	Singapore
+Singapore/22/2020	location	Singapore
+Singapore/23/2020	division	Singapore
+Singapore/23/2020	location	Singapore
+Singapore/24/2020	division	Singapore
+Singapore/24/2020	location	Singapore
+Singapore/25/2020	division	Singapore
+Singapore/25/2020	location	Singapore
+Singapore/26/2020	division	Singapore
+Singapore/26/2020	location	Singapore
+Singapore/27/2020	division	Singapore
+Singapore/27/2020	location	Singapore
+Singapore/28/2020	division	Singapore
+Singapore/28/2020	location	Singapore
+Singapore/29/2020	division	Singapore
+Singapore/29/2020	location	Singapore
+Singapore/30/2020	division	Singapore
+Singapore/30/2020	location	Singapore
+Singapore/31/2020	division	Singapore
+Singapore/31/2020	location	Singapore
+Singapore/32/2020	division	Singapore
+Singapore/32/2020	location	Singapore
+Singapore/33/2020	division	Singapore
+Singapore/33/2020	location	Singapore
+Singapore/34/2020	division	Singapore
+Singapore/34/2020	location	Singapore
 Slovakia/SK-BMC5/2020	country_exposure	France # GISAID - Travel history to Paris, France
 Slovakia/SK-BMC5/2020	division_exposure	Ile de France # GISAID - Travel history to Paris, France
 Slovakia/SK-BMC5/2020	region_exposure	Europe # GISAID - Travel history to Paris, France
