@@ -31,6 +31,7 @@
 Australia/NSW01/2020	country_exposure	China
 Australia/NSW01/2020	division_exposure	Hubei
 Australia/NSW01/2020	region_exposure	Asia
+Australia/NSW05/2020	division_exposure	China
 Australia/NSW05/2020	country_exposure	China # James: data via direct contact with Aus lab
 Australia/NSW05/2020	country_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW05/2020	division_exposure	Iran # James: data via direct contact with Aus lab
@@ -900,6 +901,7 @@ Finland/FIN-508/2020	division	Finland
 Finland/FIN03032020C/2020	country_exposure	Italy # GISAID
 Finland/FIN03032020C/2020	division_exposure	Italy # GISAID
 Finland/FIN03032020C/2020	region_exposure	Europe # GISAID
+Finland/FIN03032020A/2020	division_exposure	Italy # "Between 1. March and 5. March only 5 new cases were confirmed in Finland. Three were from Helsini, where this sample was collected from. The two male samles were working age men who got the virus in Italy (https://en.wikipedia.org/wiki/2020_coronavirus_outbreak_in_Finland)"
 Finland/FIN03032020A/2020	country_exposure	Italy # "Between 1. March and 5. March only 5 new cases were confirmed in Finland. Three were from Helsini, where this sample was collected from. The two male samles were working age men who got the virus in Italy (https://en.wikipedia.org/wiki/2020_coronavirus_outbreak_in_Finland)"
 Finland/FIN03032020A/2020	region_exposure	Europe # "Between 1. March and 5. March only 5 new cases were confirmed in Finland. Three were from Helsini, where this sample was collected from. The two male samles were working age men who got the virus in Italy (https://en.wikipedia.org/wiki/2020_coronavirus_outbreak_in_Finland)"
 France/ARA09428/2020	division	Auvergne-Rhône-Alpes
@@ -1909,6 +1911,7 @@ Luxembourg/LNS9862689/2020	location	Luxembourg
 Luxembourg/LNS9982497/2020	division	Luxembourg
 Luxembourg/LNS9982497/2020	location	Luxembourg
 Luxembourg/Lux1/2020	division	Luxembourg
+Luxembourg/Lux1/2020	division_exposure	Italy #"Travel history to Italy for first case in Luexembourg, which this must be based on collection date (https://www.pharmaceutical-technology.com/news/coronavirus-a-timeline-of-how-the-deadly-outbreak-evolved/)"
 Luxembourg/Lux1/2020	country_exposure	Italy #"Travel history to Italy for first case in Luexembourg, which this must be based on collection date (https://www.pharmaceutical-technology.com/news/coronavirus-a-timeline-of-how-the-deadly-outbreak-evolved/)"
 Luxembourg/Lux1/2020	region_exposure	Europe #"Travel history to Italy for first case in Luexembourg, which this must be based on collection date (https://www.pharmaceutical-technology.com/news/coronavirus-a-timeline-of-how-the-deadly-outbreak-evolved/)"
 Mexico/CDMX-InDRE_01/2020	country_exposure	Italy # GISAID
@@ -1925,6 +1928,7 @@ Netherlands/Andel_1365066/2020	division	North Brabant
 Netherlands/Andel_1365066/2020	location	Andel
 Netherlands/Berlicum_1363564/2020	division	North Brabant
 Netherlands/Berlicum_1363564/2020	location	Berlicum
+Netherlands/Berlicum_1363564/2020	division_exposure	Italy #"Assuming this is the first COVID-19 case in the Netherlands (confirmed on 27. Febrary), they have travel history to Lombardy in Italy (https://www.rivm.nl/en/news/current-information-about-novel-coronavirus-covid-19)"
 Netherlands/Berlicum_1363564/2020	country_exposure	Italy #"Assuming this is the first COVID-19 case in the Netherlands (confirmed on 27. Febrary), they have travel history to Lombardy in Italy (https://www.rivm.nl/en/news/current-information-about-novel-coronavirus-covid-19)"
 Netherlands/Berlicum_1363564/2020	region_exposure	Europe #"Assuming this is the first COVID-19 case in the Netherlands (confirmed on 27. Febrary), they have travel history to Lombardy in Italy (https://www.rivm.nl/en/news/current-information-about-novel-coronavirus-covid-19)"
 Netherlands/Blaricum_1364780/2020	division	North Brabant
@@ -1935,6 +1939,7 @@ Netherlands/Dalen_1363624/2020	division	Drenthe
 Netherlands/Dalen_1363624/2020	location	Dalen
 Netherlands/Delft_1363424/2020	division	South Holland
 Netherlands/Delft_1363424/2020	location	Delft
+Netherlands/Delft_1363424/2020	division_exposure	Italy #"Travel history to Italy for 1st patient from Delft, confirmed on Feb 29th (https://www.rivm.nl/en/news/current-information-about-novel-coronavirus-covid-19)"
 Netherlands/Delft_1363424/2020	country_exposure	Italy #"Travel history to Italy for 1st patient from Delft, confirmed on Feb 29th (https://www.rivm.nl/en/news/current-information-about-novel-coronavirus-covid-19)"
 Netherlands/Delft_1363424/2020	region_exposure	Europe #"Travel history to Italy for 1st patient from Delft, confirmed on Feb 29th (https://www.rivm.nl/en/news/current-information-about-novel-coronavirus-covid-19)"
 Netherlands/Diemen_1363454/2020	division	North Holland
@@ -2142,6 +2147,7 @@ Panama/328677/2020	division_exposure	Comunitat Valenciana
 Panama/328677/2020	region	North America
 Panama/328677/2020	region_exposure	Europe
 Portugal/CV62/2020	division	Portugal
+Portugal/CV62/2020	division_exposure	Italy #"Travel association (Italy, Germany) (GISAID) and clusters with other seqs with Italy travel history on nextstrain"
 Portugal/CV62/2020	country_exposure	Italy #"Travel association (Italy, Germany) (GISAID) and clusters with other seqs with Italy travel history on nextstrain"
 Portugal/CV62/2020	region_exposure	Europe #"Travel association (Italy, Germany) (GISAID) and clusters with other seqs with Italy travel history on nextstrain"
 Portugal/CV63/2020	division	Portugal
@@ -2197,6 +2203,7 @@ Scotland/CVR04/2020	country	United Kingdom
 Scotland/CVR04/2020	division	Scotland
 Scotland/CVR05/2020	country	United Kingdom
 Scotland/CVR05/2020	division	Scotland
+Scotland/CVR01/2020	division_exposure	Italy #"This sample is from the first confirmed case in Scotland (https://twitter.com/nextstrain/status/1235204799907454978?s=20), which had travel history to Italy (https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_Scotland)"
 Scotland/CVR01/2020	country_exposure	Italy #"This sample is from the first confirmed case in Scotland (https://twitter.com/nextstrain/status/1235204799907454978?s=20), which had travel history to Italy (https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_Scotland)"
 Scotland/CVR01/2020	region_exposure	Europe #"This sample is from the first confirmed case in Scotland (https://twitter.com/nextstrain/status/1235204799907454978?s=20), which had travel history to Italy (https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_Scotland)"
 Shanghai/SH01/2020	genbank_accession	MT121215
@@ -2395,6 +2402,7 @@ Taiwan/NTU02/2020	location	Taipei
 Taiwan/NTU02/2020	region_exposure	Asia # GISAID "part time worker in Wuhan"
 Taiwan/NTU03/2020	division	Taiwan
 Taiwan/NTU03/2020	location	Taipei
+Taiwan/NTU03/2020	division_exposure	Italy #This sample has overseas travel history (GISAID) and clusters with Italy outbreak on nextstrain tree
 Taiwan/NTU03/2020	country_exposure	Italy #This sample has overseas travel history (GISAID) and clusters with Italy outbreak on nextstrain tree
 Taiwan/NTU03/2020	region_exposure	Europe #This sample has overseas travel history (GISAID) and clusters with Italy outbreak on nextstrain tree
 USA/AZ_4811/2020	country	USA
@@ -2648,6 +2656,8 @@ Vietnam/VR03-38142/2020	region_exposure	Asia # ?
 Wales/PHW04/2020	host	Human # fix casing
 Wales/PHW1/2020	region_exposure	Europe #"Based on the time of sampling, this is the first case confirmed in Wales, which had travel history to Italy (https://www.bbc.com/news/uk-wales-51450517). A second case was not confirmed until 5. March (https://www.bbc.com/news/uk-wales-51751542)"
 Wales/PHW1/2020	country_exposure	Italy #"Based on the time of sampling, this is the first case confirmed in Wales, which had travel history to Italy (https://www.bbc.com/news/uk-wales-51450517). A second case was not confirmed until 5. March (https://www.bbc.com/news/uk-wales-51751542)"
+Wales/PHW1/2020	division_exposure	Italy #"Based on the time of sampling, this is the first case confirmed in Wales, which had travel history to Italy (https://www.bbc.com/news/uk-wales-51450517). A second case was not confirmed until 5. March (https://www.bbc.com/news/uk-wales-51751542)"
+Wales/PHW2/2020	division_exposure	Italy # "At the time of this sample, there were 2 confirmed cases in Wales, both with travel history to Italy. However, 500 tests had been done by this timepoint so we cannot be 100% confident this was a direct export (https://www.bbc.com/news/uk-wales-51751542)"
 Wales/PHW2/2020	country_exposure	Italy # "At the time of this sample, there were 2 confirmed cases in Wales, both with travel history to Italy. However, 500 tests had been done by this timepoint so we cannot be 100% confident this was a direct export (https://www.bbc.com/news/uk-wales-51751542)"
 Wales/PHW2/2020	region_exposure	Europe # "At the time of this sample, there were 2 confirmed cases in Wales, both with travel history to Italy. However, 500 tests had been done by this timepoint so we cannot be 100% confident this was a direct export (https://www.bbc.com/news/uk-wales-51751542)"
 Wuhan-Hu-1/2019	date	2019-12-26 # https://twitter.com/edwardcholmes/status/1219277758062374915
