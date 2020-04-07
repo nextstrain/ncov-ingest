@@ -70,6 +70,10 @@ Australia/VIC01/2020	country_exposure	China # ?
 Australia/VIC01/2020	division_exposure	Hubei # ?
 Australia/VIC01/2020	genbank_accession	MT007544
 Australia/VIC01/2020	region_exposure	Asia # ?
+Australia/NSW02/2020	country_exposure	China # Andrew R preprint: https://www.biorxiv.org/content/10.1101/2020.03.15.992818v1.full.pdf
+Australia/NSW02/2020	region_exposure	Asia # Andrew R preprint: https://www.biorxiv.org/content/10.1101/2020.03.15.992818v1.full.pdf
+Australia/NSW03/2020	country_exposure	China # Andrew R preprint: https://www.biorxiv.org/content/10.1101/2020.03.15.992818v1.full.pdf
+Australia/NSW03/2020	region_exposure	Asia # Andrew R preprint: https://www.biorxiv.org/content/10.1101/2020.03.15.992818v1.full.pdf
 Austria/CeMM0003/2020	country_exposure	Italy # GISAID
 Austria/CeMM0003/2020	division_exposure	Italy # GISAID
 Austria/CeMM0003/2020	region_exposure	Europe # GISAID
@@ -896,6 +900,8 @@ Finland/FIN-508/2020	division	Finland
 Finland/FIN03032020C/2020	country_exposure	Italy # GISAID
 Finland/FIN03032020C/2020	division_exposure	Italy # GISAID
 Finland/FIN03032020C/2020	region_exposure	Europe # GISAID
+Finland/FIN03032020A/2020	country_exposure	Italy # "Between 1. March and 5. March only 5 new cases were confirmed in Finland. Three were from Helsini, where this sample was collected from. The two male samles were working age men who got the virus in Italy (https://en.wikipedia.org/wiki/2020_coronavirus_outbreak_in_Finland)"
+Finland/FIN03032020A/2020	region_exposure	Europe # "Between 1. March and 5. March only 5 new cases were confirmed in Finland. Three were from Helsini, where this sample was collected from. The two male samles were working age men who got the virus in Italy (https://en.wikipedia.org/wiki/2020_coronavirus_outbreak_in_Finland)"
 France/ARA09428/2020	division	Auvergne-Rhône-Alpes
 France/ARA09434/2020	division	Auvergne-Rhône-Alpes
 France/ARA09451/2020	division	Auvergne-Rhône-Alpes
@@ -982,6 +988,12 @@ France/HF3138/2020	location	Compiègne
 France/HF3141/2020	location	Compiègne
 France/IDF0372-isl/2020	division	Ile de France
 France/IDF0372/2020	division	Ile de France
+France/IDF0372/2020	division_exposure	Hubei #AR cluster decision; I think this is one of the first 2 paris sequences based on the submission date and https://www.pasteur.fr/en/press-area/press-documents/institut-pasteur-sequences-whole-genome-wuhan-coronavirus-2019-ncov and apparently all the first three cases originated in china (https://en.wikipedia.org/wiki/2020_coronavirus_outbreak_in_Europe#France)
+France/IDF0372/2020	country_exposure	China #AR cluster decision; I think this is one of the first 2 paris sequences based on the submission date and https://www.pasteur.fr/en/press-area/press-documents/institut-pasteur-sequences-whole-genome-wuhan-coronavirus-2019-ncov and apparently all the first three cases originated in china (https://en.wikipedia.org/wiki/2020_coronavirus_outbreak_in_Europe#France)
+France/IDF0372/2020	region_exposure	Asia #AR cluster decision; I think this is one of the first 2 paris sequences based on the submission date and https://www.pasteur.fr/en/press-area/press-documents/institut-pasteur-sequences-whole-genome-wuhan-coronavirus-2019-ncov and apparently all the first three cases originated in china (https://en.wikipedia.org/wiki/2020_coronavirus_outbreak_in_Europe#France)
+France/IDF0373/2020	division_exposure	Hubei #"This is one of a Chinese couple from Wuhan; the other of which is BetaCoV/France/IDF0372/2020 (https://nextstrain.org/narratives/ncov/sit-rep/2020-01-30?n=10); furthermore, I think this is one of the first 2 paris sequences based on the submission date and https://www.pasteur.fr/en/press-area/press-documents/institut-pasteur-sequences-whole-genome-wuhan-coronavirus-2019-ncov and apparently all the first three cases originated in china (https://en.wikipedia.org/wiki/2020_coronavirus_outbreak_in_Europe#France)"
+France/IDF0373/2020	country_exposure	China #"This is one of a Chinese couple from Wuhan; the other of which is BetaCoV/France/IDF0372/2020 (https://nextstrain.org/narratives/ncov/sit-rep/2020-01-30?n=10); furthermore, I think this is one of the first 2 paris sequences based on the submission date and https://www.pasteur.fr/en/press-area/press-documents/institut-pasteur-sequences-whole-genome-wuhan-coronavirus-2019-ncov and apparently all the first three cases originated in china (https://en.wikipedia.org/wiki/2020_coronavirus_outbreak_in_Europe#France)"
+France/IDF0373/2020	region_exposure	Asia #"This is one of a Chinese couple from Wuhan; the other of which is BetaCoV/France/IDF0372/2020 (https://nextstrain.org/narratives/ncov/sit-rep/2020-01-30?n=10); furthermore, I think this is one of the first 2 paris sequences based on the submission date and https://www.pasteur.fr/en/press-area/press-documents/institut-pasteur-sequences-whole-genome-wuhan-coronavirus-2019-ncov and apparently all the first three cases originated in china (https://en.wikipedia.org/wiki/2020_coronavirus_outbreak_in_Europe#France)"
 France/IDF0373/2020	division	Ile de France
 France/IDF0386-islP1/2020	division	Ile de France
 France/IDF0386-islP3/2020	division	Ile de France
@@ -1701,7 +1713,7 @@ Iceland/LUH-01/2020	country_exposure	Netherlands
 Iceland/LUH-01/2020	division_exposure	Netherlands
 Iceland/LUH-01/2020	region_exposure	Europe
 India/1-27/2020	country_exposure	China # GISAID
-India/1-27/2020	division_exposure	China # GISAID
+India/1-27/2020	division_exposure	Wuhan # GISAID "Up until Feb 2 only 2 cases were confirmed in Kerela, both students returning from Wuhan (https://www.pharmaceutical-technology.com/news/india-covid-19-coronavirus-updates-status-by-state/); unknown whether students were related"
 India/1-27/2020	region_exposure	Asia # GISAID
 India/1-31/2020	country_exposure	China # GISAID
 India/1-31/2020	division_exposure	China # GISAID
@@ -1772,6 +1784,9 @@ Japan/TY-WK-501/2020	genbank_accession	LC522974
 Japan/TY-WK-501/2020	location	Tokyo
 Japan/TY-WK-521/2020	genbank_accession	LC522975
 Japan/TY-WK-521/2020	location	Tokyo
+Japan/OS-20-07-1/2020	division_exposure	Hubei #"AR cluster decision; as of 25.01 there were 3 cases confirmed in Japan, all of them had travel history to Wuhan (https://www.who.int/docs/default-source/coronaviruse/situation-reports/20200125-sitrep-5-2019-ncov.pdf?sfvrsn=429b143d_8)"
+Japan/OS-20-07-1/2020	country_exposure	China #"AR cluster decision; as of 25.01 there were 3 cases confirmed in Japan, all of them had travel history to Wuhan (https://www.who.int/docs/default-source/coronaviruse/situation-reports/20200125-sitrep-5-2019-ncov.pdf?sfvrsn=429b143d_8)"
+Japan/OS-20-07-1/2020	region_exposure	Asia #"AR cluster decision; as of 25.01 there were 3 cases confirmed in Japan, all of them had travel history to Wuhan (https://www.who.int/docs/default-source/coronaviruse/situation-reports/20200125-sitrep-5-2019-ncov.pdf?sfvrsn=429b143d_8)"
 Jingzhou/HBCDC-HB-01/2020	country_exposure	China # GISAID
 Jingzhou/HBCDC-HB-01/2020	division_exposure	Hubei # GISAID
 Jingzhou/HBCDC-HB-01/2020	region_exposure	Asia # GISAID
@@ -1894,6 +1909,8 @@ Luxembourg/LNS9862689/2020	location	Luxembourg
 Luxembourg/LNS9982497/2020	division	Luxembourg
 Luxembourg/LNS9982497/2020	location	Luxembourg
 Luxembourg/Lux1/2020	division	Luxembourg
+Luxembourg/Lux1/2020	country_exposure	Italy #"Travel history to Italy for first case in Luexembourg, which this must be based on collection date (https://www.pharmaceutical-technology.com/news/coronavirus-a-timeline-of-how-the-deadly-outbreak-evolved/)"
+Luxembourg/Lux1/2020	region_exposure	Europe #"Travel history to Italy for first case in Luexembourg, which this must be based on collection date (https://www.pharmaceutical-technology.com/news/coronavirus-a-timeline-of-how-the-deadly-outbreak-evolved/)"
 Mexico/CDMX-InDRE_01/2020	country_exposure	Italy # GISAID
 Mexico/CDMX-InDRE_01/2020	division_exposure	Lombardy # GISAID
 Mexico/CDMX-InDRE_01/2020	region_exposure	Europe # GISAID
@@ -1908,6 +1925,8 @@ Netherlands/Andel_1365066/2020	division	North Brabant
 Netherlands/Andel_1365066/2020	location	Andel
 Netherlands/Berlicum_1363564/2020	division	North Brabant
 Netherlands/Berlicum_1363564/2020	location	Berlicum
+Netherlands/Berlicum_1363564/2020	country_exposure	Italy #"Assuming this is the first COVID-19 case in the Netherlands (confirmed on 27. Febrary), they have travel history to Lombardy in Italy (https://www.rivm.nl/en/news/current-information-about-novel-coronavirus-covid-19)"
+Netherlands/Berlicum_1363564/2020	region_exposure	Europe #"Assuming this is the first COVID-19 case in the Netherlands (confirmed on 27. Febrary), they have travel history to Lombardy in Italy (https://www.rivm.nl/en/news/current-information-about-novel-coronavirus-covid-19)"
 Netherlands/Blaricum_1364780/2020	division	North Brabant
 Netherlands/Blaricum_1364780/2020	location	Blaricum
 Netherlands/Coevorden_1363618/2020	division	Drenthe
@@ -1916,6 +1935,8 @@ Netherlands/Dalen_1363624/2020	division	Drenthe
 Netherlands/Dalen_1363624/2020	location	Dalen
 Netherlands/Delft_1363424/2020	division	South Holland
 Netherlands/Delft_1363424/2020	location	Delft
+Netherlands/Delft_1363424/2020	country_exposure	Italy #"Travel history to Italy for 1st patient from Delft, confirmed on Feb 29th (https://www.rivm.nl/en/news/current-information-about-novel-coronavirus-covid-19)"
+Netherlands/Delft_1363424/2020	region_exposure	Europe #"Travel history to Italy for 1st patient from Delft, confirmed on Feb 29th (https://www.rivm.nl/en/news/current-information-about-novel-coronavirus-covid-19)"
 Netherlands/Diemen_1363454/2020	division	North Holland
 Netherlands/Diemen_1363454/2020	location	Diemen
 Netherlands/Eindhoven_1363782/2020	division	North Brabant
@@ -2121,6 +2142,8 @@ Panama/328677/2020	division_exposure	Comunitat Valenciana
 Panama/328677/2020	region	North America
 Panama/328677/2020	region_exposure	Europe
 Portugal/CV62/2020	division	Portugal
+Portugal/CV62/2020	country_exposure	Italy #"Travel association (Italy, Germany) (GISAID) and clusters with other seqs with Italy travel history on nextstrain"
+Portugal/CV62/2020	region_exposure	Europe #"Travel association (Italy, Germany) (GISAID) and clusters with other seqs with Italy travel history on nextstrain"
 Portugal/CV63/2020	division	Portugal
 Portugal/PT0001b/2020	division	Portugal
 Portugal/PT0003/2020	division	Portugal
@@ -2174,6 +2197,8 @@ Scotland/CVR04/2020	country	United Kingdom
 Scotland/CVR04/2020	division	Scotland
 Scotland/CVR05/2020	country	United Kingdom
 Scotland/CVR05/2020	division	Scotland
+Scotland/CVR01/2020	country_exposure	Italy #"This sample is from the first confirmed case in Scotland (https://twitter.com/nextstrain/status/1235204799907454978?s=20), which had travel history to Italy (https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_Scotland)"
+Scotland/CVR01/2020	region_exposure	Europe #"This sample is from the first confirmed case in Scotland (https://twitter.com/nextstrain/status/1235204799907454978?s=20), which had travel history to Italy (https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_Scotland)"
 Shanghai/SH01/2020	genbank_accession	MT121215
 Shenzhen/HKU-SZ-001/2020	division	Guangdong
 Shenzhen/HKU-SZ-002/2020	genbank_accession	MN938384
@@ -2370,6 +2395,8 @@ Taiwan/NTU02/2020	location	Taipei
 Taiwan/NTU02/2020	region_exposure	Asia # GISAID "part time worker in Wuhan"
 Taiwan/NTU03/2020	division	Taiwan
 Taiwan/NTU03/2020	location	Taipei
+Taiwan/NTU03/2020	country_exposure	Italy #This sample has overseas travel history (GISAID) and clusters with Italy outbreak on nextstrain tree
+Taiwan/NTU03/2020	region_exposure	Europe #This sample has overseas travel history (GISAID) and clusters with Italy outbreak on nextstrain tree
 USA/AZ_4811/2020	country	USA
 USA/AZ_4811/2020	division	Arizona
 USA/AZ_4811/2020	region	North America
@@ -2619,6 +2646,10 @@ Vietnam/VR03-38142/2020	country_exposure	China # ?
 Vietnam/VR03-38142/2020	division_exposure	Hubei # ?
 Vietnam/VR03-38142/2020	region_exposure	Asia # ?
 Wales/PHW04/2020	host	Human # fix casing
+Wales/PHW1/2020	region_exposure	Europe #"Based on the time of sampling, this is the first case confirmed in Wales, which had travel history to Italy (https://www.bbc.com/news/uk-wales-51450517). A second case was not confirmed until 5. March (https://www.bbc.com/news/uk-wales-51751542)"
+Wales/PHW1/2020	country_exposure	Italy #"Based on the time of sampling, this is the first case confirmed in Wales, which had travel history to Italy (https://www.bbc.com/news/uk-wales-51450517). A second case was not confirmed until 5. March (https://www.bbc.com/news/uk-wales-51751542)"
+Wales/PHW2/2020	country_exposure	Italy # "At the time of this sample, there were 2 confirmed cases in Wales, both with travel history to Italy. However, 500 tests had been done by this timepoint so we cannot be 100% confident this was a direct export (https://www.bbc.com/news/uk-wales-51751542)"
+Wales/PHW2/2020	region_exposure	Europe # "At the time of this sample, there were 2 confirmed cases in Wales, both with travel history to Italy. However, 500 tests had been done by this timepoint so we cannot be 100% confident this was a direct export (https://www.bbc.com/news/uk-wales-51751542)"
 Wuhan-Hu-1/2019	date	2019-12-26 # https://twitter.com/edwardcholmes/status/1219277758062374915
 Wuhan-Hu-1/2019	division	Hubei
 Wuhan-Hu-1/2019	genbank_accession	MN908947
