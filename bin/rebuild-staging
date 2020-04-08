@@ -9,11 +9,58 @@ export NEXTSTRAIN_AWS_BATCH_CPUS NEXTSTRAIN_AWS_BATCH_MEMORY
 
 bin="$(dirname "$0")"
 
-metadata_src="${1:?A source metadata TSV file is required as the third argument.}"
-metadata_dst="${2:?A destination metadata TSV s3:// URL is required as the fourth argument.}"
+main() {
+    local metadata_src="${1:?A source metadata TSV file is required as the third argument.}"
+    local metadata_dst="${2:?A destination metadata TSV s3:// URL is required as the fourth argument.}"
 
-sequences_src="${3:?A source sequences fasta file is required as the first argument.}"
-sequences_dst="${4:?A destination sequences fasta s3:// URL is required as the second argument.}"
+    local sequences_src="${3:?A source sequences fasta file is required as the first argument.}"
+    local sequences_dst="${4:?A destination sequences fasta s3:// URL is required as the second argument.}"
+
+    local metadata_match=$(hashes_match $metadata_src $metadata_dst)
+    local sequences_match=$(hashes_match $sequences_src $sequences_dst)
+
+    if [[ $metadata_match -eq 1 && $sequences_match -eq 1 ]]; then
+        echo "No metadata or sequence changes"
+        echo "Exiting"
+        exit 0
+    fi
+
+    echo "Changes detected in metadata or sequences. Continuing"
+
+    if [[ -d "ncov" ]]; then
+        echo "Downloading latest version of the ncov repo (master branch)"
+        (cd ncov; git pull)
+    else
+        echo "Cloning the ncov repo"
+        git clone https://github.com/nextstrain/ncov.git
+    fi
+
+    # Run on these exact data files by uploading them with the build context for
+    # the Batch job, instead of roundtripping them through S3.
+    #
+    # Since the Batch job is submitted before the rest of the GitHub workflow
+    # updates the files on S3, this also avoids a narrow race condition if AWS
+    # Batch is quick or the upload to S3 slow.
+    mkdir -p ncov/data/
+    cp -v "$metadata_src" "$sequences_src" ncov/data/
+
+
+    local output=$(
+        nextstrain build --aws-batch --detach \
+            ncov deploy_to_staging \
+            --config slack_webhook="$SLACK_INCOMING_WEBHOOK" \
+            --cores "$NEXTSTRAIN_AWS_BATCH_CPUS" \
+            --snakefile Snakefile_Regions
+    )
+
+    echo "$output"
+
+    # Extract the AWS job ID from the `nextstrain build --aws-batch --detach` output
+    local aws_batch_job_id=$(grep "AWS Batch Job ID" <<<"$output" | cut -d ' ' -f 5)
+
+    echo "Notifying Slack about rebuild."
+    "$bin"/notify-slack "A new staging build has started. Follow along in your local ncov repo with: "'```'"nextstrain build --aws-batch --attach $aws_batch_job_id ."'```'
+}
 
 # Returns 1 if both files match (have identical hashes). Else returns 0.
 hashes_match() {
@@ -27,47 +74,4 @@ hashes_match() {
     fi
 }
 
-metadata_match=$(hashes_match $metadata_src $metadata_dst)
-sequences_match=$(hashes_match $sequences_src $sequences_dst)
-
-if [[ $metadata_match -eq 1 && $sequences_match -eq 1 ]]; then
-    echo "No metadata or sequence changes"
-    echo "Exiting"
-    exit 0
-fi
-
-echo "Changes detected in metadata or sequences. Continuing"
-
-if [[ -d "ncov" ]]; then
-    echo "Downloading latest version of the ncov repo (master branch)"
-    (cd ncov; git pull)
-else
-    echo "Cloning the ncov repo"
-    git clone https://github.com/nextstrain/ncov.git
-fi
-
-# Run on these exact data files by uploading them with the build context for
-# the Batch job, instead of roundtripping them through S3.
-#
-# Since the Batch job is submitted before the rest of the GitHub workflow
-# updates the files on S3, this also avoids a narrow race condition if AWS
-# Batch is quick or the upload to S3 slow.
-mkdir -p ncov/data/
-cp -v "$metadata_src" "$sequences_src" ncov/data/
-
-
-output=$(
-    nextstrain build --aws-batch --detach \
-        ncov deploy_to_staging \
-        --config slack_webhook="$SLACK_INCOMING_WEBHOOK" \
-        --cores "$NEXTSTRAIN_AWS_BATCH_CPUS" \
-        --snakefile Snakefile_Regions
-)
-
-echo "$output"
-
-# Extract the AWS job ID from the `nextstrain build --aws-batch --detach` output
-aws_batch_job_id=$(grep "AWS Batch Job ID" <<<"$output" | cut -d ' ' -f 5)
-
-echo "Notifying Slack about rebuild."
-"$bin"/notify-slack "A new staging build has started. Follow along in your local ncov repo with: "'```'"nextstrain build --aws-batch --attach $aws_batch_job_id ."'```'
+main "$@"
