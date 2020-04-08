@@ -10,22 +10,26 @@ export NEXTSTRAIN_AWS_BATCH_CPUS NEXTSTRAIN_AWS_BATCH_MEMORY
 bin="$(dirname "$0")"
 
 main() {
-    local metadata_src="${1:?A source metadata TSV file is required as the third argument.}"
-    local metadata_dst="${2:?A destination metadata TSV s3:// URL is required as the fourth argument.}"
+    if [[ $# -ne 0 ]]; then
+        local metadata_src="${1:?A source metadata TSV file is required as the third argument.}"
+        local metadata_dst="${2:?A destination metadata TSV s3:// URL is required as the fourth argument.}"
 
-    local sequences_src="${3:?A source sequences fasta file is required as the first argument.}"
-    local sequences_dst="${4:?A destination sequences fasta s3:// URL is required as the second argument.}"
+        local sequences_src="${3:?A source sequences fasta file is required as the first argument.}"
+        local sequences_dst="${4:?A destination sequences fasta s3:// URL is required as the second argument.}"
 
-    local metadata_match=$(hashes_match $metadata_src $metadata_dst)
-    local sequences_match=$(hashes_match $sequences_src $sequences_dst)
+        local metadata_match=$(hashes_match $metadata_src $metadata_dst)
+        local sequences_match=$(hashes_match $sequences_src $sequences_dst)
 
-    if [[ $metadata_match -eq 1 && $sequences_match -eq 1 ]]; then
-        echo "No metadata or sequence changes"
-        echo "Exiting"
-        exit 0
+        if [[ $metadata_match -eq 1 && $sequences_match -eq 1 ]]; then
+            echo "No metadata or sequence changes"
+            echo "Exiting"
+            exit 0
+        fi
+
+        echo "Changes detected in metadata or sequences. Continuing"
+    else
+        echo "Rebuilding using remote data files."
     fi
-
-    echo "Changes detected in metadata or sequences. Continuing"
 
     if [[ -d "ncov" ]]; then
         echo "Downloading latest version of the ncov repo (master branch)"
@@ -35,14 +39,16 @@ main() {
         git clone https://github.com/nextstrain/ncov.git
     fi
 
-    # Run on these exact data files by uploading them with the build context for
-    # the Batch job, instead of roundtripping them through S3.
-    #
-    # Since the Batch job is submitted before the rest of the GitHub workflow
-    # updates the files on S3, this also avoids a narrow race condition if AWS
-    # Batch is quick or the upload to S3 slow.
-    mkdir -p ncov/data/
-    cp -v "$metadata_src" "$sequences_src" ncov/data/
+    if [[ -n "${metadata_src:-}" && -n "${sequences_src:-}" ]]; then
+        # Run on these exact data files by uploading them with the build context for
+        # the Batch job, instead of roundtripping them through S3.
+        #
+        # Since the Batch job is submitted before the rest of the GitHub workflow
+        # updates the files on S3, this also avoids a narrow race condition if AWS
+        # Batch is quick or the upload to S3 slow.
+        mkdir -p ncov/data/
+        cp -v "$metadata_src" "$sequences_src" ncov/data/
+    fi
 
 
     local output=$(
