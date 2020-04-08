@@ -65,5 +65,5 @@ echo "$output"
 # Extract the AWS job ID from the `nextstrain build --aws-batch --detach` output
 aws_batch_job_id=$(grep "AWS Batch Job ID" <<<"$output" | cut -d ' ' -f 5)
 
-echo "Notifying Slack about metadata change."
-"$bin"/notify-slack "A new batch job has started. Follow along in your local ncov repo with: "'```'"nextstrain build --aws-batch --attach $aws_batch_job_id ."'```'
+echo "Notifying Slack about rebuild."
+"$bin"/notify-slack "A new staging build has started. Follow along in your local ncov repo with: "'```'"nextstrain build --aws-batch --attach $aws_batch_job_id ."'```'
