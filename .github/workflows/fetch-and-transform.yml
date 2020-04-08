@@ -6,6 +6,10 @@ on:
     # * is a special character in YAML so you have to quote this string
     - cron:  '*/60 * * * *'
 
+  # Manually triggered using `./bin/trigger ingest`
+  repository_dispatch:
+    types: ingest
+
 jobs:
   ingest:
     runs-on: ubuntu-latest

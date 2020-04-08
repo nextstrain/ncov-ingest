@@ -1,0 +1,38 @@
+#!/bin/bash
+set -euo pipefail
+
+bin="$(dirname "$0")"
+event_type="${1:?An event type ("ingest") is required as the first argument.}"
+shift
+
+if [[ $# -eq 0 ]]; then
+    cat >&2 <<.
+You must specify options to curl for your GitHub credentials.  For example, you
+can specify your GitHub username, and will be prompted for your password:
+
+  $0 --user <your-github-username>
+
+You can also store your credentials or a personal access token¹ in a netrc
+file² and then tell curl to use it:
+
+  $0 --netrc
+
+which will then not require you to type your password every time.
+
+¹ https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line
+² https://ec.haxx.se/usingcurl/usingcurl-netrc
+.
+    exit 1
+fi
+
+if curl -fsS https://api.github.com/repos/nextstrain/ncov-ingest/dispatches \
+    -H 'Accept: application/vnd.github.v3+json' \
+    -H 'Content-Type: application/json' \
+    -d '{"event_type":"'"$event_type"'"}' \
+    "$@"
+then
+    echo "Successfully triggered $event_type"
+else
+    echo "Request failed" >&2
+    exit 1
+fi

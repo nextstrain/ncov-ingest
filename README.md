@@ -13,6 +13,10 @@ It is scheduled to run every 15 minutes and on pushes to `master`.
 
 AWS credentials are stored in this repository's secrets and are associated with the `nextstrain-ncov-ingest-uploader` IAM user in the Bedford Lab AWS account, which is locked down to reading and publishing only the `gisaid.ndjson`, `metadata.tsv`, and `sequences.fasta` files in the `nextstrain-ncov-private` S3 bucket.
 
+## Manually triggering the automation
+You can manually trigger the automation by running `./bin/trigger ingest --user <your-github-username>`.
+See the output of `./bin/trigger ingest` for more information about authentication with GitHub.
+
 ## Updating manual annotations
 Manual annotations should be added to `source-data/annotations.tsv`.
 A common pattern is expected to be:
