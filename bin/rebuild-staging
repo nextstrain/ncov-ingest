@@ -1,6 +1,11 @@
 #!/bin/bash
 set -euo pipefail
 
+if ! hash nextstrain 2>/dev/null; then
+    echo "The Nextstrain CLI must be installed." >&2
+    exit 1
+fi
+
 : "${SLACK_TOKEN:?The SLACK_TOKEN environment variable is required.}"
 : "${NEXTSTRAIN_AWS_BATCH_CPUS:=8}"
 : "${NEXTSTRAIN_AWS_BATCH_MEMORY:=62000}"
