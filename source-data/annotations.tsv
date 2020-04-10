@@ -1901,6 +1901,21 @@ KOR/BA-ACH_2719/2020	country	South Korea
 Korea/BA-ACH_2604/2020	country	South Korea
 Korea/BA-ACH_2718/2020	country	South Korea
 Korea/BA-ACH_2719/2020	country	South Korea
+Kuwait/KU005/2020	division	Kuwait
+Kuwait/KU005/2020	location	Dasman
+Kuwait/KU005/2020	division_exposure	United Kingdom
+Kuwait/KU005/2020	country_exposure	United Kingdom
+Kuwait/KU005/2020	region_exposure	Europe #Visited UK
+Kuwait/KU006/2020	division	Kuwait
+Kuwait/KU006/2020	location	Dasman
+Kuwait/KU006/2020	division_exposure	Italy
+Kuwait/KU006/2020	country_exposure	Italy
+Kuwait/KU006/2020	region_exposure	Europe #Visited Italy
+Kuwait/KU008/2020	division	Kuwait
+Kuwait/KU008/2020	location	Dasman
+Kuwait/KU008/2020	division_exposure	United Kingdom
+Kuwait/KU008/2020	country_exposure	United Kingdom
+Kuwait/KU008/2020	region_exposure	Europe #Traveled to UK
 Kuwait/KU09/2020	division	Kuwait
 Kuwait/KU09/2020	location	Dasman
 Kuwait/KU12/2020	division	Kuwait
@@ -2546,7 +2561,7 @@ Taiwan/NTU09/2020	country_exposure	Austria
 Taiwan/NTU09/2020	region_exposure	Europe #Travel history to Austria
 Taiwan/NTU11/2020	division_exposure	Turkey
 Taiwan/NTU11/2020	country_exposure	Turkey
-Taiwan/NTU11/2020	region_exposure	Europe #Travel history to Turkey
+Taiwan/NTU11/2020	region_exposure	Asia #Travel history to Turkey
 Taiwan/NTU12/2020	division_exposure	France
 Taiwan/NTU12/2020	country_exposure	France
 Taiwan/NTU12/2020	region_exposure	Europe #Travel history to France
@@ -2713,8 +2728,8 @@ USA/OR_5430/2020	country	USA
 USA/OR_5430/2020	division	Oregon
 USA/OR_5430/2020	region	North America
 USA/OR_5430/2020	region	North America
-USA/USA/OSUP0112/2020	division	Ohio
-USA/USA/OSUP0112/2020	location	Columbus
+USA/OSUP0112/2020	division	Ohio
+USA/OSUP0112/2020	location	Columbus
 USA/RI_0556/2020	country	USA
 USA/RI_0556/2020	division	Rhode Island
 USA/RI_0556/2020	region	North America
