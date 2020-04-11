@@ -64,8 +64,8 @@ Australia/NSW13/2020	division_exposure	Iran # James: data via direct contact wit
 Australia/NSW13/2020	region_exposure	Asia # James: data via direct contact with Aus lab
 Australia/NSW13/2020	region_exposure	Asia # James: data via direct contact with Aus lab
 Australia/NSW14/2020	division	New South Wales
-Australia/QLD01/2020	country_exposure	China # ?
 Australia/QLD01/2020	division_exposure	Hubei # ?
+Australia/QLD01/2020	country_exposure	China # ?
 Australia/QLD01/2020	region_exposure	Asia # ?
 Australia/VIC01/2020	country_exposure	China # ?
 Australia/VIC01/2020	division_exposure	Hubei # ?
@@ -300,51 +300,94 @@ China/WH-09/2020	location	Wuhan
 China/WHU01/2020	genbank_accession	MN988668
 China/WHU02/2020	genbank_accession	MN988669
 Chongqing/YC01/2020	division	Chongqing
-Congo/108/2020	country	Democratic Republic Of The Congo
-Congo/158/2020	country	Democratic Republic Of The Congo
-Congo/191/2020	country	Democratic Republic Of The Congo
-Congo/214/2020	country	Democratic Republic Of The Congo
-Congo/215/2020	country	Democratic Republic Of The Congo
-Congo/236/2020	country	Democratic Republic Of The Congo
-Congo/241/2020	country	Democratic Republic Of The Congo
-Congo/243/2020	country	Democratic Republic Of The Congo
-Congo/248/2020	country	Democratic Republic Of The Congo
-Congo/253/2020	country	Democratic Republic Of The Congo
-Congo/254/2020	country	Democratic Republic Of The Congo
-Congo/299/2020	country	Democratic Republic Of The Congo
-Congo/300/2020	country	Democratic Republic Of The Congo
-Congo/307/2020	country	Democratic Republic Of The Congo
-Congo/352/2020	country	Democratic Republic Of The Congo
-Congo/353/2020	country	Democratic Republic Of The Congo
-Congo/355/2020	country	Democratic Republic Of The Congo
-Congo/376/2020	country	Democratic Republic Of The Congo
-Congo/396/2020	country	Democratic Republic Of The Congo
-Congo/397/2020	country	Democratic Republic Of The Congo
-Congo/400/2020	country	Democratic Republic Of The Congo
-Congo/402/2020	country	Democratic Republic Of The Congo
-Congo/431/2020	country	Democratic Republic Of The Congo
-Congo/445/2020	country	Democratic Republic Of The Congo
-Congo/521/2020	country	Democratic Republic Of The Congo
-Congo/523/2020	country	Democratic Republic Of The Congo
-Congo/73/2020	country	Democratic Republic Of The Congo
-Congo/80/2020	country	Democratic Republic Of The Congo
-Congo/81/2020	country	Democratic Republic Of The Congo
-Congo/82/2020	country	Democratic Republic Of The Congo
-Congo/94/2020	country	Democratic Republic Of The Congo
-Congo/KN-0017/2020	country	Democratic Republic Of The Congo
-Congo/KN-0038/2020	country	Democratic Republic Of The Congo
-Congo/KN-0043/2020	country	Democratic Republic Of The Congo
-Congo/KN-0051/2020	country	Democratic Republic Of The Congo
-Congo/KN-0054/2020	country	Democratic Republic Of The Congo
-Congo/KN-0058/2020	country	Democratic Republic Of The Congo
-Congo/KN-0059/2020	country	Democratic Republic Of The Congo
-Congo/KN-0060/2020	country	Democratic Republic Of The Congo
-Congo/KN-0070/2020	country	Democratic Republic Of The Congo
-Congo/KN-0072/2020	country	Democratic Republic Of The Congo
-Congo/KN-13/2020	country	Democratic Republic Of The Congo
+Congo/108/2020	country	Democratic Republic of the Congo
+Congo/158/2020	country	Democratic Republic of the Congo
+Congo/191/2020	country	Democratic Republic of the Congo
+Congo/214/2020	country	Democratic Republic of the Congo
+Congo/215/2020	country	Democratic Republic of the Congo
+Congo/236/2020	country	Democratic Republic of the Congo
+Congo/241/2020	country	Democratic Republic of the Congo
+Congo/243/2020	country	Democratic Republic of the Congo
+Congo/248/2020	country	Democratic Republic of the Congo
+Congo/253/2020	country	Democratic Republic of the Congo
+Congo/254/2020	country	Democratic Republic of the Congo
+Congo/299/2020	country	Democratic Republic of the Congo
+Congo/300/2020	country	Democratic Republic of the Congo
+Congo/307/2020	country	Democratic Republic of the Congo
+Congo/352/2020	country	Democratic Republic of the Congo
+Congo/353/2020	country	Democratic Republic of the Congo
+Congo/355/2020	country	Democratic Republic of the Congo
+Congo/376/2020	country	Democratic Republic of the Congo
+Congo/396/2020	country	Democratic Republic of the Congo
+Congo/397/2020	country	Democratic Republic of the Congo
+Congo/400/2020	country	Democratic Republic of the Congo
+Congo/402/2020	country	Democratic Republic of the Congo
+Congo/431/2020	country	Democratic Republic of the Congo
+Congo/445/2020	country	Democratic Republic of the Congo
+Congo/521/2020	country	Democratic Republic of the Congo
+Congo/523/2020	country	Democratic Republic of the Congo
+Congo/73/2020	country	Democratic Republic of the Congo
+Congo/80/2020	country	Democratic Republic of the Congo
+Congo/81/2020	country	Democratic Republic of the Congo
+Congo/82/2020	country	Democratic Republic of the Congo
+Congo/94/2020	country	Democratic Republic of the Congo
+Congo/KN-0017/2020	country	Democratic Republic of the Congo
+Congo/KN-0038/2020	country	Democratic Republic of the Congo
+Congo/KN-0043/2020	country	Democratic Republic of the Congo
+Congo/KN-0051/2020	country	Democratic Republic of the Congo
+Congo/KN-0054/2020	country	Democratic Republic of the Congo
+Congo/KN-0058/2020	country	Democratic Republic of the Congo
+Congo/KN-0059/2020	country	Democratic Republic of the Congo
+Congo/KN-0060/2020	country	Democratic Republic of the Congo
+Congo/KN-0070/2020	country	Democratic Republic of the Congo
+Congo/KN-0072/2020	country	Democratic Republic of the Congo
+Congo/KN-13/2020	country	Democratic Republic of the Congo
 CzechRepublic/951/2020	country_exposure	Italy # GISAID - probably infected during holiday to italy
 CzechRepublic/951/2020	division_exposure	Italy # GISAID - probably infected during holiday to italy
 CzechRepublic/951/2020	region_exposure	Europe # GISAID - probably infected during holiday to italy
+DRC/108/2020	country	Democratic Republic of the Congo
+DRC/158/2020	country	Democratic Republic of the Congo
+DRC/191/2020	country	Democratic Republic of the Congo
+DRC/214/2020	country	Democratic Republic of the Congo
+DRC/215/2020	country	Democratic Republic of the Congo
+DRC/236/2020	country	Democratic Republic of the Congo
+DRC/241/2020	country	Democratic Republic of the Congo
+DRC/243/2020	country	Democratic Republic of the Congo
+DRC/248/2020	country	Democratic Republic of the Congo
+DRC/253/2020	country	Democratic Republic of the Congo
+DRC/254/2020	country	Democratic Republic of the Congo
+DRC/299/2020	country	Democratic Republic of the Congo
+DRC/300/2020	country	Democratic Republic of the Congo
+DRC/307/2020	country	Democratic Republic of the Congo
+DRC/352/2020	country	Democratic Republic of the Congo
+DRC/353/2020	country	Democratic Republic of the Congo
+DRC/355/2020	country	Democratic Republic of the Congo
+DRC/376/2020	country	Democratic Republic of the Congo
+DRC/396/2020	country	Democratic Republic of the Congo
+DRC/397/2020	country	Democratic Republic of the Congo
+DRC/400/2020	country	Democratic Republic of the Congo
+DRC/402/2020	country	Democratic Republic of the Congo
+DRC/431/2020	country	Democratic Republic of the Congo
+DRC/445/2020	country	Democratic Republic of the Congo
+DRC/521/2020	country	Democratic Republic of the Congo
+DRC/523/2020	country	Democratic Republic of the Congo
+DRC/73/2020	country	Democratic Republic of the Congo
+DRC/80/2020	country	Democratic Republic of the Congo
+DRC/81/2020	country	Democratic Republic of the Congo
+DRC/82/2020	country	Democratic Republic of the Congo
+DRC/94/2020	country	Democratic Republic of the Congo
+DRC/KN-0017/2020	country	Democratic Republic of the Congo
+DRC/KN-0038/2020	country	Democratic Republic of the Congo
+DRC/KN-0043/2020	country	Democratic Republic of the Congo
+DRC/KN-0051/2020	country	Democratic Republic of the Congo
+DRC/KN-0054/2020	country	Democratic Republic of the Congo
+DRC/KN-0058/2020	country	Democratic Republic of the Congo
+DRC/KN-0059/2020	country	Democratic Republic of the Congo
+DRC/KN-0060/2020	country	Democratic Republic of the Congo
+DRC/KN-0070/2020	country	Democratic Republic of the Congo
+DRC/KN-0072/2020	country	Democratic Republic of the Congo
+DRC/KN-13/2020	country	Democratic Republic of the Congo
+Ecuador/HGSQ-USFQ-018/2020	division_exposure	Guayas
 England/01/2020	country	United Kingdom
 England/01/2020	country_exposure	China # first cases were reported in media as being son & mother from China
 England/01/2020	division	England
@@ -1015,6 +1058,7 @@ France/Bourg-en-Bresse_06678/2020	division	Auvergne-Rhône-Alpes
 France/Bourg-en-Bresse_06813/2020	division	Auvergne-Rhône-Alpes
 France/Clermont-Ferrand_650/2020	division	Auvergne-Rhône-Alpes
 France/Clermont-Ferrand_651/2020	division	Auvergne-Rhône-Alpes
+France/CVL3365/2020	division	Centre-Val de Loire
 France/GE1583/2020	division	Grand Est
 France/GE1973/2020	division	Grand Est
 France/GE1977/2020	division	Grand Est
@@ -1025,11 +1069,15 @@ France/GE3067/2020	division	Grand Est
 France/HF2039/2020	division	Hauts de France
 France/HF2039/2020	location	Crépy en Valois
 France/HF2196/2020	location	Chateau-Thierry
+France/HF2306/2020	location	Compiègne
 France/HF2748/2020	location	Compiègne
 France/HF2946/2020	location	Compiègne
 France/HF2948/2020	location	Compiègne
 France/HF3138/2020	location	Compiègne
 France/HF3141/2020	location	Compiègne
+France/HF3290/2020	location	Compiègne
+France/HF3293/2020	location	Compiègne
+France/HF3295/2020	location	Compiègne
 France/IDF0372-isl/2020	division	Ile de France
 France/IDF0372/2020	division	Ile de France
 France/IDF0372/2020	division_exposure	Hubei #AR cluster decision; I think this is one of the first 2 paris sequences based on the submission date and https://www.pasteur.fr/en/press-area/press-documents/institut-pasteur-sequences-whole-genome-wuhan-coronavirus-2019-ncov and apparently all the first three cases originated in china (https://en.wikipedia.org/wiki/2020_coronavirus_outbreak_in_Europe#France)
@@ -1088,6 +1136,20 @@ Germany/BavPat2/2020	location	Munich
 Germany/BavPat2/2020	region_exposure	Asia # GISAID
 Germany/BavPat3/2020	division	Bavaria
 Germany/BavPat3/2020	location	Munich
+Ghana/1622_S2/2020	location	Accra
+Ghana/1651_S3/2020	location	Accra
+Ghana/2230_S4/2020	location	Accra
+Ghana/2333_S5/2020	location	Accra
+Ghana/2828_S6/2020	location	Accra
+Ghana/2853_S7/2020	location	Accra
+Ghana/2914_S8/2020	location	Accra
+Ghana/2944_S9/2020	location	Accra
+Ghana/2986_S10/2020	location	Accra
+Ghana/1565_S13/2020	location	Accra
+Ghana/1659_S14/2020	location	Accra
+Ghana/2850_S15/2020	location	Accra
+Ghana/3176_S11/2020	location	Accra
+Ghana/3177_S12/2020	location	Accra
 Guangdong/20SF012/2020	division	Guangdong
 Guangdong/20SF013/2020	division	Guangdong
 Guangdong/20SF014/2020	division	Guangdong
@@ -1840,6 +1902,22 @@ KOR/BA-ACH_2719/2020	country	South Korea
 Korea/BA-ACH_2604/2020	country	South Korea
 Korea/BA-ACH_2718/2020	country	South Korea
 Korea/BA-ACH_2719/2020	country	South Korea
+Kuwait/KU005/2020	division	Kuwait
+Kuwait/KU005/2020	location	Dasman
+Kuwait/KU005/2020	division_exposure	United Kingdom
+Kuwait/KU005/2020	country_exposure	United Kingdom
+Kuwait/KU005/2020	region_exposure	Europe #Visited UK
+Kuwait/KU006/2020	division	Kuwait
+Kuwait/KU006/2020	location	Dasman
+Kuwait/KU006/2020	division_exposure	Italy
+Kuwait/KU006/2020	country_exposure	Italy
+Kuwait/KU006/2020	region_exposure	Europe #Visited Italy
+Kuwait/KU008/2020	division	Kuwait
+Kuwait/KU008/2020	location	Dasman
+Kuwait/KU008/2020	division_exposure	United Kingdom
+Kuwait/KU008/2020	country_exposure	United Kingdom
+Kuwait/KU008/2020	region_exposure	Europe #Traveled to UK
+Kuwait/KU008/2020	date	2020-03-16 # submitter confirmed date mistake by email
 Kuwait/KU09/2020	division	Kuwait
 Kuwait/KU09/2020	location	Dasman
 Kuwait/KU12/2020	division	Kuwait
@@ -1848,6 +1926,13 @@ Kuwait/KU17/2020	division	Kuwait
 Kuwait/KU17/2020	location	Dasman
 Kuwait/KU18/2020	division	Kuwait
 Kuwait/KU18/2020	location	Dasman
+hCoV/Kuwait/KU001/2020	strain	Kuwait/KU001/2020
+hCoV/Kuwait/KU001/2020	division_exposure	USA #GISAID
+hCoV/Kuwait/KU001/2020	country_exposure	USA #GISAID
+hCoV/Kuwait/KU001/2020	region_exposure	North America #GISAID
+Kuwait/KU001/2020	division_exposure	USA #GISAID
+Kuwait/KU001/2020	country_exposure	USA #GISAID
+Kuwait/KU001/2020	region_exposure	North America #GISAID
 Luxembourg/LNS0000001/2020	division	Luxembourg
 Luxembourg/LNS0000001/2020	location	Luxembourg
 Luxembourg/LNS0156959/2020	division	Luxembourg
@@ -2340,6 +2425,7 @@ Slovakia/SK-BMC5/2020	country_exposure	France # GISAID - Travel history to Paris
 Slovakia/SK-BMC5/2020	division_exposure	Ile de France # GISAID - Travel history to Paris, France
 Slovakia/SK-BMC5/2020	region_exposure	Europe # GISAID - Travel history to Paris, France
 SouthAfrica/R03006-20/2020	division	KwaZulu-Natal
+SouthAfrica/KRISP_0002/2020	division	KwaZulu-Natal
 SouthAfrica/KRISP_0006/2020	division	KwaZulu-Natal
 SouthAfrica/KRISP_0007/2020	division	KwaZulu-Natal
 SouthAfrica/KRISP_0011/2020	division	KwaZulu-Natal
@@ -2387,6 +2473,12 @@ Spain/Valencia7/2020	division	Comunitat Valenciana
 Spain/Valencia8/2020	division	Comunitat Valenciana
 Spain/Valencia9/2020	division	Comunitat Valenciana
 Spain/Valencia10/2020	division	Comunitat Valenciana
+Spain/Valencia40/2020	division	Comunitat Valenciana
+Spain/Valencia46/2020	division	Comunitat Valenciana
+Spain/Valencia47/2020	division	Comunitat Valenciana
+Spain/Valencia48/2020	division	Comunitat Valenciana
+Spain/Valencia52/2020	division	Comunitat Valenciana
+Spain/Valencia53/2020	division	Comunitat Valenciana
 Spain/CastillayLeon201437/2020	division	Castilla y Leon
 Sweden/01/2020	division	Småland
 Sweden/01/2020	genbank_accession	MT093571
@@ -2451,6 +2543,51 @@ Taiwan/NTU03/2020	location	Taipei
 Taiwan/NTU03/2020	division_exposure	Italy #This sample has overseas travel history (GISAID) and clusters with Italy outbreak on nextstrain tree
 Taiwan/NTU03/2020	country_exposure	Italy #This sample has overseas travel history (GISAID) and clusters with Italy outbreak on nextstrain tree
 Taiwan/NTU03/2020	region_exposure	Europe #This sample has overseas travel history (GISAID) and clusters with Italy outbreak on nextstrain tree
+Taiwan/NTU04/2020	division_exposure	Philippines
+Taiwan/NTU04/2020	country_exposure	Philippines
+Taiwan/NTU04/2020	region_exposure	Asia #Travel history to Philippines
+Taiwan/NTU05/2020	division_exposure	France
+Taiwan/NTU05/2020	country_exposure	France
+Taiwan/NTU05/2020	region_exposure	Europe #Travel history to France
+Taiwan/NTU06/2020	division_exposure	Ireland
+Taiwan/NTU06/2020	country_exposure	Ireland
+Taiwan/NTU06/2020	region_exposure	Europe #Travel history to Ireland
+Taiwan/NTU07/2020	division_exposure	Japan
+Taiwan/NTU07/2020	country_exposure	Japan
+Taiwan/NTU07/2020	region_exposure	Asia #Travel history to Japan
+Taiwan/NTU08/2020	division_exposure	Egypt
+Taiwan/NTU08/2020	country_exposure	Egypt
+Taiwan/NTU08/2020	region_exposure	Africa #Travel history to Egypt
+Taiwan/NTU09/2020	division_exposure	Austria
+Taiwan/NTU09/2020	country_exposure	Austria
+Taiwan/NTU09/2020	region_exposure	Europe #Travel history to Austria
+Taiwan/NTU11/2020	division_exposure	Turkey
+Taiwan/NTU11/2020	country_exposure	Turkey
+Taiwan/NTU11/2020	region_exposure	Asia #Travel history to Turkey
+Taiwan/NTU12/2020	division_exposure	France
+Taiwan/NTU12/2020	country_exposure	France
+Taiwan/NTU12/2020	region_exposure	Europe #Travel history to France
+Taiwan/NTU13/2020	division_exposure	USA
+Taiwan/NTU13/2020	country_exposure	USA
+Taiwan/NTU13/2020	region_exposure	North America #Travel history to USA
+Taiwan/NTU14/2020	division_exposure	Spain
+Taiwan/NTU14/2020	country_exposure	Spain
+Taiwan/NTU14/2020	region_exposure	Europe #Travel history to Spain
+Taiwan/NTU15/2020	division_exposure	Egypt
+Taiwan/NTU15/2020	country_exposure	Egypt
+Taiwan/NTU15/2020	region_exposure	Africa #Travel history to Egypt
+Taiwan/NTU16/2020	division_exposure	Portugal
+Taiwan/NTU16/2020	country_exposure	Portugal
+Taiwan/NTU16/2020	region_exposure	Europe #Travel history to Portugal
+Taiwan/NTU17/2020	division_exposure	USA
+Taiwan/NTU17/2020	country_exposure	USA
+Taiwan/NTU17/2020	region_exposure	North America #Travel history to USA
+Taiwan/NTU19/2020	division_exposure	Czech Republic
+Taiwan/NTU19/2020	country_exposure	Czech Republic
+Taiwan/NTU19/2020	region_exposure	Europe #Travel history to Czech Republic
+Taiwan/NTU20/2020	division_exposure	Poland
+Taiwan/NTU20/2020	country_exposure	Poland
+Taiwan/NTU20/2020	region_exposure	Europe #Travel history to Poland
 USA/AZ_4811/2020	country	USA
 USA/AZ_4811/2020	division	Arizona
 USA/AZ_4811/2020	region	North America
@@ -2593,6 +2730,8 @@ USA/OR_5430/2020	country	USA
 USA/OR_5430/2020	division	Oregon
 USA/OR_5430/2020	region	North America
 USA/OR_5430/2020	region	North America
+USA/OSUP0112/2020	division	Ohio
+USA/OSUP0112/2020	location	Columbus
 USA/RI_0556/2020	country	USA
 USA/RI_0556/2020	division	Rhode Island
 USA/RI_0556/2020	region	North America

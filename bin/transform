@@ -42,7 +42,6 @@ def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
         'covv_authors'          : 'authors',
         'covv_patient_age'      : 'age',
         'covv_gender'           : 'sex',
-        'sequence_length'       : 'length',
         'covv_add_host_info'    : 'additional_host_info',
         'covv_add_location'     : 'additional_location_info',
         'covv_subm_date'        : 'date_submitted',
@@ -56,6 +55,11 @@ def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
             gisaid_data[field] = pd.NA
 
     gisaid_data.rename(mapper, axis="columns", inplace=True)
+
+    # Calculate sequence length.  GISAID provides a "sequence_length" column,
+    # but it sometimes inexplicably goes missing.
+    gisaid_data['sequence'] = gisaid_data['sequence'].str.replace('\n', '')
+    gisaid_data['length'] = gisaid_data['sequence'].str.len().astype("Int64")
 
     # Abbreviate strain names by removing the prefix. Strip spaces, too.
     gisaid_data['strain'] = gisaid_data['strain'] \
@@ -194,9 +198,7 @@ def generate_hardcoded_metadata(hardcoded_metadata: pd.DataFrame) -> pd.DataFram
 
 def write_fasta_file(sequence_data: pd.DataFrame):
     """ """
-    sequence_data['sequence'] = sequence_data['sequence'].str.replace('\n', '')
-
-    with fsspec.open(args.output_fasta, 'wt') as fastafile:
+    with fsspec.open(str(args.output_fasta), 'wt') as fastafile:
         for index, row in sequence_data.iterrows():
             fastafile.write(f">{row['strain']}\n")
             fastafile.write(f"{row['sequence']}\n")
