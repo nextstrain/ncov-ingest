@@ -2232,21 +2232,21 @@ Iceland/338/2020	region_exposure	Europe # GISAID
 Iceland/LUH-01/2020	country_exposure	Netherlands
 Iceland/LUH-01/2020	division_exposure	Netherlands
 Iceland/LUH-01/2020	region_exposure	Europe
-Iceland/370/2020	division_exposure	UK #GISAID
-Iceland/371/2020	division_exposure	UK #GISAID
-Iceland/404/2020	division_exposure	UK #GISAID
-Iceland/376/2020	division_exposure	UK #GISAID
-Iceland/378/2020	division_exposure	UK #GISAID
-Iceland/458/2020	division_exposure	UK #GISAID
-Iceland/467/2020	division_exposure	UK #GISAID
-Iceland/516/2020	division_exposure	UK #GISAID
-Iceland/522/2020	division_exposure	UK #GISAID
-Iceland/546/2020	division_exposure	UK #GISAID
-Iceland/565/2020	division_exposure	UK #GISAID
-Iceland/578/2020	division_exposure	UK #GISAID
-Iceland/580/2020	division_exposure	UK #GISAID
-Iceland/593/2020	division_exposure	UK #GISAID
-Iceland/594/2020	division_exposure	UK #GISAID
+Iceland/370/2020	division_exposure	United Kingdom #GISAID
+Iceland/371/2020	division_exposure	United Kingdom #GISAID
+Iceland/404/2020	division_exposure	United Kingdom #GISAID
+Iceland/376/2020	division_exposure	United Kingdom #GISAID
+Iceland/378/2020	division_exposure	United Kingdom #GISAID
+Iceland/458/2020	division_exposure	United Kingdom #GISAID
+Iceland/467/2020	division_exposure	United Kingdom #GISAID
+Iceland/516/2020	division_exposure	United Kingdom #GISAID
+Iceland/522/2020	division_exposure	United Kingdom #GISAID
+Iceland/546/2020	division_exposure	United Kingdom #GISAID
+Iceland/565/2020	division_exposure	United Kingdom #GISAID
+Iceland/578/2020	division_exposure	United Kingdom #GISAID
+Iceland/580/2020	division_exposure	United Kingdom #GISAID
+Iceland/593/2020	division_exposure	United Kingdom #GISAID
+Iceland/594/2020	division_exposure	United Kingdom #GISAID
 Iceland/381/2020	division_exposure	Austria #GISAID
 Iceland/384/2020	division_exposure	Austria #GISAID
 Iceland/385/2020	division_exposure	Austria #GISAID
@@ -2266,21 +2266,21 @@ Iceland/439/2020	division_exposure	USA #GISAID
 Iceland/508/2020	division_exposure	USA #GISAID
 Iceland/490/2020	division_exposure	Argentina #GISAID
 Iceland/602/2020	division_exposure	Faroe Islands #GISAID
-Iceland/370/2020	country_exposure	UK #GISAID
-Iceland/371/2020	country_exposure	UK #GISAID
-Iceland/404/2020	country_exposure	UK #GISAID
-Iceland/376/2020	country_exposure	UK #GISAID
-Iceland/378/2020	country_exposure	UK #GISAID
-Iceland/458/2020	country_exposure	UK #GISAID
-Iceland/467/2020	country_exposure	UK #GISAID
-Iceland/516/2020	country_exposure	UK #GISAID
-Iceland/522/2020	country_exposure	UK #GISAID
-Iceland/546/2020	country_exposure	UK #GISAID
-Iceland/565/2020	country_exposure	UK #GISAID
-Iceland/578/2020	country_exposure	UK #GISAID
-Iceland/580/2020	country_exposure	UK #GISAID
-Iceland/593/2020	country_exposure	UK #GISAID
-Iceland/594/2020	country_exposure	UK #GISAID
+Iceland/370/2020	country_exposure	United Kingdom #GISAID
+Iceland/371/2020	country_exposure	United Kingdom #GISAID
+Iceland/404/2020	country_exposure	United Kingdom #GISAID
+Iceland/376/2020	country_exposure	United Kingdom #GISAID
+Iceland/378/2020	country_exposure	United Kingdom #GISAID
+Iceland/458/2020	country_exposure	United Kingdom #GISAID
+Iceland/467/2020	country_exposure	United Kingdom #GISAID
+Iceland/516/2020	country_exposure	United Kingdom #GISAID
+Iceland/522/2020	country_exposure	United Kingdom #GISAID
+Iceland/546/2020	country_exposure	United Kingdom #GISAID
+Iceland/565/2020	country_exposure	United Kingdom #GISAID
+Iceland/578/2020	country_exposure	United Kingdom #GISAID
+Iceland/580/2020	country_exposure	United Kingdom #GISAID
+Iceland/593/2020	country_exposure	United Kingdom #GISAID
+Iceland/594/2020	country_exposure	United Kingdom #GISAID
 Iceland/381/2020	country_exposure	Austria #GISAID
 Iceland/384/2020	country_exposure	Austria #GISAID
 Iceland/385/2020	country_exposure	Austria #GISAID
@@ -2299,7 +2299,7 @@ Iceland/503/2020	country_exposure	France #GISAID
 Iceland/439/2020	country_exposure	USA #GISAID
 Iceland/508/2020	country_exposure	USA #GISAID
 Iceland/490/2020	country_exposure	Argentina #GISAID
-Iceland/602/2020	country_exposure	UK #GISAID
+Iceland/602/2020	country_exposure	United Kingdom #GISAID
 Iceland/370/2020	region_exposure	Europe #gisaid
 Iceland/371/2020	region_exposure	Europe #gisaid
 Iceland/404/2020	region_exposure	Europe #gisaid
@@ -3773,6 +3773,13 @@ USA/NY-NYUMC1/2020	region	North America
 USA/NY-NYUMC2/2020	division	New York
 USA/NY-NYUMC3/2020	division	New York
 USA/NY-NYUMC4/2020	division	New York
+USA/NY-NYUMC123/2020	location	Nassau County
+USA/NY-NYUMC125/2020	location	Nassau County
+USA/NY-NYUMC127/2020	location	Nassau County
+USA/NY-NYUMC128/2020	location	Nassau County
+USA/NY-NYUMC130/2020	location	Nassau County
+USA/NY-NYUMC131/2020	location	Nassau County
+USA/NY-NYUMC132/2020	location	Nassau County
 USA/NY1-PV08001/2020	country_exposure	Iran # GISAID
 USA/NY1-PV08001/2020	division_exposure	Iran # GISAID
 USA/NY1-PV08001/2020	region_exposure	Asia # GISAID
@@ -3780,6 +3787,8 @@ USA/OR_5430/2020	country	USA
 USA/OR_5430/2020	division	Oregon
 USA/OR_5430/2020	region	North America
 USA/OR_5430/2020	region	North America
+USA/OSUP0109/2020	division	Ohio
+USA/OSUP0109/2020	location	Columbus
 USA/OSUP0112/2020	division	Ohio
 USA/OSUP0112/2020	location	Columbus
 USA/RI_0556/2020	country	USA
