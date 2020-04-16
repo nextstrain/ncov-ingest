@@ -56,8 +56,7 @@ main() {
             ncov deploy_to_staging \
             --config slack_webhook="$SLACK_INCOMING_WEBHOOK" \
             --cores "$NEXTSTRAIN_AWS_BATCH_CPUS" \
-            --snakefile Snakefile_Regions \
-            --set-threads tree=8
+            --snakefile Snakefile_Regions 
     )
 
     echo "$output"
