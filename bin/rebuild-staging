@@ -2,8 +2,8 @@
 set -euo pipefail
 
 : "${SLACK_INCOMING_WEBHOOK:?The SLACK_INCOMING_WEBHOOK environment variable is required.}"
-: "${NEXTSTRAIN_AWS_BATCH_CPUS:=8}"
-: "${NEXTSTRAIN_AWS_BATCH_MEMORY:=14400}"
+: "${NEXTSTRAIN_AWS_BATCH_CPUS:=36}"
+: "${NEXTSTRAIN_AWS_BATCH_MEMORY:=64800}"
 
 export NEXTSTRAIN_AWS_BATCH_CPUS NEXTSTRAIN_AWS_BATCH_MEMORY
 
@@ -56,7 +56,8 @@ main() {
             ncov deploy_to_staging \
             --config slack_webhook="$SLACK_INCOMING_WEBHOOK" \
             --cores "$NEXTSTRAIN_AWS_BATCH_CPUS" \
-            --snakefile Snakefile_Regions 
+            --snakefile Snakefile_Regions \
+            --stats stats.json
     )
 
     echo "$output"
