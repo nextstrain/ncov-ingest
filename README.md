@@ -1,5 +1,7 @@
 # nCoV Ingestion Pipeline
 
+Internal tooling for the Nextstrain team to ingest and curate SARS-CoV-2 genome sequences. This is open source, but we are not intending to support this to be used by outside groups.
+
 ## Running locally
 If you're using Pipenv (see below), then run commands from `./bin/…` inside a `pipenv shell` or wrapped with `pipenv run ./bin/…`.
 
