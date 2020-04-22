@@ -1,7 +1,6 @@
 #!/bin/bash
 set -euo pipefail
 
-: "${SLACK_INCOMING_WEBHOOK:?The SLACK_INCOMING_WEBHOOK environment variable is required.}"
 : "${SLACK_TOKEN:?The SLACK_TOKEN environment variable is required.}"
 : "${SLACK_CHANNELS:=#ncov-gisaid-updates}"
 
@@ -32,12 +31,11 @@ if [[ "$upload" == 1 ]]; then
         --fail --silent --show-error \
         --include
 else
-    slack_message="$(jq '{"text": $text}' --arg text "$text" --null-input)"
-
-    echo "Posting Slack message: $slack_message"
-    curl "$SLACK_INCOMING_WEBHOOK" \
-        --header 'Content-type: application/json' \
-        --data-raw "$slack_message" \
+    echo "Posting Slack message: $text"
+    curl https://slack.com/api/chat.postMessage \
+        --header "Authorization: Bearer $SLACK_TOKEN" \
+        --form-string channel="$SLACK_CHANNELS" \
+        --form-string text="$text" \
         --fail --silent --show-error \
         --include
 fi

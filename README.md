@@ -40,5 +40,4 @@ If you don't have Pipenv, [install it](https://pipenv.pypa.io/en/latest/install/
 * `AWS_DEFAULT_REGION`
 * `AWS_ACCESS_KEY_ID`
 * `AWS_SECRET_ACCESS_KEY`
-* `SLACK_INCOMING_WEBHOOK`
 * `SLACK_TOKEN`

@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-: "${SLACK_INCOMING_WEBHOOK:?The SLACK_INCOMING_WEBHOOK environment variable is required.}"
+: "${SLACK_TOKEN:?The SLACK_TOKEN environment variable is required.}"
 
 bin="$(dirname "$0")"
 
