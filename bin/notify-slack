@@ -6,14 +6,18 @@ set -euo pipefail
 : "${SLACK_CHANNELS:=#ncov-gisaid-updates}"
 
 upload=0
+args=()
 
 for arg; do
     case "$arg" in
         --upload)
-            upload=1
-            shift;;
+            upload=1;;
+        *)
+            args+=("$arg");;
     esac
 done
+
+set -- "${args[@]}"
 
 text="${1:?Some message text is required.}"
 
