@@ -91,6 +91,9 @@ def parse_geographic_columns(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     gisaid_data['region']      = geographic_data[0]
     gisaid_data['country']     = geographic_data[1]
     gisaid_data['division']    = geographic_data[2]
+
+    gisaid_data.loc[pd.isnull(gisaid_data['division']), 'division'] = gisaid_data[pd.isnull(gisaid_data['division'])]['country']
+
     gisaid_data['location']    = geographic_data[3]
 
     return gisaid_data
