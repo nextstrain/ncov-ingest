@@ -4,7 +4,7 @@ set -euo pipefail
 : "${SLACK_TOKEN:?The SLACK_TOKEN environment variable is required.}"
 : "${NEXTSTRAIN_AWS_BATCH_CPUS:=8}"
 : "${NEXTSTRAIN_AWS_BATCH_MEMORY:=62000}"
-: "${NEXTSTRAIN_AWS_BATCH_QUEUE:=nextstrain-job-queue-r5a}"
+: "${NEXTSTRAIN_AWS_BATCH_QUEUE:=nextstrain-job-queue-z1d}"
 
 export NEXTSTRAIN_AWS_BATCH_CPUS NEXTSTRAIN_AWS_BATCH_MEMORY NEXTSTRAIN_AWS_BATCH_QUEUE
 
