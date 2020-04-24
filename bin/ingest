@@ -45,7 +45,7 @@ set -x
 if [[ "$branch" == master ]]; then
     ./bin/notify-on-gisaid-change data/gisaid.ndjson "$S3_SRC/gisaid.ndjson"
 fi
-./bin/upload-to-s3 --quiet data/gisaid.ndjson "$S3_DST/gisaid.ndjson"
+./bin/upload-to-s3 --quiet data/gisaid.ndjson "$S3_DST/gisaid.ndjson.gz"
 
 ./bin/transform data/gisaid.ndjson \
   --output-metadata data/metadata.tsv \
@@ -59,9 +59,9 @@ if [[ "$branch" == master ]]; then
       data/sequences.fasta "$S3_SRC/sequences.fasta"
 fi
 
-./bin/upload-to-s3 ${silent:+--quiet} data/metadata.tsv "$S3_DST/metadata.tsv"
-./bin/upload-to-s3 ${silent:+--quiet} data/additional_info.tsv "$S3_DST/additional_info.tsv"
-./bin/upload-to-s3 ${silent:+--quiet} data/sequences.fasta "$S3_DST/sequences.fasta"
+./bin/upload-to-s3 ${silent:+--quiet} data/metadata.tsv "$S3_DST/metadata.tsv.gz"
+./bin/upload-to-s3 ${silent:+--quiet} data/additional_info.tsv "$S3_DST/additional_info.tsv.gz"
+./bin/upload-to-s3 ${silent:+--quiet} data/sequences.fasta "$S3_DST/sequences.fasta.gz"
 
 ./bin/fetch-from-genbank data/metadata.tsv > data/genbank.fasta
-./bin/upload-to-s3 ${silent:+--quiet} data/genbank.fasta "$S3_DST/genbank.fasta"
+./bin/upload-to-s3 ${silent:+--quiet} data/genbank.fasta "$S3_DST/genbank.fasta.gz"
