@@ -93,6 +93,7 @@ def parse_geographic_columns(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     gisaid_data['division']    = geographic_data[2]
     gisaid_data['location']    = geographic_data[3]
 
+
     return gisaid_data
 
 def parse_originating_lab(gisaid_data: pd.DataFrame) -> pd.DataFrame:
@@ -236,6 +237,10 @@ def update_metadata(curated_gisaid_data: pd.DataFrame) -> pd.DataFrame:
         curated_gisaid_data['division_exposure'].fillna(curated_gisaid_data['division'], inplace=True)
     else:
         curated_gisaid_data['division_exposure'] = curated_gisaid_data['division']
+
+    # if division is blank, replace with country data, to avoid unexpected effects when subsampling by division
+    # (where an empty division is counted as a 'division' group)
+    curated_gisaid_data.loc[pd.isnull(curated_gisaid_data['division']), 'division'] = curated_gisaid_data['country']
 
     return curated_gisaid_data
 
