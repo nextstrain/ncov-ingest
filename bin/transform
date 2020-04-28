@@ -95,7 +95,7 @@ def parse_geographic_columns(gisaid_data: pd.DataFrame) -> pd.DataFrame:
 
     # if division is blank, replace with country data, to avoid unexpected effects when subsampling by division
     # (where an empty division is counted as a 'division' group)
-    gisaid_data.loc[pd.isnull(gisaid_data['division']), 'division'] = gisaid_data[pd.isnull(gisaid_data['division'])]['country']
+    gisaid_data.loc[pd.isnull(gisaid_data['division']), 'division'] = gisaid_data['country']
 
     return gisaid_data
 
