@@ -6,11 +6,16 @@ set -euo pipefail
 bin="$(dirname "$0")"
 
 src="${1:?A source metadata TSV file is required as the first argument.}"
-dst="${2:?A destination metadata TSV s3:// URL is required as the second argument.}"
+dst="${2:?A destination metadata TSV s3:// URL ending in .gz is required as the second argument.}"
+
+if [[ "$dst" != *.gz ]]; then
+    echo "The given destination s3:// URL must point to a gzip file ending in .gz"
+    exit 1
+fi
 
 diff="$(
     csv-diff \
-        <(aws s3 cp --no-progress "$dst" -) \
+        <(aws s3 cp --no-progress "$dst" - | gunzip) \
         "$src" \
         --format tsv \
         --key gisaid_epi_isl \
