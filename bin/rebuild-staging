@@ -18,10 +18,9 @@ main() {
         local sequences_src="${3:?A source sequences fasta file is required as the first argument.}"
         local sequences_dst="${4:?A destination sequences fasta s3:// URL is required as the second argument.}"
 
-        local metadata_match=$(hashes_match $metadata_src $metadata_dst)
-        local sequences_match=$(hashes_match $sequences_src $sequences_dst)
-
-        if [[ $metadata_match -eq 1 && $sequences_match -eq 1 ]]; then
+        if hashes-match "$metadata_src" "$metadata_dst" &&
+           hashes-match "$sequences_src" "$sequences_dst"
+        then
             echo "No metadata or sequence changes"
             echo "Exiting"
             exit 0
@@ -72,15 +71,11 @@ main() {
 }
 
 # Returns 1 if both files match (have identical hashes). Else returns 0.
-hashes_match() {
-    src_hash="$("$bin/sha256sum" < "$1")"
-    dst_hash="$("$bin/sha256sum" < <(aws s3 cp --no-progress "$2" -))"
+hashes-match() {
+    local src_hash="$("$bin/sha256sum" < "$1")"
+    local dst_hash="$("$bin/sha256sum" < <(aws s3 cp --no-progress "$2" -))"
 
-    if [[ $src_hash = $dst_hash ]]; then
-        echo 1
-    else
-        echo 0
-    fi
+    [[ "$src_hash" == "$dst_hash" ]]
 }
 
 main "$@"
