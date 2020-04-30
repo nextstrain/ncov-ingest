@@ -24,7 +24,7 @@ main() {
     local bucket="${s3path%%/*}"
     local key="${s3path#*/}"
 
-    local dst_hash="$(aws s3api head-object --bucket $bucket --key $key --query Metadata.sha256sum --output text)"
+    local dst_hash="$(aws s3api head-object --bucket "$bucket" --key "$key" --query Metadata.sha256sum --output text)"
 
     echo "$src_hash $src"
     echo "$dst_hash $dst"
