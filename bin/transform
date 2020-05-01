@@ -281,8 +281,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
 
-    gisaid_data = pd.read_json(args.gisaid_data, lines=True,
-        compression='gzip' if args.gisaid_data.endswith('.gz') else None)
+    gisaid_data = pd.read_json(args.gisaid_data, lines=True, compression='infer')
     gisaid_data = preprocess(gisaid_data)
     write_fasta_file(gisaid_data)
 

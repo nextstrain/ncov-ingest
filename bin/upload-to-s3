@@ -17,12 +17,7 @@ main() {
     done
 
     local src="${1:?A source file is required as the first argument.}"
-    local dst="${2:?A destination s3:// URL ending in .gz is required as the second argument.}"
-
-    if [[ "$dst" != *.gz ]]; then
-        echo "The given destination s3:// URL must point to a gzip file ending in .gz"
-        exit 1
-    fi
+    local dst="${2:?A destination s3:// URL is required as the second argument.}"
 
     local src_hash="$("$bin/sha256sum" < "$src")"
     local s3path="${dst#s3://}"
@@ -35,8 +30,12 @@ main() {
     echo "$dst_hash $dst"
 
     if [[ $src_hash != $dst_hash ]]; then
-        echo "Uploading zipped $src → $dst"
-        gzip -c "$src" | aws s3 cp --no-progress - "$dst" --metadata sha256sum="$src_hash"
+        echo "Uploading $src → $dst"
+        if [[ "$dst" == *.gz ]]; then
+            gzip -c "$src"
+        else
+            cat "$src"
+        fi | aws s3 cp --no-progress - "$dst" --metadata sha256sum="$src_hash"
 
         if [[ $quiet == 1 ]]; then
             echo "Quiet mode. No Slack notification sent."

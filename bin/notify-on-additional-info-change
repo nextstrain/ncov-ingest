@@ -6,17 +6,13 @@ set -euo pipefail
 bin="$(dirname "$0")"
 
 src="${1:?A source additional info TSV file is required as the first argument.}"
-dst="${2:?A destination additional info TSV s3:// URL ending in .gz is required as the second argument.}"
+dst="${2:?A destination additional info TSV s3:// URL is required as the second argument.}"
 
-if [[ "$dst" != *.gz ]]; then
-    echo "The given destination s3:// URL must point to a gzip file ending in .gz"
-    exit 1
-fi
 # Remove rows where columns 3 (additional_host_info) and 4 (additional_location_info) are empty.
 # Compare the S3 version with the local version.
 diff="$(
     csv-diff \
-        <(awk 'BEGIN {FS="\t"}; { if ($3 != "" || $4 != "") { print }}' <(aws s3 cp --no-progress "$dst" - | gunzip)) \
+        <(awk 'BEGIN {FS="\t"}; { if ($3 != "" || $4 != "") { print }}' <(aws s3 cp --no-progress "$dst" - | gunzip -cfq)) \
         <(awk 'BEGIN {FS="\t"}; { if ($3 != "" || $4 != "") { print }}' "$src") \
         --format tsv \
         --key gisaid_epi_isl \

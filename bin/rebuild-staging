@@ -13,17 +13,10 @@ bin="$(dirname "$0")"
 main() {
     if [[ $# -ne 0 ]]; then
         local metadata_src="${1:?A source metadata TSV file is required as the third argument.}"
-        local metadata_dst="${2:?A destination metadata TSV s3:// URL ending in .gz is required as the fourth argument.}"
+        local metadata_dst="${2:?A destination metadata TSV s3:// URL is required as the fourth argument.}"
 
         local sequences_src="${3:?A source sequences fasta file is required as the first argument.}"
-        local sequences_dst="${4:?A destination sequences fasta s3:// URL ending in .gz is required as the second argument.}"
-
-        for dst in "$metadata_dst", "$sequences_dst"; do
-            if [[ "$dst" != *.gz ]]; then
-                echo "The given destination s3:// URL must point to a gzip file ending in .gz. Instead received «${dst}»"
-                exit 1
-            fi
-        done
+        local sequences_dst="${4:?A destination sequences fasta s3:// URL is required as the second argument.}"
 
         if hashes-match "$metadata_src" "$metadata_dst" &&
            hashes-match "$sequences_src" "$sequences_dst"
