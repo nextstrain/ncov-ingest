@@ -9,7 +9,7 @@ src="${1:?A source GISAID ndjson file is required as the first argument.}"
 dst="${2:?A destination GISAID ndjson s3:// URL is required as the second argument.}"
 
 src_record_count="$(wc -l < "$src")"
-dst_record_count="$(wc -l < <(aws s3 cp --no-progress "$dst" -))"
+dst_record_count="$(wc -l < <(aws s3 cp --no-progress "$dst" - | gunzip -cfq))"
 added_records="$(( $src_record_count - $dst_record_count ))"
 
 printf "%'4d %s\n" "$src_record_count" "$src"

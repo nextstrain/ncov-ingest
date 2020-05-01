@@ -252,7 +252,10 @@ if __name__ == '__main__':
         description="Parse a GISAID JSON load into a metadata tsv and FASTA file.",
         formatter_class=argparse.RawTextHelpFormatter
     )
-    parser.add_argument("gisaid_data", help="Newline-delimited GISAID JSON data", nargs="?", default="s3://nextstrain-ncov-private/gisaid.ndjson")
+    parser.add_argument("gisaid_data",
+        default="s3://nextstrain-ncov-private/gisaid.ndjson.gz",
+        nargs="?",
+        help="Newline-delimited GISAID JSON data")
     parser.add_argument("--annotations",
         default=base / "source-data/annotations.tsv",
         help="Optional manually curated annotations TSV.\n"
@@ -277,7 +280,8 @@ if __name__ == '__main__':
         help="Output location of additional info tsv. Defaults to `data/additional_info.tsv`")
     args = parser.parse_args()
 
-    gisaid_data = pd.read_json(args.gisaid_data, lines=True)
+
+    gisaid_data = pd.read_json(args.gisaid_data, lines=True, compression='infer')
     gisaid_data = preprocess(gisaid_data)
     write_fasta_file(gisaid_data)
 
