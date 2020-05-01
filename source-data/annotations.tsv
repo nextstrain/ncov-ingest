@@ -48,12 +48,14 @@ Argentina/PAIS_A016/2020	region_exposure	Europe
 Argentina/PAIS_A016/2020	country_exposure	France
 Argentina/PAIS_A016/2020	division_exposure	France
 Argentina/PAIS_A017/2020	location	San Carlos de Bariloche
-Argentina/PAIS_A020/2020	countryexposure	United Kingdom
+Argentina/PAIS_A020/2020	region_exposure	Europe
+Argentina/PAIS_A020/2020	country_exposure	United Kingdom
 Argentina/PAIS_A020/2020	division_exposure	United Kingdom
 Australia/NSW01/2020	country_exposure	China
 Australia/NSW01/2020	division_exposure	Hubei
 Australia/NSW01/2020	region_exposure	Asia
 Australia/NSW05/2020	division_exposure	Iran # James: data via direct contact with Aus lab
+Australia/NSW05/2020	country_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW05/2020	region_exposure	Asia # James: data via direct contact with Aus lab
 Australia/NSW06/2020	country_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW06/2020	division_exposure	Iran # James: data via direct contact with Aus lab
@@ -939,6 +941,8 @@ DRC/KN-0060/2020	country	Democratic Republic of the Congo
 DRC/KN-0070/2020	country	Democratic Republic of the Congo
 DRC/KN-0072/2020	country	Democratic Republic of the Congo
 DRC/KN-13/2020	country	Democratic Republic of the Congo
+Ecuador/HGSQ-USFQ-018/2020	region_exposure	South America
+Ecuador/HGSQ-USFQ-018/2020	country_exposure	Ecuador
 Ecuador/HGSQ-USFQ-018/2020	division_exposure	Guayas
 England/01/2020	country	United Kingdom
 England/01/2020	country_exposure	China # first cases were reported in media as being son & mother from China
@@ -10502,6 +10506,8 @@ Panama/328677/2020	division_exposure	Comunitat Valenciana
 Panama/328677/2020	region	North America
 Panama/328677/2020	region_exposure	Europe
 Poland/Pom1/2020	division	Pomorskie
+Poland/Pom1/2020	region_exposure	Europe
+Poland/Pom1/2020	country_exposure	Poland
 Poland/Pom1/2020	division_exposure	Pomorskie
 Portugal/CV62/2020	division	Portugal
 Portugal/CV62/2020	division_exposure	Italy #"Travel association (Italy, Germany) (GISAID) and clusters with other seqs with Italy travel history on nextstrain"
@@ -15715,11 +15721,19 @@ USA/CA-CDPH-UC6/2020	division	Grand Princess # from GISAID
 USA/CA-CDPH-UC7/2020	division	Grand Princess # from GISAID
 USA/CA-CDPH-UC8/2020	division	Grand Princess # from GISAID
 USA/CA-CDPH-UC9/2020	division	Grand Princess # from GISAID
+USA/CA-CDPH-UC19/2020	region_exposure	North America # GISAID
+USA/CA-CDPH-UC19/2020	country_exposure	USA # GISAID
 USA/CA-CDPH-UC19/2020	division_exposure	Grand Princess # GISAID
+USA/CA-CDPH-UC20/2020	region_exposure	North America # GISAID
+USA/CA-CDPH-UC20/2020	country_exposure	USA # GISAID
 USA/CA-CDPH-UC20/2020	division_exposure	Grand Princess # GISAID
 USA/CA-CDPH-UC30/2020	location	Grand Princess cruise ship
+USA/CA-CDPH-UC30/2020	region_exposure	North America # GISAID
+USA/CA-CDPH-UC30/2020	country_exposure	USA # GISAID
 USA/CA-CDPH-UC30/2020	division_exposure	Grand Princess 2nd cruise #GISAID
 USA/CA-CDPH-UC31/2020	location	Grand Princess cruise ship
+USA/CA-CDPH-UC31/2020	region_exposure	North America # GISAID
+USA/CA-CDPH-UC31/2020	country_exposure	USA # GISAID
 USA/CA-CDPH-UC31/2020	division_exposure	Grand Princess 2nd cruise #GISAID
 USA/CA-CDPH-UC26/2020	location	San Francisco
 USA/CA-CDPH-UC27/2020	location	San Francisco
@@ -15727,6 +15741,8 @@ USA/CA-CDPH-UC28/2020	location	San Francisco
 USA/CA-UCSF-UC32/2020	location	San Francisco
 USA/CA-UCSF-UC33/2020	location	San Francisco
 USA/CA-UCSF-UC36/2020	location	San Francisco
+USA/CA-UCSF-UC36/2020	region_exposure	North America # GISAID
+USA/CA-UCSF-UC36/2020	country_exposure	USA # GISAID
 USA/CA-UCSF-UC36/2020	division_exposure	New York #GISAID
 # USA/CA-UCSF-UC32/2020 close contact of UC34
 # USA/CA-UCSF-UC33/2020 works at airport, community acquired
