@@ -21,6 +21,7 @@ jobs:
         python3 -m pip install --upgrade pip setuptools
         python3 -m pip install pipenv
         pipenv sync
+        pipenv run ./bin/check-annotations
         pipenv run ./bin/ingest
       env:
         AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
