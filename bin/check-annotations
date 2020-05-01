@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+"""
+Check annotations for potential errors / missing data
+"""
+
+## Not part of this script, but you can check if a strain has duplica
+# 
+
+import pandas as pd
+import sys
+
+annotations = pd.read_csv("./source-data/annotations.tsv", header=None, sep='\t', comment="#")
+annotations.columns = ['strain', 'trait', 'value']
+
+try:
+  annotations = annotations.pivot(index="strain", columns="trait", values="value")
+except ValueError:
+  print("Error reshaping the annotations table. This is potentially because there are duplicate definitions in the TSV.")
+  print("You may see these by running:")
+  print("cat source-data/annotations.tsv | grep -v '^#' | cut -f1,2 | sort | uniq -c | sort | grep -v -E '^[[:space:]]+1'")
+  sys.exit(2)
+
+
+print("The following strains have a country_exposure but not a region_exposure.")
+print("This is ok if the region_exposure happens to match the region, but problems arise if this is not the case.")
+print("To make this clear, region_exposure should be explicitly set for the following:")
+print(annotations.loc[pd.isnull(annotations.region_exposure)].loc[pd.notnull(annotations.country_exposure)].loc[:, "strain"])
+
+
+

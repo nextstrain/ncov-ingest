@@ -29,17 +29,22 @@
 ## Kuwait samples have their division set to what should be the location
 #note UPHL-03 and -04 are same patient
 #note UPHL-05 and -06 are same patient
+Argentina/PAIS_A005/2020	region_exposure	North America
 Argentina/PAIS_A005/2020	country_exposure	Mexico
 Argentina/PAIS_A005/2020	division_exposure	Mexico
 Argentina/PAIS_A006/2020	location	Quilmes
+Argentina/PAIS_A009/2020	region_exposure	South America
 Argentina/PAIS_A009/2020	country_exposure	Brazil
 Argentina/PAIS_A009/2020	division_exposure	Brazil
 Argentina/PAIS_A011/2020	location	Bahia Blanca
+Argentina/PAIS_A013/2020	region_exposure	Europe
 Argentina/PAIS_A013/2020	country_exposure	Spain
 Argentina/PAIS_A013/2020	division_exposure	Spain
 Argentina/PAIS_A014/2020	location	Bahia Blanca
+Argentina/PAIS_A015/2020	region_exposure	Asia
 Argentina/PAIS_A015/2020	country_exposure	Israel
 Argentina/PAIS_A015/2020	division_exposure	Israel
+Argentina/PAIS_A016/2020	region_exposure	Europe
 Argentina/PAIS_A016/2020	country_exposure	France
 Argentina/PAIS_A016/2020	division_exposure	France
 Argentina/PAIS_A017/2020	location	San Carlos de Bariloche
@@ -389,6 +394,7 @@ CostaRica/0003/2020	authors	Duarte et al
 CostaRica/0004/2020	region	North America
 CostaRica/0004/2020	division	La Union
 CostaRica/0004/2020	location	Cartago
+CostaRica/0004/2020	region_exposure	North America
 CostaRica/0004/2020	country_exposure	USA
 CostaRica/0004/2020	division_exposure	New York
 CostaRica/0004/2020	authors	Duarte et al
@@ -9804,7 +9810,7 @@ Iceland/504/2020	region_exposure	Europe #gisaid
 Iceland/506/2020	region_exposure	Europe #gisaid
 Iceland/427/2020	region_exposure	Europe #gisaid
 Iceland/503/2020	region_exposure	Europe #gisaid
-Iceland/602/2020	region_expsoure	Europe #GISAID
+Iceland/602/2020	region_exposure	Europe #GISAID
 Iceland/439/2020	region_exposure	North America #GISAID
 Iceland/508/2020	region_exposure	North America #GISAID
 Iceland/490/2020	region_exposure	South America #GISAID
@@ -9846,17 +9852,17 @@ India/1616/2020	division_exposure	Iran #GISAID
 India/1617/2020	division_exposure	Iran #GISAID
 India/1621/2020	division_exposure	Iran #GISAID
 India/1644/2020	division_exposure	Iran #GISAID
-India/1073/2020	regions_exposure	Asia #GISAID
-India/1093/2020	regions_exposure	Asia #GISAID
-India/1100/2020	regions_exposure	Asia #GISAID
-India/1104/2020	regions_exposure	Asia #GISAID
-India/1111/2020	regions_exposure	Asia #GISAID
-India/1115/2020	regions_exposure	Asia #GISAID
-India/1125/2020	regions_exposure	Asia #GISAID
-India/1616/2020	regions_exposure	Asia #GISAID
-India/1617/2020	regions_exposure	Asia #GISAID
-India/1621/2020	regions_exposure	Asia #GISAID
-India/1644/2020	regions_exposure	Asia #GISAID
+India/1073/2020	region_exposure	Asia #GISAID
+India/1093/2020	region_exposure	Asia #GISAID
+India/1100/2020	region_exposure	Asia #GISAID
+India/1104/2020	region_exposure	Asia #GISAID
+India/1111/2020	region_exposure	Asia #GISAID
+India/1115/2020	region_exposure	Asia #GISAID
+India/1125/2020	region_exposure	Asia #GISAID
+India/1616/2020	region_exposure	Asia #GISAID
+India/1617/2020	region_exposure	Asia #GISAID
+India/1621/2020	region_exposure	Asia #GISAID
+India/1644/2020	region_exposure	Asia #GISAID
 India/1073/2020	country_exposure	Iran #GISAID
 India/1093/2020	country_exposure	Iran #GISAID
 India/1100/2020	country_exposure	Iran #GISAID
