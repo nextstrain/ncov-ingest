@@ -29,56 +29,51 @@
 ## Kuwait samples have their division set to what should be the location
 #note UPHL-03 and -04 are same patient
 #note UPHL-05 and -06 are same patient
+Argentina/PAIS_A005/2020	region_exposure	North America
 Argentina/PAIS_A005/2020	country_exposure	Mexico
 Argentina/PAIS_A005/2020	division_exposure	Mexico
 Argentina/PAIS_A006/2020	location	Quilmes
+Argentina/PAIS_A009/2020	region_exposure	South America
 Argentina/PAIS_A009/2020	country_exposure	Brazil
 Argentina/PAIS_A009/2020	division_exposure	Brazil
 Argentina/PAIS_A011/2020	location	Bahia Blanca
+Argentina/PAIS_A013/2020	region_exposure	Europe
 Argentina/PAIS_A013/2020	country_exposure	Spain
 Argentina/PAIS_A013/2020	division_exposure	Spain
 Argentina/PAIS_A014/2020	location	Bahia Blanca
+Argentina/PAIS_A015/2020	region_exposure	Asia
 Argentina/PAIS_A015/2020	country_exposure	Israel
 Argentina/PAIS_A015/2020	division_exposure	Israel
+Argentina/PAIS_A016/2020	region_exposure	Europe
 Argentina/PAIS_A016/2020	country_exposure	France
 Argentina/PAIS_A016/2020	division_exposure	France
 Argentina/PAIS_A017/2020	location	San Carlos de Bariloche
-Argentina/PAIS_A020/2020	countryexposure	United Kingdom
+Argentina/PAIS_A020/2020	region_exposure	Europe
+Argentina/PAIS_A020/2020	country_exposure	United Kingdom
 Argentina/PAIS_A020/2020	division_exposure	United Kingdom
 Australia/NSW01/2020	country_exposure	China
 Australia/NSW01/2020	division_exposure	Hubei
 Australia/NSW01/2020	region_exposure	Asia
-Australia/NSW05/2020	division_exposure	China
-Australia/NSW05/2020	country_exposure	China # James: data via direct contact with Aus lab
-Australia/NSW05/2020	country_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW05/2020	division_exposure	Iran # James: data via direct contact with Aus lab
+Australia/NSW05/2020	country_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW05/2020	region_exposure	Asia # James: data via direct contact with Aus lab
-Australia/NSW05/2020	region_exposure	Asia # James: data via direct contact with Aus lab
-Australia/NSW06/2020	country_exposure	China # James: data via direct contact with Aus lab
 Australia/NSW06/2020	country_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW06/2020	division_exposure	Iran # James: data via direct contact with Aus lab
-Australia/NSW06/2020	region_exposure	Asia # James: data via direct contact with Aus lab
 Australia/NSW06/2020	region_exposure	Asia # James: data via direct contact with Aus lab
 Australia/NSW08/2020	division	New South Wales
 Australia/NSW09/2020	division	New South Wales
 Australia/NSW10/2020	division	New South Wales
 Australia/NSW11/2020	country_exposure	Iran # James: data via direct contact with Aus lab
-Australia/NSW11/2020	country_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW11/2020	division	New South Wales
 Australia/NSW11/2020	division_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW11/2020	region_exposure	Asia # James: data via direct contact with Aus lab
-Australia/NSW11/2020	region_exposure	Asia # James: data via direct contact with Aus lab
-Australia/NSW12/2020	country_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW12/2020	country_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW12/2020	division	New South Wales
 Australia/NSW12/2020	division_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW12/2020	region_exposure	Asia # James: data via direct contact with Aus lab
-Australia/NSW12/2020	region_exposure	Asia # James: data via direct contact with Aus lab
-Australia/NSW13/2020	country_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW13/2020	country_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW13/2020	division	New South Wales
 Australia/NSW13/2020	division_exposure	Iran # James: data via direct contact with Aus lab
-Australia/NSW13/2020	region_exposure	Asia # James: data via direct contact with Aus lab
 Australia/NSW13/2020	region_exposure	Asia # James: data via direct contact with Aus lab
 Australia/NSW14/2020	division	New South Wales
 Australia/QLD01/2020	division_exposure	Hubei # ?
@@ -401,6 +396,7 @@ CostaRica/0003/2020	authors	Duarte et al
 CostaRica/0004/2020	region	North America
 CostaRica/0004/2020	division	La Union
 CostaRica/0004/2020	location	Cartago
+CostaRica/0004/2020	region_exposure	North America
 CostaRica/0004/2020	country_exposure	USA
 CostaRica/0004/2020	division_exposure	New York
 CostaRica/0004/2020	authors	Duarte et al
@@ -945,6 +941,8 @@ DRC/KN-0060/2020	country	Democratic Republic of the Congo
 DRC/KN-0070/2020	country	Democratic Republic of the Congo
 DRC/KN-0072/2020	country	Democratic Republic of the Congo
 DRC/KN-13/2020	country	Democratic Republic of the Congo
+Ecuador/HGSQ-USFQ-018/2020	region_exposure	South America
+Ecuador/HGSQ-USFQ-018/2020	country_exposure	Ecuador
 Ecuador/HGSQ-USFQ-018/2020	division_exposure	Guayas
 England/01/2020	country	United Kingdom
 England/01/2020	country_exposure	China # first cases were reported in media as being son & mother from China
@@ -8307,8 +8305,6 @@ England/SHEF-BFD27/2020	country	United Kingdom
 England/SHEF-BFD27/2020	division	England
 England/SHEF-BFD36/2020	country	United Kingdom
 England/SHEF-BFD36/2020	division	England
-England/SHEF-BFD36/2020	division	England
-England/SHEF-BFD36/2020	division	Nottinghamshire
 England/SHEF-BFD36/2020	location	Nottinghamshire
 England/SHEF-BFD45/2020	country	United Kingdom
 England/SHEF-BFD45/2020	division	England
@@ -9008,22 +9004,14 @@ France/IDF3745/2020	division	Ile de France
 France/IDF3831/2020	division	Ile de France
 France/IDF3930/2020	division	Ile de France
 France/Lyon_487/2020	division	Auvergne-Rhône-Alpes
-France/Lyon_487/2020	division	Auvergne-Rhône-Alpes
-France/Lyon_508/2020	division	Auvergne-Rhône-Alpes
 France/Lyon_508/2020	division	Auvergne-Rhône-Alpes
 France/Lyon_0668/2020	division	Auvergne-Rhône-Alpes
 France/Lyon_683/2020	division	Auvergne-Rhône-Alpes
-France/Lyon_683/2020	division	Auvergne-Rhône-Alpes
-France/Lyon_683/2020	division	Auvergne-Rhône-Alpes
-France/Lyon_0693/2020	division	Auvergne-Rhône-Alpes
 France/Lyon_0693/2020	division	Auvergne-Rhône-Alpes
 France/Lyon_06042/2020	division	Auvergne-Rhône-Alpes
 France/Lyon_06056/2020	division	Auvergne-Rhône-Alpes
 France/Lyon_06464/2020	division	Auvergne-Rhône-Alpes
-France/Lyon_06464/2020	division	Auvergne-Rhône-Alpes
 France/Lyon_06487/2020	division	Auvergne-Rhône-Alpes
-France/Lyon_06487/2020	division	Auvergne-Rhône-Alpes
-France/Lyon_06531/2020	division	Auvergne-Rhône-Alpes
 France/Lyon_06531/2020	division	Auvergne-Rhône-Alpes
 France/Lyon_06573/2020	division	Auvergne-Rhône-Alpes
 France/Lyon_06625/2020	division	Auvergne-Rhône-Alpes
@@ -9826,7 +9814,7 @@ Iceland/504/2020	region_exposure	Europe #gisaid
 Iceland/506/2020	region_exposure	Europe #gisaid
 Iceland/427/2020	region_exposure	Europe #gisaid
 Iceland/503/2020	region_exposure	Europe #gisaid
-Iceland/602/2020	region_expsoure	Europe #GISAID
+Iceland/602/2020	region_exposure	Europe #GISAID
 Iceland/439/2020	region_exposure	North America #GISAID
 Iceland/508/2020	region_exposure	North America #GISAID
 Iceland/490/2020	region_exposure	South America #GISAID
@@ -9868,17 +9856,17 @@ India/1616/2020	division_exposure	Iran #GISAID
 India/1617/2020	division_exposure	Iran #GISAID
 India/1621/2020	division_exposure	Iran #GISAID
 India/1644/2020	division_exposure	Iran #GISAID
-India/1073/2020	regions_exposure	Asia #GISAID
-India/1093/2020	regions_exposure	Asia #GISAID
-India/1100/2020	regions_exposure	Asia #GISAID
-India/1104/2020	regions_exposure	Asia #GISAID
-India/1111/2020	regions_exposure	Asia #GISAID
-India/1115/2020	regions_exposure	Asia #GISAID
-India/1125/2020	regions_exposure	Asia #GISAID
-India/1616/2020	regions_exposure	Asia #GISAID
-India/1617/2020	regions_exposure	Asia #GISAID
-India/1621/2020	regions_exposure	Asia #GISAID
-India/1644/2020	regions_exposure	Asia #GISAID
+India/1073/2020	region_exposure	Asia #GISAID
+India/1093/2020	region_exposure	Asia #GISAID
+India/1100/2020	region_exposure	Asia #GISAID
+India/1104/2020	region_exposure	Asia #GISAID
+India/1111/2020	region_exposure	Asia #GISAID
+India/1115/2020	region_exposure	Asia #GISAID
+India/1125/2020	region_exposure	Asia #GISAID
+India/1616/2020	region_exposure	Asia #GISAID
+India/1617/2020	region_exposure	Asia #GISAID
+India/1621/2020	region_exposure	Asia #GISAID
+India/1644/2020	region_exposure	Asia #GISAID
 India/1073/2020	country_exposure	Iran #GISAID
 India/1093/2020	country_exposure	Iran #GISAID
 India/1100/2020	country_exposure	Iran #GISAID
@@ -10098,7 +10086,6 @@ Luxembourg/LNS1909273/2020	location	Luxembourg
 Luxembourg/LNS1918658/2020	division	Luxembourg
 Luxembourg/LNS1918658/2020	location	Luxembourg
 Luxembourg/LNS2013896/2020	division	Luxembourg
-Luxembourg/LNS2128808/2020	division	Luxembourg
 Luxembourg/LNS2128808/2020	division	Luxembourg
 Luxembourg/LNS2151006/2020	division	Luxembourg
 Luxembourg/LNS2151006/2020	location	Luxembourg
@@ -10489,8 +10476,6 @@ Netherlands/ZuidHolland_102/2020	division	South Holland
 Netherlands/ZuidHolland_103/2020	division	South Holland
 Netherlands/ZuidHolland_104/2020	division	South Holland
 NetherlandsL/Houten_1363498/2020	division	Utrecht
-NetherlandsL/Houten_1363498/2020	division	Utrecht
-NetherlandsL/Houten_1363498/2020	location	Houten
 NetherlandsL/Houten_1363498/2020	location	Houten
 NewZealand/01/2020	country_exposure	Iran # GISAID
 NewZealand/01/2020	division_exposure	Iran # GISAID
@@ -10521,6 +10506,8 @@ Panama/328677/2020	division_exposure	Comunitat Valenciana
 Panama/328677/2020	region	North America
 Panama/328677/2020	region_exposure	Europe
 Poland/Pom1/2020	division	Pomorskie
+Poland/Pom1/2020	region_exposure	Europe
+Poland/Pom1/2020	country_exposure	Poland
 Poland/Pom1/2020	division_exposure	Pomorskie
 Portugal/CV62/2020	division	Portugal
 Portugal/CV62/2020	division_exposure	Italy #"Travel association (Italy, Germany) (GISAID) and clusters with other seqs with Italy travel history on nextstrain"
@@ -15505,12 +15492,8 @@ SouthKorea/KCDC05/2020	location	Seoul
 SouthKorea/KCDC06/2020	location	Seoul
 SouthKorea/KCDC07/2020	location	Seoul
 SouthKorea/KCDC12/2020	division	Gyeonggi
-SouthKorea/KCDC12/2020	division	Gyeonggi
-SouthKorea/KCDC12/2020	location	Gyeonggi
 SouthKorea/KCDC12/2020	location	Gyeonggi
 SouthKorea/KCDC24/2020	division	Chungcheongnam
-SouthKorea/KCDC24/2020	division	Chungcheongnam
-SouthKorea/KCDC24/2020	location	Chungcheongnam
 SouthKorea/KCDC24/2020	location	Chungcheongnam
 SouthKorea/KUMC01/2020	division	South Korea
 SouthKorea/KUMC02/2020	division	South Korea
@@ -15590,7 +15573,6 @@ Switzerland/TI2045/2020	division	Ticino #assumed from name
 Switzerland/TI9486/2020	division	Ticino
 Switzerland/VD0503/2020	division	Geneva
 Switzerland/GE06207/2020	division	Geneva #assumed from name
-Switzerland/GE0199/2020	division	Geneva #assumed from name
 Switzerland/GE0636/2020	division	Geneva #assumed from name
 Switzerland/GE6065/2020	division	Geneva #assumed from name
 Switzerland/GE3144/2020	division	Geneva #assumed from name
@@ -15728,7 +15710,6 @@ USA/AK-PHL013/2020	location	Fairbanks
 USA/AZ_4811/2020	country	USA
 USA/AZ_4811/2020	division	Arizona
 USA/AZ_4811/2020	region	North America
-USA/AZ_4811/2020	region	North America
 USA/AZ1/2020	country_exposure	China # ?
 USA/AZ1/2020	division_exposure	Hubei # ?
 USA/AZ1/2020	genbank_accession	MN997409
@@ -15740,11 +15721,19 @@ USA/CA-CDPH-UC6/2020	division	Grand Princess # from GISAID
 USA/CA-CDPH-UC7/2020	division	Grand Princess # from GISAID
 USA/CA-CDPH-UC8/2020	division	Grand Princess # from GISAID
 USA/CA-CDPH-UC9/2020	division	Grand Princess # from GISAID
+USA/CA-CDPH-UC19/2020	region_exposure	North America # GISAID
+USA/CA-CDPH-UC19/2020	country_exposure	USA # GISAID
 USA/CA-CDPH-UC19/2020	division_exposure	Grand Princess # GISAID
+USA/CA-CDPH-UC20/2020	region_exposure	North America # GISAID
+USA/CA-CDPH-UC20/2020	country_exposure	USA # GISAID
 USA/CA-CDPH-UC20/2020	division_exposure	Grand Princess # GISAID
 USA/CA-CDPH-UC30/2020	location	Grand Princess cruise ship
+USA/CA-CDPH-UC30/2020	region_exposure	North America # GISAID
+USA/CA-CDPH-UC30/2020	country_exposure	USA # GISAID
 USA/CA-CDPH-UC30/2020	division_exposure	Grand Princess 2nd cruise #GISAID
 USA/CA-CDPH-UC31/2020	location	Grand Princess cruise ship
+USA/CA-CDPH-UC31/2020	region_exposure	North America # GISAID
+USA/CA-CDPH-UC31/2020	country_exposure	USA # GISAID
 USA/CA-CDPH-UC31/2020	division_exposure	Grand Princess 2nd cruise #GISAID
 USA/CA-CDPH-UC26/2020	location	San Francisco
 USA/CA-CDPH-UC27/2020	location	San Francisco
@@ -15752,6 +15741,8 @@ USA/CA-CDPH-UC28/2020	location	San Francisco
 USA/CA-UCSF-UC32/2020	location	San Francisco
 USA/CA-UCSF-UC33/2020	location	San Francisco
 USA/CA-UCSF-UC36/2020	location	San Francisco
+USA/CA-UCSF-UC36/2020	region_exposure	North America # GISAID
+USA/CA-UCSF-UC36/2020	country_exposure	USA # GISAID
 USA/CA-UCSF-UC36/2020	division_exposure	New York #GISAID
 # USA/CA-UCSF-UC32/2020 close contact of UC34
 # USA/CA-UCSF-UC33/2020 works at airport, community acquired
@@ -15779,7 +15770,6 @@ USA/CA7/2020	division_exposure	Hubei # ?
 USA/CA7/2020	genbank_accession	MT106052
 USA/CA7/2020	region_exposure	Asia # ?
 USA/CA8/2020	genbank_accession	MT106053
-USA/CA9/2020	genbank_accession	MT118835
 USA/CA9/2020	genbank_accession	MT118835
 USA/CA9/2020	location	Solano County
 USA/CruiseA-1/2020	division	Diamond Princess
@@ -15845,27 +15835,21 @@ USA/CT-Yale-138/2020	location	Cincinnati
 USA/FL_6318/2020	country	USA
 USA/FL_6318/2020	division	Florida
 USA/FL_6318/2020	region	North America
-USA/FL_6318/2020	region	North America
 USA/UF-3/2020	division	Florida
 USA/GA_1299/2020	country	USA
 USA/GA_1299/2020	division	Georgia
 USA/GA_1299/2020	region	North America
-USA/GA_1299/2020	region	North America
 USA/GA_1320/2020	country	USA
 USA/GA_1320/2020	division	Georgia
-USA/GA_1320/2020	region	North America
 USA/GA_1320/2020	region	North America
 USA/GA_1445/2020	country	USA
 USA/GA_1445/2020	division	Georgia
 USA/GA_1445/2020	region	North America
-USA/GA_1445/2020	region	North America
 USA/IL_1293/2020	country	USA
 USA/IL_1293/2020	division	Illinois
 USA/IL_1293/2020	region	North America
-USA/IL_1293/2020	region	North America
 USA/IL_1375/2020	country	USA
 USA/IL_1375/2020	division	Illinois
-USA/IL_1375/2020	region	North America
 USA/IL_1375/2020	region	North America
 USA/IL1/2020	country_exposure	China # ?
 USA/IL1/2020	division_exposure	Hubei # ?
@@ -15892,14 +15876,11 @@ USA/MN3-MDH3/2020	region_exposure	North America # exposure on Grand Princess htt
 USA/NH_0004/2020	country	USA
 USA/NH_0004/2020	division	New Hampshire
 USA/NH_0004/2020	region	North America
-USA/NH_0004/2020	region	North America
 USA/NH_0008/2020	country	USA
 USA/NH_0008/2020	division	New Hampshire
 USA/NH_0008/2020	region	North America
-USA/NH_0008/2020	region	North America
 USA/NY_2929/2020	country	USA
 USA/NY_2929/2020	division	New York
-USA/NY_2929/2020	region	North America
 USA/NY_2929/2020	region	North America
 USA/NY-NYUMC1/2020	country	USA
 USA/NY-NYUMC1/2020	division	New York
@@ -15926,7 +15907,6 @@ USA/NY-Wadsworth-16080-01/2020	location	Orange County NY # two orange counties i
 USA/OR_5430/2020	country	USA
 USA/OR_5430/2020	division	Oregon
 USA/OR_5430/2020	region	North America
-USA/OR_5430/2020	region	North America
 USA/OSUP0109/2020	division	Ohio
 USA/OSUP0109/2020	location	Columbus
 USA/OSUP0112/2020	division	Ohio
@@ -15940,18 +15920,14 @@ USA/OSUP0017/2020	location	Columbus
 USA/RI_0556/2020	country	USA
 USA/RI_0556/2020	division	Rhode Island
 USA/RI_0556/2020	region	North America
-USA/RI_0556/2020	region	North America
 USA/TX_2039/2020	country	USA
 USA/TX_2039/2020	division	Texas
-USA/TX_2039/2020	region	North America
 USA/TX_2039/2020	region	North America
 USA/TX_2817/2020	country	USA
 USA/TX_2817/2020	division	Texas
 USA/TX_2817/2020	region	North America
-USA/TX_2817/2020	region	North America
 USA/TX_2967/2020	country	USA
 USA/TX_2967/2020	division	Texas
-USA/TX_2967/2020	region	North America
 USA/TX_2967/2020	region	North America
 USA/TX1/2020	country_exposure	China # ?
 USA/TX1/2020	division_exposure	Hubei # ?
@@ -16044,8 +16020,6 @@ Vietnam/CM295/2020	division	Red River Delta
 Vietnam/CM295/2020	location	Hanoi
 Vietnam/CM296/2020	division	Red River Delta
 Vietnam/CM296/2020	location	Hanoi
-Vietnam/CM296/2020	location	Hanoi
-Vietnam/CM296/2020 	division	Red River Delta
 Vietnam/VR03-38142/2020	country_exposure	China # ?
 Vietnam/VR03-38142/2020	division_exposure	Hubei # ?
 Vietnam/VR03-38142/2020	region_exposure	Asia # ?
