@@ -58,7 +58,9 @@ main() {
             --cores "$NEXTSTRAIN_AWS_BATCH_CPUS" \
             --resources mem_mb="$NEXTSTRAIN_AWS_BATCH_MEMORY" \
             --snakefile Snakefile_Regions \
-            --stats stats.json
+            --stats stats.json \
+            --keep-going \
+            --restart-times 1
     )
 
     echo "$output"
