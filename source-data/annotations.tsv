@@ -316,8 +316,8 @@ Brazil/SPBR-14/2020	region_exposure	Europe
 Cambodia/0012/2020	country_exposure	China # GISAID
 Cambodia/0012/2020	division_exposure	Hubei # GISAID
 Cambodia/0012/2020	region_exposure	Asia # GISAID
-Canada/AA7/2020	Smith et al
-Canada/AI8/2020	Smith et al
+Canada/AA7/2020	authors	Smith et al
+Canada/AI8/2020	authors	Smith et al
 hCoV-10/Canada/AB5/2020	Smith et al
 Canada/BC_37_0-2/2020	country_exposure	Iran # GISAID
 Canada/BC_37_0-2/2020	division_exposure	Iran # GISAID
@@ -10524,6 +10524,7 @@ Poland/Pom1/2020	division	Pomorskie
 Poland/Pom1/2020	region_exposure	Europe
 Poland/Pom1/2020	country_exposure	Poland
 Poland/Pom1/2020	division_exposure	Pomorskie
+Poland/Wro-01/2020	originating_lab	Laboratory of Genomics & Bioinformatics, Institute of Immunology and Experimental Therapy, Polish Academy of Sciences Oddzia Mikrobiologii Wojewodzkiej Stacji Sanitarno Epidemiologiczna
 Portugal/CV62/2020	division	Portugal
 Portugal/CV62/2020	division_exposure	Italy #"Travel association (Italy, Germany) (GISAID) and clusters with other seqs with Italy travel history on nextstrain"
 Portugal/CV62/2020	country_exposure	Italy #"Travel association (Italy, Germany) (GISAID) and clusters with other seqs with Italy travel history on nextstrain"
@@ -15859,6 +15860,7 @@ USA/CT-Yale-134/2020	division	Ohio
 USA/CT-Yale-134/2020	location	Cincinnati
 USA/CT-Yale-138/2020	division	Ohio
 USA/CT-Yale-138/2020	location	Cincinnati
+USA/DC_0004/2020	division	Washington DC #Change District of Columbia to Washington DC
 USA/FL_6318/2020	country	USA
 USA/FL_6318/2020	division	Florida
 USA/FL_6318/2020	region	North America
@@ -15886,6 +15888,9 @@ USA/IL2/2020	country_exposure	China # ?
 USA/IL2/2020	division_exposure	Hubei # ?
 USA/IL2/2020	genbank_accession	MT044257
 USA/IL2/2020	region_exposure	Asia # ?
+USA/LA-CDC-1894/2020	region	North America
+USA/LA-CDC-1894/2020	country	USA
+USA/LA-CDC-1894/2020	division	Louisiana
 USA/LA-EVTL01/2020	location	East Feliciana Parish
 USA/LA-EVTL010/2020	location	Caddo Parish
 USA/LA-EVTL011/2020	location	Caddo Parish
@@ -15938,6 +15943,10 @@ USA/MA1/2020	division_exposure	Hubei # ?
 USA/MA1/2020	genbank_accession	MT039888
 USA/MA1/2020	location	Boston
 USA/MA1/2020	region_exposure	Asia # ?
+USA/MD-HP022/2020	division	Washington DC
+USA/MD-HP038/2020	division	Washington DC
+USA/MD-HP043/2020	division	Washington DC
+USA/MD-HP06/2020	division	Washington DC #Change District of Columbia to Washington DC
 USA/MN1-MDH1/2020	country_exposure	USA # exposure on Grand Princess https://minnesota.cbslocal.com/2020/03/09/we-can-survive-this-minnesotan-couple-on-grand-princess-cruise-ship-speaks-about-coronavirus-outbreak/
 USA/MN1-MDH1/2020	division_exposure	Grand Princess # exposure on Grand Princess https://minnesota.cbslocal.com/2020/03/09/we-can-survive-this-minnesotan-couple-on-grand-princess-cruise-ship-speaks-about-coronavirus-outbreak/
 USA/MN1-MDH1/2020	genbank_accession	MT188341
