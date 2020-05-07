@@ -7,11 +7,6 @@ if ! hash nextstrain 2>/dev/null; then
 fi
 
 : "${SLACK_TOKEN:?The SLACK_TOKEN environment variable is required.}"
-: "${NEXTSTRAIN_AWS_BATCH_CPUS:=8}"
-: "${NEXTSTRAIN_AWS_BATCH_MEMORY:=62000}"
-: "${NEXTSTRAIN_AWS_BATCH_QUEUE:=nextstrain-job-queue-z1d}"
-
-export NEXTSTRAIN_AWS_BATCH_CPUS NEXTSTRAIN_AWS_BATCH_MEMORY NEXTSTRAIN_AWS_BATCH_QUEUE
 
 bin="$(dirname "$0")"
 
@@ -57,12 +52,9 @@ main() {
 
 
     local output=$(
-        nextstrain build --aws-batch --detach \
+        "$bin"/launch-build \
             ncov deploy_to_staging \
-            --config slack_token="$SLACK_TOKEN" \
-            --cores "$NEXTSTRAIN_AWS_BATCH_CPUS" \
-            --resources mem_mb="$NEXTSTRAIN_AWS_BATCH_MEMORY" \
-            --profile profiles/nextstrain
+            --config slack_token="$SLACK_TOKEN"
     )
 
     echo "$output"
