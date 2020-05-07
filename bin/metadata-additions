@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+from sys import argv, stdout
+from csv import DictWriter
+from csv_diff import load_csv, compare
+
+
+def main(a, b):
+    diff = compare(load_metadata(a), load_metadata(b))
+    write_tsv(stdout, diff["added"])
+
+
+def load_metadata(filename):
+    with open(filename, encoding = 'utf-8') as f:
+        return load_csv(f, key = "gisaid_epi_isl", dialect = "excel-tab")
+
+
+def write_tsv(file, rows):
+    if not rows:
+        return
+
+    cols = rows[0].keys()
+
+    tsv = DictWriter(file, dialect = "excel-tab", fieldnames = cols)
+    tsv.writeheader()
+
+    for row in rows:
+        tsv.writerow(row)
+
+
+if __name__ == "__main__":
+    main(argv[1], argv[2])

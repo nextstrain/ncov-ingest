@@ -26,6 +26,7 @@ if [[ "$upload" == 1 ]]; then
         --header "Authorization: Bearer $SLACK_TOKEN" \
         --form-string channels="$SLACK_CHANNELS" \
         --form-string title="$text" \
+        --form-string filename="$text" \
         --form file=@/dev/stdin \
         --form filetype=text \
         --fail --silent --show-error \
