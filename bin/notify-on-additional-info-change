@@ -22,7 +22,7 @@ diff="$(
 
 if [[ -n "$diff" ]]; then
     echo "Notifying Slack about additional info change."
-    "$bin"/notify-slack --upload "Additional info changes" <<<"$diff"
+    "$bin"/notify-slack --upload "additional-info-changes.txt" <<<"$diff"
 else
     echo "No additional info change."
 fi
