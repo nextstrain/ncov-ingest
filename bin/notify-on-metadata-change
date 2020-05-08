@@ -28,7 +28,7 @@ csv-diff \
 
 "$bin"/metadata-additions "$dst_local" "$src" > "$additions"
 
-if [[ -s "$diff" ]]; then
+if [[ -n "$(< "$diff")" ]]; then
     echo "Notifying Slack about metadata change."
     "$bin"/notify-slack --upload "metadata-changes.txt" < "$diff"
 else
