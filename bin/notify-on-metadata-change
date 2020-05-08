@@ -8,19 +8,34 @@ bin="$(dirname "$0")"
 src="${1:?A source metadata TSV file is required as the first argument.}"
 dst="${2:?A destination metadata TSV s3:// URL is required as the second argument.}"
 
-diff="$(
-    csv-diff \
-        <(aws s3 cp --no-progress "$dst" - | gunzip -cfq) \
-        "$src" \
-        --format tsv \
-        --key gisaid_epi_isl \
-        --singular sequence \
-        --plural sequences
-)"
+dst_local="$(mktemp -t metadata-XXXXXX.tsv)"
 
-if [[ -n "$diff" ]]; then
+diff="$(mktemp -t metadata-changes-XXXXXX)"
+additions="$(mktemp -t metadata-additions-XXXXXX)"
+
+trap "rm -f '$dst_local' '$diff' '$additions'" EXIT
+
+aws s3 cp --no-progress "$dst" - | gunzip -cfq > "$dst_local"
+
+csv-diff \
+    "$dst_local" \
+    "$src" \
+    --format tsv \
+    --key gisaid_epi_isl \
+    --singular sequence \
+    --plural sequences \
+    > "$diff"
+
+"$bin"/metadata-additions "$dst_local" "$src" > "$additions"
+
+if [[ -n "$(< "$diff")" ]]; then
     echo "Notifying Slack about metadata change."
-    "$bin"/notify-slack --upload "Metadata changes" <<<"$diff"
+    "$bin"/notify-slack --upload "metadata-changes.txt" < "$diff"
 else
     echo "No metadata change."
+fi
+
+if [[ -s "$additions" ]]; then
+    echo "Notifying Slack about metadata additions."
+    "$bin"/notify-slack --upload "metadata-additions.tsv" < "$additions"
 fi
