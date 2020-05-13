@@ -7,8 +7,10 @@ Check annotations for potential errors / missing data
 
 import sys
 import pandas as pd
+import argparse
+from pathlib import Path
 
-ANNOTATIONS_FILE = "./source-data/annotations.tsv"
+
 ALLOWED_TRAIT_NAMES = set(
     [
         "strain",
@@ -101,9 +103,23 @@ def check_annotation(annotations):
 
 
 if __name__ == "__main__":
-    print("Ensuring that there are no unexpected trait names defined in the annotations...")
+    base = Path(__file__).resolve().parent.parent
+
+    parser = argparse.ArgumentParser(
+        description="Check if annotations from a metadata file is valid.",
+        formatter_class=argparse.RawTextHelpFormatter
+    )
+
+    parser.add_argument(
+            "--annotations",
+            default=base / "source-data/annotations.tsv",
+            help="Annotation file (in TSV format) to be checked.\n")
+
+    args = parser.parse_args()
+
+    print("Ensuring that there are no unexpected trait names defined in the annotations file {}...".format(args.annotations))
     try:
-        ann = read_annotations_file(ANNOTATIONS_FILE)
+        ann = read_annotations_file(args.annotations)
         ann = reshape_annotations(ann)
         check_annotation(ann)
     except Exception as e:
