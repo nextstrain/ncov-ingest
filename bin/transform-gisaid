@@ -260,7 +260,7 @@ if __name__ == '__main__':
         nargs="?",
         help="Newline-delimited GISAID JSON data")
     parser.add_argument("--annotations",
-        default=base / "source-data/annotations.tsv",
+        default=base / "source-data/annotations_gisaid.tsv",
         help="Optional manually curated annotations TSV.\n"
             "The TSV file should have no header and exactly four columns which contain:\n\t"
             "1. the strain ID (not used for matching; for readability)\n\t"
@@ -274,13 +274,13 @@ if __name__ == '__main__':
         "USA/CA1/2020    EPI_ISL_406034    genbank_accession   MN994467\n\t"
         "Wuhan-Hu-1/2019 EPI_ISL_402125    collection_date 2019-12-26 # Manually corrected date")
     parser.add_argument("--output-metadata",
-        default=base / "data/metadata.tsv",
+        default=base / "data/metadata_gisaid.tsv",
         help="Output location of generated metadata tsv. Defaults to `data/metadata.tsv`")
     parser.add_argument("--output-fasta",
-        default=base / "data/sequences.fasta",
+        default=base / "data/sequences_gisaid.fasta",
         help="Output location of generated FASTA file. Defaults to `data/sequences.fasta`")
     parser.add_argument("--output-additional-info",
-        default=base / "data/additional_info.tsv",
+        default=base / "data/additional_info_gisaid.tsv",
         help="Output location of additional info tsv. Defaults to `data/additional_info.tsv`")
     args = parser.parse_args()
 
