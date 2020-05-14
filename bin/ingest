@@ -41,6 +41,8 @@ cd "$(dirname "$0")/.."
 
 set -x
 
+./bin/check-annotations
+
 ./bin/fetch-from-gisaid > data/gisaid.ndjson
 if [[ "$branch" == master ]]; then
     ./bin/notify-on-gisaid-change data/gisaid.ndjson "$S3_SRC/gisaid.ndjson.gz"
