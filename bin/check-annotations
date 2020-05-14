@@ -25,6 +25,7 @@ ALLOWED_TRAIT_NAMES = set(
         "region_exposure",
         "country_exposure",
         "division_exposure",
+        "originating_lab",
     ]
 )
 
