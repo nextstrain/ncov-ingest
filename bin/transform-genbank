@@ -1,0 +1,328 @@
+#!/usr/bin/env python3
+"""
+Parse the GenBank JSON load into a metadata tsv and a FASTA file.
+"""
+import argparse
+from pathlib import Path
+import fsspec
+import re
+import pandas as pd
+from typing import List
+
+
+# Note: 'sequence' should NEVER appear in this list!
+METADATA_COLUMNS = [  # Ordering of columns in the existing metadata.tsv in the ncov repo
+    'strain', 'virus', 'gisaid_epi_isl', 'genbank_accession', 'date', 'region',
+    'country', 'division', 'location', 'region_exposure', 'country_exposure',
+    'division_exposure', 'segment', 'length', 'host', 'age', 'sex',
+    'originating_lab', 'submitting_lab', 'authors', 'url', 'title',
+    'date_submitted'
+]
+
+assert 'sequence' not in METADATA_COLUMNS, "Sequences should not appear in metadata!"
+
+def preprocess(genbank_data: pd.DataFrame) -> pd.DataFrame:
+    """
+    Rename and standardize column types and drop records where the
+    sequence length is less than 15kkb.
+    Returns the modified DataFrame.
+    """
+    mapper = {
+        'collected': 'date',
+        'submitted': 'date_submitted',
+    }
+    genbank_data.rename(mapper, axis='columns', inplace=True)
+
+    # Standardize to nullable dtypes
+    genbank_data = genbank_data.convert_dtypes()
+
+    # Normalize all string columns to Unicode Normalization Form C, for
+    # consistent, predictable string comparisons.
+    for column in genbank_data:
+        if genbank_data[column].dtype == "string":
+            genbank_data[column] = genbank_data[column].str.normalize("NFC").str.strip()
+
+    # Drop entries with length less than 15kb and reset index
+    genbank_data = genbank_data \
+        .drop(genbank_data[genbank_data.length < 15000].index) \
+        .reset_index(drop=True)
+
+    return genbank_data
+
+
+def standardize_strain_names(genbank_data: pd.DataFrame) -> pd.DataFrame:
+    """
+    Attempt to standardize strain names by removing extra prefixes,
+    stripping spaces, converting country code to country name, and correcting
+    known common error patterns.
+    """
+    # Compile list of regex to be used for strain name standardization
+    # Order is important here! Keep the known prefixes first!
+    regex_replacement = [
+        (r'(^SAR[S]{0,1}[-\s]CoV[-]{0,1}2/|^2019[-\s]nCoV[-_\s/]|^BetaCoV/|^nCoV-|^hCoV-19/)',''),
+        (r'(human/)',''),
+        (r'^USA-', 'USA/'),
+        (r'^USACT-', 'USA/CT-'),
+        (r'^USAWA-', 'USA/WA-'),
+        (r'^HKG.', 'HongKong/'),
+    ]
+    # Add country codes to regex_replacement
+    country_codes = pd.read_csv(base / 'source-data/country-codes.tsv', header=None, sep='\t', comment="#")
+    country_codes.apply(lambda c: regex_replacement.extend([
+        (rf'^{re.escape(c[0])}/', f'{c[1]}/'),
+        (rf'/{re.escape(c[0])}/', f'/{c[1]}/')]), axis=1)
+
+    # Parse strain name from title to fill in strains that are empty strings
+    genbank_data['strain_from_title'] = genbank_data['title'].apply(parse_strain_from_title)
+    genbank_data.loc[(genbank_data['strain'] == ''), 'strain'] = genbank_data['strain_from_title']
+
+    # Standardize strain names using list of regex replacements
+    for regex, replacement in regex_replacement:
+        genbank_data['strain'] = genbank_data['strain'] \
+            .str.replace(regex, replacement, n=1, case=False)
+
+    # Strip all spaces
+    genbank_data['strain'] = genbank_data['strain'].str.replace(r'\s', '')
+
+    return genbank_data
+
+
+def parse_strain_from_title(title: str) -> str:
+    """
+    Try to parse strain name from the given *title* using regex search.
+    Returns an empty string if not match is found in the *title*.
+    """
+    strain_name_regex = r'[-\w]*/[-\w]*/[-\w]*\s'
+    strain = re.search(strain_name_regex, title)
+    return strain.group(0) if strain else ''
+
+
+def parse_geographic_columns(genbank_data: pd.DataFrame) -> pd.DataFrame:
+    """
+    Expands string found in the column named `location` in the given
+    *genbank_data* DataFrame, creating 3 new columns. Returns the modified
+    DataFrame.
+
+    Expected formats of the location string are:
+        * "country"
+        * "country: division"
+        * "country: location, division
+    """
+    # Create dict of US state codes and their full names
+    us_states = pd.read_csv(base / 'source-data/us-state-codes.tsv', header=None, sep='\t', comment="#")
+    us_states = dict(zip(us_states[0], us_states[1]))
+
+    geographic_data = genbank_data['location'].str.split(':\s*', expand=True)
+    geographic_data[0] = geographic_data[0].str.strip()
+
+    divisions = []
+    locations = []
+    for index, value in geographic_data.iterrows():
+        # Both location and division are not available
+        if pd.isna(value[1]):
+            location = division = None
+        # Only division is available
+        elif ',' not in value[1]:
+            location = None
+            division = value[1]
+        # Location and division are both available
+        elif ',' in value[1]:
+            location,division = value[1].split(',', 1)
+        # Unknown format of location data
+        else:
+            assert False, f"Found unknown format for geographic data: {value}"
+
+        # Convert US state codes to full names
+        if value[0] == 'USA' and division and us_states.get(division.strip()):
+            division = us_states[division.strip()]
+
+        location = location.strip().lower().title() if location else None
+        division = division.strip().lower().title() if division else None
+
+        divisions.append(division)
+        locations.append(location)
+
+    genbank_data['country']     = geographic_data[0]
+    genbank_data['division']    = pd.Series(divisions)
+    genbank_data['location']    = pd.Series(locations)
+
+    return genbank_data
+
+
+def parse_authors(genbank_data: pd.DataFrame) -> pd.DataFrame:
+    """
+    Abbreviate the column named `authors` to be "<first author> etl al" rather than a
+    full list. Returns the modified DataFrame.
+    """
+    # Strip and normalize whitespace
+    genbank_data['authors'] = genbank_data['authors'].str.replace(r'\s+', ' ')
+    # Strip to string before first comma
+    genbank_data['authors'] = genbank_data['authors'].str.replace(r"^([^,]+),.+", lambda m: m.group(1))
+    # Add et al to authors if authors is not an empty string
+    genbank_data.loc[genbank_data['authors'] != '', 'authors'] = genbank_data['authors'].astype(str) + ' et al'
+    # Replace blank authors with '?'
+    genbank_data.loc[genbank_data['authors'] == '', 'authors'] = '?'
+
+    return genbank_data
+
+
+def format_date_columns(genbank_data: pd.DataFrame) -> pd.DataFrame:
+    """
+    Format the date columns of *genbank_data* to have the format
+    %Y-%m-%d and return the modified DataFrame.
+    """
+    date_columns = ['date', 'date_submitted']
+
+    for column in date_columns:
+        genbank_data[column] = pd.to_datetime(genbank_data[column]).dt.strftime('%Y-%m-%d')
+
+    return genbank_data
+
+
+def generate_hardcoded_metadata(genbank_data: pd.DataFrame) -> pd.DataFrame:
+    """
+    Returns a DataFrame with a column for GenBank accession plus
+    additional columns containing hardcoded metadata.
+    """
+    hardcoded_metadata = pd.DataFrame(genbank_data['genbank_accession'])
+    hardcoded_metadata['virus']             = 'ncov'
+    hardcoded_metadata['gisaid_epi_isl']    = '?'
+    hardcoded_metadata['segment']           = 'genome'
+    hardcoded_metadata['age']               = '?'
+    hardcoded_metadata['sex']               = '?'
+    hardcoded_metadata['originating_lab']   = '?'
+    hardcoded_metadata['submitting_lab']    = '?'
+
+    hardcoded_metadata['url'] = hardcoded_metadata['genbank_accession'] \
+        .apply(lambda x: f"https://www.ncbi.nlm.nih.gov/nuccore/{x}")
+
+    return hardcoded_metadata
+
+
+def update_metadata(genbank_data: pd.DataFrame) -> pd.DataFrame:
+    """
+    Update metadata with hardcoded metadata and update with curated
+    annotations if provided. Returns the modified DataFrame.
+    """
+    hardcoded_metadata = generate_hardcoded_metadata(genbank_data)
+    genbank_data = genbank_data.merge(hardcoded_metadata)
+
+    if args.annotations:
+        # Use the curated annotations tsv to update any column values
+        user_provided_annotations = pd.read_csv(args.annotations, header=None, sep='\t', comment="#")
+        for index, (genbank_accession, key, value) in user_provided_annotations.iterrows():
+            # Strip any whitespace remaining from inline comments after the final column.
+            if isinstance(value, str):
+                value = value.rstrip()
+            genbank_data.loc[genbank_data['genbank_accession'] == genbank_accession, key] = value
+
+    # if division is blank, replace with country data, to avoid unexpected effects when subsampling by division
+    # (where an empty division is counted as a 'division' group)
+    genbank_data.loc[pd.isnull(genbank_data['division']), 'division'] = genbank_data['country']
+
+    # Set `region_exposure` equal to `region` if it wasn't added by annotations
+    if 'region_exposure' in genbank_data:
+        genbank_data['region_exposure'].fillna(genbank_data['region'], inplace=True)
+    else:
+        genbank_data['region_exposure'] = genbank_data['region']
+
+    # Set `country_exposure` equal to `country` if it wasn't added by annotations
+    if 'country_exposure' in genbank_data:
+        genbank_data['country_exposure'].fillna(genbank_data['country'], inplace=True)
+    else:
+        genbank_data['country_exposure'] = genbank_data['country']
+
+    # Set `division_exposure` equal to `division` if it wasn't added by annotations
+    if 'division_exposure' in genbank_data:
+        genbank_data['division_exposure'].fillna(genbank_data['division'], inplace=True)
+    else:
+        genbank_data['division_exposure'] = genbank_data['division']
+
+    return genbank_data
+
+
+def find_and_drop_problem_records(genbank_data: pd.DataFrame) -> pd.DataFrame:
+    """
+    Find records that are missing geographic regions or have the wrong
+    name structure and print them out for manual curation. Drop the problem
+    records and duplicate records and return the modified DataFrame.
+    """
+    strain_name_regex = r'([\w]*/)?[\w]*/[-_\.\w]*/[\d]{4}'
+
+    problem_data = genbank_data.loc[(genbank_data.region == '') \
+        | (genbank_data.country == '') \
+        # All strain names should have structure {}/{}/{year} or {}/{}/{}/{year}
+        # with the exception of 'Wuhan-Hu-1/2019'
+        | (~(genbank_data.strain.str.match(strain_name_regex)) & (genbank_data.strain != 'Wuhan-Hu-1/2019'))]
+
+    # Print problem records for manual curation
+    problem_data[['genbank_accession', 'strain', 'region', 'country', 'url']].to_csv(args.problem_data, sep='\t', index=False)
+
+    # Drop entries without geographic region or with wrong strain name structure
+    genbank_data.drop(problem_data.index, inplace=True)
+
+    # Drop duplicates, prefer longest and earliest sequence
+    # based on submission date.
+    genbank_data.sort_values(['strain', 'length', 'date_submitted'],
+        ascending=[True, False, True], inplace=True)
+    genbank_data.drop_duplicates('strain', inplace=True)
+
+    return genbank_data
+
+
+def write_fasta_file(sequence_data: pd.DataFrame):
+    """ """
+    with fsspec.open(str(args.output_fasta), 'wt') as fastafile:
+        for index, row in sequence_data.iterrows():
+            fastafile.write(f">{row['strain']}\n")
+            fastafile.write(f"{row['sequence']}\n")
+
+
+if __name__ == '__main__':
+    base = Path(__file__).resolve().parent.parent
+
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.RawTextHelpFormatter)
+    parser.add_argument("genbank_data",
+        default="s3://nextstrain-ncov-private/genbank.ndjson.gz",
+        nargs="?",
+        help="Newline-delimited GenBank JSON data")
+    parser.add_argument("--annotations",
+        default=base / "source-data/annotations_genbank.tsv",
+        help="Optional manually curated annotations TSV.\n"
+            "The TSV file should have no header and exactly four columns which contain:\n\t"
+            "1. the GenBank accession number\n\t"
+            "2. the column name to replace from the generated `metadata.tsv` file\n\t"
+            "3. the replacement data\n"
+        "Lines or parts of lines starting with '#' are treated as comments.\n"
+        "e.g.\n\t"
+        "MT039888	location    Boston\n\t"
+        "# First Californian sample\n\t"
+        "MN994467	country_exposure	China\n\t"
+        "MN908947	collection_date 2019-12-26 # Manually corrected date")
+    parser.add_argument("--output-metadata",
+        default=base / "data/metadata_genbank.tsv",
+        help="Output location of generated metadata tsv. Defaults to `data/genbank/metadata.tsv`")
+    parser.add_argument("--output-fasta",
+        default=base / "data/sequences_genbank.fasta",
+        help="Output location of generated FASTA file. Defaults to `data/genbank/sequences.fasta`")
+    parser.add_argument("--problem-data",
+        default=base / "data/problem_data_genbank.tsv",
+        help="Output location of generated tsv of problem records missing geography region or a valid strain name")
+    args = parser.parse_args()
+
+    genbank_data = pd.read_json(args.genbank_data,
+                                lines=True,
+                                compression='infer')
+    genbank_data = preprocess(genbank_data)
+    genbank_data = standardize_strain_names(genbank_data)
+    genbank_data = parse_geographic_columns(genbank_data)
+    genbank_data = parse_authors(genbank_data)
+    genbank_data = format_date_columns(genbank_data)
+    genbank_data = update_metadata(genbank_data)
+    genbank_data = find_and_drop_problem_records(genbank_data)
+
+    write_fasta_file(genbank_data)
+    genbank_data = genbank_data[METADATA_COLUMNS]
+    genbank_data.to_csv(args.output_metadata, sep='\t', na_rep='', index=False)
