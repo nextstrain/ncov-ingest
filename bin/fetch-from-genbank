@@ -43,7 +43,8 @@ params = {
             #   -trs, 13 May 2020
             ('genbank_accession',       'id'),
             ('database',                'SourceDB_s'),
-            ('title',                   'Definition_s'),
+            ('strain',                  'Isolate_s'),
+            ('region',                  'Region_s'),
             ('location',                'CountryFull_s'),
             ('collected',               'CollectionDate_s'),
             ('submitted',               'CreateDate_dt'),
@@ -51,6 +52,7 @@ params = {
             ('host',                    'Host_s'),
             ('isolation_source',        'Isolation_csv'),
             ('biosample_accession',     'BioSample_s'),
+            ('title',                   'Definition_s'),
             ('authors',                 'Authors_csv'),
             ('publications',            'PubMed_csv'),
             ('sequence',                'Nucleotide_seq'),
