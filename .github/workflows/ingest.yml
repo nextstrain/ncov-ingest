@@ -4,7 +4,7 @@ on:
   push:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '*/60 * * * *'
+    - cron:  '*/240 * * * *'
 
   # Manually triggered using `./bin/trigger ingest`
   repository_dispatch:
