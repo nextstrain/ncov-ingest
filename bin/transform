@@ -88,10 +88,10 @@ def parse_geographic_columns(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     """
     geographic_data = gisaid_data['location'].str.split('\s*/\s*', expand=True)
 
-    gisaid_data['region']      = geographic_data[0]
-    gisaid_data['country']     = geographic_data[1]
-    gisaid_data['division']    = geographic_data[2]
-    gisaid_data['location']    = geographic_data[3]
+    gisaid_data['region']      = geographic_data[0].str.strip()
+    gisaid_data['country']     = geographic_data[1].str.strip()
+    gisaid_data['division']    = geographic_data[2].str.strip()
+    gisaid_data['location']    = geographic_data[3].str.strip()
 
 
     return gisaid_data
@@ -216,11 +216,11 @@ def update_metadata(curated_gisaid_data: pd.DataFrame) -> pd.DataFrame:
     if args.annotations:
         # Use the curated annotations tsv to update any column values
         user_provided_annotations = pd.read_csv(args.annotations, header=None, sep='\t', comment="#")
-        for index, (strain, key, value) in user_provided_annotations.iterrows():
+        for index, (strain, epi_isl, key, value) in user_provided_annotations.iterrows():
             # Strip any whitespace remaining from inline comments after the final column.
             if isinstance(value, str):
                 value = value.rstrip()
-            curated_gisaid_data.loc[curated_gisaid_data['strain'] == strain, key] = value
+            curated_gisaid_data.loc[curated_gisaid_data['gisaid_epi_isl'] == epi_isl, key] = value
 
     # Set `region_exposure` equal to `region` if it wasn't added by annotations
     if 'region_exposure' in curated_gisaid_data:
