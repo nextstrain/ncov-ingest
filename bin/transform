@@ -109,8 +109,6 @@ def parse_originating_lab(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     """
     Parses originating lab
     """
-    # Fix accents and non-standard commas
-    gisaid_data['originating_lab'] = gisaid_data['originating_lab'].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
     # Strip and normalize whitespace
     gisaid_data['originating_lab'] = gisaid_data['originating_lab'].str.strip().str.replace(r'\s+', ' ')
     # Fix common spelling mistakes
@@ -122,8 +120,6 @@ def parse_submitting_lab(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     """
     Parses submitting lab
     """
-    # Fix accents and non-standard commas
-    gisaid_data['submitting_lab'] = gisaid_data['submitting_lab'].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
     # Strip and normalize whitespace
     gisaid_data['submitting_lab'] = gisaid_data['submitting_lab'].str.strip().str.replace(r'\s+', ' ')
     # Fix common spelling mistakes
@@ -133,22 +129,21 @@ def parse_submitting_lab(gisaid_data: pd.DataFrame) -> pd.DataFrame:
 
 def parse_authors(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     """
-    Abbreviates the column named `authors` to be "Zhang et al" rather than a
-    full list
+    Abbreviates the column named `authors` to be "<first author> et al" rather
+    than a full list.
+
+    This is a "best effort" approach and still mangles a bunch of things.
+    Without structured author list data, improvements to the automatic parsing
+    meet diminishing returns quickly.  Further improvements should be
+    considered using manual annotations of an author map (separate from our
+    existing corrections/annotations).
     """
-    # Fix accents and non-standard commas
-    gisaid_data['authors'] = gisaid_data['authors'].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
     # Strip and normalize whitespace
     gisaid_data['authors'] = gisaid_data['authors'].str.strip().str.replace(r'\s+', ' ')
-    # Strip to string before first comma
-    gisaid_data['authors'] = gisaid_data['authors'].str.replace(r"^([^,]+),.+", lambda m: m.group(1))
-    # Strip to string before first semicolon
-    gisaid_data['authors'] = gisaid_data['authors'].str.replace(r"^([^;]+);.+", lambda m: m.group(1))
-    # Convert this string to last name
-    gisaid_data['authors'] = gisaid_data['authors'].str.replace(r" [A-Z]\.? ", ' ')
-    gisaid_data['authors'] = gisaid_data['authors'].str.replace(r"^[A-Z][a-z]+\-?[A-Z]?[a-z]* ([A-Z][a-z]+) *$", lambda m: m.group(1))
-    gisaid_data['authors'] = gisaid_data['authors'].str.replace(r" [A-Z]\.?[A-Z]?\.?$", '')
-    gisaid_data['authors'] = gisaid_data['authors'].str.replace(r" [A-Z]-[A-Z]$", '')
+    # Split to first author as best we can for now.  Both commas and semicolons
+    # (and their full-width forms) appear to be used interchangeably without a
+    # difference of meaning.
+    gisaid_data['authors'] = gisaid_data['authors'].str.split(r'(?:\s*[,，;；]\s*|\s+(?:and|&)\s+)').str[0]
     # Add et al
     gisaid_data['authors'] = gisaid_data['authors'].astype(str) + ' et al'
     return gisaid_data
@@ -157,8 +152,6 @@ def parse_age(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     """
     Parse patient age.
     """
-    # Fix accents and non-standard commas
-    gisaid_data['age'] = gisaid_data['age'].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
     # Convert "60s" or "50's" to "?"
     gisaid_data['age'] = gisaid_data['age'].str.replace(r"^\d+\'?[A-Za-z]", '?')
     # Convert to just number
@@ -177,8 +170,6 @@ def parse_sex(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     """
     Parse patient sex.
     """
-    # Fix accents and non-standard commas
-    gisaid_data['sex'] = gisaid_data['sex'].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
     # Casing and abbreviations
     gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^male$", 'Male')
     gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^M$", 'Male')
