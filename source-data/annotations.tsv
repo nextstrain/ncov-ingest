@@ -7,15 +7,17 @@
 # India/777/2020 #indian contact of italian tourist (GISAID)
 # India/c32/2020 # Indian contact of Indian Patient having travel history to Italy (GISAID)
 # India/c31/2020 # Indian contact of Indian Patient having travel history to Italy
+# India/3118/2020 Indian contact of Indian Patient having travel history to Italy
+# India/3239/2020 Indian contact of Indian Patient having travel history to Italy
 # Japan/TK/20-31-3/2020	division_exposure	Diamond Princess # GISAID
 # Panama/328677 data via email from Alexander Martinez (who did the sequencing)
 # Slovakia/SK-BMC1/2020 contact with a confirmed COVID-19 case with travel history to Italy - GISAID
 # Slovakia/SK-BMC2/2020 contact with a confirmed COVID-19 case in Austria, travel history also to Prague, Czech Republic
 # Slovakia/SK-BMC6/2020 Recognized in Martin, Slovakia but residence in Prague, Czech Republic, travel history to Austria - GISAID
-# strain	key	value
 # Switzerland/1000477806/2020	division_exposure	no travel history but open-plan office with someone who visited Lombardy & tested positive (from submitters)
 # Taiwan/NTU03/2020 patient travelled to Dubai (1/29/2020-2/10/2020) and Egypt (2/11/2020-2/21/2020) (from GISAID)
 # Taiwan/NTU03/2020 travel history from GISAID: Dubai (1/29-2/10 of 2020) and Egypt (2/11-2/21 of 2020)
+# Turkey/HSGM-1452/2020	Healthcare worker
 # USA/CA-CDPH-UC23/2020 health care worker - GISAID
 # USA/CA-CDPH-UC26/2020 recent travel to NY - GISAID
 # USA/CA-CDPH-UC27/2020 health care worker, travel to NY - GISAID
@@ -26,9 +28,12 @@
 # USA/CA-SCCPHD-UC16/2020 - household contact of UC13 (EPI_ISL_417317) - GISAID
 # USA/CA-SCCPHD-UC17/2020 - household contact of UC13 (EPI_ISL_417317) - GISAID
 # USA/UPHL-05/2020 and USA/UPHL-06/2020 have Caribean cruise exposure - Jamaica & FLorida - duncan
+# USA/CA-UCSF-UC32/2020 close contact of UC34
+# USA/CA-UCSF-UC33/2020 works at airport, community acquired
 ## Kuwait samples have their division set to what should be the location
 #note UPHL-03 and -04 are same patient
 #note UPHL-05 and -06 are same patient
+# strain	key	value
 Argentina/PAIS_A005/2020	region_exposure	North America
 Argentina/PAIS_A005/2020	country_exposure	Mexico
 Argentina/PAIS_A005/2020	division_exposure	Mexico
@@ -543,7 +548,6 @@ Canada/NS_13/2020	division	Nova Scotia
 Canada/NS_30/2020	division	Nova Scotia
 Canada/NS_31/2020	division	Nova Scotia
 Canada/NS_32/2020	division	Nova Scotia
-Canada/PE_3/2020	division	Prince Edward Island
 Canada/SK_16/2020	division	Saskatchewan
 Canada/SK_20/2020	division	Saskatchewan
 Canada/SK_52/2020	division	Saskatchewan
@@ -701,51 +705,7 @@ China/WF0029/2020	division	Shandong
 China/WH-09/2020	division	Hubei
 China/WH-09/2020	genbank_accession	MT093631
 China/WH-09/2020	location	Wuhan
-China/WHU01/2020	genbank_accession	MN988668
-China/WHU02/2020	genbank_accession	MN988669
 Chongqing/YC01/2020	division	Chongqing
-Congo/108/2020	country	Democratic Republic of the Congo
-Congo/158/2020	country	Democratic Republic of the Congo
-Congo/191/2020	country	Democratic Republic of the Congo
-Congo/214/2020	country	Democratic Republic of the Congo
-Congo/215/2020	country	Democratic Republic of the Congo
-Congo/236/2020	country	Democratic Republic of the Congo
-Congo/241/2020	country	Democratic Republic of the Congo
-Congo/243/2020	country	Democratic Republic of the Congo
-Congo/248/2020	country	Democratic Republic of the Congo
-Congo/253/2020	country	Democratic Republic of the Congo
-Congo/254/2020	country	Democratic Republic of the Congo
-Congo/299/2020	country	Democratic Republic of the Congo
-Congo/300/2020	country	Democratic Republic of the Congo
-Congo/307/2020	country	Democratic Republic of the Congo
-Congo/352/2020	country	Democratic Republic of the Congo
-Congo/353/2020	country	Democratic Republic of the Congo
-Congo/355/2020	country	Democratic Republic of the Congo
-Congo/376/2020	country	Democratic Republic of the Congo
-Congo/396/2020	country	Democratic Republic of the Congo
-Congo/397/2020	country	Democratic Republic of the Congo
-Congo/400/2020	country	Democratic Republic of the Congo
-Congo/402/2020	country	Democratic Republic of the Congo
-Congo/431/2020	country	Democratic Republic of the Congo
-Congo/445/2020	country	Democratic Republic of the Congo
-Congo/521/2020	country	Democratic Republic of the Congo
-Congo/523/2020	country	Democratic Republic of the Congo
-Congo/73/2020	country	Democratic Republic of the Congo
-Congo/80/2020	country	Democratic Republic of the Congo
-Congo/81/2020	country	Democratic Republic of the Congo
-Congo/82/2020	country	Democratic Republic of the Congo
-Congo/94/2020	country	Democratic Republic of the Congo
-Congo/KN-0017/2020	country	Democratic Republic of the Congo
-Congo/KN-0038/2020	country	Democratic Republic of the Congo
-Congo/KN-0043/2020	country	Democratic Republic of the Congo
-Congo/KN-0051/2020	country	Democratic Republic of the Congo
-Congo/KN-0054/2020	country	Democratic Republic of the Congo
-Congo/KN-0058/2020	country	Democratic Republic of the Congo
-Congo/KN-0059/2020	country	Democratic Republic of the Congo
-Congo/KN-0060/2020	country	Democratic Republic of the Congo
-Congo/KN-0070/2020	country	Democratic Republic of the Congo
-Congo/KN-0072/2020	country	Democratic Republic of the Congo
-Congo/KN-13/2020	country	Democratic Republic of the Congo
 CzechRepublic/951/2020	country_exposure	Italy # GISAID - probably infected during holiday to italy
 CzechRepublic/951/2020	division_exposure	Italy # GISAID - probably infected during holiday to italy
 CzechRepublic/951/2020	region_exposure	Europe # GISAID - probably infected during holiday to italy
@@ -1435,8 +1395,6 @@ England/02/2020	country_exposure	China # first cases were reported in media as b
 England/02/2020	division	England
 England/02/2020	division_exposure	Hubei # first cases were reported in media as being son & mother from China
 England/02/2020	region_exposure	Asia # first cases were reported in media as being son & mother from China
-England/03/2020	country	United Kingdom
-England/03/2020	division	England
 England/09c/2020	country	United Kingdom
 England/09c/2020	country_exposure	China #recently arrived from china https://www.theguardian.com/world/2020/feb/13/london-coronavirus-patient-turned-up-hospital-uber-taxi
 England/09c/2020	division	England
@@ -9469,7 +9427,6 @@ France/IDF0373/2020	region_exposure	Asia #"This is one of a Chinese couple from 
 France/IDF0373/2020	division	Ile de France
 France/IDF0386-islP1/2020	division	Ile de France
 France/IDF0386-islP3/2020	division	Ile de France
-France/IDF0386/2020	division	Ile de France
 France/IDF0515-isl/2020	division	Ile de France
 France/IDF0515/2020	country_exposure	China # ? media?
 France/IDF0515/2020	division	Ile de France
@@ -9538,12 +9495,12 @@ Ghana/1659_S14/2020	location	Accra
 Ghana/2850_S15/2020	location	Accra
 Ghana/3176_S11/2020	location	Accra
 Ghana/3177_S12/2020	location	Accra
-Guam/GU-NHG-02/2020	country	Guam # whitespace
-Guam/GU-NHG-02/2020	division	Guam # whitespace
-Guam/GU-NHG-03/2020	country	Guam # whitespace
-Guam/GU-NHG-03/2020	division	Guam # whitespace
-Guam/GU-NHG-01/2020	country	Guam # whitespace
-Guam/GU-NHG-01/2020	division	Guam # whitespace
+Guam/GU_NHG_02/2020	country	Guam # whitespace
+Guam/GU_NHG_02/2020	division	Guam # whitespace
+Guam/GU_NHG_03/2020	country	Guam # whitespace
+Guam/GU_NHG_03/2020	division	Guam # whitespace
+Guam/GU_NHG_01/2020	country	Guam # whitespace
+Guam/GU_NHG_01/2020	division	Guam # whitespace
 Guangdong/20SF012/2020	division	Guangdong
 Guangdong/20SF013/2020	division	Guangdong
 Guangdong/20SF014/2020	division	Guangdong
@@ -9568,33 +9525,6 @@ Hangzhou/ZJU-06/2020	division	Zhejiang
 Hangzhou/ZJU-06/2020	location	Hangzhou
 Hangzhou/ZJU-07/2020	division	Zhejiang
 Hangzhou/ZJU-07/2020	location	Hangzhou
-hCoV/HongKong/Case19_04022020/2020	strain	HongKong/Case19_04022020/2020
-hCoV/HongKong/Case20_30012020/2020	strain	HongKong/Case20_30012020/2020
-HongKong/Case1_21012020/2020	division	Hong Kong
-HongKong/case2_VB20017970/2020	division	Hong Kong
-HongKong/Case6_21012020/2020	division	Hong Kong
-HongKong/Case12_22012020/2020	division	Hong Kong
-HongKong/Case17_22012020/2020	division	Hong Kong
-HongKong/Case19_04022020/2020	division	Hong Kong
-HongKong/Case20_30012020/2020	division	Hong Kong
-HongKong/Case28_30012020/2020	division	Hong Kong
-HongKong/Case29_01022020/2020	division	Hong Kong
-HongKong/Case30_29012020/2020	division	Hong Kong
-HongKong/Case32_04022020/2020	division	Hong Kong
-HongKong/Case34_30012020/2020	division	Hong Kong
-HongKong/Case35_04022020/2020	division	Hong Kong
-HongKong/case42_VM20002493/2020	division	Hong Kong
-HongKong/case42_VM20002493/2020	location	Hong Kong
-HongKong/case48_VM20002507/2020	division	Hong Kong
-HongKong/case48_VM20002507/2020	location	Hong Kong
-HongKong/case49_VM20002508/2020	division	Hong Kong
-HongKong/case49_VM20002508/2020	location	Hong Kong
-HongKong/case52_VM20002582/2020	division	Hong Kong
-HongKong/case52_VM20002582/2020	location	Hong Kong
-HongKong/case78_VM20002849/2020	division	Hong Kong
-HongKong/case78_VM20002849/2020	location	Hong Kong
-HongKong/case85_VM20002868/2020	division	Hong Kong
-HongKong/case90_VM20002907/2020	division	Hong Kong
 HongKong/CUHK1/2020	division	Hong Kong
 HongKong/CUHK2/2020	division	Hong Kong
 HongKong/HKPU_2801/2020	division	Hong Kong
@@ -9701,7 +9631,6 @@ HongKong/VB20024950/2020	division	Hong Kong
 HongKong/VB20026565/2020	division	Hong Kong
 HongKong/VM20001061/2020	division	Hong Kong
 HongKong/VM20001061/2020	location	Hong Kong
-HongKong/VM20001988/2020	division	Hong Kong
 HongKong/VM20002493/2020	division	Hong Kong
 HongKong/VM20002493/2020	location	Hong Kong
 HongKong/VM20002507/2020	division	Hong Kong
@@ -9720,8 +9649,6 @@ HongKong/XM-PII-S4/2020	division	Hong Kong
 HongKong/XM-PII-S4/2020	location	Hong Kong
 Hungary/mbl1/2020	division	Central Hungary
 Hungary/mbl1/2020	location	Budapest
-Hungary/mbl4/2020	division	Central Hungary
-Hungary/mbl4/2020	location	Budapest
 Iceland/1/2020	country_exposure	Netherlands # GISAID
 Iceland/1/2020	division_exposure	Netherlands # GISAID
 Iceland/1/2020	region_exposure	Europe # GISAID
@@ -10342,8 +10269,6 @@ India/1652/2020	country_exposure	Iran #GISAID
 India/1063/2020	division_exposure	Iran #GISAID
 India/1135/2020	division_exposure	Iran #GISAID
 India/1652/2020	division_exposure	Iran #GISAID
-# India/3118/2020 Indian contact of Indian Patient having travel history to Italy
-# India/3239/2020 Indian contact of Indian Patient having travel history to Italy
 India/1073/2020	division_exposure	Iran #GISAID
 India/1093/2020	division_exposure	Iran #GISAID
 India/1100/2020	division_exposure	Iran #GISAID
@@ -10386,57 +10311,6 @@ India/GMC-TC469/2020	region_exposure	Europe
 India/GMC-TC469/2020	country_exposure	United Kingdom
 India/GMC-TC469/2020	division_exposure	United Kingdom #Travel history from United kingdom
 India/S2/2020	division	West Bengal
-india/NCDC2443_CSIR-IGIB/2020	strain	India/NCDC2443_CSIR-IGIB/2020
-india/NCDC2502_CSIR-IGIB/2020	strain	India/NCDC2502_CSIR-IGIB/2020
-india/NCDC2507_CSIR-IGIB/2020	strain	India/NCDC2507_CSIR-IGIB/2020
-india/NCDC2514_CSIR-IGIB/2020	strain	India/NCDC2514_CSIR-IGIB/2020
-india/NCDC2515_CSIR-IGIB/2020	strain	India/NCDC2515_CSIR-IGIB/2020
-india/NCDC2517_CSIR-IGIB/2020	strain	India/NCDC2517_CSIR-IGIB/2020
-india/NCDC2519_CSIR-IGIB/2020	strain	India/NCDC2519_CSIR-IGIB/2020
-india/NCDC2522_CSIR-IGIB/2020	strain	India/NCDC2522_CSIR-IGIB/2020
-india/NCDC2525_CSIR-IGIB/2020	strain	India/NCDC2525_CSIR-IGIB/2020
-india/NCDC2535_CSIR-IGIB/2020	strain	India/NCDC2535_CSIR-IGIB/2020
-india/NCDC3162_CSIR-IGIB/2020	strain	India/NCDC3162_CSIR-IGIB/2020
-india/NCDC3163_CSIR-IGIB/2020	strain	India/NCDC3163_CSIR-IGIB/2020
-india/NCDC3170_CSIR-IGIB/2020	strain	India/NCDC3170_CSIR-IGIB/2020
-india/NCDC3175_CSIR-IGIB/2020	strain	India/NCDC3175_CSIR-IGIB/2020
-india/NCDC3176_CSIR-IGIB/2020	strain	India/NCDC3176_CSIR-IGIB/2020
-india/NCDC3181_CSIR-IGIB/2020	strain	India/NCDC3181_CSIR-IGIB/2020
-india/NCDC3190_CSIR-IGIB/2020	strain	India/NCDC3190_CSIR-IGIB/2020
-india/NCDC3195_CSIR-IGIB/2020	strain	India/NCDC3195_CSIR-IGIB/2020
-india/NCDC3230_CSIR-IGIB/2020	strain	India/NCDC3230_CSIR-IGIB/2020
-india/NCDC3264_CSIR-IGIB/2020	strain	India/NCDC3264_CSIR-IGIB/2020
-india/NCDC3271_CSIR-IGIB/2020	strain	India/NCDC3271_CSIR-IGIB/2020
-india/NCDC3279_CSIR-IGIB/2020	strain	India/NCDC3279_CSIR-IGIB/2020
-india/NCDC3394_CSIR-IGIB/2020	strain	India/NCDC3394_CSIR-IGIB/2020
-india/NCDC3400_CSIR-IGIB/2020	strain	India/NCDC3400_CSIR-IGIB/2020
-india/NCDC3831_CSIR-IGIB/2020	strain	India/NCDC3831_CSIR-IGIB/2020
-india/NCDC3835_CSIR-IGIB/2020	strain	India/NCDC3835_CSIR-IGIB/2020
-india/NCDC3934_CSIR-IGIB/2020	strain	India/NCDC3934_CSIR-IGIB/2020
-india/NCDC3936_CSIR-IGIB/2020	strain	India/NCDC3936_CSIR-IGIB/2020
-india/NCDC3941_CSIR-IGIB/2020	strain	India/NCDC3941_CSIR-IGIB/2020
-india/NCDC3950_CSIR-IGIB/2020	strain	India/NCDC3950_CSIR-IGIB/2020
-india/NCDC3961_CSIR-IGIB/2020	strain	India/NCDC3961_CSIR-IGIB/2020
-india/NCDC3965_CSIR-IGIB/2020	strain	India/NCDC3965_CSIR-IGIB/2020
-india/NCDC3982_CSIR-IGIB/2020	strain	India/NCDC3982_CSIR-IGIB/2020
-india/NCDC3985_CSIR-IGIB/2020	strain	India/NCDC3985_CSIR-IGIB/2020
-india/NCDC4055_CSIR-IGIB/2020	strain	India/NCDC4055_CSIR-IGIB/2020
-india/NCDC4138_CSIR-IGIB/2020	strain	India/NCDC4138_CSIR-IGIB/2020
-india/NCDC4155_CSIR-IGIB/2020	strain	India/NCDC4155_CSIR-IGIB/2020
-india/NCDC4189_CSIR-IGIB/2020	strain	India/NCDC4189_CSIR-IGIB/2020
-india/NCDC4205_CSIR-IGIB/2020	strain	India/NCDC4205_CSIR-IGIB/2020
-india/NCDC4208_CSIR-IGIB/2020	strain	India/NCDC4208_CSIR-IGIB/2020
-india/NCDC4444_CSIR-IGIB/2020	strain	India/NCDC4444_CSIR-IGIB/2020
-india/NCDC4475_CSIR-IGIB/2020	strain	India/NCDC4475_CSIR-IGIB/2020
-india/NCDC4476_CSIR-IGIB/2020	strain	India/NCDC4476_CSIR-IGIB/2020
-india/NCDC4846_CSIR-IGIB/2020	strain	India/NCDC4846_CSIR-IGIB/2020
-india/NCDC4859_CSIR-IGIB/2020	strain	India/NCDC4859_CSIR-IGIB/2020
-india/NCDC4867_CSIR-IGIB/2020	strain	India/NCDC4867_CSIR-IGIB/2020
-india/NCDC4874_CSIR-IGIB/2020	strain	India/NCDC4874_CSIR-IGIB/2020
-india/NCDC4876_CSIR-IGIB/2020	strain	India/NCDC4876_CSIR-IGIB/2020
-india/NCDC4877_CSIR-IGIB/2020	strain	India/NCDC4877_CSIR-IGIB/2020
-india/NCDC4878_CSIR-IGIB/2020	strain	India/NCDC4878_CSIR-IGIB/2020
-india/NCDC4879_CSIR-IGIB/2020	strain	India/NCDC4879_CSIR-IGIB/2020
 India/NCDC-3162/2020	division_exposure	Indonesia
 India/NCDC-3163/2020	division_exposure	Indonesia
 India/NCDC-3162/2020	country_exposure	Indonesia
@@ -10484,8 +10358,8 @@ Italy/INMI1-isl/2020	location	Rome
 Italy/INMI1-isl/2020	region_exposure	Asia # GISAID - Chinese tourist from Hubei
 Italy/SPL1/2020	division	Lazio
 Italy/SPL1/2020	location	Rome
-Japan/AI/I-004/2020	genbank_accession	LC521925
-Japan/AI/I-004/2020	location	Aichi
+Japan/AI-I-004/2020	genbank_accession	LC521925
+Japan/AI-I-004/2020	location	Aichi
 Japan/DP0005/2020	division	Japan #replace unknown location
 Japan/DP0027/2020	division	Japan
 Japan/DP0037/2020	division	Japan
@@ -10606,9 +10480,6 @@ Kazakhstan/NCB-1/2020	authors	Shevtsov et al
 Kazakhstan/NCB-2/2020	authors	Shevtsov et al
 Kazakhstan/NCB-3/2020	authors	Shevtsov et al
 Kazakhstan/NCB-5/2020	authors	Shevtsov et al
-KOR/BA-ACH_2604/2020	country	South Korea
-KOR/BA-ACH_2718/2020	country	South Korea
-KOR/BA-ACH_2719/2020	country	South Korea
 Korea/BA-ACH_2604/2020	country	South Korea
 Korea/BA-ACH_2718/2020	country	South Korea
 Korea/BA-ACH_2719/2020	country	South Korea
@@ -10638,10 +10509,6 @@ Kuwait/KU17/2020	division	Kuwait
 Kuwait/KU17/2020	location	Dasman
 Kuwait/KU18/2020	division	Kuwait
 Kuwait/KU18/2020	location	Dasman
-hCoV/Kuwait/KU001/2020	strain	Kuwait/KU001/2020
-hCoV/Kuwait/KU001/2020	division_exposure	USA #GISAID
-hCoV/Kuwait/KU001/2020	country_exposure	USA #GISAID
-hCoV/Kuwait/KU001/2020	region_exposure	North America #GISAID
 Kuwait/KU001/2020	division_exposure	USA #GISAID
 Kuwait/KU001/2020	country_exposure	USA #GISAID
 Kuwait/KU001/2020	region_exposure	North America #GISAID
@@ -10763,7 +10630,6 @@ Mexico/Chiapas-InDRE_02/2020	region	North America
 Mexico/EdoMex-InDRE_03/2020	region	North America
 Mexico/CDMX-InDRE_06/2020	division	Mexico City
 NanChang/JX216/2020	division	Jiangxi
-nCoV-19/USA/UPHL-03/2020	strain	USA/UPHL-03/2020
 Nepal/61/2020	country_exposure	China # ?
 Nepal/61/2020	division_exposure	Hubei # ?
 Nepal/61/2020	genbank_accession	MT072688
@@ -10798,6 +10664,9 @@ Netherlands/Hardinxveld_Giessendam_1364806/2020	division	South Holland
 Netherlands/Hardinxveld_Giessendam_1364806/2020	location	Hardinxveld Giessendam
 Netherlands/Helmond_1363548/2020	division	North Brabant
 Netherlands/Helmond_1363548/2020	location	Helmond
+NetherlandsL/Houten_1363498/2020	strain	Netherlands/Houten_1363498/2020
+NetherlandsL/Houten_1363498/2020	division	Utrecht #unsure if works after strain change
+NetherlandsL/Houten_1363498/2020	location	Houten #unsure if works after strain change
 Netherlands/Houten_1363498/2020	division	Utrecht
 Netherlands/Houten_1363498/2020	location	Houten
 Netherlands/Loon_op_zand_1363512/2020	division	North Brabant
@@ -11374,14 +11243,7 @@ Russia/StPetersburg-RII6061S/2020	division	Saint-Petersburg
 Russia/StPetersburg-RII6063S/2020	division	Saint-Petersburg
 Russia/StPetersburg-RII6065S/2020	division	Saint-Petersburg
 Russia/StPetersburg-RII6086S/2020	division	Saint-Petersburg
-Russia/Vector_64304/2020	division	Saint-Petersburg
-Russia/Vector_73603/2020	division	Saint-Petersburg
-Russia/Vector_73703/2020	division	Republic of Sakha
-Russia/Vector_73709/2020	division	Republic of Sakha
-Russia/Vector_82005/2020	division	Saint-Petersburg
-Russia/Vector_83301/2020	division	Republic of Sakha
 Russia/Vector_84801/2020	division	Republic of Sakha
-Russia/Vector_89702/2020	division	Republic of Sakha
 Russia/Sakha-89702/2020	division	Republic of Sakha
 Russia/Yakutia-73703/2020	division	Republic of Sakha
 Russia/Yakutia-73709/2020	division	Republic of Sakha
@@ -16122,7 +15984,6 @@ Scotland/EDB566/2020	region	Europe
 Scotland/EDB566/2020	country	United Kingdom
 Scotland/EDB566/2020	division	Scotland
 Shanghai/SH01/2020	genbank_accession	MT121215
-Shenzhen/HKU-SZ-001/2020	division	Guangdong
 Shenzhen/HKU-SZ-002/2020	genbank_accession	MN938384
 Shenzhen/HKU-SZ-005/2020	genbank_accession	MN975262
 Shenzhen/SZTH-001/2020	division	Guangdong
@@ -16212,19 +16073,12 @@ Singapore/34/2020	location	Singapore
 Slovakia/SK-BMC5/2020	country_exposure	France # GISAID - Travel history to Paris, France
 Slovakia/SK-BMC5/2020	division_exposure	Ile de France # GISAID - Travel history to Paris, France
 Slovakia/SK-BMC5/2020	region_exposure	Europe # GISAID - Travel history to Paris, France
-SouthAfrica/R03006-20/2020	division	KwaZulu-Natal
-SouthAfrica/KRISP_0002/2020	division	KwaZulu-Natal
-SouthAfrica/KRISP_0006/2020	division	KwaZulu-Natal
-SouthAfrica/KRISP_0007/2020	division	KwaZulu-Natal
-SouthAfrica/KRISP_0011/2020	division	KwaZulu-Natal
-SouthAfrica/KRISP_0012/2020	division	KwaZulu-Natal
 SouthAfrica/KRISP-011/2020	division	KwaZulu-Natal
 SouthAfrica/KRISP-012/2020	division	KwaZulu-Natal
 SouthAfrica/KRISP-02/2020	division	KwaZulu-Natal
 SouthAfrica/KRISP-06/2020	division	KwaZulu-Natal
 SouthAfrica/KRISP-07/2020	division	KwaZulu-Natal
 SouthAfrica/R03006/2020	division	KwaZulu-Natal
-SouthAfrica/R02827-20/2020	division	Gauteng
 SouthAfrica/R02827/2020	division	Gauteng
 SouthAfrica/R02606/2020	division	KwaZulu-Natal
 SouthAfrica/KRISP-010/2020	division	KwaZulu-Natal
@@ -16284,82 +16138,82 @@ Spain/Barcelona_VH9434/2020	division	Catalunya
 Spain/LaRioja201575/2020	division	La Rioja
 Spain/Madrid_LP28_2522/2020	authors	Dahdouh et al
 Spain/PaisVasco201602/2020	division	Basque Country
-Spain/Alicante/569/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Alicante569/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
 Spain/Barcelona_VH1449/2020	division	Catalunya # previously Catalonia
 Spain/Barcelona_VH7663/2020	division	Catalunya # previously Catalonia
-Spain/Castellon/596/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Castellon/604/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/470/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/470/2020	location	Canet d'en Berenguer
-Spain/Valencia/471/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/521/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/522/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/523/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/524/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/525/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/526/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/529/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/534/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/535/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/536/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/537/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/538/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/539/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/540/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/540/2020	location	El Puig
-Spain/Valencia/541/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/542/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/546/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/547/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/548/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/549/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/550/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/551/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/551/2020	location	Llutxent
-Spain/Valencia/552/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/555/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/561/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/565/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/566/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/568/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/570/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/570/2020	location	Tavernes de la Valldigna
-Spain/Valencia/571/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/571/2020	location	Tavernes de la Valldigna
-Spain/Valencia/572/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/573/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/575/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/575/2020	location	Tavernes de la Valldigna
-Spain/Valencia/576/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/577/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/578/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/579/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/580/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/580/2020	location	Tavernes de la Valldigna
-Spain/Valencia/581/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/581/2020	location	Tavernes de la Valldigna
-Spain/Valencia/582/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/583/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/584/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/584/2020	location	Palma de Gandia
-Spain/Valencia/585/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/589/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/594/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/597/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/597/2020	location	Bonrepos i Mirambell
-Spain/Valencia/598/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/599/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/603/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/605/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/605/2020	location	Tavernes de la Valldigna
-Spain/Valencia/606/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/608/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/609/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/609/2020	location	Tavernes de la Valldigna
-Spain/Valencia/610/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/611/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/612/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
-Spain/Valencia/613/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Castellon596/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Castellon604/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia470/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia470/2020	location	Canet d'en Berenguer
+Spain/Valencia471/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia521/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia522/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia523/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia524/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia525/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia526/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia529/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia534/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia535/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia536/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia537/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia538/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia539/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia540/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia540/2020	location	El Puig
+Spain/Valencia541/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia542/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia546/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia547/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia548/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia549/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia550/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia551/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia551/2020	location	Llutxent
+Spain/Valencia552/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia555/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia561/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia565/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia566/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia568/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia570/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia570/2020	location	Tavernes de la Valldigna
+Spain/Valencia571/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia571/2020	location	Tavernes de la Valldigna
+Spain/Valencia572/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia573/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia575/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia575/2020	location	Tavernes de la Valldigna
+Spain/Valencia576/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia577/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia578/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia579/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia580/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia580/2020	location	Tavernes de la Valldigna
+Spain/Valencia581/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia581/2020	location	Tavernes de la Valldigna
+Spain/Valencia582/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia583/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia584/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia584/2020	location	Palma de Gandia
+Spain/Valencia585/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia589/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia594/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia597/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia597/2020	location	Bonrepos i Mirambell
+Spain/Valencia598/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia599/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia603/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia605/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia605/2020	location	Tavernes de la Valldigna
+Spain/Valencia606/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia608/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia609/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia609/2020	location	Tavernes de la Valldigna
+Spain/Valencia610/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia611/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia612/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
+Spain/Valencia613/2020	division	Comunitat Valenciana # previously Comunitat_Valenciana
 Spain/Valencia1/2020	genbank_accession	MT198653
 Spain/Valencia2/2020	genbank_accession	MT198651
 Spain/Valencia3/2020	genbank_accession	MT198652
@@ -16594,7 +16448,6 @@ Spain/Valencia314/2020	division	Comunitat Valenciana
 Spain/Valencia315/2020	division	Comunitat Valenciana
 Spain/Valencia316/2020	division	Comunitat Valenciana
 Spain/CastillayLeon201437/2020	division	Castilla y Leon
-SriLanka/?/2020	region	Asia
 SriLanka/COV91/2020	region	Asia
 Sweden/01/2020	division	Småland
 Sweden/01/2020	genbank_accession	MT093571
@@ -16612,7 +16465,6 @@ Switzerland/AG7120/2020	division	Aargau #assumed from name
 Switzerland/BE2536/2020	division	Bern #assumed from name
 Switzerland/BE6651/2020	division	Bern #assumed from name
 Switzerland/BS0914/2020	division	Basel #assumed from name
-Switzerland/GE0199(2020	division	Geneva #assumed from name
 Switzerland/GE0199/2020	division	Geneva #assumed from name
 Switzerland/GE1402/2020	division	Geneva #assumed from name
 Switzerland/GE1422/2020	division	Geneva #assumed from name
@@ -16626,7 +16478,6 @@ Switzerland/GE8102/2020	division	Geneva #assumed from name
 Switzerland/GE9586/2020	country_exposure	Italy # received from submitters
 Switzerland/GE9586/2020	division_exposure	Lombardy # received from submitters
 Switzerland/GE9586/2020	region_exposure	Europe # received from submitters
-Switzerland/GE062072020	division	Geneva #assumed from name
 Switzerland/GR2988/2020	division	Graubünden #assumed from name
 Switzerland/GR3043/2020	division	Graubünden #assumed from name
 Switzerland/SZ1417/2020	division	Schwyz #assumed from name
@@ -16657,13 +16508,6 @@ Switzerland/GE8086/2020	division	Geneva #assumed from name
 Switzerland/GE8147/2020	division	Geneva #assumed from name
 Switzerland/GE1736/2020	division	Geneva #assumed from name
 Switzerland/GE6414/2020	division	Geneva #assumed from name
-hCoV-10/Switzerland/GE1736/2020	division	Geneva #assumed from name
-hCoV-10/Switzerland/GE6414/2020	division	Geneva #assumed from name
-hCoV-10/Switzerland/GE1736/2020	strain	Switzerland/GE1736/2020
-hCoV-10/Switzerland/GE6414/2020	strain	Switzerland/GE6414/2020
-Sydney/2/2020	country_exposure	China # ?
-Sydney/2/2020	division_exposure	Hubei # ?
-Sydney/2/2020	region_exposure	Asia # ?
 Taiwan/2/2020	division	Taiwan
 Taiwan/2/2020	location	Kaohsiung
 Taiwan/3/2020	division	Taiwan
@@ -16821,7 +16665,6 @@ Turkey/HSGM-4698/2020	region_exposure	Asia
 Turkey/HSGM-1481/2020	division_exposure	Taiwan
 Turkey/HSGM-1481/2020	region_exposure	Asia
 Turkey/HSGM-1481/2020	country_exposure	Taiwan
-# Turkey/HSGM-1452/2020	Healthcare worker
 USA/AK-PHL013/2020	location	Fairbanks
 USA/AK-PHL002/2020	location	Interior Alaska
 USA/AK-PHL003/2020	location	Interior Alaska
@@ -16877,8 +16720,6 @@ USA/CA-UCSF-UC36/2020	location	San Francisco
 USA/CA-UCSF-UC36/2020	region_exposure	North America # GISAID
 USA/CA-UCSF-UC36/2020	country_exposure	USA # GISAID
 USA/CA-UCSF-UC36/2020	division_exposure	New York #GISAID
-# USA/CA-UCSF-UC32/2020 close contact of UC34
-# USA/CA-UCSF-UC33/2020 works at airport, community acquired
 USA/CA-PC101P/2020	genbank_accession	MT192765
 USA/CA1/2020	country_exposure	China # ?
 USA/CA1/2020	division_exposure	Hubei # ?
@@ -16924,7 +16765,6 @@ USA/CruiseA-16/2020	division	Diamond Princess
 USA/CruiseA-17/2020	division	Diamond Princess
 USA/CruiseA-18/2020	division	Diamond Princess
 USA/CruiseA-19/2020	division	Diamond Princess
-USA/CruiseA-20/2020	division	Diamond Princess
 USA/CruiseA-21/2020	division	Diamond Princess
 USA/CruiseA-22/2020	division	Diamond Princess
 USA/CruiseA-23/2020	division	Diamond Princess
@@ -16969,7 +16809,6 @@ USA/DC_0004/2020	division	Washington DC #Change District of Columbia to Washingt
 USA/FL_6318/2020	country	USA
 USA/FL_6318/2020	division	Florida
 USA/FL_6318/2020	region	North America
-USA/UF-3/2020	division	Florida
 USA/GA_1299/2020	country	USA
 USA/GA_1299/2020	division	Georgia
 USA/GA_1299/2020	region	North America
@@ -17130,16 +16969,6 @@ USA/NY-Wadsworth-16080-01/2020	location	Orange County NY # two orange counties i
 USA/OR_5430/2020	country	USA
 USA/OR_5430/2020	division	Oregon
 USA/OR_5430/2020	region	North America
-USA/OSUP0109/2020	division	Ohio
-USA/OSUP0109/2020	location	Columbus
-USA/OSUP0112/2020	division	Ohio
-USA/OSUP0112/2020	location	Columbus
-USA/OSUP0014/2020	division	Ohio
-USA/OSUP0014/2020	location	Columbus
-USA/OSUP0016/2020	division	Ohio
-USA/OSUP0016/2020	location	Columbus
-USA/OSUP0017/2020	division	Ohio
-USA/OSUP0017/2020	location	Columbus
 USA/PA-MGSC11-04/2020	division	Pennsylvania
 USA/PA-MGSC11-04/2020	location	Pittsburgh
 USA/PA-MGSC12-04/2020	division	Pennsylvania
@@ -17234,7 +17063,7 @@ USA/TX1/2020	country_exposure	China # ?
 USA/TX1/2020	division_exposure	Hubei # ?
 USA/TX1/2020	genbank_accession	MT106054
 USA/TX1/2020	region_exposure	Asia # ?
-USA/UC-CDPH-UC11/2020	division	Grand Princess # from GISAID
+USA/CA-CDPH-UC11/2020	division	Grand Princess # from GISAID
 USA/UPHL-01/2020	country_exposure	Japan # duncan
 USA/UPHL-01/2020	division_exposure	Diamond Princess # duncan
 USA/UPHL-01/2020	region_exposure	Asia # duncan
@@ -17312,10 +17141,8 @@ USA/WI1/2020	country_exposure	China # ?
 USA/WI1/2020	division_exposure	Hubei # ?
 USA/WI1/2020	genbank_accession	MT039887
 USA/WI1/2020	region_exposure	Asia # ?
-USA/WI2/2020	division	Wisconsin
-USA/WI2/2020	region	North America
-USA/WI4/2020	division	Wisconsin
-USA/WI4/2020	location	Dane County
+USA/WI-04/2020	division	Wisconsin
+USA/WI-04/2020	location	Dane County
 Vietnam/38142/2020	division	Thanh Hoa
 Vietnam/CM295/2020	division	Red River Delta
 Vietnam/CM295/2020	location	Hanoi
@@ -17350,6 +17177,8 @@ Wuhan/WH02/2019	genbank_accession	LR757997
 Wuhan/WH02/2019	location	Wuhan
 Wuhan/WH03/2020	genbank_accession	LR757996
 Wuhan/WH04/2020	genbank_accession	LR757995
+Wuhan/WHU01/2020	genbank_accession	MN988668
+Wuhan/WHU02/2020	genbank_accession	MN988669
 Wuhan/WIV02/2019	genbank_accession	MN996527
 Wuhan/WIV04/2019	genbank_accession	MN996528
 Wuhan/WIV05/2019	genbank_accession	MN996529
@@ -17358,3 +17187,181 @@ Wuhan/WIV07/2019	genbank_accession	MN996531
 Yunnan/IVDC-YN-003/2020	genbank_accession	MT049951
 Zhejiang/WZ-01/2020	location	Hangzhou
 Zhejiang/WZ-02/2020	location	Hangzhou
+# EMMA: I do not believe the below work anymore! not removing just in case.
+Canada/PE_3/2020	division	Prince Edward Island
+China/WHU01/2020	genbank_accession	MN988668
+China/WHU02/2020	genbank_accession	MN988669
+Congo/108/2020	country	Democratic Republic of the Congo
+Congo/158/2020	country	Democratic Republic of the Congo
+Congo/191/2020	country	Democratic Republic of the Congo
+Congo/214/2020	country	Democratic Republic of the Congo
+Congo/215/2020	country	Democratic Republic of the Congo
+Congo/236/2020	country	Democratic Republic of the Congo
+Congo/241/2020	country	Democratic Republic of the Congo
+Congo/243/2020	country	Democratic Republic of the Congo
+Congo/248/2020	country	Democratic Republic of the Congo
+Congo/253/2020	country	Democratic Republic of the Congo
+Congo/254/2020	country	Democratic Republic of the Congo
+Congo/299/2020	country	Democratic Republic of the Congo
+Congo/300/2020	country	Democratic Republic of the Congo
+Congo/307/2020	country	Democratic Republic of the Congo
+Congo/352/2020	country	Democratic Republic of the Congo
+Congo/353/2020	country	Democratic Republic of the Congo
+Congo/355/2020	country	Democratic Republic of the Congo
+Congo/376/2020	country	Democratic Republic of the Congo
+Congo/396/2020	country	Democratic Republic of the Congo
+Congo/397/2020	country	Democratic Republic of the Congo
+Congo/400/2020	country	Democratic Republic of the Congo
+Congo/402/2020	country	Democratic Republic of the Congo
+Congo/431/2020	country	Democratic Republic of the Congo
+Congo/445/2020	country	Democratic Republic of the Congo
+Congo/521/2020	country	Democratic Republic of the Congo
+Congo/523/2020	country	Democratic Republic of the Congo
+Congo/73/2020	country	Democratic Republic of the Congo
+Congo/80/2020	country	Democratic Republic of the Congo
+Congo/81/2020	country	Democratic Republic of the Congo
+Congo/82/2020	country	Democratic Republic of the Congo
+Congo/94/2020	country	Democratic Republic of the Congo
+Congo/KN-0017/2020	country	Democratic Republic of the Congo
+Congo/KN-0038/2020	country	Democratic Republic of the Congo
+Congo/KN-0043/2020	country	Democratic Republic of the Congo
+Congo/KN-0051/2020	country	Democratic Republic of the Congo
+Congo/KN-0054/2020	country	Democratic Republic of the Congo
+Congo/KN-0058/2020	country	Democratic Republic of the Congo
+Congo/KN-0059/2020	country	Democratic Republic of the Congo
+Congo/KN-0060/2020	country	Democratic Republic of the Congo
+Congo/KN-0070/2020	country	Democratic Republic of the Congo
+Congo/KN-0072/2020	country	Democratic Republic of the Congo
+Congo/KN-13/2020	country	Democratic Republic of the Congo
+England/03/2020	country	United Kingdom
+England/03/2020	division	England
+France/IDF0386/2020	division	Ile de France
+hCoV/HongKong/Case19_04022020/2020	strain	HongKong/Case19_04022020/2020
+hCoV/HongKong/Case20_30012020/2020	strain	HongKong/Case20_30012020/2020
+HongKong/Case1_21012020/2020	division	Hong Kong
+HongKong/case2_VB20017970/2020	division	Hong Kong
+HongKong/Case6_21012020/2020	division	Hong Kong
+HongKong/Case12_22012020/2020	division	Hong Kong
+HongKong/Case17_22012020/2020	division	Hong Kong
+HongKong/Case19_04022020/2020	division	Hong Kong
+HongKong/Case20_30012020/2020	division	Hong Kong
+HongKong/Case28_30012020/2020	division	Hong Kong
+HongKong/Case29_01022020/2020	division	Hong Kong
+HongKong/Case30_29012020/2020	division	Hong Kong
+HongKong/Case32_04022020/2020	division	Hong Kong
+HongKong/Case34_30012020/2020	division	Hong Kong
+HongKong/Case35_04022020/2020	division	Hong Kong
+HongKong/case42_VM20002493/2020	division	Hong Kong
+HongKong/case42_VM20002493/2020	location	Hong Kong
+HongKong/case48_VM20002507/2020	division	Hong Kong
+HongKong/case48_VM20002507/2020	location	Hong Kong
+HongKong/case49_VM20002508/2020	division	Hong Kong
+HongKong/case49_VM20002508/2020	location	Hong Kong
+HongKong/case52_VM20002582/2020	division	Hong Kong
+HongKong/case52_VM20002582/2020	location	Hong Kong
+HongKong/case78_VM20002849/2020	division	Hong Kong
+HongKong/case78_VM20002849/2020	location	Hong Kong
+HongKong/case85_VM20002868/2020	division	Hong Kong
+HongKong/case90_VM20002907/2020	division	Hong Kong
+HongKong/VM20001988/2020	division	Hong Kong
+Hungary/mbl4/2020	division	Central Hungary
+Hungary/mbl4/2020	location	Budapest
+india/NCDC2443_CSIR-IGIB/2020	strain	India/NCDC2443_CSIR-IGIB/2020
+india/NCDC2502_CSIR-IGIB/2020	strain	India/NCDC2502_CSIR-IGIB/2020
+india/NCDC2507_CSIR-IGIB/2020	strain	India/NCDC2507_CSIR-IGIB/2020
+india/NCDC2514_CSIR-IGIB/2020	strain	India/NCDC2514_CSIR-IGIB/2020
+india/NCDC2515_CSIR-IGIB/2020	strain	India/NCDC2515_CSIR-IGIB/2020
+india/NCDC2517_CSIR-IGIB/2020	strain	India/NCDC2517_CSIR-IGIB/2020
+india/NCDC2519_CSIR-IGIB/2020	strain	India/NCDC2519_CSIR-IGIB/2020
+india/NCDC2522_CSIR-IGIB/2020	strain	India/NCDC2522_CSIR-IGIB/2020
+india/NCDC2525_CSIR-IGIB/2020	strain	India/NCDC2525_CSIR-IGIB/2020
+india/NCDC2535_CSIR-IGIB/2020	strain	India/NCDC2535_CSIR-IGIB/2020
+india/NCDC3162_CSIR-IGIB/2020	strain	India/NCDC3162_CSIR-IGIB/2020
+india/NCDC3163_CSIR-IGIB/2020	strain	India/NCDC3163_CSIR-IGIB/2020
+india/NCDC3170_CSIR-IGIB/2020	strain	India/NCDC3170_CSIR-IGIB/2020
+india/NCDC3175_CSIR-IGIB/2020	strain	India/NCDC3175_CSIR-IGIB/2020
+india/NCDC3176_CSIR-IGIB/2020	strain	India/NCDC3176_CSIR-IGIB/2020
+india/NCDC3181_CSIR-IGIB/2020	strain	India/NCDC3181_CSIR-IGIB/2020
+india/NCDC3190_CSIR-IGIB/2020	strain	India/NCDC3190_CSIR-IGIB/2020
+india/NCDC3195_CSIR-IGIB/2020	strain	India/NCDC3195_CSIR-IGIB/2020
+india/NCDC3230_CSIR-IGIB/2020	strain	India/NCDC3230_CSIR-IGIB/2020
+india/NCDC3264_CSIR-IGIB/2020	strain	India/NCDC3264_CSIR-IGIB/2020
+india/NCDC3271_CSIR-IGIB/2020	strain	India/NCDC3271_CSIR-IGIB/2020
+india/NCDC3279_CSIR-IGIB/2020	strain	India/NCDC3279_CSIR-IGIB/2020
+india/NCDC3394_CSIR-IGIB/2020	strain	India/NCDC3394_CSIR-IGIB/2020
+india/NCDC3400_CSIR-IGIB/2020	strain	India/NCDC3400_CSIR-IGIB/2020
+india/NCDC3831_CSIR-IGIB/2020	strain	India/NCDC3831_CSIR-IGIB/2020
+india/NCDC3835_CSIR-IGIB/2020	strain	India/NCDC3835_CSIR-IGIB/2020
+india/NCDC3934_CSIR-IGIB/2020	strain	India/NCDC3934_CSIR-IGIB/2020
+india/NCDC3936_CSIR-IGIB/2020	strain	India/NCDC3936_CSIR-IGIB/2020
+india/NCDC3941_CSIR-IGIB/2020	strain	India/NCDC3941_CSIR-IGIB/2020
+india/NCDC3950_CSIR-IGIB/2020	strain	India/NCDC3950_CSIR-IGIB/2020
+india/NCDC3961_CSIR-IGIB/2020	strain	India/NCDC3961_CSIR-IGIB/2020
+india/NCDC3965_CSIR-IGIB/2020	strain	India/NCDC3965_CSIR-IGIB/2020
+india/NCDC3982_CSIR-IGIB/2020	strain	India/NCDC3982_CSIR-IGIB/2020
+india/NCDC3985_CSIR-IGIB/2020	strain	India/NCDC3985_CSIR-IGIB/2020
+india/NCDC4055_CSIR-IGIB/2020	strain	India/NCDC4055_CSIR-IGIB/2020
+india/NCDC4138_CSIR-IGIB/2020	strain	India/NCDC4138_CSIR-IGIB/2020
+india/NCDC4155_CSIR-IGIB/2020	strain	India/NCDC4155_CSIR-IGIB/2020
+india/NCDC4189_CSIR-IGIB/2020	strain	India/NCDC4189_CSIR-IGIB/2020
+india/NCDC4205_CSIR-IGIB/2020	strain	India/NCDC4205_CSIR-IGIB/2020
+india/NCDC4208_CSIR-IGIB/2020	strain	India/NCDC4208_CSIR-IGIB/2020
+india/NCDC4444_CSIR-IGIB/2020	strain	India/NCDC4444_CSIR-IGIB/2020
+india/NCDC4475_CSIR-IGIB/2020	strain	India/NCDC4475_CSIR-IGIB/2020
+india/NCDC4476_CSIR-IGIB/2020	strain	India/NCDC4476_CSIR-IGIB/2020
+india/NCDC4846_CSIR-IGIB/2020	strain	India/NCDC4846_CSIR-IGIB/2020
+india/NCDC4859_CSIR-IGIB/2020	strain	India/NCDC4859_CSIR-IGIB/2020
+india/NCDC4867_CSIR-IGIB/2020	strain	India/NCDC4867_CSIR-IGIB/2020
+india/NCDC4874_CSIR-IGIB/2020	strain	India/NCDC4874_CSIR-IGIB/2020
+india/NCDC4876_CSIR-IGIB/2020	strain	India/NCDC4876_CSIR-IGIB/2020
+india/NCDC4877_CSIR-IGIB/2020	strain	India/NCDC4877_CSIR-IGIB/2020
+india/NCDC4878_CSIR-IGIB/2020	strain	India/NCDC4878_CSIR-IGIB/2020
+india/NCDC4879_CSIR-IGIB/2020	strain	India/NCDC4879_CSIR-IGIB/2020
+KOR/BA-ACH_2604/2020	country	South Korea
+KOR/BA-ACH_2718/2020	country	South Korea
+KOR/BA-ACH_2719/2020	country	South Korea
+hCoV/Kuwait/KU001/2020	strain	Kuwait/KU001/2020
+hCoV/Kuwait/KU001/2020	division_exposure	USA #GISAID
+hCoV/Kuwait/KU001/2020	country_exposure	USA #GISAID
+hCoV/Kuwait/KU001/2020	region_exposure	North America #GISAID
+nCoV-19/USA/UPHL-03/2020	strain	USA/UPHL-03/2020
+Russia/Vector_64304/2020	division	Saint-Petersburg
+Russia/Vector_73603/2020	division	Saint-Petersburg
+Russia/Vector_73703/2020	division	Republic of Sakha
+Russia/Vector_73709/2020	division	Republic of Sakha
+Russia/Vector_82005/2020	division	Saint-Petersburg
+Russia/Vector_83301/2020	division	Republic of Sakha
+Russia/Vector_89702/2020	division	Republic of Sakha
+Shenzhen/HKU-SZ-001/2020	division	Guangdong
+SouthAfrica/R03006-20/2020	division	KwaZulu-Natal
+SouthAfrica/KRISP_0002/2020	division	KwaZulu-Natal
+SouthAfrica/KRISP_0006/2020	division	KwaZulu-Natal
+SouthAfrica/KRISP_0007/2020	division	KwaZulu-Natal
+SouthAfrica/KRISP_0011/2020	division	KwaZulu-Natal
+SouthAfrica/KRISP_0012/2020	division	KwaZulu-Natal
+SouthAfrica/R02827-20/2020	division	Gauteng
+SriLanka/?/2020	region	Asia
+Switzerland/GE0199(2020	division	Geneva #assumed from name
+Switzerland/GE062072020	division	Geneva #assumed from name
+hCoV-10/Switzerland/GE1736/2020	division	Geneva #assumed from name
+hCoV-10/Switzerland/GE6414/2020	division	Geneva #assumed from name
+hCoV-10/Switzerland/GE1736/2020	strain	Switzerland/GE1736/2020
+hCoV-10/Switzerland/GE6414/2020	strain	Switzerland/GE6414/2020
+Sydney/2/2020	country_exposure	China # ?
+Sydney/2/2020	division_exposure	Hubei # ?
+Sydney/2/2020	region_exposure	Asia # ?
+USA/CruiseA-20/2020	division	Diamond Princess
+USA/UF-3/2020	division	Florida
+USA/OSUP0109/2020	division	Ohio
+USA/OSUP0109/2020	location	Columbus
+USA/OSUP0112/2020	division	Ohio
+USA/OSUP0112/2020	location	Columbus
+USA/OSUP0014/2020	division	Ohio
+USA/OSUP0014/2020	location	Columbus
+USA/OSUP0016/2020	division	Ohio
+USA/OSUP0016/2020	location	Columbus
+USA/OSUP0017/2020	division	Ohio
+USA/OSUP0017/2020	location	Columbus
+USA/UC-CDPH-UC11/2020	division	Grand Princess # from GISAID
+USA/WI2/2020	division	Wisconsin
+USA/WI2/2020	region	North America
