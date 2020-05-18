@@ -63,7 +63,7 @@ def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     # consistent, predictable string comparisons.
     for column in gisaid_data:
         if gisaid_data[column].dtype == "string":
-            gisaid_data[column] = gisaid_data[column].str.normalize("NFC")
+            gisaid_data[column] = gisaid_data[column].str.normalize("NFC").str.strip()
 
     # Calculate sequence length.  GISAID provides a "sequence_length" column,
     # but it sometimes inexplicably goes missing.
@@ -110,7 +110,7 @@ def parse_originating_lab(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     Parses originating lab
     """
     # Strip and normalize whitespace
-    gisaid_data['originating_lab'] = gisaid_data['originating_lab'].str.strip().str.replace(r'\s+', ' ')
+    gisaid_data['originating_lab'] = gisaid_data['originating_lab'].str.replace(r'\s+', ' ')
     # Fix common spelling mistakes
     gisaid_data['originating_lab'] = gisaid_data['originating_lab'].str.replace('Contorl', 'Control')
     gisaid_data['originating_lab'] = gisaid_data['originating_lab'].str.replace('Dieases', 'Disease')
@@ -121,7 +121,7 @@ def parse_submitting_lab(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     Parses submitting lab
     """
     # Strip and normalize whitespace
-    gisaid_data['submitting_lab'] = gisaid_data['submitting_lab'].str.strip().str.replace(r'\s+', ' ')
+    gisaid_data['submitting_lab'] = gisaid_data['submitting_lab'].str.replace(r'\s+', ' ')
     # Fix common spelling mistakes
     gisaid_data['submitting_lab'] = gisaid_data['submitting_lab'].str.replace('Contorl', 'Control')
     gisaid_data['submitting_lab'] = gisaid_data['submitting_lab'].str.replace('Dieases', 'Disease')
@@ -139,7 +139,7 @@ def parse_authors(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     existing corrections/annotations).
     """
     # Strip and normalize whitespace
-    gisaid_data['authors'] = gisaid_data['authors'].str.strip().str.replace(r'\s+', ' ')
+    gisaid_data['authors'] = gisaid_data['authors'].str.replace(r'\s+', ' ')
     # Split to first author as best we can for now.  Both commas and semicolons
     # (and their full-width forms) appear to be used interchangeably without a
     # difference of meaning.
