@@ -10428,10 +10428,18 @@ india/NCDC4876_CSIR-IGIB/2020	strain	India/NCDC4876_CSIR-IGIB/2020
 india/NCDC4877_CSIR-IGIB/2020	strain	India/NCDC4877_CSIR-IGIB/2020
 india/NCDC4878_CSIR-IGIB/2020	strain	India/NCDC4878_CSIR-IGIB/2020
 india/NCDC4879_CSIR-IGIB/2020	strain	India/NCDC4879_CSIR-IGIB/2020
+India/NCDC-3162/2020	division_exposure	Indonesia
+India/NCDC-3163/2020	division_exposure	Indonesia
 India/NCDC-3162/2020	country_exposure	Indonesia
 India/NCDC-3163/2020	country_exposure	Indonesia
 India/NCDC-3175/2020	date	2020-04-05 # misannotated as "2022-04-05"
 India/NCDC-3176/2020	country_exposure	Kyrgyzstan
+India/NCDC-3176/2020	division_exposure	Kyrgyzstan
+India/NCDC-3181/2020	division_exposure	Indonesia
+India/NCDC-3190/2020	division_exposure	Indonesia
+India/NCDC-3195/2020	division_exposure	Indonesia
+India/NCDC-3394/2020	division_exposure	Indonesia
+India/NCDC-3400/2020	division_exposure	Indonesia
 India/NCDC-3181/2020	country_exposure	Indonesia
 India/NCDC-3190/2020	country_exposure	Indonesia
 India/NCDC-3195/2020	country_exposure	Indonesia
@@ -10441,6 +10449,10 @@ India/NCDC-3831/2020	country_exposure	Thailand
 India/NCDC-3982/2020	country_exposure	Thailand
 India/NCDC-02240/2020	country_exposure	Nepal
 India/NCDC-02240/2020	division_exposure	Nepal
+India/NCDC-3831/2020	country_exposure	Thailand
+India/NCDC-3982/2020	country_exposure	Thailand
+India/NCDC-3831/2020	division_exposure	Thailand
+India/NCDC-3982/2020	division_exposure	Thailand
 India/NCDC-02240/2020	division	India
 India/NCDC-02240/2020	country	India
 Iran/KHGRC-3-2178/2020	country	Iran # whitespace
@@ -16713,6 +16725,27 @@ Taiwan/NTU19/2020	region_exposure	Europe #Travel history to Czech Republic
 Taiwan/NTU20/2020	division_exposure	Poland
 Taiwan/NTU20/2020	country_exposure	Poland
 Taiwan/NTU20/2020	region_exposure	Europe #Travel history to Poland
+Taiwan/NTU10/2020	division_exposure	Egypt
+Taiwan/NTU10/2020	country_exposure	Egypt
+Taiwan/NTU10/2020	region_exposure	Africa
+Taiwan/NTU22/2020	division_exposure	USA
+Taiwan/NTU22/2020	country_exposure	USA
+Taiwan/NTU22/2020	region_exposure	North America
+Taiwan/NTU23/2020	country_exposure	USA
+Taiwan/NTU24/2020	country_exposure	USA
+Taiwan/NTU26/2020	country_exposure	USA
+Taiwan/NTU23/2020	division_exposure	USA
+Taiwan/NTU24/2020	division_exposure	USA
+Taiwan/NTU26/2020	division_exposure	USA
+Taiwan/NTU23/2020	region_exposure	North America
+Taiwan/NTU24/2020	region_exposure	North America
+Taiwan/NTU26/2020	region_exposure	North America
+Taiwan/NTU25/2020	division_exposure	Europe # England, belgium, germany
+Taiwan/NTU25/2020	country_exposure	Europe # England, belgium, germany
+Taiwan/NTU25/2020	region_exposure	Europe
+Taiwan/NTU27/2020	division_exposure	Indonesia
+Taiwan/NTU27/2020	country_exposure	Indonesia
+Taiwan/NTU27/2020	region_exposure	Asia
 Thailand/TNIC-1889/2020	region_exposure	Europe #GISAID
 Thailand/TNIC-1889/2020	country_exposure	Italy #GISAID
 Thailand/TNIC-1889/2020	division_exposure	Italy #GISAID
