@@ -48,6 +48,9 @@ def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
         'covv_location'         : 'location',
     }
 
+    # Standardize to nullable dtypes
+    gisaid_data = gisaid_data.convert_dtypes()
+
     # If an expected field is missing, fill it with NAs so the rest of the
     # script can assume it exists.
     for field in mapper:
@@ -55,6 +58,12 @@ def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
             gisaid_data[field] = pd.NA
 
     gisaid_data.rename(mapper, axis="columns", inplace=True)
+
+    # Normalize all string columns to Unicode Normalization Form C, for
+    # consistent, predictable string comparisons.
+    for column in gisaid_data:
+        if gisaid_data[column].dtype == "string":
+            gisaid_data[column] = gisaid_data[column].str.normalize("NFC")
 
     # Calculate sequence length.  GISAID provides a "sequence_length" column,
     # but it sometimes inexplicably goes missing.
