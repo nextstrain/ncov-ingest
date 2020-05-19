@@ -97,10 +97,10 @@ def parse_geographic_columns(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     """
     geographic_data = gisaid_data['location'].str.split('\s*/\s*', expand=True)
 
-    gisaid_data['region']      = geographic_data[0]
-    gisaid_data['country']     = geographic_data[1]
-    gisaid_data['division']    = geographic_data[2]
-    gisaid_data['location']    = geographic_data[3]
+    gisaid_data['region']      = geographic_data[0].str.strip()
+    gisaid_data['country']     = geographic_data[1].str.strip()
+    gisaid_data['division']    = geographic_data[2].str.strip()
+    gisaid_data['location']    = geographic_data[3].str.strip()
 
 
     return gisaid_data
@@ -216,11 +216,11 @@ def update_metadata(curated_gisaid_data: pd.DataFrame) -> pd.DataFrame:
     if args.annotations:
         # Use the curated annotations tsv to update any column values
         user_provided_annotations = pd.read_csv(args.annotations, header=None, sep='\t', comment="#")
-        for index, (strain, key, value) in user_provided_annotations.iterrows():
+        for index, (strain, epi_isl, key, value) in user_provided_annotations.iterrows():
             # Strip any whitespace remaining from inline comments after the final column.
             if isinstance(value, str):
                 value = value.rstrip()
-            curated_gisaid_data.loc[curated_gisaid_data['strain'] == strain, key] = value
+            curated_gisaid_data.loc[curated_gisaid_data['gisaid_epi_isl'] == epi_isl, key] = value
 
     # Set `region_exposure` equal to `region` if it wasn't added by annotations
     if 'region_exposure' in curated_gisaid_data:
@@ -261,16 +261,17 @@ if __name__ == '__main__':
     parser.add_argument("--annotations",
         default=base / "source-data/annotations.tsv",
         help="Optional manually curated annotations TSV.\n"
-            "The TSV file should have no header and exactly three columns which contain:\n\t"
-            "1. the strain ID\n\t"
-            "2. the column name to replace from the generated `metadata.tsv` file\n\t"
-            "3. the replacement data\n"
+            "The TSV file should have no header and exactly four columns which contain:\n\t"
+            "1. the strain ID (not used for matching; for readability)\n\t"
+            "2. the GISAID EPI_ISL accession number (used for matching)\n\t"
+            "3. the column name to replace from the generated `metadata.tsv` file\n\t"
+            "4. the replacement data\n"
         "Lines or parts of lines starting with '#' are treated as comments.\n"
         "e.g.\n\t"
-        "USA/MA1/2020    location    Boston\n\t"
+        "USA/MA1/2020    EPI_ISL_409067    location    Boston\n\t"
         "# First Californian sample\n\t"
-        "USA/CA1/2020    genbank_accession   MN994467\n\t"
-        "Wuhan-Hu-1/2019 collection_date 2019-12-26 # Manually corrected date")
+        "USA/CA1/2020    EPI_ISL_406034    genbank_accession   MN994467\n\t"
+        "Wuhan-Hu-1/2019 EPI_ISL_402125    collection_date 2019-12-26 # Manually corrected date")
     parser.add_argument("--output-metadata",
         default=base / "data/metadata.tsv",
         help="Output location of generated metadata tsv. Defaults to `data/metadata.tsv`")
