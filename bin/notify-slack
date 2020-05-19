@@ -30,6 +30,7 @@ if [[ "$upload" == 1 ]]; then
         --form file=@/dev/stdin \
         --form filetype=text \
         --fail --silent --show-error \
+        --http1.1 \
         --include
 else
     echo "Posting Slack message: $text"
@@ -38,5 +39,6 @@ else
         --form-string channel="$SLACK_CHANNELS" \
         --form-string text="$text" \
         --fail --silent --show-error \
+        --http1.1 \
         --include
 fi
