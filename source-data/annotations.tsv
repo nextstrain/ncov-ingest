@@ -16727,6 +16727,7 @@ USA/CA2/2020	EPI_ISL_406036	region_exposure	Asia # ?
 USA/CA2/2020	EPI_ISL_406036	country_exposure	China # ?
 USA/CA2/2020	EPI_ISL_406036	division_exposure	Hubei # ?
 USA/CA2/2020	EPI_ISL_406036	genbank_accession	MN994468
+USA/CA2/2020	EPI_ISL_406036	location	Orange County CA
 USA/CA3/2020	EPI_ISL_408008	genbank_accession	MT027062
 USA/CA4/2020	EPI_ISL_408009	genbank_accession	MT027063
 USA/CA5/2020	EPI_ISL_408010	country_exposure	China # ?
@@ -16962,6 +16963,9 @@ USA/NY-NYUMC3/2020	EPI_ISL_416831	division	New York
 USA/NY-NYUMC4/2020	EPI_ISL_416832	division	New York
 USA/NY-QDX-01/2020	EPI_ISL_444519	division	New York
 USA/NY-Wadsworth-16080-01/2020	EPI_ISL_426296	location	Orange County NY # two orange counties in the US
+USA/NY-Wadsworth-31930-01/2020	EPI_ISL_426305	location	Washington County NY
+USA/NY-Wadsworth-32104-01/2020	EPI_ISL_426309	location	Orange County NY
+USA/NY-Wadsworth-31488-01/2020	EPI_ISL_426298	location	Franklin County NY
 USA/NY_2929/2020	EPI_ISL_420793	country	USA
 USA/NY_2929/2020	EPI_ISL_420793	division	New York
 USA/NY_2929/2020	EPI_ISL_420793	region	North America
@@ -16971,6 +16975,17 @@ USA/NY1-PV08001/2020	EPI_ISL_414476	country_exposure	Iran # GISAID
 USA/OR_5430/2020	EPI_ISL_420794	region	North America
 USA/OR_5430/2020	EPI_ISL_420794	country	USA
 USA/OR_5430/2020	EPI_ISL_420794	division	Oregon
+USA/OR-OHSU012-CV12/2020	EPI_ISL_437521	location	Washington County OR
+USA/OR-OHSU022-CV22/2020	EPI_ISL_437522	location	Washington County OR
+USA/OR-OHSU047-CV47/2020	EPI_ISL_437527	location	Washington County OR
+USA/OR-OHSU05-CV5/2020	EPI_ISL_437529	location	Washington County OR
+USA/OR-OHSU050-CV50/2020	EPI_ISL_437530	location	Washington County OR
+USA/OR-OHSU051-CV51/2020	EPI_ISL_437531	location	Washington County OR
+USA/OR-OHSU052-CV52/2020	EPI_ISL_437532	location	Washington County OR
+USA/OR-OHSU053-CV53/2020	EPI_ISL_437533	location	Washington County OR
+USA/OR-OHSU054-CV54/2020	EPI_ISL_437534	location	Washington County OR
+USA/OR-OHSU08-CV8/2020	EPI_ISL_437535	location	Washington County OR
+
 USA/PA-CDC-2908/2020	EPI_ISL_447844	region	North America
 USA/PA-MGSC11-04/2020	EPI_ISL_436466	location	Pittsburgh
 USA/PA-MGSC11-04/2020	EPI_ISL_436466	division	Pennsylvania
@@ -17077,7 +17092,18 @@ USA/UPHL-04/2020	EPI_ISL_415542	country_exposure	USA # duncan
 USA/UPHL-04/2020	EPI_ISL_415542	division_exposure	Grand Princess # duncan
 USA/UPHL-04/2020	EPI_ISL_415542	region_exposure	North America # duncan
 USA/VT-CDC-0303/2020	EPI_ISL_447846	region	North America
-USA/WA-S214/2020	EPI_ISL_430252	location	
+USA/WA-S214/2020	EPI_ISL_430252	location
+USA/WA-S316/2020	EPI_ISL_434076	location	Franklin County WA
+USA/WA-S320/2020	EPI_ISL_434080	location	Franklin County WA
+USA/WA-S380/2020	EPI_ISL_434140	location	Franklin County WA
+USA/WA-S413/2020	EPI_ISL_434173	location	Franklin County WA
+USA/WA-S447/2020	EPI_ISL_434207	location	Franklin County WA
+USA/WA-S326/2020	EPI_ISL_434086	location	Adams County WA
+USA/WA-S383/2020	EPI_ISL_434143	location	Adams County WA
+USA/WA-S519/2020	EPI_ISL_434279	location	Adams County WA
+USA/WA-S542/2020	EPI_ISL_434302	location	Adams County WA
+USA/WA-S546/2020	EPI_ISL_434306	location	Adams County WA
+USA/WA-S555/2020	EPI_ISL_434315	location	Adams County WA	
 USA/WA-UW112/2020	EPI_ISL_416650	division	Washington
 USA/WA-UW113/2020	EPI_ISL_416651	division	Washington
 USA/WA-UW122/2020	EPI_ISL_416660	division	Washington
@@ -17143,6 +17169,7 @@ USA/WI-237/2020	EPI_ISL_428333	location	Whitefish Bay
 USA/WI-24/2020	EPI_ISL_417512	location	Dane County
 USA/WI-244/2020	EPI_ISL_428340	location	Thiensville
 USA/WI-247/2020	EPI_ISL_428343	location	Port Washington
+USA/WI-GMF-00498/2020	EPI_ISL_422453	location	Adams County WI
 USA/WI1/2020	EPI_ISL_408670	country_exposure	China # ?
 USA/WI1/2020	EPI_ISL_408670	division_exposure	Hubei # ?
 USA/WI1/2020	EPI_ISL_408670	region_exposure	Asia # ?
@@ -17175,6 +17202,30 @@ Wuhan/IPBCAMS-WH-02/2019	EPI_ISL_403931	genbank_accession	MT019530
 Wuhan/IPBCAMS-WH-03/2019	EPI_ISL_403930	genbank_accession	MT019531
 Wuhan/IPBCAMS-WH-04/2019	EPI_ISL_403929	genbank_accession	MT019532
 Wuhan/IPBCAMS-WH-05/2020	EPI_ISL_403928	genbank_accession	MT019533
+Wuhan/WHUH001/2020	EPI_ISL_449476	division	Hubei # previously Wuhan
+Wuhan/WHUH001/2020	EPI_ISL_449476	location	Wuhan
+Wuhan/WHUH002/2020	EPI_ISL_449477	division	Hubei # previously Wuhan
+Wuhan/WHUH002/2020	EPI_ISL_449477	location	Wuhan
+Wuhan/WHUH003/2020	EPI_ISL_449478	division	Hubei # previously Wuhan
+Wuhan/WHUH003/2020	EPI_ISL_449478	location	Wuhan
+Wuhan/WHUH004/2020	EPI_ISL_449479	division	Hubei # previously Wuhan
+Wuhan/WHUH004/2020	EPI_ISL_449479	location	Wuhan
+Wuhan/WHUH005/2020	EPI_ISL_449480	division	Hubei # previously Wuhan
+Wuhan/WHUH005/2020	EPI_ISL_449480	location	Wuhan
+Wuhan/WHUH006/2020	EPI_ISL_449481	division	Hubei # previously Wuhan
+Wuhan/WHUH006/2020	EPI_ISL_449481	location	Wuhan
+Wuhan/WHUH007/2020	EPI_ISL_449482	division	Hubei # previously Wuhan
+Wuhan/WHUH007/2020	EPI_ISL_449482	location	Wuhan
+Wuhan/WHUH008/2020	EPI_ISL_449483	division	Hubei # previously Wuhan
+Wuhan/WHUH008/2020	EPI_ISL_449483	location	Wuhan
+Wuhan/WHUH011/2020	EPI_ISL_449484	division	Hubei # previously Wuhan
+Wuhan/WHUH011/2020	EPI_ISL_449484	location	Wuhan
+Wuhan/WHUH012/2020	EPI_ISL_449485	division	Hubei # previously Wuhan
+Wuhan/WHUH012/2020	EPI_ISL_449485	location	Wuhan
+Wuhan/WHUH020/2020	EPI_ISL_449486	division	Hubei # previously Wuhan
+Wuhan/WHUH020/2020	EPI_ISL_449486	location	Wuhan
+Wuhan/WHUH021/2020	EPI_ISL_449487	division	Hubei # previously Wuhan
+Wuhan/WHUH021/2020	EPI_ISL_449487	location	Wuhan
 Wuhan/WH01/2019	EPI_ISL_406798	genbank_accession	LR757998
 Wuhan/WH02/2019	EPI_ISL_406799	division	Hubei
 Wuhan/WH02/2019	EPI_ISL_406799	location	Wuhan
