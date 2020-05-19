@@ -16446,9 +16446,6 @@ Spain/Valencia313/2020	division	Comunitat Valenciana
 Spain/Valencia314/2020	division	Comunitat Valenciana
 Spain/Valencia315/2020	division	Comunitat Valenciana
 Spain/Valencia316/2020	division	Comunitat Valenciana
-Spain/Valencia/568/2020	location	Grau de Sagunt
-Spain/Valencia/577/2020	location	Valencia
-Spain/Valencia/579/2020	location	Valencia
 Spain/CastillayLeon201437/2020	division	Castilla y Leon
 SriLanka/COV91/2020	region	Asia
 Sweden/01/2020	division	Småland
@@ -16808,11 +16805,9 @@ USA/CT-Yale-134/2020	location	Cincinnati
 USA/CT-Yale-138/2020	division	Ohio
 USA/CT-Yale-138/2020	location	Cincinnati
 USA/DC_0004/2020	division	Washington DC #Change District of Columbia to Washington DC
-USA/DC-CDC-0019/2020	region	North America
 USA/FL_6318/2020	country	USA
 USA/FL_6318/2020	division	Florida
 USA/FL_6318/2020	region	North America
-USA/FL-CDC-7619/2020	region	North America
 USA/GA_1299/2020	country	USA
 USA/GA_1299/2020	division	Georgia
 USA/GA_1299/2020	region	North America
@@ -16822,7 +16817,6 @@ USA/GA_1320/2020	region	North America
 USA/GA_1445/2020	country	USA
 USA/GA_1445/2020	division	Georgia
 USA/GA_1445/2020	region	North America
-USA/IA-CDC-8200/2020	region	North America
 USA/IL_1293/2020	country	USA
 USA/IL_1293/2020	division	Illinois
 USA/IL_1293/2020	region	North America
@@ -16939,7 +16933,6 @@ USA/MN3-MDH3/2020	country_exposure	USA # exposure on Grand Princess https://minn
 USA/MN3-MDH3/2020	division_exposure	Grand Princess # exposure on Grand Princess https://minnesota.cbslocal.com/2020/03/09/we-can-survive-this-minnesotan-couple-on-grand-princess-cruise-ship-speaks-about-coronavirus-outbreak/
 USA/MN3-MDH3/2020	genbank_accession	MT188339
 USA/MN3-MDH3/2020	region_exposure	North America # exposure on Grand Princess https://minnesota.cbslocal.com/2020/03/09/we-can-survive-this-minnesotan-couple-on-grand-princess-cruise-ship-speaks-about-coronavirus-outbreak/
-USA/MD-CDC-0025/2020	region	North America
 USA/NH_0004/2020	country	USA
 USA/NH_0004/2020	division	New Hampshire
 USA/NH_0004/2020	region	North America
@@ -16975,7 +16968,6 @@ USA/NY-Wadsworth-16080-01/2020	location	Orange County NY # two orange counties i
 USA/OR_5430/2020	country	USA
 USA/OR_5430/2020	division	Oregon
 USA/OR_5430/2020	region	North America
-USA/PA-CDC-2908/2020	region	North America
 USA/PA-MGSC11-04/2020	division	Pennsylvania
 USA/PA-MGSC11-04/2020	location	Pittsburgh
 USA/PA-MGSC12-04/2020	division	Pennsylvania
@@ -17054,7 +17046,6 @@ USA/PA-MGSC56-05/2020	division	Pennsylvania
 USA/PA-MGSC56-05/2020	location	Pittsburgh
 USA/PA-MGSC58-05/2020	division	Pennsylvania
 USA/PA-MGSC58-05/2020	location	Pittsburgh
-USA/PR-CDC-3578/2020	region	North America
 USA/RI_0556/2020	country	USA
 USA/RI_0556/2020	division	Rhode Island
 USA/RI_0556/2020	region	North America
@@ -17081,7 +17072,6 @@ USA/UPHL-03/2020	region_exposure	North America # duncan
 USA/UPHL-04/2020	country_exposure	USA # duncan
 USA/UPHL-04/2020	division_exposure	Grand Princess # duncan
 USA/UPHL-04/2020	region_exposure	North America # duncan
-USA/VT-CDC-0303/2020	region	North America
 USA/WA-S214/2020	location
 USA/WA-UW22/2020	location	King County
 USA/WA-UW23/2020	location	Pierce County
@@ -17349,6 +17339,9 @@ SouthAfrica/KRISP_0007/2020	division	KwaZulu-Natal
 SouthAfrica/KRISP_0011/2020	division	KwaZulu-Natal
 SouthAfrica/KRISP_0012/2020	division	KwaZulu-Natal
 SouthAfrica/R02827-20/2020	division	Gauteng
+Spain/Valencia/568/2020	location	Grau de Sagunt
+Spain/Valencia/577/2020	location	Valencia
+Spain/Valencia/579/2020	location	Valencia
 SriLanka/?/2020	region	Asia
 Switzerland/GE0199(2020	division	Geneva #assumed from name
 Switzerland/GE062072020	division	Geneva #assumed from name
@@ -17361,6 +17354,13 @@ Sydney/2/2020	division_exposure	Hubei # ?
 Sydney/2/2020	region_exposure	Asia # ?
 USA/CruiseA-20/2020	division	Diamond Princess
 USA/UF-3/2020	division	Florida
+USA/DC-CDC-0019/2020	region	North America
+USA/FL-CDC-7619/2020	region	North America
+USA/IA-CDC-8200/2020	region	North America
+USA/MD-CDC-0025/2020	region	North America
+USA/PA-CDC-2908/2020	region	North America
+USA/PR-CDC-3578/2020	region	North America
+USA/VT-CDC-0303/2020	region	North America
 USA/OSUP0109/2020	division	Ohio
 USA/OSUP0109/2020	location	Columbus
 USA/OSUP0112/2020	division	Ohio
