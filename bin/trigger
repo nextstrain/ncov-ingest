@@ -13,7 +13,13 @@ can specify your GitHub username, and will be prompted for your password:
   $0 --user <your-github-username>
 
 You can also store your credentials or a personal access token¹ in a netrc
-file² and then tell curl to use it:
+file²:
+
+  machine api.github.com
+  login <your-username>
+  password <your-token>
+
+and then tell curl to use it:
 
   $0 --netrc
 
