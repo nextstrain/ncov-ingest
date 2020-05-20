@@ -222,6 +222,10 @@ def update_metadata(curated_gisaid_data: pd.DataFrame) -> pd.DataFrame:
                 value = value.rstrip()
             curated_gisaid_data.loc[curated_gisaid_data['gisaid_epi_isl'] == epi_isl, key] = value
 
+    # if division is blank, replace with country data, to avoid unexpected effects when subsampling by division
+    # (where an empty division is counted as a 'division' group)
+    curated_gisaid_data.loc[pd.isnull(curated_gisaid_data['division']), 'division'] = curated_gisaid_data['country']
+
     # Set `region_exposure` equal to `region` if it wasn't added by annotations
     if 'region_exposure' in curated_gisaid_data:
         curated_gisaid_data['region_exposure'].fillna(curated_gisaid_data['region'], inplace=True)
@@ -239,10 +243,6 @@ def update_metadata(curated_gisaid_data: pd.DataFrame) -> pd.DataFrame:
         curated_gisaid_data['division_exposure'].fillna(curated_gisaid_data['division'], inplace=True)
     else:
         curated_gisaid_data['division_exposure'] = curated_gisaid_data['division']
-
-    # if division is blank, replace with country data, to avoid unexpected effects when subsampling by division
-    # (where an empty division is counted as a 'division' group)
-    curated_gisaid_data.loc[pd.isnull(curated_gisaid_data['division']), 'division'] = curated_gisaid_data['country']
 
     return curated_gisaid_data
 
