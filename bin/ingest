@@ -65,3 +65,10 @@ fi
 
 ./bin/fetch-from-genbank > data/genbank.ndjson
 ./bin/upload-to-s3 ${silent:+--quiet} data/genbank.ndjson "$S3_DST/genbank.ndjson.gz"
+
+./bin/transform-genbank data/genbank.ndjson \
+    --output-metadata data/metadata_genbank.tsv \
+    --output-fasta data/sequences_genbank.fasta
+
+./bin/upload-to-s3 ${silent:+--quiet} data/metadata_genbank.tsv "$S3_DST/metadata_genbank.tsv.gz"
+./bin/upload-to-s3 ${silent:+--quiet} data/sequences_genbank.fasta "$S3_DST/sequences_genbank.fasta.gz"
