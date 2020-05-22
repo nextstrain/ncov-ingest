@@ -3,21 +3,19 @@
 Parse the GenBank JSON load into a metadata tsv and a FASTA file.
 """
 import argparse
+import sys
 from pathlib import Path
-import fsspec
 import re
 import pandas as pd
 from typing import List
 
-
-# Note: 'sequence' should NEVER appear in this list!
-METADATA_COLUMNS = [  # Ordering of columns in the existing metadata.tsv in the ncov repo
-    'strain', 'virus', 'gisaid_epi_isl', 'genbank_accession', 'date', 'region',
-    'country', 'division', 'location', 'region_exposure', 'country_exposure',
-    'division_exposure', 'segment', 'length', 'host', 'age', 'sex',
-    'originating_lab', 'submitting_lab', 'authors', 'url', 'title',
-    'date_submitted'
-]
+sys.path.insert(0, str(Path(__file__).parent.parent / "lib"))
+from utils.transform import (
+    METADATA_COLUMNS,
+    standardize_dataframe,
+    fill_default_geo_metadata,
+    write_fasta_file,
+)
 
 assert 'sequence' not in METADATA_COLUMNS, "Sequences should not appear in metadata!"
 
@@ -31,23 +29,9 @@ def preprocess(genbank_data: pd.DataFrame) -> pd.DataFrame:
         'collected': 'date',
         'submitted': 'date_submitted',
     }
-    genbank_data.rename(mapper, axis='columns', inplace=True)
 
-    # Standardize to nullable dtypes
-    genbank_data = genbank_data.convert_dtypes()
-
-    # Normalize all string columns to Unicode Normalization Form C, for
-    # consistent, predictable string comparisons.
-    for column in genbank_data:
-        if genbank_data[column].dtype == "string":
-            genbank_data[column] = genbank_data[column].str.normalize("NFC").str.strip()
-
-    # Drop entries with length less than 15kb and reset index
-    genbank_data = genbank_data \
-        .drop(genbank_data[genbank_data.length < 15000].index) \
-        .reset_index(drop=True)
-
-    return genbank_data
+    # Standardize column names, dtypes and drop entries with length less than 15kb
+    return standardize_dataframe(genbank_data, mapper)
 
 
 def standardize_strain_names(genbank_data: pd.DataFrame) -> pd.DataFrame:
@@ -190,6 +174,8 @@ def generate_hardcoded_metadata(genbank_data: pd.DataFrame) -> pd.DataFrame:
     hardcoded_metadata['segment']           = 'genome'
     hardcoded_metadata['age']               = '?'
     hardcoded_metadata['sex']               = '?'
+    hardcoded_metadata['pangolin_lineage']  = '?'
+    hardcoded_metadata['GISAID_clade']      = '?'
     hardcoded_metadata['originating_lab']   = '?'
     hardcoded_metadata['submitting_lab']    = '?'
 
@@ -216,27 +202,8 @@ def update_metadata(genbank_data: pd.DataFrame) -> pd.DataFrame:
                 value = value.rstrip()
             genbank_data.loc[genbank_data['genbank_accession'] == genbank_accession, key] = value
 
-    # if division is blank, replace with country data, to avoid unexpected effects when subsampling by division
-    # (where an empty division is counted as a 'division' group)
-    genbank_data.loc[pd.isnull(genbank_data['division']), 'division'] = genbank_data['country']
-
-    # Set `region_exposure` equal to `region` if it wasn't added by annotations
-    if 'region_exposure' in genbank_data:
-        genbank_data['region_exposure'].fillna(genbank_data['region'], inplace=True)
-    else:
-        genbank_data['region_exposure'] = genbank_data['region']
-
-    # Set `country_exposure` equal to `country` if it wasn't added by annotations
-    if 'country_exposure' in genbank_data:
-        genbank_data['country_exposure'].fillna(genbank_data['country'], inplace=True)
-    else:
-        genbank_data['country_exposure'] = genbank_data['country']
-
-    # Set `division_exposure` equal to `division` if it wasn't added by annotations
-    if 'division_exposure' in genbank_data:
-        genbank_data['division_exposure'].fillna(genbank_data['division'], inplace=True)
-    else:
-        genbank_data['division_exposure'] = genbank_data['division']
+    # Fill in blank geographic columns with exisiting geographic data
+    genbank_data = fill_default_geo_metadata(genbank_data)
 
     return genbank_data
 
@@ -268,14 +235,6 @@ def find_and_drop_problem_records(genbank_data: pd.DataFrame) -> pd.DataFrame:
     genbank_data.drop_duplicates('strain', inplace=True)
 
     return genbank_data
-
-
-def write_fasta_file(sequence_data: pd.DataFrame):
-    """ """
-    with fsspec.open(str(args.output_fasta), 'wt') as fastafile:
-        for index, row in sequence_data.iterrows():
-            fastafile.write(f">{row['strain']}\n")
-            fastafile.write(f"{row['sequence']}\n")
 
 
 if __name__ == '__main__':
@@ -323,6 +282,6 @@ if __name__ == '__main__':
     genbank_data = update_metadata(genbank_data)
     genbank_data = find_and_drop_problem_records(genbank_data)
 
-    write_fasta_file(genbank_data)
+    write_fasta_file(genbank_data, args.output_fasta)
     genbank_data = genbank_data[METADATA_COLUMNS]
     genbank_data.to_csv(args.output_metadata, sep='\t', na_rep='', index=False)
