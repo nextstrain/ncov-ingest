@@ -61,8 +61,10 @@ Australia/NSW01/2020	EPI_ISL_407893	country_exposure	China
 Australia/NSW01/2020	EPI_ISL_407893	region_exposure	Asia
 Australia/NSW02/2020	EPI_ISL_408976	region_exposure	Asia # Andrew R preprint: https://www.biorxiv.org/content/10.1101/2020.03.15.992818v1.full.pdf
 Australia/NSW02/2020	EPI_ISL_408976	country_exposure	China # Andrew R preprint: https://www.biorxiv.org/content/10.1101/2020.03.15.992818v1.full.pdf
+Australia/NSW02/2020	EPI_ISL_408976	division_exposure	China
 Australia/NSW03/2020	EPI_ISL_408977	region_exposure	Asia # Andrew R preprint: https://www.biorxiv.org/content/10.1101/2020.03.15.992818v1.full.pdf
 Australia/NSW03/2020	EPI_ISL_408977	country_exposure	China # Andrew R preprint: https://www.biorxiv.org/content/10.1101/2020.03.15.992818v1.full.pdf
+Australia/NSW03/2020	EPI_ISL_408977	division_exposure	China
 Australia/NSW05/2020	EPI_ISL_412975	division_exposure	Iran # James: data via direct contact with Aus lab
 Australia/NSW05/2020	EPI_ISL_412975	region_exposure	Asia # James: data via direct contact with Aus lab
 Australia/NSW05/2020	EPI_ISL_412975	country_exposure	Iran # James: data via direct contact with Aus lab
@@ -366,6 +368,7 @@ Belgium/RYR-030649/2020	EPI_ISL_420315	location	Yernee-fraineux
 Belgium/SJ-030583/2020	EPI_ISL_420339	division	Limburg
 Belgium/TG-030757/2020	EPI_ISL_420318	location	Arbre
 Belgium/TG-030757/2020	EPI_ISL_420318	division	Ath
+Belgium/ULG-6754/2020	EPI_ISL_417019	division	Liège
 Belgium/ULG-10019/2020	EPI_ISL_427340	division	Liège
 Belgium/ULG-10023/2020	EPI_ISL_427341	division	Liège
 Belgium/ULG-10034/2020	EPI_ISL_427342	division	Liège
@@ -9348,6 +9351,7 @@ France/ARA13160/2020	EPI_ISL_420624	division	Auvergne-Rhône-Alpes
 France/ARA1322/2020	EPI_ISL_420625	division	Auvergne-Rhône-Alpes
 France/BFC2709/2020	EPI_ISL_420038	division	Bourgogne-France-Comté
 France/BFC6053/2020	EPI_ISL_443307	division	Bourgogne-France-Comté
+France/BFC2094/2020	EPI_ISL_415651	division	Bourgogne-France-Comté
 France/Bourg-en-Bresse_06678/2020	EPI_ISL_416757	division	Auvergne-Rhône-Alpes
 France/Bourg-en-Bresse_06813/2020	EPI_ISL_417340	division	Auvergne-Rhône-Alpes
 France/CIBU200107/2020	EPI_ISL_437689	division	Ile de France
@@ -10421,14 +10425,19 @@ India/1644/2020	EPI_ISL_421672	division_exposure	Iran #GISAID
 India/1652/2020	EPI_ISL_424363	country_exposure	Iran #GISAID
 India/1652/2020	EPI_ISL_424363	division_exposure	Iran #GISAID
 India/1652/2020	EPI_ISL_424363	region_exposure	Asia #GISAID
+India/763/2020	EPI_ISL_420543	division_exposure	Italy
 India/763/2020	EPI_ISL_420543	country_exposure	Italy #GISAID (Italian tourist)
 India/763/2020	EPI_ISL_420543	region_exposure	Europe #GISAID (Italian tourist)
+India/770/2020	EPI_ISL_420545	division_exposure	Italy
 India/770/2020	EPI_ISL_420545	country_exposure	Italy #GISAID (Italian tourist)
 India/770/2020	EPI_ISL_420545	region_exposure	Europe #GISAID (Italian tourist)
+India/772/2020	EPI_ISL_420547	division_exposure	Italy
 India/772/2020	EPI_ISL_420547	country_exposure	Italy #GISAID (Italian tourist)
 India/772/2020	EPI_ISL_420547	region_exposure	Europe #GISAID (Italian tourist)
+India/773/2020	EPI_ISL_420549	division_exposure	Italy
 India/773/2020	EPI_ISL_420549	region_exposure	Europe #GISAID (Italian tourist)
 India/773/2020	EPI_ISL_420549	country_exposure	Italy #GISAID (Italian tourist)
+India/781/2020	EPI_ISL_420553	division_exposure	Italy
 India/781/2020	EPI_ISL_420553	region_exposure	Europe #GISAID (Italian tourist)
 India/781/2020	EPI_ISL_420553	country_exposure	Italy #GISAID (Italian tourist)
 India/GMC-KN318/2020	EPI_ISL_431102	division_exposure	Italy #Recent Visit to Italy
