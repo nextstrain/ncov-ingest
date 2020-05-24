@@ -656,17 +656,17 @@ Colombia/GVI-97782/2020	EPI_ISL_447803	division	Meta
 Colombia/GVI-97783/2020	EPI_ISL_447804	location	Villavicencio # Swapped
 Colombia/GVI-97783/2020	EPI_ISL_447804	division	Meta
 CostaRica/01/2020	EPI_ISL_434533	region	North America
-CostaRica/01/2020	EPI_ISL_434533	location	San Rafael Al
+CostaRica/01/2020	EPI_ISL_434533	location	San Rafael de Alajuela
 CostaRica/01/2020	EPI_ISL_434533	division	Alajuela
 CostaRica/01/2020	EPI_ISL_434533	authors	Duarte et al
 CostaRica/02/2020	EPI_ISL_434535	division	Alajuela
 CostaRica/02/2020	EPI_ISL_434535	authors	Duarte et al
 CostaRica/02/2020	EPI_ISL_434535	region	North America
-CostaRica/02/2020	EPI_ISL_434535	location	San Rafael Al
+CostaRica/02/2020	EPI_ISL_434535	location	San Rafael de Alajuela
 CostaRica/03/2020	EPI_ISL_434536	division	Heredia
 CostaRica/03/2020	EPI_ISL_434536	region	North America
 CostaRica/03/2020	EPI_ISL_434536	authors	Duarte et al
-CostaRica/03/2020	EPI_ISL_434536	location	San Rafael He
+CostaRica/03/2020	EPI_ISL_434536	location	San Rafael Heredia
 CostaRica/04/2020	EPI_ISL_434540	region_exposure	North America
 CostaRica/04/2020	EPI_ISL_434540	division_exposure	New York
 CostaRica/04/2020	EPI_ISL_434540	location	La Union
@@ -674,8 +674,8 @@ CostaRica/04/2020	EPI_ISL_434540	country_exposure	USA
 CostaRica/04/2020	EPI_ISL_434540	region	North America
 CostaRica/04/2020	EPI_ISL_434540	division	Cartago
 CostaRica/04/2020	EPI_ISL_434540	authors	Duarte et al
-CostaRica/05/2020	EPI_ISL_434538	division	Tibas
-CostaRica/05/2020	EPI_ISL_434538	location	San Juan
+CostaRica/05/2020	EPI_ISL_434538	location	Tibas
+CostaRica/05/2020	EPI_ISL_434538	division	San Jose
 CostaRica/05/2020	EPI_ISL_434538	region_exposure	South America
 CostaRica/05/2020	EPI_ISL_434538	region	North America
 CostaRica/05/2020	EPI_ISL_434538	division_exposure	South America
@@ -10530,6 +10530,10 @@ Italy/INMI1-B2/2020	EPI_ISL_451299	region_exposure	Asia
 Italy/INMI1-N/2020	EPI_ISL_451300	region_exposure	Asia
 Italy/INMI2-B/2020	EPI_ISL_451301	region_exposure	Asia
 Italy/INMI2-N/2020	EPI_ISL_451302	region_exposure	Asia
+Italy/LO-13075-B/2020	EPI_ISL_451308	division	Lombardy # previously Lombardia
+Italy/LO-13075-N/2020	EPI_ISL_451309	division	Lombardy # previously Lombardia
+Italy/PV-5314-B/2020	EPI_ISL_451306	division	Lombardy # previously Lombardia
+Italy/PV-5314-N/2020	EPI_ISL_451307	division	Lombardy # previously Lombardia
 Japan/AI-I-004/2020	EPI_ISL_407084	genbank_accession	LC521925
 Japan/AI-I-004/2020	EPI_ISL_407084	location	Aichi
 Japan/DP0005/2020	EPI_ISL_416565	division	Japan #replace unknown location
@@ -11152,8 +11156,8 @@ Poland/Pom1/2020	EPI_ISL_428209	division	Pomorskie
 Poland/Pom1/2020	EPI_ISL_428209	region_exposure	Europe
 Poland/Pom1/2020	EPI_ISL_428209	country_exposure	Poland
 Poland/Pom1/2020	EPI_ISL_428209	division_exposure	Pomorskie
-Poland/Pom2/2020	 EPI_ISL_450746	division	Pomorskie
-Poland/Pom2/2020	 EPI_ISL_450746	division_exposure	Pomorskie
+Poland/Pom2/2020	EPI_ISL_450746	division	Pomorskie
+Poland/Pom2/2020	EPI_ISL_450746	division_exposure	Pomorskie
 Poland/Wro-01/2020	EPI_ISL_435723	originating_lab	Laboratory of Genomics & Bioinformatics, Institute of Immunology and Experimental Therapy, Polish Academy of Sciences Oddzia Mikrobiologii Wojewodzkiej Stacji Sanitarno Epidemiologiczna
 Poland/Wro-02/2020	EPI_ISL_437625	division	Dolnoslaskie
 Portugal/CV62/2020	EPI_ISL_413647	division	Portugal
