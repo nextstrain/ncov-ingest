@@ -32,6 +32,7 @@ csv-diff \
 
 "$bin"/metadata-additions "$dst_local" "$src" "$key" > "$additions"
 
+# csv-diff outputs two newlines which -n ignores but -s does not
 if [[ -n "$(< "$diff")" ]]; then
     echo "Notifying Slack about metadata change."
     "$bin"/notify-slack --upload "metadata-changes.txt" < "$diff"
