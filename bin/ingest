@@ -54,16 +54,14 @@ fi
 if [[ "$branch" == master ]]; then
     ./bin/notify-on-metadata-change data/metadata.tsv "$S3_SRC/metadata.tsv.gz"
     ./bin/notify-on-additional-info-change data/additional_info.tsv "$S3_SRC/additional_info.tsv.gz"
+
+    ./bin/rebuild-staging data/metadata.tsv "$S3_SRC/metadata.tsv.gz" \
+      data/sequences.fasta "$S3_SRC/sequences.fasta.gz"
 fi
 
 ./bin/upload-to-s3 ${silent:+--quiet} data/metadata.tsv "$S3_DST/metadata.tsv.gz"
 ./bin/upload-to-s3 ${silent:+--quiet} data/additional_info.tsv "$S3_DST/additional_info.tsv.gz"
 ./bin/upload-to-s3 ${silent:+--quiet} data/sequences.fasta "$S3_DST/sequences.fasta.gz"
-
-if [[ "$branch" == master ]]; then
-    ./bin/rebuild-staging data/metadata.tsv "$S3_SRC/metadata.tsv.gz" \
-      data/sequences.fasta "$S3_SRC/sequences.fasta.gz"
-fi
 
 ./bin/fetch-from-genbank > data/genbank.ndjson
 ./bin/upload-to-s3 ${silent:+--quiet} data/genbank.ndjson "$S3_DST/genbank.ndjson.gz"
