@@ -1,0 +1,52 @@
+#!/bin/bash
+set -euo pipefail
+
+: "${S3_SRC:=s3://nextstrain-data}"
+: "${S3_DST:=$S3_SRC}"
+
+# Determine where to save data files based on if we're running as a result of a
+# push to master or to another branch (or locally, outside of the GitHub
+# workflow).  Files are always compared to the default/primary paths in the
+# source S3 bucket.
+#
+silent=
+branch=
+
+case "${GITHUB_REF:-}" in
+    refs/heads/master)
+        # Do nothing different; defaults above are good.
+        branch=master
+        ;;
+    refs/heads/*)
+        # Save data files under a per-branch prefix
+        silent=yes
+        branch="${GITHUB_REF##refs/heads/}"
+        S3_DST="$S3_DST/branch/$branch"
+        ;;
+    "")
+        # Save data files under a tmp prefix
+        silent=yes
+        S3_DST="$S3_DST/tmp"
+        ;;
+    *)
+        echo "Skipping ingest for ref $GITHUB_REF"
+        exit 0
+        ;;
+esac
+
+echo "S3_SRC is $S3_SRC"
+echo "S3_DST is $S3_DST"
+
+cd "$(dirname "$0")/.."
+
+set -x
+
+./bin/fetch-from-genbank > data/genbank.ndjson
+./bin/upload-to-s3 ${silent:+--quiet} data/genbank.ndjson "$S3_DST/genbank.ndjson.gz"
+
+./bin/transform-genbank data/genbank.ndjson \
+    --output-metadata data/genbank/metadata.tsv \
+    --output-fasta data/genbank/sequences.fasta
+
+./bin/upload-to-s3 ${silent:+--quiet} data/genbank/metadata.tsv "$S3_DST/genbank_metadata.tsv.gz"
+./bin/upload-to-s3 ${silent:+--quiet} data/genbank/sequences.fasta "$S3_DST/genbank_sequences.fasta.gz"
