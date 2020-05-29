@@ -3,3 +3,7 @@
 # ensuring it exists first.
 /*
 !/.gitignore
+
+# Include empty subdirectories for GenBank and GISAID
+!/genbank
+!/gisaid
