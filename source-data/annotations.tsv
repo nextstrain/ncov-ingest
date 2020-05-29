@@ -321,7 +321,7 @@ Beijing/DT-travelCA01/2020	EPI_ISL_452331	division_exposure	Massachusetts
 Beijing/DT-travelCA01/2020	EPI_ISL_452331	location_exposure	Boston
 Beijing/DT-travelDE01/2020	EPI_ISL_452329	region_exposure	Europe
 Beijing/DT-travelDE01/2020	EPI_ISL_452329	country_exposure	Germany
-Beijing/DT-travelDE01/2020	EPI_ISL_452329	division_exposure	Munich
+Beijing/DT-travelDE01/2020	EPI_ISL_452329	division_exposure	Bavaria
 Beijing/DT-travelDE01/2020	EPI_ISL_452329	location_exposure	Munich
 Beijing/DT-travelES01/2020	EPI_ISL_452343	region_exposure	Europe
 Beijing/DT-travelES01/2020	EPI_ISL_452343	country_exposure	Spain
@@ -353,15 +353,15 @@ Beijing/DT-travelGR01/2020	EPI_ISL_452347	division_exposure	Athens
 Beijing/DT-travelGR01/2020	EPI_ISL_452347	location_exposure	Athens
 Beijing/DT-travelHU01/2020	EPI_ISL_452349	region_exposure	Europe
 Beijing/DT-travelHU01/2020	EPI_ISL_452349	country_exposure	Hungary
-Beijing/DT-travelHU01/2020	EPI_ISL_452349	division_exposure	Budapest
+Beijing/DT-travelHU01/2020	EPI_ISL_452349	division_exposure	Central Hungary
 Beijing/DT-travelHU01/2020	EPI_ISL_452349	location_exposure	Budapest
 Beijing/DT-travelHU02/2020	EPI_ISL_452348	region_exposure	Europe
 Beijing/DT-travelHU02/2020	EPI_ISL_452348	country_exposure	Hungary
-Beijing/DT-travelHU02/2020	EPI_ISL_452348	division_exposure	Budapest
+Beijing/DT-travelHU02/2020	EPI_ISL_452348	division_exposure	Central Hungary
 Beijing/DT-travelHU02/2020	EPI_ISL_452348	location_exposure	Budapest
 Beijing/DT-travelHU03/2020	EPI_ISL_452350	region_exposure	Europe
 Beijing/DT-travelHU03/2020	EPI_ISL_452350	country_exposure	Hungary
-Beijing/DT-travelHU03/2020	EPI_ISL_452350	division_exposure	Budapest
+Beijing/DT-travelHU03/2020	EPI_ISL_452350	division_exposure	Central Hungary
 Beijing/DT-travelHU03/2020	EPI_ISL_452350	location_exposure	Budapest
 Beijing/DT-travelIRI01/2020	EPI_ISL_452333	region_exposure	Europe
 Beijing/DT-travelIRI01/2020	EPI_ISL_452333	country_exposure	Italy
@@ -9674,6 +9674,7 @@ Germany/BAV-V2012622/2020	EPI_ISL_420911	location	Munich
 Germany/BAV-V2012622/2020	EPI_ISL_420911	division	Bavaria # previously Munich
 Germany/BAV-V2012856/2020	EPI_ISL_420912	location	Munich
 Germany/BAV-V2012856/2020	EPI_ISL_420912	division	Bavaria # previously Munich
+Germany/FrankfurtFFM1/2020	EPI_ISL_452218	region_exposure	Asia
 Germany/FrankfurtFFM1/2020	EPI_ISL_452218	division_exposure	Hubei
 Germany/FrankfurtFFM1/2020	EPI_ISL_452218	country_exposure	China
 Germany/FrankfurtFFM4/2020	EPI_ISL_452220	division_exposure	Italy
@@ -9683,6 +9684,8 @@ Germany/FrankfurtFFM6/2020	EPI_ISL_452222	country_exposure	Italy
 Germany/FrankfurtFFM7/2020	EPI_ISL_452223	division_exposure	Israel
 Germany/FrankfurtFFM7/2020	EPI_ISL_452223	country_exposure	Israel
 Germany/FrankfurtFFM7/2020	EPI_ISL_452223	region_exposure	Asia
+Germany/NRW-54/2020	EPI_ISL_452180	location	Duesseldorf
+Germany/NRW-54/2020	EPI_ISL_452180	division	North Rhine Westphalia # previously Duesseldorf
 Ghana/1565_S13/2020	EPI_ISL_422404	location	Accra
 Ghana/1622_S2/2020	EPI_ISL_422384	location	Accra
 Ghana/1651_S3/2020	EPI_ISL_422387	location	Accra
@@ -10928,6 +10931,7 @@ Lebanon/S5_762/2020	EPI_ISL_450512	division_exposure	Iran
 Lebanon/S3_760/2020	EPI_ISL_450510	region_exposure	Asia
 Lebanon/S5_762/2020	EPI_ISL_450512	region_exposure	Asia
 Lebanon/S7_763/2020	EPI_ISL_454420	region_exposure	Asia
+Lebanon/S7_763/2020	EPI_ISL_454420	country_exposure	Iran
 Lebanon/S7_763/2020	EPI_ISL_454420	division_exposure	Iran
 Luxembourg/LNS0000001/2020	EPI_ISL_419562	division	Luxembourg
 Luxembourg/LNS0000001/2020	EPI_ISL_419562	location	Luxembourg
@@ -11050,6 +11054,7 @@ Mexico/CDMX-InDRE_07/2020	EPI_ISL_452139	division_exposure	Lombardy
 Mexico/CDMX-InDRE_07/2020	EPI_ISL_452139	location_exposure	Bergamo
 Mexico/CDMX-InDRE_08/2020	EPI_ISL_452141	region_exposure	Europe
 Mexico/CDMX-InDRE_08/2020	EPI_ISL_452141	country_exposure	Italy
+Mexico/CDMX-InDRE_08/2020	EPI_ISL_452141	division_exposure	Italy
 Morocco/COV001884/2020	EPI_ISL_452463	country	Spain
 Morocco/COV001884/2020	EPI_ISL_452463	location	Cadizs
 NanChang/JX216/2020	EPI_ISL_417420	division	Jiangxi
@@ -17588,6 +17593,10 @@ Taiwan/CGMH-CGU-24/2020	EPI_ISL_444277	location	Taoyuan
 Taiwan/CGMH-CGU-24/2020	EPI_ISL_444277	division	Taiwan # previously Taoyuan
 Taiwan/CGMH-CGU-25/2020	EPI_ISL_444278	location	Taoyuan
 Taiwan/CGMH-CGU-25/2020	EPI_ISL_444278	division	Taiwan # previously Taoyuan
+Taiwan/CGMH-CGU-26/2020	EPI_ISL_452178	location	Taoyuan
+Taiwan/CGMH-CGU-26/2020	EPI_ISL_452178	division	Taiwan # previously Taoyuan
+Taiwan/CGMH-CGU-27/2020	EPI_ISL_452179	location	Taoyuan
+Taiwan/CGMH-CGU-27/2020	EPI_ISL_452179	division	Taiwan # previously Taoyuan
 Taiwan/144/2020	EPI_ISL_421641	location	Taipei
 Taiwan/144/2020	EPI_ISL_421641	division	Taiwan # previously Taipei
 Taiwan/225/2020	EPI_ISL_421651	location	Taipei
