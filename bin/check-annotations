@@ -33,7 +33,7 @@ ALLOWED_TRAIT_NAMES = set(
 def read_annotations_file(file_name):
     """Read the annotations TSV file"""
     annotations = pd.read_csv(file_name, header=None, sep="\t", comment="#")
-    annotations.columns = ["strain", "trait", "value"]
+    annotations.columns = ["strain", "gisaid_epi_isl", "trait", "value"]
     return annotations
 
 
