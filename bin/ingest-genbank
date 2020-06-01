@@ -53,6 +53,7 @@ fi
 
 if [[ "$branch" == master ]]; then
     ./bin/notify-on-metadata-change data/genbank/metadata.tsv "$S3_SRC/genbank_metadata.tsv.gz" genbank_accession
+    ./bin/notify-on-problem-data data/genbank/problem_data.tsv
 fi
 
 ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/metadata.tsv "$S3_DST/genbank_metadata.tsv.gz"
