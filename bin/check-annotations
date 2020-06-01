@@ -60,38 +60,6 @@ def reshape_annotations(annotations):
     return annotations
 
 
-def check_division_exposure(annotations):
-    """Check if annotations have a division_exposure but not a country_exposure"""
-    mismatched_strains = (
-        annotations.loc[pd.isnull(annotations.country_exposure)]
-        .loc[pd.notnull(annotations.division_exposure)]
-        .loc[:, "strain"]
-    )
-    if len(mismatched_strains):
-        print()
-        print("The following strains have a division_exposure but not a country_exposure.")
-        print("This is ok if the country_exposure happens to match the country, but problems arise if this is not the case.")
-        print("To make this clear, country_exposure should be explicitly set for the following:")
-        print(mismatched_strains)
-        raise Exception("strains have a division_exposure but not a country_exposure")
-
-
-def check_country_exposure(annotations):
-    """Check if annotations have a country_exposure but not a region_exposure"""
-    mismatched_strains = (
-        annotations.loc[pd.isnull(annotations.region_exposure)]
-        .loc[pd.notnull(annotations.country_exposure)]
-        .loc[:, "strain"]
-    )
-    if len(mismatched_strains):
-        print()
-        print("The following strains have a country_exposure but not a region_exposure.")
-        print("This is ok if the region_exposure happens to match the region, but problems arise if this is not the case.")
-        print("To make this clear, region_exposure should be explicitly set for the following:")
-        print(mismatched_strains)
-        raise Exception("strains have a country_exposure but not a region_exposure")
-
-
 def check_annotation(annotations):
     """Check annotations with several rules"""
     invalid_traits = set(annotations.columns) - ALLOWED_TRAIT_NAMES
@@ -99,8 +67,6 @@ def check_annotation(annotations):
         print("The following traits are unexpected and probably shouldn't be in the TSV:")
         print(invalid_traits)
         raise Exception("Found traits that aren't allowed")
-    check_division_exposure(annotations)
-    check_country_exposure(annotations)
 
 
 if __name__ == "__main__":
