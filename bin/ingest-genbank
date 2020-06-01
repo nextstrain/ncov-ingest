@@ -42,6 +42,9 @@ cd "$(dirname "$0")/.."
 set -x
 
 ./bin/fetch-from-genbank > data/genbank.ndjson
+if [[ "$branch" == master ]]; then
+    ./bin/notify-on-record-change data/genbank.ndjson "$S3_SRC/genbank.ndjson.gz" "GenBank"
+fi
 ./bin/upload-to-s3 ${silent:+--quiet} data/genbank.ndjson "$S3_DST/genbank.ndjson.gz"
 
 ./bin/transform-genbank data/genbank.ndjson \

@@ -43,7 +43,7 @@ set -x
 
 ./bin/fetch-from-gisaid > data/gisaid.ndjson
 if [[ "$branch" == master ]]; then
-    ./bin/notify-on-gisaid-change data/gisaid.ndjson "$S3_SRC/gisaid.ndjson.gz"
+    ./bin/notify-on-record-change data/gisaid.ndjson "$S3_SRC/gisaid.ndjson.gz" "GISAID"
 fi
 ./bin/upload-to-s3 --quiet data/gisaid.ndjson "$S3_DST/gisaid.ndjson.gz"
 
