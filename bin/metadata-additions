@@ -4,14 +4,14 @@ from csv import DictWriter
 from csv_diff import load_csv, compare
 
 
-def main(a, b):
-    diff = compare(load_metadata(a), load_metadata(b))
+def main(a, b, key):
+    diff = compare(load_metadata(a, key), load_metadata(b, key))
     write_tsv(stdout, diff["added"])
 
 
-def load_metadata(filename):
+def load_metadata(filename, key):
     with open(filename, encoding = 'utf-8') as f:
-        return load_csv(f, key = "gisaid_epi_isl", dialect = "excel-tab")
+        return load_csv(f, key = key, dialect = "excel-tab")
 
 
 def write_tsv(file, rows):
@@ -28,4 +28,4 @@ def write_tsv(file, rows):
 
 
 if __name__ == "__main__":
-    main(argv[1], argv[2])
+    main(argv[1], argv[2], argv[3])

@@ -51,5 +51,9 @@ fi
     --output-metadata data/genbank/metadata.tsv \
     --output-fasta data/genbank/sequences.fasta
 
+if [[ "$branch" == master ]]; then
+    ./bin/notify-on-metadata-change data/genbank/metadata.tsv "$S3_SRC/genbank_metadata.tsv.gz" genbank_accession
+fi
+
 ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/metadata.tsv "$S3_DST/genbank_metadata.tsv.gz"
 ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/sequences.fasta "$S3_DST/genbank_sequences.fasta.gz"

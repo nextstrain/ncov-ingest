@@ -52,7 +52,7 @@ fi
   --output-fasta data/gisaid/sequences.fasta
 
 if [[ "$branch" == master ]]; then
-    ./bin/notify-on-metadata-change data/gisaid/metadata.tsv "$S3_SRC/gisaid_metadata.tsv.gz"
+    ./bin/notify-on-metadata-change data/gisaid/metadata.tsv "$S3_SRC/gisaid_metadata.tsv.gz" gisaid_epi_isl
     ./bin/notify-on-additional-info-change data/gisaid/additional_info.tsv "$S3_SRC/gisaid_additional_info.tsv.gz"
 
     ./bin/rebuild-staging data/gisaid/metadata.tsv "$S3_SRC/gisaid_metadata.tsv.gz" \
