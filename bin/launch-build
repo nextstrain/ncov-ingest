@@ -1,15 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-: "${NEXTSTRAIN_AWS_BATCH_CPUS:=96}"
-: "${NEXTSTRAIN_AWS_BATCH_MEMORY:=184320}"
-: "${NEXTSTRAIN_AWS_BATCH_QUEUE:=nextstrain-job-queue}"
-
-export NEXTSTRAIN_AWS_BATCH_CPUS NEXTSTRAIN_AWS_BATCH_MEMORY NEXTSTRAIN_AWS_BATCH_QUEUE
-
-nextstrain build --aws-batch --detach \
+nextstrain build --aws-batch --cpus 96 --memory 180GiB --detach \
     "$@" \
     --profile profiles/nextstrain \
-    --cores "$NEXTSTRAIN_AWS_BATCH_CPUS" \
-    --resources mem_mb="$NEXTSTRAIN_AWS_BATCH_MEMORY" \
     --set-threads tree=16
