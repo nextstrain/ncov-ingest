@@ -95,13 +95,11 @@ def parse_geographic_columns(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     Expands the string found in the column named `location` in the given
     *df*, creating four new columns. Returns the modified ``pd.DataFrame``.
     """
-    geographic_data = gisaid_data['location'].str.split('\s*/\s*', expand=True)
+    geographic_data = gisaid_data['location'].str.split(r'\s*/\s*', expand=True)
+    location_columns = ['region', 'country', 'division', 'location']
 
-    gisaid_data['region']      = geographic_data[0].str.strip()
-    gisaid_data['country']     = geographic_data[1].str.strip()
-    gisaid_data['division']    = geographic_data[2].str.strip()
-    gisaid_data['location']    = geographic_data[3].str.strip()
-
+    for index, column in enumerate(location_columns):
+        gisaid_data[column] = geographic_data[index].str.replace('_', ' ').str.strip()
 
     return gisaid_data
 
