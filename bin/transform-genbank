@@ -44,7 +44,7 @@ def standardize_strain_names(genbank_data: pd.DataFrame) -> pd.DataFrame:
     # Order is important here! Keep the known prefixes first!
     regex_replacement = [
         (r'(^SAR[S]{0,1}[-\s]CoV[-]{0,1}2/|^2019[-\s]nCoV[-_\s/]|^BetaCoV/|^nCoV-|^hCoV-19/)',''),
-        (r'(human/)',''),
+        (r'(human/|homo sapien/)',''),
         (r'^USA-', 'USA/'),
         (r'^USACT-', 'USA/CT-'),
         (r'^USAWA-', 'USA/WA-'),
