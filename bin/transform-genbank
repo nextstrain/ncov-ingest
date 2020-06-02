@@ -52,6 +52,12 @@ def standardize_strain_names(genbank_data: pd.DataFrame) -> pd.DataFrame:
     ]
     # Add country codes to regex_replacement
     country_codes = pd.read_csv(base / 'source-data/country-codes.tsv', header=None, sep='\t', comment="#")
+    # Remove accents and non-alphabet characters from country names
+    country_codes[1] = country_codes[1] \
+        .str.normalize("NFD") \
+        .str.encode("ascii", errors="ignore") \
+        .str.decode("utf-8") \
+        .str.replace(r'[^a-zA-Z]', '')
     country_codes.apply(lambda c: regex_replacement.extend([
         (rf'^{re.escape(c[0])}/', f'{c[1]}/'),
         (rf'/{re.escape(c[0])}/', f'/{c[1]}/')]), axis=1)
