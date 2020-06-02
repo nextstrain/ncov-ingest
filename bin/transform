@@ -98,7 +98,7 @@ def parse_geographic_columns(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     geographic_data = gisaid_data['location'].str.split(r'\s*/\s*', expand=True)
     location_columns = ['region', 'country', 'division', 'location']
 
-    for column, index in zip(location_columns, range(len(location_columns))):
+    for index, column in enumerate(location_columns):
         gisaid_data[column] = geographic_data[index].str.replace('_', ' ').str.strip()
 
     return gisaid_data
