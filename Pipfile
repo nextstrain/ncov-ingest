@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-nextstrain-cli = ">=1.16.1"
+nextstrain-cli = ">=2.0.0"
 csv-diff = ">=0.6"
 fsspec = "*"
 pandas = ">=1.0.1"
