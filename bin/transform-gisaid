@@ -2,10 +2,12 @@
 """
 Parse the GISAID JSON load into a metadata tsv and a FASTA file.
 """
+import re
 import argparse
 import sys
 from pathlib import Path
 import pandas as pd
+from typing import List, Optional, Union
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "lib"))
 from utils.transform import (
@@ -78,11 +80,47 @@ def parse_geographic_columns(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     Expands the string found in the column named `location` in the given
     *df*, creating four new columns. Returns the modified ``pd.DataFrame``.
     """
+    def titlecase_non_whitelisted_tokens(tokens: Union[List[str],
+        pd._libs.missing.NAType]) -> Optional[str]:
+        """
+        Returns a title cased location name from the given location name
+        *tokens*. Ensures that no tokens contained in the *whitelist_tokens* or
+        matching the *whitelist_regex* pattern(s) are converted to title case.
+        """
+        if not isinstance(tokens, list):
+            return
+
+        return ' '.join([
+            w.title()
+            if w not in whitelist_tokens
+            and not re.match(whitelist_regex, w)
+            else w
+            for w in tokens
+        ])
+
     geographic_data = gisaid_data['location'].str.split(r'\s*/\s*', expand=True)
     location_columns = ['region', 'country', 'division', 'location']
 
+    # Manually curate list of tokens and patterns that should not be cast to
+    # title case
+    articles = [
+        'de', 'del', 'di', 'do', 'la', 'le', 'las', 'los', 'nad', 'of', 'op',
+        'the', 'y'
+    ]
+    locations = ['USA', 'DC']
+    whitelist_tokens = articles + locations
+    # Some Francophone locations are hyphen-delimited (e.g. Braine-le-Comte).
+    # These names don't get split into separate tokens, but all pieces are
+    # capitalized by `.title()`. Assume these names are already properly cased,
+    # and prevent them from being transformed.
+    whitelist_regex = r'\S*-le?-?'
+
     for index, column in enumerate(location_columns):
-        gisaid_data[column] = geographic_data[index].str.replace('_', ' ').str.strip()
+        gisaid_data[column] = geographic_data[index] \
+            .str.replace('_', ' ') \
+            .str.strip() \
+            .str.split() \
+            .apply(titlecase_non_whitelisted_tokens)
 
     return gisaid_data
 
