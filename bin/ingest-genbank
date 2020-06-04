@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-: "${S3_SRC:=s3://nextstrain-data}"
+: "${S3_SRC:=s3://nextstrain-data/ncov}"
 : "${S3_DST:=$S3_SRC}"
 
 # Determine where to save data files based on if we're running as a result of a
