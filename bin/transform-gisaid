@@ -101,14 +101,14 @@ def parse_geographic_columns(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     geographic_data = gisaid_data['location'].str.split(r'\s*/\s*', expand=True)
     location_columns = ['region', 'country', 'division', 'location']
 
-    # Manually curate list of tokens and patterns that should not be cast to
+    # Manually curate set of tokens and patterns that should not be cast to
     # title case
-    articles = [
+    articles = {
         'de', 'del', 'di', 'do', 'la', 'le', 'las', 'los', 'nad', 'of', 'op',
         'the', 'y'
-    ]
-    locations = ['USA', 'DC']
-    whitelist_tokens = articles + locations
+    }
+    locations = {'USA', 'DC'}
+    whitelist_tokens = articles | locations
     # Some Francophone locations are hyphen-delimited (e.g. Braine-le-Comte).
     # These names don't get split into separate tokens, but all pieces are
     # capitalized by `.title()`. Assume these names are already properly cased,
