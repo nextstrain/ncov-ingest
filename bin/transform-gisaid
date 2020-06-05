@@ -107,8 +107,8 @@ def parse_geographic_columns(gisaid_data: pd.DataFrame) -> pd.DataFrame:
         'de', 'del', 'di', 'do', 'la', 'le', 'las', 'los', 'nad', 'of', 'op',
         'the', 'y'
     }
-    locations = {'USA', 'DC'}
-    whitelist_tokens = articles | locations
+    abbrev = {'USA', 'DC'}
+    whitelist_tokens = articles | abbrev
     # Some Francophone locations are hyphen-delimited (e.g. Braine-le-Comte).
     # These names don't get split into separate tokens, but all pieces are
     # capitalized by `.title()`. Assume these names are already properly cased,
