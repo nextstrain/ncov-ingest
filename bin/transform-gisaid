@@ -2,12 +2,12 @@
 """
 Parse the GISAID JSON load into a metadata tsv and a FASTA file.
 """
-import re
+import regex
 import argparse
 import sys
 from pathlib import Path
 import pandas as pd
-from typing import List, Optional, Union
+from typing import List, Optional, Set, Union
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "lib"))
 from utils.transform import (
@@ -80,47 +80,61 @@ def parse_geographic_columns(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     Expands the string found in the column named `location` in the given
     *df*, creating four new columns. Returns the modified ``pd.DataFrame``.
     """
-    def titlecase_non_whitelisted_tokens(tokens: Union[List[str],
-        pd._libs.missing.NAType]) -> Optional[str]:
+    def titlecase(text: Union[str, pd._libs.missing.NAType],
+        articles: Set[str] = {}, abbrev: Set[str] = {}) -> Optional[str]:
         """
         Returns a title cased location name from the given location name
-        *tokens*. Ensures that no tokens contained in the *whitelist_tokens* or
-        matching the *whitelist_regex* pattern(s) are converted to title case.
+        *tokens*. Ensures that no tokens contained in the *whitelist_tokens* are
+        converted to title case.
+
+        >>> articles = {'a', 'and', 'of', 'the', 'le'}
+        >>> abbrev = {'USA', 'DC'}
+
+        >>> titlecase("the night OF THE LIVING DEAD", articles)
+        'The Night of the Living Dead'
+
+        >>> titlecase("BRAINE-LE-COMTE, FRANCE", articles)
+        'Braine-le-Comte, France'
+
+        >>> titlecase("auvergne-RHÔNE-alpes", articles)
+        'Auvergne-Rhône-Alpes'
+
+        >>> titlecase("washington DC, usa", articles, abbrev)
+        'Washington DC, USA'
         """
-        if not isinstance(tokens, list):
+        if not isinstance(text, str):
             return
 
-        return ' '.join([
-            w.title()
-            if w not in whitelist_tokens
-            and not re.match(whitelist_regex, w)
-            else w
-            for w in tokens
-        ])
+        words = enumerate(regex.split(r'\b', text, flags=regex.V1))
+
+        def changecase(index, word):
+            casefold = word.casefold()
+            upper = word.upper()
+
+            if upper in abbrev:
+                return upper
+            elif casefold in articles and index != 1:
+                return word.lower()
+            else:
+                return word.title()
+
+        return ''.join(changecase(i, w) for i, w in words)
 
     geographic_data = gisaid_data['location'].str.split(r'\s*/\s*', expand=True)
     location_columns = ['region', 'country', 'division', 'location']
 
-    # Manually curate set of tokens and patterns that should not be cast to
-    # title case
+    # Manually curate set of tokens that should not be cast to title case
     articles = {
         'de', 'del', 'di', 'do', 'la', 'le', 'las', 'los', 'nad', 'of', 'op',
         'the', 'y'
     }
     abbrev = {'USA', 'DC'}
-    whitelist_tokens = articles | abbrev
-    # Some Francophone locations are hyphen-delimited (e.g. Braine-le-Comte).
-    # These names don't get split into separate tokens, but all pieces are
-    # capitalized by `.title()`. Assume these names are already properly cased,
-    # and prevent them from being transformed.
-    whitelist_regex = r'\S*-le?-?'
 
     for index, column in enumerate(location_columns):
         gisaid_data[column] = geographic_data[index] \
             .str.replace('_', ' ') \
             .str.strip() \
-            .str.split() \
-            .apply(titlecase_non_whitelisted_tokens)
+            .apply(lambda text: titlecase(text, articles, abbrev))
 
     return gisaid_data
 
