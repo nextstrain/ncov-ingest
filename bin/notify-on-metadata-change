@@ -15,6 +15,12 @@ additions="$(mktemp -t metadata-additions-XXXXXX)"
 
 trap "rm -f '$dst_local' '$diff' '$additions'" EXIT
 
+# if the file is not already present, just exit
+s3path="${2#s3://}"
+bucket="${dst_s3path%%/*}"
+key="${dst_s3path#*/}"
+aws s3api head-object --bucket $bucket --key $key || exit 0
+
 aws s3 cp --no-progress "$dst" - | gunzip -cfq > "$dst_local"
 
 csv-diff \
