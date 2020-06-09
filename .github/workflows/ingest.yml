@@ -4,7 +4,7 @@ on:
   push:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    # "At minute 0 past every 4th hour"
+    # "At minute 0 past every 6th hour"
     - cron:  '0 */6 * * *'
 
   # Manually triggered using `./bin/trigger ingest`

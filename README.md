@@ -11,7 +11,7 @@ If you're using Pipenv (see below), then run commands from `./bin/…` inside a 
 
 ## Running automatically
 The fetch and transform pipeline exists as a GitHub workflow at `.github/workflows/fetch-and-transform.yml`.
-It is scheduled to run every 15 minutes and on pushes to `master`.
+It is scheduled to run every 6 hours and on pushes to `master`.
 
 AWS credentials are stored in this repository's secrets and are associated with the `nextstrain-ncov-ingest-uploader` IAM user in the Bedford Lab AWS account, which is locked down to reading and publishing only the `gisaid.ndjson`, `metadata.tsv`, and `sequences.fasta` files and their zipped equivalents in the `nextstrain-ncov-private` S3 bucket.
 
