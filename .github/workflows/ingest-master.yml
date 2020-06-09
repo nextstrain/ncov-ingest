@@ -2,6 +2,13 @@ name: Ingest 2019-nCov/SARS-CoV-2 data from GISAID for nextstrain.org/ncov
 
 on:
   push:
+    branches:
+      - master
+    tags-ignore:
+      - '**'
+    paths:
+      - source-data/annotations.tsv
+
   schedule:
     # * is a special character in YAML so you have to quote this string
     # "At minute 0 past every 6th hour"
