@@ -10,7 +10,7 @@ If you're using Pipenv (see below), then run commands from `./bin/…` inside a 
 3. Look at `data/sequences.fasta` and `data/metadata.tsv`
 
 ## Running automatically
-The fetch and transform pipeline exists as a GitHub workflow at `.github/workflows/fetch-and-transform.yml`.
+The ingest pipeline exists as the GitHub workflows `.github/workflows/ingest-master.yml` and `…/ingest-branch.yml`.
 It is scheduled to run four times a day, on pushes to `master` that modify `source-data/annotations.tsv`, and on pushes to other branches.
 Pushes to branches other than `master` upload files to branch-specific paths in the S3 bucket, don't send notifications, and don't trigger Nextstrain rebuilds, so that they don't interfere with the production data.
 
