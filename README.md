@@ -11,8 +11,19 @@ If you're using Pipenv (see below), then run commands from `./bin/…` inside a 
 
 ## Running automatically
 The fetch and transform pipeline exists as a GitHub workflow at `.github/workflows/fetch-and-transform.yml`.
-It is scheduled to run every 6 hours, on pushes to `master` that modify `source-data/annotations.tsv`, and on pushes to other branches.
+It is scheduled to run four times a day, on pushes to `master` that modify `source-data/annotations.tsv`, and on pushes to other branches.
 Pushes to branches other than `master` upload files to branch-specific paths in the S3 bucket, don't send notifications, and don't trigger Nextstrain rebuilds, so that they don't interfere with the production data.
+
+The current schedule as of 10 June 2020 is:
+
+| UTC         | Seattle     | Basel       |
+| ----------- | ----------- | ----------- |
+| 06:00:00+00 | 23:00:00-07 | 08:00:00+02 |
+| 12:00:00+00 | 05:00:00-07 | 14:00:00+02 |
+| 15:00:00+00 | 08:00:00-07 | 17:00:00+02 |
+| 21:00:00+00 | 14:00:00-07 | 23:00:00+02 |
+
+(time zone math courtesy of [this PostgreSQL query](https://gist.github.com/tsibley/2237b487ad022b3fdf62937fa94cf216))
 
 AWS credentials are stored in this repository's secrets and are associated with the `nextstrain-ncov-ingest-uploader` IAM user in the Bedford Lab AWS account, which is locked down to reading and publishing only the `gisaid.ndjson`, `metadata.tsv`, and `sequences.fasta` files and their zipped equivalents in the `nextstrain-ncov-private` S3 bucket.
 

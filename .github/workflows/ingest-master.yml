@@ -10,9 +10,8 @@ on:
       - source-data/annotations.tsv
 
   schedule:
-    # * is a special character in YAML so you have to quote this string
-    # "At minute 0 past every 6th hour"
-    - cron:  '0 */6 * * *'
+    # See table of scheduled times in the README.  Times here are UTC.
+    - cron: '0 6,12,15,21 * * *'
 
   # Manually triggered using `./bin/trigger ingest`
   repository_dispatch:
