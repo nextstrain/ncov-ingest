@@ -2,15 +2,28 @@
 
 # Paul Gordon, 2020
 # Script to read in Zotero bibliographic information (RDF) and create annotations for NextStrain that link individual virus names back to the most suitable (as defined by manual override or earliest date) publication that references them.
+# This script will strip all of the existing references out of the annotations file and replace them, so that the entire collection can be reconciled with the latest bibliographic information (e.g. a sample can have a pre-print URL, but then eventually
+# this gets replaced with a paper URL, and we don't want to have to remove the old prepirnt URL manully (since it's a 1:1 relationship for now for sample:paper_url).
 
 use strict;
 use warnings;
 use RDF::Simple::Parser;
 
-@ARGV > 2 or die "Usage: $0 <sample2precedent.txt> <gisaid_patient_status_metadata.txt> file:zotero_bibliography_file1.rdf [...file2.rdf...]\n";
+@ARGV > 3 or die "Usage: $0 <existing_annotations.tsv> <sample2override_url.txt> <gisaid_patient_status_metadata.txt> file:zotero_bibliography_file1.rdf [...file2.rdf...]\n";
 
+my $annotations_file = shift @ARGV;
 my $override_file = shift @ARGV;
 my $gisaid_metadata_file = shift @ARGV;
+
+open(ANNOTATIONS, $annotations_file)
+  or die "Cannot open existing annotations file $annotations_file for reading: $!\n";
+my @existing_annotations;
+while(<ANNOTATIONS>){
+	my @F = split /\t/, $_;
+	next if not /^\s*#/ and ($F[2] eq "paper_url" or $F[2] eq "title");
+	push @existing_annotations, $_;
+}
+close(ANNOTATIONS);
 
 open(OVERRIDE, $override_file)
   or die "Cannot open $override_file for reading: $!\n";
@@ -106,15 +119,18 @@ for my $uri (@ARGV){
 	}
 }
 
-binmode STDOUT, ":encoding(UTF-8)"; # get rid of wide character printing warnings
+open(ANNOTATIONS, ">$annotations_file")
+  or die "Cannot open existing annotations file $annotations_file for reading: $!\n";
+#binmode ANNOTATIONS, ":encoding(UTF-8)"; # get rid of wide character printing warnings
+print ANNOTATIONS @existing_annotations;
 for my $sample (sort keys %sample2url){
 	my $url = $sample2url{$sample};
 	if(not exists $url2title{$url}){
 		warn "No title found in the RDF data for URL '$url', skipping\n";
 		next;
 	}
-	print "$sample\t$sample2gisaid_id{$sample}\ttitle\t\"$url2title{$url}\"\n";
-	print "$sample\t$sample2gisaid_id{$sample}\tpaper_url\t$url\n";
+	print ANNOTATIONS "$sample\t$sample2gisaid_id{$sample}\ttitle\t\"$url2title{$url}\"\n";
+	print ANNOTATIONS "$sample\t$sample2gisaid_id{$sample}\tpaper_url\t$url\n";
 }
 
 # There is a limit in Zotero on the size of an "extra" annotation, so we need to carefully add very long lists of IDs close to primry sources, like the UK COG Consortium phylodynamic analysis with 16K entries, to the superceding file
@@ -135,6 +151,7 @@ for my $sample (keys %superceding_sample2url){
 		warn "Skipping output for '$sample' in the superceding file ($override_file) because it was not defined in the GISAID metadata file $gisaid_metadata_file, either a typo or metadata needs updating.\n";
 		next;
 	}
-	print "$sample\t$sample2gisaid_id{$sample}\ttitle\t\"",$url2title{$superceding_sample2url{$sample}},"\"\n";
-	print "$sample\t$sample2gisaid_id{$sample}\tpaper_url\t$url\n";
+	print ANNOTATIONS "$sample\t$sample2gisaid_id{$sample}\ttitle\t\"",$url2title{$superceding_sample2url{$sample}},"\"\n";
+	print ANNOTATIONS "$sample\t$sample2gisaid_id{$sample}\tpaper_url\t$url\n";
 }
+close(ANNOTATIONS);
