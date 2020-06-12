@@ -84,7 +84,7 @@ def parse_geographic_columns(genbank_data: pd.DataFrame) -> pd.DataFrame:
     Expected formats of the location string are:
         * "country"
         * "country: division"
-        * "country: location, division
+        * "country: division, location"
     """
     # Create dict of US state codes and their full names
     us_states = pd.read_csv(base / 'source-data/us-state-codes.tsv', header=None, sep='\t', comment="#")
@@ -105,14 +105,22 @@ def parse_geographic_columns(genbank_data: pd.DataFrame) -> pd.DataFrame:
             division = value[1]
         # Location and division are both available
         elif ',' in value[1]:
-            location,division = value[1].split(',', 1)
+            division,location = value[1].split(',', 1)
         # Unknown format of location data
         else:
             assert False, f"Found unknown format for geographic data: {value}"
 
-        # Convert US state codes to full names
-        if value[0] == 'USA' and division and us_states.get(division.strip()):
-            division = us_states[division.strip()]
+        # Special parsing for US locations because the format varies
+        if value[0] == 'USA' and division:
+            # Switch location & division if location is a US state
+            if location and any(location.strip() in s for s in us_states.items()):
+                state = location
+                location = division
+                division = state
+            # Convert US state codes to full names
+            if us_states.get(division.strip()):
+                division = us_states[division.strip()]
+
 
         location = location.strip().lower().title() if location else None
         division = division.strip().lower().title() if division else None
