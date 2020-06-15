@@ -12,7 +12,7 @@ import pandas as pd
 METADATA_COLUMNS = [  # Ordering of columns in the existing metadata.tsv in the ncov repo
     'strain', 'virus', 'gisaid_epi_isl', 'genbank_accession', 'date', 'region',
     'country', 'division', 'location', 'region_exposure', 'country_exposure',
-    'division_exposure', 'segment', 'length', 'host', 'age', 'sex',
+    'division_exposure', 'segment', 'length', 'host', 'age', 'sex', 'pangolin_lineage', 'GISAID_clade',
     'originating_lab', 'submitting_lab', 'authors', 'url', 'title', 'paper_url',
     'date_submitted'
 ]
@@ -42,6 +42,8 @@ def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
         'covv_authors'          : 'authors',
         'covv_patient_age'      : 'age',
         'covv_gender'           : 'sex',
+        'covv_lineage'          : 'pangolin_lineage',
+        'covv_clade'            : 'GISAID_clade',
         'covv_add_host_info'    : 'additional_host_info',
         'covv_add_location'     : 'additional_location_info',
         'covv_subm_date'        : 'date_submitted',
