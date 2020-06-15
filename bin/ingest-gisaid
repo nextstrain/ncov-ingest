@@ -43,25 +43,22 @@ set -x
 
 ./bin/fetch-from-gisaid > data/gisaid.ndjson
 if [[ "$branch" == master ]]; then
-    ./bin/notify-on-gisaid-change data/gisaid.ndjson "$S3_SRC/gisaid.ndjson.gz"
+    ./bin/notify-on-record-change data/gisaid.ndjson "$S3_SRC/gisaid.ndjson.gz" "GISAID"
 fi
 ./bin/upload-to-s3 --quiet data/gisaid.ndjson "$S3_DST/gisaid.ndjson.gz"
 
-./bin/transform data/gisaid.ndjson \
-  --output-metadata data/metadata.tsv \
-  --output-fasta data/sequences.fasta
+./bin/transform-gisaid data/gisaid.ndjson \
+  --output-metadata data/gisaid/metadata.tsv \
+  --output-fasta data/gisaid/sequences.fasta
 
 if [[ "$branch" == master ]]; then
-    ./bin/notify-on-metadata-change data/metadata.tsv "$S3_SRC/metadata.tsv.gz"
-    ./bin/notify-on-additional-info-change data/additional_info.tsv "$S3_SRC/additional_info.tsv.gz"
+    ./bin/notify-on-metadata-change data/gisaid/metadata.tsv "$S3_SRC/metadata.tsv.gz" gisaid_epi_isl
+    ./bin/notify-on-additional-info-change data/gisaid/additional_info.tsv "$S3_SRC/additional_info.tsv.gz"
 
-    ./bin/rebuild-staging data/metadata.tsv "$S3_SRC/metadata.tsv.gz" \
-      data/sequences.fasta "$S3_SRC/sequences.fasta.gz"
+    ./bin/rebuild-staging data/gisaid/metadata.tsv "$S3_SRC/metadata.tsv.gz" \
+      data/gisaid/sequences.fasta "$S3_SRC/sequences.fasta.gz"
 fi
 
-./bin/upload-to-s3 ${silent:+--quiet} data/metadata.tsv "$S3_DST/metadata.tsv.gz"
-./bin/upload-to-s3 ${silent:+--quiet} data/additional_info.tsv "$S3_DST/additional_info.tsv.gz"
-./bin/upload-to-s3 ${silent:+--quiet} data/sequences.fasta "$S3_DST/sequences.fasta.gz"
-
-./bin/fetch-from-genbank > data/genbank.ndjson
-./bin/upload-to-s3 ${silent:+--quiet} data/genbank.ndjson "$S3_DST/genbank.ndjson.gz"
+./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/metadata.tsv "$S3_DST/metadata.tsv.gz"
+./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/additional_info.tsv "$S3_DST/additional_info.tsv.gz"
+./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/sequences.fasta "$S3_DST/sequences.fasta.gz"

@@ -1,0 +1,15 @@
+#!/bin/bash
+set -euo pipefail
+
+: "${SLACK_TOKEN:?The SLACK_TOKEN environment variable is required.}"
+
+bin="$(dirname "$0")"
+
+problem_data="${1:?A problem data TSV file is required as the first argument.}"
+
+if [[ -s "$problem_data" ]]; then
+    echo "Notifying Slack about problem data."
+    "$bin"/notify-slack --upload "genbank-problem-data.tsv" < "$problem_data"
+else
+    echo "No problem data found."
+fi

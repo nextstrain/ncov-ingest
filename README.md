@@ -6,8 +6,8 @@ Internal tooling for the Nextstrain team to ingest and curate SARS-CoV-2 genome 
 If you're using Pipenv (see below), then run commands from `./bin/…` inside a `pipenv shell` or wrapped with `pipenv run ./bin/…`.
 
 1. Run `./bin/fetch-from-gisaid > data/gisaid.ndjson`
-2. Run `./bin/transform data/gisaid.ndjson`
-3. Look at `data/sequences.fasta` and `data/metadata.tsv`
+2. Run `./bin/transform-gisaid data/gisaid.ndjson`
+3. Look at `data/gisaid/sequences.fasta` and `data/gisaid/metadata.tsv`
 
 ## Running automatically
 The ingest pipeline exists as the GitHub workflows `.github/workflows/ingest-master.yml` and `…/ingest-branch.yml`.
@@ -33,13 +33,13 @@ If you want to only trigger a rebuild of [nextstrain/ncov](https://github.com/ne
 See the output of `./bin/trigger ingest` or `./bin/trigger rebuild` for more information about authentication with GitHub.
 
 ## Updating manual annotations
-Manual annotations should be added to `source-data/annotations.tsv`.
+Manual annotations should be added to `source-data/gisaid_annotations.tsv`.
 A common pattern is expected to be:
 
  1. Run <https://github.com/nextstrain/ncov>.
  2. Discover metadata that needs fixing.
- 3. Update `source-data/annotations.tsv`.
- 4. Push changes to `master` and re-download `metadata.tsv`.
+ 3. Update `source-data/gisaid_annotations.tsv`.
+ 4. Push changes to `master` and re-download `gisaid/metadata.tsv`.
 
 ## Required dependencies
 Run `pipenv sync` to setup an isolated Python 3.6 environment using the pinned dependencies.
