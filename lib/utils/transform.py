@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
+import regex
 import fsspec
 import pandas as pd
+from typing import List, Optional, Set, Union
 
 # Note: 'sequence' should NEVER appear in these lists!
 METADATA_COLUMNS = [  # Ordering of columns in the existing metadata.tsv in the ncov repo
@@ -78,3 +80,44 @@ def write_fasta_file(sequence_data: pd.DataFrame, output_fasta: str):
         for index, row in sequence_data.iterrows():
             fastafile.write(f">{row['strain']}\n")
             fastafile.write(f"{row['sequence']}\n")
+
+
+def titlecase(text: Union[str, pd._libs.missing.NAType],
+    articles: Set[str] = {}, abbrev: Set[str] = {}) -> Optional[str]:
+    """
+    Returns a title cased location name from the given location name
+    *tokens*. Ensures that no tokens contained in the *whitelist_tokens* are
+    converted to title case.
+
+    >>> articles = {'a', 'and', 'of', 'the', 'le'}
+    >>> abbrev = {'USA', 'DC'}
+
+    >>> titlecase("the night OF THE LIVING DEAD", articles)
+    'The Night of the Living Dead'
+
+    >>> titlecase("BRAINE-LE-COMTE, FRANCE", articles)
+    'Braine-le-Comte, France'
+
+    >>> titlecase("auvergne-RHÔNE-alpes", articles)
+    'Auvergne-Rhône-Alpes'
+
+    >>> titlecase("washington DC, usa", articles, abbrev)
+    'Washington DC, USA'
+    """
+    if not isinstance(text, str):
+        return
+
+    words = enumerate(regex.split(r'\b', text, flags=regex.V1))
+
+    def changecase(index, word):
+        casefold = word.casefold()
+        upper = word.upper()
+
+        if upper in abbrev:
+            return upper
+        elif casefold in articles and index != 1:
+            return word.lower()
+        else:
+            return word.title()
+
+    return ''.join(changecase(i, w) for i, w in words)

@@ -13,6 +13,7 @@ from utils.transform import (
     standardize_dataframe,
     fill_default_geo_metadata,
     write_fasta_file,
+    titlecase,
 )
 
 # Preserve the ordering of these columns for ease when generating Slack
@@ -81,8 +82,18 @@ def parse_geographic_columns(gisaid_data: pd.DataFrame) -> pd.DataFrame:
     geographic_data = gisaid_data['location'].str.split(r'\s*/\s*', expand=True)
     location_columns = ['region', 'country', 'division', 'location']
 
+    # Manually curate set of tokens that should not be cast to title case
+    articles = {
+        'de', 'del', 'des', 'di', 'do', 'en', 'l', 'la', 'las', 'le', 'los',
+        'nad', 'of', 'op', 'sur', 'the', 'y'
+    }
+    abbrev = {'USA', 'DC'}
+
     for index, column in enumerate(location_columns):
-        gisaid_data[column] = geographic_data[index].str.replace('_', ' ').str.strip()
+        gisaid_data[column] = geographic_data[index] \
+            .str.replace('_', ' ') \
+            .str.strip() \
+            .apply(lambda text: titlecase(text, articles, abbrev))
 
     return gisaid_data
 

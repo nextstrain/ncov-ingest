@@ -12,6 +12,7 @@ fsspec = "*"
 pandas = ">=1.0.1"
 s3fs = "*"
 biopython = "*"
+regex = "*"
 
 [requires]
 python_version = "3.6"
