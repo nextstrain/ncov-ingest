@@ -1,0 +1,33 @@
+#!/usr/bin/env python3
+"""
+Creates a list of flagged sequences from the provided metadata TSV in the
+Nextstrain exclusions.txt convention. Prints the list to stdout.
+"""
+import logging
+import argparse
+import pandas as pd
+from pathlib import Path
+from datetime import date
+
+
+LOG = logging.getLogger(__name__)
+
+
+if __name__ == '__main__':
+    base = Path(__file__).resolve().parent.parent
+
+    parser = argparse.ArgumentParser(
+        description="Warn about future dates in a metadata TSV file.",
+        formatter_class=argparse.RawTextHelpFormatter
+    )
+    parser.add_argument("metadata",
+        nargs="?",
+        default=base / "data/gisaid/metadata.tsv",
+        help="Location of generated metadata tsv. Defaults to `data/gisaid/metadata.tsv`")
+    args = parser.parse_args()
+
+    metadata = pd.read_csv(args.metadata, sep="\t")
+    metadata.loc[metadata.date > str(date.today()), 'reason'] = '# Collection date in the future'
+    flagged_strains = metadata.loc[metadata.reason.notnull()]
+
+    print(flagged_strains[['strain', 'reason']].to_csv(header=False, index=False, sep='\t'))
