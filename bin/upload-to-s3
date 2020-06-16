@@ -35,7 +35,7 @@ main() {
             gzip -c "$src"
         else
             cat "$src"
-        fi | aws s3 cp --no-progress - "$dst" --metadata sha256sum="$src_hash"
+        fi | aws s3 cp --no-progress - "$dst" --metadata sha256sum="$src_hash" $(content-type "$dst") $(content-encoding "$dst")
 
         if [[ $quiet == 1 ]]; then
             echo "Quiet mode. No Slack notification sent."
@@ -48,6 +48,21 @@ main() {
     else
         echo "Files are identical, skipping upload"
     fi
+}
+
+content-type() {
+    case "${1%.gz}" in
+        *.tsv)      echo --content-type=text/tab-separated-values;;
+        *.csv)      echo --content-type=text/comma-separated-values;;
+        *.ndjson)   echo --content-type=application/x-ndjson;;
+        *)          echo --content-type=text/plain;;
+    esac
+}
+
+content-encoding() {
+    case "$1" in
+        *.gz) echo --content-encoding=gzip;;
+    esac
 }
 
 main "$@"
