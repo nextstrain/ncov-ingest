@@ -226,7 +226,8 @@ def find_and_drop_problem_records(genbank_data: pd.DataFrame) -> pd.DataFrame:
         | (~(genbank_data.strain.str.match(strain_name_regex)) & (genbank_data.strain != 'Wuhan-Hu-1/2019'))]
 
     # Print problem records for manual curation
-    problem_data[['genbank_accession', 'strain', 'region', 'country', 'url']].to_csv(args.problem_data, sep='\t', index=False)
+    if not problem_data.empty:
+        problem_data[['genbank_accession', 'strain', 'region', 'country', 'url']].to_csv(args.problem_data, sep='\t', index=False)
 
     # Drop entries without geographic region or with wrong strain name structure
     genbank_data.drop(problem_data.index, inplace=True)
