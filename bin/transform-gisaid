@@ -242,13 +242,13 @@ if __name__ == '__main__':
         "Wuhan-Hu-1/2019 EPI_ISL_402125    collection_date 2019-12-26 # Manually corrected date")
     parser.add_argument("--output-metadata",
         default=base / "data/gisaid/metadata.tsv",
-        help="Output location of generated metadata tsv. Defaults to `data/metadata.tsv`")
+        help="Output location of generated metadata tsv. Defaults to `data/gisaid/metadata.tsv`")
     parser.add_argument("--output-fasta",
         default=base / "data/gisaid/sequences.fasta",
-        help="Output location of generated FASTA file. Defaults to `data/sequences.fasta`")
+        help="Output location of generated FASTA file. Defaults to `data/gisaid/sequences.fasta`")
     parser.add_argument("--output-additional-info",
         default=base / "data/gisaid/additional_info.tsv",
-        help="Output location of additional info tsv. Defaults to `data/additional_info.tsv`")
+        help="Output location of additional info tsv. Defaults to `data/gisaid/additional_info.tsv`")
     args = parser.parse_args()
 
 
