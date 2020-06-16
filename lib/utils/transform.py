@@ -24,14 +24,14 @@ def standardize_dataframe(df: pd.DataFrame, column_mapper: dict) -> pd.DataFrame
     # script can assume it exists.
     for field in column_mapper:
         if field not in df:
-            df[field] = pd.NA
+            df[field] = pd.Series(dtype="string")
 
     df.rename(column_mapper, axis='columns', inplace=True)
 
     # Normalize all string columns to Unicode Normalization Form C, for
     # consistent, predictable string comparisons.
     for column in df:
-        if df[column].notnull().any() and df[column].dtype == "string":
+        if df[column].dtype == "string":
             df[column] = df[column].str.normalize("NFC").str.strip()
 
     # Drop entries with length less than 15kb and reset index
