@@ -84,7 +84,7 @@ def parse_geographic_columns(gisaid_data: pd.DataFrame) -> pd.DataFrame:
 
     # Manually curate set of tokens that should not be cast to title case
     articles = {
-        'de', 'del', 'des', 'di', 'do', 'en', 'l', 'la', 'las', 'le', 'los',
+        'and', 'de', 'del', 'des', 'di', 'do', 'en', 'l', 'la', 'las', 'le', 'los',
         'nad', 'of', 'op', 'sur', 'the', 'y'
     }
     abbrev = {'USA', 'DC'}
