@@ -31,7 +31,7 @@ def standardize_dataframe(df: pd.DataFrame, column_mapper: dict) -> pd.DataFrame
     # Normalize all string columns to Unicode Normalization Form C, for
     # consistent, predictable string comparisons.
     for column in df:
-        if df[column].dtype == "string":
+        if df[column].notnull().any() and df[column].dtype == "string":
             df[column] = df[column].str.normalize("NFC").str.strip()
 
     # Drop entries with length less than 15kb and reset index
