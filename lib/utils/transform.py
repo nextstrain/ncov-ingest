@@ -24,7 +24,7 @@ def standardize_dataframe(df: pd.DataFrame, column_mapper: dict) -> pd.DataFrame
     # script can assume it exists.
     for field in column_mapper:
         if field not in df:
-            df[field] = pd.NA
+            df[field] = pd.Series(dtype="string")
 
     df.rename(column_mapper, axis='columns', inplace=True)
 
