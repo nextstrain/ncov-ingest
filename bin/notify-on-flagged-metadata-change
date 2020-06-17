@@ -14,6 +14,9 @@ diff="$(mktemp -t flagged-metadata-additions-XXXXXX)"
 
 trap "rm -f '$dst_local' '$diff'" EXIT
 
+# if the file is not already present, just exit
+"$bin"/s3-object-exists "$dst" || exit 0
+
 aws s3 cp --no-progress "$dst" - | gunzip -cfq > "$dst_local"
 
 comm -13 \
