@@ -64,5 +64,5 @@ fi
 
 ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/metadata.tsv "$S3_DST/metadata.tsv.gz"
 ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/additional_info.tsv "$S3_DST/additional_info.tsv.gz"
-./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/flagged_metadata.txt "$S3_DST/flagged_metadata.txt.gz"
+# ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/flagged_metadata.txt "$S3_DST/flagged_metadata.txt.gz"
 ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/sequences.fasta "$S3_DST/sequences.fasta.gz"
