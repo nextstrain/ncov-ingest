@@ -2,6 +2,7 @@
 import regex
 import fsspec
 import pandas as pd
+from datetime import datetime
 from typing import List, Optional, Set, Union
 
 # Note: 'sequence' should NEVER appear in these lists!
@@ -35,6 +36,12 @@ def standardize_dataframe(df: pd.DataFrame, column_mapper: dict) -> pd.DataFrame
     for column in df:
         if df[column].dtype == "string":
             df[column] = df[column].str.normalize("NFC").str.strip()
+
+    # Standardize date format to ISO 8601 date
+    date_columns = {'date', 'date_submitted'}
+    date_formats = {'%Y-%m-%d', '%Y-%m-%dT%H:%M:%SZ'}
+    for column in date_columns:
+        df[column] = df[column].apply(lambda x: format_date(x, date_formats))
 
     # Drop entries with length less than 15kb and reset index
     df = df \
@@ -121,3 +128,34 @@ def titlecase(text: Union[str, pd._libs.missing.NAType],
             return word.title()
 
     return ''.join(changecase(i, w) for i, w in words)
+
+
+def format_date(date_string: str, expected_formats: set) -> str:
+    """
+    Format *date_string* to ISO 8601 date (YYYY-MM-DD).
+    If *date_string* does not match *expected_formats*, return *date_string*.
+
+    >>> expected_formats = {'%Y-%m-%d', '%Y-%m-%dT%H:%M:%SZ'}
+
+    >>> format_date("2020", expected_formats)
+    '2020'
+
+    >>> format_date("2020-01", expected_formats)
+    '2020-01'
+
+    >>> format_date("2020-1-15", expected_formats)
+    '2020-01-15'
+
+    >>> format_date("2020-01-15", expected_formats)
+    '2020-01-15'
+
+    >>> format_date("2020-01-15T00:00:00Z", expected_formats)
+    '2020-01-15'
+    """
+    for format in expected_formats:
+        try:
+            return datetime.strptime(date_string, format).strftime('%Y-%m-%d')
+        except ValueError:
+            continue
+
+    return date_string
