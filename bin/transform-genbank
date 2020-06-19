@@ -152,19 +152,6 @@ def parse_authors(genbank_data: pd.DataFrame) -> pd.DataFrame:
     return genbank_data
 
 
-def format_date_columns(genbank_data: pd.DataFrame) -> pd.DataFrame:
-    """
-    Format the date columns of *genbank_data* to have the format
-    %Y-%m-%d and return the modified DataFrame.
-    """
-    date_columns = ['date', 'date_submitted']
-
-    for column in date_columns:
-        genbank_data[column] = pd.to_datetime(genbank_data[column]).dt.strftime('%Y-%m-%d')
-
-    return genbank_data
-
-
 def generate_hardcoded_metadata(genbank_data: pd.DataFrame) -> pd.DataFrame:
     """
     Returns a DataFrame with a column for GenBank accession plus
@@ -282,7 +269,6 @@ if __name__ == '__main__':
     genbank_data = standardize_strain_names(genbank_data)
     genbank_data = parse_geographic_columns(genbank_data)
     genbank_data = parse_authors(genbank_data)
-    genbank_data = format_date_columns(genbank_data)
     genbank_data = update_metadata(genbank_data)
     genbank_data = find_and_drop_problem_records(genbank_data)
 
