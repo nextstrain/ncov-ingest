@@ -146,6 +146,9 @@ def format_date(date_string: str, expected_formats: set) -> str:
     >>> format_date("2020-1-15", expected_formats)
     '2020-01-15'
 
+    >>> format_date("2020-1-1", expected_formats)
+    '2020-01-01'
+
     >>> format_date("2020-01-15", expected_formats)
     '2020-01-15'
 
