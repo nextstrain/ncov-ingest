@@ -155,9 +155,9 @@ def format_date(date_string: str, expected_formats: set) -> str:
     >>> format_date("2020-01-15T00:00:00Z", expected_formats)
     '2020-01-15'
     """
-    for format in expected_formats:
+    for date_format in expected_formats:
         try:
-            return datetime.strptime(date_string, format).strftime('%Y-%m-%d')
+            return datetime.strptime(date_string, date_format).strftime('%Y-%m-%d')
         except ValueError:
             continue
 
