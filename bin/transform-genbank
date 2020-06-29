@@ -118,8 +118,8 @@ def parse_geographic_columns(genbank_data: pd.DataFrame) -> pd.DataFrame:
                 location = division
                 division = state
             # Convert US state codes to full names
-            if us_states.get(division.strip()):
-                division = us_states[division.strip()]
+            if us_states.get(division.strip().upper()):
+                division = us_states[division.strip().upper()]
 
 
         location = location.strip().lower().title() if location else None
