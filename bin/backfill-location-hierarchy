@@ -15,7 +15,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "lib"))
 from utils.hierarchy_dataframe import hierarchy_dataframe
 
 
-LOCATION_HIERARCHY_COLUMNS = ['region', 'country', 'division']
+LOCATION_HIERARCHY_COLUMNS = ['region', 'country', 'division', 'location']
 
 
 if __name__ == '__main__':

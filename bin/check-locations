@@ -14,18 +14,23 @@ from typing import List
 sys.path.insert(0, str(Path(__file__).parent.parent / "lib"))
 from utils.hierarchy_dataframe import hierarchy_dataframe
 
-LOCATION_HIERARCHY_COLUMNS = ['region', 'country', 'division']
+LOCATION_HIERARCHY_COLUMNS = ['region', 'country', 'division', 'location']
 
 
 def validate_metadata(metadata: pd.DataFrame, columns: List[str]):
     def no_missing_hierarchy_data():
         """
         Raises an ``AssertionError`` if the metadata have missing values in the
-        given location hierarchy *columns*.
+        given location hierarchy *columns* (except for 'location', which is
+        allowed to have missing values).
         """
-        non_null_columns = columns.copy()
+        try:
+            non_null_columns = columns.copy()
+            non_null_columns.remove('location')
+        except ValueError:
+            non_null_columns = columns
 
-        non_null_columns += [ f"{resolution}_exposure" for resolution in non_null_columns ]
+        non_null_columns = [ f"{resolution}_exposure" for resolution in non_null_columns ]
 
         assert metadata[non_null_columns].notnull().all().all(), \
             "There are missing values in the location hierarchy columns " \
