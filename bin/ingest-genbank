@@ -50,10 +50,14 @@ fi
 ./bin/transform-genbank data/genbank.ndjson \
     --output-metadata data/genbank/metadata.tsv \
     --output-fasta data/genbank/sequences.fasta
+./bin/check-locations data/genbank/metadata.tsv \
+    data/genbank/location_hierarchy.tsv \
+    genbank_accession
 
 if [[ "$branch" == master ]]; then
     ./bin/notify-on-metadata-change data/genbank/metadata.tsv "$S3_SRC/genbank_metadata.tsv.gz" genbank_accession
     ./bin/notify-on-problem-data data/genbank/problem_data.tsv
+    ./bin/notify-on-location-hierarchy-change data/genbank/location_hierarchy.tsv source-data/location_hierarchy.tsv
 fi
 
 ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/metadata.tsv "$S3_DST/genbank_metadata.tsv.gz"
