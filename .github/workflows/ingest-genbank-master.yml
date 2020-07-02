@@ -9,10 +9,6 @@ on:
     paths:
       - source-data/genbank_annotations.tsv
 
-  schedule:
-    # See table of scheduled times in the README.  Times here are UTC.
-    - cron: '0 6,12,15,21 * * *'
-
   # Manually triggered using `./bin/trigger ingest`
   repository_dispatch:
     types: ingest
