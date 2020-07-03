@@ -30,6 +30,15 @@ A common pattern is expected to be:
  3. Update `source-data/gisaid_annotations.tsv`.
  4. Push changes to `master` and re-download `gisaid/metadata.tsv`.
 
+## Updating manual location hierarchy
+New location hierarchies should be manually added to `source-data/location_hierarchy.tsv`.
+A common pattern is expected to be:
+
+ 1. Run the ingest.
+ 2. Discover new location hierarchies via Slack that need review.
+ 3. Update `source-data/location_hierarchy.tsv`.
+ 4. Push changes to `master` so the next ingest will have an updated "source of truth" to draw from.
+
 ## Required dependencies
 Run `pipenv sync` to setup an isolated Python 3.6 environment using the pinned dependencies.
 
@@ -42,3 +51,4 @@ If you don't have Pipenv, [install it](https://pipenv.pypa.io/en/latest/install/
 * `AWS_ACCESS_KEY_ID`
 * `AWS_SECRET_ACCESS_KEY`
 * `SLACK_TOKEN`
+* `SLACK_CHANNELS`
