@@ -137,6 +137,7 @@ Asia	China	Zhejiang	Keqiao
 Asia	China	Zhejiang	Lishui
 Asia	China	Zhejiang	Shangyu
 Asia	China	Zhejiang	Yuecheng
+Asia	Georgia	Georgia	
 Asia	Georgia	Tbilisi	
 Asia	Hong Kong	Hong Kong	
 Asia	Hong Kong	Hong Kong	Hong Kong
@@ -284,6 +285,7 @@ Asia	Japan	Tokyo	Tokyo
 Asia	Jordan	Amman	
 Asia	Jordan	Irbid	
 Asia	Kazakhstan	Nur-Sultan	
+Asia	Kazakhstan	Kazakhstan	
 Asia	Kuwait	Kuwait	
 Asia	Kuwait	Kuwait	Dasman
 Asia	Kuwait	Kuwait	Hawali
@@ -302,6 +304,7 @@ Asia	Oman	Dakhiliyah
 Asia	Oman	Muscat	
 Asia	Oman	North Batinah	
 Asia	Oman	South Batinah	
+Asia	Pakistan	Gilgit Baltistan	
 Asia	Pakistan	Gilgit Baltistan	Gilgit
 Asia	Pakistan	Islamabad	
 Asia	Pakistan	Islamabad Capital Territory	
@@ -342,6 +345,7 @@ Asia	Thailand	Samut Prakarn
 Asia	Thailand	Thailand	
 Asia	Thailand	Trang	
 Asia	Timor-Leste	Timor-Leste	
+Asia	Turkey	Turkey	
 Asia	United Arab Emirates	United Arab Emirates	
 Asia	Vietnam	Ho Chi Minh City	
 Asia	Vietnam	Lao Cai	
@@ -845,9 +849,11 @@ Europe	Germany	Frankfurt
 Europe	Germany	Germany	
 Europe	Germany	North Rhine Westphalia	
 Europe	Germany	North Rhine Westphalia	Duesseldorf
+Europe	Germany	North Rhine Westphalia	Heinsberg
 Europe	Germany	North Rhine Westphalia	Heinsberg District
 Europe	Germany	North Rhine Westphalia	Münster
 Europe	Germany	Rostock	
+Europe	Greece	Greece	
 Europe	Greece	Athens	
 Europe	Greece	Thessaloniki	
 Europe	Hungary	Balassagyarmat	
@@ -1008,6 +1014,7 @@ Europe	Russia	Samara Region
 Europe	Russia	Sverdlovsk Region	
 Europe	Russia	Tatarstan	
 Europe	Russia	Tver Region	
+Europe	Serbia	Serbia	
 Europe	Serbia	Cacak	
 Europe	Serbia	Kraljevo	
 Europe	Serbia	Novi Pazar	
@@ -1195,6 +1202,7 @@ Europe	Spain	Navarra	Torres De Elorz
 Europe	Spain	Navarra	Zulueta
 Europe	Spain	San Jose	
 Europe	Spain	Spain	
+Europe	Sweden	Sweden	
 Europe	Sweden	Dalarna	
 Europe	Sweden	Gavleborgs Lan	
 Europe	Sweden	Halland	
@@ -1317,6 +1325,7 @@ North America	USA	Alaska	Mat-Su
 North America	USA	Alaska	Southeast Alaska
 North America	USA	Arizona	
 North America	USA	Arizona	Phoenix
+North America	USA	Arizona	Maricopa County
 North America	USA	Arkansas	
 North America	USA	California	
 North America	USA	California	Alameda County
@@ -1340,6 +1349,7 @@ North America	USA	California	Santa Clara County
 North America	USA	California	Solano County
 North America	USA	California	Ventura County
 North America	USA	Colorado	
+North America	USA	Colorado	El Paso County CO
 North America	USA	Connecticut	
 North America	USA	Connecticut	Beacon Falls
 North America	USA	Connecticut	Bethany
@@ -1376,6 +1386,7 @@ North America	USA	Connecticut	Waterbury
 North America	USA	Connecticut	West Haven
 North America	USA	Connecticut	Woodbridge
 North America	USA	Connecticut	Yorktown Heights
+North America	USA	District of Columnbia	
 North America	USA	Diamond Princess	
 North America	USA	Florida	
 North America	USA	Florida	Miami
@@ -1395,28 +1406,50 @@ North America	USA	Indiana	Indianapolis
 North America	USA	Iowa	
 North America	USA	Iowa	Allamakee County
 North America	USA	Iowa	Buchanan County
+North America	USA	Iowa	Dubuque County
 North America	USA	Iowa	Fayette County
 North America	USA	Iowa	Winneshiek County
 North America	USA	Kansas	
 North America	USA	Kentucky	
 North America	USA	Louisiana	
 North America	USA	Louisiana	Assumption Parish
+North American	USA	Louisiana	Avondale
 North America	USA	Louisiana	Bienville Parish
 North America	USA	Louisiana	Bossier Parish
 North America	USA	Louisiana	Caddo Parish
+North America	USA	Louisiana	Chalmette
+North America	USA	Louisiana	Delacroix
 North America	USA	Louisiana	DeSoto Parish
 North America	USA	Louisiana	East Baton Rouge Parish
 North America	USA	Louisiana	East Feliciana Parish
+North America	USA	Louisiana	Gheens
 North America	USA	Louisiana	Grant Parish
+North America	USA	Louisiana	Gray
+North America	USA	Louisiana	Hammond
+North America	USA	Louisiana	Houma
 North America	USA	Louisiana	Iberville Parish
 North America	USA	Louisiana	Jefferson Parish
+North America	USA	Louisiana	Kenner
+North America	USA	Louisiana	Killona
+North America	USA	Louisiana	Lacombe
 North America	USA	Louisiana	Livingston Parish
+North America	USA	Louisiana	Lockport
+North America	USA	Louisiana	Luling
+North America	USA	Louisiana	Maringouin
+North America	USA	Louisiana	Marrero
+North America	USA	Louisiana	Metairie
 North America	USA	Louisiana	Morehouse Parish
+North America	USA	Louisiana	Napoleonville
 North America	USA	Louisiana	New Orleans
+North America	USA	Louisiana	Raceland
 North America	USA	Louisiana	Rapides Parish
+North America	USA	Louisiana	Saint Rose
+North America	USA	Louisiana	Slidell
 North America	USA	Louisiana	St Bernard Parish
 North America	USA	Louisiana	St Tammany Parish
 North America	USA	Louisiana	Tensas Parish
+North America	USA	Louisiana	Thibodaux
+North America	USA	Louisiana	Violet
 North America	USA	Louisiana	Webster Parish
 North America	USA	Maryland	
 North America	USA	Massachusetts	
@@ -1530,6 +1563,7 @@ North America	USA	Wisconsin	Brookfield
 North America	USA	Wisconsin	Brooklyn WI
 North America	USA	Wisconsin	Brown Deer
 North America	USA	Wisconsin	Campbellsport
+North America	USA	Wisconsin	Chippewa County WI
 North America	USA	Wisconsin	Chippewa Falls
 North America	USA	Wisconsin	Colorado Springs
 North America	USA	Wisconsin	Columbia County
@@ -1576,9 +1610,12 @@ North America	USA	Wisconsin	Ozaukee County
 North America	USA	Wisconsin	Pewaukee
 North America	USA	Wisconsin	Port Washington
 North America	USA	Wisconsin	Racine
+North America	USA	Wisconsin	Racine County
 North America	USA	Wisconsin	Richland Center
+North America	USA	Wisconsin	Richland County WI
 North America	USA	Wisconsin	River Hills
 North America	USA	Wisconsin	Rock County
+North America	USA	Wisconsin	Sauk County
 North America	USA	Wisconsin	Saukville
 North America	USA	Wisconsin	Slinger
 North America	USA	Wisconsin	South Milwaukee
@@ -1625,6 +1662,7 @@ Oceania	New Zealand	Counties Manukau
 Oceania	New Zealand	Lakes	
 Oceania	New Zealand	Midcentral	
 Oceania	New Zealand	Nelson Marlborough	
+Oceania	New Zealand	New Zealand	
 Oceania	New Zealand	Otago	
 Oceania	New Zealand	Southern	
 Oceania	New Zealand	Waikato	
@@ -1694,6 +1732,7 @@ South America	Brazil	São Paulo	Rio Claro
 South America	Brazil	São Paulo	Sao Bernardo do Campo
 South America	Brazil	São Paulo	São Paulo
 South America	Chile	Antofagasta	
+South America	Chile	Chile	
 South America	Chile	Chillan	
 South America	Chile	Chillan	Chillan
 South America	Chile	Concepcion	
@@ -1789,8 +1828,10 @@ South America	Ecuador	Los Rios	Babahoyo
 South America	Ecuador	Pichincha	
 South America	Ecuador	Quito	
 South America	Peru	Lima	
+South America	Peru	Peru	
 South America	South America	South America	
 South America	Uruguay	Maldonado	
 South America	Uruguay	Montevideo	
 South America	Uruguay	Rivera	
+South America	Uruguay	Uruguay		
 South America	Venezuela	Venezuela	
