@@ -5,6 +5,9 @@ on:
   repository_dispatch:
     types: rebuild
 
+  # Manually triggered using GitHub's UI
+  workflow_dispatch:
+
 jobs:
   rebuild:
     runs-on: ubuntu-latest
