@@ -37,15 +37,29 @@ esac
 echo "S3_SRC is $S3_SRC"
 echo "S3_DST is $S3_DST"
 
+fetch=0
+
+for arg; do
+    case "$arg" in
+        --fetch)
+            fetch=1;;
+        *)
+    esac
+done
+
 cd "$(dirname "$0")/.."
 
 set -x
 
-./bin/fetch-from-gisaid > data/gisaid.ndjson
-if [[ "$branch" == master ]]; then
-    ./bin/notify-on-record-change data/gisaid.ndjson "$S3_SRC/gisaid.ndjson.gz" "GISAID"
+if [[ "$fetch" == 1 ]]; then
+    ./bin/fetch-from-gisaid > data/gisaid.ndjson
+    if [[ "$branch" == master ]]; then
+        ./bin/notify-on-record-change data/gisaid.ndjson "$S3_SRC/gisaid.ndjson.gz" "GISAID"
+    fi
+    ./bin/upload-to-s3 --quiet data/gisaid.ndjson "$S3_DST/gisaid.ndjson.gz"
+else
+    aws s3 cp --no-progress "$S3_DST/gisaid.ndjson.gz" - | gunzip -cfq > data/gisaid.ndjson
 fi
-./bin/upload-to-s3 --quiet data/gisaid.ndjson "$S3_DST/gisaid.ndjson.gz"
 
 ./bin/transform-gisaid data/gisaid.ndjson \
   --output-metadata data/gisaid/metadata.tsv \
