@@ -92,6 +92,8 @@ Asia	Bangladesh	Dhaka	Tejgaon
 Asia	Bangladesh	Dhaka	Uttara
 Asia	Bangladesh	Jhenaidha	
 Asia	Bangladesh	Jhenaidha	Shailokupa
+Asia	Bangladesh	Khulna	
+Asia	Bangladesh	Khulna	Jashore
 Asia	Bangladesh	Mirpur	
 Asia	Bangladesh	Narail	
 Asia	Bangladesh	Narail	Kalia
@@ -241,6 +243,7 @@ Asia	India	Tamil Nadu
 Asia	India	Telangana	
 Asia	India	Telangana	Hyderabad
 Asia	India	Uttar Pradesh	
+Asia	India	Uttar Pradesh	Lucknow
 Asia	India	Uttar Pradesh	Noida
 Asia	India	West Bengal	
 Asia	India	West Bengal	Darjeeling
@@ -805,15 +808,21 @@ Europe	Czech Republic	Hranice Na Moravě	Prostějov
 Europe	Czech Republic	Jihlava	
 Europe	Czech Republic	Litomerice-Brnay	
 Europe	Czech Republic	Melnik	
-Europe	Czech Republic	Plzeň Region
+Europe	Czech Republic	Olomouc Region	
+Europe	Czech Republic	Olomouc Region	Litovel
+Europe	Czech Republic	Plzeň Region	
+Europe	Czech Republic	Plzeň Region	Klenčí
 Europe	Czech Republic	Plzeň Region	Domažlice
 Europe	Czech Republic	Prague	
-Europe	Czech Republic	South Moravian Region
+Europe	Czech Republic	South Moravian Region	
 Europe	Czech Republic	South Moravian Region	Brno
 Europe	Czech Republic	Usti nad Labem	
+Europe	Czech Republic	Usti nad Labem	Všebořice
 Europe	Czech Republic	Vysocina Region	
 Europe	Czech Republic	Vysocina Region	Bela - Ledec Na Sazavou
 Europe	Czech Republic	Vysocina Region	Kynice
+Europe	Czech Republic	Zlin	
+Europe	Czech Republic	Zlin	Fryšták
 Europe	Denmark	Copenhagen	
 Europe	Denmark	Denmark	
 Europe	Estonia	Estonia	
@@ -898,12 +907,14 @@ Europe	Germany	Bavaria	Starnberg
 Europe	Germany	Berlin	
 Europe	Germany	Frankfurt	
 Europe	Germany	Germany	
+Europe	Germany	Niedersachsen	
 Europe	Germany	North Rhine Westphalia	
 Europe	Germany	North Rhine Westphalia	Duesseldorf
 Europe	Germany	North Rhine Westphalia	Heinsberg
 Europe	Germany	North Rhine Westphalia	Heinsberg District
 Europe	Germany	North Rhine Westphalia	Münster
 Europe	Germany	Rostock	
+Europe	Germany	Western Pomerania	
 Europe	Greece	Greece	
 Europe	Greece	Athens	
 Europe	Greece	Thessaloniki	
@@ -1418,7 +1429,7 @@ North America	USA	Connecticut	Bristol
 North America	USA	Connecticut	Cheshire
 North America	USA	Connecticut	East Haven
 North America	USA	Connecticut	Fairfield
-North America	USA	Connecticut	Fairfield County
+North America	USA	Connecticut	Fairfield County CT
 North America	USA	Connecticut	Glastonbury
 North America	USA	Connecticut	Greenwich
 North America	USA	Connecticut	Hamden
@@ -1581,7 +1592,9 @@ North America	USA	Puerto Rico
 North America	USA	Rhode Island	
 North America	USA	San Jose	
 North America	USA	South Carolina	
-North America	USA	South Carolina	Richland County
+North America	USA	South Carolina	Richland County SC
+North America	USA	South Carolina	Berkeley County
+North America	USA	South Carolina	Fairfield SC
 North America	USA	Tennessee	
 North America	USA	Texas	
 North America	USA	Texas	Greater Houston Area
@@ -1894,6 +1907,7 @@ South America	Colombia	Valle del Cauca	Trujillo
 South America	Colombia	Valle del Cauca	Tulua
 South America	Colombia	Valle del Cauca	Yumbo
 South America	Ecuador	Guayas	
+South America	Ecuador	Guayas	Guayaquil
 South America	Ecuador	Los Rios	
 South America	Ecuador	Los Rios	Babahoyo
 South America	Ecuador	Pichincha	
