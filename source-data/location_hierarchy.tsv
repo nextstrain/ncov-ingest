@@ -6,11 +6,11 @@ Africa	Benin	Oueme
 Africa	Burkina Faso	Burkina Faso	
 Africa	Democratic Republic of the Congo	Democratic Republic of the Congo	
 Africa	Democratic Republic of the Congo	Haut-Katanga	
-Africa	Democratic Republic of the Congo	Kongo Central	
 Africa	Democratic Republic of the Congo	Kinshasa	
+Africa	Democratic Republic of the Congo	Kongo Central	
 Africa	Democratic Republic of the Congo	Sud Kivu	
-Africa	Egypt	Cairo	Al Matariyyah
 Africa	Egypt	Cairo	
+Africa	Egypt	Cairo	Al Matariyyah
 Africa	Egypt	Egypt	
 Africa	Egypt	Kalyoubia	
 Africa	Egypt	Nile River Cruise	
@@ -32,19 +32,19 @@ Africa	Nigeria	Kwara State
 Africa	Nigeria	Lagos	
 Africa	Nigeria	Nigeria	
 Africa	Nigeria	Ogun State	
+Africa	Nigeria	Ondo State	
 Africa	Nigeria	Osun State	
 Africa	Nigeria	Oyo State	
-Africa	Nigeria	Ondo State	
 Africa	Senegal	Dakar	
 Africa	Senegal	Dakar	Guediawaye
-Africa	Senegal	Dakar	Mbao
 Africa	Senegal	Dakar	Keur Massar
-Africa	Senegal	Mbour	
-Africa	Senegal	St-Louis	
-Africa	Senegal	Dakar	Yeumbeul
+Africa	Senegal	Dakar	Mbao
 Africa	Senegal	Dakar	Sangalkam
+Africa	Senegal	Dakar	Yeumbeul
 Africa	Senegal	Kolda	
 Africa	Senegal	Kolda	Velingara
+Africa	Senegal	Mbour	
+Africa	Senegal	St-Louis	
 Africa	Senegal	Thies	
 Africa	Senegal	Touba	
 Africa	South Africa	Eastern Cape	
@@ -73,10 +73,10 @@ Asia	Asia	Asia
 Asia	Bahrain	Bahrain	
 Asia	Bahrain	Capital Governorate	
 Asia	Bahrain	Capital Governorate	Manama
-Asia	Bangladesh	Barishal	
 Asia	Bangladesh	Bagherhat	
 Asia	Bangladesh	Bagherhat	Sador
 Asia	Bangladesh	Bangladesh	
+Asia	Bangladesh	Barishal	
 Asia	Bangladesh	Barishal	
 Asia	Bangladesh	Chattogram	
 Asia	Bangladesh	Chattogram	Brahmanbaria
@@ -270,6 +270,7 @@ Asia	Israel	Bat Yam
 Asia	Israel	Beit Shemesh	
 Asia	Israel	Beni Brak	
 Asia	Israel	Central District	
+Asia	Israel	Central District	Kfar Saba
 Asia	Israel	Elad	
 Asia	Israel	Elkana	
 Asia	Israel	Gani Tikva	
@@ -281,7 +282,6 @@ Asia	Israel	Israel
 Asia	Israel	Jerusalem District	
 Asia	Israel	Kfar Habad	
 Asia	Israel	Kfar Saba	
-Asia	Israel	Central District	Kfar Saba
 Asia	Israel	Kiryat Gat	
 Asia	Israel	Kiryat Ono	
 Asia	Israel	Maalot Tarshicha	
@@ -329,8 +329,8 @@ Asia	Japan	Tokyo
 Asia	Japan	Tokyo	Tokyo
 Asia	Jordan	Amman	
 Asia	Jordan	Irbid	
-Asia	Kazakhstan	Nur-Sultan	
 Asia	Kazakhstan	Kazakhstan	
+Asia	Kazakhstan	Nur-Sultan	
 Asia	Kuwait	Kuwait	
 Asia	Kuwait	Kuwait	Dasman
 Asia	Kuwait	Kuwait	Hawali
@@ -831,13 +831,13 @@ Europe	Czech Republic	Melnik
 Europe	Czech Republic	Olomouc Region	
 Europe	Czech Republic	Olomouc Region	Litovel
 Europe	Czech Republic	Plzeň Region	
-Europe	Czech Republic	Plzeň Region	Klenčí
 Europe	Czech Republic	Plzeň Region	Domažlice
+Europe	Czech Republic	Plzeň Region	Klenčí
 Europe	Czech Republic	Plzeň Region	Plzeň
 Europe	Czech Republic	Prague	
 Europe	Czech Republic	South Moravian Region	
-Europe	Czech Republic	South Moravian Region	Brno
 Europe	Czech Republic	South Moravian Region	Breclav
+Europe	Czech Republic	South Moravian Region	Brno
 Europe	Czech Republic	Usti nad Labem	
 Europe	Czech Republic	Usti nad Labem	Všebořice
 Europe	Czech Republic	Vysocina Region	
@@ -937,8 +937,8 @@ Europe	Germany	North Rhine Westphalia	Heinsberg District
 Europe	Germany	North Rhine Westphalia	Münster
 Europe	Germany	Rostock	
 Europe	Germany	Western Pomerania	
-Europe	Greece	Greece	
 Europe	Greece	Athens	
+Europe	Greece	Greece	
 Europe	Greece	Thessaloniki	
 Europe	Hungary	Balassagyarmat	
 Europe	Hungary	Balatonfured	
@@ -1042,7 +1042,6 @@ Europe	Norway	Norway
 Europe	Norway	Oslo	
 Europe	Norway	Trondheim	
 Europe	Poland	Dolnoslaskie	
-Europe	Poland	Łódzkie	
 Europe	Poland	Malopolskie	
 Europe	Poland	Malopolskie	Kraków
 Europe	Poland	Mazowieckie	
@@ -1059,6 +1058,7 @@ Europe	Poland	Warminsko-Mazurskie	Olsztyn
 Europe	Poland	Wielkopolskie	
 Europe	Poland	Wielkopolskie	Kalisz
 Europe	Poland	Zielonogorskie	
+Europe	Poland	Łódzkie	
 Europe	Portugal	Lisbon	
 Europe	Portugal	Portugal	
 Europe	Romania	Arges	
@@ -1100,11 +1100,11 @@ Europe	Russia	Samara Region
 Europe	Russia	Sverdlovsk Region	
 Europe	Russia	Tatarstan	
 Europe	Russia	Tver Region	
-Europe	Serbia	Serbia	
 Europe	Serbia	Cacak	
 Europe	Serbia	Kraljevo	
 Europe	Serbia	Novi Pazar	
 Europe	Serbia	Novi Sad	
+Europe	Serbia	Serbia	
 Europe	Serbia	Uzice	
 Europe	Slovakia	Bratislava	
 Europe	Slovakia	Kosice	
@@ -1265,8 +1265,8 @@ Europe	Spain	La Rioja	Pradejon
 Europe	Spain	Madrid	
 Europe	Spain	Madrid	Alcala de Henares
 Europe	Spain	Madrid	Alcobendas
-Europe	Spain	Madrid	Arganda del Rey
 Europe	Spain	Madrid	Ambite
+Europe	Spain	Madrid	Arganda del Rey
 Europe	Spain	Madrid	Campo Real
 Europe	Spain	Madrid	Leganés
 Europe	Spain	Madrid	Madrid
@@ -1292,7 +1292,6 @@ Europe	Spain	Navarra	Torres De Elorz
 Europe	Spain	Navarra	Zulueta
 Europe	Spain	San Jose	
 Europe	Spain	Spain	
-Europe	Sweden	Sweden	
 Europe	Sweden	Dalarna	
 Europe	Sweden	Gavleborgs Lan	
 Europe	Sweden	Halland	
@@ -1310,6 +1309,7 @@ Europe	Sweden	Småland	Jönköping
 Europe	Sweden	Sodermanland	
 Europe	Sweden	Sormland	
 Europe	Sweden	Stockholm	
+Europe	Sweden	Sweden	
 Europe	Sweden	Uppsala	
 Europe	Sweden	Varmland	
 Europe	Sweden	Vasterbotten	
@@ -1415,8 +1415,8 @@ North America	USA	Alaska	Interior Alaska
 North America	USA	Alaska	Mat-Su
 North America	USA	Alaska	Southeast Alaska
 North America	USA	Arizona	
-North America	USA	Arizona	Phoenix
 North America	USA	Arizona	Maricopa County
+North America	USA	Arizona	Phoenix
 North America	USA	Arkansas	
 North America	USA	California	
 North America	USA	California	Alameda County
@@ -1441,6 +1441,7 @@ North America	USA	California	Santa Clara County
 North America	USA	California	Solano County
 North America	USA	California	Ventura County
 North America	USA	Colorado	
+North America	USA	Colorado	Denver County
 North America	USA	Colorado	El Paso County CO
 North America	USA	Connecticut	
 North America	USA	Connecticut	Beacon Falls
@@ -1478,10 +1479,12 @@ North America	USA	Connecticut	Waterbury
 North America	USA	Connecticut	West Haven
 North America	USA	Connecticut	Woodbridge
 North America	USA	Connecticut	Yorktown Heights
-North America	USA	District of Columbia	
 North America	USA	Diamond Princess	
+North America	USA	District of Columbia	
 North America	USA	Florida	
 North America	USA	Florida	Miami
+North America	USA	Florida	Miami-Dade County
+North America	USA	Florida	Palm Beach County
 North America	USA	Georgia	
 North America	USA	Grand Princess	
 North America	USA	Grand Princess	Grand Princess Cruise Ship
@@ -1493,6 +1496,8 @@ North America	USA	Idaho
 North America	USA	Illinois	
 North America	USA	Illinois	Chicago
 North America	USA	Illinois	Cook County
+North America	USA	Illinois	Dupage County
+North America	USA	Illinois	Kane County
 North America	USA	Illinois	Lake County
 North America	USA	Illinois	Mchenry County
 North America	USA	Illinois	Winnebago County IL
@@ -1503,6 +1508,7 @@ North America	USA	Iowa	Allamakee County
 North America	USA	Iowa	Buchanan County
 North America	USA	Iowa	Dubuque County
 North America	USA	Iowa	Fayette County
+North America	USA	Iowa	Jackson County
 North America	USA	Iowa	Winneshiek County
 North America	USA	Kansas	
 North America	USA	Kentucky	
@@ -1513,8 +1519,8 @@ North America	USA	Louisiana	Bienville Parish
 North America	USA	Louisiana	Bossier Parish
 North America	USA	Louisiana	Caddo Parish
 North America	USA	Louisiana	Chalmette
-North America	USA	Louisiana	Delacroix
 North America	USA	Louisiana	DeSoto Parish
+North America	USA	Louisiana	Delacroix
 North America	USA	Louisiana	East Baton Rouge Parish
 North America	USA	Louisiana	East Feliciana Parish
 North America	USA	Louisiana	Gheens
@@ -1549,10 +1555,13 @@ North America	USA	Louisiana	Webster Parish
 North America	USA	Maryland	
 North America	USA	Massachusetts	
 North America	USA	Massachusetts	Boston
+North America	USA	Massachusetts	Middlesex County
+North America	USA	Massachusetts	Norfolk County
 North America	USA	Michigan	
 North America	USA	Minnesota	
 North America	USA	Minnesota	Fillmore County
 North America	USA	Minnesota	Houston County
+North America	USA	Minnesota	Stearns County
 North America	USA	Minnesota	Wabasha County
 North America	USA	Minnesota	Winona County
 North America	USA	Missouri	
@@ -1615,9 +1624,9 @@ North America	USA	Puerto Rico
 North America	USA	Rhode Island	
 North America	USA	San Jose	
 North America	USA	South Carolina	
-North America	USA	South Carolina	Richland County SC
 North America	USA	South Carolina	Berkeley County
 North America	USA	South Carolina	Fairfield County SC
+North America	USA	South Carolina	Richland County SC
 North America	USA	Tennessee	
 North America	USA	Texas	
 North America	USA	Texas	Greater Houston Area
@@ -1667,8 +1676,8 @@ North America	USA	Wisconsin	Chippewa County WI
 North America	USA	Wisconsin	Chippewa Falls
 North America	USA	Wisconsin	Colorado Springs
 North America	USA	Wisconsin	Columbia County
-North America	USA	Wisconsin	Columbus WI
 North America	USA	Wisconsin	Columbia County WI
+North America	USA	Wisconsin	Columbus WI
 North America	USA	Wisconsin	Cottage Grove
 North America	USA	Wisconsin	Crawford County
 North America	USA	Wisconsin	Cross Plains
@@ -1736,9 +1745,10 @@ North America	USA	Wisconsin	Verona WI
 North America	USA	Wisconsin	Washington County WI
 North America	USA	Wisconsin	Waukesha County
 North America	USA	Wisconsin	Waunakee
+North America	USA	Wisconsin	Waupaca County
 North America	USA	Wisconsin	Wauwatosa
-North America	USA	Wisconsin	Winnebago County WI
 North America	USA	Wisconsin	Whitefish Bay
+North America	USA	Wisconsin	Winnebago County WI
 North America	USA	Wyoming	
 Oceania	Australia	Australia	
 Oceania	Australia	New South Wales	
@@ -1929,18 +1939,19 @@ South America	Colombia	Valle del Cauca	Palmira
 South America	Colombia	Valle del Cauca	Trujillo
 South America	Colombia	Valle del Cauca	Tulua
 South America	Colombia	Valle del Cauca	Yumbo
-South America	Ecuador	Guayas	
-South America	Ecuador	Guayas	Guayaquil
-South America	Ecuador	Los Rios	
-South America	Ecuador	Los Rios	Babahoyo
-South America	Ecuador	Pichincha	
-South America	Ecuador	Quito	
 South America	Ecuador	Chimborazo	
 South America	Ecuador	Chimborazo	Riobamba
+South America	Ecuador	Guayas	
+South America	Ecuador	Guayas	Guayaquil
 South America	Ecuador	Imbabura	
 South America	Ecuador	Imbabura	Ibarra
 South America	Ecuador	Imbabura	Urcuqui
+South America	Ecuador	Los Rios	
+South America	Ecuador	Los Rios	Babahoyo
+South America	Ecuador	Pichincha	
 South America	Ecuador	Pichincha	Cayambe
+South America	Ecuador	Quito	
+South America	Peru	Arequipa	
 South America	Peru	Huanuco	
 South America	Peru	Ica	
 South America	Peru	Lima	
