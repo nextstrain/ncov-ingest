@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+import pandas as pd
+import argparse
+
+def clean_metadata_file(file_name, n_cols, header):
+    """
+    1. Read the metadata TSV file
+    2. Sort alphabetically and make sure n columns (n-1 tabs) each row
+    3. Write out (overwrite) metadata file
+    """
+    col_names = list(pd.read_csv(file_name, sep="\t", header=None, nrows=1).iloc[0]) if header else list(range(n_cols))
+    metadata = pd.read_csv(file_name,
+                           sep="\t",
+                           header=0 if header else None, #needs to happen if a header already exists and you are overriding with "names"
+                           names=col_names, # overriding column names; this adds missing tabs when there are too few
+                           usecols=col_names) # using first n only; this removes extra tabs
+    metadata = metadata.sort_values(col_names)
+    metadata.to_csv(file_name, sep="\t", index=False, header=header)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="""Sort metadata tsv and clean tabs. 
+        For files with a header, use --header and the number of columns in the header (and the header names) will be used.
+        For files with no header, use --n-cols.""",
+        formatter_class=argparse.RawTextHelpFormatter
+    )
+
+    parser.add_argument(
+            "--metadata",
+            required=True,
+            help="Location metadata file (in TSV format) to be cleaned.\n")
+
+    parser.add_argument(
+            "--n-cols",
+            type=int,
+            help="Number of columns to enforce.\n")
+
+    parser.add_argument(
+            "--header",
+            action='store_true',
+            help="Respect a header in the file if set.\n")
+
+    args = parser.parse_args()
+    clean_metadata_file(args.metadata, args.n_cols, args.header)
