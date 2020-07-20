@@ -21,7 +21,7 @@ You can manually trigger the full automation by running `./bin/trigger ingest --
 If you want to only trigger a rebuild of [nextstrain/ncov](https://github.com/nextstrain/ncov) without re-ingesting data from GISAID first, run `./bin/trigger rebuild --user <your-github-username>`.
 See the output of `./bin/trigger ingest` or `./bin/trigger rebuild` for more information about authentication with GitHub.
 
-Note: running `./trigger` posts a GitHub `repository_dispatch`.
+Note: running `./bin/trigger` posts a GitHub `repository_dispatch`.
 Regardless of which branch you are on, it will trigger the specified action on the master branch.
 
 ## Updating manual annotations
