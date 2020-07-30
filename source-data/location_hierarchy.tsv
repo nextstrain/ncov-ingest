@@ -44,6 +44,7 @@ Africa	Senegal	Dakar	Yeumbeul
 Africa	Senegal	Kolda	
 Africa	Senegal	Kolda	Velingara
 Africa	Senegal	Mbour	
+Africa	Senegal	Pikine	
 Africa	Senegal	St-Louis	
 Africa	Senegal	Thies	
 Africa	Senegal	Touba	
@@ -104,12 +105,14 @@ Asia	Bangladesh	Jhenaidha	Shailokupa
 Asia	Bangladesh	Khulna	
 Asia	Bangladesh	Khulna	Jashore
 Asia	Bangladesh	Mirpur	
+Asia	Bangladesh	Mymensingh	
 Asia	Bangladesh	Narail	
 Asia	Bangladesh	Narail	Kalia
 Asia	Bangladesh	Narayanganj	
 Asia	Bangladesh	Rajshahi	
 Asia	Bangladesh	Rajshahi	Pabna
 Asia	Bangladesh	Rangpur	
+Asia	Bangladesh	Rangpur	Nilphamari
 Asia	Bangladesh	Sylhet	
 Asia	Bangladesh	Sylhet	Habiganj
 Asia	Bangladesh	Sylhet	Moulvibazar
@@ -165,6 +168,8 @@ Asia	China	Jiangxi	Shangrao
 Asia	China	Jiangxi	Xinyu
 Asia	China	Jiangxi	Yichun
 Asia	China	Jiangxi	Yingtan
+Asia	China	Liaoning	
+Asia	China	Liaoning	Dalian
 Asia	China	Shandong	
 Asia	China	Shandong	Qingdao
 Asia	China	Shanghai	
@@ -979,9 +984,14 @@ Europe	Iran	Iran
 Europe	Ireland	Cork	
 Europe	Ireland	Dublin	
 Europe	Ireland	Ireland	
+Europe	Ireland	Kerry	
+Europe	Ireland	Kilkenny	
+Europe	Ireland	Leitrim	
 Europe	Ireland	Limerick	
 Europe	Ireland	Louth	
+Europe	Ireland	Sligo	
 Europe	Ireland	Tipperary	
+Europe	Ireland	Waterford	
 Europe	Ireland	Wicklow	
 Europe	Italy	Abruzzo	
 Europe	Italy	Abruzzo	L'Aquila
@@ -1169,6 +1179,7 @@ Europe	Spain	Andalusia
 Europe	Spain	Andalusia	Alamedilla
 Europe	Spain	Andalusia	Albolote
 Europe	Spain	Andalusia	Alcala la Real
+Europe	Spain	Andalusia	Alfacar
 Europe	Spain	Andalusia	Algeciras
 Europe	Spain	Andalusia	Alhaurin de la Torre
 Europe	Spain	Andalusia	Almeria
@@ -1176,28 +1187,37 @@ Europe	Spain	Andalusia	Antequera
 Europe	Spain	Andalusia	Atarfe
 Europe	Spain	Andalusia	Benajarafe
 Europe	Spain	Andalusia	Cadiz
+Europe	Spain	Andalusia	Castillo de Locubin
 Europe	Spain	Andalusia	Castril
 Europe	Spain	Andalusia	Chiclana de la Frontera
 Europe	Spain	Andalusia	Churriana de la Vega
+Europe	Spain	Andalusia	Cijuela
+Europe	Spain	Andalusia	Cogollos de la Vega
 Europe	Spain	Andalusia	Conil de la Frontera
 Europe	Spain	Andalusia	Cordoba
 Europe	Spain	Andalusia	Cortijos Nuevos
+Europe	Spain	Andalusia	Cullar Vega
+Europe	Spain	Andalusia	Durcal
 Europe	Spain	Andalusia	Fonelas
 Europe	Spain	Andalusia	Frailes
 Europe	Spain	Andalusia	Granada
 Europe	Spain	Andalusia	Guadix
 Europe	Spain	Andalusia	Guevejar
 Europe	Spain	Andalusia	Huetor Santillan
+Europe	Spain	Andalusia	Illora
 Europe	Spain	Andalusia	Iznalloz
 Europe	Spain	Andalusia	Jerez De La Frontera
 Europe	Spain	Andalusia	Jun
 Europe	Spain	Andalusia	La Linea de la Concepcion
+Europe	Spain	Andalusia	La Zubia
+Europe	Spain	Andalusia	Las Gabias
 Europe	Spain	Andalusia	Mairena Aljarafe
 Europe	Spain	Andalusia	Malaga
 Europe	Spain	Andalusia	Maracena
 Europe	Spain	Andalusia	Ogijares
 Europe	Spain	Andalusia	Otura
 Europe	Spain	Andalusia	Pinos Puente
+Europe	Spain	Andalusia	Puebla de Don Fadrique
 Europe	Spain	Andalusia	Puerto Santa Maria
 Europe	Spain	Andalusia	Pulianas
 Europe	Spain	Andalusia	Rincon de la Victoria
@@ -1244,11 +1264,13 @@ Europe	Spain	Castilla la Mancha	Albacete
 Europe	Spain	Castilla la Mancha	Almansa
 Europe	Spain	Castilla la Mancha	Ayna
 Europe	Spain	Castilla la Mancha	Balazote
+Europe	Spain	Castilla la Mancha	Bogarra
 Europe	Spain	Castilla la Mancha	Cuenca
 Europe	Spain	Castilla la Mancha	Hellin
 Europe	Spain	Castilla la Mancha	Lezuza
 Europe	Spain	Castilla la Mancha	Madrigueras
 Europe	Spain	Castilla la Mancha	Mingogil
+Europe	Spain	Castilla la Mancha	Motilleja
 Europe	Spain	Castilla la Mancha	Riopar
 Europe	Spain	Castilla la Mancha	San Clemente
 Europe	Spain	Castilla la Mancha	Socuellamos
@@ -1304,7 +1326,9 @@ Europe	Spain	Galicia	Muros
 Europe	Spain	Galicia	Negreira
 Europe	Spain	Galicia	Noia
 Europe	Spain	Galicia	Oroso
+Europe	Spain	Galicia	Outes
 Europe	Spain	Galicia	Padrón
+Europe	Spain	Galicia	Pontecesures
 Europe	Spain	Galicia	Rianjo
 Europe	Spain	Galicia	Ribeira
 Europe	Spain	Galicia	Santa Comba
@@ -1313,9 +1337,26 @@ Europe	Spain	Galicia	Teo
 Europe	Spain	Galicia	Valga
 Europe	Spain	Grand Canary Islands	
 Europe	Spain	La Rioja	
+Europe	Spain	La Rioja	Agoncillo
+Europe	Spain	La Rioja	Albelda de Iregua
+Europe	Spain	La Rioja	Alberite
+Europe	Spain	La Rioja	Alfaro
+Europe	Spain	La Rioja	Autol
 Europe	Spain	La Rioja	Calahorra
+Europe	Spain	La Rioja	Casalarreina
+Europe	Spain	La Rioja	El Villar de Arnedo
+Europe	Spain	La Rioja	Ezcaray
+Europe	Spain	La Rioja	Haro
+Europe	Spain	La Rioja	Herce
+Europe	Spain	La Rioja	Lardero
 Europe	Spain	La Rioja	Logrono
+Europe	Spain	La Rioja	Najera
+Europe	Spain	La Rioja	Nalda
+Europe	Spain	La Rioja	Ojacastro
 Europe	Spain	La Rioja	Pradejon
+Europe	Spain	La Rioja	San Vicente de la Sonsierra
+Europe	Spain	La Rioja	Santo Domingo de la Calzada
+Europe	Spain	La Rioja	Villamediana de Iregua
 Europe	Spain	Madrid	
 Europe	Spain	Madrid	Alcala de Henares
 Europe	Spain	Madrid	Alcobendas
@@ -1454,7 +1495,7 @@ North America	Costa Rica	San Jose	Desamparados
 North America	Costa Rica	San Jose	Escazu
 North America	Costa Rica	San Jose	Perez Zeledon
 North America	Costa Rica	San Jose	San Jose
-North America	Costa Rica	San Jose	Santa Ana
+North America	Costa Rica	San Jose	Santa Ana CR
 North America	Costa Rica	San Jose	Tarrazu
 North America	Costa Rica	San Jose	Tibas
 North America	Jamaica	Jamaica	
@@ -1483,7 +1524,59 @@ North America	Mexico	Sinaloa
 North America	Mexico	Sonora	
 North America	Mexico	Tabasco	
 North America	Mexico	Yucatan	
+North America	Panama	Bocas del Toro	
+North America	Panama	Chiriqui	
+North America	Panama	Cocle	
+North America	Panama	Colon	
+North America	Panama	Guna Yala	
+North America	Panama	Guna Yala	Aligandí
+North America	Panama	Herrera	
+North America	Panama	Los Santos	
+North America	Panama	Panama Center	
+North America	Panama	Panama Center	Alcalde Díaz
+North America	Panama	Panama Center	Amelia Denis de Icaza
+North America	Panama	Panama Center	Ancón
+North America	Panama	Panama Center	Arnulfo Arias
+North America	Panama	Panama Center	Belisario Frías
+North America	Panama	Panama Center	Belisario Porras
+North America	Panama	Panama Center	Bella Vista
+North America	Panama	Panama Center	Betania
+North America	Panama	Panama Center	Calidonia
+North America	Panama	Panama Center	Chepo
+North America	Panama	Panama Center	Chilibre
+North America	Panama	Panama Center	Clayton PA
+North America	Panama	Panama Center	Don Bosco
+North America	Panama	Panama Center	El Chorrillo
+North America	Panama	Panama Center	El Crisol
+North America	Panama	Panama Center	Ernesto Córdoba
+North America	Panama	Panama Center	Jose Domingo Espinar
+North America	Panama	Panama Center	Juan Díaz
+North America	Panama	Panama Center	Las Cumbres
+North America	Panama	Panama Center	Las Mañanitas
+North America	Panama	Panama Center	Omar Torrijos
+North America	Panama	Panama Center	Pacora
+North America	Panama	Panama Center	Parque Lefevre
+North America	Panama	Panama Center	Parque Real
+North America	Panama	Panama Center	Pedregal
+North America	Panama	Panama Center	Pueblo Nuevo
+North America	Panama	Panama Center	Rufina Alfaro
+North America	Panama	Panama Center	Río Abajo
+North America	Panama	Panama Center	San Francisco PA
+North America	Panama	Panama Center	Santa Ana PA
+North America	Panama	Panama Center	Tocumen
+North America	Panama	Panama Center	Victoriano Lorenzo
 North America	Panama	Panama City	
+North America	Panama	Panama Oeste	
+North America	Panama	Panama Oeste	Arraiján
+North America	Panama	Panama Oeste	Burunga
+North America	Panama	Panama Oeste	Guadalupe
+North America	Panama	Panama Oeste	Herrera (Panama Oeste)
+North America	Panama	Panama Oeste	Juan Demóstenes Arosemena
+North America	Panama	Panama Oeste	La Chorrera
+North America	Panama	Panama Oeste	Lídice
+North America	Panama	Panama Oeste	Veracruz
+North America	Panama	Panama Oeste	Vista Alegre
+North America	Panama	Santiago de Veraguas	
 North America	USA	Alabama	
 North America	USA	Alaska	
 North America	USA	Alaska	Anchorage
@@ -1642,6 +1735,7 @@ North America	USA	Minnesota	Houston County
 North America	USA	Minnesota	Stearns County
 North America	USA	Minnesota	Wabasha County
 North America	USA	Minnesota	Winona County
+North America	USA	Mississippi	
 North America	USA	Missouri	
 North America	USA	Missouri	St. Louis MO
 North America	USA	Missouri	Saint Louis County
@@ -1707,6 +1801,7 @@ North America	USA	South Carolina
 North America	USA	South Carolina	Berkeley County
 North America	USA	South Carolina	Fairfield County SC
 North America	USA	South Carolina	Richland County SC
+North America	USA	South Dakota	
 North America	USA	Tennessee	
 North America	USA	Texas	
 North America	USA	Texas	Greater Houston Area
@@ -1734,6 +1829,7 @@ North America	USA	Washington	Kirkland
 North America	USA	Washington	Kittitas County
 North America	USA	Washington	Mason County
 North America	USA	Washington	Pierce County
+North America	USA	Washington	San Juan County
 North America	USA	Washington	Seattle
 North America	USA	Washington	Skagit County
 North America	USA	Washington	Snohomish County
@@ -1847,7 +1943,7 @@ Oceania	Australia	Queensland	Southeast Queensland
 Oceania	Australia	Queensland	Sunshine Coast
 Oceania	Australia	South Australia	
 Oceania	Australia	Victoria	
-Oceania	Australia	Victoria	Clayton
+Oceania	Australia	Victoria	Clayton AU
 Oceania	Australia	Victoria	Melbourne
 Oceania	Australia	Western Australia	
 Oceania	Australia	Western Australia	Perth
@@ -1869,6 +1965,7 @@ Oceania	New Zealand	Wairarapa
 Oceania	New Zealand	Waitemata	
 Oceania	New Zealand	Wellington	
 South America	Argentina	Argentina	
+South America	Argentina	Cordoba AR	
 South America	Argentina	Buenos Aires	
 South America	Argentina	Buenos Aires	Bahia Blanca
 South America	Argentina	Buenos Aires	Lomas de Zamora
@@ -1899,6 +1996,14 @@ South America	Brazil	Minas Gerais
 South America	Brazil	Para	
 South America	Brazil	Paraná	
 South America	Brazil	Pernambuco	
+South America	Brazil	Pernambuco	Alianca
+South America	Brazil	Pernambuco	Camaragibe
+South America	Brazil	Pernambuco	Ipojuca
+South America	Brazil	Pernambuco	Jaboatao Dos Guararapes
+South America	Brazil	Pernambuco	Olinda
+South America	Brazil	Pernambuco	Paulista
+South America	Brazil	Pernambuco	Recife
+South America	Brazil	Pernambuco	Sao Lourenco Da Mata
 South America	Brazil	Piaui	
 South America	Brazil	Rio Grande do Norte	
 South America	Brazil	Rio Grande do Sul	
@@ -1976,10 +2081,11 @@ South America	Colombia	Cesar
 South America	Colombia	Cesar	Valledupar
 South America	Colombia	Choco	
 South America	Colombia	Choco	Quibdo
+South America	Colombia	Cienaga de Oro	
 South America	Colombia	Colombia	
-South America	Colombia	Cordoba	
-South America	Colombia	Cordoba	Monteria
-South America	Colombia	Cordoba	Tierralta
+South America	Colombia	Cordoba CO	
+South America	Colombia	Cordoba CO	Monteria
+South America	Colombia	Cordoba CO	Tierralta
 South America	Colombia	Cundinamarca	
 South America	Colombia	Cundinamarca	Cajica
 South America	Colombia	Cundinamarca	Choconta
@@ -2002,16 +2108,22 @@ South America	Colombia	Narino	Ipiales
 South America	Colombia	Narino	Tumaco
 South America	Colombia	Norte de Santander	
 South America	Colombia	Norte de Santander	Cucuta
+South America	Colombia	Pasto	
 South America	Colombia	Quindio	
 South America	Colombia	Quindio	Armenia
 South America	Colombia	Risaralda	
 South America	Colombia	Risaralda	Dosquebradas
 South America	Colombia	Risaralda	Pereira
 South America	Colombia	Santander	
+South America	Colombia	Santander de Quilichao	
 South America	Colombia	Santander	Barrancabermeja
 South America	Colombia	Santander	Bucaramanga
+South America	Colombia	Soledad	
+South America	Colombia	Suesca	
+South America	Colombia	Tolemaida	
 South America	Colombia	Tolima	
 South America	Colombia	Tolima	Ibague
+South America	Colombia	Tunja	
 South America	Colombia	Valle del Cauca	
 South America	Colombia	Valle del Cauca	Andalucia
 South America	Colombia	Valle del Cauca	Buga
