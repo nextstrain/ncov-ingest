@@ -19,7 +19,7 @@ AWS credentials are stored in this repository's secrets and are associated with 
 ## Manually triggering the automation
 A full run is a now done in 3 steps via manual triggers:
 1. Fetch new sequences and ingest them by running `./bin/trigger fetch-and-ingest --user <your-github-username>`.
-2. Add manual annotations and update location hiearchy as needed and run ingest without fetching new sequences.
+2. Add manual annotations, update location hierarchy as needed, and run ingest without fetching new sequences.
     * Pushes of `source-data/*-annotations.tsv` to the master branch will automatically trigger a run of ingest.
     * You can also run ingest manually by running `./bin/trigger ingest --user <your-github-username>`.
 3. Once all manual fixes are complete, trigger a rebuild of [nextstrain/ncov](https://github.com/nextstrain/ncov) by running `./bin/trigger rebuild --user <your-github-username>`.
