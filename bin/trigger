@@ -2,7 +2,7 @@
 set -euo pipefail
 
 bin="$(dirname "$0")"
-event_type="${1:?An event type ("ingest" or "rebuild") is required as the first argument.}"
+event_type="${1:?An event type ("fetch-and-ingest", "ingest" or "rebuild") is required as the first argument.}"
 shift
 
 if [[ $# -eq 0 ]]; then

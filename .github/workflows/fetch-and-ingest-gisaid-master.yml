@@ -1,11 +1,9 @@
-name: '[branch] Ingest 2019-nCov/SARS-CoV-2 data from GISAID for nextstrain.org/ncov'
+name: 'Fetch & Ingest 2019-nCov/SARS-CoV-2 data from GISAID for nextstrain.org/ncov'
 
 on:
-  push:
-    branches-ignore:
-      - master
-    tags-ignore:
-      - '**'
+  # Manually triggered using `./bin/trigger fetch-and-ingest`
+  repository_dispatch:
+    types: fetch-and-ingest
 
 jobs:
   ingest:
@@ -18,7 +16,7 @@ jobs:
         python3 -m pip install --upgrade pip setuptools
         python3 -m pip install pipenv
         pipenv sync
-        pipenv run ./bin/ingest-gisaid
+        pipenv run ./bin/ingest-gisaid --fetch
       env:
         AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}

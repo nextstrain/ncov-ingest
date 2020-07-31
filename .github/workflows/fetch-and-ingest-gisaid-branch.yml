@@ -1,17 +1,11 @@
-name: Ingest 2019-nCov/SARS-CoV-2 data from GISAID for nextstrain.org/ncov
+name: '[branch] Fetch & Ingest 2019-nCov/SARS-CoV-2 data from GISAID for nextstrain.org/ncov'
 
 on:
   push:
-    branches:
+    branches-ignore:
       - master
     tags-ignore:
       - '**'
-    paths:
-      - source-data/gisaid_annotations.tsv
-
-  # Manually triggered using `./bin/trigger ingest`
-  repository_dispatch:
-    types: ingest
 
 jobs:
   ingest:
@@ -24,10 +18,11 @@ jobs:
         python3 -m pip install --upgrade pip setuptools
         python3 -m pip install pipenv
         pipenv sync
-        pipenv run ./bin/ingest-gisaid
+        pipenv run ./bin/ingest-gisaid --fetch
       env:
         AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        GISAID_API_ENDPOINT: ${{ secrets.GISAID_API_ENDPOINT }}
+        GISAID_USERNAME_AND_PASSWORD: ${{ secrets.GISAID_USERNAME_AND_PASSWORD }}
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-        SLACK_CHANNELS: ncov-gisaid-updates
