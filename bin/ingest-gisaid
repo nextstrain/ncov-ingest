@@ -1,69 +1,117 @@
 #!/bin/bash
+# usage: ingest-gisaid [--fetch]
+#        ingest-gisaid --help
+#
+# Ingest SARS-CoV-2 metadata and sequences from GISAID.
+#
+# If the --fetch flag is given, new records are fetched from GISAID. Otherwise,
+# ingest from the existing GISAID NDJSON file on S3.
+#
 set -euo pipefail
 
 : "${S3_SRC:=s3://nextstrain-ncov-private}"
 : "${S3_DST:=$S3_SRC}"
 
-# Determine where to save data files based on if we're running as a result of a
-# push to master or to another branch (or locally, outside of the GitHub
-# workflow).  Files are always compared to the default/primary paths in the
-# source S3 bucket.
-#
-silent=
-branch=
+main() {
+    local fetch=0
 
-case "${GITHUB_REF:-}" in
-    refs/heads/master)
-        # Do nothing different; defaults above are good.
-        branch=master
-        ;;
-    refs/heads/*)
-        # Save data files under a per-branch prefix
-        silent=yes
-        branch="${GITHUB_REF##refs/heads/}"
-        S3_DST="$S3_DST/branch/$branch"
-        ;;
-    "")
-        # Save data files under a tmp prefix
-        silent=yes
-        S3_DST="$S3_DST/tmp"
-        ;;
-    *)
-        echo "Skipping ingest for ref $GITHUB_REF"
-        exit 0
-        ;;
-esac
+    for arg; do
+        case "$arg" in
+            -h|--help)
+                print-help
+                exit
+                ;;
+            --fetch)
+                fetch=1
+                shift
+                break
+                ;;
+        esac
+    done
 
-echo "S3_SRC is $S3_SRC"
-echo "S3_DST is $S3_DST"
+    # Determine where to save data files based on if we're running as a result of a
+    # push to master or to another branch (or locally, outside of the GitHub
+    # workflow).  Files are always compared to the default/primary paths in the
+    # source S3 bucket.
+    #
+    local silent=
+    local branch=
 
-cd "$(dirname "$0")/.."
+    case "${GITHUB_REF:-}" in
+        refs/heads/master)
+            # Do nothing different; defaults above are good.
+            branch=master
+            ;;
+        refs/heads/*)
+            # Save data files under a per-branch prefix
+            silent=yes
+            branch="${GITHUB_REF##refs/heads/}"
+            S3_DST="$S3_DST/branch/$branch"
+            ;;
+        "")
+            # Save data files under a tmp prefix
+            silent=yes
+            S3_DST="$S3_DST/tmp"
+            ;;
+        *)
+            echo "Skipping ingest for ref $GITHUB_REF"
+            exit 0
+            ;;
+    esac
 
-set -x
+    echo "S3_SRC is $S3_SRC"
+    echo "S3_DST is $S3_DST"
 
-./bin/fetch-from-gisaid > data/gisaid.ndjson
-if [[ "$branch" == master ]]; then
-    ./bin/notify-on-record-change data/gisaid.ndjson "$S3_SRC/gisaid.ndjson.gz" "GISAID"
-fi
-./bin/upload-to-s3 --quiet data/gisaid.ndjson "$S3_DST/gisaid.ndjson.gz"
+    cd "$(dirname "$0")/.."
 
-./bin/transform-gisaid data/gisaid.ndjson \
-  --output-metadata data/gisaid/metadata.tsv \
-  --output-fasta data/gisaid/sequences.fasta
+    set -x
 
-./bin/flag-metadata data/gisaid/metadata.tsv > data/gisaid/flagged_metadata.txt
-./bin/check-locations data/gisaid/metadata.tsv \
-    data/gisaid/location_hierarchy.tsv \
-    gisaid_epi_isl
+    if [[ "$fetch" == 1 ]]; then
+        ./bin/fetch-from-gisaid > data/gisaid.ndjson
+        if [[ "$branch" == master ]]; then
+            ./bin/notify-on-record-change data/gisaid.ndjson "$S3_SRC/gisaid.ndjson.gz" "GISAID"
+        fi
+        ./bin/upload-to-s3 --quiet data/gisaid.ndjson "$S3_DST/gisaid.ndjson.gz"
+    else
+        aws s3 cp --no-progress "$S3_DST/gisaid.ndjson.gz" - | gunzip -cfq > data/gisaid.ndjson
+    fi
 
-if [[ "$branch" == master ]]; then
-    ./bin/notify-on-metadata-change data/gisaid/metadata.tsv "$S3_SRC/metadata.tsv.gz" gisaid_epi_isl
-    ./bin/notify-on-additional-info-change data/gisaid/additional_info.tsv "$S3_SRC/additional_info.tsv.gz"
-    ./bin/notify-on-flagged-metadata-change data/gisaid/flagged_metadata.txt "$S3_SRC/flagged_metadata.txt.gz"
-    ./bin/notify-on-location-hierarchy-addition data/gisaid/location_hierarchy.tsv source-data/location_hierarchy.tsv
-fi
+    ./bin/transform-gisaid data/gisaid.ndjson \
+      --output-metadata data/gisaid/metadata.tsv \
+      --output-fasta data/gisaid/sequences.fasta
 
-./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/metadata.tsv "$S3_DST/metadata.tsv.gz"
-./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/additional_info.tsv "$S3_DST/additional_info.tsv.gz"
-./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/flagged_metadata.txt "$S3_DST/flagged_metadata.txt.gz"
-./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/sequences.fasta "$S3_DST/sequences.fasta.gz"
+    ./bin/flag-metadata data/gisaid/metadata.tsv > data/gisaid/flagged_metadata.txt
+    ./bin/check-locations data/gisaid/metadata.tsv \
+        data/gisaid/location_hierarchy.tsv \
+        gisaid_epi_isl
+
+    if [[ "$branch" == master ]]; then
+        ./bin/notify-on-metadata-change data/gisaid/metadata.tsv "$S3_SRC/metadata.tsv.gz" gisaid_epi_isl
+        ./bin/notify-on-additional-info-change data/gisaid/additional_info.tsv "$S3_SRC/additional_info.tsv.gz"
+        ./bin/notify-on-flagged-metadata-change data/gisaid/flagged_metadata.txt "$S3_SRC/flagged_metadata.txt.gz"
+        ./bin/notify-on-location-hierarchy-addition data/gisaid/location_hierarchy.tsv source-data/location_hierarchy.tsv
+    fi
+
+    ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/metadata.tsv "$S3_DST/metadata.tsv.gz"
+    ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/additional_info.tsv "$S3_DST/additional_info.tsv.gz"
+    ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/flagged_metadata.txt "$S3_DST/flagged_metadata.txt.gz"
+    ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/sequences.fasta "$S3_DST/sequences.fasta.gz"
+}
+
+print-help() {
+    # Print the help comments at the top of this file ($0)
+    local line
+    while read -r line; do
+        if [[ $line =~ ^#! ]]; then
+            continue
+        elif [[ $line =~ ^# ]]; then
+            line="${line/##/}"
+            line="${line/# /}"
+            echo "$line"
+        else
+            break
+        fi
+    done < "$0"
+}
+
+main "$@"

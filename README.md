@@ -11,15 +11,20 @@ If you're using Pipenv (see below), then run commands from `./bin/…` inside a 
 
 ## Running automatically
 The ingest pipeline exists as the GitHub workflows `.github/workflows/ingest-master-*.yml` and `…/ingest-branch-*.yml`.
-It is run on pushes to `master` that modify `source-data/annotations.tsv` and on pushes to other branches.
+It is run on pushes to `master` that modify `source-data/*-annotations.tsv` and on pushes to other branches.
 Pushes to branches other than `master` upload files to branch-specific paths in the S3 bucket, don't send notifications, and don't trigger Nextstrain rebuilds, so that they don't interfere with the production data.
 
 AWS credentials are stored in this repository's secrets and are associated with the `nextstrain-ncov-ingest-uploader` IAM user in the Bedford Lab AWS account, which is locked down to reading and publishing only the `gisaid.ndjson`, `metadata.tsv`, and `sequences.fasta` files and their zipped equivalents in the `nextstrain-ncov-private` S3 bucket.
 
 ## Manually triggering the automation
-You can manually trigger the full automation by running `./bin/trigger ingest --user <your-github-username>`.
-If you want to only trigger a rebuild of [nextstrain/ncov](https://github.com/nextstrain/ncov) without re-ingesting data from GISAID first, run `./bin/trigger rebuild --user <your-github-username>`.
-See the output of `./bin/trigger ingest` or `./bin/trigger rebuild` for more information about authentication with GitHub.
+A full run is a now done in 3 steps via manual triggers:
+1. Fetch new sequences and ingest them by running `./bin/trigger fetch-and-ingest --user <your-github-username>`.
+2. Add manual annotations, update location hierarchy as needed, and run ingest without fetching new sequences.
+    * Pushes of `source-data/*-annotations.tsv` to the master branch will automatically trigger a run of ingest.
+    * You can also run ingest manually by running `./bin/trigger ingest --user <your-github-username>`.
+3. Once all manual fixes are complete, trigger a rebuild of [nextstrain/ncov](https://github.com/nextstrain/ncov) by running `./bin/trigger rebuild --user <your-github-username>`.
+
+See the output of `./bin/trigger fetch-and-ingest --user <your-github-username>`, `./bin/trigger ingest` or `./bin/trigger rebuild` for more information about authentication with GitHub.
 
 Note: running `./bin/trigger` posts a GitHub `repository_dispatch`.
 Regardless of which branch you are on, it will trigger the specified action on the master branch.
