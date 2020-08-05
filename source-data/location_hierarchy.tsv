@@ -14,12 +14,15 @@ Africa	Egypt	Cairo	Al Matariyyah
 Africa	Egypt	Egypt	
 Africa	Egypt	Kalyoubia	
 Africa	Egypt	Nile River Cruise	
-Africa	France	France	
 Africa	Gambia	Kombo	
 Africa	Gambia	West Coast Region	
 Africa	Ghana	Greater Accra	
 Africa	Ghana	Greater Accra	Accra
 Africa	Kenya	Kenya	
+Africa	Madagascar	Analamanga	
+Africa	Madagascar	Analamanga	Antananarivo
+Africa	Madagascar	Analanjirofo	
+Africa	Madagascar	Analanjirofo	Fenoarivo
 Africa	Mali	Bamako	
 Africa	Mali	Mopti	
 Africa	Morocco	Casablanca	
@@ -196,6 +199,7 @@ Asia	India	Andhra Pradesh
 Asia	India	Assam	
 Asia	India	Bihar	
 Asia	India	Delhi	
+Asia	India	Delhi	Tughlakabad
 Asia	India	Gujarat	
 Asia	India	Gujarat	Ahmedabad
 Asia	India	Gujarat	Bardoli
@@ -243,10 +247,17 @@ Asia	India	Gujarat	Ghogha
 Asia	India	Gujarat	Kamrej
 Asia	India	Gujarat	Mahuva
 Asia	India	Haryana	
+Asia	India	Haryana	Faridabad
+Asia	India	Haryana	Gurugram
+Asia	India	Haryana	Palwal
 Asia	India	India	
 Asia	India	Jammu	
 Asia	India	Kargil	
 Asia	India	Karnataka	
+Asia	India	Karnataka	Bengaluru Urban
+Asia	India	Karnataka	Chikkaballapura
+Asia	India	Karnataka	Haveri
+Asia	India	Karnataka	Kolar
 Asia	India	Kerala	
 Asia	India	Ladakh	
 Asia	India	Madhya Pradesh	
@@ -255,8 +266,17 @@ Asia	India	Madhya Pradesh	Mandsaur
 Asia	India	Madhya Pradesh	Neemach
 Asia	India	Madhya Pradesh	Ujjain
 Asia	India	Maharashtra	
+Asia	India	Maharashtra	Akola
+Asia	India	Maharashtra	Amravati
+Asia	India	Maharashtra	Aurangabad
+Asia	India	Maharashtra	Jalna
+Asia	India	Maharashtra	Mumbai
+Asia	India	Maharashtra	Wardha
+Asia	India	Maharashtra	Washim
+Asia	India	Maharashtra	Yavatmal
 Asia	India	Mumbai	
 Asia	India	Odisha	
+Asia	India	Odisha	Ganjam
 Asia	India	Punjab	
 Asia	India	Rajasthan	
 Asia	India	Rajasthan	Bikaner
@@ -265,13 +285,26 @@ Asia	India	Tamil Nadu
 Asia	India	Telangana	
 Asia	India	Telangana	Hyderabad
 Asia	India	Uttar Pradesh	
+Asia	India	Uttar Pradesh	Gaziabad
 Asia	India	Uttar Pradesh	Lucknow
+Asia	India	Uttar Pradesh	Muzaffarnagar
 Asia	India	Uttar Pradesh	Noida
+Asia	India	Uttarakhand	
+Asia	India	Uttarakhand	Chamoli
+Asia	India	Uttarakhand	Dehradun
+Asia	India	Uttarakhand	Haridwar
+Asia	India	Uttarakhand	Pauri Garhwal
+Asia	India	Uttarakhand	Rudraprayag
+Asia	India	Uttarakhand	Tehri Garhwal
+Asia	India	Uttarakhand	Uttarkashi
 Asia	India	West Bengal	
+Asia	India	West Bengal	Birbhum
 Asia	India	West Bengal	Darjeeling
 Asia	India	West Bengal	East Medinipur
+Asia	India	West Bengal	Hooghly
 Asia	India	West Bengal	Howrah
 Asia	India	West Bengal	Kolkata
+Asia	India	West Bengal	Nadia
 Asia	India	West Bengal	North 24 Parganas
 Asia	India	West Bengal	South 24 Parganas
 Asia	India	West Bengal	Tehatta
@@ -879,15 +912,23 @@ Europe	Finland	Finland	Rovaniemi
 Europe	Finland	Helsinki	
 Europe	Finland	Uusimaa	
 Europe	France	Auvergne-Rhône-Alpes	
+Europe	France	Auvergne-Rhône-Alpes	Bourgoin-Jallieu
 Europe	France	Auvergne-Rhône-Alpes	Bourg-en-Bresse
+Europe	France	Auvergne-Rhône-Alpes	Chambery
 Europe	France	Auvergne-Rhône-Alpes	Contamines
+Europe	France	Auvergne-Rhône-Alpes	Contamine-sur-Arve
+Europe	France	Auvergne-Rhône-Alpes	Craponne
+Europe	France	Auvergne-Rhône-Alpes	Decines
 Europe	France	Auvergne-Rhône-Alpes	Lyon
 Europe	France	Auvergne-Rhône-Alpes	Macon
+Europe	France	Auvergne-Rhône-Alpes	Oyonnax
 Europe	France	Auvergne-Rhône-Alpes	Privas
 Europe	France	Auvergne-Rhône-Alpes	Saint-Priest
+Europe	France	Auvergne-Rhône-Alpes	Tarare
 Europe	France	Auvergne-Rhône-Alpes	Valence
 Europe	France	Auvergne-Rhône-Alpes	Venissieux
 Europe	France	Auvergne-Rhône-Alpes	Vienne
+Europe	France	Auvergne-Rhône-Alpes	Villefranche-sur-Saône
 Europe	France	Bourgogne	
 Europe	France	Bourgogne	Dijon
 Europe	France	Bourgogne-France-Comté	
@@ -942,10 +983,14 @@ Europe	France	Ile de France	Vanves
 Europe	France	Normandie	
 Europe	France	Normandie	Carentan
 Europe	France	Normandie	Rouen
+Europe	France	Nouvelle-Aquitaine	
+Europe	France	Nouvelle-Aquitaine	Limoges
 Europe	France	Occitanie	
+Europe	France	Occitanie	Caraman
 Europe	France	Pays de la Loire	
 Europe	France	Pays de la Loire	Nantes
 Europe	France	Provence-Alpes-Côte d'Azur	
+Europe	France	Provence-Alpes-Côte d'Azur	Embrun
 Europe	France	Toulouse	
 Europe	Germany	Baden-Wuerttemberg	
 Europe	Germany	Baden-Wuerttemberg	Tuebingen
@@ -1099,6 +1144,10 @@ Europe	Poland	Wielkopolskie
 Europe	Poland	Wielkopolskie	Kalisz
 Europe	Poland	Zielonogorskie	
 Europe	Poland	Łódzkie	
+Europe	Poland	Łódzkie	Belchatow County
+Europe	Poland	Łódzkie	Lodz
+Europe	Poland	Łódzkie	Pajeczno County
+Europe	Poland	Łódzkie	Skierniewice County
 Europe	Portugal	Beja	
 Europe	Portugal	Beja	Santa Clara de Louredo
 Europe	Portugal	Coimbra	
@@ -1255,6 +1304,7 @@ Europe	Spain	Aragon	Zaragoza
 Europe	Spain	Asturias	
 Europe	Spain	Balear Islands	
 Europe	Spain	Balear Islands	Alcudia
+Europe	Spain	Balear Islands	Calvia
 Europe	Spain	Balear Islands	Ibiza
 Europe	Spain	Balear Islands	Llubi
 Europe	Spain	Balear Islands	Lluchmayor
@@ -1294,7 +1344,15 @@ Europe	Spain	Castilla la Mancha	Villanueva de la Jara
 Europe	Spain	Castilla la Mancha	Villarrobledo
 Europe	Spain	Castilla y Leon	
 Europe	Spain	Catalunya	
+Europe	Spain	Catalunya	Badalona
 Europe	Spain	Catalunya	Barcelona
+Europe	Spain	Catalunya	El Prat de Llobregat
+Europe	Spain	Catalunya	Jorba
+Europe	Spain	Catalunya	L'Hospitalet de Llobregat
+Europe	Spain	Catalunya	Sabadell
+Europe	Spain	Catalunya	Santa Coloma de Cervello
+Europe	Spain	Catalunya	Vallirana
+Europe	Spain	Catalunya	Vic
 Europe	Spain	Comunitat Valenciana	
 Europe	Spain	Comunitat Valenciana	Albal
 Europe	Spain	Comunitat Valenciana	Alboraya
@@ -1807,9 +1865,12 @@ North America	USA	Ohio	Cincinnati
 North America	USA	Ohio	Columbus OH
 North America	USA	Oklahoma	
 North America	USA	Oregon	
+North America	USA	Oregon	Clackamas County
 North America	USA	Oregon	Columbia County OR
+North America	USA	Oregon	Lane County OR
 North America	USA	Oregon	Marion County
 North America	USA	Oregon	Multnomah County
+North America	USA	Oregon	Umatilla County
 North America	USA	Oregon	Wasco County
 North America	USA	Oregon	Washington County OR
 North America	USA	Pennsylvania	
@@ -1850,6 +1911,7 @@ North America	USA	Washington	Jefferson County WA
 North America	USA	Washington	King County
 North America	USA	Washington	Kirkland
 North America	USA	Washington	Kittitas County
+North America	USA	Washington	Klickitat County
 North America	USA	Washington	Mason County
 North America	USA	Washington	Pierce County
 North America	USA	Washington	San Juan County
@@ -1858,7 +1920,6 @@ North America	USA	Washington	Skagit County
 North America	USA	Washington	Snohomish County
 North America	USA	Washington	Spokane County
 North America	USA	Washington	Thurston County
-North America	USA	Washington	Umatilla County
 North America	USA	Washington	Walla Walla County
 North America	USA	Washington	Whatcom County
 North America	USA	Washington	Yakima County
