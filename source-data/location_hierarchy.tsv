@@ -12,6 +12,7 @@ Africa	Democratic Republic of the Congo	Sud Kivu
 Africa	Egypt	Cairo	
 Africa	Egypt	Cairo	Al Matariyyah
 Africa	Egypt	Egypt	
+Africa	Egypt	Faiyum	
 Africa	Egypt	Kalyoubia	
 Africa	Egypt	Nile River Cruise	
 Africa	Gambia	Kombo	
@@ -84,6 +85,7 @@ Africa	Tunisia	Bizerte
 Africa	Tunisia	Tunisia	
 Africa	Uganda	Uganda	
 Africa	Zambia	Zambia	
+Africa	Zambia	Lusaka	
 Asia	Asia	Asia	
 Asia	Bahrain	Bahrain	
 Asia	Bahrain	Capital Governorate	
@@ -469,6 +471,7 @@ Asia	Thailand	Thailand
 Asia	Thailand	Trang	
 Asia	Timor-Leste	Timor-Leste	
 Asia	Turkey	Turkey	
+Asia	Turkey	Bursa	
 Asia	United Arab Emirates	United Arab Emirates	
 Asia	Vietnam	Ho Chi Minh City	
 Asia	Vietnam	Lao Cai	
@@ -991,6 +994,7 @@ Europe	France	Pays de la Loire
 Europe	France	Pays de la Loire	Nantes
 Europe	France	Provence-Alpes-Côte d'Azur	
 Europe	France	Provence-Alpes-Côte d'Azur	Embrun
+Europe	France	Provence-Alpes-Côte d'Azur	Marseille
 Europe	France	Toulouse	
 Europe	Germany	Baden-Wuerttemberg	
 Europe	Germany	Baden-Wuerttemberg	Tuebingen
@@ -1250,6 +1254,7 @@ Europe	Spain	Andalusia	Antequera
 Europe	Spain	Andalusia	Atarfe
 Europe	Spain	Andalusia	Benajarafe
 Europe	Spain	Andalusia	Benalmadena
+Europe	Spain	Andalusia	Benalua de las Villas
 Europe	Spain	Andalusia	Cadiz
 Europe	Spain	Andalusia	Castillo de Locubin
 Europe	Spain	Andalusia	Castril
@@ -1267,17 +1272,21 @@ Europe	Spain	Andalusia	Frailes
 Europe	Spain	Andalusia	Granada
 Europe	Spain	Andalusia	Guadix
 Europe	Spain	Andalusia	Guevejar
+Europe	Spain	Andalusia	Huescar
 Europe	Spain	Andalusia	Huetor Santillan
 Europe	Spain	Andalusia	Illora
 Europe	Spain	Andalusia	Iznalloz
 Europe	Spain	Andalusia	Jerez De La Frontera
 Europe	Spain	Andalusia	Jun
 Europe	Spain	Andalusia	La Linea de la Concepcion
+Europe	Spain	Andalusia	La Peza
 Europe	Spain	Andalusia	La Zubia
 Europe	Spain	Andalusia	Las Gabias
+Europe	Spain	Andalusia	Loja
 Europe	Spain	Andalusia	Mairena Aljarafe
 Europe	Spain	Andalusia	Malaga
 Europe	Spain	Andalusia	Maracena
+Europe	Spain	Andalusia	Navas de San Juan
 Europe	Spain	Andalusia	Nerja
 Europe	Spain	Andalusia	Ogijares
 Europe	Spain	Andalusia	Otura
@@ -1293,6 +1302,7 @@ Europe	Spain	Andalusia	San Roque
 Europe	Spain	Andalusia	Santa Fe
 Europe	Spain	Andalusia	Sevilla
 Europe	Spain	Andalusia	Tarifa
+Europe	Spain	Andalusia	Torre del Mar
 Europe	Spain	Andalusia	Torremolinos
 Europe	Spain	Andalusia	Ubeda
 Europe	Spain	Andalusia	Valderrubio
@@ -1349,12 +1359,18 @@ Europe	Spain	Catalunya
 Europe	Spain	Catalunya	Badalona
 Europe	Spain	Catalunya	Barcelona
 Europe	Spain	Catalunya	El Prat de Llobregat
+Europe	Spain	Catalunya	Granollers
 Europe	Spain	Catalunya	Jorba
 Europe	Spain	Catalunya	L'Hospitalet de Llobregat
+Europe	Spain	Catalunya	Mataro
+Europe	Spain	Catalunya	Mollet del Valles
 Europe	Spain	Catalunya	Sabadell
+Europe	Spain	Catalunya	San Cugat del Valles
 Europe	Spain	Catalunya	Santa Coloma de Cervello
+Europe	Spain	Catalunya	Tiana
 Europe	Spain	Catalunya	Vallirana
 Europe	Spain	Catalunya	Vic
+Europe	Spain	Catalunya	Vilasar de Mar
 Europe	Spain	Comunitat Valenciana	
 Europe	Spain	Comunitat Valenciana	Albal
 Europe	Spain	Comunitat Valenciana	Alboraya
@@ -1388,9 +1404,19 @@ Europe	Spain	Comunitat Valenciana	Valencia
 Europe	Spain	Comunitat Valenciana	Valencia Horta
 Europe	Spain	Comunitat Valenciana	Xeraco
 Europe	Spain	Donostia-San Sebatian	
+Europe	Spain	Extremadura	
+Europe	Spain	Extremadura	Arroyo de la Luz
+Europe	Spain	Extremadura	Caceres
+Europe	Spain	Extremadura	Jaraicejo
+Europe	Spain	Extremadura	Malpartida de Plasencia
+Europe	Spain	Extremadura	Navalmoral de la Mata
+Europe	Spain	Extremadura	Plasencia
+Europe	Spain	Extremadura	Pueblonuevo de Miramontes
+Europe	Spain	Extremadura	Villanueva de la Vera
 Europe	Spain	Galicia	
 Europe	Spain	Galicia	A Coruna
 Europe	Spain	Galicia	Ames
+Europe	Spain	Galicia	Bertamirans
 Europe	Spain	Galicia	Boiro
 Europe	Spain	Galicia	Boqueixón
 Europe	Spain	Galicia	El Rosal
@@ -1403,12 +1429,14 @@ Europe	Spain	Galicia	Oroso
 Europe	Spain	Galicia	Outes
 Europe	Spain	Galicia	Padrón
 Europe	Spain	Galicia	Pontecesures
+Europe	Spain	Galicia	Puerto del Son
 Europe	Spain	Galicia	Rianjo
 Europe	Spain	Galicia	Ribeira
 Europe	Spain	Galicia	Santa Comba
 Europe	Spain	Galicia	Santiago de Compostela
 Europe	Spain	Galicia	Teo
 Europe	Spain	Galicia	Valga
+Europe	Spain	Galicia	Vedra
 Europe	Spain	Grand Canary Islands	
 Europe	Spain	La Rioja	
 Europe	Spain	La Rioja	Agoncillo
@@ -1741,6 +1769,7 @@ North America	USA	Florida
 North America	USA	Florida	Miami
 North America	USA	Florida	Miami-Dade County
 North America	USA	Florida	Palm Beach County
+North America	USA	Florida	Walton County
 North America	USA	Georgia	
 North America	USA	Grand Princess	
 North America	USA	Grand Princess	Grand Princess Cruise Ship
@@ -1889,6 +1918,7 @@ North America	USA	Rhode Island
 North America	USA	San Jose	
 North America	USA	South Carolina	
 North America	USA	South Carolina	Berkeley County
+North America	USA	South Carolina	Columbia SC
 North America	USA	South Carolina	Fairfield County SC
 North America	USA	South Carolina	Kershaw
 North America	USA	South Carolina	Richland County SC
@@ -2089,6 +2119,7 @@ South America	Brazil	Mato Grosso
 South America	Brazil	Minas Gerais	
 South America	Brazil	Para	
 South America	Brazil	Paraná	
+South America	Brazil	Paraná	Curitiba
 South America	Brazil	Pernambuco	
 South America	Brazil	Pernambuco	Alianca
 South America	Brazil	Pernambuco	Camaragibe
