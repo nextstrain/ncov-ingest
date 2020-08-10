@@ -2,7 +2,7 @@
 import pandas as pd
 import argparse
 
-def clean_metadata_file(file_name, n_cols, header):
+def clean_metadata_file(file_name, n_cols, header, sort_col):
     """
     1. Read the metadata TSV file
     2. Sort alphabetically and make sure n columns (n-1 tabs) each row
@@ -14,6 +14,11 @@ def clean_metadata_file(file_name, n_cols, header):
                            header=0 if header else None, #needs to happen if a header already exists and you are overriding with "names"
                            names=col_names, # overriding column names; this adds missing tabs when there are too few
                            usecols=col_names) # using first n only; this removes extra tabs
+    if sort_col is not None:
+        if not header:
+            sort_col = int(sort_col) + 1
+        col_names.remove(sort_col)
+        col_names = [sort_col] + col_names
     metadata = metadata.sort_values(col_names)
     metadata.to_csv(file_name, sep="\t", index=False, header=header)
 
@@ -22,7 +27,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="""Sort metadata tsv and clean tabs. 
         For files with a header, use --header and the number of columns in the header (and the header names) will be used.
-        For files with no header, use --n-cols.""",
+        For files with no header, use --n-cols followed by the number of columns in the tsv.""",
         formatter_class=argparse.RawTextHelpFormatter
     )
 
@@ -37,9 +42,14 @@ if __name__ == "__main__":
             help="Number of columns to enforce.\n")
 
     parser.add_argument(
+            "--sort-col",
+            type=str,
+            help="A column name (or 1-based index for headerless tsvs) to prioritize sorting; if not used, sorting will be alphabetical by columns in the order they appear.`.\n")
+
+    parser.add_argument(
             "--header",
             action='store_true',
             help="Respect a header in the file if set.\n")
 
     args = parser.parse_args()
-    clean_metadata_file(args.metadata, args.n_cols, args.header)
+    clean_metadata_file(args.metadata, args.n_cols, args.header, args.sort_col)
