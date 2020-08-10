@@ -1,0 +1,45 @@
+name: Tab correcting and sorting on manually maintained tsv files
+
+on:
+  push:
+    branches:
+      - clean-metadata
+    tags-ignore:
+      - '**'
+    paths:
+      - source-data/location_hierarchy.tsv
+      - source-data/gisaid_annotations.tsv
+
+jobs:
+  clean-metadata:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        PATH="$HOME/.local/bin:$PATH"
+        python3 -m pip install --upgrade pip setuptools
+        python3 -m pip install pipenv
+    - name: clean location hierarchies
+      run: |
+        pipenv sync
+        pipenv run ./bin/clean-tsv-metadata --metadata source-data/location_hierarchy.tsv --header
+    - name: clean annotations
+      run: |
+        pipenv sync
+        grep -v "paper\|title" source-data/gisaid_annotations.tsv > nonpaper_annotations.tsv
+        pipenv run ./bin/clean-tsv-metadata --metadata nonpaper_annotations.tsv --n-cols 4
+        grep "paper\|title" source-data/gisaid_annotations.tsv > paper_annotations.tsv
+        pipenv run ./bin/clean-tsv-metadata --metadata paper_annotations.tsv --n-cols 4 --sort-col 1
+        cat nonpaper_annotations.tsv > source-data/gisaid_annotations.tsv
+        cat paper_annotations.tsv >> source-data/gisaid_annotations.tsv
+    - name: commit cleaned tsvs
+      run: |
+        git config --global user.name "${{ github.actor }}"
+        git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+        git diff --quiet || git commit -am "Automated commit: clean manually maintained tsvs"
+        git push
