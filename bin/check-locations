@@ -30,7 +30,7 @@ def validate_metadata(metadata: pd.DataFrame, columns: List[str]):
         except ValueError:
             non_null_columns = columns
 
-        non_null_columns = [ f"{resolution}_exposure" for resolution in non_null_columns ]
+        non_null_columns += [ f"{resolution}_exposure" for resolution in non_null_columns ]
 
         assert metadata[non_null_columns].notnull().all().all(), \
             "There are missing values in the location hierarchy columns " \
