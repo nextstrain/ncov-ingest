@@ -47,6 +47,19 @@ A common pattern is expected to be:
  3. Update `source-data/location_hierarchy.tsv`.
  4. Push changes to `master` so the next ingest will have an updated "source of truth" to draw from.
 
+## Configuring alerts for new GISAID data from specific location hierarchy areas
+Some Nextstrain team members may be interested in receiving alerts when new GISAID strains are added from specific locations, e.g. Portugal or Louisiana.
+To add a custom alert configuration, create a new entry in `new-sequence-alerts-config.json`.
+Each resolution (region, division, country, location) accepts a list of strings of areas of interest.
+Note that these strings must match the area name exactly.
+
+To set up custom alerts, you'll need to retrieve your Slack member ID.
+Note that the `user` field in each alert configuration is for human use only -- it need not match your Slack display name or username.
+To view your Slack member ID, open up the Slack menu by clicking your name at the top, and click on 'View profile'.
+Then, click on 'More'.
+You can then copy your Slack member ID from the menu that appears.
+Enter this into the `slack_member_id` field of your alert configuration.
+
 ## Required dependencies
 Run `pipenv sync` to setup an isolated Python 3.6 environment using the pinned dependencies.
 
