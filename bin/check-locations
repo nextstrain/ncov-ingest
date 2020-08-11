@@ -32,9 +32,15 @@ def validate_metadata(metadata: pd.DataFrame, columns: List[str]):
 
         non_null_columns += [ f"{resolution}_exposure" for resolution in non_null_columns ]
 
+        ids_missing_hierarchy_data = list(
+            metadata[metadata[non_null_columns] \
+                .isnull() \
+                .any(axis='columns')][args.unique_id])
+
         assert metadata[non_null_columns].notnull().all().all(), \
-            "There are missing values in the location hierarchy columns " \
-            f"«{non_null_columns}». At this point, we expect all " \
+            "The following strains have missing values in one or more of the " \
+            f"location hierarchy columns «{non_null_columns}»: " \
+            f"«{ids_missing_hierarchy_data}». At this point, we expect all " \
             "missing values to be interpolated."
 
     no_missing_hierarchy_data()
