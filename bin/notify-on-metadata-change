@@ -44,4 +44,8 @@ fi
 if [[ -s "$additions" ]]; then
     echo "Notifying Slack about metadata additions."
     "$bin"/notify-slack --upload "metadata-additions.tsv" < "$additions"
+
+    if [[ "$key" == "gisaid_epi_isl" ]]; then
+        "$bin"/notify-users-on-new-locations "$additions"
+    fi
 fi
