@@ -42,9 +42,9 @@ main() {
             exit 0
         fi
 
-        if ! "$bin"/notify-slack "Updated $dst available."; then
-            echo "Notifying Slack failed, but exiting with success anyway."
-        fi
+ #       if ! "$bin"/notify-slack "Updated $dst available."; then
+ #           echo "Notifying Slack failed, but exiting with success anyway."
+ #       fi
     else
         echo "Files are identical, skipping upload"
     fi

@@ -1,32 +1,32 @@
 #!/bin/bash
 set -euo pipefail
 
-: "${SLACK_TOKEN:?The SLACK_TOKEN environment variable is required.}"
-: "${SLACK_CHANNELS:?The SLACK_CHANNELS environment variable is required.}"
-
-bin="$(dirname "$0")"
-
-src="${1:?A source additional info TSV file is required as the first argument.}"
-dst="${2:?A destination additional info TSV s3:// URL is required as the second argument.}"
-
-# if the file is not already present, just exit
-"$bin"/s3-object-exists "$dst" || exit 0
-
-# Remove rows where columns 3 (additional_host_info) and 4 (additional_location_info) are empty.
-# Compare the S3 version with the local version.
-diff="$(
-    csv-diff \
-        <(awk 'BEGIN {FS="\t"}; { if ($3 != "" || $4 != "") { print }}' <(aws s3 cp --no-progress "$dst" - | gunzip -cfq)) \
-        <(awk 'BEGIN {FS="\t"}; { if ($3 != "" || $4 != "") { print }}' "$src") \
-        --format tsv \
-        --key gisaid_epi_isl \
-        --singular "additional info" \
-        --plural "additional info"
-)"
-
-if [[ -n "$diff" ]]; then
-    echo "Notifying Slack about additional info change."
-    "$bin"/notify-slack --upload "additional-info-changes.txt" <<<"$diff"
-else
-    echo "No additional info change."
-fi
+#: "${SLACK_TOKEN:?The SLACK_TOKEN environment variable is required.}"
+#: "${SLACK_CHANNELS:?The SLACK_CHANNELS environment variable is required.}"
+#
+#bin="$(dirname "$0")"
+#
+#src="${1:?A source additional info TSV file is required as the first argument.}"
+#dst="${2:?A destination additional info TSV s3:// URL is required as the second argument.}"
+#
+## if the file is not already present, just exit
+#"$bin"/s3-object-exists "$dst" || exit 0
+#
+## Remove rows where columns 3 (additional_host_info) and 4 (additional_location_info) are empty.
+## Compare the S3 version with the local version.
+#diff="$(
+#    csv-diff \
+#        <(awk 'BEGIN {FS="\t"}; { if ($3 != "" || $4 != "") { print }}' <(aws s3 cp --no-progress "$dst" - | gunzip -cfq)) \
+#        <(awk 'BEGIN {FS="\t"}; { if ($3 != "" || $4 != "") { print }}' "$src") \
+#        --format tsv \
+#        --key gisaid_epi_isl \
+#        --singular "additional info" \
+#        --plural "additional info"
+#)"
+#
+#if [[ -n "$diff" ]]; then
+#    echo "Notifying Slack about additional info change."
+#    "$bin"/notify-slack --upload "additional-info-changes.txt" <<<"$diff"
+#else
+#    echo "No additional info change."
+#fi

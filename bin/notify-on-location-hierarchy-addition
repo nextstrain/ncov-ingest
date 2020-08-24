@@ -1,31 +1,31 @@
 #!/bin/bash
 set -euo pipefail
 
-: "${SLACK_TOKEN:?The SLACK_TOKEN environment variable is required.}"
-: "${SLACK_CHANNELS:?The SLACK_CHANNELS environment variable is required.}"
-
-bin="$(dirname "$0")"
-
-src="${1:?A source location hierarchy TSV file is required as the first argument.}"
-dst="${2:?A destination location hierarchy TSV file is required as the second argument.}"
-
-diff="$(mktemp -t location-hierarchy-changes-XXXXXX)"
-
-trap "rm -f '$diff'" EXIT
-
-comm -13 \
-    <(sort "$dst") \
-    <(sort "$src") \
-    > "$diff"
-
-if [[ -s "$diff" ]]; then
-    echo "Notifying Slack about location hierarchy additions."
-    message=":world_map: "$(wc -l < "$diff")" new location hierarchies. "
-    message+="Note that these are case-sensitive. Please review these "
-    message+="hierarchies and either add them to "
-    message+="_./source-data/location_hierarchy.tsv_ or create new annotations "
-    message+="to correct them."
-
-    "$bin"/notify-slack "$message"
-    "$bin"/notify-slack --upload "location-hierarchy-additions.tsv" < "$diff"
-fi
+#: "${SLACK_TOKEN:?The SLACK_TOKEN environment variable is required.}"
+#: "${SLACK_CHANNELS:?The SLACK_CHANNELS environment variable is required.}"
+#
+#bin="$(dirname "$0")"
+#
+#src="${1:?A source location hierarchy TSV file is required as the first argument.}"
+#dst="${2:?A destination location hierarchy TSV file is required as the second argument.}"
+#
+#diff="$(mktemp -t location-hierarchy-changes-XXXXXX)"
+#
+#trap "rm -f '$diff'" EXIT
+#
+#comm -13 \
+#    <(sort "$dst") \
+#    <(sort "$src") \
+#    > "$diff"
+#
+#if [[ -s "$diff" ]]; then
+#    echo "Notifying Slack about location hierarchy additions."
+#    message=":world_map: "$(wc -l < "$diff")" new location hierarchies. "
+#    message+="Note that these are case-sensitive. Please review these "
+#    message+="hierarchies and either add them to "
+#    message+="_./source-data/location_hierarchy.tsv_ or create new annotations "
+#    message+="to correct them."
+#
+#    "$bin"/notify-slack "$message"
+#    "$bin"/notify-slack --upload "location-hierarchy-additions.tsv" < "$diff"
+#fi
