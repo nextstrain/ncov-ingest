@@ -69,7 +69,7 @@ main() {
     if [[ "$fetch" == 1 ]]; then
         ./bin/fetch-from-gisaid > data/gisaid.ndjson
         if [[ "$branch" == master ]]; then
-            ./bin/notify-on-record-change data/gisaid.ndjson "$S3_SRC/gisaid.ndjson.gz" "GISAID"
+            #./bin/notify-on-record-change data/gisaid.ndjson "$S3_SRC/gisaid.ndjson.gz" "GISAID"
         fi
         ./bin/upload-to-s3 --quiet data/gisaid.ndjson "$S3_DST/gisaid.ndjson.gz"
     else
@@ -86,10 +86,10 @@ main() {
         gisaid_epi_isl
 
     if [[ "$branch" == master ]]; then
-        ./bin/notify-on-metadata-change data/gisaid/metadata.tsv "$S3_SRC/metadata.tsv.gz" gisaid_epi_isl
-        ./bin/notify-on-additional-info-change data/gisaid/additional_info.tsv "$S3_SRC/additional_info.tsv.gz"
-        ./bin/notify-on-flagged-metadata-change data/gisaid/flagged_metadata.txt "$S3_SRC/flagged_metadata.txt.gz"
-        ./bin/notify-on-location-hierarchy-addition data/gisaid/location_hierarchy.tsv source-data/location_hierarchy.tsv
+    #    ./bin/notify-on-metadata-change data/gisaid/metadata.tsv "$S3_SRC/metadata.tsv.gz" gisaid_epi_isl
+    #    ./bin/notify-on-additional-info-change data/gisaid/additional_info.tsv "$S3_SRC/additional_info.tsv.gz"
+    #    ./bin/notify-on-flagged-metadata-change data/gisaid/flagged_metadata.txt "$S3_SRC/flagged_metadata.txt.gz"
+    #    ./bin/notify-on-location-hierarchy-addition data/gisaid/location_hierarchy.tsv source-data/location_hierarchy.tsv
     fi
 
     ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/metadata.tsv "$S3_DST/metadata.tsv.gz"

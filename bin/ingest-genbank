@@ -43,7 +43,7 @@ set -x
 
 ./bin/fetch-from-genbank > data/genbank.ndjson
 if [[ "$branch" == master ]]; then
-    ./bin/notify-on-record-change data/genbank.ndjson "$S3_SRC/genbank.ndjson.gz" "GenBank"
+    #./bin/notify-on-record-change data/genbank.ndjson "$S3_SRC/genbank.ndjson.gz" "GenBank"
 fi
 ./bin/upload-to-s3 ${silent:+--quiet} data/genbank.ndjson "$S3_DST/genbank.ndjson.gz"
 
@@ -55,9 +55,9 @@ fi
     genbank_accession
 
 if [[ "$branch" == master ]]; then
-    ./bin/notify-on-metadata-change data/genbank/metadata.tsv "$S3_SRC/genbank_metadata.tsv.gz" genbank_accession
-    ./bin/notify-on-problem-data data/genbank/problem_data.tsv
-    ./bin/notify-on-location-hierarchy-addition data/genbank/location_hierarchy.tsv source-data/location_hierarchy.tsv
+    #./bin/notify-on-metadata-change data/genbank/metadata.tsv "$S3_SRC/genbank_metadata.tsv.gz" genbank_accession
+    #./bin/notify-on-problem-data data/genbank/problem_data.tsv
+    #./bin/notify-on-location-hierarchy-addition data/genbank/location_hierarchy.tsv source-data/location_hierarchy.tsv
 fi
 
 ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/metadata.tsv "$S3_DST/genbank_metadata.tsv.gz"
