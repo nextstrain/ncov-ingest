@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+trap "exit" INT
+
+set -x
+
+INPUT_DIR="data/gisaid/inputs"
+OUTPUT_DIR="data/gisaid/outputs"
+
+main() {
+  cd "$(dirname "$0")/.."
+
+  mkdir -p "${INPUT_DIR}"
+  mkdir -p "${OUTPUT_DIR}"
+
+  METADATA_OLD="${INPUT_DIR}/metadata.tsv"
+  METADATA_NEW="${OUTPUT_DIR}/metadata.tsv"
+  METADATA_CHANGES="${OUTPUT_DIR}/metadata-changes.txt"
+  METADATA_ADDITIONS="${OUTPUT_DIR}/metadata-additions.tsv"
+
+  ADDITIONAL_INFO_OLD="${INPUT_DIR}/additional_info.tsv"
+  ADDITIONAL_INFO_NEW="${OUTPUT_DIR}/additional_info.tsv"
+  ADDITIONAL_INFO_CHANGES="${OUTPUT_DIR}/additional-info-changes.txt"
+
+  LOCATION_HIERARCHY_NEW="${INPUT_DIR}/location_hierarchy.tsv"
+  LOCATION_HIERARCHY_REFERENCE="source-data/location_hierarchy.tsv"
+  LOCATION_HIERARCHY_ADDITIONS="${OUTPUT_DIR}/location-hierarchy-additions.tsv"
+
+  KEY="gisaid_epi_isl"
+
+  ./bin/transform-gisaid "${INPUT_DIR}/gisaid.ndjson" \
+    --output-metadata "${OUTPUT_DIR}/metadata.tsv" \
+    --output-fasta "${OUTPUT_DIR}/sequences.fasta" \
+    --output-additional-info "${OUTPUT_DIR}/additional_info.tsv"
+
+  csv-diff \
+    "${METADATA_OLD}" \
+    "${METADATA_NEW}" \
+    --format tsv \
+    --key "$KEY" \
+    --singular sequence \
+    --plural sequences \
+    >"${METADATA_CHANGES}"
+
+  ./bin/metadata-additions "${METADATA_OLD}" "${METADATA_NEW}" "${KEY}" >"${METADATA_ADDITIONS}"
+
+  csv-diff \
+    <(awk 'BEGIN {FS="\t"}; { if ($3 != "" || $4 != "") { print }}' "${ADDITIONAL_INFO_OLD}") \
+    <(awk 'BEGIN {FS="\t"}; { if ($3 != "" || $4 != "") { print }}' "${ADDITIONAL_INFO_NEW}") \
+    --format tsv \
+    --key "${KEY}" \
+    --singular "additional info" \
+    --plural "additional info" \
+    >${ADDITIONAL_INFO_CHANGES}
+
+  ./bin/flag-metadata "${OUTPUT_DIR}/metadata.tsv" >"${OUTPUT_DIR}/flagged_metadata.txt"
+  ./bin/check-locations "${OUTPUT_DIR}/metadata.tsv" "${OUTPUT_DIR}/location_hierarchy.tsv" "gisaid_epi_isl"
+
+  comm -13 \
+    <(sort "${LOCATION_HIERARCHY_REFERENCE}") \
+    <(sort "${LOCATION_HIERARCHY_NEW}") \
+    >"${LOCATION_HIERARCHY_ADDITIONS}"
+}
+
+main "$@"
