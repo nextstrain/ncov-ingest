@@ -1,10 +1,10 @@
 region	country	division	location
 Africa	Algeria	Blida	
 Africa	Algeria	Boufarik	
-Africa	Cameroon	Yaounde	
 Africa	Benin	Cotonou	
 Africa	Benin	Oueme	
 Africa	Burkina Faso	Burkina Faso	
+Africa	Cameroon	Yaounde	
 Africa	Democratic Republic of the Congo	Democratic Republic of the Congo	
 Africa	Democratic Republic of the Congo	Haut-Katanga	
 Africa	Democratic Republic of the Congo	Kinshasa	
@@ -22,9 +22,7 @@ Africa	Ghana	Ghana
 Africa	Ghana	Greater Accra	
 Africa	Ghana	Greater Accra	Accra
 Africa	Kenya	Kenya	
-Africa	Madagascar	Analamanga	
 Africa	Madagascar	Analamanga	Antananarivo
-Africa	Madagascar	Analanjirofo	
 Africa	Madagascar	Analanjirofo	Fenoarivo
 Africa	Mali	Bamako	
 Africa	Mali	Mopti	
@@ -43,7 +41,6 @@ Africa	Nigeria	Osun State
 Africa	Nigeria	Oyo State	
 Africa	Senegal	Dakar	
 Africa	Senegal	Dakar	Guediawaye
-Africa	Senegal	Dakar	Keur Massar
 Africa	Senegal	Dakar	Mbao
 Africa	Senegal	Dakar	Pikine
 Africa	Senegal	Dakar	Sangalkam
@@ -51,7 +48,6 @@ Africa	Senegal	Dakar	Yeumbeul
 Africa	Senegal	Kolda	
 Africa	Senegal	Kolda	Velingara
 Africa	Senegal	Mbour	
-Africa	Senegal	Pikine	
 Africa	Senegal	St-Louis	
 Africa	Senegal	Thies	
 Africa	Senegal	Touba	
@@ -87,7 +83,6 @@ Africa	Tunisia	Ben Arous
 Africa	Tunisia	Bizerte	
 Africa	Tunisia	Tunisia	
 Africa	Uganda	Uganda	
-Africa	Zambia	Zambia	
 Africa	Zambia	Lusaka	
 Asia	Asia	Asia	
 Asia	Bahrain	Bahrain	
@@ -96,7 +91,6 @@ Asia	Bahrain	Capital Governorate	Manama
 Asia	Bangladesh	Bagherhat	
 Asia	Bangladesh	Bagherhat	Sador
 Asia	Bangladesh	Bangladesh	
-Asia	Bangladesh	Barishal	
 Asia	Bangladesh	Barishal	
 Asia	Bangladesh	Chattogram	
 Asia	Bangladesh	Chattogram	Begumganj
@@ -120,11 +114,9 @@ Asia	Bangladesh	Jhenaidha
 Asia	Bangladesh	Jhenaidha	Shailokupa
 Asia	Bangladesh	Khulna	
 Asia	Bangladesh	Khulna	Jashore
-Asia	Bangladesh	Mirpur	
 Asia	Bangladesh	Mymensingh	
 Asia	Bangladesh	Narail	
 Asia	Bangladesh	Narail	Kalia
-Asia	Bangladesh	Narayanganj	
 Asia	Bangladesh	Rajshahi	
 Asia	Bangladesh	Rajshahi	Pabna
 Asia	Bangladesh	Rangpur	
@@ -169,7 +161,6 @@ Asia	China	Hubei
 Asia	China	Hubei	Jingzhou
 Asia	China	Hubei	Tianmen
 Asia	China	Hubei	Wuhan
-Asia	China	Iran	
 Asia	China	Jiangsu	
 Asia	China	Jiangsu	Changzhou
 Asia	China	Jiangsu	Huaian
@@ -191,7 +182,6 @@ Asia	China	Shandong	Qingdao
 Asia	China	Shanghai	
 Asia	China	Sichuan	
 Asia	China	Sichuan	Chengdu
-Asia	China	Wuhan	
 Asia	China	Yunnan	
 Asia	China	Yunnan	Kunming
 Asia	China	Yunnan	Pu'Er
@@ -202,7 +192,6 @@ Asia	China	Zhejiang	Keqiao
 Asia	China	Zhejiang	Lishui
 Asia	China	Zhejiang	Shangyu
 Asia	China	Zhejiang	Yuecheng
-Asia	Georgia	Georgia	
 Asia	Georgia	Tbilisi	
 Asia	Hong Kong	Hong Kong	
 Asia	Hong Kong	Hong Kong	Hong Kong
@@ -217,15 +206,19 @@ Asia	India	Gujarat	Ahmedabad
 Asia	India	Gujarat	Bardoli
 Asia	India	Gujarat	Bayad
 Asia	India	Gujarat	Bharuch
+Asia	India	Gujarat	Bhavnagar
 Asia	India	Gujarat	Bhuj
 Asia	India	Gujarat	Botad
 Asia	India	Gujarat	Choryasi
 Asia	India	Gujarat	Chuda
 Asia	India	Gujarat	Dahegam
 Asia	India	Gujarat	Dahod
+Asia	India	Gujarat	Daskroi
 Asia	India	Gujarat	Dhanera
 Asia	India	Gujarat	Dhansura
+Asia	India	Gujarat	Dholka
 Asia	India	Gujarat	Gandhinagar
+Asia	India	Gujarat	Ghogha
 Asia	India	Gujarat	Gondal
 Asia	India	Gujarat	Himatnagar
 Asia	India	Gujarat	Jamnagar
@@ -233,11 +226,13 @@ Asia	India	Gujarat	Jetpur
 Asia	India	Gujarat	Junagadh
 Asia	India	Gujarat	Kadi
 Asia	India	Gujarat	Kalol
+Asia	India	Gujarat	Kamrej
 Asia	India	Gujarat	Kapadvanj
 Asia	India	Gujarat	Kheda
 Asia	India	Gujarat	Khedbrahma
 Asia	India	Gujarat	Kodinar
 Asia	India	Gujarat	Mahemdavad
+Asia	India	Gujarat	Mahuva
 Asia	India	Gujarat	Mandvi
 Asia	India	Gujarat	Mansa
 Asia	India	Gujarat	Mehsana
@@ -253,42 +248,38 @@ Asia	India	Gujarat	Surat
 Asia	India	Gujarat	Talod
 Asia	India	Gujarat	Una
 Asia	India	Gujarat	Vadodara
-Asia	India	Gujarat	Bhavnagar
-Asia	India	Gujarat	Daskroi
-Asia	India	Gujarat	Dholka
-Asia	India	Gujarat	Ghogha
-Asia	India	Gujarat	Kamrej
-Asia	India	Gujarat	Mahuva
 Asia	India	Haryana	
 Asia	India	Haryana	Faridabad
 Asia	India	Haryana	Gurugram
 Asia	India	Haryana	Palwal
 Asia	India	India	
 Asia	India	Jammu	
-Asia	India	Kargil	
 Asia	India	Karnataka	
 Asia	India	Karnataka	Bengaluru Urban
 Asia	India	Karnataka	Chikkaballapura
 Asia	India	Karnataka	Haveri
 Asia	India	Karnataka	Kolar
 Asia	India	Karnataka	Tumakuru
-Asia	India	Kerala	
 Asia	India	Ladakh	
+Asia	India	Ladakh	Kargil
 Asia	India	Madhya Pradesh	
 Asia	India	Madhya Pradesh	Burhanpur
 Asia	India	Madhya Pradesh	Mandsaur
 Asia	India	Madhya Pradesh	Neemach
 Asia	India	Madhya Pradesh	Ujjain
 Asia	India	Maharashtra	
+Asia	India	Maharashtra	Ahmednagar
 Asia	India	Maharashtra	Akola
 Asia	India	Maharashtra	Amravati
 Asia	India	Maharashtra	Aurangabad
 Asia	India	Maharashtra	Jalna
+Asia	India	Maharashtra	Kolhapur
 Asia	India	Maharashtra	Mumbai
+Asia	India	Maharashtra	Pune
+Asia	India	Maharashtra	Sangli
 Asia	India	Maharashtra	Wardha
 Asia	India	Maharashtra	Washim
 Asia	India	Maharashtra	Yavatmal
-Asia	India	Mumbai	
 Asia	India	Odisha	
 Asia	India	Odisha	Ganjam
 Asia	India	Punjab	
@@ -296,14 +287,44 @@ Asia	India	Rajasthan
 Asia	India	Rajasthan	Bikaner
 Asia	India	Rajasthan	Jaipur
 Asia	India	Tamil Nadu	
+Asia	India	Tamil Nadu	Chennai
 Asia	India	Telangana	
+Asia	India	Telangana	Adilabad
+Asia	India	Telangana	Gadwal
 Asia	India	Telangana	Hyderabad
+Asia	India	Telangana	Jogulamba Gadwal
+Asia	India	Telangana	Kamareddy
+Asia	India	Telangana	Khammam
+Asia	India	Telangana	Mahboobnagar
+Asia	India	Telangana	Mahbubnagar
+Asia	India	Telangana	Mancherial
+Asia	India	Telangana	Nagarkurnool
+Asia	India	Telangana	Nalgonda
+Asia	India	Telangana	Nirmal
+Asia	India	Telangana	Nizamabad
+Asia	India	Telangana	Peddapally
+Asia	India	Telangana	Rangareddy
+Asia	India	Telangana	Sangareddy
+Asia	India	Telangana	Suryapet
+Asia	India	Telangana	Vikarabad
 Asia	India	Uttar Pradesh	
+Asia	India	Uttar Pradesh	Agra
 Asia	India	Uttar Pradesh	Aligarh
+Asia	India	Uttar Pradesh	Azamgarh
+Asia	India	Uttar Pradesh	Barabanki
+Asia	India	Uttar Pradesh	Farrukhabad
 Asia	India	Uttar Pradesh	Gaziabad
+Asia	India	Uttar Pradesh	Hardoi
+Asia	India	Uttar Pradesh	Kannauj
+Asia	India	Uttar Pradesh	Kanpur
+Asia	India	Uttar Pradesh	Lakhimpur
 Asia	India	Uttar Pradesh	Lucknow
+Asia	India	Uttar Pradesh	Moradabad
 Asia	India	Uttar Pradesh	Muzaffarnagar
 Asia	India	Uttar Pradesh	Noida
+Asia	India	Uttar Pradesh	Pilibhit
+Asia	India	Uttar Pradesh	Sambhal
+Asia	India	Uttar Pradesh	Shahjahanpur
 Asia	India	Uttarakhand	
 Asia	India	Uttarakhand	Chamoli
 Asia	India	Uttarakhand	Dehradun
@@ -323,7 +344,6 @@ Asia	India	West Bengal	Nadia
 Asia	India	West Bengal	North 24 Parganas
 Asia	India	West Bengal	South 24 Parganas
 Asia	India	West Bengal	Tehatta
-Asia	Indonesia	Bandung	
 Asia	Indonesia	East Kalimantan	
 Asia	Indonesia	East Kalimantan	Samarinda
 Asia	Indonesia	Indonesia	
@@ -331,7 +351,10 @@ Asia	Indonesia	Jakarta
 Asia	Indonesia	North Sulawesi	
 Asia	Indonesia	North Sulawesi	Manado
 Asia	Indonesia	Pasuruan	
+Asia	Indonesia	Special Region of Yogyakarta	
 Asia	Indonesia	Surabaya	
+Asia	Indonesia	West Java	
+Asia	Indonesia	West Java	Bandung
 Asia	Iran	Iran	
 Asia	Iran	Semnan	
 Asia	Iran	Tehran	
@@ -346,12 +369,12 @@ Asia	Israel	Elkana
 Asia	Israel	Gani Tikva	
 Asia	Israel	Gedera	
 Asia	Israel	Haifa	
+Asia	Israel	Haifa District	
 Asia	Israel	Holon	
 Asia	Israel	Hukuk	
 Asia	Israel	Israel	
 Asia	Israel	Jerusalem District	
 Asia	Israel	Kfar Habad	
-Asia	Israel	Kfar Saba	
 Asia	Israel	Kiryat Gat	
 Asia	Israel	Kiryat Ono	
 Asia	Israel	Maalot Tarshicha	
@@ -399,14 +422,12 @@ Asia	Japan	Tokyo
 Asia	Japan	Tokyo	Tokyo
 Asia	Jordan	Amman	
 Asia	Jordan	Irbid	
-Asia	Kazakhstan	Kazakhstan	
 Asia	Kazakhstan	Nur-Sultan	
 Asia	Kuwait	Kuwait	
 Asia	Kuwait	Kuwait	Dasman
 Asia	Kuwait	Kuwait	Hawali
 Asia	Kyrgyzstan	Kyrgyzstan	
 Asia	Lebanon	Beirut	
-Asia	Lebanon	Lebanon	
 Asia	Malaysia	Kuala Lumpur	
 Asia	Malaysia	Malaysia	
 Asia	Malaysia	Pahang	
@@ -439,10 +460,8 @@ Asia	Oman	South Batinah	Al Awabi
 Asia	Oman	South Batinah	Ar Rustaq
 Asia	Oman	South Batinah	Barka
 Asia	Oman	South Batinah	Nakhal
-Asia	Pakistan	Gilgit Baltistan	
 Asia	Pakistan	Gilgit Baltistan	Gilgit
 Asia	Pakistan	Islamabad	
-Asia	Pakistan	Islamabad Capital Territory	
 Asia	Pakistan	Karachi	
 Asia	Pakistan	Khyber Pakhtunkhwa	
 Asia	Pakistan	Pakistan	
@@ -466,7 +485,6 @@ Asia	South Korea	Gyeonggi Province	Uijeongbu
 Asia	South Korea	Seoul	
 Asia	South Korea	Seoul	Seoul
 Asia	South Korea	South Korea	
-Asia	South Korea	Uijeongbu	
 Asia	Sri Lanka	Sri Lanka	
 Asia	Taiwan	Keelung	
 Asia	Taiwan	New Taipei City	
@@ -478,7 +496,6 @@ Asia	Taiwan	Taiwan	Taoyuan
 Asia	Thailand	Bangkok	
 Asia	Thailand	Nakhonnayok	
 Asia	Thailand	Nonthaburi	
-Asia	Thailand	Nonthaburi	Bangkok
 Asia	Thailand	Pathum Thani	
 Asia	Thailand	Phuket	
 Asia	Thailand	Samut Prakarn	
@@ -487,6 +504,7 @@ Asia	Thailand	Thailand
 Asia	Thailand	Trang	
 Asia	Timor-Leste	Timor-Leste	
 Asia	United Arab Emirates	United Arab Emirates	
+Asia	Uzbekistan	Uzbekistan	
 Asia	Vietnam	Ho Chi Minh City	
 Asia	Vietnam	Lao Cai	
 Asia	Vietnam	Quangninh	
@@ -501,7 +519,6 @@ Europe	Austria	Italian cruise ship
 Europe	Austria	Lower Austria	
 Europe	Austria	Salzburg	
 Europe	Austria	Salzburg	Bad Gastein
-Europe	Austria	South Tyrol	
 Europe	Austria	Styria	
 Europe	Austria	Tyrol	
 Europe	Austria	Tyrol	Aldrans
@@ -661,7 +678,6 @@ Europe	Belgium	Ieper
 Europe	Belgium	Ieper	Geluwe
 Europe	Belgium	Ieper	Poperinge
 Europe	Belgium	Ieper	Vlamertinge
-Europe	Belgium	Kalmthout	
 Europe	Belgium	Kortrijk	
 Europe	Belgium	Kortrijk	Anzegem
 Europe	Belgium	Kortrijk	Avelgem
@@ -906,7 +922,6 @@ Europe	Czech Republic	Olomouc Region
 Europe	Czech Republic	Olomouc Region	Litovel
 Europe	Czech Republic	Plzeň Region	
 Europe	Czech Republic	Plzeň Region	Domažlice
-Europe	Czech Republic	Plzeň Region	Klenčí
 Europe	Czech Republic	Plzeň Region	Plzeň
 Europe	Czech Republic	Prague	
 Europe	Czech Republic	Prague	Prague-Miskovice
@@ -931,11 +946,11 @@ Europe	Finland	Finland	Rovaniemi
 Europe	Finland	Helsinki	
 Europe	Finland	Uusimaa	
 Europe	France	Auvergne-Rhône-Alpes	
-Europe	France	Auvergne-Rhône-Alpes	Bourgoin-Jallieu
 Europe	France	Auvergne-Rhône-Alpes	Bourg-en-Bresse
+Europe	France	Auvergne-Rhône-Alpes	Bourgoin-Jallieu
 Europe	France	Auvergne-Rhône-Alpes	Chambery
-Europe	France	Auvergne-Rhône-Alpes	Contamines
 Europe	France	Auvergne-Rhône-Alpes	Contamine-sur-Arve
+Europe	France	Auvergne-Rhône-Alpes	Contamines
 Europe	France	Auvergne-Rhône-Alpes	Craponne
 Europe	France	Auvergne-Rhône-Alpes	Decines
 Europe	France	Auvergne-Rhône-Alpes	Lyon
@@ -976,7 +991,6 @@ Europe	France	Hauts de France	Compiègne
 Europe	France	Hauts de France	Crouy en Thelle
 Europe	France	Hauts de France	Crépy en Valois
 Europe	France	Hauts de France	Nogent-l'Artaud
-Europe	France	Hubei	
 Europe	France	Ile de France	
 Europe	France	Ile de France	Asnières-sur-Seine
 Europe	France	Ile de France	Cergy
@@ -1018,12 +1032,12 @@ Europe	Germany	Bavaria
 Europe	Germany	Bavaria	Munich
 Europe	Germany	Bavaria	Starnberg
 Europe	Germany	Berlin	
+Europe	Germany	Berlin	Berlin
 Europe	Germany	Frankfurt	
 Europe	Germany	Germany	
 Europe	Germany	Niedersachsen	
 Europe	Germany	North Rhine Westphalia	
 Europe	Germany	North Rhine Westphalia	Duesseldorf
-Europe	Germany	North Rhine Westphalia	Heinsberg
 Europe	Germany	North Rhine Westphalia	Heinsberg District
 Europe	Germany	North Rhine Westphalia	Münster
 Europe	Germany	Rostock	
@@ -1031,7 +1045,6 @@ Europe	Germany	Western Pomerania
 Europe	Greece	Athens	
 Europe	Greece	Central Greece	
 Europe	Greece	Central Greece	Livadeia
-Europe	Greece	Greece	
 Europe	Greece	Thessaloniki	
 Europe	Hungary	Balassagyarmat	
 Europe	Hungary	Balatonfured	
@@ -1051,7 +1064,6 @@ Europe	Hungary	Oroshaza
 Europe	Hungary	Szabolcs-Szatmár-Bereg County	
 Europe	Hungary	Szeged	
 Europe	Iceland	Reykjavik	
-Europe	Iran	Iran	
 Europe	Ireland	Cork	
 Europe	Ireland	Dublin	
 Europe	Ireland	Galway	
@@ -1059,9 +1071,9 @@ Europe	Ireland	Ireland
 Europe	Ireland	Kerry	
 Europe	Ireland	Kildare	
 Europe	Ireland	Kilkenny	
+Europe	Ireland	Laois	
 Europe	Ireland	Leitrim	
 Europe	Ireland	Limerick	
-Europe	Ireland	Laois	
 Europe	Ireland	Louth	
 Europe	Ireland	Meath	
 Europe	Ireland	Monaghan	
@@ -1096,7 +1108,6 @@ Europe	Italy	Sardinia
 Europe	Italy	Sicily	
 Europe	Italy	South Tyrol	
 Europe	Italy	Trentino	
-Europe	Italy	Tyrol	
 Europe	Italy	Valle D'Aosta	
 Europe	Italy	Veneto	
 Europe	Italy	Veneto	Verona IT
@@ -1106,6 +1117,10 @@ Europe	Lithuania	Lithuania
 Europe	Lithuania	Vilnius	
 Europe	Luxembourg	Luxembourg	
 Europe	Luxembourg	Luxembourg	Luxembourg
+Europe	Moldova	Balti	
+Europe	Moldova	Chisinau	
+Europe	Moldova	Straseni	
+Europe	Montenegro	Montenegro	
 Europe	Netherlands	Drenthe	
 Europe	Netherlands	Drenthe	Coevorden
 Europe	Netherlands	Drenthe	Dalen
@@ -1142,11 +1157,11 @@ Europe	Netherlands	Utrecht
 Europe	Netherlands	Utrecht	Houten
 Europe	Netherlands	Utrecht	Utrecht
 Europe	Netherlands	Zeeland	
-Europe	North Macedonia	Eastern Region MK	
-Europe	North Macedonia	Eastern Region MK	Shtip
+Europe	North Macedonia	Eastern Region	
+Europe	North Macedonia	Eastern Region	Shtip
 Europe	North Macedonia	North Macedonia	
-Europe	North Macedonia	Northeastern Region MK	
-Europe	North Macedonia	Northeastern Region MK	Kumanovo
+Europe	North Macedonia	Northeastern Region	
+Europe	North Macedonia	Northeastern Region	Kumanovo
 Europe	North Macedonia	Pelagonia	
 Europe	North Macedonia	Pelagonia	Prilep
 Europe	North Macedonia	Skopje	
@@ -1180,8 +1195,6 @@ Europe	Portugal	Beja
 Europe	Portugal	Beja	Santa Clara de Louredo
 Europe	Portugal	Coimbra	
 Europe	Portugal	Coimbra	Penacova
-Europe	Portugal	Guarda	
-Europe	Portugal	Guarda	Seia
 Europe	Portugal	Lisbon	
 Europe	Portugal	Lisbon	Agualva
 Europe	Portugal	Lisbon	Aguas livres
@@ -1196,7 +1209,6 @@ Europe	Portugal	Lisbon	Cova da Moura
 Europe	Portugal	Lisbon	Damaia de Cima
 Europe	Portugal	Lisbon	Encosta de Sol
 Europe	Portugal	Lisbon	Massama
-Europe	Portugal	Lisbon	Mina da Agua
 Europe	Portugal	Lisbon	Monte Abrão
 Europe	Portugal	Lisbon	Pontinha
 Europe	Portugal	Lisbon	Queluz
@@ -1205,13 +1217,11 @@ Europe	Portugal	Lisbon	Reboleira
 Europe	Portugal	Lisbon	Rio de Mouro
 Europe	Portugal	Lisbon	Sacavem
 Europe	Portugal	Lisbon	Santa Maria dos Olivais
-Europe	Portugal	Lisbon	São Domingos da Benfica
 Europe	Portugal	Lisbon	Seia
+Europe	Portugal	Lisbon	São Domingos da Benfica
 Europe	Portugal	Portugal	
 Europe	Portugal	Santarem	
 Europe	Portugal	Santarem	Santarem
-Europe	Portugal	Setúbal	
-Europe	Portugal	Setúbal	Corroios
 Europe	Romania	Arges	
 Europe	Romania	Bucharest	
 Europe	Romania	Buzau	
@@ -1223,6 +1233,7 @@ Europe	Romania	Teleorman
 Europe	Romania	Valcea	
 Europe	Romania	Vrancea	
 Europe	Romania	Vrancea	Focsani
+Europe	Russia	Bryansk Oblast	
 Europe	Russia	Buryat Republic	
 Europe	Russia	Buryat Republic	Ulan-Ude
 Europe	Russia	Chechen Republic	
@@ -1236,15 +1247,12 @@ Europe	Russia	Lipetsk Region
 Europe	Russia	Moscow	
 Europe	Russia	Moscow Region	
 Europe	Russia	Novosibirsk Oblast	
-Europe	Russia	Bryansk Oblast	
-Europe	Russia	Republic of Bashkortostan	
-Europe	Russia	Yamalo-Nenets Autonomous Okrug	
-Europe	Russia	Yaroslavl Oblast	
 Europe	Russia	Omsk Region	
 Europe	Russia	Orenburg Region	
 Europe	Russia	Perm Region	
 Europe	Russia	Primorskiy Region	
 Europe	Russia	Pskov Region	
+Europe	Russia	Republic of Bashkortostan	
 Europe	Russia	Republic of Buryatia	
 Europe	Russia	Republic of Crymea	
 Europe	Russia	Republic of Kabardino-Balkaria	
@@ -1255,6 +1263,8 @@ Europe	Russia	Samara Region
 Europe	Russia	Sverdlovsk Region	
 Europe	Russia	Tatarstan	
 Europe	Russia	Tver Region	
+Europe	Russia	Yamalo-Nenets Autonomous Okrug	
+Europe	Russia	Yaroslavl Oblast	
 Europe	Serbia	Cacak	
 Europe	Serbia	Kraljevo	
 Europe	Serbia	Novi Pazar	
@@ -1491,7 +1501,6 @@ Europe	Spain	Madrid	Arganda del Rey
 Europe	Spain	Madrid	Campo Real
 Europe	Spain	Madrid	Fuenlabrada
 Europe	Spain	Madrid	Leganés
-Europe	Spain	Madrid	Madrid
 Europe	Spain	Madrid	Parla
 Europe	Spain	Madrid	Rivas-Vaciamadrid
 Europe	Spain	Madrid	San Fernando de Henares
@@ -1513,7 +1522,6 @@ Europe	Spain	Navarra	Peralta
 Europe	Spain	Navarra	Tafalla
 Europe	Spain	Navarra	Torres De Elorz
 Europe	Spain	Navarra	Zulueta
-Europe	Spain	San Jose	
 Europe	Spain	Spain	
 Europe	Sweden	Dalarna	
 Europe	Sweden	Gavleborgs Lan	
@@ -1532,7 +1540,6 @@ Europe	Sweden	Småland	Jönköping
 Europe	Sweden	Sodermanland	
 Europe	Sweden	Sormland	
 Europe	Sweden	Stockholm	
-Europe	Sweden	Sweden	
 Europe	Sweden	Uppsala	
 Europe	Sweden	Varmland	
 Europe	Sweden	Vasterbotten	
@@ -1573,6 +1580,7 @@ Europe	Turkey	Denizli
 Europe	Turkey	Eskisehir	
 Europe	Turkey	Istanbul	
 Europe	Turkey	Karaman	
+Europe	Turkey	Kars Province	
 Europe	Turkey	Kastamonu	
 Europe	Turkey	Kayseri	
 Europe	Turkey	Kocaeli	
@@ -1584,18 +1592,15 @@ Europe	Turkey	Siirt
 Europe	Turkey	Tekirdag	
 Europe	Turkey	Tokat	
 Europe	Turkey	Turkey	
-Europe	Turkey	Kars Province	
 Europe	Ukraine	Ukraine	
 Europe	United Kingdom	England	
 Europe	United Kingdom	England	Derbyshire
 Europe	United Kingdom	England	London
-Europe	United Kingdom	England	Norfolk
 Europe	United Kingdom	England	Northamtonshire
 Europe	United Kingdom	England	Nottinghamshire
 Europe	United Kingdom	England	South Yorkshire
 Europe	United Kingdom	England	Warwickshire
 Europe	United Kingdom	England	Yorkshire
-Europe	United Kingdom	Faroe Islands	
 Europe	United Kingdom	Northern Ireland	
 Europe	United Kingdom	Scotland	
 Europe	United Kingdom	United Kingdom	
@@ -1646,20 +1651,18 @@ North America	Costa Rica	San Jose	Tibas
 North America	Cuba	Cuba	
 North America	Guatemala	Guatemala	
 North America	Jamaica	Jamaica	
-North America	Nicaragua	Nicaragua	
 North America	Mexico	Baja California	
 North America	Mexico	Baja California	Tijuana
 North America	Mexico	Baja California Sur	
 North America	Mexico	Chiapas	
 North America	Mexico	Chihuahua	
+North America	Mexico	Coahuila	
 North America	Mexico	Durango	
 North America	Mexico	Durango	Gomez Palacios
 North America	Mexico	Estado de Mexico	
-North America	Mexico	Gomez Palacios	
 North America	Mexico	Guadalajara	
 North America	Mexico	Guanajuato	
 North America	Mexico	Guerrero	
-North America	Mexico	Heredia	
 North America	Mexico	Jalisco	
 North America	Mexico	Mexico	
 North America	Mexico	Mexico City	
@@ -1670,9 +1673,10 @@ North America	Mexico	Queretaro
 North America	Mexico	Quintana Roo	
 North America	Mexico	Sinaloa	
 North America	Mexico	Sonora	
-North America	Mexico	Estado de Mexico	
 North America	Mexico	Tabasco	
+North America	Mexico	Tamaulipas	
 North America	Mexico	Yucatan	
+North America	Nicaragua	Nicaragua	
 North America	Panama	Bocas del Toro	
 North America	Panama	Chiriqui	
 North America	Panama	Cocle	
@@ -1728,7 +1732,6 @@ North America	Panama	Panama Oeste	Veracruz
 North America	Panama	Panama Oeste	Vista Alegre
 North America	Panama	Santiago de Veraguas	
 North America	USA	Alabama	
-North America	USA	Alabama	Mobile County
 North America	USA	Alaska	
 North America	USA	Alaska	Anchorage
 North America	USA	Alaska	Fairbanks
@@ -1739,12 +1742,9 @@ North America	USA	Arizona
 North America	USA	Arizona	Maricopa County
 North America	USA	Arizona	Phoenix
 North America	USA	Arkansas	
-North America	USA	Arkansas	Little Rock
 North America	USA	California	
 North America	USA	California	Alameda County
 North America	USA	California	Contra Costa County
-North America	USA	California	Cruise_Ship_1
-North America	USA	California	Cruise_Ship_2
 North America	USA	California	Davis
 North America	USA	California	Fresno County
 North America	USA	California	Grand Princess Cruise Ship
@@ -1777,7 +1777,6 @@ North America	USA	California	Ventura County
 North America	USA	Colorado	
 North America	USA	Colorado	Colorado Springs
 North America	USA	Colorado	Denver County
-North America	USA	Colorado	El Paso County CO
 North America	USA	Connecticut	
 North America	USA	Connecticut	Beacon Falls
 North America	USA	Connecticut	Bethany
@@ -1815,7 +1814,6 @@ North America	USA	Connecticut	West Haven
 North America	USA	Connecticut	Woodbridge
 North America	USA	Connecticut	Yorktown Heights
 North America	USA	Diamond Princess	
-North America	USA	District of Columbia	
 North America	USA	Florida	
 North America	USA	Florida	Miami
 North America	USA	Florida	Miami-Dade County
@@ -1851,43 +1849,22 @@ North America	USA	Kansas
 North America	USA	Kentucky	
 North America	USA	Louisiana	
 North America	USA	Louisiana	Assumption Parish
-North America	USA	Louisiana	Avondale
 North America	USA	Louisiana	Bienville Parish
 North America	USA	Louisiana	Bossier Parish
 North America	USA	Louisiana	Caddo Parish
-North America	USA	Louisiana	Chalmette
 North America	USA	Louisiana	DeSoto Parish
-North America	USA	Louisiana	Delacroix
 North America	USA	Louisiana	East Baton Rouge Parish
 North America	USA	Louisiana	East Feliciana Parish
-North America	USA	Louisiana	Gheens
 North America	USA	Louisiana	Grant Parish
-North America	USA	Louisiana	Gray
-North America	USA	Louisiana	Hammond
-North America	USA	Louisiana	Houma
 North America	USA	Louisiana	Iberville Parish
 North America	USA	Louisiana	Jefferson Parish
-North America	USA	Louisiana	Kenner
-North America	USA	Louisiana	Killona
-North America	USA	Louisiana	Lacombe
 North America	USA	Louisiana	Livingston Parish
-North America	USA	Louisiana	Lockport
-North America	USA	Louisiana	Luling
-North America	USA	Louisiana	Maringouin
-North America	USA	Louisiana	Marrero
-North America	USA	Louisiana	Metairie
 North America	USA	Louisiana	Morehouse Parish
-North America	USA	Louisiana	Napoleonville
 North America	USA	Louisiana	New Orleans
-North America	USA	Louisiana	Raceland
 North America	USA	Louisiana	Rapides Parish
-North America	USA	Louisiana	Saint Rose
-North America	USA	Louisiana	Slidell
 North America	USA	Louisiana	St Bernard Parish
 North America	USA	Louisiana	St Tammany Parish
 North America	USA	Louisiana	Tensas Parish
-North America	USA	Louisiana	Thibodaux
-North America	USA	Louisiana	Violet
 North America	USA	Louisiana	Webster Parish
 North America	USA	Maine	
 North America	USA	Maryland	
@@ -1904,18 +1881,18 @@ North America	USA	Minnesota	Wabasha County
 North America	USA	Minnesota	Winona County
 North America	USA	Mississippi	
 North America	USA	Missouri	
-North America	USA	Missouri	St. Louis MO
 North America	USA	Missouri	Saint Louis County
+North America	USA	Missouri	St. Louis MO
 North America	USA	Montana	
 North America	USA	Nebraska	
 North America	USA	Nevada	
 North America	USA	New Hampshire	
 North America	USA	New Jersey	
 North America	USA	New Jersey	Bergen County
+North America	USA	New Jersey	Burlington County
 North America	USA	New Jersey	Camden County
 North America	USA	New Jersey	Essex County
 North America	USA	New Jersey	Hudson County
-North America	USA	New Jersey	Burlington County
 North America	USA	New Mexico	
 North America	USA	New York	
 North America	USA	New York	Albany County
@@ -1969,14 +1946,11 @@ North America	USA	Pennsylvania	Pittsburgh
 North America	USA	Puerto Rico	
 North America	USA	Puerto Rico	Ponce
 North America	USA	Rhode Island	
-North America	USA	San Jose	
 North America	USA	South Carolina	
 North America	USA	South Carolina	Berkeley County
 North America	USA	South Carolina	Columbia SC
 North America	USA	South Carolina	Fairfield County SC
-North America	USA	South Carolina	Kershaw
 North America	USA	South Carolina	Richland County SC
-North America	USA	South Carolina	Ridgeway
 North America	USA	South Dakota	
 North America	USA	South Dakota	Minnehaha County
 North America	USA	Tennessee	
@@ -2020,91 +1994,47 @@ North America	USA	Washington DC
 North America	USA	Washington DC	District of Columbia County
 North America	USA	Wisconsin	
 North America	USA	Wisconsin	Adams County WI
-North America	USA	Wisconsin	Bayside
-North America	USA	Wisconsin	Belleville
-North America	USA	Wisconsin	Beloit
-North America	USA	Wisconsin	Blanchardville
-North America	USA	Wisconsin	Brookfield
 North America	USA	Wisconsin	Brooklyn WI
 North America	USA	Wisconsin	Brown County WI
-North America	USA	Wisconsin	Brown Deer
 North America	USA	Wisconsin	Campbellsport
 North America	USA	Wisconsin	Chippewa County WI
-North America	USA	Wisconsin	Chippewa Falls
 North America	USA	Wisconsin	Columbia County WI
 North America	USA	Wisconsin	Columbus WI
-North America	USA	Wisconsin	Cottage Grove
 North America	USA	Wisconsin	Crawford County
-North America	USA	Wisconsin	Cross Plains
-North America	USA	Wisconsin	Cudahy
 North America	USA	Wisconsin	Dane County
-North America	USA	Wisconsin	Deforest
 North America	USA	Wisconsin	Dodge County
 North America	USA	Wisconsin	Door County
 North America	USA	Wisconsin	Eau Claire County
-North America	USA	Wisconsin	Elm Grove
-North America	USA	Wisconsin	Fitchburg
 North America	USA	Wisconsin	Fond Du Lac County
-North America	USA	Wisconsin	Franklin
-North America	USA	Wisconsin	Glendale
-North America	USA	Wisconsin	Grafton
 North America	USA	Wisconsin	Grant County WI
-North America	USA	Wisconsin	Greater Milwaukee Area
 North America	USA	Wisconsin	Green County
-North America	USA	Wisconsin	Greenfield
-North America	USA	Wisconsin	Hartford
-North America	USA	Wisconsin	Hillpoint
-North America	USA	Wisconsin	Holy Cross
 North America	USA	Wisconsin	Iowa County WI
-North America	USA	Wisconsin	Jackson
 North America	USA	Wisconsin	Jackson County WI
-North America	USA	Wisconsin	Janesville
 North America	USA	Wisconsin	Jefferson County WI
 North America	USA	Wisconsin	Juneau County
 North America	USA	Wisconsin	La Crosse County
 North America	USA	Wisconsin	Lafayette County
-North America	USA	Wisconsin	Madison
 North America	USA	Wisconsin	Manitowoc County
 North America	USA	Wisconsin	Marquette County
-North America	USA	Wisconsin	Marshall
-North America	USA	Wisconsin	Mequon
-North America	USA	Wisconsin	Middleton
 North America	USA	Wisconsin	Milwaukee County
-North America	USA	Wisconsin	Monona
 North America	USA	Wisconsin	Monroe County
-North America	USA	Wisconsin	Mount Horeb
-North America	USA	Wisconsin	Muscoda
-North America	USA	Wisconsin	New Berlin
-North America	USA	Wisconsin	Oak Creek
 North America	USA	Wisconsin	Oregon WI
 North America	USA	Wisconsin	Outagamie County
 North America	USA	Wisconsin	Ozaukee County
-North America	USA	Wisconsin	Pewaukee
 North America	USA	Wisconsin	Port Washington
-North America	USA	Wisconsin	Racine
 North America	USA	Wisconsin	Racine County
-North America	USA	Wisconsin	Richland Center
 North America	USA	Wisconsin	Richland County WI
-North America	USA	Wisconsin	River Hills
 North America	USA	Wisconsin	Rock County
 North America	USA	Wisconsin	Sauk County
-North America	USA	Wisconsin	Saukville
 North America	USA	Wisconsin	Sheboygan County
-North America	USA	Wisconsin	Slinger
 North America	USA	Wisconsin	South Milwaukee
-North America	USA	Wisconsin	Spring Green
-North America	USA	Wisconsin	Stoughton
-North America	USA	Wisconsin	Sun Prarie
 North America	USA	Wisconsin	Thiensville
-North America	USA	Wisconsin	Tomah
 North America	USA	Wisconsin	Trempealeau County
 North America	USA	Wisconsin	Vernon County
 North America	USA	Wisconsin	Verona WI
 North America	USA	Wisconsin	Washington County WI
 North America	USA	Wisconsin	Waukesha County
-North America	USA	Wisconsin	Waunakee
 North America	USA	Wisconsin	Waupaca County
-North America	USA	Wisconsin	Wauwatosa
 North America	USA	Wisconsin	Whitefish Bay
 North America	USA	Wisconsin	Winnebago County WI
 North America	USA	Wyoming	
@@ -2146,12 +2076,11 @@ Oceania	New Zealand	Wairarapa
 Oceania	New Zealand	Waitemata	
 Oceania	New Zealand	Wellington	
 South America	Argentina	Argentina	
-South America	Argentina	Cordoba AR	
 South America	Argentina	Buenos Aires	
 South America	Argentina	Buenos Aires	Bahia Blanca
 South America	Argentina	Buenos Aires	Lomas de Zamora
 South America	Argentina	Buenos Aires	Quilmes
-South America	Argentina	Ciudad Autonoma de Buenos Aires	
+South America	Argentina	Cordoba AR	
 South America	Argentina	Rio Negro	
 South America	Argentina	Rio Negro	San Carlos de Bariloche
 South America	Argentina	Tucuman	
@@ -2169,7 +2098,6 @@ South America	Brazil	Distrito Federal
 South America	Brazil	Distrito Federal	Brasilia
 South America	Brazil	Espirito Santo	
 South America	Brazil	Espirito Santo	Vila Velha
-South America	Brazil	Goiais	
 South America	Brazil	Goiás	
 South America	Brazil	Maranhão	
 South America	Brazil	Mato Grosso	
@@ -2207,7 +2135,6 @@ South America	Brazil	Rondonia	Porto Velho
 South America	Brazil	Santa Catarina	
 South America	Brazil	Santa Catarina	Florianopolis
 South America	Brazil	Santa Catarina	Joinville
-South America	Brazil	Sao Paulo	
 South America	Brazil	Sergipe	
 South America	Brazil	São Paulo	
 South America	Brazil	São Paulo	Americana
@@ -2225,10 +2152,9 @@ South America	Brazil	São Paulo	Peruibe
 South America	Brazil	São Paulo	Presidente Venceslau
 South America	Brazil	São Paulo	Rio Claro
 South America	Brazil	São Paulo	Sao Bernardo do Campo
-South America	Brazil	São Paulo	São Paulo
 South America	Brazil	São Paulo	Sao Vicente
+South America	Brazil	São Paulo	São Paulo
 South America	Chile	Antofagasta	
-South America	Chile	Chile	
 South America	Chile	Chillan	
 South America	Chile	Chillan	Chillan
 South America	Chile	Concepcion	
@@ -2306,9 +2232,9 @@ South America	Colombia	Risaralda
 South America	Colombia	Risaralda	Dosquebradas
 South America	Colombia	Risaralda	Pereira
 South America	Colombia	Santander	
-South America	Colombia	Santander de Quilichao	
 South America	Colombia	Santander	Barrancabermeja
 South America	Colombia	Santander	Bucaramanga
+South America	Colombia	Santander de Quilichao	
 South America	Colombia	Soledad	
 South America	Colombia	Suesca	
 South America	Colombia	Tolemaida	
@@ -2329,18 +2255,19 @@ South America	Ecuador	Carchi
 South America	Ecuador	Carchi	Awa Reserve
 South America	Ecuador	Chimborazo	
 South America	Ecuador	Chimborazo	Riobamba
+South America	Ecuador	Daule	
 South America	Ecuador	Galapagos	
 South America	Ecuador	Galapagos	Puerto Baquerizo Moreno
 South America	Ecuador	Guayas	
 South America	Ecuador	Guayas	General Villamil Playas
 South America	Ecuador	Guayas	Guayaquil
 South America	Ecuador	Guayas	San Jacinto de Yaguachi
-South America	Ecuador	Daule	
 South America	Ecuador	Imbabura	
 South America	Ecuador	Imbabura	Ibarra
 South America	Ecuador	Imbabura	Urcuqui
 South America	Ecuador	Los Rios	
 South America	Ecuador	Los Rios	Babahoyo
+South America	Ecuador	Los Rios	Quevedo
 South America	Ecuador	Los Rios	Ventanas
 South America	Ecuador	Manabi	
 South America	Ecuador	Manabi	Calceta
@@ -2351,21 +2278,27 @@ South America	Ecuador	Manabi	Portoviejo
 South America	Ecuador	Manabi	Puerto Lopez
 South America	Ecuador	Manabi	Sucre
 South America	Ecuador	Orellana	
+South America	Ecuador	Orellana	Coca
 South America	Ecuador	Pichincha	
 South America	Ecuador	Pichincha	Cayambe
-South America	Ecuador	Quito	
+South America	Ecuador	Pichincha	Quito
 South America	Ecuador	Santa Elena	
+South America	Ecuador	Zamora-Chinchipe	
+South America	Ecuador	Zamora-Chinchipe	Yantzaza
+South America	Peru	Ancash	
 South America	Peru	Arequipa	
+South America	Peru	Cajamarca	
 South America	Peru	Cuzco	
 South America	Peru	Huanuco	
 South America	Peru	Ica	
+South America	Peru	Junin	
+South America	Peru	La Libertad	
 South America	Peru	Lambayeque	
 South America	Peru	Lima	
 South America	Peru	Loreto	
-South America	Peru	Peru	
 South America	South America	South America	
+South America	Suriname	Suriname	
 South America	Uruguay	Maldonado	
 South America	Uruguay	Montevideo	
 South America	Uruguay	Rivera	
-South America	Uruguay	Uruguay	
 South America	Venezuela	Venezuela	
