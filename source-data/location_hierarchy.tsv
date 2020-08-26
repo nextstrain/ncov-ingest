@@ -280,11 +280,15 @@ Asia	India	Madhya Pradesh	Mandsaur
 Asia	India	Madhya Pradesh	Neemach
 Asia	India	Madhya Pradesh	Ujjain
 Asia	India	Maharashtra	
+Asia	India	Maharashtra	Ahmednagar
 Asia	India	Maharashtra	Akola
 Asia	India	Maharashtra	Amravati
 Asia	India	Maharashtra	Aurangabad
 Asia	India	Maharashtra	Jalna
+Asia	India	Maharashtra	Kolhapur
 Asia	India	Maharashtra	Mumbai
+Asia	India	Maharashtra	Pune
+Asia	India	Maharashtra	Sangli
 Asia	India	Maharashtra	Wardha
 Asia	India	Maharashtra	Washim
 Asia	India	Maharashtra	Yavatmal
@@ -296,14 +300,44 @@ Asia	India	Rajasthan
 Asia	India	Rajasthan	Bikaner
 Asia	India	Rajasthan	Jaipur
 Asia	India	Tamil Nadu	
+Asia	India	Tamil Nadu	Chennai
 Asia	India	Telangana	
+Asia	India	Telangana	Adilabad
+Asia	India	Telangana	Gadwal
 Asia	India	Telangana	Hyderabad
+Asia	India	Telangana	Jogulamba Gadwal
+Asia	India	Telangana	Kamareddy
+Asia	India	Telangana	Khammam
+Asia	India	Telangana	Mahboobnagar
+Asia	India	Telangana	Mahbubnagar
+Asia	India	Telangana	Mancherial
+Asia	India	Telangana	Nagarkurnool
+Asia	India	Telangana	Nalgonda
+Asia	India	Telangana	Nirmal
+Asia	India	Telangana	Nizamabad
+Asia	India	Telangana	Peddapally
+Asia	India	Telangana	Rangareddy
+Asia	India	Telangana	Sangareddy
+Asia	India	Telangana	Suryapet
+Asia	India	Telangana	Vikarabad
 Asia	India	Uttar Pradesh	
+Asia	India	Uttar Pradesh	Agra
 Asia	India	Uttar Pradesh	Aligarh
+Asia	India	Uttar Pradesh	Azamgarh
+Asia	India	Uttar Pradesh	Barabanki
+Asia	India	Uttar Pradesh	Farrukhabad
 Asia	India	Uttar Pradesh	Gaziabad
+Asia	India	Uttar Pradesh	Hardoi
+Asia	India	Uttar Pradesh	Kannauj
+Asia	India	Uttar Pradesh	Kanpur
+Asia	India	Uttar Pradesh	Lakhimpur
 Asia	India	Uttar Pradesh	Lucknow
+Asia	India	Uttar Pradesh	Moradabad
 Asia	India	Uttar Pradesh	Muzaffarnagar
 Asia	India	Uttar Pradesh	Noida
+Asia	India	Uttar Pradesh	Pilibhit
+Asia	India	Uttar Pradesh	Sambhal
+Asia	India	Uttar Pradesh	Shahjahanpur
 Asia	India	Uttarakhand	
 Asia	India	Uttarakhand	Chamoli
 Asia	India	Uttarakhand	Dehradun
@@ -331,7 +365,10 @@ Asia	Indonesia	Jakarta
 Asia	Indonesia	North Sulawesi	
 Asia	Indonesia	North Sulawesi	Manado
 Asia	Indonesia	Pasuruan	
+Asia	Indonesia	Special Region of Yogyakarta	
 Asia	Indonesia	Surabaya	
+Asia	Indonesia	West Java	
+Asia	Indonesia	West Java	Bandung
 Asia	Iran	Iran	
 Asia	Iran	Semnan	
 Asia	Iran	Tehran	
@@ -346,6 +383,7 @@ Asia	Israel	Elkana
 Asia	Israel	Gani Tikva	
 Asia	Israel	Gedera	
 Asia	Israel	Haifa	
+Asia	Israel	Haifa District	
 Asia	Israel	Holon	
 Asia	Israel	Hukuk	
 Asia	Israel	Israel	
@@ -487,6 +525,7 @@ Asia	Thailand	Thailand
 Asia	Thailand	Trang	
 Asia	Timor-Leste	Timor-Leste	
 Asia	United Arab Emirates	United Arab Emirates	
+Asia	Uzbekistan	Uzbekistan	
 Asia	Vietnam	Ho Chi Minh City	
 Asia	Vietnam	Lao Cai	
 Asia	Vietnam	Quangninh	
@@ -1018,6 +1057,7 @@ Europe	Germany	Bavaria
 Europe	Germany	Bavaria	Munich
 Europe	Germany	Bavaria	Starnberg
 Europe	Germany	Berlin	
+Europe	Germany	Berlin	Berlin
 Europe	Germany	Frankfurt	
 Europe	Germany	Germany	
 Europe	Germany	Niedersachsen	
@@ -1106,6 +1146,10 @@ Europe	Lithuania	Lithuania
 Europe	Lithuania	Vilnius	
 Europe	Luxembourg	Luxembourg	
 Europe	Luxembourg	Luxembourg	Luxembourg
+Europe	Moldova	Balti	
+Europe	Moldova	Chisinau	
+Europe	Moldova	Straseni	
+Europe	Montenegro	Montenegro	
 Europe	Netherlands	Drenthe	
 Europe	Netherlands	Drenthe	Coevorden
 Europe	Netherlands	Drenthe	Dalen
@@ -1142,11 +1186,11 @@ Europe	Netherlands	Utrecht
 Europe	Netherlands	Utrecht	Houten
 Europe	Netherlands	Utrecht	Utrecht
 Europe	Netherlands	Zeeland	
-Europe	North Macedonia	Eastern Region MK	
-Europe	North Macedonia	Eastern Region MK	Shtip
+Europe	North Macedonia	Eastern Region	
+Europe	North Macedonia	Eastern Region	Shtip
 Europe	North Macedonia	North Macedonia	
-Europe	North Macedonia	Northeastern Region MK	
-Europe	North Macedonia	Northeastern Region MK	Kumanovo
+Europe	North Macedonia	Northeastern Region	
+Europe	North Macedonia	Northeastern Region	Kumanovo
 Europe	North Macedonia	Pelagonia	
 Europe	North Macedonia	Pelagonia	Prilep
 Europe	North Macedonia	Skopje	
@@ -1652,6 +1696,7 @@ North America	Mexico	Baja California	Tijuana
 North America	Mexico	Baja California Sur	
 North America	Mexico	Chiapas	
 North America	Mexico	Chihuahua	
+North America	Mexico	Coahuila	
 North America	Mexico	Durango	
 North America	Mexico	Durango	Gomez Palacios
 North America	Mexico	Estado de Mexico	
@@ -1672,6 +1717,7 @@ North America	Mexico	Sinaloa
 North America	Mexico	Sonora	
 North America	Mexico	Estado de Mexico	
 North America	Mexico	Tabasco	
+North America	Mexico	Tamaulipas	
 North America	Mexico	Yucatan	
 North America	Panama	Bocas del Toro	
 North America	Panama	Chiriqui	
@@ -2341,6 +2387,7 @@ South America	Ecuador	Imbabura	Ibarra
 South America	Ecuador	Imbabura	Urcuqui
 South America	Ecuador	Los Rios	
 South America	Ecuador	Los Rios	Babahoyo
+South America	Ecuador	Los Rios	Quevedo
 South America	Ecuador	Los Rios	Ventanas
 South America	Ecuador	Manabi	
 South America	Ecuador	Manabi	Calceta
@@ -2351,19 +2398,26 @@ South America	Ecuador	Manabi	Portoviejo
 South America	Ecuador	Manabi	Puerto Lopez
 South America	Ecuador	Manabi	Sucre
 South America	Ecuador	Orellana	
+South America	Ecuador	Orellana	Coca
 South America	Ecuador	Pichincha	
 South America	Ecuador	Pichincha	Cayambe
+South America	Ecuador	Pichincha	Quito
 South America	Ecuador	Quito	
 South America	Ecuador	Santa Elena	
+South America	Ecuador	Zamora-Chinchipe	
+South America	Ecuador	Zamora-Chinchipe	Yantzaza
+South America	Peru	Ancash	
 South America	Peru	Arequipa	
 South America	Peru	Cuzco	
 South America	Peru	Huanuco	
 South America	Peru	Ica	
+South America	Peru	Junin	
 South America	Peru	Lambayeque	
 South America	Peru	Lima	
 South America	Peru	Loreto	
 South America	Peru	Peru	
 South America	South America	South America	
+South America	Suriname	Suriname	
 South America	Uruguay	Maldonado	
 South America	Uruguay	Montevideo	
 South America	Uruguay	Rivera	
