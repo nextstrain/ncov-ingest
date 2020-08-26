@@ -25,7 +25,7 @@ main() {
   ADDITIONAL_INFO_NEW="${OUTPUT_DIR}/additional_info.tsv"
   ADDITIONAL_INFO_CHANGES="${OUTPUT_DIR}/additional-info-changes.txt"
 
-  LOCATION_HIERARCHY_NEW="${INPUT_DIR}/location_hierarchy.tsv"
+  LOCATION_HIERARCHY_NEW="${OUTPUT_DIR}/location_hierarchy.tsv"
   LOCATION_HIERARCHY_REFERENCE="source-data/location_hierarchy.tsv"
   LOCATION_HIERARCHY_ADDITIONS="${OUTPUT_DIR}/location-hierarchy-additions.tsv"
 
