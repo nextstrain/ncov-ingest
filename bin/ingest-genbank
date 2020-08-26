@@ -42,9 +42,9 @@ cd "$(dirname "$0")/.."
 set -x
 
 ./bin/fetch-from-genbank > data/genbank.ndjson
-#if [[ "$branch" == master ]]; then
-    #./bin/notify-on-record-change data/genbank.ndjson "$S3_SRC/genbank.ndjson.gz" "GenBank"
-#fi
+if [[ "$branch" == master ]]; then
+    ./bin/notify-on-record-change data/genbank.ndjson "$S3_SRC/genbank.ndjson.gz" "GenBank"
+fi
 ./bin/upload-to-s3 ${silent:+--quiet} data/genbank.ndjson "$S3_DST/genbank.ndjson.gz"
 
 ./bin/transform-genbank data/genbank.ndjson \
@@ -54,11 +54,11 @@ set -x
     data/genbank/location_hierarchy.tsv \
     genbank_accession
 
-#if [[ "$branch" == master ]]; then
-    #./bin/notify-on-metadata-change data/genbank/metadata.tsv "$S3_SRC/genbank_metadata.tsv.gz" genbank_accession
-    #./bin/notify-on-problem-data data/genbank/problem_data.tsv
-    #./bin/notify-on-location-hierarchy-addition data/genbank/location_hierarchy.tsv source-data/location_hierarchy.tsv
-#fi
+if [[ "$branch" == master ]]; then
+    ./bin/notify-on-metadata-change data/genbank/metadata.tsv "$S3_SRC/genbank_metadata.tsv.gz" genbank_accession
+    ./bin/notify-on-problem-data data/genbank/problem_data.tsv
+    ./bin/notify-on-location-hierarchy-addition data/genbank/location_hierarchy.tsv source-data/location_hierarchy.tsv
+fi
 
 ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/metadata.tsv "$S3_DST/genbank_metadata.tsv.gz"
 ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/sequences.fasta "$S3_DST/genbank_sequences.fasta.gz"
