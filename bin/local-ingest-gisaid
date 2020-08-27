@@ -23,8 +23,11 @@ trap "exit" INT
 
 set -x
 
+TMP_DIR="data/gisaid/tmp"
 INPUT_DIR="data/gisaid/inputs"
 OUTPUT_DIR="data/gisaid/outputs"
+
+GISAID_NDJSON="${INPUT_DIR}/gisaid.ndjson"
 
 METADATA_OLD="${INPUT_DIR}/metadata.tsv"
 METADATA_NEW="${OUTPUT_DIR}/metadata.tsv"
@@ -56,6 +59,10 @@ main() {
       download-inputs
       exit
       ;;
+    --download-gisaid)
+      download-gisaid
+      exit
+      ;;
     --ingest)
       ingest
       exit
@@ -75,6 +82,22 @@ download-inputs() {
 
   aws s3 cp "${S3_BUCKET}/additional_info.tsv.gz" - | gunzip -cq >"data/gisaid/inputs/additional_info.tsv"
   aws s3 cp "${S3_BUCKET}/metadata.tsv.gz" - | gunzip -cq >"data/gisaid/inputs/metadata.tsv"
+}
+
+download-gisaid() {
+  [ -f ".env" ] && source ".env"
+  [ -f "../.env" ] && source "../.env"
+
+  mkdir -p "${INPUT_DIR}"
+  mkdir -p "${TMP_DIR}"
+
+  wget \
+    --directory-prefix="${TMP_DIR}" \
+    --http-user="${GISAID_USERNAME}" \
+    --http-password="${GISAID_PASSWORD}" \
+    "${GISAID_URL}"
+
+  bzip2 -cdk "${TMP_DIR}/corona2020_fulldump.json.bz2" > "${GISAID_NDJSON}"
 }
 
 ingest() {
