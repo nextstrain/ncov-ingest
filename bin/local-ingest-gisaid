@@ -95,9 +95,10 @@ download-gisaid() {
     --directory-prefix="${TMP_DIR}" \
     --http-user="${GISAID_USERNAME}" \
     --http-password="${GISAID_PASSWORD}" \
-    "${GISAID_URL}"
+    "${GISAID_URL}" \
+    -O "${TMP_DIR}/gisaid.ndjson.bz2"
 
-  bzip2 -cdk "${TMP_DIR}/corona2020_fulldump.json.bz2" > "${GISAID_NDJSON}"
+  bzip2 -cdk "${TMP_DIR}/gisaid.ndjson.bz2" > "${GISAID_NDJSON}"
 }
 
 ingest() {
