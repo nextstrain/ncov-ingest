@@ -43,8 +43,7 @@ if __name__ == "__main__":
     )
 
     parser.add_argument(
-            "--metadata",
-            required=True,
+            "metadata",
             help="Location metadata file (in TSV format) to be cleaned.\n")
 
     parser.add_argument(
