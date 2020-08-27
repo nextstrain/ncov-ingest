@@ -274,4 +274,4 @@ if __name__ == '__main__':
 
     write_fasta_file(genbank_data, args.output_fasta)
     genbank_data = genbank_data[METADATA_COLUMNS]
-    genbank_data.to_csv(args.output_metadata, sep='\t', na_rep='', index=False)
+    genbank_data.to_csv(args.output_metadata, sep='\t', na_rep='', index=False, line_terminatorstr='\n')

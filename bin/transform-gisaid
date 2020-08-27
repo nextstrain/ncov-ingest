@@ -150,6 +150,7 @@ if __name__ == '__main__':
                 restval="?",
                 extrasaction='ignore',
                 delimiter='\t',
+                lineterminator='\n'
             )
             additional_info_csv.writeheader()
             metadata_csv = csv.DictWriter(
@@ -158,6 +159,7 @@ if __name__ == '__main__':
                 restval="?",
                 extrasaction='ignore',
                 delimiter='\t',
+                lineterminator='\n'
             )
             metadata_csv.writeheader()
 
