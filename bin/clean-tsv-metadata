@@ -9,12 +9,18 @@ def clean_metadata_file(file_name, n_cols, header, sort_col):
     2. Sort alphabetically and make sure n columns (n-1 tabs) each row
     3. Write out (overwrite) metadata file
     """
-    col_names = list(pd.read_csv(file_name, sep="\t", header=None, nrows=1).iloc[0]) if header else list(range(n_cols))
+    if n_cols:
+        # if --n-cols is passed, read in and back out to assert n columns
+        metadata = pd.read_csv(file_name,
+                               sep="\t",
+                               header=None,
+                               names=list(range(n_cols)), # overriding column names; this adds missing tabs when there are too few
+                               usecols=list(range(n_cols))) # using first n only; this removes extra tabs
+        metadata.to_csv(file_name, sep="\t", index=False, header=False, quoting=csv.QUOTE_NONE)
     metadata = pd.read_csv(file_name,
                            sep="\t",
-                           header=0 if header else None, #needs to happen if a header already exists and you are overriding with "names"
-                           names=col_names, # overriding column names; this adds missing tabs when there are too few
-                           usecols=col_names) # using first n only; this removes extra tabs
+                           header=0 if header else None)
+    col_names = list(metadata.columns)
     if sort_col is not None:
         try:
             if not header:
