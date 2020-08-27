@@ -27,7 +27,7 @@ jobs:
     - name: clean location hierarchies
       run: |
         pipenv sync
-        pipenv run ./bin/clean-tsv-metadata --metadata source-data/location_hierarchy.tsv --header
+        pipenv run ./bin/clean-tsv-metadata --metadata source-data/location_hierarchy.tsv --header --n-cols 4
     - name: clean annotations
       run: |
         pipenv sync
