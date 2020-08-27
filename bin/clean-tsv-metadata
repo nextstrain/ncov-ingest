@@ -15,12 +15,16 @@ def clean_metadata_file(file_name, n_cols, header, sort_col):
                            names=col_names, # overriding column names; this adds missing tabs when there are too few
                            usecols=col_names) # using first n only; this removes extra tabs
     if sort_col is not None:
-        if not header:
-            sort_col = int(sort_col) + 1
-        col_names.remove(sort_col)
+        try:
+            if not header:
+                sort_col = int(sort_col)
+            col_names.remove(sort_col)
+        except ValueError as e:
+            print(f"{sort_col} is not a column name in file, or if --header wasn't used, there are not this many columns in the file.")
+            raise e
         col_names = [sort_col] + col_names
     metadata = metadata.sort_values(col_names)
-    metadata.to_csv(file_name, sep="\t", index=False, header=header)
+    metadata.to_csv(file_name, sep="\t", index=False, header=0 if header else None)
 
 
 if __name__ == "__main__":
@@ -44,7 +48,7 @@ if __name__ == "__main__":
     parser.add_argument(
             "--sort-col",
             type=str,
-            help="A column name (or 1-based index for headerless tsvs) to prioritize sorting; if not used, sorting will be alphabetical by columns in the order they appear.`.\n")
+            help="A column name (or 0-based index for headerless tsvs) to prioritize sorting; if not used, sorting will be alphabetical by columns in the order they appear.`.\n")
 
     parser.add_argument(
             "--header",
