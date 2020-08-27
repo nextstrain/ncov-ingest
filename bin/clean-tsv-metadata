@@ -25,7 +25,7 @@ def clean_metadata_file(file_name, n_cols, header, sort_col):
             raise e
         col_names = [sort_col] + col_names
     metadata = metadata.sort_values(col_names)
-    metadata.to_csv(file_name, sep="\t", index=False, header=0 if header else None, quoting=csv.QUOTE_NONE)
+    metadata.to_csv(file_name, sep="\t", index=False, header=header, quoting=csv.QUOTE_NONE)
 
 
 if __name__ == "__main__":
