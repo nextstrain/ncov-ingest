@@ -27,7 +27,7 @@ def clean_metadata_file(file_name, n_cols, header, sort_col):
                 sort_col = int(sort_col)
             col_names.remove(sort_col)
         except ValueError as e:
-            print(f"{sort_col} is not a column name in file, or if --header wasn't used, there are not this many columns in the file.")
+            print(f"{sort_col} is not a column name in file, or if --no-header was used, there are not this many columns in the file.")
             raise e
         col_names = [sort_col] + col_names
     metadata = metadata.sort_values(col_names)
@@ -36,9 +36,7 @@ def clean_metadata_file(file_name, n_cols, header, sort_col):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="""Sort metadata tsv and clean tabs. 
-        For files with a header, use --header and the number of columns in the header (and the header names) will be used.
-        For files with no header, use --n-cols followed by the number of columns in the tsv.""",
+        description="""Sort metadata tsv and clean tabs.""",
         formatter_class=argparse.RawTextHelpFormatter
     )
 
@@ -49,7 +47,7 @@ if __name__ == "__main__":
     parser.add_argument(
             "--n-cols",
             type=int,
-            help="Number of columns to enforce.\n")
+            help="Number of columns to enforce. Extra tabs will be added for rows with fewer than this number, and rows with more than this number will be truncated to this number of columns/tabs.\n")
 
     parser.add_argument(
             "--sort-col",
@@ -57,9 +55,9 @@ if __name__ == "__main__":
             help="A column name (or 0-based index for headerless tsvs) to prioritize sorting; if not used, sorting will be alphabetical by columns in the order they appear.`.\n")
 
     parser.add_argument(
-            "--header",
+            "--no-header",
             action='store_true',
-            help="Respect a header in the file if set.\n")
+            help="Do not read in the first line of the file as the column names.\n")
 
     args = parser.parse_args()
-    clean_metadata_file(args.metadata, args.n_cols, args.header, args.sort_col)
+    clean_metadata_file(args.metadata, args.n_cols, not args.no_header, args.sort_col)
