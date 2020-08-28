@@ -107,7 +107,8 @@ ingest() {
   ./bin/transform-gisaid "${INPUT_DIR}/gisaid.ndjson" \
     --output-metadata "${OUTPUT_DIR}/metadata.tsv" \
     --output-fasta "${OUTPUT_DIR}/sequences.fasta" \
-    --output-additional-info "${OUTPUT_DIR}/additional_info.tsv"
+    --output-additional-info "${OUTPUT_DIR}/additional_info.tsv" \
+    --output-unix-newline
 
   csv-diff \
     "${METADATA_OLD}" \
