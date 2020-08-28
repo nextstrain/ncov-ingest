@@ -38,8 +38,14 @@ class RenameAndAddColumns(Transformer):
 
 
 class StandardizeData(Transformer):
-    """This transformer standardizes the data format.  TODO: describe the
-    transformations."""
+    """This transformer standardizes the data format:
+
+    1. Removes newlines from the sequence and measures its length.
+    2. Strip whitespace and convert to Unicode Normalization Form C for all strings.
+    3. Standardize date formats.
+    4. Abbreviate and remove whitespace from strain names3
+    5. Add a line number.
+    """
 
     def __init__(self):
         self.line_count = 1
@@ -91,13 +97,16 @@ class ExpandLocation(Transformer):
         'nad', 'of', 'op', 'sur', 'the', 'y'
     }
     ABBREV = {'USA', 'DC'}
+    LOCATION_COLUMNS = ['region', 'country', 'division', 'location']
 
     def transform_value(self, entry: dict) -> dict:
-        geographic_data = entry['location'].split('/')
-        geographic_data += [""] * (4 - len(geographic_data))
-        location_columns = ['region', 'country', 'division', 'location']
+        geographic_data = entry['location'].split(
+            '/',
+            maxsplit=len(ExpandLocation.LOCATION_COLUMNS))
+        geographic_data += [""] * (
+                len(ExpandLocation.LOCATION_COLUMNS) - len(geographic_data))
 
-        for index, column in enumerate(location_columns):
+        for index, column in enumerate(ExpandLocation.LOCATION_COLUMNS):
             entry[column] = titlecase(
                 geographic_data[index]
                 .replace('_', ' ')
