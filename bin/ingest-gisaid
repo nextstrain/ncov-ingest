@@ -80,7 +80,8 @@ main() {
     trap "rm -f '$flagged_annotations'" EXIT
     ./bin/transform-gisaid data/gisaid.ndjson \
         --output-metadata data/gisaid/metadata.tsv \
-        --output-fasta data/gisaid/sequences.fasta > "$flagged_annotations"
+        --output-fasta data/gisaid/sequences.fasta \
+        --output-unix-newline > "$flagged_annotations"
 
     ./bin/flag-metadata data/gisaid/metadata.tsv > data/gisaid/flagged_metadata.txt
     ./bin/check-locations data/gisaid/metadata.tsv \
