@@ -2,6 +2,7 @@
 """
 Parse the GISAID NDJSON load into a metadata tsv and a FASTA file.
 """
+import os
 import argparse
 import csv
 import sys
@@ -82,7 +83,7 @@ if __name__ == '__main__':
         dest="newline",
         action="store_const",
         const="\n",
-        default=None,
+        default=os.linesep,
         help="When specified, always use unix newlines in output files."
     )
     args = parser.parse_args()
@@ -151,9 +152,7 @@ if __name__ == '__main__':
     with open(args.output_fasta, "wt", newline=args.newline) as fasta_fh:
         with open(args.output_additional_info, "wt", newline="") as additional_info_fh, \
              open(args.output_metadata, "wt", newline="") as metadata_fh:
-            dict_writer_kwargs = {}
-            if args.newline is not None:
-                dict_writer_kwargs['lineterminator'] = args.newline
+            dict_writer_kwargs = {'lineterminator': args.newline}
 
             # set up the CSV output files
             additional_info_csv = csv.DictWriter(
