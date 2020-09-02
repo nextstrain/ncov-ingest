@@ -11,11 +11,18 @@ def clean_tsv_file(input_file, output_file, n_cols, header, sort_col):
     """
     if n_cols:
         # if --n-cols is passed, read in and back out to assert n columns
-        data = pd.read_csv(input_file,
-                               sep="\t",
-                               header=None,
-                               names=list(range(n_cols)), # overriding column names; this adds missing tabs when there are too few
-                               usecols=list(range(n_cols))) # using first n only; this removes extra tabs
+        try:
+            data = pd.read_csv(input_file,
+                                   sep="\t",
+                                   header=None,
+                                   names=list(range(n_cols)), # overriding column names; this adds missing tabs when there are too few
+                                   usecols=list(range(n_cols))) # using first n only; this removes extra tabs
+        except pd.errors.ParserError as e:
+            if "Too many columns specified" in str(e):
+                print(e)
+                print(f"--n-cols {n_cols} was passed, but there are not this many columns in {input_file}. --n-cols can't add extra columns, it just enforces up to the existing number of columns in the tsv.")
+                exit()
+            raise e
         data.to_csv(output_file, sep="\t", index=False, header=False, quoting=csv.QUOTE_NONE)
         input_file = output_file # we now want to read in the column-corrected version
     data = pd.read_csv(input_file,
