@@ -3,6 +3,22 @@ import pandas as pd
 import argparse
 import csv
 
+
+def positive_integer(string: str) -> int:
+    """
+    Custom type checker for argparse. Throws an
+    :class:`argparse.ArgumentTypeError` if the given *string* is not a valid int
+    or if it's less than or equal to zero.
+    """
+    try:
+        value = int(string)
+        assert value > 0
+
+    except (ValueError, AssertionError):
+        raise argparse.ArgumentTypeError("--n-cols must be an integer > 0")
+
+    return value
+
 def clean_tsv_file(input_file, output_file, n_cols, header, sort_col):
     """
     1. Read the tsv file
@@ -72,7 +88,7 @@ if __name__ == "__main__":
 
     parser.add_argument(
             "--n-cols",
-            type=int,
+            type=positive_integer,
             help="Number of columns to enforce. Extra tabs will be added for rows with fewer than this number, and rows with more than this number will be truncated to this number of columns/tabs.\n")
 
     parser.add_argument(
