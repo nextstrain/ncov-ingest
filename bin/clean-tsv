@@ -9,26 +9,38 @@ def clean_tsv_file(input_file, output_file, n_cols, header, sort_col):
     2. Sort alphabetically and make sure n columns (n-1 tabs) each row (if n_cols is passed)
     3. Write out tsv file
     """
-    if n_cols:
-        # if --n-cols is passed, read in and back out to assert n columns
-        try:
-            data = pd.read_csv(input_file,
-                                   sep="\t",
-                                   header=None,
-                                   names=list(range(n_cols)), # overriding column names; this adds missing tabs when there are too few
-                                   usecols=list(range(n_cols))) # using first n only; this removes extra tabs
-        except pd.errors.ParserError as e:
-            if "Too many columns specified" in str(e):
-                print(e)
-                print(f"--n-cols {n_cols} was passed, but there are not this many columns in {input_file}. --n-cols can't add extra columns, it just enforces up to the existing number of columns in the tsv.")
-                exit()
-            raise e
-        data.to_csv(output_file, sep="\t", index=False, header=False, quoting=csv.QUOTE_NONE)
-        input_file = output_file # we now want to read in the column-corrected version
-    data = pd.read_csv(input_file,
+    try:
+        data = pd.read_csv(input_file,
                            sep="\t",
-                           header=0 if header else None)
+                           header=None,
+                           names=range(n_cols) if n_cols else None,
+                           usecols=range(n_cols) if n_cols else None)
+
+    except pd.errors.ParserError as e:
+        if n_cols is None:
+            raise Exception(f"Error decoding tsv «{input_file}». Please provide an argument for "
+                "--n-cols specifying the number of columns to enforce. This number must not exceed "
+                "the total number of columns in the tsv.")
+        else:
+            raise Exception(f"Error decoding tsv: {e}. \n\n Did you specify too many columns with "
+                "--n-cols? --n-cols can't add extra columns, it just enforces up to the existing "
+                "number of columns in the tsv.")
+
+    if n_cols:
+        # Drop excess columns as specified by --n-cols
+        data = data[data.columns[0:n_cols]]
+
     col_names = list(data.columns)
+
+    if header:
+        # "Pop" first row and replace column names with it
+        first_row = data.iloc[0]
+        assert first_row.notnull().all(), "Error: You have missing values in your tsv header. " \
+            "Did you mean to specify --no-header?"
+        col_names = list(first_row)
+        data.columns = col_names
+        data = data.drop(0).reset_index(drop=True)
+
     if sort_col is not None:
         try:
             if not header:
