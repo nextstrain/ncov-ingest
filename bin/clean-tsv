@@ -62,9 +62,9 @@ def clean_tsv_file(input_file, output_file, n_cols, header, sort_col):
             if not header:
                 sort_col = int(sort_col)
             col_names.remove(sort_col)
-        except ValueError as e:
-            print(f"{sort_col} is not a column name in file, or if --no-header was used, there are not this many columns in the file.")
-            raise e
+        except ValueError:
+            raise ValueError(f"«{sort_col}» is not a column name in file, or if --no-header was "
+                "used, there are not this many columns in the file.")
         col_names = [sort_col] + col_names
     data = data.sort_values(col_names)
     data.to_csv(output_file, sep="\t", index=False, header=header, quoting=csv.QUOTE_NONE)
