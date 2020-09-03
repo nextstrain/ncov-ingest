@@ -19,7 +19,8 @@ def positive_integer(string: str) -> int:
 
     return value
 
-def clean_tsv_file(input_file: str, output_file: str, n_cols: positive_integer, header: bool, sort_col: str):
+def clean_tsv_file(input_file: str, output_file: str, n_cols: positive_integer,
+    header: bool, sort_col: str):
     """
     1. Read the tsv file
     2. Sort alphabetically and make sure n columns (n-1 tabs) each row (if n_cols is passed)
@@ -89,12 +90,15 @@ if __name__ == "__main__":
     parser.add_argument(
             "--n-cols",
             type=positive_integer,
-            help="Number of columns to enforce. Extra tabs will be added for rows with fewer than this number, and rows with more than this number will be truncated to this number of columns/tabs.\n")
+            help="Number of columns to enforce. Extra tabs will be added for rows with fewer than "
+                "this number, and rows with more than this number will be truncated to this number "
+                "of columns/tabs.\n")
 
     parser.add_argument(
             "--sort-col",
             type=str,
-            help="A column name (or 0-based index for headerless tsvs) to prioritize sorting; if not used, sorting will be alphabetical by columns in the order they appear.\n")
+            help="A column name (or 0-based index for headerless tsvs) to prioritize sorting; if "
+                "not used, sorting will be alphabetical by columns in the order they appear.\n")
 
     parser.add_argument(
             "--no-header",
