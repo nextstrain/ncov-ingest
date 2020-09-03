@@ -94,7 +94,7 @@ if __name__ == "__main__":
     parser.add_argument(
             "--sort-col",
             type=str,
-            help="A column name (or 0-based index for headerless tsvs) to prioritize sorting; if not used, sorting will be alphabetical by columns in the order they appear.`.\n")
+            help="A column name (or 0-based index for headerless tsvs) to prioritize sorting; if not used, sorting will be alphabetical by columns in the order they appear.\n")
 
     parser.add_argument(
             "--no-header",
