@@ -19,7 +19,7 @@ def positive_integer(string: str) -> int:
 
     return value
 
-def clean_tsv_file(input_file, output_file, n_cols, header, sort_col):
+def clean_tsv_file(input_file: str, output_file: str, n_cols: positive_integer, header: bool, sort_col: str):
     """
     1. Read the tsv file
     2. Sort alphabetically and make sure n columns (n-1 tabs) each row (if n_cols is passed)
