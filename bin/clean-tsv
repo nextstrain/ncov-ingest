@@ -2,6 +2,7 @@
 import pandas as pd
 import argparse
 import csv
+import sys
 
 
 def positive_integer(string: str) -> int:
@@ -19,7 +20,7 @@ def positive_integer(string: str) -> int:
 
     return value
 
-def clean_tsv_file(input_file: str, output_file: str, n_cols: positive_integer,
+def clean_tsv_file(input_file: str, output: str, n_cols: positive_integer,
     header: bool, sort_col: str):
     """
     1. Read the tsv file
@@ -68,7 +69,7 @@ def clean_tsv_file(input_file: str, output_file: str, n_cols: positive_integer,
                 "used, there are not this many columns in the file.")
         col_names = [sort_col] + col_names
     data = data.sort_values(col_names)
-    data.to_csv(output_file, sep="\t", index=False, header=header, quoting=csv.QUOTE_NONE)
+    data.to_csv(output, sep="\t", index=False, header=header, quoting=csv.QUOTE_NONE)
 
 
 if __name__ == "__main__":
@@ -83,9 +84,11 @@ if __name__ == "__main__":
             help="Path to file in TSV format to be cleaned and sorted.\n")
 
     parser.add_argument(
-            "output_file",
+            "--output-tsv",
             type=str,
-            help="Path to write cleaned and sorted output TSV.\n")
+            dest="output",
+            default=sys.stdout,
+            help="Path to write cleaned and sorted output TSV. Defaults to stdout.")
 
     parser.add_argument(
             "--n-cols",
@@ -106,4 +109,4 @@ if __name__ == "__main__":
             help="Do not read in the first line of the file as the column names.\n")
 
     args = parser.parse_args()
-    clean_tsv_file(args.tsv, args.output_file, args.n_cols, not args.no_header, args.sort_col)
+    clean_tsv_file(args.tsv, args.output, args.n_cols, not args.no_header, args.sort_col)
