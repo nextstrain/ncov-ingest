@@ -1,6 +1,11 @@
 name: 'Fetch & Ingest 2019-nCov/SARS-CoV-2 data from GISAID for nextstrain.org/ncov'
 
 on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    # "At 08:00 (10:00 CET) on every day-of-week from Monday through Friday."
+    - cron:  '0 8 * * MON-FRI'
+
   # Manually triggered using `./bin/trigger fetch-and-ingest`
   repository_dispatch:
     types: fetch-and-ingest
