@@ -21,7 +21,7 @@ def positive_integer(string: str) -> int:
     return value
 
 def clean_tsv_file(input_file: str, output: str, n_cols: positive_integer,
-    header: bool, sort_col: str):
+    header: bool, sort: bool, sort_col: str):
     """
     1. Read the tsv file
     2. Sort alphabetically and make sure n columns (n-1 tabs) each row (if n_cols is passed)
@@ -68,7 +68,10 @@ def clean_tsv_file(input_file: str, output: str, n_cols: positive_integer,
             raise ValueError(f"«{sort_col}» is not a column name in file, or if --no-header was "
                 "used, there are not this many columns in the file.")
         col_names = [sort_col] + col_names
-    data = data.sort_values(col_names)
+
+    if sort:
+        data = data.sort_values(col_names)
+
     data.to_csv(output, sep="\t", index=False, header=header, quoting=csv.QUOTE_NONE)
 
 
@@ -98,10 +101,16 @@ if __name__ == "__main__":
                 "of columns/tabs.\n")
 
     parser.add_argument(
+            "--sort",
+            action='store_true',
+            help="Sort output TSV alphabetically by columns in the order they appear. This is the "
+                "default sorting behavior, and it can be overriden with --sort-col.")
+
+    parser.add_argument(
             "--sort-col",
             type=str,
-            help="A column name (or 0-based index for headerless tsvs) to prioritize sorting; if "
-                "not used, sorting will be alphabetical by columns in the order they appear.\n")
+            help="A column name (or 0-based index for headerless tsvs) to prioritize sorting; "
+                "overrides the --sort option.\n")
 
     parser.add_argument(
             "--no-header",
@@ -109,4 +118,9 @@ if __name__ == "__main__":
             help="Do not read in the first line of the file as the column names.\n")
 
     args = parser.parse_args()
-    clean_tsv_file(args.tsv, args.output, args.n_cols, not args.no_header, args.sort_col)
+    clean_tsv_file(input_file=args.tsv,
+        output=args.output,
+        n_cols=args.n_cols,
+        header=not args.no_header,
+        sort=args.sort or (args.sort_col is not None),
+        sort_col=args.sort_col)
