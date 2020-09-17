@@ -48,16 +48,19 @@ Africa	Nigeria	Oyo State
 Africa	Nigeria	Rivers	
 Africa	Senegal	Dakar	
 Africa	Senegal	Dakar	Guediawaye
+Africa	Senegal	Dakar	Keur Massar
 Africa	Senegal	Dakar	Mbao
 Africa	Senegal	Dakar	Pikine
 Africa	Senegal	Dakar	Sangalkam
 Africa	Senegal	Dakar	Yeumbeul
+Africa	Senegal	Diourbel	
+Africa	Senegal	Diourbel	Touba
 Africa	Senegal	Kolda	
 Africa	Senegal	Kolda	Velingara
 Africa	Senegal	Mbour	
 Africa	Senegal	St-Louis	
 Africa	Senegal	Thies	
-Africa	Senegal	Touba	
+Africa	Senegal	Thies	Mbour
 Africa	Sierra Leone	Sierra Leone	
 Africa	South Africa	Eastern Cape	
 Africa	South Africa	Free State	
@@ -273,7 +276,7 @@ Asia	India	Haryana	Faridabad
 Asia	India	Haryana	Gurugram
 Asia	India	Haryana	Palwal
 Asia	India	India	
-Asia	India	Jammu	
+Asia	India	Jammu and Kashmir	
 Asia	India	Karnataka	
 Asia	India	Karnataka	Bengaluru Urban
 Asia	India	Karnataka	Chikkaballapura
@@ -1170,6 +1173,7 @@ Europe	Kosovo	Kosovo
 Europe	Latvia	Latvia	
 Europe	Latvia	Riga	
 Europe	Lithuania	Lithuania	
+Europe	Lithuania	Marijampoles Apskritis	
 Europe	Lithuania	Vilnius	
 Europe	Luxembourg	Luxembourg	
 Europe	Luxembourg	Luxembourg	Luxembourg
@@ -1406,6 +1410,10 @@ Europe	Spain	Andalusia	Velez Malaga
 Europe	Spain	Andalusia	Zujar
 Europe	Spain	Aragon	
 Europe	Spain	Aragon	Alcaniz
+Europe	Spain	Aragon	Caspe
+Europe	Spain	Aragon	Fraga
+Europe	Spain	Aragon	Monzon
+Europe	Spain	Aragon	Tamarite de Litera
 Europe	Spain	Aragon	Teruel
 Europe	Spain	Aragon	Zaragoza
 Europe	Spain	Asturias	
@@ -1426,10 +1434,15 @@ Europe	Spain	Basque Country
 Europe	Spain	Basque Country	Bermeo
 Europe	Spain	Basque Country	Bizkaia
 Europe	Spain	Basque Country	Donostia-San Sebastian
+Europe	Spain	Basque Country	Mondragon
 Europe	Spain	Basque Country	Portugalete
 Europe	Spain	Basque Country	Vitoria-Gasteiz
 Europe	Spain	Canary Islands	
+Europe	Spain	Canary Islands	Lanzarote
 Europe	Spain	Canary Islands	Las Palmas
+Europe	Spain	Cantabria	
+Europe	Spain	Cantabria	Santander
+Europe	Spain	Cantabria	Zurita
 Europe	Spain	Castilla la Mancha	
 Europe	Spain	Castilla la Mancha	Albacete
 Europe	Spain	Castilla la Mancha	Almansa
@@ -1450,6 +1463,38 @@ Europe	Spain	Castilla la Mancha	Tobarra
 Europe	Spain	Castilla la Mancha	Villanueva de la Jara
 Europe	Spain	Castilla la Mancha	Villarrobledo
 Europe	Spain	Castilla y Leon	
+Europe	Spain	Castilla y Leon	Antonan del Valle
+Europe	Spain	Castilla y Leon	Astorga
+Europe	Spain	Castilla y Leon	Benavides de Orbigo
+Europe	Spain	Castilla y Leon	Bercianos del Paramo
+Europe	Spain	Castilla y Leon	Brazuelo
+Europe	Spain	Castilla y Leon	Castrillo de San Pelayo
+Europe	Spain	Castilla y Leon	Castro de Cepeda
+Europe	Spain	Castilla y Leon	Estebanez de la Calzada
+Europe	Spain	Castilla y Leon	Garrafe de Torio
+Europe	Spain	Castilla y Leon	La Baneza
+Europe	Spain	Castilla y Leon	La Carrera de Otero
+Europe	Spain	Castilla y Leon	La Robla
+Europe	Spain	Castilla y Leon	La Virgen del Camino
+Europe	Spain	Castilla y Leon	Leon
+Europe	Spain	Castilla y Leon	Montejos del Camino
+Europe	Spain	Castilla y Leon	Palacios de la Valduerna
+Europe	Spain	Castilla y Leon	Posada de la Valduerna
+Europe	Spain	Castilla y Leon	Quintana de Raneros
+Europe	Spain	Castilla y Leon	Riego de la Vega
+Europe	Spain	Castilla y Leon	San Andres del Rabanedo
+Europe	Spain	Castilla y Leon	San Cristobal de la Polantera
+Europe	Spain	Castilla y Leon	San Pedro de Pegas
+Europe	Spain	Castilla y Leon	San Roman de la Vega
+Europe	Spain	Castilla y Leon	Trobajo del Camino
+Europe	Spain	Castilla y Leon	Val de San Lorenzo
+Europe	Spain	Castilla y Leon	Valdeviejas
+Europe	Spain	Castilla y Leon	Valencia de Don Juan
+Europe	Spain	Castilla y Leon	Veguellina de Orbigo
+Europe	Spain	Castilla y Leon	Villaobispo de las Regueras
+Europe	Spain	Castilla y Leon	Villaquilambre
+Europe	Spain	Castilla y Leon	Villarejo de Orbigo
+Europe	Spain	Castilla y Leon	Villaturiel
 Europe	Spain	Catalunya	
 Europe	Spain	Catalunya	Badalona
 Europe	Spain	Catalunya	Barcelona
@@ -1459,6 +1504,7 @@ Europe	Spain	Catalunya	Jorba
 Europe	Spain	Catalunya	L'Hospitalet de Llobregat
 Europe	Spain	Catalunya	Mataro
 Europe	Spain	Catalunya	Mollet del Valles
+Europe	Spain	Catalunya	Palamos
 Europe	Spain	Catalunya	Sabadell
 Europe	Spain	Catalunya	San Cugat del Valles
 Europe	Spain	Catalunya	Santa Coloma de Cervello
@@ -1476,6 +1522,7 @@ Europe	Spain	Comunitat Valenciana	Beniganim
 Europe	Spain	Comunitat Valenciana	Benirredra
 Europe	Spain	Comunitat Valenciana	Bonrepos i Mirambell
 Europe	Spain	Comunitat Valenciana	Canet d'en Berenguer
+Europe	Spain	Comunitat Valenciana	Castellon de la Plana
 Europe	Spain	Comunitat Valenciana	Chilches
 Europe	Spain	Comunitat Valenciana	El Puig
 Europe	Spain	Comunitat Valenciana	Elda
@@ -1532,27 +1579,37 @@ Europe	Spain	Galicia	Santiago de Compostela
 Europe	Spain	Galicia	Teo
 Europe	Spain	Galicia	Valga
 Europe	Spain	Galicia	Vedra
+Europe	Spain	Galicia	Vigo
 Europe	Spain	Grand Canary Islands	
 Europe	Spain	La Rioja	
 Europe	Spain	La Rioja	Agoncillo
 Europe	Spain	La Rioja	Albelda de Iregua
 Europe	Spain	La Rioja	Alberite
+Europe	Spain	La Rioja	Aldeanueva de Ebro
 Europe	Spain	La Rioja	Alfaro
+Europe	Spain	La Rioja	Arnedo
 Europe	Spain	La Rioja	Autol
 Europe	Spain	La Rioja	Calahorra
+Europe	Spain	La Rioja	Camprovin
 Europe	Spain	La Rioja	Casalarreina
+Europe	Spain	La Rioja	Ciruena
+Europe	Spain	La Rioja	Clavijo
 Europe	Spain	La Rioja	El Villar de Arnedo
 Europe	Spain	La Rioja	Ezcaray
 Europe	Spain	La Rioja	Haro
 Europe	Spain	La Rioja	Herce
 Europe	Spain	La Rioja	Lardero
+Europe	Spain	La Rioja	Leiva
 Europe	Spain	La Rioja	Logrono
 Europe	Spain	La Rioja	Najera
 Europe	Spain	La Rioja	Nalda
+Europe	Spain	La Rioja	Navarrete
 Europe	Spain	La Rioja	Ojacastro
 Europe	Spain	La Rioja	Pradejon
 Europe	Spain	La Rioja	San Vicente de la Sonsierra
 Europe	Spain	La Rioja	Santo Domingo de la Calzada
+Europe	Spain	La Rioja	Torrecilla en Cameros
+Europe	Spain	La Rioja	Ventas del Bano
 Europe	Spain	La Rioja	Villamediana de Iregua
 Europe	Spain	Madrid	
 Europe	Spain	Madrid	Alcala de Henares
@@ -1562,6 +1619,7 @@ Europe	Spain	Madrid	Arganda del Rey
 Europe	Spain	Madrid	Campo Real
 Europe	Spain	Madrid	Fuenlabrada
 Europe	Spain	Madrid	Leganés
+Europe	Spain	Madrid	Madrid
 Europe	Spain	Madrid	Parla
 Europe	Spain	Madrid	Rivas-Vaciamadrid
 Europe	Spain	Madrid	San Fernando de Henares
@@ -1570,18 +1628,28 @@ Europe	Spain	Melilla
 Europe	Spain	Murcia	
 Europe	Spain	Murcia	Murcia
 Europe	Spain	Navarra	
+Europe	Spain	Navarra	Artajona
 Europe	Spain	Navarra	Baranain
 Europe	Spain	Navarra	Barasoain
+Europe	Spain	Navarra	Burlada
 Europe	Spain	Navarra	Cintruenigo
 Europe	Spain	Navarra	Cizur Menor
 Europe	Spain	Navarra	Echavarri
 Europe	Spain	Navarra	Fitero
+Europe	Spain	Navarra	Huarte
+Europe	Spain	Navarra	Lodosa
+Europe	Spain	Navarra	Mendillorri
 Europe	Spain	Navarra	Mutilva
 Europe	Spain	Navarra	Noain
 Europe	Spain	Navarra	Pamplona
 Europe	Spain	Navarra	Peralta
+Europe	Spain	Navarra	Sarriguren
 Europe	Spain	Navarra	Tafalla
 Europe	Spain	Navarra	Torres De Elorz
+Europe	Spain	Navarra	Tudela
+Europe	Spain	Navarra	Viana
+Europe	Spain	Navarra	Villava
+Europe	Spain	Navarra	Zizur Mayor
 Europe	Spain	Navarra	Zulueta
 Europe	Spain	Spain	
 Europe	Sweden	Dalarna	
@@ -1961,6 +2029,7 @@ North America	USA	Missouri	St. Louis MO
 North America	USA	Montana	
 North America	USA	Nebraska	
 North America	USA	Nevada	
+North America	USA	Nevada	Clark County NV
 North America	USA	New Hampshire	
 North America	USA	New Jersey	
 North America	USA	New Jersey	Bergen County
@@ -1968,6 +2037,7 @@ North America	USA	New Jersey	Burlington County
 North America	USA	New Jersey	Camden County
 North America	USA	New Jersey	Essex County
 North America	USA	New Jersey	Hudson County
+North America	USA	New Jersey	Morris County
 North America	USA	New Mexico	
 North America	USA	New York	
 North America	USA	New York	Albany County
@@ -1985,6 +2055,7 @@ North America	USA	New York	Montgomery County NY
 North America	USA	New York	Nassau County
 North America	USA	New York	New Rochelle
 North America	USA	New York	New York City
+North America	USA	New York	New York County
 North America	USA	New York	Onondaga County
 North America	USA	New York	Orange County NY
 North America	USA	New York	Passaic County
@@ -2036,7 +2107,9 @@ North America	USA	South Dakota	Minnehaha County
 North America	USA	Tennessee	
 North America	USA	Texas	
 North America	USA	Texas	Bexar County
+North America	USA	Texas	El Paso
 North America	USA	Texas	Greater Houston Area
+North America	USA	Texas	Harris
 North America	USA	Texas	Houston
 North America	USA	Texas	Panola County
 North America	USA	USA	
@@ -2049,7 +2122,7 @@ North America	USA	Washington	Adams County WA
 North America	USA	Washington	Asotin County
 North America	USA	Washington	Benton County
 North America	USA	Washington	Chelan County
-North America	USA	Washington	Clark County
+North America	USA	Washington	Clark County WA
 North America	USA	Washington	Cowlitz County
 North America	USA	Washington	Douglas County WA
 North America	USA	Washington	Franklin County WA
@@ -2095,7 +2168,9 @@ North America	USA	Wisconsin	Jefferson County WI
 North America	USA	Wisconsin	Juneau County
 North America	USA	Wisconsin	La Crosse County
 North America	USA	Wisconsin	Lafayette County
+North America	USA	Wisconsin	Lincoln County
 North America	USA	Wisconsin	Manitowoc County
+North America	USA	Wisconsin	Marathon County
 North America	USA	Wisconsin	Marquette County
 North America	USA	Wisconsin	Milwaukee County
 North America	USA	Wisconsin	Monroe County
