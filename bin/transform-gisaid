@@ -94,10 +94,10 @@ if __name__ == '__main__':
         with open(args.annotations, "r") as gisaid_fh:
             csvreader = csv.reader(gisaid_fh, delimiter='\t')
             for row in csvreader:
-                if len(row) != 4:
-                    # ensure that it's a comment
-                    if row[0].lstrip()[0] != '#':
-                        print("WARNING: couldn't decode annotation line " + "\t".join(row))
+                if row[0].lstrip()[0] == '#':
+                    continue
+                elif len(row) != 4:
+                    print("WARNING: couldn't decode annotation line " + "\t".join(row))
                     continue
                 strain, epi_isl, key, value = row
                 annotations[epi_isl].append((
