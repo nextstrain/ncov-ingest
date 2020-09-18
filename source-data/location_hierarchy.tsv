@@ -370,8 +370,10 @@ Asia	India	West Bengal	Nadia
 Asia	India	West Bengal	North 24 Parganas
 Asia	India	West Bengal	South 24 Parganas
 Asia	India	West Bengal	Tehatta
+Asia	Indonesia	Bali	
 Asia	Indonesia	Banten	
 Asia	Indonesia	Banten	Tangerang
+Asia	Indonesia	Center Kalimantan	
 Asia	Indonesia	Central Java	
 Asia	Indonesia	East Java	
 Asia	Indonesia	East Java	Pasuruan
@@ -383,7 +385,10 @@ Asia	Indonesia	Indonesia
 Asia	Indonesia	Jakarta	
 Asia	Indonesia	North Sulawesi	
 Asia	Indonesia	North Sulawesi	Manado
+Asia	Indonesia	North Sumatra	
+Asia	Indonesia	Papua	
 Asia	Indonesia	Pasuruan	
+Asia	Indonesia	South Kalimantan	
 Asia	Indonesia	Special Region of Yogyakarta	
 Asia	Indonesia	Surabaya	
 Asia	Indonesia	West Java	
@@ -584,6 +589,7 @@ Europe	Belarus	Belarus
 Europe	Belgium	Aalst	
 Europe	Belgium	Aalst	Geraardsbergen
 Europe	Belgium	Antwerpen	
+Europe	Belgium	Antwerpen	Aartselaar
 Europe	Belgium	Antwerpen	Berchem
 Europe	Belgium	Antwerpen	Brasschaat
 Europe	Belgium	Antwerpen	Broechem
@@ -714,6 +720,7 @@ Europe	Belgium	Huy	Wanze
 Europe	Belgium	Huy	Yernée-Fraineux
 Europe	Belgium	Ieper	
 Europe	Belgium	Ieper	Geluwe
+Europe	Belgium	Ieper	Langemark
 Europe	Belgium	Ieper	Poperinge
 Europe	Belgium	Ieper	Vlamertinge
 Europe	Belgium	Kortrijk	
@@ -1191,6 +1198,7 @@ Europe	Netherlands	Drenthe	Dalen
 Europe	Netherlands	Flevoland	
 Europe	Netherlands	Flevoland	Zeewolde
 Europe	Netherlands	Friesland	
+Europe	Netherlands	Friesland	Franeker
 Europe	Netherlands	Gelderland	
 Europe	Netherlands	Leiden	
 Europe	Netherlands	Limburg	
@@ -1201,6 +1209,7 @@ Europe	Netherlands	North Brabant	Andel
 Europe	Netherlands	North Brabant	Berlicum
 Europe	Netherlands	North Brabant	Blaricum
 Europe	Netherlands	North Brabant	Eindhoven
+Europe	Netherlands	North Brabant	Heeswijk Dinther
 Europe	Netherlands	North Brabant	Helmond
 Europe	Netherlands	North Brabant	Loon op zand
 Europe	Netherlands	North Brabant	Nieuwendijk
@@ -1208,9 +1217,13 @@ Europe	Netherlands	North Brabant	Oisterwijk
 Europe	Netherlands	North Brabant	Oss
 Europe	Netherlands	North Brabant	Tilburg
 Europe	Netherlands	North Holland	
+Europe	Netherlands	North Holland	Amsterdam West
+Europe	Netherlands	North Holland	Beverwijk
 Europe	Netherlands	North Holland	Diemen
 Europe	Netherlands	North Holland	Haarlem
 Europe	Netherlands	North Holland	Naarden
+Europe	Netherlands	North Holland	Schiphol
+Europe	Netherlands	North Holland	Wervershoof
 Europe	Netherlands	Overijssel	
 Europe	Netherlands	South Holland	
 Europe	Netherlands	South Holland	Delft
@@ -1218,7 +1231,9 @@ Europe	Netherlands	South Holland	Hardinxveld Giessendam
 Europe	Netherlands	South Holland	Nootdorp
 Europe	Netherlands	South Holland	Rotterdam
 Europe	Netherlands	Utrecht	
+Europe	Netherlands	Utrecht	Amersfoort
 Europe	Netherlands	Utrecht	Houten
+Europe	Netherlands	Utrecht	Overvecht
 Europe	Netherlands	Utrecht	Utrecht
 Europe	Netherlands	Zeeland	
 Europe	North Macedonia	Eastern Region	
@@ -1368,6 +1383,7 @@ Europe	Spain	Andalusia	Cullar Vega
 Europe	Spain	Andalusia	Durcal
 Europe	Spain	Andalusia	Fonelas
 Europe	Spain	Andalusia	Frailes
+Europe	Spain	Andalusia	Fuente Vaqueros
 Europe	Spain	Andalusia	Granada
 Europe	Spain	Andalusia	Guadix
 Europe	Spain	Andalusia	Guevejar
@@ -1431,17 +1447,45 @@ Europe	Spain	Balear Islands	Palma de Mallorca
 Europe	Spain	Balear Islands	Santa Maria del Camino
 Europe	Spain	Balear Islands	Son Servera
 Europe	Spain	Basque Country	
+Europe	Spain	Basque Country	Baracaldo
 Europe	Spain	Basque Country	Bermeo
+Europe	Spain	Basque Country	Bilbao
 Europe	Spain	Basque Country	Bizkaia
 Europe	Spain	Basque Country	Donostia-San Sebastian
 Europe	Spain	Basque Country	Mondragon
+Europe	Spain	Basque Country	Musques
 Europe	Spain	Basque Country	Portugalete
+Europe	Spain	Basque Country	San Sebastian
 Europe	Spain	Basque Country	Vitoria-Gasteiz
 Europe	Spain	Canary Islands	
 Europe	Spain	Canary Islands	Lanzarote
 Europe	Spain	Canary Islands	Las Palmas
 Europe	Spain	Cantabria	
+Europe	Spain	Cantabria	Cabezon de la Sal
+Europe	Spain	Cantabria	Carandia
+Europe	Spain	Cantabria	Castro Urdiales
+Europe	Spain	Cantabria	La Penilla
+Europe	Spain	Cantabria	Laredo
+Europe	Spain	Cantabria	Liencres
+Europe	Spain	Cantabria	Los Corrales de Buelna
+Europe	Spain	Cantabria	Maliano
+Europe	Spain	Cantabria	Marina de Cudeyo
+Europe	Spain	Cantabria	Muriedas
+Europe	Spain	Cantabria	Oruna
+Europe	Spain	Cantabria	Pielagos
+Europe	Spain	Cantabria	Polanco
+Europe	Spain	Cantabria	Pontejos
+Europe	Spain	Cantabria	Puente San Miguel
+Europe	Spain	Cantabria	Ramales de la Victoria
+Europe	Spain	Cantabria	Renedo
+Europe	Spain	Cantabria	Santa Cruz de Bezana
 Europe	Spain	Cantabria	Santander
+Europe	Spain	Cantabria	Santiago de Cartes
+Europe	Spain	Cantabria	Santillana
+Europe	Spain	Cantabria	Santona
+Europe	Spain	Cantabria	Suances
+Europe	Spain	Cantabria	Torrelavega
+Europe	Spain	Cantabria	Valderredible
 Europe	Spain	Cantabria	Zurita
 Europe	Spain	Castilla la Mancha	
 Europe	Spain	Castilla la Mancha	Albacete
@@ -1513,35 +1557,62 @@ Europe	Spain	Catalunya	Vallirana
 Europe	Spain	Catalunya	Vic
 Europe	Spain	Catalunya	Vilasar de Mar
 Europe	Spain	Comunitat Valenciana	
+Europe	Spain	Comunitat Valenciana	Alaquas
 Europe	Spain	Comunitat Valenciana	Albal
+Europe	Spain	Comunitat Valenciana	Albalat dels Sorells
+Europe	Spain	Comunitat Valenciana	Alboraia
 Europe	Spain	Comunitat Valenciana	Alboraya
 Europe	Spain	Comunitat Valenciana	Albuixech
+Europe	Spain	Comunitat Valenciana	Algemesi
+Europe	Spain	Comunitat Valenciana	Alginet
 Europe	Spain	Comunitat Valenciana	Almassera
 Europe	Spain	Comunitat Valenciana	Almenara
+Europe	Spain	Comunitat Valenciana	Almussafes
+Europe	Spain	Comunitat Valenciana	Alzira
+Europe	Spain	Comunitat Valenciana	Antella
+Europe	Spain	Comunitat Valenciana	Benifaio
 Europe	Spain	Comunitat Valenciana	Beniganim
 Europe	Spain	Comunitat Valenciana	Benirredra
 Europe	Spain	Comunitat Valenciana	Bonrepos i Mirambell
 Europe	Spain	Comunitat Valenciana	Canet d'en Berenguer
+Europe	Spain	Comunitat Valenciana	Carcaixent
+Europe	Spain	Comunitat Valenciana	Carlet
+Europe	Spain	Comunitat Valenciana	Castello de la Plana
 Europe	Spain	Comunitat Valenciana	Castellon de la Plana
 Europe	Spain	Comunitat Valenciana	Chilches
+Europe	Spain	Comunitat Valenciana	Cullera
+Europe	Spain	Comunitat Valenciana	El Dosel
 Europe	Spain	Comunitat Valenciana	El Puig
 Europe	Spain	Comunitat Valenciana	Elda
+Europe	Spain	Comunitat Valenciana	Favara
 Europe	Spain	Comunitat Valenciana	Gandia
 Europe	Spain	Comunitat Valenciana	Gilet
+Europe	Spain	Comunitat Valenciana	Godella
 Europe	Spain	Comunitat Valenciana	Grau de Sagunt
+Europe	Spain	Comunitat Valenciana	Guadassuar
+Europe	Spain	Comunitat Valenciana	Llombai
 Europe	Spain	Comunitat Valenciana	Llutxent
+Europe	Spain	Comunitat Valenciana	Massalaves
+Europe	Spain	Comunitat Valenciana	Massamagrell
 Europe	Spain	Comunitat Valenciana	Meliana
 Europe	Spain	Comunitat Valenciana	Miramar
 Europe	Spain	Comunitat Valenciana	Museros
 Europe	Spain	Comunitat Valenciana	Oliva
 Europe	Spain	Comunitat Valenciana	Olleria
 Europe	Spain	Comunitat Valenciana	Palma de Gandia
+Europe	Spain	Comunitat Valenciana	Picassent
+Europe	Spain	Comunitat Valenciana	Piles
 Europe	Spain	Comunitat Valenciana	Puzol
+Europe	Spain	Comunitat Valenciana	Quart de Poblet
 Europe	Spain	Comunitat Valenciana	Sagunt
 Europe	Spain	Comunitat Valenciana	Segorbe
 Europe	Spain	Comunitat Valenciana	Simat de la Valldigna
+Europe	Spain	Comunitat Valenciana	Sollana
 Europe	Spain	Comunitat Valenciana	Soneja
+Europe	Spain	Comunitat Valenciana	Sueca
+Europe	Spain	Comunitat Valenciana	Tavernes Blanques
 Europe	Spain	Comunitat Valenciana	Tavernes de la Valldigna
+Europe	Spain	Comunitat Valenciana	Torrent
 Europe	Spain	Comunitat Valenciana	Valencia
 Europe	Spain	Comunitat Valenciana	Valencia Horta
 Europe	Spain	Comunitat Valenciana	Xeraco
@@ -1636,6 +1707,7 @@ Europe	Spain	Navarra	Cintruenigo
 Europe	Spain	Navarra	Cizur Menor
 Europe	Spain	Navarra	Echavarri
 Europe	Spain	Navarra	Fitero
+Europe	Spain	Navarra	Gartzain
 Europe	Spain	Navarra	Huarte
 Europe	Spain	Navarra	Lodosa
 Europe	Spain	Navarra	Mendillorri
