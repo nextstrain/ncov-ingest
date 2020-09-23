@@ -523,6 +523,7 @@ Asia	Singapore	Singapore
 Asia	Singapore	Singapore	Singapore
 Asia	South Korea	Chungcheongnam	
 Asia	South Korea	Chungcheongnam	Chungcheongnam
+Asia	South Korea	Gwangju	
 Asia	South Korea	Gyeonggi Province	
 Asia	South Korea	Gyeonggi Province	Gyeonggi
 Asia	South Korea	Gyeonggi Province	Uijeongbu
@@ -624,6 +625,7 @@ Europe	Belgium	Ath	Lessines
 Europe	Belgium	Ath	Quevaucamps
 Europe	Belgium	Ath	Wadelincourt
 Europe	Belgium	Belgium	
+Europe	Belgium	Brabant Wallon	
 Europe	Belgium	Brugge	
 Europe	Belgium	Brugge	Assebroek
 Europe	Belgium	Brugge	Blankenberge
@@ -675,6 +677,7 @@ Europe	Belgium	Dinant	Ciney
 Europe	Belgium	Dinant	Havelange
 Europe	Belgium	Eeklo	
 Europe	Belgium	Eeklo	Maldegem
+Europe	Belgium	Flandre-Orientale	
 Europe	Belgium	Flines-lès-Mortagne	
 Europe	Belgium	Gent	
 Europe	Belgium	Gent	Asper
@@ -686,6 +689,7 @@ Europe	Belgium	Gent	Lovendegem
 Europe	Belgium	Gent	Mariakerke
 Europe	Belgium	Gent	Merelbeke
 Europe	Belgium	Gent	Nevele
+Europe	Belgium	Hainaut	
 Europe	Belgium	Halle-Vilvoorde	
 Europe	Belgium	Halle-Vilvoorde	Asse
 Europe	Belgium	Halle-Vilvoorde	Beersel
@@ -786,6 +790,7 @@ Europe	Belgium	Liège	Seraing
 Europe	Belgium	Liège	Soumagne
 Europe	Belgium	Liège	Voroux-lez-Liers
 Europe	Belgium	Liège	Wandre
+Europe	Belgium	Limburg BE	
 Europe	Belgium	Maaseik	
 Europe	Belgium	Maaseik	Bocholt
 Europe	Belgium	Maaseik	Bree
@@ -976,16 +981,23 @@ Europe	Czech Republic	Melnik
 Europe	Czech Republic	Moravian-Silesian Region	
 Europe	Czech Republic	Moravian-Silesian Region	Albrechtice
 Europe	Czech Republic	Moravian-Silesian Region	Cesky Tesin
+Europe	Czech Republic	Moravian-Silesian Region	Havířov
+Europe	Czech Republic	Moravian-Silesian Region	Karviná
 Europe	Czech Republic	Olomouc Region	
 Europe	Czech Republic	Olomouc Region	Litovel
+Europe	Czech Republic	Pardubice Region	Pardubice
 Europe	Czech Republic	Plzeň Region	
 Europe	Czech Republic	Plzeň Region	Domažlice
 Europe	Czech Republic	Plzeň Region	Plzeň
 Europe	Czech Republic	Prague	
+Europe	Czech Republic	Prague	Kvetnice
 Europe	Czech Republic	Prague	Prague-Miskovice
+Europe	Czech Republic	Prague	Sedlec
 Europe	Czech Republic	South Moravian Region	
 Europe	Czech Republic	South Moravian Region	Breclav
 Europe	Czech Republic	South Moravian Region	Brno
+Europe	Czech Republic	South Moravian Region	Hodonín
+Europe	Czech Republic	South Moravian Region	Ratíškovice
 Europe	Czech Republic	South Moravian Region	Znojmo
 Europe	Czech Republic	Usti nad Labem	
 Europe	Czech Republic	Usti nad Labem	Litomerice
@@ -1465,12 +1477,22 @@ Europe	Spain	Basque Country	Baracaldo
 Europe	Spain	Basque Country	Bermeo
 Europe	Spain	Basque Country	Bilbao
 Europe	Spain	Basque Country	Bizkaia
+Europe	Spain	Basque Country	Deba
 Europe	Spain	Basque Country	Donostia-San Sebastian
+Europe	Spain	Basque Country	Eibar
+Europe	Spain	Basque Country	Hernani
+Europe	Spain	Basque Country	Irun
+Europe	Spain	Basque Country	Mallabia
+Europe	Spain	Basque Country	Mendaro
 Europe	Spain	Basque Country	Mondragon
 Europe	Spain	Basque Country	Musques
+Europe	Spain	Basque Country	Ordizia
 Europe	Spain	Basque Country	Portugalete
 Europe	Spain	Basque Country	San Sebastian
+Europe	Spain	Basque Country	Tolosa
 Europe	Spain	Basque Country	Vitoria-Gasteiz
+Europe	Spain	Basque Country	Zarauz
+Europe	Spain	Basque Country	Zumarraga
 Europe	Spain	Canary Islands	
 Europe	Spain	Canary Islands	Lanzarote
 Europe	Spain	Canary Islands	Las Palmas
@@ -1556,6 +1578,8 @@ Europe	Spain	Castilla y Leon	Villaturiel
 Europe	Spain	Catalunya	
 Europe	Spain	Catalunya	Badalona
 Europe	Spain	Catalunya	Barcelona
+Europe	Spain	Catalunya	Cambrils
+Europe	Spain	Catalunya	El Masnou
 Europe	Spain	Catalunya	El Prat de Llobregat
 Europe	Spain	Catalunya	Granollers
 Europe	Spain	Catalunya	Jorba
@@ -1650,6 +1674,7 @@ Europe	Spain	Galicia	Boqueixón
 Europe	Spain	Galicia	El Rosal
 Europe	Spain	Galicia	La Estrada
 Europe	Spain	Galicia	Lalin
+Europe	Spain	Galicia	Lousame
 Europe	Spain	Galicia	Muros
 Europe	Spain	Galicia	Negreira
 Europe	Spain	Galicia	Noia
@@ -1657,15 +1682,19 @@ Europe	Spain	Galicia	Oroso
 Europe	Spain	Galicia	Outes
 Europe	Spain	Galicia	Padrón
 Europe	Spain	Galicia	Pontecesures
+Europe	Spain	Galicia	Puebla del Caraminal
 Europe	Spain	Galicia	Puerto del Son
 Europe	Spain	Galicia	Rianjo
 Europe	Spain	Galicia	Ribeira
+Europe	Spain	Galicia	Rois
 Europe	Spain	Galicia	Santa Comba
 Europe	Spain	Galicia	Santiago de Compostela
+Europe	Spain	Galicia	Silleda
 Europe	Spain	Galicia	Teo
 Europe	Spain	Galicia	Valga
 Europe	Spain	Galicia	Vedra
 Europe	Spain	Galicia	Vigo
+Europe	Spain	Galicia	Villa de Cruces
 Europe	Spain	Grand Canary Islands	
 Europe	Spain	La Rioja	
 Europe	Spain	La Rioja	Agoncillo
@@ -2056,6 +2085,7 @@ North America	USA	Hawaii
 North America	USA	Idaho	
 North America	USA	Idaho	Madison County
 North America	USA	Illinois	
+North America	USA	Illinois	Boone County
 North America	USA	Illinois	Chicago
 North America	USA	Illinois	Cook County
 North America	USA	Illinois	Dupage County
@@ -2188,17 +2218,51 @@ North America	USA	South Carolina
 North America	USA	South Carolina	Berkeley County
 North America	USA	South Carolina	Columbia SC
 North America	USA	South Carolina	Fairfield County SC
+North America	USA	South Carolina	Georgetown
+North America	USA	South Carolina	Horry
 North America	USA	South Carolina	Richland County SC
 North America	USA	South Dakota	
 North America	USA	South Dakota	Minnehaha County
 North America	USA	Tennessee	
 North America	USA	Texas	
 North America	USA	Texas	Bexar County
-North America	USA	Texas	El Paso
+North America	USA	Texas	Brewster County
+North America	USA	Texas	Burleson County
+North America	USA	Texas	Cameron County
+North America	USA	Texas	Comal County
+North America	USA	Texas	Dallas County
+North America	USA	Texas	Deaf Smith County
+North America	USA	Texas	El Paso County
+North America	USA	Texas	Galveston County
+North America	USA	Texas	Gonzales County
 North America	USA	Texas	Greater Houston Area
-North America	USA	Texas	Harris
+North America	USA	Texas	Grimes County
+North America	USA	Texas	Harris County
+North America	USA	Texas	Hays County
+North America	USA	Texas	Hidalgo County
 North America	USA	Texas	Houston
+North America	USA	Texas	Jim Wells County
+North America	USA	Texas	Kaufman County
+North America	USA	Texas	Lamar County
+North America	USA	Texas	Lavaca County
+North America	USA	Texas	Limestone County
+North America	USA	Texas	Live Oak County
+North America	USA	Texas	Llano County
+North America	USA	Texas	Mclennan County
+North America	USA	Texas	Montgomery County TX
+North America	USA	Texas	Nueces County
+North America	USA	Texas	Ochiltree County
 North America	USA	Texas	Panola County
+North America	USA	Texas	Parker County
+North America	USA	Texas	Red River County
+North America	USA	Texas	San Patricio County
+North America	USA	Texas	Titus County
+North America	USA	Texas	Travis County
+North America	USA	Texas	Val Verde County
+North America	USA	Texas	Waller County
+North America	USA	Texas	Washington County TX
+North America	USA	Texas	Webb County
+North America	USA	Texas	Williamson County
 North America	USA	USA	
 North America	USA	Utah	
 North America	USA	Vermont	
@@ -2233,6 +2297,7 @@ North America	USA	Washington	Whatcom County
 North America	USA	Washington	Yakima County
 North America	USA	Washington DC	
 North America	USA	Washington DC	District of Columbia County
+North America	USA	West Virginia	
 North America	USA	Wisconsin	
 North America	USA	Wisconsin	Adams County WI
 North America	USA	Wisconsin	Brooklyn WI
@@ -2265,6 +2330,7 @@ North America	USA	Wisconsin	Oregon WI
 North America	USA	Wisconsin	Outagamie County
 North America	USA	Wisconsin	Ozaukee County
 North America	USA	Wisconsin	Port Washington
+North America	USA	Wisconsin	Portage County
 North America	USA	Wisconsin	Racine County
 North America	USA	Wisconsin	Richland County WI
 North America	USA	Wisconsin	Rock County
@@ -2275,6 +2341,7 @@ North America	USA	Wisconsin	Thiensville
 North America	USA	Wisconsin	Trempealeau County
 North America	USA	Wisconsin	Vernon County
 North America	USA	Wisconsin	Verona WI
+North America	USA	Wisconsin	Walworth County
 North America	USA	Wisconsin	Washington County WI
 North America	USA	Wisconsin	Waukesha County
 North America	USA	Wisconsin	Waupaca County
@@ -2337,6 +2404,7 @@ South America	Brazil	Amazonas	Manaus
 South America	Brazil	Bahia	
 South America	Brazil	Bahia	Feira de Santana
 South America	Brazil	Brazil	
+South America	Brazil	Brazilian Cruise	
 South America	Brazil	Ceará	
 South America	Brazil	Distrito Federal	
 South America	Brazil	Distrito Federal	Brasilia
@@ -2349,7 +2417,12 @@ South America	Brazil	Minas Gerais
 South America	Brazil	Para	
 South America	Brazil	Paraiba	
 South America	Brazil	Paraná	
+South America	Brazil	Paraná	Cianorte
 South America	Brazil	Paraná	Curitiba
+South America	Brazil	Paraná	Maringa
+South America	Brazil	Paraná	Medianeira
+South America	Brazil	Paraná	Ponta Grossa
+South America	Brazil	Paraná	Vere
 South America	Brazil	Pernambuco	
 South America	Brazil	Pernambuco	Alianca
 South America	Brazil	Pernambuco	Camaragibe
@@ -2361,26 +2434,40 @@ South America	Brazil	Pernambuco	Paulista
 South America	Brazil	Pernambuco	Recife
 South America	Brazil	Pernambuco	Sao Lourenco Da Mata
 South America	Brazil	Piaui	
+South America	Brazil	Piaui	Parnaiba
 South America	Brazil	Rio Grande do Norte	
 South America	Brazil	Rio Grande do Sul	
 South America	Brazil	Rio de Janeiro	
 South America	Brazil	Rio de Janeiro	Belford Roxo
 South America	Brazil	Rio de Janeiro	Duque de Caxias
 South America	Brazil	Rio de Janeiro	Itaborai
+South America	Brazil	Rio de Janeiro	Mesquita
 South America	Brazil	Rio de Janeiro	Niteroi
 South America	Brazil	Rio de Janeiro	Nova Iguacu
 South America	Brazil	Rio de Janeiro	Petropolis
 South America	Brazil	Rio de Janeiro	Queimados
 South America	Brazil	Rio de Janeiro	Resende
 South America	Brazil	Rio de Janeiro	Rio de Janeiro
+South America	Brazil	Rio de Janeiro	Sao Goncalo
 South America	Brazil	Rio de Janeiro	Teresopolis
 South America	Brazil	Rondonia	
 South America	Brazil	Rondonia	Jaru
 South America	Brazil	Rondonia	Porto Velho
 South America	Brazil	Santa Catarina	
+South America	Brazil	Santa Catarina	Balneario Camburiu
+South America	Brazil	Santa Catarina	Braco do Norte
 South America	Brazil	Santa Catarina	Florianopolis
 South America	Brazil	Santa Catarina	Joinville
 South America	Brazil	Sergipe	
+South America	Brazil	Sergipe	Aracaju
+South America	Brazil	Sergipe	Estancia
+South America	Brazil	Sergipe	Itaporanga Dajuda
+South America	Brazil	Sergipe	Jaboatiana
+South America	Brazil	Sergipe	Laranjeiras
+South America	Brazil	Sergipe	Nossa Senhora Da Gloria
+South America	Brazil	Sergipe	Nossa Senhora do Socorro
+South America	Brazil	Sergipe	Riachuelo
+South America	Brazil	Sergipe	Tomar do Geru
 South America	Brazil	São Paulo	
 South America	Brazil	São Paulo	Americana
 South America	Brazil	São Paulo	Assis
@@ -2564,20 +2651,28 @@ South America	Ecuador	Zamora-Chinchipe	Yantzaza
 South America	Ecuador	Zamora-Chinchipe	Zamora
 South America	Peru	Ancash	
 South America	Peru	Ancash	Huaraz
+South America	Peru	Ancash	Huarmey
+South America	Peru	Ancash	Santa
 South America	Peru	Arequipa	
+South America	Peru	Arequipa	Arequipa
 South America	Peru	Cajamarca	
 South America	Peru	Callao	
+South America	Peru	Callao	Callao
 South America	Peru	Cuzco	
 South America	Peru	Huanuco	
 South America	Peru	Ica	
 South America	Peru	Junin	
 South America	Peru	La Libertad	
+South America	Peru	La Libertad	La Libertad
 South America	Peru	Lambayeque	
 South America	Peru	Lambayeque	Chiclayo
 South America	Peru	Lima	
 South America	Peru	Lima	Cañete
+South America	Peru	Lima	Huarochiri
 South America	Peru	Lima	Lima
 South America	Peru	Loreto	
+South America	Peru	Ucayali	
+South America	Peru	Ucayali	Coronel Portillo
 South America	South America	South America	
 South America	Suriname	Suriname	
 South America	Uruguay	Maldonado	
