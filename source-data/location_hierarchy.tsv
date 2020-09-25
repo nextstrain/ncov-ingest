@@ -279,6 +279,7 @@ Asia	India	Haryana
 Asia	India	Haryana	Faridabad
 Asia	India	Haryana	Gurugram
 Asia	India	Haryana	Palwal
+Asia	India	Haryana	Panchkula
 Asia	India	India	
 Asia	India	Jammu and Kashmir	
 Asia	India	Karnataka	
@@ -976,6 +977,7 @@ Europe	Czech Republic	Czech Republic
 Europe	Czech Republic	Hranice Na Moravě	
 Europe	Czech Republic	Hranice Na Moravě	Prostějov
 Europe	Czech Republic	Jihlava	
+Europe	Czech Republic	Liberec Region	
 Europe	Czech Republic	Litomerice-Brnay	
 Europe	Czech Republic	Melnik	
 Europe	Czech Republic	Moravian-Silesian Region	
@@ -985,6 +987,8 @@ Europe	Czech Republic	Moravian-Silesian Region	Havířov
 Europe	Czech Republic	Moravian-Silesian Region	Karviná
 Europe	Czech Republic	Olomouc Region	
 Europe	Czech Republic	Olomouc Region	Litovel
+Europe	Czech Republic	Olomouc Region	Písařov
+Europe	Czech Republic	Olomouc Region	Sumperk
 Europe	Czech Republic	Pardubice Region	Pardubice
 Europe	Czech Republic	Plzeň Region	
 Europe	Czech Republic	Plzeň Region	Domažlice
@@ -1002,6 +1006,8 @@ Europe	Czech Republic	South Moravian Region	Znojmo
 Europe	Czech Republic	Usti nad Labem	
 Europe	Czech Republic	Usti nad Labem	Litomerice
 Europe	Czech Republic	Usti nad Labem	Litvinov
+Europe	Czech Republic	Usti nad Labem	Račice
+Europe	Czech Republic	Usti nad Labem	Sulejovice
 Europe	Czech Republic	Usti nad Labem	Všebořice
 Europe	Czech Republic	Vysocina Region	
 Europe	Czech Republic	Vysocina Region	Bela - Ledec Na Sazavou
@@ -1230,6 +1236,7 @@ Europe	Netherlands	Flevoland	Zeewolde
 Europe	Netherlands	Friesland	
 Europe	Netherlands	Friesland	Franeker
 Europe	Netherlands	Gelderland	
+Europe	Netherlands	Groningen	
 Europe	Netherlands	Leiden	
 Europe	Netherlands	Limburg	
 Europe	Netherlands	Milheeze	
@@ -1859,6 +1866,8 @@ Europe	United Kingdom	England	Nottinghamshire
 Europe	United Kingdom	England	South Yorkshire
 Europe	United Kingdom	England	Warwickshire
 Europe	United Kingdom	England	Yorkshire
+Europe	United Kingdom	Gibraltar	
+Europe	United Kingdom	Gibraltar	Gibraltar
 Europe	United Kingdom	Northern Ireland	
 Europe	United Kingdom	Scotland	
 Europe	United Kingdom	United Kingdom	
@@ -2112,9 +2121,12 @@ North America	USA	Indiana	Indianapolis
 North America	USA	Iowa	
 North America	USA	Iowa	Allamakee County
 North America	USA	Iowa	Buchanan County
+North America	USA	Iowa	Clayton County
 North America	USA	Iowa	Dubuque County
 North America	USA	Iowa	Fayette County
+North America	USA	Iowa	Howard County
 North America	USA	Iowa	Jackson County IA
+North America	USA	Iowa	Johnson County
 North America	USA	Iowa	Winneshiek County
 North America	USA	Kansas	
 North America	USA	Kentucky	
@@ -2314,6 +2326,7 @@ North America	USA	Wisconsin
 North America	USA	Wisconsin	Adams County WI
 North America	USA	Wisconsin	Brooklyn WI
 North America	USA	Wisconsin	Brown County WI
+North America	USA	Wisconsin	Buffalo County
 North America	USA	Wisconsin	Campbellsport
 North America	USA	Wisconsin	Chippewa County WI
 North America	USA	Wisconsin	Columbia County WI
@@ -2341,12 +2354,14 @@ North America	USA	Wisconsin	Monroe County
 North America	USA	Wisconsin	Oregon WI
 North America	USA	Wisconsin	Outagamie County
 North America	USA	Wisconsin	Ozaukee County
+North America	USA	Wisconsin	Pepin County
 North America	USA	Wisconsin	Port Washington
 North America	USA	Wisconsin	Portage County
 North America	USA	Wisconsin	Racine County
 North America	USA	Wisconsin	Richland County WI
 North America	USA	Wisconsin	Rock County
 North America	USA	Wisconsin	Sauk County
+North America	USA	Wisconsin	Shawano County
 North America	USA	Wisconsin	Sheboygan County
 North America	USA	Wisconsin	South Milwaukee
 North America	USA	Wisconsin	Thiensville
@@ -2407,6 +2422,7 @@ South America	Argentina	Cordoba AR
 South America	Argentina	Rio Negro	
 South America	Argentina	Rio Negro	San Carlos de Bariloche
 South America	Argentina	Tucuman	
+South America	Aruba	Aruba	
 South America	Brazil	Acre	
 South America	Brazil	Alagoas	
 South America	Brazil	Alagoas	Maceio
@@ -2482,12 +2498,16 @@ South America	Brazil	Sergipe	Riachuelo
 South America	Brazil	Sergipe	Tomar do Geru
 South America	Brazil	São Paulo	
 South America	Brazil	São Paulo	Americana
+South America	Brazil	São Paulo	Araçatuba
 South America	Brazil	São Paulo	Assis
 South America	Brazil	São Paulo	Barueri
+South America	Brazil	São Paulo	Birigui
 South America	Brazil	São Paulo	Caieiras
+South America	Brazil	São Paulo	Cajamar
 South America	Brazil	São Paulo	Campinas
 South America	Brazil	São Paulo	Cotia
 South America	Brazil	São Paulo	Diadema
+South America	Brazil	São Paulo	Euclides Da Cunha Paulista
 South America	Brazil	São Paulo	Guarujá
 South America	Brazil	São Paulo	Guarulhos
 South America	Brazil	São Paulo	Hortolandia
@@ -2495,10 +2515,12 @@ South America	Brazil	São Paulo	Itapecerica Da Serra
 South America	Brazil	São Paulo	Itariri
 South America	Brazil	São Paulo	Itatiba
 South America	Brazil	São Paulo	Jandira
+South America	Brazil	São Paulo	Jundiai
 South America	Brazil	São Paulo	Maua
 South America	Brazil	São Paulo	Mogi Das Cruzes
 South America	Brazil	São Paulo	Osasco
 South America	Brazil	São Paulo	Peruibe
+South America	Brazil	São Paulo	Presidente Prudente
 South America	Brazil	São Paulo	Presidente Venceslau
 South America	Brazil	São Paulo	Rio Claro
 South America	Brazil	São Paulo	Rio Verde
@@ -2506,6 +2528,7 @@ South America	Brazil	São Paulo	Santa Isabel
 South America	Brazil	São Paulo	Sao Bernardo do Campo
 South America	Brazil	São Paulo	Sao Vicente
 South America	Brazil	São Paulo	São Paulo
+South America	Brazil	São Paulo	Taboao Da Serra
 South America	Chile	Antofagasta	
 South America	Chile	Chillan	
 South America	Chile	Chillan	Chillan
@@ -2612,6 +2635,7 @@ South America	Colombia	Valle del Cauca	Palmira
 South America	Colombia	Valle del Cauca	Trujillo
 South America	Colombia	Valle del Cauca	Tulua
 South America	Colombia	Valle del Cauca	Yumbo
+South America	Curacao	Curacao	
 South America	Ecuador	Azuay	
 South America	Ecuador	Azuay	Cuenca EC
 South America	Ecuador	Bolivar EC	
@@ -2683,6 +2707,7 @@ South America	Peru	Lima	Cañete
 South America	Peru	Lima	Huarochiri
 South America	Peru	Lima	Lima
 South America	Peru	Loreto	
+South America	Peru	Peru	
 South America	Peru	Ucayali	
 South America	Peru	Ucayali	Coronel Portillo
 South America	South America	South America	
