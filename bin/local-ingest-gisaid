@@ -112,13 +112,13 @@ ingest() {
   nextclade.js \
     --input-fasta="${OUTPUT_DIR}/sequences.fasta" \
     --output-json="${OUTPUT_DIR}/nextclade.json" \
-    --output-csv="${OUTPUT_DIR}/nextclade.csv" \
-    --output-csv-clades-only="${OUTPUT_DIR}/nextclade.clades.csv" \
+    --output-tsv="${OUTPUT_DIR}/nextclade.csv" \
+    --output-tsv-clades-only="${OUTPUT_DIR}/nextclade.clades.tsv" \
     --output-tree="${OUTPUT_DIR}/nextclade.tree.json"
 
   ./bin/join-metadata-and-clades \
     "${OUTPUT_DIR}/metadata.tsv" \
-    "${OUTPUT_DIR}/nextclade.clades.csv" \
+    "${OUTPUT_DIR}/nextclade.clades.tsv" \
     -o "${OUTPUT_DIR}/metadata2.tsv"
 
   csv-diff \
