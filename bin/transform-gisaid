@@ -1,19 +1,34 @@
 #!/usr/bin/env python3
 """
-Parse the GISAID JSON load into a metadata tsv and a FASTA file.
+Parse the GISAID NDJSON load into a metadata tsv and a FASTA file.
 """
+import os
 import argparse
+import csv
 import sys
+from collections import defaultdict
 from pathlib import Path
-import pandas as pd
+from typing import Any, Dict, List, Tuple
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "lib"))
 from utils.transform import (
     METADATA_COLUMNS,
-    standardize_dataframe,
-    fill_default_geo_metadata,
-    write_fasta_file,
-    titlecase,
+)
+from utils.transformpipeline import LINE_NUMBER_KEY
+from utils.transformpipeline.datasource import LineToJsonDataSource
+from utils.transformpipeline.filters import LineNumberFilter, SequenceLengthFilter
+from utils.transformpipeline.transforms import (
+    AbbreviateAuthors,
+    AddHardcodedMetadata,
+    DropSequenceData,
+    ExpandLocation,
+    FillDefaultLocationData,
+    FixLabs,
+    MergeUserAnnotatedMetadata,
+    ParsePatientAge,
+    ParseSex,
+    RenameAndAddColumns,
+    StandardizeData,
 )
 
 # Preserve the ordering of these columns for ease when generating Slack
@@ -23,196 +38,9 @@ ADDITIONAL_INFO_COLUMNS = [
     'additional_location_info'
 ]
 
+
 assert 'sequence' not in METADATA_COLUMNS, "Sequences should not appear in metadata!"
 assert 'sequence' not in ADDITIONAL_INFO_COLUMNS, "Sequences should not appear in additional info!"
-
-def preprocess(gisaid_data: pd.DataFrame) -> pd.DataFrame:
-    """
-    Renames columns and abbreviate strain name in a given *gisaid_data*
-    DataFrame, returning the modified DataFrame.
-    """
-    mapper = {
-        'covv_virus_name'       : 'strain',
-        'covv_accession_id'     : 'gisaid_epi_isl',
-        'covv_collection_date'  : 'date',
-        'covv_host'             : 'host',
-        'covv_orig_lab'         : 'originating_lab',
-        'covv_subm_lab'         : 'submitting_lab',
-        'covv_authors'          : 'authors',
-        'covv_patient_age'      : 'age',
-        'covv_gender'           : 'sex',
-        'covv_lineage'          : 'pangolin_lineage',
-        'covv_clade'            : 'GISAID_clade',
-        'covv_add_host_info'    : 'additional_host_info',
-        'covv_add_location'     : 'additional_location_info',
-        'covv_subm_date'        : 'date_submitted',
-        'covv_location'         : 'location',
-    }
-
-    # Calculate sequence length.  GISAID provides a "sequence_length" column,
-    # but it sometimes inexplicably goes missing.
-    gisaid_data['sequence'] = gisaid_data['sequence'].str.replace('\n', '')
-    gisaid_data['length'] = gisaid_data['sequence'].str.len().astype("Int64")
-
-    # Standardize column names, dtypes and drop entries with length less than 15kb
-    gisaid_data = standardize_dataframe(gisaid_data, mapper)
-
-    # Abbreviate strain names by removing the prefix. Strip spaces, too.
-    gisaid_data['strain'] = gisaid_data['strain'] \
-        .str.replace(r'^[hn]CoV-19/', '', n=1, case=False) \
-        .str.replace(r'\s', '')
-
-    # Drop duplicates, prefer longest and earliest sequence (assuming accessions
-    # are chronological)
-    gisaid_data.sort_values(['strain', 'length', 'gisaid_epi_isl'],
-        ascending=[True, False, True], inplace=True)
-
-    gisaid_data.drop_duplicates('strain', inplace=True)
-
-    # Sort by strain name
-    gisaid_data.sort_values(by=['strain'], inplace=True)
-
-    return gisaid_data
-
-def parse_geographic_columns(gisaid_data: pd.DataFrame) -> pd.DataFrame:
-    """
-    Expands the string found in the column named `location` in the given
-    *df*, creating four new columns. Returns the modified ``pd.DataFrame``.
-    """
-    geographic_data = gisaid_data['location'].str.split(r'\s*/\s*', expand=True)
-    location_columns = ['region', 'country', 'division', 'location']
-
-    # Manually curate set of tokens that should not be cast to title case
-    articles = {
-        'and', 'de', 'del', 'des', 'di', 'do', 'en', 'l', 'la', 'las', 'le', 'los',
-        'nad', 'of', 'op', 'sur', 'the', 'y'
-    }
-    abbrev = {'USA', 'DC'}
-
-    for index, column in enumerate(location_columns):
-        gisaid_data[column] = geographic_data[index] \
-            .str.replace('_', ' ') \
-            .str.strip() \
-            .apply(lambda text: titlecase(text, articles, abbrev))
-
-    return gisaid_data
-
-def parse_originating_lab(gisaid_data: pd.DataFrame) -> pd.DataFrame:
-    """
-    Parses originating lab
-    """
-    # Strip and normalize whitespace
-    gisaid_data['originating_lab'] = gisaid_data['originating_lab'].str.replace(r'\s+', ' ')
-    # Fix common spelling mistakes
-    gisaid_data['originating_lab'] = gisaid_data['originating_lab'].str.replace('Contorl', 'Control')
-    gisaid_data['originating_lab'] = gisaid_data['originating_lab'].str.replace('Dieases', 'Disease')
-    return gisaid_data
-
-def parse_submitting_lab(gisaid_data: pd.DataFrame) -> pd.DataFrame:
-    """
-    Parses submitting lab
-    """
-    # Strip and normalize whitespace
-    gisaid_data['submitting_lab'] = gisaid_data['submitting_lab'].str.replace(r'\s+', ' ')
-    # Fix common spelling mistakes
-    gisaid_data['submitting_lab'] = gisaid_data['submitting_lab'].str.replace('Contorl', 'Control')
-    gisaid_data['submitting_lab'] = gisaid_data['submitting_lab'].str.replace('Dieases', 'Disease')
-    return gisaid_data
-
-def parse_authors(gisaid_data: pd.DataFrame) -> pd.DataFrame:
-    """
-    Abbreviates the column named `authors` to be "<first author> et al" rather
-    than a full list.
-
-    This is a "best effort" approach and still mangles a bunch of things.
-    Without structured author list data, improvements to the automatic parsing
-    meet diminishing returns quickly.  Further improvements should be
-    considered using manual annotations of an author map (separate from our
-    existing corrections/annotations).
-    """
-    # Strip and normalize whitespace
-    gisaid_data['authors'] = gisaid_data['authors'].str.replace(r'\s+', ' ')
-    # Split to first author as best we can for now.  Both commas and semicolons
-    # (and their full-width forms) appear to be used interchangeably without a
-    # difference of meaning.
-    gisaid_data['authors'] = gisaid_data['authors'].str.split(r'(?:\s*[,，;；]\s*|\s+(?:and|&)\s+)').str[0]
-    # Add et al
-    gisaid_data['authors'] = gisaid_data['authors'].astype(str) + ' et al'
-    return gisaid_data
-
-def parse_age(gisaid_data: pd.DataFrame) -> pd.DataFrame:
-    """
-    Parse patient age.
-    """
-    # Convert "60s" or "50's" to "?"
-    gisaid_data['age'] = gisaid_data['age'].str.replace(r"^\d+\'?[A-Za-z]", '?')
-    # Convert to just number
-    gisaid_data['age'] = gisaid_data['age'].str.replace(r"^(\d+) years$", lambda m: m.group(1))
-    # Convert months to years
-    gisaid_data['age'] = gisaid_data['age'].str.replace(r"^(\d+) months", lambda m: str(int(m.group(1))/12.0))
-    # Cleanup unknowns
-    gisaid_data['age'] = gisaid_data['age'].str.replace(r"^0$", '?')
-    # Catch all non-numeric values
-    gisaid_data['age'] = pd.to_numeric(gisaid_data['age'], errors='coerce').fillna('?')
-    # Convert numeric values to int
-    gisaid_data['age'] = gisaid_data['age'].apply(lambda x: x if x=='?' else int(x))
-    return gisaid_data
-
-def parse_sex(gisaid_data: pd.DataFrame) -> pd.DataFrame:
-    """
-    Parse patient sex.
-    """
-    # Casing and abbreviations
-    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^male$", 'Male')
-    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^M$", 'Male')
-    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^female$", 'Female')
-    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^F$", 'Female')
-    # Fix spelling
-    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^Femal$", 'Female')
-    # Cleanup unknowns
-    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^unknown$", '?')
-    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^N/A$", '?')
-    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^NA$", '?')
-    gisaid_data['sex'] = gisaid_data['sex'].str.replace(r"^not applicable$", '?')
-    return gisaid_data
-
-def generate_hardcoded_metadata(hardcoded_metadata: pd.DataFrame) -> pd.DataFrame:
-    """
-    Returns a ``pd.DataFrame`` with a column for strain ID plus additional
-    columns containing harcoded metadata.
-    """
-    hardcoded_metadata = pd.DataFrame(gisaid_data['strain'])
-    hardcoded_metadata['virus']             = 'ncov'
-    hardcoded_metadata['genbank_accession'] = '?'
-    hardcoded_metadata['url']               = 'https://www.gisaid.org'
-    # TODO verify these are all actually true
-    hardcoded_metadata['segment']           = 'genome'
-    hardcoded_metadata['title']             = '?'
-    hardcoded_metadata['paper_url']         = '?'
-
-    return hardcoded_metadata
-
-
-def update_metadata(curated_gisaid_data: pd.DataFrame) -> pd.DataFrame:
-    """ """
-    # Add hardcoded metadata which is *almost* always true
-    hardcoded_metadata = generate_hardcoded_metadata(curated_gisaid_data)
-    curated_gisaid_data.update(hardcoded_metadata)
-    curated_gisaid_data = curated_gisaid_data.merge(hardcoded_metadata)
-
-    if args.annotations:
-        # Use the curated annotations tsv to update any column values
-        user_provided_annotations = pd.read_csv(args.annotations, header=None, sep='\t', comment="#")
-        for index, (strain, epi_isl, key, value) in user_provided_annotations.iterrows():
-            # Strip any whitespace remaining from inline comments after the final column.
-            if isinstance(value, str):
-                value = value.rstrip()
-            curated_gisaid_data.loc[curated_gisaid_data['gisaid_epi_isl'] == epi_isl, key] = value
-
-    # Fill in blank geographic columns with exisiting geographic data
-    curated_gisaid_data = fill_default_geo_metadata(curated_gisaid_data)
-
-    return curated_gisaid_data
 
 
 if __name__ == '__main__':
@@ -224,7 +52,6 @@ if __name__ == '__main__':
     )
     parser.add_argument("gisaid_data",
         default="s3://nextstrain-ncov-private/gisaid.ndjson.gz",
-        nargs="?",
         help="Newline-delimited GISAID JSON data")
     parser.add_argument("--annotations",
         default=base / "source-data/gisaid_annotations.tsv",
@@ -249,25 +76,121 @@ if __name__ == '__main__':
     parser.add_argument("--output-additional-info",
         default=base / "data/gisaid/additional_info.tsv",
         help="Output location of additional info tsv. Defaults to `data/gisaid/additional_info.tsv`")
+    parser.add_argument("--sorted-fasta", action="store_true",
+        help="Sort the fasta file in the same order as the metadata file.  WARNING: Enabling this option can consume a lot of memory.")
+    parser.add_argument(
+        "--output-unix-newline",
+        dest="newline",
+        action="store_const",
+        const="\n",
+        default=os.linesep,
+        help="When specified, always use unix newlines in output files."
+    )
     args = parser.parse_args()
 
+    annotations: Dict[str, List[Tuple[str, Any]]] = defaultdict(list)
+    if args.annotations:
+        # Use the curated annotations tsv to update any column values
+        with open(args.annotations, "r") as gisaid_fh:
+            csvreader = csv.reader(gisaid_fh, delimiter='\t')
+            for row in csvreader:
+                if row[0].lstrip()[0] == '#':
+                    continue
+                elif len(row) != 4:
+                    print("WARNING: couldn't decode annotation line " + "\t".join(row))
+                    continue
+                strain, epi_isl, key, value = row
+                annotations[epi_isl].append((
+                    key,
+                    # remove the comment and the extra ws from the value
+                    value.split('#')[0].rstrip(),
+                ))
 
-    gisaid_data = pd.read_json(args.gisaid_data, lines=True, compression='infer')
-    gisaid_data = preprocess(gisaid_data)
-    write_fasta_file(gisaid_data, args.output_fasta)
+    with open(args.gisaid_data, "r") as gisaid_fh:
+        pipeline = (
+            LineToJsonDataSource(gisaid_fh)
+            | RenameAndAddColumns()
+            | StandardizeData()
+            | SequenceLengthFilter(15000)
+        )
 
-    gisaid_data = parse_geographic_columns(gisaid_data)
-    gisaid_data = parse_originating_lab(gisaid_data)
-    gisaid_data = parse_submitting_lab(gisaid_data)
-    gisaid_data = parse_authors(gisaid_data)
-    gisaid_data = parse_age(gisaid_data)
-    gisaid_data = parse_sex(gisaid_data)
-    gisaid_data = update_metadata(gisaid_data)
+        if not args.sorted_fasta:
+            pipeline = pipeline | DropSequenceData()
 
-    # Export additional info
-    gisaid_data[ADDITIONAL_INFO_COLUMNS] \
-        .to_csv(args.output_additional_info, sep='\t', na_rep='?', index=False)
+        pipeline = (
+            pipeline
+            | ExpandLocation()
+            | FixLabs()
+            | AbbreviateAuthors()
+            | ParsePatientAge()
+            | ParseSex()
+            | AddHardcodedMetadata()
+            | MergeUserAnnotatedMetadata(annotations)
+            | FillDefaultLocationData()
+        )
 
-    # Reorder columns consistent with the existing metadata on GitHub
-    gisaid_data = gisaid_data[METADATA_COLUMNS]
-    gisaid_data.to_csv(args.output_metadata, sep='\t', na_rep='', index=False)
+        sorted_metadata = sorted(
+            pipeline,
+            key=lambda obj: (
+                obj['strain'],
+                -obj['length'],
+                obj['gisaid_epi_isl'],
+                obj[LINE_NUMBER_KEY]
+            )
+        )
+
+    # dedup by strain and compile a list of relevant line numbers.
+    seen_strains = set()
+    line_numbers = set()
+    for entry in sorted_metadata:
+        if entry['strain'] in seen_strains:
+            continue
+
+        seen_strains.add(entry['strain'])
+        line_numbers.add(entry[LINE_NUMBER_KEY])
+
+    with open(args.output_fasta, "wt", newline=args.newline) as fasta_fh:
+        with open(args.output_additional_info, "wt", newline="") as additional_info_fh, \
+             open(args.output_metadata, "wt", newline="") as metadata_fh:
+            dict_writer_kwargs = {'lineterminator': args.newline}
+
+            # set up the CSV output files
+            additional_info_csv = csv.DictWriter(
+                additional_info_fh,
+                ADDITIONAL_INFO_COLUMNS,
+                restval="?",
+                extrasaction='ignore',
+                delimiter='\t',
+                **dict_writer_kwargs
+            )
+            additional_info_csv.writeheader()
+            metadata_csv = csv.DictWriter(
+                metadata_fh,
+                METADATA_COLUMNS,
+                restval="?",
+                extrasaction='ignore',
+                delimiter='\t',
+                **dict_writer_kwargs
+            )
+            metadata_csv.writeheader()
+
+            for entry in sorted_metadata:
+                if entry[LINE_NUMBER_KEY] in line_numbers:
+                    additional_info_csv.writerow(entry)
+                    metadata_csv.writerow(entry)
+
+                    if args.sorted_fasta:
+                        fasta_fh.write(f">{entry['strain']}\n")
+                        fasta_fh.write(f"{entry['sequence']}\n")
+
+        if not args.sorted_fasta:
+            with open(args.gisaid_data, "r") as gisaid_fh:
+                for entry in (
+                        LineToJsonDataSource(gisaid_fh)
+                        | RenameAndAddColumns()
+                        | StandardizeData()
+                        | SequenceLengthFilter(15000)
+                        | LineNumberFilter(line_numbers)
+                ):
+                    fasta_fh.write(f">{entry['strain']}\n")
+                    fasta_fh.write(f"{entry['sequence']}\n")
