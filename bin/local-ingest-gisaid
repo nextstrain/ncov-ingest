@@ -63,6 +63,10 @@ main() {
       download-gisaid
       exit
       ;;
+    --transform)
+      transform
+      exit
+      ;;
     --ingest)
       ingest
       exit
@@ -99,6 +103,15 @@ download-gisaid() {
     -O "${TMP_DIR}/gisaid.ndjson.bz2"
 
   bzip2 -cdk "${TMP_DIR}/gisaid.ndjson.bz2" > "${GISAID_NDJSON}"
+}
+
+transform() {
+  mkdir -p "${OUTPUT_DIR}"
+
+  ./bin/transform-gisaid "${INPUT_DIR}/gisaid.ndjson" \
+    --output-metadata "${OUTPUT_DIR}/metadata.tsv" \
+    --output-fasta "${OUTPUT_DIR}/sequences.fasta" \
+    --output-additional-info "${OUTPUT_DIR}/additional_info.tsv"
 }
 
 ingest() {

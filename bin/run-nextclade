@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+
+# Allows running nextclade on a large input fasta file:
+#   - splits fasta file into batches of a given size (Node.js is limited to max 2G file size)
+#   - runs batches in a parallel pool, given number of processes (nextclade CLI is currently serial)
+#   - concatenates inputs from all batches
+
+# TODO: This functionality might be ported to nextclade native
+# (with streaming .fasta reader and webworkers/multiprocessing)
+
+set -o errexit
+set -o nounset
+set -o pipefail
+trap "exit" INT
+
+INPUT_FASTA=${1}
+OUTPUT_TSV=${2}
+TMP_DIR_FASTA="tmp/fasta"
+TMP_DIR_CLADES="tmp/clades"
+INPUT_WILDCARD="${TMP_DIR_FASTA}/*.fasta"
+OUTPUT_WILDCARD="${TMP_DIR_CLADES}/*.tsv"
+
+# Default number of processes, if not provided.
+# Usually equals to the number of threads on all CPUs combined.
+N_PROCESSES_DEFAULT=$(getconf _NPROCESSORS_ONLN)
+
+# Alternatively, use number of processes provided as the third argument
+N_PROCESSES=${3:-"${N_PROCESSES_DEFAULT}"}
+
+# Split fasta file to multiple batches
+mkdir -p "${TMP_DIR_FASTA}"
+./bin/split-fasta \
+  "${INPUT_FASTA}" \
+  --batch_size=100 \
+  --output_dir="${TMP_DIR_FASTA}"
+
+# Run batches in parallel
+echo "Using {N_PROCESSES} parallel processes"
+mkdir -p "${TMP_DIR_CLADES}"
+N_JOBS_CURRENT="\j"
+for input in ${INPUT_WILDCARD}; do
+  input_basename="$(basename "${input}")"
+  output_basename="${input_basename%.fasta}.tsv"
+  output_filename="${TMP_DIR_CLADES}/${output_basename}"
+  echo ${output_filename}
+
+  while ((${N_JOBS_CURRENT@P} >= N_PROCESSES)); do
+    wait -n
+  done
+
+  echo "Processing ${input}"
+
+  nextclade.js \
+    --input-fasta="${input}" \
+    --output-tsv-clades-only="${output_filename}" &
+done
+
+# Concatenate output batches together
+./bin/join-csv-rows ${OUTPUT_WILDCARD} >${OUTPUT_TSV}
+
+rm -rf "${TMP_DIR_FASTA}" "${TMP_DIR_CLADES}"

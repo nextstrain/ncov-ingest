@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+trap "exit" INT
+
+# Get .ndjson
+./bin/local-ingest-gisaid --download-gisaid
+
+# Convert .ndjson into big `sequences.fasta` and `metadata.tsv`
+./bin/local-ingest-gisaid --transform
+
+# Run nextclade in parallel batches from `sequences.fasta`, produce `nextclade.clades.tsv`
+./bin/run-nextclade \
+  "data/gisaid/outputs/sequences.fasta" \
+  "data/gisaid/outputs/nextclade.clades.tsv"
+
+# Join `metadata.tsv` and `nextclade.clades.tsv`, produce `metadata2.tsv`
+./bin/join-metadata-and-clades \
+  "data/gisaid/outputs/metadata.tsv" \
+  "data/gisaid/outputs/nextclade.clades.tsv" \
+  -o "data/gisaid/outputs/metadata2.tsv"
