@@ -1,0 +1,47 @@
+#!/usr/bin/env python3
+import argparse
+
+import pandas as pd
+from Bio import SeqIO
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="\
+Produces a FASTA FILE containing sequences present in the input FASTA file, \
+but missing the input TSV file. This is useful in order to find which sequences require additional treatment. \
+")
+    parser.add_argument(
+        "--input_fasta",
+        required=True,
+        help="Path to the input FASTA file.")
+    parser.add_argument(
+        "--input_tsv",
+        required=True,
+        help="Path to the input TSV file."
+    )
+    parser.add_argument(
+        "--output_fasta",
+        required=True,
+        help="Path to the output FASTA file."
+    )
+    return parser.parse_args()
+
+
+def main():
+    args = parse_args()
+
+    tsv = pd.read_csv(args.input_tsv, sep="\t")
+    tsv_ids = list(tsv['seqName'])
+
+    result = []
+    with open(args.input_fasta) as f_input:
+        for seq in SeqIO.parse(f_input, "fasta"):
+            if seq.id not in tsv_ids:
+                result.append(seq)
+
+    with open(args.output_fasta, "w") as f_output:
+        SeqIO.write(result, f_output, "fasta")
+
+
+if __name__ == '__main__':
+    main()

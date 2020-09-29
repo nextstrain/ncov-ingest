@@ -122,13 +122,18 @@ ingest() {
     --output-fasta "${OUTPUT_DIR}/sequences.fasta" \
     --output-additional-info "${OUTPUT_DIR}/additional_info.tsv"
 
-  nextclade.js \
-    --input-fasta="${OUTPUT_DIR}/sequences.fasta" \
-    --output-json="${OUTPUT_DIR}/nextclade.json" \
-    --output-tsv="${OUTPUT_DIR}/nextclade.csv" \
-    --output-tsv-clades-only="${OUTPUT_DIR}/nextclade.clades.tsv" \
-    --output-tree="${OUTPUT_DIR}/nextclade.tree.json"
+  # Find sequences in FASTA which don't have clades assigned yet
+  ./bin/filter-fasta \
+    --input_fasta="${OUTPUT_DIR}/sequences.fasta" \
+    --input_tsv="${INPUT_DIR}/nextclade.clades.tsv" \
+    --output_fasta="${OUTPUT_DIR}/nextclade.sequences.fasta" \
 
+  # ... and assign clades to them
+  ./bin/run-nextclade \
+    "${OUTPUT_DIR}/nextclade.sequences.fasta" \
+    "${OUTPUT_DIR}/nextclade.clades.tsv" \
+
+  # Join these clades into metadata
   ./bin/join-metadata-and-clades \
     "${OUTPUT_DIR}/metadata.tsv" \
     "${OUTPUT_DIR}/nextclade.clades.tsv" \

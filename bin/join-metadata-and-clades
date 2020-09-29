@@ -42,7 +42,7 @@ def main():
     # Concatenate on columns
     result = pd.concat([metadata, clades], axis=1)
 
-    # Move tje new column so that it's next to other clade columns
+    # Move the new column so that it's next to other clade columns
     result = reorder_columns(result)
 
     result.to_csv(args.o)

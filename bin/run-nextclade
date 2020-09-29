@@ -35,14 +35,13 @@ mkdir -p "${TMP_DIR_FASTA}"
   --output_dir="${TMP_DIR_FASTA}"
 
 # Run batches in parallel
-echo "Using {N_PROCESSES} parallel processes"
+echo "Using ${N_PROCESSES} parallel processes"
 mkdir -p "${TMP_DIR_CLADES}"
 N_JOBS_CURRENT="\j"
 for input in ${INPUT_WILDCARD}; do
   input_basename="$(basename "${input}")"
   output_basename="${input_basename%.fasta}.tsv"
   output_filename="${TMP_DIR_CLADES}/${output_basename}"
-  echo ${output_filename}
 
   while ((${N_JOBS_CURRENT@P} >= N_PROCESSES)); do
     wait -n
