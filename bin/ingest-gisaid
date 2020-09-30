@@ -83,6 +83,32 @@ main() {
         --output-fasta data/gisaid/sequences.fasta \
         --output-unix-newline > "$flagged_annotations"
 
+    # Download old clades
+    aws s3 cp --no-progress "$S3_DST/nextclade.clades.tsv" - | gunzip -cfq > "data/gisaid/nextclade.clades.tsv"
+
+    # Find sequences in FASTA which don't have clades assigned yet
+    ./bin/filter-fasta \
+      --input_fasta="data/gisaid/sequences.fasta" \
+      --input_tsv="data/gisaid/nextclade.clades.tsv" \
+      --output_fasta="data/gisaid/nextclade.sequences.fasta" \
+
+    # ... and assign clades to them
+    ./bin/run-nextclade \
+      "data/gisaid/nextclade.sequences.fasta" \
+      "data/gisaid/nextclade.clades.new.tsv" \
+
+    # Concatenate the new clades with the old ones
+    ./bin/join-csv-rows \
+     "data/gisaid/nextclade.clades.new.tsv" \
+     "data/gisaid/nextclade.clades.tsv" \
+     > "data/gisaid/nextclade.clades.tsv" \
+
+    # Join these clades into metadata
+    ./bin/join-metadata-and-clades \
+      "data/gisaid/metadata.tsv" \
+      "data/gisaid/nextclade.clades.tsv" \
+      -o "data/gisaid/metadata2.tsv"
+
     ./bin/flag-metadata data/gisaid/metadata.tsv > data/gisaid/flagged_metadata.txt
     ./bin/check-locations data/gisaid/metadata.tsv \
         data/gisaid/location_hierarchy.tsv \
@@ -97,6 +123,7 @@ main() {
     fi
 
     ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/metadata.tsv "$S3_DST/metadata.tsv.gz"
+    ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/metadata2.tsv "$S3_DST/metadata2.tsv.gz"
     ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/additional_info.tsv "$S3_DST/additional_info.tsv.gz"
     ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/flagged_metadata.txt "$S3_DST/flagged_metadata.txt.gz"
     ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/sequences.fasta "$S3_DST/sequences.fasta.gz"

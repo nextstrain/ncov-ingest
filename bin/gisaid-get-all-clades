@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+trap "exit" INT
+
+TMP_DIR="data/gisaid/tmp"
+
+: "${GISAID_USERNAME:?The GISAID_USERNAME environment variable is required.}"
+: "${GISAID_PASSWORD:?The GISAID_PASSWORD environment variable is required.}"
+: "${GISAID_URL:?The GISAID_URL environment variable is required.}"
+
+# Load environment variables from these files, if exist
+[ -f ".env" ] && source ".env"
+[ -f "../.env" ] && source "../.env"
+
+mkdir -p "${TMP_DIR}"
+
+# Get .ndjson
+wget \
+  --directory-prefix="${TMP_DIR}" \
+  --http-user="${GISAID_USERNAME}" \
+  --http-password="${GISAID_PASSWORD}" \
+  "${GISAID_URL}" \
+  -O "${TMP_DIR}/gisaid.ndjson.bz2"
+
+bzip2 -cdk "${TMP_DIR}/gisaid.ndjson.bz2" >"${GISAID_NDJSON}"
+
+# Convert .ndjson into big `sequences.fasta` and `metadata.tsv`
+./bin/transform-gisaid "data/gisaid/gisaid.ndjson" \
+  --output-metadata "data/gisaid/metadata.tsv" \
+  --output-fasta "data/gisaid/sequences.fasta" \
+  --output-additional-info "data/gisaid/additional_info.tsv"
+
+# Run nextclade in parallel batches from `sequences.fasta`, produce `nextclade.clades.tsv`
+./bin/run-nextclade \
+  "data/gisaid/sequences.fasta" \
+  "data/gisaid/nextclade.clades.tsv"
+
+# Join `metadata.tsv` and `nextclade.clades.tsv`, produce `metadata2.tsv`
+./bin/join-metadata-and-clades \
+  "data/gisaid/metadata.tsv" \
+  "data/gisaid/nextclade.clades.tsv" \
+  -o "data/gisaid/metadata2.tsv"
