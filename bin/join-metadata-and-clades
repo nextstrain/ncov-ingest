@@ -46,7 +46,7 @@ def main():
     # Move the new column so that it's next to other clade columns
     result = reorder_columns(result)
 
-    result.to_csv(args.o, index_label=INDEX_COLUMN_NAME)
+    result.to_csv(args.o, index_label=INDEX_COLUMN_NAME, sep='\t')
 
 
 if __name__ == '__main__':
