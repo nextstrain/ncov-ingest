@@ -7,6 +7,7 @@ import pandas as pd
 INPUT_CLADE_COLUMN = "clade"
 OUTPUT_CLADE_COLUMN = "Nextstrain_clade"
 INSERT_BEFORE_THIS_COLUMN = "pangolin_lineage"
+INDEX_COLUMN_NAME = 'strain'
 
 
 def reorder_columns(result: pd.DataFrame):
@@ -33,7 +34,7 @@ def parse_args():
 def main():
     args = parse_args()
 
-    metadata = pd.read_csv(args.first_file, index_col='strain', sep='\t')
+    metadata = pd.read_csv(args.first_file, index_col=INDEX_COLUMN_NAME, sep='\t')
 
     # Read and rename clade column to be more descriptive
     clades = pd.read_csv(args.second_file, index_col=0, sep='\t') \
@@ -45,7 +46,7 @@ def main():
     # Move the new column so that it's next to other clade columns
     result = reorder_columns(result)
 
-    result.to_csv(args.o)
+    result.to_csv(args.o, index_label=INDEX_COLUMN_NAME)
 
 
 if __name__ == '__main__':

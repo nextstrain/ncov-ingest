@@ -21,8 +21,6 @@ set -o nounset
 set -o pipefail
 trap "exit" INT
 
-set -x
-
 TMP_DIR="data/gisaid/tmp"
 INPUT_DIR="data/gisaid/inputs"
 OUTPUT_DIR="data/gisaid/outputs"
@@ -133,17 +131,17 @@ ingest() {
     "${OUTPUT_DIR}/nextclade.sequences.fasta" \
     "${OUTPUT_DIR}/nextclade.clades.new.tsv" \
 
+  # Concatenate the new clades with the old ones
+  ./bin/join-csv-rows \
+  "${OUTPUT_DIR}/nextclade.clades.new.tsv" \
+  "${INPUT_DIR}/nextclade.clades.tsv" \
+  > "${OUTPUT_DIR}/nextclade.clades.tsv" \
+
   # Join these clades into metadata
   ./bin/join-metadata-and-clades \
     "${OUTPUT_DIR}/metadata.tsv" \
     "${OUTPUT_DIR}/nextclade.clades.tsv" \
     -o "${OUTPUT_DIR}/metadata2.tsv"
-
-  # And also join these clades to the overall mapping
-  ./bin/join-csv-rows \
-  "${OUTPUT_DIR}/nextclade.clades.new.tsv" \
-  "${INPUT_DIR}/nextclade.clades.tsv" \
-  > "${OUTPUT_DIR}/nextclade.clades.tsv" \
 
   csv-diff \
     "${METADATA_OLD}" \
