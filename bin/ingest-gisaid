@@ -64,8 +64,6 @@ main() {
 
     cd "$(dirname "$0")/.."
 
-    set -x
-
     if [[ "$fetch" == 1 ]]; then
         ./bin/fetch-from-gisaid > data/gisaid.ndjson
         if [[ "$branch" == master ]]; then
