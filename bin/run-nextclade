@@ -54,6 +54,11 @@ for input in ${INPUT_WILDCARD}; do
     --output-tsv-clades-only="${output_filename}" &
 done
 
+# Wait until all processes finish
+for job in $(jobs -p); do
+  wait $job
+done
+
 # Concatenate output batches together
 ./bin/join-csv-rows ${OUTPUT_WILDCARD} >${OUTPUT_TSV}
 
