@@ -68,10 +68,11 @@ main() {
 
     echo "---"
     df -h
+    echo "PWD=${PWD}"
     echo "---"
     echo "/mnt:" && du -bsch /mnt/* 2>/dev/null || true | sort -h
     echo "---"
-    echo "data/:" && du -bsch data/* 2>/dev/null || true | sort -h
+    echo "data/gisaid:" && du -bsch data/gisaid/* 2>/dev/null || true | sort -h
     echo "---"
     echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
     echo "---"
@@ -88,10 +89,11 @@ main() {
 
     echo "---"
     df -h
+    echo "PWD=${PWD}"
     echo "---"
     echo "/mnt:" && du -bsch /mnt/* 2>/dev/null || true | sort -h
     echo "---"
-    echo "data/:" && du -bsch data/* 2>/dev/null || true | sort -h
+    echo "data/gisaid:" && du -bsch data/gisaid/* 2>/dev/null || true | sort -h
     echo "---"
     echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
     echo "---"
@@ -106,10 +108,11 @@ main() {
 
     echo "---"
     df -h
+    echo "PWD=${PWD}"
     echo "---"
     echo "/mnt:" && du -bsch /mnt/* 2>/dev/null || true | sort -h
     echo "---"
-    echo "data/:" && du -bsch data/* 2>/dev/null || true | sort -h
+    echo "data/gisaid:" && du -bsch data/gisaid/* 2>/dev/null || true | sort -h
     echo "---"
     echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
     echo "---"
@@ -120,10 +123,11 @@ main() {
 
     echo "---"
     df -h
+    echo "PWD=${PWD}"
     echo "---"
     echo "/mnt:" && du -bsch /mnt/* 2>/dev/null || true | sort -h
     echo "---"
-    echo "data/:" && du -bsch data/* 2>/dev/null || true | sort -h
+    echo "data/gisaid:" && du -bsch data/gisaid/* 2>/dev/null || true | sort -h
     echo "---"
     echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
     echo "---"
@@ -136,10 +140,11 @@ main() {
 
     echo "---"
     df -h
+    echo "PWD=${PWD}"
     echo "---"
     echo "/mnt:" && du -bsch /mnt/* 2>/dev/null || true | sort -h
     echo "---"
-    echo "data/:" && du -bsch data/* 2>/dev/null || true | sort -h
+    echo "data/gisaid:" && du -bsch data/gisaid/* 2>/dev/null || true | sort -h
     echo "---"
     echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
     echo "---"
@@ -151,10 +156,11 @@ main() {
 
     echo "---"
     df -h
+    echo "PWD=${PWD}"
     echo "---"
     echo "/mnt:" && du -bsch /mnt/* 2>/dev/null || true | sort -h
     echo "---"
-    echo "data/:" && du -bsch data/* 2>/dev/null || true | sort -h
+    echo "data/gisaid:" && du -bsch data/gisaid/* 2>/dev/null || true | sort -h
     echo "---"
     echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
     echo "---"
@@ -167,10 +173,11 @@ main() {
 
     echo "---"
     df -h
+    echo "PWD=${PWD}"
     echo "---"
     echo "/mnt:" && du -bsch /mnt/* 2>/dev/null || true | sort -h
     echo "---"
-    echo "data/:" && du -bsch data/* 2>/dev/null || true | sort -h
+    echo "data/gisaid:" && du -bsch data/gisaid/* 2>/dev/null || true | sort -h
     echo "---"
     echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
     echo "---"
@@ -185,10 +192,11 @@ main() {
 
     echo "---"
     df -h
+    echo "PWD=${PWD}"
     echo "---"
     echo "/mnt:" && du -bsch /mnt/* 2>/dev/null || true | sort -h
     echo "---"
-    echo "data/:" && du -bsch data/* 2>/dev/null || true | sort -h
+    echo "data/gisaid:" && du -bsch data/gisaid/* 2>/dev/null || true | sort -h
     echo "---"
     echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
     echo "---"
