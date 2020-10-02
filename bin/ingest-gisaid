@@ -152,24 +152,7 @@ main() {
     # ... and assign clades to them
     ./bin/run-nextclade \
       "data/gisaid/nextclade.sequences.fasta" \
-      "data/gisaid/nextclade.clades.new.tsv" \
-
-    echo "---"
-    df -h
-    echo "PWD=${PWD}"
-    echo "---"
-    echo "/mnt:" && du -bsch /mnt/* 2>/dev/null || true | sort -h
-    echo "---"
-    echo "data/gisaid:" && du -bsch data/gisaid/* 2>/dev/null || true | sort -h
-    echo "---"
-    echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
-    echo "---"
-
-    # Concatenate the new clades with the old ones
-    ./bin/join-csv-rows \
-     "data/gisaid/nextclade.clades.new.tsv" \
-     "data/gisaid/nextclade.clades.tsv" \
-     > "data/gisaid/nextclade.clades.tsv" \
+      "data/gisaid/nextclade.clades.tsv" \
 
     echo "---"
     df -h

@@ -96,7 +96,8 @@ echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
 echo "---"
 
 # Concatenate output batches together
-# Joins CSV/TSV rows from multiple files, preserving header only from the first file
-awk 'FNR==1 && NR!=1{next;}{print}' ${OUTPUT_WILDCARD} >${OUTPUT_TSV}
+for output in ${OUTPUT_WILDCARD}; do
+  tail -n +1 "$output" >> "${OUTPUT_TSV}"
+done
 
 rm -rf "${TMP_DIR_FASTA}" "${TMP_DIR_CLADES}"
