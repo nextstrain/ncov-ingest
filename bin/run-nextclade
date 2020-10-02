@@ -13,6 +13,8 @@ set -o nounset
 set -o pipefail
 trap "exit" INT
 
+set -x
+
 INPUT_FASTA=${1}
 OUTPUT_TSV=${2}
 TMP_DIR_FASTA="tmp/fasta"
@@ -34,6 +36,17 @@ mkdir -p "${TMP_DIR_FASTA}"
   --batch_size=100 \
   --output_dir="${TMP_DIR_FASTA}"
 
+echo "---"
+df -h
+echo "PWD=${PWD}"
+echo "---"
+echo "/mnt:" && du -bsch /mnt/* 2>/dev/null || true | sort -h
+echo "---"
+echo "data/gisaid:" && du -bsch data/gisaid/* 2>/dev/null || true | sort -h
+echo "---"
+echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
+echo "---"
+
 # Run batches in parallel
 echo "Using ${N_PROCESSES} parallel processes"
 mkdir -p "${TMP_DIR_CLADES}"
@@ -54,12 +67,36 @@ for input in ${INPUT_WILDCARD}; do
     --output-tsv-clades-only="${output_filename}" &
 done
 
+echo "---"
+df -h
+echo "PWD=${PWD}"
+echo "---"
+echo "/mnt:" && du -bsch /mnt/* 2>/dev/null || true | sort -h
+echo "---"
+echo "data/gisaid:" && du -bsch data/gisaid/* 2>/dev/null || true | sort -h
+echo "---"
+echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
+echo "---"
+
 # Wait until all processes finish
 for job in $(jobs -p); do
   wait $job
 done
 
+
+echo "---"
+df -h
+echo "PWD=${PWD}"
+echo "---"
+echo "/mnt:" && du -bsch /mnt/* 2>/dev/null || true | sort -h
+echo "---"
+echo "data/gisaid:" && du -bsch data/gisaid/* 2>/dev/null || true | sort -h
+echo "---"
+echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
+echo "---"
+
 # Concatenate output batches together
-./bin/join-csv-rows ${OUTPUT_WILDCARD} >${OUTPUT_TSV}
+# Joins CSV/TSV rows from multiple files, preserving header only from the first file
+awk 'FNR==1 && NR!=1{next;}{print}' ${OUTPUT_WILDCARD} >${OUTPUT_TSV}
 
 rm -rf "${TMP_DIR_FASTA}" "${TMP_DIR_CLADES}"
