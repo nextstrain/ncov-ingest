@@ -15,31 +15,6 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: 14
-    - name: free disk space
-      run: |
-        echo "PWD=${PWD}"
-        echo "---"
-        df -h
-        echo "---"
-        echo "/:" && du -bsch /* 2>/dev/null || true | sort -h
-        echo "---"
-        echo "/mnt:" && du -bsch /mnt/* 2>/dev/null || true | sort -h
-        echo "---"
-        echo "data/gisaid:" && du -bsch data/gisaid/* 2>/dev/null || true | sort -h
-        echo "---"
-        echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
-        echo "---"
-        sudo swapoff -a
-        sudo rm -f /mnt/swapfile
-        echo "---"
-        df -h
-        echo "---"
-        echo "/mnt:" && du -bsch /mnt/* 2>/dev/null || true | sort -h
-        echo "---"
-        echo "data/gisaid:" && du -bsch data/gisaid/* 2>/dev/null || true | sort -h
-        echo "---"
-        echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
-        echo "---"
     - name: ingest
       run: |
         echo "PWD=${PWD}"

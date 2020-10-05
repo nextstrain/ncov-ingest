@@ -66,17 +66,6 @@ main() {
 
     set -x
 
-    echo "---"
-    df -h
-    echo "PWD=${PWD}"
-    echo "---"
-    echo "/mnt:" && du -bsch /mnt/* 2>/dev/null || true | sort -h
-    echo "---"
-    echo "data/gisaid:" && du -bsch data/gisaid/* 2>/dev/null || true | sort -h
-    echo "---"
-    echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
-    echo "---"
-
     if [[ "$fetch" == 1 ]]; then
         ./bin/fetch-from-gisaid > data/gisaid.ndjson
         if [[ "$branch" == master ]]; then
@@ -87,17 +76,6 @@ main() {
         aws s3 cp --no-progress "$S3_DST/gisaid.ndjson.gz" - | gunzip -cfq > data/gisaid.ndjson
     fi
 
-    echo "---"
-    df -h
-    echo "PWD=${PWD}"
-    echo "---"
-    echo "/mnt:" && du -bsch /mnt/* 2>/dev/null || true | sort -h
-    echo "---"
-    echo "data/gisaid:" && du -bsch data/gisaid/* 2>/dev/null || true | sort -h
-    echo "---"
-    echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
-    echo "---"
-
     flagged_annotations="$(mktemp -t flagged-annotations-XXXXXX)"
     trap "rm -f '$flagged_annotations'" EXIT
     ./bin/transform-gisaid data/gisaid.ndjson \
@@ -105,32 +83,8 @@ main() {
         --output-fasta data/gisaid/sequences.fasta \
         --output-unix-newline > "$flagged_annotations"
 
-
-    echo "---"
-    df -h
-    echo "PWD=${PWD}"
-    echo "---"
-    echo "/mnt:" && du -bsch /mnt/* 2>/dev/null || true | sort -h
-    echo "---"
-    echo "data/gisaid:" && du -bsch data/gisaid/* 2>/dev/null || true | sort -h
-    echo "---"
-    echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
-    echo "---"
-
     # Download old clades
     aws s3 cp --no-progress "$S3_DST/nextclade.clades.tsv.gz" - | gunzip -cfq > "data/gisaid/nextclade.clades.tsv"
-
-
-    echo "---"
-    df -h
-    echo "PWD=${PWD}"
-    echo "---"
-    echo "/mnt:" && du -bsch /mnt/* 2>/dev/null || true | sort -h
-    echo "---"
-    echo "data/gisaid:" && du -bsch data/gisaid/* 2>/dev/null || true | sort -h
-    echo "---"
-    echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
-    echo "---"
 
     # Find sequences in FASTA which don't have clades assigned yet
     ./bin/filter-fasta \
@@ -138,51 +92,16 @@ main() {
       --input_tsv="data/gisaid/nextclade.clades.tsv" \
       --output_fasta="data/gisaid/nextclade.sequences.fasta" \
 
-    echo "---"
-    df -h
-    echo "PWD=${PWD}"
-    echo "---"
-    echo "/mnt:" && du -bsch /mnt/* 2>/dev/null || true | sort -h
-    echo "---"
-    echo "data/gisaid:" && du -bsch data/gisaid/* 2>/dev/null || true | sort -h
-    echo "---"
-    echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
-    echo "---"
-
     # ... and assign clades to them
     ./bin/run-nextclade \
       "data/gisaid/nextclade.sequences.fasta" \
       "data/gisaid/nextclade.clades.tsv" \
-
-    echo "---"
-    df -h
-    echo "PWD=${PWD}"
-    echo "---"
-    echo "/mnt:" && du -bsch /mnt/* 2>/dev/null || true | sort -h
-    echo "---"
-    echo "data/gisaid:" && du -bsch data/gisaid/* 2>/dev/null || true | sort -h
-    echo "---"
-    echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
-    echo "---"
-
 
     # Join these clades into metadata
     ./bin/join-metadata-and-clades \
       "data/gisaid/metadata.tsv" \
       "data/gisaid/nextclade.clades.tsv" \
       -o "data/gisaid/metadata2.tsv"
-
-
-    echo "---"
-    df -h
-    echo "PWD=${PWD}"
-    echo "---"
-    echo "/mnt:" && du -bsch /mnt/* 2>/dev/null || true | sort -h
-    echo "---"
-    echo "data/gisaid:" && du -bsch data/gisaid/* 2>/dev/null || true | sort -h
-    echo "---"
-    echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
-    echo "---"
 
     ./bin/flag-metadata data/gisaid/metadata.tsv > data/gisaid/flagged_metadata.txt
     ./bin/check-locations data/gisaid/metadata.tsv \

@@ -36,17 +36,6 @@ mkdir -p "${TMP_DIR_FASTA}"
   --batch_size=100 \
   --output_dir="${TMP_DIR_FASTA}"
 
-echo "---"
-df -h
-echo "PWD=${PWD}"
-echo "---"
-echo "/mnt:" && du -bsch /mnt/* 2>/dev/null || true | sort -h
-echo "---"
-echo "data/gisaid:" && du -bsch data/gisaid/* 2>/dev/null || true | sort -h
-echo "---"
-echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
-echo "---"
-
 # Run batches in parallel
 echo "Using ${N_PROCESSES} parallel processes"
 mkdir -p "${TMP_DIR_CLADES}"
@@ -67,33 +56,10 @@ for input in ${INPUT_WILDCARD}; do
     --output-tsv-clades-only="${output_filename}" &
 done
 
-echo "---"
-df -h
-echo "PWD=${PWD}"
-echo "---"
-echo "/mnt:" && du -bsch /mnt/* 2>/dev/null || true | sort -h
-echo "---"
-echo "data/gisaid:" && du -bsch data/gisaid/* 2>/dev/null || true | sort -h
-echo "---"
-echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
-echo "---"
-
 # Wait until all processes finish
 for job in $(jobs -p); do
   wait $job
 done
-
-
-echo "---"
-df -h
-echo "PWD=${PWD}"
-echo "---"
-echo "/mnt:" && du -bsch /mnt/* 2>/dev/null || true | sort -h
-echo "---"
-echo "data/gisaid:" && du -bsch data/gisaid/* 2>/dev/null || true | sort -h
-echo "---"
-echo "tmp/:" && du -bsch tmp/* 2>/dev/null || true | sort -h
-echo "---"
 
 # Concatenate output batches together
 for output in ${OUTPUT_WILDCARD}; do
