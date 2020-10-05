@@ -8,6 +8,7 @@ INPUT_CLADE_COLUMN = "clade"
 OUTPUT_CLADE_COLUMN = "Nextstrain_clade"
 INSERT_BEFORE_THIS_COLUMN = "pangolin_lineage"
 INDEX_COLUMN_NAME = 'strain'
+VALUE_CLADE_MISSING = '-'
 
 
 def reorder_columns(result: pd.DataFrame):
@@ -42,6 +43,8 @@ def main():
 
     # Concatenate on columns
     result = pd.concat([metadata, clades], axis=1)
+
+    result[OUTPUT_CLADE_COLUMN] = result[OUTPUT_CLADE_COLUMN].fillna(VALUE_CLADE_MISSING)
 
     # Move the new column so that it's next to other clade columns
     result = reorder_columns(result)
