@@ -123,19 +123,19 @@ ingest() {
   # Find sequences in FASTA which don't have clades assigned yet
   ./bin/filter-fasta \
     --input_fasta="${OUTPUT_DIR}/sequences.fasta" \
-    --input_tsv="${INPUT_DIR}/nextclade.clades.tsv" \
+    --input_tsv="${INPUT_DIR}/nextclade.tsv" \
     --output_fasta="${OUTPUT_DIR}/nextclade.sequences.fasta" \
 
   # ... and assign clades to them
   ./bin/run-nextclade \
     "${OUTPUT_DIR}/nextclade.sequences.fasta" \
-    "${INPUT_DIR}/nextclade.clades.tsv" \
-    "${OUTPUT_DIR}/nextclade.clades.tsv"
+    "${INPUT_DIR}/nextclade.tsv" \
+    "${OUTPUT_DIR}/nextclade.tsv"
 
   # Join these clades into metadata
   ./bin/join-metadata-and-clades \
     "${OUTPUT_DIR}/metadata.tsv" \
-    "${OUTPUT_DIR}/nextclade.clades.tsv" \
+    "${OUTPUT_DIR}/nextclade.tsv" \
     -o "${OUTPUT_DIR}/metadata2.tsv"
 
   csv-diff \
