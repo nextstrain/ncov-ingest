@@ -63,7 +63,7 @@ done
 
 # Concatenate output batches together
 for output in ${OUTPUT_WILDCARD}; do
-  tail -n +1 "$output" >> "${OUTPUT_TSV}"
+  tail -n +2 "$output" >>"${OUTPUT_TSV}"
 done
 
 rm -rf "${TMP_DIR_FASTA}" "${TMP_DIR_CLADES}"
