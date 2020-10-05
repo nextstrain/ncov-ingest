@@ -14,7 +14,8 @@ set -o pipefail
 trap "exit" INT
 
 INPUT_FASTA=${1}
-OUTPUT_TSV=${2}
+INPUT_TSV=${2}
+OUTPUT_TSV=${3}
 TMP_DIR_FASTA="tmp/fasta"
 TMP_DIR_CLADES="tmp/clades"
 INPUT_WILDCARD="${TMP_DIR_FASTA}/*.fasta"
@@ -25,13 +26,13 @@ OUTPUT_WILDCARD="${TMP_DIR_CLADES}/*.tsv"
 N_PROCESSES_DEFAULT=$(getconf _NPROCESSORS_ONLN)
 
 # Alternatively, use number of processes provided as the third argument
-N_PROCESSES=${3:-"${N_PROCESSES_DEFAULT}"}
+N_PROCESSES=${4:-"${N_PROCESSES_DEFAULT}"}
 
 # Split fasta file to multiple batches
 mkdir -p "${TMP_DIR_FASTA}"
 ./bin/split-fasta \
   "${INPUT_FASTA}" \
-  --batch_size=100 \
+  --batch_size=20 \
   --output_dir="${TMP_DIR_FASTA}"
 
 # Run batches in parallel
@@ -59,7 +60,11 @@ for job in $(jobs -p); do
   wait $job
 done
 
+cp "${INPUT_TSV}" "${OUTPUT_TSV}"
+
 # Concatenate output batches together
-./bin/join-csv-rows ${OUTPUT_WILDCARD} >${OUTPUT_TSV}
+for output in ${OUTPUT_WILDCARD}; do
+  tail -n +2 "$output" >>"${OUTPUT_TSV}"
+done
 
 rm -rf "${TMP_DIR_FASTA}" "${TMP_DIR_CLADES}"

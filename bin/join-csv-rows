@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-set -o errexit
-set -o nounset
-set -o pipefail
-trap "exit" INT
-
-# Joins CSV/TSV rows from multiple files, preserving header only from the first file
-awk 'FNR==1 && NR!=1{next;}{print}' $@

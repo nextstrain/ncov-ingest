@@ -129,13 +129,8 @@ ingest() {
   # ... and assign clades to them
   ./bin/run-nextclade \
     "${OUTPUT_DIR}/nextclade.sequences.fasta" \
-    "${OUTPUT_DIR}/nextclade.clades.new.tsv" \
-
-  # Concatenate the new clades with the old ones
-  ./bin/join-csv-rows \
-  "${OUTPUT_DIR}/nextclade.clades.new.tsv" \
-  "${INPUT_DIR}/nextclade.clades.tsv" \
-  > "${OUTPUT_DIR}/nextclade.clades.tsv" \
+    "${INPUT_DIR}/nextclade.clades.tsv" \
+    "${OUTPUT_DIR}/nextclade.clades.tsv"
 
   # Join these clades into metadata
   ./bin/join-metadata-and-clades \
