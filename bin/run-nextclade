@@ -53,7 +53,7 @@ for input in ${INPUT_WILDCARD}; do
 
   nextclade.js \
     --input-fasta="${input}" \
-    --output-tsv-clades-only="${output_filename}" &
+    --output-tsv="${output_filename}" &
 done
 
 # Wait until all processes finish

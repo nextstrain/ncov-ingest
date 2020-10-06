@@ -41,6 +41,8 @@ def main():
     clades = pd.read_csv(args.second_file, index_col=0, sep='\t') \
         .rename(columns={INPUT_CLADE_COLUMN: OUTPUT_CLADE_COLUMN})
 
+    clades = clades[[OUTPUT_CLADE_COLUMN]]
+
     # Concatenate on columns
     result = pd.concat([metadata, clades], axis=1)
 
