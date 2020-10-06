@@ -3,6 +3,7 @@ Africa	Algeria	Blida
 Africa	Algeria	Boufarik	
 Africa	Benin	Cotonou	
 Africa	Benin	Oueme	
+Africa	Botswana	Gaborone	
 Africa	Burkina Faso	Burkina Faso	
 Africa	Cameroon	Yaounde	
 Africa	Democratic Republic of the Congo	Democratic Republic of the Congo	
@@ -24,6 +25,10 @@ Africa	Ghana	Ghana
 Africa	Ghana	Greater Accra	
 Africa	Ghana	Greater Accra	Accra
 Africa	Kenya	Kenya	
+Africa	Kenya	Kilifi	
+Africa	Kenya	Kwale	
+Africa	Kenya	Mombasa	
+Africa	Kenya	Taita Taveta	
 Africa	Madagascar	Analamanga	Antananarivo
 Africa	Madagascar	Analanjirofo	Fenoarivo
 Africa	Mali	Bamako	
@@ -384,6 +389,7 @@ Asia	Indonesia	Center Kalimantan
 Asia	Indonesia	Central Java	
 Asia	Indonesia	East Java	
 Asia	Indonesia	East Java	Pasuruan
+Asia	Indonesia	East Java	Purwokerto
 Asia	Indonesia	East Java	Sidoarjo
 Asia	Indonesia	East Java	Surabaya
 Asia	Indonesia	East Kalimantan	
@@ -394,6 +400,7 @@ Asia	Indonesia	North Sulawesi
 Asia	Indonesia	North Sulawesi	Manado
 Asia	Indonesia	North Sumatra	
 Asia	Indonesia	Papua	
+Asia	Indonesia	Papua	Timika
 Asia	Indonesia	Pasuruan	
 Asia	Indonesia	South Kalimantan	
 Asia	Indonesia	Special Region of Yogyakarta	
@@ -442,6 +449,7 @@ Asia	Israel	Yehud
 Asia	Israel	Zefat	
 Asia	Japan	Aichi	
 Asia	Japan	Aichi	Aichi
+Asia	Japan	Aichi	Nagoya
 Asia	Japan	Chiba	
 Asia	Japan	Chubu	
 Asia	Japan	Chushikoku	
@@ -672,7 +680,7 @@ Europe	Belgium	Dendermonde	Kalken
 Europe	Belgium	Dendermonde	Waasmunster
 Europe	Belgium	Diksmuide	
 Europe	Belgium	Diksmuide	Beerst
-Europe	Belgium	Diksmuide	Lo
+Europe	Belgium	Diksmuide	Lo-Reninge
 Europe	Belgium	Dinant	
 Europe	Belgium	Dinant	Ciney
 Europe	Belgium	Dinant	Havelange
@@ -684,6 +692,7 @@ Europe	Belgium	Gent
 Europe	Belgium	Gent	Asper
 Europe	Belgium	Gent	Bottelare
 Europe	Belgium	Gent	Deinze
+Europe	Belgium	Gent	Gent
 Europe	Belgium	Gent	Gentbrugge
 Europe	Belgium	Gent	Lotenhulle
 Europe	Belgium	Gent	Lovendegem
@@ -766,6 +775,7 @@ Europe	Belgium	Leuven	Kersbeek-Miskom
 Europe	Belgium	Leuven	Kessel-Lo
 Europe	Belgium	Leuven	Kortenberg
 Europe	Belgium	Leuven	Landen BE
+Europe	Belgium	Leuven	Leuven
 Europe	Belgium	Leuven	Linter
 Europe	Belgium	Leuven	Lubbeek
 Europe	Belgium	Leuven	Molenstede
@@ -852,6 +862,7 @@ Europe	Belgium	Nivelles	Rebecq
 Europe	Belgium	Nivelles	Rixensart
 Europe	Belgium	Nivelles	Tubize
 Europe	Belgium	Nivelles	Waterloo
+Europe	Belgium	Oost-Vlaanderen	
 Europe	Belgium	Oostende	
 Europe	Belgium	Oostende	Ettelgem
 Europe	Belgium	Oudenaarde	
@@ -1004,6 +1015,7 @@ Europe	Czech Republic	South Moravian Region	Hodonín
 Europe	Czech Republic	South Moravian Region	Ratíškovice
 Europe	Czech Republic	South Moravian Region	Znojmo
 Europe	Czech Republic	Usti nad Labem	
+Europe	Czech Republic	Usti nad Labem	Libochovice
 Europe	Czech Republic	Usti nad Labem	Litomerice
 Europe	Czech Republic	Usti nad Labem	Litvinov
 Europe	Czech Republic	Usti nad Labem	Račice
@@ -1034,6 +1046,7 @@ Europe	France	Auvergne-Rhône-Alpes	Craponne
 Europe	France	Auvergne-Rhône-Alpes	Decines
 Europe	France	Auvergne-Rhône-Alpes	Lyon
 Europe	France	Auvergne-Rhône-Alpes	Macon
+Europe	France	Auvergne-Rhône-Alpes	Montagnieu
 Europe	France	Auvergne-Rhône-Alpes	Oyonnax
 Europe	France	Auvergne-Rhône-Alpes	Privas
 Europe	France	Auvergne-Rhône-Alpes	Saint-Priest
@@ -1049,35 +1062,71 @@ Europe	France	Bourgogne-France-Comté	Chalon sur Saone
 Europe	France	Bourgogne-France-Comté	Montreux-Chateau
 Europe	France	Bourgogne-France-Comté	Thise
 Europe	France	Bretagne	
+Europe	France	Bretagne	Arradon
 Europe	France	Bretagne	Brest
+Europe	France	Bretagne	Cayenne
+Europe	France	Bretagne	La Rochelle
+Europe	France	Bretagne	Lannilis
+Europe	France	Bretagne	Morlaix
 Europe	France	Bretagne	Ploudalmezeau
+Europe	France	Bretagne	Pordic
 Europe	France	Bretagne	Rennes
+Europe	France	Bretagne	Saint Pierre Quiberon
+Europe	France	Bretagne	Sene
+Europe	France	Bretagne	Vannes
 Europe	France	Centre-Val de Loire	
 Europe	France	Centre-Val de Loire	Abondant
+Europe	France	Centre-Val de Loire	Angers
 Europe	France	Centre-Val de Loire	Tours
 Europe	France	France	
 Europe	France	Grand Est	
+Europe	France	Grand Est	Amneville
+Europe	France	Grand Est	Biesheim
+Europe	France	Grand Est	Crusnes
+Europe	France	Grand Est	Ensisheim
+Europe	France	Grand Est	Fameck
 Europe	France	Grand Est	Gondrecourt-le-Chateau
+Europe	France	Grand Est	Guebwiller
 Europe	France	Grand Est	Ham Sous Varsberg
+Europe	France	Grand Est	Ingersheim
+Europe	France	Grand Est	Joeuf
+Europe	France	Grand Est	Liepvre
+Europe	France	Grand Est	Maizières Les Metz
+Europe	France	Grand Est	Marange Silvange
+Europe	France	Grand Est	Metz
+Europe	France	Grand Est	Montigny Les Metz
+Europe	France	Grand Est	Munster
+Europe	France	Grand Est	Murbach
 Europe	France	Grand Est	Nancy
+Europe	France	Grand Est	Ottonville
+Europe	France	Grand Est	Reguisheim
 Europe	France	Grand Est	Reims
+Europe	France	Grand Est	Sarreguemines
+Europe	France	Grand Est	Soultz Haut Rhin
+Europe	France	Grand Est	Soultzeren
 Europe	France	Grand Est	Spicheren
 Europe	France	Grand Est	Strasbourg
+Europe	France	Grand Est	Talange
 Europe	France	Grand Est	Woippy
 Europe	France	Hauts de France	
 Europe	France	Hauts de France	Chateau-Thierry
 Europe	France	Hauts de France	Compiègne
 Europe	France	Hauts de France	Crouy en Thelle
 Europe	France	Hauts de France	Crépy en Valois
+Europe	France	Hauts de France	Lille
 Europe	France	Hauts de France	Nogent-l'Artaud
+Europe	France	Hauts de France	Santes
 Europe	France	Ile de France	
+Europe	France	Ile de France	Argenteuil
 Europe	France	Ile de France	Asnières-sur-Seine
+Europe	France	Ile de France	Boulogne Billancourt
 Europe	France	Ile de France	Cergy
 Europe	France	Ile de France	Colombes
 Europe	France	Ile de France	Garches
 Europe	France	Ile de France	Gennevilliers
 Europe	France	Ile de France	Guyancourt
 Europe	France	Ile de France	Juvisy-sur-Orge
+Europe	France	Ile de France	Le Chesnay
 Europe	France	Ile de France	Le Pecq
 Europe	France	Ile de France	Levallois-Perret
 Europe	France	Ile de France	Longjumeau
@@ -1090,6 +1139,7 @@ Europe	France	Ile de France	Paris
 Europe	France	Ile de France	Pontoise
 Europe	France	Ile de France	Saint Germain en Laye
 Europe	France	Ile de France	Saint-Thibault-des-Vignes
+Europe	France	Ile de France	Sarcelles
 Europe	France	Ile de France	Seine-Port
 Europe	France	Ile de France	Vanves
 Europe	France	Normandie	
@@ -1193,11 +1243,13 @@ Europe	Italy	Lazio
 Europe	Italy	Lazio	Rome
 Europe	Italy	Lombardy	
 Europe	Italy	Lombardy	Milan
+Europe	Italy	Lombardy	Pavia
 Europe	Italy	Marche	
 Europe	Italy	Marche	Ancona
 Europe	Italy	Molise	
 Europe	Italy	Pa Trento	
 Europe	Italy	Piedmont	
+Europe	Italy	Piedmont	Turin
 Europe	Italy	Sardinia	
 Europe	Italy	Sicily	
 Europe	Italy	South Tyrol	
@@ -1236,6 +1288,7 @@ Europe	Netherlands	Flevoland	Zeewolde
 Europe	Netherlands	Friesland	
 Europe	Netherlands	Friesland	Franeker
 Europe	Netherlands	Gelderland	
+Europe	Netherlands	Gelderland	Apeldoorn
 Europe	Netherlands	Groningen	
 Europe	Netherlands	Leiden	
 Europe	Netherlands	Limburg	
@@ -1258,6 +1311,7 @@ Europe	Netherlands	North Holland	Amsterdam West
 Europe	Netherlands	North Holland	Beverwijk
 Europe	Netherlands	North Holland	Diemen
 Europe	Netherlands	North Holland	Haarlem
+Europe	Netherlands	North Holland	Katwoude
 Europe	Netherlands	North Holland	Naarden
 Europe	Netherlands	North Holland	Schiphol
 Europe	Netherlands	North Holland	Wervershoof
@@ -1281,11 +1335,18 @@ Europe	North Macedonia	Northeastern Region	Kumanovo
 Europe	North Macedonia	Pelagonia	
 Europe	North Macedonia	Pelagonia	Prilep
 Europe	North Macedonia	Skopje	
+Europe	Norway	Agder	
+Europe	Norway	Innlandet	
+Europe	Norway	Moreogromsdal	
 Europe	Norway	Norway	
 Europe	Norway	Oslo	
+Europe	Norway	Rogaland	
+Europe	Norway	Tromsogfinnmark	
 Europe	Norway	Trondheim	
 Europe	Norway	Vestland	
 Europe	Norway	Vestland	Bergen
+Europe	Norway	Vestlandet	
+Europe	Norway	Viken	
 Europe	Poland	Dolnoslaskie	
 Europe	Poland	Malopolskie	
 Europe	Poland	Malopolskie	Kraków
@@ -1351,38 +1412,52 @@ Europe	Romania	Teleorman
 Europe	Romania	Valcea	
 Europe	Romania	Vrancea	
 Europe	Romania	Vrancea	Focsani
-Europe	Russia	Bryansk Oblast	
-Europe	Russia	Buryat Republic	
-Europe	Russia	Buryat Republic	Ulan-Ude
-Europe	Russia	Chechen Republic	
-Europe	Russia	Chelyabinsk Region	
-Europe	Russia	Khabarovsk Region	
-Europe	Russia	Krasnodar Region	
-Europe	Russia	Krasnoyarsk Region	
+Europe	Russia	Bashkortostan	
+Europe	Russia	Bryansk	
+Europe	Russia	Buryatia	
+Europe	Russia	Buryatia	Ulan-Ude
+Europe	Russia	Chechen	
+Europe	Russia	Chelyabinsk	
+Europe	Russia	Kabardino-Balkaria	
+Europe	Russia	Khabarovsk	
+Europe	Russia	Krasnodar	
+Europe	Russia	Krasnoyarsk	
 Europe	Russia	Leningrad Region	
 Europe	Russia	Leningrad Region	Kipen
-Europe	Russia	Lipetsk Region	
+Europe	Russia	Lipetsk	
 Europe	Russia	Moscow	
 Europe	Russia	Moscow Region	
-Europe	Russia	Novosibirsk Oblast	
-Europe	Russia	Omsk Region	
-Europe	Russia	Orenburg Region	
-Europe	Russia	Perm Region	
-Europe	Russia	Primorskiy Region	
-Europe	Russia	Pskov Region	
-Europe	Russia	Republic of Bashkortostan	
-Europe	Russia	Republic of Buryatia	
-Europe	Russia	Republic of Crymea	
-Europe	Russia	Republic of Kabardino-Balkaria	
+Europe	Russia	Novosibirsk	
+Europe	Russia	Omsk	
+Europe	Russia	Omsk	Azovo
+Europe	Russia	Omsk	Cherlak
+Europe	Russia	Omsk	Kalachinsk
+Europe	Russia	Omsk	Lyubinsky
+Europe	Russia	Omsk	Maryanovka
+Europe	Russia	Omsk	Moskalenki
+Europe	Russia	Omsk	Muromtsevo
+Europe	Russia	Omsk	Nizhnyaya Omka
+Europe	Russia	Omsk	Novovarshavka
+Europe	Russia	Omsk	Omsk
+Europe	Russia	Omsk	Russkaya Polyana
+Europe	Russia	Omsk	Sedelnikovo
+Europe	Russia	Omsk	Ust-Ishim
+Europe	Russia	Orenburg	
+Europe	Russia	Perm	
+Europe	Russia	Primorsky	
+Europe	Russia	Pskov	
+Europe	Russia	Republic of Crymea		
 Europe	Russia	Republic of Sakha	
 Europe	Russia	Saint-Petersburg	
-Europe	Russia	Sakhalin Region	
-Europe	Russia	Samara Region	
-Europe	Russia	Sverdlovsk Region	
+Europe	Russia	Sakhalin	
+Europe	Russia	Samara	
+Europe	Russia	Sverdlovsk	
+Europe	Russia	Sverdlovsk	Ekaterinburg
+Europe	Russia	Sverdlovsk	Verkhnyaya Pyshma
 Europe	Russia	Tatarstan	
-Europe	Russia	Tver Region	
-Europe	Russia	Yamalo-Nenets Autonomous Okrug	
-Europe	Russia	Yaroslavl Oblast	
+Europe	Russia	Tver	
+Europe	Russia	Yamalo-Nenets	
+Europe	Russia	Yaroslavl	
 Europe	Serbia	Serbia	
 Europe	Serbia	Cacak	
 Europe	Serbia	Kraljevo	
@@ -1512,7 +1587,7 @@ Europe	Spain	Basque Country	Zarauz
 Europe	Spain	Basque Country	Zumarraga
 Europe	Spain	Canary Islands	
 Europe	Spain	Canary Islands	Lanzarote
-Europe	Spain	Canary Islands	Las Palmas
+Europe	Spain	Canary Islands	Las Palmas de Gran Canaria
 Europe	Spain	Cantabria	
 Europe	Spain	Cantabria	Cabezon de la Sal
 Europe	Spain	Cantabria	Carandia
@@ -2051,6 +2126,7 @@ North America	USA	California	Sutter County
 North America	USA	California	Tulare County
 North America	USA	California	Tuolumne County
 North America	USA	California	Ventura County
+North America	USA	California	Yolo County
 North America	USA	Colorado	
 North America	USA	Colorado	Colorado Springs
 North America	USA	Colorado	Denver County
@@ -2090,6 +2166,10 @@ North America	USA	Connecticut	Waterbury
 North America	USA	Connecticut	West Haven
 North America	USA	Connecticut	Woodbridge
 North America	USA	Connecticut	Yorktown Heights
+North America	USA	Delaware	
+North America	USA	Delaware	Kent
+North America	USA	Delaware	New Castle
+North America	USA	Delaware	Sussex
 North America	USA	Diamond Princess	
 North America	USA	Florida	
 North America	USA	Florida	Miami
@@ -2253,6 +2333,7 @@ North America	USA	Texas	Brewster County
 North America	USA	Texas	Burleson County
 North America	USA	Texas	Cameron County
 North America	USA	Texas	Comal County
+North America	USA	Texas	Comanche County
 North America	USA	Texas	Dallas County
 North America	USA	Texas	Deaf Smith County
 North America	USA	Texas	Ector County
@@ -2286,6 +2367,7 @@ North America	USA	Texas	Val Verde County
 North America	USA	Texas	Waller County
 North America	USA	Texas	Washington County TX
 North America	USA	Texas	Webb County
+North America	USA	Texas	Wharton County
 North America	USA	Texas	Williamson County
 North America	USA	USA	
 North America	USA	Utah	
@@ -2399,6 +2481,8 @@ Oceania	Australia	Western Australia	Perth
 Oceania	Guam	Guam	
 Oceania	New Zealand	Auckland	
 Oceania	New Zealand	Auckland	Auckland
+Oceania	New Zealand	Auckland	Counties Manukau
+Oceania	New Zealand	Auckland	Waitemata
 Oceania	New Zealand	Bay of Plenty	
 Oceania	New Zealand	Canterbury	
 Oceania	New Zealand	Combined Wellington	
@@ -2698,6 +2782,7 @@ South America	Peru	Cuzco
 South America	Peru	Huanuco	
 South America	Peru	Ica	
 South America	Peru	Junin	
+South America	Peru	Junin	Huancayo
 South America	Peru	La Libertad	
 South America	Peru	La Libertad	La Libertad
 South America	Peru	Lambayeque	
