@@ -31,16 +31,13 @@ def main():
     args = parse_args()
 
     tsv = pd.read_csv(args.input_tsv, sep="\t")
-    tsv_ids = list(tsv['seqName'])
+    tsv_ids = set(tsv['seqName'])
 
-    result = []
     with open(args.input_fasta) as f_input:
-        for seq in SeqIO.parse(f_input, "fasta"):
-            if seq.id not in tsv_ids:
-                result.append(seq)
-
-    with open(args.output_fasta, "w") as f_output:
-        SeqIO.write(result, f_output, "fasta")
+        with open(args.output_fasta, "w") as f_output:
+            for seq in SeqIO.parse(f_input, "fasta"):
+                if seq.id not in tsv_ids:
+                    SeqIO.write(seq, f_output, "fasta")
 
 
 if __name__ == '__main__':
