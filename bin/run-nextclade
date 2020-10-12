@@ -1,12 +1,19 @@
 #!/usr/bin/env bash
 
-# Allows running nextclade on a large input fasta file:
-#   - splits fasta file into batches of a given size (Node.js is limited to max 2G file size)
-#   - runs batches in a parallel pool, given number of processes (nextclade CLI is currently serial)
-#   - concatenates inputs from all batches
-
-# TODO: This functionality might be ported to nextclade native
-# (with streaming .fasta reader and webworkers/multiprocessing)
+# HACK: Allows running nextclade on a large input fasta file:
+#
+#   - Splits fasta file into batches of a given size (Node.js is limited to max
+#     GBytes file size)
+#
+#   - Runs batches one at a time. Nextclade uses a thread pool to schedule the
+#     analysis of sequences in parallel, on per-sequence basis.
+#
+#   - Concatenates outputs from all batches
+#
+# TODO: This this script will be redundant when Nextclade implements a proper
+#  streaming fasta reader, thus lifting the 2 GBytes limit. This will
+#  effectively move batching inside Nextclade
+#
 
 set -o errexit
 set -o nounset
@@ -21,8 +28,11 @@ TMP_DIR_CLADES="tmp/clades"
 INPUT_WILDCARD="${TMP_DIR_FASTA}/*.fasta"
 OUTPUT_WILDCARD="${TMP_DIR_CLADES}/*.tsv"
 
+BATCH_SIZE=4
+
 # Default number of processes, if not provided.
-# Usually equals to the number of threads on all CPUs combined.
+# Usually equals to the sum of numbers of logical cores ("threads") on all CPUs
+# in the system combined, including "hyperthreads".
 N_PROCESSES_DEFAULT=$(getconf _NPROCESSORS_ONLN)
 
 # Alternatively, use number of processes provided as the third argument
@@ -32,32 +42,22 @@ N_PROCESSES=${4:-"${N_PROCESSES_DEFAULT}"}
 mkdir -p "${TMP_DIR_FASTA}"
 ./bin/split-fasta \
   "${INPUT_FASTA}" \
-  --batch_size=20 \
+  --batch_size=${BATCH_SIZE} \
   --output_dir="${TMP_DIR_FASTA}"
 
 # Run batches in parallel
 echo "Using ${N_PROCESSES} parallel processes"
 mkdir -p "${TMP_DIR_CLADES}"
-N_JOBS_CURRENT="\j"
 for input in ${INPUT_WILDCARD}; do
   input_basename="$(basename "${input}")"
   output_basename="${input_basename%.fasta}.tsv"
   output_filename="${TMP_DIR_CLADES}/${output_basename}"
 
-  while ((${N_JOBS_CURRENT@P} >= N_PROCESSES)); do
-    wait -n
-  done
-
   echo "Processing ${input}"
-
   nextclade.js \
+    --jobs="${N_PROCESSES}" \
     --input-fasta="${input}" \
-    --output-tsv="${output_filename}" &
-done
-
-# Wait until all processes finish
-for job in $(jobs -p); do
-  wait $job
+    --output-tsv="${output_filename}"
 done
 
 cp "${INPUT_TSV}" "${OUTPUT_TSV}"
@@ -67,4 +67,4 @@ for output in ${OUTPUT_WILDCARD}; do
   tail -n +2 "$output" >>"${OUTPUT_TSV}"
 done
 
-rm -rf "${TMP_DIR_FASTA}" "${TMP_DIR_CLADES}"
+#rm -rf "${TMP_DIR_FASTA}" "${TMP_DIR_CLADES}"
