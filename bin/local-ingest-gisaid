@@ -100,7 +100,7 @@ download-gisaid() {
     "${GISAID_URL}" \
     -O "${TMP_DIR}/gisaid.ndjson.bz2"
 
-  bzip2 -cdk "${TMP_DIR}/gisaid.ndjson.bz2" > "${GISAID_NDJSON}"
+  bzip2 -cdk "${TMP_DIR}/gisaid.ndjson.bz2" >"${GISAID_NDJSON}"
 }
 
 transform() {
@@ -124,7 +124,7 @@ ingest() {
   ./bin/filter-fasta \
     --input_fasta="${OUTPUT_DIR}/sequences.fasta" \
     --input_tsv="${INPUT_DIR}/nextclade.tsv" \
-    --output_fasta="${OUTPUT_DIR}/nextclade.sequences.fasta" \
+    --output_fasta="${OUTPUT_DIR}/nextclade.sequences.fasta"
 
   # ... and assign clades to them
   ./bin/run-nextclade \
