@@ -99,7 +99,7 @@ main() {
     ./bin/join-metadata-and-clades \
       "data/gisaid/metadata.tsv" \
       "data/gisaid/nextclade.tsv" \
-      -o "data/gisaid/metadata2.tsv"
+      -o "data/gisaid/metadata.tsv"
 
     ./bin/flag-metadata data/gisaid/metadata.tsv > data/gisaid/flagged_metadata.txt
     ./bin/check-locations data/gisaid/metadata.tsv \
