@@ -136,7 +136,7 @@ ingest() {
   ./bin/join-metadata-and-clades \
     "${OUTPUT_DIR}/metadata.tsv" \
     "${OUTPUT_DIR}/nextclade.tsv" \
-    -o "${OUTPUT_DIR}/metadata2.tsv"
+    -o "${OUTPUT_DIR}/metadata.tsv"
 
   csv-diff \
     "${METADATA_OLD}" \
