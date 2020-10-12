@@ -7,7 +7,8 @@ import pandas as pd
 INPUT_CLADE_COLUMN = "clade"
 OUTPUT_CLADE_COLUMN = "Nextstrain_clade"
 INSERT_BEFORE_THIS_COLUMN = "pangolin_lineage"
-INDEX_COLUMN_NAME = 'strain'
+METADATA_JOIN_COLUMN_NAME = 'strain'
+NEXTCLADE_JOIN_COLUMN_NAME = 'seqName'
 VALUE_CLADE_MISSING = '-'
 
 
@@ -35,23 +36,28 @@ def parse_args():
 def main():
     args = parse_args()
 
-    metadata = pd.read_csv(args.first_file, index_col=INDEX_COLUMN_NAME, sep='\t')
+    metadata = pd.read_csv(args.first_file, index_col=False, sep='\t')
 
     # Read and rename clade column to be more descriptive
-    clades = pd.read_csv(args.second_file, index_col=0, sep='\t') \
+    clades = pd.read_csv(args.second_file, index_col=False, sep='\t') \
         .rename(columns={INPUT_CLADE_COLUMN: OUTPUT_CLADE_COLUMN})
 
-    clades = clades[[OUTPUT_CLADE_COLUMN]]
+    clades = clades[[NEXTCLADE_JOIN_COLUMN_NAME, OUTPUT_CLADE_COLUMN]]
 
     # Concatenate on columns
-    result = pd.concat([metadata, clades], axis=1)
+    result = pd.merge(
+        metadata, clades,
+        left_on=METADATA_JOIN_COLUMN_NAME,
+        right_on=NEXTCLADE_JOIN_COLUMN_NAME,
+        how='left'
+    )
 
     result[OUTPUT_CLADE_COLUMN] = result[OUTPUT_CLADE_COLUMN].fillna(VALUE_CLADE_MISSING)
 
     # Move the new column so that it's next to other clade columns
     result = reorder_columns(result)
 
-    result.to_csv(args.o, index_label=INDEX_COLUMN_NAME, sep='\t')
+    result.to_csv(args.o, index_label=METADATA_JOIN_COLUMN_NAME, sep='\t')
 
 
 if __name__ == '__main__':
