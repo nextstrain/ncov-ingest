@@ -21,7 +21,7 @@ set -o pipefail
 trap "exit" INT
 
 INPUT_FASTA=${1}
-OUTPUT_TSV=${3}
+OUTPUT_TSV=${2}
 TMP_DIR_FASTA="tmp/fasta"
 TMP_DIR_CLADES="tmp/clades"
 INPUT_WILDCARD="${TMP_DIR_FASTA}/*.fasta"
