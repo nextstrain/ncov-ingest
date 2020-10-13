@@ -21,13 +21,13 @@ set -o pipefail
 trap "exit" INT
 
 INPUT_FASTA=${1}
-OUTPUT_TSV=${2}
+OUTPUT_TSV=${3}
 TMP_DIR_FASTA="tmp/fasta"
 TMP_DIR_CLADES="tmp/clades"
 INPUT_WILDCARD="${TMP_DIR_FASTA}/*.fasta"
 OUTPUT_WILDCARD="${TMP_DIR_CLADES}/*.tsv"
 
-BATCH_SIZE=100
+BATCH_SIZE=200
 
 # Default number of processes, if not provided.
 # Usually equals to the sum of numbers of logical cores ("threads") on all CPUs
@@ -61,7 +61,7 @@ done
 
 # Concatenate output batches together
 for output in ${OUTPUT_WILDCARD}; do
-  tail -n +2 "$output" >>"${OUTPUT_TSV}"
+  ./bin/join-rows $output "${OUTPUT_TSV}" -o "${OUTPUT_TSV}"
 done
 
 rm -rf "${TMP_DIR_FASTA}" "${TMP_DIR_CLADES}"

@@ -36,19 +36,19 @@ def parse_args():
 def main():
     args = parse_args()
 
-    metadata = pd.read_csv(args.first_file, index_col=False, sep='\t')
+    metadata = pd.read_csv(args.first_file, index_col=METADATA_JOIN_COLUMN_NAME, sep='\t', low_memory=False)
 
     # Read and rename clade column to be more descriptive
-    clades = pd.read_csv(args.second_file, index_col=False, sep='\t') \
+    clades = pd.read_csv(args.second_file, index_col=NEXTCLADE_JOIN_COLUMN_NAME, sep='\t', low_memory=False) \
         .rename(columns={INPUT_CLADE_COLUMN: OUTPUT_CLADE_COLUMN})
 
-    clades = clades[[NEXTCLADE_JOIN_COLUMN_NAME, OUTPUT_CLADE_COLUMN]]
+    clades = clades[[OUTPUT_CLADE_COLUMN]]
 
     # Concatenate on columns
     result = pd.merge(
         metadata, clades,
-        left_on=METADATA_JOIN_COLUMN_NAME,
-        right_on=NEXTCLADE_JOIN_COLUMN_NAME,
+        left_index=True,
+        right_index=True,
         how='left'
     )
 

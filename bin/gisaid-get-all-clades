@@ -36,10 +36,10 @@ bzip2 -cdk "${TMP_DIR}/gisaid.ndjson.bz2" >"${GISAID_NDJSON}"
 # Run nextclade in parallel batches from `sequences.fasta`, produce `nextclade.clades.tsv`
 ./bin/run-nextclade \
   "data/gisaid/sequences.fasta" \
-  "data/gisaid/nextclade.clades.tsv"
+  "data/gisaid/nextclade.tsv"
 
 # Join `metadata.tsv` and `nextclade.clades.tsv`, produce `metadata2.tsv`
 ./bin/join-metadata-and-clades \
   "data/gisaid/metadata.tsv" \
-  "data/gisaid/nextclade.clades.tsv" \
-  -o "data/gisaid/metadata2.tsv"
+  "data/gisaid/nextclade.tsv" \
+  -o "data/gisaid/metadata.tsv"
