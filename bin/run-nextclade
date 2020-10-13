@@ -28,7 +28,7 @@ TMP_DIR_CLADES="tmp/clades"
 INPUT_WILDCARD="${TMP_DIR_FASTA}/*.fasta"
 OUTPUT_WILDCARD="${TMP_DIR_CLADES}/*.tsv"
 
-BATCH_SIZE=4
+BATCH_SIZE=200
 
 # Default number of processes, if not provided.
 # Usually equals to the sum of numbers of logical cores ("threads") on all CPUs
