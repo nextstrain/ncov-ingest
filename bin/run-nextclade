@@ -64,7 +64,7 @@ cp "${INPUT_TSV}" "${OUTPUT_TSV}"
 
 # Concatenate output batches together
 for output in ${OUTPUT_WILDCARD}; do
-  tail -n +2 "$output" >>"${OUTPUT_TSV}"
+  ./bin/join-rows $output "${OUTPUT_TSV}" -o "${OUTPUT_TSV}"
 done
 
 #rm -rf "${TMP_DIR_FASTA}" "${TMP_DIR_CLADES}"
