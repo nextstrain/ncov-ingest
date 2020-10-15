@@ -52,6 +52,7 @@ Africa	Nigeria	Ondo State
 Africa	Nigeria	Osun State	
 Africa	Nigeria	Oyo State	
 Africa	Nigeria	Rivers	
+Africa	Republic of the Congo	Brazzaville	
 Africa	Senegal	Dakar	
 Africa	Senegal	Dakar	Guediawaye
 Africa	Senegal	Dakar	Keur Massar
@@ -219,6 +220,7 @@ Asia	China	Zhejiang	Keqiao
 Asia	China	Zhejiang	Lishui
 Asia	China	Zhejiang	Shangyu
 Asia	China	Zhejiang	Yuecheng
+Asia	Georgia	Georgia (Europe)	
 Asia	Georgia	Tbilisi	
 Asia	Hong Kong	Hong Kong	
 Asia	Hong Kong	Hong Kong	Hong Kong
@@ -491,6 +493,7 @@ Asia	Malaysia	Kuala Lumpur
 Asia	Malaysia	Malaysia	
 Asia	Malaysia	Pahang	
 Asia	Malaysia	Selangor	
+Asia	Maldives	Maldives	
 Asia	Mongolia	Mongolia	
 Asia	Myanmar	Myanmar	
 Asia	Myanmar	Yangon	
@@ -1206,6 +1209,7 @@ Europe	Hungary	Szabolcs-Szatmár-Bereg County
 Europe	Hungary	Szeged	
 Europe	Iceland	Reykjavik	
 Europe	Ireland	Cavan	
+Europe	Ireland	Clare	
 Europe	Ireland	Cork	
 Europe	Ireland	Dublin	
 Europe	Ireland	Galway	
@@ -1217,6 +1221,7 @@ Europe	Ireland	Laois
 Europe	Ireland	Leitrim	
 Europe	Ireland	Limerick	
 Europe	Ireland	Louth	
+Europe	Ireland	Mayo	
 Europe	Ireland	Meath	
 Europe	Ireland	Monaghan	
 Europe	Ireland	Offaly	
@@ -1224,6 +1229,7 @@ Europe	Ireland	Roscommon
 Europe	Ireland	Sligo	
 Europe	Ireland	Tipperary	
 Europe	Ireland	Waterford	
+Europe	Ireland	Westmeath	
 Europe	Ireland	Wexford	
 Europe	Ireland	Wicklow	
 Europe	Italy	Abruzzo	
@@ -1474,9 +1480,13 @@ Europe	Serbia	Serbia
 Europe	Serbia	Uzice	
 Europe	Slovakia	Bratislava	
 Europe	Slovakia	Kosice	
+Europe	Slovakia	Kosice	Zehra
 Europe	Slovakia	Kostoliste	
 Europe	Slovakia	Martin	
+Europe	Slovakia	Pezinok	
 Europe	Slovakia	Slovakia	
+Europe	Slovakia	Zilina	
+Europe	Slovakia	Zilina	Martincek
 Europe	Slovenia	Slovenia	
 Europe	Spain	Andalusia	
 Europe	Spain	Andalusia	Alamedilla
@@ -1904,6 +1914,7 @@ Europe	Switzerland	Glarus
 Europe	Switzerland	Graubünden	
 Europe	Switzerland	Jura	
 Europe	Switzerland	Lucerne	
+Europe	Switzerland	Nidwalden	
 Europe	Switzerland	Obwalden	
 Europe	Switzerland	Sankt Gallen	
 Europe	Switzerland	Schaffhausen	
@@ -2237,6 +2248,7 @@ North America	USA	Kansas
 North America	USA	Kentucky	
 North America	USA	Louisiana	
 North America	USA	Louisiana	Assumption Parish
+North America	USA	Louisiana	Avoyelles Parish
 North America	USA	Louisiana	Bienville Parish
 North America	USA	Louisiana	Bossier Parish
 North America	USA	Louisiana	Caddo Parish
@@ -2252,13 +2264,17 @@ North America	USA	Louisiana	Lincoln Parish
 North America	USA	Louisiana	Livingston Parish
 North America	USA	Louisiana	Madison Parish
 North America	USA	Louisiana	Morehouse Parish
+North America	USA	Louisiana	Natchitoches Parish
 North America	USA	Louisiana	New Orleans
+North America	USA	Louisiana	Ouachita Parish
 North America	USA	Louisiana	Rapides Parish
 North America	USA	Louisiana	Red River Parish
+North America	USA	Louisiana	Richland Parish
 North America	USA	Louisiana	Sabine Parish
 North America	USA	Louisiana	St Bernard Parish
 North America	USA	Louisiana	St Tammany Parish
 North America	USA	Louisiana	Tensas Parish
+North America	USA	Louisiana	Union Parish
 North America	USA	Louisiana	Webster Parish
 North America	USA	Maine	
 North America	USA	Maryland	
@@ -2426,7 +2442,7 @@ North America	USA	Washington	Kirkland
 North America	USA	Washington	Kittitas County
 North America	USA	Washington	Klickitat County
 North America	USA	Washington	Mason County
-North America	USA	Washington	Pierce County
+North America	USA	Washington	Pierce County WA
 North America	USA	Washington	San Juan County
 North America	USA	Washington	Seattle
 North America	USA	Washington	Skagit County
@@ -2441,6 +2457,8 @@ North America	USA	Washington DC	District of Columbia County
 North America	USA	West Virginia	
 North America	USA	Wisconsin	
 North America	USA	Wisconsin	Adams County WI
+North America	USA	Wisconsin	Ashland County
+North America	USA	Wisconsin	Barron County
 North America	USA	Wisconsin	Brooklyn WI
 North America	USA	Wisconsin	Brown County WI
 North America	USA	Wisconsin	Buffalo County
@@ -2460,6 +2478,7 @@ North America	USA	Wisconsin	Iowa County WI
 North America	USA	Wisconsin	Jackson County WI
 North America	USA	Wisconsin	Jefferson County WI
 North America	USA	Wisconsin	Juneau County
+North America	USA	Wisconsin	Kenosha County
 North America	USA	Wisconsin	La Crosse County
 North America	USA	Wisconsin	Lafayette County
 North America	USA	Wisconsin	Lincoln County
@@ -2468,16 +2487,20 @@ North America	USA	Wisconsin	Marathon County
 North America	USA	Wisconsin	Marquette County
 North America	USA	Wisconsin	Milwaukee County
 North America	USA	Wisconsin	Monroe County
+North America	USA	Wisconsin	Oconto County
 North America	USA	Wisconsin	Oregon WI
 North America	USA	Wisconsin	Outagamie County
 North America	USA	Wisconsin	Ozaukee County
 North America	USA	Wisconsin	Pepin County
+North America	USA	Wisconsin	Pierce County WI
+North America	USA	Wisconsin	Polk County
 North America	USA	Wisconsin	Port Washington
 North America	USA	Wisconsin	Portage County
 North America	USA	Wisconsin	Racine County
 North America	USA	Wisconsin	Richland County WI
 North America	USA	Wisconsin	Rock County
 North America	USA	Wisconsin	Sauk County
+North America	USA	Wisconsin	Sawyer County
 North America	USA	Wisconsin	Shawano County
 North America	USA	Wisconsin	Sheboygan County
 North America	USA	Wisconsin	South Milwaukee
@@ -2520,18 +2543,21 @@ Oceania	New Zealand	Auckland	Counties Manukau
 Oceania	New Zealand	Auckland	Waitemata
 Oceania	New Zealand	Bay of Plenty	
 Oceania	New Zealand	Canterbury	
-Oceania	New Zealand	Combined Wellington	
 Oceania	New Zealand	Counties Manukau	
+Oceania	New Zealand	Hawkes Bay	
 Oceania	New Zealand	Lakes	
 Oceania	New Zealand	Midcentral	
 Oceania	New Zealand	Nelson Marlborough	
 Oceania	New Zealand	New Zealand	
 Oceania	New Zealand	Otago	
 Oceania	New Zealand	Southern	
+Oceania	New Zealand	Taranaki	
 Oceania	New Zealand	Waikato	
 Oceania	New Zealand	Wairarapa	
 Oceania	New Zealand	Waitemata	
 Oceania	New Zealand	Wellington	
+Oceania	New Zealand	Wellington	Capital and Coast
+Oceania	New Zealand	Wellington	Hutt Valley
 South America	Argentina	Argentina	
 South America	Argentina	Buenos Aires	
 South America	Argentina	Buenos Aires	Bahia Blanca
