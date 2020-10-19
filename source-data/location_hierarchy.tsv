@@ -5,6 +5,7 @@ Africa	Benin	Cotonou
 Africa	Benin	Oueme	
 Africa	Botswana	Gaborone	
 Africa	Burkina Faso	Burkina Faso	
+Africa	Cameroon	Cameroon
 Africa	Cameroon	Yaounde	
 Africa	Democratic Republic of the Congo	Democratic Republic of the Congo	
 Africa	Democratic Republic of the Congo	Haut-Katanga	
@@ -24,6 +25,8 @@ Africa	Gambia	West Coast Region
 Africa	Ghana	Ghana	
 Africa	Ghana	Greater Accra	
 Africa	Ghana	Greater Accra	Accra
+Africa	Guinea	Conakry	
+Africa	Ivory Coast	Ivory Coast	
 Africa	Kenya	Kenya	
 Africa	Kenya	Kilifi	
 Africa	Kenya	Kwale	
@@ -32,6 +35,7 @@ Africa	Kenya	Taita Taveta
 Africa	Madagascar	Analamanga	Antananarivo
 Africa	Madagascar	Analanjirofo	Fenoarivo
 Africa	Mali	Bamako	
+Africa	Mali	Mali	
 Africa	Mali	Mopti	
 Africa	Morocco	Casablanca	
 Africa	Morocco	Morocco	
@@ -65,10 +69,12 @@ Africa	Senegal	Diourbel	Touba
 Africa	Senegal	Kolda	
 Africa	Senegal	Kolda	Velingara
 Africa	Senegal	Mbour	
+Africa	Senegal	Senegal	
 Africa	Senegal	St-Louis	
 Africa	Senegal	Thies	
 Africa	Senegal	Thies	Mbour
 Africa	Sierra Leone	Sierra Leone	
+Africa	Somalia	Somalia	
 Africa	South Africa	Eastern Cape	
 Africa	South Africa	Free State	
 Africa	South Africa	Gauteng	
@@ -593,22 +599,33 @@ Europe	Austria	Styria
 Europe	Austria	Tyrol	
 Europe	Austria	Tyrol	Aldrans
 Europe	Austria	Tyrol	Elbigenalp
+Europe	Austria	Tyrol	Galtür
 Europe	Austria	Tyrol	Innsbruck
 Europe	Austria	Tyrol	Ischgl
+Europe	Austria	Tyrol	Kappl
 Europe	Austria	Tyrol	Kematen in Tirol
+Europe	Austria	Tyrol	Kufstein
 Europe	Austria	Tyrol	Laengenfeld
 Europe	Austria	Tyrol	Matrei am Brenner
 Europe	Austria	Tyrol	Mayrhofen
+Europe	Austria	Tyrol	Nauders
+Europe	Austria	Tyrol	Pettneu Am Arlberg
+Europe	Austria	Tyrol	Pfunden
 Europe	Austria	Tyrol	Ramsau im Zillertal
+Europe	Austria	Tyrol	See
 Europe	Austria	Tyrol	Seefeld in Tirol
 Europe	Austria	Tyrol	Sistrans
+Europe	Austria	Tyrol	Sölden
 Europe	Austria	Tyrol	St. Anton
 Europe	Austria	Tyrol	Steinach am Brenner
 Europe	Austria	Tyrol	Strass im Zillertal
 Europe	Austria	Tyrol	Thaur
+Europe	Austria	Tyrol	Tösens
 Europe	Austria	Tyrol	Zams
 Europe	Austria	Upper Austria	
 Europe	Austria	Upper Austria	Altenhof Am Hausruck
+Europe	Austria	Upper Austria	Hochficht
+Europe	Austria	Upper Austria	Linz
 Europe	Austria	Upper Austria	Losenstein
 Europe	Austria	Vienna	
 Europe	Austria	Vorarlberg	
@@ -1051,6 +1068,7 @@ Europe	France	Auvergne-Rhône-Alpes
 Europe	France	Auvergne-Rhône-Alpes	Bourg-en-Bresse
 Europe	France	Auvergne-Rhône-Alpes	Bourgoin-Jallieu
 Europe	France	Auvergne-Rhône-Alpes	Chambery
+Europe	France	Auvergne-Rhône-Alpes	Clermont-Ferrand
 Europe	France	Auvergne-Rhône-Alpes	Contamine-sur-Arve
 Europe	France	Auvergne-Rhône-Alpes	Contamines
 Europe	France	Auvergne-Rhône-Alpes	Craponne
@@ -1059,6 +1077,7 @@ Europe	France	Auvergne-Rhône-Alpes	Lyon
 Europe	France	Auvergne-Rhône-Alpes	Macon
 Europe	France	Auvergne-Rhône-Alpes	Montagnieu
 Europe	France	Auvergne-Rhône-Alpes	Oyonnax
+Europe	France	Auvergne-Rhône-Alpes	Pollionnay
 Europe	France	Auvergne-Rhône-Alpes	Privas
 Europe	France	Auvergne-Rhône-Alpes	Saint-Priest
 Europe	France	Auvergne-Rhône-Alpes	Tarare
@@ -1070,6 +1089,7 @@ Europe	France	Bourgogne
 Europe	France	Bourgogne	Dijon
 Europe	France	Bourgogne-France-Comté	
 Europe	France	Bourgogne-France-Comté	Chalon sur Saone
+Europe	France	Bourgogne-France-Comté	Dijon
 Europe	France	Bourgogne-France-Comté	Montreux-Chateau
 Europe	France	Bourgogne-France-Comté	Thise
 Europe	France	Bretagne	
@@ -1133,6 +1153,7 @@ Europe	France	Ile de France	Asnières-sur-Seine
 Europe	France	Ile de France	Boulogne Billancourt
 Europe	France	Ile de France	Cergy
 Europe	France	Ile de France	Colombes
+Europe	France	Ile de France	Essonne
 Europe	France	Ile de France	Garches
 Europe	France	Ile de France	Gennevilliers
 Europe	France	Ile de France	Guyancourt
@@ -1160,6 +1181,7 @@ Europe	France	Nouvelle-Aquitaine
 Europe	France	Nouvelle-Aquitaine	Limoges
 Europe	France	Occitanie	
 Europe	France	Occitanie	Caraman
+Europe	France	Occitanie	Toulouse
 Europe	France	Pays de la Loire	
 Europe	France	Pays de la Loire	Nantes
 Europe	France	Provence-Alpes-Côte d'Azur	
@@ -1266,6 +1288,7 @@ Europe	Italy	Piedmont
 Europe	Italy	Piedmont	Turin
 Europe	Italy	Sardinia	
 Europe	Italy	Sicily	
+Europe	Italy	Sicily	Palermo
 Europe	Italy	South Tyrol	
 Europe	Italy	Trentino	
 Europe	Italy	Trentino-Alto Adige	
@@ -1475,18 +1498,26 @@ Europe	Russia	Yamalo-Nenets
 Europe	Russia	Yaroslavl	
 Europe	Serbia	Serbia	
 Europe	Serbia	Cacak	
+Europe	Serbia	Cuprija	
+Europe	Serbia	Kragujevac	
 Europe	Serbia	Kraljevo	
+Europe	Serbia	Krusevac	
 Europe	Serbia	Novi Pazar	
 Europe	Serbia	Novi Sad	
 Europe	Serbia	Serbia	
 Europe	Serbia	Uzice	
 Europe	Slovakia	Bratislava	
+Europe	Slovakia	Jatov	
+Europe	Slovakia	Kamenicna	
 Europe	Slovakia	Kosice	
 Europe	Slovakia	Kosice	Zehra
 Europe	Slovakia	Kostoliste	
+Europe	Slovakia	Levice	
 Europe	Slovakia	Martin	
 Europe	Slovakia	Pezinok	
 Europe	Slovakia	Slovakia	
+Europe	Slovakia	Surany	
+Europe	Slovakia	Tvrdosovce	
 Europe	Slovakia	Zilina	
 Europe	Slovakia	Zilina	Martincek
 Europe	Slovenia	Slovenia	
@@ -1590,18 +1621,27 @@ Europe	Spain	Basque Country	Bermeo
 Europe	Spain	Basque Country	Bilbao
 Europe	Spain	Basque Country	Bizkaia
 Europe	Spain	Basque Country	Deba
+Europe	Spain	Basque Country	Derio
 Europe	Spain	Basque Country	Donostia-San Sebastian
 Europe	Spain	Basque Country	Eibar
+Europe	Spain	Basque Country	Erandio
+Europe	Spain	Basque Country	Getxo
 Europe	Spain	Basque Country	Hernani
 Europe	Spain	Basque Country	Irun
+Europe	Spain	Basque Country	Leioa
 Europe	Spain	Basque Country	Mallabia
 Europe	Spain	Basque Country	Mendaro
 Europe	Spain	Basque Country	Mondragon
+Europe	Spain	Basque Country	Muskiz
 Europe	Spain	Basque Country	Musques
 Europe	Spain	Basque Country	Ordizia
+Europe	Spain	Basque Country	Ortuella
 Europe	Spain	Basque Country	Portugalete
 Europe	Spain	Basque Country	San Sebastian
+Europe	Spain	Basque Country	Santurtzi
+Europe	Spain	Basque Country	Sopelana
 Europe	Spain	Basque Country	Tolosa
+Europe	Spain	Basque Country	Trapaga
 Europe	Spain	Basque Country	Vitoria-Gasteiz
 Europe	Spain	Basque Country	Zarauz
 Europe	Spain	Basque Country	Zumarraga
@@ -1967,6 +2007,7 @@ Europe	Ukraine	Volyn
 Europe	Ukraine	Volyn	Lutsk
 Europe	United Kingdom	England	
 Europe	United Kingdom	England	Derbyshire
+Europe	United Kingdom	England	Liverpool
 Europe	United Kingdom	England	London
 Europe	United Kingdom	England	Northamtonshire
 Europe	United Kingdom	England	Nottinghamshire
@@ -2154,6 +2195,7 @@ North America	USA	California	Merced County
 North America	USA	California	Monterey County CA
 North America	USA	California	Orange County CA
 North America	USA	California	Sacramento County
+North America	USA	California	San Bernardino County
 North America	USA	California	San Diego
 North America	USA	California	San Diego County
 North America	USA	California	San Francisco
@@ -2186,13 +2228,14 @@ North America	USA	Connecticut	Fairfield County CT
 North America	USA	Connecticut	Glastonbury
 North America	USA	Connecticut	Greenwich
 North America	USA	Connecticut	Hamden
+North America	USA	Connecticut	Hartford County
 North America	USA	Connecticut	Madison CT
 North America	USA	Connecticut	Manchester
 North America	USA	Connecticut	Meriden
 North America	USA	Connecticut	Milford
 North America	USA	Connecticut	Mount-Vernon
 North America	USA	Connecticut	New Fairfield
-North America	USA	Connecticut	New Haven
+North America	USA	Connecticut	New Haven County
 North America	USA	Connecticut	Newtown
 North America	USA	Connecticut	North Haven
 North America	USA	Connecticut	North-Branford
@@ -2203,6 +2246,7 @@ North America	USA	Connecticut	Riverside
 North America	USA	Connecticut	Seymour
 North America	USA	Connecticut	Shelton
 North America	USA	Connecticut	Stratford
+North America	USA	Connecticut	Tolland County
 North America	USA	Connecticut	Trumbull
 North America	USA	Connecticut	Wallingford
 North America	USA	Connecticut	Waterbury
@@ -2210,9 +2254,9 @@ North America	USA	Connecticut	West Haven
 North America	USA	Connecticut	Woodbridge
 North America	USA	Connecticut	Yorktown Heights
 North America	USA	Delaware	
-North America	USA	Delaware	Kent
-North America	USA	Delaware	New Castle
-North America	USA	Delaware	Sussex
+North America	USA	Delaware	Kent County
+North America	USA	Delaware	New Castle County
+North America	USA	Delaware	Sussex County
 North America	USA	Diamond Princess	
 North America	USA	Florida	
 North America	USA	Florida	Miami
@@ -2667,6 +2711,7 @@ South America	Brazil	Sergipe	Riachuelo
 South America	Brazil	Sergipe	Tomar do Geru
 South America	Brazil	São Paulo	
 South America	Brazil	São Paulo	Americana
+South America	Brazil	São Paulo	Amparo
 South America	Brazil	São Paulo	Araçatuba
 South America	Brazil	São Paulo	Assis
 South America	Brazil	São Paulo	Barueri
@@ -2674,6 +2719,7 @@ South America	Brazil	São Paulo	Birigui
 South America	Brazil	São Paulo	Caieiras
 South America	Brazil	São Paulo	Cajamar
 South America	Brazil	São Paulo	Campinas
+South America	Brazil	São Paulo	Caraguatatuba
 South America	Brazil	São Paulo	Cotia
 South America	Brazil	São Paulo	Diadema
 South America	Brazil	São Paulo	Euclides Da Cunha Paulista
@@ -2693,6 +2739,7 @@ South America	Brazil	São Paulo	Peruibe
 South America	Brazil	São Paulo	Presidente Prudente
 South America	Brazil	São Paulo	Presidente Venceslau
 South America	Brazil	São Paulo	Rio Claro
+South America	Brazil	São Paulo	Rio Pardo
 South America	Brazil	São Paulo	Rio Verde
 South America	Brazil	São Paulo	Santa Isabel
 South America	Brazil	São Paulo	Sao Bernardo do Campo
