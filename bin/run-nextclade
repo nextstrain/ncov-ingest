@@ -47,7 +47,7 @@ mkdir -p "${TMP_DIR_FASTA}"
   --output_dir="${TMP_DIR_FASTA}"
 
 # Check if batches exist and report
-if ! ls ${INPUT_WILDCARD} 1>/dev/null 2>&1; then
+if ls ${INPUT_WILDCARD} 1>/dev/null 2>&1; then
   NUM_BATCHES="$(ls -Ubad1 2>/dev/null -- ${INPUT_WILDCARD} | wc -l)"
   echo "There are ${NUM_BATCHES} batches of sequences to process with Nextclade (batch size is ${BATCH_SIZE})"
 else
