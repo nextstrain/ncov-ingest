@@ -15,12 +15,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 14
     - name: ingest
       run: |
-        PATH="$HOME/.local/bin:$PATH"
+        PATH="$HOME/.local/bin:$PWD/node_modules/.bin:$PATH"
         python3 -m pip install --upgrade pip setuptools
         python3 -m pip install pipenv
         pipenv sync
+        yarn install
         pipenv run ./bin/ingest-gisaid --fetch
       env:
         AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}

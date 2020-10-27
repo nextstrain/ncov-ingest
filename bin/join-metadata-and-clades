@@ -1,0 +1,64 @@
+#!/usr/bin/env python3
+import argparse
+import sys
+
+import pandas as pd
+
+INPUT_CLADE_COLUMN = "clade"
+OUTPUT_CLADE_COLUMN = "Nextstrain_clade"
+INSERT_BEFORE_THIS_COLUMN = "pangolin_lineage"
+METADATA_JOIN_COLUMN_NAME = 'strain'
+NEXTCLADE_JOIN_COLUMN_NAME = 'seqName'
+VALUE_CLADE_MISSING = '-'
+
+
+def reorder_columns(result: pd.DataFrame):
+    """
+    Moves the new clade column after a specified column
+    """
+    columns = list(result.columns)
+    columns.remove(OUTPUT_CLADE_COLUMN)
+    insert_at = columns.index(INSERT_BEFORE_THIS_COLUMN)
+    columns.insert(insert_at, OUTPUT_CLADE_COLUMN)
+    return result[columns]
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Joins metadata file with Nextclade clade output",
+    )
+    parser.add_argument("first_file")
+    parser.add_argument("second_file")
+    parser.add_argument("-o", default=sys.stdout)
+    return parser.parse_args()
+
+
+def main():
+    args = parse_args()
+
+    metadata = pd.read_csv(args.first_file, index_col=METADATA_JOIN_COLUMN_NAME, sep='\t', low_memory=False)
+
+    # Read and rename clade column to be more descriptive
+    clades = pd.read_csv(args.second_file, index_col=NEXTCLADE_JOIN_COLUMN_NAME, sep='\t', low_memory=False) \
+        .rename(columns={INPUT_CLADE_COLUMN: OUTPUT_CLADE_COLUMN})
+
+    clades = clades[[OUTPUT_CLADE_COLUMN]]
+
+    # Concatenate on columns
+    result = pd.merge(
+        metadata, clades,
+        left_index=True,
+        right_index=True,
+        how='left'
+    )
+
+    result[OUTPUT_CLADE_COLUMN] = result[OUTPUT_CLADE_COLUMN].fillna(VALUE_CLADE_MISSING)
+
+    # Move the new column so that it's next to other clade columns
+    result = reorder_columns(result)
+
+    result.to_csv(args.o, index_label=METADATA_JOIN_COLUMN_NAME, sep='\t')
+
+
+if __name__ == '__main__':
+    main()
