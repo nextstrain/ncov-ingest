@@ -36,10 +36,10 @@ def parse_args():
 def main():
     args = parse_args()
 
-    metadata = pd.read_csv(args.first_file, index_col=METADATA_JOIN_COLUMN_NAME, sep='\t', low_memory=False)
+    metadata = pd.read_csv(args.first_file, index_col=METADATA_JOIN_COLUMN_NAME, sep='\t', low_memory=False, na_filter = False)
 
     # Read and rename clade column to be more descriptive
-    clades = pd.read_csv(args.second_file, index_col=NEXTCLADE_JOIN_COLUMN_NAME, sep='\t', low_memory=False) \
+    clades = pd.read_csv(args.second_file, index_col=NEXTCLADE_JOIN_COLUMN_NAME, sep='\t', low_memory=False, na_filter = False) \
         .rename(columns={INPUT_CLADE_COLUMN: OUTPUT_CLADE_COLUMN})
 
     clades = clades[[OUTPUT_CLADE_COLUMN]]
