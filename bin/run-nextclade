@@ -44,10 +44,27 @@ mkdir -p "${TMP_DIR_FASTA}"
   --batch_size=${BATCH_SIZE} \
   --output_dir="${TMP_DIR_FASTA}"
 
+# Check if batches exist and report
+if ! ls ${INPUT_WILDCARD} 1>/dev/null 2>&1; then
+  NUM_BATCHES=ls -Ubad1 2>/dev/null -- ${INPUT_WILDCARD} | wc -l
+  echo "There are ${NUM_BATCHES} batches of sequences to process with Nextclade (batch size is ${BATCH_SIZE})"
+else
+  echo "There are no new sequences to process. Skipping Nextclade step."
+  rm -rf "${TMP_DIR_FASTA}"
+  exit 0
+fi
+
 # Run batches in parallel
 echo "Using ${N_PROCESSES} parallel processes"
 mkdir -p "${TMP_DIR_CLADES}"
 for input in ${INPUT_WILDCARD}; do
+  if [ ! -e "${input}" ]; then
+    # If ${input} does not exist, this means that INPUT_WILDCARD was not expanded,
+    # there are no batch files and we should not attempt to run the processing.
+    # If we would, then it will crash.
+    break
+  fi
+
   input_basename="$(basename "${input}")"
   output_basename="${input_basename%.fasta}.tsv"
   output_filename="${TMP_DIR_CLADES}/${output_basename}"
