@@ -587,7 +587,9 @@ Asia	South Korea	Seoul	Seoul
 Asia	South Korea	South Korea	
 Asia	Sri Lanka	Sri Lanka	
 Asia	Sri Lanka	Colombo	
+Asia	Sri Lanka	Gampaha	
 Asia	Sri Lanka	Kalutara	
+Asia	Sri Lanka	Kalutara	Beruwala
 Asia	Taiwan	Keelung	
 Asia	Taiwan	New Taipei City	
 Asia	Taiwan	Tainan	
@@ -1242,6 +1244,7 @@ Europe	Germany	Niedersachsen
 Europe	Germany	North Rhine Westphalia	
 Europe	Germany	North Rhine Westphalia	Bielefeld
 Europe	Germany	North Rhine Westphalia	Duesseldorf
+Europe	Germany	North Rhine Westphalia	Essen
 Europe	Germany	North Rhine Westphalia	Heinsberg District
 Europe	Germany	North Rhine Westphalia	Heinsberg
 Europe	Germany	North Rhine Westphalia	Münster
@@ -1343,6 +1346,7 @@ Europe	Latvia	Latvia
 Europe	Latvia	Riga	
 Europe	Lithuania	Alytaus Apskritis	
 Europe	Lithuania	Kauno Apskritis	
+Europe	Lithuania	Klaipedos Apskritis	
 Europe	Lithuania	Lithuania	
 Europe	Lithuania	Marijampoles Apskritis	
 Europe	Lithuania	Taurages Apskritis	
@@ -1492,27 +1496,64 @@ Europe	Romania	Teleorman
 Europe	Romania	Valcea	
 Europe	Romania	Vrancea	
 Europe	Romania	Vrancea	Focsani
+Europe	Russia	Altai Krai	
+Europe	Russia	Altai Krai	Barnaul
 Europe	Russia	Bashkortostan	
 Europe	Russia	Bryansk	
+Europe	Russia	Bryansk Oblast	
+Europe	Russia	Bryansk Oblast	Bryansk
 Europe	Russia	Buryatia	
 Europe	Russia	Buryatia	Ulan-Ude
 Europe	Russia	Chechen	
+Europe	Russia	Chechen Republic	
+Europe	Russia	Chechen Republic	Grozny
 Europe	Russia	Chelyabinsk	
+Europe	Russia	Ivanovo Oblast	
+Europe	Russia	Ivanovo Oblast	Ivanovo
 Europe	Russia	Kabardino-Balkaria	
+Europe	Russia	Kaluga Oblast	
+Europe	Russia	Kaluga Oblast	Tovarkovo
+Europe	Russia	Karachay-Cherkess Republic	
+Europe	Russia	Karachay-Cherkess Republic	Cherkessk
+Europe	Russia	Karachay-Cherkess Republic	Karachayevsk
+Europe	Russia	Karachay-Cherkess Republic	Zelenchukskaya
+Europe	Russia	Kemerovo Oblast	
+Europe	Russia	Kemerovo Oblast	Kemerovo
 Europe	Russia	Khabarovsk	
+Europe	Russia	Khanty-Mansi Autonomous Okrug	
+Europe	Russia	Khanty-Mansi Autonomous Okrug	Khanty-Mansiysk
+Europe	Russia	Komi Republic	
+Europe	Russia	Komi Republic	Sosnogorsk
+Europe	Russia	Komi Republic	Ukhta
 Europe	Russia	Krasnodar	
+Europe	Russia	Krasnodar	Anapa
+Europe	Russia	Krasnodar	Krasnodar
 Europe	Russia	Krasnodar	Sochi
 Europe	Russia	Krasnoyarsk	
 Europe	Russia	Leningrad Oblast	
 Europe	Russia	Leningrad Oblast	Kipen
+Europe	Russia	Leningrad Oblast	Kirishi
+Europe	Russia	Leningrad Oblast	Kirovsk
 Europe	Russia	Leningrad Oblast	Sosnovyi Bor
+Europe	Russia	Leningrad Oblast	Vsevolozhsk
+Europe	Russia	Leningrad Oblast	Yanino
 Europe	Russia	Lipetsk	
+Europe	Russia	Mari El Republic	
+Europe	Russia	Mari El Republic	Kozmodemyansk
+Europe	Russia	Moscow Oblast	
+Europe	Russia	Moscow Oblast	Bronnitsy
+Europe	Russia	Moscow Oblast	Lapino
+Europe	Russia	Moscow Oblast	Uvarovka
 Europe	Russia	Moscow	
 Europe	Russia	Moscow Region	
+Europe	Russia	Murmansk Oblast	
+Europe	Russia	Murmansk Oblast	Murmansk
+Europe	Russia	Murmansk Oblast	Severomorsk
 Europe	Russia	Nizhny Novgorod Oblast	
 Europe	Russia	Nizhny Novgorod Oblast	Nizhny Novgorod
 Europe	Russia	Novgorod Oblast	
 Europe	Russia	Novgorod Oblast	Borovichi
+Europe	Russia	Novgorod Oblast	Veliky Novgorod
 Europe	Russia	Novosibirsk	
 Europe	Russia	Novosibirsk	Novosibirsk
 Europe	Russia	Omsk	
@@ -1535,11 +1576,20 @@ Europe	Russia	Perm Krai	Perm
 Europe	Russia	Primorsky	
 Europe	Russia	Primorsky	Vladivostok
 Europe	Russia	Pskov	
+Europe	Russia	Pskov Oblast	
+Europe	Russia	Pskov Oblast	Velikiye Luki
 Europe	Russia	Republic of Adygea	
 Europe	Russia	Republic of Adygea	Maykop
 Europe	Russia	Republic of Crymea		
+Europe	Russia	Republic of Dagestan	
+Europe	Russia	Republic of Dagestan	Derbent
+Europe	Russia	Republic of Dagestan	Makhachkala
+Europe	Russia	Republic of Ingushetia	
+Europe	Russia	Republic of Ingushetia	Nazran
 Europe	Russia	Republic of Kalmykia	
 Europe	Russia	Republic of Kalmykia	Elista
+Europe	Russia	Republic of Karelia	
+Europe	Russia	Republic of Karelia	Petrozavodsk
 Europe	Russia	Republic of Khakassia	
 Europe	Russia	Republic of Khakassia	Abakan
 Europe	Russia	Republic of Sakha	
@@ -1547,16 +1597,25 @@ Europe	Russia	Russia
 Europe	Russia	Saint-Petersburg	
 Europe	Russia	Sakhalin	
 Europe	Russia	Samara	
+Europe	Russia	Stavropol Krai	
+Europe	Russia	Stavropol Krai	Stavropol
+Europe	Russia	Stavropol Krai	Yessentuki
 Europe	Russia	Sverdlovsk	
 Europe	Russia	Sverdlovsk	Ekaterinburg
+Europe	Russia	Sverdlovsk	Kachkanar
 Europe	Russia	Sverdlovsk	Kirovgrad
+Europe	Russia	Sverdlovsk	Krasnouralsk
 Europe	Russia	Sverdlovsk	Nizhny Tagil
+Europe	Russia	Sverdlovsk	Pervouralsk
 Europe	Russia	Sverdlovsk	Revda
 Europe	Russia	Sverdlovsk	Shalya
 Europe	Russia	Sverdlovsk	Verkhny Tagil
 Europe	Russia	Sverdlovsk	Verkhnyaya Pyshma
+Europe	Russia	Sverdlovsk	Zarechny
 Europe	Russia	Tatarstan	
 Europe	Russia	Tver	
+Europe	Russia	Voronezh Oblast	
+Europe	Russia	Voronezh Oblast	Voronezh
 Europe	Russia	Yamalo-Nenets	
 Europe	Russia	Yaroslavl	
 Europe	Serbia	Serbia	
@@ -2701,6 +2760,7 @@ South America	Brazil	Amazonas
 South America	Brazil	Amazonas	Manaus
 South America	Brazil	Bahia	
 South America	Brazil	Bahia	Feira de Santana
+South America	Brazil	Bahia	Teixeira de Freitas
 South America	Brazil	Brazil	
 South America	Brazil	Brazilian Cruise	
 South America	Brazil	Ceará	
@@ -2796,6 +2856,7 @@ South America	Brazil	São Paulo	Campinas
 South America	Brazil	São Paulo	Caraguatatuba
 South America	Brazil	São Paulo	Cotia
 South America	Brazil	São Paulo	Diadema
+South America	Brazil	São Paulo	Emilianopolis
 South America	Brazil	São Paulo	Euclides Da Cunha Paulista
 South America	Brazil	São Paulo	Guarujá
 South America	Brazil	São Paulo	Guarulhos
@@ -2810,12 +2871,15 @@ South America	Brazil	São Paulo	Maua
 South America	Brazil	São Paulo	Mogi Das Cruzes
 South America	Brazil	São Paulo	Osasco
 South America	Brazil	São Paulo	Peruibe
+South America	Brazil	São Paulo	Presidente Epitacio
 South America	Brazil	São Paulo	Presidente Prudente
 South America	Brazil	São Paulo	Presidente Venceslau
 South America	Brazil	São Paulo	Rio Claro
 South America	Brazil	São Paulo	Rio Pardo
 South America	Brazil	São Paulo	Rio Verde
 South America	Brazil	São Paulo	Santa Isabel
+South America	Brazil	São Paulo	Santo Anastacio
+South America	Brazil	São Paulo	Santo Andre
 South America	Brazil	São Paulo	Sao Bernardo do Campo
 South America	Brazil	São Paulo	Sao Vicente
 South America	Brazil	São Paulo	São Paulo
