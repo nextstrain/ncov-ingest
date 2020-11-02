@@ -20,8 +20,6 @@ set -o nounset
 set -o pipefail
 trap "exit" INT
 
-set -x
-
 INPUT_FASTA=${1}
 OUTPUT_TSV=${2}
 TMP_DIR_FASTA="tmp/fasta"
