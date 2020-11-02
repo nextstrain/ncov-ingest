@@ -33,7 +33,7 @@ bzip2 -cdk "${TMP_DIR}/gisaid.ndjson.bz2" >"data/gisaid/gisaid.ndjson"
   --output-unix-newline
 
 ./bin/run-nextclade \
-  "data/gisaid/nextclade.sequences.fasta" \
+  "data/gisaid/sequences.fasta" \
   "data/gisaid/nextclade.tsv"
 
 ./bin/join-metadata-and-clades \
