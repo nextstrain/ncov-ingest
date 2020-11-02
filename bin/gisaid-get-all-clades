@@ -7,13 +7,13 @@ trap "exit" INT
 
 TMP_DIR="data/gisaid/tmp"
 
-: "${GISAID_USERNAME:?The GISAID_USERNAME environment variable is required.}"
-: "${GISAID_PASSWORD:?The GISAID_PASSWORD environment variable is required.}"
-: "${GISAID_URL:?The GISAID_URL environment variable is required.}"
-
 # Load environment variables from these files, if exist
 [ -f ".env" ] && source ".env"
 [ -f "../.env" ] && source "../.env"
+
+: "${GISAID_USERNAME:?The GISAID_USERNAME environment variable is required.}"
+: "${GISAID_PASSWORD:?The GISAID_PASSWORD environment variable is required.}"
+: "${GISAID_URL:?The GISAID_URL environment variable is required.}"
 
 mkdir -p "${TMP_DIR}"
 
@@ -25,20 +25,17 @@ wget \
   "${GISAID_URL}" \
   -O "${TMP_DIR}/gisaid.ndjson.bz2"
 
-bzip2 -cdk "${TMP_DIR}/gisaid.ndjson.bz2" >"${GISAID_NDJSON}"
+bzip2 -cdk "${TMP_DIR}/gisaid.ndjson.bz2" >"data/gisaid/gisaid.ndjson"
 
-# Convert .ndjson into big `sequences.fasta` and `metadata.tsv`
 ./bin/transform-gisaid "data/gisaid/gisaid.ndjson" \
   --output-metadata "data/gisaid/metadata.tsv" \
   --output-fasta "data/gisaid/sequences.fasta" \
-  --output-additional-info "data/gisaid/additional_info.tsv"
+  --output-unix-newline
 
-# Run nextclade in parallel batches from `sequences.fasta`, produce `nextclade.clades.tsv`
 ./bin/run-nextclade \
-  "data/gisaid/sequences.fasta" \
+  "data/gisaid/nextclade.sequences.fasta" \
   "data/gisaid/nextclade.tsv"
 
-# Join `metadata.tsv` and `nextclade.clades.tsv`, produce `metadata2.tsv`
 ./bin/join-metadata-and-clades \
   "data/gisaid/metadata.tsv" \
   "data/gisaid/nextclade.tsv" \
