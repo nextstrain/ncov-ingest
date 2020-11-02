@@ -20,6 +20,7 @@ mkdir -p "${TMP_DIR}"
 if [ -f "data/gisaid/gisaid.ndjson" ]; then
   echo "Note: 'data/gisaid/gisaid.ndjson' already exists. Reusing it and skipping download step."
   echo "Note: to start fresh, remove the following files: 'rm data/gisaid/{gisaid.ndjson,metadata.tsv,sequences.fasta}'"
+  echo ""
 else
   wget \
     --directory-prefix="${TMP_DIR}" \
@@ -33,6 +34,7 @@ fi
 
 if [ -f "data/gisaid/metadata.tsv" ] && [ -f "data/gisaid/sequences.fasta" ]; then
   echo "Note: 'data/gisaid/metadata.tsv' and 'data/gisaid/sequences.fasta' already exist. Reusing them and skipping transform step. Delete these files to start fresh."
+  echo ""
 else
   ./bin/transform-gisaid "data/gisaid/gisaid.ndjson" \
     --output-metadata "data/gisaid/metadata.tsv" \
