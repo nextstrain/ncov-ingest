@@ -17,20 +17,28 @@ TMP_DIR="data/gisaid/tmp"
 
 mkdir -p "${TMP_DIR}"
 
-# Get .ndjson
-wget \
-  --directory-prefix="${TMP_DIR}" \
-  --http-user="${GISAID_USERNAME}" \
-  --http-password="${GISAID_PASSWORD}" \
-  "${GISAID_URL}" \
-  -O "${TMP_DIR}/gisaid.ndjson.bz2"
+if [ -f "data/gisaid/gisaid.ndjson" ]; then
+  echo "Note: 'data/gisaid/gisaid.ndjson' already exists. Reusing it and skipping download step."
+  echo "Note: to start fresh, remove the following files: 'rm data/gisaid/{gisaid.ndjson,metadata.tsv,sequences.fasta}'"
+else
+  wget \
+    --directory-prefix="${TMP_DIR}" \
+    --http-user="${GISAID_USERNAME}" \
+    --http-password="${GISAID_PASSWORD}" \
+    "${GISAID_URL}" \
+    -O "${TMP_DIR}/gisaid.ndjson.bz2"
 
-bzip2 -cdk "${TMP_DIR}/gisaid.ndjson.bz2" >"data/gisaid/gisaid.ndjson"
+  bzip2 -cdk "${TMP_DIR}/gisaid.ndjson.bz2" >"data/gisaid/gisaid.ndjson"
+fi
 
-./bin/transform-gisaid "data/gisaid/gisaid.ndjson" \
-  --output-metadata "data/gisaid/metadata.tsv" \
-  --output-fasta "data/gisaid/sequences.fasta" \
-  --output-unix-newline
+if [ -f "data/gisaid/metadata.tsv" ] && [ -f "data/gisaid/sequences.fasta" ]; then
+  echo "Note: 'data/gisaid/metadata.tsv' and 'data/gisaid/sequences.fasta' already exist. Reusing them and skipping transform step. Delete these files to start fresh."
+else
+  ./bin/transform-gisaid "data/gisaid/gisaid.ndjson" \
+    --output-metadata "data/gisaid/metadata.tsv" \
+    --output-fasta "data/gisaid/sequences.fasta" \
+    --output-unix-newline
+fi
 
 ./bin/run-nextclade \
   "data/gisaid/sequences.fasta" \
