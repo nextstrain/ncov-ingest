@@ -1095,6 +1095,9 @@ Europe	Czech Republic	Zlin	Uhersky Brod
 Europe	Denmark	Copenhagen	
 Europe	Denmark	Denmark	
 Europe	Denmark	Faroe Islands	
+Europe	Denmark	Faroe Islands	Faroe Islands
+Europe	Denmark	Sjaelland	
+Europe	Denmark	Syddanmark	
 Europe	Estonia	Estonia	
 Europe	Europe	Europe	
 Europe	Finland	Finland	
@@ -1127,12 +1130,16 @@ Europe	France	Bourgogne	Dijon
 Europe	France	Bourgogne-France-Comté	
 Europe	France	Bourgogne-France-Comté	Chalon sur Saone
 Europe	France	Bourgogne-France-Comté	Dijon
+Europe	France	Bourgogne-France-Comté	Montcenis
 Europe	France	Bourgogne-France-Comté	Montreux-Chateau
 Europe	France	Bourgogne-France-Comté	Thise
 Europe	France	Bretagne	
 Europe	France	Bretagne	Arradon
+Europe	France	Bretagne	Betton
 Europe	France	Bretagne	Brest
 Europe	France	Bretagne	Cayenne
+Europe	France	Bretagne	Chateaulin
+Europe	France	Bretagne	Fougères
 Europe	France	Bretagne	La Rochelle
 Europe	France	Bretagne	Lannilis
 Europe	France	Bretagne	Morlaix
@@ -1145,12 +1152,16 @@ Europe	France	Bretagne	Vannes
 Europe	France	Centre-Val de Loire	
 Europe	France	Centre-Val de Loire	Abondant
 Europe	France	Centre-Val de Loire	Angers
+Europe	France	Centre-Val de Loire	Blois
+Europe	France	Centre-Val de Loire	Craon
 Europe	France	Centre-Val de Loire	Fondettes
+Europe	France	Centre-Val de Loire	Rouziers-de-Touraine
 Europe	France	Centre-Val de Loire	Tours
 Europe	France	France	
 Europe	France	Grand Est	
 Europe	France	Grand Est	Amneville
 Europe	France	Grand Est	Biesheim
+Europe	France	Grand Est	Bischheim
 Europe	France	Grand Est	Crusnes
 Europe	France	Grand Est	Ensisheim
 Europe	France	Grand Est	Fameck
@@ -1176,6 +1187,7 @@ Europe	France	Grand Est	Soultzeren
 Europe	France	Grand Est	Spicheren
 Europe	France	Grand Est	Strasbourg
 Europe	France	Grand Est	Talange
+Europe	France	Grand Est	Thann
 Europe	France	Grand Est	Woippy
 Europe	France	Hauts de France	
 Europe	France	Hauts de France	Chateau-Thierry
@@ -1192,6 +1204,7 @@ Europe	France	Ile de France	Boulogne Billancourt
 Europe	France	Ile de France	Cergy
 Europe	France	Ile de France	Chanteloup-en-Brie
 Europe	France	Ile de France	Colombes
+Europe	France	Ile de France	Compans
 Europe	France	Ile de France	Essonne
 Europe	France	Ile de France	Garches
 Europe	France	Ile de France	Gennevilliers
@@ -1216,6 +1229,7 @@ Europe	France	Ile de France	Saint-Thibault-des-Vignes
 Europe	France	Ile de France	Sarcelles
 Europe	France	Ile de France	Seine-Port
 Europe	France	Ile de France	Vanves
+Europe	France	Ile de France	Verrières-le-Buisson
 Europe	France	Normandie	
 Europe	France	Normandie	Carentan
 Europe	France	Normandie	Rouen
@@ -1234,6 +1248,7 @@ Europe	France	Toulouse
 Europe	Germany	Baden-Wuerttemberg	
 Europe	Germany	Baden-Wuerttemberg	Tuebingen
 Europe	Germany	Bavaria	
+Europe	Germany	Bavaria	Erlangen
 Europe	Germany	Bavaria	Munich
 Europe	Germany	Bavaria	Starnberg
 Europe	Germany	Berlin	
@@ -1332,6 +1347,7 @@ Europe	Italy	Pa Trento
 Europe	Italy	Piedmont	
 Europe	Italy	Piedmont	Turin
 Europe	Italy	Sardinia	
+Europe	Italy	Sardinia	Nuoro
 Europe	Italy	Sicily	
 Europe	Italy	Sicily	Palermo
 Europe	Italy	South Tyrol	
@@ -1933,6 +1949,7 @@ Europe	Spain	Comunitat Valenciana	Valencia Horta
 Europe	Spain	Comunitat Valenciana	Xeraco
 Europe	Spain	Donostia-San Sebatian	
 Europe	Spain	Extremadura	
+Europe	Spain	Extremadura	Alcantara
 Europe	Spain	Extremadura	Arroyo de la Luz
 Europe	Spain	Extremadura	Caceres
 Europe	Spain	Extremadura	Jaraicejo
@@ -2194,6 +2211,20 @@ North America	Costa Rica	San Jose	Tarrazu
 North America	Costa Rica	San Jose	Tibas
 North America	Cuba	Cuba	
 North America	Dominican Republic	Dominican Republic	
+North America	Guadeloupe	Baie-Mahault	
+North America	Guadeloupe	Basse-Terre	
+North America	Guadeloupe	Guadeloupe	
+North America	Guadeloupe	Lamentin	
+North America	Guadeloupe	Le Gosier	
+North America	Guadeloupe	Le Moule	
+North America	Guadeloupe	Les Abymes	
+North America	Guadeloupe	Morne À l'Eau	
+North America	Guadeloupe	Métropole	
+North America	Guadeloupe	Saint-François	
+North America	Guadeloupe	Sainte-Anne	
+North America	Guadeloupe	Sainte-Rose	
+North America	Guadeloupe	Trois-Rivières	
+North America	Guadeloupe	Vieux Habitants	
 North America	Guatemala	Guatemala	
 North America	Jamaica	Jamaica	
 North America	Mexico	Aguascalientes	
@@ -2287,6 +2318,8 @@ North America	Panama	Panama Oeste	Lídice
 North America	Panama	Panama Oeste	Veracruz
 North America	Panama	Panama Oeste	Vista Alegre
 North America	Panama	Santiago de Veraguas	
+North America	Saint Barthélemy	Saint Barthélemy	
+North America	Saint Martin	Saint Martin	
 North America	USA	Alabama	
 North America	USA	Alaska	
 North America	USA	Alaska	Anchorage
@@ -2871,6 +2904,7 @@ South America	Brazil	São Paulo	Peruibe
 South America	Brazil	São Paulo	Presidente Epitacio
 South America	Brazil	São Paulo	Presidente Prudente
 South America	Brazil	São Paulo	Presidente Venceslau
+South America	Brazil	São Paulo	Ribeirao Preto
 South America	Brazil	São Paulo	Rio Claro
 South America	Brazil	São Paulo	Rio Pardo
 South America	Brazil	São Paulo	Rio Verde
