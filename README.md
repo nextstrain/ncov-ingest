@@ -62,10 +62,10 @@ Enter this into the `slack_member_id` field of your alert configuration.
 
 ## Refreshing clades
 
-Clades assigned with Nextclade are currently cached in `nextclade.tsv` on S3 bucket and only incremental updates for new sequences are performed during the daily ingests. This clade cache goes stale with time. It is necessary to perform full update of `nextclade.tsv` file periodically, recomputing clades for all of the GISAID sequences (~200k as on November 2020) all over again, to account for changes in the data. Same goes for when updating Nextclade versions, as they may lead to changes in clade assignment logic. Massive amounts of compute is required and it is not currently feasible to do this computation on current infrastructure, so it should be done elsewhere. It takes approximately 2-3 hours on a 16 core/32 threads machine for 200k sequences.
+Clades assigned with Nextclade are currently cached in `nextclade.tsv` on S3 bucket and only incremental updates for new sequences are performed during the daily ingests. This clade cache goes stale with time. It is necessary to perform full update of `nextclade.tsv` file periodically, recomputing clades for all of the GISAID sequences all over again, to account for changes in the data. Same goes for when updating Nextclade versions, as they may lead to changes in clade assignment logic. Massive amounts of compute is required and it is not currently feasible to do this computation on current infrastructure, so it should be done elsewhere. As of November 2020, for 200k sequences, it takes approximately 2-3 hours on an on-prem Xeon machine with 16 cores/32 threads.
 
-Python 3.6+, Node.js >= 12 and yarn v1 are required.
-Use `./bin/gisaid-get-all-clades` to perform this update:
+Use `./bin/gisaid-get-all-clades` to perform this update.
+Python >= 3.6+, Node.js >= 12 (14 recommended) and yarn v1 are required.
 
 ```
 git clone https://github.com/nextstrain/ncov-ingest
@@ -81,7 +81,9 @@ The resulting `data/gisaid/nextclade.tsv` should be placed on S3 bucked, replaci
 ./bin/upload-to-s3 data/gisaid/nextclade.tsv s3://nextstrain-ncov-private/nextclade.tsv.gz
 ```
 
-It will be picked up by the next ingest. The best time for the update is between daily builds. There is usually no rush, even if the globally recomputed `nextclade.tsv` is lagging behind one or two days, it will be incrementally updated by the next daily ingest. 
+It will be picked up by the next ingest.
+
+The best time for the update is between daily builds. There is usually no rush, even if the globally recomputed `nextclade.tsv` is lagging behind one or two days, it will be incrementally updated by the next daily ingest.
 
 
 ## Required dependencies
