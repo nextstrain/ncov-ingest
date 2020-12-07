@@ -653,6 +653,8 @@ Asia	Philippines	National Capital Region
 Asia	Philippines	Philippines	
 Asia	Qatar	Doha	
 Asia	Qatar	Qatar	
+Asia	Saudi Arabia	Eastern Province	
+Asia	Saudi Arabia	Eastern Province	Qatif
 Asia	Saudi Arabia	Jeddah	
 Asia	Saudi Arabia	Madinah	
 Asia	Saudi Arabia	Makkah	
@@ -1593,8 +1595,14 @@ Europe	North Macedonia	North Macedonia
 Europe	North Macedonia	Northeastern Region	
 Europe	North Macedonia	Northeastern Region	Kumanovo
 Europe	North Macedonia	Pelagonia	
+Europe	North Macedonia	Pelagonia	Bitola
 Europe	North Macedonia	Pelagonia	Prilep
 Europe	North Macedonia	Skopje	
+Europe	North Macedonia	Southwestern Region	
+Europe	North Macedonia	Southwestern Region	Ohrid
+Europe	North Macedonia	Southwestern Region	Struga
+Europe	North Macedonia	Vardar	
+Europe	North Macedonia	Vardar	Veles
 Europe	Norway	Agder	
 Europe	Norway	Innlandet	
 Europe	Norway	More Og Romsdal	
@@ -1805,12 +1813,15 @@ Europe	Russia	Voronezh
 Europe	Russia	Voronezh	Voronezh
 Europe	Russia	Yamalo-Nenets	
 Europe	Russia	Yaroslavl	
+Europe	Serbia	Central Banat District	
+Europe	Serbia	Central Banat District	Zrenjanin
 Europe	Serbia	Moravica District	
 Europe	Serbia	Moravica District	Cacak
 Europe	Serbia	North Banat District	
 Europe	Serbia	North Banat District	Kikinda
 Europe	Serbia	North Bačka District	
-Europe	Serbia	North Bačka District	Suubotica
+Europe	Serbia	North Bačka District	Backa Topola
+Europe	Serbia	North Bačka District	Subotica
 Europe	Serbia	Pomoravlje District	
 Europe	Serbia	Pomoravlje District	Cuprija
 Europe	Serbia	Rasina District	
@@ -1826,9 +1837,11 @@ Europe	Serbia	South Bačka District
 Europe	Serbia	South Bačka District	Backa Palanka
 Europe	Serbia	South Bačka District	Novi Sad
 Europe	Serbia	South Bačka District	Srbobran
+Europe	Serbia	South Bačka District	Titel
 Europe	Serbia	South Bačka District	Vrbas
 Europe	Serbia	Srem District	
 Europe	Serbia	Srem District	Ruma
+Europe	Serbia	Srem District	Sremska Mitrovica
 Europe	Serbia	Zlatibor District	
 Europe	Serbia	Zlatibor District	Uzice
 Europe	Serbia	Šumadija District	
@@ -2760,6 +2773,7 @@ North America	USA	Missouri	St. Louis MO
 North America	USA	Montana	
 North America	USA	Montana	Ravalli County
 North America	USA	Nebraska	
+North America	USA	Nebraska	Lancaster County
 North America	USA	Nevada	
 North America	USA	Nevada	Clark County NV
 North America	USA	New Hampshire	
@@ -2776,34 +2790,66 @@ North America	USA	New York
 North America	USA	New York	Albany County
 North America	USA	New York	Bronx
 North America	USA	New York	Brooklyn
-North America	USA	New York	Broome County
+North America	USA	New York	Cattaraugus County
 North America	USA	New York	Cayuga County
+North America	USA	New York	Chautauqua County
+North America	USA	New York	Chemung County
 North America	USA	New York	Chenango County
 North America	USA	New York	Clinton County
+North America	USA	New York	Columbia County NY
+North America	USA	New York	Cortland County
+North America	USA	New York	Broome County
+North America	USA	New York	Delaware County
 North America	USA	New York	Dutchess County
+North America	USA	New York	Erie County
+North America	USA	New York	Essex County NY
 North America	USA	New York	Franklin County NY
+North America	USA	New York	Fulton County
+North America	USA	New York	Greene County
+North America	USA	New York	Hamilton County
+North America	USA	New York	Herkimer County
 North America	USA	New York	Jefferson County NY
+North America	USA	New York	Lewis County
+North America	USA	New York	Madison County NY
 North America	USA	New York	Manhattan
+North America	USA	New York	Monroe County NY
 North America	USA	New York	Montgomery County NY
 North America	USA	New York	Nassau County
 North America	USA	New York	New Rochelle
 North America	USA	New York	New York City
 North America	USA	New York	New York County
+North America	USA	New York	Niagara County
+North America	USA	New York	Oneida County
 North America	USA	New York	Onondaga County
+North America	USA	New York	Ontario County
 North America	USA	New York	Orange County NY
+North America	USA	New York	Orleans County
+North America	USA	New York	Oswego County
+North America	USA	New York	Otsego County
 North America	USA	New York	Passaic County
 North America	USA	New York	Putnam County
 North America	USA	New York	Queens
+North America	USA	New York	Rensselaer County
 North America	USA	New York	Richmond County
 North America	USA	New York	Rockland County
 North America	USA	New York	Saratoga County
 North America	USA	New York	Schenectady County
+North America	USA	New York	Schoharie County
+North America	USA	New York	Seneca County
+North America	USA	New York	St. Lawrence County
 North America	USA	New York	Staten Island
+North America	USA	New York	Steuben County
 North America	USA	New York	Suffolk County
+North America	USA	New York	Sullivan County
+North America	USA	New York	Tioga County
+North America	USA	New York	Tompkins County
 North America	USA	New York	Ulster County
 North America	USA	New York	Wanakena
+North America	USA	New York	Warren County
 North America	USA	New York	Washington County NY
+North America	USA	New York	Wayne County
 North America	USA	New York	Westchester County
+North America	USA	New York	Wyoming County
 North America	USA	North Carolina	
 North America	USA	Ohio	
 North America	USA	Ohio	Cincinnati
@@ -2891,6 +2937,7 @@ North America	USA	Texas	Live Oak County
 North America	USA	Texas	Llano County
 North America	USA	Texas	Mclennan County
 North America	USA	Texas	Montgomery County TX
+North America	USA	Texas	Morris County TX
 North America	USA	Texas	Nacogdoches County
 North America	USA	Texas	Nueces County
 North America	USA	Texas	Ochiltree County
@@ -2985,6 +3032,7 @@ North America	USA	Wisconsin	Marquette County
 North America	USA	Wisconsin	Milwaukee County
 North America	USA	Wisconsin	Monroe County
 North America	USA	Wisconsin	Oconto County
+North America	USA	Wisconsin	Ogle County WI
 North America	USA	Wisconsin	Oregon WI
 North America	USA	Wisconsin	Outagamie County
 North America	USA	Wisconsin	Ozaukee County
