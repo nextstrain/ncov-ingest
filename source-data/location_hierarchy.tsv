@@ -71,6 +71,7 @@ Africa	Madagascar	Toamasina
 Africa	Mali	Bamako	
 Africa	Mali	Mali	
 Africa	Mali	Mopti	
+Africa	Mali	Timbuktu	
 Africa	Morocco	Casablanca	
 Africa	Morocco	Morocco	
 Africa	Morocco	Ouarzazate	
@@ -170,6 +171,7 @@ Africa	Uganda	Uganda
 Africa	Zambia	Lusaka	
 Africa	Zimbabwe	Zimbabwe	
 Asia	Afghanistan	Kabul	
+Asia	Armenia	Armenia	
 Asia	Asia	Asia	
 Asia	Bahrain	Bahrain	
 Asia	Bahrain	Capital Governorate	
@@ -220,6 +222,7 @@ Asia	Bangladesh	Sylhet	Moulvibazar
 Asia	Bangladesh	Tangail	
 Asia	Brunei	Brunei	
 Asia	Cambodia	Sihanoukville	
+Asia	Cambodia	Phnom Penh	
 Asia	China	Anhui	
 Asia	China	Anhui	Fuyang
 Asia	China	Anhui	Hefei
@@ -1930,7 +1933,7 @@ Europe	Spain	Andalusia	Rincon de la Victoria
 Europe	Spain	Andalusia	Rio San Pedro
 Europe	Spain	Andalusia	Rota
 Europe	Spain	Andalusia	San Fernando
-Europe	Spain	Andalusia	San Roque
+Europe	Spain	Andalusia	San Roque ES
 Europe	Spain	Andalusia	Santa Fe
 Europe	Spain	Andalusia	Sevilla
 Europe	Spain	Andalusia	Tarifa
@@ -2099,47 +2102,6 @@ Europe	Spain	Castilla y Leon	Villaquilambre
 Europe	Spain	Castilla y Leon	Villarejo de Orbigo
 Europe	Spain	Castilla y Leon	Villaturiel
 Europe	Spain	Catalunya	
-Europe	Spain	Catalunya	Alella
-Europe	Spain	Catalunya	Arenys de Munt
-Europe	Spain	Catalunya	Badalona
-Europe	Spain	Catalunya	Barcelona
-Europe	Spain	Catalunya	Bellavista
-Europe	Spain	Catalunya	Bigues I Riells
-Europe	Spain	Catalunya	Cambrils
-Europe	Spain	Catalunya	Canovelles
-Europe	Spain	Catalunya	Cardedeu
-Europe	Spain	Catalunya	Cerdanyola del Valles
-Europe	Spain	Catalunya	El Masnou
-Europe	Spain	Catalunya	El Prat de Llobregat
-Europe	Spain	Catalunya	Gerona
-Europe	Spain	Catalunya	Granollers
-Europe	Spain	Catalunya	Jorba
-Europe	Spain	Catalunya	L'Hospitalet de Llobregat
-Europe	Spain	Catalunya	La Llagosta
-Europe	Spain	Catalunya	La Roca del Valles
-Europe	Spain	Catalunya	Lliça de Vall
-Europe	Spain	Catalunya	Llinars del Valles
-Europe	Spain	Catalunya	Mataro
-Europe	Spain	Catalunya	Moia
-Europe	Spain	Catalunya	Mollet del Valles
-Europe	Spain	Catalunya	Moncada y Reixach
-Europe	Spain	Catalunya	Navas
-Europe	Spain	Catalunya	Palamos
-Europe	Spain	Catalunya	Palau Solita i Plegamans
-Europe	Spain	Catalunya	Parets del Valles
-Europe	Spain	Catalunya	Premia de Mar
-Europe	Spain	Catalunya	Sabadell
-Europe	Spain	Catalunya	San Cugat del Valles
-Europe	Spain	Catalunya	Sant Adria del Besos
-Europe	Spain	Catalunya	Santa Coloma de Cervello
-Europe	Spain	Catalunya	Santa Coloma de Gramenet
-Europe	Spain	Catalunya	Santa Perpetua de Mogoda
-Europe	Spain	Catalunya	Teia
-Europe	Spain	Catalunya	Terrassa
-Europe	Spain	Catalunya	Tiana
-Europe	Spain	Catalunya	Vallirana
-Europe	Spain	Catalunya	Vic
-Europe	Spain	Catalunya	Vilasar de Mar
 Europe	Spain	Ceuta	
 Europe	Spain	Comunitat Valenciana	
 Europe	Spain	Comunitat Valenciana	Alaquas
@@ -2420,6 +2382,7 @@ Europe	United Kingdom	Scotland
 Europe	United Kingdom	United Kingdom	
 Europe	United Kingdom	Wales	
 Europe	United Kingdom	Wales	Cardiff
+North America	North America	North America	
 North America	Belize	Belize	
 North America	Belize	Belmopan	
 North America	Canada	Alberta	
@@ -2435,42 +2398,6 @@ North America	Canada	Ontario	Toronto
 North America	Canada	Quebec	
 North America	Canada	Quebec	Lanaudière
 North America	Canada	Quebec	Montérégie
-North America	Costa Rica	Alajuela	
-North America	Costa Rica	Alajuela	Alajuela
-North America	Costa Rica	Alajuela	Grecia
-North America	Costa Rica	Alajuela	Orotina
-North America	Costa Rica	Alajuela	San Carlos
-North America	Costa Rica	Alajuela	San Rafael de Alajuela
-North America	Costa Rica	Cartago CR	
-North America	Costa Rica	Cartago CR	La Union
-North America	Costa Rica	Costa Rica	
-North America	Costa Rica	Guanacaste	
-North America	Costa Rica	Guanacaste	La Cruz
-North America	Costa Rica	Guanacaste	Nicoya
-North America	Costa Rica	Heredia	
-North America	Costa Rica	Heredia	Barva
-North America	Costa Rica	Heredia	Heredia
-North America	Costa Rica	Heredia	San Rafael Heredia
-North America	Costa Rica	Limon	
-North America	Costa Rica	Limon	Siquirres
-North America	Costa Rica	Puntarenas	
-North America	Costa Rica	Puntarenas	Corredores
-North America	Costa Rica	Puntarenas	Coto Brus
-North America	Costa Rica	Puntarenas	Garabito
-North America	Costa Rica	San Jose	
-North America	Costa Rica	San Jose	Alajuelita
-North America	Costa Rica	San Jose	Aserri
-North America	Costa Rica	San Jose	Curridabat
-North America	Costa Rica	San Jose	Desamparados
-North America	Costa Rica	San Jose	Escazu
-North America	Costa Rica	San Jose	Goicoechea
-North America	Costa Rica	San Jose	Montes de Oca
-North America	Costa Rica	San Jose	Moravia
-North America	Costa Rica	San Jose	Perez Zeledon
-North America	Costa Rica	San Jose	San Jose
-North America	Costa Rica	San Jose	Santa Ana CR
-North America	Costa Rica	San Jose	Tarrazu
-North America	Costa Rica	San Jose	Tibas
 North America	Cuba	Cuba	
 North America	Dominican Republic	Dominican Republic	
 North America	El Salvador	San Salvador	
@@ -2689,6 +2616,7 @@ North America	USA	Florida
 North America	USA	Florida	Alachua County
 North America	USA	Florida	Miami
 North America	USA	Florida	Miami-Dade County
+North America	USA	Florida	Miami Gardens
 North America	USA	Florida	Orange County FL
 North America	USA	Florida	Palm Beach County
 North America	USA	Florida	Walton County
@@ -2791,15 +2719,6 @@ North America	USA	Nevada
 North America	USA	Nevada	Clark County NV
 North America	USA	New Hampshire	
 North America	USA	New Jersey	
-North America	USA	New Jersey	Bergen County
-North America	USA	New Jersey	Burlington County
-North America	USA	New Jersey	Camden County
-North America	USA	New Jersey	Essex County
-North America	USA	New Jersey	Essex County NJ
-North America	USA	New Jersey	Hudson County
-North America	USA	New Jersey	Morris County
-North America	USA	New Jersey	Morris County NJ
-North America	USA	New Jersey	Paterson
 North America	USA	New Mexico	
 North America	USA	New York	
 North America	USA	New York	Albany County
