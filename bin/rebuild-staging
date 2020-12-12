@@ -53,7 +53,7 @@ main() {
 
     local output=$(
         "$bin"/launch-build \
-            ncov deploy_to_staging \
+            ncov deploy_to_staging upload \
             --config slack_token="$SLACK_TOKEN"
     )
 
