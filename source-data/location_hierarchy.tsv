@@ -250,6 +250,7 @@ Asia	Bangladesh	Rangpur	Nilphamari
 Asia	Bangladesh	Sylhet	
 Asia	Bangladesh	Sylhet	Habiganj
 Asia	Bangladesh	Sylhet	Moulvibazar
+Asia	Bangladesh	Sylhet	Sunamganj
 Asia	Bangladesh	Tangail	
 Asia	Brunei	Brunei	
 Asia	Cambodia	Phnom Penh	
@@ -513,6 +514,7 @@ Asia	India	West Bengal	Nadia
 Asia	India	West Bengal	North 24 Parganas
 Asia	India	West Bengal	South 24 Parganas
 Asia	India	West Bengal	Tehatta
+Asia	Indonesia	Aceh	
 Asia	Indonesia	Bali	
 Asia	Indonesia	Banten	
 Asia	Indonesia	Banten	South Tangerang
@@ -536,12 +538,14 @@ Asia	Indonesia	Papua
 Asia	Indonesia	Papua	Timika
 Asia	Indonesia	Pasuruan	
 Asia	Indonesia	South Kalimantan	
+Asia	Indonesia	South Sulawesi	
 Asia	Indonesia	Special Region of Yogyakarta	
 Asia	Indonesia	Surabaya	
 Asia	Indonesia	West Java	
 Asia	Indonesia	West Java	Bandung
 Asia	Indonesia	West Java	Bogor Regency
 Asia	Indonesia	West Java	Purwakarta
+Asia	Indonesia	West Java	Tasikmalaya
 Asia	Indonesia	Yogyakarta	
 Asia	Indonesia	Yogyakarta	Sleman
 Asia	Iran	Iran	
@@ -656,8 +660,17 @@ Asia	Maldives	Maldives
 Asia	Mongolia	Mongolia	
 Asia	Myanmar	Myanmar	
 Asia	Myanmar	Yangon	
+Asia	Nepal	Baglung	
+Asia	Nepal	Bhaktapur	
+Asia	Nepal	Dolakha	
+Asia	Nepal	Kapilvastu	
+Asia	Nepal	Kathmandu	
 Asia	Nepal	Kathmandu	Kathmandu
+Asia	Nepal	Kavre	
 Asia	Nepal	Nepal	
+Asia	Nepal	Rautahat	
+Asia	Nepal	Rolpa	
+Asia	Nepal	Sarlahi	
 Asia	Oman	Buraimi	
 Asia	Oman	Buraimi	Buraimi
 Asia	Oman	Dakhiliyah	
@@ -687,6 +700,7 @@ Asia	Pakistan	Karachi
 Asia	Pakistan	Khyber Pakhtunkhwa	
 Asia	Pakistan	Pakistan	
 Asia	Pakistan	Rawalpindi	
+Asia	Pakistan	Sindh	
 Asia	Palestine	Bethlehem	
 Asia	Palestine	Hebron	
 Asia	Palestine	Hebron	Fawwar
@@ -754,6 +768,7 @@ Asia	Thailand	Nonthaburi
 Asia	Thailand	Pathum Thani	
 Asia	Thailand	Phitsanulok	
 Asia	Thailand	Phuket	
+Asia	Thailand	Rayong	
 Asia	Thailand	Samut Prakarn	
 Asia	Thailand	Samut Sakhon	
 Asia	Thailand	Samut Songkhram	
@@ -816,6 +831,17 @@ Europe	Austria	Upper Austria	Losenstein
 Europe	Austria	Vienna	
 Europe	Austria	Vorarlberg	
 Europe	Belarus	Belarus	
+Europe	Belarus	Gomel Region	
+Europe	Belarus	Gomel Region	Kalinkavichy
+Europe	Belarus	Minsk	
+Europe	Belarus	Minsk Region	
+Europe	Belarus	Minsk Region	Kolodishchi
+Europe	Belarus	Minsk Region	Smalyavichy
+Europe	Belarus	Minsk Region	Uzda
+Europe	Belarus	Mogilev Region	
+Europe	Belarus	Mogilev Region	Babruysk
+Europe	Belarus	Vitebsk Region	
+Europe	Belarus	Vitebsk Region	Dubrowna
 Europe	Belgium	Aalst	
 Europe	Belgium	Aalst	Erpe-Mere
 Europe	Belgium	Aalst	Geraardsbergen
@@ -1498,6 +1524,7 @@ Europe	France	Bourgogne-France-Comté	Chalon sur Saone
 Europe	France	Bourgogne-France-Comté	Dijon
 Europe	France	Bourgogne-France-Comté	Montcenis
 Europe	France	Bourgogne-France-Comté	Montreux-Chateau
+Europe	France	Bourgogne-France-Comté	St Clément
 Europe	France	Bourgogne-France-Comté	Thise
 Europe	France	Bretagne	
 Europe	France	Bretagne	Arradon
@@ -1511,6 +1538,7 @@ Europe	France	Bretagne	Lannilis
 Europe	France	Bretagne	Morlaix
 Europe	France	Bretagne	Ploudalmezeau
 Europe	France	Bretagne	Pordic
+Europe	France	Bretagne	Quimper
 Europe	France	Bretagne	Rennes
 Europe	France	Bretagne	Saint Pierre Quiberon
 Europe	France	Bretagne	Saint-Brieuc
@@ -1559,11 +1587,12 @@ Europe	France	Grand Est	Thann
 Europe	France	Grand Est	Tucquegnieux
 Europe	France	Grand Est	Woippy
 Europe	France	Hauts de France	
+Europe	France	Hauts de France	Amiens
 Europe	France	Hauts de France	Bousbecque
 Europe	France	Hauts de France	Chateau-Thierry
 Europe	France	Hauts de France	Compiègne
-Europe	France	Hauts de France	Crouy en Thelle
 Europe	France	Hauts de France	Crespin
+Europe	France	Hauts de France	Crouy en Thelle
 Europe	France	Hauts de France	Crépy en Valois
 Europe	France	Hauts de France	Flines-lès-Mortagne
 Europe	France	Hauts de France	Genech
@@ -1670,6 +1699,7 @@ Europe	Germany	Rheinland-Pfalz
 Europe	Germany	Rheinland-Pfalz	Koblenz
 Europe	Germany	Rostock	
 Europe	Germany	Saarland	
+Europe	Germany	Saxony	
 Europe	Germany	Saxony-Anhalt	
 Europe	Germany	Schleswig-Holstein	
 Europe	Germany	Thuringia	
@@ -1890,6 +1920,7 @@ Europe	Norway	Viken
 Europe	Poland	Dolnośląskie	
 Europe	Poland	Malopolskie	
 Europe	Poland	Malopolskie	Kraków
+Europe	Poland	Masovia	
 Europe	Poland	Mazowieckie	
 Europe	Poland	Mazowieckie	Brodno-Warszawa
 Europe	Poland	Mazowieckie	Grodzisk Mazowiecki
@@ -2793,6 +2824,7 @@ Europe	United Kingdom	Scotland
 Europe	United Kingdom	United Kingdom	
 Europe	United Kingdom	Wales	
 Europe	United Kingdom	Wales	Cardiff
+North America	Antigua and Barbuda	Antigua and Barbuda	
 North America	Belize	Belize	
 North America	Belize	Belmopan	
 North America	Canada	Alberta	
@@ -2804,6 +2836,7 @@ North America	Canada	New Brunswick
 North America	Canada	Newfoundland and Labrador	
 North America	Canada	Nova Scotia	
 North America	Canada	Ontario	
+North America	Canada	Ontario	Brampton
 North America	Canada	Ontario	Ottawa
 North America	Canada	Ontario	Toronto
 North America	Canada	Quebec	
@@ -2987,7 +3020,9 @@ North America	Panama	Panama Oeste	Veracruz
 North America	Panama	Panama Oeste	Vista Alegre
 North America	Panama	Santiago de Veraguas	
 North America	Saint Barthélemy	Saint Barthélemy	
+North America	Saint Kitts and Nevis	Saint Kitts and Nevis	
 North America	Saint Martin	Saint Martin	
+North America	Saint Vincent and the Grenadines	Saint Vincent and the Grenadines	
 North America	USA	Alabama	
 North America	USA	Alaska	
 North America	USA	Alaska	Anchorage
@@ -3003,6 +3038,8 @@ North America	USA	Arizona	Yuma
 North America	USA	Arkansas	
 North America	USA	California	
 North America	USA	California	Alameda County
+North America	USA	California	Butte County
+North America	USA	California	Colusa County
 North America	USA	California	Contra Costa County
 North America	USA	California	Davis
 North America	USA	California	Fresno County
@@ -3010,14 +3047,18 @@ North America	USA	California	Grand Princess
 North America	USA	California	Grand Princess Cruise Ship
 North America	USA	California	Humboldt County
 North America	USA	California	Imperial County
+North America	USA	California	Inyo County
 North America	USA	California	Kern County
 North America	USA	California	Kings County
 North America	USA	California	Lake County CA
 North America	USA	California	Los Angeles County
 North America	USA	California	Madera County
 North America	USA	California	Marin County
+North America	USA	California	Mendocino County
 North America	USA	California	Merced County
+North America	USA	California	Mono County
 North America	USA	California	Monterey County CA
+North America	USA	California	Napa County
 North America	USA	California	Orange County CA
 North America	USA	California	Riverside
 North America	USA	California	Riverside County
@@ -3034,6 +3075,7 @@ North America	USA	California	Santa Barbara County
 North America	USA	California	Santa Clara County
 North America	USA	California	Solano County
 North America	USA	California	Sonoma County
+North America	USA	California	Stanislaus County
 North America	USA	California	Sutter County
 North America	USA	California	Tulare County
 North America	USA	California	Tuolumne County
@@ -3104,6 +3146,10 @@ North America	USA	Grand Princess	Grand Princess Cruise Ship
 North America	USA	Grand Princess 2nd cruise	
 North America	USA	Grand Princess 2nd cruise	Grand Princess Cruise Ship
 North America	USA	Hawaii	
+North America	USA	Hawaii	Hawaii County
+North America	USA	Hawaii	Honolulu County
+North America	USA	Hawaii	Kauai County
+North America	USA	Hawaii	Maui County
 North America	USA	Idaho	
 North America	USA	Idaho	Madison County
 North America	USA	Idaho	Madison County ID
@@ -3120,6 +3166,7 @@ North America	USA	Illinois	Lake County IL
 North America	USA	Illinois	Mchenry County
 North America	USA	Illinois	Ogle County
 North America	USA	Illinois	Ogle County IL
+North America	USA	Illinois	Rock Island County
 North America	USA	Illinois	Saline County
 North America	USA	Illinois	Stephenson County
 North America	USA	Illinois	Winnebago County IL
@@ -3192,6 +3239,7 @@ North America	USA	Montana
 North America	USA	Montana	Ravalli County
 North America	USA	Nebraska	
 North America	USA	Nebraska	Lancaster County
+North America	USA	Nebraska	Omaha
 North America	USA	Nevada	
 North America	USA	Nevada	Clark County NV
 North America	USA	New Hampshire	
@@ -3282,6 +3330,7 @@ North America	USA	Ohio
 North America	USA	Ohio	Cincinnati
 North America	USA	Ohio	Columbus OH
 North America	USA	Ohio	Cuyahoga County
+North America	USA	Ohio	Franklin County OH
 North America	USA	Oklahoma	
 North America	USA	Oregon	
 North America	USA	Oregon	Clackamas County
@@ -3724,12 +3773,15 @@ South America	Brazil	São Paulo	Caraguatatuba
 South America	Brazil	São Paulo	Cotia
 South America	Brazil	São Paulo	Cunha
 South America	Brazil	São Paulo	Diadema
+South America	Brazil	São Paulo	Embu Das Artes
 South America	Brazil	São Paulo	Emilianopolis
 South America	Brazil	São Paulo	Euclides Da Cunha Paulista
 South America	Brazil	São Paulo	Fernandopolis
+South America	Brazil	São Paulo	Guararema
 South America	Brazil	São Paulo	Guarujá
 South America	Brazil	São Paulo	Guarulhos
 South America	Brazil	São Paulo	Hortolandia
+South America	Brazil	São Paulo	Indaiatuba
 South America	Brazil	São Paulo	Itapecerica Da Serra
 South America	Brazil	São Paulo	Itariri
 South America	Brazil	São Paulo	Itatiba
@@ -3749,6 +3801,7 @@ South America	Brazil	São Paulo	Nova Odessa
 South America	Brazil	São Paulo	Osasco
 South America	Brazil	São Paulo	Peruibe
 South America	Brazil	São Paulo	Piracicaba
+South America	Brazil	São Paulo	Poa
 South America	Brazil	São Paulo	Presidente Epitacio
 South America	Brazil	São Paulo	Presidente Prudente
 South America	Brazil	São Paulo	Presidente Venceslau
@@ -3802,7 +3855,10 @@ South America	Chile	Magallanes	Punta Arenas
 South America	Chile	Maule	
 South America	Chile	Maule	Talca
 South America	Chile	O'Higgins	
+South America	Chile	O'Higgins	Lolol
+South America	Chile	O'Higgins	Pichidegua
 South America	Chile	O'Higgins	Rancagua
+South America	Chile	O'Higgins	San Francisco de Mostazal
 South America	Chile	Region Metropolitana de Santiago	
 South America	Chile	Region Metropolitana de Santiago	Santiago
 South America	Chile	Valparaiso	
@@ -3999,12 +4055,12 @@ South America	Suriname	Suriname
 South America	Trinidad	Trinidad	
 South America	Uruguay	Artigas	
 South America	Uruguay	Artigas	Bella Union
-South America	Uruguay	Rocha	
-South America	Uruguay	Rocha	Chuy
 South America	Uruguay	Cerro Largo	
 South America	Uruguay	Cerro Largo	Rio Branco
 South America	Uruguay	Maldonado	
 South America	Uruguay	Montevideo	
 South America	Uruguay	Rivera	
+South America	Uruguay	Rocha	
+South America	Uruguay	Rocha	Chuy
 South America	Uruguay	Treinta y Tres	
 South America	Venezuela	Venezuela	
