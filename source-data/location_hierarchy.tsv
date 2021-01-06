@@ -1,6 +1,16 @@
 region	country	division	location
+Africa	Algeria	Adrar	
+Africa	Algeria	Alger	
 Africa	Algeria	Blida	
+Africa	Algeria	Bordj-Bou-Arreridj	
 Africa	Algeria	Boufarik	
+Africa	Algeria	Bouira	
+Africa	Algeria	El Oued	
+Africa	Algeria	Laghouat	
+Africa	Algeria	Ouargla	
+Africa	Algeria	Sétif	
+Africa	Algeria	Tipaza	
+Africa	Algeria	Tizi-Ouzou	
 Africa	Benin	Cotonou	
 Africa	Benin	Oueme	
 Africa	Botswana	Gaborone	
@@ -529,6 +539,8 @@ Asia	Indonesia	East Java	Surabaya
 Asia	Indonesia	East Java	Tulungagung
 Asia	Indonesia	East Kalimantan	
 Asia	Indonesia	East Kalimantan	Samarinda
+Asia	Indonesia	East Nusa Tenggara	
+Asia	Indonesia	East Nusa Tenggara	Kupang
 Asia	Indonesia	Indonesia	
 Asia	Indonesia	Jakarta	
 Asia	Indonesia	Kepulauan Bangka Belitung	
@@ -545,6 +557,7 @@ Asia	Indonesia	Surabaya
 Asia	Indonesia	West Java	
 Asia	Indonesia	West Java	Bandung
 Asia	Indonesia	West Java	Bogor Regency
+Asia	Indonesia	West Java	Depok
 Asia	Indonesia	West Java	Purwakarta
 Asia	Indonesia	West Java	Tasikmalaya
 Asia	Indonesia	Yogyakarta	
@@ -1688,6 +1701,7 @@ Europe	Germany	Hesse
 Europe	Germany	Hesse	Frankfurt
 Europe	Germany	Mecklenburg-Vorpommern	
 Europe	Germany	Niedersachsen	
+Europe	Germany	Niedersachsen	Hannover
 Europe	Germany	North Rhine Westphalia	
 Europe	Germany	North Rhine Westphalia	Bielefeld
 Europe	Germany	North Rhine Westphalia	Cologne
@@ -1813,7 +1827,9 @@ Europe	Italy	Valle D'Aosta
 Europe	Italy	Veneto	
 Europe	Italy	Veneto	Padova
 Europe	Italy	Veneto	Rovigo
+Europe	Italy	Veneto	Treviso
 Europe	Italy	Veneto	Verona IT
+Europe	Italy	Veneto	Vicenza
 Europe	Kosovo	Kosovo	
 Europe	Kosovo	Kosovska Mitrovica	
 Europe	Latvia	Latvia	
@@ -2721,6 +2737,7 @@ Europe	Spain	Navarra	Villava
 Europe	Spain	Navarra	Zizur Mayor
 Europe	Spain	Navarra	Zulueta
 Europe	Spain	Spain	
+Europe	Sweden	Blekinge	
 Europe	Sweden	Dalarna	
 Europe	Sweden	Gavleborgs Lan	
 Europe	Sweden	Gotland	
@@ -3265,6 +3282,7 @@ North America	USA	New Jersey	Trenton
 North America	USA	New Mexico	
 North America	USA	New York	
 North America	USA	New York	Albany County
+North America	USA	New York	Allegany County NY
 North America	USA	New York	Bronx
 North America	USA	New York	Brooklyn
 North America	USA	New York	Broome County
@@ -3288,6 +3306,7 @@ North America	USA	New York	Herkimer County
 North America	USA	New York	Jefferson County NY
 North America	USA	New York	Kings County NY
 North America	USA	New York	Lewis County
+North America	USA	New York	Livingston County
 North America	USA	New York	Madison County NY
 North America	USA	New York	Manhattan
 North America	USA	New York	Monroe County NY
@@ -3390,6 +3409,7 @@ North America	USA	Texas	Burleson County
 North America	USA	Texas	Calhoun County
 North America	USA	Texas	Cameron County
 North America	USA	Texas	Cass County
+North America	USA	Texas	Collin County
 North America	USA	Texas	Comal County
 North America	USA	Texas	Comanche County
 North America	USA	Texas	Crosby
@@ -3399,15 +3419,18 @@ North America	USA	Texas	Deaf Smith County
 North America	USA	Texas	Denton County
 North America	USA	Texas	Ector County
 North America	USA	Texas	El Paso County
+North America	USA	Texas	Fort Bend County
 North America	USA	Texas	Galveston County
 North America	USA	Texas	Gonzales County
 North America	USA	Texas	Gray County
 North America	USA	Texas	Greater Houston Area
 North America	USA	Texas	Gregg County
 North America	USA	Texas	Grimes County
+North America	USA	Texas	Guadalupe County
 North America	USA	Texas	Harris County
 North America	USA	Texas	Hays County
 North America	USA	Texas	Hidalgo County
+North America	USA	Texas	Hood County
 North America	USA	Texas	Houston
 North America	USA	Texas	Hunt County
 North America	USA	Texas	Jasper County
@@ -3419,6 +3442,7 @@ North America	USA	Texas	Lavaca County
 North America	USA	Texas	Limestone County
 North America	USA	Texas	Live Oak County
 North America	USA	Texas	Llano County
+North America	USA	Texas	Lubbock County
 North America	USA	Texas	McCulloch County
 North America	USA	Texas	Mclennan County
 North America	USA	Texas	Montague County
@@ -3434,10 +3458,12 @@ North America	USA	Texas	Polk County TX
 North America	USA	Texas	Red River County
 North America	USA	Texas	Rusk County
 North America	USA	Texas	San Patricio County
+North America	USA	Texas	Starr County
 North America	USA	Texas	Smith County
 North America	USA	Texas	Taylor
 North America	USA	Texas	Taylor County TX
 North America	USA	Texas	Titus County
+North America	USA	Texas	Tom Green County
 North America	USA	Texas	Travis County
 North America	USA	Texas	Upshur County
 North America	USA	Texas	Val Verde County
@@ -3451,6 +3477,7 @@ North America	USA	Texas	Wheeler County
 North America	USA	Texas	Wichita County
 North America	USA	Texas	Williamson County
 North America	USA	Texas	Wilson County
+North America	USA	Texas	Wise County
 North America	USA	USA	
 North America	USA	Utah	
 North America	USA	Vermont	
