@@ -13,7 +13,9 @@ Africa	Algeria	Tipaza
 Africa	Algeria	Tizi-Ouzou	
 Africa	Benin	Cotonou	
 Africa	Benin	Oueme	
+Africa	Botswana	Francistown	
 Africa	Botswana	Gaborone	
+Africa	Botswana	Maun	
 Africa	Burkina Faso	Burkina Faso	
 Africa	Burkina Faso	Cascades	
 Africa	Burkina Faso	Cascades	Banfora
@@ -89,6 +91,7 @@ Africa	Morocco	Mohammedia
 Africa	Morocco	Morocco	
 Africa	Morocco	Ouarzazate	
 Africa	Morocco	Rabat	
+Africa	Morocco	Salé	
 Africa	Morocco	Temara	
 Africa	Mozambique	Cabo Delgado	
 Africa	Mozambique	Cabo Delgado	Pemba
@@ -191,6 +194,7 @@ Africa	South Africa	Western Cape Province	Prince Albert
 Africa	South Africa	Western Cape Province	Stellenbosch
 Africa	South Africa	Western Cape Province	Tygerberg
 Africa	South Africa	Western Cape Province	West Coast
+Africa	Tanzania	Tanzania	
 Africa	Togo	Togo	
 Africa	Tunisia	Ben Arous	
 Africa	Tunisia	Bizerte	
@@ -776,6 +780,7 @@ Asia	Taiwan	Taiwan	Taipei
 Asia	Taiwan	Taiwan	Taoyuan
 Asia	Tajikistan	Tajikistan	
 Asia	Thailand	Bangkok	
+Asia	Thailand	Chiang Rai	
 Asia	Thailand	Chonburi	
 Asia	Thailand	Nakhonnayok	
 Asia	Thailand	Nonthaburi	
@@ -786,6 +791,7 @@ Asia	Thailand	Rayong
 Asia	Thailand	Samut Prakarn	
 Asia	Thailand	Samut Sakhon	
 Asia	Thailand	Samut Songkhram	
+Asia	Thailand	Singburi	
 Asia	Thailand	Thailand	
 Asia	Thailand	Trang	
 Asia	Timor-Leste	Timor-Leste	
@@ -1508,6 +1514,7 @@ Europe	France	Auvergne-Rhône-Alpes	Bourg-en-Bresse
 Europe	France	Auvergne-Rhône-Alpes	Bourgoin-Jallieu
 Europe	France	Auvergne-Rhône-Alpes	Chambery
 Europe	France	Auvergne-Rhône-Alpes	Clermont-Ferrand
+Europe	France	Auvergne-Rhône-Alpes	Cluses
 Europe	France	Auvergne-Rhône-Alpes	Contamine-sur-Arve
 Europe	France	Auvergne-Rhône-Alpes	Contamines
 Europe	France	Auvergne-Rhône-Alpes	Craponne
@@ -1566,6 +1573,8 @@ Europe	France	Centre-Val de Loire	Craon
 Europe	France	Centre-Val de Loire	Fondettes
 Europe	France	Centre-Val de Loire	Rouziers-de-Touraine
 Europe	France	Centre-Val de Loire	Tours
+Europe	France	Corse	
+Europe	France	Corse	Porto-Vecchio
 Europe	France	France	
 Europe	France	Grand Est	
 Europe	France	Grand Est	Amneville
@@ -1652,6 +1661,7 @@ Europe	France	Ile de France	Saint Germain en Laye
 Europe	France	Ile de France	Saint-Thibault-des-Vignes
 Europe	France	Ile de France	Sarcelles
 Europe	France	Ile de France	Seine-Port
+Europe	France	Ile de France	Thiais
 Europe	France	Ile de France	Vanves
 Europe	France	Ile de France	Verrières-le-Buisson
 Europe	France	Ile de France	Villeneuve St Georges
@@ -1660,8 +1670,11 @@ Europe	France	Normandie	Bernieres-le-Patry
 Europe	France	Normandie	Carentan
 Europe	France	Normandie	Rouen
 Europe	France	Nouvelle-Aquitaine	
+Europe	France	Nouvelle-Aquitaine	Anglet
 Europe	France	Nouvelle-Aquitaine	Bordeaux
+Europe	France	Nouvelle-Aquitaine	La Brède
 Europe	France	Nouvelle-Aquitaine	Limoges
+Europe	France	Nouvelle-Aquitaine	Notre-Dame-de-Sanilhac
 Europe	France	Nouvelle-Aquitaine	Poitiers
 Europe	France	Occitanie	
 Europe	France	Occitanie	Caraman
@@ -1678,6 +1691,7 @@ Europe	France	Provence-Alpes-Côte d'Azur	Marignane
 Europe	France	Provence-Alpes-Côte d'Azur	Marseille
 Europe	France	Provence-Alpes-Côte d'Azur	Nice
 Europe	France	Provence-Alpes-Côte d'Azur	Saint-Vallier-de-Thiey
+Europe	France	Provence-Alpes-Côte d'Azur	Toulon
 Europe	France	Reunion	
 Europe	France	Toulouse	
 Europe	Germany	Baden-Wuerttemberg	
@@ -1835,6 +1849,7 @@ Europe	Kosovo	Kosovska Mitrovica
 Europe	Latvia	Latvia	
 Europe	Latvia	Riga	
 Europe	Lithuania	Alytaus Apskritis	
+Europe	Lithuania	Jonavos Apskritis	
 Europe	Lithuania	Kauno Apskritis	
 Europe	Lithuania	Klaipedos Apskritis	
 Europe	Lithuania	Lithuania	
@@ -2050,6 +2065,8 @@ Europe	Russia	Kalmykia
 Europe	Russia	Kalmykia	Elista
 Europe	Russia	Kaluga	
 Europe	Russia	Kaluga	Tovarkovo
+Europe	Russia	Kamchatka Krai	
+Europe	Russia	Kamchatka Krai	Petropavlovsk-Kamchatsky
 Europe	Russia	Karachay-Cherkess	
 Europe	Russia	Karachay-Cherkess	Cherkessk
 Europe	Russia	Karachay-Cherkess	Karachayevsk
@@ -2086,6 +2103,7 @@ Europe	Russia	Krasnodar	Krasnodar
 Europe	Russia	Krasnodar	Novorossiysk
 Europe	Russia	Krasnodar	Sochi
 Europe	Russia	Krasnoyarsk	
+Europe	Russia	Krasnoyarsk	Krasnoyarsk
 Europe	Russia	Leningrad Oblast	
 Europe	Russia	Leningrad Oblast	Gatchina
 Europe	Russia	Leningrad Oblast	Kipen
@@ -2181,9 +2199,11 @@ Europe	Russia	Stavropol	Stavropol
 Europe	Russia	Stavropol	Yessentuki
 Europe	Russia	Sverdlovsk	
 Europe	Russia	Sverdlovsk	Asbest
+Europe	Russia	Sverdlovsk	Baltym
 Europe	Russia	Sverdlovsk	Bobrovsky
 Europe	Russia	Sverdlovsk	Dvurechensk
 Europe	Russia	Sverdlovsk	Ekaterinburg
+Europe	Russia	Sverdlovsk	Ivdel
 Europe	Russia	Sverdlovsk	Kachkanar
 Europe	Russia	Sverdlovsk	Kamensk-Uralsky
 Europe	Russia	Sverdlovsk	Kashino
@@ -2192,12 +2212,14 @@ Europe	Russia	Sverdlovsk	Krasnouralsk
 Europe	Russia	Sverdlovsk	Krasnyi Aduy
 Europe	Russia	Sverdlovsk	Nizhny Tagil
 Europe	Russia	Sverdlovsk	Pervouralsk
+Europe	Russia	Sverdlovsk	Polevskoy
 Europe	Russia	Sverdlovsk	Revda
 Europe	Russia	Sverdlovsk	Serov
 Europe	Russia	Sverdlovsk	Shalya
 Europe	Russia	Sverdlovsk	Sredneuralsk
 Europe	Russia	Sverdlovsk	Svobodny (Sverdlovsk)
 Europe	Russia	Sverdlovsk	Svobodnyi
+Europe	Russia	Sverdlovsk	Sysert
 Europe	Russia	Sverdlovsk	Verkhny Tagil
 Europe	Russia	Sverdlovsk	Verkhnyaya Pyshma
 Europe	Russia	Sverdlovsk	Yekaterinburg
@@ -2871,57 +2893,80 @@ North America	Costa Rica	Alajuela	San Rafael de Alajuela
 North America	Costa Rica	Alajuela	San Roque CO
 North America	Costa Rica	Cartago CR	
 North America	Costa Rica	Cartago CR	Carmen
+North America	Costa Rica	Cartago CR	Cartago CR
+North America	Costa Rica	Cartago CR	Concepcion CR
 North America	Costa Rica	Cartago CR	Dulce Nombre
+North America	Costa Rica	Cartago CR	El Tejar
 North America	Costa Rica	Cartago CR	La Suiza
 North America	Costa Rica	Cartago CR	La Union
 North America	Costa Rica	Cartago CR	Llanos de Santa Lucia
+North America	Costa Rica	Cartago CR	Paraiso
 North America	Costa Rica	Cartago CR	San Diego CR
 North America	Costa Rica	Cartago CR	San Isidro
+North America	Costa Rica	Cartago CR	San Rafael Cartago
+North America	Costa Rica	Cartago CR	San Ramon
 North America	Costa Rica	Cartago CR	Tres Rios
 North America	Costa Rica	Cartago CR	Tres Rios CR
 North America	Costa Rica	Costa Rica	
 North America	Costa Rica	Guanacaste	
 North America	Costa Rica	Guanacaste	La Cruz
+North America	Costa Rica	Guanacaste	Liberia
 North America	Costa Rica	Guanacaste	Nicoya
 North America	Costa Rica	Heredia	
 North America	Costa Rica	Heredia	Barva
 North America	Costa Rica	Heredia	Heredia
+North America	Costa Rica	Heredia	Mercedes
+North America	Costa Rica	Heredia	Paracito
 North America	Costa Rica	Heredia	San Francisco CR
 North America	Costa Rica	Heredia	San Pablo CR
 North America	Costa Rica	Heredia	San Rafael Heredia
 North America	Costa Rica	Limon	
+North America	Costa Rica	Limon	Limon
 North America	Costa Rica	Limon	Siquirres
 North America	Costa Rica	Puntarenas	
+North America	Costa Rica	Puntarenas	Buenos Aires
+North America	Costa Rica	Puntarenas	Canoas CR
 North America	Costa Rica	Puntarenas	Corredor
 North America	Costa Rica	Puntarenas	Corredores
 North America	Costa Rica	Puntarenas	Coto Brus
 North America	Costa Rica	Puntarenas	Garabito
+North America	Costa Rica	Puntarenas	La Cuesta
 North America	Costa Rica	Puntarenas	Laurel
+North America	Costa Rica	Puntarenas	Palmar
 North America	Costa Rica	Puntarenas	Piedras Blancas
+North America	Costa Rica	Puntarenas	Puntarenas
 North America	Costa Rica	San Jose	
 North America	Costa Rica	San Jose	Alajuelita
 North America	Costa Rica	San Jose	Aserri
+North America	Costa Rica	San Jose	Barbacoas
 North America	Costa Rica	San Jose	Curridabat
 North America	Costa Rica	San Jose	Desamparados
 North America	Costa Rica	San Jose	Escazu
 North America	Costa Rica	San Jose	Goicoechea
+North America	Costa Rica	San Jose	Llorente
 North America	Costa Rica	San Jose	Los Guido
 North America	Costa Rica	San Jose	Montes de Oca
 North America	Costa Rica	San Jose	Moravia
+North America	Costa Rica	San Jose	Patalillo
 North America	Costa Rica	San Jose	Pavas
 North America	Costa Rica	San Jose	Perez Zeledon
 North America	Costa Rica	San Jose	Picagres
+North America	Costa Rica	San Jose	Pitahaya
 North America	Costa Rica	San Jose	Pozos
 North America	Costa Rica	San Jose	Purral
 North America	Costa Rica	San Jose	San Antonio
 North America	Costa Rica	San Jose	San Felipe
+North America	Costa Rica	San Jose	San Francisco de Dos Rios
 North America	Costa Rica	San Jose	San Jerónimo
 North America	Costa Rica	San Jose	San Jose
+North America	Costa Rica	San Jose	San Pedro
+North America	Costa Rica	San Jose	San Rafael Arriba
 North America	Costa Rica	San Jose	San Rafael de Escazú
 North America	Costa Rica	San Jose	Santa Ana CR
 North America	Costa Rica	San Jose	Santiago de Puriscal
 North America	Costa Rica	San Jose	Tarrazu
 North America	Costa Rica	San Jose	Tibas
+North America	Costa Rica	San Jose	Tirrases
 North America	Costa Rica	San Jose	Zapote
 North America	Cuba	Cuba	
 North America	Dominican Republic	Dominican Republic	
@@ -3458,8 +3503,8 @@ North America	USA	Texas	Polk County TX
 North America	USA	Texas	Red River County
 North America	USA	Texas	Rusk County
 North America	USA	Texas	San Patricio County
-North America	USA	Texas	Starr County
 North America	USA	Texas	Smith County
+North America	USA	Texas	Starr County
 North America	USA	Texas	Taylor
 North America	USA	Texas	Taylor County TX
 North America	USA	Texas	Titus County
@@ -3501,6 +3546,7 @@ North America	USA	Washington	Kittitas County
 North America	USA	Washington	Klickitat County
 North America	USA	Washington	Mason County
 North America	USA	Washington	Mercer Island
+North America	USA	Washington	Pacific County
 North America	USA	Washington	Pierce County WA
 North America	USA	Washington	San Juan County
 North America	USA	Washington	Seattle
@@ -3705,10 +3751,15 @@ South America	Brazil	Piaui
 South America	Brazil	Piaui	Parnaiba
 South America	Brazil	Rio Grande do Norte	
 South America	Brazil	Rio Grande do Sul	
+South America	Brazil	Rio Grande do Sul	Alto Feliz
 South America	Brazil	Rio Grande do Sul	Arroio do Meio
+South America	Brazil	Rio Grande do Sul	Barao
+South America	Brazil	Rio Grande do Sul	Bom Principio
 South America	Brazil	Rio Grande do Sul	Bom Retiro do Sul
+South America	Brazil	Rio Grande do Sul	Butia
 South America	Brazil	Rio Grande do Sul	Cacapava do Sul
 South America	Brazil	Rio Grande do Sul	Cachoeira do Sul
+South America	Brazil	Rio Grande do Sul	Canoas BR
 South America	Brazil	Rio Grande do Sul	Carazinho
 South America	Brazil	Rio Grande do Sul	Carlos Barbosa
 South America	Brazil	Rio Grande do Sul	Caxias do Sul
@@ -3717,14 +3768,18 @@ South America	Brazil	Rio Grande do Sul	Erechim
 South America	Brazil	Rio Grande do Sul	Farroupilha
 South America	Brazil	Rio Grande do Sul	Flores Da Cunha
 South America	Brazil	Rio Grande do Sul	Frederico Westphalen
+South America	Brazil	Rio Grande do Sul	Garibaldi
 South America	Brazil	Rio Grande do Sul	Girua
 South America	Brazil	Rio Grande do Sul	Ijui
 South America	Brazil	Rio Grande do Sul	Itaqui
 South America	Brazil	Rio Grande do Sul	Lajeado
 South America	Brazil	Rio Grande do Sul	Lavras do Sul
+South America	Brazil	Rio Grande do Sul	Linha Nova
 South America	Brazil	Rio Grande do Sul	Marau
+South America	Brazil	Rio Grande do Sul	Morro Reuter
 South America	Brazil	Rio Grande do Sul	Nova Araça
 South America	Brazil	Rio Grande do Sul	Nova Brescia
+South America	Brazil	Rio Grande do Sul	Novo Hamburgo
 South America	Brazil	Rio Grande do Sul	Não-Me-Toque
 South America	Brazil	Rio Grande do Sul	Osorio
 South America	Brazil	Rio Grande do Sul	Passo Fundo
@@ -3737,12 +3792,15 @@ South America	Brazil	Rio Grande do Sul	Santa Rosa
 South America	Brazil	Rio Grande do Sul	Santana do Livramento
 South America	Brazil	Rio Grande do Sul	Santo Angelo
 South America	Brazil	Rio Grande do Sul	Sao Borja
+South America	Brazil	Rio Grande do Sul	Sapiranga
 South America	Brazil	Rio Grande do Sul	Serafina Correa
 South America	Brazil	Rio Grande do Sul	São Domingos do Sul
 South America	Brazil	Rio Grande do Sul	São Leopoldo
 South America	Brazil	Rio Grande do Sul	Tapejara
+South America	Brazil	Rio Grande do Sul	Taquara
 South America	Brazil	Rio Grande do Sul	Torres
 South America	Brazil	Rio Grande do Sul	Tres Passos
+South America	Brazil	Rio Grande do Sul	Tupandi
 South America	Brazil	Rio Grande do Sul	Venancio Aires
 South America	Brazil	Rio de Janeiro	
 South America	Brazil	Rio de Janeiro	Belford Roxo
@@ -3876,6 +3934,7 @@ South America	Chile	Aysén
 South America	Chile	Aysén	Coyhaique
 South America	Chile	Biobío	
 South America	Chile	Biobío	Concepcion
+South America	Chile	Biobío	Concepcion CL
 South America	Chile	Los Lagos	
 South America	Chile	Los Lagos	Puerto Montt
 South America	Chile	Magallanes	
@@ -4055,6 +4114,10 @@ South America	Peru	Amazonas
 South America	Peru	Amazonas	Bongara
 South America	Peru	Amazonas	Chachapoyas
 South America	Peru	Amazonas	Luya
+South America	Peru	Amazonas PE	
+South America	Peru	Amazonas PE	Bongara
+South America	Peru	Amazonas PE	Chachapoyas
+South America	Peru	Amazonas PE	Luya
 South America	Peru	Ancash	
 South America	Peru	Ancash	Huaraz
 South America	Peru	Ancash	Huarmey
