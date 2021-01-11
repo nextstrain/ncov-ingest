@@ -168,6 +168,7 @@ def generate_hardcoded_metadata(genbank_data: pd.DataFrame) -> pd.DataFrame:
     hardcoded_metadata['originating_lab']   = '?'
     hardcoded_metadata['submitting_lab']    = '?'
     hardcoded_metadata['paper_url']         = '?'
+    hardcoded_metadata['purpose_of_sequencing']         = '?'
 
     hardcoded_metadata['url'] = hardcoded_metadata['genbank_accession'] \
         .apply(lambda x: f"https://www.ncbi.nlm.nih.gov/nuccore/{x}")
