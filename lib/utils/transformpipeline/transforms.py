@@ -204,6 +204,7 @@ class AddHardcodedMetadata(Transformer):
         entry['segment'] = 'genome'
         entry['title'] = '?'
         entry['paper_url'] = '?'
+        entry['purpose_of_sequencing'] = ''
 
         return entry
 
