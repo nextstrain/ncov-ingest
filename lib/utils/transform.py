@@ -11,7 +11,7 @@ METADATA_COLUMNS = [  # Ordering of columns in the existing metadata.tsv in the 
     'country', 'division', 'location', 'region_exposure', 'country_exposure',
     'division_exposure', 'segment', 'length', 'host', 'age', 'sex', 'pangolin_lineage', 'GISAID_clade',
     'originating_lab', 'submitting_lab', 'authors', 'url', 'title', 'paper_url',
-    'date_submitted'
+    'date_submitted', 'purpose_of_sequencing'
 ]
 
 
