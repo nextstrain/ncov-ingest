@@ -26,7 +26,7 @@ ALLOWED_TRAIT_NAMES = set(
         "country_exposure",
         "division_exposure",
         "originating_lab",
-	"purpose_of_sequencing"
+        "purpose_of_sequencing",
     ]
 )
 
