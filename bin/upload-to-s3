@@ -19,12 +19,13 @@ main() {
     local src="${1:?A source file is required as the first argument.}"
     local dst="${2:?A destination s3:// URL is required as the second argument.}"
 
-    local src_hash="$("$bin/sha256sum" < "$src")"
     local s3path="${dst#s3://}"
     local bucket="${s3path%%/*}"
     local key="${s3path#*/}"
 
-    local dst_hash="$(aws s3api head-object --bucket "$bucket" --key "$key" --query Metadata.sha256sum --output text)"
+    local src_hash dst_hash
+    src_hash="$("$bin/sha256sum" < "$src")"
+    dst_hash="$(aws s3api head-object --bucket "$bucket" --key "$key" --query Metadata.sha256sum --output text)"
 
     echo "$src_hash $src"
     echo "$dst_hash $dst"
