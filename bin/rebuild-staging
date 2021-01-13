@@ -51,7 +51,9 @@ main() {
     fi
 
 
-    local output=$(
+    local output aws_batch_job_id
+
+    output=$(
         "$bin"/launch-build \
             ncov deploy_to_staging upload \
             --config slack_token="$SLACK_TOKEN"
@@ -60,7 +62,7 @@ main() {
     echo "$output"
 
     # Extract the AWS job ID from the `nextstrain build --aws-batch --detach` output
-    local aws_batch_job_id=$(grep "AWS Batch Job ID" <<<"$output" | cut -d ' ' -f 5)
+    aws_batch_job_id=$(grep "AWS Batch Job ID" <<<"$output" | cut -d ' ' -f 5)
 
     echo "Notifying Slack about rebuild."
     "$bin"/notify-slack "A new staging build was submitted. Follow along in your local ncov repo with: "'```'"nextstrain build --aws-batch --attach $aws_batch_job_id ."'```'

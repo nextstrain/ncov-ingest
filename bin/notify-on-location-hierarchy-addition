@@ -20,7 +20,7 @@ comm -13 \
 
 if [[ -s "$diff" ]]; then
     echo "Notifying Slack about location hierarchy additions."
-    message=":world_map: "$(wc -l < "$diff")" new location hierarchies. "
+    message=":world_map: $(wc -l < "$diff") new location hierarchies. "
     message+="Note that these are case-sensitive. Please review these "
     message+="hierarchies and either add them to "
     message+="_./source-data/location_hierarchy.tsv_ or create new annotations "
