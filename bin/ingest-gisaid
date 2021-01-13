@@ -115,7 +115,6 @@ main() {
     fi
 
     ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/metadata.tsv "$S3_DST/metadata.tsv.gz"
-    ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/metadata2.tsv "$S3_DST/metadata2.tsv.gz"
     ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/nextclade.tsv "$S3_DST/nextclade.tsv.gz"
     ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/additional_info.tsv "$S3_DST/additional_info.tsv.gz"
     ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/flagged_metadata.txt "$S3_DST/flagged_metadata.txt.gz"
