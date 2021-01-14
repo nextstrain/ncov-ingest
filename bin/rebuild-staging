@@ -51,7 +51,9 @@ main() {
     fi
 
 
-    local output=$(
+    local output aws_batch_job_id
+
+    output=$(
         "$bin"/launch-build \
             ncov deploy_to_staging upload \
             --config slack_token="$SLACK_TOKEN"
@@ -60,7 +62,7 @@ main() {
     echo "$output"
 
     # Extract the AWS job ID from the `nextstrain build --aws-batch --detach` output
-    local aws_batch_job_id=$(grep "AWS Batch Job ID" <<<"$output" | cut -d ' ' -f 5)
+    aws_batch_job_id=$(grep "AWS Batch Job ID" <<<"$output" | cut -d ' ' -f 5)
 
     echo "Notifying Slack about rebuild."
     "$bin"/notify-slack "A new staging build was submitted. Follow along in your local ncov repo with: "'```'"nextstrain build --aws-batch --attach $aws_batch_job_id ."'```'
@@ -68,12 +70,13 @@ main() {
 
 # Returns 1 if both files match (have identical hashes). Else returns 0.
 hashes-match() {
-    local src_hash="$("$bin/sha256sum" < "$1")"
-
     local dst_s3path="${2#s3://}"
     local dst_bucket="${dst_s3path%%/*}"
     local dst_key="${dst_s3path#*/}"
-    local dst_hash="$(aws s3api head-object --bucket "$dst_bucket" --key "$dst_key" --query Metadata.sha256sum --output text)"
+
+    local src_hash dst_hash no_hash=0000000000000000000000000000000000000000000000000000000000000000
+    src_hash="$("$bin/sha256sum" < "$1")"
+    dst_hash="$(aws s3api head-object --bucket "$dst_bucket" --key "$dst_key" --query Metadata.sha256sum --output text || echo "$no_hash")"
 
     [[ "$src_hash" == "$dst_hash" ]]
 }

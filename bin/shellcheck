@@ -1,0 +1,3 @@
+#!/bin/bash
+set -euo pipefail
+git grep -lz '^#!/bin/bash' | xargs -0 shellcheck "$@"

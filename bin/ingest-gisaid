@@ -82,7 +82,10 @@ main() {
         --output-unix-newline > "$flagged_annotations"
 
     # Download old clades
-    aws s3 cp --no-progress "$S3_DST/nextclade.tsv.gz" - | gunzip -cfq > "data/gisaid/nextclade.tsv"
+    (   aws s3 cp --no-progress "$S3_DST/nextclade.tsv.gz" - \
+     || aws s3 cp --no-progress "$S3_SRC/nextclade.tsv.gz" -) \
+        | gunzip -cfq \
+        > "data/gisaid/nextclade.tsv"
 
     # Find sequences in FASTA which don't have clades assigned yet
     ./bin/filter-fasta \
