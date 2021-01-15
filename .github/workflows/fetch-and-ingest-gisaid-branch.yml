@@ -17,7 +17,6 @@ jobs:
         node-version: 14
     - name: ingest
       run: |
-        echo "PWD=${PWD}"
         PATH="$HOME/.local/bin:$PWD/node_modules/.bin:$PATH"
         python3 -m pip install --upgrade pip setuptools
         python3 -m pip install pipenv
