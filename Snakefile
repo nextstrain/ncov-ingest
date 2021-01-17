@@ -162,30 +162,6 @@ rule check_locations:
         ./bin/check-locations {input} {output} gisaid_epi_isl
         '''
 
-rule upload_gisaid_to_S3:
-    input:
-        metadata = "data/gisaid/metadata.tsv",
-        clades = "data/gisaid/nextclade.tsv",
-        additional_info = "data/gisaid/additional_info.tsv",
-        sequences = "data/gisaid/sequences.fasta",
-        flagged_metadata = "data/gisaid/flagged_metadata.txt"
-    shell:
-        '''
-        ./bin/upload-to-s3 --quiet {input.metadata} {S3_BUCKET}/metadata.tsv.gz &\
-        ./bin/upload-to-s3 --quiet {input.clades} {S3_BUCKET}/nextclade.tsv.gz &\
-        ./bin/upload-to-s3 --quiet {input.additional_info} {S3_BUCKET}/additional_info.tsv.gz &\
-        ./bin/upload-to-s3 --quiet {input.flagged_metadata} {S3_BUCKET}/flagged_metadata.txt.gz &\
-        ./bin/upload-to-s3 --quiet {input.sequences} {S3_BUCKET}/sequences.fasta.gz
-        '''
-
-rule rerun_clades:
-    input:
-        clades = rules.nextclade_all.output
-    shell:
-        '''
-        ./bin/upload-to-s3 --quiet {input.clades} {S3_BUCKET}/nextclade.tsv.gz
-        '''
-
 rule clean:
     message: "Removing directories: {params}"
     params:
@@ -233,4 +209,49 @@ rule additional_info_change:
             --key gisaid_epi_isl \
             --singular "additional info" \
             --plural "additional info" > {output.changes}
+        '''
+
+
+##########################################################################
+onerror:
+    shell("./bin/notify-slack 'ncov-ingest failed'")
+
+
+##########################################################################
+## target rules
+##########################################################################
+rule post_to_slack:
+    input:
+        additional_info = "data/gisaid/additional_info_changes.tsv",
+        metadata_additions = "data/gisaid/metadata_additions.tsv",
+        metadata_changes = "data/gisaid/metadata_changes.tsv"
+    shell:
+        '''
+        ./bin/notify-slack --upload "metadata-changes.txt" < {input.metadata_changes} &\
+        ./bin/notify-slack --upload "metadata-additions.txt" < {input.metadata_additions} &\
+        ./bin/notify-slack --upload "additional_info_changes.txt" < {input.additional_info}
+        '''
+
+rule upload_gisaid_to_S3:
+    input:
+        metadata = "data/gisaid/metadata.tsv",
+        clades = "data/gisaid/nextclade.tsv",
+        additional_info = "data/gisaid/additional_info.tsv",
+        sequences = "data/gisaid/sequences.fasta",
+        flagged_metadata = "data/gisaid/flagged_metadata.txt"
+    shell:
+        '''
+        ./bin/upload-to-s3 --quiet {input.metadata} {S3_BUCKET}/metadata.tsv.gz &\
+        ./bin/upload-to-s3 --quiet {input.clades} {S3_BUCKET}/nextclade.tsv.gz &\
+        ./bin/upload-to-s3 --quiet {input.additional_info} {S3_BUCKET}/additional_info.tsv.gz &\
+        ./bin/upload-to-s3 --quiet {input.flagged_metadata} {S3_BUCKET}/flagged_metadata.txt.gz &\
+        ./bin/upload-to-s3 --quiet {input.sequences} {S3_BUCKET}/sequences.fasta.gz
+        '''
+
+rule rerun_clades:
+    input:
+        clades = rules.nextclade_all.output
+    shell:
+        '''
+        ./bin/upload-to-s3 --quiet {input.clades} {S3_BUCKET}/nextclade.tsv.gz
         '''
