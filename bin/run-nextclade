@@ -72,5 +72,3 @@ done
 for output in ${OUTPUT_WILDCARD}; do
   ./bin/join-rows $output "${OUTPUT_TSV}" -o "${OUTPUT_TSV}"
 done
-
-rm -rf "${TMP_DIR_FASTA}" "${TMP_DIR_CLADES}"

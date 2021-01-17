@@ -23,8 +23,9 @@ def main():
     try:
         right = pd.read_csv(args.second_file, sep='\t', low_memory=False, na_filter = False)
     except FileNotFoundError:
-        right = pd.DataFrame().reindex_like(left)
+        right = pd.DataFrame()
 
+    print(f"joining {args.first_file}({left.shape}) and {args.second_file}({right.shape})")
     result = pd.concat([left, right], join='outer')
 
     result.to_csv(args.o, index=False, sep='\t')
