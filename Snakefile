@@ -3,6 +3,8 @@ import os
 S3_BUCKET = "s3://nextstrain-ncov-private"
 ruleorder: unpack_gisaid>fetch_gisaid_from_S3
 ruleorder: concat_clades>nextclade_all
+localrules: download_inputs, download_gisaid, push_gisaid_to_S3, post_to_slack, fetch_gisaid_from_S3, rerun_clades
+
 
 rule download_inputs:
     output:
