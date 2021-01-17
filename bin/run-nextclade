@@ -20,22 +20,14 @@ set -o nounset
 set -o pipefail
 trap "exit" INT
 
-INPUT_FASTA=${1}
-OUTPUT_TSV=${2}
+BATCH_SIZE=${1}
+N_PROCESSES=${2}
+INPUT_FASTA=${3}
+OUTPUT_TSV=${4}
 TMP_DIR_FASTA="tmp/fasta"
 TMP_DIR_CLADES="tmp/clades"
 INPUT_WILDCARD="${TMP_DIR_FASTA}/*.fasta"
 OUTPUT_WILDCARD="${TMP_DIR_CLADES}/*.tsv"
-
-BATCH_SIZE=${BATCH_SIZE:=200}
-
-# Default number of processes, if not provided.
-# Usually equals to the sum of numbers of logical cores ("threads") on all CPUs
-# in the system combined, including "hyperthreads".
-N_PROCESSES_DEFAULT=$(getconf _NPROCESSORS_ONLN)
-
-# Alternatively, use number of processes provided as the third argument
-N_PROCESSES=${4:-"${N_PROCESSES_DEFAULT}"}
 
 # Split fasta file to multiple batches
 mkdir -p "${TMP_DIR_FASTA}"
