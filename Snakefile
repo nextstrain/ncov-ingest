@@ -193,3 +193,44 @@ rule clean:
         "tmp"
     shell:
         "rm -rfv {params}"
+
+rule metadata_addition:
+    input:
+        old = "data/{data_source}/inputs/metadata.tsv",
+        new = "data/{data_source}/new_metadata.tsv"
+    output:
+        additions = "data/{data_source}/metadata_additions.tsv",
+        changes = "data/{data_source}/metadata_changes.tsv"
+    params:
+        key = "gisaid_epi_isl"
+    shell:
+        '''
+        csv-diff \
+            {input.old} \
+            {input.new} \
+            --format tsv \
+            --key {params.key} \
+            --singular sequence \
+            --plural sequences \
+            > {output.changes} & \
+        ./bin/metadata-additions {input.old} {input.new} {params.key} >  {output.additions}
+        '''
+
+rule additional_info_change:
+    input:
+        old = "data/{data_source}/inputs/additional_info.tsv",
+        new = "data/{data_source}/additional_info.tsv"
+    output:
+        changes = "data/{data_source}/additional_info_changes.tsv"
+    params:
+        key = "gisaid_epi_isl"
+    shell:
+        '''
+        csv-diff \
+            <(awk 'BEGIN {{FS="\t"}}; {{ if ($3 != "" || $4 != "") {{ print }}}}' {input.old}) \
+            <(awk 'BEGIN {{FS="\t"}}; {{ if ($3 != "" || $4 != "") {{ print }}}}' {input.new}) \
+            --format tsv \
+            --key gisaid_epi_isl \
+            --singular "additional info" \
+            --plural "additional info" > {output.changes}
+        '''
