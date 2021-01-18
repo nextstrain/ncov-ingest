@@ -46,6 +46,9 @@ else
   exit 0
 fi
 
+echo "nextclade version"
+nextclade.js --version
+
 # Run batches in parallel
 echo "Using ${N_PROCESSES} parallel processes"
 mkdir -p "${TMP_DIR_CLADES}"

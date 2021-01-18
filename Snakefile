@@ -66,6 +66,7 @@ rule download_gisaid:
 rule transform:
     input:
         gisaid_json = rules.unpack_gisaid.output.json,
+        annotations = "source-data/gisaid_annotations.tsv"
     output:
         metadata = "data/gisaid/metadata.tsv",
         sequences = "data/gisaid/sequences.fasta",
@@ -121,7 +122,7 @@ rule nextclade_all:
     input:
         rules.transform.output.sequences
     output:
-        "data/gisaid/nextclade.tsv"
+        "data/gisaid/nextclade_rerun.tsv"
     params:
         batch_size = 1000
     threads: 16
