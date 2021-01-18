@@ -236,7 +236,7 @@ rule post_to_slack:
 
 rule upload_gisaid_to_S3:
     input:
-        metadata = "data/gisaid/metadata.tsv",
+        metadata = "data/gisaid/new_metadata.tsv",
         clades = "data/gisaid/nextclade.tsv",
         additional_info = "data/gisaid/additional_info.tsv",
         sequences = "data/gisaid/sequences.fasta",
