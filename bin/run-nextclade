@@ -42,6 +42,7 @@ if ls ${INPUT_WILDCARD} 1>/dev/null 2>&1; then
   echo "There are ${NUM_BATCHES} batches of sequences to process with Nextclade (batch size is ${BATCH_SIZE})"
 else
   echo "There are no new sequences to process. Skipping Nextclade step."
+  touch ${OUTPUT_TSV}
   rm -rf "${TMP_DIR_FASTA}"
   exit 0
 fi
@@ -57,6 +58,7 @@ for input in ${INPUT_WILDCARD}; do
     # If ${input} does not exist, this means that INPUT_WILDCARD was not expanded,
     # there are no batch files and we should not attempt to run the processing.
     # If we would, then it will crash.
+    touch ${OUTPUT_TSV}
     break
   fi
 

@@ -18,7 +18,10 @@ def parse_args():
 def main():
     args = parse_args()
 
-    left = pd.read_csv(args.first_file, sep='\t', low_memory=False, na_filter = False)
+    try:
+        left = pd.read_csv(args.first_file, sep='\t', low_memory=False, na_filter = False)
+    except:
+        left = pd.DataFrame()        
 
     try:
         right = pd.read_csv(args.second_file, sep='\t', low_memory=False, na_filter = False)
