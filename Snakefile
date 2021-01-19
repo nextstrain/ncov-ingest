@@ -5,6 +5,8 @@ ruleorder: unpack_gisaid>fetch_gisaid_from_S3
 ruleorder: concat_clades>nextclade_all
 localrules: download_inputs, download_gisaid, push_gisaid_to_S3, post_to_slack, fetch_gisaid_from_S3, rerun_clades, upload_gisaid_to_S3
 
+wildcard_constraints:
+    data_source = "gisaid|genbank"
 
 rule download_inputs:
     output:
@@ -231,7 +233,7 @@ rule post_to_slack:
     shell:
         '''
         ./bin/notify-slack --upload "metadata-changes.txt" < {input.metadata_changes} &\
-        ./bin/notify-slack --upload "metadata-additions.txt" < {input.metadata_additions} &\
+        ./bin/notify-slack --upload "metadata-additions.tsv" < {input.metadata_additions} &\
         ./bin/notify-slack --upload "additional_info_changes.txt" < {input.additional_info}
         '''
 

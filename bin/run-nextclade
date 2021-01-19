@@ -75,3 +75,5 @@ done
 for output in ${OUTPUT_WILDCARD}; do
   ./bin/join-rows $output "${OUTPUT_TSV}" -o "${OUTPUT_TSV}"
 done
+
+rm -r tmp
