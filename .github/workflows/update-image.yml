@@ -2,17 +2,17 @@ name: Update image
 
 on:
   push:
-    branches:
-      - master
-    tags-ignore:
-      - '**'
-    paths:
-      - Dockerfile
-      - .dockerignore
-      - Pipfile
-      - Pipfile.lock
-      - package.json
-      - yarn.lock
+    #    branches:
+    #      - master
+    #    tags-ignore:
+    #      - '**'
+    #    paths:
+    #      - Dockerfile
+    #      - .dockerignore
+    #      - Pipfile
+    #      - Pipfile.lock
+    #      - package.json
+    #      - yarn.lock
 
   # Manually triggered using bin/trigger update-image
   repository_dispatch:
