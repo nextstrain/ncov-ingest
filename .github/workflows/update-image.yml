@@ -44,3 +44,5 @@ jobs:
           tags: nextstrain/ncov-ingest:latest
           cache-from: type=registry,ref=nextstrain/ncov-ingest:latest
           cache-to: type=inline,mode=max
+          build-args: |
+            GIT_REVISION=${{ env.GIT_REVISION }}
