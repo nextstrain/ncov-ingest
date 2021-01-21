@@ -9,7 +9,7 @@ if [[ $# -eq 0 ]]; then
 You must specify options to curl for your GitHub credentials.  For example, you
 can specify your GitHub username, and will be prompted for your password:
 
-  $0 --user <your-github-username>
+  $0 $event_type --user <your-github-username>
 
 You can also store your credentials or a personal access token¹ in a netrc
 file²:
@@ -20,7 +20,7 @@ file²:
 
 and then tell curl to use it:
 
-  $0 --netrc
+  $0 $event_type --netrc
 
 which will then not require you to type your password every time.
 
