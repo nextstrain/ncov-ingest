@@ -1,10 +1,41 @@
 import re
 import unicodedata
-from typing import Any, Dict, Sequence, Tuple
+from collections import defaultdict
+from typing import Any, Collection, List, MutableMapping, Sequence, Tuple
 
 from utils.transform import format_date, titlecase
 from . import LINE_NUMBER_KEY
 from ._base import Transformer
+
+
+class UserProvidedAnnotations:
+    def __init__(self):
+        self.entries: MutableMapping[str, List[Tuple[str, Any]]] = defaultdict(list)
+        self.use_count: MutableMapping[str, int] = dict()
+
+    def add_user_annotation(
+            self,
+            gisaid_epi_isl: str,
+            key: str,
+            value: Any,
+    ) -> None:
+        self.entries[gisaid_epi_isl].append((key, value))
+        self.use_count[gisaid_epi_isl] = 0
+
+    def get_user_annotations(self, gisaid_epi_isl: str) -> Sequence[Tuple[str, Any]]:
+        annotations = self.entries.get(gisaid_epi_isl, None)
+        if annotations is not None:
+            self.use_count[gisaid_epi_isl] += 1
+            return annotations
+        else:
+            return []
+
+    def get_unused_annotations(self) -> Collection[str]:
+        return [
+            gisaid_epi_isl
+            for gisaid_epi_isl, use_count in self.use_count.items()
+            if use_count == 0
+        ]
 
 
 class RenameAndAddColumns(Transformer):
@@ -211,11 +242,11 @@ class AddHardcodedMetadata(Transformer):
 
 class MergeUserAnnotatedMetadata(Transformer):
     """Use the curated annotations tsv to update any column values."""
-    def __init__(self, annotations: Dict[str, Sequence[Tuple[str, Any]]]):
+    def __init__(self, annotations: UserProvidedAnnotations):
         self.annotations = annotations
 
     def transform_value(self, entry: dict) -> dict:
-        annotations = self.annotations.get(entry['gisaid_epi_isl'], [])
+        annotations = self.annotations.get_user_annotations(entry['gisaid_epi_isl'])
         for key, value in annotations:
             entry[key] = value
         return entry

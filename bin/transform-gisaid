@@ -6,9 +6,7 @@ import os
 import argparse
 import csv
 import sys
-from collections import defaultdict
 from pathlib import Path
-from typing import Any, Dict, List, Tuple
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "lib"))
 from utils.transform import (
@@ -29,6 +27,7 @@ from utils.transformpipeline.transforms import (
     ParseSex,
     RenameAndAddColumns,
     StandardizeData,
+    UserProvidedAnnotations,
 )
 
 # Preserve the ordering of these columns for ease when generating Slack
@@ -88,7 +87,7 @@ if __name__ == '__main__':
     )
     args = parser.parse_args()
 
-    annotations: Dict[str, List[Tuple[str, Any]]] = defaultdict(list)
+    annotations = UserProvidedAnnotations()
     if args.annotations:
         # Use the curated annotations tsv to update any column values
         with open(args.annotations, "r") as gisaid_fh:
@@ -100,11 +99,12 @@ if __name__ == '__main__':
                     print("WARNING: couldn't decode annotation line " + "\t".join(row))
                     continue
                 strain, epi_isl, key, value = row
-                annotations[epi_isl].append((
+                annotations.add_user_annotation(
+                    epi_isl,
                     key,
                     # remove the comment and the extra ws from the value
                     value.split('#')[0].rstrip(),
-                ))
+                )
 
     with open(args.gisaid_data, "r") as gisaid_fh:
         pipeline = (
@@ -138,6 +138,9 @@ if __name__ == '__main__':
                 obj[LINE_NUMBER_KEY]
             )
         )
+
+    for unused_gisaid_epi_isl in annotations.get_unused_annotations():
+        print(f"WARNING: annotation for {unused_gisaid_epi_isl} was not used.")
 
     # dedup by strain and compile a list of relevant line numbers.
     seen_strains = set()
