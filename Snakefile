@@ -167,13 +167,22 @@ rule check_locations:
         ./bin/check-locations {input} {output} gisaid_epi_isl
         '''
 
-rule clean:
+rule clean_all:
     message: "Removing directories: {params}"
     params:
         "data",
         "tmp"
     shell:
         "rm -rfv {params}"
+
+rule clean:
+    message: "Removing: {params}"
+    params:
+        "data/gisaid/*tsv",
+        "data/gisaid/inputs/*tsv",
+        "data/gisaid/*fasta"
+    shell:
+        "rm -v {params}"
 
 rule metadata_addition:
     input:
