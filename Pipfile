@@ -10,7 +10,8 @@ nextstrain-cli = ">=2.0.0"
 csv-diff = ">=0.6"
 fsspec = "*"
 pandas = ">=1.0.1"
-s3fs = "*"
+s3fs = {version = "*", extras = ["boto3"]}
+aiobotocore = {version = "*", extras = ["boto3"]}
 biopython = "*"
 regex = "*"
 
