@@ -87,7 +87,7 @@ The best time for the update is between daily builds. There is usually no rush, 
 
 
 ## Required dependencies
-Run `pipenv sync` to setup an isolated Python 3.6 environment using the pinned dependencies.
+Run `pipenv sync` to setup an isolated Python 3.7 environment using the pinned dependencies.
 
 If you don't have Pipenv, [install it](https://pipenv.pypa.io/en/latest/install/#installing-pipenv) first with `brew install pipenv` or `python3 -m pip install pipenv`.
 

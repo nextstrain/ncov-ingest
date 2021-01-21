@@ -1,11 +1,11 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "ec19e792bac2760b70513ae4915237ccebbea14ce72dbbdbdad48cee04cf10df"
+            "sha256": "108bb3f46e31043c45070980c0c72fccae9b0a85eb18847c1a0bf97768d3c9c4"
         },
         "pipfile-spec": 6,
         "requires": {
-            "python_version": "3.6"
+            "python_version": "3.7"
         },
         "sources": [
             {
@@ -206,13 +206,6 @@
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==2.10"
-        },
-        "idna-ssl": {
-            "hashes": [
-                "sha256:a933e3bb13da54383f9e8f35dc4f9cb9eb9b3b78c6b36f311254d6d0d92c6c7c"
-            ],
-            "markers": "python_version < '3.7'",
-            "version": "==1.1.0"
         },
         "jmespath": {
             "hashes": [
@@ -490,11 +483,11 @@
                 "boto3"
             ],
             "hashes": [
-                "sha256:7396943cbc1cf92eb6f7aa93be5f64a3bfa59d76908262e89bae06e3c87fa59d",
-                "sha256:b9415e12e14fab44a67e505017b128ac6a5e63204d74d6622100ae10c764172e"
+                "sha256:0e7a3fdab0ff66af7c8afd9cdc69723643e10ba6ce37776332fdad9f41bec3dd",
+                "sha256:87e5210415db17b9de18c77bcfc4a301570cc9030ee112b77dc47ab82426bae1"
             ],
             "index": "pypi",
-            "version": "==0.5.1"
+            "version": "==0.5.2"
         },
         "s3transfer": {
             "hashes": [
