@@ -10,8 +10,8 @@ If you're using Pipenv (see below), then run commands from `./bin/…` inside a 
 3. Look at `data/gisaid/sequences.fasta` and `data/gisaid/metadata.tsv`
 
 ## Running automatically
-The ingest pipeline exists as the GitHub workflows `.github/workflows/ingest-master-*.yml` and `…/ingest-branch-*.yml`.
-It is run on pushes to `master` that modify `source-data/*-annotations.tsv` and on pushes to other branches.
+The ingest pipelines are triggered from the GitHub workflows `.github/workflows/ingest-master-*.yml` and `…/ingest-branch-*.yml` but run on AWS Batch via the `nextstrain build --aws-batch` infrastructure.
+They're run on pushes to `master` that modify `source-data/*-annotations.tsv` and on pushes to other branches.
 Pushes to branches other than `master` upload files to branch-specific paths in the S3 bucket, don't send notifications, and don't trigger Nextstrain rebuilds, so that they don't interfere with the production data.
 
 AWS credentials are stored in this repository's secrets and are associated with the `nextstrain-ncov-ingest-uploader` IAM user in the Bedford Lab AWS account, which is locked down to reading and publishing only the `gisaid.ndjson`, `metadata.tsv`, and `sequences.fasta` files and their zipped equivalents in the `nextstrain-ncov-private` S3 bucket.

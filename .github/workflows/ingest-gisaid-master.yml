@@ -18,17 +18,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
-      with:
-        node-version: 14
     - name: ingest
       run: |
-        PATH="$HOME/.local/bin:$PWD/node_modules/.bin:$PATH"
-        python3 -m pip install --upgrade pip setuptools
-        python3 -m pip install pipenv
-        pipenv sync
-        yarn install
-        pipenv run ./bin/ingest-gisaid
+        PATH="$HOME/.local/bin:$PATH"
+
+        python3 -m pip install nextstrain-cli
+
+        ./bin/write-envdir env.d \
+          AWS_DEFAULT_REGION \
+          GITHUB_REF \
+          SLACK_TOKEN \
+          SLACK_CHANNELS
+
+        nextstrain build \
+          --aws-batch \
+          --image nextstrain/ncov-ingest \
+          --cpus 8 \
+          --memory 15GiB \
+          --exec env \
+          . \
+            envdir env.d ingest-gisaid
       env:
         AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
