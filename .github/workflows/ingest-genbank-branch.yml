@@ -1,4 +1,4 @@
-name: '[branch] Ingest 2019-nCov/SARS-CoV-2 data from GenBank for nextstrain.org/ncov'
+name: GenBank ingest (on branch)
 
 on:
   push:
@@ -15,10 +15,22 @@ jobs:
     - name: ingest
       run: |
         PATH="$HOME/.local/bin:$PATH"
-        python3 -m pip install --upgrade pip setuptools
-        python3 -m pip install pipenv
-        pipenv sync
-        pipenv run ./bin/ingest-genbank
+
+        python3 -m pip install nextstrain-cli
+
+        ./bin/write-envdir env.d \
+          AWS_DEFAULT_REGION \
+          GITHUB_REF \
+          SLACK_TOKEN
+
+        nextstrain build \
+          --aws-batch \
+          --image nextstrain/ncov-ingest \
+          --cpus 8 \
+          --memory 15GiB \
+          --exec env \
+          . \
+            envdir env.d ingest-genbank
       env:
         AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}

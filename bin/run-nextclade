@@ -37,6 +37,9 @@ N_PROCESSES_DEFAULT=$(getconf _NPROCESSORS_ONLN)
 # Alternatively, use number of processes provided as the third argument
 N_PROCESSES=${4:-"${N_PROCESSES_DEFAULT}"}
 
+# By default, suppress debugging messages which fill logs with noise
+: "${NODE_ENV:=production}"
+
 # Split fasta file to multiple batches
 mkdir -p "${TMP_DIR_FASTA}"
 ./bin/split-fasta \

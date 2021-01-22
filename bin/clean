@@ -1,0 +1,11 @@
+#!/bin/bash
+# Removes data files we expect to be transient.
+set -euo pipefail
+
+find data/ \
+    -mindepth 1 \
+    -not -path data/genbank \
+    -not -path data/gisaid \
+    -not -name .gitignore \
+    -print \
+    -delete

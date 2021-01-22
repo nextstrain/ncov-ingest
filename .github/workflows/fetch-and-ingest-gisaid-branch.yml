@@ -1,4 +1,4 @@
-name: '[branch] Fetch & Ingest 2019-nCov/SARS-CoV-2 data from GISAID for nextstrain.org/ncov'
+name: GISAID fetch and ingest (on branch)
 
 on:
   push:
@@ -12,18 +12,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
-      with:
-        node-version: 14
     - name: ingest
       run: |
-        echo "PWD=${PWD}"
-        PATH="$HOME/.local/bin:$PWD/node_modules/.bin:$PATH"
-        python3 -m pip install --upgrade pip setuptools
-        python3 -m pip install pipenv
-        pipenv sync
-        yarn install
-        pipenv run ./bin/ingest-gisaid --fetch
+        PATH="$HOME/.local/bin:$PATH"
+
+        python3 -m pip install nextstrain-cli
+
+        ./bin/write-envdir env.d \
+          AWS_DEFAULT_REGION \
+          GISAID_API_ENDPOINT \
+          GISAID_USERNAME_AND_PASSWORD \
+          GITHUB_REF \
+          SLACK_TOKEN
+
+        nextstrain build \
+          --aws-batch \
+          --image nextstrain/ncov-ingest \
+          --cpus 8 \
+          --memory 15GiB \
+          --exec env \
+          . \
+            envdir env.d ingest-gisaid --fetch
       env:
         AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
