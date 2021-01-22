@@ -7,8 +7,8 @@
 # integrated Buildpacks and/or Conda support; there are pros and cons for each
 # system).
 #
-# The image is not currently updated or published automatically.  To rebuild
-# the image manually on your local computer, run:
+# The image is updated and published automatically by a GitHub Actions
+# workflow.  To rebuild the image manually on your local computer, run:
 #
 #     docker build -t nextstrain/ncov-ingest:latest .
 #
