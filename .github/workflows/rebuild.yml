@@ -16,10 +16,8 @@ jobs:
     - name: rebuild
       run: |
         PATH="$HOME/.local/bin:$PATH"
-        python3 -m pip install --upgrade pip setuptools
-        python3 -m pip install pipenv
-        pipenv sync
-        pipenv run ./bin/rebuild-staging
+        python3 -m pip install nextstrain-cli
+        ./bin/rebuild-staging
       env:
         AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
