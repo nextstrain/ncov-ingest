@@ -39,6 +39,7 @@ N_PROCESSES=${4:-"${N_PROCESSES_DEFAULT}"}
 
 # By default, suppress debugging messages which fill logs with noise
 : "${NODE_ENV:=production}"
+export NODE_ENV
 
 # Split fasta file to multiple batches
 mkdir -p "${TMP_DIR_FASTA}"
