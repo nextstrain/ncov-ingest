@@ -2,11 +2,16 @@
 """
 Parse the GISAID NDJSON load into a metadata tsv and a FASTA file.
 """
-import os
 import argparse
+import contextlib
 import csv
+import gzip
+import io
+import os
 import sys
 from pathlib import Path
+
+from magic import from_buffer
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "lib"))
 from utils.transform import (
@@ -42,6 +47,27 @@ assert 'sequence' not in METADATA_COLUMNS, "Sequences should not appear in metad
 assert 'sequence' not in ADDITIONAL_INFO_COLUMNS, "Sequences should not appear in additional info!"
 
 
+@contextlib.contextmanager
+def open_read_maybe_gz(filepath):
+    with open(filepath, "rb") as stream:
+        # peek to see if it's a gzip file
+        file_type = from_buffer(stream.peek())
+        if file_type.find("gzip") != -1:
+            yield gzip.open(stream, "rt")
+        else:
+            yield io.TextIOWrapper(stream)
+
+
+@contextlib.contextmanager
+def open_write_maybe_gz(filepath, newline=None):
+    with open(filepath, "wb") as stream:
+        if filepath.lower().endswith(".gz"):
+            with gzip.GzipFile(fileobj=stream, mode="wb") as stream:
+                yield io.TextIOWrapper(stream, newline=newline)
+        else:
+            yield io.TextIOWrapper(stream, newline=newline)
+
+
 if __name__ == '__main__':
     base = Path(__file__).resolve().parent.parent
 
@@ -50,7 +76,7 @@ if __name__ == '__main__':
         formatter_class=argparse.RawTextHelpFormatter
     )
     parser.add_argument("gisaid_data",
-        default="s3://nextstrain-ncov-private/gisaid.ndjson.gz",
+        default="data/gisaid.ndjson.gz",
         help="Newline-delimited GISAID JSON data")
     parser.add_argument("--annotations",
         default=base / "source-data/gisaid_annotations.tsv",
@@ -106,7 +132,7 @@ if __name__ == '__main__':
                     value.split('#')[0].rstrip(),
                 )
 
-    with open(args.gisaid_data, "r") as gisaid_fh:
+    with open_read_maybe_gz(args.gisaid_data) as gisaid_fh:
         pipeline = (
             LineToJsonDataSource(gisaid_fh)
             | RenameAndAddColumns()
@@ -152,7 +178,7 @@ if __name__ == '__main__':
         seen_strains.add(entry['strain'])
         line_numbers.add(entry[LINE_NUMBER_KEY])
 
-    with open(args.output_fasta, "wt", newline=args.newline) as fasta_fh:
+    with open_write_maybe_gz(args.output_fasta, newline=args.newline) as fasta_fh:
         with open(args.output_additional_info, "wt", newline="") as additional_info_fh, \
              open(args.output_metadata, "wt", newline="") as metadata_fh:
             dict_writer_kwargs = {'lineterminator': args.newline}
@@ -190,7 +216,7 @@ if __name__ == '__main__':
                         updated_strain_names_by_line_no[entry[LINE_NUMBER_KEY]] = entry['strain']
 
         if not args.sorted_fasta:
-            with open(args.gisaid_data, "r") as gisaid_fh:
+            with open_read_maybe_gz(args.gisaid_data) as gisaid_fh:
                 for entry in (
                         LineToJsonDataSource(gisaid_fh)
                         | RenameAndAddColumns()
