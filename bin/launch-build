@@ -2,7 +2,6 @@
 set -euo pipefail
 
 nextstrain build --aws-batch --cpus 96 --memory 180GiB --detach \
-    --image nextstrain/base:branch-python-base \
     "$@" \
     --profile nextstrain_profiles/nextstrain \
     --set-threads tree=16
