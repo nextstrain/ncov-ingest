@@ -64,8 +64,9 @@ ENV PATH="/nextstrain/ncov-ingest/node_modules/.bin:$PATH"
 # ncov-ingest's programs.
 ENV PATH="./bin:$PATH"
 
-# Add some basic metadata to our image for searching later.#
+# Add some basic metadata to our image for searching later.  Note that some
+# common labels are inherited from our base image.
 ARG GIT_REVISION
-LABEL org.opencontainers.image.authors="Nextstrain team <hello@nextstrain.org>"
 LABEL org.opencontainers.image.source="https://github.com/nextstrain/ncov-ingest"
 LABEL org.opencontainers.image.revision="${GIT_REVISION}"
+LABEL org.nextstrain.image.name="nextstrain/ncov-ingest"
