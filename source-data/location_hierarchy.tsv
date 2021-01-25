@@ -542,6 +542,7 @@ Asia	India	Uttar Pradesh	Noida
 Asia	India	Uttar Pradesh	Pilibhit
 Asia	India	Uttar Pradesh	Sambhal
 Asia	India	Uttar Pradesh	Shahjahanpur
+Asia	India	Uttar Pradesh	Varanasi
 Asia	India	Uttarakhand	
 Asia	India	Uttarakhand	Chamoli
 Asia	India	Uttarakhand	Dehradun
@@ -1002,6 +1003,7 @@ Europe	Belgium	Antwerpen	Kapellen
 Europe	Belgium	Antwerpen	Kontich
 Europe	Belgium	Antwerpen	Malle
 Europe	Belgium	Antwerpen	Merksem
+Europe	Belgium	Antwerpen	Mortsel
 Europe	Belgium	Antwerpen	Niel
 Europe	Belgium	Antwerpen	Oostmalle
 Europe	Belgium	Antwerpen	Ranst
@@ -1669,6 +1671,7 @@ Europe	France	Auvergne-Rhône-Alpes	Montagnieu
 Europe	France	Auvergne-Rhône-Alpes	Oyonnax
 Europe	France	Auvergne-Rhône-Alpes	Pollionnay
 Europe	France	Auvergne-Rhône-Alpes	Privas
+Europe	France	Auvergne-Rhône-Alpes	Rhone Alpes
 Europe	France	Auvergne-Rhône-Alpes	Saint-Etienne
 Europe	France	Auvergne-Rhône-Alpes	Saint-Genis-Les-Ollieres
 Europe	France	Auvergne-Rhône-Alpes	Saint-Jean-de-Bournay
@@ -1698,6 +1701,7 @@ Europe	France	Bretagne	Chateaulin
 Europe	France	Bretagne	Fougères
 Europe	France	Bretagne	La Rochelle
 Europe	France	Bretagne	Lannilis
+Europe	France	Bretagne	Melesse
 Europe	France	Bretagne	Morlaix
 Europe	France	Bretagne	Plerin
 Europe	France	Bretagne	Ploudalmezeau
@@ -1768,6 +1772,7 @@ Europe	France	Hauts de France	Compiègne
 Europe	France	Hauts de France	Crespin
 Europe	France	Hauts de France	Crouy en Thelle
 Europe	France	Hauts de France	Crépy en Valois
+Europe	France	Hauts de France	Dunkerque
 Europe	France	Hauts de France	Flines-lès-Mortagne
 Europe	France	Hauts de France	Genech
 Europe	France	Hauts de France	Leers
@@ -1778,14 +1783,17 @@ Europe	France	Hauts de France	Nord Pas de Calais
 Europe	France	Hauts de France	Roubaix
 Europe	France	Hauts de France	Saint-Saulve
 Europe	France	Hauts de France	Santes
+Europe	France	Hauts de France	Somain
 Europe	France	Hauts de France	Tourcoing
 Europe	France	Hauts de France	Wambrechies
 Europe	France	Ile de France	
 Europe	France	Ile de France	Argenteuil
 Europe	France	Ile de France	Asnières-sur-Seine
 Europe	France	Ile de France	Boulogne Billancourt
+Europe	France	Ile de France	Bry sur Marne
 Europe	France	Ile de France	Cergy
 Europe	France	Ile de France	Chanteloup-en-Brie
+Europe	France	Ile de France	Clamart
 Europe	France	Ile de France	Colombes
 Europe	France	Ile de France	Compans
 Europe	France	Ile de France	Egreville
@@ -1813,6 +1821,7 @@ Europe	France	Ile de France	Plessis Trevise
 Europe	France	Ile de France	Pontoise
 Europe	France	Ile de France	Puteaux
 Europe	France	Ile de France	Saint Germain en Laye
+Europe	France	Ile de France	Saint Mandé
 Europe	France	Ile de France	Saint-Thibault-des-Vignes
 Europe	France	Ile de France	Sarcelles
 Europe	France	Ile de France	Seine-Port
@@ -1850,10 +1859,13 @@ Europe	France	Occitanie	Toulouse
 Europe	France	Pays de la Loire	
 Europe	France	Pays de la Loire	Angers
 Europe	France	Pays de la Loire	Cholet
+Europe	France	Pays de la Loire	Le Mans
 Europe	France	Pays de la Loire	Nantes
 Europe	France	Pays de la Loire	Saint Herblain
 Europe	France	Pays de la Loire	Saint-Gilles-Croix-de-Vie
+Europe	France	Pays de la Loire	Val de Loire
 Europe	France	Provence-Alpes-Côte d'Azur	
+Europe	France	Provence-Alpes-Côte d'Azur	Alpes Maritimes
 Europe	France	Provence-Alpes-Côte d'Azur	Cannes
 Europe	France	Provence-Alpes-Côte d'Azur	Draguignan
 Europe	France	Provence-Alpes-Côte d'Azur	Embrun
@@ -1861,8 +1873,10 @@ Europe	France	Provence-Alpes-Côte d'Azur	Frejus
 Europe	France	Provence-Alpes-Côte d'Azur	Marignane
 Europe	France	Provence-Alpes-Côte d'Azur	Marseille
 Europe	France	Provence-Alpes-Côte d'Azur	Nice
+Europe	France	Provence-Alpes-Côte d'Azur	Provence
 Europe	France	Provence-Alpes-Côte d'Azur	Saint-Vallier-de-Thiey
 Europe	France	Provence-Alpes-Côte d'Azur	Toulon
+Europe	France	Provence-Alpes-Côte d'Azur	Var
 Europe	France	Reunion	
 Europe	France	Toulouse	
 Europe	Germany	Baden-Wuerttemberg	
@@ -2261,6 +2275,8 @@ Europe	Portugal	Santarem	Santarem
 Europe	Romania	Arges	
 Europe	Romania	Bucharest	
 Europe	Romania	Buzau	
+Europe	Romania	Cluj	
+Europe	Romania	Cluj Napoca	
 Europe	Romania	Constanta	
 Europe	Romania	Giurgiu	
 Europe	Romania	Hunedoara	
@@ -2271,6 +2287,7 @@ Europe	Romania	Sanmihaiu Roman
 Europe	Romania	Suceava	
 Europe	Romania	Suceava	Iasi
 Europe	Romania	Teleorman	
+Europe	Romania	Tulcea	
 Europe	Romania	Valcea	
 Europe	Romania	Vrancea	
 Europe	Romania	Vrancea	Focsani
@@ -3120,6 +3137,7 @@ Europe	Switzerland	Geneva
 Europe	Switzerland	Glarus	
 Europe	Switzerland	Graubünden	
 Europe	Switzerland	Graubünden	Champfer
+Europe	Switzerland	Graubünden	Chur
 Europe	Switzerland	Graubünden	Flims Dorf
 Europe	Switzerland	Jura	
 Europe	Switzerland	Jura	Saignelegier
@@ -3131,6 +3149,8 @@ Europe	Switzerland	Obwalden
 Europe	Switzerland	Sankt Gallen	
 Europe	Switzerland	Schaffhausen	
 Europe	Switzerland	Schwyz	
+Europe	Switzerland	Schwyz	Küssnacht Am Rigi
+Europe	Switzerland	Schwyz	Merlischachen
 Europe	Switzerland	Schwyz	Wollerau
 Europe	Switzerland	Solothurn	
 Europe	Switzerland	Solothurn	Breitenbach
@@ -3139,6 +3159,7 @@ Europe	Switzerland	Solothurn	Flüh
 Europe	Switzerland	Solothurn	Hochwald
 Europe	Switzerland	Solothurn	Solothurn
 Europe	Switzerland	Switzerland	
+Europe	Switzerland	Tessin	
 Europe	Switzerland	Thurgau	
 Europe	Switzerland	Ticino	
 Europe	Switzerland	Uri	
@@ -4372,7 +4393,9 @@ South America	Brazil	São Paulo	Cotia
 South America	Brazil	São Paulo	Cunha
 South America	Brazil	São Paulo	Diadema
 South America	Brazil	São Paulo	Embu Das Artes
+South America	Brazil	São Paulo	Embu-Guacu
 South America	Brazil	São Paulo	Emilianopolis
+South America	Brazil	São Paulo	Ermelino Matarazzo
 South America	Brazil	São Paulo	Euclides Da Cunha Paulista
 South America	Brazil	São Paulo	Fernandopolis
 South America	Brazil	São Paulo	Guararema
@@ -4396,12 +4419,15 @@ South America	Brazil	São Paulo	Marilia
 South America	Brazil	São Paulo	Maua
 South America	Brazil	São Paulo	Mococa
 South America	Brazil	São Paulo	Mogi Das Cruzes
+South America	Brazil	São Paulo	Mogi-Guacu
 South America	Brazil	São Paulo	Mongagua
 South America	Brazil	São Paulo	Nova Odessa
 South America	Brazil	São Paulo	Osasco
 South America	Brazil	São Paulo	Peruibe
+South America	Brazil	São Paulo	Pindamonhangaba
 South America	Brazil	São Paulo	Piracicaba
 South America	Brazil	São Paulo	Poa
+South America	Brazil	São Paulo	Porto Feliz
 South America	Brazil	São Paulo	Presidente Epitacio
 South America	Brazil	São Paulo	Presidente Prudente
 South America	Brazil	São Paulo	Presidente Venceslau
@@ -4420,6 +4446,7 @@ South America	Brazil	São Paulo	Santos
 South America	Brazil	São Paulo	Sao Bernardo do Campo
 South America	Brazil	São Paulo	Sao Caetano do Sul
 South America	Brazil	São Paulo	Sao Jose Dos Campos
+South America	Brazil	São Paulo	Sao Mateus
 South America	Brazil	São Paulo	Sao Sebastiao
 South America	Brazil	São Paulo	Sao Vicente
 South America	Brazil	São Paulo	Sorocaba
