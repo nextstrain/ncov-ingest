@@ -69,19 +69,12 @@ main() {
 
 
     echo "Launching a trial build for nextstrain/base:branch-python-base"
-
-    # Must use a config file because Snakemake's --config options seemingly
-    # don't override the profile's config files as they should.  Not sure why.
-    tee ncov/trial.yaml <<<"
----
-S3_BUCKET: nextstrain-ncov-private/branch/new-build-base-image
-s3_staging_url: s3://nextstrain-staging/trial_
-"
-
     "$bin"/launch-build \
         --image nextstrain/base:branch-python-base \
         ncov deploy_to_staging upload \
-        --configfile trial.yaml
+        --config \
+            S3_BUCKET=nextstrain-ncov-private/branch/new-build-base-image \
+            s3_staging_url=s3://nextstrain-staging/trial_
 }
 
 # Returns 1 if both files match (have identical hashes). Else returns 0.
