@@ -16,6 +16,7 @@ Africa	Benin	Oueme
 Africa	Botswana	Francistown	
 Africa	Botswana	Gaborone	
 Africa	Botswana	Maun	
+Africa	Botswana	Southern East	
 Africa	Burkina Faso	Burkina Faso	
 Africa	Burkina Faso	Cascades	
 Africa	Burkina Faso	Cascades	Banfora
@@ -129,6 +130,7 @@ Africa	Nigeria	Ondo State
 Africa	Nigeria	Osun State	
 Africa	Nigeria	Oyo State	
 Africa	Nigeria	Rivers	
+Africa	Nigeria	Zamfara State	
 Africa	Republic of the Congo	Brazzaville	
 Africa	Rwanda	Kigali	
 Africa	Rwanda	Rwanda	
@@ -824,6 +826,9 @@ Asia	Palestine	Nablus	Majdal Bani Fadil
 Asia	Palestine	Nablus	Qusra
 Asia	Palestine	Ramallah	
 Asia	Palestine	Ramallah	Jalazone
+Asia	Palestine	Ramallah and al-Bireh Governorate	
+Asia	Palestine	Ramallah and al-Bireh Governorate	Jalazone
+Asia	Palestine	Ramallah and al-Bireh Governorate	Ramallah
 Asia	Palestine	Tulkarem	
 Asia	Palestine	West Bank	
 Asia	Palestine	West Bank	Elkana
@@ -1694,6 +1699,7 @@ Europe	France	Auvergne-Rhône-Alpes	Villefranche-sur-Saône
 Europe	France	Bourgogne	
 Europe	France	Bourgogne	Dijon
 Europe	France	Bourgogne-France-Comté	
+Europe	France	Bourgogne-France-Comté	Besancon
 Europe	France	Bourgogne-France-Comté	Chalon sur Saone
 Europe	France	Bourgogne-France-Comté	Dijon
 Europe	France	Bourgogne-France-Comté	Montcenis
@@ -1730,10 +1736,12 @@ Europe	France	Centre-Val de Loire	Orléans
 Europe	France	Centre-Val de Loire	Rouziers-de-Touraine
 Europe	France	Centre-Val de Loire	Tours
 Europe	France	Corse	
+Europe	France	Corse	Bastia
 Europe	France	Corse	Porto-Vecchio
 Europe	France	France	
 Europe	France	Grand Est	
 Europe	France	Grand Est	Amneville
+Europe	France	Grand Est	Bezannes
 Europe	France	Grand Est	Biesheim
 Europe	France	Grand Est	Bischheim
 Europe	France	Grand Est	Brumath
@@ -1797,6 +1805,8 @@ Europe	France	Hauts de France	Wambrechies
 Europe	France	Ile de France	
 Europe	France	Ile de France	Argenteuil
 Europe	France	Ile de France	Asnières-sur-Seine
+Europe	France	Ile de France	Aulnay Sous Bois
+Europe	France	Ile de France	Bobigny
 Europe	France	Ile de France	Boulogne Billancourt
 Europe	France	Ile de France	Bry sur Marne
 Europe	France	Ile de France	Cergy
@@ -1870,6 +1880,7 @@ Europe	France	Pays de la Loire	Cholet
 Europe	France	Pays de la Loire	Le Mans
 Europe	France	Pays de la Loire	Nantes
 Europe	France	Pays de la Loire	Saint Herblain
+Europe	France	Pays de la Loire	Saint Nazaire
 Europe	France	Pays de la Loire	Saint-Gilles-Croix-de-Vie
 Europe	France	Pays de la Loire	Val de Loire
 Europe	France	Provence-Alpes-Côte d'Azur	
@@ -2107,6 +2118,7 @@ Europe	Italy	Tuscany	Siena
 Europe	Italy	Umbria	
 Europe	Italy	Valle D'Aosta	
 Europe	Italy	Veneto	
+Europe	Italy	Veneto	Belluno
 Europe	Italy	Veneto	Padova
 Europe	Italy	Veneto	Rovigo
 Europe	Italy	Veneto	Treviso
@@ -2226,6 +2238,7 @@ Europe	Norway	Vestland	Bergen
 Europe	Norway	Vestlandet	
 Europe	Norway	Viken	
 Europe	Poland	Dolnośląskie	
+Europe	Poland	Lubuskie	
 Europe	Poland	Malopolskie	
 Europe	Poland	Malopolskie	Kraków
 Europe	Poland	Masovia	
@@ -2236,13 +2249,17 @@ Europe	Poland	Mazowieckie	Plock
 Europe	Poland	Mazowieckie	Radom
 Europe	Poland	Mazowieckie	Warszawa
 Europe	Poland	Opolskie	
+Europe	Poland	Podkarpackie	
 Europe	Poland	Poland	
 Europe	Poland	Pomorskie	
 Europe	Poland	Slask	
+Europe	Poland	Slaskie	
+Europe	Poland	Swietokrzyskie	
 Europe	Poland	Warminsko-Mazurskie	
 Europe	Poland	Warminsko-Mazurskie	Olsztyn
 Europe	Poland	Wielkopolskie	
 Europe	Poland	Wielkopolskie	Kalisz
+Europe	Poland	Zachodniopomorskie	
 Europe	Poland	Zielonogorskie	
 Europe	Poland	Łódzkie	
 Europe	Poland	Łódzkie	Belchatow County
@@ -2342,7 +2359,15 @@ Europe	Russia	Ingushetia	Nazran
 Europe	Russia	Irkutsk Region	
 Europe	Russia	Irkutsk Region	Irkutsk
 Europe	Russia	Ivanovo	
+Europe	Russia	Ivanovo	Furmanov
 Europe	Russia	Ivanovo	Ivanovo
+Europe	Russia	Ivanovo	Kineshma
+Europe	Russia	Ivanovo	Mikhalevo
+Europe	Russia	Ivanovo	Rodniki
+Europe	Russia	Ivanovo	Shuya (Ivanovo)
+Europe	Russia	Ivanovo	Vichuga
+Europe	Russia	Ivanovo	Yuryevets
+Europe	Russia	Ivanovo	Zavolzhsk
 Europe	Russia	Kabardino-Balkaria	
 Europe	Russia	Kaliningrad Region	
 Europe	Russia	Kaliningrad Region	Kaliningrad
@@ -2367,6 +2392,7 @@ Europe	Russia	Karelia	Podporozhye
 Europe	Russia	Karelia	Porosoozero
 Europe	Russia	Karelia	Povenets
 Europe	Russia	Karelia	Shuya
+Europe	Russia	Karelia	Shuya (Karelia)
 Europe	Russia	Karelia	Sosnovka
 Europe	Russia	Kemerovo	
 Europe	Russia	Kemerovo	Kemerovo
@@ -2476,6 +2502,7 @@ Europe	Russia	Ryazan
 Europe	Russia	Ryazan	Ryazan
 Europe	Russia	Saint-Petersburg	
 Europe	Russia	Saint-Petersburg	Saint Petersburg
+Europe	Russia	Saint-Petersburg	Saint-Petersburg
 Europe	Russia	Sakhalin	
 Europe	Russia	Samara	
 Europe	Russia	Saratov	
@@ -2569,10 +2596,12 @@ Europe	Serbia	Zlatibor District
 Europe	Serbia	Zlatibor District	Uzice
 Europe	Serbia	Šumadija District	
 Europe	Serbia	Šumadija District	Kragujevac
+Europe	Slovakia	Banovce nad Bebravou	
 Europe	Slovakia	Banska Bystrica	
 Europe	Slovakia	Banska Bystrica	Zelovce
 Europe	Slovakia	Bratislava	
 Europe	Slovakia	Doľany	
+Europe	Slovakia	Ilava	
 Europe	Slovakia	Jatov	
 Europe	Slovakia	Kamenicna	
 Europe	Slovakia	Kosice	
@@ -2583,11 +2612,16 @@ Europe	Slovakia	Martin
 Europe	Slovakia	Miloslavov	
 Europe	Slovakia	Nitra	
 Europe	Slovakia	Nitra	Hurbanovo
+Europe	Slovakia	Nove Mesto nad Vahom	
 Europe	Slovakia	Nove Zamky	
+Europe	Slovakia	Oravska Lesna	
+Europe	Slovakia	Partizanske	
 Europe	Slovakia	Pavlovce nad Uhom	
 Europe	Slovakia	Pezinok	
+Europe	Slovakia	Prievidza	
 Europe	Slovakia	Slovakia	
 Europe	Slovakia	Surany	
+Europe	Slovakia	Trencin	
 Europe	Slovakia	Tvrdosovce	
 Europe	Slovakia	Zilina	
 Europe	Slovakia	Zilina	Martincek
@@ -3385,6 +3419,7 @@ North America	Mexico	Colima
 North America	Mexico	Durango	
 North America	Mexico	Durango	Gomez Palacios
 North America	Mexico	Estado de Mexico	
+North America	Mexico	Estado de Mexico	Nicolas Romero
 North America	Mexico	Guadalajara	
 North America	Mexico	Guanajuato	
 North America	Mexico	Guerrero	
@@ -3392,6 +3427,7 @@ North America	Mexico	Hidalgo
 North America	Mexico	Jalisco	
 North America	Mexico	Mexico	
 North America	Mexico	Mexico City	
+North America	Mexico	Mexico City	Chimalhuacan
 North America	Mexico	Michoacan	
 North America	Mexico	Morelos	
 North America	Mexico	Nayarit	
@@ -3400,14 +3436,20 @@ North America	Mexico	Oaxaca
 North America	Mexico	Puebla	
 North America	Mexico	Queretaro	
 North America	Mexico	Quintana Roo	
+North America	Mexico	Quintana Roo	Cozumel
 North America	Mexico	San Luis Potosi	
 North America	Mexico	Sinaloa	
 North America	Mexico	Sonora	
+North America	Mexico	Sonora	Caborca
+North America	Mexico	Sonora	Hermosillo
 North America	Mexico	Sonora	San Luis Rio Colorado
 North America	Mexico	Tabasco	
+North America	Mexico	Tabasco	Centla
+North America	Mexico	Tabasco	Huimanguillo
 North America	Mexico	Tamaulipas	
 North America	Mexico	Tamaulipas	Matamoros
 North America	Mexico	Tlaxcala	
+North America	Mexico	Tlaxcala	Calpulalpan
 North America	Mexico	Veracruz	
 North America	Mexico	Yucatan	
 North America	Mexico	Zacatecas	
@@ -3471,8 +3513,48 @@ North America	Saint Barthélemy	Saint Barthélemy
 North America	Saint Kitts and Nevis	Saint Kitts and Nevis	
 North America	Saint Martin	Saint Martin	
 North America	Saint Vincent and the Grenadines	Saint Vincent and the Grenadines	
+North America	St. Lucia	St. Lucia	
 North America	USA	Alabama	
+North America	USA	Alabama	Autauga County
+North America	USA	Alabama	Baldwin County
+North America	USA	Alabama	Blount County
+North America	USA	Alabama	Butler County
+North America	USA	Alabama	Calhoun County AL
+North America	USA	Alabama	Cherokee County
+North America	USA	Alabama	Chilton County
+North America	USA	Alabama	Clay County
+North America	USA	Alabama	Cleburne County
+North America	USA	Alabama	Coffee County
+North America	USA	Alabama	Conecuh County
+North America	USA	Alabama	Covington County
+North America	USA	Alabama	Cullman County
+North America	USA	Alabama	Dale County
+North America	USA	Alabama	Dekalb County AL
+North America	USA	Alabama	Elmore County
+North America	USA	Alabama	Escambia County
+North America	USA	Alabama	Etowah County
+North America	USA	Alabama	Geneva County
+North America	USA	Alabama	Hale County
+North America	USA	Alabama	Houston County AL
+North America	USA	Alabama	Jackson County AL
+North America	USA	Alabama	Jefferson County AL
+North America	USA	Alabama	Lauderdale County
+North America	USA	Alabama	Lawrence County
+North America	USA	Alabama	Limestone County AL
+North America	USA	Alabama	Madison County AL
+North America	USA	Alabama	Marshall County
+North America	USA	Alabama	Mobile County
+North America	USA	Alabama	Montgomery County AL
 North America	USA	Alabama	Morgan County AL
+North America	USA	Alabama	Pickens County AL
+North America	USA	Alabama	Randolph County AL
+North America	USA	Alabama	Shelby County
+North America	USA	Alabama	St. Clair County AL
+North America	USA	Alabama	Sumter County
+North America	USA	Alabama	Talladega County
+North America	USA	Alabama	Tallapoosa County
+North America	USA	Alabama	Tuscaloosa County
+North America	USA	Alabama	Winston County
 North America	USA	Alaska	
 North America	USA	Alaska	Anchorage
 North America	USA	Alaska	Fairbanks
@@ -3595,6 +3677,7 @@ North America	USA	Florida	Walton County
 North America	USA	Georgia	
 North America	USA	Georgia	Atlanta
 North America	USA	Georgia	Cobb
+North America	USA	Georgia	Thomas County
 North America	USA	Grand Princess	
 North America	USA	Grand Princess	Grand Princess Cruise Ship
 North America	USA	Grand Princess 2nd cruise	
@@ -3615,6 +3698,7 @@ North America	USA	Illinois	Clark County IL
 North America	USA	Illinois	Clinton County IL
 North America	USA	Illinois	Cook County
 North America	USA	Illinois	Dekalb County
+North America	USA	Illinois	Dekalb County IL
 North America	USA	Illinois	Dupage County
 North America	USA	Illinois	Fayette County IL
 North America	USA	Illinois	Franklin County IL
@@ -3636,9 +3720,11 @@ North America	USA	Illinois	Ogle County IL
 North America	USA	Illinois	Perry County
 North America	USA	Illinois	Pulaski County
 North America	USA	Illinois	Randolph County
+North America	USA	Illinois	Randolph County IL
 North America	USA	Illinois	Rock Island County
 North America	USA	Illinois	Saline County
 North America	USA	Illinois	St. Clair County
+North America	USA	Illinois	St. Clair County IL
 North America	USA	Illinois	Stephenson County
 North America	USA	Illinois	Union County IL
 North America	USA	Illinois	White County
@@ -3705,6 +3791,7 @@ North America	USA	Minnesota
 North America	USA	Minnesota	Dakota County
 North America	USA	Minnesota	Fillmore County
 North America	USA	Minnesota	Houston County
+North America	USA	Minnesota	Houston County MN
 North America	USA	Minnesota	Stearns County
 North America	USA	Minnesota	Wabasha County
 North America	USA	Minnesota	Winona County
@@ -3717,6 +3804,7 @@ North America	USA	Montana
 North America	USA	Montana	Ravalli County
 North America	USA	Nebraska	
 North America	USA	Nebraska	Lancaster County
+North America	USA	Nebraska	Lancaster County NE
 North America	USA	Nebraska	Omaha
 North America	USA	Nevada	
 North America	USA	Nevada	Clark County NV
@@ -3857,6 +3945,7 @@ North America	USA	South Carolina	Anderson County
 North America	USA	South Carolina	Beaufort County
 North America	USA	South Carolina	Berkeley County
 North America	USA	South Carolina	Charleston County
+North America	USA	South Carolina	Colleton County
 North America	USA	South Carolina	Columbia SC
 North America	USA	South Carolina	Darlington County
 North America	USA	South Carolina	Dorchester County
@@ -3865,12 +3954,16 @@ North America	USA	South Carolina	Florence County
 North America	USA	South Carolina	Georgetown
 North America	USA	South Carolina	Georgetown County
 North America	USA	South Carolina	Greenville County
+North America	USA	South Carolina	Hampton County
 North America	USA	South Carolina	Horry
 North America	USA	South Carolina	Horry County
+North America	USA	South Carolina	Lancaster County SC
+North America	USA	South Carolina	Pickens County SC
 North America	USA	South Carolina	Richland County SC
 North America	USA	South Carolina	Spartanburg County
 North America	USA	South Carolina	Williamsburg
 North America	USA	South Carolina	Williamsburg County
+North America	USA	South Carolina	York County
 North America	USA	South Dakota	
 North America	USA	South Dakota	Minnehaha County
 North America	USA	Tennessee	
@@ -3887,6 +3980,7 @@ North America	USA	Texas	Brewster County
 North America	USA	Texas	Brown County TX
 North America	USA	Texas	Burleson County
 North America	USA	Texas	Calhoun County
+North America	USA	Texas	Calhoun County TX
 North America	USA	Texas	Cameron County
 North America	USA	Texas	Cass County
 North America	USA	Texas	Collin County
@@ -3923,6 +4017,7 @@ North America	USA	Texas	Kaufman County
 North America	USA	Texas	Lamar County
 North America	USA	Texas	Lavaca County
 North America	USA	Texas	Limestone County
+North America	USA	Texas	Limestone County TX
 North America	USA	Texas	Live Oak County
 North America	USA	Texas	Llano County
 North America	USA	Texas	Lubbock County
@@ -3969,6 +4064,7 @@ North America	USA	Utah
 North America	USA	Vermont	
 North America	USA	Virgin Islands	
 North America	USA	Virginia	
+North America	USA	Virginia	Frederick County
 North America	USA	Washington	
 North America	USA	Washington	Adams County WA
 North America	USA	Washington	Asotin County
