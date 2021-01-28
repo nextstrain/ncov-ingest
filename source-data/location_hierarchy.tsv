@@ -879,6 +879,7 @@ Asia	Taiwan	Taiwan	Kaohsiung
 Asia	Taiwan	Taiwan	Taipei
 Asia	Taiwan	Taiwan	Taoyuan
 Asia	Tajikistan	Tajikistan	
+Asia	Thailand	Ang Thong	
 Asia	Thailand	Bangkok	
 Asia	Thailand	Chiang Rai	
 Asia	Thailand	Chonburi	
@@ -888,6 +889,7 @@ Asia	Thailand	Pathum Thani
 Asia	Thailand	Phitsanulok	
 Asia	Thailand	Phuket	
 Asia	Thailand	Rayong	
+Asia	Thailand	Samut Prakan	
 Asia	Thailand	Samut Prakarn	
 Asia	Thailand	Samut Sakhon	
 Asia	Thailand	Samut Songkhram	
@@ -979,6 +981,7 @@ Europe	Austria	Upper Austria	Linz
 Europe	Austria	Upper Austria	Losenstein
 Europe	Austria	Vienna	
 Europe	Austria	Vorarlberg	
+Europe	Azerbaijan	Azerbaijan	
 Europe	Belarus	Belarus	
 Europe	Belarus	Gomel Region	
 Europe	Belarus	Gomel Region	Kalinkavichy
@@ -1543,6 +1546,7 @@ Europe	Czech Republic	Central Bohemian Region	Chýně
 Europe	Czech Republic	Central Bohemian Region	Herink
 Europe	Czech Republic	Central Bohemian Region	Hořátev
 Europe	Czech Republic	Central Bohemian Region	Hrušov
+Europe	Czech Republic	Central Bohemian Region	Kladno
 Europe	Czech Republic	Central Bohemian Region	Kochánky
 Europe	Czech Republic	Central Bohemian Region	Kolin
 Europe	Czech Republic	Central Bohemian Region	Kostelec N. Černými Lesy
@@ -1573,6 +1577,7 @@ Europe	Czech Republic	Central Bohemian Region	Říčany
 Europe	Czech Republic	Czech Republic	
 Europe	Czech Republic	Hradec Králové Region	
 Europe	Czech Republic	Hradec Králové Region	Jičín
+Europe	Czech Republic	Hradec Králové Region	Police nad Metují
 Europe	Czech Republic	Hradec Králové Region	Sběř
 Europe	Czech Republic	Hradec Králové Region	Staré Hrady
 Europe	Czech Republic	Hradec Králové Region	Trutnov
@@ -1710,7 +1715,7 @@ Europe	France	Bretagne
 Europe	France	Bretagne	Arradon
 Europe	France	Bretagne	Betton
 Europe	France	Bretagne	Brest
-Europe	France	Bretagne	Cayenne
+Europe	France	Bretagne	Cayenne BRE
 Europe	France	Bretagne	Chateaulin
 Europe	France	Bretagne	Fougères
 Europe	France	Bretagne	La Rochelle
@@ -1739,6 +1744,7 @@ Europe	France	Corse
 Europe	France	Corse	Bastia
 Europe	France	Corse	Porto-Vecchio
 Europe	France	France	
+Europe	France	French Guiana	Cayenne GF
 Europe	France	Grand Est	
 Europe	France	Grand Est	Amneville
 Europe	France	Grand Est	Bezannes
@@ -1758,6 +1764,7 @@ Europe	France	Grand Est	Hegenheim
 Europe	France	Grand Est	Ingersheim
 Europe	France	Grand Est	Joeuf
 Europe	France	Grand Est	Liepvre
+Europe	France	Grand Est	Lorraine
 Europe	France	Grand Est	Maizières Les Metz
 Europe	France	Grand Est	Marange Silvange
 Europe	France	Grand Est	Metz
@@ -1856,6 +1863,7 @@ Europe	France	Mayotte	Mamoudzou
 Europe	France	Normandie	
 Europe	France	Normandie	Bernieres-le-Patry
 Europe	France	Normandie	Carentan
+Europe	France	Normandie	Cherbourg-Octeville
 Europe	France	Normandie	Le Havre
 Europe	France	Normandie	Lisieux
 Europe	France	Normandie	Rouen
@@ -3517,36 +3525,50 @@ North America	St. Lucia	St. Lucia
 North America	USA	Alabama	
 North America	USA	Alabama	Autauga County
 North America	USA	Alabama	Baldwin County
+North America	USA	Alabama	Barbour County
+North America	USA	Alabama	Bibb County
 North America	USA	Alabama	Blount County
 North America	USA	Alabama	Butler County
 North America	USA	Alabama	Calhoun County AL
+North America	USA	Alabama	Chambers County
 North America	USA	Alabama	Cherokee County
 North America	USA	Alabama	Chilton County
 North America	USA	Alabama	Clay County
 North America	USA	Alabama	Cleburne County
 North America	USA	Alabama	Coffee County
+North America	USA	Alabama	Colbert County
 North America	USA	Alabama	Conecuh County
+North America	USA	Alabama	Coosa County
 North America	USA	Alabama	Covington County
+North America	USA	Alabama	Crenshaw County
 North America	USA	Alabama	Cullman County
 North America	USA	Alabama	Dale County
+North America	USA	Alabama	Dallas County AL
 North America	USA	Alabama	Dekalb County AL
 North America	USA	Alabama	Elmore County
 North America	USA	Alabama	Escambia County
 North America	USA	Alabama	Etowah County
+North America	USA	Alabama	Fayette County AL
 North America	USA	Alabama	Geneva County
 North America	USA	Alabama	Hale County
+North America	USA	Alabama	Henry County
 North America	USA	Alabama	Houston County AL
 North America	USA	Alabama	Jackson County AL
 North America	USA	Alabama	Jefferson County AL
 North America	USA	Alabama	Lauderdale County
 North America	USA	Alabama	Lawrence County
+North America	USA	Alabama	Lee County AL
 North America	USA	Alabama	Limestone County AL
+North America	USA	Alabama	Lowndes County
 North America	USA	Alabama	Madison County AL
+North America	USA	Alabama	Marion County AL
 North America	USA	Alabama	Marshall County
 North America	USA	Alabama	Mobile County
 North America	USA	Alabama	Montgomery County AL
 North America	USA	Alabama	Morgan County AL
+North America	USA	Alabama	Perry County AL
 North America	USA	Alabama	Pickens County AL
+North America	USA	Alabama	Pike County
 North America	USA	Alabama	Randolph County AL
 North America	USA	Alabama	Shelby County
 North America	USA	Alabama	St. Clair County AL
@@ -3554,6 +3576,8 @@ North America	USA	Alabama	Sumter County
 North America	USA	Alabama	Talladega County
 North America	USA	Alabama	Tallapoosa County
 North America	USA	Alabama	Tuscaloosa County
+North America	USA	Alabama	Walker County
+North America	USA	Alabama	Wilcox County
 North America	USA	Alabama	Winston County
 North America	USA	Alaska	
 North America	USA	Alaska	Anchorage
@@ -3711,13 +3735,13 @@ North America	USA	Illinois	Kane County
 North America	USA	Illinois	Kankakee County
 North America	USA	Illinois	Kendall County
 North America	USA	Illinois	Lake County IL
-North America	USA	Illinois	Lee County
+North America	USA	Illinois	Lee County IL
 North America	USA	Illinois	Madison County IL
 North America	USA	Illinois	Mchenry County
 North America	USA	Illinois	Monroe County IL
 North America	USA	Illinois	Ogle County
 North America	USA	Illinois	Ogle County IL
-North America	USA	Illinois	Perry County
+North America	USA	Illinois	Perry County IL
 North America	USA	Illinois	Pulaski County
 North America	USA	Illinois	Randolph County
 North America	USA	Illinois	Randolph County IL
@@ -3988,7 +4012,7 @@ North America	USA	Texas	Comal County
 North America	USA	Texas	Comanche County
 North America	USA	Texas	Crosby
 North America	USA	Texas	Crosby County
-North America	USA	Texas	Dallas County
+North America	USA	Texas	Dallas County TX
 North America	USA	Texas	Deaf Smith County
 North America	USA	Texas	Denton County
 North America	USA	Texas	Ector County
@@ -4333,6 +4357,7 @@ South America	Brazil	Distrito Federal	Brasilia
 South America	Brazil	Espirito Santo	
 South America	Brazil	Espirito Santo	Vila Velha
 South America	Brazil	Goiás	
+South America	Brazil	Goiás	Santa Barbara de Goias
 South America	Brazil	Maranhão	
 South America	Brazil	Mato Grosso	
 South America	Brazil	Minas Gerais	
@@ -4507,6 +4532,7 @@ South America	Brazil	São Paulo	Cajati
 South America	Brazil	São Paulo	Campinas
 South America	Brazil	São Paulo	Candido Mota
 South America	Brazil	São Paulo	Caraguatatuba
+South America	Brazil	São Paulo	Cesário Lange
 South America	Brazil	São Paulo	Cotia
 South America	Brazil	São Paulo	Cunha
 South America	Brazil	São Paulo	Diadema
@@ -4530,6 +4556,7 @@ South America	Brazil	São Paulo	Jandira
 South America	Brazil	São Paulo	Jarinu
 South America	Brazil	São Paulo	Jundiai
 South America	Brazil	São Paulo	Juquia
+South America	Brazil	São Paulo	Juquitiba
 South America	Brazil	São Paulo	Limeira
 South America	Brazil	São Paulo	Lorena
 South America	Brazil	São Paulo	Mairipora
