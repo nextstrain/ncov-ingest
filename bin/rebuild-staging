@@ -73,7 +73,8 @@ main() {
         --image nextstrain/base:branch-python-base \
         ncov deploy_to_staging upload \
         --config \
-            S3_BUCKET=nextstrain-ncov-private/branch/new-build-base-image \
+            S3_SRC_BUCKET=nextstrain-ncov-private \
+            S3_DST_BUCKET=nextstrain-ncov-private/branch/new-build-base-image \
             s3_staging_url=s3://nextstrain-staging/trial_
 }
 
