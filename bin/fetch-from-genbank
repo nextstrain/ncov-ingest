@@ -12,6 +12,13 @@ The request this program makes is based on observing the network activity that
 performs after clicking through the download interface.  Some tweaks were made
 by comparing different download requests and guessing, which allows us to
 download the metadata + sequence in the same request instead of two.
+
+See also the full set of fields available in an example record saved to:
+
+    docs/ncbi-virus-all-fields-example.json
+
+which was extracted from network observations during load of the above NCBI
+Virus URL.
 """
 import csv
 import json
