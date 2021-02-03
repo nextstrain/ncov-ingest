@@ -49,6 +49,7 @@ params = {
             # useful?
             #   -trs, 13 May 2020
             ('genbank_accession',       'id'),
+            ('genbank_accession_rev',   'AccVer_s'),
             ('database',                'SourceDB_s'),
             ('strain',                  'Isolate_s'),
             ('region',                  'Region_s'),
