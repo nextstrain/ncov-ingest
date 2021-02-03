@@ -1,3 +1,4 @@
+import csv
 import re
 import unicodedata
 from collections import defaultdict
@@ -250,6 +251,16 @@ class MergeUserAnnotatedMetadata(Transformer):
         for key, value in annotations:
             entry[key] = value
         return entry
+
+class WriteCSV(Transformer):
+    """writes the data to a CSV file."""
+    def __init__(self, writer: csv.DictWriter ):
+        self.writer = writer
+
+    def transform_value(self, entry: dict) -> dict:
+        self.writer.writerow(entry)
+        return entry
+
 
 
 class FillDefaultLocationData(Transformer):

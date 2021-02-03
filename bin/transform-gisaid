@@ -28,6 +28,7 @@ from utils.transformpipeline.transforms import (
     RenameAndAddColumns,
     StandardizeData,
     UserProvidedAnnotations,
+    WriteCSV,
 )
 
 # Preserve the ordering of these columns for ease when generating Slack
@@ -70,13 +71,13 @@ if __name__ == '__main__':
         default=base / "source-data/accessions.tsv",
         help="Optional manually curated TSV cross-referencing accessions between databases (e.g. GISAID and GenBank/INSDC).")
     parser.add_argument("--output-metadata",
-        default=base / "data/gisaid/metadata.tsv",
+        default=str( base / "data/gisaid/metadata.tsv" ), 
         help="Output location of generated metadata tsv. Defaults to `data/gisaid/metadata.tsv`")
     parser.add_argument("--output-fasta",
-        default=base / "data/gisaid/sequences.fasta",
+        default=str( base / "data/gisaid/sequences.fasta" ) ,
         help="Output location of generated FASTA file. Defaults to `data/gisaid/sequences.fasta`")
     parser.add_argument("--output-additional-info",
-        default=base / "data/gisaid/additional_info.tsv",
+        default=str( base / "data/gisaid/additional_info.tsv" ) ,
         help="Output location of additional info tsv. Defaults to `data/gisaid/additional_info.tsv`")
     parser.add_argument("--sorted-fasta", action="store_true",
         help="Sort the fasta file in the same order as the metadata file.  WARNING: Enabling this option can consume a lot of memory.")
@@ -93,6 +94,7 @@ if __name__ == '__main__':
     annotations = UserProvidedAnnotations()
     if args.annotations:
         # Use the curated annotations tsv to update any column values
+        print(args.annotations)
         with open(args.annotations, "r") as gisaid_fh:
             csvreader = csv.reader(gisaid_fh, delimiter='\t')
             for row in csvreader:
@@ -109,6 +111,7 @@ if __name__ == '__main__':
                     value.split('#')[0].rstrip(),
                 )
 
+
     accessions = UserProvidedAnnotations()
     if args.accessions:
         with open(args.accessions, "r") as accessions_fh:
@@ -119,7 +122,9 @@ if __name__ == '__main__':
                     row["genbank_accession"]
                 )
 
-    with open(args.gisaid_data, "r") as gisaid_fh:
+    with open(args.gisaid_data, "r") as gisaid_fh , \
+         open(args.output_metadata + '.raw', "wt", newline="") as metadata_raw_fh:
+
         pipeline = (
             LineToJsonDataSource(gisaid_fh)
             | RenameAndAddColumns()
@@ -129,7 +134,7 @@ if __name__ == '__main__':
 
         if not args.sorted_fasta:
             pipeline = pipeline | DropSequenceData()
-
+        
         pipeline = (
             pipeline
             | ExpandLocation()
@@ -137,7 +142,28 @@ if __name__ == '__main__':
             | AbbreviateAuthors()
             | ParsePatientAge()
             | ParseSex()
-            | AddHardcodedMetadata()
+            | AddHardcodedMetadata() 
+        )
+
+        # set up the CSV output files for raw metadata
+        dict_writer_kwargs = {'lineterminator': args.newline}
+
+
+        metadata_csv = csv.DictWriter(
+            metadata_raw_fh,
+            METADATA_COLUMNS,
+            restval="?",
+            extrasaction='ignore',
+            delimiter='\t',
+            **dict_writer_kwargs
+        )
+        metadata_csv.writeheader()
+
+        pipeline = ( pipeline  | WriteCSV( metadata_csv ) )
+
+
+
+        pipeline = (pipeline
             | MergeUserAnnotatedMetadata(annotations)
             | MergeUserAnnotatedMetadata(accessions)
             | FillDefaultLocationData()
