@@ -242,7 +242,7 @@ if __name__ == '__main__':
     parser.add_argument("--annotations",
         default=base / "source-data/genbank_annotations.tsv",
         help="Optional manually curated annotations TSV.\n"
-            "The TSV file should have no header and exactly four columns which contain:\n\t"
+            "The TSV file should have no header and exactly three columns which contain:\n\t"
             "1. the GenBank accession number\n\t"
             "2. the column name to replace from the generated `metadata.tsv` file\n\t"
             "3. the replacement data\n"
