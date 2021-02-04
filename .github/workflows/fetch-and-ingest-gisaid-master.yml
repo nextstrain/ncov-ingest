@@ -15,13 +15,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+
+    - name: setup
+      run: ./bin/setup-github-workflow
+
     - name: ingest
       run: |
-        PATH="$HOME/.local/bin:$PATH"
-
-        python3 -m pip install --upgrade pip setuptools wheel
-        python3 -m pip install nextstrain-cli
-
         ./bin/write-envdir env.d \
           AWS_DEFAULT_REGION \
           GISAID_API_ENDPOINT \
