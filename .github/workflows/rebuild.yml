@@ -16,7 +16,7 @@ jobs:
     - name: rebuild
       run: |
         PATH="$HOME/.local/bin:$PATH"
-        python3 -m pip install setuptools
+        python3 -m pip install --upgrade pip setuptools wheel
         python3 -m pip install nextstrain-cli
         ./bin/rebuild-staging
       env:
