@@ -66,6 +66,9 @@ if __name__ == '__main__':
         "# First Californian sample\n\t"
         "USA/CA1/2020    EPI_ISL_406034    genbank_accession   MN994467\n\t"
         "Wuhan-Hu-1/2019 EPI_ISL_402125    collection_date 2019-12-26 # Manually corrected date")
+    parser.add_argument("--accessions",
+        default=base / "source-data/accessions.tsv",
+        help="Optional manually curated TSV cross-referencing accessions between databases (e.g. GISAID and GenBank/INSDC).")
     parser.add_argument("--output-metadata",
         default=base / "data/gisaid/metadata.tsv",
         help="Output location of generated metadata tsv. Defaults to `data/gisaid/metadata.tsv`")
@@ -106,6 +109,16 @@ if __name__ == '__main__':
                     value.split('#')[0].rstrip(),
                 )
 
+    accessions = UserProvidedAnnotations()
+    if args.accessions:
+        with open(args.accessions, "r") as accessions_fh:
+            for row in csv.DictReader(accessions_fh, delimiter='\t'):
+                accessions.add_user_annotation(
+                    row["gisaid_epi_isl"],
+                    "genbank_accession",
+                    row["genbank_accession"]
+                )
+
     with open(args.gisaid_data, "r") as gisaid_fh:
         pipeline = (
             LineToJsonDataSource(gisaid_fh)
@@ -126,6 +139,7 @@ if __name__ == '__main__':
             | ParseSex()
             | AddHardcodedMetadata()
             | MergeUserAnnotatedMetadata(annotations)
+            | MergeUserAnnotatedMetadata(accessions)
             | FillDefaultLocationData()
         )
 
