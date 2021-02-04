@@ -65,6 +65,7 @@ Africa	Equatorial Guinea	Litoral	Bata
 Africa	Equatorial Guinea	Litoral	Mbini
 Africa	Ethiopia	Ethiopia	
 Africa	Gabon	Libreville	
+Africa	Gambia	Gambia	
 Africa	Gambia	Kombo	
 Africa	Gambia	West Coast Region	
 Africa	Ghana	Ghana	
@@ -303,6 +304,7 @@ Asia	Bangladesh	Sylhet	Moulvibazar
 Asia	Bangladesh	Sylhet	Sunamganj
 Asia	Bangladesh	Tangail	
 Asia	Brunei	Brunei	
+Asia	Cambodia	Cambodia	
 Asia	Cambodia	Phnom Penh	
 Asia	Cambodia	Sihanoukville	
 Asia	Cambodia	Steung Treng	
@@ -1336,7 +1338,9 @@ Europe	Belgium	Leuven	Oud-Heverlee
 Europe	Belgium	Leuven	Rotselaar
 Europe	Belgium	Leuven	Scherpenheuvel-Zichem
 Europe	Belgium	Leuven	Sint-Joris-Weert
+Europe	Belgium	Leuven	Sint-Joris-Winge
 Europe	Belgium	Leuven	Tervuren
+Europe	Belgium	Leuven	Testelt
 Europe	Belgium	Leuven	Tielt-Winge
 Europe	Belgium	Leuven	Tienen
 Europe	Belgium	Leuven	Tremelo
@@ -1363,6 +1367,7 @@ Europe	Belgium	Liège	Seraing
 Europe	Belgium	Liège	Soumagne
 Europe	Belgium	Liège	Voroux-lez-Liers
 Europe	Belgium	Liège	Wandre
+Europe	Belgium	Luxembourg BE	
 Europe	Belgium	Maaseik	
 Europe	Belgium	Maaseik	Bocholt
 Europe	Belgium	Maaseik	Bree
@@ -1580,6 +1585,7 @@ Europe	Belgium	Turnhout	Grobbendonk
 Europe	Belgium	Turnhout	Herentals
 Europe	Belgium	Turnhout	Herselt
 Europe	Belgium	Turnhout	Hoogstraten
+Europe	Belgium	Turnhout	Hulshout
 Europe	Belgium	Turnhout	Kasterlee
 Europe	Belgium	Turnhout	Laakdal
 Europe	Belgium	Turnhout	Lille BE
@@ -1614,6 +1620,7 @@ Europe	Belgium	Verviers	Theux
 Europe	Belgium	Veurne	
 Europe	Belgium	Veurne	Beveren
 Europe	Belgium	Veurne	De Panne
+Europe	Belgium	Veurne	Oostduinkerke
 Europe	Belgium	Waremme	
 Europe	Belgium	Waremme	Berloz
 Europe	Belgium	Waremme	Hannut
@@ -2307,6 +2314,7 @@ Europe	Lithuania	Utena	Ignalina
 Europe	Lithuania	Utena	Molėtų rajono savivaldybės
 Europe	Lithuania	Utena	Visaginas
 Europe	Lithuania	Utena	Zarasų rajono savivaldybė
+Europe	Lithuania	Vilniaus Apskritis	
 Europe	Lithuania	Vilnius	
 Europe	Lithuania	Vilnius	Ukmerge
 Europe	Lithuania	Vilnius	Širvintų rajono savivaldybė
@@ -2359,6 +2367,7 @@ Europe	Netherlands	North Holland	Naarden
 Europe	Netherlands	North Holland	Schiphol
 Europe	Netherlands	North Holland	Wervershoof
 Europe	Netherlands	Overijssel	
+Europe	Netherlands	Overijssel	Raalte
 Europe	Netherlands	Roermond	
 Europe	Netherlands	South Holland	
 Europe	Netherlands	South Holland	Delft
@@ -3479,13 +3488,20 @@ North America	Canada	Quebec	Lanaudière
 North America	Canada	Quebec	Montérégie
 North America	Costa Rica	Alajuela	
 North America	Costa Rica	Alajuela	Alajuela
+North America	Costa Rica	Alajuela	Cutris
 North America	Costa Rica	Alajuela	Grecia
+North America	Costa Rica	Alajuela	Guacima
 North America	Costa Rica	Alajuela	Orotina
 North America	Costa Rica	Alajuela	Quesada
+North America	Costa Rica	Alajuela	Sabanilla
 North America	Costa Rica	Alajuela	San Carlos
+North America	Costa Rica	Alajuela	San Isidro (Alajuela)
 North America	Costa Rica	Alajuela	San Rafael de Alajuela
 North America	Costa Rica	Alajuela	San Roque CO
+North America	Costa Rica	Alajuela	San Roque CR
+North America	Costa Rica	Alajuela	Santiago (Alajuela)
 North America	Costa Rica	Cartago CR	
+North America	Costa Rica	Cartago CR	Aguacaliente
 North America	Costa Rica	Cartago CR	Carmen
 North America	Costa Rica	Cartago CR	Cartago CR
 North America	Costa Rica	Cartago CR	Concepcion CR
@@ -3494,29 +3510,43 @@ North America	Costa Rica	Cartago CR	El Tejar
 North America	Costa Rica	Cartago CR	La Suiza
 North America	Costa Rica	Cartago CR	La Union
 North America	Costa Rica	Cartago CR	Llanos de Santa Lucia
+North America	Costa Rica	Cartago CR	Occidental
+North America	Costa Rica	Cartago CR	Oreamuno
+North America	Costa Rica	Cartago CR	Orosi
 North America	Costa Rica	Cartago CR	Paraiso
 North America	Costa Rica	Cartago CR	San Diego CR
 North America	Costa Rica	Cartago CR	San Isidro
 North America	Costa Rica	Cartago CR	San Isidro CR
+North America	Costa Rica	Cartago CR	San Juan
 North America	Costa Rica	Cartago CR	San Rafael Cartago
 North America	Costa Rica	Cartago CR	San Ramon
+North America	Costa Rica	Cartago CR	Santa Rosa CR
 North America	Costa Rica	Cartago CR	Tres Rios
 North America	Costa Rica	Cartago CR	Tres Rios CR
 North America	Costa Rica	Costa Rica	
 North America	Costa Rica	Guanacaste	
+North America	Costa Rica	Guanacaste	Bagaces
 North America	Costa Rica	Guanacaste	La Cruz
 North America	Costa Rica	Guanacaste	Liberia
 North America	Costa Rica	Guanacaste	Nicoya
+North America	Costa Rica	Guanacaste	Sardinal
+North America	Costa Rica	Guanacaste	Tilaran
 North America	Costa Rica	Heredia	
 North America	Costa Rica	Heredia	Barva
 North America	Costa Rica	Heredia	Heredia
+North America	Costa Rica	Heredia	Horquetas
 North America	Costa Rica	Heredia	Mercedes
 North America	Costa Rica	Heredia	Paracito
+North America	Costa Rica	Heredia	Puerto Viejo
 North America	Costa Rica	Heredia	San Francisco CR
 North America	Costa Rica	Heredia	San Pablo CR
 North America	Costa Rica	Heredia	San Rafael Heredia
+North America	Costa Rica	Heredia	Santo Domingo CR
+North America	Costa Rica	Heredia	Sarapiqui
 North America	Costa Rica	Limon	
+North America	Costa Rica	Limon	Guapiles
 North America	Costa Rica	Limon	Limon
+North America	Costa Rica	Limon	Pococi
 North America	Costa Rica	Limon	Siquirres
 North America	Costa Rica	Puntarenas	
 North America	Costa Rica	Puntarenas	Buenos Aires
@@ -3525,10 +3555,12 @@ North America	Costa Rica	Puntarenas	Corredor
 North America	Costa Rica	Puntarenas	Corredores
 North America	Costa Rica	Puntarenas	Coto Brus
 North America	Costa Rica	Puntarenas	Garabito
+North America	Costa Rica	Puntarenas	Golfito
 North America	Costa Rica	Puntarenas	La Cuesta
 North America	Costa Rica	Puntarenas	Laurel
 North America	Costa Rica	Puntarenas	Palmar
 North America	Costa Rica	Puntarenas	Piedras Blancas
+North America	Costa Rica	Puntarenas	Puerto Cortes
 North America	Costa Rica	Puntarenas	Puntarenas
 North America	Costa Rica	San Jose	
 North America	Costa Rica	San Jose	Alajuelita
@@ -3538,6 +3570,7 @@ North America	Costa Rica	San Jose	Curridabat
 North America	Costa Rica	San Jose	Desamparados
 North America	Costa Rica	San Jose	Escazu
 North America	Costa Rica	San Jose	Goicoechea
+North America	Costa Rica	San Jose	Granadilla
 North America	Costa Rica	San Jose	Llorente
 North America	Costa Rica	San Jose	Los Guido
 North America	Costa Rica	San Jose	Montes de Oca
@@ -3552,6 +3585,7 @@ North America	Costa Rica	San Jose	Purral
 North America	Costa Rica	San Jose	San Antonio
 North America	Costa Rica	San Jose	San Felipe
 North America	Costa Rica	San Jose	San Francisco de Dos Rios
+North America	Costa Rica	San Jose	San Isidro de El General
 North America	Costa Rica	San Jose	San Jerónimo
 North America	Costa Rica	San Jose	San Jose
 North America	Costa Rica	San Jose	San Pedro
@@ -3760,11 +3794,15 @@ North America	USA	Alaska	Northern Alaska
 North America	USA	Alaska	Southeast Alaska
 North America	USA	Alaska	Southwest Alaska
 North America	USA	Arizona	
+North America	USA	Arizona	Apache County
+North America	USA	Arizona	Coconino County
+North America	USA	Arizona	Gila County
 North America	USA	Arizona	Maricopa County
 North America	USA	Arizona	Mohave County
 North America	USA	Arizona	Navajo County
 North America	USA	Arizona	Phoenix
 North America	USA	Arizona	Pima County
+North America	USA	Arizona	Yavapai County
 North America	USA	Arizona	Yuma
 North America	USA	Arkansas	
 North America	USA	California	
@@ -3907,6 +3945,7 @@ North America	USA	Illinois	Jo Daviess County
 North America	USA	Illinois	Kane County
 North America	USA	Illinois	Kankakee County
 North America	USA	Illinois	Kendall County
+North America	USA	Illinois	Kendall County IL
 North America	USA	Illinois	Lake County IL
 North America	USA	Illinois	Lee County IL
 North America	USA	Illinois	Madison County IL
@@ -4178,6 +4217,7 @@ North America	USA	Tennessee	Shelby County TN
 North America	USA	Texas	
 North America	USA	Texas	Angelina County
 North America	USA	Texas	Atascosa County
+North America	USA	Texas	Austin County
 North America	USA	Texas	Bailey County
 North America	USA	Texas	Bandera County
 North America	USA	Texas	Bee County
@@ -4202,6 +4242,7 @@ North America	USA	Texas	Denton County
 North America	USA	Texas	Ector County
 North America	USA	Texas	El Paso County
 North America	USA	Texas	Fort Bend County
+North America	USA	Texas	Freestone County
 North America	USA	Texas	Galveston County
 North America	USA	Texas	Gonzales County
 North America	USA	Texas	Gray County
@@ -4222,6 +4263,8 @@ North America	USA	Texas	Jefferson County TX
 North America	USA	Texas	Jim Hogg County
 North America	USA	Texas	Jim Wells County
 North America	USA	Texas	Kaufman County
+North America	USA	Texas	Kendall County TX
+North America	USA	Texas	Kerr County
 North America	USA	Texas	Lamar County
 North America	USA	Texas	Lavaca County
 North America	USA	Texas	Limestone County
@@ -4243,8 +4286,10 @@ North America	USA	Texas	Parker County
 North America	USA	Texas	Pecos County
 North America	USA	Texas	Polk County TX
 North America	USA	Texas	Red River County
+North America	USA	Texas	Robertson County
 North America	USA	Texas	Rusk County
 North America	USA	Texas	San Patricio County
+North America	USA	Texas	San Saba County
 North America	USA	Texas	Smith County
 North America	USA	Texas	Starr County
 North America	USA	Texas	Tarrant County
@@ -4641,6 +4686,7 @@ South America	Brazil	Rio Grande do Sul	Quaraí
 South America	Brazil	Rio Grande do Sul	Saldanha Marinho
 South America	Brazil	Rio Grande do Sul	Santa Maria
 South America	Brazil	Rio Grande do Sul	Santa Rosa
+South America	Brazil	Rio Grande do Sul	Santa Rosa BR
 South America	Brazil	Rio Grande do Sul	Santana do Livramento
 South America	Brazil	Rio Grande do Sul	Santo Angelo
 South America	Brazil	Rio Grande do Sul	Sao Borja
@@ -4997,6 +5043,7 @@ South America	Ecuador	Santo Domingo
 South America	Ecuador	Santo Domingo	Santo Domingo
 South America	Ecuador	Santo Domingo de los Tsachilas	
 South America	Ecuador	Santo Domingo de los Tsachilas	Santo Domingo
+South America	Ecuador	Santo Domingo de los Tsachilas	Santo Domingo de los Colorados
 South America	Ecuador	Sucumbios	
 South America	Ecuador	Tungurahua	
 South America	Ecuador	Tungurahua	Ambato
