@@ -9,6 +9,104 @@ from . import LINE_NUMBER_KEY
 from ._base import Transformer
 
 
+
+class UserProvidedGeoLocationSubstitutionRules:
+    """ this class represents patterns of substitutions in the localisation data of entries """
+    def __init__(self):
+        self.entries: MutableMapping[str,MutableMapping[str, MutableMapping[str, MutableMapping[str, Tuple[str,str,str,str] ]]]] = defaultdict( lambda : defaultdict( lambda : defaultdict( dict ) ) )
+        self.use_count: MutableMapping[Tuple[str,str,str,str], int] = dict()
+
+    def add_user_rule(
+            self,
+            start: Tuple[str,str,str,str],
+            arrival: Tuple[str,str,str,str],
+    ) -> None:
+        
+        self.entries[ start[0] ][ start[1] ][ start[2] ][ start[3] ] = arrival
+
+        for i in range(3):
+            if start[i] == '*' and start[i+1] != '*' :
+                print("ERROR : in rules, for the raw, * character are only allowed when the lower entity is also a * character.")
+                print("\tfaulty rule",start,arrival)
+                exit(1)
+
+        self.use_count[start] = 0
+
+    def get_user_rules(self, start: Tuple[str,str,str,str] ) -> Tuple[str,str,str,str]:
+        """
+        NB: 1. will apply several rules if necessary (eg. transform A to B, then tranform B to C if rules A->B anf B->C exist)
+            2. will apply general rules in the order regions, country, division, location.
+
+            eg. if rules are :
+                EU , * , * , * -> Europe , * , * , *
+                Europe , France , Haut-De-France , * -> Europe , France , Haut de France , *
+
+            then entry :
+                EU , France , Haut-De-France , foo
+            will first become
+                Europe , France , Haut-De-France , foo
+            and then 
+                Europe , France , Haut de France , foo
+
+
+            Takes :
+                - Tuple[str,str,str,str] : region, country, division, location tuple
+            Returns :
+                Tuple[str,str,str,str] -> tuple updated. 
+        """
+
+        arrival = start
+        rules_applied = 0
+        continueApply = True
+        while continueApply:
+            continueApply = False
+
+            rule = []
+            ruleDic = self.entries
+            for i in range(4):
+                if '*' in ruleDic : # default substitution rule
+                    rule.append('*')
+                elif arrival[i] in ruleDic : # found a corresponding rule
+                    rule.append(arrival[i])
+                else : # found no corresponding rules
+                    break
+                ruleDic = ruleDic[rule[-1]]
+                #print(arrival, rule , ruleDic)
+
+            continueApply = len(rule) == 4 # we were able to form a full rule
+
+            if continueApply:
+
+                newArrival = self._replaceEntry( arrival , self.entries[ rule[0] ][rule[1]][rule[2]][rule[3]] )
+                self.use_count[tuple( rule ) ] += 1
+                rules_applied+=1
+
+                #print("applied",rules_applied , ':', arrival , '->', rule , '->' , newArrival)
+                arrival = newArrival
+            if rules_applied > 1000 :
+                print("ERROR : more than 1000 geographic location rules applied on the same entry. There might be cyclicity in your rules")
+                print("\tfaulty entry",start)
+                exit(1)
+
+            
+        return arrival
+        
+    def _replaceEntry( self, start , arrival ):
+        """ takes into account * character, which will not cause a change """
+        new = list(start)
+        for i in range(len(arrival)):
+            if arrival[i] != '*':
+                new[i] = arrival[i]
+        return new
+
+    def get_unused_annotations(self) -> Collection[str]:
+        return [
+            start
+            for start, use_count in self.use_count.items()
+            if use_count == 0
+        ]
+
+
 class UserProvidedAnnotations:
     def __init__(self):
         self.entries: MutableMapping[str, List[Tuple[str, Any]]] = defaultdict(list)
@@ -249,8 +347,24 @@ class MergeUserAnnotatedMetadata(Transformer):
     def transform_value(self, entry: dict) -> dict:
         annotations = self.annotations.get_user_annotations(entry['gisaid_epi_isl'])
         for key, value in annotations:
+            if key in entry and entry[key] == value :
+                print('REDUNDANT ANNOTATED METADATA :',entry['gisaid_epi_isl'] , key , value)
             entry[key] = value
         return entry
+
+class ApplyUserGeoLocationSubstitutionRules(Transformer):
+    """Use the curated subtitution rules tsv to update geographical column values."""
+    def __init__(self, rules: UserProvidedGeoLocationSubstitutionRules):
+        self.rules = rules
+
+    def transform_value(self, entry: dict) -> dict:
+        LOCATION_COLUMNS = ['region', 'country', 'division', 'location']
+        newVal = self.rules.get_user_rules( tuple( [ entry[col] for col in LOCATION_COLUMNS ] ) )
+        for i,key in enumerate(LOCATION_COLUMNS):
+            entry[key] = newVal[i]
+        return entry
+
+
 
 class WriteCSV(Transformer):
     """writes the data to a CSV file."""
