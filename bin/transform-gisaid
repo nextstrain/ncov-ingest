@@ -56,7 +56,7 @@ if __name__ == '__main__':
         default="s3://nextstrain-ncov-private/gisaid.ndjson.gz",
         help="Newline-delimited GISAID JSON data")
     parser.add_argument("--annotations",
-        default=base / "source-data/gisaid_annotations.tsv",
+        default=str( base / "source-data/gisaid_annotations.tsv" ),
         help="Optional manually curated annotations TSV.\n"
             "The TSV file should have no header and exactly four columns which contain:\n\t"
             "1. the strain ID (not used for matching; for readability)\n\t"
@@ -73,6 +73,7 @@ if __name__ == '__main__':
         default=base / "source-data/accessions.tsv",
         help="Optional manually curated TSV cross-referencing accessions between databases (e.g. GISAID and GenBank/INSDC).")
     parser.add_argument("--geo-location-rules",
+        default = str( base / "source-data/gisaid_geoLocationRules.tsv" ) ,
         help="Optional manually curated rules to correct geographical location.\n"
             "The TSV file should have no header and exactly 8 columns which contain:\n\t"
             "1. the raw region\n\t"
@@ -157,10 +158,10 @@ if __name__ == '__main__':
                     annot
                 )
 
+    RAW_METADATA_FILENAME = args.output_metadata + '.raw'
 
 
-    with open(args.gisaid_data, "r") as gisaid_fh , \
-         open(args.output_metadata + '.raw', "wt", newline="") as metadata_raw_fh:
+    with open(args.gisaid_data, "r") as gisaid_fh :
 
         pipeline = (
             LineToJsonDataSource(gisaid_fh)
@@ -182,43 +183,21 @@ if __name__ == '__main__':
             | AddHardcodedMetadata() 
         )
 
-        # set up the CSV output files for raw metadata
-        dict_writer_kwargs = {'lineterminator': args.newline}
-
-
-        metadata_csv = csv.DictWriter(
-            metadata_raw_fh,
-            METADATA_COLUMNS,
-            restval="?",
-            extrasaction='ignore',
-            delimiter='\t',
-            **dict_writer_kwargs
-        )
-        metadata_csv.writeheader()
-
-        pipeline = ( pipeline  | WriteCSV( metadata_csv ) )
+        # writing the raw metadata in a tsv file
+        pipeline = ( pipeline  | WriteCSV(RAW_METADATA_FILENAME, 
+                                            METADATA_COLUMNS , 
+                                            restval = '?' , 
+                                            extrasaction ='ignore' , 
+                                            delimiter  = '\t', 
+                                            dict_writer_kwargs  = {'lineterminator': args.newline} ) )
 
 
         # applying the substitution rules (temporary : writing the intermediary data to verify effect )
         dict_writer_kwargs = {'lineterminator': args.newline}
 
-        metadata_int_fh = open(args.output_metadata + '.int', "wt", newline="")
-        metadata_csv = csv.DictWriter(
-            metadata_int_fh,
-            METADATA_COLUMNS,
-            restval="?",
-            extrasaction='ignore',
-            delimiter='\t',
-            **dict_writer_kwargs
-        )
-        metadata_csv.writeheader()
-
-        pipeline = ( pipeline  
-            | ApplyUserGeoLocationSubstitutionRules(geoRules)
-            | WriteCSV( metadata_csv ) 
-        )
-
+        
         pipeline = (pipeline
+            | ApplyUserGeoLocationSubstitutionRules(geoRules)
             | MergeUserAnnotatedMetadata(annotations)
             | MergeUserAnnotatedMetadata(accessions)
             | FillDefaultLocationData()
@@ -234,8 +213,6 @@ if __name__ == '__main__':
             )
         )
 
-
-        metadata_int_fh.close()
     #for unused_gisaid_epi_isl in annotations.get_unused_annotations():
     #    print(f"WARNING: annotation for {unused_gisaid_epi_isl} was not used.")
 

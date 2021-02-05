@@ -2,7 +2,7 @@ import csv
 import re
 import unicodedata
 from collections import defaultdict
-from typing import Any, Collection, List, MutableMapping, Sequence, Tuple
+from typing import Any, Collection, List, MutableMapping, Sequence, Tuple , Dict
 
 from utils.transform import format_date, titlecase
 from . import LINE_NUMBER_KEY
@@ -368,8 +368,27 @@ class ApplyUserGeoLocationSubstitutionRules(Transformer):
 
 class WriteCSV(Transformer):
     """writes the data to a CSV file."""
-    def __init__(self, writer: csv.DictWriter ):
-        self.writer = writer
+    def __init__(self, fileName: str , 
+                 columns : List[str] , 
+                 restval : str = '?' , 
+                 extrasaction : str ='ignore' , 
+                 delimiter : str = ',', 
+                 dict_writer_kwargs : Dict[str,str] = {} ):
+
+        self.OUT = open( fileName , 'wt')
+
+        self.writer = csv.DictWriter(
+            self.OUT,
+            columns,
+            restval=restval,
+            extrasaction=extrasaction,
+            delimiter=delimiter,
+            **dict_writer_kwargs
+        )
+        self.writer.writeheader()
+
+    def __del__(self):
+        self.OUT.close()
 
     def transform_value(self, entry: dict) -> dict:
         self.writer.writerow(entry)
