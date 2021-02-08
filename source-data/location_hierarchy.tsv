@@ -16,6 +16,8 @@ Africa	Benin	Oueme
 Africa	Botswana	Botswana	
 Africa	Botswana	Francistown	
 Africa	Botswana	Gaborone	
+Africa	Botswana	Goodhope	
+Africa	Botswana	Lobatse	
 Africa	Botswana	Maun	
 Africa	Botswana	Southern East	
 Africa	Burkina Faso	Burkina Faso	
@@ -169,10 +171,15 @@ Africa	South Africa	Eastern Cape
 Africa	South Africa	Eastern Cape	Amathole
 Africa	South Africa	Eastern Cape	Buffalo City
 Africa	South Africa	Eastern Cape	Chris Hani
+Africa	South Africa	Eastern Cape	Joe Gqabi
+Africa	South Africa	Eastern Cape	Middleburg
 Africa	South Africa	Eastern Cape	Nelson Mandela Bay
 Africa	South Africa	Eastern Cape	Sarah Baartman
 Africa	South Africa	Free State	
 Africa	South Africa	Gauteng	
+Africa	South Africa	Gauteng	Ekurhuleni Metro
+Africa	South Africa	Gauteng	Johannesburg Metro
+Africa	South Africa	Gauteng	West Rand
 Africa	South Africa	KwaZulu-Natal	
 Africa	South Africa	KwaZulu-Natal	Amajuba
 Africa	South Africa	KwaZulu-Natal	Berea
@@ -202,6 +209,7 @@ Africa	South Africa	Western Cape Province	Beaufort West
 Africa	South Africa	Western Cape Province	Bitou
 Africa	South Africa	Western Cape Province	Cape Town
 Africa	South Africa	Western Cape Province	Cape Town Metro
+Africa	South Africa	Western Cape Province	Cape Winelands
 Africa	South Africa	Western Cape Province	Garden Route
 Africa	South Africa	Western Cape Province	George
 Africa	South Africa	Western Cape Province	Hessequa
@@ -272,11 +280,13 @@ Asia	Bangladesh	Chattogram	Noakhali
 Asia	Bangladesh	Cox'S Bazar	
 Asia	Bangladesh	Dhaka	
 Asia	Bangladesh	Dhaka	Agargaon
+Asia	Bangladesh	Dhaka	Banani
 Asia	Bangladesh	Dhaka	Dhaka
 Asia	Bangladesh	Dhaka	Dhamrai
 Asia	Bangladesh	Dhaka	Faridpur
 Asia	Bangladesh	Dhaka	Gulshan
 Asia	Bangladesh	Dhaka	Jatrabari
+Asia	Bangladesh	Dhaka	Keraniganj
 Asia	Bangladesh	Dhaka	Kodomtoly
 Asia	Bangladesh	Dhaka	Mirpur
 Asia	Bangladesh	Dhaka	Mohammadpur
@@ -1086,6 +1096,7 @@ Europe	Belgium	Antwerpen	Edegem
 Europe	Belgium	Antwerpen	Ekeren
 Europe	Belgium	Antwerpen	Emblem
 Europe	Belgium	Antwerpen	Hemiksem
+Europe	Belgium	Antwerpen	Hoboken
 Europe	Belgium	Antwerpen	Hoevenen
 Europe	Belgium	Antwerpen	Kalmthout
 Europe	Belgium	Antwerpen	Kapellen
@@ -1981,6 +1992,7 @@ Europe	France	Grand Est	Tucquegnieux
 Europe	France	Grand Est	Vandoeuvre-Les-Nancy
 Europe	France	Grand Est	Vieux Ferette
 Europe	France	Grand Est	Village-Neuf
+Europe	France	Grand Est	Wissembourg
 Europe	France	Grand Est	Woippy
 Europe	France	Hauts de France	
 Europe	France	Hauts de France	Amiens
@@ -2557,6 +2569,7 @@ Europe	Romania	Hunedoara
 Europe	Romania	Ialomița	
 Europe	Romania	Ilfov	
 Europe	Romania	Mioveni	
+Europe	Romania	Mures	
 Europe	Romania	Ploiesti	
 Europe	Romania	Prahova	
 Europe	Romania	Romania	
@@ -2911,6 +2924,7 @@ Europe	Spain	Andalusia	Fonelas
 Europe	Spain	Andalusia	Frailes
 Europe	Spain	Andalusia	Fuente Vaqueros
 Europe	Spain	Andalusia	Granada
+Europe	Spain	Andalusia	Granada ES
 Europe	Spain	Andalusia	Guadix
 Europe	Spain	Andalusia	Guevejar
 Europe	Spain	Andalusia	Huescar
@@ -3228,6 +3242,7 @@ Europe	Spain	Comunitat Valenciana	Gilet
 Europe	Spain	Comunitat Valenciana	Godella
 Europe	Spain	Comunitat Valenciana	Grau de Sagunt
 Europe	Spain	Comunitat Valenciana	Guadassuar
+Europe	Spain	Comunitat Valenciana	La Pobla de Vallbona
 Europe	Spain	Comunitat Valenciana	Llombai
 Europe	Spain	Comunitat Valenciana	Llutxent
 Europe	Spain	Comunitat Valenciana	Massalaves
@@ -4028,9 +4043,12 @@ North America	USA	Delaware	Sussex County
 North America	USA	Diamond Princess	
 North America	USA	Florida	
 North America	USA	Florida	Alachua County
+North America	USA	Florida	Duval County
+North America	USA	Florida	Lee County FL
 North America	USA	Florida	Miami
 North America	USA	Florida	Miami Gardens
 North America	USA	Florida	Miami-Dade County
+North America	USA	Florida	Monroe County FL
 North America	USA	Florida	Orange County FL
 North America	USA	Florida	Palm Beach County
 North America	USA	Florida	Walton County
@@ -4094,11 +4112,14 @@ North America	USA	Illinois	Will County
 North America	USA	Illinois	Williamson County IL
 North America	USA	Illinois	Winnebago County IL
 North America	USA	Indiana	
+North America	USA	Indiana	Elkhart County
 North America	USA	Indiana	Indianapolis
+North America	USA	Indiana	Lake County IN
 North America	USA	Indiana	Marion County IN
 North America	USA	Iowa	
 North America	USA	Iowa	Allamakee County
 North America	USA	Iowa	Buchanan County
+North America	USA	Iowa	Chickasaw County
 North America	USA	Iowa	Clayton County
 North America	USA	Iowa	Dubuque County
 North America	USA	Iowa	Fayette County
@@ -4143,17 +4164,21 @@ North America	USA	Louisiana	Webster Parish
 North America	USA	Maine	
 North America	USA	Maryland	
 North America	USA	Maryland	Prince George'S County
+North America	USA	Maryland	Prince George's County
 North America	USA	Massachusetts	
 North America	USA	Massachusetts	Boston
 North America	USA	Massachusetts	Middlesex County MA
 North America	USA	Massachusetts	Norfolk County
 North America	USA	Michigan	
 North America	USA	Michigan	Alpena County
+North America	USA	Michigan	Berrien County
 North America	USA	Minnesota	
+North America	USA	Minnesota	Chisago County
 North America	USA	Minnesota	Dakota County
 North America	USA	Minnesota	Fillmore County
 North America	USA	Minnesota	Houston County
 North America	USA	Minnesota	Houston County MN
+North America	USA	Minnesota	Pine County
 North America	USA	Minnesota	Stearns County
 North America	USA	Minnesota	Wabasha County
 North America	USA	Minnesota	Winona County
@@ -4223,6 +4248,7 @@ North America	USA	New York	Franklin County NY
 North America	USA	New York	Fulton County
 North America	USA	New York	Genesee County
 North America	USA	New York	Greene County
+North America	USA	New York	Greene County NY
 North America	USA	New York	Hamilton County
 North America	USA	New York	Hamilton County NY
 North America	USA	New York	Herkimer County
@@ -4280,6 +4306,7 @@ North America	USA	Ohio	Cincinnati
 North America	USA	Ohio	Columbus OH
 North America	USA	Ohio	Cuyahoga County
 North America	USA	Ohio	Franklin County OH
+North America	USA	Ohio	Greene County OH
 North America	USA	Oklahoma	
 North America	USA	Oregon	
 North America	USA	Oregon	Clackamas County
@@ -4306,6 +4333,7 @@ North America	USA	Pennsylvania
 North America	USA	Pennsylvania	Allegheny County
 North America	USA	Pennsylvania	Chester County
 North America	USA	Pennsylvania	Montgomery County PA
+North America	USA	Pennsylvania	Philadelphia County
 North America	USA	Pennsylvania	Pittsburgh
 North America	USA	Puerto Rico	
 North America	USA	Puerto Rico	Ponce
@@ -4347,6 +4375,7 @@ North America	USA	Texas	Austin County
 North America	USA	Texas	Bailey County
 North America	USA	Texas	Bandera County
 North America	USA	Texas	Bee County
+North America	USA	Texas	Bell County
 North America	USA	Texas	Bexar County
 North America	USA	Texas	Bowie County
 North America	USA	Texas	Brazos County
@@ -4486,6 +4515,7 @@ North America	USA	Wisconsin
 North America	USA	Wisconsin	Adams County WI
 North America	USA	Wisconsin	Ashland County
 North America	USA	Wisconsin	Barron County
+North America	USA	Wisconsin	Bayfield County
 North America	USA	Wisconsin	Brooklyn WI
 North America	USA	Wisconsin	Brown County WI
 North America	USA	Wisconsin	Buffalo County
@@ -4503,6 +4533,7 @@ North America	USA	Wisconsin	Eau Claire County
 North America	USA	Wisconsin	Fond Du Lac County
 North America	USA	Wisconsin	Grant County WI
 North America	USA	Wisconsin	Green County
+North America	USA	Wisconsin	Green Lake County
 North America	USA	Wisconsin	Iowa County WI
 North America	USA	Wisconsin	Jackson County WI
 North America	USA	Wisconsin	Jefferson County WI
@@ -4510,6 +4541,7 @@ North America	USA	Wisconsin	Juneau County
 North America	USA	Wisconsin	Kenosha County
 North America	USA	Wisconsin	La Crosse County
 North America	USA	Wisconsin	Lafayette County
+North America	USA	Wisconsin	Langlade County
 North America	USA	Wisconsin	Lincoln County WI
 North America	USA	Wisconsin	Manitowoc County
 North America	USA	Wisconsin	Marathon County
@@ -4528,6 +4560,7 @@ North America	USA	Wisconsin	Pierce County WI
 North America	USA	Wisconsin	Polk County WI
 North America	USA	Wisconsin	Port Washington
 North America	USA	Wisconsin	Portage County
+North America	USA	Wisconsin	Price County
 North America	USA	Wisconsin	Racine County
 North America	USA	Wisconsin	Richland County WI
 North America	USA	Wisconsin	Rock County
@@ -4669,6 +4702,7 @@ South America	Argentina	Rio Negro	San Carlos de Bariloche
 South America	Argentina	Santa Fe	
 South America	Argentina	Santa Fe	Cayastá
 South America	Argentina	Santa Fe	Ceres
+South America	Argentina	Santa Fe	Ceres AR
 South America	Argentina	Santa Fe	Coronda
 South America	Argentina	Santa Fe	Esperanza
 South America	Argentina	Santa Fe	Reconquista
@@ -4677,6 +4711,7 @@ South America	Argentina	Santa Fe	Totoras
 South America	Argentina	Santa Fe	Villa Ocampo
 South America	Argentina	Tierra del Fuego	
 South America	Argentina	Tierra del Fuego	Rio Grande
+South America	Argentina	Tierra del Fuego	Rio Grande AR
 South America	Argentina	Tierra del Fuego	Ushuaia
 South America	Argentina	Tucuman	
 South America	Aruba	Aruba	
@@ -4713,6 +4748,8 @@ South America	Brazil	Distrito Federal	Brasilia
 South America	Brazil	Espirito Santo	
 South America	Brazil	Espirito Santo	Vila Velha
 South America	Brazil	Goiás	
+South America	Brazil	Goiás	Ceres BR
+South America	Brazil	Goiás	Goiania
 South America	Brazil	Goiás	Santa Barbara de Goias
 South America	Brazil	Maranhão	
 South America	Brazil	Mato Grosso	
@@ -4771,16 +4808,20 @@ South America	Brazil	Pernambuco	Tamandaré
 South America	Brazil	Pernambuco	Vitoria de Santo Antao
 South America	Brazil	Piaui	
 South America	Brazil	Piaui	Parnaiba
+South America	Brazil	Piaui	Terezina
 South America	Brazil	Rio Grande do Norte	
 South America	Brazil	Rio Grande do Sul	
 South America	Brazil	Rio Grande do Sul	Alto Feliz
 South America	Brazil	Rio Grande do Sul	Arroio do Meio
+South America	Brazil	Rio Grande do Sul	Bage
+South America	Brazil	Rio Grande do Sul	Balneario Pinhal
 South America	Brazil	Rio Grande do Sul	Barao
 South America	Brazil	Rio Grande do Sul	Bom Principio
 South America	Brazil	Rio Grande do Sul	Bom Retiro do Sul
 South America	Brazil	Rio Grande do Sul	Butia
 South America	Brazil	Rio Grande do Sul	Cacapava do Sul
 South America	Brazil	Rio Grande do Sul	Cachoeira do Sul
+South America	Brazil	Rio Grande do Sul	Cachoeirnha
 South America	Brazil	Rio Grande do Sul	Canoas BR
 South America	Brazil	Rio Grande do Sul	Carazinho
 South America	Brazil	Rio Grande do Sul	Carlos Barbosa
@@ -4793,8 +4834,10 @@ South America	Brazil	Rio Grande do Sul	Flores Da Cunha
 South America	Brazil	Rio Grande do Sul	Frederico Westphalen
 South America	Brazil	Rio Grande do Sul	Garibaldi
 South America	Brazil	Rio Grande do Sul	Girua
+South America	Brazil	Rio Grande do Sul	Guaiba
 South America	Brazil	Rio Grande do Sul	Ibiruba
 South America	Brazil	Rio Grande do Sul	Ijui
+South America	Brazil	Rio Grande do Sul	Imbe
 South America	Brazil	Rio Grande do Sul	Itaqui
 South America	Brazil	Rio Grande do Sul	Lajeado
 South America	Brazil	Rio Grande do Sul	Lavras do Sul
@@ -4810,25 +4853,35 @@ South America	Brazil	Rio Grande do Sul	Passo Fundo
 South America	Brazil	Rio Grande do Sul	Pelotas
 South America	Brazil	Rio Grande do Sul	Porto Alegre
 South America	Brazil	Rio Grande do Sul	Quaraí
+South America	Brazil	Rio Grande do Sul	Rio Grande BR
 South America	Brazil	Rio Grande do Sul	Saldanha Marinho
 South America	Brazil	Rio Grande do Sul	Santa Maria
 South America	Brazil	Rio Grande do Sul	Santa Rosa
 South America	Brazil	Rio Grande do Sul	Santa Rosa BR
 South America	Brazil	Rio Grande do Sul	Santana do Livramento
 South America	Brazil	Rio Grande do Sul	Santo Angelo
+South America	Brazil	Rio Grande do Sul	Santo Antonio Da Patrulha
 South America	Brazil	Rio Grande do Sul	Sao Borja
 South America	Brazil	Rio Grande do Sul	Sao Sebastiao do Cai
 South America	Brazil	Rio Grande do Sul	Sapiranga
 South America	Brazil	Rio Grande do Sul	Serafina Correa
+South America	Brazil	Rio Grande do Sul	Sertao
 South America	Brazil	Rio Grande do Sul	São Domingos do Sul
 South America	Brazil	Rio Grande do Sul	São Leopoldo
 South America	Brazil	Rio Grande do Sul	Tapejara
+South America	Brazil	Rio Grande do Sul	Tapes
 South America	Brazil	Rio Grande do Sul	Taquara
+South America	Brazil	Rio Grande do Sul	Teutonia
+South America	Brazil	Rio Grande do Sul	Tiradentes
 South America	Brazil	Rio Grande do Sul	Torres
 South America	Brazil	Rio Grande do Sul	Torres BR
+South America	Brazil	Rio Grande do Sul	Tramandai
 South America	Brazil	Rio Grande do Sul	Tres Passos
 South America	Brazil	Rio Grande do Sul	Tupandi
 South America	Brazil	Rio Grande do Sul	Venancio Aires
+South America	Brazil	Rio Grande do Sul	Vera Cruz
+South America	Brazil	Rio Grande do Sul	Viamao
+South America	Brazil	Rio Grande do Sul	Vista Gaucha
 South America	Brazil	Rio de Janeiro	
 South America	Brazil	Rio de Janeiro	Belford Roxo
 South America	Brazil	Rio de Janeiro	Cabo Frio
@@ -4905,6 +4958,7 @@ South America	Brazil	São Paulo	Guarujá
 South America	Brazil	São Paulo	Guarulhos
 South America	Brazil	São Paulo	Herculandia
 South America	Brazil	São Paulo	Hortolandia
+South America	Brazil	São Paulo	Iguape
 South America	Brazil	São Paulo	Indaiatuba
 South America	Brazil	São Paulo	Itapecerica Da Serra
 South America	Brazil	São Paulo	Itariri
@@ -4960,6 +5014,17 @@ South America	Brazil	São Paulo	Taciba
 South America	Brazil	São Paulo	Taruma
 South America	Brazil	São Paulo	Taubate
 South America	Brazil	São Paulo	Taubate
+South America	Brazil	Tocantins	
+South America	Brazil	Tocantins	Araguaiana
+South America	Brazil	Tocantins	Araguatins
+South America	Brazil	Tocantins	Figueiropolis
+South America	Brazil	Tocantins	Formoso do Araguaia
+South America	Brazil	Tocantins	Guarai
+South America	Brazil	Tocantins	Mateiros
+South America	Brazil	Tocantins	Palmas
+South America	Brazil	Tocantins	Paraiso do Tacantins
+South America	Brazil	Tocantins	Presidente Kennedy
+South America	Brazil	Tocantins	Sandolandia
 South America	Chile	Antofagasta	
 South America	Chile	Antofagasta	Antofagasta
 South America	Chile	Araucanía	
@@ -5046,17 +5111,21 @@ South America	Colombia	Cesar
 South America	Colombia	Cesar	Valledupar
 South America	Colombia	Choco	
 South America	Colombia	Choco	Quibdo
+South America	Colombia	Choco	Union Panamericana
 South America	Colombia	Cienaga de Oro	
 South America	Colombia	Colombia	
 South America	Colombia	Cordoba CO	
 South America	Colombia	Cordoba CO	Cienaga de Oro
 South America	Colombia	Cordoba CO	Monteria
+South America	Colombia	Cordoba CO	Santa Cruz de Lorica
 South America	Colombia	Cordoba CO	Tierralta
 South America	Colombia	Cundinamarca	
 South America	Colombia	Cundinamarca	Cajica
 South America	Colombia	Cundinamarca	Chia
 South America	Colombia	Cundinamarca	Choconta
+South America	Colombia	Cundinamarca	Facatativa
 South America	Colombia	Cundinamarca	Funza
+South America	Colombia	Cundinamarca	Fuquene
 South America	Colombia	Cundinamarca	Madrid CO
 South America	Colombia	Cundinamarca	Pacho
 South America	Colombia	Cundinamarca	Soacha
@@ -5064,17 +5133,22 @@ South America	Colombia	Cundinamarca	Suesca
 South America	Colombia	Cundinamarca	Zipaquira
 South America	Colombia	Departamento de Amazonas	
 South America	Colombia	Departamento de Amazonas	Leticia
+South America	Colombia	Departamento de Amazonas	Puerto Nariño
+South America	Colombia	Departamento de Amazonas	Tarapacá
 South America	Colombia	Huila	
 South America	Colombia	Huila	Neiva
 South America	Colombia	La Guajira	
+South America	Colombia	La Guajira	Riohacha
 South America	Colombia	Magdalena	
 South America	Colombia	Magdalena	Cienaga
 South America	Colombia	Magdalena	Santa Marta
 South America	Colombia	Meta	
+South America	Colombia	Meta	Granada CO
 South America	Colombia	Meta	Villavicencio
 South America	Colombia	Narino	
 South America	Colombia	Narino	Ipiales
 South America	Colombia	Narino	Pasto
+South America	Colombia	Narino	Potosi
 South America	Colombia	Narino	Tumaco
 South America	Colombia	Norte de Santander	
 South America	Colombia	Norte de Santander	Cucuta
@@ -5129,6 +5203,7 @@ South America	Ecuador	Esmeraldas	Esmeraldas
 South America	Ecuador	Galapagos	
 South America	Ecuador	Galapagos	Puerto Baquerizo Moreno
 South America	Ecuador	Guayas	
+South America	Ecuador	Guayas	Duran
 South America	Ecuador	Guayas	General Villamil Playas
 South America	Ecuador	Guayas	Guayaquil
 South America	Ecuador	Guayas	San Jacinto de Yaguachi
@@ -5147,6 +5222,7 @@ South America	Ecuador	Los Rios	Valencia EC
 South America	Ecuador	Los Rios	Ventanas
 South America	Ecuador	Manabi	
 South America	Ecuador	Manabi	Calceta
+South America	Ecuador	Manabi	Chone
 South America	Ecuador	Manabi	Jipijapa
 South America	Ecuador	Manabi	Manta
 South America	Ecuador	Manabi	Pajan
@@ -5228,4 +5304,5 @@ South America	Uruguay	Rivera
 South America	Uruguay	Rocha	
 South America	Uruguay	Rocha	Chuy
 South America	Uruguay	Treinta y Tres	
+South America	Uruguay	Uruguay	
 South America	Venezuela	Venezuela	
