@@ -3,6 +3,7 @@
 Parse the GenBank JSON load into a metadata tsv and a FASTA file.
 """
 import argparse
+import csv
 import sys
 from pathlib import Path
 import re
@@ -193,6 +194,13 @@ def update_metadata(genbank_data: pd.DataFrame) -> pd.DataFrame:
                 value = value.rstrip()
             genbank_data.loc[genbank_data['genbank_accession'] == genbank_accession, key] = value
 
+    if args.accessions:
+        with open(args.accessions, "r") as accessions_fh:
+            for row in csv.DictReader(accessions_fh, delimiter='\t'):
+                # Our GenBank metadata file is currently indexed on the
+                # non-versioned accession.
+                genbank_data.loc[genbank_data["genbank_accession_rev"] == row["genbank_accession"], "gisaid_epi_isl"] = row["gisaid_epi_isl"]
+
     # Fill in blank geographic columns with exisiting geographic data
     genbank_data = fill_default_geo_metadata(genbank_data)
 
@@ -242,7 +250,7 @@ if __name__ == '__main__':
     parser.add_argument("--annotations",
         default=base / "source-data/genbank_annotations.tsv",
         help="Optional manually curated annotations TSV.\n"
-            "The TSV file should have no header and exactly four columns which contain:\n\t"
+            "The TSV file should have no header and exactly three columns which contain:\n\t"
             "1. the GenBank accession number\n\t"
             "2. the column name to replace from the generated `metadata.tsv` file\n\t"
             "3. the replacement data\n"
@@ -252,6 +260,9 @@ if __name__ == '__main__':
         "# First Californian sample\n\t"
         "MN994467	country_exposure	China\n\t"
         "MN908947	collection_date 2019-12-26 # Manually corrected date")
+    parser.add_argument("--accessions",
+        default=base / "source-data/accessions.tsv",
+        help="Optional manually curated TSV cross-referencing accessions between databases (e.g. GISAID and GenBank/INSDC).")
     parser.add_argument("--output-metadata",
         default=base / "data/genbank/metadata.tsv",
         help="Output location of generated metadata tsv. Defaults to `data/genbank/metadata.tsv`")
