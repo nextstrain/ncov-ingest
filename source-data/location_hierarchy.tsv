@@ -212,6 +212,7 @@ Africa	South Africa	Western Cape Province	Bitou
 Africa	South Africa	Western Cape Province	Cape Town
 Africa	South Africa	Western Cape Province	Cape Town Metro
 Africa	South Africa	Western Cape Province	Cape Winelands
+Africa	South Africa	Western Cape Province	Ga-Segonyana
 Africa	South Africa	Western Cape Province	Garden Route
 Africa	South Africa	Western Cape Province	George
 Africa	South Africa	Western Cape Province	Hessequa
@@ -651,6 +652,8 @@ Asia	Indonesia	West Nusa Tenggara
 Asia	Indonesia	West Papua	
 Asia	Indonesia	Yogyakarta	
 Asia	Indonesia	Yogyakarta	Sleman
+Asia	Iran	Gilan	
+Asia	Iran	Gorgan	
 Asia	Iran	Iran	
 Asia	Iran	Karaj	
 Asia	Iran	Qom	
@@ -1692,6 +1695,7 @@ Europe	Belgium	Veurne	Beveren
 Europe	Belgium	Veurne	De Panne
 Europe	Belgium	Veurne	Koksijde
 Europe	Belgium	Veurne	Oostduinkerke
+Europe	Belgium	Vlaams-Brabant	
 Europe	Belgium	Waremme	
 Europe	Belgium	Waremme	Berloz
 Europe	Belgium	Waremme	Hannut
@@ -1711,9 +1715,12 @@ Europe	Bosnia and Herzegovina	Livno
 Europe	Bosnia and Herzegovina	Maglaj	
 Europe	Bosnia and Herzegovina	Mostar	
 Europe	Bosnia and Herzegovina	Novi Travnik	
+Europe	Bosnia and Herzegovina	Prnjavor	
 Europe	Bosnia and Herzegovina	Sarajevo	
 Europe	Bosnia and Herzegovina	Tuzla	
 Europe	Bosnia and Herzegovina	Vitez	
+Europe	Bosnia and Herzegovina	Vogosca	
+Europe	Bosnia and Herzegovina	Zenica	
 Europe	Bosnia and Herzegovina	Zepce	
 Europe	Bosnia and Herzegovina	Čelinac	
 Europe	Bulgaria	Blagoevgrad	
@@ -1751,10 +1758,15 @@ Europe	Czech Republic	Central Bohemian Region	Hrušov
 Europe	Czech Republic	Central Bohemian Region	Kladno
 Europe	Czech Republic	Central Bohemian Region	Kochánky
 Europe	Czech Republic	Central Bohemian Region	Kolin
+Europe	Czech Republic	Central Bohemian Region	Konetopy
+Europe	Czech Republic	Central Bohemian Region	Kosmonosy
 Europe	Czech Republic	Central Bohemian Region	Kostelec N. Černými Lesy
+Europe	Czech Republic	Central Bohemian Region	Kostelec nad Labem
+Europe	Czech Republic	Central Bohemian Region	Krauupy nad Vltavou
 Europe	Czech Republic	Central Bohemian Region	Krhanice
 Europe	Czech Republic	Central Bohemian Region	Králův Dvůr
 Europe	Czech Republic	Central Bohemian Region	Kutná Hora
+Europe	Czech Republic	Central Bohemian Region	Libis
 Europe	Czech Republic	Central Bohemian Region	Louňovice
 Europe	Czech Republic	Central Bohemian Region	Malinová
 Europe	Czech Republic	Central Bohemian Region	Mlada Boleslav
@@ -1767,6 +1779,7 @@ Europe	Czech Republic	Central Bohemian Region	Poděbrady
 Europe	Czech Republic	Central Bohemian Region	Příbram
 Europe	Czech Republic	Central Bohemian Region	Radonice
 Europe	Czech Republic	Central Bohemian Region	Slaný
+Europe	Czech Republic	Central Bohemian Region	Slatina
 Europe	Czech Republic	Central Bohemian Region	Tehovec
 Europe	Czech Republic	Central Bohemian Region	Tuklaty
 Europe	Czech Republic	Central Bohemian Region	Veltrusy
@@ -1789,6 +1802,7 @@ Europe	Czech Republic	Hranice Na Moravě
 Europe	Czech Republic	Hranice Na Moravě	Prostějov
 Europe	Czech Republic	Jihlava	
 Europe	Czech Republic	Liberec Region	
+Europe	Czech Republic	Liberec Region	Chuchelna
 Europe	Czech Republic	Liberec Region	Jablonec nad Nisou
 Europe	Czech Republic	Liberec Region	Liberec
 Europe	Czech Republic	Liberec Region	Litomerice
@@ -1806,6 +1820,8 @@ Europe	Czech Republic	Olomouc Region
 Europe	Czech Republic	Olomouc Region	Litovel
 Europe	Czech Republic	Olomouc Region	Písařov
 Europe	Czech Republic	Olomouc Region	Sumperk
+Europe	Czech Republic	Pardubice Region	
+Europe	Czech Republic	Pardubice Region	Horni Jeleni
 Europe	Czech Republic	Pardubice Region	Pardubice
 Europe	Czech Republic	Plzeň Region	
 Europe	Czech Republic	Plzeň Region	Dobřany
@@ -1834,6 +1850,7 @@ Europe	Czech Republic	Southern Bohemia Region	České Budějovice
 Europe	Czech Republic	Southern Bohemia Region	Český Krumlov
 Europe	Czech Republic	Southern Bohemia Region	Šumavské Hoštice
 Europe	Czech Republic	Usti nad Labem	
+Europe	Czech Republic	Usti nad Labem	Chlumec
 Europe	Czech Republic	Usti nad Labem	Chomutov
 Europe	Czech Republic	Usti nad Labem	Dubí
 Europe	Czech Republic	Usti nad Labem	Děčín
@@ -1846,6 +1863,7 @@ Europe	Czech Republic	Usti nad Labem	Telnice
 Europe	Czech Republic	Usti nad Labem	Teplice
 Europe	Czech Republic	Usti nad Labem	Tisá
 Europe	Czech Republic	Usti nad Labem	Třebenice
+Europe	Czech Republic	Usti nad Labem	Usti nad Labem
 Europe	Czech Republic	Usti nad Labem	Všebořice
 Europe	Czech Republic	Vysocina Region	
 Europe	Czech Republic	Vysocina Region	Bela - Ledec Na Sazavou
@@ -1856,6 +1874,7 @@ Europe	Czech Republic	Zlin	Uhersky Brod
 Europe	Czech Republic	Zlín Region	
 Europe	Czech Republic	Zlín Region	Buchlovice
 Europe	Czech Republic	Zlín Region	Fryšták
+Europe	Czech Republic	Zlín Region	Hluk
 Europe	Czech Republic	Zlín Region	Uhersky Brod
 Europe	Denmark	Copenhagen	
 Europe	Denmark	Denmark	
@@ -2318,6 +2337,7 @@ Europe	Ireland	Kerry
 Europe	Ireland	Kildare	
 Europe	Ireland	Kilkenny	
 Europe	Ireland	Laois	
+Europe	Ireland	Leinster	
 Europe	Ireland	Leitrim	
 Europe	Ireland	Limerick	
 Europe	Ireland	Limerick	Limerick City
@@ -2490,11 +2510,13 @@ Europe	Netherlands	Utrecht	Houten
 Europe	Netherlands	Utrecht	Overvecht
 Europe	Netherlands	Utrecht	Utrecht
 Europe	Netherlands	Zeeland	
+Europe	North Macedonia	Debar	
 Europe	North Macedonia	Eastern Region	
 Europe	North Macedonia	Eastern Region	Kochani
 Europe	North Macedonia	Eastern Region	Shtip
 Europe	North Macedonia	Gostivar	
 Europe	North Macedonia	Kavadarci	
+Europe	North Macedonia	Kavadarci	Kavadarci
 Europe	North Macedonia	North Macedonia	
 Europe	North Macedonia	North Macedonia	Kavadarci
 Europe	North Macedonia	Northeastern Region	
@@ -2892,8 +2914,12 @@ Europe	Serbia	Šumadija District	Kragujevac
 Europe	Slovakia	Banovce nad Bebravou	
 Europe	Slovakia	Banska Bystrica	
 Europe	Slovakia	Banska Bystrica	Zelovce
+Europe	Slovakia	Bartosova Lehotka	
+Europe	Slovakia	Bela nad Cirochou	
 Europe	Slovakia	Bratislava	
+Europe	Slovakia	Dolny Kubin	
 Europe	Slovakia	Doľany	
+Europe	Slovakia	Hnusta	
 Europe	Slovakia	Ilava	
 Europe	Slovakia	Jatov	
 Europe	Slovakia	Kamenicna	
@@ -2903,6 +2929,8 @@ Europe	Slovakia	Kostoliste
 Europe	Slovakia	Levice	
 Europe	Slovakia	Martin	
 Europe	Slovakia	Miloslavov	
+Europe	Slovakia	Muranska Huta	
+Europe	Slovakia	Myto Pod Dumbierom	
 Europe	Slovakia	Nitra	
 Europe	Slovakia	Nitra	Hurbanovo
 Europe	Slovakia	Nove Mesto nad Vahom	
@@ -2912,15 +2940,26 @@ Europe	Slovakia	Partizanske
 Europe	Slovakia	Pavlovce nad Uhom	
 Europe	Slovakia	Pezinok	
 Europe	Slovakia	Prievidza	
+Europe	Slovakia	Revuca	
+Europe	Slovakia	Rimavska Sobota	
+Europe	Slovakia	Ruzomberok	
 Europe	Slovakia	Slovakia	
 Europe	Slovakia	Surany	
+Europe	Slovakia	Topolcany	
+Europe	Slovakia	Trencianska Tepla	
 Europe	Slovakia	Trencin	
 Europe	Slovakia	Trenčín	
+Europe	Slovakia	Tvrdosin	
 Europe	Slovakia	Tvrdosovce	
+Europe	Slovakia	Velky Krtis	
 Europe	Slovakia	Zilina	
 Europe	Slovakia	Zilina	Dolný Kubín
 Europe	Slovakia	Zilina	Martincek
 Europe	Slovakia	Zilina	Trstena
+Europe	Slovenia	Celje	
+Europe	Slovenia	Kranj	
+Europe	Slovenia	Murska Sobota	
+Europe	Slovenia	Novo Mesto	
 Europe	Slovenia	Slovenia	
 Europe	Slovenia	Velenje	
 Europe	Spain	Andalusia	
@@ -3172,12 +3211,14 @@ Europe	Spain	Catalunya
 Europe	Spain	Catalunya	Alella
 Europe	Spain	Catalunya	Arenys de Mar
 Europe	Spain	Catalunya	Arenys de Munt
+Europe	Spain	Catalunya	Argentona
 Europe	Spain	Catalunya	Badalona
 Europe	Spain	Catalunya	Barcelona
 Europe	Spain	Catalunya	Bellavista
 Europe	Spain	Catalunya	Berga
 Europe	Spain	Catalunya	Bigues I Riells
 Europe	Spain	Catalunya	Cabrera de Mar
+Europe	Spain	Catalunya	Cabrils
 Europe	Spain	Catalunya	Caldes de Montbui
 Europe	Spain	Catalunya	Calella
 Europe	Spain	Catalunya	Cambrils
@@ -3186,6 +3227,7 @@ Europe	Spain	Catalunya	Canoves i Samalus
 Europe	Spain	Catalunya	Cardedeu
 Europe	Spain	Catalunya	Castellbisbal
 Europe	Spain	Catalunya	Castellterçol
+Europe	Spain	Catalunya	Centelles
 Europe	Spain	Catalunya	Cerdanyola del Valles
 Europe	Spain	Catalunya	Corro d'Avall
 Europe	Spain	Catalunya	El Masnou
@@ -3197,6 +3239,7 @@ Europe	Spain	Catalunya	L'Hospitalet de Llobregat
 Europe	Spain	Catalunya	La Garriga
 Europe	Spain	Catalunya	La Llagosta
 Europe	Spain	Catalunya	La Roca del Valles
+Europe	Spain	Catalunya	Llica D'Amunt
 Europe	Spain	Catalunya	Llinars del Valles
 Europe	Spain	Catalunya	Llissa de Munt
 Europe	Spain	Catalunya	Lliça de Vall
@@ -3215,13 +3258,17 @@ Europe	Spain	Catalunya	Pineda de Mar
 Europe	Spain	Catalunya	Premia de Dalt
 Europe	Spain	Catalunya	Premia de Mar
 Europe	Spain	Catalunya	Ripollet
+Europe	Spain	Catalunya	Rubi
 Europe	Spain	Catalunya	Sabadell
 Europe	Spain	Catalunya	San Cugat del Valles
 Europe	Spain	Catalunya	San Pol de Mar
 Europe	Spain	Catalunya	Sant Adria del Besos
+Europe	Spain	Catalunya	Sant Andreu de Llavaneres
 Europe	Spain	Catalunya	Sant Antoni de Vilamajor
 Europe	Spain	Catalunya	Sant Celoni
+Europe	Spain	Catalunya	Sant Esteve de Palautordera
 Europe	Spain	Catalunya	Sant Fost de Campsentelles
+Europe	Spain	Catalunya	Sant Joan Despi
 Europe	Spain	Catalunya	Sant Joan Vilatorrada
 Europe	Spain	Catalunya	Sant Pere de Vilamajor
 Europe	Spain	Catalunya	Sant Vicenç de Montalt
@@ -4149,6 +4196,7 @@ North America	USA	Indiana	Elkhart County
 North America	USA	Indiana	Indianapolis
 North America	USA	Indiana	Lake County IN
 North America	USA	Indiana	Marion County IN
+North America	USA	Indiana	Tippecanoe County
 North America	USA	Iowa	
 North America	USA	Iowa	Allamakee County
 North America	USA	Iowa	Buchanan County
@@ -4503,6 +4551,7 @@ North America	USA	Texas	Wilson County
 North America	USA	Texas	Wise County
 North America	USA	USA	
 North America	USA	Utah	
+North America	USA	Utah	Utah County
 North America	USA	Vermont	
 North America	USA	Virgin Islands	
 North America	USA	Virginia	
@@ -5187,6 +5236,7 @@ South America	Colombia	Narino	Tumaco
 South America	Colombia	Norte de Santander	
 South America	Colombia	Norte de Santander	Cucuta
 South America	Colombia	Pasto	
+South America	Colombia	Putumayo	
 South America	Colombia	Quindio	
 South America	Colombia	Quindio	Armenia
 South America	Colombia	Risaralda	
@@ -5216,6 +5266,7 @@ South America	Colombia	Valle del Cauca	Palmira
 South America	Colombia	Valle del Cauca	Trujillo
 South America	Colombia	Valle del Cauca	Tulua
 South America	Colombia	Valle del Cauca	Yumbo
+South America	Colombia	Vichada	
 South America	Curacao	Curacao	
 South America	Ecuador	Azuay	
 South America	Ecuador	Azuay	Cuenca EC
