@@ -27,6 +27,7 @@ jobs:
 
         nextstrain build \
           --aws-batch \
+          --no-download \
           --image nextstrain/ncov-ingest \
           --cpus 8 \
           --memory 15GiB \

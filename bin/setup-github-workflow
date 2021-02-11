@@ -9,5 +9,5 @@ python3 -m pip install --upgrade pip setuptools wheel
 echo "::endgroup::"
 
 echo "::group::Installing nextstrain-cli"
-python3 -m pip install nextstrain-cli
+python3 -m pip install 'nextstrain-cli >=3.0.0'
 echo "::endgroup::"
