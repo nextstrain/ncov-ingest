@@ -49,6 +49,7 @@ Africa	Democratic Republic of the Congo	Haut-Katanga
 Africa	Democratic Republic of the Congo	Kinshasa	
 Africa	Democratic Republic of the Congo	Kisantu	
 Africa	Democratic Republic of the Congo	Kongo Central	
+Africa	Democratic Republic of the Congo	Lualaba	
 Africa	Democratic Republic of the Congo	Nord Kivu	
 Africa	Democratic Republic of the Congo	Sud Kivu	
 Africa	Egypt	Cairo	
@@ -110,11 +111,13 @@ Africa	Mozambique	Cabo Delgado	Pemba
 Africa	Mozambique	Gaza	
 Africa	Mozambique	Gaza	Xai Xai
 Africa	Mozambique	Inhambane	
+Africa	Mozambique	Inhambane	Inhambane
 Africa	Mozambique	Manica	
 Africa	Mozambique	Manica	Chimoio
 Africa	Mozambique	Maputo	
 Africa	Mozambique	Maputo	Bagamoio
 Africa	Mozambique	Maputo	Katembe
+Africa	Mozambique	Maputo	Maputo City
 Africa	Mozambique	Maputo	Marracuene
 Africa	Mozambique	Maputo	Mavalane
 Africa	Mozambique	Maputo	Polana Canico
@@ -1153,6 +1156,7 @@ Europe	Belgium	Brugge	Assebroek
 Europe	Belgium	Brugge	Blankenberge
 Europe	Belgium	Brugge	Knokke-Heist
 Europe	Belgium	Brugge	Oostkamp
+Europe	Belgium	Brugge	Ruddervoorde
 Europe	Belgium	Brugge	Sint-Andries
 Europe	Belgium	Brugge	Sint-Kruis
 Europe	Belgium	Brugge	Sint-Michiels
@@ -1323,6 +1327,7 @@ Europe	Belgium	Ieper	Langemark-Poelkapelle
 Europe	Belgium	Ieper	Poperinge
 Europe	Belgium	Ieper	Vlamertinge
 Europe	Belgium	Ieper	Wervik
+Europe	Belgium	Ieper	Zonnebeke
 Europe	Belgium	Kortrijk	
 Europe	Belgium	Kortrijk	Anzegem
 Europe	Belgium	Kortrijk	Avelgem
@@ -1451,6 +1456,7 @@ Europe	Belgium	Mechelen	Breendonk
 Europe	Belgium	Mechelen	Duffel
 Europe	Belgium	Mechelen	Heist-op-den-Berg
 Europe	Belgium	Mechelen	Itegem
+Europe	Belgium	Mechelen	Kessel
 Europe	Belgium	Mechelen	Koningshooikt
 Europe	Belgium	Mechelen	Leest
 Europe	Belgium	Mechelen	Lier
@@ -1571,6 +1577,7 @@ Europe	Belgium	Philippeville	Couvin
 Europe	Belgium	Roeselare	
 Europe	Belgium	Roeselare	Hooglede
 Europe	Belgium	Roeselare	Izegem
+Europe	Belgium	Roeselare	Ledegem
 Europe	Belgium	Roeselare	Lichtervelde
 Europe	Belgium	Roeselare	Staden
 Europe	Belgium	Saint-Saulve	
@@ -1598,6 +1605,7 @@ Europe	Belgium	Tielt	Ardooie
 Europe	Belgium	Tielt	Dentergem
 Europe	Belgium	Tielt	Meulebeke
 Europe	Belgium	Tielt	Oostrozebeke
+Europe	Belgium	Tielt	Pittem
 Europe	Belgium	Tielt	Ruiselede
 Europe	Belgium	Tielt	Wielsbeke
 Europe	Belgium	Tielt	Wingene
@@ -2071,6 +2079,7 @@ Europe	France	Ile de France	Chanteloup-en-Brie
 Europe	France	Ile de France	Clamart
 Europe	France	Ile de France	Colombes
 Europe	France	Ile de France	Compans
+Europe	France	Ile de France	Creteil
 Europe	France	Ile de France	Egreville
 Europe	France	Ile de France	Essonne
 Europe	France	Ile de France	Garches
@@ -2200,6 +2209,7 @@ Europe	Germany	Baden-Wuerttemberg	Sigmaringen
 Europe	Germany	Baden-Wuerttemberg	Steinen
 Europe	Germany	Baden-Wuerttemberg	Tuebingen
 Europe	Germany	Baden-Wuerttemberg	Tuttlingen
+Europe	Germany	Baden-Wuerttemberg	Ulm
 Europe	Germany	Baden-Wuerttemberg	Villingen-Schwenningen
 Europe	Germany	Baden-Wuerttemberg	Weil Am Rhein
 Europe	Germany	Bavaria	
@@ -2411,6 +2421,7 @@ Europe	Italy	Veneto	Belluno
 Europe	Italy	Veneto	Padova
 Europe	Italy	Veneto	Rovigo
 Europe	Italy	Veneto	Treviso
+Europe	Italy	Veneto	Venezia
 Europe	Italy	Veneto	Verona IT
 Europe	Italy	Veneto	Vicenza
 Europe	Kosovo	Ferizaj	
@@ -2569,7 +2580,14 @@ Europe	Poland	Swietokrzyskie
 Europe	Poland	Warminsko-Mazurskie	
 Europe	Poland	Warminsko-Mazurskie	Olsztyn
 Europe	Poland	Wielkopolskie	
+Europe	Poland	Wielkopolskie	Czapury
 Europe	Poland	Wielkopolskie	Kalisz
+Europe	Poland	Wielkopolskie	Lubon
+Europe	Poland	Wielkopolskie	Oborniki
+Europe	Poland	Wielkopolskie	Plewiska
+Europe	Poland	Wielkopolskie	Poznan
+Europe	Poland	Wielkopolskie	Sierosław
+Europe	Poland	Wielkopolskie	Tarnowo Podgorne
 Europe	Poland	Zachodniopomorskie	
 Europe	Poland	Zielonogorskie	
 Europe	Poland	Łódzkie	
@@ -2581,21 +2599,33 @@ Europe	Portugal	Beja
 Europe	Portugal	Beja	Santa Clara de Louredo
 Europe	Portugal	Coimbra	
 Europe	Portugal	Coimbra	Penacova
+Europe	Portugal	Leiria	
+Europe	Portugal	Leiria	Alcobaca
+Europe	Portugal	Leiria	Caldas Da Rainha
+Europe	Portugal	Leiria	Obidos
+Europe	Portugal	Leiria	Peniche
 Europe	Portugal	Lisbon	
 Europe	Portugal	Lisbon	Agualva
 Europe	Portugal	Lisbon	Aguas livres
 Europe	Portugal	Lisbon	Algueirão-Mem Martins
 Europe	Portugal	Lisbon	Almargem do Bispo
 Europe	Portugal	Lisbon	Amadora
+Europe	Portugal	Lisbon	Arneiro
 Europe	Portugal	Lisbon	Buraca
 Europe	Portugal	Lisbon	Cacem
 Europe	Portugal	Lisbon	Casal de Cambra
+Europe	Portugal	Lisbon	Cascais
 Europe	Portugal	Lisbon	Corroios
 Europe	Portugal	Lisbon	Cova da Moura
 Europe	Portugal	Lisbon	Damaia de Cima
 Europe	Portugal	Lisbon	Encosta de Sol
+Europe	Portugal	Lisbon	Loures
+Europe	Portugal	Lisbon	Lourinha
+Europe	Portugal	Lisbon	Mafra
 Europe	Portugal	Lisbon	Massama
 Europe	Portugal	Lisbon	Monte Abrão
+Europe	Portugal	Lisbon	Odivelas
+Europe	Portugal	Lisbon	Oeiras
 Europe	Portugal	Lisbon	Pontinha
 Europe	Portugal	Lisbon	Queluz
 Europe	Portugal	Lisbon	Ramada
@@ -2604,10 +2634,31 @@ Europe	Portugal	Lisbon	Rio de Mouro
 Europe	Portugal	Lisbon	Sacavem
 Europe	Portugal	Lisbon	Santa Maria dos Olivais
 Europe	Portugal	Lisbon	Seia
+Europe	Portugal	Lisbon	Sintra
 Europe	Portugal	Lisbon	São Domingos da Benfica
+Europe	Portugal	Lisbon	Torres Vedras
+Europe	Portugal	Lisbon	Vila Franca de Xira
 Europe	Portugal	Portugal	
 Europe	Portugal	Santarem	
+Europe	Portugal	Santarem	Almeirim
+Europe	Portugal	Santarem	Benavente
+Europe	Portugal	Santarem	Rio Maior
 Europe	Portugal	Santarem	Santarem
+Europe	Portugal	Santarem	Torres Novas
+Europe	Portugal	Setúbal	
+Europe	Portugal	Setúbal	Alcacer do Sal
+Europe	Portugal	Setúbal	Alcochete
+Europe	Portugal	Setúbal	Almada
+Europe	Portugal	Setúbal	Barreiro
+Europe	Portugal	Setúbal	Grandola
+Europe	Portugal	Setúbal	Moita
+Europe	Portugal	Setúbal	Montijo
+Europe	Portugal	Setúbal	Palmela
+Europe	Portugal	Setúbal	Seixal
+Europe	Portugal	Setúbal	Sesimbra
+Europe	Portugal	Sobral de Monte AgracO	
+Europe	Portugal	Évora	
+Europe	Portugal	Évora	Montemor-o-Novo
 Europe	Romania	Arges	
 Europe	Romania	Bucharest	
 Europe	Romania	Buzau	
@@ -3117,8 +3168,16 @@ Europe	Spain	Basque Country	Zarauz
 Europe	Spain	Basque Country	Zumarraga
 Europe	Spain	Canary Islands	
 Europe	Spain	Canary Islands	Adeje
+Europe	Spain	Canary Islands	Agaete
+Europe	Spain	Canary Islands	Arucas
+Europe	Spain	Canary Islands	Galdar
+Europe	Spain	Canary Islands	La Aldea de San Nicolas
 Europe	Spain	Canary Islands	Lanzarote
 Europe	Spain	Canary Islands	Las Palmas de Gran Canaria
+Europe	Spain	Canary Islands	Moya
+Europe	Spain	Canary Islands	Santa Brigida
+Europe	Spain	Canary Islands	Santa Maria de Guia de Gran Canaria
+Europe	Spain	Canary Islands	Teror
 Europe	Spain	Cantabria	
 Europe	Spain	Cantabria	Ampuero
 Europe	Spain	Cantabria	Astillero
@@ -3264,6 +3323,7 @@ Europe	Spain	Catalunya	San Cugat del Valles
 Europe	Spain	Catalunya	San Pol de Mar
 Europe	Spain	Catalunya	Sant Adria del Besos
 Europe	Spain	Catalunya	Sant Andreu de Llavaneres
+Europe	Spain	Catalunya	Sant Andreu de la Barca
 Europe	Spain	Catalunya	Sant Antoni de Vilamajor
 Europe	Spain	Catalunya	Sant Celoni
 Europe	Spain	Catalunya	Sant Esteve de Palautordera
@@ -3295,6 +3355,7 @@ Europe	Spain	Comunitat Valenciana	Alboraya
 Europe	Spain	Comunitat Valenciana	Albuixech
 Europe	Spain	Comunitat Valenciana	Algemesi
 Europe	Spain	Comunitat Valenciana	Alginet
+Europe	Spain	Comunitat Valenciana	Alicante
 Europe	Spain	Comunitat Valenciana	Almassera
 Europe	Spain	Comunitat Valenciana	Almenara
 Europe	Spain	Comunitat Valenciana	Almussafes
@@ -3314,6 +3375,7 @@ Europe	Spain	Comunitat Valenciana	Chilches
 Europe	Spain	Comunitat Valenciana	Cullera
 Europe	Spain	Comunitat Valenciana	El Dosel
 Europe	Spain	Comunitat Valenciana	El Puig
+Europe	Spain	Comunitat Valenciana	Elche
 Europe	Spain	Comunitat Valenciana	Elda
 Europe	Spain	Comunitat Valenciana	Favara
 Europe	Spain	Comunitat Valenciana	Gandia
@@ -3347,8 +3409,10 @@ Europe	Spain	Comunitat Valenciana	Sueca
 Europe	Spain	Comunitat Valenciana	Tavernes Blanques
 Europe	Spain	Comunitat Valenciana	Tavernes de la Valldigna
 Europe	Spain	Comunitat Valenciana	Torrent
+Europe	Spain	Comunitat Valenciana	Torrevieja
 Europe	Spain	Comunitat Valenciana	Valencia ES
 Europe	Spain	Comunitat Valenciana	Valencia Horta
+Europe	Spain	Comunitat Valenciana	Villajoyosa
 Europe	Spain	Comunitat Valenciana	Villena
 Europe	Spain	Comunitat Valenciana	Xeraco
 Europe	Spain	Donostia-San Sebatian	
@@ -4150,17 +4214,22 @@ North America	USA	Idaho	Kootenai County
 North America	USA	Idaho	Madison County
 North America	USA	Idaho	Madison County ID
 North America	USA	Illinois	
+North America	USA	Illinois	Adams County IL
 North America	USA	Illinois	Bond County
 North America	USA	Illinois	Boone County
+North America	USA	Illinois	Bureau County
+North America	USA	Illinois	Cass County IL
 North America	USA	Illinois	Chicago
 North America	USA	Illinois	Clark County IL
 North America	USA	Illinois	Clinton County IL
 North America	USA	Illinois	Cook County
 North America	USA	Illinois	Dekalb County
 North America	USA	Illinois	Dekalb County IL
+North America	USA	Illinois	Douglas County IL
 North America	USA	Illinois	Dupage County
 North America	USA	Illinois	Fayette County IL
 North America	USA	Illinois	Franklin County IL
+North America	USA	Illinois	Fulton County IL
 North America	USA	Illinois	Gallatin County
 North America	USA	Illinois	Hamilton County IL
 North America	USA	Illinois	Hancock County
@@ -4173,21 +4242,29 @@ North America	USA	Illinois	Kendall County IL
 North America	USA	Illinois	Lake County IL
 North America	USA	Illinois	Lee County IL
 North America	USA	Illinois	Madison County IL
+North America	USA	Illinois	McDonough County
+North America	USA	Illinois	McHenry County
 North America	USA	Illinois	Mchenry County
 North America	USA	Illinois	Monroe County IL
+North America	USA	Illinois	Morgan County IL
 North America	USA	Illinois	Ogle County
 North America	USA	Illinois	Ogle County IL
+North America	USA	Illinois	Peoria County
 North America	USA	Illinois	Perry County IL
 North America	USA	Illinois	Pulaski County
 North America	USA	Illinois	Randolph County
 North America	USA	Illinois	Randolph County IL
 North America	USA	Illinois	Rock Island County
 North America	USA	Illinois	Saline County
+North America	USA	Illinois	Schuyler County
 North America	USA	Illinois	St. Clair County
 North America	USA	Illinois	St. Clair County IL
 North America	USA	Illinois	Stephenson County
 North America	USA	Illinois	Union County IL
+North America	USA	Illinois	Warren County IL
+North America	USA	Illinois	Washington County IL
 North America	USA	Illinois	White County
+North America	USA	Illinois	Whiteside County
 North America	USA	Illinois	Will County
 North America	USA	Illinois	Williamson County IL
 North America	USA	Illinois	Winnebago County IL
@@ -4521,6 +4598,7 @@ North America	USA	Texas	Panola County
 North America	USA	Texas	Parker County
 North America	USA	Texas	Pecos County
 North America	USA	Texas	Polk County TX
+North America	USA	Texas	Presidio County
 North America	USA	Texas	Red River County
 North America	USA	Texas	Robertson County
 North America	USA	Texas	Rusk County
@@ -4769,12 +4847,14 @@ South America	Argentina	Cordoba AR	Saldan
 South America	Argentina	Cordoba AR	Villa Dolores
 South America	Argentina	Cordoba AR	Villa Maria
 South America	Argentina	Neuquen	
+South America	Argentina	Neuquen	Centenario
 South America	Argentina	Neuquen	Cutral Co
 South America	Argentina	Neuquen	Las Lajas
 South America	Argentina	Neuquen	Loncopue
 South America	Argentina	Neuquen	Neuquen
 South America	Argentina	Neuquen	Plottier
 South America	Argentina	Neuquen	San Martin de los Andes
+South America	Argentina	Neuquen	Senillosa
 South America	Argentina	Neuquen	Villa la Angostura
 South America	Argentina	Neuquen	Zapala
 South America	Argentina	Rio Negro	
