@@ -5,7 +5,11 @@ set -euo pipefail
 echo "$HOME/.local/bin" | tee -a "$GITHUB_PATH"
 
 echo "::group::Installing/upgrading Pip, setuptools, and wheel"
-python3 -m pip install --upgrade pip setuptools wheel s3fs
+python3 -m pip install --upgrade pip setuptools wheel
+echo "::endgroup::"
+
+echo "::group::Installing s3fs"
+python3 -m pip install s3fs
 echo "::endgroup::"
 
 echo "::group::Installing nextstrain-cli"
