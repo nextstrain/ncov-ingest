@@ -254,7 +254,11 @@ Africa	Tunisia	Tunis	La Marsa
 Africa	Tunisia	Tunis	Tunis
 Africa	Tunisia	Tunisia	
 Africa	Uganda	Uganda	
+Africa	Zambia	Central	
+Africa	Zambia	Copperbelt	
+Africa	Zambia	Livingstone	
 Africa	Zambia	Lusaka	
+Africa	Zambia	Zambia	
 Africa	Zimbabwe	Zimbabwe	
 Asia	Afghanistan	Afghanistan	
 Asia	Afghanistan	Kabul	
@@ -653,6 +657,7 @@ Asia	Indonesia	West Java	Tasikmalaya
 Asia	Indonesia	West Kalimantan	
 Asia	Indonesia	West Nusa Tenggara	
 Asia	Indonesia	West Papua	
+Asia	Indonesia	West Sumatra	
 Asia	Indonesia	Yogyakarta	
 Asia	Indonesia	Yogyakarta	Sleman
 Asia	Iran	Gilan	
@@ -936,6 +941,8 @@ Asia	South Korea	Gyeonggi Province	Uijeongbu
 Asia	South Korea	Seoul	
 Asia	South Korea	Seoul	Seoul
 Asia	South Korea	South Korea	
+Asia	Sri Lanka	Central Province	
+Asia	Sri Lanka	Central Province	Dambulla
 Asia	Sri Lanka	Colombo	
 Asia	Sri Lanka	Gampaha	
 Asia	Sri Lanka	Kalutara	
@@ -944,6 +951,8 @@ Asia	Sri Lanka	Kalutara	Ingiriya
 Asia	Sri Lanka	Matale	
 Asia	Sri Lanka	Sri Lanka	
 Asia	Sri Lanka	Vavuniya	
+Asia	Sri Lanka	Western Province	
+Asia	Sri Lanka	Western Province	Avissawella
 Asia	Taiwan	Keelung	
 Asia	Taiwan	New Taipei City	
 Asia	Taiwan	Tainan	
@@ -975,6 +984,7 @@ Asia	United Arab Emirates	Dubai
 Asia	United Arab Emirates	Sharja	
 Asia	United Arab Emirates	United Arab Emirates	
 Asia	Uzbekistan	Uzbekistan	
+Asia	Vietnam	Hai Duong	
 Asia	Vietnam	Ho Chi Minh City	
 Asia	Vietnam	Lao Cai	
 Asia	Vietnam	Quangninh	
@@ -1189,6 +1199,7 @@ Europe	Belgium	Brussels	Woluwe-Saint-Lambert
 Europe	Belgium	Brussels	Woluwe-Saint-Pierre
 Europe	Belgium	Charleroi	
 Europe	Belgium	Charleroi	Aiseau
+Europe	Belgium	Charleroi	Bouffioulx
 Europe	Belgium	Charleroi	Buzet
 Europe	Belgium	Charleroi	Châtelet
 Europe	Belgium	Charleroi	Châtelineau
@@ -1364,6 +1375,7 @@ Europe	Belgium	Leuven	Boutersem
 Europe	Belgium	Leuven	Bunsbeek
 Europe	Belgium	Leuven	Diest
 Europe	Belgium	Leuven	Duisburg
+Europe	Belgium	Leuven	Eliksem
 Europe	Belgium	Leuven	Erps-Kwerps
 Europe	Belgium	Leuven	Everberg
 Europe	Belgium	Leuven	Geetbets
@@ -1414,15 +1426,20 @@ Europe	Belgium	Leuven	Wilsele
 Europe	Belgium	Leuven	Winksele
 Europe	Belgium	Leuven	Zichem
 Europe	Belgium	Leuven	Zoutleeuw
+Europe	Belgium	Limburg	
+Europe	Belgium	Limburg	's Herenelderen
+Europe	Belgium	Limburg	Genoelselderen
 Europe	Belgium	Limburg BE	
 Europe	Belgium	Liège	
 Europe	Belgium	Liège	Ans
 Europe	Belgium	Liège	Bierset
+Europe	Belgium	Liège	Boncelles
 Europe	Belgium	Liège	Bressoux
 Europe	Belgium	Liège	Dalhem
 Europe	Belgium	Liège	Dolembreux
 Europe	Belgium	Liège	Fleron
 Europe	Belgium	Liège	Herstal
+Europe	Belgium	Liège	Ougree
 Europe	Belgium	Liège	Saive
 Europe	Belgium	Liège	Seraing
 Europe	Belgium	Liège	Soumagne
@@ -1436,6 +1453,7 @@ Europe	Belgium	Maaseik	Dilsen-Stokkem
 Europe	Belgium	Maaseik	Grote-Brogel
 Europe	Belgium	Maaseik	Hechtel
 Europe	Belgium	Maaseik	Hechtel-Eksel
+Europe	Belgium	Maaseik	Helchteren
 Europe	Belgium	Maaseik	Houthalen-Helchteren
 Europe	Belgium	Maaseik	Kaulille
 Europe	Belgium	Maaseik	Lommel
@@ -1471,6 +1489,7 @@ Europe	Belgium	Mechelen	Schriek
 Europe	Belgium	Mechelen	Sint-Amands
 Europe	Belgium	Mechelen	Sint-Katelijne-Waver
 Europe	Belgium	Mechelen	Weert
+Europe	Belgium	Mechelen	Weert BE
 Europe	Belgium	Mechelen	Willebroek
 Europe	Belgium	Mepel	
 Europe	Belgium	Mons	
@@ -1480,6 +1499,7 @@ Europe	Belgium	Mons	Boussu
 Europe	Belgium	Mons	Colfontaine
 Europe	Belgium	Mons	Cuesmes
 Europe	Belgium	Mons	Dour
+Europe	Belgium	Mons	Erbaut
 Europe	Belgium	Mons	Flénu
 Europe	Belgium	Mons	Frameries
 Europe	Belgium	Mons	Ghlin
@@ -1504,14 +1524,18 @@ Europe	Belgium	Namur
 Europe	Belgium	Namur	Aisemont
 Europe	Belgium	Namur	Andenne
 Europe	Belgium	Namur	Arbre
+Europe	Belgium	Namur	Assesse
 Europe	Belgium	Namur	Beuzet
+Europe	Belgium	Namur	Boignee
 Europe	Belgium	Namur	Bois-de-Villers
 Europe	Belgium	Namur	Bovesse
 Europe	Belgium	Namur	Champion
 Europe	Belgium	Namur	Dhuy
 Europe	Belgium	Namur	Ermeton-sur-Biert
 Europe	Belgium	Namur	Erpent
+Europe	Belgium	Namur	Evelette
 Europe	Belgium	Namur	Faulx-les-Tombes
+Europe	Belgium	Namur	Gelbressee
 Europe	Belgium	Namur	Gembloux
 Europe	Belgium	Namur	Grand-Leez
 Europe	Belgium	Namur	Jemeppe-sur-Sambre
@@ -1535,6 +1559,7 @@ Europe	Belgium	Nivelles	Court-Saint-Étienne
 Europe	Belgium	Nivelles	Genappe
 Europe	Belgium	Nivelles	Genval
 Europe	Belgium	Nivelles	Glimes
+Europe	Belgium	Nivelles	Houtain-le-Val
 Europe	Belgium	Nivelles	Ittre
 Europe	Belgium	Nivelles	Jodoigne
 Europe	Belgium	Nivelles	La Hulpe
@@ -1576,9 +1601,11 @@ Europe	Belgium	Philippeville
 Europe	Belgium	Philippeville	Couvin
 Europe	Belgium	Roeselare	
 Europe	Belgium	Roeselare	Hooglede
+Europe	Belgium	Roeselare	Ingelmunster
 Europe	Belgium	Roeselare	Izegem
 Europe	Belgium	Roeselare	Ledegem
 Europe	Belgium	Roeselare	Lichtervelde
+Europe	Belgium	Roeselare	Moorslede
 Europe	Belgium	Roeselare	Staden
 Europe	Belgium	Saint-Saulve	
 Europe	Belgium	Sint-Niklaas	
@@ -1588,6 +1615,7 @@ Europe	Belgium	Sint-Niklaas	Sint-Gillis-Waas
 Europe	Belgium	Sint-Niklaas	Stekene
 Europe	Belgium	Sint-Niklaas	Temse
 Europe	Belgium	Soignies	
+Europe	Belgium	Soignies	Bellecourt
 Europe	Belgium	Soignies	Braine-le-Comte
 Europe	Belgium	Soignies	Casteau
 Europe	Belgium	Soignies	Hennuyères
@@ -1603,6 +1631,7 @@ Europe	Belgium	Thuin	Fontaine-Valmont
 Europe	Belgium	Tielt	
 Europe	Belgium	Tielt	Ardooie
 Europe	Belgium	Tielt	Dentergem
+Europe	Belgium	Tielt	Koolskamp
 Europe	Belgium	Tielt	Meulebeke
 Europe	Belgium	Tielt	Oostrozebeke
 Europe	Belgium	Tielt	Pittem
@@ -1611,10 +1640,13 @@ Europe	Belgium	Tielt	Wielsbeke
 Europe	Belgium	Tielt	Wingene
 Europe	Belgium	Tongeren	
 Europe	Belgium	Tongeren	Alken
+Europe	Belgium	Tongeren	Batsheers
 Europe	Belgium	Tongeren	Beverst
 Europe	Belgium	Tongeren	Bilzen
+Europe	Belgium	Tongeren	Bommershoven
 Europe	Belgium	Tongeren	Borgloon
 Europe	Belgium	Tongeren	Eisden
+Europe	Belgium	Tongeren	Gellik
 Europe	Belgium	Tongeren	Hoeselt
 Europe	Belgium	Tongeren	Klein-Gelmen
 Europe	Belgium	Tongeren	Kortessem
@@ -1704,6 +1736,7 @@ Europe	Belgium	Veurne	De Panne
 Europe	Belgium	Veurne	Koksijde
 Europe	Belgium	Veurne	Oostduinkerke
 Europe	Belgium	Vlaams-Brabant	
+Europe	Belgium	Wallonia	
 Europe	Belgium	Waremme	
 Europe	Belgium	Waremme	Berloz
 Europe	Belgium	Waremme	Hannut
@@ -2387,7 +2420,9 @@ Europe	Italy	Castel di Sangro
 Europe	Italy	Emilia-Romagna	
 Europe	Italy	Friuli Venezia Giulia	
 Europe	Italy	Friuli Venezia Giulia	Gorizia
+Europe	Italy	Friuli Venezia Giulia	Pordenone
 Europe	Italy	Friuli Venezia Giulia	Trieste
+Europe	Italy	Friuli Venezia Giulia	Udine
 Europe	Italy	Italian cruise ship	
 Europe	Italy	Italy	
 Europe	Italy	Lazio	
@@ -2398,6 +2433,8 @@ Europe	Italy	Lombardy	Pavia
 Europe	Italy	Marche	
 Europe	Italy	Marche	Ancona
 Europe	Italy	Molise	
+Europe	Italy	Molise	Campobasso
+Europe	Italy	Molise	Isernia
 Europe	Italy	Pa Trento	
 Europe	Italy	Piedmont	
 Europe	Italy	Piedmont	Turin
@@ -2476,17 +2513,44 @@ Europe	Netherlands	Flevoland
 Europe	Netherlands	Flevoland	Zeewolde
 Europe	Netherlands	Friesland	
 Europe	Netherlands	Friesland	Franeker
+Europe	Netherlands	Friesland	Weststellingwerf
 Europe	Netherlands	Gelderland	
 Europe	Netherlands	Gelderland	Apeldoorn
+Europe	Netherlands	Gelderland	Arnhem
 Europe	Netherlands	Gelderland	Nijmegen
 Europe	Netherlands	Groningen	
 Europe	Netherlands	Leiden	
 Europe	Netherlands	Limburg	
+Europe	Netherlands	Limburg	Beek
+Europe	Netherlands	Limburg	Beekdaelen
+Europe	Netherlands	Limburg	Brunssum
+Europe	Netherlands	Limburg	Echt-Susteren
+Europe	Netherlands	Limburg	Eijsden-Margraten
+Europe	Netherlands	Limburg	Gulpen-Wittem
+Europe	Netherlands	Limburg	Heerlen
+Europe	Netherlands	Limburg	Horst Aan de Maas
+Europe	Netherlands	Limburg	Kerkrade
+Europe	Netherlands	Limburg	Landgraaf
+Europe	Netherlands	Limburg	Maasgouw
+Europe	Netherlands	Limburg	Maastricht
+Europe	Netherlands	Limburg	Meerssen
+Europe	Netherlands	Limburg	Nederweert
+Europe	Netherlands	Limburg	Roerdalen
+Europe	Netherlands	Limburg	Roermond
+Europe	Netherlands	Limburg	Sittard-Geleen
+Europe	Netherlands	Limburg	Stein
+Europe	Netherlands	Limburg	Valkenburg Aan de Geul
+Europe	Netherlands	Limburg	Venlo
+Europe	Netherlands	Limburg	Voerendaal
+Europe	Netherlands	Limburg	Weert NL
 Europe	Netherlands	Netherlands	
 Europe	Netherlands	North Brabant	
 Europe	Netherlands	North Brabant	Andel
+Europe	Netherlands	North Brabant	Bergeijk
 Europe	Netherlands	North Brabant	Berlicum
+Europe	Netherlands	North Brabant	Best
 Europe	Netherlands	North Brabant	Blaricum
+Europe	Netherlands	North Brabant	Cranendonck
 Europe	Netherlands	North Brabant	Eindhoven
 Europe	Netherlands	North Brabant	Heeswijk Dinther
 Europe	Netherlands	North Brabant	Helmond
@@ -2495,11 +2559,14 @@ Europe	Netherlands	North Brabant	Milheeze
 Europe	Netherlands	North Brabant	Nieuwendijk
 Europe	Netherlands	North Brabant	Oisterwijk
 Europe	Netherlands	North Brabant	Oss
+Europe	Netherlands	North Brabant	Someren
 Europe	Netherlands	North Brabant	Tilburg
+Europe	Netherlands	North Brabant	Veldhoven
 Europe	Netherlands	North Holland	
 Europe	Netherlands	North Holland	Amsterdam West
 Europe	Netherlands	North Holland	Beverwijk
 Europe	Netherlands	North Holland	Diemen
+Europe	Netherlands	North Holland	Gooise Meren
 Europe	Netherlands	North Holland	Haarlem
 Europe	Netherlands	North Holland	Katwoude
 Europe	Netherlands	North Holland	Naarden
@@ -3735,6 +3802,7 @@ Europe	Ukraine	Kyiv
 Europe	Ukraine	Ukraine	
 Europe	Ukraine	Volyn	
 Europe	Ukraine	Volyn	Lutsk
+Europe	United Kingdom	British Virgin Islands	
 Europe	United Kingdom	England	
 Europe	United Kingdom	England	Derbyshire
 Europe	United Kingdom	England	Liverpool
@@ -3752,6 +3820,7 @@ Europe	United Kingdom	United Kingdom
 Europe	United Kingdom	Wales	
 Europe	United Kingdom	Wales	Cardiff
 North America	Antigua and Barbuda	Antigua and Barbuda	
+North America	Barbados	Barbados	
 North America	Belize	Belize	
 North America	Belize	Belmopan	
 North America	Bermuda	Bermuda	
@@ -4008,6 +4077,7 @@ North America	Panama	Panama Oeste	Vista Alegre
 North America	Panama	Santiago de Veraguas	
 North America	Saint Barthélemy	Saint Barthélemy	
 North America	Saint Kitts and Nevis	Saint Kitts and Nevis	
+North America	Saint Lucia	Saint Lucia	
 North America	Saint Martin	Saint Martin	
 North America	Saint Vincent and the Grenadines	Saint Vincent and the Grenadines	
 North America	St. Lucia	St. Lucia	
@@ -4081,6 +4151,7 @@ North America	USA	Arizona
 North America	USA	Arizona	Apache County
 North America	USA	Arizona	Coconino County
 North America	USA	Arizona	Gila County
+North America	USA	Arizona	Graham County
 North America	USA	Arizona	Maricopa County
 North America	USA	Arizona	Mohave County
 North America	USA	Arizona	Navajo County
@@ -4092,11 +4163,13 @@ North America	USA	Arizona	Yuma
 North America	USA	Arkansas	
 North America	USA	California	
 North America	USA	California	Alameda County
+North America	USA	California	Amador County
 North America	USA	California	Brentwood County
 North America	USA	California	Butte County
 North America	USA	California	Colusa County
 North America	USA	California	Contra Costa County
 North America	USA	California	Davis
+North America	USA	California	El Dorado County
 North America	USA	California	Fresno County
 North America	USA	California	Grand Princess
 North America	USA	California	Grand Princess Cruise Ship
@@ -4109,12 +4182,15 @@ North America	USA	California	Lake County CA
 North America	USA	California	Los Angeles County
 North America	USA	California	Madera County
 North America	USA	California	Marin County
+North America	USA	California	Mariposa County
 North America	USA	California	Mendocino County
 North America	USA	California	Merced County
 North America	USA	California	Mono County
 North America	USA	California	Monterey County CA
 North America	USA	California	Napa County
+North America	USA	California	Nevada County
 North America	USA	California	Orange County CA
+North America	USA	California	Placer County
 North America	USA	California	Riverside
 North America	USA	California	Riverside County
 North America	USA	California	Sacramento County
@@ -4128,14 +4204,18 @@ North America	USA	California	San Luis Obispo County
 North America	USA	California	San Mateo County
 North America	USA	California	Santa Barbara County
 North America	USA	California	Santa Clara County
+North America	USA	California	Santa Cruz County
+North America	USA	California	Shasta County
 North America	USA	California	Solano County
 North America	USA	California	Sonoma County
 North America	USA	California	Stanislaus County
 North America	USA	California	Sutter County
+North America	USA	California	Tehama County
 North America	USA	California	Tulare County
 North America	USA	California	Tuolumne County
 North America	USA	California	Ventura County
 North America	USA	California	Yolo County
+North America	USA	California	Yuba County
 North America	USA	Colorado	
 North America	USA	Colorado	Colorado Springs
 North America	USA	Colorado	Denver County
@@ -4373,6 +4453,7 @@ North America	USA	New Jersey	Guttenberg
 North America	USA	New Jersey	Hudson County
 North America	USA	New Jersey	Jersey City
 North America	USA	New Jersey	Middlesex County NJ
+North America	USA	New Jersey	Monmouth County
 North America	USA	New Jersey	Morris County NJ
 North America	USA	New Jersey	New Jersey
 North America	USA	New Jersey	Ocean County
@@ -4534,6 +4615,7 @@ North America	USA	Texas	Bailey County
 North America	USA	Texas	Bandera County
 North America	USA	Texas	Bee County
 North America	USA	Texas	Bell County
+North America	USA	Texas	Belton
 North America	USA	Texas	Bexar County
 North America	USA	Texas	Bowie County
 North America	USA	Texas	Brazos County
@@ -4544,6 +4626,7 @@ North America	USA	Texas	Calhoun County
 North America	USA	Texas	Calhoun County TX
 North America	USA	Texas	Cameron County
 North America	USA	Texas	Cass County
+North America	USA	Texas	Castro County
 North America	USA	Texas	Collin County
 North America	USA	Texas	Comal County
 North America	USA	Texas	Comanche County
@@ -4556,6 +4639,7 @@ North America	USA	Texas	Ector County
 North America	USA	Texas	El Paso County
 North America	USA	Texas	Fort Bend County
 North America	USA	Texas	Freestone County
+North America	USA	Texas	Frisco
 North America	USA	Texas	Galveston County
 North America	USA	Texas	Gonzales County
 North America	USA	Texas	Gray County
@@ -4578,6 +4662,7 @@ North America	USA	Texas	Jim Wells County
 North America	USA	Texas	Kaufman County
 North America	USA	Texas	Kendall County TX
 North America	USA	Texas	Kerr County
+North America	USA	Texas	Kleberg County
 North America	USA	Texas	Lamar County
 North America	USA	Texas	Lavaca County
 North America	USA	Texas	Limestone County
@@ -4633,6 +4718,7 @@ North America	USA	Utah	Utah County
 North America	USA	Vermont	
 North America	USA	Virgin Islands	
 North America	USA	Virginia	
+North America	USA	Virginia	Alexandria
 North America	USA	Virginia	Frederick County
 North America	USA	Washington	
 North America	USA	Washington	Adams County WA
@@ -5096,6 +5182,7 @@ South America	Brazil	São Paulo	Araras
 South America	Brazil	São Paulo	Araçatuba
 South America	Brazil	São Paulo	Assis
 South America	Brazil	São Paulo	Atibaia
+South America	Brazil	São Paulo	Auriflama
 South America	Brazil	São Paulo	Barueri
 South America	Brazil	São Paulo	Birigui
 South America	Brazil	São Paulo	Braganca Paulista
@@ -5142,6 +5229,7 @@ South America	Brazil	São Paulo	Mogi-Guacu
 South America	Brazil	São Paulo	Mongagua
 South America	Brazil	São Paulo	Nova Odessa
 South America	Brazil	São Paulo	Osasco
+South America	Brazil	São Paulo	Ouro Verde
 South America	Brazil	São Paulo	Peruibe
 South America	Brazil	São Paulo	Pindamonhangaba
 South America	Brazil	São Paulo	Piracicaba
@@ -5159,6 +5247,7 @@ South America	Brazil	São Paulo	Rio Pardo
 South America	Brazil	São Paulo	Rio Verde
 South America	Brazil	São Paulo	Santa Barbara D'Oeste
 South America	Brazil	São Paulo	Santa Isabel
+South America	Brazil	São Paulo	Santana de Parnaiba
 South America	Brazil	São Paulo	Santo Anastacio
 South America	Brazil	São Paulo	Santo Andre
 South America	Brazil	São Paulo	Santos
@@ -5168,6 +5257,7 @@ South America	Brazil	São Paulo	Sao Jose Dos Campos
 South America	Brazil	São Paulo	Sao Mateus
 South America	Brazil	São Paulo	Sao Sebastiao
 South America	Brazil	São Paulo	Sao Vicente
+South America	Brazil	São Paulo	Sete Barras
 South America	Brazil	São Paulo	Sorocaba
 South America	Brazil	São Paulo	Sumare
 South America	Brazil	São Paulo	São Paulo
