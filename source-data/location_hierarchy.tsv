@@ -230,7 +230,10 @@ Africa	South Africa	Western Cape Province	Prince Albert
 Africa	South Africa	Western Cape Province	Stellenbosch
 Africa	South Africa	Western Cape Province	Tygerberg
 Africa	South Africa	Western Cape Province	West Coast
+Africa	Tanzania	Arusha	
 Africa	Tanzania	Tanzania	
+Africa	Togo	Golfe	
+Africa	Togo	Golfe	Lome
 Africa	Togo	Togo	
 Africa	Tunisia	Ariana	
 Africa	Tunisia	Ben Arous	
@@ -1130,6 +1133,7 @@ Europe	Belgium	Antwerpen	Mortsel
 Europe	Belgium	Antwerpen	Niel
 Europe	Belgium	Antwerpen	Oelegem
 Europe	Belgium	Antwerpen	Oostmalle
+Europe	Belgium	Antwerpen	Pulle
 Europe	Belgium	Antwerpen	Ranst
 Europe	Belgium	Antwerpen	Schilde
 Europe	Belgium	Antwerpen	Schoten
@@ -1300,6 +1304,7 @@ Europe	Belgium	Halle-Vilvoorde	Vilvoorde
 Europe	Belgium	Halle-Vilvoorde	Wemmel
 Europe	Belgium	Halle-Vilvoorde	Wezembeek-Oppem
 Europe	Belgium	Halle-Vilvoorde	Zaventem
+Europe	Belgium	Halle-Vilvoorde	Zemst
 Europe	Belgium	Hasselt	
 Europe	Belgium	Hasselt	Beringen
 Europe	Belgium	Hasselt	Beverlo
@@ -1639,6 +1644,7 @@ Europe	Belgium	Tielt	Ruiselede
 Europe	Belgium	Tielt	Wielsbeke
 Europe	Belgium	Tielt	Wingene
 Europe	Belgium	Tongeren	
+Europe	Belgium	Tongeren	's Herenelderen
 Europe	Belgium	Tongeren	Alken
 Europe	Belgium	Tongeren	Batsheers
 Europe	Belgium	Tongeren	Beverst
@@ -1647,6 +1653,7 @@ Europe	Belgium	Tongeren	Bommershoven
 Europe	Belgium	Tongeren	Borgloon
 Europe	Belgium	Tongeren	Eisden
 Europe	Belgium	Tongeren	Gellik
+Europe	Belgium	Tongeren	Genoelselderen
 Europe	Belgium	Tongeren	Hoeselt
 Europe	Belgium	Tongeren	Klein-Gelmen
 Europe	Belgium	Tongeren	Kortessem
@@ -2427,6 +2434,7 @@ Europe	Italy	Italian cruise ship
 Europe	Italy	Italy	
 Europe	Italy	Lazio	
 Europe	Italy	Lazio	Rome
+Europe	Italy	Liguria	
 Europe	Italy	Lombardy	
 Europe	Italy	Lombardy	Milan
 Europe	Italy	Lombardy	Pavia
@@ -2729,9 +2737,11 @@ Europe	Portugal	Évora	Montemor-o-Novo
 Europe	Romania	Arges	
 Europe	Romania	Bucharest	
 Europe	Romania	Buzau	
+Europe	Romania	Calarasi	
 Europe	Romania	Cluj	
 Europe	Romania	Cluj Napoca	
 Europe	Romania	Constanta	
+Europe	Romania	Covasna	
 Europe	Romania	Giurgiu	
 Europe	Romania	Hunedoara	
 Europe	Romania	Ialomița	
@@ -3799,10 +3809,14 @@ Europe	Ukraine	Crimea	Yevpatoriya
 Europe	Ukraine	Ivano-Frankivsk	
 Europe	Ukraine	Kharkiv	
 Europe	Ukraine	Kyiv	
+Europe	Ukraine	Rivne	
 Europe	Ukraine	Ukraine	
+Europe	Ukraine	Uzhgorod	
+Europe	Ukraine	Vinnytsia	
 Europe	Ukraine	Volyn	
 Europe	Ukraine	Volyn	Lutsk
 Europe	United Kingdom	British Virgin Islands	
+Europe	United Kingdom	Cayman Islands	
 Europe	United Kingdom	England	
 Europe	United Kingdom	England	Derbyshire
 Europe	United Kingdom	England	Liverpool
@@ -4194,6 +4208,7 @@ North America	USA	California	Placer County
 North America	USA	California	Riverside
 North America	USA	California	Riverside County
 North America	USA	California	Sacramento County
+North America	USA	California	San Benito County
 North America	USA	California	San Bernardino County
 North America	USA	California	San Diego
 North America	USA	California	San Diego County
@@ -4356,6 +4371,7 @@ North America	USA	Indiana	Marion County IN
 North America	USA	Indiana	Tippecanoe County
 North America	USA	Iowa	
 North America	USA	Iowa	Allamakee County
+North America	USA	Iowa	Bremer County
 North America	USA	Iowa	Buchanan County
 North America	USA	Iowa	Chickasaw County
 North America	USA	Iowa	Clayton County
@@ -4365,6 +4381,7 @@ North America	USA	Iowa	Fayette County IA
 North America	USA	Iowa	Howard County
 North America	USA	Iowa	Jackson County IA
 North America	USA	Iowa	Johnson County
+North America	USA	Iowa	Polk County IA
 North America	USA	Iowa	Winneshiek County
 North America	USA	Kansas	
 North America	USA	Kentucky	
@@ -4507,6 +4524,7 @@ North America	USA	New York	New York City
 North America	USA	New York	New York County
 North America	USA	New York	Niagara County
 North America	USA	New York	Oneida County
+North America	USA	New York	Oneida County NY
 North America	USA	New York	Onondaga County
 North America	USA	New York	Ontario County
 North America	USA	New York	Orange County NY
@@ -4775,16 +4793,20 @@ North America	USA	Wisconsin	Crawford County
 North America	USA	Wisconsin	Dane County
 North America	USA	Wisconsin	Dodge County
 North America	USA	Wisconsin	Door County
+North America	USA	Wisconsin	Douglas County WI
+North America	USA	Wisconsin	Dunn County
 North America	USA	Wisconsin	Eau Claire County
 North America	USA	Wisconsin	Fond Du Lac County
 North America	USA	Wisconsin	Grant County WI
 North America	USA	Wisconsin	Green County
 North America	USA	Wisconsin	Green Lake County
 North America	USA	Wisconsin	Iowa County WI
+North America	USA	Wisconsin	Iron County
 North America	USA	Wisconsin	Jackson County WI
 North America	USA	Wisconsin	Jefferson County WI
 North America	USA	Wisconsin	Juneau County
 North America	USA	Wisconsin	Kenosha County
+North America	USA	Wisconsin	Kewaunee County
 North America	USA	Wisconsin	La Crosse County
 North America	USA	Wisconsin	Lafayette County
 North America	USA	Wisconsin	Langlade County
@@ -4798,6 +4820,7 @@ North America	USA	Wisconsin	Monroe County
 North America	USA	Wisconsin	Monroe County WI
 North America	USA	Wisconsin	Oconto County
 North America	USA	Wisconsin	Ogle County WI
+North America	USA	Wisconsin	Oneida County WI
 North America	USA	Wisconsin	Oregon WI
 North America	USA	Wisconsin	Outagamie County
 North America	USA	Wisconsin	Ozaukee County
@@ -4810,6 +4833,7 @@ North America	USA	Wisconsin	Price County
 North America	USA	Wisconsin	Racine County
 North America	USA	Wisconsin	Richland County WI
 North America	USA	Wisconsin	Rock County
+North America	USA	Wisconsin	Saint Croix County
 North America	USA	Wisconsin	Sauk County
 North America	USA	Wisconsin	Sawyer County
 North America	USA	Wisconsin	Shawano County
@@ -4944,9 +4968,18 @@ South America	Argentina	Neuquen	Senillosa
 South America	Argentina	Neuquen	Villa la Angostura
 South America	Argentina	Neuquen	Zapala
 South America	Argentina	Rio Negro	
+South America	Argentina	Rio Negro	Allen
+South America	Argentina	Rio Negro	Catriel
+South America	Argentina	Rio Negro	Chinchinales
 South America	Argentina	Rio Negro	Cipolletti
+South America	Argentina	Rio Negro	General Conesa
 South America	Argentina	Rio Negro	General Roca
+South America	Argentina	Rio Negro	Jacobacci
+South America	Argentina	Rio Negro	Patagones
+South America	Argentina	Rio Negro	San Antonio Este
 South America	Argentina	Rio Negro	San Carlos de Bariloche
+South America	Argentina	Rio Negro	Viedma
+South America	Argentina	Rio Negro	Villa Regina
 South America	Argentina	Santa Fe	
 South America	Argentina	Santa Fe	Cayastá
 South America	Argentina	Santa Fe	Ceres
@@ -4974,8 +5007,6 @@ South America	Brazil	Acre
 South America	Brazil	Alagoas	
 South America	Brazil	Alagoas	Maceio
 South America	Brazil	Amapa	
-South America	Brazil	Amazonas	
-South America	Brazil	Amazonas	Manaus
 South America	Brazil	Amazonas BR	
 South America	Brazil	Amazonas BR	Caapiranga
 South America	Brazil	Amazonas BR	Carauari
@@ -4984,6 +5015,7 @@ South America	Brazil	Amazonas BR	Labrea
 South America	Brazil	Amazonas BR	Manacapuru
 South America	Brazil	Amazonas BR	Manaquiri
 South America	Brazil	Amazonas BR	Manaus
+South America	Brazil	Amazonas BR	Nova Holinda
 South America	Brazil	Amazonas BR	Tapaua
 South America	Brazil	Bahia	
 South America	Brazil	Bahia	Feira de Santana
@@ -5077,11 +5109,13 @@ South America	Brazil	Rio Grande do Sul	Caxias do Sul
 South America	Brazil	Rio Grande do Sul	Cruz Alta
 South America	Brazil	Rio Grande do Sul	Erechim
 South America	Brazil	Rio Grande do Sul	Esteio
+South America	Brazil	Rio Grande do Sul	Estrela Velha
 South America	Brazil	Rio Grande do Sul	Farroupilha
 South America	Brazil	Rio Grande do Sul	Flores Da Cunha
 South America	Brazil	Rio Grande do Sul	Frederico Westphalen
 South America	Brazil	Rio Grande do Sul	Garibaldi
 South America	Brazil	Rio Grande do Sul	Girua
+South America	Brazil	Rio Grande do Sul	Gramado
 South America	Brazil	Rio Grande do Sul	Guaiba
 South America	Brazil	Rio Grande do Sul	Ibiruba
 South America	Brazil	Rio Grande do Sul	Ijui
@@ -5094,9 +5128,11 @@ South America	Brazil	Rio Grande do Sul	Marau
 South America	Brazil	Rio Grande do Sul	Morro Reuter
 South America	Brazil	Rio Grande do Sul	Nova Araça
 South America	Brazil	Rio Grande do Sul	Nova Brescia
+South America	Brazil	Rio Grande do Sul	Novo Cabrais
 South America	Brazil	Rio Grande do Sul	Novo Hamburgo
 South America	Brazil	Rio Grande do Sul	Não-Me-Toque
 South America	Brazil	Rio Grande do Sul	Osorio
+South America	Brazil	Rio Grande do Sul	Parobe
 South America	Brazil	Rio Grande do Sul	Passo Fundo
 South America	Brazil	Rio Grande do Sul	Pelotas
 South America	Brazil	Rio Grande do Sul	Porto Alegre
@@ -5119,6 +5155,7 @@ South America	Brazil	Rio Grande do Sul	São Leopoldo
 South America	Brazil	Rio Grande do Sul	Tapejara
 South America	Brazil	Rio Grande do Sul	Tapes
 South America	Brazil	Rio Grande do Sul	Taquara
+South America	Brazil	Rio Grande do Sul	Taquari
 South America	Brazil	Rio Grande do Sul	Teutonia
 South America	Brazil	Rio Grande do Sul	Tiradentes
 South America	Brazil	Rio Grande do Sul	Torres
@@ -5176,6 +5213,7 @@ South America	Brazil	Sergipe	Riachuelo
 South America	Brazil	Sergipe	Tomar do Geru
 South America	Brazil	São Paulo	
 South America	Brazil	São Paulo	Adamantina
+South America	Brazil	São Paulo	Aguas de Santa Barbara
 South America	Brazil	São Paulo	Americana
 South America	Brazil	São Paulo	Amparo
 South America	Brazil	São Paulo	Araras
@@ -5196,6 +5234,7 @@ South America	Brazil	São Paulo	Cesário Lange
 South America	Brazil	São Paulo	Cotia
 South America	Brazil	São Paulo	Cunha
 South America	Brazil	São Paulo	Diadema
+South America	Brazil	São Paulo	Echapora
 South America	Brazil	São Paulo	Embu Das Artes
 South America	Brazil	São Paulo	Embu-Guacu
 South America	Brazil	São Paulo	Emilianopolis
@@ -5215,6 +5254,7 @@ South America	Brazil	São Paulo	Itatiba
 South America	Brazil	São Paulo	Jacareí
 South America	Brazil	São Paulo	Jandira
 South America	Brazil	São Paulo	Jarinu
+South America	Brazil	São Paulo	Jau
 South America	Brazil	São Paulo	Jundiai
 South America	Brazil	São Paulo	Juquia
 South America	Brazil	São Paulo	Juquitiba
@@ -5229,7 +5269,9 @@ South America	Brazil	São Paulo	Mogi-Guacu
 South America	Brazil	São Paulo	Mongagua
 South America	Brazil	São Paulo	Nova Odessa
 South America	Brazil	São Paulo	Osasco
+South America	Brazil	São Paulo	Ourinhos
 South America	Brazil	São Paulo	Ouro Verde
+South America	Brazil	São Paulo	Pariquera-Acu
 South America	Brazil	São Paulo	Peruibe
 South America	Brazil	São Paulo	Pindamonhangaba
 South America	Brazil	São Paulo	Piracicaba
@@ -5246,6 +5288,7 @@ South America	Brazil	São Paulo	Rio Grande Da Serra
 South America	Brazil	São Paulo	Rio Pardo
 South America	Brazil	São Paulo	Rio Verde
 South America	Brazil	São Paulo	Santa Barbara D'Oeste
+South America	Brazil	São Paulo	Santa Cruz do Rio Pardo
 South America	Brazil	São Paulo	Santa Isabel
 South America	Brazil	São Paulo	Santana de Parnaiba
 South America	Brazil	São Paulo	Santo Anastacio
@@ -5266,6 +5309,7 @@ South America	Brazil	São Paulo	Taciba
 South America	Brazil	São Paulo	Taruma
 South America	Brazil	São Paulo	Taubate
 South America	Brazil	São Paulo	Taubate
+South America	Brazil	São Paulo	Tupa
 South America	Brazil	Tocantins	
 South America	Brazil	Tocantins	Araguaiana
 South America	Brazil	Tocantins	Araguatins
