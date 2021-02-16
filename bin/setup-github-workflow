@@ -8,10 +8,6 @@ echo "::group::Installing/upgrading Pip, setuptools, and wheel"
 python3 -m pip install --upgrade pip setuptools wheel
 echo "::endgroup::"
 
-echo "::group::Installing s3fs"
-python3 -m pip install s3fs
-echo "::endgroup::"
-
 echo "::group::Installing nextstrain-cli"
-python3 -m pip install 'nextstrain-cli >=3.0.0'
+python3 -m pip install 'nextstrain-cli >=3.0.1'
 echo "::endgroup::"
