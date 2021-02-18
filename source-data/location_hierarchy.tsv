@@ -671,14 +671,17 @@ Asia	Indonesia	Yogyakarta
 Asia	Indonesia	Yogyakarta	Sleman
 Asia	Iran	Gilan	
 Asia	Iran	Gorgan	
+Asia	Iran	Hamedan	
 Asia	Iran	Iran	
 Asia	Iran	Karaj	
+Asia	Iran	Kashmar	
 Asia	Iran	Qom	
 Asia	Iran	Semnan	
 Asia	Iran	Sistan and Baluchestan	
 Asia	Iran	Sistan and Baluchestan	Zahedan
 Asia	Iran	Tehran	
 Asia	Iran	Tehran	Abmangol
+Asia	Iran	Urmia	
 Asia	Iraq	Al-Muthanna Province	
 Asia	Iraq	Erbil	
 Asia	Iraq	Iraq	
@@ -2183,6 +2186,7 @@ Europe	France	Ile de France	Garches
 Europe	France	Ile de France	Gennevilliers
 Europe	France	Ile de France	Groslay
 Europe	France	Ile de France	Guyancourt
+Europe	France	Ile de France	Hauts-de-Seine
 Europe	France	Ile de France	Issy-Les-Moulineaux
 Europe	France	Ile de France	Ivry-sur-Seine
 Europe	France	Ile de France	Juvisy-sur-Orge
@@ -2211,7 +2215,9 @@ Europe	France	Ile de France	Saint Mandé
 Europe	France	Ile de France	Saint-Denis
 Europe	France	Ile de France	Saint-Thibault-des-Vignes
 Europe	France	Ile de France	Sarcelles
+Europe	France	Ile de France	Seine-Et-Marne
 Europe	France	Ile de France	Seine-Port
+Europe	France	Ile de France	Seine-Saint-Denis
 Europe	France	Ile de France	Suresnes
 Europe	France	Ile de France	Thiais
 Europe	France	Ile de France	Vanves
@@ -2292,6 +2298,7 @@ Europe	Germany	Baden-Wuerttemberg	Buehl
 Europe	Germany	Baden-Wuerttemberg	Freiburg
 Europe	Germany	Baden-Wuerttemberg	Gaufelden
 Europe	Germany	Baden-Wuerttemberg	Grenzach-Wyhlen
+Europe	Germany	Baden-Wuerttemberg	Gundelfingen
 Europe	Germany	Baden-Wuerttemberg	Heidelberg
 Europe	Germany	Baden-Wuerttemberg	Konstanz
 Europe	Germany	Baden-Wuerttemberg	Lörrach
@@ -3186,15 +3193,20 @@ Europe	Spain	Andalusia	Alfacar
 Europe	Spain	Andalusia	Algeciras
 Europe	Spain	Andalusia	Alhaurin de la Torre
 Europe	Spain	Andalusia	Alhendin
+Europe	Spain	Andalusia	Alicun de Ortega
 Europe	Spain	Andalusia	Almeria
 Europe	Spain	Andalusia	Antequera
 Europe	Spain	Andalusia	Atarfe
+Europe	Spain	Andalusia	Baza
 Europe	Spain	Andalusia	Benajarafe
 Europe	Spain	Andalusia	Benalmadena
+Europe	Spain	Andalusia	Benalua
 Europe	Spain	Andalusia	Benalua de las Villas
 Europe	Spain	Andalusia	Cadiz
+Europe	Spain	Andalusia	Campillo de Arenas
 Europe	Spain	Andalusia	Castillo de Locubin
 Europe	Spain	Andalusia	Castril
+Europe	Spain	Andalusia	Chauchina
 Europe	Spain	Andalusia	Chiclana de la Frontera
 Europe	Spain	Andalusia	Churriana de la Vega
 Europe	Spain	Andalusia	Cijuela
@@ -3211,11 +3223,13 @@ Europe	Spain	Andalusia	Granada
 Europe	Spain	Andalusia	Granada ES
 Europe	Spain	Andalusia	Guadix
 Europe	Spain	Andalusia	Guevejar
+Europe	Spain	Andalusia	Huelago
 Europe	Spain	Andalusia	Huescar
 Europe	Spain	Andalusia	Huetor Santillan
 Europe	Spain	Andalusia	Illora
 Europe	Spain	Andalusia	Iznalloz
 Europe	Spain	Andalusia	Jerez De La Frontera
+Europe	Spain	Andalusia	Jodar
 Europe	Spain	Andalusia	Jun
 Europe	Spain	Andalusia	La Linea de la Concepcion
 Europe	Spain	Andalusia	La Peza
@@ -3225,10 +3239,13 @@ Europe	Spain	Andalusia	Loja
 Europe	Spain	Andalusia	Mairena Aljarafe
 Europe	Spain	Andalusia	Malaga
 Europe	Spain	Andalusia	Maracena
+Europe	Spain	Andalusia	Moclin
+Europe	Spain	Andalusia	Montilla
 Europe	Spain	Andalusia	Navas de San Juan
 Europe	Spain	Andalusia	Nerja
 Europe	Spain	Andalusia	Ogijares
 Europe	Spain	Andalusia	Otura
+Europe	Spain	Andalusia	Peligros
 Europe	Spain	Andalusia	Pinos Puente
 Europe	Spain	Andalusia	Puebla de Don Fadrique
 Europe	Spain	Andalusia	Puerto Santa Maria
@@ -3351,6 +3368,7 @@ Europe	Spain	Canary Islands	Santa Maria de Guia de Gran Canaria
 Europe	Spain	Canary Islands	Teror
 Europe	Spain	Canary Islands	Valleseco
 Europe	Spain	Cantabria	
+Europe	Spain	Cantabria	Alceda
 Europe	Spain	Cantabria	Ampuero
 Europe	Spain	Cantabria	Anaz
 Europe	Spain	Cantabria	Arnuero
@@ -3370,6 +3388,7 @@ Europe	Spain	Cantabria	La Penilla
 Europe	Spain	Cantabria	Laredo
 Europe	Spain	Cantabria	Liano
 Europe	Spain	Cantabria	Liencres
+Europe	Spain	Cantabria	Loredo
 Europe	Spain	Cantabria	Los Corrales de Buelna
 Europe	Spain	Cantabria	Maliano
 Europe	Spain	Cantabria	Marina de Cudeyo
@@ -3395,6 +3414,8 @@ Europe	Spain	Cantabria	Santander
 Europe	Spain	Cantabria	Santiago de Cartes
 Europe	Spain	Cantabria	Santillana
 Europe	Spain	Cantabria	Santona
+Europe	Spain	Cantabria	Saron
+Europe	Spain	Cantabria	Selaya
 Europe	Spain	Cantabria	Solares
 Europe	Spain	Cantabria	Suances
 Europe	Spain	Cantabria	Torrelavega
@@ -3468,6 +3489,7 @@ Europe	Spain	Catalunya	Berga
 Europe	Spain	Catalunya	Bigues I Riells
 Europe	Spain	Catalunya	Cabrera de Mar
 Europe	Spain	Catalunya	Cabrils
+Europe	Spain	Catalunya	Caldes d'Estrac
 Europe	Spain	Catalunya	Caldes de Montbui
 Europe	Spain	Catalunya	Calella
 Europe	Spain	Catalunya	Cambrils
@@ -3476,20 +3498,25 @@ Europe	Spain	Catalunya	Canoves i Samalus
 Europe	Spain	Catalunya	Cardedeu
 Europe	Spain	Catalunya	Cardona
 Europe	Spain	Catalunya	Castellbisbal
+Europe	Spain	Catalunya	Castelldefels
 Europe	Spain	Catalunya	Castellterçol
 Europe	Spain	Catalunya	Centelles
 Europe	Spain	Catalunya	Cerdanyola del Valles
 Europe	Spain	Catalunya	Corro d'Avall
 Europe	Spain	Catalunya	El Masnou
 Europe	Spain	Catalunya	El Prat de Llobregat
+Europe	Spain	Catalunya	Fogars de la Selva
 Europe	Spain	Catalunya	Gerona
 Europe	Spain	Catalunya	Granollers
+Europe	Spain	Catalunya	Hostalrich
 Europe	Spain	Catalunya	Jorba
+Europe	Spain	Catalunya	L'Ametlla del Valles
 Europe	Spain	Catalunya	L'Hospitalet de Llobregat
 Europe	Spain	Catalunya	La Garriga
 Europe	Spain	Catalunya	La Llagosta
 Europe	Spain	Catalunya	La Roca del Valles
 Europe	Spain	Catalunya	Les Masies de Voltrega
+Europe	Spain	Catalunya	Lleida
 Europe	Spain	Catalunya	Llica D'Amunt
 Europe	Spain	Catalunya	Llinars del Valles
 Europe	Spain	Catalunya	Llissa de Munt
@@ -3497,12 +3524,14 @@ Europe	Spain	Catalunya	Lliça de Vall
 Europe	Spain	Catalunya	Malgrat de Mar
 Europe	Spain	Catalunya	Manlleu
 Europe	Spain	Catalunya	Manresa
+Europe	Spain	Catalunya	Martorelles
 Europe	Spain	Catalunya	Mataro
 Europe	Spain	Catalunya	Moia
 Europe	Spain	Catalunya	Mollet del Valles
 Europe	Spain	Catalunya	Moncada y Reixach
 Europe	Spain	Catalunya	Montgat
 Europe	Spain	Catalunya	Navas
+Europe	Spain	Catalunya	Oris
 Europe	Spain	Catalunya	Palamos
 Europe	Spain	Catalunya	Palau Solita i Plegamans
 Europe	Spain	Catalunya	Parets del Valles
@@ -3521,6 +3550,7 @@ Europe	Spain	Catalunya	Sant Andreu de la Barca
 Europe	Spain	Catalunya	Sant Antoni de Vilamajor
 Europe	Spain	Catalunya	Sant Celoni
 Europe	Spain	Catalunya	Sant Esteve de Palautordera
+Europe	Spain	Catalunya	Sant Feliu de Codines
 Europe	Spain	Catalunya	Sant Fost de Campsentelles
 Europe	Spain	Catalunya	Sant Fruitos de Bages
 Europe	Spain	Catalunya	Sant Joan Despi
@@ -3539,7 +3569,9 @@ Europe	Spain	Catalunya	Tiana
 Europe	Spain	Catalunya	Vallgorguina
 Europe	Spain	Catalunya	Vallirana
 Europe	Spain	Catalunya	Vic
+Europe	Spain	Catalunya	Viladecans
 Europe	Spain	Catalunya	Vilanova del Vallés
+Europe	Spain	Catalunya	Vilassar de Dalt
 Europe	Spain	Catalunya	Vilassar de Mar
 Europe	Spain	Ceuta	
 Europe	Spain	Comunitat Valenciana	
@@ -3715,6 +3747,7 @@ Europe	Spain	Melilla
 Europe	Spain	Murcia	
 Europe	Spain	Murcia	Murcia
 Europe	Spain	Navarra	
+Europe	Spain	Navarra	Andosilla
 Europe	Spain	Navarra	Artajona
 Europe	Spain	Navarra	Baranain
 Europe	Spain	Navarra	Barasoain
