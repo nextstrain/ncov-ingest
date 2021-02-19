@@ -2,7 +2,7 @@ import csv
 import re
 import unicodedata
 from collections import defaultdict
-from typing import Any, Collection, List, MutableMapping, Sequence, Tuple , Dict
+from typing import Any, Collection, List, MutableMapping, Sequence, Tuple , Dict , Union
 
 from utils.transform import format_date, titlecase
 from . import LINE_NUMBER_KEY
@@ -24,13 +24,49 @@ class UserProvidedGeoLocationSubstitutionRules:
         
         self.entries[ start[0] ][ start[1] ][ start[2] ][ start[3] ] = arrival
 
-        for i in range(3):
-            if start[i] == '*' and start[i+1] != '*' :
-                print("ERROR : in rules, for the raw, * character are only allowed when the lower entity is also a * character.")
-                print("\tfaulty rule",start,arrival)
-                exit(1)
-
         self.use_count[start] = 0
+
+
+    def findApplicableRule( self , start: Tuple[str,str,str,str] , current: List[str] = [None,None,None,None] , level : int = 0) -> Union[ Tuple[str,str,str,str] , None ]:
+        """
+        **recursive** up to 4 levels
+
+        Takes:
+            start: Tuple[str,str,str,str] : entry to find a rule for
+            current: List[str,str,str,str] = [None,None,None,None] : current substituion pattern found, up until <level> index
+            level : int = 0 : current index for which we try to find a rule
+
+        Returns:
+            Tuple[str,str,str,str] : completed substitution pattern
+            or
+            None : if no substittuion pattern was found
+        """
+        #print("findApplicableRule" , level , start , current)
+        if level >= 4:
+            return current
+
+        ruleDic = self.entries
+        for i in range(level):
+            ruleDic = ruleDic[ current[i] ]
+
+        if start[level] in ruleDic: # found a corresponding rule
+            current[level] = start[level]
+            rule = self.findApplicableRule(start, current , level+1)
+            if not rule is None : # means a rule was found in all underlying levels
+                return tuple(rule )
+
+        if '*' in ruleDic: # if no corresponding rule was found, look up the general substitution rules 
+            current[level] = '*'
+            rule = self.findApplicableRule(start, current , level+1)
+            if not rule is None : # means a rule was found in all underlying levels
+                return tuple(rule )
+
+        #otherwise, no rule was found in the underlying levels
+        return None
+
+
+
+
 
     def get_user_rules(self, start: Tuple[str,str,str,str] ) -> Tuple[str,str,str,str]:
         """
@@ -62,18 +98,9 @@ class UserProvidedGeoLocationSubstitutionRules:
             continueApply = False
 
             rule = []
-            ruleDic = self.entries
-            for i in range(4):
-                if '*' in ruleDic : # default substitution rule
-                    rule.append('*')
-                elif arrival[i] in ruleDic : # found a corresponding rule
-                    rule.append(arrival[i])
-                else : # found no corresponding rules
-                    break
-                ruleDic = ruleDic[rule[-1]]
-                #print(arrival, rule , ruleDic)
+            rule = self.findApplicableRule( arrival , [None,None,None,None] )
 
-            continueApply = len(rule) == 4 # we were able to form a full rule
+            continueApply = not rule is None # we were able to form a full rule
 
             if continueApply:
 
