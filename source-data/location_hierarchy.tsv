@@ -176,6 +176,7 @@ Africa	Senegal	Senegal
 Africa	Senegal	St-Louis	
 Africa	Senegal	Thies	
 Africa	Senegal	Thies	Mbour
+Africa	Senegal	Thies	Saly Portudal
 Africa	Sierra Leone	Sierra Leone	
 Africa	Somalia	Somalia	
 Africa	South Africa	Eastern Cape	
@@ -432,6 +433,7 @@ Asia	India	Delhi
 Asia	India	Delhi	New Delhi
 Asia	India	Delhi	Tughlakabad
 Asia	India	Delhi	West Delhi
+Asia	India	Goa	
 Asia	India	Gujarat	
 Asia	India	Gujarat	Adajan
 Asia	India	Gujarat	Ahmedabad
@@ -510,6 +512,7 @@ Asia	India	Karnataka	Chikkaballapura
 Asia	India	Karnataka	Haveri
 Asia	India	Karnataka	Kolar
 Asia	India	Karnataka	Tumakuru
+Asia	India	Kerala	
 Asia	India	Ladakh	
 Asia	India	Ladakh	Kargil
 Asia	India	Madhya Pradesh	
@@ -1122,7 +1125,9 @@ Europe	Austria	Vorarlberg	Bludenz
 Europe	Austria	Vorarlberg	Bregenz
 Europe	Austria	Vorarlberg	Dornbirn
 Europe	Austria	Vorarlberg	Feldkirch
+Europe	Austria	Vorarlberg	Gofis
 Europe	Austria	Vorarlberg	Hohenems
+Europe	Austria	Vorarlberg	Rankweil
 Europe	Austria	Vorarlberg	Schwarzach
 Europe	Azerbaijan	Azerbaijan	
 Europe	Belarus	Belarus	
@@ -1659,6 +1664,7 @@ Europe	Belgium	Roeselare	Lichtervelde
 Europe	Belgium	Roeselare	Moorslede
 Europe	Belgium	Roeselare	Staden
 Europe	Belgium	Saint-Saulve	
+Europe	Belgium	Schaarbeek	
 Europe	Belgium	Sint-Niklaas	
 Europe	Belgium	Sint-Niklaas	Bazel
 Europe	Belgium	Sint-Niklaas	Lokeren
@@ -2156,6 +2162,7 @@ Europe	France	Hauts de France	Flines-lès-Mortagne
 Europe	France	Hauts de France	Genech
 Europe	France	Hauts de France	Gondecourt
 Europe	France	Hauts de France	Henin-Beaumont
+Europe	France	Hauts de France	Laon
 Europe	France	Hauts de France	Leers
 Europe	France	Hauts de France	Lille FR
 Europe	France	Hauts de France	Lyz-Les-Lannoy
@@ -2171,12 +2178,14 @@ Europe	France	Hauts de France	Tourcoing
 Europe	France	Hauts de France	Wambrechies
 Europe	France	Ile de France	
 Europe	France	Ile de France	Argenteuil
+Europe	France	Ile de France	Arpajon
 Europe	France	Ile de France	Asnières-sur-Seine
 Europe	France	Ile de France	Aulnay Sous Bois
 Europe	France	Ile de France	Bobigny
 Europe	France	Ile de France	Boulogne Billancourt
 Europe	France	Ile de France	Bry sur Marne
 Europe	France	Ile de France	Cergy
+Europe	France	Ile de France	Cergy Pontoise
 Europe	France	Ile de France	Chanteloup-en-Brie
 Europe	France	Ile de France	Clamart
 Europe	France	Ile de France	Colombes
@@ -2201,6 +2210,7 @@ Europe	France	Ile de France	Maisons Alfort
 Europe	France	Ile de France	Mantes-la-Jolie
 Europe	France	Ile de France	Meaux
 Europe	France	Ile de France	Meudon la Forêt
+Europe	France	Ile de France	Montfermeil
 Europe	France	Ile de France	Montigny le Bretonneux
 Europe	France	Ile de France	Montreuil
 Europe	France	Ile de France	Moussy Le Neuf
@@ -2308,6 +2318,7 @@ Europe	Germany	Baden-Wuerttemberg	Mannheim
 Europe	Germany	Baden-Wuerttemberg	Muehlacker
 Europe	Germany	Baden-Wuerttemberg	Oftersheim
 Europe	Germany	Baden-Wuerttemberg	Pfaffenweiler
+Europe	Germany	Baden-Wuerttemberg	Rammingen
 Europe	Germany	Baden-Wuerttemberg	Rickenbach
 Europe	Germany	Baden-Wuerttemberg	Rottweil
 Europe	Germany	Baden-Wuerttemberg	Rümmingen
@@ -2339,6 +2350,7 @@ Europe	Germany	Brandenburg
 Europe	Germany	Bremen	
 Europe	Germany	Germany	
 Europe	Germany	Hamburg	
+Europe	Germany	Herzogenrath	
 Europe	Germany	Hesse	
 Europe	Germany	Hesse	Bad Camberg
 Europe	Germany	Hesse	Bad Homburg
@@ -2428,17 +2440,21 @@ Europe	Hungary	Central Hungary
 Europe	Hungary	Central Hungary	Budapest
 Europe	Hungary	Csongrád County	
 Europe	Hungary	Debrecen	
+Europe	Hungary	Fejer	
 Europe	Hungary	Győr-Moson-Sopron County	
 Europe	Hungary	Hajdú-Bihar County	
 Europe	Hungary	Heves County	
 Europe	Hungary	Hungary	
 Europe	Hungary	Jász-Nagykun-Szolnok County	
 Europe	Hungary	Kecskemet	
+Europe	Hungary	Komárom-Esztergom	
+Europe	Hungary	Nógrád	
 Europe	Hungary	Oroshaza	
 Europe	Hungary	Pest County	
 Europe	Hungary	Somogy County	
 Europe	Hungary	Szabolcs-Szatmár-Bereg County	
 Europe	Hungary	Szeged	
+Europe	Hungary	Vas	
 Europe	Hungary	Veszprém County	
 Europe	Iceland	Reykjavik	
 Europe	Ireland	Carlow	
@@ -2508,6 +2524,8 @@ Europe	Italy	Marche
 Europe	Italy	Marche	Ancona
 Europe	Italy	Molise	
 Europe	Italy	Molise	Campobasso
+Europe	Italy	Molise	Colletorto
+Europe	Italy	Molise	Frosolone
 Europe	Italy	Molise	Isernia
 Europe	Italy	Pa Trento	
 Europe	Italy	Piedmont	
@@ -2544,7 +2562,14 @@ Europe	Kosovo	Pristina	Gracanica
 Europe	Kosovo	Pristina	Lipljan
 Europe	Latvia	Latvia	
 Europe	Latvia	Riga	
+Europe	Liechtenstein	Eschen	
+Europe	Liechtenstein	Gamprin-Bendern	
 Europe	Liechtenstein	Liechtenstein	
+Europe	Liechtenstein	Mauren	
+Europe	Liechtenstein	Planken	
+Europe	Liechtenstein	Schaan	
+Europe	Liechtenstein	Schellenberg	
+Europe	Liechtenstein	Vaduz	
 Europe	Lithuania	Alytaus Apskritis	
 Europe	Lithuania	Jonavos Apskritis	
 Europe	Lithuania	Kauno Apskritis	
@@ -2881,6 +2906,13 @@ Europe	Russia	Astrakhan Region	Kharabali
 Europe	Russia	Astrakhan Region	Volodarskiy
 Europe	Russia	Bashkortostan	
 Europe	Russia	Bashkortostan	Ufa
+Europe	Russia	Belgorod Region	
+Europe	Russia	Belgorod Region	Belgorod
+Europe	Russia	Belgorod Region	Grayvoron
+Europe	Russia	Belgorod Region	Novy Oskol
+Europe	Russia	Belgorod Region	Prokhorovka
+Europe	Russia	Belgorod Region	Stary Oskol
+Europe	Russia	Belgorod Region	Valuyki
 Europe	Russia	Bryansk Oblast	
 Europe	Russia	Bryansk Oblast	Bryansk
 Europe	Russia	Buryatia	
@@ -3084,6 +3116,7 @@ Europe	Russia	Tatarstan
 Europe	Russia	Tula Region	
 Europe	Russia	Tula Region	Novomoskovsk
 Europe	Russia	Tver	
+Europe	Russia	Tver	Torzhok
 Europe	Russia	Tyumen Region	
 Europe	Russia	Tyumen Region	Tyumen
 Europe	Russia	Vladimir Region	
@@ -3182,11 +3215,19 @@ Europe	Slovakia	Zilina	Dolný Kubín
 Europe	Slovakia	Zilina	Martincek
 Europe	Slovakia	Zilina	Trstena
 Europe	Slovenia	Celje	
+Europe	Slovenia	Jesenice	
+Europe	Slovenia	Kamnik	
 Europe	Slovenia	Kranj	
+Europe	Slovenia	Kranjska Gora	
+Europe	Slovenia	Ljubljana	
 Europe	Slovenia	Murska Sobota	
 Europe	Slovenia	Novo Mesto	
+Europe	Slovenia	Skofija Loka	
 Europe	Slovenia	Slovenia	
+Europe	Slovenia	Trebnje	
 Europe	Slovenia	Velenje	
+Europe	Slovenia	Zelezniki	
+Europe	Slovenia	Ziri	
 Europe	Spain	Andalusia	
 Europe	Spain	Andalusia	Alamedilla
 Europe	Spain	Andalusia	Albolote
@@ -3806,6 +3847,7 @@ Europe	Sweden	Vasternorrland
 Europe	Sweden	Vastmanland	
 Europe	Sweden	Vastra Gotaland	
 Europe	Switzerland	Aargau	
+Europe	Switzerland	Aargau	Aarburg
 Europe	Switzerland	Aargau	Dottikon
 Europe	Switzerland	Aargau	Frick
 Europe	Switzerland	Aargau	Glashütten
@@ -3814,7 +3856,11 @@ Europe	Switzerland	Aargau	Magden
 Europe	Switzerland	Aargau	Möhlin
 Europe	Switzerland	Aargau	Oftringen
 Europe	Switzerland	Aargau	Rheinfelden
+Europe	Switzerland	Aargau	Riniken
+Europe	Switzerland	Aargau	Rothrist
+Europe	Switzerland	Aargau	Spreitenbach
 Europe	Switzerland	Aargau	Staffelbach
+Europe	Switzerland	Aargau	Untersiggenthal
 Europe	Switzerland	Aargau	Wallbach
 Europe	Switzerland	Aargau	Wegenstetten
 Europe	Switzerland	Aargau	Zofingen
@@ -3860,34 +3906,58 @@ Europe	Switzerland	Basel-Stadt	Basel
 Europe	Switzerland	Basel-Stadt	Bettingen
 Europe	Switzerland	Basel-Stadt	Riehen
 Europe	Switzerland	Bern	
+Europe	Switzerland	Bern	Biel
 Europe	Switzerland	Bern	Burgdorf
+Europe	Switzerland	Bern	Evilard
+Europe	Switzerland	Bern	Gasel
+Europe	Switzerland	Bern	Goldswil
+Europe	Switzerland	Bern	Ipsach
 Europe	Switzerland	Bern	Kallnach
 Europe	Switzerland	Bern	Moutier
 Europe	Switzerland	Bern	Oberhofen
+Europe	Switzerland	Bern	Orvin
 Europe	Switzerland	Bern	Wasen Im Emmental
 Europe	Switzerland	Freiburg	
 Europe	Switzerland	Fribourg	
+Europe	Switzerland	Fribourg	Fribourg
+Europe	Switzerland	Fribourg	Le Mouret
 Europe	Switzerland	Geneva	
 Europe	Switzerland	Geneva	Carouge
 Europe	Switzerland	Geneva	Vandoeuvres
 Europe	Switzerland	Glarus	
+Europe	Switzerland	Glarus	Bilten
+Europe	Switzerland	Glarus	Filzbach
+Europe	Switzerland	Glarus	Niederurnen
 Europe	Switzerland	Graubünden	
 Europe	Switzerland	Graubünden	Champfer
 Europe	Switzerland	Graubünden	Chur
 Europe	Switzerland	Graubünden	Flims Dorf
 Europe	Switzerland	Graubünden	Jenaz
+Europe	Switzerland	Graubünden	Landquart
+Europe	Switzerland	Graubünden	Trimmis
+Europe	Switzerland	Graubünden	Zernez
 Europe	Switzerland	Jura	
 Europe	Switzerland	Jura	Boncourt
 Europe	Switzerland	Jura	Delémont
 Europe	Switzerland	Jura	Saignelegier
 Europe	Switzerland	Lucerne	
+Europe	Switzerland	Lucerne	Grosswangen
+Europe	Switzerland	Lucerne	Gunzwil
 Europe	Switzerland	Lucerne	Horw
 Europe	Switzerland	Lucerne	Wolhusen
 Europe	Switzerland	Neuchâtel	
 Europe	Switzerland	Nidwalden	
 Europe	Switzerland	Obwalden	
 Europe	Switzerland	Sankt Gallen	
+Europe	Switzerland	Sankt Gallen	Altstatten
+Europe	Switzerland	Sankt Gallen	Buchs
+Europe	Switzerland	Sankt Gallen	Kriessern
+Europe	Switzerland	Sankt Gallen	Rebstein
+Europe	Switzerland	Sankt Gallen	Rheintal
+Europe	Switzerland	Sankt Gallen	St Gallen
+Europe	Switzerland	Sankt Gallen	Widnau
 Europe	Switzerland	Schaffhausen	
+Europe	Switzerland	Schaffhausen	Flurlingen
 Europe	Switzerland	Schaffhausen	Schaffhausen
 Europe	Switzerland	Schwyz	
 Europe	Switzerland	Schwyz	Küssnacht Am Rigi
@@ -3912,12 +3982,20 @@ Europe	Switzerland	Solothurn	Nunningen
 Europe	Switzerland	Solothurn	Rodersdorf
 Europe	Switzerland	Solothurn	Seewen
 Europe	Switzerland	Solothurn	Solothurn
+Europe	Switzerland	Solothurn	St. Pantaleon
 Europe	Switzerland	Solothurn	St.Pantaleon
 Europe	Switzerland	Solothurn	Witterswil
 Europe	Switzerland	Switzerland	
 Europe	Switzerland	Tessin	
 Europe	Switzerland	Thurgau	
+Europe	Switzerland	Thurgau	Frauenfeld
+Europe	Switzerland	Thurgau	Munchwilen
+Europe	Switzerland	Thurgau	Wangi
+Europe	Switzerland	Thurgau	Wilen bei Wil
 Europe	Switzerland	Ticino	
+Europe	Switzerland	Ticino	Lugano
+Europe	Switzerland	Ticino	Pregassona
+Europe	Switzerland	Ticino	Purasca
 Europe	Switzerland	Uri	
 Europe	Switzerland	Uri	Bauen
 Europe	Switzerland	Valais	
@@ -3927,8 +4005,17 @@ Europe	Switzerland	Vaud	Lutry
 Europe	Switzerland	Vaud	Renens
 Europe	Switzerland	Zug	
 Europe	Switzerland	Zürich	
+Europe	Switzerland	Zürich	Bassersdorf
 Europe	Switzerland	Zürich	Birmensdorf
+Europe	Switzerland	Zürich	Dubendorf
+Europe	Switzerland	Zürich	Hinwil
+Europe	Switzerland	Zürich	Lufingen
+Europe	Switzerland	Zürich	Nanikon
+Europe	Switzerland	Zürich	Niederhasli
 Europe	Switzerland	Zürich	Seuzach
+Europe	Switzerland	Zürich	Thalwil
+Europe	Switzerland	Zürich	Volketswil
+Europe	Switzerland	Zürich	Wallisellen
 Europe	Switzerland	Zürich	Zürich
 Europe	Turkey	Adıyaman	
 Europe	Turkey	Afyon	
@@ -4292,12 +4379,14 @@ North America	USA	Alabama	Lowndes County
 North America	USA	Alabama	Madison County AL
 North America	USA	Alabama	Marion County AL
 North America	USA	Alabama	Marshall County
+North America	USA	Alabama	Marshall County AL
 North America	USA	Alabama	Mobile County
 North America	USA	Alabama	Montgomery County AL
 North America	USA	Alabama	Morgan County AL
 North America	USA	Alabama	Perry County AL
 North America	USA	Alabama	Pickens County AL
 North America	USA	Alabama	Pike County
+North America	USA	Alabama	Pike County AL
 North America	USA	Alabama	Randolph County AL
 North America	USA	Alabama	Shelby County AL
 North America	USA	Alabama	St. Clair County AL
@@ -4331,6 +4420,7 @@ North America	USA	Arizona	Pinal County
 North America	USA	Arizona	Yavapai County
 North America	USA	Arizona	Yuma
 North America	USA	Arkansas	
+North America	USA	Baker Island	
 North America	USA	California	
 North America	USA	California	Alameda County
 North America	USA	California	Amador County
@@ -4460,6 +4550,7 @@ North America	USA	Hawaii	Hawaii County
 North America	USA	Hawaii	Honolulu County
 North America	USA	Hawaii	Kauai County
 North America	USA	Hawaii	Maui County
+North America	USA	Howland Island	
 North America	USA	Idaho	
 North America	USA	Idaho	Kootenai County
 North America	USA	Idaho	Madison County
@@ -4468,52 +4559,81 @@ North America	USA	Illinois
 North America	USA	Illinois	Adams County IL
 North America	USA	Illinois	Bond County
 North America	USA	Illinois	Boone County
+North America	USA	Illinois	Brown County IL
 North America	USA	Illinois	Bureau County
 North America	USA	Illinois	Cass County IL
+North America	USA	Illinois	Champaign County
 North America	USA	Illinois	Chicago
+North America	USA	Illinois	Christian County
 North America	USA	Illinois	Clark County IL
 North America	USA	Illinois	Clinton County IL
 North America	USA	Illinois	Cook County
+North America	USA	Illinois	Crawford County IL
+North America	USA	Illinois	Cumberland County
 North America	USA	Illinois	Dekalb County
 North America	USA	Illinois	Dekalb County IL
 North America	USA	Illinois	Douglas County IL
 North America	USA	Illinois	Dupage County
+North America	USA	Illinois	Effingham County
 North America	USA	Illinois	Fayette County IL
 North America	USA	Illinois	Franklin County IL
 North America	USA	Illinois	Fulton County IL
 North America	USA	Illinois	Gallatin County
+North America	USA	Illinois	Greene County IL
 North America	USA	Illinois	Hamilton County IL
 North America	USA	Illinois	Hancock County
+North America	USA	Illinois	Iroquois County
 North America	USA	Illinois	Jackson County IL
+North America	USA	Illinois	Jersey County
 North America	USA	Illinois	Jo Daviess County
+North America	USA	Illinois	Johnson County IL
 North America	USA	Illinois	Kane County
 North America	USA	Illinois	Kankakee County
 North America	USA	Illinois	Kendall County
 North America	USA	Illinois	Kendall County IL
+North America	USA	Illinois	Knox County
 North America	USA	Illinois	Lake County IL
+North America	USA	Illinois	Lasalle County
 North America	USA	Illinois	Lee County IL
+North America	USA	Illinois	Logan County
+North America	USA	Illinois	Macon County
+North America	USA	Illinois	Macoupin County
 North America	USA	Illinois	Madison County IL
+North America	USA	Illinois	Marion County IL
+North America	USA	Illinois	Marshall County IL
+North America	USA	Illinois	Mason County IL
+North America	USA	Illinois	Massac County
 North America	USA	Illinois	McDonough County
 North America	USA	Illinois	McHenry County
 North America	USA	Illinois	Mchenry County
 North America	USA	Illinois	Monroe County IL
+North America	USA	Illinois	Montgomery County IL
 North America	USA	Illinois	Morgan County IL
 North America	USA	Illinois	Ogle County
 North America	USA	Illinois	Ogle County IL
 North America	USA	Illinois	Peoria County
 North America	USA	Illinois	Perry County IL
+North America	USA	Illinois	Pike County IL
 North America	USA	Illinois	Pulaski County
+North America	USA	Illinois	Putnam County IL
 North America	USA	Illinois	Randolph County
 North America	USA	Illinois	Randolph County IL
 North America	USA	Illinois	Rock Island County
 North America	USA	Illinois	Saline County
+North America	USA	Illinois	Sangamon County
 North America	USA	Illinois	Schuyler County IL
+North America	USA	Illinois	Scott County
+North America	USA	Illinois	Shelby County IL
 North America	USA	Illinois	St. Clair County
 North America	USA	Illinois	St. Clair County IL
 North America	USA	Illinois	Stephenson County
+North America	USA	Illinois	Tazewell County
 North America	USA	Illinois	Union County IL
+North America	USA	Illinois	Vermilion County
+North America	USA	Illinois	Wabash County
 North America	USA	Illinois	Warren County IL
 North America	USA	Illinois	Washington County IL
+North America	USA	Illinois	Wayne County IL
 North America	USA	Illinois	White County
 North America	USA	Illinois	Whiteside County
 North America	USA	Illinois	Will County
@@ -4537,11 +4657,15 @@ North America	USA	Iowa	Fayette County IA
 North America	USA	Iowa	Howard County
 North America	USA	Iowa	Jackson County IA
 North America	USA	Iowa	Johnson County
+North America	USA	Iowa	Johnson County IA
 North America	USA	Iowa	Polk County IA
 North America	USA	Iowa	Winneshiek County
+North America	USA	Jarvis Island	
+North America	USA	Johnson Atoll	
 North America	USA	Kansas	
 North America	USA	Kentucky	
 North America	USA	Kentucky	Mccracken County
+North America	USA	Kingman Reef	
 North America	USA	Louisiana	
 North America	USA	Louisiana	Assumption Parish
 North America	USA	Louisiana	Avoyelles Parish
@@ -4583,6 +4707,7 @@ North America	USA	Massachusetts	Norfolk County
 North America	USA	Michigan	
 North America	USA	Michigan	Alpena County
 North America	USA	Michigan	Berrien County
+North America	USA	Midway Islands	
 North America	USA	Minnesota	
 North America	USA	Minnesota	Chisago County
 North America	USA	Minnesota	Dakota County
@@ -4605,6 +4730,7 @@ North America	USA	Montana	Bozeman
 North America	USA	Montana	Ennis
 North America	USA	Montana	Ravalli County
 North America	USA	Montana	West Yellowstone
+North America	USA	Navassa Island	
 North America	USA	Nebraska	
 North America	USA	Nebraska	Lancaster County
 North America	USA	Nebraska	Lancaster County NE
@@ -4658,6 +4784,7 @@ North America	USA	New York	Erie County
 North America	USA	New York	Essex County NY
 North America	USA	New York	Franklin County NY
 North America	USA	New York	Fulton County
+North America	USA	New York	Fulton County NY
 North America	USA	New York	Genesee County
 North America	USA	New York	Greene County
 North America	USA	New York	Greene County NY
@@ -4689,6 +4816,7 @@ North America	USA	New York	Oswego County
 North America	USA	New York	Otsego County
 North America	USA	New York	Passaic County
 North America	USA	New York	Putnam County
+North America	USA	New York	Putnam County NY
 North America	USA	New York	Queens
 North America	USA	New York	Rensselaer County
 North America	USA	New York	Richmond County
@@ -4708,8 +4836,10 @@ North America	USA	New York	Tompkins County
 North America	USA	New York	Ulster County
 North America	USA	New York	Wanakena
 North America	USA	New York	Warren County
+North America	USA	New York	Warren County NY
 North America	USA	New York	Washington County NY
 North America	USA	New York	Wayne County
+North America	USA	New York	Wayne County NY
 North America	USA	New York	Westchester County
 North America	USA	New York	Wyoming County
 North America	USA	New York	Yates County
@@ -4743,6 +4873,7 @@ North America	USA	Oregon	Umatilla County
 North America	USA	Oregon	Wasco County
 North America	USA	Oregon	Washington County OR
 North America	USA	Oregon	Yamhill County
+North America	USA	Palmyra Atoll	
 North America	USA	Pennsylvania	
 North America	USA	Pennsylvania	Allegheny County
 North America	USA	Pennsylvania	Chester County
@@ -4801,6 +4932,7 @@ North America	USA	Texas	Calhoun County
 North America	USA	Texas	Calhoun County TX
 North America	USA	Texas	Cameron County
 North America	USA	Texas	Cass County
+North America	USA	Texas	Cass County TX
 North America	USA	Texas	Castro County
 North America	USA	Texas	Collin County
 North America	USA	Texas	Comal County
@@ -4895,6 +5027,7 @@ North America	USA	Virgin Islands
 North America	USA	Virginia	
 North America	USA	Virginia	Alexandria
 North America	USA	Virginia	Frederick County
+North America	USA	Wake Island	
 North America	USA	Washington	
 North America	USA	Washington	Adams County WA
 North America	USA	Washington	Asotin County
@@ -4916,6 +5049,7 @@ North America	USA	Washington	Klickitat County
 North America	USA	Washington	Lewis County WA
 North America	USA	Washington	Lincoln County WA
 North America	USA	Washington	Mason County
+North America	USA	Washington	Mason County WA
 North America	USA	Washington	Mercer Island
 North America	USA	Washington	Pacific County
 North America	USA	Washington	Pierce County WA
@@ -4947,6 +5081,7 @@ North America	USA	Wisconsin	Clark County WI
 North America	USA	Wisconsin	Columbia County WI
 North America	USA	Wisconsin	Columbus WI
 North America	USA	Wisconsin	Crawford County
+North America	USA	Wisconsin	Crawford County WI
 North America	USA	Wisconsin	Dane County
 North America	USA	Wisconsin	Dodge County
 North America	USA	Wisconsin	Door County
@@ -5186,6 +5321,7 @@ South America	Brazil	Distrito Federal	Brasilia
 South America	Brazil	Espirito Santo	
 South America	Brazil	Espirito Santo	Vila Velha
 South America	Brazil	Goiás	
+South America	Brazil	Goiás	Aparecida de Goiania
 South America	Brazil	Goiás	Ceres BR
 South America	Brazil	Goiás	Goiania
 South America	Brazil	Goiás	Santa Barbara de Goias
@@ -5374,6 +5510,7 @@ South America	Brazil	São Paulo	Adamantina
 South America	Brazil	São Paulo	Aguas de Santa Barbara
 South America	Brazil	São Paulo	Americana
 South America	Brazil	São Paulo	Amparo
+South America	Brazil	São Paulo	Andradina
 South America	Brazil	São Paulo	Araraquara
 South America	Brazil	São Paulo	Araras
 South America	Brazil	São Paulo	Araçatuba
@@ -5464,6 +5601,7 @@ South America	Brazil	São Paulo	Sao Vicente
 South America	Brazil	São Paulo	Sete Barras
 South America	Brazil	São Paulo	Sorocaba
 South America	Brazil	São Paulo	Sumare
+South America	Brazil	São Paulo	Suzano
 South America	Brazil	São Paulo	São Paulo
 South America	Brazil	São Paulo	Taboao Da Serra
 South America	Brazil	São Paulo	Taciba
@@ -5471,6 +5609,7 @@ South America	Brazil	São Paulo	Taruma
 South America	Brazil	São Paulo	Taubate
 South America	Brazil	São Paulo	Taubate
 South America	Brazil	São Paulo	Tupa
+South America	Brazil	São Paulo	Vargem Grande Paulista
 South America	Brazil	Tocantins	
 South America	Brazil	Tocantins	Araguaiana
 South America	Brazil	Tocantins	Araguatins
@@ -5751,6 +5890,7 @@ South America	Peru	Moquegua	Moquegua
 South America	Peru	Peru	
 South America	Peru	Ucayali	
 South America	Peru	Ucayali	Coronel Portillo
+South America	Sint Maarten	Sint Maarten	
 South America	South America	South America	
 South America	Suriname	Suriname	
 South America	Trinidad	Trinidad	
