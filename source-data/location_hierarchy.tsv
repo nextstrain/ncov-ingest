@@ -85,6 +85,7 @@ Africa	Ghana	Greater Accra
 Africa	Ghana	Greater Accra	Accra
 Africa	Ghana	Volta	
 Africa	Guinea	Conakry	
+Africa	Guinea	Guinea	
 Africa	Ivory Coast	Ivory Coast	
 Africa	Kenya	Kajiado	
 Africa	Kenya	Kenya	
@@ -219,6 +220,8 @@ Africa	South Africa	South Africa
 Africa	South Africa	Western Cape Province	
 Africa	South Africa	Western Cape Province	Beaufort West
 Africa	South Africa	Western Cape Province	Bitou
+Africa	South Africa	Western Cape Province	Breede Valley
+Africa	South Africa	Western Cape Province	Cape Agulhas
 Africa	South Africa	Western Cape Province	Cape Town
 Africa	South Africa	Western Cape Province	Cape Town Metro
 Africa	South Africa	Western Cape Province	Cape Winelands
@@ -235,6 +238,7 @@ Africa	South Africa	Western Cape Province	Mossel Bay
 Africa	South Africa	Western Cape Province	Oudtshoorn
 Africa	South Africa	Western Cape Province	Prince Albert
 Africa	South Africa	Western Cape Province	Stellenbosch
+Africa	South Africa	Western Cape Province	Swellendam
 Africa	South Africa	Western Cape Province	Tygerberg
 Africa	South Africa	Western Cape Province	West Coast
 Africa	Tanzania	Arusha	
@@ -1179,6 +1183,7 @@ Europe	Belgium	Antwerpen	Oelegem
 Europe	Belgium	Antwerpen	Oostmalle
 Europe	Belgium	Antwerpen	Pulle
 Europe	Belgium	Antwerpen	Ranst
+Europe	Belgium	Antwerpen	Schelle
 Europe	Belgium	Antwerpen	Schilde
 Europe	Belgium	Antwerpen	Schoten
 Europe	Belgium	Antwerpen	Sint-Lenaarts
@@ -1187,6 +1192,7 @@ Europe	Belgium	Antwerpen	Vremde
 Europe	Belgium	Antwerpen	Wijnegem
 Europe	Belgium	Antwerpen	Wilrijk
 Europe	Belgium	Antwerpen	Wommelgem
+Europe	Belgium	Antwerpen	Wuustwezel
 Europe	Belgium	Antwerpen	Zandhoven
 Europe	Belgium	Antwerpen	Zoersel
 Europe	Belgium	Arlon	
@@ -1285,6 +1291,7 @@ Europe	Belgium	Diksmuide	Lo-Reninge
 Europe	Belgium	Diksmuide	Zarren
 Europe	Belgium	Dinant	
 Europe	Belgium	Dinant	Alle
+Europe	Belgium	Dinant	Beauraing
 Europe	Belgium	Dinant	Ciney
 Europe	Belgium	Dinant	Dorinne
 Europe	Belgium	Dinant	Havelange
@@ -1326,12 +1333,15 @@ Europe	Belgium	Halle-Vilvoorde	Grimbergen
 Europe	Belgium	Halle-Vilvoorde	Halle
 Europe	Belgium	Halle-Vilvoorde	Herne
 Europe	Belgium	Halle-Vilvoorde	Hoeilaart
+Europe	Belgium	Halle-Vilvoorde	Hofstade
 Europe	Belgium	Halle-Vilvoorde	Huizingen
 Europe	Belgium	Halle-Vilvoorde	Humbeek
 Europe	Belgium	Halle-Vilvoorde	Kampenhout
 Europe	Belgium	Halle-Vilvoorde	Kraainem
+Europe	Belgium	Halle-Vilvoorde	Linkebeek
 Europe	Belgium	Halle-Vilvoorde	Londerzeel
 Europe	Belgium	Halle-Vilvoorde	Machelen
+Europe	Belgium	Halle-Vilvoorde	Meise
 Europe	Belgium	Halle-Vilvoorde	Melsbroek
 Europe	Belgium	Halle-Vilvoorde	Nossegem
 Europe	Belgium	Halle-Vilvoorde	Oetingen
@@ -1450,6 +1460,7 @@ Europe	Belgium	Leuven	Kortenberg
 Europe	Belgium	Leuven	Kumtich
 Europe	Belgium	Leuven	Landen BE
 Europe	Belgium	Leuven	Langdorp
+Europe	Belgium	Leuven	Leefdaal
 Europe	Belgium	Leuven	Leuven
 Europe	Belgium	Leuven	Linden
 Europe	Belgium	Leuven	Linter
@@ -1492,6 +1503,7 @@ Europe	Belgium	Liège	Bressoux
 Europe	Belgium	Liège	Dalhem
 Europe	Belgium	Liège	Dolembreux
 Europe	Belgium	Liège	Fleron
+Europe	Belgium	Liège	Harzé
 Europe	Belgium	Liège	Herstal
 Europe	Belgium	Liège	Ougree
 Europe	Belgium	Liège	Saive
@@ -1501,10 +1513,12 @@ Europe	Belgium	Liège	Voroux-lez-Liers
 Europe	Belgium	Liège	Wandre
 Europe	Belgium	Luxembourg BE	
 Europe	Belgium	Maaseik	
+Europe	Belgium	Maaseik	Achel
 Europe	Belgium	Maaseik	Bocholt
 Europe	Belgium	Maaseik	Bree
 Europe	Belgium	Maaseik	Dilsen-Stokkem
 Europe	Belgium	Maaseik	Grote-Brogel
+Europe	Belgium	Maaseik	Hamont-Achel
 Europe	Belgium	Maaseik	Hechtel
 Europe	Belgium	Maaseik	Hechtel-Eksel
 Europe	Belgium	Maaseik	Helchteren
@@ -1580,6 +1594,7 @@ Europe	Belgium	Namur
 Europe	Belgium	Namur	Aisemont
 Europe	Belgium	Namur	Andenne
 Europe	Belgium	Namur	Arbre
+Europe	Belgium	Namur	Arsimont
 Europe	Belgium	Namur	Assesse
 Europe	Belgium	Namur	Beuzet
 Europe	Belgium	Namur	Boignee
@@ -1615,6 +1630,7 @@ Europe	Belgium	Nivelles	Court-Saint-Étienne
 Europe	Belgium	Nivelles	Genappe
 Europe	Belgium	Nivelles	Genval
 Europe	Belgium	Nivelles	Glimes
+Europe	Belgium	Nivelles	Grez-Doiceau
 Europe	Belgium	Nivelles	Houtain-le-Val
 Europe	Belgium	Nivelles	Ittre
 Europe	Belgium	Nivelles	Jodoigne
@@ -1675,6 +1691,7 @@ Europe	Belgium	Soignies
 Europe	Belgium	Soignies	Bellecourt
 Europe	Belgium	Soignies	Braine-le-Comte
 Europe	Belgium	Soignies	Casteau
+Europe	Belgium	Soignies	Feluy
 Europe	Belgium	Soignies	Hennuyères
 Europe	Belgium	Soignies	Horrues
 Europe	Belgium	Soignies	Le Roeulx
@@ -1694,6 +1711,7 @@ Europe	Belgium	Tielt	Meulebeke
 Europe	Belgium	Tielt	Oostrozebeke
 Europe	Belgium	Tielt	Pittem
 Europe	Belgium	Tielt	Ruiselede
+Europe	Belgium	Tielt	Wakken
 Europe	Belgium	Tielt	Wielsbeke
 Europe	Belgium	Tielt	Wingene
 Europe	Belgium	Tongeren	
@@ -1784,6 +1802,7 @@ Europe	Belgium	Turnhout	Retie
 Europe	Belgium	Turnhout	Rijkevorsel
 Europe	Belgium	Turnhout	Veerle
 Europe	Belgium	Turnhout	Vorselaar
+Europe	Belgium	Turnhout	Vorst
 Europe	Belgium	Turnhout	Vosselaar
 Europe	Belgium	Turnhout	Weelde
 Europe	Belgium	Turnhout	Westerlo
@@ -1807,6 +1826,7 @@ Europe	Belgium	Virton
 Europe	Belgium	Virton	Valansart
 Europe	Belgium	Vlaams-Brabant	
 Europe	Belgium	Wallonia	
+Europe	Belgium	Wallonia	Gouy-Lez-Pieton
 Europe	Belgium	Waremme	
 Europe	Belgium	Waremme	Berloz
 Europe	Belgium	Waremme	Hannut
@@ -2745,7 +2765,9 @@ Europe	Poland	Slask
 Europe	Poland	Slaskie	
 Europe	Poland	Swietokrzyskie	
 Europe	Poland	Warminsko-Mazurskie	
+Europe	Poland	Warminsko-Mazurskie	Elblaski
 Europe	Poland	Warminsko-Mazurskie	Olsztyn
+Europe	Poland	Warminsko-Mazurskie	Ostrodzki
 Europe	Poland	Wielkopolskie	
 Europe	Poland	Wielkopolskie	Baranowo
 Europe	Poland	Wielkopolskie	Cieradz Koscielny
@@ -3473,6 +3495,7 @@ Europe	Spain	Castilla la Mancha	Belmonte
 Europe	Spain	Castilla la Mancha	Bogarra
 Europe	Spain	Castilla la Mancha	Cuenca ES
 Europe	Spain	Castilla la Mancha	Hellin
+Europe	Spain	Castilla la Mancha	Horcajo de los Montes
 Europe	Spain	Castilla la Mancha	Lezuza
 Europe	Spain	Castilla la Mancha	Madrigueras
 Europe	Spain	Castilla la Mancha	Mingogil
@@ -3532,6 +3555,7 @@ Europe	Spain	Catalunya	Berga
 Europe	Spain	Catalunya	Bigues I Riells
 Europe	Spain	Catalunya	Cabrera de Mar
 Europe	Spain	Catalunya	Cabrils
+Europe	Spain	Catalunya	Calafell
 Europe	Spain	Catalunya	Caldes d'Estrac
 Europe	Spain	Catalunya	Caldes de Montbui
 Europe	Spain	Catalunya	Calella
@@ -3574,8 +3598,11 @@ Europe	Spain	Catalunya	Mollet del Valles
 Europe	Spain	Catalunya	Moncada y Reixach
 Europe	Spain	Catalunya	Monistrol de Montserrat
 Europe	Spain	Catalunya	Montgat
+Europe	Spain	Catalunya	Montornes del Valles
+Europe	Spain	Catalunya	Navarcles
 Europe	Spain	Catalunya	Navas
 Europe	Spain	Catalunya	Oris
+Europe	Spain	Catalunya	Orrius
 Europe	Spain	Catalunya	Palamos
 Europe	Spain	Catalunya	Palau Solita i Plegamans
 Europe	Spain	Catalunya	Parets del Valles
@@ -3597,6 +3624,7 @@ Europe	Spain	Catalunya	Sant Esteve de Palautordera
 Europe	Spain	Catalunya	Sant Feliu de Codines
 Europe	Spain	Catalunya	Sant Fost de Campsentelles
 Europe	Spain	Catalunya	Sant Fruitos de Bages
+Europe	Spain	Catalunya	Sant Jaume de Llierca
 Europe	Spain	Catalunya	Sant Joan Despi
 Europe	Spain	Catalunya	Sant Joan Vilatorrada
 Europe	Spain	Catalunya	Sant Pere de Vilamajor
@@ -3604,6 +3632,7 @@ Europe	Spain	Catalunya	Sant Vicenç de Montalt
 Europe	Spain	Catalunya	Santa Coloma de Cervello
 Europe	Spain	Catalunya	Santa Coloma de Gramenet
 Europe	Spain	Catalunya	Santa Eulàlia de Ronçana
+Europe	Spain	Catalunya	Santa Margarida de Montbui
 Europe	Spain	Catalunya	Santa Perpetua de Mogoda
 Europe	Spain	Catalunya	Solsona
 Europe	Spain	Catalunya	Taradell
@@ -4528,6 +4557,7 @@ North America	USA	Delaware	Sussex County
 North America	USA	Diamond Princess	
 North America	USA	Florida	
 North America	USA	Florida	Alachua County
+North America	USA	Florida	Broward County
 North America	USA	Florida	Duval County
 North America	USA	Florida	Lee County FL
 North America	USA	Florida	Miami
@@ -4756,6 +4786,7 @@ North America	USA	New Jersey	Monmouth County
 North America	USA	New Jersey	Morris County NJ
 North America	USA	New Jersey	New Jersey
 North America	USA	New Jersey	Ocean County
+North America	USA	New Jersey	Passaic County
 North America	USA	New Jersey	Paterson
 North America	USA	New Jersey	Salem County
 North America	USA	New Jersey	Secaucus
@@ -5290,6 +5321,7 @@ South America	Argentina	Tierra del Fuego	Ushuaia
 South America	Argentina	Tucuman	
 South America	Aruba	Aruba	
 South America	Bolivia	Beni	
+South America	Bolivia	Bolivia	
 South America	Bolivia	Oruro	
 South America	Bolivia	Pando	
 South America	Bolivia	Santa Cruz	
@@ -5327,6 +5359,25 @@ South America	Brazil	Goiás	Goiania
 South America	Brazil	Goiás	Santa Barbara de Goias
 South America	Brazil	Maranhão	
 South America	Brazil	Mato Grosso	
+South America	Brazil	Mato Grosso do Sul	
+South America	Brazil	Mato Grosso do Sul	Agua Clara
+South America	Brazil	Mato Grosso do Sul	Anastacio
+South America	Brazil	Mato Grosso do Sul	Aquidauana
+South America	Brazil	Mato Grosso do Sul	Campo Grande
+South America	Brazil	Mato Grosso do Sul	Chapadao do Sul
+South America	Brazil	Mato Grosso do Sul	Coxim
+South America	Brazil	Mato Grosso do Sul	Dourados
+South America	Brazil	Mato Grosso do Sul	Figueirao
+South America	Brazil	Mato Grosso do Sul	Iguatemi
+South America	Brazil	Mato Grosso do Sul	Jardim
+South America	Brazil	Mato Grosso do Sul	Ladario
+South America	Brazil	Mato Grosso do Sul	Maracaju
+South America	Brazil	Mato Grosso do Sul	Miranda
+South America	Brazil	Mato Grosso do Sul	Ponta Pora
+South America	Brazil	Mato Grosso do Sul	Rondonopolis
+South America	Brazil	Mato Grosso do Sul	Selviria
+South America	Brazil	Mato Grosso do Sul	Sonora
+South America	Brazil	Mato Grosso do Sul	Tres Lagoas
 South America	Brazil	Minas Gerais	
 South America	Brazil	Para	
 South America	Brazil	Paraiba	
@@ -5572,6 +5623,7 @@ South America	Brazil	São Paulo	Ouro Verde
 South America	Brazil	São Paulo	Pariquera-Acu
 South America	Brazil	São Paulo	Peruibe
 South America	Brazil	São Paulo	Pindamonhangaba
+South America	Brazil	São Paulo	Piracaia
 South America	Brazil	São Paulo	Piracicaba
 South America	Brazil	São Paulo	Poa
 South America	Brazil	São Paulo	Porto Feliz
