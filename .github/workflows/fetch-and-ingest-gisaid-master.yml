@@ -10,6 +10,9 @@ on:
   repository_dispatch:
     types: fetch-and-ingest
 
+  # Manually triggered using GitHub's UI
+  workflow_dispatch:
+
 jobs:
   ingest:
     runs-on: ubuntu-latest
