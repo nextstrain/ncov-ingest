@@ -109,6 +109,8 @@ class UserProvidedGeoLocationSubstitutionRules:
                 rules_applied+=1
 
                 #print("applied",rules_applied , ':', arrival , '->', rule , '->' , newArrival)
+                if arrival == newArrival:
+                    continueApply = False
                 arrival = newArrival
             if rules_applied > 1000 :
                 print("ERROR : more than 1000 geographic location rules applied on the same entry. There might be cyclicity in your rules")
