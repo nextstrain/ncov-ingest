@@ -1,11 +1,139 @@
+import csv
 import re
 import unicodedata
 from collections import defaultdict
-from typing import Any, Collection, List, MutableMapping, Sequence, Tuple
+from typing import Any, Collection, List, MutableMapping, Sequence, Tuple , Dict , Union
 
 from utils.transform import format_date, titlecase
 from . import LINE_NUMBER_KEY
 from ._base import Transformer
+
+
+
+class UserProvidedGeoLocationSubstitutionRules:
+    """ this class represents patterns of substitutions in the localisation data of entries """
+    def __init__(self):
+        self.entries: MutableMapping[str,MutableMapping[str, MutableMapping[str, MutableMapping[str, Tuple[str,str,str,str] ]]]] = defaultdict( lambda : defaultdict( lambda : defaultdict( dict ) ) )
+        self.use_count: MutableMapping[Tuple[str,str,str,str], int] = dict()
+
+    def add_user_rule(
+            self,
+            start: Tuple[str,str,str,str],
+            arrival: Tuple[str,str,str,str],
+    ) -> None:
+        
+        self.entries[ start[0] ][ start[1] ][ start[2] ][ start[3] ] = arrival
+
+        self.use_count[start] = 0
+
+
+    def findApplicableRule( self , start: Tuple[str,str,str,str] , current: List[str] = [None,None,None,None] , level : int = 0) -> Union[ Tuple[str,str,str,str] , None ]:
+        """
+        **recursive** up to 4 levels
+
+        Takes:
+            start: Tuple[str,str,str,str] : entry to find a rule for
+            current: List[str,str,str,str] = [None,None,None,None] : current substituion pattern found, up until <level> index
+            level : int = 0 : current index for which we try to find a rule
+
+        Returns:
+            Tuple[str,str,str,str] : completed substitution pattern
+            or
+            None : if no substittuion pattern was found
+        """
+        #print("findApplicableRule" , level , start , current)
+        if level >= 4:
+            return current
+
+        ruleDic = self.entries
+        for i in range(level):
+            ruleDic = ruleDic[ current[i] ]
+
+        if start[level] in ruleDic: # found a corresponding rule
+            current[level] = start[level]
+            rule = self.findApplicableRule(start, current , level+1)
+            if not rule is None : # means a rule was found in all underlying levels
+                return tuple(rule )
+
+        if '*' in ruleDic: # if no corresponding rule was found, look up the general substitution rules 
+            current[level] = '*'
+            rule = self.findApplicableRule(start, current , level+1)
+            if not rule is None : # means a rule was found in all underlying levels
+                return tuple(rule )
+
+        #otherwise, no rule was found in the underlying levels
+        return None
+
+
+
+
+
+    def get_user_rules(self, start: Tuple[str,str,str,str] ) -> Tuple[str,str,str,str]:
+        """
+        NB: 1. will apply several rules if necessary (eg. transform A to B, then tranform B to C if rules A->B anf B->C exist)
+            2. will apply general rules in the order regions, country, division, location.
+
+            eg. if rules are :
+                EU , * , * , * -> Europe , * , * , *
+                Europe , France , Haut-De-France , * -> Europe , France , Haut de France , *
+
+            then entry :
+                EU , France , Haut-De-France , foo
+            will first become
+                Europe , France , Haut-De-France , foo
+            and then 
+                Europe , France , Haut de France , foo
+
+
+            Takes :
+                - Tuple[str,str,str,str] : region, country, division, location tuple
+            Returns :
+                Tuple[str,str,str,str] -> tuple updated. 
+        """
+
+        arrival = start
+        rules_applied = 0
+        continueApply = True
+        while continueApply:
+            continueApply = False
+
+            rule = []
+            rule = self.findApplicableRule( arrival , [None,None,None,None] )
+
+            continueApply = not rule is None # we were able to form a full rule
+
+            if continueApply:
+
+                newArrival = self._replaceEntry( arrival , self.entries[ rule[0] ][rule[1]][rule[2]][rule[3]] )
+                self.use_count[tuple( rule ) ] += 1
+                rules_applied+=1
+
+                #print("applied",rules_applied , ':', arrival , '->', rule , '->' , newArrival)
+                if arrival == newArrival:
+                    continueApply = False
+                arrival = newArrival
+            if rules_applied > 1000 :
+                print("ERROR : more than 1000 geographic location rules applied on the same entry. There might be cyclicity in your rules")
+                print("\tfaulty entry",start)
+                exit(1)
+
+            
+        return arrival
+        
+    def _replaceEntry( self, start , arrival ):
+        """ takes into account * character, which will not cause a change """
+        new = list(start)
+        for i in range(len(arrival)):
+            if arrival[i] != '*':
+                new[i] = arrival[i]
+        return new
+
+    def get_unused_annotations(self) -> Collection[str]:
+        return [
+            start
+            for start, use_count in self.use_count.items()
+            if use_count == 0
+        ]
 
 
 class UserProvidedAnnotations:
@@ -248,8 +376,53 @@ class MergeUserAnnotatedMetadata(Transformer):
     def transform_value(self, entry: dict) -> dict:
         annotations = self.annotations.get_user_annotations(entry['gisaid_epi_isl'])
         for key, value in annotations:
+            if key in entry and entry[key] == value :
+                print('REDUNDANT ANNOTATED METADATA :',entry['gisaid_epi_isl'] , key , value)
             entry[key] = value
         return entry
+
+class ApplyUserGeoLocationSubstitutionRules(Transformer):
+    """Use the curated subtitution rules tsv to update geographical column values."""
+    def __init__(self, rules: UserProvidedGeoLocationSubstitutionRules):
+        self.rules = rules
+
+    def transform_value(self, entry: dict) -> dict:
+        LOCATION_COLUMNS = ['region', 'country', 'division', 'location']
+        newVal = self.rules.get_user_rules( tuple( [ entry[col] for col in LOCATION_COLUMNS ] ) )
+        for i,key in enumerate(LOCATION_COLUMNS):
+            entry[key] = newVal[i]
+        return entry
+
+
+
+class WriteCSV(Transformer):
+    """writes the data to a CSV file."""
+    def __init__(self, fileName: str , 
+                 columns : List[str] , 
+                 restval : str = '?' , 
+                 extrasaction : str ='ignore' , 
+                 delimiter : str = ',', 
+                 dict_writer_kwargs : Dict[str,str] = {} ):
+
+        self.OUT = open( fileName , 'wt')
+
+        self.writer = csv.DictWriter(
+            self.OUT,
+            columns,
+            restval=restval,
+            extrasaction=extrasaction,
+            delimiter=delimiter,
+            **dict_writer_kwargs
+        )
+        self.writer.writeheader()
+
+    def __del__(self):
+        self.OUT.close()
+
+    def transform_value(self, entry: dict) -> dict:
+        self.writer.writerow(entry)
+        return entry
+
 
 
 class FillDefaultLocationData(Transformer):

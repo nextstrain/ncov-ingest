@@ -1,0 +1,136 @@
+#!/usr/bin/env python3
+import sys
+import csv
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent.parent / "lib"))
+from utils.transform import (
+    METADATA_COLUMNS,
+)
+
+from utils.transformpipeline.transforms import UserProvidedGeoLocationSubstitutionRules
+import argparse
+from collections import defaultdict
+
+if __name__ == '__main__':
+    
+
+    parser = argparse.ArgumentParser(
+        description="Parse a file containing substitutions rules for geographic locations and assess if the rules are compatible.",
+        formatter_class=argparse.RawTextHelpFormatter
+    )
+    parser.add_argument("--geo-location-rules", required = True,
+        help="Optional manually curated rules to correct geographical location.\n"
+            "The TSV file should have no header and exactly 8 columns which contain:\n\t"
+            "1. the raw region\n\t"
+            "2. the raw country\n\t"
+            "3. the raw division\n\t"
+            "4. the raw location\n\t"
+            "5. the transformed region\n\t"
+            "6. the transformed country\n\t"
+            "7. the transformed division\n\t"
+            "8. the transformed location\n\t"
+        "Lines or parts of lines starting with '#' are treated as comments.\n"
+        "e.g.\n\t"
+        "Europe Spain   Catalunya   Mataró  Europe  Spain   Catalunya   Mataro\n\t")
+    parser.add_argument("--output-file",
+        help="Output location of a \"cleaned\" substitutions rules file : ie. rules redundant with a more general one are removed.")
+
+
+
+    toRemove = set()
+
+    args = parser.parse_args()
+
+    geoRules = UserProvidedGeoLocationSubstitutionRules()
+    if args.geo_location_rules :
+        # use curated rules to subtitute known spurious locations with correct ones
+        with open(args.geo_location_rules,'r') as geo_location_rules_fh :
+            csvreader = csv.reader(geo_location_rules_fh, delimiter='\t')
+            for row in csvreader:
+                if row[0].lstrip()[0] == '#':
+                    continue
+                elif len(row) != 8:
+                    print("WARNING: couldn't decode annotation line " + "\t".join(row))
+                    continue
+                row[-1] = row[-1].partition('#')[0].rstrip()
+                raw , annot = tuple( row[:4] ) , tuple( row[4:8] )
+                # remove the comment and the extra ws from the value
+
+                if raw[3] in geoRules.entries[ raw[0] ][ raw[1] ][ raw[2] ] : # such a rule already exists
+                    if geoRules.entries[ raw[0] ][ raw[1] ][ raw[2] ][ raw[3] ] != annot : # multiple arrival for the same start
+                        print('CRITICAL PROBLEM : some rules give multiple possible solutions for the same raw data. Both will be removed in output, you may add the correct one manually if you want.')
+                        print('\t'.join(raw+geoRules.entries[ raw[0] ][ raw[1] ][ raw[2] ][ raw[3] ]) )
+                        print('\t'.join(raw+annot) )
+                        toRemove.add(raw)
+                    else:
+                        print('WARNING:',raw,'->',annot,'appears several times (resolved in output).')
+
+                geoRules.add_user_rule(
+                    raw,
+                    annot
+                )
+
+    print('rules read')
+    # next we check if rules are redundant with a more generalistic rule by applying them
+    for region , countries in geoRules.entries.items():
+        for country , divisions in countries.items():
+            for division , locations in divisions.items():
+                loc_copy = locations.copy()
+                for location , arrival in loc_copy.items() :
+                    
+                    locations.pop(location)# temporary removal of that rule
+                    raw=tuple([region,country,division,location])
+                    rule = geoRules.findApplicableRule( raw )
+                    if not rule is None: # a rule apply -> possible redundance ?
+
+                        ruleArrival = list( geoRules.entries[ rule[0] ][rule[1]][rule[2]][rule[3]] )
+                        for i in range(4):
+                            if ruleArrival[i] == '*':
+                                ruleArrival[i] = raw[i]
+
+                        ruleArrival = tuple(ruleArrival)
+                        if ruleArrival == arrival :
+                            print('REDUNDANCE FOUND : a rule corresponds to a more generalistic one (omitted in output).')
+                            print('general   \t',rule , '->', geoRules.entries[ rule[0] ][rule[1]][rule[2]][rule[3]] )
+                            print('particular\t',raw , '->', arrival )
+                            toRemove.add(raw)
+
+                    # add back the rule to the rule set
+                    locations[location] = arrival
+    print('rules redundancy checked')
+
+    #checking for cyclicity... I do not do this ina smart way > I apply the substitutions and if more than 1000 occur I flag this as cyclic
+
+    for region , countries in geoRules.entries.items():
+        for country , divisions in countries.items():
+            for division , locations in divisions.items():
+                loc_copy = locations.copy()
+                for location , arrival in loc_copy.items() :
+                    
+                    #locations.pop(location)# temporary removal of that rule
+                    
+                    raw=tuple([region,country,division,location])
+                    #print(raw)
+                    try:
+                        arrival = geoRules.get_user_rules(raw ) 
+
+                    except:
+                        print("potential cyclicity from",raw,'->',arrival)
+                        toRemove.add(raw)
+
+                    # add back the rule to the rule set
+                    locations[location] = arrival
+    print("cyclicity checked")
+
+    if args.output_file :
+        print("print non problematic rules to",args.output_file)
+        with open(args.output_file,'w') as OUT:
+            for region , countries in geoRules.entries.items():
+                for country , divisions in countries.items():
+                    for division , locations in divisions.items():
+                        for location , arrival in locations.items() :
+                    
+                            raw=tuple([region,country,division,location])
+                            if not raw in toRemove:
+                                print( '\t'.join(raw) , '\t'.join(arrival) , sep = '\t' , file = OUT )

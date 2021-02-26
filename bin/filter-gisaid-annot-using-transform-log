@@ -1,0 +1,79 @@
+#!/usr/bin/env python3
+import argparse
+from collections import defaultdict
+if __name__ == '__main__':
+    
+
+    parser = argparse.ArgumentParser(
+        description="Parse a transform-gisaid execution log and filter out redundant gisaid annotations from a provided file.",
+        formatter_class=argparse.RawTextHelpFormatter
+    )
+    parser.add_argument("--annotations",
+        help="source manually curated annotations TSV.\n"
+            "The TSV file should have no header and exactly four columns which contain:\n\t"
+            "1. the strain ID (not used for matching; for readability)\n\t"
+            "2. the GISAID EPI_ISL accession number (used for matching)\n\t"
+            "3. the column name to replace from the generated `metadata.tsv` file\n\t"
+            "4. the replacement data\n"
+        "Lines or parts of lines starting with '#' are treated as comments.\n"
+        "e.g.\n\t"
+        "USA/MA1/2020    EPI_ISL_409067    location    Boston\n\t"
+        "# First Californian sample\n\t"
+        "USA/CA1/2020    EPI_ISL_406034    genbank_accession   MN994467\n\t"
+        "Wuhan-Hu-1/2019 EPI_ISL_402125    collection_date 2019-12-26 # Manually corrected date" , required = True)
+    parser.add_argument("--log",
+        help="transform-gisaid execution log", required = True)
+    parser.add_argument("--output",
+        help="Output location of the filtered annotation file. NB : it can be the input annotation file", required = True)
+
+    args = parser.parse_args()
+
+    redundantAnnot = defaultdict(dict)
+    n = 0
+    with open(args.log , 'r') as IN :
+        for l in IN:
+            if l.startswith('REDUNDANT ANNOTATED METADATA : '):
+
+                sl = l[len('REDUNDANT ANNOTATED METADATA : '):].strip().split()
+                if len(sl) <3:
+                    continue
+                redundantAnnot[ sl[0] ][ "\t".join([sl[0] , sl[1] , " ".join(sl[2:]) ]) ] = 0
+                n +=1
+
+    linesToKeep = []
+
+    removed = 0
+
+    with open(args.annotations , 'r') as IN:
+
+        for l in IN:
+
+            sl = l.strip().split('\t')
+            filterOut = False
+
+            if len(sl)>=4 and sl[1] in redundantAnnot:
+
+                #getting the line without eventual comments
+                i = sl[1]
+                k = sl[2]
+                v = '\t'.join(sl[3:]).partition('#')[0].strip()
+                annotId = '\t'.join([i,k,v])
+
+                if annotId in redundantAnnot[sl[1]] :
+                    redundantAnnot[sl[1]][annotId] +=1
+                    filterOut = True
+                    print("removed redundant :", annotId)
+                    removed+=1
+            if not filterOut:
+                linesToKeep.append(l)
+
+    with open(args.output,'w') as OUT:
+        for l in linesToKeep:
+            print( l , end = '' , file = OUT )
+    print('removed',removed,'annotation lines')
+
+
+    #for a in redundantAnnot:
+    #    for s in redundantAnnot[a]:
+    #        if redundantAnnot[a][s] == 0:
+    #            print('not removed',s)

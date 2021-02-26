@@ -28,6 +28,9 @@ from utils.transformpipeline.transforms import (
     RenameAndAddColumns,
     StandardizeData,
     UserProvidedAnnotations,
+    UserProvidedGeoLocationSubstitutionRules,
+    ApplyUserGeoLocationSubstitutionRules,
+    WriteCSV,
 )
 
 # Preserve the ordering of these columns for ease when generating Slack
@@ -53,7 +56,7 @@ if __name__ == '__main__':
         default="s3://nextstrain-ncov-private/gisaid.ndjson.gz",
         help="Newline-delimited GISAID JSON data")
     parser.add_argument("--annotations",
-        default=base / "source-data/gisaid_annotations.tsv",
+        default=str( base / "source-data/gisaid_annotations.tsv" ),
         help="Optional manually curated annotations TSV.\n"
             "The TSV file should have no header and exactly four columns which contain:\n\t"
             "1. the strain ID (not used for matching; for readability)\n\t"
@@ -69,14 +72,29 @@ if __name__ == '__main__':
     parser.add_argument("--accessions",
         default=base / "source-data/accessions.tsv",
         help="Optional manually curated TSV cross-referencing accessions between databases (e.g. GISAID and GenBank/INSDC).")
+    parser.add_argument("--geo-location-rules",
+        default = str( base / "source-data/gisaid_geoLocationRules.tsv" ) ,
+        help="Optional manually curated rules to correct geographical location.\n"
+            "The TSV file should have no header and exactly 8 columns which contain:\n\t"
+            "1. the raw region\n\t"
+            "2. the raw country\n\t"
+            "3. the raw division\n\t"
+            "4. the raw location\n\t"
+            "1. the raw region\n\t"
+            "2. the raw country\n\t"
+            "3. the raw division\n\t"
+            "4. the raw location\n\t"
+        "Lines or parts of lines starting with '#' are treated as comments.\n"
+        "e.g.\n\t"
+        "Europe Spain   Catalunya   Mataró  Europe  Spain   Catalunya   Mataro\n\t")
     parser.add_argument("--output-metadata",
-        default=base / "data/gisaid/metadata.tsv",
+        default=str( base / "data/gisaid/metadata.tsv" ), 
         help="Output location of generated metadata tsv. Defaults to `data/gisaid/metadata.tsv`")
     parser.add_argument("--output-fasta",
-        default=base / "data/gisaid/sequences.fasta",
+        default=str( base / "data/gisaid/sequences.fasta" ) ,
         help="Output location of generated FASTA file. Defaults to `data/gisaid/sequences.fasta`")
     parser.add_argument("--output-additional-info",
-        default=base / "data/gisaid/additional_info.tsv",
+        default=str( base / "data/gisaid/additional_info.tsv" ) ,
         help="Output location of additional info tsv. Defaults to `data/gisaid/additional_info.tsv`")
     parser.add_argument("--sorted-fasta", action="store_true",
         help="Sort the fasta file in the same order as the metadata file.  WARNING: Enabling this option can consume a lot of memory.")
@@ -109,6 +127,7 @@ if __name__ == '__main__':
                     value.split('#')[0].rstrip(),
                 )
 
+
     accessions = UserProvidedAnnotations()
     if args.accessions:
         with open(args.accessions, "r") as accessions_fh:
@@ -119,7 +138,31 @@ if __name__ == '__main__':
                     row["genbank_accession"]
                 )
 
-    with open(args.gisaid_data, "r") as gisaid_fh:
+
+    geoRules = UserProvidedGeoLocationSubstitutionRules()
+    if args.geo_location_rules :
+        # use curated rules to subtitute known spurious locations with correct ones
+        with open(args.geo_location_rules,'r') as geo_location_rules_fh :
+            csvreader = csv.reader(geo_location_rules_fh, delimiter='\t')
+            for row in csvreader:
+                if row[0].lstrip()[0] == '#':
+                    continue
+                elif len(row) != 8:
+                    print("WARNING: couldn't decode annotation line " + "\t".join(row))
+                    continue
+                row[-1] = row[-1].partition('#')[0].rstrip()
+                raw , annot = tuple( row[:4] ) , tuple( row[4:8] )
+                # remove the comment and the extra ws from the value
+                geoRules.add_user_rule(
+                    raw,
+                    annot
+                )
+
+    RAW_METADATA_FILENAME = args.output_metadata + '.raw'
+
+
+    with open(args.gisaid_data, "r") as gisaid_fh :
+
         pipeline = (
             LineToJsonDataSource(gisaid_fh)
             | RenameAndAddColumns()
@@ -129,7 +172,7 @@ if __name__ == '__main__':
 
         if not args.sorted_fasta:
             pipeline = pipeline | DropSequenceData()
-
+        
         pipeline = (
             pipeline
             | ExpandLocation()
@@ -137,7 +180,24 @@ if __name__ == '__main__':
             | AbbreviateAuthors()
             | ParsePatientAge()
             | ParseSex()
-            | AddHardcodedMetadata()
+            | AddHardcodedMetadata() 
+        )
+
+        # writing the raw metadata in a tsv file
+        pipeline = ( pipeline  | WriteCSV(RAW_METADATA_FILENAME, 
+                                            METADATA_COLUMNS , 
+                                            restval = '?' , 
+                                            extrasaction ='ignore' , 
+                                            delimiter  = '\t', 
+                                            dict_writer_kwargs  = {'lineterminator': args.newline} ) )
+
+
+        # applying the substitution rules (temporary : writing the intermediary data to verify effect )
+        dict_writer_kwargs = {'lineterminator': args.newline}
+
+        
+        pipeline = (pipeline
+            | ApplyUserGeoLocationSubstitutionRules(geoRules)
             | MergeUserAnnotatedMetadata(annotations)
             | MergeUserAnnotatedMetadata(accessions)
             | FillDefaultLocationData()
@@ -153,8 +213,8 @@ if __name__ == '__main__':
             )
         )
 
-    for unused_gisaid_epi_isl in annotations.get_unused_annotations():
-        print(f"WARNING: annotation for {unused_gisaid_epi_isl} was not used.")
+    #for unused_gisaid_epi_isl in annotations.get_unused_annotations():
+    #    print(f"WARNING: annotation for {unused_gisaid_epi_isl} was not used.")
 
     # dedup by strain and compile a list of relevant line numbers.
     seen_strains = set()
