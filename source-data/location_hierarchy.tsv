@@ -17,6 +17,7 @@ Africa	Botswana	Botswana
 Africa	Botswana	Francistown	
 Africa	Botswana	Gaborone	
 Africa	Botswana	Goodhope	
+Africa	Botswana	Kasane	
 Africa	Botswana	Lobatse	
 Africa	Botswana	Maun	
 Africa	Botswana	Southern East	
@@ -347,6 +348,7 @@ Asia	Cambodia	Steung Treng
 Asia	China	Anhui	
 Asia	China	Anhui	Fuyang
 Asia	China	Anhui	Hefei
+Asia	China	Anhui	Lu'An
 Asia	China	Anhui	Suzhou
 Asia	China	Beijing	
 Asia	China	Beijing	Beijing
@@ -652,6 +654,9 @@ Asia	Indonesia	North Maluku
 Asia	Indonesia	North Sulawesi	
 Asia	Indonesia	North Sulawesi	Manado
 Asia	Indonesia	North Sumatra	
+Asia	Indonesia	North Sumatra	Binjai
+Asia	Indonesia	North Sumatra	Mandailing
+Asia	Indonesia	North Sumatra	Medan
 Asia	Indonesia	Papua	
 Asia	Indonesia	Papua	Timika
 Asia	Indonesia	Pasuruan	
@@ -938,6 +943,7 @@ Asia	Palestine	West Bank	Salfit
 Asia	Palestine	West Bank	Tkoa
 Asia	Palestine	West Bank	Tulkarem
 Asia	Philippines	Calabarzon	
+Asia	Philippines	Central Luzon	
 Asia	Philippines	Manila	
 Asia	Philippines	Mimaropa	
 Asia	Philippines	National Capital Region	
@@ -1369,6 +1375,7 @@ Europe	Belgium	Hasselt	As
 Europe	Belgium	Hasselt	Beringen
 Europe	Belgium	Hasselt	Beverlo
 Europe	Belgium	Hasselt	Diepenbeek
+Europe	Belgium	Hasselt	Duras
 Europe	Belgium	Hasselt	Genk
 Europe	Belgium	Hasselt	Gingelom
 Europe	Belgium	Hasselt	Groot-Gelmen
@@ -1523,8 +1530,10 @@ Europe	Belgium	Maaseik
 Europe	Belgium	Maaseik	Achel
 Europe	Belgium	Maaseik	Bocholt
 Europe	Belgium	Maaseik	Bree
+Europe	Belgium	Maaseik	Dilsen
 Europe	Belgium	Maaseik	Dilsen-Stokkem
 Europe	Belgium	Maaseik	Grote-Brogel
+Europe	Belgium	Maaseik	Hamont
 Europe	Belgium	Maaseik	Hamont-Achel
 Europe	Belgium	Maaseik	Hechtel
 Europe	Belgium	Maaseik	Hechtel-Eksel
@@ -4162,6 +4171,7 @@ North America	Costa Rica	Alajuela	Alajuela
 North America	Costa Rica	Alajuela	Cutris
 North America	Costa Rica	Alajuela	Grecia
 North America	Costa Rica	Alajuela	Guacima
+North America	Costa Rica	Alajuela	Guatuso
 North America	Costa Rica	Alajuela	Orotina
 North America	Costa Rica	Alajuela	Quesada
 North America	Costa Rica	Alajuela	Sabanilla
@@ -4178,6 +4188,7 @@ North America	Costa Rica	Cartago CR	Cartago CR
 North America	Costa Rica	Cartago CR	Concepcion CR
 North America	Costa Rica	Cartago CR	Dulce Nombre
 North America	Costa Rica	Cartago CR	El Tejar
+North America	Costa Rica	Cartago CR	Jimenez
 North America	Costa Rica	Cartago CR	La Suiza
 North America	Costa Rica	Cartago CR	La Union
 North America	Costa Rica	Cartago CR	Llanos de Santa Lucia
@@ -4200,6 +4211,7 @@ North America	Costa Rica	Guanacaste	Bagaces
 North America	Costa Rica	Guanacaste	La Cruz
 North America	Costa Rica	Guanacaste	Liberia
 North America	Costa Rica	Guanacaste	Nicoya
+North America	Costa Rica	Guanacaste	Santa Cruz
 North America	Costa Rica	Guanacaste	Sardinal
 North America	Costa Rica	Guanacaste	Tilaran
 North America	Costa Rica	Heredia	
@@ -4229,6 +4241,7 @@ North America	Costa Rica	Puntarenas	Garabito
 North America	Costa Rica	Puntarenas	Golfito
 North America	Costa Rica	Puntarenas	La Cuesta
 North America	Costa Rica	Puntarenas	Laurel
+North America	Costa Rica	Puntarenas	Osa
 North America	Costa Rica	Puntarenas	Palmar
 North America	Costa Rica	Puntarenas	Piedras Blancas
 North America	Costa Rica	Puntarenas	Puerto Cortes
@@ -5367,15 +5380,32 @@ South America	Brazil	Alagoas
 South America	Brazil	Alagoas	Maceio
 South America	Brazil	Amapa	
 South America	Brazil	Amazonas BR	
+South America	Brazil	Amazonas BR	Anori
+South America	Brazil	Amazonas BR	Autazes
+South America	Brazil	Amazonas BR	Barreirinha
 South America	Brazil	Amazonas BR	Caapiranga
 South America	Brazil	Amazonas BR	Carauari
+South America	Brazil	Amazonas BR	Careiro
 South America	Brazil	Amazonas BR	Iranduba
+South America	Brazil	Amazonas BR	Itacoatiara
+South America	Brazil	Amazonas BR	Jutaí
 South America	Brazil	Amazonas BR	Labrea
 South America	Brazil	Amazonas BR	Manacapuru
 South America	Brazil	Amazonas BR	Manaquiri
 South America	Brazil	Amazonas BR	Manaus
+South America	Brazil	Amazonas BR	Manicoré
+South America	Brazil	Amazonas BR	Maués
 South America	Brazil	Amazonas BR	Nova Holinda
+South America	Brazil	Amazonas BR	Nova Olinda do Norte
+South America	Brazil	Amazonas BR	Parintins
+South America	Brazil	Amazonas BR	Presidente Figueiredo
+South America	Brazil	Amazonas BR	Rio Preto Da Eva
+South America	Brazil	Amazonas BR	Santa Isabel do Rio Negro
+South America	Brazil	Amazonas BR	Santo Antônio do Içá
+South America	Brazil	Amazonas BR	São Gabriel Da Cachoeira
+South America	Brazil	Amazonas BR	Tabatinga
 South America	Brazil	Amazonas BR	Tapaua
+South America	Brazil	Amazonas BR	Urucará
 South America	Brazil	Bahia	
 South America	Brazil	Bahia	Feira de Santana
 South America	Brazil	Bahia	Teixeira de Freitas
