@@ -13,6 +13,9 @@ on:
   repository_dispatch:
     types: ingest
 
+  # Manually triggered using GitHub's UI
+  workflow_dispatch:
+
 jobs:
   ingest:
     runs-on: ubuntu-latest
@@ -34,8 +37,8 @@ jobs:
           --aws-batch \
           --no-download \
           --image nextstrain/ncov-ingest \
-          --cpus 8 \
-          --memory 15GiB \
+          --cpus 16 \
+          --memory 30GiB \
           --exec env \
           . \
             envdir env.d ingest-genbank
