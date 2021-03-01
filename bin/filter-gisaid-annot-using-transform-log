@@ -35,7 +35,7 @@ if __name__ == '__main__':
             if l.startswith('REDUNDANT ANNOTATED METADATA : '):
 
                 sl = l[len('REDUNDANT ANNOTATED METADATA : '):].strip().split()
-                
+                #print(sl)
                 if len(sl) <3:
                     if len(sl) == 2 : # sometimes data are put to blank, and thus the line only has 2 elements
                         sl.append('')
@@ -56,12 +56,12 @@ if __name__ == '__main__':
             sl = l.strip().split('\t')
             filterOut = False
 
-            if len(sl)>=4 and sl[1] in redundantAnnot:
-
+            if len(sl)>=3 and sl[1] in redundantAnnot:
                 #getting the line without eventual comments
                 i = sl[1]
                 k = sl[2]
                 v = '\t'.join(sl[3:]).partition('#')[0].strip()
+
                 annotId = '\t'.join([i,k,v])
 
                 if annotId in redundantAnnot[sl[1]] :
@@ -78,7 +78,3 @@ if __name__ == '__main__':
     print('removed',removed,'annotation lines')
 
 
-    #for a in redundantAnnot:
-    #    for s in redundantAnnot[a]:
-    #        if redundantAnnot[a][s] == 0:
-    #            print('not removed',s)
