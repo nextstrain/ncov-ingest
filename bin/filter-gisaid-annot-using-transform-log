@@ -35,8 +35,13 @@ if __name__ == '__main__':
             if l.startswith('REDUNDANT ANNOTATED METADATA : '):
 
                 sl = l[len('REDUNDANT ANNOTATED METADATA : '):].strip().split()
+                
                 if len(sl) <3:
-                    continue
+                    if len(sl) == 2 : # sometimes data are put to blank, and thus the line only has 2 elements
+                        sl.append('')
+
+                    else :
+                        continue
                 redundantAnnot[ sl[0] ][ "\t".join([sl[0] , sl[1] , " ".join(sl[2:]) ]) ] = 0
                 n +=1
 
