@@ -62,26 +62,12 @@ Europe	France	Grand-Est	Tucquegnieux	Europe	France	Grand Est	Tucquegnieux
 Europe	France	Grand-Est	Brumath	Europe	France	Grand Est	Brumath
 Europe	France	Grand-Est	Champagne Ardenne	Europe	France	Grand Est	Champagne Ardenne
 Europe	France	Grand-Est	Lorraine	Europe	France	Grand Est	Lorraine
-Europe	France	Hauts-de-France	Compiègne	Europe	France	Hauts de France	Compiègne
-Europe	France	Hauts-de-France	Crépy en Valois	Europe	France	Hauts de France	Crépy en Valois
-Europe	France	Hauts-de-France	Chateau-Thierry	Europe	France	Hauts de France	Chateau-Thierry
 Europe	France	Hauts-de-France	Crépy-en -Valois	Europe	France	Hauts de France	Crépy en Valois
-Europe	France	Hauts-de-France	Crouy en Thelle	Europe	France	Hauts de France	Crouy en Thelle
-Europe	France	Hauts-de-France		Europe	France	Hauts de France	
 Europe	France	Hauts-de-France	Pontoise	Europe	France	Ile de France	Pontoise
 Europe	France	Hauts-de-France	Nogent l'Artaud	Europe	France	Hauts de France	Nogent-l'Artaud
 Europe	France	Hauts-de-France	Lille	Europe	France	Hauts de France	Lille FR
-Europe	France	Hauts-de-France	Genech	Europe	France	Hauts de France	Genech
-Europe	France	Hauts-de-France	Lyz-Les-Lannoy	Europe	France	Hauts de France	Lyz-Les-Lannoy
-Europe	France	Hauts-de-France	Tourcoing	Europe	France	Hauts de France	Tourcoing
-Europe	France	Hauts-de-France	Roubaix	Europe	France	Hauts de France	Roubaix
-Europe	France	Hauts-de-France	Wambrechies	Europe	France	Hauts de France	Wambrechies
-Europe	France	Hauts-de-France	Leers	Europe	France	Hauts de France	Leers
-Europe	France	Hauts-de-France	Bousbecque	Europe	France	Hauts de France	Bousbecque
-Europe	France	Hauts-de-France	Crespin	Europe	France	Hauts de France	Crespin
-Europe	France	Hauts-de-France	Amiens	Europe	France	Hauts de France	Amiens
-Europe	France	Hauts-de-France	Nord Pas de Calais	Europe	France	Hauts de France	Nord Pas de Calais
 Europe	France	Hauts-de-France	Nord-Pas-de-Calais	Europe	France	Hauts de France	Nord Pas de Calais
+Europe	France	Hauts-de-France	*	Europe	France	Hauts de France	*
 Europe	France	Île-de-France	Pontoise	Europe	France	Ile de France	Pontoise
 Europe	France	Île-de-France	Paris	Europe	France	Ile de France	Paris
 Europe	France	Île-de-France	Garches	Europe	France	Ile de France	Garches
@@ -298,7 +284,7 @@ Europe	Belgium	Heverlee		Europe	Belgium	Leuven	Heverlee
 Europe	Belgium	Montigny-le-Tilleul		Europe	Belgium	Charleroi	Montigny-le-Tilleul
 Europe	Belgium	Arbre		Europe	Belgium	Namur	Arbre
 Europe	Belgium	Yernee-Fraineux		Europe	Belgium	Huy	Yernée-Fraineux
-Europe	Belgium	Brussel		Europe	Belgium	Brussels	Brussels
+Europe	Belgium	Brussel		Europe	Belgium	Brussels	Bruxelles
 Europe	Belgium	Brussel	*	Europe	Belgium	Brussels	*
 Europe	Belgium	Stekene		Europe	Belgium	Sint-Niklaas	Stekene
 Europe	Belgium	Sint-Gillis-Waas		Europe	Belgium	Sint-Niklaas	Sint-Gillis-Waas
@@ -6069,12 +6055,15 @@ Europe	Belgium	Kessel Lo		Europe	Belgium	Leuven	Kessel-Lo
 Europe	Belgium	Leopolsdburg		Europe	Belgium	Hasselt	Leopoldsburg
 Europe	Belgium	Brussels	Heusden	Europe	Belgium	Hasselt	Heusden-Zolder
 Europe	Belgium	Brussels	Berchem-Sainte-Agath	Europe	Belgium	Brussels	Berchem-Sainte-Agathe
+Europe	Belgium	Brussels	Brussels	Europe	Belgium	Brussels	Bruxelles
 Europe	Belgium	Gent	Sint-Amansberg	Europe	Belgium	Gent	Sint-Amandsberg
 Europe	Belgium	Soigmies	*	Europe	Belgium	Soignies	*
 Europe	Belgium	Flemishbrabant	*	Europe	Belgium	Vlaams-Brabant	*
 Europe	Belgium	Lille		Europe	Belgium	Turnhout	Lille BE
 Europe	Belgium	Limbourg		Europe	Belgium	Verviers	Limbourg BE
 Europe	Belgium	Houthalen		Europe	Belgium	Maaseik	Houthalen-Helchteren
+Europe	Belgium	Limburg	*	Europe	Belgium	Limburg BE	*
+Europe	Belgium	Unknown		Europe	Belgium	Belgium	
 Europe	Switzerland	Graubunden	*	Europe	Switzerland	Graubünden	*
 Europe	Switzerland	Graubã¼Nden	*	Europe	Switzerland	Graubünden	*
 Europe	Switzerland	Basel		Europe	Switzerland	Basel-Stadt	
@@ -6209,6 +6198,7 @@ Europe	Russia	Saratov Region	*	Europe	Russia	Saratov	*
 Europe	Russia	Pskov Oblast	Borisovichi	Europe	Russia	Pskov Oblast	Borovichi
 Europe	Russia	Saint-Petersburg	Saint Petersburg	Europe	Russia	Saint-Petersburg	Saint-Petersburg
 Europe	Russia	Tver Region	*	Europe	Russia	Tver	*
+Europe	Russia	Arkhangelsk	*	Europe	Russia	Arkhangelsk Region	*
 Europe	Hungary	Baranya	*	Europe	Hungary	Baranya County	*
 Europe	Hungary	Budapest		Europe	Hungary	Central Hungary	Budapest
 Europe	Hungary	Borsod-Abauj-Zemplen County	*	Europe	Hungary	Borsod-Abaúj-Zemplén County	*
@@ -6224,6 +6214,7 @@ Europe	Hungary	Bacs-Kiskun	*	Europe	Hungary	Bács-Kiskun County	*
 Europe	Hungary	Heves	*	Europe	Hungary	Heves County	*
 Europe	Hungary	Szabolcs-Szatmar-Bereg	*	Europe	Hungary	Szabolcs-Szatmár-Bereg County	*
 Europe	Hungary	Komárom-Esztergom County	*	Europe	Hungary	Komárom-Esztergom	*
+Europe	Hungary	Gyor-Moson-Sopron	*	Europe	Hungary	Győr-Moson-Sopron County	*
 Europe	United Kingdom	England	Nottinghamhisre	Europe	United Kingdom	England	Nottinghamshire
 Europe	Czech Republic	Central Czechia and Prague		Europe	Czech Republic	Prague	
 Europe	Czech Republic	Vysocina	Kynice	Europe	Czech Republic	Vysocina Region	Kynice
@@ -6354,6 +6345,7 @@ Europe	Spain	Balear Islands	Marratxi	Europe	Spain	Balear Islands	Marratxí
 Europe	Spain	Cantabria	Penacastillo	Europe	Spain	Cantabria	Peñacastillo
 Europe	Spain	Islas Canarias	*	Europe	Spain	Canary Islands	*
 Europe	Spain	Asturias	Oviedo City	Europe	Spain	Asturias	Oviedo
+Europe	Spain	La Rioja	Albelda	Europe	Spain	La Rioja	Albelda de Iregua
 Europe	Sweden	Västerbotten		Europe	Sweden	Vasterbotten	
 Europe	Sweden	Västra Götaland	*	Europe	Sweden	Vastra Gotaland	*
 Europe	Sweden	Unknown		Europe	Sweden	Sweden	
@@ -6386,6 +6378,7 @@ Europe	Italy	South Tyrol	*	Europe	Italy	Trentino-Alto Adige	Autonomous Province 
 Europe	Italy	*	Verona	Europe	Italy	*	Verona IT
 Europe	Italy	Toscana	*	Europe	Italy	Tuscany	*
 Europe	Italy	Trentino Alto Adige	*	Europe	Italy	Trentino-Alto Adige	*
+Europe	Italy	Campania	Napoli	Europe	Italy	Campania	Naples
 Europe	Finland	Lapland		Europe	Finland	Finland	Rovaniemi
 Europe	Serbia	Kraljevo		Europe	Serbia	Raška District	Kraljevo
 Europe	Serbia	Novi Pazar		Europe	Serbia	Raška District	Novi Pazar
@@ -6544,6 +6537,10 @@ Europe	Portugal	Setubal	*	Europe	Portugal	Setúbal	*
 Europe	Macedonia	*	*	Europe	North Macedonia	*	*
 Europe	Belarus	Homel Region	*	Europe	Belarus	Gomel Region	*
 Europe	Blegium	*	*	Europe	Belgium	*	*
+Europe	Country	Namen		Europe	Belgium	Namur	
+Europe	Croatia	The City of Zagreb		Europe	Croatia	Zagreb	Zagreb
+Europe	Croatia	Zagreb County		Europe	Croatia	Zagreb	
+Europe	Croatia	Osijek		Europe	Croatia	Osijek-Baranja	Osijek
 Asia	Taiwan	Taipei		Asia	Taiwan	Taiwan	Taipei
 Asia	Taiwan	Taoyuan		Asia	Taiwan	Taiwan	Taoyuan
 Asia	Taiwan	Kaohsiung		Asia	Taiwan	Taiwan	Kaohsiung
@@ -6556,6 +6553,7 @@ Asia	China	Chongqinq	Yongchuan	Asia	China	Chongqing	Yongchuan
 Asia	China	Zhejiang	Shaoxing	Asia	China	Zhejiang	Keqiao
 Asia	China	Harbin		Asia	China	Heilongjiang	Harbin
 Asia	China	Anhui	Lu`An	Asia	China	Anhui	Lu'An
+Asia	China	Yunnan	Puer City	Asia	China	Yunnan	Pu'Er
 Asia	South Korea	Gyeonggi-do		Asia	South Korea	Gyeonggi Province	Gyeonggi
 Asia	South Korea	Chungcheongnam-do		Asia	South Korea	Chungcheongnam	Chungcheongnam
 Asia	South Korea	Uijeongbu		Asia	South Korea	Gyeonggi Province	Uijeongbu
@@ -6702,6 +6700,10 @@ Asia	Philippines	Region Iv-A	*	Asia	Philippines	Calabarzon	*
 Asia	Philippines	Region Ix	*	Asia	Philippines	Zamboanga Peninsula	*
 Asia	Philippines	Region Iv-B	*	Asia	Philippines	Mimaropa	*
 Asia	Philippines	Region Iii	*	Asia	Philippines	Central Luzon	*
+Asia	Philippines	4-A	*	Asia	Philippines	Calabarzon	*
+Asia	Philippines	7	*	Asia	Philippines	Central Visayas	*
+Asia	Philippines	11	*	Asia	Philippines	Davao Region	*
+Asia	Philippines	3	*	Asia	Philippines	Central Luzon	*
 Asia	Indonesia	Special Region of Yogyakarta	*	Asia	Indonesia	Yogyakarta	*
 Asia	Indonesia	Central Kalimantan	*	Asia	Indonesia	Center Kalimantan	*
 Asia	Indonesia	Bangka Belitung Islands	*	Asia	Indonesia	Kepulauan Bangka Belitung	*
@@ -7012,6 +7014,7 @@ North America	USA	Texas	Dallas	North America	USA	Texas	Dallas County TX
 North America	USA	Texas	Brown	North America	USA	Texas	Brown County TX
 North America	USA	Texas	Calhoun	North America	USA	Texas	Calhoun County TX
 North America	USA	Texas	Moris	North America	USA	Texas	Morris County TX
+North America	USA	Texas	Lorena	North America	USA	Texas	Lorena TX
 North America	USA	Louisiana	Desoto Parish	North America	USA	Louisiana	DeSoto Parish
 North America	USA	Louisiana	St. Tammany Parish	North America	USA	Louisiana	St Tammany Parish
 North America	USA	Louisiana	St. Bernard Parish	North America	USA	Louisiana	St Bernard Parish
@@ -7099,6 +7102,9 @@ North America	USA	Alabama	Na County	North America	USA	Alabama
 North America	USA	Alabama	Lee County	North America	USA	Alabama	Lee County AL
 North America	USA	Alabama	Mobile	North America	USA	Alabama	Mobile County
 North America	USA	Alabama	Auburn	North America	USA	Alabama	Lee County AL
+North America	USA	Alabama	Marshall County	North America	USA	Alabama	Marshall County AL
+North America	USA	Alabama	Pike County	North America	USA	Alabama	Pike County AL
+North America	USA	Alabama	Monroe County	North America	USA	Alabama	Monroe County AL
 North America	USA	Texas Terry	*	North America	USA	Texas	Terry County
 North America	USA	Texas Mclennan	*	North America	USA	Texas	Mclennan County
 North America	USA	Al	*	North America	USA	Alabama	*
@@ -7166,6 +7172,7 @@ North America	USA	Maryland	Mdh	North America	USA	Maryland
 North America	USA	Maryland	Prince George'S County	North America	USA	Maryland	Prince George's County
 North America	USA	New York County	*	North America	USA	New York	*
 North America	USA	Tennessee	Shelby	North America	USA	Tennessee	Shelby County
+North America	USA	Missourintana	*	North America	USA	Missouri	*
 North America	Costa Rica	Tibas		North America	Costa Rica	San Jose	Tibas
 North America	Costa Rica	Cartago	Tres Rios	North America	Costa Rica	Cartago CR	Tres Rios CR
 North America	Costa Rica	Cartago	San Isidro	North America	Costa Rica	Cartago CR	San Isidro CR
@@ -7236,6 +7243,7 @@ South America	Brazil	São Paulo	Ermelindo Matarazo	South America	Brazil	São Pau
 South America	Brazil	São Paulo	Santa Barbara D Oeste	South America	Brazil	São Paulo	Santa Barbara D'Oeste
 South America	Brazil	São Paulo	Cesario Lage	South America	Brazil	São Paulo	Cesário Lange
 South America	Brazil	São Paulo	Embu	South America	Brazil	São Paulo	Embu Das Artes
+South America	Brazil	São Paulo	Lorena	South America	Brazil	São Paulo	Lorena BR
 South America	Brazil	Paraíba	*	South America	Brazil	Paraiba	*
 South America	Brazil	Rio de Janeiro	Nova Iguaçu	South America	Brazil	Rio de Janeiro	Nova Iguacu
 South America	Brazil	Rio de Janeiro	São Gonçalo	South America	Brazil	Rio de Janeiro	Sao Goncalo
@@ -7258,6 +7266,7 @@ South America	Brazil	Parana	*	South America	Brazil	Paraná	*
 South America	Brazil	Southeast	Minas Gerais	South America	Brazil	Minas Gerais	
 South America	Brazil	Southeast	*	South America	Brazil	Southeast Region	*
 South America	Brazil	Amazonas BR	Lábrea	South America	Brazil	Amazonas BR	Labrea
+South America	Brazil	Tocantins	Paraiso do Tocantins	South America	Brazil	Tocantins	Paraiso do Tacantins
 South America	Argentina	Cordoba	Cordoba	South America	Argentina	Cordoba AR	Cordoba AR
 South America	Argentina	Cordoba	Brikman	South America	Argentina	Cordoba AR	Brinkmann
 South America	Argentina	Cordoba	*	South America	Argentina	Cordoba AR	*
@@ -7331,6 +7340,7 @@ Oceania	New Zealand	Waitemata		Oceania	New Zealand	Auckland	Waitemata
 Oceania	New Zealand	Combined Auckland	*	Oceania	New Zealand	Auckland	*
 Oceania	New Zealand	Capital and Coast		Oceania	New Zealand	Wellington	Capital and Coast
 Oceania	New Zealand	Hutt Valley		Oceania	New Zealand	Wellington	Hutt Valley
+Oceania	New Zealand	Counties Manukau		Oceania	New Zealand	Auckland	Counties Manukau
 Africa	Senegal	Saint-Louis	*	Africa	Senegal	St-Louis	*
 Africa	Senegal	Pikine		Africa	Senegal	Dakar	Pikine
 Africa	South Africa	Western Cape	Northern	Africa	South Africa	Northern Cape	
@@ -7527,21 +7537,3 @@ Israel	Asia	Southern		Asia	Israel	South District
 Asian	*	*	*	Asia	*	*	*
 North-America	*	*	*	North America	*	*	*
 Afrique	*	*	*	Africa	*	*	*
-Europe	Belgium	Limburg	*	Europe	Belgium	Limburg BE	*
-Europe	Belgium	Brussels	Brussels	Europe	Belgium	Brussels	Bruxelles
-Europe	Italy	Campania	Napoli	Europe	Italy	Campania	Naples
-Europe	France	Hauts-de-France	*	Europe	France	Hauts de France	*
-Oceania	New Zealand	Counties Manukau		Oceania	New Zealand	Auckland	Counties Manukau
-South America	Brazil	Tocantins	Paraiso do Tocantins	South America	Brazil	Tocantins	Paraiso do Tacantins
-Asia	Philippines	4-A	*	Asia	Philippines	Calabarzon	*
-Asia	Philippines	7	*	Asia	Philippines	Central Visayas	*
-Asia	Philippines	11	*	Asia	Philippines	Davao Region	*
-Asia	Philippines	3	*	Asia	Philippines	Central Luzon	*
-Europe	Country	Namen		Europe	Belgium	Namur	
-Europe	Croatia	The City of Zagreb		Europe	Croatia	Zagreb	Zagreb
-Europe	Croatia	Zagreb County		Europe	Croatia	Zagreb	
-Europe	Croatia	Osijek		Europe	Croatia	Osijek-Baranja	Osijek
-Europe	Hungary	Gyor-Moson-Sopron	*	Europe	Hungary	Győr-Moson-Sopron County	*
-Europe	Russia	Arkhangelsk	*	Europe	Russia	Arkhangelsk Region	*
-North America	USA	Missourintana	*	North America	USA	Missouri	*
-Europe	Spain	La Rioja	Albelda	Europe	Spain	La Rioja	Albelda de Iregua
