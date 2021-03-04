@@ -175,7 +175,7 @@ def generate_hardcoded_metadata(genbank_data: pd.DataFrame) -> pd.DataFrame:
     hardcoded_metadata['segment']           = 'genome'
     hardcoded_metadata['age']               = '?'
     hardcoded_metadata['sex']               = '?'
-    hardcoded_metadata['pangolin_lineage']  = '?'
+    hardcoded_metadata['pango_lineage']  = '?'
     hardcoded_metadata['GISAID_clade']      = '?'
     hardcoded_metadata['originating_lab']   = '?'
     hardcoded_metadata['submitting_lab']    = '?'
