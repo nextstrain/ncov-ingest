@@ -179,7 +179,7 @@ class RenameAndAddColumns(Transformer):
         'covv_authors': 'authors',
         'covv_patient_age': 'age',
         'covv_gender': 'sex',
-        'covv_lineage': 'pangolin_lineage',
+        'covv_lineage': 'pango_lineage',
         'covv_clade': 'GISAID_clade',
         'covv_add_host_info': 'additional_host_info',
         'covv_add_location': 'additional_location_info',

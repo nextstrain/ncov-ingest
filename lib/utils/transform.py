@@ -9,7 +9,7 @@ from typing import List, Optional, Set, Union
 METADATA_COLUMNS = [  # Ordering of columns in the existing metadata.tsv in the ncov repo
     'strain', 'virus', 'gisaid_epi_isl', 'genbank_accession', 'date', 'region',
     'country', 'division', 'location', 'region_exposure', 'country_exposure',
-    'division_exposure', 'segment', 'length', 'host', 'age', 'sex', 'pangolin_lineage', 'GISAID_clade',
+    'division_exposure', 'segment', 'length', 'host', 'age', 'sex', 'pango_lineage', 'GISAID_clade',
     'originating_lab', 'submitting_lab', 'authors', 'url', 'title', 'paper_url',
     'date_submitted', 'purpose_of_sequencing'
 ]

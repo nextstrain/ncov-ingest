@@ -6,7 +6,7 @@ import pandas as pd
 
 INPUT_CLADE_COLUMN = "clade"
 OUTPUT_CLADE_COLUMN = "Nextstrain_clade"
-INSERT_BEFORE_THIS_COLUMN = "pangolin_lineage"
+INSERT_BEFORE_THIS_COLUMN = "pango_lineage"
 METADATA_JOIN_COLUMN_NAME = 'strain'
 NEXTCLADE_JOIN_COLUMN_NAME = 'seqName'
 VALUE_CLADE_MISSING = '-'
