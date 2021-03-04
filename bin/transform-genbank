@@ -16,7 +16,10 @@ from utils.transform import (
     standardize_dataframe,
     fill_default_geo_metadata,
     write_fasta_file,
+
 )
+from utils.transformpipeline.transforms import UserProvidedGeoLocationSubstitutionRules 
+
 
 assert 'sequence' not in METADATA_COLUMNS, "Sequences should not appear in metadata!"
 
@@ -177,6 +180,37 @@ def generate_hardcoded_metadata(genbank_data: pd.DataFrame) -> pd.DataFrame:
     return hardcoded_metadata
 
 
+def apply_geoRules( genbank_data: pd.DataFrame , rulesFile : str) -> pd.DataFrame:
+
+
+    geoRules = UserProvidedGeoLocationSubstitutionRules()
+    if rulesFile :
+        # use curated rules to subtitute known spurious locations with correct ones
+        with open(rulesFile,'r') as geo_location_rules_fh :
+            csvreader = csv.reader(geo_location_rules_fh, delimiter='\t')
+            for row in csvreader:
+                if row[0].lstrip()[0] == '#':
+                    continue
+                elif len(row) != 8:
+                    print("WARNING: couldn't decode annotation line " + "\t".join(row))
+                    continue
+                row[-1] = row[-1].partition('#')[0].rstrip()
+                raw , annot = tuple( row[:4] ) , tuple( row[4:8] )
+                # remove the comment and the extra ws from the value
+                geoRules.add_user_rule(
+                    raw,
+                    annot
+                )
+
+        for index, row in genbank_data.iterrows():
+
+            LOCATION_COLUMNS = ['region', 'country', 'division', 'location']
+            newVal = geoRules.get_user_rules( tuple( [ row[col] for col in LOCATION_COLUMNS ] ) )
+            for i,key in enumerate(LOCATION_COLUMNS):
+                row[key] = newVal[i]
+    
+    return genbank_data
+
 def update_metadata(genbank_data: pd.DataFrame) -> pd.DataFrame:
     """
     Update metadata with hardcoded metadata and update with curated
@@ -205,6 +239,8 @@ def update_metadata(genbank_data: pd.DataFrame) -> pd.DataFrame:
     genbank_data = fill_default_geo_metadata(genbank_data)
 
     return genbank_data
+
+
 
 
 def find_and_drop_problem_records(genbank_data: pd.DataFrame) -> pd.DataFrame:
@@ -272,6 +308,21 @@ if __name__ == '__main__':
     parser.add_argument("--problem-data",
         default=base / "data/genbank/problem_data.tsv",
         help="Output location of generated tsv of problem records missing geography region or a valid strain name")
+    parser.add_argument("--geo-location-rules",
+        default = str( base / "source-data/gisaid_geoLocationRules.tsv" ) ,
+        help="Optional manually curated rules to correct geographical location.\n"
+            "The TSV file should have no header and exactly 8 columns which contain:\n\t"
+            "1. the raw region\n\t"
+            "2. the raw country\n\t"
+            "3. the raw division\n\t"
+            "4. the raw location\n\t"
+            "1. the raw region\n\t"
+            "2. the raw country\n\t"
+            "3. the raw division\n\t"
+            "4. the raw location\n\t"
+        "Lines or parts of lines starting with '#' are treated as comments.\n"
+        "e.g.\n\t"
+        "Europe Spain   Catalunya   Mataró  Europe  Spain   Catalunya   Mataro\n\t")
     args = parser.parse_args()
 
     genbank_data = pd.read_json(args.genbank_data,
@@ -281,6 +332,11 @@ if __name__ == '__main__':
     genbank_data = standardize_strain_names(genbank_data)
     genbank_data = parse_geographic_columns(genbank_data)
     genbank_data = parse_authors(genbank_data)
+
+    ##geoRules additions
+    genbank_data = apply_geoRules( genbank_data , rulesFile = args.geo_location_rules )
+    ##
+
     genbank_data = update_metadata(genbank_data)
     genbank_data = find_and_drop_problem_records(genbank_data)
 
