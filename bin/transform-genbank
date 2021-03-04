@@ -99,7 +99,14 @@ def parse_geographic_columns(genbank_data: pd.DataFrame) -> pd.DataFrame:
 
     divisions = []
     locations = []
+    i =0
     for index, value in geographic_data.iterrows():
+
+        if len(value)<2:# Both location and division are not available - special case where no records in the source json have this
+            divisions.append(None)
+            locations.append(None)
+            continue
+
         # Both location and division are not available
         if pd.isna(value[1]):
             location = division = None
@@ -131,6 +138,7 @@ def parse_geographic_columns(genbank_data: pd.DataFrame) -> pd.DataFrame:
 
         divisions.append(division)
         locations.append(location)
+
 
     genbank_data['country']     = geographic_data[0]
     genbank_data['division']    = pd.Series(divisions)
@@ -202,10 +210,19 @@ def apply_geoRules( genbank_data: pd.DataFrame , rulesFile : str) -> pd.DataFram
                     annot
                 )
 
+        def replaceInList(l,a,b):
+            for i in range(len(l)):
+                if l[i]==a:
+                    l[i]=b
+            return l
+
         for index, row in genbank_data.iterrows():
 
             LOCATION_COLUMNS = ['region', 'country', 'division', 'location']
-            newVal = geoRules.get_user_rules( tuple( [ row[col] for col in LOCATION_COLUMNS ] ) )
+            locs = [ row[col] for col in LOCATION_COLUMNS ]
+            locs = replaceInList(locs,None,'') ## expected empty for rules is ''
+            newVal = geoRules.get_user_rules( tuple( locs ) )
+            newVal = tuple( replaceInList(list(newVal),'',None) ) ## re-putting the default expected by the rest of the code
             for i,key in enumerate(LOCATION_COLUMNS):
                 row[key] = newVal[i]
     
