@@ -54,6 +54,30 @@ fi
     data/genbank/location_hierarchy.tsv \
     genbank_accession
 
+# Download old clades
+(   aws s3 cp --no-progress "$S3_DST/nextclade.tsv.gz" - \
+    || aws s3 cp --no-progress "$S3_SRC/nextclade.tsv.gz" -) \
+    | gunzip -cfq \
+    > "data/genbank/nextclade.tsv"
+
+# Find sequences in FASTA which don't have clades assigned yet
+./bin/filter-fasta \
+    --input_fasta="data/genbank/sequences.fasta" \
+    --input_tsv="data/genbank/nextclade.tsv" \
+    --output_fasta="data/genbank/nextclade.sequences.fasta" \
+
+# ... and assign clades to them
+./bin/run-nextclade \
+    "data/genbank/nextclade.sequences.fasta" \
+    "data/genbank/nextclade.tsv" \
+
+# Join these clades into metadata
+./bin/join-metadata-and-clades \
+    "data/genbank/metadata.tsv" \
+    "data/genbank/nextclade.tsv" \
+    -o "data/genbank/metadata.tsv"
+
+
 if [[ "$branch" == master ]]; then
     ./bin/notify-on-metadata-change data/genbank/metadata.tsv "$S3_SRC/genbank_metadata.tsv.gz" genbank_accession
     ./bin/notify-on-problem-data data/genbank/problem_data.tsv
