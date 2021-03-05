@@ -86,5 +86,6 @@ fi
 
 ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/metadata.tsv "$S3_DST/genbank_metadata.tsv.gz"
 ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/sequences.fasta "$S3_DST/genbank_sequences.fasta.gz"
+./bin/upload-to-s3 ${silent:+--quiet} data/genbank/nextclade.tsv "$S3_DST/nextclade.tsv.gz"
 
 ./bin/clean
