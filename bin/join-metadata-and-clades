@@ -4,41 +4,32 @@ import sys
 
 import pandas as pd
 
-INPUT_CLADE_COLUMN = "clade"
-OUTPUT_CLADE_COLUMN = "Nextstrain_clade"
-INPUT_MISSING_DATA_COLUMN = "totalMissing"
-OUTPUT_MISSING_DATA_COLUMN = "missing_data"
-INPUT_DIVERGENCE_COLUMN = "totalMutations"
-OUTPUT_DIVERGENCE_COLUMN = "divergence"
-INPUT_nonACGTN_COLUMN = "totalNonACGTNs"
-OUTPUT_nonACGTN_COLUMN = "nonACGTN"
-INPUT_PRIVATE_MUTATIONS_COLUMN ="qc.privateMutations.total"
-OUTPUT_PRIVATE_MUTATIONS_COLUMN = "rare_mutations"
-INPUT_SnpClusters_COLUMN ="qc.snpClusters.totalSNPs"
-OUTPUT_SnpClusters_COLUMN = "clustered_SNPs"
 INSERT_BEFORE_THIS_COLUMN = "pango_lineage"
 METADATA_JOIN_COLUMN_NAME = 'strain'
 NEXTCLADE_JOIN_COLUMN_NAME = 'seqName'
-VALUE_CLADE_MISSING = '-'
+VALUE_MISSING_DATA = '?'
 
 column_map = {
-    INPUT_CLADE_COLUMN: OUTPUT_CLADE_COLUMN,
-    INPUT_MISSING_DATA_COLUMN: OUTPUT_MISSING_DATA_COLUMN,
-    INPUT_DIVERGENCE_COLUMN: OUTPUT_DIVERGENCE_COLUMN,
-    INPUT_nonACGTN_COLUMN: OUTPUT_nonACGTN_COLUMN,
-    INPUT_PRIVATE_MUTATIONS_COLUMN: OUTPUT_PRIVATE_MUTATIONS_COLUMN,
-    INPUT_SnpClusters_COLUMN: OUTPUT_SnpClusters_COLUMN
+    "clade": "Nextstrain_clade",
+    "totalMissing": "missing_data",
+    "totalMutations": "divergence",
+    "totalNonACGTNs": "nonACGTN",
+    "qc.privateMutations.total":  "rare_mutations",
+    "qc.snpClusters.totalSNPs": "snp_clusters",
+    "qc.missingData.status": "QC_missing_data",
+    "qc.mixedSites.status": "QC_mixed_sites",
+    "qc.privateMutations.status": "QC_rare_mutations",
+    "qc.snpClusters.status": "QC_snp_clusters",
 }
-
 
 def reorder_columns(result: pd.DataFrame):
     """
     Moves the new clade column after a specified column
     """
     columns = list(result.columns)
-    columns.remove(OUTPUT_CLADE_COLUMN)
+    columns.remove(column_map['clade'])
     insert_at = columns.index(INSERT_BEFORE_THIS_COLUMN)
-    columns.insert(insert_at, OUTPUT_CLADE_COLUMN)
+    columns.insert(insert_at, column_map['clade'])
     return result[columns]
 
 
@@ -55,11 +46,13 @@ def parse_args():
 def main():
     args = parse_args()
 
-    metadata = pd.read_csv(args.first_file, index_col=METADATA_JOIN_COLUMN_NAME, sep='\t', low_memory=False, na_filter = False)
+    metadata = pd.read_csv(args.first_file, index_col=METADATA_JOIN_COLUMN_NAME,
+                           sep='\t', low_memory=False, na_filter = False)
 
     # Read and rename clade column to be more descriptive
-    clades = pd.read_csv(args.second_file, index_col=NEXTCLADE_JOIN_COLUMN_NAME, sep='\t', low_memory=False, na_filter = False) \
-        .rename(columns=column_map)
+    clades = pd.read_csv(args.second_file, index_col=NEXTCLADE_JOIN_COLUMN_NAME,
+                         sep='\t', low_memory=False, na_filter = False) \
+            .rename(columns=column_map)
 
     clades = clades[list(column_map.values())]
 
@@ -71,7 +64,7 @@ def main():
         how='left'
     )
     for col in column_map.values():
-        result[col] = result[col].fillna(VALUE_CLADE_MISSING)
+        result[col] = result[col].fillna(VALUE_MISSING_DATA)
 
     # Move the new column so that it's next to other clade columns
     result = reorder_columns(result)
