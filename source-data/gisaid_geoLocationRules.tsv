@@ -84,6 +84,8 @@ Europe	France	Auvergne-Rhône-Alpes	Villefranche	Europe	France	Auvergne-Rhône-A
 Europe	France	Auvergne-Rhône-Alpes	Chambéry	Europe	France	Auvergne-Rhône-Alpes	Chambery
 Europe	France	Auvergne-Rhône-Alpes	Andrezieux-Boutheon	Europe	France	Auvergne-Rhône-Alpes	Andrézieux-Bouthéon
 Europe	France	Auvergne-Rhône-Alpes	Vichy Cedex	Europe	France	Auvergne-Rhône-Alpes	Vichy
+Europe	France	Auvergne-Rhône-Alpes	Macon	Europe	France	Bourgogne-France-Comté	Macon
+Europe	France	Auvergne-Rhône-Alpes	Saint-Martin-D'Heres	Europe	France	Auvergne-Rhône-Alpes	Saint-Martin-D'Hères
 Europe	France	Provence-Alpes-Côte-D’Azur	*	Europe	France	Provence-Alpes-Côte d'Azur	*
 Europe	France	Centre-Val de Loire	Angers	Europe	France	Pays de la Loire	Angers
 Europe	France	Centre-Val de Loire	Rouziers de Touraine	Europe	France	Centre-Val de Loire	Rouziers-de-Touraine
@@ -121,6 +123,7 @@ Europe	France	Ile de France	Saint Mande	Europe	France	Ile de France	Saint Mandé
 Europe	France	Ile de France	Neuilly-sur-Seine	Europe	France	Ile de France	Neuilly sur Seine
 Europe	France	Ile de France	Mantes la Jolie	Europe	France	Ile de France	Mantes-la-Jolie
 Europe	France	Ile de France	Saint Denis	Europe	France	Ile de France	Saint-Denis
+Europe	France	Ile de France	Ivrt-sur-Seine	Europe	France	Ile de France	Ivry-sur-Seine
 Europe	France	Lorraine	*	Europe	France	Grand Est	*
 Europe	France	Aquitaine	*	Europe	France	Nouvelle-Aquitaine	*
 Europe	France	Champagne Ardenne	*	Europe	France	Grand Est	*
@@ -165,6 +168,7 @@ Europe	France	Pays de la Loire	Chollet	Europe	France	Pays de la Loire	Cholet
 Europe	France	Pays de la Loire	Les Sables D Olonne	Europe	France	Pays de la Loire	Les Sables D'Olonne
 Europe	France	Pays de la Loire	La Roche sur Yon	Europe	France	Pays de la Loire	La Roche-sur-Yon
 Europe	France	Pays de la Loire	Saint-Nazaire	Europe	France	Pays de la Loire	Saint Nazaire
+Europe	France	Pays de la Loire	Saint-Herblain	Europe	France	Pays de la Loire	Saint Herblain
 Europe	France	Auvergne	*	Europe	France	Auvergne-Rhône-Alpes	*
 Europe	France	Haute Normandie	*	Europe	France	Normandie	*
 Europe	France	Alsace	*	Europe	France	Grand Est	*
@@ -201,6 +205,7 @@ Europe	Germany	Baden-Wuerttemberg	Grenzach-Whylen	Europe	Germany	Baden-Wuerttemb
 Europe	Germany	Baden-Wuerttemberg	Bad Sackingen	Europe	Germany	Baden-Wuerttemberg	Bad Säckingen
 Europe	Germany	Baden-Wuerttemberg	Lorrach	Europe	Germany	Baden-Wuerttemberg	Lörrach
 Europe	Germany	Thuringia	Franconia	Europe	Germany	Thuringia	
+Europe	Germany	Franconia		Europe	Germany	Bavaria	
 Europe	Belgium	Couthuin		Europe	Belgium	Huy	Couthuin
 Europe	Belgium	Kessel-Lo		Europe	Belgium	Leuven	Kessel-Lo
 Europe	Belgium	Holsbeek		Europe	Belgium	Leuven	Holsbeek
@@ -6047,6 +6052,10 @@ Europe	Belgium	Fleron		Europe	Belgium	Liège	Fléron
 Europe	Belgium	Marchinne-Au-Pont		Europe	Belgium	Charleroi	Marchienne-au-Pont
 Europe	Belgium	Brussels Capital Region	*	Europe	Belgium	Brussels	*
 Europe	Belgium	Sint-Josse-Ten-Node		Europe	Belgium	Brussels	Saint-Josse-ten-Noode
+Europe	Belgium	Province		Europe	Belgium	Belgium	
+Europe	Belgium	Luxemburg	*	Europe	Belgium	Luxembourg BE	*
+Europe	Belgium	Emines		Europe	Belgium	Namur	Émines
+Europe	Belgium	Achene		Europe	Belgium	Dinant	Achêne
 Europe	Switzerland	Graubunden	*	Europe	Switzerland	Graubünden	*
 Europe	Switzerland	Graubã¼Nden	*	Europe	Switzerland	Graubünden	*
 Europe	Switzerland	Basel		Europe	Switzerland	Basel-Stadt	
@@ -6332,6 +6341,7 @@ Europe	Spain	Cantabria	Penacastillo	Europe	Spain	Cantabria	Peñacastillo
 Europe	Spain	Islas Canarias	*	Europe	Spain	Canary Islands	*
 Europe	Spain	Asturias	Oviedo City	Europe	Spain	Asturias	Oviedo
 Europe	Spain	La Rioja	Albelda	Europe	Spain	La Rioja	Albelda de Iregua
+Europe	Spain	Cataluna	*	Europe	Spain	Catalunya	*
 Europe	Sweden	Västerbotten		Europe	Sweden	Vasterbotten	
 Europe	Sweden	Västra Götaland	*	Europe	Sweden	Vastra Gotaland	*
 Europe	Sweden	Unknown		Europe	Sweden	Sweden	
@@ -6353,6 +6363,9 @@ Europe	Poland	Wielkopolskie	Poznań	Europe	Poland	Wielkopolskie	Poznan
 Europe	Poland	Wielkopolskie	Przezmierowo	Europe	Poland	Wielkopolskie	Przeźmierowo
 Europe	Poland	Wielkopolskie	Skorzewo	Europe	Poland	Wielkopolskie	Skórzewo
 Europe	Poland	Warminsko-Mazurskie	Olsztynski	Europe	Poland	Warminsko-Mazurskie	Olsztyn
+Europe	Poland	Podlaskie	Bielsk Podlaski	Europe	Poland	Podlaskie	Bielsk Podlaski
+Europe	Poland	Podlaskie	Orzysz	Europe	Poland	Warminsko-Mazurskie	Orzysz
+Europe	Poland	Bielsk Podlaski		Europe	Poland	Podlaskie	Bielsk Podlaski
 Europe	Italy	Apulia	Bat	Europe	Italy	Apulia	Barletta-Andria-Trani
 Europe	Italy	Padova		Europe	Italy	Veneto	Padova
 Europe	Italy	Puglia	*	Europe	Italy	Apulia	*
@@ -6465,6 +6478,25 @@ Europe	Austria	Vorarlberg	Bregenz-Stadt	Europe	Austria	Vorarlberg	Bregenz
 Europe	Austria	Upper Austria	Wels, Eggendorf Im Traunkreis, Buchkirchen, Gunskirchen, Marchtrenk, Pennewang, Sattledt, Schleißheim, Steinhaus, Thalheim Bei Wels, Weißkirchen An Der Traun	Europe	Austria	Upper Austria	Wels-Land
 Europe	Austria	Upper Austria	Bad Ischl, St. Wolfgang Im Salzkammergut, Sankt Gilgen, Strobl	Europe	Austria	Upper Austria	Gmunden
 Europe	Austria	Upper Austria	Amstetten	Europe	Austria	Lower Austria	Amstetten
+Europe	Austria	Attnang-Puchheim		Europe	Austria	Upper Austria	Attnang-Puchheim
+Europe	Austria	Gmunden		Europe	Austria	Upper Austria	Gmunden
+Europe	Austria	Vöcklabruck		Europe	Austria	Upper Austria	Vöcklabruck
+Europe	Austria	Neukirchen	Altmünster	Europe	Austria	Upper Austria	Neukirchen
+Europe	Austria	Attersee		Europe	Austria	Upper Austria	Attersee
+Europe	Austria	Bad Goisern		Europe	Austria	Upper Austria	Bad Goisern
+Europe	Austria	Bad Ischl		Europe	Austria	Upper Austria	Bad Ischl
+Europe	Austria	Ebensee Am Traunsee		Europe	Austria	Upper Austria	Ebensee Am Traunsee
+Europe	Austria	Fornach		Europe	Austria	Upper Austria	Fornach
+Europe	Austria	Frankenburg Am Hausruck		Europe	Austria	Upper Austria	Frankenburg Am Hausruck
+Europe	Austria	Laakirchen		Europe	Austria	Upper Austria	Laakirchen
+Europe	Austria	Ohlsdorf		Europe	Austria	Upper Austria	Ohlsdorf
+Europe	Austria	Regau		Europe	Austria	Upper Austria	Regau
+Europe	Austria	Schwanenstadt		Europe	Austria	Upper Austria	Schwanenstadt
+Europe	Austria	St.Georgen Im Attergau		Europe	Austria	Upper Austria	St. Georgen Im Attergau
+Europe	Austria	Timelkam		Europe	Austria	Upper Austria	Timelkam
+Europe	Austria	Vöcklamarkt		Europe	Austria	Upper Austria	Vöcklamarkt
+Europe	Austria	Weyregg Am Attersee		Europe	Austria	Upper Austria	Weyregg Am Attersee
+Europe	Austria	Zell Am Moos		Europe	Austria	Upper Austria	Zell Am Moos
 Europe	Romania	Lalomita	*	Europe	Romania	Ialomița	*
 Europe	Romania	Ialomita	*	Europe	Romania	Ialomița	*
 Europe	Romania	Targu Mures		Europe	Romania	Mures	Targu Mures
@@ -6535,6 +6567,11 @@ Europe	Croatia	The City of Zagreb		Europe	Croatia	Zagreb	Zagreb
 Europe	Croatia	Zagreb County		Europe	Croatia	Zagreb	
 Europe	Croatia	Osijek		Europe	Croatia	Osijek-Baranja	Osijek
 Europe	Croatia	Šibenik-Knin County	*	Europe	Croatia	Sibenik-Knin County	*
+Europe	Estonia	Central Estonia	*	Europe	Estonia	Estonia	*
+Europe	Estonia	North-Eastern Estonia	*	Europe	Estonia	Estonia	*
+Europe	Estonia	Northern Estonia	*	Europe	Estonia	Estonia	*
+Europe	Estonia	Southern Estonia	*	Europe	Estonia	Estonia	*
+Europe	Estonia	Western Estonia	*	Europe	Estonia	Estonia	*
 Asia	Taiwan	Taipei		Asia	Taiwan	Taiwan	Taipei
 Asia	Taiwan	Taoyuan		Asia	Taiwan	Taiwan	Taoyuan
 Asia	Taiwan	Kaohsiung		Asia	Taiwan	Taiwan	Kaohsiung
@@ -6706,6 +6743,8 @@ Asia	Indonesia	Tangerang Selatan		Asia	Indonesia	Banten	South Tangerang
 Asia	Indonesia	Jawa Barat	*	Asia	Indonesia	West Java	*
 Asia	Indonesia	Yogjakarta	*	Asia	Indonesia	Yogyakarta	*
 Asia	Indonesia	Center Java	*	Asia	Indonesia	Central Java	*
+Asia	Indonesia	South Sumatera	*	Asia	Indonesia	South Sumatra	*
+Asia	Indonesia	North Sumatera	*	Asia	Indonesia	North Sumatra	*
 Asia	Sri Lanka	Kk	*	Asia	Sri Lanka	Sri Lanka	*
 Asia	Sri Lanka	Beruwala		Asia	Sri Lanka	Kalutara	Beruwala
 Asia	Sri Lanka	Vaviniya	*	Asia	Sri Lanka	Vavuniya	*
@@ -6734,6 +6773,7 @@ Asia	Georgia	Georgia	*	Asia	Georgia	Georgia (Europe)	*
 Asia	Bangladeah	*	*	Asia	Bangladesh	*	*
 Asia	Japan	Kyushu	Nagasaki	Asia	Japan	Nagasaki	
 Asia	Japan	Kyusyu	*	Asia	Japan	Kyushu	*
+Asia	Lebanon	Middle East		Asia	Lebanon	Lebanon	
 North America	Mexico	Baja California sur	*	North America	Mexico	Baja California Sur	*
 North America	Mexico	Coahuila de Zaragoza	*	North America	Mexico	Coahuila	*
 North America	Mexico	Ciudad de Mexico	*	North America	Mexico	Mexico City	*
@@ -6787,6 +6827,8 @@ North America	USA	Illinois	Fulton County, Il	North America	USA	Illinois	Fulton C
 North America	USA	Illinois	Schuyler County, Il	North America	USA	Illinois	Schuyler County
 North America	USA	Illinois	Mchenry County	North America	USA	Illinois	McHenry County
 North America	USA	Illinois	Mcdonough County	North America	USA	Illinois	McDonough County
+North America	USA	Illinois	Jefferson County	North America	USA	Illinois	Jefferson County IL
+North America	USA	Illinois	Lake County	North America	USA	Illinois	Lake County IL
 North America	USA	Wisconsin	Monroe County	North America	USA	Wisconsin	Monroe County WI
 North America	USA	Wisconsin	Richland County	North America	USA	Wisconsin	Richland County WI
 North America	USA	Wisconsin	Grant County	North America	USA	Wisconsin	Grant County WI
@@ -6815,8 +6857,9 @@ North America	USA	Wisconsin	Green	North America	USA	Wisconsin	Green County
 North America	USA	Wisconsin	Chippewa	North America	USA	Wisconsin	Chippewa County WI
 North America	USA	Wisconsin	Pierce	North America	USA	Wisconsin	Pierce County WI
 North America	USA	Wisconsin	Sawyer	North America	USA	Wisconsin	Sawyer County
-North America	USA	Wisconsin	Columbia	North America	USA	Wisconsin	Columbia County
+North America	USA	Wisconsin	Columbia	North America	USA	Wisconsin	Columbia County WI
 North America	USA	Wisconsin	Doge County	North America	USA	Wisconsin	Dodge County
+North America	USA	Wisconsin	Columbia County	North America	USA	Wisconsin	Columbia County WI
 North America	USA	Ohio	Columbus	North America	USA	Ohio	Columbus OH
 North America	USA	Ohio	Franklin County	North America	USA	Ohio	Franklin County OH
 North America	USA	Ohio	Colombus	North America	USA	Ohio	Columbus OH
@@ -6879,6 +6922,9 @@ North America	USA	Arizona	Pima Co.	North America	USA	Arizona	Pima County
 North America	USA	Arizona	Navajo Co.	North America	USA	Arizona	Navajo County
 North America	USA	Arizona	Coconino Co.	North America	USA	Arizona	Coconino County
 North America	USA	Indiana	Marion County	North America	USA	Indiana	Marion County IN
+North America	USA	Indiana	Lake County	North America	USA	Indiana	Lake County IN
+North America	USA	Indiana	Jefferson County	North America	USA	Indiana	Jefferson County IN
+North America	USA	Indiana	Johnson County	North America	USA	Indiana	Johnson County IN
 North America	USA	California	Orange County	North America	USA	California	Orange County CA
 North America	USA	California	Kings County	North America	USA	California	Kings County CA
 North America	USA	California	Lake County	North America	USA	California	Lake County CA
@@ -6933,6 +6979,7 @@ North America	USA	Oregon	Willsonville	North America	USA	Oregon	Wilsonville
 North America	USA	Oregon	Sharidan	North America	USA	Oregon	Sheridan
 North America	USA	Oregon	Union County	North America	USA	Oregon	Union County OR
 North America	USA	Oregon	Clackamas	North America	USA	Oregon	Clackamas County
+North America	USA	Oregon	Jefferson County	North America	USA	Oregon	Jefferson County OR
 North America	USA	Texas	Houston County	North America	USA	Texas	Harris County
 North America	USA	Texas	Washington County	North America	USA	Texas	Washington County TX
 North America	USA	Texas	Williamson County	North America	USA	Texas	Williamson County TX
@@ -7024,6 +7071,7 @@ North America	USA	Texas	Calhoun	North America	USA	Texas	Calhoun County TX
 North America	USA	Texas	Moris	North America	USA	Texas	Morris County TX
 North America	USA	Texas	Lorena	North America	USA	Texas	Lorena TX
 North America	USA	Texas	Georgetown	North America	USA	Texas	Georgetown TX
+North America	USA	Texas	Willacy	North America	USA	Texas	Willacy County
 North America	USA	Louisiana	Desoto Parish	North America	USA	Louisiana	DeSoto Parish
 North America	USA	Louisiana	St. Tammany Parish	North America	USA	Louisiana	St Tammany Parish
 North America	USA	Louisiana	St. Bernard Parish	North America	USA	Louisiana	St Bernard Parish
@@ -7081,6 +7129,9 @@ North America	USA	Idaho	Madison County	North America	USA	Idaho	Madison County ID
 North America	USA	Nevada	Clark County	North America	USA	Nevada	Clark County NV
 North America	USA	Nevada	Douglas County	North America	USA	Nevada	Douglas County NV
 North America	USA	Nevada	Casron	North America	USA	Nevada	Carson
+North America	USA	Nevada	Chico	North America	USA	California	Butte County
+North America	USA	Nevada	Washoe	North America	USA	Nevada	Washoe County
+North America	USA	Nevada	Clark	North America	USA	Nevada	Clark County NV
 North America	USA	Nebraska	Lancaster County	North America	USA	Nebraska	Lancaster County NE
 North America	USA	Hawaii	Hawaii County Hi	North America	USA	Hawaii	Hawaii County
 North America	USA	Hawaii	Honolulu County Hi	North America	USA	Hawaii	Honolulu County
@@ -7182,6 +7233,7 @@ North America	USA	*	Distrsict of Columbia County	North America	USA	*	District of
 North America	USA	District of Columbia	*	North America	USA	Washington DC	*
 North America	USA	Maryland	Mdh	North America	USA	Maryland	
 North America	USA	Maryland	Prince George'S County	North America	USA	Maryland	Prince George's County
+North America	USA	Maryland	Montgomery County	North America	USA	Maryland	Montgomery County MD
 North America	USA	New York County	*	North America	USA	New York	*
 North America	USA	Tennessee	Shelby	North America	USA	Tennessee	Shelby County
 North America	USA	Missourintana	*	North America	USA	Missouri	*
@@ -7204,9 +7256,11 @@ North America	Costa Rica	San Jose	Santiago	North America	Costa Rica	San Jose	San
 North America	Costa Rica	San Jose	San Pedro	North America	Costa Rica	San Jose	San Pedro CR
 North America	Costa Rica	San Jose	Pitaya	North America	Costa Rica	San Jose	Pitahaya
 North America	Costa Rica	San Jose	San Isidro del General	North America	Costa Rica	San Jose	San Isidro de El General
+North America	Costa Rica	San Jose	San Felipe	North America	Costa Rica	San Jose	San Felipe CR
 North America	Costa Rica	Puntarenas	Canoas	North America	Costa Rica	Puntarenas	Canoas CR
 North America	Costa Rica	Cartago CR	San Rafael	North America	Costa Rica	Cartago CR	San Rafael Cartago
 North America	Costa Rica	Cartago CR	San Francisco O Agua Caliente	North America	Costa Rica	Cartago CR	Aguacaliente
+North America	Costa Rica	Cartago CR	San Ramon	North America	Costa Rica	Cartago CR	San Ramon CR
 North America	Panama	Panama Center	San Francisco	North America	Panama	Panama Center	San Francisco PA
 North America	Panama	Panama Center	Clayton	North America	Panama	Panama Center	Clayton PA
 North America	Panama	Panama Center	Mañanitas	North America	Panama	Panama Center	Las Mañanitas
@@ -7256,6 +7310,7 @@ South America	Brazil	São Paulo	Santa Barbara D Oeste	South America	Brazil	São 
 South America	Brazil	São Paulo	Cesario Lage	South America	Brazil	São Paulo	Cesário Lange
 South America	Brazil	São Paulo	Embu	South America	Brazil	São Paulo	Embu Das Artes
 South America	Brazil	São Paulo	Lorena	South America	Brazil	São Paulo	Lorena BR
+South America	Brazil	São Paulo	Vera Cruz	South America	Brazil	São Paulo	Vera Cruz (São Paulo)
 South America	Brazil	Paraíba	*	South America	Brazil	Paraiba	*
 South America	Brazil	Rio de Janeiro	Nova Iguaçu	South America	Brazil	Rio de Janeiro	Nova Iguacu
 South America	Brazil	Rio de Janeiro	São Gonçalo	South America	Brazil	Rio de Janeiro	Sao Goncalo
@@ -7266,6 +7321,11 @@ South America	Brazil	Rio de Janeiro	Três Rios	South America	Brazil	Rio de Janei
 South America	Brazil	Rio Grande do Sul	Torres	South America	Brazil	Rio Grande do Sul	Torres BR
 South America	Brazil	Rio Grande do Sul	Canoas	South America	Brazil	Rio Grande do Sul	Canoas BR
 South America	Brazil	Rio Grande do Sul	Nanuque	South America	Brazil	Rio Grande do Sul	
+South America	Brazil	Rio Grande do Sul	Vera Cruz	South America	Brazil	Rio Grande do Sul	Vera Cruz (Rio Grande do Sul)
+South America	Brazil	Rio Grande do Sul	Sao Leopoldo	South America	Brazil	Rio Grande do Sul	São Leopoldo
+South America	Brazil	Rio Grande do Sul	Sao Domingos do Sul	South America	Brazil	Rio Grande do Sul	São Domingos do Sul
+South America	Brazil	Rio Grande do Sul	Nao-Me-Toque	South America	Brazil	Rio Grande do Sul	Não-Me-Toque
+South America	Brazil	Rio Grande do Sul	Quarai	South America	Brazil	Rio Grande do Sul	Quaraí
 South America	Brazil	Sao Paulo	Sao Paulo	South America	Brazil	São Paulo	São Paulo
 South America	Brazil	Sao Paulo	Sao Matetus	South America	Brazil	São Paulo	Sao Mateus
 South America	Brazil	Sao Paulo	São Jose Dos Campo	South America	Brazil	São Paulo	Sao Jose Dos Campos
@@ -7298,7 +7358,8 @@ South America	Argentina	Rio Negro	Ing. Huergo	South America	Argentina	Rio Negro	
 South America	Ecuador	Quito		South America	Ecuador	Pichincha	Quito
 South America	Ecuador	Guayaquil		South America	Ecuador	Guayas	Guayaquil
 South America	Ecuador	Carchi	Reciento	South America	Ecuador	Carchi	Awa Reserve
-South America	Ecuador	Los Rios	Valencia	South America	Ecuador	Los Rios	Valencia EC
+South America	Ecuador	Los Rios	Valencia	South America	Ecuador	Los Rios EC	Valencia EC
+South America	Ecuador	Los Rios	*	South America	Ecuador	Los Rios EC	*
 South America	Ecuador	Bolivar	*	South America	Ecuador	Bolivar EC	*
 South America	Ecuador	Azuay	Cuenca	South America	Ecuador	Azuay	Cuenca EC
 South America	Ecuador	Imbabura	San Pablo	South America	Ecuador	Imbabura	San Pablo EC
@@ -7319,6 +7380,11 @@ South America	Chile	Libertador General Bernardo O'Higgins	*	South America	Chile	
 South America	Chile	Puerto Montt		South America	Chile	Los Lagos	Puerto Montt
 South America	Chile	Santiago	*	South America	Chile	Region Metropolitana de Santiago	*
 South America	Chile	Araucania	*	South America	Chile	Araucanía	*
+South America	Chile	Los Rios	*	South America	Chile	Los Rios CL	*
+South America	Chile	Arica y Parinacota	*	South America	Chile	Arica and Parinacota	*
+South America	Chile	Nuble	*	South America	Chile	Ñuble	*
+South America	Chile	Region Metropolitana de Santiago	San Ramon	South America	Chile	Region Metropolitana de Santiago	San Ramon CL
+South America	Chile	Valparaiso	San Felipe	South America	Chile	Valparaiso	San Felipe CL
 South America	Colombia	Cundinamarca	Madrid	South America	Colombia	Cundinamarca	Madrid CO
 South America	Colombia	Cundinamarca	Tolemaida	South America	Colombia	Tolima	Tolemaida
 South America	Colombia	Caldas	Pereira	South America	Colombia	Risaralda	Pereira
@@ -7356,6 +7422,7 @@ Oceania	New Zealand	Combined Auckland	*	Oceania	New Zealand	Auckland	*
 Oceania	New Zealand	Capital and Coast		Oceania	New Zealand	Wellington	Capital and Coast
 Oceania	New Zealand	Hutt Valley		Oceania	New Zealand	Wellington	Hutt Valley
 Oceania	New Zealand	Counties Manukau		Oceania	New Zealand	Auckland	Counties Manukau
+Oceania	USA	Northern Mariana Islands	*	North America	USA	Northern Mariana Islands	*
 Africa	Senegal	Saint-Louis	*	Africa	Senegal	St-Louis	*
 Africa	Senegal	Pikine		Africa	Senegal	Dakar	Pikine
 Africa	South Africa	Western Cape	Northern	Africa	South Africa	Northern Cape	
@@ -7498,6 +7565,7 @@ Israel	Asia	Southern		Asia	Israel	South District
 *	*	*	Barcelona H	*	*	*	Barcelona
 *	*	*	Foreigner	*	*	*	
 *	*	*	Unknown County	*	*	*	
+*	*	*	Brak Informacji	*	*	*	
 *	*	Nw	*	*	*	North-West	*
 *	*	Ec	*	*	*	Eastern Cape	*
 *	*	Gp	*	*	*	Gauteng	*
@@ -7554,19 +7622,3 @@ Israel	Asia	Southern		Asia	Israel	South District
 Asian	*	*	*	Asia	*	*	*
 North-America	*	*	*	North America	*	*	*
 Afrique	*	*	*	Africa	*	*	*
-North America	USA	Illinois	Jefferson County	North America	USA	Illinois	Jefferson County IL
-North America	USA	Illinois	Lake County	North America	USA	Illinois	Lake County IL
-North America	USA	Maryland	Montgomery County	North America	USA	Maryland	Montgomery County MD
-North America	USA	Indiana	Lake County	North America	USA	Indiana	Lake County IN
-North America	USA	Indiana	Jefferson County	North America	USA	Indiana	Jefferson County IN
-North America	USA	Nevada	Chico	North America	USA	California	Butte County
-Europe	Belgium	Province		Europe	Belgium	Belgium	
-Europe	Belgium	Luxemburg	*	Europe	Belgium	Luxembourg BE	*
-Europe	Poland	Podlaskie	Bielsk Podlaski	Europe	Poland	Podlaskie	Bielsk Podlaski
-Europe	Spain	Cataluna	*	Europe	Spain	Catalunya	*
-Asia	Lebanon	Middle East		Asia	Lebanon	Lebanon	
-Europe	Estonia	Central Estonia	*	Europe	Estonia	Estonia	*
-Europe	Estonia	North-Eastern Estonia	*	Europe	Estonia	Estonia	*
-Europe	Estonia	Northern Estonia	*	Europe	Estonia	Estonia	*
-Europe	Estonia	Southern Estonia	*	Europe	Estonia	Estonia	*
-Europe	Estonia	Western Estonia	*	Europe	Estonia	Estonia	*
