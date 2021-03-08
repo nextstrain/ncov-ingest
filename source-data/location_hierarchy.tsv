@@ -80,6 +80,7 @@ Africa	Equatorial Guinea	Litoral	Bata
 Africa	Equatorial Guinea	Litoral	Mbini
 Africa	Equatorial Guinea	Wele Nzas	
 Africa	Equatorial Guinea	Wele Nzas	Nsork
+Africa	Ethiopia	Addis Ababa	
 Africa	Ethiopia	Ethiopia	
 Africa	Gabon	Libreville	
 Africa	Gambia	Gambia	
@@ -648,6 +649,7 @@ Asia	Indonesia	Center Kalimantan
 Asia	Indonesia	Central Java	
 Asia	Indonesia	Central Java	Purwokerto
 Asia	Indonesia	East Java	
+Asia	Indonesia	East Java	Gresik
 Asia	Indonesia	East Java	Pasuruan
 Asia	Indonesia	East Java	Purwokerto
 Asia	Indonesia	East Java	Sidoarjo
@@ -1154,20 +1156,36 @@ Europe	Austria	Tyrol	Zams
 Europe	Austria	Upper Austria	
 Europe	Austria	Upper Austria	Altenhof Am Hausruck
 Europe	Austria	Upper Austria	Altmünster
+Europe	Austria	Upper Austria	Attersee
 Europe	Austria	Upper Austria	Attnang-Puchheim
+Europe	Austria	Upper Austria	Bad Goisern
+Europe	Austria	Upper Austria	Bad Ischl
+Europe	Austria	Upper Austria	Ebensee Am Traunsee
 Europe	Austria	Upper Austria	Eferding
+Europe	Austria	Upper Austria	Fornach
+Europe	Austria	Upper Austria	Frankenburg Am Hausruck
 Europe	Austria	Upper Austria	Freistadt
 Europe	Austria	Upper Austria	Gmunden
 Europe	Austria	Upper Austria	Grieskirchen
 Europe	Austria	Upper Austria	Gunskirchen
 Europe	Austria	Upper Austria	Haizing
 Europe	Austria	Upper Austria	Hochficht
+Europe	Austria	Upper Austria	Laakirchen
 Europe	Austria	Upper Austria	Linz
 Europe	Austria	Upper Austria	Linz-Land
 Europe	Austria	Upper Austria	Losenstein
+Europe	Austria	Upper Austria	Neukirchen
+Europe	Austria	Upper Austria	Ohlsdorf
+Europe	Austria	Upper Austria	Regau
+Europe	Austria	Upper Austria	Schwanenstadt
+Europe	Austria	Upper Austria	St. Georgen Im Attergau
+Europe	Austria	Upper Austria	Timelkam
 Europe	Austria	Upper Austria	Vöcklabruck
+Europe	Austria	Upper Austria	Vöcklamarkt
 Europe	Austria	Upper Austria	Wels-Land
 Europe	Austria	Upper Austria	Wels-Stadt
+Europe	Austria	Upper Austria	Weyregg Am Attersee
+Europe	Austria	Upper Austria	Zell Am Moos
 Europe	Austria	Vienna	
 Europe	Austria	Vienna	Vienna
 Europe	Austria	Vorarlberg	
@@ -1347,6 +1365,7 @@ Europe	Belgium	Diksmuide	Kortemark
 Europe	Belgium	Diksmuide	Lo-Reninge
 Europe	Belgium	Diksmuide	Zarren
 Europe	Belgium	Dinant	
+Europe	Belgium	Dinant	Achêne
 Europe	Belgium	Dinant	Alle
 Europe	Belgium	Dinant	Beauraing
 Europe	Belgium	Dinant	Ciney
@@ -1393,6 +1412,7 @@ Europe	Belgium	Halle-Vilvoorde	Hoeilaart
 Europe	Belgium	Halle-Vilvoorde	Hofstade
 Europe	Belgium	Halle-Vilvoorde	Huizingen
 Europe	Belgium	Halle-Vilvoorde	Humbeek
+Europe	Belgium	Halle-Vilvoorde	Itterbeek
 Europe	Belgium	Halle-Vilvoorde	Kampenhout
 Europe	Belgium	Halle-Vilvoorde	Kraainem
 Europe	Belgium	Halle-Vilvoorde	Linkebeek
@@ -1690,6 +1710,7 @@ Europe	Belgium	Namur	Sambreville
 Europe	Belgium	Namur	Spy
 Europe	Belgium	Namur	Temploux
 Europe	Belgium	Namur	Éghezée
+Europe	Belgium	Namur	Émines
 Europe	Belgium	Namur	Évelette
 Europe	Belgium	Neufchâteau	
 Europe	Belgium	Neufchâteau	Saint-Hubert
@@ -1897,6 +1918,7 @@ Europe	Belgium	Verviers	Henri-Chapelle
 Europe	Belgium	Verviers	Herve
 Europe	Belgium	Verviers	Kelmis
 Europe	Belgium	Verviers	Limbourg BE
+Europe	Belgium	Verviers	Lontzen
 Europe	Belgium	Verviers	Malmedy
 Europe	Belgium	Verviers	Membach
 Europe	Belgium	Verviers	Theux
@@ -2125,6 +2147,7 @@ Europe	France	Auvergne-Rhône-Alpes
 Europe	France	Auvergne-Rhône-Alpes	Andrezieux-Boutheon
 Europe	France	Auvergne-Rhône-Alpes	Andrézieux-Bouthéon
 Europe	France	Auvergne-Rhône-Alpes	Annemasse
+Europe	France	Auvergne-Rhône-Alpes	Annonay
 Europe	France	Auvergne-Rhône-Alpes	Bourg-en-Bresse
 Europe	France	Auvergne-Rhône-Alpes	Bourgoin-Jallieu
 Europe	France	Auvergne-Rhône-Alpes	Chambery
@@ -2164,10 +2187,12 @@ Europe	France	Auvergne-Rhône-Alpes	Voiron
 Europe	France	Bourgogne	
 Europe	France	Bourgogne	Dijon
 Europe	France	Bourgogne-France-Comté	
+Europe	France	Bourgogne-France-Comté	Auxerre
 Europe	France	Bourgogne-France-Comté	Besancon
 Europe	France	Bourgogne-France-Comté	Brognard
 Europe	France	Bourgogne-France-Comté	Chalon sur Saone
 Europe	France	Bourgogne-France-Comté	Dijon
+Europe	France	Bourgogne-France-Comté	Macon
 Europe	France	Bourgogne-France-Comté	Montcenis
 Europe	France	Bourgogne-France-Comté	Montreux-Chateau
 Europe	France	Bourgogne-France-Comté	Nevers
@@ -2291,6 +2316,7 @@ Europe	France	Hauts de France	Calais
 Europe	France	Hauts de France	Cambrai
 Europe	France	Hauts de France	Chateau-Thierry
 Europe	France	Hauts de France	Compiègne
+Europe	France	Hauts de France	Coquelles
 Europe	France	Hauts de France	Crespin
 Europe	France	Hauts de France	Crouy en Thelle
 Europe	France	Hauts de France	Crépy en Valois
@@ -2398,13 +2424,18 @@ Europe	France	Normandie	Saint Valery en Caux
 Europe	France	Normandie	Yquelon
 Europe	France	Nouvelle-Aquitaine	
 Europe	France	Nouvelle-Aquitaine	Anglet
+Europe	France	Nouvelle-Aquitaine	Blaye
 Europe	France	Nouvelle-Aquitaine	Bordeaux
+Europe	France	Nouvelle-Aquitaine	Dax
 Europe	France	Nouvelle-Aquitaine	Gueret
 Europe	France	Nouvelle-Aquitaine	La Brède
+Europe	France	Nouvelle-Aquitaine	Langon
+Europe	France	Nouvelle-Aquitaine	Le Haillan
 Europe	France	Nouvelle-Aquitaine	Limoges
 Europe	France	Nouvelle-Aquitaine	Notre-Dame-de-Sanilhac
 Europe	France	Nouvelle-Aquitaine	Pau
 Europe	France	Nouvelle-Aquitaine	Poitiers
+Europe	France	Nouvelle-Aquitaine	Pons
 Europe	France	Nouvelle-Aquitaine	Saint-Paul-lès-Dax
 Europe	France	Nouvelle-Aquitaine	Saintes
 Europe	France	Occitanie	
@@ -2677,9 +2708,22 @@ Europe	Italy	Marche
 Europe	Italy	Marche	Ancona
 Europe	Italy	Molise	
 Europe	Italy	Molise	Campobasso
+Europe	Italy	Molise	Colle d'Anchise
 Europe	Italy	Molise	Colletorto
 Europe	Italy	Molise	Frosolone
+Europe	Italy	Molise	Guglionesi
 Europe	Italy	Molise	Isernia
+Europe	Italy	Molise	Macchiagodena
+Europe	Italy	Molise	Montefalcone nel Sannio
+Europe	Italy	Molise	Montemitro
+Europe	Italy	Molise	Palata
+Europe	Italy	Molise	Petacciato
+Europe	Italy	Molise	Pietracatella
+Europe	Italy	Molise	Portocannone
+Europe	Italy	Molise	Sant'Elia a Pianisi
+Europe	Italy	Molise	Santa Croce di Magliano
+Europe	Italy	Molise	Termoli
+Europe	Italy	Molise	Vinchiaturo
 Europe	Italy	Pa Trento	
 Europe	Italy	Piedmont	
 Europe	Italy	Piedmont	Turin
@@ -2904,6 +2948,34 @@ Europe	Poland	Mazowieckie	Sokolow Podlaski
 Europe	Poland	Mazowieckie	Warszawa
 Europe	Poland	Opolskie	
 Europe	Poland	Podkarpackie	
+Europe	Poland	Podlaskie	
+Europe	Poland	Podlaskie	Białystok
+Europe	Poland	Podlaskie	Bielsk Podlaski
+Europe	Poland	Podlaskie	Boćki
+Europe	Poland	Podlaskie	Chodorówka Stara
+Europe	Poland	Podlaskie	Czarna Białostocka
+Europe	Poland	Podlaskie	Czyżew
+Europe	Poland	Podlaskie	Dryga
+Europe	Poland	Podlaskie	Gliniszcze Małe
+Europe	Poland	Podlaskie	Grabowiec
+Europe	Poland	Podlaskie	Hamulka
+Europe	Poland	Podlaskie	Knyszyn
+Europe	Poland	Podlaskie	Kowale
+Europe	Poland	Podlaskie	Krukowszczyzna
+Europe	Poland	Podlaskie	Kuźnica
+Europe	Poland	Podlaskie	Lipiny
+Europe	Poland	Podlaskie	Nowodziel
+Europe	Poland	Podlaskie	Olendy
+Europe	Poland	Podlaskie	Olmonty
+Europe	Poland	Podlaskie	Popławy
+Europe	Poland	Podlaskie	Rajgród
+Europe	Poland	Podlaskie	Sokółka
+Europe	Poland	Podlaskie	Stary Kamień
+Europe	Poland	Podlaskie	Suwałki
+Europe	Poland	Podlaskie	Szudziałowo
+Europe	Poland	Podlaskie	Twarogi-Mazury
+Europe	Poland	Podlaskie	Wojnowce
+Europe	Poland	Podlaskie	Zawady
 Europe	Poland	Poland	
 Europe	Poland	Pomorskie	
 Europe	Poland	Slask	
@@ -2912,6 +2984,7 @@ Europe	Poland	Swietokrzyskie
 Europe	Poland	Warminsko-Mazurskie	
 Europe	Poland	Warminsko-Mazurskie	Elblaski
 Europe	Poland	Warminsko-Mazurskie	Olsztyn
+Europe	Poland	Warminsko-Mazurskie	Orzysz
 Europe	Poland	Warminsko-Mazurskie	Ostrodzki
 Europe	Poland	Wielkopolskie	
 Europe	Poland	Wielkopolskie	Baranowo
@@ -4334,6 +4407,7 @@ North America	Costa Rica	Cartago CR	San Isidro CR
 North America	Costa Rica	Cartago CR	San Juan
 North America	Costa Rica	Cartago CR	San Rafael Cartago
 North America	Costa Rica	Cartago CR	San Ramon
+North America	Costa Rica	Cartago CR	San Ramon CR
 North America	Costa Rica	Cartago CR	Santa Rosa CR
 North America	Costa Rica	Cartago CR	Tres Rios
 North America	Costa Rica	Cartago CR	Tres Rios CR
@@ -4400,6 +4474,7 @@ North America	Costa Rica	San Jose	Pozos
 North America	Costa Rica	San Jose	Purral
 North America	Costa Rica	San Jose	San Antonio
 North America	Costa Rica	San Jose	San Felipe
+North America	Costa Rica	San Jose	San Felipe CR
 North America	Costa Rica	San Jose	San Francisco de Dos Rios
 North America	Costa Rica	San Jose	San Isidro de El General
 North America	Costa Rica	San Jose	San Jerónimo
@@ -4426,6 +4501,7 @@ North America	Guadeloupe	Le Moule
 North America	Guadeloupe	Les Abymes	
 North America	Guadeloupe	Morne À l'Eau	
 North America	Guadeloupe	Métropole	
+North America	Guadeloupe	Pointe-A-Pitre	
 North America	Guadeloupe	Saint-François	
 North America	Guadeloupe	Sainte-Anne	
 North America	Guadeloupe	Sainte-Rose	
@@ -4772,6 +4848,7 @@ North America	USA	Hawaii	Kauai County
 North America	USA	Hawaii	Maui County
 North America	USA	Howland Island	
 North America	USA	Idaho	
+North America	USA	Idaho	Ada County
 North America	USA	Idaho	Kootenai County
 North America	USA	Idaho	Madison County
 North America	USA	Idaho	Madison County ID
@@ -4864,6 +4941,7 @@ North America	USA	Indiana
 North America	USA	Indiana	Elkhart County
 North America	USA	Indiana	Indianapolis
 North America	USA	Indiana	Jefferson County IN
+North America	USA	Indiana	Johnson County IN
 North America	USA	Indiana	Lake County IN
 North America	USA	Indiana	Marion County IN
 North America	USA	Indiana	Tippecanoe County
@@ -4951,6 +5029,7 @@ North America	USA	Montana	Belgrade
 North America	USA	Montana	Big Sky
 North America	USA	Montana	Bozeman
 North America	USA	Montana	Ennis
+North America	USA	Montana	Lewis and Clark County
 North America	USA	Montana	Ravalli County
 North America	USA	Montana	West Yellowstone
 North America	USA	Navassa Island	
@@ -5081,6 +5160,7 @@ North America	USA	New York	Yates County
 North America	USA	North Carolina	
 North America	USA	North Carolina	Mecklenburg County
 North America	USA	North Dakota	
+North America	USA	Northern Mariana Islands	
 North America	USA	Ohio	
 North America	USA	Ohio	Cincinnati
 North America	USA	Ohio	Columbus OH
@@ -5098,6 +5178,8 @@ North America	USA	Oregon	Deschutes County
 North America	USA	Oregon	Douglas County OR
 North America	USA	Oregon	Hood River County
 North America	USA	Oregon	Jackson County OR
+North America	USA	Oregon	Jefferson County OR
+North America	USA	Oregon	Josephine County
 North America	USA	Oregon	Klamath County
 North America	USA	Oregon	Klamath Falls
 North America	USA	Oregon	Lake Oswego
@@ -5279,6 +5361,7 @@ North America	USA	Texas	Webb County
 North America	USA	Texas	Wharton County
 North America	USA	Texas	Wheeler County
 North America	USA	Texas	Wichita County
+North America	USA	Texas	Willacy County
 North America	USA	Texas	Williamson County
 North America	USA	Texas	Williamson County TX
 North America	USA	Texas	Wilson County
@@ -5638,6 +5721,7 @@ South America	Brazil	Mato Grosso do Sul	Nova Andradina
 South America	Brazil	Mato Grosso do Sul	Ponta Pora
 South America	Brazil	Mato Grosso do Sul	Rondonopolis
 South America	Brazil	Mato Grosso do Sul	Selviria
+South America	Brazil	Mato Grosso do Sul	Sete Quedas
 South America	Brazil	Mato Grosso do Sul	Sidrolandia
 South America	Brazil	Mato Grosso do Sul	Sonora
 South America	Brazil	Mato Grosso do Sul	Tres Lagoas
@@ -5791,6 +5875,7 @@ South America	Brazil	Rio Grande do Sul	Tres Passos
 South America	Brazil	Rio Grande do Sul	Tupandi
 South America	Brazil	Rio Grande do Sul	Venancio Aires
 South America	Brazil	Rio Grande do Sul	Vera Cruz
+South America	Brazil	Rio Grande do Sul	Vera Cruz (Rio Grande do Sul)
 South America	Brazil	Rio Grande do Sul	Viamao
 South America	Brazil	Rio Grande do Sul	Vista Gaucha
 South America	Brazil	Rio de Janeiro	
@@ -5841,6 +5926,7 @@ South America	Brazil	Sergipe	Tomar do Geru
 South America	Brazil	São Paulo	
 South America	Brazil	São Paulo	Adamantina
 South America	Brazil	São Paulo	Aguas de Santa Barbara
+South America	Brazil	São Paulo	Alvares Machado
 South America	Brazil	São Paulo	Americana
 South America	Brazil	São Paulo	Amparo
 South America	Brazil	São Paulo	Andradina
@@ -5871,6 +5957,7 @@ South America	Brazil	São Paulo	Cubatao
 South America	Brazil	São Paulo	Cunha
 South America	Brazil	São Paulo	Diadema
 South America	Brazil	São Paulo	Dois Corregos
+South America	Brazil	São Paulo	Dracena
 South America	Brazil	São Paulo	Echapora
 South America	Brazil	São Paulo	Embu Das Artes
 South America	Brazil	São Paulo	Embu-Guacu
@@ -5879,6 +5966,7 @@ South America	Brazil	São Paulo	Ermelino Matarazzo
 South America	Brazil	São Paulo	Estrela do Norte
 South America	Brazil	São Paulo	Euclides Da Cunha Paulista
 South America	Brazil	São Paulo	Fernandopolis
+South America	Brazil	São Paulo	Garca
 South America	Brazil	São Paulo	Guararema
 South America	Brazil	São Paulo	Guarujá
 South America	Brazil	São Paulo	Guarulhos
@@ -5905,12 +5993,15 @@ South America	Brazil	São Paulo	Lorena
 South America	Brazil	São Paulo	Lorena BR
 South America	Brazil	São Paulo	Mairipora
 South America	Brazil	São Paulo	Marilia
+South America	Brazil	São Paulo	Martinopolis
 South America	Brazil	São Paulo	Maua
 South America	Brazil	São Paulo	Mococa
 South America	Brazil	São Paulo	Mogi Das Cruzes
 South America	Brazil	São Paulo	Mogi-Guacu
 South America	Brazil	São Paulo	Mongagua
+South America	Brazil	São Paulo	Narandiba
 South America	Brazil	São Paulo	Nova Odessa
+South America	Brazil	São Paulo	Oriente
 South America	Brazil	São Paulo	Osasco
 South America	Brazil	São Paulo	Ourinhos
 South America	Brazil	São Paulo	Ouro Verde
@@ -5919,11 +6010,18 @@ South America	Brazil	São Paulo	Peruibe
 South America	Brazil	São Paulo	Pindamonhangaba
 South America	Brazil	São Paulo	Piracaia
 South America	Brazil	São Paulo	Piracicaba
+South America	Brazil	São Paulo	Pirapozinho
 South America	Brazil	São Paulo	Poa
 South America	Brazil	São Paulo	Porto Feliz
+South America	Brazil	São Paulo	Porto Ferreira
+South America	Brazil	São Paulo	Praia Grande
+South America	Brazil	São Paulo	Presidente Bernardes
 South America	Brazil	São Paulo	Presidente Epitacio
 South America	Brazil	São Paulo	Presidente Prudente
 South America	Brazil	São Paulo	Presidente Venceslau
+South America	Brazil	São Paulo	Quintana
+South America	Brazil	São Paulo	Regente Feijo
+South America	Brazil	São Paulo	Ribeirao Dos Indios
 South America	Brazil	São Paulo	Ribeirao Pires
 South America	Brazil	São Paulo	Ribeirao Preto
 South America	Brazil	São Paulo	Ribeirao do Sul
@@ -5931,6 +6029,7 @@ South America	Brazil	São Paulo	Rio Claro
 South America	Brazil	São Paulo	Rio Grande Da Serra
 South America	Brazil	São Paulo	Rio Pardo
 South America	Brazil	São Paulo	Rio Verde
+South America	Brazil	São Paulo	Sandovalina
 South America	Brazil	São Paulo	Santa Barbara D'Oeste
 South America	Brazil	São Paulo	Santa Cruz do Rio Pardo
 South America	Brazil	São Paulo	Santa Isabel
@@ -5942,6 +6041,7 @@ South America	Brazil	São Paulo	Sao Bernardo do Campo
 South America	Brazil	São Paulo	Sao Caetano do Sul
 South America	Brazil	São Paulo	Sao Jose Dos Campos
 South America	Brazil	São Paulo	Sao Mateus
+South America	Brazil	São Paulo	Sao Pedro do Turvo
 South America	Brazil	São Paulo	Sao Sebastiao
 South America	Brazil	São Paulo	Sao Vicente
 South America	Brazil	São Paulo	Sete Barras
@@ -5952,6 +6052,7 @@ South America	Brazil	São Paulo	São Paulo
 South America	Brazil	São Paulo	Taboao Da Serra
 South America	Brazil	São Paulo	Taciba
 South America	Brazil	São Paulo	Taquaritinga
+South America	Brazil	São Paulo	Tarabai
 South America	Brazil	São Paulo	Taruma
 South America	Brazil	São Paulo	Taubate
 South America	Brazil	São Paulo	Taubate
@@ -5959,6 +6060,7 @@ South America	Brazil	São Paulo	Tupa
 South America	Brazil	São Paulo	Uru
 South America	Brazil	São Paulo	Valinhos
 South America	Brazil	São Paulo	Vargem Grande Paulista
+South America	Brazil	São Paulo	Vera Cruz (São Paulo)
 South America	Brazil	Tocantins	
 South America	Brazil	Tocantins	Araguaiana
 South America	Brazil	Tocantins	Araguatins
@@ -5974,6 +6076,9 @@ South America	Chile	Antofagasta
 South America	Chile	Antofagasta	Antofagasta
 South America	Chile	Araucanía	
 South America	Chile	Araucanía	Angol
+South America	Chile	Araucanía	Lautaro
+South America	Chile	Araucanía	Padre las Casas
+South America	Chile	Araucanía	Perquenco
 South America	Chile	Araucanía	Temuco
 South America	Chile	Arica and Parinacota	
 South America	Chile	Arica and Parinacota	Arica
@@ -5994,9 +6099,13 @@ South America	Chile	Biobío
 South America	Chile	Biobío	Concepcion
 South America	Chile	Biobío	Concepcion CL
 South America	Chile	Biobío	Los Angeles
+South America	Chile	Biobío	San Pedro de la Paz
+South America	Chile	Biobío	Talcahuano
 South America	Chile	Coquimbo	
 South America	Chile	Los Lagos	
 South America	Chile	Los Lagos	Puerto Montt
+South America	Chile	Los Rios CL	
+South America	Chile	Los Rios CL	Panguipulli
 South America	Chile	Magallanes	
 South America	Chile	Magallanes	Natales
 South America	Chile	Magallanes	Porvenir
@@ -6004,7 +6113,9 @@ South America	Chile	Magallanes	Puerto Natales
 South America	Chile	Magallanes	Puerto Williams
 South America	Chile	Magallanes	Punta Arenas
 South America	Chile	Maule	
+South America	Chile	Maule	Constitucion
 South America	Chile	Maule	Curico
+South America	Chile	Maule	Maule
 South America	Chile	Maule	Talca
 South America	Chile	O'Higgins	
 South America	Chile	O'Higgins	Lolol
@@ -6015,16 +6126,45 @@ South America	Chile	Region Metropolitana de Santiago
 South America	Chile	Region Metropolitana de Santiago	Buin
 South America	Chile	Region Metropolitana de Santiago	Colina
 South America	Chile	Region Metropolitana de Santiago	Curacavi
+South America	Chile	Region Metropolitana de Santiago	Estacion Central
+South America	Chile	Region Metropolitana de Santiago	Huechuraba
+South America	Chile	Region Metropolitana de Santiago	Independencia
+South America	Chile	Region Metropolitana de Santiago	La Cisterna
+South America	Chile	Region Metropolitana de Santiago	La Florida
+South America	Chile	Region Metropolitana de Santiago	La Granja
+South America	Chile	Region Metropolitana de Santiago	La Pintana
+South America	Chile	Region Metropolitana de Santiago	Las Condes
 South America	Chile	Region Metropolitana de Santiago	Maipu
 South America	Chile	Region Metropolitana de Santiago	Padre Hurtado
+South America	Chile	Region Metropolitana de Santiago	Penaflor
+South America	Chile	Region Metropolitana de Santiago	Penalolen
+South America	Chile	Region Metropolitana de Santiago	Pirque
+South America	Chile	Region Metropolitana de Santiago	Providencia
+South America	Chile	Region Metropolitana de Santiago	Pudahuel
+South America	Chile	Region Metropolitana de Santiago	Puente Alto
 South America	Chile	Region Metropolitana de Santiago	Quilicura
+South America	Chile	Region Metropolitana de Santiago	Recoleta
+South America	Chile	Region Metropolitana de Santiago	Renca
+South America	Chile	Region Metropolitana de Santiago	San Joaquin
+South America	Chile	Region Metropolitana de Santiago	San Jose de Maipo
+South America	Chile	Region Metropolitana de Santiago	San Miguel
+South America	Chile	Region Metropolitana de Santiago	San Ramon CL
 South America	Chile	Region Metropolitana de Santiago	Santiago
 South America	Chile	Region Metropolitana de Santiago	Talagante
+South America	Chile	Region Metropolitana de Santiago	Vitacura
+South America	Chile	Region Metropolitana de Santiago	Ñuñoa
+South America	Chile	Tarapacá	
+South America	Chile	Tarapacá	Iquique
 South America	Chile	Valparaiso	
+South America	Chile	Valparaiso	Con-Con
+South America	Chile	Valparaiso	Limache
 South America	Chile	Valparaiso	Los Andes
+South America	Chile	Valparaiso	San Felipe CL
+South America	Chile	Valparaiso	Valparaiso
 South America	Chile	Valparaiso	Vina del Mar
 South America	Chile	Ñuble	
 South America	Chile	Ñuble	Chillan
+South America	Chile	Ñuble	Treguaco
 South America	Colombia	Antioquia	
 South America	Colombia	Antioquia	Bello
 South America	Colombia	Antioquia	Envigado
@@ -6177,6 +6317,11 @@ South America	Ecuador	Los Rios	Babahoyo
 South America	Ecuador	Los Rios	Quevedo
 South America	Ecuador	Los Rios	Valencia EC
 South America	Ecuador	Los Rios	Ventanas
+South America	Ecuador	Los Rios EC	
+South America	Ecuador	Los Rios EC	Babahoyo
+South America	Ecuador	Los Rios EC	Quevedo
+South America	Ecuador	Los Rios EC	Valencia EC
+South America	Ecuador	Los Rios EC	Ventanas
 South America	Ecuador	Manabi	
 South America	Ecuador	Manabi	Calceta
 South America	Ecuador	Manabi	Chone
