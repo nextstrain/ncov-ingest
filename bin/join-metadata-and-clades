@@ -3,6 +3,7 @@ import argparse
 import sys
 from datetime import datetime
 import pandas as pd
+import numpy as np
 
 INSERT_BEFORE_THIS_COLUMN = "pango_lineage"
 METADATA_JOIN_COLUMN_NAME = 'strain'
