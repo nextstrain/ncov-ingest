@@ -41,16 +41,24 @@ if __name__ == '__main__':
     if args.geo_location_rules :
         # use curated rules to subtitute known spurious locations with correct ones
         with open(args.geo_location_rules,'r') as geo_location_rules_fh :
-            csvreader = csv.reader(geo_location_rules_fh, delimiter='\t')
-            for row in csvreader:
-                if row[0].lstrip()[0] == '#':
+            
+            for line in geo_location_rules_fh :
+
+                if line.lstrip()[0] == '#':
                     continue
-                elif len(row) != 8:
+
+                row = line.strip('\n').split('\t')
+
+                raw,annot = None,None
+                if len(row) == 8:
+                    row[-1] = row[-1].partition('#')[0].rstrip()
+                    raw , annot = tuple( row[:4] ) , tuple( row[4:8] )
+                elif len(row) == 2:
+                    row[-1] = row[-1].partition('#')[0].rstrip()
+                    raw , annot = tuple( row[0].split('/') ) , tuple( row[1].split('/') )
+                else:
                     print("WARNING: couldn't decode annotation line " + "\t".join(row))
                     continue
-                row[-1] = row[-1].partition('#')[0].rstrip()
-                raw , annot = tuple( row[:4] ) , tuple( row[4:8] )
-                # remove the comment and the extra ws from the value
 
                 geoRules.add_user_rule(
                     raw,
