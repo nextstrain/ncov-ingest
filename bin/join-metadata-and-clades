@@ -87,8 +87,9 @@ def main():
     offset = result["Nextstrain_clade"].apply(clade_to_offset)
     div = result["divergence"]
     div[div=='']=np.nan
+    div_array = np.array([x if type(x)==int else np.nan for x in div])
     # calculate divergence
-    result["clock_deviation"] = div.astype(float) - ((t-reference_day)*rate_per_day + offset)
+    result["clock_deviation"] = div_array - ((t-reference_day)*rate_per_day + offset)
 
     for col in column_map.values():
         result[col] = result[col].fillna(VALUE_MISSING_DATA)
