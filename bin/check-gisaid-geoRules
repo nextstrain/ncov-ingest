@@ -35,6 +35,8 @@ if __name__ == '__main__':
     toRemove = set()
 
     args = parser.parse_args()
+    comments = []
+    ruleComments = {}
 
     geoRules = UserProvidedGeoLocationSubstitutionRules()
     if args.geo_location_rules :
@@ -44,6 +46,7 @@ if __name__ == '__main__':
             for line in geo_location_rules_fh:
 
                 if line.lstrip()[0] == '#':
+                    comments.append(line)
                     continue # ignore comments
         
                 row = line.strip('\n').split('\t')
@@ -51,12 +54,22 @@ if __name__ == '__main__':
                 raw,annot = None,None
         
                 if len(row) == 2:
-                    row[-1] = row[-1].partition('#')[0].rstrip()
+                    row[-1] , j , comment = row[-1].partition('#')
+                    row[-1] = row[-1].rstrip()
                     raw , annot = tuple( row[0].split('/') ) , tuple( row[1].split('/') )
+                    if comment != '':
+                        ruleComments[raw] = '#'+comment
+
+
                 elif len(row) == 8:
                     print("WARNING: found a rule line using the old all tabs separators format. This is accepted in that particular script but we do not guarantee it in any other.\nPlease update to region/country/division/location<tab>region/country/division/location.")
-                    row[-1] = row[-1].partition('#')[0].rstrip()
+                    row[-1] , j , comment = row[-1].partition('#')
+                    row[-1] = row[-1].rstrip()
+
                     raw , annot = tuple( row[:4] ) , tuple( row[4:8] )
+                    if comment != '':
+                        ruleComments[raw] = '#'+comment
+
                 else:
                     print("WARNING: couldn't decode rule line " + "\t".join(row))
                     continue
@@ -130,6 +143,8 @@ if __name__ == '__main__':
     if args.output_file :
         print("print non problematic rules to",args.output_file)
         with open(args.output_file,'w') as OUT:
+            for c in comments:
+                print(c,file=OUT, end='')
             for region , countries in geoRules.entries.items():
                 for country , divisions in countries.items():
                     for division , locations in divisions.items():
@@ -137,4 +152,5 @@ if __name__ == '__main__':
                     
                             raw=tuple([region,country,division,location])
                             if not raw in toRemove:
-                                print( '/'.join(raw) , '/'.join(arrival) , sep = '\t' , file = OUT )
+                                comment = ruleComments.get(raw,'')
+                                print( '/'.join(raw) , '/'.join(arrival) + comment , sep = '\t' , file = OUT )
