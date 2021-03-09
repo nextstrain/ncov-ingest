@@ -1,0 +1,125 @@
+#!/usr/bin/env python3
+import sys
+import csv
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent.parent / "lib"))
+from utils.transform import (
+    METADATA_COLUMNS,
+)
+
+from utils.transformpipeline.transforms import UserProvidedGeoLocationSubstitutionRules
+import argparse
+from collections import defaultdict
+
+if __name__ == '__main__':
+    
+
+    parser = argparse.ArgumentParser(
+        description="Parse a file containing substitutions rules for geographic locations and assess if the rules are compatible.",
+        formatter_class=argparse.RawTextHelpFormatter
+    )
+    parser.add_argument("--geo-location-rules", required = True,
+        help="Optional manually curated rules to correct geographical location.\n"
+            "The TSV file should have no header and exactly 8 columns which contain:\n\t"
+            "1. the raw region\n\t"
+            "2. the raw country\n\t"
+            "3. the raw division\n\t"
+            "4. the raw location\n\t"
+            "5. the transformed region\n\t"
+            "6. the transformed country\n\t"
+            "7. the transformed division\n\t"
+            "8. the transformed location\n\t"
+        "Lines or parts of lines starting with '#' are treated as comments.\n"
+        "e.g.\n\t"
+        "Europe Spain   Catalunya   Mataró  Europe  Spain   Catalunya   Mataro\n\t")
+
+
+    args = parser.parse_args()
+
+    geoRules = UserProvidedGeoLocationSubstitutionRules()
+    if args.geo_location_rules :
+        # use curated rules to subtitute known spurious locations with correct ones
+        with open(args.geo_location_rules,'r') as geo_location_rules_fh :
+            csvreader = csv.reader(geo_location_rules_fh, delimiter='\t')
+            for row in csvreader:
+                if row[0].lstrip()[0] == '#':
+                    continue
+                elif len(row) != 8:
+                    print("WARNING: couldn't decode annotation line " + "\t".join(row))
+                    continue
+                row[-1] = row[-1].partition('#')[0].rstrip()
+                raw , annot = tuple( row[:4] ) , tuple( row[4:8] )
+                # remove the comment and the extra ws from the value
+
+                geoRules.add_user_rule(
+                    raw,
+                    annot
+                )
+
+    print('rules read')
+
+    potentiallyGeneral = {}
+    potentiallyGeneralList = defaultdict(list)
+    problemGeneralization = set()
+
+
+    for region , countries in geoRules.entries.items():
+        for country , divisions in countries.items():
+            for division , locations in divisions.items():
+                for location , arrival in locations.items() :
+                    
+                    raw=tuple([region,country,division,location])
+
+                    # We want to detect cases such as 
+                    # a/b/c/d -> a/b/C/d
+                    # in which case we could generalize to a/b/c/* -> a/b/C/*
+                    # NB : in general we want to keep the upper levels in the substitution pattern
+
+                    # finding which fields are candidate to generalization
+                    generalizable = []
+                    for i in [3,2,1,0]:
+                        if raw[i] == arrival[i] and raw[i]!='*':
+                            generalizable.append(i)
+                        else :
+                            break
+
+                    if len(generalizable) > 0 :
+
+                        generalizedRaw = list(raw)
+                        generalizedArrival = list(arrival)
+                        for i in generalizable:
+                            generalizedRaw[i] = '*'
+                            generalizedArrival[i] = '*'
+
+                        generalizedRaw = tuple(generalizedRaw)
+                        generalizedArrival = tuple(generalizedArrival)
+
+
+                        # checking if this generalizable rule is already in conflict with another 
+                        if generalizedRaw in potentiallyGeneral and potentiallyGeneral[generalizedRaw] != generalizedArrival:
+                            problemGeneralization.add( generalizedRaw )
+
+                        # adding this generalized rule to the set
+                        potentiallyGeneral[generalizedRaw] = generalizedArrival
+                        potentiallyGeneralList[generalizedRaw].append( (raw , arrival) )
+
+    print('Generalization assessed.' , len(potentiallyGeneral) - len(problemGeneralization) , 'potential candidates.' )
+
+    sep1='\t'
+    sep2='\t'
+
+    for generalizedRaw,generalizedArrival in potentiallyGeneral.items():
+
+        if generalizedRaw in problemGeneralization: # ignore problem cases where generalization would create conflicts
+            continue
+
+        print('#***')
+        print('#Generalizes',len(potentiallyGeneralList[generalizedRaw]),"rules")
+        print(sep1.join(generalizedRaw),sep1.join(generalizedArrival) , "#GENERAL", sep=sep2 )
+        for generalized in potentiallyGeneralList[generalizedRaw]:
+
+            print('#SPECIFIC',sep1.join(generalized[0]),sep1.join(generalized[1]) , sep=sep2 )
+
+
+
