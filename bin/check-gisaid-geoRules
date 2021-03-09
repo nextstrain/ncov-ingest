@@ -21,18 +21,12 @@ if __name__ == '__main__':
     )
     parser.add_argument("--geo-location-rules", required = True,
         help="Optional manually curated rules to correct geographical location.\n"
-            "The TSV file should have no header and exactly 8 columns which contain:\n\t"
-            "1. the raw region\n\t"
-            "2. the raw country\n\t"
-            "3. the raw division\n\t"
-            "4. the raw location\n\t"
-            "5. the transformed region\n\t"
-            "6. the transformed country\n\t"
-            "7. the transformed division\n\t"
-            "8. the transformed location\n\t"
+            "The TSV file should have no header and exactly 2 columns in the following format:\n\t"
+            "region/country/division/location<tab>region/country/division/location"
         "Lines or parts of lines starting with '#' are treated as comments.\n"
         "e.g.\n\t"
-        "Europe Spain   Catalunya   Mataró  Europe  Spain   Catalunya   Mataro\n\t")
+        "Europe/Spain/Catalunya/Mataró\tEurope/Spain/Catalunya/Mataro\n\t")
+
     parser.add_argument("--output-file",
         help="Output location of a \"cleaned\" substitutions rules file : ie. rules redundant with a more general one are removed.")
 
@@ -46,16 +40,26 @@ if __name__ == '__main__':
     if args.geo_location_rules :
         # use curated rules to subtitute known spurious locations with correct ones
         with open(args.geo_location_rules,'r') as geo_location_rules_fh :
-            csvreader = csv.reader(geo_location_rules_fh, delimiter='\t')
-            for row in csvreader:
-                if row[0].lstrip()[0] == '#':
+
+            for line in geo_location_rules_fh:
+
+                if line.lstrip()[0] == '#':
+                    continue # ignore comments
+        
+                row = line.strip('\n').split('\t')
+        
+                raw,annot = None,None
+        
+                if len(row) == 2:
+                    row[-1] = row[-1].partition('#')[0].rstrip()
+                    raw , annot = tuple( row[0].split('/') ) , tuple( row[1].split('/') )
+                elif len(row) == 8:
+                    print("WARNING: found a rule line using the old all tabs separators format. This is accepted in that particular script but we do not guarantee it in any other.\nPlease update to region/country/division/location<tab>region/country/division/location.")
+                    row[-1] = row[-1].partition('#')[0].rstrip()
+                    raw , annot = tuple( row[:4] ) , tuple( row[4:8] )
+                else:
+                    print("WARNING: couldn't decode rule line " + "\t".join(row))
                     continue
-                elif len(row) != 8:
-                    print("WARNING: couldn't decode annotation line " + "\t".join(row))
-                    continue
-                row[-1] = row[-1].partition('#')[0].rstrip()
-                raw , annot = tuple( row[:4] ) , tuple( row[4:8] )
-                # remove the comment and the extra ws from the value
 
                 if raw[3] in geoRules.entries[ raw[0] ][ raw[1] ][ raw[2] ] : # such a rule already exists
                     if geoRules.entries[ raw[0] ][ raw[1] ][ raw[2] ][ raw[3] ] != annot : # multiple arrival for the same start
@@ -133,4 +137,4 @@ if __name__ == '__main__':
                     
                             raw=tuple([region,country,division,location])
                             if not raw in toRemove:
-                                print( '\t'.join(raw) , '\t'.join(arrival) , sep = '\t' , file = OUT )
+                                print( '/'.join(raw) , '/'.join(arrival) , sep = '\t' , file = OUT )
