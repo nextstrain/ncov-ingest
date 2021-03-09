@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 import argparse
 import sys
-
+from datetime import datetime
 import pandas as pd
 
 INSERT_BEFORE_THIS_COLUMN = "pango_lineage"
 METADATA_JOIN_COLUMN_NAME = 'strain'
 NEXTCLADE_JOIN_COLUMN_NAME = 'seqName'
 VALUE_MISSING_DATA = '?'
+
+rate_per_day = 0.0006 * 29903 / 365
+reference_day = datetime(2020,1,1).toordinal()
 
 column_map = {
     "clade": "Nextstrain_clade",
@@ -42,6 +45,13 @@ def parse_args():
     parser.add_argument("-o", default=sys.stdout)
     return parser.parse_args()
 
+def datestr_to_ordinal(x):
+    try:
+        return datetime.strptime(x,"%Y-%m-%d").toordinal()
+    except:
+        return np.nan
+
+
 
 def main():
     args = parse_args()
@@ -55,6 +65,13 @@ def main():
             .rename(columns=column_map)
 
     clades = clades[list(column_map.values())]
+    divergence = pd.read_csv("source-data/clade_divergence.tsv", sep='\t', index_col="clade")
+    def clade_to_offset(x):
+        try:
+            return divergence.loc[x]['intercept']
+        except:
+            # expected number of mutations in jan 2020
+            return 2.0
 
     # Concatenate on columns
     result = pd.merge(
@@ -63,6 +80,10 @@ def main():
         right_index=True,
         how='left'
     )
+    t = result["date"].apply(datestr_to_ordinal)
+    offset = result["Nextstrain_clade"].apply(clade_to_offset)
+    result["clock_deviation"] = result["divergence"] - ((t-reference_day)*rate_per_day + offset)
+
     for col in column_map.values():
         result[col] = result[col].fillna(VALUE_MISSING_DATA)
 
