@@ -81,9 +81,14 @@ def main():
         right_index=True,
         how='left'
     )
+
+    # extract divergence, time and offset information into vectors or series
     t = result["date"].apply(datestr_to_ordinal)
     offset = result["Nextstrain_clade"].apply(clade_to_offset)
-    result["clock_deviation"] = result["divergence"] - ((t-reference_day)*rate_per_day + offset)
+    div = result["divergence"]
+    div[div=='']=np.nan
+    # calculate divergence
+    result["clock_deviation"] = div.astype(float) - ((t-reference_day)*rate_per_day + offset)
 
     for col in column_map.values():
         result[col] = result[col].fillna(VALUE_MISSING_DATA)
