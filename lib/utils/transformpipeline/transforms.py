@@ -16,6 +16,33 @@ class UserProvidedGeoLocationSubstitutionRules:
         self.entries: MutableMapping[str,MutableMapping[str, MutableMapping[str, MutableMapping[str, Tuple[str,str,str,str] ]]]] = defaultdict( lambda : defaultdict( lambda : defaultdict( dict ) ) )
         self.use_count: MutableMapping[Tuple[str,str,str,str], int] = dict()
 
+    def readFromLine( self , line : str ) -> None:
+        """ reads a substitution rule from a file line .
+            This function primarily accepts a format : region/country/division/location<tab>region/country/division/location
+            But it will also accept (an give a warning) if a line with all separators as tabs is given
+        """
+
+        if line.lstrip()[0] == '#':
+            return # ignore comments
+
+        row = line.strip('\n').split('\t')
+
+        raw,annot = None,None
+
+        if len(row) == 2:
+            row[-1] = row[-1].partition('#')[0].rstrip()
+            raw , annot = tuple( row[0].split('/') ) , tuple( row[1].split('/') )
+        elif len(row) == 8:
+            print("WARNING: found a rule line using the old all tabs separators format. This is accepted in that particular script but we do not guarantee it in any other.\nPlease update to region/country/division/location<tab>region/country/division/location.")
+            row[-1] = row[-1].partition('#')[0].rstrip()
+            raw , annot = tuple( row[:4] ) , tuple( row[4:8] )
+        else:
+            print("WARNING: couldn't decode rule line " + "\t".join(row))
+            return
+        #print('adding',raw,annot)
+        self.add_user_rule( raw,annot )
+
+
     def add_user_rule(
             self,
             start: Tuple[str,str,str,str],
