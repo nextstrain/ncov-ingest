@@ -563,6 +563,7 @@ Asia	India	Maharashtra	Virar
 Asia	India	Maharashtra	Wardha
 Asia	India	Maharashtra	Washim
 Asia	India	Maharashtra	Yavatmal
+Asia	India	Manipur	
 Asia	India	Odisha	
 Asia	India	Odisha	Ganjam
 Asia	India	Punjab IN	
@@ -1076,14 +1077,19 @@ Europe	Austria	Carinthia	Villach
 Europe	Austria	Carinthia	Villach-Land
 Europe	Austria	Carinthia	Wachsenberg
 Europe	Austria	Carinthia	Wernberg
+Europe	Austria	Carinthia	Wolfsberg
 Europe	Austria	Italian cruise ship	
 Europe	Austria	Lower Austria	
 Europe	Austria	Lower Austria	Amstetten
 Europe	Austria	Lower Austria	Bad Vöslau
 Europe	Austria	Lower Austria	Baden
 Europe	Austria	Lower Austria	Bruck An Der Leitha
+Europe	Austria	Lower Austria	Gänserndorf
 Europe	Austria	Lower Austria	Hennersdorf
+Europe	Austria	Lower Austria	Hollabrunn
+Europe	Austria	Lower Austria	Horn
 Europe	Austria	Lower Austria	Korneuburg
+Europe	Austria	Lower Austria	Lilienfeld
 Europe	Austria	Lower Austria	Markt Piesting
 Europe	Austria	Lower Austria	Mistelbach
 Europe	Austria	Lower Austria	Mödling
@@ -1114,6 +1120,7 @@ Europe	Austria	Styria	Kalsdorf Bei Graz
 Europe	Austria	Styria	Kapfenberg
 Europe	Austria	Styria	Liezen
 Europe	Austria	Styria	Murau
+Europe	Austria	Styria	Murtal
 Europe	Austria	Styria	Weiz
 Europe	Austria	Tyrol	
 Europe	Austria	Tyrol	Achenkirch
@@ -1178,7 +1185,9 @@ Europe	Austria	Upper Austria	Neukirchen
 Europe	Austria	Upper Austria	Ohlsdorf
 Europe	Austria	Upper Austria	Regau
 Europe	Austria	Upper Austria	Schwanenstadt
+Europe	Austria	Upper Austria	Schörfling Am Attersee
 Europe	Austria	Upper Austria	St. Georgen Im Attergau
+Europe	Austria	Upper Austria	Steyr-Land
 Europe	Austria	Upper Austria	Timelkam
 Europe	Austria	Upper Austria	Vöcklabruck
 Europe	Austria	Upper Austria	Vöcklamarkt
@@ -2936,6 +2945,7 @@ Europe	Poland	Bielsk Podlaski
 Europe	Poland	Dolnośląskie	
 Europe	Poland	Dolnośląskie	Ząbkowice Śląskie
 Europe	Poland	Lubuskie	
+Europe	Poland	Lubuskie	Dabrowka
 Europe	Poland	Malopolskie	
 Europe	Poland	Malopolskie	Kraków
 Europe	Poland	Masovia	
@@ -2995,9 +3005,12 @@ Europe	Poland	Wielkopolskie	Dabrowa
 Europe	Poland	Wielkopolskie	Debienko
 Europe	Poland	Wielkopolskie	Duszniki
 Europe	Poland	Wielkopolskie	Dąbrowa
+Europe	Poland	Wielkopolskie	Goluski
+Europe	Poland	Wielkopolskie	Gora
 Europe	Poland	Wielkopolskie	Jarocin
 Europe	Poland	Wielkopolskie	Jeziorki
 Europe	Poland	Wielkopolskie	Kalisz
+Europe	Poland	Wielkopolskie	Kobylniki
 Europe	Poland	Wielkopolskie	Komorniki
 Europe	Poland	Wielkopolskie	Koziegłowy
 Europe	Poland	Wielkopolskie	Lubon
@@ -3008,6 +3021,7 @@ Europe	Poland	Wielkopolskie	Niepruszewo
 Europe	Poland	Wielkopolskie	Nowy Tomysl
 Europe	Poland	Wielkopolskie	Oborniki
 Europe	Poland	Wielkopolskie	Orlowo
+Europe	Poland	Wielkopolskie	Paledzie
 Europe	Poland	Wielkopolskie	Plewiska
 Europe	Poland	Wielkopolskie	Poznan
 Europe	Poland	Wielkopolskie	Przeźmierowo
@@ -3022,8 +3036,12 @@ Europe	Poland	Wielkopolskie	Strykowo
 Europe	Poland	Wielkopolskie	Tarnowo Podgorne
 Europe	Poland	Wielkopolskie	Wiorek
 Europe	Poland	Wielkopolskie	Wysławice
+Europe	Poland	Wielkopolskie	Zalasewo
+Europe	Poland	Wielkopolskie	Zlotniki
 Europe	Poland	Wielkopolskie	Zydowo
 Europe	Poland	Zachodniopomorskie	
+Europe	Poland	Zachodniopomorskie	Mysliborz
+Europe	Poland	Zachodniopomorskie	Stare Brynki
 Europe	Poland	Zachodniopomorskie	Witkowo Drugie
 Europe	Poland	Zielonogorskie	
 Europe	Poland	Łódzkie	
@@ -3749,6 +3767,7 @@ Europe	Spain	Castilla y Leon	La Virgen del Camino
 Europe	Spain	Castilla y Leon	Leon
 Europe	Spain	Castilla y Leon	Montejos del Camino
 Europe	Spain	Castilla y Leon	Palacios de la Valduerna
+Europe	Spain	Castilla y Leon	Palencia
 Europe	Spain	Castilla y Leon	Posada de la Valduerna
 Europe	Spain	Castilla y Leon	Quintana de Raneros
 Europe	Spain	Castilla y Leon	Riego de la Vega
@@ -3799,6 +3818,7 @@ Europe	Spain	Catalunya	El Masnou
 Europe	Spain	Catalunya	El Prat de Llobregat
 Europe	Spain	Catalunya	Esplugues de Llobregat
 Europe	Spain	Catalunya	Fogars de la Selva
+Europe	Spain	Catalunya	Gaia
 Europe	Spain	Catalunya	Gerona
 Europe	Spain	Catalunya	Granollers
 Europe	Spain	Catalunya	Hostalrich
@@ -4070,6 +4090,7 @@ Europe	Spain	Navarra	Artajona
 Europe	Spain	Navarra	Baranain
 Europe	Spain	Navarra	Barasoain
 Europe	Spain	Navarra	Burlada
+Europe	Spain	Navarra	Cadreita
 Europe	Spain	Navarra	Cintruenigo
 Europe	Spain	Navarra	Cizur Menor
 Europe	Spain	Navarra	Echavarri
@@ -4078,10 +4099,12 @@ Europe	Spain	Navarra	Estella
 Europe	Spain	Navarra	Fitero
 Europe	Spain	Navarra	Gartzain
 Europe	Spain	Navarra	Huarte
+Europe	Spain	Navarra	Leitza
 Europe	Spain	Navarra	Lodosa
 Europe	Spain	Navarra	Mendillorri
 Europe	Spain	Navarra	Mutilva
 Europe	Spain	Navarra	Noain
+Europe	Spain	Navarra	Obanos
 Europe	Spain	Navarra	Pamplona
 Europe	Spain	Navarra	Peralta
 Europe	Spain	Navarra	Sarriguren
@@ -5259,6 +5282,7 @@ North America	USA	Texas	Brazos County
 North America	USA	Texas	Brewster County
 North America	USA	Texas	Brown County TX
 North America	USA	Texas	Burleson County
+North America	USA	Texas	Caldwell
 North America	USA	Texas	Calhoun County
 North America	USA	Texas	Calhoun County TX
 North America	USA	Texas	Cameron County
@@ -5270,6 +5294,7 @@ North America	USA	Texas	College Station
 North America	USA	Texas	Collin County
 North America	USA	Texas	Comal County
 North America	USA	Texas	Comanche County
+North America	USA	Texas	Copperas Cove
 North America	USA	Texas	Crosby
 North America	USA	Texas	Crosby County
 North America	USA	Texas	Dallas County TX
@@ -5284,6 +5309,7 @@ North America	USA	Texas	Galveston County
 North America	USA	Texas	Gatesville
 North America	USA	Texas	Georgetown
 North America	USA	Texas	Georgetown TX
+North America	USA	Texas	Giddings
 North America	USA	Texas	Gonzales County
 North America	USA	Texas	Gray County
 North America	USA	Texas	Greater Houston Area
@@ -5313,6 +5339,7 @@ North America	USA	Texas	Lamar County
 North America	USA	Texas	Lavaca County
 North America	USA	Texas	Limestone County
 North America	USA	Texas	Limestone County TX
+North America	USA	Texas	Little River Academy
 North America	USA	Texas	Live Oak County
 North America	USA	Texas	Llano County
 North America	USA	Texas	Lometa
@@ -5324,6 +5351,7 @@ North America	USA	Texas	McCulloch County
 North America	USA	Texas	Mclennan County
 North America	USA	Texas	Montague County
 North America	USA	Texas	Montgomery County TX
+North America	USA	Texas	Moody
 North America	USA	Texas	Morris County TX
 North America	USA	Texas	Nacogdoches County
 North America	USA	Texas	Nueces County
@@ -5336,7 +5364,9 @@ North America	USA	Texas	Polk County TX
 North America	USA	Texas	Presidio County
 North America	USA	Texas	Red River County
 North America	USA	Texas	Robertson County
+North America	USA	Texas	Rogers
 North America	USA	Texas	Rosebud
+North America	USA	Texas	Round Rock
 North America	USA	Texas	Rusk County
 North America	USA	Texas	San Patricio County
 North America	USA	Texas	San Saba County
@@ -5727,10 +5757,29 @@ South America	Brazil	Mato Grosso do Sul	Sonora
 South America	Brazil	Mato Grosso do Sul	Tres Lagoas
 South America	Brazil	Mato Grosso do Sul	Vicentina
 South America	Brazil	Minas Gerais	
+South America	Brazil	Minas Gerais	Alem do Paraiba
+South America	Brazil	Minas Gerais	Alfenas
+South America	Brazil	Minas Gerais	Aracuai
 South America	Brazil	Minas Gerais	Araxa
 South America	Brazil	Minas Gerais	Barbacena
 South America	Brazil	Minas Gerais	Belo Horizonte
 South America	Brazil	Minas Gerais	Betim
+South America	Brazil	Minas Gerais	Bom Despacho
+South America	Brazil	Minas Gerais	Caratinga
+South America	Brazil	Minas Gerais	Confins
+South America	Brazil	Minas Gerais	Coromandel
+South America	Brazil	Minas Gerais	Desterro do Melo
+South America	Brazil	Minas Gerais	Divinopolis
+South America	Brazil	Minas Gerais	Esmeraldas BR
+South America	Brazil	Minas Gerais	Governador Valadares
+South America	Brazil	Minas Gerais	Guaira
+South America	Brazil	Minas Gerais	Ibitiura de Minas
+South America	Brazil	Minas Gerais	Montes Claros
+South America	Brazil	Minas Gerais	Muriae
+South America	Brazil	Minas Gerais	Ouro Branco
+South America	Brazil	Minas Gerais	Paracatu
+South America	Brazil	Minas Gerais	Sabara
+South America	Brazil	Minas Gerais	Uberaba
 South America	Brazil	Para	
 South America	Brazil	Paraiba	
 South America	Brazil	Paraiba	Cabedelo
@@ -5743,15 +5792,35 @@ South America	Brazil	Paraiba	Pedras de Fogo
 South America	Brazil	Paraiba	Pilar
 South America	Brazil	Paraiba	Santa Rita
 South America	Brazil	Paraná	
+South America	Brazil	Paraná	Araucaria
+South America	Brazil	Paraná	Astorga BR
+South America	Brazil	Paraná	Boa Esperanca do Iguacu
+South America	Brazil	Paraná	Borrazopolis
+South America	Brazil	Paraná	Cambara
+South America	Brazil	Paraná	Carambei
 South America	Brazil	Paraná	Cascavel
+South America	Brazil	Paraná	Castro
 South America	Brazil	Paraná	Cianorte
+South America	Brazil	Paraná	Colombo
+South America	Brazil	Paraná	Cornelio Procopio
 South America	Brazil	Paraná	Curitiba
 South America	Brazil	Paraná	Dois Vizinhos
+South America	Brazil	Paraná	Francisco Beltrao
+South America	Brazil	Paraná	Irati
+South America	Brazil	Paraná	Lapa
 South America	Brazil	Paraná	Londrina
+South America	Brazil	Paraná	Mangueirinha
 South America	Brazil	Paraná	Marechal Candido Rondon
 South America	Brazil	Paraná	Maringa
 South America	Brazil	Paraná	Medianeira
 South America	Brazil	Paraná	Ponta Grossa
+South America	Brazil	Paraná	Quedas do Iguacu
+South America	Brazil	Paraná	Reboucas
+South America	Brazil	Paraná	Santa Helena
+South America	Brazil	Paraná	Sao Miguel do Iguacu
+South America	Brazil	Paraná	Sulina
+South America	Brazil	Paraná	Terra Boa
+South America	Brazil	Paraná	Toledo
 South America	Brazil	Paraná	Umuarama
 South America	Brazil	Paraná	Uniao Da Vitoria
 South America	Brazil	Paraná	Vere
@@ -5812,12 +5881,14 @@ South America	Brazil	Rio Grande do Sul	Butia
 South America	Brazil	Rio Grande do Sul	Cacapava do Sul
 South America	Brazil	Rio Grande do Sul	Cachoeira do Sul
 South America	Brazil	Rio Grande do Sul	Cachoeirnha
+South America	Brazil	Rio Grande do Sul	Candelaria
 South America	Brazil	Rio Grande do Sul	Canoas BR
 South America	Brazil	Rio Grande do Sul	Carazinho
 South America	Brazil	Rio Grande do Sul	Carlos Barbosa
 South America	Brazil	Rio Grande do Sul	Caxias do Sul
 South America	Brazil	Rio Grande do Sul	Cruz Alta
 South America	Brazil	Rio Grande do Sul	Erechim
+South America	Brazil	Rio Grande do Sul	Espumoso
 South America	Brazil	Rio Grande do Sul	Esteio
 South America	Brazil	Rio Grande do Sul	Estrela Velha
 South America	Brazil	Rio Grande do Sul	Farroupilha
@@ -5872,12 +5943,14 @@ South America	Brazil	Rio Grande do Sul	Torres
 South America	Brazil	Rio Grande do Sul	Torres BR
 South America	Brazil	Rio Grande do Sul	Tramandai
 South America	Brazil	Rio Grande do Sul	Tres Passos
+South America	Brazil	Rio Grande do Sul	Três Cachoeiras
 South America	Brazil	Rio Grande do Sul	Tupandi
 South America	Brazil	Rio Grande do Sul	Venancio Aires
 South America	Brazil	Rio Grande do Sul	Vera Cruz
 South America	Brazil	Rio Grande do Sul	Vera Cruz (Rio Grande do Sul)
 South America	Brazil	Rio Grande do Sul	Viamao
 South America	Brazil	Rio Grande do Sul	Vista Gaucha
+South America	Brazil	Rio Grande do Sul	Xangri-la
 South America	Brazil	Rio de Janeiro	
 South America	Brazil	Rio de Janeiro	Belford Roxo
 South America	Brazil	Rio de Janeiro	Cabo Frio
@@ -5895,8 +5968,11 @@ South America	Brazil	Rio de Janeiro	Niteroi
 South America	Brazil	Rio de Janeiro	Nova Friburgo
 South America	Brazil	Rio de Janeiro	Nova Iguacu
 South America	Brazil	Rio de Janeiro	Petropolis
+South America	Brazil	Rio de Janeiro	Porto Real
 South America	Brazil	Rio de Janeiro	Queimados
 South America	Brazil	Rio de Janeiro	Resende
+South America	Brazil	Rio de Janeiro	Rio Bonito
+South America	Brazil	Rio de Janeiro	Rio Claro RJ
 South America	Brazil	Rio de Janeiro	Rio de Janeiro
 South America	Brazil	Rio de Janeiro	Sao Goncalo
 South America	Brazil	Rio de Janeiro	Seropédica
@@ -5944,6 +6020,7 @@ South America	Brazil	São Paulo	Biritiba Mirim
 South America	Brazil	São Paulo	Bocaina
 South America	Brazil	São Paulo	Borebi
 South America	Brazil	São Paulo	Braganca Paulista
+South America	Brazil	São Paulo	Cachoeira Paulista
 South America	Brazil	São Paulo	Cahoeira Paulista
 South America	Brazil	São Paulo	Caieiras
 South America	Brazil	São Paulo	Cajamar
@@ -6026,6 +6103,7 @@ South America	Brazil	São Paulo	Ribeirao Pires
 South America	Brazil	São Paulo	Ribeirao Preto
 South America	Brazil	São Paulo	Ribeirao do Sul
 South America	Brazil	São Paulo	Rio Claro
+South America	Brazil	São Paulo	Rio Claro SP
 South America	Brazil	São Paulo	Rio Grande Da Serra
 South America	Brazil	São Paulo	Rio Pardo
 South America	Brazil	São Paulo	Rio Verde
@@ -6040,6 +6118,7 @@ South America	Brazil	São Paulo	Santos
 South America	Brazil	São Paulo	Sao Bernardo do Campo
 South America	Brazil	São Paulo	Sao Caetano do Sul
 South America	Brazil	São Paulo	Sao Jose Dos Campos
+South America	Brazil	São Paulo	Sao Jose do Rio Pardo
 South America	Brazil	São Paulo	Sao Mateus
 South America	Brazil	São Paulo	Sao Pedro do Turvo
 South America	Brazil	São Paulo	Sao Sebastiao
@@ -6289,6 +6368,7 @@ South America	Ecuador	El Oro
 South America	Ecuador	El Oro	Machala
 South America	Ecuador	Esmeraldas	
 South America	Ecuador	Esmeraldas	Esmeraldas
+South America	Ecuador	Esmeraldas	Esmeraldas EC
 South America	Ecuador	Galapagos	
 South America	Ecuador	Galapagos	Puerto Baquerizo Moreno
 South America	Ecuador	Galapagos	San Cristobal
