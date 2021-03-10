@@ -52,7 +52,12 @@ def datestr_to_ordinal(x):
     except:
         return np.nan
 
-
+def isfloat(value):
+  try:
+    float(value)
+    return True
+  except ValueError:
+    return False
 
 def main():
     args = parse_args()
@@ -86,7 +91,7 @@ def main():
     t = result["date"].apply(datestr_to_ordinal)
     offset = result["Nextstrain_clade"].apply(clade_to_offset)
     div = result["divergence"]
-    div_array = np.array([float(x) if type(x) in [int, float] or x.isdigit() else np.nan for x in div])
+    div_array = np.array([float(x) if isfloat(x) else np.nan for x in div])
     # calculate divergence
     result["clock_deviation"] = div_array - ((t-reference_day)*rate_per_day + offset)
 
