@@ -24,7 +24,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     metadata = pd.read_csv(args.metadata, sep="\t", dtype="string")
-    clock_devation = np.array([float(x) if x.isdigit() else np.nan for x in metadata.clock_deviation])
+    clock_deviation = np.array([float(x) if x.isdigit() else np.nan for x in metadata.clock_deviation])
     metadata.loc[metadata.date > str(date.today()), 'reason'] = '# Collection date in the future'
     metadata.loc[(metadata.date < "2020-03-01") & (metadata.date.str.len() == 10), 'reason'] = '# Collection date prior to March 2020'
     metadata.loc[(clock_deviation < -10) & (~np.isnan(clock_deviation)), 'reason'] = '# Strain under diverged'
