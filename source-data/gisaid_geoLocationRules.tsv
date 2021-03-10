@@ -86,6 +86,7 @@ Europe	France	Auvergne-Rhône-Alpes	Andrezieux-Boutheon	Europe	France	Auvergne-R
 Europe	France	Auvergne-Rhône-Alpes	Vichy Cedex	Europe	France	Auvergne-Rhône-Alpes	Vichy
 Europe	France	Auvergne-Rhône-Alpes	Macon	Europe	France	Bourgogne-France-Comté	Macon
 Europe	France	Auvergne-Rhône-Alpes	Saint-Martin-D'Heres	Europe	France	Auvergne-Rhône-Alpes	Saint-Martin-D'Hères
+Europe	France	Auvergne-Rhône-Alpes	Decines	Europe	France	Auvergne-Rhône-Alpes	Decines-Charpieu
 Europe	France	Provence-Alpes-Côte-D’Azur	*	Europe	France	Provence-Alpes-Côte d'Azur	*
 Europe	France	Centre-Val de Loire	Angers	Europe	France	Pays de la Loire	Angers
 Europe	France	Centre-Val de Loire	Rouziers de Touraine	Europe	France	Centre-Val de Loire	Rouziers-de-Touraine
@@ -140,6 +141,8 @@ Europe	France	Picardie	*	Europe	France	Hauts de France	*
 Europe	France	Poitou Charentes	Saintes	Europe	France	Nouvelle-Aquitaine	Saintes
 Europe	France	Basse Normandie	*	Europe	France	Normandie	*
 Europe	France	Occitanie	Marseille	Europe	France	Provence-Alpes-Côte d'Azur	Marseille
+Europe	France	Occitanie	Saint-Gilles	Europe	France	Occitanie	Saint-Gilles FR
+Europe	France	Occitanie	Béziers	Europe	France	Occitanie	Beziers
 Europe	France	Alpes Maritimes		Europe	France	Provence-Alpes-Côte d'Azur	Alpes Maritimes
 Europe	France	Centre	*	Europe	France	Centre-Val de Loire	*
 Europe	France	Nord Pas de Calais	Lille	Europe	France	Hauts de France	Lille FR
@@ -594,8 +597,7 @@ Europe	Belgium	Ottignies		Europe	Belgium	Nivelles	Ottignies
 Europe	Belgium	Perwez		Europe	Belgium	Nivelles	Perwez
 Europe	Belgium	Villers-la-Ville		Europe	Belgium	Nivelles	Villers-la-Ville
 Europe	Belgium	Koekelberg		Europe	Belgium	Brussels	Koekelberg
-Europe	Belgium	Saint-Giles		Europe	Belgium	Brussels	Saint-Gilles
-Europe	Belgium	Saint-Giles	*	Europe	Belgium	Saint-Gilles	*
+Europe	Belgium	Saint-Giles		Europe	Belgium	Brussels	Saint-Gilles BE
 Europe	Belgium	Evere		Europe	Belgium	Brussels	Evere
 Europe	Belgium	Maffe		Europe	Belgium	Dinant	Maffe
 Europe	Belgium	Glabbeek		Europe	Belgium	Leuven	Glabbeek
@@ -626,8 +628,7 @@ Europe	Belgium	Averbode		Europe	Belgium	Leuven	Averbode
 Europe	Belgium	Affligem		Europe	Belgium	Halle-Vilvoorde	Affligem
 Europe	Belgium	Diegem		Europe	Belgium	Halle-Vilvoorde	Diegem
 Europe	Belgium	Thieulain		Europe	Belgium	Tournai-Mouscron	Thieulain
-Europe	Belgium	Sint-Gilles		Europe	Belgium	Brussels	Saint-Gilles
-Europe	Belgium	Sint-Gilles	*	Europe	Belgium	Saint-Gilles	*
+Europe	Belgium	Sint-Gilles		Europe	Belgium	Brussels	Saint-Gilles BE
 Europe	Belgium	Autre-Eglise		Europe	Belgium	Nivelles	Autre-Église
 Europe	Belgium	Autre-Eglise	*	Europe	Belgium	Autre-Église	*
 Europe	Belgium	Moeskroen		Europe	Belgium	Tournai-Mouscron	Mouscron
@@ -659,7 +660,7 @@ Europe	Belgium	Jodoigne		Europe	Belgium	Nivelles	Jodoigne
 Europe	Belgium	Willaupuis		Europe	Belgium	Tournai-Mouscron	Willaupuis
 Europe	Belgium	Boortmeerbeek		Europe	Belgium	Leuven	Boortmeerbeek
 Europe	Belgium	Hornu		Europe	Belgium	Mons	Hornu
-Europe	Belgium	Saint-Gilles		Europe	Belgium	Brussels	Saint-Gilles
+Europe	Belgium	Saint-Gilles		Europe	Belgium	Brussels	Saint-Gilles BE
 Europe	Belgium	Zele		Europe	Belgium	Dendermonde	Zele
 Europe	Belgium	Bekkevoort		Europe	Belgium	Leuven	Bekkevoort
 Europe	Belgium	Zaventem		Europe	Belgium	Halle-Vilvoorde	Zaventem
@@ -780,8 +781,7 @@ Europe	Belgium	Walhain		Europe	Belgium	Nivelles	Walhain
 Europe	Belgium	Tremelo		Europe	Belgium	Leuven	Tremelo
 Europe	Belgium	Wolhain		Europe	Belgium	Nivelles	Walhain
 Europe	Belgium	Wolhain	*	Europe	Belgium	Walhain	*
-Europe	Belgium	Sint-Gillis		Europe	Belgium	Brussels	Saint-Gilles
-Europe	Belgium	Sint-Gillis	*	Europe	Belgium	Saint-Gilles	*
+Europe	Belgium	Sint-Gillis		Europe	Belgium	Brussels	Saint-Gilles BE
 Europe	Belgium	Malmedy		Europe	Belgium	Verviers	Malmedy
 Europe	Belgium	Middelkerke		Europe	Belgium	Oostende	Middelkerke
 Europe	Belgium	Langemark		Europe	Belgium	Ieper	Langemark
@@ -3511,7 +3511,7 @@ Europe	Belgium	*	Ixelles	Europe	Belgium	Brussels	Ixelles
 Europe	Belgium	*	Jette	Europe	Belgium	Brussels	Jette
 Europe	Belgium	*	Koekelberg	Europe	Belgium	Brussels	Koekelberg
 Europe	Belgium	*	Molenbeek-Saint-Jean	Europe	Belgium	Brussels	Molenbeek-Saint-Jean
-Europe	Belgium	*	Saint-Gilles	Europe	Belgium	Brussels	Saint-Gilles
+Europe	Belgium	*	Saint-Gilles	Europe	Belgium	Brussels	Saint-Gilles BE
 Europe	Belgium	*	Saint-Josse-ten-Noode	Europe	Belgium	Brussels	Saint-Josse-ten-Noode
 Europe	Belgium	*	Schaerbeek	Europe	Belgium	Brussels	Schaerbeek
 Europe	Belgium	*	Uccle	Europe	Belgium	Brussels	Uccle
@@ -3622,7 +3622,7 @@ Europe	Belgium	*	Sint-Agatha-Berchem	Europe	Belgium	Brussels	Berchem-Sainte-Agat
 Europe	Belgium	*	Brussel	Europe	Belgium	*	Brussels
 Europe	Belgium	*	Elsene	Europe	Belgium	Brussels	Ixelles
 Europe	Belgium	*	Sint-Jans-Molenbeek	Europe	Belgium	Brussels	Molenbeek-Saint-Jean
-Europe	Belgium	*	Sint-Gillis	Europe	Belgium	Brussels	Saint-Gilles
+Europe	Belgium	*	Sint-Gillis	Europe	Belgium	Brussels	Saint-Gilles BE
 Europe	Belgium	*	Sint-Joost-ten-Node	Europe	Belgium	Brussels	Saint-Josse-ten-Noode
 Europe	Belgium	*	Schaarbeek	Europe	Belgium	Brussels	Schaerbeek
 Europe	Belgium	*	Ukkel	Europe	Belgium	Brussels	Uccle
@@ -3671,8 +3671,8 @@ Europe	Belgium	*	Properinge	Europe	Belgium	Ieper	Poperinge
 Europe	Belgium	*	Lo	Europe	Belgium	Diksmuide	Lo-Reninge
 Europe	Belgium	*	Pont-A-Celles	Europe	Belgium	Charleroi	Pont-à-Celles
 Europe	Belgium	*	Eghezee	Europe	Belgium	Namur	Éghezée
-Europe	Belgium	*	Saint-Giles	Europe	Belgium	Brussels	Saint-Gilles
-Europe	Belgium	*	Sint-Gilles	Europe	Belgium	Brussels	Saint-Gilles
+Europe	Belgium	*	Saint-Giles	Europe	Belgium	Brussels	Saint-Gilles BE
+Europe	Belgium	*	Sint-Gilles	Europe	Belgium	Brussels	Saint-Gilles BE
 Europe	Belgium	*	Overijze	Europe	Belgium	Halle-Vilvoorde	Overijse
 Europe	Belgium	*	Court-Saint-Etienne	Europe	Belgium	Nivelles	Court-Saint-Étienne
 Europe	Belgium	*	Oostakker	Europe	Belgium	Gent	Gent
@@ -6056,6 +6056,8 @@ Europe	Belgium	Province		Europe	Belgium	Belgium
 Europe	Belgium	Luxemburg	*	Europe	Belgium	Luxembourg BE	*
 Europe	Belgium	Emines		Europe	Belgium	Namur	Émines
 Europe	Belgium	Achene		Europe	Belgium	Dinant	Achêne
+Europe	Belgium	Beveren		Europe	Belgium	Veurne	Beveren
+Europe	Belgium	Heist-Aan-Zee		Europe	Belgium	Brugge	Heist
 Europe	Switzerland	Graubunden	*	Europe	Switzerland	Graubünden	*
 Europe	Switzerland	Graubã¼Nden	*	Europe	Switzerland	Graubünden	*
 Europe	Switzerland	Basel		Europe	Switzerland	Basel-Stadt	
@@ -6326,6 +6328,7 @@ Europe	Spain	Catalunya	L' Ametlla del Valles	Europe	Spain	Catalunya	L'Ametlla de
 Europe	Spain	Catalunya	Sant Joan de Vilatorrada	Europe	Spain	Catalunya	Sant Joan Vilatorrada
 Europe	Spain	Catalunya	Sant Vicenc de Muntall	Europe	Spain	Catalunya	Sant Vicenç de Montalt
 Europe	Spain	Catalunya	Sant Vicenc de Montalt	Europe	Spain	Catalunya	Sant Vicenç de Montalt
+Europe	Spain	Catalunya	Sant Vicenç de Castellet	Europe	Spain	Catalunya	San Vicente de Castellet
 Europe	Spain	Extremadura	Alcantara	Europe	Spain	Extremadura	Caceres
 Europe	Spain	Andalusia	Granada	Europe	Spain	Andalusia	Alhendin
 Europe	Spain	Andalusia	Malaga H	Europe	Spain	Andalusia	Malaga
@@ -6342,6 +6345,7 @@ Europe	Spain	Islas Canarias	*	Europe	Spain	Canary Islands	*
 Europe	Spain	Asturias	Oviedo City	Europe	Spain	Asturias	Oviedo
 Europe	Spain	La Rioja	Albelda	Europe	Spain	La Rioja	Albelda de Iregua
 Europe	Spain	Cataluna	*	Europe	Spain	Catalunya	*
+Europe	Spain	Castilla y Leon	Astorga	Europe	Spain	Castilla y Leon	Astorga ES
 Europe	Sweden	Västerbotten		Europe	Sweden	Vasterbotten	
 Europe	Sweden	Västra Götaland	*	Europe	Sweden	Vastra Gotaland	*
 Europe	Sweden	Unknown		Europe	Sweden	Sweden	
@@ -6362,6 +6366,7 @@ Europe	Poland	Warmińsko-Mazurskie	*	Europe	Poland	Warminsko-Mazurskie	*
 Europe	Poland	Wielkopolskie	Poznań	Europe	Poland	Wielkopolskie	Poznan
 Europe	Poland	Wielkopolskie	Przezmierowo	Europe	Poland	Wielkopolskie	Przeźmierowo
 Europe	Poland	Wielkopolskie	Skorzewo	Europe	Poland	Wielkopolskie	Skórzewo
+Europe	Poland	Wielkopolskie	Dabrowka	Europe	Poland	Lubuskie	Dabrowka
 Europe	Poland	Warminsko-Mazurskie	Olsztynski	Europe	Poland	Warminsko-Mazurskie	Olsztyn
 Europe	Poland	Podlaskie	Bielsk Podlaski	Europe	Poland	Podlaskie	Bielsk Podlaski
 Europe	Poland	Podlaskie	Orzysz	Europe	Poland	Warminsko-Mazurskie	Orzysz
@@ -6478,6 +6483,7 @@ Europe	Austria	Vorarlberg	Bregenz-Stadt	Europe	Austria	Vorarlberg	Bregenz
 Europe	Austria	Upper Austria	Wels, Eggendorf Im Traunkreis, Buchkirchen, Gunskirchen, Marchtrenk, Pennewang, Sattledt, Schleißheim, Steinhaus, Thalheim Bei Wels, Weißkirchen An Der Traun	Europe	Austria	Upper Austria	Wels-Land
 Europe	Austria	Upper Austria	Bad Ischl, St. Wolfgang Im Salzkammergut, Sankt Gilgen, Strobl	Europe	Austria	Upper Austria	Gmunden
 Europe	Austria	Upper Austria	Amstetten	Europe	Austria	Lower Austria	Amstetten
+Europe	Austria	Upper Austria	Horn	Europe	Austria	Lower Austria	Horn
 Europe	Austria	Attnang-Puchheim		Europe	Austria	Upper Austria	Attnang-Puchheim
 Europe	Austria	Gmunden		Europe	Austria	Upper Austria	Gmunden
 Europe	Austria	Vöcklabruck		Europe	Austria	Upper Austria	Vöcklabruck
@@ -6497,6 +6503,7 @@ Europe	Austria	Timelkam		Europe	Austria	Upper Austria	Timelkam
 Europe	Austria	Vöcklamarkt		Europe	Austria	Upper Austria	Vöcklamarkt
 Europe	Austria	Weyregg Am Attersee		Europe	Austria	Upper Austria	Weyregg Am Attersee
 Europe	Austria	Zell Am Moos		Europe	Austria	Upper Austria	Zell Am Moos
+Europe	Austria	Schörfling Am Attersee		Europe	Austria	Upper Austria	Schörfling Am Attersee
 Europe	Romania	Lalomita	*	Europe	Romania	Ialomița	*
 Europe	Romania	Ialomita	*	Europe	Romania	Ialomița	*
 Europe	Romania	Targu Mures		Europe	Romania	Mures	Targu Mures
@@ -6550,6 +6557,7 @@ Europe	Slovakia	Zelovce		Europe	Slovakia	Banska Bystrica	Zelovce
 Europe	Slovakia	Trstena		Europe	Slovakia	Zilina	Trstena
 Europe	Slovakia	Trencin	*	Europe	Slovakia	Trenčín	*
 Europe	Slovakia	Dolný Kubín		Europe	Slovakia	Zilina	Dolný Kubín
+Europe	Slovakia	Trencín	*	Europe	Slovakia	Trenčín	*
 Europe	Denmark	Na		Europe	Denmark	Denmark	
 Europe	Denmark	Na	*	Europe	Denmark		*
 Europe	Ireland	Limerick	Limerick County	Europe	Ireland	Limerick	
@@ -6567,11 +6575,14 @@ Europe	Croatia	The City of Zagreb		Europe	Croatia	Zagreb	Zagreb
 Europe	Croatia	Zagreb County		Europe	Croatia	Zagreb	
 Europe	Croatia	Osijek		Europe	Croatia	Osijek-Baranja	Osijek
 Europe	Croatia	Šibenik-Knin County	*	Europe	Croatia	Sibenik-Knin County	*
+Europe	Croatia	Požega-Slavonia County	*	Europe	Croatia	Pozega-Slavonia County	*
+Europe	Croatia	Međimurje County	*	Europe	Croatia	Medimurje County	*
 Europe	Estonia	Central Estonia	*	Europe	Estonia	Estonia	*
 Europe	Estonia	North-Eastern Estonia	*	Europe	Estonia	Estonia	*
 Europe	Estonia	Northern Estonia	*	Europe	Estonia	Estonia	*
 Europe	Estonia	Southern Estonia	*	Europe	Estonia	Estonia	*
 Europe	Estonia	Western Estonia	*	Europe	Estonia	Estonia	*
+Europe	Netherlans	Noord Brabant	*	Europe	Netherlands	North Brabant	*
 Asia	Taiwan	Taipei		Asia	Taiwan	Taiwan	Taipei
 Asia	Taiwan	Taoyuan		Asia	Taiwan	Taiwan	Taoyuan
 Asia	Taiwan	Kaohsiung		Asia	Taiwan	Taiwan	Kaohsiung
@@ -6717,6 +6728,7 @@ Asia	India	West Bengal	Hoogly	Asia	India	West Bengal	Hooghly
 Asia	India	Uttrakhand	*	Asia	India	Uttarakhand	*
 Asia	India	Gujrat	*	Asia	India	Gujarat	*
 Asia	India	Jammu Kashmir	*	Asia	India	Jammu and Kashmir	*
+Asia	India	Chattisgarh	*	Asia	India	Chhattisgarh	*
 Asia	Bangladesh	Chittagong	Cox'S Bazar	Asia	Bangladesh	Chattogram	Cox's Bazar
 Asia	Bangladesh	Khulna	Jessore	Asia	Bangladesh	Khulna	Jashore
 Asia	Bangladesh	Chattogram	Cox'S Bazar	Asia	Bangladesh	Chattogram	Cox's Bazar
@@ -6903,6 +6915,7 @@ North America	USA	New York	Out of State	North America	USA	New York
 North America	USA	New York	Passaic County	North America	USA	New Jersey	Passaic County
 North America	USA	New York	New York	North America	USA	New York	New York City
 North America	USA	New York	Albany	North America	USA	New York	Albany County
+North America	USA	New York	Delaware County	North America	USA	New York	Delaware County NY
 North America	USA	Arizona	Phoenix County	North America	USA	Arizona	Maricopa County
 North America	USA	Arizona	Tucson	North America	USA	Arizona	Pima County
 North America	USA	Arizona	Navajo	North America	USA	Arizona	Navajo County
@@ -7072,6 +7085,11 @@ North America	USA	Texas	Moris	North America	USA	Texas	Morris County TX
 North America	USA	Texas	Lorena	North America	USA	Texas	Lorena TX
 North America	USA	Texas	Georgetown	North America	USA	Texas	Georgetown TX
 North America	USA	Texas	Willacy	North America	USA	Texas	Willacy County
+North America	USA	Texas	Leon	North America	USA	Texas	Leon County
+North America	USA	Texas	Zapata	North America	USA	Texas	Zapata County
+North America	USA	Texas	Trinity	North America	USA	Texas	Trinity County
+North America	USA	Texas	Parmer	North America	USA	Texas	Parmer County
+North America	USA	Texas	Lee	North America	USA	Texas	Lee County TX
 North America	USA	Louisiana	Desoto Parish	North America	USA	Louisiana	DeSoto Parish
 North America	USA	Louisiana	St. Tammany Parish	North America	USA	Louisiana	St Tammany Parish
 North America	USA	Louisiana	St. Bernard Parish	North America	USA	Louisiana	St Bernard Parish
@@ -7123,6 +7141,7 @@ North America	USA	South Carolina	Pickens	North America	USA	South Carolina	Picken
 North America	USA	South Carolina	Lancaster	North America	USA	South Carolina	Lancaster County SC
 North America	USA	Pennsylvania	Montgomery County	North America	USA	Pennsylvania	Montgomery County PA
 North America	USA	Pennsylvania	Philadelphia	North America	USA	Pennsylvania	Philadelphia County
+North America	USA	Pennsylvania	Delaware County	North America	USA	Pennsylvania	Delaware County PA
 North America	USA	Minnesota	Houston County	North America	USA	Minnesota	Houston County MN
 North America	USA	Massachusetts	Middlesex County	North America	USA	Massachusetts	Middlesex County MA
 North America	USA	Idaho	Madison County	North America	USA	Idaho	Madison County ID
@@ -7311,6 +7330,9 @@ South America	Brazil	São Paulo	Cesario Lage	South America	Brazil	São Paulo	Ces
 South America	Brazil	São Paulo	Embu	South America	Brazil	São Paulo	Embu Das Artes
 South America	Brazil	São Paulo	Lorena	South America	Brazil	São Paulo	Lorena BR
 South America	Brazil	São Paulo	Vera Cruz	South America	Brazil	São Paulo	Vera Cruz (São Paulo)
+South America	Brazil	São Paulo	Rio Claro	South America	Brazil	São Paulo	Rio Claro SP
+South America	Brazil	São Paulo	Cesario Lange	South America	Brazil	São Paulo	Cesário Lange
+South America	Brazil	São Paulo	Cahoeira Paulista	South America	Brazil	São Paulo	Cachoeira Paulista
 South America	Brazil	Paraíba	*	South America	Brazil	Paraiba	*
 South America	Brazil	Rio de Janeiro	Nova Iguaçu	South America	Brazil	Rio de Janeiro	Nova Iguacu
 South America	Brazil	Rio de Janeiro	São Gonçalo	South America	Brazil	Rio de Janeiro	Sao Goncalo
@@ -7318,6 +7340,7 @@ South America	Brazil	Rio de Janeiro	Niterói	South America	Brazil	Rio de Janeiro
 South America	Brazil	Rio de Janeiro	Itaboraí	South America	Brazil	Rio de Janeiro	Itaborai
 South America	Brazil	Rio de Janeiro	Petrópolis	South America	Brazil	Rio de Janeiro	Petropolis
 South America	Brazil	Rio de Janeiro	Três Rios	South America	Brazil	Rio de Janeiro	Tres Rios BR
+South America	Brazil	Rio de Janeiro	Rio Claro	South America	Brazil	Rio de Janeiro	Rio Claro RJ
 South America	Brazil	Rio Grande do Sul	Torres	South America	Brazil	Rio Grande do Sul	Torres BR
 South America	Brazil	Rio Grande do Sul	Canoas	South America	Brazil	Rio Grande do Sul	Canoas BR
 South America	Brazil	Rio Grande do Sul	Nanuque	South America	Brazil	Rio Grande do Sul	
@@ -7326,6 +7349,8 @@ South America	Brazil	Rio Grande do Sul	Sao Leopoldo	South America	Brazil	Rio Gra
 South America	Brazil	Rio Grande do Sul	Sao Domingos do Sul	South America	Brazil	Rio Grande do Sul	São Domingos do Sul
 South America	Brazil	Rio Grande do Sul	Nao-Me-Toque	South America	Brazil	Rio Grande do Sul	Não-Me-Toque
 South America	Brazil	Rio Grande do Sul	Quarai	South America	Brazil	Rio Grande do Sul	Quaraí
+South America	Brazil	Rio Grande do Sul	Lageado	South America	Brazil	Rio Grande do Sul	Lajeado
+South America	Brazil	Rio Grande do Sul	Espulmoso	South America	Brazil	Rio Grande do Sul	Espumoso
 South America	Brazil	Sao Paulo	Sao Paulo	South America	Brazil	São Paulo	São Paulo
 South America	Brazil	Sao Paulo	Sao Matetus	South America	Brazil	São Paulo	Sao Mateus
 South America	Brazil	Sao Paulo	São Jose Dos Campo	South America	Brazil	São Paulo	Sao Jose Dos Campos
@@ -7340,6 +7365,8 @@ South America	Brazil	Southeast	*	South America	Brazil	Southeast Region	*
 South America	Brazil	Amazonas BR	Lábrea	South America	Brazil	Amazonas BR	Labrea
 South America	Brazil	Tocantins	Paraiso do Tocantins	South America	Brazil	Tocantins	Paraiso do Tacantins
 South America	Brazil	Espirito Santos	*	South America	Brazil	Espirito Santo	*
+South America	Brazil	Paraná	Astorga	South America	Brazil	Paraná	Astorga BR
+South America	Brazil	Minas Gerais	Esmeraldas	South America	Brazil	Minas Gerais	Esmeraldas BR
 South America	Argentina	Cordoba	Cordoba	South America	Argentina	Cordoba AR	Cordoba AR
 South America	Argentina	Cordoba	Brikman	South America	Argentina	Cordoba AR	Brinkmann
 South America	Argentina	Cordoba	*	South America	Argentina	Cordoba AR	*
@@ -7367,6 +7394,7 @@ South America	Ecuador	Santo Domingo	*	South America	Ecuador	Santo Domingo de los
 South America	Ecuador	Santo Domingo de los Tsachilas	Santo Domingo	South America	Ecuador	Santo Domingo de los Tsachilas	Santo Domingo de los Colorados
 South America	Ecuador	Gusayas	*	South America	Ecuador	Guayas	*
 South America	Ecuador	Daule		South America	Ecuador	Guayas	Daule
+South America	Ecuador	Esmeraldas	Esmeraldas	South America	Ecuador	Esmeraldas	Esmeraldas EC
 South America	Chile	Los Lagos	Llanquihue	South America	Chile	Los Lagos	Puerto Montt
 South America	Chile	La Araucania	*	South America	Chile	Araucanía	*
 South America	Chile	Biobio	Diguillin	South America	Chile	Ñuble	Chillan
@@ -7470,6 +7498,7 @@ Africa	Nigeria	Lagos State	*	Africa	Nigeria	Lagos	*
 Africa	Nigeria	Akwa-Ibom State	*	Africa	Nigeria	Akwa-Ibom	*
 Africa	Nigeria	Fct	*	Africa	Nigeria	Federal Capital Territory	*
 Africa	Nigeria	Edo State	*	Africa	Nigeria	Edo	*
+Africa	Nigeria	Ebonyi State	*	Africa	Nigeria	Ebonyi	*
 Africa	Côte D'Ivoire	Boauké		Africa	Côte d'Ivoire	Bouaké	
 Africa	Côte D'Ivoire	Yamoussoukro		Africa	Côte d'Ivoire	Yamoussoukro	
 Africa	Côte D'Ivoire	Bouafle		Africa	Côte d'Ivoire	Bouafle	
@@ -7509,6 +7538,7 @@ Africa	Côte D’Ivoire	*	*	Africa	Côte d'Ivoire	*	*
 Africa	Cote Divoire	*	*	Africa	Côte d'Ivoire	*	*
 Africa	Togo	West Africa	*	Africa	Togo	Togo	*
 Africa	Mozambique	Maputo Cidade	*	Africa	Mozambique	Maputo	*
+Africa	Réunion	Saint-Denis		Europe	France	Réunion	Saint-Denis de la Réunion
 Italy	Apulia	Bari		Europe	Italy	Apulia	Bari
 North Macedonia	Kochani	Kochani		Europe	North Macedonia	Eastern Region	Kochani
 North Macedonia	Kavadarci	Kavadarci		Europe	North Macedonia	Kavadarci	Kavadarci
@@ -7622,21 +7652,3 @@ Israel	Asia	Southern		Asia	Israel	South District
 Asian	*	*	*	Asia	*	*	*
 North-America	*	*	*	North America	*	*	*
 Afrique	*	*	*	Africa	*	*	*
-South America	Brazil	Paraná	Astorga	South America	Brazil	Paraná	Astorga BR
-Europe	Spain	Castilla y Leon	Astorga	Europe	Spain	Castilla y Leon	Astorga ES
-South America	Brazil	São Paulo	Rio Claro	South America	Brazil	São Paulo	Rio Claro SP
-South America	Brazil	Rio de Janeiro	Rio Claro	South America	Brazil	Rio de Janeiro	Rio Claro RJ
-South America	Brazil	Minas Gerais	Esmeraldas	South America	Brazil	Minas Gerais	Esmeraldas BR
-South America	Ecuador	Esmeraldas	Esmeraldas	South America	Ecuador	Esmeraldas	Esmeraldas EC
-Europe	Poland	Wielkopolskie	Dabrowka	Europe	Poland	Lubuskie	Dabrowka
-Europe	Spain	Catalunya	Sant Vicenç de Castellet	Europe	Spain	Catalunya	San Vicente de Castellet
-South America	Brazil	Rio Grande do Sul	Lageado	South America	Brazil	Rio Grande do Sul	Lajeado
-South America	Brazil	São Paulo	Cesario Lange	South America	Brazil	São Paulo	Cesário Lange
-South America	Brazil	São Paulo	Cahoeira Paulista	South America	Brazil	São Paulo	Cachoeira Paulista
-Asia	India	Chattisgarh	*	Asia	India	Chhattisgarh	*
-Europe	Belgium	Beveren		Europe	Belgium	Veurne	Beveren
-Europe	Slovakia	Trencín	*	Europe	Slovakia	Trenčín	*
-Africa	Nigeria	Ebonyi State	*	Africa	Nigeria	Ebonyi	*
-Europe	Austria	Upper Austria	Horn	Europe	Austria	Lower Austria	Horn
-South America	Brazil	Rio Grande do Sul	Espulmoso	South America	Brazil	Rio Grande do Sul	Espumoso
-Europe	Austria	Schörfling Am Attersee		Europe	Austria	Upper Austria	Schörfling Am Attersee
