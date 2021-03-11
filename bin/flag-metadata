@@ -35,9 +35,9 @@ if __name__ == '__main__':
     clock_deviation = np.array([float(x) if isfloat(x) else np.nan for x in metadata.clock_deviation])
     metadata.loc[metadata.date > str(date.today()), 'reason'] = '# Collection date in the future'
     metadata.loc[(metadata.date < "2020-03-01") & (metadata.date.str.len() == 10), 'reason'] = '# Collection date prior to March 2020'
-    metadata.loc[(clock_deviation < -deviation_cutoff) & (~np.isnan(clock_deviation)), 'reason'] = '# Strain under diverged'
-    metadata.loc[(clock_deviation > deviation_cutoff) & (~np.isnan(clock_deviation)), 'reason'] = '# Strain over diverged'
-    metadata.loc[(metadata.QC_rare_mutations == "bad"), 'reason'] = '# Strain has failed rare mutation QC'
+    metadata.loc[(clock_deviation < -deviation_cutoff) & (~np.isnan(clock_deviation)), 'reason'] = f'# Strain under diverged <-{deviation_cutoff}'
+    metadata.loc[(clock_deviation > deviation_cutoff) & (~np.isnan(clock_deviation)), 'reason'] =  f'# Strain over diverged >{deviation_cutoff}'
+    # metadata.loc[(metadata.QC_rare_mutations == "bad"), 'reason'] = '# Strain has failed rare mutation QC'
     flagged_strains = metadata.loc[metadata.reason.notnull()]
 
     print(flagged_strains[['strain', 'reason']].to_csv(header=False, index=False, sep='\t'))
