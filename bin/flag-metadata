@@ -22,7 +22,7 @@ if __name__ == '__main__':
     base = Path(__file__).resolve().parent.parent
 
     parser = argparse.ArgumentParser(
-        description="Warn about future dates in a metadata TSV file.",
+        description="Warn about future dates in a metadata TSV file and sequences that don't follow a molecular clock.",
         formatter_class=argparse.RawTextHelpFormatter
     )
     parser.add_argument("metadata",
