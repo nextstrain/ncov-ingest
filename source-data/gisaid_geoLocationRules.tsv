@@ -6370,6 +6370,7 @@ Europe	Poland	Wielkopolskie	Dabrowka	Europe	Poland	Lubuskie	Dabrowka
 Europe	Poland	Warminsko-Mazurskie	Olsztynski	Europe	Poland	Warminsko-Mazurskie	Olsztyn
 Europe	Poland	Podlaskie	Bielsk Podlaski	Europe	Poland	Podlaskie	Bielsk Podlaski
 Europe	Poland	Podlaskie	Orzysz	Europe	Poland	Warminsko-Mazurskie	Orzysz
+Europe	Poland	Podlaskie	Bialystok	Europe	Poland	Podlaskie	Białystok
 Europe	Poland	Bielsk Podlaski		Europe	Poland	Podlaskie	Bielsk Podlaski
 Europe	Italy	Apulia	Bat	Europe	Italy	Apulia	Barletta-Andria-Trani
 Europe	Italy	Padova		Europe	Italy	Veneto	Padova
@@ -6596,6 +6597,8 @@ Asia	China	Zhejiang	Shaoxing	Asia	China	Zhejiang	Keqiao
 Asia	China	Harbin		Asia	China	Heilongjiang	Harbin
 Asia	China	Anhui	Lu`An	Asia	China	Anhui	Lu'An
 Asia	China	Yunnan	Puer City	Asia	China	Yunnan	Pu'Er
+Asia	China	Hong Kong	Hong Kong	Asia	Hong Kong	Hong Kong	Hong Kong
+Asia	China	Hong Kong		Asia	Hong Kong	Hong Kong	Hong Kong
 Asia	South Korea	Gyeonggi-do		Asia	South Korea	Gyeonggi Province	Gyeonggi
 Asia	South Korea	Chungcheongnam-do		Asia	South Korea	Chungcheongnam	Chungcheongnam
 Asia	South Korea	Uijeongbu		Asia	South Korea	Gyeonggi Province	Uijeongbu
@@ -6766,6 +6769,7 @@ Asia	Sri Lanka	Avisawella	*	Asia	Sri Lanka	Avissawella	*
 Asia	Sri Lanka	Quarantine Kandy	*	Asia	Sri Lanka	Kandy	*
 Asia	Sri Lanka	Quarantine	*	Asia	Sri Lanka	Sri Lanka	*
 Asia	Sri Lanka	Qc Killinochchi	*	Asia	Sri Lanka	Kilinochchi	*
+Asia	Sri Lanka	Avissawella		Asia	Sri Lanka	Western Province	Avissawella
 Asia	Palestine	Tulkarem		Asia	Palestine	West Bank	Tulkarem
 Asia	Palestine	West Bank	Jericho	Asia	Palestine	Jericho	
 Asia	Palestine	West Bank	Ramallah	Asia	Palestine	Ramallah and al-Bireh Governorate	Ramallah
@@ -7090,6 +7094,10 @@ North America	USA	Texas	Zapata	North America	USA	Texas	Zapata County
 North America	USA	Texas	Trinity	North America	USA	Texas	Trinity County
 North America	USA	Texas	Parmer	North America	USA	Texas	Parmer County
 North America	USA	Texas	Lee	North America	USA	Texas	Lee County TX
+North America	USA	Texas	Johnson	North America	USA	Texas	Johnson County TX
+North America	USA	Texas	Ellis	North America	USA	Texas	Ellis County
+North America	USA	Texas	Cooke	North America	USA	Texas	Cooke County
+North America	USA	Texas	Brazoria	North America	USA	Texas	Brazoria County
 North America	USA	Louisiana	Desoto Parish	North America	USA	Louisiana	DeSoto Parish
 North America	USA	Louisiana	St. Tammany Parish	North America	USA	Louisiana	St Tammany Parish
 North America	USA	Louisiana	St. Bernard Parish	North America	USA	Louisiana	St Bernard Parish
@@ -7110,6 +7118,8 @@ North America	USA	Louisiana	De Soto	North America	USA	Louisiana	DeSoto Parish
 North America	USA	Louisiana	Richland	North America	USA	Louisiana	Richland Parish
 North America	USA	Louisiana	Madison	North America	USA	Louisiana	Madison Parish
 North America	USA	Louisiana	De Soto Parish	North America	USA	Louisiana	DeSoto Parish
+North America	USA	Louisiana	East Baton Rouge	North America	USA	Louisiana	East Baton Rouge Parish
+North America	USA	Louisiana	Ascension	North America	USA	Louisiana	Ascension Parish
 North America	USA	Connecticut	Middlesex County	North America	USA	Connecticut	Woodbridge
 North America	USA	Connecticut	New Haven	North America	USA	Connecticut	New Haven County
 North America	USA	Connecticut	Hartford	North America	USA	Connecticut	Hartford County
@@ -7280,6 +7290,7 @@ North America	Costa Rica	Puntarenas	Canoas	North America	Costa Rica	Puntarenas	C
 North America	Costa Rica	Cartago CR	San Rafael	North America	Costa Rica	Cartago CR	San Rafael Cartago
 North America	Costa Rica	Cartago CR	San Francisco O Agua Caliente	North America	Costa Rica	Cartago CR	Aguacaliente
 North America	Costa Rica	Cartago CR	San Ramon	North America	Costa Rica	Cartago CR	San Ramon CR
+North America	Costa Rica	Unknown		North America	Costa Rica	Costa Rica	
 North America	Panama	Panama Center	San Francisco	North America	Panama	Panama Center	San Francisco PA
 North America	Panama	Panama Center	Clayton	North America	Panama	Panama Center	Clayton PA
 North America	Panama	Panama Center	Mañanitas	North America	Panama	Panama Center	Las Mañanitas
@@ -7341,6 +7352,9 @@ South America	Brazil	Rio de Janeiro	Itaboraí	South America	Brazil	Rio de Janeir
 South America	Brazil	Rio de Janeiro	Petrópolis	South America	Brazil	Rio de Janeiro	Petropolis
 South America	Brazil	Rio de Janeiro	Três Rios	South America	Brazil	Rio de Janeiro	Tres Rios BR
 South America	Brazil	Rio de Janeiro	Rio Claro	South America	Brazil	Rio de Janeiro	Rio Claro RJ
+South America	Brazil	Rio de Janeiro	Sao Joao de Meriti	South America	Brazil	Rio de Janeiro	São João de Meriti
+South America	Brazil	Rio de Janeiro	Nilopolis	South America	Brazil	Rio de Janeiro	Nilópolis
+South America	Brazil	Rio de Janeiro	Itaguai	South America	Brazil	Rio de Janeiro	Itaguaí
 South America	Brazil	Rio Grande do Sul	Torres	South America	Brazil	Rio Grande do Sul	Torres BR
 South America	Brazil	Rio Grande do Sul	Canoas	South America	Brazil	Rio Grande do Sul	Canoas BR
 South America	Brazil	Rio Grande do Sul	Nanuque	South America	Brazil	Rio Grande do Sul	
