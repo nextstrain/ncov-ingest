@@ -196,26 +196,29 @@ class UserProvidedAnnotations:
 class RenameAndAddColumns(Transformer):
     """This transformer applies the column renames as dictated by COLUMN_MAP."""
 
-    COLUMN_MAP = {
-        'covv_virus_name': 'strain',
-        'covv_accession_id': 'gisaid_epi_isl',
-        'covv_collection_date': 'date',
-        'covv_host': 'host',
-        'covv_orig_lab': 'originating_lab',
-        'covv_subm_lab': 'submitting_lab',
-        'covv_authors': 'authors',
-        'covv_patient_age': 'age',
-        'covv_gender': 'sex',
-        'covv_lineage': 'pango_lineage',
-        'covv_clade': 'GISAID_clade',
-        'covv_add_host_info': 'additional_host_info',
-        'covv_add_location': 'additional_location_info',
-        'covv_subm_date': 'date_submitted',
-        'covv_location': 'location',
-    }
+    def __init__(self , column_map = None) :
+        self.column_map = column_map
+        if self.column_map is None : # this default corresponds to column substituion for gisaid
+            self.column_map = {
+                'covv_virus_name': 'strain',
+                'covv_accession_id': 'gisaid_epi_isl',
+                'covv_collection_date': 'date',
+                'covv_host': 'host',
+                'covv_orig_lab': 'originating_lab',
+                'covv_subm_lab': 'submitting_lab',
+                'covv_authors': 'authors',
+                'covv_patient_age': 'age',
+                'covv_gender': 'sex',
+                'covv_lineage': 'pango_lineage',
+                'covv_clade': 'GISAID_clade',
+                'covv_add_host_info': 'additional_host_info',
+                'covv_add_location': 'additional_location_info',
+                'covv_subm_date': 'date_submitted',
+                'covv_location': 'location',
+            }
 
     def transform_value(self, entry: dict) -> dict:
-        for in_col, out_col in RenameAndAddColumns.COLUMN_MAP.items():
+        for in_col, out_col in self.column_map.items():
             if in_col not in entry:
                 entry[out_col] = ""
             else:
@@ -473,4 +476,45 @@ class FillDefaultLocationData(Transformer):
         # Set `division_exposure` equal to `division` if it wasn't added by annotations
         entry.setdefault('division_exposure', entry['division'])
 
+        return entry
+
+class StandardizeGenbankStrainNames(Transformer):
+    """
+    Attempt to standardize strain names by removing extra prefixes,
+    stripping spaces, and correcting known common error patterns.
+    """
+    def parse_strain_from_title(self,title: str) -> str:
+        """
+        Try to parse strain name from the given *title* using regex search.
+        Returns an empty string if not match is found in the *title*.
+        """
+        strain_name_regex = r'[-\w]*/[-\w]*/[-\w]*\s'
+        strain = re.search(strain_name_regex, title)
+        return strain.group(0) if strain else ''
+
+    def transform_value(self, entry: dict) -> dict:
+        # Compile list of regex to be used for strain name standardization
+        # Order is important here! Keep the known prefixes first!
+        regex_replacement = [
+            (r'(^SAR[S]{0,1}[-\s]CoV[-]{0,1}2/|^2019[-\s]nCoV[-_\s/]|^BetaCoV/|^nCoV-|^hCoV-19/)',''),
+            (r'(human/|homo sapien/|Homosapiens/)',''),
+            (r'^USA-', 'USA/'),
+            (r'^USACT-', 'USA/CT-'),
+            (r'^USAWA-', 'USA/WA-'),
+            (r'^HKG.', 'HongKong/'),
+        ]
+
+        # Parse strain name from title to fill in strains that are empty strings
+        entry['strain_from_title'] = self.parse_strain_from_title( entry['title'] )
+    
+        if entry['strain'] == '':
+            entry['strain'] = entry['strain_from_title']
+    
+        # Standardize strain names using list of regex replacements
+        for regex, replacement in regex_replacement:
+            entry['strain'] = re.sub( regex, replacement, entry['strain'], flags=re.IGNORECASE)
+    
+        # Strip all spaces
+        entry['strain'] = re.sub( r'\s', '' , entry['strain'] )
+    
         return entry

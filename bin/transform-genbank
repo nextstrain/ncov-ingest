@@ -2,6 +2,7 @@
 """
 Parse the GenBank JSON load into a metadata tsv and a FASTA file.
 """
+import os
 import argparse
 import csv
 import sys
@@ -18,8 +19,17 @@ from utils.transform import (
     write_fasta_file,
 
 )
-from utils.transformpipeline.transforms import UserProvidedGeoLocationSubstitutionRules 
-
+from utils.transformpipeline import LINE_NUMBER_KEY
+from utils.transformpipeline.datasource import LineToJsonDataSource
+from utils.transformpipeline.filters import SequenceLengthFilter, LineNumberFilter
+from utils.transformpipeline.transforms import (
+    DropSequenceData,
+    RenameAndAddColumns,
+    StandardizeData,
+    StandardizeGenbankStrainNames,
+    UserProvidedAnnotations,
+    UserProvidedGeoLocationSubstitutionRules,
+)
 
 assert 'sequence' not in METADATA_COLUMNS, "Sequences should not appear in metadata!"
 
@@ -314,6 +324,8 @@ if __name__ == '__main__':
     parser.add_argument("--problem-data",
         default=base / "data/genbank/problem_data.tsv",
         help="Output location of generated tsv of problem records missing geography region or a valid strain name")
+    parser.add_argument("--sorted-fasta", action="store_true",
+        help="Sort the fasta file in the same order as the metadata file.  WARNING: Enabling this option can consume a lot of memory.")
     parser.add_argument("--geo-location-rules",
         default = str( base / "source-data/gisaid_geoLocationRules.tsv" ) ,
         help="Optional manually curated rules to correct geographical location.\n"
@@ -322,14 +334,102 @@ if __name__ == '__main__':
         "Lines or parts of lines starting with '#' are treated as comments.\n"
         "e.g.\n\t"
         "Europe/Spain/Catalunya/Mataró\tEurope/Spain/Catalunya/Mataro\n\t")
-
+    parser.add_argument(
+        "--output-unix-newline",
+        dest="newline",
+        action="store_const",
+        const="\n",
+        default=os.linesep,
+        help="When specified, always use unix newlines in output files."
+    )
     args = parser.parse_args()
 
-    genbank_data = pd.read_json(args.genbank_data,
-                                lines=True,
-                                compression='infer')
-    genbank_data = preprocess(genbank_data)
-    genbank_data = standardize_strain_names(genbank_data)
+
+    #parsing curated annotations
+    annotations = UserProvidedAnnotations()
+    if args.annotations:
+        # Use the curated annotations tsv to update any column values
+        with open(args.annotations, "r") as gisaid_fh:
+            csvreader = csv.reader(gisaid_fh, delimiter='\t')
+            for row in csvreader:
+                if row[0].lstrip()[0] == '#':
+                    continue
+                elif len(row) != 3:
+                    print("WARNING: couldn't decode annotation line " + "\t".join(row))
+                    continue
+                strainId, key, value = row
+                annotations.add_user_annotation(
+                    strainId,
+                    key,
+                    # remove the comment and the extra ws from the value
+                    value.split('#')[0].rstrip(),
+                )
+
+
+    accessions = UserProvidedAnnotations()
+    if args.accessions:
+        with open(args.accessions, "r") as accessions_fh:
+            for row in csv.DictReader(accessions_fh, delimiter='\t'):
+                accessions.add_user_annotation(
+                    row["genbank_accession"],
+                    "gisaid_epi_isl",
+                    row["gisaid_epi_isl"],
+                )
+
+    geoRules = UserProvidedGeoLocationSubstitutionRules()
+    if args.geo_location_rules :
+        # use curated rules to subtitute known spurious locations with correct ones
+        with open(args.geo_location_rules,'r') as geo_location_rules_fh :
+            for line in geo_location_rules_fh:
+                geoRules.readFromLine( line )
+
+
+    with open(args.genbank_data, "r") as genbank_fh :
+
+        pipeline = (
+            LineToJsonDataSource(genbank_fh)
+            | RenameAndAddColumns(column_map = { 'collected': 'date',
+                                                 'submitted': 'date_submitted'})
+            | StandardizeData()
+            | SequenceLengthFilter(15000)
+        )
+
+        if not args.sorted_fasta:
+            pipeline = pipeline | DropSequenceData()
+
+        pipeline = pipeline | StandardizeGenbankStrainNames()
+
+        sorted_metadata = sorted(
+            pipeline,
+            key=lambda obj: (
+                obj['strain'],
+                -obj['length'],
+                obj['genbank_accession'],
+                obj[LINE_NUMBER_KEY]
+            )
+        )
+        #print( type( sorted_metadata ) )
+        #print( sorted_metadata )
+
+    # this should be moved further down
+    # dedup by strain and compile a list of relevant line numbers.
+    seen_strains = set()
+    line_numbers = set()
+    updated_strain_names_by_line_no = {}
+    for entry in sorted_metadata:
+        if entry['strain'] in seen_strains:
+            continue
+
+        seen_strains.add(entry['strain'])
+        line_numbers.add(entry[LINE_NUMBER_KEY])
+        updated_strain_names_by_line_no[entry[LINE_NUMBER_KEY]] = entry['strain']
+
+    #genbank_data = pd.read_json(args.genbank_data,
+    #                            lines=True,
+    #                            compression='infer')
+    #genbank_data = preprocess(genbank_data)
+    #genbank_data = standardize_strain_names(genbank_data)
+    genbank_data = pd.DataFrame( sorted_metadata )
     genbank_data = parse_geographic_columns(genbank_data)
     genbank_data = parse_authors(genbank_data)
 
@@ -340,6 +440,24 @@ if __name__ == '__main__':
     genbank_data = update_metadata(genbank_data)
     genbank_data = find_and_drop_problem_records(genbank_data)
 
-    write_fasta_file(genbank_data, args.output_fasta)
+    if args.sorted_fasta:
+        write_fasta_file(genbank_data, args.output_fasta)
+
     genbank_data = genbank_data[METADATA_COLUMNS]
     genbank_data.to_csv(args.output_metadata, sep='\t', na_rep='', index=False)
+
+
+    if not args.sorted_fasta:
+        
+        with open(args.genbank_data, "r") as genbank_IN , open(args.output_fasta, "wt", newline=args.newline) as fasta_OUT:
+                for entry in (
+                        LineToJsonDataSource(genbank_IN)
+                        | RenameAndAddColumns(column_map = { 'collected': 'date',
+                                                 'submitted': 'date_submitted'})
+                        | StandardizeData()
+                        | LineNumberFilter(line_numbers)
+                ):
+                    strain_name = updated_strain_names_by_line_no[entry[LINE_NUMBER_KEY]]
+                    print( '>' , strain_name , sep='' , file= fasta_OUT)
+                    print( entry['sequence'] , file= fasta_OUT)
+                    
