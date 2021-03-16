@@ -114,6 +114,7 @@ Africa	Mali	Bamako
 Africa	Mali	Mali	
 Africa	Mali	Mopti	
 Africa	Mali	Timbuktu	
+Africa	Mauritania	Mauritania	
 Africa	Mauritius	Plaine-Wilhems	
 Africa	Mauritius	Plaine-Wilhems	Candos
 Africa	Morocco	Casablanca	
@@ -616,6 +617,7 @@ Asia	India	Telangana	Sangareddy
 Asia	India	Telangana	Suryapet
 Asia	India	Telangana	Vikarabad
 Asia	India	Telangana	Warangal
+Asia	India	Tripura	
 Asia	India	Uttar Pradesh	
 Asia	India	Uttar Pradesh	Agra
 Asia	India	Uttar Pradesh	Aligarh
@@ -1026,12 +1028,17 @@ Asia	Sri Lanka	Kandy
 Asia	Sri Lanka	Kilinochchi	
 Asia	Sri Lanka	Mannar	
 Asia	Sri Lanka	Matale	
+Asia	Sri Lanka	North Central Province	
+Asia	Sri Lanka	North Central Province	Anuradhapura
 Asia	Sri Lanka	North Western Province	
 Asia	Sri Lanka	North Western Province	Puttalam
 Asia	Sri Lanka	Sabaragamuwa Province	
 Asia	Sri Lanka	Sabaragamuwa Province	Kegalle
 Asia	Sri Lanka	Sabaragamuwa Province	Ratnapura
 Asia	Sri Lanka	Sri Lanka	
+Asia	Sri Lanka	Uva Province	
+Asia	Sri Lanka	Uva Province	Badulla
+Asia	Sri Lanka	Uva Province	Mahiyangana
 Asia	Sri Lanka	Vavuniya	
 Asia	Sri Lanka	Western Province	
 Asia	Sri Lanka	Western Province	Avissawella
@@ -1670,6 +1677,7 @@ Europe	Belgium	Maaseik	Opglabbeek
 Europe	Belgium	Maaseik	Oudsbergen
 Europe	Belgium	Maaseik	Overpelt
 Europe	Belgium	Maaseik	Peer
+Europe	Belgium	Maaseik	Pelt
 Europe	Belgium	Maaseik	Stokkem
 Europe	Belgium	Marche-en-Famenne	
 Europe	Belgium	Marche-en-Famenne	Hotton
@@ -2010,13 +2018,27 @@ Europe	Bosnia and Herzegovina	Zepce
 Europe	Bosnia and Herzegovina	Čelinac	
 Europe	Bulgaria	Blagoevgrad	
 Europe	Bulgaria	Bulgaria	
+Europe	Bulgaria	Burgas	
 Europe	Bulgaria	Dupnitza	
+Europe	Bulgaria	Gabrovo	
+Europe	Bulgaria	Haskovo	
 Europe	Bulgaria	Kyustendil	
+Europe	Bulgaria	Lovech	
+Europe	Bulgaria	Montana BG	
 Europe	Bulgaria	Pazardzhik	
+Europe	Bulgaria	Pernik	
 Europe	Bulgaria	Pleven	
+Europe	Bulgaria	Plovdiv	
+Europe	Bulgaria	Razgrad	
+Europe	Bulgaria	Ruse	
+Europe	Bulgaria	Sliven	
 Europe	Bulgaria	Smolyan	
 Europe	Bulgaria	Sofia	
+Europe	Bulgaria	Targovishte	
+Europe	Bulgaria	Varna	
 Europe	Bulgaria	Vidin	
+Europe	Bulgaria	Vratsa	
+Europe	Bulgaria	Yambol	
 Europe	Crimea	Crimea	
 Europe	Croatia	Bjelovar-Bilogora County	
 Europe	Croatia	Brod-Posavina County	
@@ -2417,6 +2439,7 @@ Europe	France	Ile de France	Egreville
 Europe	France	Ile de France	Essonne
 Europe	France	Ile de France	Garches
 Europe	France	Ile de France	Gennevilliers
+Europe	France	Ile de France	Gonesse
 Europe	France	Ile de France	Groslay
 Europe	France	Ile de France	Guyancourt
 Europe	France	Ile de France	Hauts-de-Seine
@@ -2461,6 +2484,7 @@ Europe	France	Ile de France	Verrières-le-Buisson
 Europe	France	Ile de France	Villejuif
 Europe	France	Ile de France	Villeneuve St Georges
 Europe	France	Ile de France	Villeneuve-Saint-Georges
+Europe	France	Ile de France	Yvelines
 Europe	France	Lorraine	
 Europe	France	Lorraine	Epinal
 Europe	France	Martinique	
@@ -2495,6 +2519,7 @@ Europe	France	Nouvelle-Aquitaine	Pau
 Europe	France	Nouvelle-Aquitaine	Perigueux
 Europe	France	Nouvelle-Aquitaine	Poitiers
 Europe	France	Nouvelle-Aquitaine	Pons
+Europe	France	Nouvelle-Aquitaine	Royan
 Europe	France	Nouvelle-Aquitaine	Saint-Paul-lès-Dax
 Europe	France	Nouvelle-Aquitaine	Saintes
 Europe	France	Occitanie	
@@ -2827,13 +2852,16 @@ Europe	Kosovo	Pristina	Gracanica
 Europe	Kosovo	Pristina	Lipljan
 Europe	Latvia	Latvia	
 Europe	Latvia	Riga	
+Europe	Liechtenstein	Balzers	
 Europe	Liechtenstein	Eschen	
+Europe	Liechtenstein	Eschen	Nendeln
 Europe	Liechtenstein	Gamprin-Bendern	
 Europe	Liechtenstein	Liechtenstein	
 Europe	Liechtenstein	Mauren	
 Europe	Liechtenstein	Planken	
 Europe	Liechtenstein	Schaan	
 Europe	Liechtenstein	Schellenberg	
+Europe	Liechtenstein	Triesen	
 Europe	Liechtenstein	Vaduz	
 Europe	Lithuania	Alytaus Apskritis	
 Europe	Lithuania	Jonavos Apskritis	
@@ -3184,6 +3212,7 @@ Europe	Portugal	Setúbal	Barreiro
 Europe	Portugal	Setúbal	Grandola
 Europe	Portugal	Setúbal	Moita
 Europe	Portugal	Setúbal	Montijo
+Europe	Portugal	Setúbal	Montijo PT
 Europe	Portugal	Setúbal	Palmela
 Europe	Portugal	Setúbal	Seixal
 Europe	Portugal	Setúbal	Sesimbra
@@ -3191,6 +3220,7 @@ Europe	Portugal	Sobral de Monte AgracO
 Europe	Portugal	Évora	
 Europe	Portugal	Évora	Montemor-o-Novo
 Europe	Romania	Arges	
+Europe	Romania	Bihor	
 Europe	Romania	Bucharest	
 Europe	Romania	Buzau	
 Europe	Romania	Calarasi	
@@ -3199,6 +3229,7 @@ Europe	Romania	Cluj Napoca
 Europe	Romania	Constanta	
 Europe	Romania	Covasna	
 Europe	Romania	Dambovita	
+Europe	Romania	Galati	
 Europe	Romania	Giurgiu	
 Europe	Romania	Hunedoara	
 Europe	Romania	Ialomița	
@@ -3513,12 +3544,17 @@ Europe	Slovakia	Banska Bystrica	Zelovce
 Europe	Slovakia	Bartosova Lehotka	
 Europe	Slovakia	Bela nad Cirochou	
 Europe	Slovakia	Bratislava	
+Europe	Slovakia	Bratislava	Rovinka
+Europe	Slovakia	Bratislava	Slovensky Grob
+Europe	Slovakia	Bratislava	Vinosady
 Europe	Slovakia	Dolny Kubin	
 Europe	Slovakia	Doľany	
 Europe	Slovakia	Hnusta	
+Europe	Slovakia	Humenne	
 Europe	Slovakia	Ilava	
 Europe	Slovakia	Jatov	
 Europe	Slovakia	Kamenicna	
+Europe	Slovakia	Komarno	
 Europe	Slovakia	Kosice	
 Europe	Slovakia	Kosice	Zehra
 Europe	Slovakia	Kostoliste	
@@ -3529,8 +3565,17 @@ Europe	Slovakia	Martin
 Europe	Slovakia	Miloslavov	
 Europe	Slovakia	Muranska Huta	
 Europe	Slovakia	Myto Pod Dumbierom	
+Europe	Slovakia	Namestovo	
+Europe	Slovakia	Namestovo	Benadovo
+Europe	Slovakia	Namestovo	Klin
+Europe	Slovakia	Namestovo	Oravske Vesele
+Europe	Slovakia	Namestovo	Vavrecka
 Europe	Slovakia	Nitra	
+Europe	Slovakia	Nitra	Batorove Kosihy
 Europe	Slovakia	Nitra	Hurbanovo
+Europe	Slovakia	Nitra	Kolta
+Europe	Slovakia	Nitra	Marcelova
+Europe	Slovakia	Nitra	Ton
 Europe	Slovakia	Nove Mesto nad Vahom	
 Europe	Slovakia	Nove Zamky	
 Europe	Slovakia	Nove Zamky	Ulany nad Zitavou
@@ -3538,23 +3583,48 @@ Europe	Slovakia	Oravska Lesna
 Europe	Slovakia	Partizanske	
 Europe	Slovakia	Pavlovce nad Uhom	
 Europe	Slovakia	Pezinok	
+Europe	Slovakia	Poprad	
+Europe	Slovakia	Prešov	
+Europe	Slovakia	Prešov	Janovce
+Europe	Slovakia	Prešov	Spisske Bystre
+Europe	Slovakia	Prešov	Spisske Podhradie
+Europe	Slovakia	Prešov	Velka Frankova
+Europe	Slovakia	Prešov	Vikartovce
 Europe	Slovakia	Prievidza	
 Europe	Slovakia	Revuca	
 Europe	Slovakia	Rimavska Sobota	
 Europe	Slovakia	Ruzomberok	
+Europe	Slovakia	Sala	
+Europe	Slovakia	Senec	
 Europe	Slovakia	Slovakia	
 Europe	Slovakia	Surany	
 Europe	Slovakia	Topolcany	
 Europe	Slovakia	Trencianska Tepla	
 Europe	Slovakia	Trencin	
 Europe	Slovakia	Trenčín	
+Europe	Slovakia	Trenčín	Beckov
+Europe	Slovakia	Trenčín	Kostolna-Zariecie
+Europe	Slovakia	Trenčín	Moravske Lieskove
+Europe	Slovakia	Trenčín	Nova Dubnica
+Europe	Slovakia	Trnava	
+Europe	Slovakia	Trnava	Cierna Voda
+Europe	Slovakia	Trnava	Dolne Saliby
+Europe	Slovakia	Trnava	Horne Saliby
+Europe	Slovakia	Trnava	Mostova
+Europe	Slovakia	Trnava	Soporna
+Europe	Slovakia	Trnava	Velke Ulany
+Europe	Slovakia	Trnava	Voderady
 Europe	Slovakia	Tvrdosin	
 Europe	Slovakia	Tvrdosovce	
 Europe	Slovakia	Velky Krtis	
 Europe	Slovakia	Zilina	
 Europe	Slovakia	Zilina	Dolný Kubín
 Europe	Slovakia	Zilina	Martincek
+Europe	Slovakia	Zilina	Nizna
+Europe	Slovakia	Zilina	Oravska Jasenica
+Europe	Slovakia	Zilina	Oravska Polhora
 Europe	Slovakia	Zilina	Trstena
+Europe	Slovakia	Zilina	Turzovka
 Europe	Slovenia	Celje	
 Europe	Slovenia	Jesenice	
 Europe	Slovenia	Kamnik	
@@ -3676,6 +3746,9 @@ Europe	Spain	Asturias	Norena
 Europe	Spain	Asturias	Oviedo
 Europe	Spain	Asturias	Panes
 Europe	Spain	Asturias	Pravia
+Europe	Spain	Asturias	Quiros
+Europe	Spain	Asturias	Ribera de Arriba
+Europe	Spain	Asturias	Salas
 Europe	Spain	Asturias	Siero
 Europe	Spain	Asturias	Somiedo
 Europe	Spain	Asturias	Tineo
@@ -4309,6 +4382,7 @@ Europe	Switzerland	Aargau	Riniken
 Europe	Switzerland	Aargau	Rothrist
 Europe	Switzerland	Aargau	Spreitenbach
 Europe	Switzerland	Aargau	Staffelbach
+Europe	Switzerland	Aargau	Suhr
 Europe	Switzerland	Aargau	Untersiggenthal
 Europe	Switzerland	Aargau	Wallbach
 Europe	Switzerland	Aargau	Wegenstetten
@@ -4356,6 +4430,8 @@ Europe	Switzerland	Basel-Stadt	Bettingen
 Europe	Switzerland	Basel-Stadt	Riehen
 Europe	Switzerland	Bern	
 Europe	Switzerland	Bern	Biel
+Europe	Switzerland	Bern	Biel-Bienne
+Europe	Switzerland	Bern	Bolligen
 Europe	Switzerland	Bern	Burgdorf
 Europe	Switzerland	Bern	Evilard
 Europe	Switzerland	Bern	Gasel
@@ -4363,6 +4439,7 @@ Europe	Switzerland	Bern	Goldswil
 Europe	Switzerland	Bern	Ipsach
 Europe	Switzerland	Bern	Kallnach
 Europe	Switzerland	Bern	Moutier
+Europe	Switzerland	Bern	Nidau
 Europe	Switzerland	Bern	Oberhofen
 Europe	Switzerland	Bern	Orvin
 Europe	Switzerland	Bern	Wasen Im Emmental
@@ -4384,9 +4461,11 @@ Europe	Switzerland	Graubünden	Flims Dorf
 Europe	Switzerland	Graubünden	Jenaz
 Europe	Switzerland	Graubünden	Landquart
 Europe	Switzerland	Graubünden	Trimmis
+Europe	Switzerland	Graubünden	Vals
 Europe	Switzerland	Graubünden	Zernez
 Europe	Switzerland	Jura	
 Europe	Switzerland	Jura	Boncourt
+Europe	Switzerland	Jura	Courrendlin
 Europe	Switzerland	Jura	Delémont
 Europe	Switzerland	Jura	Saignelegier
 Europe	Switzerland	Lucerne	
@@ -4399,11 +4478,20 @@ Europe	Switzerland	Nidwalden
 Europe	Switzerland	Obwalden	
 Europe	Switzerland	Sankt Gallen	
 Europe	Switzerland	Sankt Gallen	Altstatten
+Europe	Switzerland	Sankt Gallen	Bad Ragaz
 Europe	Switzerland	Sankt Gallen	Buchs
+Europe	Switzerland	Sankt Gallen	Gams
+Europe	Switzerland	Sankt Gallen	Gossau
+Europe	Switzerland	Sankt Gallen	Grub
 Europe	Switzerland	Sankt Gallen	Kriessern
+Europe	Switzerland	Sankt Gallen	Mels
+Europe	Switzerland	Sankt Gallen	Mörschwil
+Europe	Switzerland	Sankt Gallen	Niederuzwil
 Europe	Switzerland	Sankt Gallen	Rebstein
 Europe	Switzerland	Sankt Gallen	Rheintal
+Europe	Switzerland	Sankt Gallen	Sevelen
 Europe	Switzerland	Sankt Gallen	St Gallen
+Europe	Switzerland	Sankt Gallen	Walenstadt
 Europe	Switzerland	Sankt Gallen	Widnau
 Europe	Switzerland	Schaffhausen	
 Europe	Switzerland	Schaffhausen	Flurlingen
@@ -4411,6 +4499,7 @@ Europe	Switzerland	Schaffhausen	Schaffhausen
 Europe	Switzerland	Schwyz	
 Europe	Switzerland	Schwyz	Küssnacht Am Rigi
 Europe	Switzerland	Schwyz	Merlischachen
+Europe	Switzerland	Schwyz	Rickenbach CH
 Europe	Switzerland	Schwyz	Wollerau
 Europe	Switzerland	Solothurn	
 Europe	Switzerland	Solothurn	Breitenbach
@@ -4433,16 +4522,22 @@ Europe	Switzerland	Solothurn	Seewen
 Europe	Switzerland	Solothurn	Solothurn
 Europe	Switzerland	Solothurn	St. Pantaleon
 Europe	Switzerland	Solothurn	St.Pantaleon
+Europe	Switzerland	Solothurn	Starrkirch-Wil
 Europe	Switzerland	Solothurn	Witterswil
 Europe	Switzerland	Switzerland	
 Europe	Switzerland	Tessin	
 Europe	Switzerland	Thurgau	
+Europe	Switzerland	Thurgau	Erlen
+Europe	Switzerland	Thurgau	Felben-Wellhausen
 Europe	Switzerland	Thurgau	Frauenfeld
+Europe	Switzerland	Thurgau	Gachnang
 Europe	Switzerland	Thurgau	Munchwilen
 Europe	Switzerland	Thurgau	Wangi
 Europe	Switzerland	Thurgau	Wilen bei Wil
 Europe	Switzerland	Ticino	
+Europe	Switzerland	Ticino	Canobbio
 Europe	Switzerland	Ticino	Lugano
+Europe	Switzerland	Ticino	Paradiso
 Europe	Switzerland	Ticino	Pregassona
 Europe	Switzerland	Ticino	Purasca
 Europe	Switzerland	Uri	
@@ -4456,15 +4551,25 @@ Europe	Switzerland	Zug
 Europe	Switzerland	Zürich	
 Europe	Switzerland	Zürich	Bassersdorf
 Europe	Switzerland	Zürich	Birmensdorf
+Europe	Switzerland	Zürich	Brütten
+Europe	Switzerland	Zürich	Brüttisellen
 Europe	Switzerland	Zürich	Dubendorf
+Europe	Switzerland	Zürich	Embrach
 Europe	Switzerland	Zürich	Hinwil
+Europe	Switzerland	Zürich	Horgen
 Europe	Switzerland	Zürich	Lufingen
 Europe	Switzerland	Zürich	Nanikon
 Europe	Switzerland	Zürich	Niederhasli
+Europe	Switzerland	Zürich	Rorbas
 Europe	Switzerland	Zürich	Seuzach
 Europe	Switzerland	Zürich	Thalwil
 Europe	Switzerland	Zürich	Volketswil
 Europe	Switzerland	Zürich	Wallisellen
+Europe	Switzerland	Zürich	Wangen
+Europe	Switzerland	Zürich	Wetzikon
+Europe	Switzerland	Zürich	Winterthur
+Europe	Switzerland	Zürich	Wolfhausen
+Europe	Switzerland	Zürich	Zollikon
 Europe	Switzerland	Zürich	Zürich
 Europe	Turkey	Adıyaman	
 Europe	Turkey	Afyon	
@@ -4580,6 +4685,7 @@ North America	Costa Rica	Cartago CR	San Diego CR
 North America	Costa Rica	Cartago CR	San Isidro
 North America	Costa Rica	Cartago CR	San Isidro CR
 North America	Costa Rica	Cartago CR	San Juan
+North America	Costa Rica	Cartago CR	San Juan CR
 North America	Costa Rica	Cartago CR	San Rafael Cartago
 North America	Costa Rica	Cartago CR	San Ramon
 North America	Costa Rica	Cartago CR	San Ramon CR
@@ -4739,15 +4845,66 @@ North America	Mexico	Zacatecas
 North America	Nicaragua	Nicaragua	
 North America	North America	North America	
 North America	Panama	Bocas del Toro	
+North America	Panama	Bocas del Toro	Changuinola
+North America	Panama	Bocas del Toro	El Empalme
+North America	Panama	Bocas del Toro	Finca 30
+North America	Panama	Bocas del Toro	Guabito
 North America	Panama	Chiriqui	
+North America	Panama	Chiriqui	Baco
+North America	Panama	Chiriqui	Bugaba
+North America	Panama	Chiriqui	David
+North America	Panama	Chiriqui	Gomez
+North America	Panama	Chiriqui	Puerto Armuelles
+North America	Panama	Chiriqui	Volcan
 North America	Panama	Cocle	
+North America	Panama	Cocle	Aguadulce
+North America	Panama	Cocle	Anton
+North America	Panama	Cocle	Barrios Unidos
+North America	Panama	Cocle	Chiguiri Arriba
+North America	Panama	Cocle	El Valle
+North America	Panama	Cocle	Llano Grande
+North America	Panama	Cocle	Pajonal
+North America	Panama	Cocle	Penonome
+North America	Panama	Cocle	Rio Hato
+North America	Panama	Cocle	Santa Rita PA
+North America	Panama	Cocle	Toabre
 North America	Panama	Colon	
+North America	Panama	Colon	Barrio Norte
+North America	Panama	Colon	Barrio Sur
+North America	Panama	Colon	Buena Vista
+North America	Panama	Colon	Cativá
+North America	Panama	Colon	Ciricito
+North America	Panama	Colon	Cristobal
+North America	Panama	Colon	Escobal
+North America	Panama	Colon	Maria Chiquita
+North America	Panama	Colon	Nueva Esperanza
+North America	Panama	Colon	Pilon
+North America	Panama	Colon	Portobelo
+North America	Panama	Colon	Sabanitas
+North America	Panama	Colon	San Juan PA
+North America	Panama	Darien	
+North America	Panama	Darien	Meteti
+North America	Panama	Darien	Pinogana
+North America	Panama	Darien	Sambu
+North America	Panama	Darien	Santa Fe PA
+North America	Panama	Darien	Tucuti
+North America	Panama	Darien	Yaviza
 North America	Panama	Guna Yala	
 North America	Panama	Guna Yala	Aligandí
+North America	Panama	Guna Yala	Carlos Santana Avila
+North America	Panama	Guna Yala	Cirilo Guaynora
+North America	Panama	Guna Yala	Nargana
+North America	Panama	Guna Yala	Salto Dupi
 North America	Panama	Herrera	
+North America	Panama	Herrera	Chitre
+North America	Panama	Herrera	El Calabacito
+North America	Panama	Herrera	San Juan Bautista
 North America	Panama	Los Santos	
+North America	Panama	Los Santos	Las Tablas
+North America	Panama	Los Santos	Pocri
 North America	Panama	Panama	
 North America	Panama	Panama Center	
+North America	Panama	Panama Center	24 De Diciembre
 North America	Panama	Panama Center	Alcalde Díaz
 North America	Panama	Panama Center	Amelia Denis de Icaza
 North America	Panama	Panama Center	Ancón
@@ -4756,10 +4913,13 @@ North America	Panama	Panama Center	Belisario Frías
 North America	Panama	Panama Center	Belisario Porras
 North America	Panama	Panama Center	Bella Vista
 North America	Panama	Panama Center	Betania
+North America	Panama	Panama Center	Boqueron
+North America	Panama	Panama Center	Caimitillo
 North America	Panama	Panama Center	Calidonia
 North America	Panama	Panama Center	Chepo
 North America	Panama	Panama Center	Chilibre
 North America	Panama	Panama Center	Clayton PA
+North America	Panama	Panama Center	Curundú
 North America	Panama	Panama Center	Don Bosco
 North America	Panama	Panama Center	El Chorrillo
 North America	Panama	Panama Center	El Crisol
@@ -4777,21 +4937,42 @@ North America	Panama	Panama Center	Pueblo Nuevo
 North America	Panama	Panama Center	Rufina Alfaro
 North America	Panama	Panama Center	Río Abajo
 North America	Panama	Panama Center	San Francisco PA
+North America	Panama	Panama Center	San Martin PA
 North America	Panama	Panama Center	Santa Ana PA
 North America	Panama	Panama Center	Tocumen
+North America	Panama	Panama Center	Torti
 North America	Panama	Panama Center	Victoriano Lorenzo
 North America	Panama	Panama City	
 North America	Panama	Panama Oeste	
 North America	Panama	Panama Oeste	Arraiján
+North America	Panama	Panama Oeste	Barrio Balboa
+North America	Panama	Panama Oeste	Barrio Colon
 North America	Panama	Panama Oeste	Burunga
+North America	Panama	Panama Oeste	El Coco
+North America	Panama	Panama Oeste	Feuillet
 North America	Panama	Panama Oeste	Guadalupe
 North America	Panama	Panama Oeste	Herrera (Panama Oeste)
 North America	Panama	Panama Oeste	Juan Demóstenes Arosemena
 North America	Panama	Panama Oeste	La Chorrera
 North America	Panama	Panama Oeste	Lídice
+North America	Panama	Panama Oeste	Puerto Caimito
+North America	Panama	Panama Oeste	Santa Clara
 North America	Panama	Panama Oeste	Veracruz
 North America	Panama	Panama Oeste	Vista Alegre
+North America	Panama	San Miguelito	
+North America	Panama	San Miguelito	Belisario Frias
+North America	Panama	San Miguelito	Jose D. Espinar
 North America	Panama	Santiago de Veraguas	
+North America	Panama	Veraguas	
+North America	Panama	Veraguas	Atalaya
+North America	Panama	Veraguas	La Colorada
+North America	Panama	Veraguas	Las Palmas
+North America	Panama	Veraguas	Los Algarrobos
+North America	Panama	Veraguas	Montijo PA
+North America	Panama	Veraguas	Rodrigo Luque
+North America	Panama	Veraguas	San Martín de Porres
+North America	Panama	Veraguas	Santiago PA
+North America	Panama	Veraguas	Sona
 North America	Saint Barthélemy	Saint Barthélemy	
 North America	Saint Kitts and Nevis	Saint Kitts and Nevis	
 North America	Saint Lucia	Saint Lucia	
@@ -5351,6 +5532,7 @@ North America	USA	Ohio	Greene County OH
 North America	USA	Oklahoma	
 North America	USA	Oregon	
 North America	USA	Oregon	Beaverton
+North America	USA	Oregon	Benton County OR
 North America	USA	Oregon	Clackamas County
 North America	USA	Oregon	Clatsop County
 North America	USA	Oregon	Columbia County OR
@@ -5441,6 +5623,7 @@ North America	USA	Texas	Brazoria County
 North America	USA	Texas	Brazos County
 North America	USA	Texas	Brewster County
 North America	USA	Texas	Brown County TX
+North America	USA	Texas	Burleson
 North America	USA	Texas	Burleson County
 North America	USA	Texas	Caldwell
 North America	USA	Texas	Calhoun County
@@ -5465,6 +5648,7 @@ North America	USA	Texas	Denton County
 North America	USA	Texas	Ector County
 North America	USA	Texas	El Paso County
 North America	USA	Texas	Ellis County
+North America	USA	Texas	Falls County
 North America	USA	Texas	Fort Bend County
 North America	USA	Texas	Freestone County
 North America	USA	Texas	Frisco
@@ -5526,6 +5710,7 @@ North America	USA	Texas	Oldham County
 North America	USA	Texas	Panola County
 North America	USA	Texas	Parker County
 North America	USA	Texas	Parmer County
+North America	USA	Texas	Pecos
 North America	USA	Texas	Pecos County
 North America	USA	Texas	Polk County TX
 North America	USA	Texas	Presidio County
@@ -5564,6 +5749,7 @@ North America	USA	Texas	Williamson County
 North America	USA	Texas	Williamson County TX
 North America	USA	Texas	Wilson County
 North America	USA	Texas	Wise County
+North America	USA	Texas	Wood County TX
 North America	USA	Texas	Zapata County
 North America	USA	USA	
 North America	USA	Utah	
@@ -5578,6 +5764,7 @@ North America	USA	Washington
 North America	USA	Washington	Adams County WA
 North America	USA	Washington	Asotin County
 North America	USA	Washington	Benton County
+North America	USA	Washington	Benton County WA
 North America	USA	Washington	Chelan County
 North America	USA	Washington	Clallam County
 North America	USA	Washington	Clark County WA
@@ -5696,6 +5883,7 @@ North America	USA	Wisconsin	Waushara County
 North America	USA	Wisconsin	Whitefish Bay
 North America	USA	Wisconsin	Winnebago County WI
 North America	USA	Wisconsin	Wood County
+North America	USA	Wisconsin	Wood County WI
 North America	USA	Wyoming	
 Oceania	Australia	Australia	
 Oceania	Australia	Australian Capital Territory	
@@ -5780,6 +5968,7 @@ South America	Argentina	Buenos Aires	Quilmes
 South America	Argentina	Buenos Aires	San Fernando AR
 South America	Argentina	Buenos Aires	San Isidro AR
 South America	Argentina	Buenos Aires	San Martin
+South America	Argentina	Buenos Aires	San Martin AR
 South America	Argentina	Buenos Aires	San Pedro AR
 South America	Argentina	Buenos Aires	Tigre
 South America	Argentina	Buenos Aires	Torres AR
@@ -5847,6 +6036,7 @@ South America	Bolivia	Santa Cruz
 South America	Bolivia	Santa Cruz	El Torno
 South America	Bolivia	Santa Cruz	Pailon
 South America	Bolivia	Tarija	
+South America	Bonaire	Bonaire	
 South America	Brazil	Acre	
 South America	Brazil	Alagoas	
 South America	Brazil	Alagoas	Delmiro Gouveia
@@ -5905,13 +6095,21 @@ South America	Brazil	Ceará	Fortaleza
 South America	Brazil	Distrito Federal	
 South America	Brazil	Distrito Federal	Brasilia
 South America	Brazil	Espirito Santo	
+South America	Brazil	Espirito Santo	Aguia Branca
+South America	Brazil	Espirito Santo	Aracruz
+South America	Brazil	Espirito Santo	Baixo Guandu
 South America	Brazil	Espirito Santo	Barra do Sao Francisco
 South America	Brazil	Espirito Santo	Cachoeiro de Itapemirim
 South America	Brazil	Espirito Santo	Cariacica
+South America	Brazil	Espirito Santo	Fundao
 South America	Brazil	Espirito Santo	Guarapari
+South America	Brazil	Espirito Santo	Irupi
 South America	Brazil	Espirito Santo	Linhares
 South America	Brazil	Espirito Santo	Santa Teresa
+South America	Brazil	Espirito Santo	Sao Gabriel Da Palha
 South America	Brazil	Espirito Santo	Serra
+South America	Brazil	Espirito Santo	Vila Pavao
+South America	Brazil	Espirito Santo	Vila Valerio
 South America	Brazil	Espirito Santo	Vila Velha
 South America	Brazil	Espirito Santo	Vitoria
 South America	Brazil	Goiás	
@@ -5974,6 +6172,7 @@ South America	Brazil	Minas Gerais	Governador Valadares
 South America	Brazil	Minas Gerais	Guaira
 South America	Brazil	Minas Gerais	Ibitiura de Minas
 South America	Brazil	Minas Gerais	Manhuacu
+South America	Brazil	Minas Gerais	Monte Alegre de Minas
 South America	Brazil	Minas Gerais	Montes Claros
 South America	Brazil	Minas Gerais	Muriae
 South America	Brazil	Minas Gerais	Ouro Branco
@@ -6005,6 +6204,7 @@ South America	Brazil	Paraiba	Riachao
 South America	Brazil	Paraiba	Riacho Dos Cavalos
 South America	Brazil	Paraiba	Rio Tinto
 South America	Brazil	Paraiba	Santa Rita
+South America	Brazil	Paraiba	Santa Rita PB
 South America	Brazil	Paraiba	Sao Jose do Brejo do Cruz
 South America	Brazil	Paraiba	Sape
 South America	Brazil	Paraiba	Sossego
@@ -6059,6 +6259,7 @@ South America	Brazil	Paraná	Vere
 South America	Brazil	Pernambuco	
 South America	Brazil	Pernambuco	Alianca
 South America	Brazil	Pernambuco	Araripina
+South America	Brazil	Pernambuco	Arcoverde
 South America	Brazil	Pernambuco	Barra de Guabiraba
 South America	Brazil	Pernambuco	Bezerros
 South America	Brazil	Pernambuco	Cabo de Santo Agostinho
@@ -6191,6 +6392,7 @@ South America	Brazil	Rio Grande do Sul	Vista Gaucha
 South America	Brazil	Rio Grande do Sul	Xangri-la
 South America	Brazil	Rio de Janeiro	
 South America	Brazil	Rio de Janeiro	Belford Roxo
+South America	Brazil	Rio de Janeiro	Bom Jesus do Itabapoana
 South America	Brazil	Rio de Janeiro	Cabo Frio
 South America	Brazil	Rio de Janeiro	Campos Dos Goytacazes
 South America	Brazil	Rio de Janeiro	Duque de Caxias
@@ -6203,6 +6405,7 @@ South America	Brazil	Rio de Janeiro	Macaé
 South America	Brazil	Rio de Janeiro	Mage
 South America	Brazil	Rio de Janeiro	Maricá
 South America	Brazil	Rio de Janeiro	Mesquita
+South America	Brazil	Rio de Janeiro	Miracema
 South America	Brazil	Rio de Janeiro	Nilopolis
 South America	Brazil	Rio de Janeiro	Nilópolis
 South America	Brazil	Rio de Janeiro	Niteroi
@@ -6320,6 +6523,7 @@ South America	Brazil	São Paulo	Limeira
 South America	Brazil	São Paulo	Lins
 South America	Brazil	São Paulo	Lorena
 South America	Brazil	São Paulo	Lorena BR
+South America	Brazil	São Paulo	Lorena SP
 South America	Brazil	São Paulo	Mairipora
 South America	Brazil	São Paulo	Marilia
 South America	Brazil	São Paulo	Martinopolis
