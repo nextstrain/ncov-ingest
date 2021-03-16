@@ -29,40 +29,7 @@ Europe/Netherlands/Noord-Holland/*	Europe/Netherlands/North Holland/*
 Europe/Netherlands/Noord-Brabant/*	Europe/Netherlands/North Brabant/*
 Europe/Netherlands/Zuid-Holland/*	Europe/Netherlands/South Holland/*
 Europe/Netherlands/Limburg/Weert	Europe/Netherlands/Limburg/Weert NL
-Europe/France/Grand-Est/Strasbourg	Europe/France/Grand Est/Strasbourg
-Europe/France/Grand-Est/Reims	Europe/France/Grand Est/Reims
-Europe/France/Grand-Est/Gondrecourt-le-Chateau	Europe/France/Grand Est/Gondrecourt-le-Chateau
-Europe/France/Grand-Est/Spicheren	Europe/France/Grand Est/Spicheren
-Europe/France/Grand-Est/Woippy	Europe/France/Grand Est/Woippy
-Europe/France/Grand-Est/Nancy	Europe/France/Grand Est/Nancy
-Europe/France/Grand-Est/Ham Sous Varsberg	Europe/France/Grand Est/Ham Sous Varsberg
-Europe/France/Grand-Est/Ensisheim	Europe/France/Grand Est/Ensisheim
-Europe/France/Grand-Est/Biesheim	Europe/France/Grand Est/Biesheim
-Europe/France/Grand-Est/Munster	Europe/France/Grand Est/Munster
-Europe/France/Grand-Est/Reguisheim	Europe/France/Grand Est/Reguisheim
-Europe/France/Grand-Est/Ingersheim	Europe/France/Grand Est/Ingersheim
-Europe/France/Grand-Est/Guebwiller	Europe/France/Grand Est/Guebwiller
-Europe/France/Grand-Est/Soultzeren	Europe/France/Grand Est/Soultzeren
-Europe/France/Grand-Est/Soultz Haut Rhin	Europe/France/Grand Est/Soultz Haut Rhin
-Europe/France/Grand-Est/Murbach	Europe/France/Grand Est/Murbach
-Europe/France/Grand-Est/Liepvre	Europe/France/Grand Est/Liepvre
-Europe/France/Grand-Est/Marange Silvange	Europe/France/Grand Est/Marange Silvange
-Europe/France/Grand-Est/Talange	Europe/France/Grand Est/Talange
-Europe/France/Grand-Est/Metz	Europe/France/Grand Est/Metz
-Europe/France/Grand-Est/Amneville	Europe/France/Grand Est/Amneville
-Europe/France/Grand-Est/Sarreguemines	Europe/France/Grand Est/Sarreguemines
-Europe/France/Grand-Est/Montigny Les Metz	Europe/France/Grand Est/Montigny Les Metz
-Europe/France/Grand-Est/Joeuf	Europe/France/Grand Est/Joeuf
-Europe/France/Grand-Est/Ottonville	Europe/France/Grand Est/Ottonville
-Europe/France/Grand-Est/Fameck	Europe/France/Grand Est/Fameck
-Europe/France/Grand-Est/Crusnes	Europe/France/Grand Est/Crusnes
-Europe/France/Grand-Est/Maizières Les Metz	Europe/France/Grand Est/Maizières Les Metz
-Europe/France/Grand-Est/Bischheim	Europe/France/Grand Est/Bischheim
-Europe/France/Grand-Est/Thann	Europe/France/Grand Est/Thann
-Europe/France/Grand-Est/Tucquegnieux	Europe/France/Grand Est/Tucquegnieux
-Europe/France/Grand-Est/Brumath	Europe/France/Grand Est/Brumath
-Europe/France/Grand-Est/Champagne Ardenne	Europe/France/Grand Est/Champagne Ardenne
-Europe/France/Grand-Est/Lorraine	Europe/France/Grand Est/Lorraine
+Europe/France/Grand-Est/*	Europe/France/Grand Est/*
 Europe/France/Hauts-de-France/Crépy-en -Valois	Europe/France/Hauts de France/Crépy en Valois
 Europe/France/Hauts-de-France/Pontoise	Europe/France/Ile de France/Pontoise
 Europe/France/Hauts-de-France/Nogent l'Artaud	Europe/France/Hauts de France/Nogent-l'Artaud
@@ -77,8 +44,7 @@ Europe/France/Île-de-France/Moussy-le-Neuf	Europe/France/Ile de France/Moussy L
 Europe/France/Île-de-France/Villeneuve St Georges	Europe/France/Ile de France/Villeneuve-Saint-Georges
 Europe/France/Île-de-France/Villeneuve-St-Georges	Europe/France/Ile de France/Villeneuve-Saint-Georges
 Europe/France/Île-de-France/*	Europe/France/Ile de France/*
-Europe/France/Pays-de-la-Loire/Nantes	Europe/France/Pays de la Loire/Nantes
-Europe/France/Pays-de-la-Loire/Val de Loire	Europe/France/Pays de la Loire/Val de Loire
+Europe/France/Pays-de-la-Loire/*	Europe/France/Pays de la Loire/*
 Europe/France/Provence-Alpes-Côte D'Azur/*	Europe/France/Provence-Alpes-Côte d'Azur/*
 Europe/France/Auvergne-Rhône-Alpes/Villefranche	Europe/France/Auvergne-Rhône-Alpes/Villefranche-sur-Saône
 Europe/France/Auvergne-Rhône-Alpes/Chambéry	Europe/France/Auvergne-Rhône-Alpes/Chambery
@@ -6381,9 +6347,8 @@ Europe/Poland/Pomerania/	Europe/Poland/Pomorskie/
 Europe/Poland/Dolnoslaskie/*	Europe/Poland/Dolnośląskie/*
 Europe/Poland/Dolnoslakie/	Europe/Poland/Dolnośląskie/
 Europe/Poland/Pomorze/	Europe/Poland/Pomorskie/
-Europe/Poland/Malopolska/Kraków	Europe/Poland/Malopolskie/Kraków
-Europe/Poland/Malopolska/	Europe/Poland/Malopolskie/
 Europe/Poland/Malopolska/Krakow	Europe/Poland/Malopolskie/Kraków
+Europe/Poland/Malopolska/*	Europe/Poland/Malopolskie/*
 Europe/Poland/Wielkopolska/Kalisz	Europe/Poland/Wielkopolskie/Kalisz
 Europe/Poland/Lodzkie/*	Europe/Poland/Łódzkie/*
 Europe/Poland/Mazowieckie/Warsaw	Europe/Poland/Mazowieckie/Warszawa
@@ -7408,16 +7373,10 @@ North America/Panama/Panama Center/Chorrillo	North America/Panama/Panama Center/
 North America/Panama/Panama Center/San Martin	North America/Panama/Panama Center/San Martin PA
 North America/Panama/Panama Center/Alcalde Diaz	North America/Panama/Panama Center/Alcalde Díaz
 North America/Panama/Panama Center/Ernesto Córdoba	North America/Panama/Panama Center/Ernesto Cordoba
-North America/Panama/Panama West/Juan Demóstenes Arosemena	North America/Panama/Panama Oeste/Juan Demóstenes Arosemena
-North America/Panama/Panama West/Vista Alegre	North America/Panama/Panama Oeste/Vista Alegre
 North America/Panama/Panama West/Chorrera	North America/Panama/Panama Oeste/La Chorrera
 North America/Panama/Panama West/Herrera	North America/Panama/Panama Oeste/Herrera (Panama Oeste)
 North America/Panama/Panama West/Desconocido	North America/Panama/Panama Oeste/
-North America/Panama/Panama West/	North America/Panama/Panama Oeste/
-North America/Panama/Panama West/Lídice	North America/Panama/Panama Oeste/Lídice
-North America/Panama/Panama West/Guadalupe	North America/Panama/Panama Oeste/Guadalupe
-North America/Panama/Panama West/Burunga	North America/Panama/Panama Oeste/Burunga
-North America/Panama/Panama West/Veracruz	North America/Panama/Panama Oeste/Veracruz
+North America/Panama/Panama West/*	North America/Panama/Panama Oeste/*
 North America/Panama/Santiago/*	North America/Panama/Veraguas/*
 North America/Panama/Panama East/*	North America/Panama/Panama Center/*
 North America/Panama/Panama North/*	North America/Panama/Panama Center/*
@@ -7663,13 +7622,8 @@ Africa/Nigeria/Fct/*	Africa/Nigeria/Federal Capital Territory/*
 Africa/Nigeria/Edo State/*	Africa/Nigeria/Edo/*
 Africa/Nigeria/Ebonyi State/*	Africa/Nigeria/Ebonyi/*
 Africa/Côte D'Ivoire/Boauké/	Africa/Côte d'Ivoire/Bouaké/
-Africa/Côte D'Ivoire/Yamoussoukro/	Africa/Côte d'Ivoire/Yamoussoukro/
-Africa/Côte D'Ivoire/Bouafle/	Africa/Côte d'Ivoire/Bouafle/
-Africa/Côte D'Ivoire/Katiola/	Africa/Côte d'Ivoire/Katiola/
-Africa/Côte D'Ivoire/Beoumi/	Africa/Côte d'Ivoire/Beoumi/
 Africa/Côte D'Ivoire/Brobo/	Africa/Côte d'Ivoire/Bouaké/Brobo
-Africa/Côte D'Ivoire/Séguéla/	Africa/Côte d'Ivoire/Séguéla/
-Africa/Côte D'Ivoire/Guiglo/	Africa/Côte d'Ivoire/Guiglo/
+Africa/Côte D'Ivoire/*/*	Africa/Côte d'Ivoire/*/*
 Africa/Equatorial Guinea/Bioko sur/*	Africa/Equatorial Guinea/Bioko Sur/*
 Africa/Tunisia/Tunis/Marsa	Africa/Tunisia/Tunis/La Marsa
 Africa/Tunisia/Tunis/Ben Arous	Africa/Tunisia/Ben Arous/Ben Arous
