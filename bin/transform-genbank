@@ -23,6 +23,8 @@ from utils.transformpipeline import LINE_NUMBER_KEY
 from utils.transformpipeline.datasource import LineToJsonDataSource
 from utils.transformpipeline.filters import SequenceLengthFilter, LineNumberFilter
 from utils.transformpipeline.transforms import (
+    AbbreviateAuthors,
+    AddHardcodedMetadataGenbank,
     DropSequenceData,
     ParseGeographicColumnsGenbank,
     RenameAndAddColumns,
@@ -399,7 +401,13 @@ if __name__ == '__main__':
             pipeline = pipeline | DropSequenceData()
 
         pipeline = ( pipeline | StandardizeGenbankStrainNames()
-                            | ParseGeographicColumnsGenbank( base / 'source-data/us-state-codes.tsv' )
+                              | ParseGeographicColumnsGenbank( base / 'source-data/us-state-codes.tsv' )
+                              | AbbreviateAuthors()
+                              | AddHardcodedMetadataGenbank()
+                              | ApplyUserGeoLocationSubstitutionRules(geoRules)
+                              | MergeUserAnnotatedMetadata(annotations)
+                              | MergeUserAnnotatedMetadata(accessions)
+                              | FillDefaultLocationData()
         )
 
         sorted_metadata = sorted(
@@ -433,16 +441,17 @@ if __name__ == '__main__':
     #genbank_data = preprocess(genbank_data)
     #genbank_data = standardize_strain_names(genbank_data)
     #genbank_data = parse_geographic_columns(genbank_data)
-    genbank_data = pd.DataFrame( sorted_metadata )
+    #genbank_data = parse_authors(genbank_data)
 
 
-    genbank_data = parse_authors(genbank_data)
 
     ##geoRules additions
-    genbank_data = apply_geoRules( genbank_data , rulesFile = args.geo_location_rules )
+    #genbank_data = apply_geoRules( genbank_data , rulesFile = args.geo_location_rules )
     ##
 
-    genbank_data = update_metadata(genbank_data)
+    #genbank_data = update_metadata(genbank_data)
+
+    genbank_data = pd.DataFrame( sorted_metadata )
     genbank_data = find_and_drop_problem_records(genbank_data)
 
     if args.sorted_fasta:

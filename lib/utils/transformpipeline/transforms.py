@@ -550,7 +550,7 @@ class ParseGeographicColumnsGenbank(Transformer):
             sl = geographic_data[1].split(',')
             
             division = sl[0].strip()
-            if len(sl) == 1:
+            if len(sl) > 1:
                 location = sl[1].strip()
         elif len(geographic_data) > 2:
             assert False, f"Found unknown format for geographic data: {value}"
@@ -559,25 +559,47 @@ class ParseGeographicColumnsGenbank(Transformer):
         # Special parsing for US locations because the format varies
         if country == 'USA' and not division is None:
             # Switch location & division if location is a US state
-            if location and any(location.strip() in s for s in us_states.items()):
+            if location and any(location.strip() in s for s in self.us_states.items()):
                 state = location
                 location = division
                 division = state
             # Convert US state codes to full names
-            if us_states.get(division.strip().upper()):
-                division = us_states[division.strip().upper()]
+            if self.us_states.get(division.strip().upper()):
+                division = self.us_states[division.strip().upper()]
     
     
         location = location.strip().lower().title() if location else None
         division = division.strip().lower().title() if division else None
     
 
-        print(entry , '->' , geographic_data , country,
-                                                division,
-                                                location)
+        #print(entry , '->' , geographic_data , country, division, location)
         entry['country']     = country
         entry['division']    = division
         entry['location']    = location
 
 
         return entry
+
+class AddHardcodedMetadataGenbank(Transformer):
+    """
+    Adds a key-value for strain ID plus additional key-values containing harcoded
+    metadata.
+    """
+    def transform_value(self, entry: dict) -> dict:
+
+        entry['virus']             = 'ncov'
+        entry['gisaid_epi_isl']    = '?'
+        entry['segment']           = 'genome'
+        entry['age']               = '?'
+        entry['sex']               = '?'
+        entry['pango_lineage']  = '?'
+        entry['GISAID_clade']      = '?'
+        entry['originating_lab']   = '?'
+        entry['submitting_lab']    = '?'
+        entry['paper_url']         = '?'
+        entry['purpose_of_sequencing']         = '?'
+    
+        entry['url'] = entry['genbank_accession'].apply(lambda x: f"https://www.ncbi.nlm.nih.gov/nuccore/{x}")
+        return entry
+
+        
