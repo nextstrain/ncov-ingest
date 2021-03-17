@@ -3,6 +3,8 @@ import re
 import unicodedata
 from collections import defaultdict
 from typing import Any, Collection, List, MutableMapping, Sequence, Tuple , Dict , Union
+import pandas as pd
+
 
 from utils.transform import format_date, titlecase
 from . import LINE_NUMBER_KEY
@@ -517,4 +519,65 @@ class StandardizeGenbankStrainNames(Transformer):
         # Strip all spaces
         entry['strain'] = re.sub( r'\s', '' , entry['strain'] )
     
+        return entry
+
+class ParseGeographicColumnsGenbank(Transformer):
+    """
+    Expands string found in the column named `location` in the given
+    *genbank_data* DataFrame, creating 3 new columns. Returns the modified
+    DataFrame.
+
+    Expected formats of the location string are:
+        * "country"
+        * "country: division"
+        * "country: division, location"
+    """
+    def __init__(self, us_state_code_file_name ):
+        # Create dict of US state codes and their full names
+        self.us_states = pd.read_csv( us_state_code_file_name , header=None, sep='\t', comment="#")
+        self.us_states = dict(zip(self.us_states[0], self.us_states[1]))
+
+
+    def transform_value(self, entry : dict) -> dict :
+    
+        geographic_data = entry['location'].split(':')
+        
+        country = geographic_data[0].strip()
+        division = None
+        location = None
+
+        if len(geographic_data) == 2 :
+            sl = geographic_data[1].split(',')
+            
+            division = sl[0].strip()
+            if len(sl) == 1:
+                location = sl[1].strip()
+        elif len(geographic_data) > 2:
+            assert False, f"Found unknown format for geographic data: {value}"
+    
+
+        # Special parsing for US locations because the format varies
+        if country == 'USA' and not division is None:
+            # Switch location & division if location is a US state
+            if location and any(location.strip() in s for s in us_states.items()):
+                state = location
+                location = division
+                division = state
+            # Convert US state codes to full names
+            if us_states.get(division.strip().upper()):
+                division = us_states[division.strip().upper()]
+    
+    
+        location = location.strip().lower().title() if location else None
+        division = division.strip().lower().title() if division else None
+    
+
+        print(entry , '->' , geographic_data , country,
+                                                division,
+                                                location)
+        entry['country']     = country
+        entry['division']    = division
+        entry['location']    = location
+
+
         return entry

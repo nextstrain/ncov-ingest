@@ -24,6 +24,7 @@ from utils.transformpipeline.datasource import LineToJsonDataSource
 from utils.transformpipeline.filters import SequenceLengthFilter, LineNumberFilter
 from utils.transformpipeline.transforms import (
     DropSequenceData,
+    ParseGeographicColumnsGenbank,
     RenameAndAddColumns,
     StandardizeData,
     StandardizeGenbankStrainNames,
@@ -397,7 +398,9 @@ if __name__ == '__main__':
         if not args.sorted_fasta:
             pipeline = pipeline | DropSequenceData()
 
-        pipeline = pipeline | StandardizeGenbankStrainNames()
+        pipeline = ( pipeline | StandardizeGenbankStrainNames()
+                            | ParseGeographicColumnsGenbank( base / 'source-data/us-state-codes.tsv' )
+        )
 
         sorted_metadata = sorted(
             pipeline,
@@ -429,8 +432,10 @@ if __name__ == '__main__':
     #                            compression='infer')
     #genbank_data = preprocess(genbank_data)
     #genbank_data = standardize_strain_names(genbank_data)
+    #genbank_data = parse_geographic_columns(genbank_data)
     genbank_data = pd.DataFrame( sorted_metadata )
-    genbank_data = parse_geographic_columns(genbank_data)
+
+
     genbank_data = parse_authors(genbank_data)
 
     ##geoRules additions
