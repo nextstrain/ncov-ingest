@@ -342,7 +342,10 @@ class AbbreviateAuthors(Transformer):
     def transform_value(self, entry: dict) -> dict:
         # Strip and normalize whitespace
         entry['authors'] = re.sub(r'\s+', ' ', entry['authors'])
-        entry['authors'] = re.split(r'(?:\s*[,，;；]\s*|\s+(?:and|&)\s+)', entry['authors'])[0] + " et al"
+        if entry['authors'] == "":
+            entry['authors'] = '?'
+        else:
+            entry['authors'] = re.split(r'(?:\s*[,，;；]\s*|\s+(?:and|&)\s+)', entry['authors'])[0] + " et al"
         return entry
 
 
@@ -402,14 +405,15 @@ class AddHardcodedMetadata(Transformer):
 
 class MergeUserAnnotatedMetadata(Transformer):
     """Use the curated annotations tsv to update any column values."""
-    def __init__(self, annotations: UserProvidedAnnotations):
+    def __init__(self, annotations: UserProvidedAnnotations , idKey : str = "gisaid_epi_isl"):
         self.annotations = annotations
+        self.idKey = idKey
 
     def transform_value(self, entry: dict) -> dict:
-        annotations = self.annotations.get_user_annotations(entry['gisaid_epi_isl'])
+        annotations = self.annotations.get_user_annotations( entry[ self.idKey ] )
         for key, value in annotations:
             if key in entry and entry[key] == value :
-                print('REDUNDANT ANNOTATED METADATA :',entry['gisaid_epi_isl'] , key , value)
+                print('REDUNDANT ANNOTATED METADATA :', entry[ self.idKey ] , key , value)
             entry[key] = value
         return entry
 
@@ -499,12 +503,13 @@ class StandardizeGenbankStrainNames(Transformer):
         # Order is important here! Keep the known prefixes first!
         regex_replacement = [
             (r'(^SAR[S]{0,1}[-\s]CoV[-]{0,1}2/|^2019[-\s]nCoV[-_\s/]|^BetaCoV/|^nCoV-|^hCoV-19/)',''),
-            (r'(human/|homo sapien/|Homosapiens/)',''),
+            (r'(human/|homo sapien/|Homosapiens{0,1}/)',''),
             (r'^USA-', 'USA/'),
             (r'^USACT-', 'USA/CT-'),
             (r'^USAWA-', 'USA/WA-'),
             (r'^HKG.', 'HongKong/'),
         ]
+
 
         # Parse strain name from title to fill in strains that are empty strings
         entry['strain_from_title'] = self.parse_strain_from_title( entry['title'] )
@@ -512,12 +517,15 @@ class StandardizeGenbankStrainNames(Transformer):
         if entry['strain'] == '':
             entry['strain'] = entry['strain_from_title']
     
+
         # Standardize strain names using list of regex replacements
         for regex, replacement in regex_replacement:
+
             entry['strain'] = re.sub( regex, replacement, entry['strain'], flags=re.IGNORECASE)
     
         # Strip all spaces
         entry['strain'] = re.sub( r'\s', '' , entry['strain'] )
+
     
         return entry
 
@@ -543,21 +551,18 @@ class ParseGeographicColumnsGenbank(Transformer):
         geographic_data = entry['location'].split(':')
         
         country = geographic_data[0].strip()
-        division = None
-        location = None
+        division = ''
+        location = ''
 
         if len(geographic_data) == 2 :
-            sl = geographic_data[1].split(',')
+            division , j , location = geographic_data[1].partition(',')
             
-            division = sl[0].strip()
-            if len(sl) > 1:
-                location = sl[1].strip()
         elif len(geographic_data) > 2:
             assert False, f"Found unknown format for geographic data: {value}"
     
 
         # Special parsing for US locations because the format varies
-        if country == 'USA' and not division is None:
+        if country == 'USA' and not division is '':
             # Switch location & division if location is a US state
             if location and any(location.strip() in s for s in self.us_states.items()):
                 state = location
@@ -568,8 +573,8 @@ class ParseGeographicColumnsGenbank(Transformer):
                 division = self.us_states[division.strip().upper()]
     
     
-        location = location.strip().lower().title() if location else None
-        division = division.strip().lower().title() if division else None
+        location = location.strip().lower().title() if location else ''
+        division = division.strip().lower().title() if division else ''
     
 
         #print(entry , '->' , geographic_data , country, division, location)
@@ -599,7 +604,7 @@ class AddHardcodedMetadataGenbank(Transformer):
         entry['paper_url']         = '?'
         entry['purpose_of_sequencing']         = '?'
     
-        entry['url'] = entry['genbank_accession'].apply(lambda x: f"https://www.ncbi.nlm.nih.gov/nuccore/{x}")
+        entry['url'] = "https://www.ncbi.nlm.nih.gov/nuccore/" + entry['genbank_accession']
         return entry
 
         

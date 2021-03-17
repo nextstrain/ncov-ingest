@@ -24,8 +24,11 @@ from utils.transformpipeline.datasource import LineToJsonDataSource
 from utils.transformpipeline.filters import SequenceLengthFilter, LineNumberFilter
 from utils.transformpipeline.transforms import (
     AbbreviateAuthors,
+    ApplyUserGeoLocationSubstitutionRules,
     AddHardcodedMetadataGenbank,
     DropSequenceData,
+    FillDefaultLocationData,
+    MergeUserAnnotatedMetadata,
     ParseGeographicColumnsGenbank,
     RenameAndAddColumns,
     StandardizeData,
@@ -378,7 +381,7 @@ if __name__ == '__main__':
                     "gisaid_epi_isl",
                     row["gisaid_epi_isl"],
                 )
-
+    
     geoRules = UserProvidedGeoLocationSubstitutionRules()
     if args.geo_location_rules :
         # use curated rules to subtitute known spurious locations with correct ones
@@ -405,8 +408,8 @@ if __name__ == '__main__':
                               | AbbreviateAuthors()
                               | AddHardcodedMetadataGenbank()
                               | ApplyUserGeoLocationSubstitutionRules(geoRules)
-                              | MergeUserAnnotatedMetadata(annotations)
-                              | MergeUserAnnotatedMetadata(accessions)
+                              | MergeUserAnnotatedMetadata(annotations, idKey = 'genbank_accession' )
+                              | MergeUserAnnotatedMetadata(accessions, idKey = 'genbank_accession_rev' )
                               | FillDefaultLocationData()
         )
 
@@ -428,6 +431,8 @@ if __name__ == '__main__':
     line_numbers = set()
     updated_strain_names_by_line_no = {}
     for entry in sorted_metadata:
+        if entry['genbank_accession'] == 'MT295464' :
+            print(entry)
         if entry['strain'] in seen_strains:
             continue
 
@@ -460,6 +465,8 @@ if __name__ == '__main__':
     genbank_data = genbank_data[METADATA_COLUMNS]
     genbank_data.to_csv(args.output_metadata, sep='\t', na_rep='', index=False)
 
+    print('metadata written')
+    exit(1)
 
     if not args.sorted_fasta:
         
