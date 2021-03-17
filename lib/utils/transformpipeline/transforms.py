@@ -414,6 +414,7 @@ class MergeUserAnnotatedMetadata(Transformer):
         for key, value in annotations:
             if key in entry and entry[key] == value :
                 print('REDUNDANT ANNOTATED METADATA :', entry[ self.idKey ] , key , value)
+
             entry[key] = value
         return entry
 
@@ -502,7 +503,7 @@ class StandardizeGenbankStrainNames(Transformer):
         # Compile list of regex to be used for strain name standardization
         # Order is important here! Keep the known prefixes first!
         regex_replacement = [
-            (r'(^SAR[S]{0,1}[-\s]CoV[-]{0,1}2/|^2019[-\s]nCoV[-_\s/]|^BetaCoV/|^nCoV-|^hCoV-19/)',''),
+            (r'(^SAR[S]{0,1}[-\s]{0,1}CoV[-]{0,1}2/|^2019[-\s]nCoV[-_\s/]|^BetaCoV/|^nCoV-|^hCoV-19/)',''),
             (r'(human/|homo sapien/|Homosapiens{0,1}/)',''),
             (r'^USA-', 'USA/'),
             (r'^USACT-', 'USA/CT-'),
@@ -608,3 +609,15 @@ class AddHardcodedMetadataGenbank(Transformer):
         return entry
 
         
+class Tracker(Transformer):
+    """
+    here to print a number of entries when seen
+    """
+    def __init__(self , interestIds : set , interestField : str):
+        self.interestIds = interestIds
+        self.interestField = interestField
+
+    def transform_value(self, entry : dict) -> dict :
+        if entry[ self.interestField ] in self.interestIds:
+            print(entry)
+        return entry
