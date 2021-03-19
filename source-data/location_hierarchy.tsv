@@ -122,6 +122,14 @@ Africa	Kenya	Lamu
 Africa	Kenya	Mombasa	
 Africa	Kenya	Taita Taveta	
 Africa	Kenya	Tana River	
+Africa	Lesotho	Berea	
+Africa	Lesotho	Botha Bothe	
+Africa	Lesotho	Leribe	
+Africa	Lesotho	Mafeteng	
+Africa	Lesotho	Maseru	
+Africa	Lesotho	Mohale's Hoek	
+Africa	Lesotho	Qacha's Nek	
+Africa	Lesotho	Quthing	
 Africa	Liberia	Liberia	
 Africa	Madagascar	Analamanga	
 Africa	Madagascar	Analamanga	Antananarivo
@@ -436,6 +444,7 @@ Asia	China	Hubei	Jingzhou
 Asia	China	Hubei	Tianmen
 Asia	China	Hubei	Wuhan
 Asia	China	Hunan	
+Asia	China	Hunan	Changde
 Asia	China	Hunan	Huaihua
 Asia	China	Hunan	Shaoyang
 Asia	China	Jiangsu	
@@ -707,6 +716,7 @@ Asia	Indonesia	Jakarta	South Jakarta
 Asia	Indonesia	Kepulauan Bangka Belitung	
 Asia	Indonesia	Kepulauan Riau	
 Asia	Indonesia	Lampung	
+Asia	Indonesia	Lampung	Pringsewu
 Asia	Indonesia	Maluku	
 Asia	Indonesia	North Kalimantan	
 Asia	Indonesia	North Kalimantan	Malinau
@@ -741,6 +751,7 @@ Asia	Indonesia	West Kalimantan
 Asia	Indonesia	West Nusa Tenggara	
 Asia	Indonesia	West Papua	
 Asia	Indonesia	West Sulawesi	
+Asia	Indonesia	West Sulawesi	Mamuju
 Asia	Indonesia	West Sumatra	
 Asia	Indonesia	Yogyakarta	
 Asia	Indonesia	Yogyakarta	Sleman
@@ -977,11 +988,13 @@ Asia	Pakistan	Punjab PK
 Asia	Pakistan	Rawalpindi	
 Asia	Pakistan	Sindh	
 Asia	Palestine	Bethlehem	
+Asia	Palestine	Bethlehem	Bethlehem
 Asia	Palestine	Hebron	
 Asia	Palestine	Hebron	Fawwar
 Asia	Palestine	Hebron	Halhul
 Asia	Palestine	Hebron	al-Arroub
 Asia	Palestine	Jenin	
+Asia	Palestine	Jenin	Jenin
 Asia	Palestine	Jericho	
 Asia	Palestine	Jerusalem	
 Asia	Palestine	Nablus	
@@ -989,14 +1002,20 @@ Asia	Palestine	Nablus	Balata
 Asia	Palestine	Nablus	Dahieh
 Asia	Palestine	Nablus	Deir al-Hatab
 Asia	Palestine	Nablus	Majdal Bani Fadil
+Asia	Palestine	Nablus	Nablus
 Asia	Palestine	Nablus	Qusra
+Asia	Palestine	Qalqilya	
+Asia	Palestine	Qalqilya	Qalqilya
 Asia	Palestine	Ramallah	
 Asia	Palestine	Ramallah	Jalazone
 Asia	Palestine	Ramallah and al-Bireh Governorate	
 Asia	Palestine	Ramallah and al-Bireh Governorate	Jalazone
 Asia	Palestine	Ramallah and al-Bireh Governorate	Ramallah
+Asia	Palestine	Tubas	
+Asia	Palestine	Tubas	Tubas
 Asia	Palestine	Tulkarem	
 Asia	Palestine	West Bank	
+Asia	Palestine	West Bank	Al-Khalil
 Asia	Palestine	West Bank	Ariel
 Asia	Palestine	West Bank	Elkana
 Asia	Palestine	West Bank	Maale-Edumim
@@ -1874,6 +1893,7 @@ Europe	Belgium	Sint-Niklaas	Lokeren
 Europe	Belgium	Sint-Niklaas	Sint-Gillis-Waas
 Europe	Belgium	Sint-Niklaas	Stekene
 Europe	Belgium	Sint-Niklaas	Temse
+Europe	Belgium	Sint-Niklaas	Vrasene
 Europe	Belgium	Soignies	
 Europe	Belgium	Soignies	Bellecourt
 Europe	Belgium	Soignies	Braine-le-Comte
@@ -2017,6 +2037,7 @@ Europe	Belgium	Veurne	Oostduinkerke
 Europe	Belgium	Virton	
 Europe	Belgium	Virton	Valansart
 Europe	Belgium	Vlaams-Brabant	
+Europe	Belgium	Vlaams-Brabant	Ruisbroek
 Europe	Belgium	Wallonia	
 Europe	Belgium	Wallonia	Gouy-Lez-Pieton
 Europe	Belgium	Waremme	
@@ -2077,6 +2098,7 @@ Europe	Croatia	Croatia
 Europe	Croatia	Dubrovnik	
 Europe	Croatia	Dubrovnik-Neretva County	
 Europe	Croatia	Istria	
+Europe	Croatia	Karlovac County	
 Europe	Croatia	Koprivnica	
 Europe	Croatia	Krapina-Zagorje County	
 Europe	Croatia	Medimurje County	
@@ -2276,6 +2298,7 @@ Europe	France	Auvergne-Rhône-Alpes	Lyon
 Europe	France	Auvergne-Rhône-Alpes	Macon
 Europe	France	Auvergne-Rhône-Alpes	Mazet-Saint-Voy
 Europe	France	Auvergne-Rhône-Alpes	Montagnieu
+Europe	France	Auvergne-Rhône-Alpes	Montlucon
 Europe	France	Auvergne-Rhône-Alpes	Oyonnax
 Europe	France	Auvergne-Rhône-Alpes	Pierre-Bénite
 Europe	France	Auvergne-Rhône-Alpes	Pollionnay
@@ -2368,6 +2391,7 @@ Europe	France	Grand Est
 Europe	France	Grand Est	Altkirch
 Europe	France	Grand Est	Amneville
 Europe	France	Grand Est	Baldersheim
+Europe	France	Grand Est	Bartenheim
 Europe	France	Grand Est	Bezannes
 Europe	France	Grand Est	Biesheim
 Europe	France	Grand Est	Bischheim
@@ -2385,9 +2409,11 @@ Europe	France	Grand Est	Gondrecourt-le-Chateau
 Europe	France	Grand Est	Guebwiller
 Europe	France	Grand Est	Ham Sous Varsberg
 Europe	France	Grand Est	Hegenheim
+Europe	France	Grand Est	Huningue
 Europe	France	Grand Est	Ingersheim
 Europe	France	Grand Est	Joeuf
 Europe	France	Grand Est	La Chapelle-Saint-Luc
+Europe	France	Grand Est	Leymen
 Europe	France	Grand Est	Liepvre
 Europe	France	Grand Est	Lingolsheim
 Europe	France	Grand Est	Lorraine
@@ -2546,6 +2572,7 @@ Europe	France	Normandie	Rouen
 Europe	France	Normandie	Saint Valery en Caux
 Europe	France	Normandie	Yquelon
 Europe	France	Nouvelle-Aquitaine	
+Europe	France	Nouvelle-Aquitaine	Agen
 Europe	France	Nouvelle-Aquitaine	Anglet
 Europe	France	Nouvelle-Aquitaine	Bayonne
 Europe	France	Nouvelle-Aquitaine	Blaye
@@ -2567,6 +2594,7 @@ Europe	France	Nouvelle-Aquitaine	Royan
 Europe	France	Nouvelle-Aquitaine	Saint-Paul-lès-Dax
 Europe	France	Nouvelle-Aquitaine	Saintes
 Europe	France	Occitanie	
+Europe	France	Occitanie	Albi
 Europe	France	Occitanie	Beziers
 Europe	France	Occitanie	Cahors
 Europe	France	Occitanie	Caraman
@@ -2574,6 +2602,7 @@ Europe	France	Occitanie	Montauban
 Europe	France	Occitanie	Montpellier
 Europe	France	Occitanie	Narbonne
 Europe	France	Occitanie	Nîmes
+Europe	France	Occitanie	Rodez
 Europe	France	Occitanie	Saint-Gaudens
 Europe	France	Occitanie	Saint-Gely-Du-Fesc
 Europe	France	Occitanie	Saint-Gilles FR
@@ -2598,6 +2627,7 @@ Europe	France	Provence-Alpes-Côte d'Azur	Aix-en-Provence
 Europe	France	Provence-Alpes-Côte d'Azur	Alpes Maritimes
 Europe	France	Provence-Alpes-Côte d'Azur	Antibes
 Europe	France	Provence-Alpes-Côte d'Azur	Aubagne
+Europe	France	Provence-Alpes-Côte d'Azur	Cagnes-sur-Mer
 Europe	France	Provence-Alpes-Côte d'Azur	Cannes
 Europe	France	Provence-Alpes-Côte d'Azur	Draguignan
 Europe	France	Provence-Alpes-Côte d'Azur	Embrun
@@ -2615,6 +2645,7 @@ Europe	France	Provence-Alpes-Côte d'Azur	Toulon
 Europe	France	Provence-Alpes-Côte d'Azur	Var
 Europe	France	Reunion	
 Europe	France	Réunion	
+Europe	France	Réunion	Saint-Benoit
 Europe	France	Réunion	Saint-Denis de la Réunion
 Europe	France	Toulouse	
 Europe	Germany	Baden-Wuerttemberg	
@@ -2657,6 +2688,7 @@ Europe	Germany	Bavaria	Raubling
 Europe	Germany	Bavaria	Roding
 Europe	Germany	Bavaria	Schierling
 Europe	Germany	Bavaria	Schlusselfeld
+Europe	Germany	Bavaria	Schwabach
 Europe	Germany	Bavaria	Starnberg
 Europe	Germany	Berlin	
 Europe	Germany	Berlin	Berlin	
@@ -3038,9 +3070,9 @@ Europe	Netherlands	Utrecht	Zeist
 Europe	Netherlands	Zeeland	
 Europe	North Macedonia	Debar	
 Europe	North Macedonia	Eastern Region	
-Europe	North Macedonia	Eastern Region MK	Kochani
 Europe	North Macedonia	Eastern Region	Shtip
 Europe	North Macedonia	Eastern Region MK	
+Europe	North Macedonia	Eastern Region MK	Kochani
 Europe	North Macedonia	Eastern Region MK	Shtip
 Europe	North Macedonia	Gevgelija	
 Europe	North Macedonia	Gostivar	
@@ -3082,18 +3114,29 @@ Europe	Norway	Vestlandet
 Europe	Norway	Viken	
 Europe	Poland	Bielsk Podlaski	
 Europe	Poland	Dolnośląskie	
+Europe	Poland	Dolnośląskie	Kamieniec Wrocławski
 Europe	Poland	Dolnośląskie	Wojnowice
 Europe	Poland	Dolnośląskie	Wroclaw
 Europe	Poland	Dolnośląskie	Ząbkowice Śląskie
 Europe	Poland	Kujawsko-Pomorskie	
+Europe	Poland	Kujawsko-Pomorskie	Bobrowo
 Europe	Poland	Kujawsko-Pomorskie	Bydgoszcz
 Europe	Poland	Kujawsko-Pomorskie	Dziarnowo
+Europe	Poland	Kujawsko-Pomorskie	Pruszcz
 Europe	Poland	Lubelskie	
+Europe	Poland	Lubelskie	Chełm
+Europe	Poland	Lubelskie	Hanna
 Europe	Poland	Lubelskie	Lublin
+Europe	Poland	Lubelskie	Milejów-Osada
+Europe	Poland	Lubelskie	Zamość
 Europe	Poland	Lubuskie	
 Europe	Poland	Lubuskie	Dabrowka
+Europe	Poland	Lubuskie	Kostrzyn
+Europe	Poland	Lubuskie	Lubsko
 Europe	Poland	Malopolskie	
 Europe	Poland	Malopolskie	Kraków
+Europe	Poland	Malopolskie	Olewin
+Europe	Poland	Malopolskie	Olkusz
 Europe	Poland	Masovia	
 Europe	Poland	Mazowieckie	
 Europe	Poland	Mazowieckie	Brodno-Warszawa
@@ -3104,9 +3147,14 @@ Europe	Poland	Mazowieckie	Sokolow Podlaski
 Europe	Poland	Mazowieckie	Warszawa
 Europe	Poland	Opolskie	
 Europe	Poland	Opolskie	Kedzierzyn Kozle
+Europe	Poland	Opolskie	Olesno
 Europe	Poland	Opolskie	Opole
 Europe	Poland	Podkarpackie	
+Europe	Poland	Podkarpackie	Bachórzec
+Europe	Poland	Podkarpackie	Nagoszyn
 Europe	Poland	Podkarpackie	Rzeszow
+Europe	Poland	Podkarpackie	Siedliska-Bogusz
+Europe	Poland	Podkarpackie	Ustrzyki Dolne
 Europe	Poland	Podlaskie	
 Europe	Poland	Podlaskie	Bialystok
 Europe	Poland	Podlaskie	Białystok
@@ -3129,6 +3177,7 @@ Europe	Poland	Podlaskie	Olendy
 Europe	Poland	Podlaskie	Olmonty
 Europe	Poland	Podlaskie	Popławy
 Europe	Poland	Podlaskie	Rajgród
+Europe	Poland	Podlaskie	Sejny
 Europe	Poland	Podlaskie	Sokółka
 Europe	Poland	Podlaskie	Stary Kamień
 Europe	Poland	Podlaskie	Suwałki
@@ -3140,20 +3189,33 @@ Europe	Poland	Poland
 Europe	Poland	Pomorskie	
 Europe	Poland	Pomorskie	Gdansk
 Europe	Poland	Pomorskie	Gdynia
+Europe	Poland	Pomorskie	Hel
+Europe	Poland	Pomorskie	Jeleńska Huta
+Europe	Poland	Pomorskie	Lubkowo
+Europe	Poland	Pomorskie	Objazda
+Europe	Poland	Pomorskie	Słupsk
 Europe	Poland	Slask	
 Europe	Poland	Slaskie	
+Europe	Poland	Slaskie	Bielsko-Biała
 Europe	Poland	Slaskie	Katowice
+Europe	Poland	Slaskie	Pawłowice
+Europe	Poland	Slaskie	Ruda Śląska
+Europe	Poland	Slaskie	Suszec
+Europe	Poland	Slaskie	Wojska
 Europe	Poland	Swietokrzyskie	
 Europe	Poland	Swietokrzyskie	Kielce
+Europe	Poland	Swietokrzyskie	Modliszewice
 Europe	Poland	Warminsko-Mazurskie	
 Europe	Poland	Warminsko-Mazurskie	Bartoszycki
 Europe	Poland	Warminsko-Mazurskie	Braniewski
 Europe	Poland	Warminsko-Mazurskie	Dzialdowski
 Europe	Poland	Warminsko-Mazurskie	Elblaski
+Europe	Poland	Warminsko-Mazurskie	Elbląg
 Europe	Poland	Warminsko-Mazurskie	Gizycki
 Europe	Poland	Warminsko-Mazurskie	Goldapski
 Europe	Poland	Warminsko-Mazurskie	Ilawski
 Europe	Poland	Warminsko-Mazurskie	Ketrzynski
+Europe	Poland	Warminsko-Mazurskie	Korsze
 Europe	Poland	Warminsko-Mazurskie	Lidzbarski
 Europe	Poland	Warminsko-Mazurskie	Mragowski
 Europe	Poland	Warminsko-Mazurskie	Nidzicki
@@ -3163,6 +3225,7 @@ Europe	Poland	Warminsko-Mazurskie	Orzysz
 Europe	Poland	Warminsko-Mazurskie	Ostrodzki
 Europe	Poland	Warminsko-Mazurskie	Piski
 Europe	Poland	Warminsko-Mazurskie	Szczycienski
+Europe	Poland	Warminsko-Mazurskie	Wólka
 Europe	Poland	Wielkopolskie	
 Europe	Poland	Wielkopolskie	Baranowo
 Europe	Poland	Wielkopolskie	Buk
@@ -3195,6 +3258,7 @@ Europe	Poland	Wielkopolskie	Nowy Tomysl
 Europe	Poland	Wielkopolskie	Oborniki
 Europe	Poland	Wielkopolskie	Orlowo
 Europe	Poland	Wielkopolskie	Paledzie
+Europe	Poland	Wielkopolskie	Pecna
 Europe	Poland	Wielkopolskie	Plewiska
 Europe	Poland	Wielkopolskie	Popowko
 Europe	Poland	Wielkopolskie	Poznan
@@ -3213,6 +3277,8 @@ Europe	Poland	Wielkopolskie	Suchy las
 Europe	Poland	Wielkopolskie	Swarzedz
 Europe	Poland	Wielkopolskie	Tarnowo Podgorne
 Europe	Poland	Wielkopolskie	Uscikowo
+Europe	Poland	Wielkopolskie	Wielichowo
+Europe	Poland	Wielkopolskie	Wilkowo Polskie
 Europe	Poland	Wielkopolskie	Wiorek
 Europe	Poland	Wielkopolskie	Wiry
 Europe	Poland	Wielkopolskie	Wysławice
@@ -3221,10 +3287,13 @@ Europe	Poland	Wielkopolskie	Zlotniki
 Europe	Poland	Wielkopolskie	Zydowo
 Europe	Poland	Zachodniopomorskie	
 Europe	Poland	Zachodniopomorskie	Gryfino
+Europe	Poland	Zachodniopomorskie	Kukułowo
 Europe	Poland	Zachodniopomorskie	Mysliborz
 Europe	Poland	Zachodniopomorskie	Nowe Brynki
+Europe	Poland	Zachodniopomorskie	Płoty
 Europe	Poland	Zachodniopomorskie	Stare Brynki
 Europe	Poland	Zachodniopomorskie	Szczecin
+Europe	Poland	Zachodniopomorskie	Szczecinek
 Europe	Poland	Zachodniopomorskie	Witkowo Drugie
 Europe	Poland	Zielonogorskie	
 Europe	Poland	Łódzkie	
@@ -3732,6 +3801,8 @@ Europe	Slovenia	Velenje
 Europe	Slovenia	Zelezniki	
 Europe	Slovenia	Ziri	
 Europe	Spain	Andalusia	
+Europe	Spain	Andalusia	Adra
+Europe	Spain	Andalusia	Aguadulce ES
 Europe	Spain	Andalusia	Alamedilla
 Europe	Spain	Andalusia	Albolote
 Europe	Spain	Andalusia	Alcala la Real
@@ -3743,13 +3814,19 @@ Europe	Spain	Andalusia	Alicun de Ortega
 Europe	Spain	Andalusia	Almeria
 Europe	Spain	Andalusia	Antequera
 Europe	Spain	Andalusia	Atarfe
+Europe	Spain	Andalusia	Aulago
+Europe	Spain	Andalusia	Bacares
 Europe	Spain	Andalusia	Baza
+Europe	Spain	Andalusia	Benahadux
 Europe	Spain	Andalusia	Benajarafe
 Europe	Spain	Andalusia	Benalmadena
 Europe	Spain	Andalusia	Benalua
 Europe	Spain	Andalusia	Benalua de las Villas
+Europe	Spain	Andalusia	Benamaurel
 Europe	Spain	Andalusia	Cadiz
 Europe	Spain	Andalusia	Campillo de Arenas
+Europe	Spain	Andalusia	Campohermoso
+Europe	Spain	Andalusia	Carboneras
 Europe	Spain	Andalusia	Castillo de Locubin
 Europe	Spain	Andalusia	Castril
 Europe	Spain	Andalusia	Chauchina
@@ -3762,26 +3839,35 @@ Europe	Spain	Andalusia	Cordoba ES
 Europe	Spain	Andalusia	Cortijos Nuevos
 Europe	Spain	Andalusia	Cullar Vega
 Europe	Spain	Andalusia	Durcal
+Europe	Spain	Andalusia	El Argamason
+Europe	Spain	Andalusia	El Barranquete
+Europe	Spain	Andalusia	Finana
 Europe	Spain	Andalusia	Fonelas
 Europe	Spain	Andalusia	Frailes
 Europe	Spain	Andalusia	Fuente Vaqueros
+Europe	Spain	Andalusia	Gergal
 Europe	Spain	Andalusia	Granada
 Europe	Spain	Andalusia	Granada ES
 Europe	Spain	Andalusia	Guadix
 Europe	Spain	Andalusia	Guevejar
 Europe	Spain	Andalusia	Huelago
+Europe	Spain	Andalusia	Huercal de Almeria
 Europe	Spain	Andalusia	Huescar
 Europe	Spain	Andalusia	Huetor Santillan
+Europe	Spain	Andalusia	Illar
 Europe	Spain	Andalusia	Illora
 Europe	Spain	Andalusia	Iznalloz
 Europe	Spain	Andalusia	Jerez De La Frontera
 Europe	Spain	Andalusia	Jodar
 Europe	Spain	Andalusia	Jun
+Europe	Spain	Andalusia	La Calahorra
+Europe	Spain	Andalusia	La Canada de San Urbano
 Europe	Spain	Andalusia	La Linea de la Concepcion
 Europe	Spain	Andalusia	La Peza
 Europe	Spain	Andalusia	La Zubia
 Europe	Spain	Andalusia	Las Gabias
 Europe	Spain	Andalusia	Loja
+Europe	Spain	Andalusia	Macael
 Europe	Spain	Andalusia	Mairena Aljarafe
 Europe	Spain	Andalusia	Malaga
 Europe	Spain	Andalusia	Maracena
@@ -3791,20 +3877,26 @@ Europe	Spain	Andalusia	Navas de San Juan
 Europe	Spain	Andalusia	Nerja
 Europe	Spain	Andalusia	Ogijares
 Europe	Spain	Andalusia	Otura
+Europe	Spain	Andalusia	Pajara
 Europe	Spain	Andalusia	Peligros
 Europe	Spain	Andalusia	Pinos Puente
 Europe	Spain	Andalusia	Puebla de Don Fadrique
 Europe	Spain	Andalusia	Puerto Santa Maria
 Europe	Spain	Andalusia	Pulianas
+Europe	Spain	Andalusia	Retamar
 Europe	Spain	Andalusia	Rincon de la Victoria
 Europe	Spain	Andalusia	Rio San Pedro
 Europe	Spain	Andalusia	Rota
 Europe	Spain	Andalusia	San Fernando
 Europe	Spain	Andalusia	San Fernando ES
+Europe	Spain	Andalusia	San Isidro de Nijar
 Europe	Spain	Andalusia	San Roque ES
 Europe	Spain	Andalusia	Santa Fe
 Europe	Spain	Andalusia	Santa Fe ES
+Europe	Spain	Andalusia	Santa Maria del Aguila
 Europe	Spain	Andalusia	Sevilla
+Europe	Spain	Andalusia	Sorbas
+Europe	Spain	Andalusia	Tabernas
 Europe	Spain	Andalusia	Tarifa
 Europe	Spain	Andalusia	Torre del Mar
 Europe	Spain	Andalusia	Torremolinos
@@ -3812,6 +3904,7 @@ Europe	Spain	Andalusia	Ubeda
 Europe	Spain	Andalusia	Valderrubio
 Europe	Spain	Andalusia	Vegas del Genil
 Europe	Spain	Andalusia	Velez Malaga
+Europe	Spain	Andalusia	Viator
 Europe	Spain	Andalusia	Zujar
 Europe	Spain	Aragon	
 Europe	Spain	Aragon	Alagon
@@ -4480,14 +4573,17 @@ Europe	Switzerland	Aargau
 Europe	Switzerland	Aargau	Aarburg
 Europe	Switzerland	Aargau	Dottikon
 Europe	Switzerland	Aargau	Frick
+Europe	Switzerland	Aargau	Gebenstorf
 Europe	Switzerland	Aargau	Glashütten
 Europe	Switzerland	Aargau	Kaiseraugst
+Europe	Switzerland	Aargau	Laufenburg
 Europe	Switzerland	Aargau	Magden
 Europe	Switzerland	Aargau	Möhlin
 Europe	Switzerland	Aargau	Oftringen
 Europe	Switzerland	Aargau	Rheinfelden
 Europe	Switzerland	Aargau	Riniken
 Europe	Switzerland	Aargau	Rothrist
+Europe	Switzerland	Aargau	Sisseln
 Europe	Switzerland	Aargau	Spreitenbach
 Europe	Switzerland	Aargau	Staffelbach
 Europe	Switzerland	Aargau	Suhr
@@ -4513,6 +4609,7 @@ Europe	Switzerland	Basel-Land	Ettingen
 Europe	Switzerland	Basel-Land	Frenkendorf
 Europe	Switzerland	Basel-Land	Füllinsdorf
 Europe	Switzerland	Basel-Land	Gelterkinden
+Europe	Switzerland	Basel-Land	Grellingen
 Europe	Switzerland	Basel-Land	Laufen
 Europe	Switzerland	Basel-Land	Liestal
 Europe	Switzerland	Basel-Land	Lupsingen
@@ -4520,6 +4617,8 @@ Europe	Switzerland	Basel-Land	Muttenz
 Europe	Switzerland	Basel-Land	Münchenstein
 Europe	Switzerland	Basel-Land	Oberdorf
 Europe	Switzerland	Basel-Land	Oberwil
+Europe	Switzerland	Basel-Land	Oberwil BL
+Europe	Switzerland	Basel-Land	Ormalingen
 Europe	Switzerland	Basel-Land	Pfeffingen
 Europe	Switzerland	Basel-Land	Pratteln
 Europe	Switzerland	Basel-Land	Reigoldswil
@@ -4537,6 +4636,7 @@ Europe	Switzerland	Basel-Stadt	Basel
 Europe	Switzerland	Basel-Stadt	Bettingen
 Europe	Switzerland	Basel-Stadt	Riehen
 Europe	Switzerland	Bern	
+Europe	Switzerland	Bern	Bern
 Europe	Switzerland	Bern	Biel
 Europe	Switzerland	Bern	Biel-Bienne
 Europe	Switzerland	Bern	Bolligen
@@ -4568,12 +4668,14 @@ Europe	Switzerland	Graubünden	Chur
 Europe	Switzerland	Graubünden	Flims Dorf
 Europe	Switzerland	Graubünden	Jenaz
 Europe	Switzerland	Graubünden	Landquart
+Europe	Switzerland	Graubünden	St. Moritz
 Europe	Switzerland	Graubünden	Trimmis
 Europe	Switzerland	Graubünden	Vals
 Europe	Switzerland	Graubünden	Zernez
 Europe	Switzerland	Jura	
 Europe	Switzerland	Jura	Boncourt
 Europe	Switzerland	Jura	Courrendlin
+Europe	Switzerland	Jura	Courtetelle
 Europe	Switzerland	Jura	Delémont
 Europe	Switzerland	Jura	Saignelegier
 Europe	Switzerland	Lucerne	
@@ -4613,6 +4715,7 @@ Europe	Switzerland	Solothurn
 Europe	Switzerland	Solothurn	Breitenbach
 Europe	Switzerland	Solothurn	Bättwil
 Europe	Switzerland	Solothurn	Büsserach
+Europe	Switzerland	Solothurn	Dornach
 Europe	Switzerland	Solothurn	Dulliken
 Europe	Switzerland	Solothurn	Erschwil
 Europe	Switzerland	Solothurn	Fehren
@@ -4640,6 +4743,7 @@ Europe	Switzerland	Thurgau	Felben-Wellhausen
 Europe	Switzerland	Thurgau	Frauenfeld
 Europe	Switzerland	Thurgau	Gachnang
 Europe	Switzerland	Thurgau	Munchwilen
+Europe	Switzerland	Thurgau	Steckborn
 Europe	Switzerland	Thurgau	Wangi
 Europe	Switzerland	Thurgau	Wilen bei Wil
 Europe	Switzerland	Ticino	
@@ -4668,6 +4772,7 @@ Europe	Switzerland	Zürich	Horgen
 Europe	Switzerland	Zürich	Lufingen
 Europe	Switzerland	Zürich	Nanikon
 Europe	Switzerland	Zürich	Niederhasli
+Europe	Switzerland	Zürich	Nürensdorf
 Europe	Switzerland	Zürich	Rorbas
 Europe	Switzerland	Zürich	Seuzach
 Europe	Switzerland	Zürich	Thalwil
@@ -5293,6 +5398,7 @@ North America	USA	Florida	Alachua County
 North America	USA	Florida	Broward County
 North America	USA	Florida	Duval County
 North America	USA	Florida	Lee County FL
+North America	USA	Florida	Levy County
 North America	USA	Florida	Miami
 North America	USA	Florida	Miami Gardens
 North America	USA	Florida	Miami-Dade County
@@ -5441,6 +5547,7 @@ North America	USA	Louisiana	Avoyelles Parish
 North America	USA	Louisiana	Bienville Parish
 North America	USA	Louisiana	Bossier Parish
 North America	USA	Louisiana	Caddo Parish
+North America	USA	Louisiana	Calcasieu Parish
 North America	USA	Louisiana	Claiborne Parish
 North America	USA	Louisiana	DeSoto Parish
 North America	USA	Louisiana	East Baton Rouge
@@ -5462,6 +5569,7 @@ North America	USA	Louisiana	Red River Parish
 North America	USA	Louisiana	Richland Parish
 North America	USA	Louisiana	Sabine Parish
 North America	USA	Louisiana	St Bernard Parish
+North America	USA	Louisiana	St Landry Parish
 North America	USA	Louisiana	St Tammany Parish
 North America	USA	Louisiana	Tensas Parish
 North America	USA	Louisiana	Union Parish
@@ -5639,6 +5747,11 @@ North America	USA	Ohio	Columbus OH
 North America	USA	Ohio	Cuyahoga County
 North America	USA	Ohio	Franklin County OH
 North America	USA	Ohio	Greene County OH
+North America	USA	Ohio	Hocking County
+North America	USA	Ohio	Marion County OH
+North America	USA	Ohio	Montgomery County OH
+North America	USA	Ohio	Pickaway County
+North America	USA	Ohio	Williams County OH
 North America	USA	Oklahoma	
 North America	USA	Oregon	
 North America	USA	Oregon	Beaverton
@@ -5710,6 +5823,7 @@ North America	USA	South Carolina	Hampton County
 North America	USA	South Carolina	Horry
 North America	USA	South Carolina	Horry County
 North America	USA	South Carolina	Lancaster County SC
+North America	USA	South Carolina	Laurens County SC
 North America	USA	South Carolina	Orangeburg County
 North America	USA	South Carolina	Pickens County SC
 North America	USA	South Carolina	Richland County SC
@@ -5724,12 +5838,14 @@ North America	USA	Tennessee
 North America	USA	Tennessee	Shelby County TN
 North America	USA	Texas	
 North America	USA	Texas	Angelina County
+North America	USA	Texas	Aransas County
 North America	USA	Texas	Atascosa County
 North America	USA	Texas	Austin County
 North America	USA	Texas	Bailey County
 North America	USA	Texas	Bandera County
 North America	USA	Texas	Bee County
 North America	USA	Texas	Bell County
+North America	USA	Texas	Bell County TX
 North America	USA	Texas	Belton
 North America	USA	Texas	Bexar County
 North America	USA	Texas	Bowie County
@@ -5747,6 +5863,7 @@ North America	USA	Texas	Cass County
 North America	USA	Texas	Cass County TX
 North America	USA	Texas	Castro County
 North America	USA	Texas	Cedar Park
+North America	USA	Texas	Clark
 North America	USA	Texas	College Station
 North America	USA	Texas	Collin County
 North America	USA	Texas	Comal County
@@ -5764,6 +5881,7 @@ North America	USA	Texas	Ector County
 North America	USA	Texas	El Paso County
 North America	USA	Texas	Ellis County
 North America	USA	Texas	Falls County
+North America	USA	Texas	Fayette County TX
 North America	USA	Texas	Fort Bend County
 North America	USA	Texas	Freestone County
 North America	USA	Texas	Frisco
@@ -5774,6 +5892,7 @@ North America	USA	Texas	Georgetown TX
 North America	USA	Texas	Giddings
 North America	USA	Texas	Gonzales County
 North America	USA	Texas	Gray County
+North America	USA	Texas	Grayson County TX
 North America	USA	Texas	Greater Houston Area
 North America	USA	Texas	Gregg County
 North America	USA	Texas	Grimes County
@@ -6149,9 +6268,12 @@ South America	Argentina	Tucuman
 South America	Aruba	Aruba	
 South America	Bolivia	Beni	
 South America	Bolivia	Bolivia	
+South America	Bolivia	Chuquisaca	
+South America	Bolivia	Chuquisaca	Sucre BO
 South America	Bolivia	La Paz	
 South America	Bolivia	Oruro	
 South America	Bolivia	Pando	
+South America	Bolivia	Potosi	
 South America	Bolivia	Santa Cruz	
 South America	Bolivia	Santa Cruz	El Torno
 South America	Bolivia	Santa Cruz	Pailon
@@ -6724,6 +6846,7 @@ South America	Brazil	São Paulo	Vargem Grande Paulista
 South America	Brazil	São Paulo	Vera Cruz (São Paulo)
 South America	Brazil	Tocantins	
 South America	Brazil	Tocantins	Araguaiana
+South America	Brazil	Tocantins	Araguaina
 South America	Brazil	Tocantins	Araguatins
 South America	Brazil	Tocantins	Figueiropolis
 South America	Brazil	Tocantins	Formoso do Araguaia
@@ -6994,6 +7117,7 @@ South America	Ecuador	Manabi	Pajan
 South America	Ecuador	Manabi	Portoviejo
 South America	Ecuador	Manabi	Puerto Lopez
 South America	Ecuador	Manabi	Sucre
+South America	Ecuador	Manabi	Sucre EC
 South America	Ecuador	Morona Santiago	
 South America	Ecuador	Morona Santiago	Morona
 South America	Ecuador	Napo	
