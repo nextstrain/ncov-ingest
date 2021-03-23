@@ -446,22 +446,6 @@ if __name__ == '__main__':
         line_numbers.add(entry[LINE_NUMBER_KEY])
         updated_strain_names_by_line_no[entry[LINE_NUMBER_KEY]] = entry['strain']
 
-    #genbank_data = pd.read_json(args.genbank_data,
-    #                            lines=True,
-    #                            compression='infer')
-    #genbank_data = preprocess(genbank_data)
-    #genbank_data = standardize_strain_names(genbank_data)
-    #genbank_data = parse_geographic_columns(genbank_data)
-    #genbank_data = parse_authors(genbank_data)
-
-
-
-    ##geoRules additions
-    #genbank_data = apply_geoRules( genbank_data , rulesFile = args.geo_location_rules )
-    ##
-
-    #genbank_data = update_metadata(genbank_data)
-    #genbank_data = find_and_drop_problem_records(genbank_data)
 
     with open( args.output_metadata , 'wt' ) as metadata_OUT:
         dict_writer_kwargs = {'lineterminator': args.newline} 
@@ -488,14 +472,6 @@ if __name__ == '__main__':
                     print( '>' , strain_name , sep='' , file= fasta_OUT)
                     print( entry['sequence'] , file= fasta_OUT)                
 
-
-    #genbank_data = pd.DataFrame( sorted_metadata )
-
-    #if args.sorted_fasta:
-    #    write_fasta_file(genbank_data, args.output_fasta)
-
-    #genbank_data = genbank_data[METADATA_COLUMNS]
-    #genbank_data.to_csv(args.output_metadata, sep='\t', na_rep='', index=False)
 
 
     if not args.sorted_fasta:
