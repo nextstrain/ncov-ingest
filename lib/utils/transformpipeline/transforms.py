@@ -345,7 +345,11 @@ class AbbreviateAuthors(Transformer):
         if entry['authors'] == "":
             entry['authors'] = '?'
         else:
-            entry['authors'] = re.split(r'(?:\s*[,，;；]\s*|\s+(?:and|&)\s+)', entry['authors'])[0] + " et al"
+            entry['authors'] = re.split(r'(?:\s*[,，;；]\s*|\s+(?:and|&)\s+)', entry['authors'])[0]
+
+            if not entry['authors'].strip('. ').endswith(" et al"): # if it does not already finishes with " et al.", add it 
+                entry['authors'] += ' et al'
+
         return entry
 
 
