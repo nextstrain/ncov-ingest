@@ -3,6 +3,8 @@ import re
 import unicodedata
 from collections import defaultdict
 from typing import Any, Collection, List, MutableMapping, Sequence, Tuple , Dict , Union
+import pandas as pd
+
 
 from utils.transform import format_date, titlecase
 from . import LINE_NUMBER_KEY
@@ -196,26 +198,29 @@ class UserProvidedAnnotations:
 class RenameAndAddColumns(Transformer):
     """This transformer applies the column renames as dictated by COLUMN_MAP."""
 
-    COLUMN_MAP = {
-        'covv_virus_name': 'strain',
-        'covv_accession_id': 'gisaid_epi_isl',
-        'covv_collection_date': 'date',
-        'covv_host': 'host',
-        'covv_orig_lab': 'originating_lab',
-        'covv_subm_lab': 'submitting_lab',
-        'covv_authors': 'authors',
-        'covv_patient_age': 'age',
-        'covv_gender': 'sex',
-        'covv_lineage': 'pango_lineage',
-        'covv_clade': 'GISAID_clade',
-        'covv_add_host_info': 'additional_host_info',
-        'covv_add_location': 'additional_location_info',
-        'covv_subm_date': 'date_submitted',
-        'covv_location': 'location',
-    }
+    def __init__(self , column_map = None) :
+        self.column_map = column_map
+        if self.column_map is None : # this default corresponds to column substituion for gisaid
+            self.column_map = {
+                'covv_virus_name': 'strain',
+                'covv_accession_id': 'gisaid_epi_isl',
+                'covv_collection_date': 'date',
+                'covv_host': 'host',
+                'covv_orig_lab': 'originating_lab',
+                'covv_subm_lab': 'submitting_lab',
+                'covv_authors': 'authors',
+                'covv_patient_age': 'age',
+                'covv_gender': 'sex',
+                'covv_lineage': 'pango_lineage',
+                'covv_clade': 'GISAID_clade',
+                'covv_add_host_info': 'additional_host_info',
+                'covv_add_location': 'additional_location_info',
+                'covv_subm_date': 'date_submitted',
+                'covv_location': 'location',
+            }
 
     def transform_value(self, entry: dict) -> dict:
-        for in_col, out_col in RenameAndAddColumns.COLUMN_MAP.items():
+        for in_col, out_col in self.column_map.items():
             if in_col not in entry:
                 entry[out_col] = ""
             else:
@@ -337,7 +342,14 @@ class AbbreviateAuthors(Transformer):
     def transform_value(self, entry: dict) -> dict:
         # Strip and normalize whitespace
         entry['authors'] = re.sub(r'\s+', ' ', entry['authors'])
-        entry['authors'] = re.split(r'(?:\s*[,，;；]\s*|\s+(?:and|&)\s+)', entry['authors'])[0] + " et al"
+        if entry['authors'] == "":
+            entry['authors'] = '?'
+        else:
+            entry['authors'] = re.split(r'(?:\s*[,，;；]\s*|\s+(?:and|&)\s+)', entry['authors'])[0]
+
+            if not entry['authors'].strip('. ').endswith(" et al"): # if it does not already finishes with " et al.", add it 
+                entry['authors'] += ' et al'
+
         return entry
 
 
@@ -397,14 +409,16 @@ class AddHardcodedMetadata(Transformer):
 
 class MergeUserAnnotatedMetadata(Transformer):
     """Use the curated annotations tsv to update any column values."""
-    def __init__(self, annotations: UserProvidedAnnotations):
+    def __init__(self, annotations: UserProvidedAnnotations , idKey : str = "gisaid_epi_isl"):
         self.annotations = annotations
+        self.idKey = idKey
 
     def transform_value(self, entry: dict) -> dict:
-        annotations = self.annotations.get_user_annotations(entry['gisaid_epi_isl'])
+        annotations = self.annotations.get_user_annotations( entry[ self.idKey ] )
         for key, value in annotations:
             if key in entry and entry[key] == value :
-                print('REDUNDANT ANNOTATED METADATA :',entry['gisaid_epi_isl'] , key , value)
+                print('REDUNDANT ANNOTATED METADATA :', entry[ self.idKey ] , key , value)
+
             entry[key] = value
         return entry
 
@@ -473,4 +487,141 @@ class FillDefaultLocationData(Transformer):
         # Set `division_exposure` equal to `division` if it wasn't added by annotations
         entry.setdefault('division_exposure', entry['division'])
 
+        return entry
+
+class StandardizeGenbankStrainNames(Transformer):
+    """
+    Attempt to standardize strain names by removing extra prefixes,
+    stripping spaces, and correcting known common error patterns.
+    """
+    def parse_strain_from_title(self,title: str) -> str:
+        """
+        Try to parse strain name from the given *title* using regex search.
+        Returns an empty string if not match is found in the *title*.
+        """
+        strain_name_regex = r'[-\w]*/[-\w]*/[-\w]*\s'
+        strain = re.search(strain_name_regex, title)
+        return strain.group(0) if strain else ''
+
+    def transform_value(self, entry: dict) -> dict:
+        # Compile list of regex to be used for strain name standardization
+        # Order is important here! Keep the known prefixes first!
+        regex_replacement = [
+            (r'(^SAR[S]{0,1}[-\s]{0,1}CoV[-]{0,1}2/|^2019[-\s]nCoV[-_\s/]|^BetaCoV/|^nCoV-|^hCoV-19/)',''),
+            (r'(human/|homo sapien/|Homosapiens{0,1}/)',''),
+            (r'^USA-', 'USA/'),
+            (r'^USACT-', 'USA/CT-'),
+            (r'^USAWA-', 'USA/WA-'),
+            (r'^HKG.', 'HongKong/'),
+        ]
+
+
+        # Parse strain name from title to fill in strains that are empty strings
+        entry['strain_from_title'] = self.parse_strain_from_title( entry['title'] )
+    
+        if entry['strain'] == '':
+            entry['strain'] = entry['strain_from_title']
+    
+
+        # Standardize strain names using list of regex replacements
+        for regex, replacement in regex_replacement:
+
+            entry['strain'] = re.sub( regex, replacement, entry['strain'], flags=re.IGNORECASE)
+    
+        # Strip all spaces
+        entry['strain'] = re.sub( r'\s', '' , entry['strain'] )
+
+    
+        return entry
+
+class ParseGeographicColumnsGenbank(Transformer):
+    """
+    Expands string found in the column named `location` in the given
+    *genbank_data* DataFrame, creating 3 new columns. Returns the modified
+    DataFrame.
+
+    Expected formats of the location string are:
+        * "country"
+        * "country: division"
+        * "country: division, location"
+    """
+    def __init__(self, us_state_code_file_name ):
+        # Create dict of US state codes and their full names
+        self.us_states = pd.read_csv( us_state_code_file_name , header=None, sep='\t', comment="#")
+        self.us_states = dict(zip(self.us_states[0], self.us_states[1]))
+
+
+    def transform_value(self, entry : dict) -> dict :
+    
+        geographic_data = entry['location'].split(':')
+        
+        country = geographic_data[0].strip()
+        division = ''
+        location = ''
+
+        if len(geographic_data) == 2 :
+            division , j , location = geographic_data[1].partition(',')
+            
+        elif len(geographic_data) > 2:
+            assert False, f"Found unknown format for geographic data: {value}"
+    
+
+        # Special parsing for US locations because the format varies
+        if country == 'USA' and not division is '':
+            # Switch location & division if location is a US state
+            if location and any(location.strip() in s for s in self.us_states.items()):
+                state = location
+                location = division
+                division = state
+            # Convert US state codes to full names
+            if self.us_states.get(division.strip().upper()):
+                division = self.us_states[division.strip().upper()]
+    
+    
+        location = location.strip().lower().title() if location else ''
+        division = division.strip().lower().title() if division else ''
+    
+
+        #print(entry , '->' , geographic_data , country, division, location)
+        entry['country']     = country
+        entry['division']    = division
+        entry['location']    = location
+
+
+        return entry
+
+class AddHardcodedMetadataGenbank(Transformer):
+    """
+    Adds a key-value for strain ID plus additional key-values containing harcoded
+    metadata.
+    """
+    def transform_value(self, entry: dict) -> dict:
+
+        entry['virus']             = 'ncov'
+        entry['gisaid_epi_isl']    = '?'
+        entry['segment']           = 'genome'
+        entry['age']               = '?'
+        entry['sex']               = '?'
+        entry['pango_lineage']  = '?'
+        entry['GISAID_clade']      = '?'
+        entry['originating_lab']   = '?'
+        entry['submitting_lab']    = '?'
+        entry['paper_url']         = '?'
+        entry['purpose_of_sequencing']         = '?'
+    
+        entry['url'] = "https://www.ncbi.nlm.nih.gov/nuccore/" + entry['genbank_accession']
+        return entry
+
+        
+class Tracker(Transformer):
+    """
+    here to print a number of entries when seen
+    """
+    def __init__(self , interestIds : set , interestField : str):
+        self.interestIds = interestIds
+        self.interestField = interestField
+
+    def transform_value(self, entry : dict) -> dict :
+        if entry[ self.interestField ] in self.interestIds:
+            print(entry)
         return entry
