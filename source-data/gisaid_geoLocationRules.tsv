@@ -29,6 +29,8 @@ Europe/Netherlands/Noord-Holland/*	Europe/Netherlands/North Holland/*
 Europe/Netherlands/Noord-Brabant/*	Europe/Netherlands/North Brabant/*
 Europe/Netherlands/Zuid-Holland/*	Europe/Netherlands/South Holland/*
 Europe/Netherlands/Limburg/Weert	Europe/Netherlands/Limburg/Weert NL
+Europe/Netherlands/Zealand/*	Europe/Netherlands/Zeeland/*
+Europe/Netherlands/Unknown/	Europe/Netherlands/Netherlands/
 Europe/France/Grand-Est/*	Europe/France/Grand Est/*
 Europe/France/Hauts-de-France/Crépy-en -Valois	Europe/France/Hauts de France/Crépy en Valois
 Europe/France/Hauts-de-France/Pontoise	Europe/France/Ile de France/Pontoise
@@ -58,6 +60,7 @@ Europe/France/Auvergne-Rhône-Alpes/Décines-Charpieu	Europe/France/Auvergne-Rh�
 Europe/France/Auvergne-Rhône-Alpes/Bourg-Les-Valence	Europe/France/Auvergne-Rhône-Alpes/Bourg-Lès-Valence
 Europe/France/Auvergne-Rhône-Alpes/Villefranche-sur-Saone	Europe/France/Auvergne-Rhône-Alpes/Villefranche-sur-Saône
 Europe/France/Auvergne-Rhône-Alpes/Saint-Martin-Dheres	Europe/France/Auvergne-Rhône-Alpes/Saint-Martin-D'Hères
+Europe/France/Auvergne-Rhône-Alpes/Pierre-Benite	Europe/France/Auvergne-Rhône-Alpes/Pierre-Bénite
 Europe/France/Provence-Alpes-Côte-D’Azur/*	Europe/France/Provence-Alpes-Côte d'Azur/*
 Europe/France/Centre-Val de Loire/Angers	Europe/France/Pays de la Loire/Angers
 Europe/France/Centre-Val de Loire/Rouziers de Touraine	Europe/France/Centre-Val de Loire/Rouziers-de-Touraine
@@ -6039,6 +6042,12 @@ Europe/Belgium/Flemish-Brabant/*	Europe/Belgium/Vlaams-Brabant/*
 Europe/Belgium/Zandvliet/	Europe/Belgium/Antwerpen/Berendrecht - Zandvliet - Lillo
 Europe/Belgium/Sint-Joost-Ten-Node/	Europe/Belgium/Brussels/Saint-Josse-ten-Noode
 Europe/Belgium/Ruisbroek/	Europe/Belgium/Halle-Vilvoorde/Ruisbroek
+Europe/Belgium/Meeuwen-Gruitrode/	Europe/Belgium/Maaseik/Meeuwen-Gruitrode
+Europe/Belgium/Zandvoorde/	Europe/Belgium/Oostende/Zandvoorde
+Europe/Belgium/Keergbergen/	Europe/Belgium/Leuven/Keerbergen
+Europe/Belgium/Atenhoven/	Europe/Belgium/Leuven/Attenhoven
+Europe/Belgium/Fontaine-l'Eveque/	Europe/Belgium/Charleroi/Fontaine-l'Évêque
+Europe/Belgium/Merkplas/	Europe/Belgium/Turnhout/Merksplas
 Europe/Switzerland/Graubunden/*	Europe/Switzerland/Graubünden/*
 Europe/Switzerland/Graubã¼Nden/*	Europe/Switzerland/Graubünden/*
 Europe/Switzerland/Basel/	Europe/Switzerland/Basel-Stadt/
@@ -6974,6 +6983,7 @@ North America/USA/Illinois/Morgan County	North America/USA/Illinois/Morgan Count
 North America/USA/Illinois/Montgomery County	North America/USA/Illinois/Montgomery County IL
 North America/USA/Illinois/Warren County	North America/USA/Illinois/Warren County IL
 North America/USA/Illinois/Gallatin County	North America/USA/Illinois/Gallatin County IL
+North America/USA/Illinois/Champaign County	North America/USA/Illinois/Champaign County IL
 North America/USA/Wisconsin/Monroe County	North America/USA/Wisconsin/Monroe County WI
 North America/USA/Wisconsin/Richland County	North America/USA/Wisconsin/Richland County WI
 North America/USA/Wisconsin/Grant County	North America/USA/Wisconsin/Grant County WI
@@ -7015,6 +7025,10 @@ North America/USA/Ohio/Montgomery County	North America/USA/Ohio/Montgomery Count
 North America/USA/Ohio/Pickaway	North America/USA/Ohio/Pickaway County
 North America/USA/Ohio/Williams	North America/USA/Ohio/Williams County OH
 North America/USA/Ohio/Montgomery	North America/USA/Ohio/Montgomery County OH
+North America/USA/Ohio/Greene County	North America/USA/Ohio/Greene County OH
+North America/USA/Ohio/Clark County	North America/USA/Ohio/Clark County OH
+North America/USA/Ohio/Champaign	North America/USA/Ohio/Champaign County OH
+North America/USA/Ohio/Butler County	North America/USA/Ohio/Butler County OH
 North America/USA/Colorado/El Paso County	North America/USA/Colorado/Colorado Springs
 North America/USA/Colorado/Mesa	North America/USA/Colorado/Mesa County
 North America/USA/Washington/Pierce County	North America/USA/Washington/Pierce County WA
@@ -7405,6 +7419,7 @@ North America/USA/Alabama/Marshall County	North America/USA/Alabama/Marshall Cou
 North America/USA/Alabama/Pike County	North America/USA/Alabama/Pike County AL
 North America/USA/Alabama/Monroe County	North America/USA/Alabama/Monroe County AL
 North America/USA/Alabama/Walker County	North America/USA/Alabama/Walker County AL
+North America/USA/Alabama/Butler County	North America/USA/Alabama/Butler County AL
 North America/USA/Texas Terry/*	North America/USA/Texas/Terry County
 North America/USA/Texas Mclennan/*	North America/USA/Texas/Mclennan County
 North America/USA/Al/*	North America/USA/Alabama/*
@@ -7478,6 +7493,7 @@ North America/USA/Houston/	North America/USA/Texas/Houston
 North America/USA/Montana/Gallatin County	North America/USA/Montana/Gallatin County MT
 North America/USA/Montana/Belgrade	North America/USA/Montana/Gallatin County MT
 North America/USA/Florida/Walton County	North America/USA/Florida/Walton County FL
+North America/USA/DC/*	North America/USA/Washington DC/*
 North America/Costa Rica/Tibas/	North America/Costa Rica/San Jose/Tibas
 North America/Costa Rica/Cartago/Tres Rios	North America/Costa Rica/Cartago CR/Tres Rios CR
 North America/Costa Rica/Cartago/San Isidro	North America/Costa Rica/Cartago CR/San Isidro CR
@@ -7587,6 +7603,7 @@ South America/Brazil/São Paulo/Cesario Lange	South America/Brazil/São Paulo/Ce
 South America/Brazil/São Paulo/Cahoeira Paulista	South America/Brazil/São Paulo/Cachoeira Paulista
 South America/Brazil/São Paulo/Lorena	South America/Brazil/São Paulo/Lorena SP
 South America/Brazil/São Paulo/Lorena BR	South America/Brazil/São Paulo/Lorena SP
+South America/Brazil/São Paulo/Ceario Lange	South America/Brazil/São Paulo/Cesário Lange
 South America/Brazil/Paraíba/*	South America/Brazil/Paraiba/*
 South America/Brazil/Rio de Janeiro/Nova Iguaçu	South America/Brazil/Rio de Janeiro/Nova Iguacu
 South America/Brazil/Rio de Janeiro/São Gonçalo	South America/Brazil/Rio de Janeiro/Sao Goncalo
@@ -7609,6 +7626,7 @@ South America/Brazil/Rio Grande do Sul/Quarai	South America/Brazil/Rio Grande do
 South America/Brazil/Rio Grande do Sul/Lageado	South America/Brazil/Rio Grande do Sul/Lajeado
 South America/Brazil/Rio Grande do Sul/Espulmoso	South America/Brazil/Rio Grande do Sul/Espumoso
 South America/Brazil/Rio Grande do Sul/Marau	South America/Brazil/Bahia/Marau
+South America/Brazil/Rio Grande do Sul/Santa Maria	South America/Brazil/Rio Grande do Sul/Santa Maria RS
 South America/Brazil/Sao Paulo/Sao Paulo	South America/Brazil/São Paulo/São Paulo
 South America/Brazil/Sao Paulo/Sao Matetus	South America/Brazil/São Paulo/Sao Mateus
 South America/Brazil/Sao Paulo/São Jose Dos Campo	South America/Brazil/São Paulo/Sao Jose Dos Campos
@@ -7627,6 +7645,7 @@ South America/Brazil/Espirito Santos/*	South America/Brazil/Espirito Santo/*
 South America/Brazil/Paraná/Astorga	South America/Brazil/Paraná/Astorga BR
 South America/Brazil/Minas Gerais/Esmeraldas	South America/Brazil/Minas Gerais/Esmeraldas BR
 South America/Brazil/Espirito Santo/Lorena	South America/Brazil/São Paulo/Lorena SP
+South America/Brazil/Distrito Federal/Santa Maria	South America/Brazil/Distrito Federal/Santa Maria DF
 South America/Argentina/Cordoba/Cordoba	South America/Argentina/Cordoba AR/Cordoba AR
 South America/Argentina/Cordoba/Brikman	South America/Argentina/Cordoba AR/Brinkmann
 South America/Argentina/Cordoba/*	South America/Argentina/Cordoba AR/*
@@ -7804,6 +7823,7 @@ Africa/Côte D’Ivoire/*/*	Africa/Côte d'Ivoire/*/*
 Africa/Cote Divoire/*/*	Africa/Côte d'Ivoire/*/*
 Africa/Togo/West Africa/*	Africa/Togo/Togo/*
 Africa/Togo/Lome-Golfe/*	Africa/Togo/Golfe/Lome
+Africa/Togo/Lome/*	Africa/Togo/Golfe/Lome
 Africa/Mozambique/Maputo Cidade/*	Africa/Mozambique/Maputo/*
 Africa/Réunion/Saint-Denis/	Europe/France/Réunion/Saint-Denis de la Réunion
 Africa/Namibia/Manzini/	Africa/Eswatini/Manzini/
@@ -7943,7 +7963,3 @@ Israel/Asia/Southern/	Asia/Israel/South District/
 Asian/*/*/*	Asia/*/*/*
 North-America/*/*/*	North America/*/*/*
 Afrique/*/*/*	Africa/*/*/*
-Africa/Togo/Lome/*	Africa/Togo/Golfe/Lome
-South America/Brazil/São Paulo/Ceario Lange	South America/Brazil/São Paulo/Cesário Lange
-South America/Brazil/Rio Grande do Sul/Santa Maria	South America/Brazil/Rio Grande do Sul/Santa Maria RS
-South America/Brazil/Distrito Federal/Santa Maria	South America/Brazil/Distrito Federal/Santa Maria DF
