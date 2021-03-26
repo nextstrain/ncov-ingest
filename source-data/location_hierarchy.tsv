@@ -327,6 +327,8 @@ Africa	Tunisia	Tunis	La Marsa
 Africa	Tunisia	Tunis	Tunis
 Africa	Tunisia	Tunisia	
 Africa	Uganda	Uganda	
+Africa	Union of the Comoros	Moheli	
+Africa	Union of the Comoros	Ngazidja	
 Africa	Zambia	Central	
 Africa	Zambia	Copperbelt	
 Africa	Zambia	Livingstone	
@@ -729,8 +731,10 @@ Asia	Indonesia	North Sulawesi
 Asia	Indonesia	North Sulawesi	Manado
 Asia	Indonesia	North Sumatra	
 Asia	Indonesia	North Sumatra	Binjai
+Asia	Indonesia	North Sumatra	Langkat
 Asia	Indonesia	North Sumatra	Mandailing
 Asia	Indonesia	North Sumatra	Medan
+Asia	Indonesia	North Sumatra	Simalungun
 Asia	Indonesia	Papua	
 Asia	Indonesia	Papua	Timika
 Asia	Indonesia	Pasuruan	
@@ -915,6 +919,7 @@ Asia	Japan	Nara
 Asia	Japan	Niigata	
 Asia	Japan	Osaka	
 Asia	Japan	Saitama	
+Asia	Japan	Tochigi	
 Asia	Japan	Tohoku	
 Asia	Japan	Tokyo	
 Asia	Japan	Tokyo	Tokyo
@@ -925,6 +930,9 @@ Asia	Jordan	Irbid
 Asia	Jordan	Jordan	
 Asia	Jordan	Mafraq	
 Asia	Jordan	Zarqa	
+Asia	Kazakhstan	Aktobe Region	
+Asia	Kazakhstan	Almaty	
+Asia	Kazakhstan	Atyrau Region	
 Asia	Kazakhstan	Kazakhstan	
 Asia	Kazakhstan	Nur-Sultan	
 Asia	Kuwait	Al Asimah	
@@ -1392,6 +1400,7 @@ Europe	Belgium	Brugge	Heist
 Europe	Belgium	Brugge	Jabbeke
 Europe	Belgium	Brugge	Knokke
 Europe	Belgium	Brugge	Knokke-Heist
+Europe	Belgium	Brugge	Moerkerke
 Europe	Belgium	Brugge	Oostkamp
 Europe	Belgium	Brugge	Ruddervoorde
 Europe	Belgium	Brugge	Sint-Andries
@@ -1719,6 +1728,7 @@ Europe	Belgium	Liège	Harzé
 Europe	Belgium	Liège	Herstal
 Europe	Belgium	Liège	Lontzen
 Europe	Belgium	Liège	Ougrée
+Europe	Belgium	Liège	Retinne
 Europe	Belgium	Liège	Saive
 Europe	Belgium	Liège	Seraing
 Europe	Belgium	Liège	Soumagne
@@ -2301,6 +2311,7 @@ Europe	Denmark	Denmark
 Europe	Denmark	Faroe Islands	
 Europe	Denmark	Faroe Islands	Faroe Islands
 Europe	Denmark	Hovedstaden	
+Europe	Denmark	Hovedstaden	Copenhagen
 Europe	Denmark	Midtjylland	
 Europe	Denmark	Nordjylland	
 Europe	Denmark	Sjaelland	
@@ -2340,7 +2351,9 @@ Europe	France	Auvergne-Rhône-Alpes	Lyon
 Europe	France	Auvergne-Rhône-Alpes	Macon
 Europe	France	Auvergne-Rhône-Alpes	Mazet-Saint-Voy
 Europe	France	Auvergne-Rhône-Alpes	Montagnieu
+Europe	France	Auvergne-Rhône-Alpes	Montelimar
 Europe	France	Auvergne-Rhône-Alpes	Montlucon
+Europe	France	Auvergne-Rhône-Alpes	Moulins
 Europe	France	Auvergne-Rhône-Alpes	Oyonnax
 Europe	France	Auvergne-Rhône-Alpes	Pierre-Bénite
 Europe	France	Auvergne-Rhône-Alpes	Pollionnay
@@ -2348,11 +2361,13 @@ Europe	France	Auvergne-Rhône-Alpes	Pringy
 Europe	France	Auvergne-Rhône-Alpes	Privas
 Europe	France	Auvergne-Rhône-Alpes	Rhone Alpes
 Europe	France	Auvergne-Rhône-Alpes	Roanne
+Europe	France	Auvergne-Rhône-Alpes	Romans-sur-Isere
 Europe	France	Auvergne-Rhône-Alpes	Roussillon
 Europe	France	Auvergne-Rhône-Alpes	Saint-Etienne
 Europe	France	Auvergne-Rhône-Alpes	Saint-Genis-Les-Ollieres
 Europe	France	Auvergne-Rhône-Alpes	Saint-Jean-de-Bournay
 Europe	France	Auvergne-Rhône-Alpes	Saint-Julien-en-Genevois
+Europe	France	Auvergne-Rhône-Alpes	Saint-Just-Saint-Rambert
 Europe	France	Auvergne-Rhône-Alpes	Saint-Martin-D'Hères
 Europe	France	Auvergne-Rhône-Alpes	Saint-Priest
 Europe	France	Auvergne-Rhône-Alpes	Saint-Verand
@@ -2368,6 +2383,7 @@ Europe	France	Auvergne-Rhône-Alpes	Voiron
 Europe	France	Bourgogne	
 Europe	France	Bourgogne	Dijon
 Europe	France	Bourgogne-France-Comté	
+Europe	France	Bourgogne-France-Comté	Autun
 Europe	France	Bourgogne-France-Comté	Auxerre
 Europe	France	Bourgogne-France-Comté	Besancon
 Europe	France	Bourgogne-France-Comté	Brognard
@@ -2640,6 +2656,7 @@ Europe	France	Nouvelle-Aquitaine	Notre-Dame-de-Sanilhac
 Europe	France	Nouvelle-Aquitaine	Orthez
 Europe	France	Nouvelle-Aquitaine	Pau
 Europe	France	Nouvelle-Aquitaine	Perigueux
+Europe	France	Nouvelle-Aquitaine	Pessac
 Europe	France	Nouvelle-Aquitaine	Poitiers
 Europe	France	Nouvelle-Aquitaine	Pons
 Europe	France	Nouvelle-Aquitaine	Puilboreau
@@ -2652,6 +2669,7 @@ Europe	France	Occitanie	Beziers
 Europe	France	Occitanie	Cahors
 Europe	France	Occitanie	Caraman
 Europe	France	Occitanie	Carcassonne
+Europe	France	Occitanie	Castelnaudary
 Europe	France	Occitanie	Millau
 Europe	France	Occitanie	Montauban
 Europe	France	Occitanie	Montpellier
@@ -2684,12 +2702,15 @@ Europe	France	Provence-Alpes-Côte d'Azur	Aix-en-Provence
 Europe	France	Provence-Alpes-Côte d'Azur	Alpes Maritimes
 Europe	France	Provence-Alpes-Côte d'Azur	Antibes
 Europe	France	Provence-Alpes-Côte d'Azur	Aubagne
+Europe	France	Provence-Alpes-Côte d'Azur	Biot
 Europe	France	Provence-Alpes-Côte d'Azur	Cagnes-sur-Mer
 Europe	France	Provence-Alpes-Côte d'Azur	Cannes
 Europe	France	Provence-Alpes-Côte d'Azur	Draguignan
 Europe	France	Provence-Alpes-Côte d'Azur	Embrun
 Europe	France	Provence-Alpes-Côte d'Azur	Frejus
+Europe	France	Provence-Alpes-Côte d'Azur	Gap
 Europe	France	Provence-Alpes-Côte d'Azur	La Penne-sur-Huveaune
+Europe	France	Provence-Alpes-Côte d'Azur	La Seyne-sur-Mer
 Europe	France	Provence-Alpes-Côte d'Azur	Le Muy
 Europe	France	Provence-Alpes-Côte d'Azur	Manosque
 Europe	France	Provence-Alpes-Côte d'Azur	Marignane
@@ -3011,6 +3032,8 @@ Europe	Lithuania	Kauno Apskritis	Jonava
 Europe	Lithuania	Kedainiai	
 Europe	Lithuania	Klaipedos Apskritis	
 Europe	Lithuania	Klaipedos Apskritis	Kretingos rajono savivaldybė
+Europe	Lithuania	Klaipedos Apskritis	Palanga
+Europe	Lithuania	Klaipedos Apskritis	Silute
 Europe	Lithuania	Lithuania	
 Europe	Lithuania	Marijampoles Apskritis	
 Europe	Lithuania	Panevezio Apskritis	
@@ -3061,6 +3084,7 @@ Europe	Netherlands	Gelderland
 Europe	Netherlands	Gelderland	Apeldoorn
 Europe	Netherlands	Gelderland	Arnhem
 Europe	Netherlands	Gelderland	Nijmegen
+Europe	Netherlands	Gelderland	Wijchen
 Europe	Netherlands	Groningen	
 Europe	Netherlands	Leiden	
 Europe	Netherlands	Limburg	
@@ -3079,6 +3103,7 @@ Europe	Netherlands	Limburg	Maasgouw
 Europe	Netherlands	Limburg	Maastricht
 Europe	Netherlands	Limburg	Meerssen
 Europe	Netherlands	Limburg	Nederweert
+Europe	Netherlands	Limburg	Peel en Maas
 Europe	Netherlands	Limburg	Roerdalen
 Europe	Netherlands	Limburg	Roermond
 Europe	Netherlands	Limburg	Simpelveld
@@ -3096,12 +3121,14 @@ Europe	Netherlands	North Brabant	Andel
 Europe	Netherlands	North Brabant	Bergeijk
 Europe	Netherlands	North Brabant	Berlicum
 Europe	Netherlands	North Brabant	Best
+Europe	Netherlands	North Brabant	Bladel
 Europe	Netherlands	North Brabant	Blaricum
 Europe	Netherlands	North Brabant	Cranendonck
 Europe	Netherlands	North Brabant	Eindhoven
 Europe	Netherlands	North Brabant	Heeswijk Dinther
 Europe	Netherlands	North Brabant	Heeze-Leende
 Europe	Netherlands	North Brabant	Helmond
+Europe	Netherlands	North Brabant	Loon op Zand
 Europe	Netherlands	North Brabant	Loon op zand
 Europe	Netherlands	North Brabant	Milheeze
 Europe	Netherlands	North Brabant	Nieuwendijk
@@ -3115,6 +3142,7 @@ Europe	Netherlands	North Holland
 Europe	Netherlands	North Holland	Amsterdam
 Europe	Netherlands	North Holland	Amsterdam West
 Europe	Netherlands	North Holland	Beverwijk
+Europe	Netherlands	North Holland	Blaricum
 Europe	Netherlands	North Holland	Diemen
 Europe	Netherlands	North Holland	Gooise Meren
 Europe	Netherlands	North Holland	Haarlem
@@ -3130,6 +3158,8 @@ Europe	Netherlands	South Holland
 Europe	Netherlands	South Holland	Delft
 Europe	Netherlands	South Holland	Dordrecht
 Europe	Netherlands	South Holland	Hardinxveld Giessendam
+Europe	Netherlands	South Holland	Leiden
+Europe	Netherlands	South Holland	Molenlanden
 Europe	Netherlands	South Holland	Nootdorp
 Europe	Netherlands	South Holland	Rotterdam
 Europe	Netherlands	St Eustatius	
@@ -3141,6 +3171,7 @@ Europe	Netherlands	Utrecht	Overvecht
 Europe	Netherlands	Utrecht	Utrecht
 Europe	Netherlands	Utrecht	Zeist
 Europe	Netherlands	Zeeland	
+Europe	Netherlands	Zeeland	Middelburg
 Europe	North Macedonia	Debar	
 Europe	North Macedonia	Eastern Region	
 Europe	North Macedonia	Eastern Region	Shtip
@@ -3867,13 +3898,23 @@ Europe	Slovakia	Zilina	Oravska Polhora
 Europe	Slovakia	Zilina	Trstena
 Europe	Slovakia	Zilina	Turzovka
 Europe	Slovenia	Celje	
+Europe	Slovenia	Gorenjska	
 Europe	Slovenia	Jesenice	
+Europe	Slovenia	Jugovzhodna	
 Europe	Slovenia	Kamnik	
+Europe	Slovenia	Koroska	
 Europe	Slovenia	Kranj	
 Europe	Slovenia	Kranjska Gora	
 Europe	Slovenia	Ljubljana	
 Europe	Slovenia	Murska Sobota	
 Europe	Slovenia	Novo Mesto	
+Europe	Slovenia	Obalnokraska	
+Europe	Slovenia	Osrednjeslovenska	
+Europe	Slovenia	Podravska	
+Europe	Slovenia	Pomurska	
+Europe	Slovenia	Posavska	
+Europe	Slovenia	Primorskonotranjska	
+Europe	Slovenia	Savinjska	
 Europe	Slovenia	Skofija Loka	
 Europe	Slovenia	Slovenia	
 Europe	Slovenia	Trebnje	
@@ -4356,6 +4397,7 @@ Europe	Spain	Catalunya	Sant Andreu de Llavaneres
 Europe	Spain	Catalunya	Sant Andreu de la Barca
 Europe	Spain	Catalunya	Sant Antoni de Vilamajor
 Europe	Spain	Catalunya	Sant Celoni
+Europe	Spain	Catalunya	Sant Esteve Sesrovires
 Europe	Spain	Catalunya	Sant Esteve de Palautordera
 Europe	Spain	Catalunya	Sant Feliu de Codines
 Europe	Spain	Catalunya	Sant Feliu de Guixols
