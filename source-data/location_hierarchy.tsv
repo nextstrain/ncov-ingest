@@ -777,6 +777,7 @@ Asia	Indonesia	West Sulawesi	Mamuju
 Asia	Indonesia	West Sumatra	
 Asia	Indonesia	Yogyakarta	
 Asia	Indonesia	Yogyakarta	Sleman
+Asia	Iran	Alborz Province	
 Asia	Iran	Gilan	
 Asia	Iran	Gorgan	
 Asia	Iran	Hamedan	
@@ -1143,6 +1144,8 @@ Asia	United Arab Emirates	Abu Dhabi
 Asia	United Arab Emirates	Dubai	
 Asia	United Arab Emirates	Sharja	
 Asia	United Arab Emirates	United Arab Emirates	
+Asia	Uzbekistan	Tashkent	
+Asia	Uzbekistan	Tashkent	Tashkent City
 Asia	Uzbekistan	Uzbekistan	
 Asia	Vietnam	Hai Duong	
 Asia	Vietnam	Ho Chi Minh City	
@@ -1422,6 +1425,7 @@ Europe	Belgium	Brugge	Heist
 Europe	Belgium	Brugge	Jabbeke
 Europe	Belgium	Brugge	Knokke
 Europe	Belgium	Brugge	Knokke-Heist
+Europe	Belgium	Brugge	Loppem
 Europe	Belgium	Brugge	Moerkerke
 Europe	Belgium	Brugge	Oostkamp
 Europe	Belgium	Brugge	Ruddervoorde
@@ -2193,6 +2197,7 @@ Europe	Bulgaria	Dobrich
 Europe	Bulgaria	Dupnitza	
 Europe	Bulgaria	Gabrovo	
 Europe	Bulgaria	Haskovo	
+Europe	Bulgaria	Kardzhali	
 Europe	Bulgaria	Kyustendil	
 Europe	Bulgaria	Lovech	
 Europe	Bulgaria	Montana BG	
@@ -3075,6 +3080,7 @@ Europe	Italy	Lombardy
 Europe	Italy	Lombardy	Brescia
 Europe	Italy	Lombardy	Milan
 Europe	Italy	Lombardy	Pavia
+Europe	Italy	Lombardy	Varese
 Europe	Italy	Marche	
 Europe	Italy	Marche	Ancona
 Europe	Italy	Molise	
@@ -3356,6 +3362,7 @@ Europe	Poland	Kujawsko-Pomorskie
 Europe	Poland	Kujawsko-Pomorskie	Bobrowo
 Europe	Poland	Kujawsko-Pomorskie	Bydgoszcz
 Europe	Poland	Kujawsko-Pomorskie	Dziarnowo
+Europe	Poland	Kujawsko-Pomorskie	Grudziadz
 Europe	Poland	Kujawsko-Pomorskie	Pruszcz
 Europe	Poland	Kujawsko-Pomorskie	Sepolno Krajenskie
 Europe	Poland	Lubelskie	
@@ -3381,9 +3388,37 @@ Europe	Poland	Lubuskie	Szprotawa
 Europe	Poland	Lubuskie	Tomaszowo
 Europe	Poland	Lubuskie	Zielona Gora
 Europe	Poland	Malopolskie	
+Europe	Poland	Malopolskie	Biertowice
+Europe	Poland	Malopolskie	Borzęta
+Europe	Poland	Malopolskie	Brzączowice
+Europe	Poland	Malopolskie	Bysina
+Europe	Poland	Malopolskie	Dobczyce
+Europe	Poland	Malopolskie	Glichów
+Europe	Poland	Malopolskie	Grabówki
+Europe	Poland	Malopolskie	Gruszów
 Europe	Poland	Malopolskie	Kraków
+Europe	Poland	Malopolskie	Krzyszkowice
+Europe	Poland	Malopolskie	Modrzewiowa
+Europe	Poland	Malopolskie	Myślenice
+Europe	Poland	Malopolskie	Niepołomice
+Europe	Poland	Malopolskie	Nowa Wieś
 Europe	Poland	Malopolskie	Olewin
 Europe	Poland	Malopolskie	Olkusz
+Europe	Poland	Malopolskie	Osieczany
+Europe	Poland	Malopolskie	Poznachowice Górne
+Europe	Poland	Malopolskie	Raciechowice
+Europe	Poland	Malopolskie	Siepraw
+Europe	Poland	Malopolskie	Stojowice
+Europe	Poland	Malopolskie	Strumiany
+Europe	Poland	Malopolskie	Sułków
+Europe	Poland	Malopolskie	Szczytniki
+Europe	Poland	Malopolskie	Wieliczka
+Europe	Poland	Malopolskie	Wola Batorska
+Europe	Poland	Malopolskie	Wrzosowa
+Europe	Poland	Malopolskie	Węgrzce Wielkie
+Europe	Poland	Malopolskie	Zabawa
+Europe	Poland	Malopolskie	Zakrzów
+Europe	Poland	Malopolskie	Zawada
 Europe	Poland	Masovia	
 Europe	Poland	Mazowieckie	
 Europe	Poland	Mazowieckie	Brodno-Warszawa
@@ -3393,16 +3428,26 @@ Europe	Poland	Mazowieckie	Radom
 Europe	Poland	Mazowieckie	Sokolow Podlaski
 Europe	Poland	Mazowieckie	Warszawa
 Europe	Poland	Opolskie	
+Europe	Poland	Opolskie	Biała
+Europe	Poland	Opolskie	Głogówek
+Europe	Poland	Opolskie	Głuchołazy
 Europe	Poland	Opolskie	Kedzierzyn Kozle
+Europe	Poland	Opolskie	Nysa
 Europe	Poland	Opolskie	Olesno
 Europe	Poland	Opolskie	Opole
+Europe	Poland	Opolskie	Otmice
 Europe	Poland	Opolskie	Prudnik
+Europe	Poland	Opolskie	Stary las
 Europe	Poland	Opolskie	Strzelce Opolskie
+Europe	Poland	Opolskie	Sucha
+Europe	Poland	Opolskie	Łąka Prudnicka
 Europe	Poland	Podkarpackie	
 Europe	Poland	Podkarpackie	Bachórzec
+Europe	Poland	Podkarpackie	Brzozow
 Europe	Poland	Podkarpackie	Nagoszyn
 Europe	Poland	Podkarpackie	Rzeszow
 Europe	Poland	Podkarpackie	Siedliska-Bogusz
+Europe	Poland	Podkarpackie	Tarnobrzeg
 Europe	Poland	Podkarpackie	Ustrzyki Dolne
 Europe	Poland	Podlaskie	
 Europe	Poland	Podlaskie	Bialystok
@@ -3473,6 +3518,7 @@ Europe	Poland	Pomorskie	Przelek
 Europe	Poland	Pomorskie	Puck
 Europe	Poland	Pomorskie	Raniewo
 Europe	Poland	Pomorskie	Rumia
+Europe	Poland	Pomorskie	Sopot
 Europe	Poland	Pomorskie	Stegna
 Europe	Poland	Pomorskie	Sztum
 Europe	Poland	Pomorskie	Sztumskie Pole
@@ -3481,12 +3527,20 @@ Europe	Poland	Pomorskie	Wejherowo
 Europe	Poland	Slask	
 Europe	Poland	Slaskie	
 Europe	Poland	Slaskie	Bielsko-Biała
+Europe	Poland	Slaskie	Cieszyn
+Europe	Poland	Slaskie	Czechowice-Dziedzice
+Europe	Poland	Slaskie	Dankowice
+Europe	Poland	Slaskie	Gliwice
+Europe	Poland	Slaskie	Hażlach
 Europe	Poland	Slaskie	Katowice
 Europe	Poland	Slaskie	Pawłowice
 Europe	Poland	Slaskie	Ruda Śląska
+Europe	Poland	Slaskie	Rudziczka
 Europe	Poland	Slaskie	Sosnicowice
 Europe	Poland	Slaskie	Suszec
+Europe	Poland	Slaskie	Wilkowice
 Europe	Poland	Slaskie	Wojska
+Europe	Poland	Slaskie	Żywiec
 Europe	Poland	Swietokrzyskie	
 Europe	Poland	Swietokrzyskie	Kielce
 Europe	Poland	Swietokrzyskie	Modliszewice
@@ -3500,6 +3554,7 @@ Europe	Poland	Warminsko-Mazurskie	Dywity
 Europe	Poland	Warminsko-Mazurskie	Dzialdowski
 Europe	Poland	Warminsko-Mazurskie	Elblaski
 Europe	Poland	Warminsko-Mazurskie	Elbląg
+Europe	Poland	Warminsko-Mazurskie	Elk
 Europe	Poland	Warminsko-Mazurskie	Gizycki
 Europe	Poland	Warminsko-Mazurskie	Goldapski
 Europe	Poland	Warminsko-Mazurskie	Gutkowo
@@ -3543,38 +3598,49 @@ Europe	Poland	Wielkopolskie	Buk
 Europe	Poland	Wielkopolskie	Cieradz Koscielny
 Europe	Poland	Wielkopolskie	Czajkow
 Europe	Poland	Wielkopolskie	Czapury
+Europe	Poland	Wielkopolskie	Czerniejewo
 Europe	Poland	Wielkopolskie	Dabrowa
+Europe	Poland	Wielkopolskie	Dalki
 Europe	Poland	Wielkopolskie	Debienko
 Europe	Poland	Wielkopolskie	Duszniki
 Europe	Poland	Wielkopolskie	Dąbrowa
+Europe	Poland	Wielkopolskie	Gniezno
 Europe	Poland	Wielkopolskie	Goluski
 Europe	Poland	Wielkopolskie	Gora
 Europe	Poland	Wielkopolskie	Gorzewo
 Europe	Poland	Wielkopolskie	Jarocin
+Europe	Poland	Wielkopolskie	Jarosławiec
 Europe	Poland	Wielkopolskie	Jeziorki
 Europe	Poland	Wielkopolskie	Kalisz
+Europe	Poland	Wielkopolskie	Kamionki
 Europe	Poland	Wielkopolskie	Kobylniki
 Europe	Poland	Wielkopolskie	Komorniki
 Europe	Poland	Wielkopolskie	Komorniki WP
 Europe	Poland	Wielkopolskie	Kowanowko
 Europe	Poland	Wielkopolskie	Koziegłowy
 Europe	Poland	Wielkopolskie	Krotoszyn
+Europe	Poland	Wielkopolskie	Kruchowo
 Europe	Poland	Wielkopolskie	Lipka
 Europe	Poland	Wielkopolskie	Lubon
 Europe	Poland	Wielkopolskie	Ludomki
 Europe	Poland	Wielkopolskie	Lusowo
 Europe	Poland	Wielkopolskie	Maniewo
+Europe	Poland	Wielkopolskie	Miaty
+Europe	Poland	Wielkopolskie	Miedzyrzecz
 Europe	Poland	Wielkopolskie	Mosina
 Europe	Poland	Wielkopolskie	Mrowino
 Europe	Poland	Wielkopolskie	Murowana Goslina
 Europe	Poland	Wielkopolskie	Niepruszewo
 Europe	Poland	Wielkopolskie	Nowy Tomysl
 Europe	Poland	Wielkopolskie	Oborniki
+Europe	Poland	Wielkopolskie	Orchowo
 Europe	Poland	Wielkopolskie	Orlowo
 Europe	Poland	Wielkopolskie	Paledzie
 Europe	Poland	Wielkopolskie	Pecna
 Europe	Poland	Wielkopolskie	Plewiska
+Europe	Poland	Wielkopolskie	Pobiedziska
 Europe	Poland	Wielkopolskie	Popowko
+Europe	Poland	Wielkopolskie	Powidz
 Europe	Poland	Wielkopolskie	Poznan
 Europe	Poland	Wielkopolskie	Przebedowo
 Europe	Poland	Wielkopolskie	Przeźmierowo
@@ -3584,21 +3650,30 @@ Europe	Poland	Wielkopolskie	Rogozno
 Europe	Poland	Wielkopolskie	Rokietnica
 Europe	Poland	Wielkopolskie	Sady
 Europe	Poland	Wielkopolskie	Sierosław
+Europe	Poland	Wielkopolskie	Skwierzyna
 Europe	Poland	Wielkopolskie	Skórzewo
 Europe	Poland	Wielkopolskie	Srem
+Europe	Poland	Wielkopolskie	Sroda Wielkopolska
 Europe	Poland	Wielkopolskie	Strykowo
 Europe	Poland	Wielkopolskie	Suchy las
 Europe	Poland	Wielkopolskie	Swarzedz
 Europe	Poland	Wielkopolskie	Tarnowo Podgorne
+Europe	Poland	Wielkopolskie	Trzemeszno
+Europe	Poland	Wielkopolskie	Trzuskołon
 Europe	Poland	Wielkopolskie	Uscikowo
+Europe	Poland	Wielkopolskie	Welnica
 Europe	Poland	Wielkopolskie	Wielen
 Europe	Poland	Wielkopolskie	Wielichowo
 Europe	Poland	Wielkopolskie	Wilkowo Polskie
 Europe	Poland	Wielkopolskie	Wiorek
 Europe	Poland	Wielkopolskie	Wiry
+Europe	Poland	Wielkopolskie	Witkowo
+Europe	Poland	Wielkopolskie	Wola Lagiewnicka
+Europe	Poland	Wielkopolskie	Wymyslowo
 Europe	Poland	Wielkopolskie	Wysogotowo
 Europe	Poland	Wielkopolskie	Wysławice
 Europe	Poland	Wielkopolskie	Zalasewo
+Europe	Poland	Wielkopolskie	Zielatkowo
 Europe	Poland	Wielkopolskie	Zlotniki
 Europe	Poland	Wielkopolskie	Zydowo
 Europe	Poland	Zachodniopomorskie	
@@ -3789,6 +3864,7 @@ Europe	Russia	Ivanovo	Furmanov
 Europe	Russia	Ivanovo	Ivanovo
 Europe	Russia	Ivanovo	Kineshma
 Europe	Russia	Ivanovo	Mikhalevo
+Europe	Russia	Ivanovo	Palekh
 Europe	Russia	Ivanovo	Rodniki
 Europe	Russia	Ivanovo	Shuya (Ivanovo)
 Europe	Russia	Ivanovo	Vichuga
@@ -3860,6 +3936,7 @@ Europe	Russia	Mari El	Kozmodemyansk
 Europe	Russia	Moscow Oblast	
 Europe	Russia	Moscow Oblast	Bronnitsy
 Europe	Russia	Moscow Oblast	Dmitrov
+Europe	Russia	Moscow Oblast	Dolgoprudny
 Europe	Russia	Moscow Oblast	Elektrostal
 Europe	Russia	Moscow Oblast	Kalininets
 Europe	Russia	Moscow Oblast	Korolyov
@@ -3873,6 +3950,7 @@ Europe	Russia	Moscow Oblast	Sergiyev Posad
 Europe	Russia	Moscow Oblast	Uvarovka
 Europe	Russia	Moscow Oblast	Zvenigorod
 Europe	Russia	Murmansk	
+Europe	Russia	Murmansk	Kovdor
 Europe	Russia	Murmansk	Murmansk
 Europe	Russia	Murmansk	Severomorsk
 Europe	Russia	Nizhny Novgorod	
@@ -3942,6 +4020,7 @@ Europe	Russia	Stavropol	Yessentuki
 Europe	Russia	Sverdlovsk	
 Europe	Russia	Sverdlovsk	Asbest
 Europe	Russia	Sverdlovsk	Baltym
+Europe	Russia	Sverdlovsk	Berezovsky
 Europe	Russia	Sverdlovsk	Bobrovsky
 Europe	Russia	Sverdlovsk	Dvurechensk
 Europe	Russia	Sverdlovsk	Ekaterinburg
@@ -4030,7 +4109,11 @@ Europe	Serbia	Šumadija District
 Europe	Serbia	Šumadija District	Kragujevac
 Europe	Slovakia	Banovce nad Bebravou	
 Europe	Slovakia	Banska Bystrica	
+Europe	Slovakia	Banska Bystrica	Brezno
+Europe	Slovakia	Banska Bystrica	Lucenec
+Europe	Slovakia	Banska Bystrica	Zarnovica
 Europe	Slovakia	Banska Bystrica	Zelovce
+Europe	Slovakia	Banska Bystrica	Ziar nad Hronom
 Europe	Slovakia	Bartosova Lehotka	
 Europe	Slovakia	Bela nad Cirochou	
 Europe	Slovakia	Bobrov	
@@ -4054,6 +4137,11 @@ Europe	Slovakia	Jatov
 Europe	Slovakia	Kamenicna	
 Europe	Slovakia	Komarno	
 Europe	Slovakia	Kosice	
+Europe	Slovakia	Kosice	Gelnica
+Europe	Slovakia	Kosice	Michalovce
+Europe	Slovakia	Kosice	Sobrance
+Europe	Slovakia	Kosice	Spisska Nova Ves
+Europe	Slovakia	Kosice	Trebisov
 Europe	Slovakia	Kosice	Zehra
 Europe	Slovakia	Kostoliste	
 Europe	Slovakia	Krivá	
@@ -4094,8 +4182,13 @@ Europe	Slovakia	Poprad
 Europe	Slovakia	Prešov	
 Europe	Slovakia	Prešov	Hranovnica
 Europe	Slovakia	Prešov	Janovce
+Europe	Slovakia	Prešov	Kezmarok
+Europe	Slovakia	Prešov	Sabinov
+Europe	Slovakia	Prešov	Snina
 Europe	Slovakia	Prešov	Spisske Bystre
 Europe	Slovakia	Prešov	Spisske Podhradie
+Europe	Slovakia	Prešov	Stara Lubovna
+Europe	Slovakia	Prešov	Stropkov
 Europe	Slovakia	Prešov	Velka Frankova
 Europe	Slovakia	Prešov	Vikartovce
 Europe	Slovakia	Prievidza	
@@ -4121,6 +4214,7 @@ Europe	Slovakia	Trenčín	Kostolna-Zariecie
 Europe	Slovakia	Trenčín	Moravske Lieskove
 Europe	Slovakia	Trenčín	Nemšová
 Europe	Slovakia	Trenčín	Nova Dubnica
+Europe	Slovakia	Trenčín	Puchov
 Europe	Slovakia	Trnava	
 Europe	Slovakia	Trnava	Boleraz
 Europe	Slovakia	Trnava	Brestovany
@@ -4130,6 +4224,7 @@ Europe	Slovakia	Trnava	Horne Saliby
 Europe	Slovakia	Trnava	Hradište pod Vrátnom
 Europe	Slovakia	Trnava	Mostova
 Europe	Slovakia	Trnava	Sereď
+Europe	Slovakia	Trnava	Skalica
 Europe	Slovakia	Trnava	Smolenice
 Europe	Slovakia	Trnava	Soporna
 Europe	Slovakia	Trnava	Velke Ulany
@@ -4140,8 +4235,10 @@ Europe	Slovakia	Tvrdosovce
 Europe	Slovakia	Velky Krtis	
 Europe	Slovakia	Zabiedovo	
 Europe	Slovakia	Zilina	
+Europe	Slovakia	Zilina	Cadca
 Europe	Slovakia	Zilina	Dolný Kubín
 Europe	Slovakia	Zilina	Horná Štubňa
+Europe	Slovakia	Zilina	Liptovsky Mikulas
 Europe	Slovakia	Zilina	Martincek
 Europe	Slovakia	Zilina	Nizna
 Europe	Slovakia	Zilina	Oravska Jasenica
@@ -5260,6 +5357,7 @@ Europe	Ukraine	Crimea
 Europe	Ukraine	Crimea	Alushta
 Europe	Ukraine	Crimea	Crimea
 Europe	Ukraine	Crimea	Novofedorovka
+Europe	Ukraine	Crimea	Oktyabr'skoye
 Europe	Ukraine	Crimea	Simpheropol
 Europe	Ukraine	Crimea	Yevpatoriya
 Europe	Ukraine	Dnipro	
@@ -6719,29 +6817,92 @@ South America	Argentina	Buenos Aires	San Fernando AR
 South America	Argentina	Buenos Aires	San Isidro AR
 South America	Argentina	Buenos Aires	San Martin
 South America	Argentina	Buenos Aires	San Martin AR
+South America	Argentina	Buenos Aires	San Martin BA
 South America	Argentina	Buenos Aires	San Pedro AR
 South America	Argentina	Buenos Aires	Tigre
 South America	Argentina	Buenos Aires	Torres AR
 South America	Argentina	Buenos Aires	Tres de Febrero
 South America	Argentina	Buenos Aires	Vicente Lopez
 South America	Argentina	Chaco	
+South America	Argentina	Chaco	Avia Terai
+South America	Argentina	Chaco	Barranqueras
+South America	Argentina	Chaco	Charata
+South America	Argentina	Chaco	Colonia Benitez
+South America	Argentina	Chaco	Coronel Du Graty
 South America	Argentina	Chaco	Fontana
+South America	Argentina	Chaco	Gancedo
 South America	Argentina	Chaco	Isla del Cerrito
+South America	Argentina	Chaco	Juan Jose Castelli
+South America	Argentina	Chaco	La Verde
+South America	Argentina	Chaco	Lapachito
+South America	Argentina	Chaco	Las Breñas
+South America	Argentina	Chaco	Machagai
+South America	Argentina	Chaco	Pampa del Indio
+South America	Argentina	Chaco	Presidencia de la Plaza
 South America	Argentina	Chaco	Puerto Vilelas
+South America	Argentina	Chaco	Quitilipi
 South America	Argentina	Chaco	Resistencia
+South America	Argentina	Chaco	Santa Sylvina
 South America	Argentina	Chaco	Sanz Peña
 South America	Argentina	Chaco	Sauzalito
+South America	Argentina	Chaco	Tres Isletas
+South America	Argentina	Chaco	Villa Angela
 South America	Argentina	Cordoba AR	
+South America	Argentina	Cordoba AR	Alta Gracia
+South America	Argentina	Cordoba AR	Arroyito
 South America	Argentina	Cordoba AR	Belle Ville
 South America	Argentina	Cordoba AR	Brinkmann
+South America	Argentina	Cordoba AR	Colonia Caroya
 South America	Argentina	Cordoba AR	Cordoba AR
+South America	Argentina	Cordoba AR	Cordoba Villa El Libertador
+South America	Argentina	Cordoba AR	Corral de Bustos
+South America	Argentina	Cordoba AR	General Deheza
+South America	Argentina	Cordoba AR	Jesus Maria
+South America	Argentina	Cordoba AR	La Falda
+South America	Argentina	Cordoba AR	Las Varillas
+South America	Argentina	Cordoba AR	Marcos Juarez
+South America	Argentina	Cordoba AR	Monte Buey
+South America	Argentina	Cordoba AR	Monte Cristo
+South America	Argentina	Cordoba AR	Monte Maiz
+South America	Argentina	Cordoba AR	Oliva AR
+South America	Argentina	Cordoba AR	Oncativo
+South America	Argentina	Cordoba AR	Rio Ceballos
+South America	Argentina	Cordoba AR	Rio Cuarto
+South America	Argentina	Cordoba AR	Rio Segundo
+South America	Argentina	Cordoba AR	Rio Tercero
 South America	Argentina	Cordoba AR	Saldan
+South America	Argentina	Cordoba AR	San Francisco AR
+South America	Argentina	Cordoba AR	Santa Rosa de Calamuchita
+South America	Argentina	Cordoba AR	Unquillo
 South America	Argentina	Cordoba AR	Villa Dolores
 South America	Argentina	Cordoba AR	Villa Maria
+South America	Argentina	Corrientes	
+South America	Argentina	Corrientes	Corrientes
+South America	Argentina	Jujuy	
+South America	Argentina	Jujuy	Calilegua
+South America	Argentina	Jujuy	Libertador General San Martin
+South America	Argentina	Jujuy	Perico
+South America	Argentina	Jujuy	San Pedro de Jujuy
+South America	Argentina	Jujuy	San Salvador de Jujuy
+South America	Argentina	La Pampa	
+South America	Argentina	La Pampa	Catrilo
+South America	Argentina	La Pampa	Intendente Alvear
+South America	Argentina	La Pampa	Larroude
+South America	Argentina	La Pampa	Macachín
+South America	Argentina	La Pampa	Santa Rosa AR
+South America	Argentina	La Pampa	Winifreda
+South America	Argentina	Mendoza	
+South America	Argentina	Mendoza	Godoy Cruz
+South America	Argentina	Mendoza	Guaymallen
+South America	Argentina	Mendoza	Lujan de Cuyo
+South America	Argentina	Mendoza	Maipu AR
+South America	Argentina	Mendoza	Rivadavia
+South America	Argentina	Mendoza	San Martin MZ
 South America	Argentina	Neuquen	
 South America	Argentina	Neuquen	Centenario
 South America	Argentina	Neuquen	Cutral Co
 South America	Argentina	Neuquen	Las Lajas
+South America	Argentina	Neuquen	Las Ovejas
 South America	Argentina	Neuquen	Loncopue
 South America	Argentina	Neuquen	Neuquen
 South America	Argentina	Neuquen	Plottier
@@ -6762,21 +6923,94 @@ South America	Argentina	Rio Negro	San Antonio Este
 South America	Argentina	Rio Negro	San Carlos de Bariloche
 South America	Argentina	Rio Negro	Viedma
 South America	Argentina	Rio Negro	Villa Regina
+South America	Argentina	Salta	
+South America	Argentina	Salta	Aguaray
+South America	Argentina	Salta	Colonia Santa Rosa
+South America	Argentina	Salta	General Guemes
+South America	Argentina	Salta	General Mosconi
+South America	Argentina	Salta	Hipolito Yrigoyen
+South America	Argentina	Salta	Salta
+South America	Argentina	Salta	Salvador Mazza
+South America	Argentina	Salta	San Ramon de la Nueva Oran
+South America	Argentina	Salta	Tartagal
 South America	Argentina	Santa Fe	
+South America	Argentina	Santa Fe	Acebal
+South America	Argentina	Santa Fe	Arroyo Seco
+South America	Argentina	Santa Fe	Avellaneda AR
+South America	Argentina	Santa Fe	Capitan Bermudez
+South America	Argentina	Santa Fe	Carcaraña
+South America	Argentina	Santa Fe	Casilda
 South America	Argentina	Santa Fe	Cayastá
 South America	Argentina	Santa Fe	Ceres
 South America	Argentina	Santa Fe	Ceres AR
+South America	Argentina	Santa Fe	Colonia Margarita
 South America	Argentina	Santa Fe	Coronda
+South America	Argentina	Santa Fe	Coronel Arnold
 South America	Argentina	Santa Fe	Esperanza
+South America	Argentina	Santa Fe	Fighiera
+South America	Argentina	Santa Fe	Firmat
+South America	Argentina	Santa Fe	Fortin Olmos
+South America	Argentina	Santa Fe	Fray Luis Beltran
+South America	Argentina	Santa Fe	Fuentes
+South America	Argentina	Santa Fe	Funes
+South America	Argentina	Santa Fe	Helvecia
+South America	Argentina	Santa Fe	Hughes
+South America	Argentina	Santa Fe	Laguna Paiva
+South America	Argentina	Santa Fe	Las Rosas
+South America	Argentina	Santa Fe	Los Molinos
+South America	Argentina	Santa Fe	Maggiolo
+South America	Argentina	Santa Fe	Monte Vera
+South America	Argentina	Santa Fe	Pavon Arriba
+South America	Argentina	Santa Fe	Perez
+South America	Argentina	Santa Fe	Pueblo Esther
+South America	Argentina	Santa Fe	Puerto Gral San Martin
+South America	Argentina	Santa Fe	Rafaela
 South America	Argentina	Santa Fe	Reconquista
+South America	Argentina	Santa Fe	Ricardone
+South America	Argentina	Santa Fe	Rosario
+South America	Argentina	Santa Fe	Rueda
+South America	Argentina	Santa Fe	San Carlos AR
+South America	Argentina	Santa Fe	San Jose de la Esquina
+South America	Argentina	Santa Fe	San Justo
+South America	Argentina	Santa Fe	San Lorenzo
+South America	Argentina	Santa Fe	Sancti Spiritu
+South America	Argentina	Santa Fe	Sanford
 South America	Argentina	Santa Fe	Santa Fe AR
+South America	Argentina	Santa Fe	Santa Isabel AR
+South America	Argentina	Santa Fe	Santo Tome
+South America	Argentina	Santa Fe	Soldini
+South America	Argentina	Santa Fe	Sunchales
+South America	Argentina	Santa Fe	Teodelina
 South America	Argentina	Santa Fe	Totoras
+South America	Argentina	Santa Fe	Venado Tuerto
+South America	Argentina	Santa Fe	Villa Amelia
+South America	Argentina	Santa Fe	Villa Cañas
+South America	Argentina	Santa Fe	Villa Constitucion
+South America	Argentina	Santa Fe	Villa Gob. Galvez
+South America	Argentina	Santa Fe	Villa Gobernador Galvez
 South America	Argentina	Santa Fe	Villa Ocampo
+South America	Argentina	Santa Fe	Villada
+South America	Argentina	Santa Fe	Wheelwright
+South America	Argentina	Santa Fe	Zavalla
 South America	Argentina	Tierra del Fuego	
 South America	Argentina	Tierra del Fuego	Rio Grande
 South America	Argentina	Tierra del Fuego	Rio Grande AR
+South America	Argentina	Tierra del Fuego	Tolhuin
 South America	Argentina	Tierra del Fuego	Ushuaia
 South America	Argentina	Tucuman	
+South America	Argentina	Tucuman	Aguilares
+South America	Argentina	Tucuman	Alderetes
+South America	Argentina	Tucuman	Burruyacu
+South America	Argentina	Tucuman	Concepcion AR
+South America	Argentina	Tucuman	Famailla
+South America	Argentina	Tucuman	Las Talitas
+South America	Argentina	Tucuman	Lastenia
+South America	Argentina	Tucuman	Monteros
+South America	Argentina	Tucuman	San Miguel de Tucuman
+South America	Argentina	Tucuman	San Pablo AR
+South America	Argentina	Tucuman	Simoca
+South America	Argentina	Tucuman	Tafi Viejo
+South America	Argentina	Tucuman	Yerba Buena
 South America	Aruba	Aruba	
 South America	Bolivia	Beni	
 South America	Bolivia	Bolivia	
