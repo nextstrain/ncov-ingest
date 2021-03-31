@@ -12,6 +12,12 @@ from utils.transformpipeline.transforms import UserProvidedGeoLocationSubstituti
 import argparse
 from collections import defaultdict
 
+def check_positive_int(v):
+    n = int(v)
+    if n <= 0 :
+        raise argparse.ArgumentTypeError(str(v)+" is not a positive integer value." )
+    return n
+
 if __name__ == '__main__':
     
 
@@ -26,6 +32,9 @@ if __name__ == '__main__':
         "Lines or parts of lines starting with '#' are treated as comments.\n"
         "e.g.\n\t"
         "Europe/Spain/Catalunya/Mataró\tEurope/Spain/Catalunya/Mataro\n\t")
+    parser.add_argument( "--min-generalized",
+                        default=2, type=check_positive_int,
+                        help="minimum number of rules needed to consider generalization. Default : 2" )
 
 
     args = parser.parse_args()
@@ -105,15 +114,20 @@ if __name__ == '__main__':
                         potentiallyGeneral[generalizedRaw] = generalizedArrival
                         potentiallyGeneralList[generalizedRaw].append( (raw , arrival) )
 
-    print('Generalization assessed.' , len(potentiallyGeneral) - len(problemGeneralization) , 'potential candidates.' )
+    ## filtering out problem cases and generalization of a low number of rules + preparing for sorting by number of generalized rules
+    general2nbGeneralized = {raw:len(potentiallyGeneralList[raw]) for raw in potentiallyGeneral.keys() if ( not raw in problemGeneralization) and len(potentiallyGeneralList[raw]) >= args.min_generalized }
+    
+    sortedGeneralRaw = list( zip( *sorted(general2nbGeneralized.items() , key= lambda x : x[1] , reverse=True ) ) )[0]
+
+
+    print('Generalization assessed.' , len(sortedGeneralRaw) , 'potential candidates.' )
 
     sep1='/'
     sep2='\t'
 
-    for generalizedRaw,generalizedArrival in potentiallyGeneral.items():
 
-        if generalizedRaw in problemGeneralization: # ignore problem cases where generalization would create conflicts
-            continue
+    for generalizedRaw in sortedGeneralRaw:
+        generalizedArrival = potentiallyGeneral[generalizedRaw]
 
         print('#***')
         print('#Generalizes',len(potentiallyGeneralList[generalizedRaw]),"rules")
