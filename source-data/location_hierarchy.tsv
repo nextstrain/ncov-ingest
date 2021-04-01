@@ -98,6 +98,8 @@ Africa	Ghana	Ashanti Region
 Africa	Ghana	Bono Region	
 Africa	Ghana	Central Region	
 Africa	Ghana	Central Region	Cape Coast
+Africa	Ghana	Central Region GH	
+Africa	Ghana	Central Region GH	Cape Coast
 Africa	Ghana	Eastern Region GH	
 Africa	Ghana	Eastern Region GH	Abuakwa North
 Africa	Ghana	Eastern Region GH	Atiwa West
@@ -141,6 +143,13 @@ Africa	Madagascar	Analamanga
 Africa	Madagascar	Analamanga	Antananarivo
 Africa	Madagascar	Analanjirofo	Fenoarivo
 Africa	Madagascar	Toamasina	
+Africa	Malawi	Central Region MW	
+Africa	Malawi	Central Region MW	Lilongwe
+Africa	Malawi	Northern Region MW	
+Africa	Malawi	Northern Region MW	Karonga
+Africa	Malawi	Northern Region MW	Mzimba
+Africa	Malawi	Southern Region MW	
+Africa	Malawi	Southern Region MW	Blantyre
 Africa	Mali	Bamako	
 Africa	Mali	Mali	
 Africa	Mali	Mopti	
@@ -306,6 +315,8 @@ Africa	South Africa	Western Cape Province	Tygerberg
 Africa	South Africa	Western Cape Province	West Coast
 Africa	Tanzania	Arusha	
 Africa	Tanzania	Tanzania	
+Africa	Togo	Centrale Region TG	
+Africa	Togo	Centrale Region TG	Tchaoudjo
 Africa	Togo	Golfe	
 Africa	Togo	Golfe	Lome
 Africa	Togo	Togo	
@@ -499,6 +510,8 @@ Asia	Georgia	Georgia (Europe)
 Asia	Georgia	Tbilisi	
 Asia	Hong Kong	Hong Kong	
 Asia	Hong Kong	Hong Kong	Hong Kong
+Asia	India	Andaman and Nicobar Islands	
+Asia	India	Andaman and Nicobar Islands	North and Middle Andaman
 Asia	India	Andhra Pradesh	
 Asia	India	Andhra Pradesh	Guntur
 Asia	India	Andhra Pradesh	Kadapa
@@ -589,6 +602,7 @@ Asia	India	Himachal Pradesh
 Asia	India	India	
 Asia	India	Jammu and Kashmir	
 Asia	India	Jharkhand	
+Asia	India	Jharkhand	East Singhbhum
 Asia	India	Karnataka	
 Asia	India	Karnataka	Bengaluru Urban
 Asia	India	Karnataka	Chikkaballapura
@@ -596,6 +610,7 @@ Asia	India	Karnataka	Haveri
 Asia	India	Karnataka	Kolar
 Asia	India	Karnataka	Tumakuru
 Asia	India	Kerala	
+Asia	India	Kerala	Thrissur
 Asia	India	Ladakh	
 Asia	India	Ladakh	Kargil
 Asia	India	Madhya Pradesh	
@@ -628,6 +643,10 @@ Asia	India	Maharashtra	Wardha
 Asia	India	Maharashtra	Washim
 Asia	India	Maharashtra	Yavatmal
 Asia	India	Manipur	
+Asia	India	Mizoram	
+Asia	India	Mizoram	Aizawl
+Asia	India	Mizoram	Lunglei
+Asia	India	Mizoram	Serchhip
 Asia	India	Odisha	
 Asia	India	Odisha	Ganjam
 Asia	India	Punjab IN	
@@ -636,6 +655,7 @@ Asia	India	Rajasthan
 Asia	India	Rajasthan	Bikaner
 Asia	India	Rajasthan	Jaipur
 Asia	India	Sikkim	
+Asia	India	Sikkim	South Sikkim
 Asia	India	Tamil Nadu	
 Asia	India	Tamil Nadu	Chennai
 Asia	India	Telangana	
@@ -695,18 +715,26 @@ Asia	India	Uttarakhand	Uttarkashi
 Asia	India	West Bengal	
 Asia	India	West Bengal	Bankura
 Asia	India	West Bengal	Birbhum
+Asia	India	West Bengal	Cooch Behar
 Asia	India	West Bengal	Darjeeling
 Asia	India	West Bengal	East Medinipur
 Asia	India	West Bengal	Hooghly
 Asia	India	West Bengal	Howrah
+Asia	India	West Bengal	Jalpaiguri
 Asia	India	West Bengal	Jhargram
 Asia	India	West Bengal	Kolkata
+Asia	India	West Bengal	Malda
 Asia	India	West Bengal	Murshidabad
 Asia	India	West Bengal	Nadia
 Asia	India	West Bengal	North 24 Parganas
 Asia	India	West Bengal	Paschim Bardhaman
+Asia	India	West Bengal	Paschim Medinipur
+Asia	India	West Bengal	Purba Bardhaman
+Asia	India	West Bengal	Purba Medinipur
+Asia	India	West Bengal	Purulia
 Asia	India	West Bengal	South 24 Parganas
 Asia	India	West Bengal	Tehatta
+Asia	India	West Bengal	Uttar Dinajpur
 Asia	Indonesia	Aceh	
 Asia	Indonesia	Bali	
 Asia	Indonesia	Bali	Denpasar
@@ -767,6 +795,8 @@ Asia	Indonesia	West Java	Bekasi
 Asia	Indonesia	West Java	Bogor
 Asia	Indonesia	West Java	Bogor Regency
 Asia	Indonesia	West Java	Depok
+Asia	Indonesia	West Java	Garut
+Asia	Indonesia	West Java	Karawang
 Asia	Indonesia	West Java	Purwakarta
 Asia	Indonesia	West Java	Tasikmalaya
 Asia	Indonesia	West Kalimantan	
@@ -1487,6 +1517,7 @@ Europe	Belgium	Charleroi	Marchienne-au-Pont
 Europe	Belgium	Charleroi	Marcinelle
 Europe	Belgium	Charleroi	Mellet
 Europe	Belgium	Charleroi	Monceau-sur-Sambre
+Europe	Belgium	Charleroi	Mont-sur-Marchienne
 Europe	Belgium	Charleroi	Montignies-sur-Sambre
 Europe	Belgium	Charleroi	Montigny-le-Tilleul
 Europe	Belgium	Charleroi	Pont-à-Celles
@@ -1843,6 +1874,7 @@ Europe	Belgium	Mechelen	Puurs-Sint-Amands
 Europe	Belgium	Mechelen	Schriek
 Europe	Belgium	Mechelen	Sint-Amands
 Europe	Belgium	Mechelen	Sint-Katelijne-Waver
+Europe	Belgium	Mechelen	Walem
 Europe	Belgium	Mechelen	Weert
 Europe	Belgium	Mechelen	Weert BE
 Europe	Belgium	Mechelen	Wiekevorst
@@ -2418,48 +2450,115 @@ Europe	Finland	Helsinki
 Europe	Finland	Southern Finland	
 Europe	Finland	Uusimaa	
 Europe	France	Auvergne-Rhône-Alpes	
+Europe	France	Auvergne-Rhône-Alpes	Abrest
 Europe	France	Auvergne-Rhône-Alpes	Andrezieux-Boutheon
 Europe	France	Auvergne-Rhône-Alpes	Andrézieux-Bouthéon
 Europe	France	Auvergne-Rhône-Alpes	Annecy
 Europe	France	Auvergne-Rhône-Alpes	Annemasse
 Europe	France	Auvergne-Rhône-Alpes	Annonay
+Europe	France	Auvergne-Rhône-Alpes	Apchat
 Europe	France	Auvergne-Rhône-Alpes	Aubenas
+Europe	France	Auvergne-Rhône-Alpes	Aubiere
+Europe	France	Auvergne-Rhône-Alpes	Aulnat
 Europe	France	Auvergne-Rhône-Alpes	Aurillac
+Europe	France	Auvergne-Rhône-Alpes	Aydat
+Europe	France	Auvergne-Rhône-Alpes	Beaumont
 Europe	France	Auvergne-Rhône-Alpes	Bellegarde-sur-Valserine
+Europe	France	Auvergne-Rhône-Alpes	Bellerive sur Allier
+Europe	France	Auvergne-Rhône-Alpes	Billom
 Europe	France	Auvergne-Rhône-Alpes	Bourg-Lès-Valence
 Europe	France	Auvergne-Rhône-Alpes	Bourg-en-Bresse
 Europe	France	Auvergne-Rhône-Alpes	Bourgoin-Jallieu
 Europe	France	Auvergne-Rhône-Alpes	Bron
+Europe	France	Auvergne-Rhône-Alpes	Cebazat
+Europe	France	Auvergne-Rhône-Alpes	Ceyrat
 Europe	France	Auvergne-Rhône-Alpes	Challes-Les-Eaux
+Europe	France	Auvergne-Rhône-Alpes	Chamalieres
+Europe	France	Auvergne-Rhône-Alpes	Chambaron sur Morge
 Europe	France	Auvergne-Rhône-Alpes	Chambery
+Europe	France	Auvergne-Rhône-Alpes	Chaniat
+Europe	France	Auvergne-Rhône-Alpes	Chapdes Beaufort
 Europe	France	Auvergne-Rhône-Alpes	Chaponost
+Europe	France	Auvergne-Rhône-Alpes	Charbonniere Les Vieilles
+Europe	France	Auvergne-Rhône-Alpes	Charbonnieres Les Varenne
+Europe	France	Auvergne-Rhône-Alpes	Chatel Guyon
+Europe	France	Auvergne-Rhône-Alpes	Chauriat
 Europe	France	Auvergne-Rhône-Alpes	Clermont-Ferrand
 Europe	France	Auvergne-Rhône-Alpes	Cluses
+Europe	France	Auvergne-Rhône-Alpes	Combronde
+Europe	France	Auvergne-Rhône-Alpes	Condat
 Europe	France	Auvergne-Rhône-Alpes	Contamine-sur-Arve
 Europe	France	Auvergne-Rhône-Alpes	Contamines
+Europe	France	Auvergne-Rhône-Alpes	Coulandon
+Europe	France	Auvergne-Rhône-Alpes	Cournon
+Europe	France	Auvergne-Rhône-Alpes	Cournon D Auvergne
 Europe	France	Auvergne-Rhône-Alpes	Craponne
+Europe	France	Auvergne-Rhône-Alpes	Creuzier le Vieux
+Europe	France	Auvergne-Rhône-Alpes	Cusset
+Europe	France	Auvergne-Rhône-Alpes	Dallet
+Europe	France	Auvergne-Rhône-Alpes	Davayat
 Europe	France	Auvergne-Rhône-Alpes	Davezieux
 Europe	France	Auvergne-Rhône-Alpes	Decines
 Europe	France	Auvergne-Rhône-Alpes	Decines-Charpieu
+Europe	France	Auvergne-Rhône-Alpes	Escurolles
+Europe	France	Auvergne-Rhône-Alpes	Espinchal
+Europe	France	Auvergne-Rhône-Alpes	Gannat
+Europe	France	Auvergne-Rhône-Alpes	Gerzat
 Europe	France	Auvergne-Rhône-Alpes	Givors
 Europe	France	Auvergne-Rhône-Alpes	Grenoble
+Europe	France	Auvergne-Rhône-Alpes	Isserteaux
+Europe	France	Auvergne-Rhône-Alpes	Issoire
+Europe	France	Auvergne-Rhône-Alpes	La Bourboule
+Europe	France	Auvergne-Rhône-Alpes	La Goutelle
+Europe	France	Auvergne-Rhône-Alpes	La Monnerie le Montel
+Europe	France	Auvergne-Rhône-Alpes	La Moutade
+Europe	France	Auvergne-Rhône-Alpes	La Roche Blanche
+Europe	France	Auvergne-Rhône-Alpes	Lafeuillade en Vezie
+Europe	France	Auvergne-Rhône-Alpes	Laqueuille
+Europe	France	Auvergne-Rhône-Alpes	Le Breuil sur Couze
+Europe	France	Auvergne-Rhône-Alpes	Le Mont Dore
 Europe	France	Auvergne-Rhône-Alpes	Le Puy-en-Velay
+Europe	France	Auvergne-Rhône-Alpes	Lempdes
+Europe	France	Auvergne-Rhône-Alpes	Les Martres de Veyre
+Europe	France	Auvergne-Rhône-Alpes	Les Martres sur Morge
+Europe	France	Auvergne-Rhône-Alpes	Lezoux
+Europe	France	Auvergne-Rhône-Alpes	Luzillat
 Europe	France	Auvergne-Rhône-Alpes	Lyon
 Europe	France	Auvergne-Rhône-Alpes	Macon
+Europe	France	Auvergne-Rhône-Alpes	Maringues
+Europe	France	Auvergne-Rhône-Alpes	Marsat
 Europe	France	Auvergne-Rhône-Alpes	Mazet-Saint-Voy
+Europe	France	Auvergne-Rhône-Alpes	Molles
 Europe	France	Auvergne-Rhône-Alpes	Montagnieu
+Europe	France	Auvergne-Rhône-Alpes	Montaigut
 Europe	France	Auvergne-Rhône-Alpes	Montelimar
 Europe	France	Auvergne-Rhône-Alpes	Montlucon
+Europe	France	Auvergne-Rhône-Alpes	Montmorin
 Europe	France	Auvergne-Rhône-Alpes	Moulins
+Europe	France	Auvergne-Rhône-Alpes	Murat le Quaire
+Europe	France	Auvergne-Rhône-Alpes	Nohanent
 Europe	France	Auvergne-Rhône-Alpes	Oyonnax
+Europe	France	Auvergne-Rhône-Alpes	Paslieres
+Europe	France	Auvergne-Rhône-Alpes	Paulhenc
 Europe	France	Auvergne-Rhône-Alpes	Pierre-Bénite
 Europe	France	Auvergne-Rhône-Alpes	Pollionnay
+Europe	France	Auvergne-Rhône-Alpes	Pont Du Chateau
+Europe	France	Auvergne-Rhône-Alpes	Premilhat
 Europe	France	Auvergne-Rhône-Alpes	Pringy
 Europe	France	Auvergne-Rhône-Alpes	Privas
+Europe	France	Auvergne-Rhône-Alpes	Puy Guillaume
+Europe	France	Auvergne-Rhône-Alpes	Randan
 Europe	France	Auvergne-Rhône-Alpes	Rhone Alpes
+Europe	France	Auvergne-Rhône-Alpes	Riom
+Europe	France	Auvergne-Rhône-Alpes	Riom Es Montagnes
 Europe	France	Auvergne-Rhône-Alpes	Roanne
 Europe	France	Auvergne-Rhône-Alpes	Romans-sur-Isere
 Europe	France	Auvergne-Rhône-Alpes	Roussillon
+Europe	France	Auvergne-Rhône-Alpes	Saint Beauzire
+Europe	France	Auvergne-Rhône-Alpes	Saint Bonnet Pres Riom
+Europe	France	Auvergne-Rhône-Alpes	Saint Germain des Fosses
+Europe	France	Auvergne-Rhône-Alpes	Saint Julien de Coppel
+Europe	France	Auvergne-Rhône-Alpes	Saint Sandoux
 Europe	France	Auvergne-Rhône-Alpes	Saint-Etienne
 Europe	France	Auvergne-Rhône-Alpes	Saint-Etienne-de-Saint-Geoirs
 Europe	France	Auvergne-Rhône-Alpes	Saint-Genis-Les-Ollieres
@@ -2469,15 +2568,29 @@ Europe	France	Auvergne-Rhône-Alpes	Saint-Just-Saint-Rambert
 Europe	France	Auvergne-Rhône-Alpes	Saint-Martin-D'Hères
 Europe	France	Auvergne-Rhône-Alpes	Saint-Priest
 Europe	France	Auvergne-Rhône-Alpes	Saint-Verand
+Europe	France	Auvergne-Rhône-Alpes	St Amant Tallende
+Europe	France	Auvergne-Rhône-Alpes	St Denis Combarnazat
+Europe	France	Auvergne-Rhône-Alpes	St Gervais D Auvergne
+Europe	France	Auvergne-Rhône-Alpes	St Hilaire la Croix
+Europe	France	Auvergne-Rhône-Alpes	St Ours Les Roches
+Europe	France	Auvergne-Rhône-Alpes	St Yorre
 Europe	France	Auvergne-Rhône-Alpes	Tarare
+Europe	France	Auvergne-Rhône-Alpes	Thiers
 Europe	France	Auvergne-Rhône-Alpes	Thonon-Les-Bains
 Europe	France	Auvergne-Rhône-Alpes	Valence
+Europe	France	Auvergne-Rhône-Alpes	Vallon en Sully
 Europe	France	Auvergne-Rhône-Alpes	Venissieux
+Europe	France	Auvergne-Rhône-Alpes	Vertaizon
+Europe	France	Auvergne-Rhône-Alpes	Veyre Monton
 Europe	France	Auvergne-Rhône-Alpes	Vichy
 Europe	France	Auvergne-Rhône-Alpes	Vienne
+Europe	France	Auvergne-Rhône-Alpes	Villefranche-d'Allier
 Europe	France	Auvergne-Rhône-Alpes	Villefranche-sur-Saône
 Europe	France	Auvergne-Rhône-Alpes	Villeurbanne
 Europe	France	Auvergne-Rhône-Alpes	Voiron
+Europe	France	Auvergne-Rhône-Alpes	Volvic
+Europe	France	Auvergne-Rhône-Alpes	Yssac la Tourette
+Europe	France	Auvergne-Rhône-Alpes	Ytrac
 Europe	France	Bourgogne	
 Europe	France	Bourgogne	Dijon
 Europe	France	Bourgogne-France-Comté	
@@ -2502,6 +2615,7 @@ Europe	France	Bretagne	Chateaulin
 Europe	France	Bretagne	Dinan
 Europe	France	Bretagne	Etables sur Mer
 Europe	France	Bretagne	Fougères
+Europe	France	Bretagne	Hennebont
 Europe	France	Bretagne	La Rochelle
 Europe	France	Bretagne	Lannilis
 Europe	France	Bretagne	Lannion
@@ -2530,6 +2644,8 @@ Europe	France	Centre-Val de Loire	Abondant
 Europe	France	Centre-Val de Loire	Angers
 Europe	France	Centre-Val de Loire	Blois
 Europe	France	Centre-Val de Loire	Bourges
+Europe	France	Centre-Val de Loire	Bruere Allichamps
+Europe	France	Centre-Val de Loire	Cellettes
 Europe	France	Centre-Val de Loire	Chambrey Les Tours
 Europe	France	Centre-Val de Loire	Craon
 Europe	France	Centre-Val de Loire	Dreux
@@ -2637,6 +2753,7 @@ Europe	France	Hauts de France	Dunkerque
 Europe	France	Hauts de France	Flines-lès-Mortagne
 Europe	France	Hauts de France	Genech
 Europe	France	Hauts de France	Gondecourt
+Europe	France	Hauts de France	Gravelines
 Europe	France	Hauts de France	Henin-Beaumont
 Europe	France	Hauts de France	Laon
 Europe	France	Hauts de France	Leers
@@ -2751,6 +2868,8 @@ Europe	France	Nouvelle-Aquitaine	Bayonne
 Europe	France	Nouvelle-Aquitaine	Biarritz
 Europe	France	Nouvelle-Aquitaine	Blaye
 Europe	France	Nouvelle-Aquitaine	Bordeaux
+Europe	France	Nouvelle-Aquitaine	Bort-les-Orgues
+Europe	France	Nouvelle-Aquitaine	Budeliere
 Europe	France	Nouvelle-Aquitaine	Casteljaloux
 Europe	France	Nouvelle-Aquitaine	Dax
 Europe	France	Nouvelle-Aquitaine	Gradignan
@@ -2773,6 +2892,7 @@ Europe	France	Nouvelle-Aquitaine	Poitiers
 Europe	France	Nouvelle-Aquitaine	Pons
 Europe	France	Nouvelle-Aquitaine	Puilboreau
 Europe	France	Nouvelle-Aquitaine	Royan
+Europe	France	Nouvelle-Aquitaine	Saint-Mexant
 Europe	France	Nouvelle-Aquitaine	Saint-Paul-lès-Dax
 Europe	France	Nouvelle-Aquitaine	Saintes
 Europe	France	Occitanie	
@@ -2810,6 +2930,7 @@ Europe	France	Pays de la Loire	Nantes
 Europe	France	Pays de la Loire	Saint Herblain
 Europe	France	Pays de la Loire	Saint Nazaire
 Europe	France	Pays de la Loire	Saint-Gilles-Croix-de-Vie
+Europe	France	Pays de la Loire	Saint-Même-le-Tenu
 Europe	France	Pays de la Loire	Saumur
 Europe	France	Pays de la Loire	Val de Loire
 Europe	France	Provence-Alpes-Côte d'Azur	
@@ -2979,6 +3100,8 @@ Europe	Greece	Athens
 Europe	Greece	Attica	
 Europe	Greece	Central Greece	
 Europe	Greece	Central Greece	Livadeia
+Europe	Greece	Central Macedonia	
+Europe	Greece	Crete	
 Europe	Greece	Drama	
 Europe	Greece	Evros	
 Europe	Greece	Greece	
@@ -2986,6 +3109,7 @@ Europe	Greece	Rodopi
 Europe	Greece	South Aegean Region	
 Europe	Greece	Thessaloniki	
 Europe	Greece	Thrace	
+Europe	Greece	Western Greece	
 Europe	Greece	Xanthi	
 Europe	Hungary	Balassagyarmat	
 Europe	Hungary	Balatonfured	
@@ -3115,6 +3239,7 @@ Europe	Italy	Trentino
 Europe	Italy	Trentino-Alto Adige	
 Europe	Italy	Trentino-Alto Adige	Autonomous Province of Bolzano
 Europe	Italy	Trentino-Alto Adige	Autonomous Province of Trento
+Europe	Italy	Trentino-Alto Adige	South Tyrol
 Europe	Italy	Tuscany	
 Europe	Italy	Tuscany	Florence
 Europe	Italy	Tuscany	Siena
@@ -3350,13 +3475,50 @@ Europe	Norway	Vestlandet
 Europe	Norway	Viken	
 Europe	Poland	Bielsk Podlaski	
 Europe	Poland	Dolnośląskie	
+Europe	Poland	Dolnośląskie	Bielawa
+Europe	Poland	Dolnośląskie	Blazejow
+Europe	Poland	Dolnośląskie	Blazkowa
+Europe	Poland	Dolnośląskie	Bobolice
+Europe	Poland	Dolnośląskie	Bogdaszowice
+Europe	Poland	Dolnośląskie	Bolkow
+Europe	Poland	Dolnośląskie	Cieplowody
+Europe	Poland	Dolnośląskie	Czarny Bor
+Europe	Poland	Dolnośląskie	Debrznik
+Europe	Poland	Dolnośląskie	Dzierzoniow
+Europe	Poland	Dolnośląskie	Janowice Wielkie
 Europe	Poland	Dolnośląskie	Jelenia Gora
+Europe	Poland	Dolnośląskie	Jezow Sudecki
 Europe	Poland	Dolnośląskie	Kamieniec Wrocławski
+Europe	Poland	Dolnośląskie	Kamienna Gora
 Europe	Poland	Dolnośląskie	Kepno
+Europe	Poland	Dolnośląskie	Kochanow
+Europe	Poland	Dolnośląskie	Kostrzyca
+Europe	Poland	Dolnośląskie	Krzeszow
 Europe	Poland	Dolnośląskie	Legnica
+Europe	Poland	Dolnośląskie	Lipno
+Europe	Poland	Dolnośląskie	Lomnica
+Europe	Poland	Dolnośląskie	Lubawka
+Europe	Poland	Dolnośląskie	Lutomia Dolna
+Europe	Poland	Dolnośląskie	Mala Kamienica
+Europe	Poland	Dolnośląskie	Marciszow
+Europe	Poland	Dolnośląskie	Mikowice
+Europe	Poland	Dolnośląskie	Myslakowice
+Europe	Poland	Dolnośląskie	Nadolice Wielkie
+Europe	Poland	Dolnośląskie	Nowizna
+Europe	Poland	Dolnośląskie	Pieszyce
+Europe	Poland	Dolnośląskie	Pilawa Gorna
+Europe	Poland	Dolnośląskie	Przedborowa
+Europe	Poland	Dolnośląskie	Przylesie
+Europe	Poland	Dolnośląskie	Sosnowa
+Europe	Poland	Dolnośląskie	Swidnica DS
+Europe	Poland	Dolnośląskie	Sycow
 Europe	Poland	Dolnośląskie	Walbrzych
+Europe	Poland	Dolnośląskie	Witkow
+Europe	Poland	Dolnośląskie	Wojcieszyce
 Europe	Poland	Dolnośląskie	Wojnowice
 Europe	Poland	Dolnośląskie	Wroclaw
+Europe	Poland	Dolnośląskie	Zabor
+Europe	Poland	Dolnośląskie	Zatonie
 Europe	Poland	Dolnośląskie	Ząbkowice Śląskie
 Europe	Poland	Kujawsko-Pomorskie	
 Europe	Poland	Kujawsko-Pomorskie	Bobrowo
@@ -3374,16 +3536,20 @@ Europe	Poland	Lubelskie	Zamość
 Europe	Poland	Lubuskie	
 Europe	Poland	Lubuskie	Bronowice
 Europe	Poland	Lubuskie	Bytom Odrzanski
+Europe	Poland	Lubuskie	Czerwiensk
 Europe	Poland	Lubuskie	Dabrowka
 Europe	Poland	Lubuskie	Dobiegniew
 Europe	Poland	Lubuskie	Gorzow Wlkp
 Europe	Poland	Lubuskie	Kostrzyn
 Europe	Poland	Lubuskie	Kostrzyn nad Odra
+Europe	Poland	Lubuskie	Krosno Odrzańskie
 Europe	Poland	Lubuskie	Lubrza
 Europe	Poland	Lubuskie	Lubsko
 Europe	Poland	Lubuskie	Nowa Sol
+Europe	Poland	Lubuskie	Nowogrod Bobrzanski
 Europe	Poland	Lubuskie	Strzelce Krajenskie
 Europe	Poland	Lubuskie	Swidnica
+Europe	Poland	Lubuskie	Swidnica LB
 Europe	Poland	Lubuskie	Szprotawa
 Europe	Poland	Lubuskie	Tomaszowo
 Europe	Poland	Lubuskie	Zielona Gora
@@ -3427,11 +3593,15 @@ Europe	Poland	Mazowieckie	Plock
 Europe	Poland	Mazowieckie	Radom
 Europe	Poland	Mazowieckie	Sokolow Podlaski
 Europe	Poland	Mazowieckie	Warszawa
+Europe	Poland	Mazowieckie	Łaz
 Europe	Poland	Opolskie	
 Europe	Poland	Opolskie	Biała
+Europe	Poland	Opolskie	Bierzow
+Europe	Poland	Opolskie	Bąkowice
 Europe	Poland	Opolskie	Głogówek
 Europe	Poland	Opolskie	Głuchołazy
 Europe	Poland	Opolskie	Kedzierzyn Kozle
+Europe	Poland	Opolskie	Namysłów
 Europe	Poland	Opolskie	Nysa
 Europe	Poland	Opolskie	Olesno
 Europe	Poland	Opolskie	Opole
@@ -3635,6 +3805,7 @@ Europe	Poland	Wielkopolskie	Nowy Tomysl
 Europe	Poland	Wielkopolskie	Oborniki
 Europe	Poland	Wielkopolskie	Orchowo
 Europe	Poland	Wielkopolskie	Orlowo
+Europe	Poland	Wielkopolskie	Ostrzeszow
 Europe	Poland	Wielkopolskie	Paledzie
 Europe	Poland	Wielkopolskie	Pecna
 Europe	Poland	Wielkopolskie	Plewiska
@@ -3698,12 +3869,19 @@ Europe	Poland	Zachodniopomorskie	Szczecinek
 Europe	Poland	Zachodniopomorskie	Witkowo Drugie
 Europe	Poland	Zielonogorskie	
 Europe	Poland	Łódzkie	
+Europe	Poland	Łódzkie	Adolfow
 Europe	Poland	Łódzkie	Belchatow County
+Europe	Poland	Łódzkie	Brzeziny
+Europe	Poland	Łódzkie	Justynow
+Europe	Poland	Łódzkie	Koluszki
 Europe	Poland	Łódzkie	Kutno
 Europe	Poland	Łódzkie	Lodz
 Europe	Poland	Łódzkie	Pabianice
 Europe	Poland	Łódzkie	Pajeczno County
+Europe	Poland	Łódzkie	Sieradz
 Europe	Poland	Łódzkie	Skierniewice County
+Europe	Poland	Łódzkie	Suliszewice
+Europe	Poland	Łódzkie	Wisniowa Gora
 Europe	Portugal	Beja	
 Europe	Portugal	Beja	Santa Clara de Louredo
 Europe	Portugal	Coimbra	
@@ -4248,9 +4426,11 @@ Europe	Slovakia	Zilina	Turcianske Teplice
 Europe	Slovakia	Zilina	Turzovka
 Europe	Slovenia	Celje	
 Europe	Slovenia	Gorenjska	
+Europe	Slovenia	Gorenjska	Kranj
 Europe	Slovenia	Goriska	
 Europe	Slovenia	Jesenice	
 Europe	Slovenia	Jugovzhodna	
+Europe	Slovenia	Jugovzhodna	Novo Mesto
 Europe	Slovenia	Kamnik	
 Europe	Slovenia	Koroska	
 Europe	Slovenia	Kranj	
@@ -4262,9 +4442,11 @@ Europe	Slovenia	Obalnokraska
 Europe	Slovenia	Osrednjeslovenska	
 Europe	Slovenia	Podravska	
 Europe	Slovenia	Pomurska	
+Europe	Slovenia	Pomurska	Murska Sobota
 Europe	Slovenia	Posavska	
 Europe	Slovenia	Primorskonotranjska	
 Europe	Slovenia	Savinjska	
+Europe	Slovenia	Savinjska	Celje
 Europe	Slovenia	Skofija Loka	
 Europe	Slovenia	Slovenia	
 Europe	Slovenia	Trebnje	
@@ -4752,6 +4934,7 @@ Europe	Spain	Catalunya	Sant Adria del Besos
 Europe	Spain	Catalunya	Sant Andreu de Llavaneres
 Europe	Spain	Catalunya	Sant Andreu de la Barca
 Europe	Spain	Catalunya	Sant Antoni de Vilamajor
+Europe	Spain	Catalunya	Sant Boi de Llobregat
 Europe	Spain	Catalunya	Sant Celoni
 Europe	Spain	Catalunya	Sant Esteve Sesrovires
 Europe	Spain	Catalunya	Sant Esteve de Palautordera
@@ -5390,6 +5573,7 @@ Europe	United Kingdom	United Kingdom
 Europe	United Kingdom	Wales	
 Europe	United Kingdom	Wales	Cardiff
 North America	Antigua and Barbuda	Antigua and Barbuda	
+North America	Bahamas	Bahamas	
 North America	Barbados	Barbados	
 North America	Belize	Belize	
 North America	Belize	Belmopan	
@@ -5947,6 +6131,7 @@ North America	USA	Delaware	Prospect
 North America	USA	Delaware	Seaford
 North America	USA	Delaware	Smyrna
 North America	USA	Delaware	Sussex County
+North America	USA	Delaware	Sussex County DE
 North America	USA	Delaware	Wilmington
 North America	USA	Diamond Princess	
 North America	USA	Florida	
@@ -6224,6 +6409,7 @@ North America	USA	New Jersey	Paterson
 North America	USA	New Jersey	Salem County
 North America	USA	New Jersey	Secaucus
 North America	USA	New Jersey	Somerset County
+North America	USA	New Jersey	Sussex County NJ
 North America	USA	New Jersey	Trenton
 North America	USA	New Jersey	Union County
 North America	USA	New Jersey	Union County NJ
@@ -6502,6 +6688,7 @@ North America	USA	Texas	Hockley County
 North America	USA	Texas	Hood County
 North America	USA	Texas	Houston
 North America	USA	Texas	Hunt County
+North America	USA	Texas	Jackson
 North America	USA	Texas	Jasper County
 North America	USA	Texas	Jefferson County TX
 North America	USA	Texas	Jim Hogg County
@@ -6513,6 +6700,7 @@ North America	USA	Texas	Kendall County TX
 North America	USA	Texas	Kerr County
 North America	USA	Texas	Killeen
 North America	USA	Texas	Kleberg County
+North America	USA	Texas	Knox County TX
 North America	USA	Texas	Lamar County
 North America	USA	Texas	Lamb County
 North America	USA	Texas	Lavaca County
@@ -6531,7 +6719,9 @@ North America	USA	Texas	Marlin
 North America	USA	Texas	Mart
 North America	USA	Texas	McCulloch County
 North America	USA	Texas	Mclennan County
+North America	USA	Texas	Medina County TX
 North America	USA	Texas	Midland County TX
+North America	USA	Texas	Milam County
 North America	USA	Texas	Montague County
 North America	USA	Texas	Montgomery County TX
 North America	USA	Texas	Moody
@@ -6723,6 +6913,7 @@ North America	USA	Wisconsin	Washburn County
 North America	USA	Wisconsin	Washington County WI
 North America	USA	Wisconsin	Waukesha County
 North America	USA	Wisconsin	Waupaca County
+North America	USA	Wisconsin	Waupun
 North America	USA	Wisconsin	Waushara County
 North America	USA	Wisconsin	Whitefish Bay
 North America	USA	Wisconsin	Winnebago County WI
