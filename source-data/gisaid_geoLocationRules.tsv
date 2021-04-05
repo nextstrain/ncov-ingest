@@ -89,6 +89,7 @@ Europe/France/Bretagne/Fougeres	Europe/France/Bretagne/Fougères
 Europe/France/Bretagne/Lanilis	Europe/France/Bretagne/Lannilis
 Europe/France/Bretagne/Dinan Cedex	Europe/France/Bretagne/Dinan
 Europe/France/Bretagne/La Rochelle	Europe/France/Nouvelle-Aquitaine/La Rochelle
+Europe/France/Bretagne/Noyal Chatillion sur Seiche	Europe/France/Bretagne/Noyal Chatillon sur Seiche
 Europe/France/Centre Val de Loire/Nantes	Europe/France/Pays de la Loire/Nantes
 Europe/France/Centre Val de Loire/*	Europe/France/Centre-Val de Loire/*
 Europe/France/Auvergne-Rhone-Alpes/Andrezieux-Boutheon	Europe/France/Auvergne-Rhône-Alpes/Andrézieux-Bouthéon
@@ -6103,6 +6104,7 @@ Europe/Belgium/Dorcinelle/	Europe/Belgium/Charleroi/Marcinelle
 Europe/Belgium/Imde/	Europe/Belgium/Halle-Vilvoorde/Meise
 Europe/Belgium/Concelles/	Europe/Belgium/Charleroi/Courcelles
 Europe/Belgium/Heist Aan Zee/	Europe/Belgium/Brugge/Heist
+Europe/Belgium/Sint-Jan-Molenbeek/	Europe/Belgium/Brussels/Molenbeek-Saint-Jean
 Europe/Switzerland/Graubunden/*	Europe/Switzerland/Graubünden/*
 Europe/Switzerland/Graubã¼Nden/*	Europe/Switzerland/Graubünden/*
 Europe/Switzerland/Basel/	Europe/Switzerland/Basel-Stadt/
@@ -6166,6 +6168,7 @@ Europe/Switzerland/Graubuenden/*	Europe/Switzerland/Graubünden/*
 Europe/Switzerland/Lucerne/Hümikon	Europe/Switzerland/Lucerne/Hämikon
 Europe/Switzerland/Lucerne/Schütz	Europe/Switzerland/Lucerne/Schötz
 Europe/Switzerland/Zug/Unterügeri	Europe/Switzerland/Zug/Unterägeri
+Europe/Switzerland/Unkown/	Europe/Switzerland/Switzerland/
 Europe/Russia/Saint Petersburg/Saint Petersburg	Europe/Russia/Saint-Petersburg/Saint-Petersburg
 Europe/Russia/Saint Petersburg/*	Europe/Russia/Saint-Petersburg/*
 Europe/Russia/Moscow/*	Europe/Russia/Moscow Oblast/*
@@ -6282,6 +6285,7 @@ Europe/Hungary/Szabolcs-Szatmar-Bereg/*	Europe/Hungary/Szabolcs-Szatmár-Bereg C
 Europe/Hungary/Komárom-Esztergom County/*	Europe/Hungary/Komárom-Esztergom/*
 Europe/Hungary/Gyor-Moson-Sopron/*	Europe/Hungary/Győr-Moson-Sopron County/*
 Europe/Hungary/Csongrad County/*	Europe/Hungary/Csongrád County/*
+Europe/Hungary/Jasz-Nagykun-Szolnok/*	Europe/Hungary/Jász-Nagykun-Szolnok County/*
 Europe/United Kingdom/England/Nottinghamhisre	Europe/United Kingdom/England/Nottinghamshire
 Europe/Czech Republic/Central Czechia and Prague/	Europe/Czech Republic/Prague/
 Europe/Czech Republic/Vysocina/*	Europe/Czech Republic/Vysocina Region/*
@@ -7122,6 +7126,7 @@ Asia/Kazakhstan/Aqtobe Region/*	Asia/Kazakhstan/Aktobe Region/*
 Asia/Kazakhstan/West-Kazakhstan/*	Asia/Kazakhstan/West-Kazakhstan Region/*
 Asia/Kazakhstan/Almaty/Tengizchevroil	Asia/Kazakhstan/Almaty/
 Asia/Kazakhstan/Atyray Region/Tengizchevroil	Asia/Kazakhstan/Atyrau Region/
+Asia/Kazakhstan/East Kazakhstan Region/*	Asia/Kazakhstan/East-Kazakhstan Region/*
 Asia/Kazkahstan/*/*	Asia/Kazakhstan/*/*
 Asia/Uzbekistan/Tashkent/Tashkent Region	Asia/Uzbekistan/Tashkent/Tashkent City
 North America/Mexico/Baja California sur/*	North America/Mexico/Baja California Sur/*
@@ -7290,6 +7295,15 @@ North America/USA/Washington/Jefferson	North America/USA/Washington/Jefferson Co
 North America/USA/Washington/Grays Harbor	North America/USA/Washington/Grays Harbor County
 North America/USA/Washington/Clark	North America/USA/Washington/Clark County WA
 North America/USA/Washington/Spokane	North America/USA/Washington/Spokane County
+North America/USA/Washington/Whatcom	North America/USA/Washington/Whatcom County
+North America/USA/Washington/Bellingham	North America/USA/Washington/Whatcom County
+North America/USA/Washington/Lynden	North America/USA/Washington/Whatcom County
+North America/USA/Washington/Sedro Woolley	North America/USA/Washington/Skagit County
+North America/USA/Washington/Burlington	North America/USA/Washington/Skagit County
+North America/USA/Washington/Sumas	North America/USA/Washington/Whatcom County
+North America/USA/Washington/Swinomish	North America/USA/Washington/Skagit County
+North America/USA/Washington/Maple Falls	North America/USA/Washington/Whatcom County
+North America/USA/Washington/USA	North America/USA/Washington/
 North America/USA/New York/Orange County	North America/USA/New York/Orange County NY
 North America/USA/New York/Franklin County	North America/USA/New York/Franklin County NY
 North America/USA/New York/Jefferson County	North America/USA/New York/Jefferson County NY
@@ -7349,6 +7363,9 @@ North America/USA/Arizona/None	North America/USA/Arizona/
 North America/USA/Arizona/Nez Perce	North America/USA/Idaho/Nez Perce County
 North America/USA/Arizona/Baltimore	North America/USA/Maryland/Baltimore
 North America/USA/Arizona/Cochise	North America/USA/Arizona/Cochise County
+North America/USA/Arizona/Santa Cruz	North America/USA/Arizona/Santa Cruz County AZ
+North America/USA/Arizona/Galveston	North America/USA/Arizona/
+North America/USA/Arizona/Sumner	North America/USA/Arizona/
 North America/USA/Indiana/Marion County	North America/USA/Indiana/Marion County IN
 North America/USA/Indiana/Lake County	North America/USA/Indiana/Lake County IN
 North America/USA/Indiana/Jefferson County	North America/USA/Indiana/Jefferson County IN
@@ -7376,7 +7393,8 @@ North America/USA/California/Davis	North America/USA/California/Yolo County
 North America/USA/California/Orange	North America/USA/California/Orange County CA
 North America/USA/California/San Bernadino County	North America/USA/California/San Bernardino County
 North America/USA/California/San Luis Obispo	North America/USA/California/San Luis Obispo County
-North America/USA/California/Santa Cruz	North America/USA/California/Santa Cruz County
+North America/USA/California/Santa Cruz	North America/USA/California/Santa Cruz County CA
+North America/USA/California/Santa Cruz County	North America/USA/California/Santa Cruz County CA
 North America/USA/New Jersey/Essex County	North America/USA/New Jersey/Essex County NJ
 North America/USA/New Jersey/Hudson	North America/USA/New Jersey/Hudson County
 North America/USA/New Jersey/Morris County	North America/USA/New Jersey/Morris County NJ
@@ -7894,6 +7912,8 @@ South America/Brazil/São Paulo/Ceario Lange	South America/Brazil/São Paulo/Ces
 South America/Brazil/São Paulo/Maceio	South America/Brazil/Alagoas/Maceio
 South America/Brazil/São Paulo/Petrolandia	South America/Brazil/Pernambuco/Petrolandia
 South America/Brazil/São Paulo/Itapetim	South America/Brazil/Pernambuco/Itapetim
+South America/Brazil/São Paulo/Taguaritinga	South America/Brazil/São Paulo/Taquaritinga
+South America/Brazil/São Paulo/Valparaiso	South America/Brazil/São Paulo/Valparaiso BR
 South America/Brazil/Paraíba/*	South America/Brazil/Paraiba/*
 South America/Brazil/Rio de Janeiro/Nova Iguaçu	South America/Brazil/Rio de Janeiro/Nova Iguacu
 South America/Brazil/Rio de Janeiro/São Gonçalo	South America/Brazil/Rio de Janeiro/Sao Goncalo
@@ -8021,6 +8041,7 @@ South America/Chile/Region Metropolitana de Santiago/San Ramon	South America/Chi
 South America/Chile/Region Metropolitana de Santiago/Sanjoaquin	South America/Chile/Region Metropolitana de Santiago/San Joaquin
 South America/Chile/Valparaiso/San Felipe	South America/Chile/Valparaiso/San Felipe CL
 South America/Chile/Valparaiso/Viña del Mar	South America/Chile/Valparaiso/Vina del Mar
+South America/Chile/Valparaiso/Valparaiso	South America/Chile/Valparaiso/Valparaiso CL
 South America/Chile/Aysen/*	South America/Chile/Aysén/*
 South America/Chile/Tarapaca/*	South America/Chile/Tarapacá/*
 South America/Chile/El Maule/*	South America/Chile/Maule/*
