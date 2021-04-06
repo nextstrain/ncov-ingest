@@ -362,6 +362,7 @@ Asia	Bangladesh	Bagherhat
 Asia	Bangladesh	Bagherhat	Sador
 Asia	Bangladesh	Bangladesh	
 Asia	Bangladesh	Barishal	
+Asia	Bangladesh	Barishal	Bhola
 Asia	Bangladesh	Brahmanbaria	
 Asia	Bangladesh	Chattogram	
 Asia	Bangladesh	Chattogram	Bandarban
@@ -389,7 +390,9 @@ Asia	Bangladesh	Dhaka	Faridpur
 Asia	Bangladesh	Dhaka	Gulshan
 Asia	Bangladesh	Dhaka	Jatrabari
 Asia	Bangladesh	Dhaka	Keraniganj
+Asia	Bangladesh	Dhaka	Kishoreganj
 Asia	Bangladesh	Dhaka	Kodomtoly
+Asia	Bangladesh	Dhaka	Madaripur
 Asia	Bangladesh	Dhaka	Manikganj
 Asia	Bangladesh	Dhaka	Mirpur
 Asia	Bangladesh	Dhaka	Mohammadpur
@@ -419,6 +422,7 @@ Asia	Bangladesh	Sylhet
 Asia	Bangladesh	Sylhet	Habiganj
 Asia	Bangladesh	Sylhet	Moulvibazar
 Asia	Bangladesh	Sylhet	Sunamganj
+Asia	Bangladesh	Sylhet	Sylhet
 Asia	Bangladesh	Tangail	
 Asia	Brunei	Brunei	
 Asia	Cambodia	Cambodia	
@@ -5343,6 +5347,8 @@ Europe	Switzerland	Aargau	Wegenstetten
 Europe	Switzerland	Aargau	Windisch
 Europe	Switzerland	Aargau	Zofingen
 Europe	Switzerland	Appenzell Ausserrhoden	
+Europe	Switzerland	Appenzell Ausserrhoden	Herisau
+Europe	Switzerland	Appenzell Ausserrhoden	Waldstatt
 Europe	Switzerland	Basel-Land	
 Europe	Switzerland	Basel-Land	Aesch
 Europe	Switzerland	Basel-Land	Allschwil
@@ -5465,25 +5471,46 @@ Europe	Switzerland	Nidwalden	Stansstad
 Europe	Switzerland	Obwalden	
 Europe	Switzerland	Obwalden	Sarnen
 Europe	Switzerland	Sankt Gallen	
+Europe	Switzerland	Sankt Gallen	Abtwil SG
 Europe	Switzerland	Sankt Gallen	Altstatten
+Europe	Switzerland	Sankt Gallen	Amden
+Europe	Switzerland	Sankt Gallen	Appenzell
 Europe	Switzerland	Sankt Gallen	Au
 Europe	Switzerland	Sankt Gallen	Bad Ragaz
+Europe	Switzerland	Sankt Gallen	Bazenheid
 Europe	Switzerland	Sankt Gallen	Buchs
+Europe	Switzerland	Sankt Gallen	Buchs SG
+Europe	Switzerland	Sankt Gallen	Bütschwil
+Europe	Switzerland	Sankt Gallen	Flums
 Europe	Switzerland	Sankt Gallen	Gams
 Europe	Switzerland	Sankt Gallen	Gossau
 Europe	Switzerland	Sankt Gallen	Grabs
+Europe	Switzerland	Sankt Gallen	Grabserberg
 Europe	Switzerland	Sankt Gallen	Grub
+Europe	Switzerland	Sankt Gallen	Heerbrugg
+Europe	Switzerland	Sankt Gallen	Jona
 Europe	Switzerland	Sankt Gallen	Kriessern
 Europe	Switzerland	Sankt Gallen	Mels
 Europe	Switzerland	Sankt Gallen	Mörschwil
 Europe	Switzerland	Sankt Gallen	Niederuzwil
 Europe	Switzerland	Sankt Gallen	Oberriet
+Europe	Switzerland	Sankt Gallen	Rapperswil
 Europe	Switzerland	Sankt Gallen	Rebstein
+Europe	Switzerland	Sankt Gallen	Rheineck
 Europe	Switzerland	Sankt Gallen	Rheintal
+Europe	Switzerland	Sankt Gallen	Rorschach
+Europe	Switzerland	Sankt Gallen	Ruthi
+Europe	Switzerland	Sankt Gallen	Sargans
+Europe	Switzerland	Sankt Gallen	Schmerikon
+Europe	Switzerland	Sankt Gallen	Schänis
 Europe	Switzerland	Sankt Gallen	Sevelen
 Europe	Switzerland	Sankt Gallen	St Gallen
+Europe	Switzerland	Sankt Gallen	St. Margrethen
 Europe	Switzerland	Sankt Gallen	Walenstadt
+Europe	Switzerland	Sankt Gallen	Wattwil
+Europe	Switzerland	Sankt Gallen	Werdenberg
 Europe	Switzerland	Sankt Gallen	Widnau
+Europe	Switzerland	Sankt Gallen	Wil
 Europe	Switzerland	Schaffhausen	
 Europe	Switzerland	Schaffhausen	Flurlingen
 Europe	Switzerland	Schaffhausen	Schaffhausen
@@ -5522,6 +5549,8 @@ Europe	Switzerland	Solothurn	Witterswil
 Europe	Switzerland	Switzerland	
 Europe	Switzerland	Tessin	
 Europe	Switzerland	Thurgau	
+Europe	Switzerland	Thurgau	Arbon
+Europe	Switzerland	Thurgau	Bischofszell
 Europe	Switzerland	Thurgau	Erlen
 Europe	Switzerland	Thurgau	Felben-Wellhausen
 Europe	Switzerland	Thurgau	Frauenfeld
@@ -6061,15 +6090,15 @@ North America	USA	Alabama	Wilcox County
 North America	USA	Alabama	Winston County
 North America	USA	Alaska	
 North America	USA	Alaska	Anchorage
+North America	USA	Alaska	Anchorage and Matanuska-Susitna
 North America	USA	Alaska	Fairbanks
+North America	USA	Alaska	Gulf Coast Alaska
 North America	USA	Alaska	Interior Alaska
 North America	USA	Alaska	Mat-Su
 North America	USA	Alaska	Matanuska-Susitna Valley
 North America	USA	Alaska	Northern Alaska
 North America	USA	Alaska	Southeast Alaska
 North America	USA	Alaska	Southwest Alaska
-North America	USA	Alaska	Anchorage and Matanuska-Susitna
-North America	USA	Alaska	Gulf Coast Alaska
 North America	USA	Arizona	
 North America	USA	Arizona	Apache County
 North America	USA	Arizona	Cochise County
@@ -7592,6 +7621,9 @@ South America	Brazil	Rio Grande do Sul	Butia
 South America	Brazil	Rio Grande do Sul	Cacapava do Sul
 South America	Brazil	Rio Grande do Sul	Cachoeira do Sul
 South America	Brazil	Rio Grande do Sul	Cachoeirnha
+South America	Brazil	Rio Grande do Sul	Camaquã
+South America	Brazil	Rio Grande do Sul	Cambará do Sul
+South America	Brazil	Rio Grande do Sul	Campo Bom
 South America	Brazil	Rio Grande do Sul	Candelaria
 South America	Brazil	Rio Grande do Sul	Canoas BR
 South America	Brazil	Rio Grande do Sul	Carazinho
@@ -7600,18 +7632,24 @@ South America	Brazil	Rio Grande do Sul	Caxias do Sul
 South America	Brazil	Rio Grande do Sul	Cerro Grande do Sul
 South America	Brazil	Rio Grande do Sul	Cotipora
 South America	Brazil	Rio Grande do Sul	Cruz Alta
+South America	Brazil	Rio Grande do Sul	Dois Irmãos
 South America	Brazil	Rio Grande do Sul	Erechim
 South America	Brazil	Rio Grande do Sul	Espumoso
 South America	Brazil	Rio Grande do Sul	Esteio
 South America	Brazil	Rio Grande do Sul	Estrela Velha
+South America	Brazil	Rio Grande do Sul	Estância Velha
 South America	Brazil	Rio Grande do Sul	Farroupilha
 South America	Brazil	Rio Grande do Sul	Flores Da Cunha
 South America	Brazil	Rio Grande do Sul	Frederico Westphalen
 South America	Brazil	Rio Grande do Sul	Garibaldi
 South America	Brazil	Rio Grande do Sul	Girua
+South America	Brazil	Rio Grande do Sul	Glorinha
 South America	Brazil	Rio Grande do Sul	Gramado
+South America	Brazil	Rio Grande do Sul	Gravataí
 South America	Brazil	Rio Grande do Sul	Guaiba
+South America	Brazil	Rio Grande do Sul	Harmonia
 South America	Brazil	Rio Grande do Sul	Ibiruba
+South America	Brazil	Rio Grande do Sul	Igrejinha
 South America	Brazil	Rio Grande do Sul	Ijui
 South America	Brazil	Rio Grande do Sul	Imbe
 South America	Brazil	Rio Grande do Sul	Itaqui
@@ -7619,19 +7657,25 @@ South America	Brazil	Rio Grande do Sul	Lajeado
 South America	Brazil	Rio Grande do Sul	Lavras do Sul
 South America	Brazil	Rio Grande do Sul	Linha Nova
 South America	Brazil	Rio Grande do Sul	Marau
+South America	Brazil	Rio Grande do Sul	Montenegro
 South America	Brazil	Rio Grande do Sul	Morro Reuter
 South America	Brazil	Rio Grande do Sul	Nova Araça
 South America	Brazil	Rio Grande do Sul	Nova Brescia
+South America	Brazil	Rio Grande do Sul	Nova Santa Rita
 South America	Brazil	Rio Grande do Sul	Novo Cabrais
 South America	Brazil	Rio Grande do Sul	Novo Hamburgo
 South America	Brazil	Rio Grande do Sul	Não-Me-Toque
 South America	Brazil	Rio Grande do Sul	Osorio
+South America	Brazil	Rio Grande do Sul	Pareci Novo
 South America	Brazil	Rio Grande do Sul	Parobe
 South America	Brazil	Rio Grande do Sul	Passo Fundo
 South America	Brazil	Rio Grande do Sul	Pelotas
 South America	Brazil	Rio Grande do Sul	Porto Alegre
+South America	Brazil	Rio Grande do Sul	Portão
 South America	Brazil	Rio Grande do Sul	Quaraí
 South America	Brazil	Rio Grande do Sul	Rio Grande BR
+South America	Brazil	Rio Grande do Sul	Riozinho
+South America	Brazil	Rio Grande do Sul	Rolante
 South America	Brazil	Rio Grande do Sul	Saldanha Marinho
 South America	Brazil	Rio Grande do Sul	Santa Maria
 South America	Brazil	Rio Grande do Sul	Santa Maria RS
@@ -7643,6 +7687,7 @@ South America	Brazil	Rio Grande do Sul	Santo Antonio Da Patrulha
 South America	Brazil	Rio Grande do Sul	Sao Borja
 South America	Brazil	Rio Grande do Sul	Sao Sebastiao do Cai
 South America	Brazil	Rio Grande do Sul	Sapiranga
+South America	Brazil	Rio Grande do Sul	Sapucaia do Sul
 South America	Brazil	Rio Grande do Sul	Serafina Correa
 South America	Brazil	Rio Grande do Sul	Sertao
 South America	Brazil	Rio Grande do Sul	São Domingos do Sul
@@ -7657,7 +7702,9 @@ South America	Brazil	Rio Grande do Sul	Torres
 South America	Brazil	Rio Grande do Sul	Torres BR
 South America	Brazil	Rio Grande do Sul	Tramandai
 South America	Brazil	Rio Grande do Sul	Tres Passos
+South America	Brazil	Rio Grande do Sul	Triunfo
 South America	Brazil	Rio Grande do Sul	Três Cachoeiras
+South America	Brazil	Rio Grande do Sul	Três Coroas
 South America	Brazil	Rio Grande do Sul	Tupandi
 South America	Brazil	Rio Grande do Sul	Venancio Aires
 South America	Brazil	Rio Grande do Sul	Vera Cruz
