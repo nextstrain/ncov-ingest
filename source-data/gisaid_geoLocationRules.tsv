@@ -6157,6 +6157,18 @@ Europe/Switzerland/Bern/Biel	Europe/Switzerland/Bern/Biel-Bienne
 Europe/Switzerland/Sankt Gallen/St. Gallen	Europe/Switzerland/Sankt Gallen/St Gallen
 Europe/Switzerland/Sankt Gallen/Heiligkreuz (Mels)	Europe/Switzerland/Sankt Gallen/Mels
 Europe/Switzerland/Sankt Gallen/Mürschwil	Europe/Switzerland/Sankt Gallen/Mörschwil
+Europe/Switzerland/Sankt Gallen/St. Margrethen Sg	Europe/Switzerland/Sankt Gallen/St. Margrethen
+Europe/Switzerland/Sankt Gallen/Wil Sg	Europe/Switzerland/Sankt Gallen/Wil
+Europe/Switzerland/Sankt Gallen/Altstätten Sg	Europe/Switzerland/Sankt Gallen/Altstatten
+Europe/Switzerland/Sankt Gallen/Rapperswil Sg	Europe/Switzerland/Sankt Gallen/Rapperswil
+Europe/Switzerland/Sankt Gallen/Ruthi Sg	Europe/Switzerland/Sankt Gallen/Ruthi
+Europe/Switzerland/Sankt Gallen/Buchs Sg	Europe/Switzerland/Sankt Gallen/Buchs SG
+Europe/Switzerland/Sankt Gallen/Abtwil Sg	Europe/Switzerland/Sankt Gallen/Abtwil SG
+Europe/Switzerland/Sankt Gallen/St.Gallen	Europe/Switzerland/Sankt Gallen/St Gallen
+Europe/Switzerland/Sankt Gallen/Herisau	Europe/Switzerland/Appenzell Ausserrhoden/Herisau
+Europe/Switzerland/Sankt Gallen/Waldstatt	Europe/Switzerland/Appenzell Ausserrhoden/Waldstatt
+Europe/Switzerland/Sankt Gallen/Bischofszell	Europe/Switzerland/Thurgau/Bischofszell
+Europe/Switzerland/Sankt Gallen/Arbon	Europe/Switzerland/Thurgau/Arbon
 Europe/Switzerland/Schwyz/Rickenbach B. Schwyz	Europe/Switzerland/Schwyz/Rickenbach CH
 Europe/Switzerland/Be/Bernv	Europe/Switzerland/Bern/
 Europe/Switzerland/Be/*	Europe/Switzerland/Bern/*
@@ -6758,6 +6770,11 @@ Europe/Lithuania/Kauno Apskr/*	Europe/Lithuania/Kauno Apskritis/*
 Europe/Lithuania/Marijampoles Apskr/*	Europe/Lithuania/Marijampoles Apskritis/*
 Europe/Lithuania/Taurages Apskr/*	Europe/Lithuania/Taurages Apskritis/*
 Europe/Lithuania/Kedainiai/	Europe/Lithuania/Kauno Apskritis/Kedainiai
+Europe/Lithuania/Marijampoles/*	Europe/Lithuania/Marijampoles Apskritis/*
+Europe/Lithuania/Panevezio/*	Europe/Lithuania/Panevezio Apskritis/*
+Europe/Lithuania/Vilniaus/*	Europe/Lithuania/Vilnius/*
+Europe/Lithuania/Kauno/*	Europe/Lithuania/Kauno Apskritis/*
+Europe/Lithuania/Alytaus/*	Europe/Lithuania/Alytaus Apskritis/*
 Europe/Ukraine/Lutsk/	Europe/Ukraine/Volyn/Lutsk
 Europe/Ukraine/Ivano-Frankivs'K/*	Europe/Ukraine/Ivano-Frankivsk/*
 Europe/Slovakia/Martincek/	Europe/Slovakia/Zilina/Martincek
@@ -7048,6 +7065,7 @@ Asia/Bangladesh/Chattogram/Cox'S Bazar	Asia/Bangladesh/Chattogram/Cox's Bazar
 Asia/Bangladesh/Chattogram/Cumilla	Asia/Bangladesh/Chattogram/Comilla
 Asia/Bangladesh/Chattogram/Khagrachhari	Asia/Bangladesh/Chattogram/Khagrachari
 Asia/Bangladesh/Dhaka/Naraynganj	Asia/Bangladesh/Dhaka/Narayanganj
+Asia/Bangladesh/Dhaka/Kishoregonj	Asia/Bangladesh/Dhaka/Kishoreganj
 Asia/Thailand/Phatum Thani/	Asia/Thailand/Pathum Thani/
 Asia/Thailand/Samut Sakorn/*	Asia/Thailand/Samut Sakhon/*
 Asia/Thailand/Angthong/*	Asia/Thailand/Ang Thong/*
@@ -7449,6 +7467,7 @@ North America/USA/Oregon/Yamhill	North America/USA/Oregon/Yamhill County
 North America/USA/Oregon/Washington	North America/USA/Oregon/Washington County OR
 North America/USA/Oregon/Lincoln County	North America/USA/Oregon/Lincoln County OR
 North America/USA/Oregon/Grant	North America/USA/Oregon/Grant County OR
+North America/USA/Oregon/Grant County	North America/USA/Oregon/Grant County OR
 North America/USA/Texas/Houston County	North America/USA/Texas/Harris County
 North America/USA/Texas/Washington County	North America/USA/Texas/Washington County TX
 North America/USA/Texas/Williamson County	North America/USA/Texas/Williamson County TX
@@ -7608,6 +7627,8 @@ North America/USA/Texas/Cass	North America/USA/Texas/Cass County TX
 North America/USA/Texas/Knox	North America/USA/Texas/Knox County TX
 North America/USA/Texas/Matagorda	North America/USA/Texas/Matagorda County
 North America/USA/Texas/Navarro	North America/USA/Texas/Navarro County
+North America/USA/Texas/Burnet	North America/USA/Texas/Burnet County
+North America/USA/Texas/Gillespie	North America/USA/Texas/Gillespie County
 North America/USA/Louisiana/Desoto Parish	North America/USA/Louisiana/DeSoto Parish
 North America/USA/Louisiana/St. Tammany Parish	North America/USA/Louisiana/St Tammany Parish
 North America/USA/Louisiana/St. Bernard Parish	North America/USA/Louisiana/St Bernard Parish
@@ -7822,6 +7843,7 @@ North America/Costa Rica/Cartago CR/San Rafael	North America/Costa Rica/Cartago 
 North America/Costa Rica/Cartago CR/San Francisco O Agua Caliente	North America/Costa Rica/Cartago CR/Aguacaliente
 North America/Costa Rica/Cartago CR/San Juan	North America/Costa Rica/Cartago CR/San Juan CR
 North America/Costa Rica/Cartago CR/San Ramon	North America/Costa Rica/Cartago CR/San Ramón District, La Unión
+North America/Costa Rica/Cartago CR/La Union	North America/Costa Rica/Cartago CR/La Union CR
 North America/Costa Rica/Unknown/	North America/Costa Rica/Costa Rica/
 North America/Panama/Panama Center/San Francisco	North America/Panama/Panama Center/San Francisco PA
 North America/Panama/Panama Center/Clayton	North America/Panama/Panama Center/Clayton PA
@@ -7938,6 +7960,9 @@ South America/Brazil/Rio Grande do Sul/Lageado	South America/Brazil/Rio Grande d
 South America/Brazil/Rio Grande do Sul/Espulmoso	South America/Brazil/Rio Grande do Sul/Espumoso
 South America/Brazil/Rio Grande do Sul/Marau	South America/Brazil/Bahia/Marau
 South America/Brazil/Rio Grande do Sul/Santa Maria	South America/Brazil/Rio Grande do Sul/Santa Maria RS
+South America/Brazil/Rio Grande do Sul/Parobé	South America/Brazil/Rio Grande do Sul/Parobe
+South America/Brazil/Rio Grande do Sul/Cachoeirinha	South America/Brazil/Rio Grande do Sul/Cachoeirnha
+South America/Brazil/Rio Grande do Sul/São Sebastião do Caí	South America/Brazil/Rio Grande do Sul/Sao Sebastiao do Cai
 South America/Brazil/Sao Paulo/Sao Paulo	South America/Brazil/São Paulo/São Paulo
 South America/Brazil/Sao Paulo/Sao Matetus	South America/Brazil/São Paulo/Sao Mateus
 South America/Brazil/Sao Paulo/São Jose Dos Campo	South America/Brazil/São Paulo/Sao Jose Dos Campos
@@ -8050,6 +8075,7 @@ South America/Chile/Magallanes y de la Antartica Chilena/*	South America/Chile/M
 South America/Chile/Biobío/Chillan	South America/Chile/Ñuble/Chillan
 South America/Chile/Maule/San Clemente	South America/Chile/Maule/San Clemente CL
 South America/Chile/Ñuble/San Carlos	South America/Chile/Ñuble/San Carlos CL
+South America/Chile/Los Rios CL/La Union	South America/Chile/Los Rios CL/La Union CL
 South America/Colombia/Cundinamarca/Madrid	South America/Colombia/Cundinamarca/Madrid CO
 South America/Colombia/Cundinamarca/Tolemaida	South America/Colombia/Tolima/Tolemaida
 South America/Colombia/Caldas/Pereira	South America/Colombia/Risaralda/Pereira
@@ -8228,6 +8254,7 @@ Africa/Cote D'Ivoire/Seguela/*	Africa/Côte d'Ivoire/Séguéla/*
 Africa/Malawi/Central Region/*	Africa/Malawi/Central Region MW/*
 Africa/Malawi/Northern Region/*	Africa/Malawi/Northern Region MW/*
 Africa/Malawi/Southern Region/*	Africa/Malawi/Southern Region MW/*
+Africa/Comoros/*/*	Africa/Union of the Comoros/*/*
 Italy/Apulia/Bari/	Europe/Italy/Apulia/Bari
 North Macedonia/Kochani/Kochani/	Europe/North Macedonia/Eastern Region MK/Kochani
 North Macedonia/Kavadarci/Kavadarci/	Europe/North Macedonia/Kavadarci/Kavadarci
@@ -8341,20 +8368,3 @@ Israel/Asia/Southern/	Asia/Israel/South District/
 Asian/*/*/*	Asia/*/*/*
 North-America/*/*/*	North America/*/*/*
 Afrique/*/*/*	Africa/*/*/*
-North America/USA/Oregon/Grant County	North America/USA/Oregon/Grant County OR
-Europe/Switzerland/Sankt Gallen/St. Margrethen Sg	Europe/Switzerland/Sankt Gallen/St. Margrethen
-Europe/Switzerland/Sankt Gallen/Wil Sg	Europe/Switzerland/Sankt Gallen/Wil
-Europe/Switzerland/Sankt Gallen/Altstätten Sg	Europe/Switzerland/Sankt Gallen/Altstatten
-Europe/Switzerland/Sankt Gallen/Rapperswil Sg	Europe/Switzerland/Sankt Gallen/Rapperswil
-Europe/Switzerland/Sankt Gallen/Ruthi Sg	Europe/Switzerland/Sankt Gallen/Ruthi
-Europe/Switzerland/Sankt Gallen/Buchs Sg	Europe/Switzerland/Sankt Gallen/Buchs SG
-Europe/Switzerland/Sankt Gallen/Abtwil Sg	Europe/Switzerland/Sankt Gallen/Abtwil SG
-Europe/Switzerland/Sankt Gallen/St.Gallen	Europe/Switzerland/Sankt Gallen/St Gallen
-Europe/Switzerland/Sankt Gallen/Herisau	Europe/Switzerland/Appenzell Ausserrhoden/Herisau
-Europe/Switzerland/Sankt Gallen/Waldstatt	Europe/Switzerland/Appenzell Ausserrhoden/Waldstatt
-South America/Brazil/Rio Grande do Sul/Parobé	South America/Brazil/Rio Grande do Sul/Parobe
-South America/Brazil/Rio Grande do Sul/Cachoeirinha	South America/Brazil/Rio Grande do Sul/Cachoeirnha
-South America/Brazil/Rio Grande do Sul/São Sebastião do Caí	South America/Brazil/Rio Grande do Sul/Sao Sebastiao do Cai
-Asia/Bangladesh/Dhaka/Kishoregonj	Asia/Bangladesh/Dhaka/Kishoreganj
-Europe/Switzerland/Sankt Gallen/Bischofszell	Europe/Switzerland/Thurgau/Bischofszell
-Europe/Switzerland/Sankt Gallen/Arbon	Europe/Switzerland/Thurgau/Arbon
