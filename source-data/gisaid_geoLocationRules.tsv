@@ -74,6 +74,13 @@ Europe/France/Auvergne-Rhône-Alpes/Saint Meme le Tenu	Europe/France/Pays de la 
 Europe/France/Auvergne-Rhône-Alpes/Clermont Ferrand	Europe/France/Auvergne-Rhône-Alpes/Clermont-Ferrand
 Europe/France/Auvergne-Rhône-Alpes/Clermont Fd	Europe/France/Auvergne-Rhône-Alpes/Clermont-Ferrand
 Europe/France/Auvergne-Rhône-Alpes/Villefranche D Allier	Europe/France/Auvergne-Rhône-Alpes/Villefranche-d'Allier
+Europe/France/Auvergne-Rhône-Alpes/Paris 07	Europe/France/Ile de France/Paris
+Europe/France/Auvergne-Rhône-Alpes/Saint Ouen	Europe/France/Ile de France/Saint-Ouen-sur-Seine
+Europe/France/Auvergne-Rhône-Alpes/Digne Les Bains	Europe/France/Provence-Alpes-Côte d'Azur/Digne Les Bains
+Europe/France/Auvergne-Rhône-Alpes/Chatelguyon	Europe/France/Auvergne-Rhône-Alpes/Chatel Guyon
+Europe/France/Auvergne-Rhône-Alpes/St Beauzire	Europe/France/Auvergne-Rhône-Alpes/Saint Beauzire
+Europe/France/Auvergne-Rhône-Alpes/Charbonniere Les Vieilles	Europe/France/Auvergne-Rhône-Alpes/Charbonnieres Les Vieilles
+Europe/France/Auvergne-Rhône-Alpes/Les Martres D Artiere	Europe/France/Auvergne-Rhône-Alpes/Les Martres D'Artiere
 Europe/France/Provence-Alpes-Côte-D’Azur/*	Europe/France/Provence-Alpes-Côte d'Azur/*
 Europe/France/Centre-Val de Loire/Angers	Europe/France/Pays de la Loire/Angers
 Europe/France/Centre-Val de Loire/Rouziers de Touraine	Europe/France/Centre-Val de Loire/Rouziers-de-Touraine
@@ -6299,6 +6306,7 @@ Europe/Hungary/Gyor-Moson-Sopron/*	Europe/Hungary/Győr-Moson-Sopron County/*
 Europe/Hungary/Csongrad County/*	Europe/Hungary/Csongrád County/*
 Europe/Hungary/Jasz-Nagykun-Szolnok/*	Europe/Hungary/Jász-Nagykun-Szolnok County/*
 Europe/United Kingdom/England/Nottinghamhisre	Europe/United Kingdom/England/Nottinghamshire
+Europe/United Kingdom/London/	Europe/United Kingdom/England/London
 Europe/Czech Republic/Central Czechia and Prague/	Europe/Czech Republic/Prague/
 Europe/Czech Republic/Vysocina/*	Europe/Czech Republic/Vysocina Region/*
 Europe/Czech Republic/Domažlice/	Europe/Czech Republic/Plzeň Region/Domažlice
@@ -6464,6 +6472,11 @@ Europe/Spain/Catalunya/Unknown	Europe/Spain/Catalunya/
 Europe/Spain/Catalunya/Sant Fost de Campsentelle	Europe/Spain/Catalunya/Sant Fost de Campsentelles
 Europe/Spain/Catalunya/Palau Solita I Plegamans	Europe/Spain/Catalunya/Palau Solita i Plegamans
 Europe/Spain/Catalunya/Palau-Solita	Europe/Spain/Catalunya/Palau Solita i Plegamans
+Europe/Spain/Catalunya/Ametlla del Valles	Europe/Spain/Catalunya/L'Ametlla del Valles
+Europe/Spain/Catalunya/Hospitalet	Europe/Spain/Catalunya/L'Hospitalet de Llobregat
+Europe/Spain/Catalunya/Castelltercol	Europe/Spain/Catalunya/Castellterçol
+Europe/Spain/Catalunya/Sant Fost de Camsentelles	Europe/Spain/Catalunya/Sant Fost de Campsentelles
+Europe/Spain/Catalunya/Llica de Munt	Europe/Spain/Catalunya/Llica D'Amunt
 Europe/Spain/Extremadura/Alcantara	Europe/Spain/Extremadura/Caceres
 Europe/Spain/Extremadura/Guadalupe	Europe/Spain/Extremadura/Guadalupe ES
 Europe/Spain/Extremadura/Trujillo	Europe/Spain/Extremadura/Trujillo ES
@@ -6508,6 +6521,7 @@ Europe/Poland/Wielkopolskie/Skorzewo	Europe/Poland/Wielkopolskie/Skórzewo
 Europe/Poland/Wielkopolskie/Dabrowka	Europe/Poland/Lubuskie/Dabrowka
 Europe/Poland/Wielkopolskie/Uscikowo Folwark	Europe/Poland/Wielkopolskie/Uscikowo
 Europe/Poland/Wielkopolskie/Komorniki	Europe/Poland/Wielkopolskie/Komorniki WP
+Europe/Poland/Wielkopolskie/Dabrowa	Europe/Poland/Wielkopolskie/Dabrowa (Wielkopolskie)
 Europe/Poland/Warminsko-Mazurskie/Olsztynski	Europe/Poland/Warminsko-Mazurskie/Olsztyn
 Europe/Poland/Warminsko-Mazurskie/Komorniki	Europe/Poland/Warminsko-Mazurskie/Komorniki WN
 Europe/Poland/Warminsko-Mazurskie/Lutry	Europe/Poland/Warminsko-Mazurskie/Lutry PL
@@ -6520,12 +6534,20 @@ Europe/Poland/Warminsko-Mazurskie/Kozlowo	Europe/Poland/Warminsko-Mazurskie/Koz�
 Europe/Poland/Warminsko-Mazurskie/Ketrzyn	Europe/Poland/Warminsko-Mazurskie/Ketrzynski
 Europe/Poland/Warminsko-Mazurskie/Kętrzyn	Europe/Poland/Warminsko-Mazurskie/Ketrzynski
 Europe/Poland/Warminsko-Mazurskie/Ostroda	Europe/Poland/Warminsko-Mazurskie/Ostrodzki
+Europe/Poland/Warminsko-Mazurskie/Dabrowa	Europe/Poland/Warminsko-Mazurskie/Dabrowa (Warminsko-Mazurskie)
+Europe/Poland/Warminsko-Mazurskie/Zalesie	Europe/Poland/Warminsko-Mazurskie/Zalesie (Warminsko-Mazurskie)
 Europe/Poland/Podlaskie/Bielsk Podlaski	Europe/Poland/Podlaskie/Bielsk Podlaski
 Europe/Poland/Podlaskie/Orzysz	Europe/Poland/Warminsko-Mazurskie/Orzysz
 Europe/Poland/Podlaskie/Bialystok	Europe/Poland/Podlaskie/Białystok
 Europe/Poland/Podlaskie/Sokolka	Europe/Poland/Podlaskie/Sokółka
+Europe/Poland/Podlaskie/Kowale	Europe/Poland/Podlaskie/Kowale (Podlaskie)
+Europe/Poland/Podlaskie/Lomza	Europe/Poland/Podlaskie/Łomża
 Europe/Poland/Bielsk Podlaski/	Europe/Poland/Podlaskie/Bielsk Podlaski
 Europe/Poland/Malopolskie/Krakow	Europe/Poland/Malopolskie/Kraków
+Europe/Poland/Malopolskie/Wegrzce Wielkie	Europe/Poland/Malopolskie/Węgrzce Wielkie
+Europe/Poland/Malopolskie/Niepolomice	Europe/Poland/Malopolskie/Niepołomice
+Europe/Poland/Malopolskie/Myslenice	Europe/Poland/Malopolskie/Myślenice
+Europe/Poland/Malopolskie/Tarnobrzeg	Europe/Poland/Podkarpackie/Tarnobrzeg
 Europe/Poland/Małopolskie/*	Europe/Poland/Malopolskie/*
 Europe/Poland/Świętokrzyskie/*	Europe/Poland/Swietokrzyskie/*
 Europe/Poland/Dolnośląskie/Wrocław	Europe/Poland/Dolnośląskie/Wroclaw
@@ -6543,17 +6565,32 @@ Europe/Poland/Dolnośląskie/Ostrzeszow	Europe/Poland/Wielkopolskie/Ostrzeszow
 Europe/Poland/Dolnośląskie/Swidnica	Europe/Poland/Dolnośląskie/Swidnica DS
 Europe/Poland/Dolnośląskie/Zabkowice Slaskie	Europe/Poland/Dolnośląskie/Ząbkowice Śląskie
 Europe/Poland/Dolnośląskie/Kamieniec Wroclawski	Europe/Poland/Dolnośląskie/Kamieniec Wrocławski
+Europe/Poland/Dolnośląskie/Kepno	Europe/Poland/Wielkopolskie/Kepno
 Europe/Poland/Pomorskie/Gdańsk	Europe/Poland/Pomorskie/Gdansk
 Europe/Poland/Pomorskie/Slupsk	Europe/Poland/Pomorskie/Słupsk
 Europe/Poland/Pomorskie/Koscierzyna	Europe/Poland/Pomorskie/Kościerzyna
+Europe/Poland/Pomorskie/Kowale	Europe/Poland/Pomorskie/Kowale (Pomorskie)
+Europe/Poland/Pomorskie/Zalesie	Europe/Poland/Pomorskie/Zalesie (Pomorskie)
 Europe/Poland/Łódzkie/Łódź	Europe/Poland/Łódzkie/Lodz
+Europe/Poland/Łódzkie/Kalisz	Europe/Poland/Wielkopolskie/Kalisz
+Europe/Poland/Łódzkie/Szowsko	Europe/Poland/Podkarpackie/Szowsko
+Europe/Poland/Łódzkie/Zuki	Europe/Poland/Łódzkie/
+Europe/Poland/Łódzkie/Malealkow	Europe/Poland/Łódzkie/
 Europe/Poland/Śląskie/*	Europe/Poland/Slaskie/*
 Europe/Poland/Opolskie/Kedzierzyn-Kozle	Europe/Poland/Opolskie/Kedzierzyn Kozle
 Europe/Poland/Opolskie/Kędzierzyn-Koźle	Europe/Poland/Opolskie/Kedzierzyn Kozle
+Europe/Poland/Opolskie/Namyslow	Europe/Poland/Opolskie/Namysłów
 Europe/Poland/Zuid-Holland/*	Europe/Netherlands/South Holland/*
 Europe/Poland/Małopolska/*	Europe/Poland/Malopolskie/*
 Europe/Poland/Mujawsko-Pomorskie/*	Europe/Poland/Kujawsko-Pomorskie/*
 Europe/Poland/Lubuskie/Swidnica	Europe/Poland/Lubuskie/Swidnica LB
+Europe/Poland/Slaskie/Bielsko-Biala	Europe/Poland/Slaskie/Bielsko-Biała
+Europe/Poland/Slaskie/Zywiec	Europe/Poland/Slaskie/Żywiec
+Europe/Poland/Slaskie/Glucholazy	Europe/Poland/Opolskie/Głuchołazy
+Europe/Poland/Zachodniopomorskie/Kamaleien Pomaleorski	Europe/Poland/Zachodniopomorskie/Kamien Pomorski
+Europe/Poland/Zachodniopomorskie/Pomaleianowo	Europe/Poland/Zachodniopomorskie/
+Europe/Poland/Zachodniopomorskie/Borzymale	Europe/Poland/Zachodniopomorskie/
+Europe/Poland/Zachodniopomorskie/Maleiedzyzdroje	Europe/Poland/Zachodniopomorskie/Międzyzdroje
 Europe/Italy/Apulia/Bat	Europe/Italy/Apulia/Barletta-Andria-Trani
 Europe/Italy/Apulia/Potenza	Europe/Italy/Basilicata/Potenza
 Europe/Italy/Padova/	Europe/Italy/Veneto/Padova
@@ -6639,6 +6676,7 @@ Europe/Austria/Carinthia/Vila	Europe/Austria/Carinthia/Villach
 Europe/Austria/Carinthia/Spittal An Der Drau	Europe/Austria/Carinthia/Spittal an der Drau
 Europe/Austria/Carinthia/Klagenfurt Am Wörthersee Stadt	Europe/Austria/Carinthia/Klagenfurt Am Wörthersee
 Europe/Austria/Carinthia/Klagenfurt	Europe/Austria/Carinthia/Klagenfurt Am Wörthersee
+Europe/Austria/Carinthia/Stadl-Predlitz	Europe/Austria/Styria/Stadl-Predlitz
 Europe/Austria/Salzburg/Haizing	Europe/Austria/Upper Austria/Haizing
 Europe/Austria/Salzburg/Kramsach	Europe/Austria/Tyrol/Kramsach
 Europe/Austria/Salzburg/Attnang-Puchheim	Europe/Austria/Upper Austria/Attnang-Puchheim
@@ -6656,6 +6694,7 @@ Europe/Austria/Vienna/Wien	Europe/Austria/Vienna/Vienna
 Europe/Austria/Tyrol/Innsbruck-Stadt	Europe/Austria/Tyrol/Innsbruck
 Europe/Austria/Tyrol/Innsbruck, Aldrans, Axams, Birgitz, Ellbögen, Götzens, Grinzens, Lans, Mutters, Natters, Patsch, Rum, Schönberg Im Stubaital, Sistrans, Völs	Europe/Austria/Tyrol/Innsbruck-Land
 Europe/Austria/Tyrol/Achenkirch, Aschau Im Zillertal, Brandberg, Bruck Am Ziller, Buch In Tirol, Eben Am Achensee, Finkenberg, Fügen, Fügenberg, Gallzein, Gerlos, Gerlosberg, Hainzenberg, Hart Im Zillertal, Hippach, Jenbach, Kaltenbach, Mayrhofen, Ramsau Im Zillertal, Ried Im Zillertal, Rohrberg, Schlitters, Schwendau, Steinberg Am Rofan, Strass Im Zillertal, Stumm, Stummerberg, Tux, Uderns, Wiesing, Zell Am Ziller, Zellberg	Europe/Austria/Tyrol/Schwaz
+Europe/Austria/Tyrol/Kitzbühel-Stadt	Europe/Austria/Tyrol/Kitzbuhel-Stadt
 Europe/Austria/Styria/Altaussee, Bad Aussee, Grundlsee, Bad Mitterndorf	Europe/Austria/Styria/Liezen
 Europe/Austria/Styria/Graz-Stadt	Europe/Austria/Styria/Graz
 Europe/Austria/Styria/Graz-Land	Europe/Austria/Styria/Graz
@@ -6695,6 +6734,42 @@ Europe/Austria/Vöcklamarkt/	Europe/Austria/Upper Austria/Vöcklamarkt
 Europe/Austria/Weyregg Am Attersee/	Europe/Austria/Upper Austria/Weyregg Am Attersee
 Europe/Austria/Zell Am Moos/	Europe/Austria/Upper Austria/Zell Am Moos
 Europe/Austria/Schörfling Am Attersee/	Europe/Austria/Upper Austria/Schörfling Am Attersee
+Europe/Austria/Pilsbach/	Europe/Austria/Upper Austria/Pilsbach
+Europe/Austria/Scharnstein/	Europe/Austria/Upper Austria/Scharnstein
+Europe/Austria/Pinsdorf/	Europe/Austria/Upper Austria/Pinsdorf
+Europe/Austria/Gruenau Im Almtal/	Europe/Austria/Upper Austria/Grünau im Almtal
+Europe/Austria/St.Konrad/	Europe/Austria/Upper Austria/St. Konrad
+Europe/Austria/Pettenbach/	Europe/Austria/Upper Austria/Pettenbach
+Europe/Austria/Unterach Am Attersee/	Europe/Austria/Upper Austria/Unterach Am Attersee
+Europe/Austria/Voecklamarkt/	Europe/Austria/Upper Austria/Vöcklamarkt
+Europe/Austria/Voecklabruck/	Europe/Austria/Upper Austria/Vöcklabruck
+Europe/Austria/Chalupki/	Europe/Poland/Slaskie/Chałupki
+Europe/Austria/Aurach Am Hongar/	Europe/Austria/Upper Austria/Aurach Am Hongar
+Europe/Austria/Bad Aussee/	Europe/Austria/Styria/Bad Aussee
+Europe/Austria/Frankenmarkt/	Europe/Austria/Upper Austria/Frankenmarkt
+Europe/Austria/Oed/	Europe/Austria/Lower Austria/Oed
+Europe/Austria/Patergassen/	Europe/Austria/Carinthia/Patergassen
+Europe/Austria/Seekirchen/	Europe/Austria/Salzburg/Seekirchen am Wallersee
+Europe/Austria/Stadt-Predlitz/	Europe/Austria/Styria/Stadl-Predlitz
+Europe/Austria/Pögstall/	Europe/Austria/Lower Austria/Pöggstall
+Europe/Austria/Grunddorf/	Europe/Austria/Lower Austria/Grunddorf
+Europe/Austria/Steinerkirchen/	Europe/Austria/Upper Austria/Steinerkirchen an der Traun
+Europe/Austria/Steinerkirchen/Traun	Europe/Austria/Upper Austria/Steinerkirchen an der Traun
+Europe/Austria/Rudolfsheim Fünfhaus/	Europe/Austria/Vienna/Rudolfsheim Fünfhaus
+Europe/Austria/Gams/	Europe/Austria/Styria/Bad Gams
+Europe/Austria/Seiersberg/	Europe/Austria/Styria/Seiersberg-Pirka
+Europe/Austria/Klagenfurt/	Europe/Austria/Carinthia/Klagenfurt Am Wörthersee
+Europe/Austria/Launsdorf/	Europe/Austria/Carinthia/Launsdorf
+Europe/Austria/Altmuenster/	Europe/Austria/Upper Austria/Altmünster
+Europe/Austria/Pfaffing/	Europe/Austria/Upper Austria/Pfaffing
+Europe/Austria/Seewalchen Am Attersee/	Europe/Austria/Upper Austria/Seewalchen Am Attersee
+Europe/Austria/Gosau/	Europe/Austria/Upper Austria/Gosau
+Europe/Austria/Kirchham Bei Vorchdorf/	Europe/Austria/Upper Austria/Kirchham
+Europe/Austria/Lenzing/	Europe/Austria/Upper Austria/Lenzing
+Europe/Austria/Roitham/	Europe/Austria/Upper Austria/Roitham am Traunfall
+Europe/Austria/Schoerfling Am Attersee/	Europe/Austria/Upper Austria/Schörfling Am Attersee
+Europe/Austria/Ebensee/	Europe/Austria/Upper Austria/Ebensee Am Traunsee
+Europe/Austria/Waidhofen/Thaya	Europe/Austria/Lower Austria/Thaya
 Europe/Romania/Lalomita/*	Europe/Romania/Ialomița/*
 Europe/Romania/Ialomita/*	Europe/Romania/Ialomița/*
 Europe/Romania/Targu Mures/	Europe/Romania/Mures/Targu Mures
@@ -6775,6 +6850,9 @@ Europe/Lithuania/Panevezio/*	Europe/Lithuania/Panevezio Apskritis/*
 Europe/Lithuania/Vilniaus/*	Europe/Lithuania/Vilnius/*
 Europe/Lithuania/Kauno/*	Europe/Lithuania/Kauno Apskritis/*
 Europe/Lithuania/Alytaus/*	Europe/Lithuania/Alytaus Apskritis/*
+Europe/Lithuania/Klaipedos/*	Europe/Lithuania/Klaipedos Apskritis/*
+Europe/Lithuania/Taurages/*	Europe/Lithuania/Taurages Apskritis/*
+Europe/Lithuania/Telsiu/*	Europe/Lithuania/Telsiai Apskritis/*
 Europe/Ukraine/Lutsk/	Europe/Ukraine/Volyn/Lutsk
 Europe/Ukraine/Ivano-Frankivs'K/*	Europe/Ukraine/Ivano-Frankivsk/*
 Europe/Slovakia/Martincek/	Europe/Slovakia/Zilina/Martincek
@@ -6859,6 +6937,22 @@ Europe/Slovakia/Sobrance/	Europe/Slovakia/Kosice/Sobrance
 Europe/Slovakia/Skalica/	Europe/Slovakia/Trnava/Skalica
 Europe/Slovakia/Michalovce/	Europe/Slovakia/Kosice/Michalovce
 Europe/Slovakia/Puchov/	Europe/Slovakia/Trenčín/Puchov
+Europe/Slovakia/Holice/	Europe/Slovakia/Trnava/Holice
+Europe/Slovakia/Liesek/	Europe/Slovakia/Zilina/Liesek
+Europe/Slovakia/Novot/	Europe/Slovakia/Zilina/Novot
+Europe/Slovakia/Mutne/	Europe/Slovakia/Zilina/Mutne
+Europe/Slovakia/Vitanova/	Europe/Slovakia/Zilina/Vitanova
+Europe/Slovakia/Zubrohlava/	Europe/Slovakia/Zilina/Zubrohlava
+Europe/Slovakia/Zuberec/	Europe/Slovakia/Zilina/Zuberec
+Europe/Slovakia/Sihelne/	Europe/Slovakia/Zilina/Sihelne
+Europe/Slovakia/Suha Hora/	Europe/Slovakia/Zilina/Suchá Hora
+Europe/Slovakia/Kralovsky Chlmec/	Europe/Slovakia/Kosice/Kralovsky Chlmec
+Europe/Slovakia/Turany nad Ondavou/	Europe/Slovakia/Prešov/Turany nad Ondavou
+Europe/Slovakia/Livovska Huta/	Europe/Slovakia/Prešov/Livovska Huta
+Europe/Slovakia/Komárno/*	Europe/Slovakia/Komarno/*
+Europe/Slovakia/Palovce nad Uhom/*	Europe/Slovakia/Pavlovce nad Uhom/*
+Europe/Slovakia/Banská Bystrica/*	Europe/Slovakia/Banska Bystrica/*
+Europe/Slovakia/Nové Zámky/*	Europe/Slovakia/Nove Zamky/*
 Europe/Denmark/Na/	Europe/Denmark/Denmark/
 Europe/Denmark/Na/*	Europe/Denmark//*
 Europe/Ireland/Limerick/Limerick County	Europe/Ireland/Limerick/
@@ -7066,10 +7160,15 @@ Asia/Bangladesh/Chattogram/Cumilla	Asia/Bangladesh/Chattogram/Comilla
 Asia/Bangladesh/Chattogram/Khagrachhari	Asia/Bangladesh/Chattogram/Khagrachari
 Asia/Bangladesh/Dhaka/Naraynganj	Asia/Bangladesh/Dhaka/Narayanganj
 Asia/Bangladesh/Dhaka/Kishoregonj	Asia/Bangladesh/Dhaka/Kishoreganj
+Asia/Bangladesh/Sunamganj/	Asia/Bangladesh/Sylhet/Sunamganj
+Asia/Bangladesh/Unknown/	Asia/Bangladesh/Bangladesh/
+Asia/Bangladesh/Sylthet/*	Asia/Bangladesh/Sylhet/*
 Asia/Thailand/Phatum Thani/	Asia/Thailand/Pathum Thani/
 Asia/Thailand/Samut Sakorn/*	Asia/Thailand/Samut Sakhon/*
 Asia/Thailand/Angthong/*	Asia/Thailand/Ang Thong/*
 Asia/Thailand/Khonkean/*	Asia/Thailand/Khon Kaen/*
+Asia/Thailand/Chon Buri/*	Asia/Thailand/Chonburi/*
+Asia/Thailand/Nakhonnayok/*	Asia/Thailand/Nakhon Nayok/*
 Asia/Oman/Musca/	Asia/Oman/Muscat/
 Asia/Oman/Muscta/	Asia/Oman/Muscat/
 Asia/Oman/Buraymi/Buraymi	Asia/Oman/Buraimi/Buraimi
@@ -7235,6 +7334,16 @@ North America/USA/Illinois/Menard County	North America/USA/Illinois/Menard Count
 North America/USA/Illinois/Saline County, Il	North America/USA/Illinois/Saline County IL
 North America/USA/Illinois/Saline County	North America/USA/Illinois/Saline County IL
 North America/USA/Illinois/Livingston County	North America/USA/Illinois/Livingston County IL
+North America/USA/Illinois/Brown County	North America/USA/Illinois/Brown County IL
+North America/USA/Illinois/Calhoun County	North America/USA/Illinois/Calhoun County IL
+North America/USA/Illinois/Crawford County	North America/USA/Illinois/Crawford County IL
+North America/USA/Illinois/Marion County	North America/USA/Illinois/Marion County IL
+North America/USA/Illinois/Richland County	North America/USA/Illinois/Richland County IL
+North America/USA/Illinois/Washington County	North America/USA/Illinois/Washington County IL
+North America/USA/Illinois/Clay County	North America/USA/Illinois/Clay County IL
+North America/USA/Illinois/Henry County	North America/USA/Illinois/Henry County IL
+North America/USA/Illinois/Lawrence County	North America/USA/Illinois/Lawrence County IL
+North America/USA/Illinois/Hardin County	North America/USA/Illinois/Hardin County IL
 North America/USA/Wisconsin/Monroe County	North America/USA/Wisconsin/Monroe County WI
 North America/USA/Wisconsin/Richland County	North America/USA/Wisconsin/Richland County WI
 North America/USA/Wisconsin/Grant County	North America/USA/Wisconsin/Grant County WI
@@ -7384,6 +7493,7 @@ North America/USA/Arizona/Cochise	North America/USA/Arizona/Cochise County
 North America/USA/Arizona/Santa Cruz	North America/USA/Arizona/Santa Cruz County AZ
 North America/USA/Arizona/Galveston	North America/USA/Arizona/
 North America/USA/Arizona/Sumner	North America/USA/Arizona/
+North America/USA/Arizona/Olmsted County	North America/USA/Minnesota/Olmsted County
 North America/USA/Indiana/Marion County	North America/USA/Indiana/Marion County IN
 North America/USA/Indiana/Lake County	North America/USA/Indiana/Lake County IN
 North America/USA/Indiana/Jefferson County	North America/USA/Indiana/Jefferson County IN
@@ -7703,6 +7813,7 @@ North America/USA/Nevada/Douglas	North America/USA/Nevada/Douglas County NV
 North America/USA/Nevada/Churchill	North America/USA/Nevada/Churchill County
 North America/USA/Nevada/Mineral	North America/USA/Nevada/Mineral County NV
 North America/USA/Nevada/Honolulu	North America/USA/Hawaii/Honolulu County
+North America/USA/Nevada/Honululu	North America/USA/Hawaii/Honolulu County
 North America/USA/Nebraska/Lancaster County	North America/USA/Nebraska/Lancaster County NE
 North America/USA/Hawaii/Hawaii County Hi	North America/USA/Hawaii/Hawaii County
 North America/USA/Hawaii/Honolulu County Hi	North America/USA/Hawaii/Honolulu County
@@ -7742,6 +7853,9 @@ North America/USA/Alabama/Pike County	North America/USA/Alabama/Pike County AL
 North America/USA/Alabama/Monroe County	North America/USA/Alabama/Monroe County AL
 North America/USA/Alabama/Walker County	North America/USA/Alabama/Walker County AL
 North America/USA/Alabama/Butler County	North America/USA/Alabama/Butler County AL
+North America/USA/Alabama/Clay County	North America/USA/Alabama/Clay County AL
+North America/USA/Alabama/Lawrence County	North America/USA/Alabama/Lawrence County AL
+North America/USA/Alabama/Henry County	North America/USA/Alabama/Henry County AL
 North America/USA/Texas Terry/*	North America/USA/Texas/Terry County
 North America/USA/Texas Mclennan/*	North America/USA/Texas/Mclennan County
 North America/USA/Al/*	North America/USA/Alabama/*
@@ -7905,6 +8019,7 @@ North America/St. Lucia/*/*	North America/Saint Lucia/*/*
 North America/Cayman Islands//	Europe/United Kingdom/Cayman Islands/
 North America/British Virgin Islands//	Europe/United Kingdom/British Virgin Islands/
 North America/Germany/Rhineland-Palatinate/*	Europe/Germany/Rheinland-Pfalz/*
+North America/México/*/*	North America/Mexico/*/*
 South America/Brazil/Espírito Santo/*	South America/Brazil/Espirito Santo/*
 South America/Brazil/Amazonas/*	South America/Brazil/Amazonas BR/*
 South America/Brazil/Maranhao/*	South America/Brazil/Maranhão/*
@@ -7988,9 +8103,11 @@ South America/Brazil/Tocantins/Paraiso do Tocantins	South America/Brazil/Tocanti
 South America/Brazil/Espirito Santos/*	South America/Brazil/Espirito Santo/*
 South America/Brazil/Paraná/Astorga	South America/Brazil/Paraná/Astorga BR
 South America/Brazil/Minas Gerais/Esmeraldas	South America/Brazil/Minas Gerais/Esmeraldas BR
+South America/Brazil/Minas Gerais/Guaira	South America/Brazil/São Paulo/Guaira
 South America/Brazil/Espirito Santo/Lorena	South America/Brazil/São Paulo/Lorena SP
 South America/Brazil/Distrito Federal/Santa Maria	South America/Brazil/Distrito Federal/Santa Maria DF
 South America/Brazil/Pernambuco/Tamandare	South America/Brazil/Pernambuco/Tamandaré
+South America/Brazil/Maranhão/Rosario	South America/Brazil/Maranhão/Rosario BR
 South America/Argentina/Cordoba/Cordoba	South America/Argentina/Cordoba AR/Cordoba AR
 South America/Argentina/Cordoba/Brikman	South America/Argentina/Cordoba AR/Brinkmann
 South America/Argentina/Cordoba/*	South America/Argentina/Cordoba AR/*
@@ -8007,6 +8124,7 @@ South America/Argentina/Santa Fe/Santa Fe	South America/Argentina/Santa Fe/Santa
 South America/Argentina/Santa Fe/San Carlos	South America/Argentina/Santa Fe/San Carlos AR
 South America/Argentina/Santa Fe/Avellaneda	South America/Argentina/Santa Fe/Avellaneda AR
 South America/Argentina/Santa Fe/Santa Isabel	South America/Argentina/Santa Fe/Santa Isabel AR
+South America/Argentina/Santa Fe/Rosario	South America/Argentina/Santa Fe/Rosario AR
 South America/Argentina/Cordoba AR/Brikman	South America/Argentina/Cordoba AR/Brinkmann
 South America/Argentina/Cordoba AR/San Francisco	South America/Argentina/Cordoba AR/San Francisco AR
 South America/Argentina/Cordoba AR/Oliva	South America/Argentina/Cordoba AR/Oliva AR
@@ -8052,7 +8170,7 @@ South America/Chile/La Araucania/*	South America/Chile/Araucanía/*
 South America/Chile/Biobio/Diguillin	South America/Chile/Ñuble/Chillan
 South America/Chile/Biobio/Concepcion	South America/Chile/Biobío/Concepcion CL
 South America/Chile/Biobio/*	South America/Chile/Biobío/*
-South America/Chile/Aisen/Coyhaique	South America/Chile/Aysén/Coyhaique
+South America/Chile/Aisen/*	South America/Chile/Aysén/*
 South America/Chile/Magallanes/Puerto Wiilliams	South America/Chile/Magallanes/Puerto Williams
 South America/Chile/Magallanes/Puntaarenas	South America/Chile/Magallanes/Punta Arenas
 South America/Chile/Atacama/Chañaral	South America/Chile/Atacama/El Salvador
@@ -8368,44 +8486,3 @@ Israel/Asia/Southern/	Asia/Israel/South District/
 Asian/*/*/*	Asia/*/*/*
 North-America/*/*/*	North America/*/*/*
 Afrique/*/*/*	Africa/*/*/*
-Europe/United Kingdom/London/	Europe/United Kingdom/England/London
-Europe/France/Auvergne-Rhône-Alpes/Paris 07	Europe/France/Ile de France/Paris
-Europe/France/Auvergne-Rhône-Alpes/Saint Ouen	Europe/France/Ile de France/Saint-Ouen-sur-Seine
-Europe/France/Auvergne-Rhône-Alpes/Digne Les Bains	Europe/France/Provence-Alpes-Côte d'Azur/Digne Les Bains
-Europe/France/Auvergne-Rhône-Alpes/Chatelguyon	Europe/France/Auvergne-Rhône-Alpes/Chatel Guyon
-Europe/France/Auvergne-Rhône-Alpes/St Beauzire	Europe/France/Auvergne-Rhône-Alpes/Saint Beauzire
-Europe/France/Auvergne-Rhône-Alpes/Charbonniere Les Vieilles	Europe/France/Auvergne-Rhône-Alpes/Charbonnieres Les Vieilles
-Europe/France/Auvergne-Rhône-Alpes/Les Martres D Artiere	Europe/France/Auvergne-Rhône-Alpes/Les Martres D'Artiere
-Europe/Spain/Catalunya/Ametlla del Valles	Europe/Spain/Catalunya/L'Ametlla del Valles
-Europe/Spain/Catalunya/Hospitalet	Europe/Spain/Catalunya/L'Hospitalet de Llobregat
-Europe/Spain/Catalunya/Castelltercol	Europe/Spain/Catalunya/Castellterçol
-Europe/Spain/Catalunya/Sant Fost de Camsentelles	Europe/Spain/Catalunya/Sant Fost de Campsentelles
-Europe/Spain/Catalunya/Llica de Munt	Europe/Spain/Catalunya/Llica D'Amunt
-North America/USA/Arizona/Olmsted County	North America/USA/Minnesota/Olmsted County
-Asia/Thailand/Chon Buri/*	Asia/Thailand/Chonburi/*
-Asia/Thailand/Nakhonnayok/*	Asia/Thailand/Nakhon Nayok/*
-Europe/Austria/Pilsbach/	Europe/Austria/Upper Austria/Pilsbach
-Europe/Austria/Scharnstein/	Europe/Austria/Upper Austria/Scharnstein
-Europe/Austria/Pinsdorf/	Europe/Austria/Upper Austria/Pinsdorf
-Europe/Austria/Gruenau Im Almtal/	Europe/Austria/Upper Austria/Grünau im Almtal
-Europe/Austria/St.Konrad/	Europe/Austria/Upper Austria/St. Konrad
-Europe/Austria/Pettenbach/	Europe/Austria/Upper Austria/Pettenbach
-Europe/Austria/Unterach Am Attersee/	Europe/Austria/Upper Austria/Unterach Am Attersee
-Europe/Austria/Voecklamarkt/	Europe/Austria/Upper Austria/Vöcklamarkt
-Europe/Austria/Voecklabruck/	Europe/Austria/Upper Austria/Vöcklabruck
-Europe/Austria/Chalupki/	Europe/Poland/Slaskie/Chałupki
-Europe/Austria/Aurach Am Hongar/	Europe/Austria/Upper Austria/Aurach Am Hongar
-Europe/Austria/Bad Aussee/	Europe/Austria/Styria/Bad Aussee
-Europe/Slovakia/Holice/	Europe/Slovakia/Trnava/Holice
-Europe/Slovakia/Liesek/	Europe/Slovakia/Zilina/Liesek
-Europe/Slovakia/Novot/	Europe/Slovakia/Zilina/Novot
-Europe/Slovakia/Mutne/	Europe/Slovakia/Zilina/Mutne
-Europe/Slovakia/Vitanova/	Europe/Slovakia/Zilina/Vitanova
-Europe/Slovakia/Zubrohlava/	Europe/Slovakia/Zilina/Zubrohlava
-Europe/Slovakia/Zuberec/	Europe/Slovakia/Zilina/Zuberec
-Europe/Slovakia/Sihelne/	Europe/Slovakia/Zilina/Sihelne
-Europe/Slovakia/Suha Hora/	Europe/Slovakia/Zilina/Suchá Hora
-Europe/Slovakia/Kralovsky Chlmec/	Europe/Slovakia/Kosice/Kralovsky Chlmec
-Europe/Slovakia/Turany nad Ondavou/	Europe/Slovakia/Prešov/Turany nad Ondavou
-Europe/Slovakia/Livovska Huta/	Europe/Slovakia/Prešov/Livovska Huta
-North America/USA/Nevada/Honululu	North America/USA/Hawaii/Honolulu County
