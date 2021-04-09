@@ -381,6 +381,7 @@ Asia	Bangladesh	Chattogram	Laxmipur Sadar
 Asia	Bangladesh	Chattogram	Noakhali
 Asia	Bangladesh	Chattogram	Rangamati
 Asia	Bangladesh	Cox'S Bazar	
+Asia	Bangladesh	Cumilla	
 Asia	Bangladesh	Dhaka	
 Asia	Bangladesh	Dhaka	Agargaon
 Asia	Bangladesh	Dhaka	Banani
@@ -418,6 +419,7 @@ Asia	Bangladesh	Rajshahi
 Asia	Bangladesh	Rajshahi	Pabna
 Asia	Bangladesh	Rangpur	
 Asia	Bangladesh	Rangpur	Nilphamari
+Asia	Bangladesh	Sirajganj	
 Asia	Bangladesh	Sylhet	
 Asia	Bangladesh	Sylhet	Habiganj
 Asia	Bangladesh	Sylhet	Moulvibazar
@@ -1220,6 +1222,7 @@ Europe	Austria	Austria
 Europe	Austria	Burgenland	
 Europe	Austria	Burgenland	Eisenstadt
 Europe	Austria	Burgenland	Eisenstadt-Umgebung
+Europe	Austria	Burgenland	Müllendorf
 Europe	Austria	Burgenland	Neusiedl Am See
 Europe	Austria	Burgenland	Unterwart
 Europe	Austria	Carinthia	
@@ -1233,7 +1236,10 @@ Europe	Austria	Carinthia	Hermagor
 Europe	Austria	Carinthia	Klagenfurt
 Europe	Austria	Carinthia	Klagenfurt Am Wörthersee
 Europe	Austria	Carinthia	Landskron
+Europe	Austria	Carinthia	Launsdorf
+Europe	Austria	Carinthia	Patergassen
 Europe	Austria	Carinthia	Pörtschach
+Europe	Austria	Carinthia	Rangersdorf
 Europe	Austria	Carinthia	Rosegg
 Europe	Austria	Carinthia	Sankt Veit An Der Glan
 Europe	Austria	Carinthia	Sittersdorf
@@ -1253,7 +1259,9 @@ Europe	Austria	Lower Austria	Amstetten
 Europe	Austria	Lower Austria	Bad Vöslau
 Europe	Austria	Lower Austria	Baden
 Europe	Austria	Lower Austria	Bruck An Der Leitha
+Europe	Austria	Lower Austria	Grunddorf
 Europe	Austria	Lower Austria	Gänserndorf
+Europe	Austria	Lower Austria	Hainfeld
 Europe	Austria	Lower Austria	Hennersdorf
 Europe	Austria	Lower Austria	Hollabrunn
 Europe	Austria	Lower Austria	Horn
@@ -1263,15 +1271,22 @@ Europe	Austria	Lower Austria	Markt Piesting
 Europe	Austria	Lower Austria	Melk
 Europe	Austria	Lower Austria	Mistelbach
 Europe	Austria	Lower Austria	Mödling
+Europe	Austria	Lower Austria	Oed
+Europe	Austria	Lower Austria	Pöggstall
 Europe	Austria	Lower Austria	Sankt Polten-Land
 Europe	Austria	Lower Austria	Schönau an der Triesting
+Europe	Austria	Lower Austria	Thaya
+Europe	Austria	Lower Austria	Waidhofen An Der Thaya
 Europe	Austria	Lower Austria	Waidhofen An Der Ybbs
+Europe	Austria	Lower Austria	Weitersfeld
 Europe	Austria	Lower Austria	Wiener Neustadt-Land
+Europe	Austria	Lower Austria	Windigsteig
 Europe	Austria	Lower Austria	Zwettl
 Europe	Austria	Salzburg	
 Europe	Austria	Salzburg	Abtenau
 Europe	Austria	Salzburg	Bad Gastein
 Europe	Austria	Salzburg	Bischofshofen
+Europe	Austria	Salzburg	Filzmoos
 Europe	Austria	Salzburg	Golling An Der Salzach
 Europe	Austria	Salzburg	Hallein
 Europe	Austria	Salzburg	Kaprun
@@ -1281,20 +1296,33 @@ Europe	Austria	Salzburg	Pfarrwerfen
 Europe	Austria	Salzburg	Saalfelden
 Europe	Austria	Salzburg	Salzburg
 Europe	Austria	Salzburg	Salzburg-Umgebung
+Europe	Austria	Salzburg	Seekirchen am Wallersee
 Europe	Austria	Salzburg	Siggerwiesen
 Europe	Austria	Salzburg	St. Johann im Pongau
 Europe	Austria	Salzburg	Zell am See
 Europe	Austria	Styria	
+Europe	Austria	Styria	Aigen Im Ennstal
 Europe	Austria	Styria	Bad Aussee
+Europe	Austria	Styria	Bad Gams
+Europe	Austria	Styria	Bad Mitterndorf
 Europe	Austria	Styria	Bruck-Mürzzuschlag
+Europe	Austria	Styria	Gamlitz
 Europe	Austria	Styria	Graz
+Europe	Austria	Styria	Gutenberg-Stenzengreith
 Europe	Austria	Styria	Hartberg-Fürstenfeld
 Europe	Austria	Styria	Kalsdorf Bei Graz
 Europe	Austria	Styria	Kapfenberg
+Europe	Austria	Styria	Leibnitz
 Europe	Austria	Styria	Liezen
+Europe	Austria	Styria	Mariazell
 Europe	Austria	Styria	Murau
 Europe	Austria	Styria	Murtal
+Europe	Austria	Styria	Oberwölz
+Europe	Austria	Styria	Ramsau Am Dachstein
+Europe	Austria	Styria	Seiersberg-Pirka
+Europe	Austria	Styria	Stadl-Predlitz
 Europe	Austria	Styria	Weiz
+Europe	Austria	Styria	Öblarn
 Europe	Austria	Tyrol	
 Europe	Austria	Tyrol	Achenkirch
 Europe	Austria	Tyrol	Aldrans
@@ -1310,6 +1338,7 @@ Europe	Austria	Tyrol	Kappl
 Europe	Austria	Tyrol	Kematen in Tirol
 Europe	Austria	Tyrol	Kirchbichl
 Europe	Austria	Tyrol	Kitzbuhel-Stadt
+Europe	Austria	Tyrol	Kitzbühel
 Europe	Austria	Tyrol	Kramsach
 Europe	Austria	Tyrol	Kufstein
 Europe	Austria	Tyrol	Laengenfeld
@@ -1341,42 +1370,67 @@ Europe	Austria	Upper Austria	Attnang-Puchheim
 Europe	Austria	Upper Austria	Aurach Am Hongar
 Europe	Austria	Upper Austria	Bad Goisern
 Europe	Austria	Upper Austria	Bad Ischl
+Europe	Austria	Upper Austria	Buchkirchen
 Europe	Austria	Upper Austria	Ebensee Am Traunsee
+Europe	Austria	Upper Austria	Eberstalzell
+Europe	Austria	Upper Austria	Edt Bei Lambach
 Europe	Austria	Upper Austria	Eferding
+Europe	Austria	Upper Austria	Eschenau Im Hausruckkreis
+Europe	Austria	Upper Austria	Fischlham
 Europe	Austria	Upper Austria	Fornach
+Europe	Austria	Upper Austria	Fraham
 Europe	Austria	Upper Austria	Frankenburg Am Hausruck
+Europe	Austria	Upper Austria	Frankenmarkt
 Europe	Austria	Upper Austria	Freistadt
+Europe	Austria	Upper Austria	Gaspoltshofen
 Europe	Austria	Upper Austria	Gmunden
+Europe	Austria	Upper Austria	Gosau
 Europe	Austria	Upper Austria	Grieskirchen
 Europe	Austria	Upper Austria	Grünau im Almtal
 Europe	Austria	Upper Austria	Gunskirchen
 Europe	Austria	Upper Austria	Haizing
+Europe	Austria	Upper Austria	Hartkirchen
 Europe	Austria	Upper Austria	Hochficht
+Europe	Austria	Upper Austria	Holzhausen
+Europe	Austria	Upper Austria	Kirchham
 Europe	Austria	Upper Austria	Laakirchen
+Europe	Austria	Upper Austria	Lambach
+Europe	Austria	Upper Austria	Lenzing
 Europe	Austria	Upper Austria	Linz
 Europe	Austria	Upper Austria	Linz-Land
 Europe	Austria	Upper Austria	Losenstein
+Europe	Austria	Upper Austria	Marchtrenk
+Europe	Austria	Upper Austria	Natternbach
 Europe	Austria	Upper Austria	Neukirchen
 Europe	Austria	Upper Austria	Ohlsdorf
 Europe	Austria	Upper Austria	Pettenbach
+Europe	Austria	Upper Austria	Pfaffing
 Europe	Austria	Upper Austria	Pilsbach
 Europe	Austria	Upper Austria	Pinsdorf
+Europe	Austria	Upper Austria	Prambachkirchen
 Europe	Austria	Upper Austria	Regau
+Europe	Austria	Upper Austria	Ried
+Europe	Austria	Upper Austria	Roitham am Traunfall
 Europe	Austria	Upper Austria	Scharnstein
 Europe	Austria	Upper Austria	Schwanenstadt
 Europe	Austria	Upper Austria	Schörfling Am Attersee
+Europe	Austria	Upper Austria	Seewalchen Am Attersee
 Europe	Austria	Upper Austria	St. Georgen Im Attergau
 Europe	Austria	Upper Austria	St. Konrad
+Europe	Austria	Upper Austria	Steinerkirchen an der Traun
 Europe	Austria	Upper Austria	Steyr-Land
 Europe	Austria	Upper Austria	Timelkam
 Europe	Austria	Upper Austria	Unterach Am Attersee
 Europe	Austria	Upper Austria	Vöcklabruck
 Europe	Austria	Upper Austria	Vöcklamarkt
+Europe	Austria	Upper Austria	Weißkirchen An Der Traun
+Europe	Austria	Upper Austria	Wels
 Europe	Austria	Upper Austria	Wels-Land
 Europe	Austria	Upper Austria	Wels-Stadt
 Europe	Austria	Upper Austria	Weyregg Am Attersee
 Europe	Austria	Upper Austria	Zell Am Moos
 Europe	Austria	Vienna	
+Europe	Austria	Vienna	Rudolfsheim Fünfhaus
 Europe	Austria	Vienna	Vienna
 Europe	Austria	Vorarlberg	
 Europe	Austria	Vorarlberg	Bildstein
@@ -1388,6 +1442,7 @@ Europe	Austria	Vorarlberg	Gofis
 Europe	Austria	Vorarlberg	Hohenems
 Europe	Austria	Vorarlberg	Rankweil
 Europe	Austria	Vorarlberg	Schwarzach
+Europe	Austria	Vorarlberg	Wolfurt
 Europe	Azerbaijan	Azerbaijan	
 Europe	Belarus	Belarus	
 Europe	Belarus	Gomel Region	
@@ -1478,8 +1533,10 @@ Europe	Belgium	Ath	Flobecq
 Europe	Belgium	Ath	Harchies
 Europe	Belgium	Ath	Ladeuze
 Europe	Belgium	Ath	Lessines
+Europe	Belgium	Ath	Marcq
 Europe	Belgium	Ath	Quevaucamps
 Europe	Belgium	Ath	Stambruges
+Europe	Belgium	Ath	Thoricourt
 Europe	Belgium	Ath	Wadelincourt
 Europe	Belgium	Belgium	
 Europe	Belgium	Brabant Wallon	
@@ -2008,6 +2065,7 @@ Europe	Belgium	Nivelles	Ophain-Bois-Seigneur-Isaac
 Europe	Belgium	Nivelles	Ottignies
 Europe	Belgium	Nivelles	Ottignies-Louvain-la-Neuve
 Europe	Belgium	Nivelles	Perwez
+Europe	Belgium	Nivelles	Plancenoit
 Europe	Belgium	Nivelles	Pécrot
 Europe	Belgium	Nivelles	Rebecq
 Europe	Belgium	Nivelles	Rixensart
@@ -2197,6 +2255,7 @@ Europe	Belgium	Turnhout	Ramsel
 Europe	Belgium	Turnhout	Ravels
 Europe	Belgium	Turnhout	Retie
 Europe	Belgium	Turnhout	Rijkevorsel
+Europe	Belgium	Turnhout	Varendonk
 Europe	Belgium	Turnhout	Veerle
 Europe	Belgium	Turnhout	Vorselaar
 Europe	Belgium	Turnhout	Vorst
@@ -2297,6 +2356,7 @@ Europe	Croatia	Dubrovnik-Neretva County
 Europe	Croatia	Istria	
 Europe	Croatia	Karlovac County	
 Europe	Croatia	Koprivnica	
+Europe	Croatia	Koprivnica-Križevci County	
 Europe	Croatia	Krapina-Zagorje County	
 Europe	Croatia	Lika-Senj County	
 Europe	Croatia	Medimurje County	
@@ -3596,11 +3656,15 @@ Europe	Poland	Kujawsko-Pomorskie	Dziarnowo
 Europe	Poland	Kujawsko-Pomorskie	Grudziadz
 Europe	Poland	Kujawsko-Pomorskie	Pruszcz
 Europe	Poland	Kujawsko-Pomorskie	Sepolno Krajenskie
+Europe	Poland	Kujawsko-Pomorskie	Swiecie
+Europe	Poland	Kujawsko-Pomorskie	Wloclawek
+Europe	Poland	Kujawsko-Pomorskie	Znin
 Europe	Poland	Lubelskie	
 Europe	Poland	Lubelskie	Chełm
 Europe	Poland	Lubelskie	Hanna
 Europe	Poland	Lubelskie	Lublin
 Europe	Poland	Lubelskie	Milejów-Osada
+Europe	Poland	Lubelskie	Parczew
 Europe	Poland	Lubelskie	Zamość
 Europe	Poland	Lubuskie	
 Europe	Poland	Lubuskie	Bronowice
@@ -3627,13 +3691,17 @@ Europe	Poland	Malopolskie	Biertowice
 Europe	Poland	Malopolskie	Borzęta
 Europe	Poland	Malopolskie	Brzączowice
 Europe	Poland	Malopolskie	Bysina
+Europe	Poland	Malopolskie	Choragwica
+Europe	Poland	Malopolskie	Czarnochowice
 Europe	Poland	Malopolskie	Dobczyce
 Europe	Poland	Malopolskie	Glichów
 Europe	Poland	Malopolskie	Grabówki
 Europe	Poland	Malopolskie	Gruszów
 Europe	Poland	Malopolskie	Kraków
 Europe	Poland	Malopolskie	Krzyszkowice
+Europe	Poland	Malopolskie	Miechow
 Europe	Poland	Malopolskie	Modrzewiowa
+Europe	Poland	Malopolskie	Mogilany
 Europe	Poland	Malopolskie	Myślenice
 Europe	Poland	Malopolskie	Niepołomice
 Europe	Poland	Malopolskie	Nowa Wieś
@@ -3643,6 +3711,8 @@ Europe	Poland	Malopolskie	Osieczany
 Europe	Poland	Malopolskie	Poznachowice Górne
 Europe	Poland	Malopolskie	Raciechowice
 Europe	Poland	Malopolskie	Siepraw
+Europe	Poland	Malopolskie	Slomniki
+Europe	Poland	Malopolskie	Stanislaw Dolny
 Europe	Poland	Malopolskie	Stojowice
 Europe	Poland	Malopolskie	Strumiany
 Europe	Poland	Malopolskie	Sułków
@@ -3654,12 +3724,16 @@ Europe	Poland	Malopolskie	Węgrzce Wielkie
 Europe	Poland	Malopolskie	Zabawa
 Europe	Poland	Malopolskie	Zakrzów
 Europe	Poland	Malopolskie	Zawada
+Europe	Poland	Malopolskie	Zelkow
 Europe	Poland	Masovia	
 Europe	Poland	Mazowieckie	
 Europe	Poland	Mazowieckie	Brodno-Warszawa
 Europe	Poland	Mazowieckie	Grodzisk Mazowiecki
+Europe	Poland	Mazowieckie	Minsk Mazowiecki
+Europe	Poland	Mazowieckie	Piaseczno
 Europe	Poland	Mazowieckie	Plock
 Europe	Poland	Mazowieckie	Radom
+Europe	Poland	Mazowieckie	Siedlce
 Europe	Poland	Mazowieckie	Sokolow Podlaski
 Europe	Poland	Mazowieckie	Warszawa
 Europe	Poland	Mazowieckie	Łaz
@@ -3683,9 +3757,15 @@ Europe	Poland	Opolskie	Łąka Prudnicka
 Europe	Poland	Podkarpackie	
 Europe	Poland	Podkarpackie	Bachórzec
 Europe	Poland	Podkarpackie	Brzozow
+Europe	Poland	Podkarpackie	Debica
+Europe	Poland	Podkarpackie	Krosno
+Europe	Poland	Podkarpackie	Lezajsk
 Europe	Poland	Podkarpackie	Nagoszyn
+Europe	Poland	Podkarpackie	Ropczyce
 Europe	Poland	Podkarpackie	Rzeszow
 Europe	Poland	Podkarpackie	Siedliska-Bogusz
+Europe	Poland	Podkarpackie	Strzyzow
+Europe	Poland	Podkarpackie	Szowsko
 Europe	Poland	Podkarpackie	Tarnobrzeg
 Europe	Poland	Podkarpackie	Ustrzyki Dolne
 Europe	Poland	Podlaskie	
@@ -3706,6 +3786,7 @@ Europe	Poland	Podlaskie	Hamulka
 Europe	Poland	Podlaskie	Knyszyn
 Europe	Poland	Podlaskie	Kolno
 Europe	Poland	Podlaskie	Kowale
+Europe	Poland	Podlaskie	Kowale (Podlaskie)
 Europe	Poland	Podlaskie	Krukowszczyzna
 Europe	Poland	Podlaskie	Kuźnica
 Europe	Poland	Podlaskie	Lipiny
@@ -3729,11 +3810,14 @@ Europe	Poland	Poland
 Europe	Poland	Pomorskie	
 Europe	Poland	Pomorskie	Bojano
 Europe	Poland	Pomorskie	Bolesławice
+Europe	Poland	Pomorskie	Chojnice
+Europe	Poland	Pomorskie	Chojnicki
 Europe	Poland	Pomorskie	Czluchow
 Europe	Poland	Pomorskie	Gdansk
 Europe	Poland	Pomorskie	Gdynia
 Europe	Poland	Pomorskie	Gdynski
 Europe	Poland	Pomorskie	Gilwa
+Europe	Poland	Pomorskie	Gledowo
 Europe	Poland	Pomorskie	Gozdawa
 Europe	Poland	Pomorskie	Grzybno
 Europe	Poland	Pomorskie	Hel
@@ -3741,6 +3825,8 @@ Europe	Poland	Pomorskie	Jantar
 Europe	Poland	Pomorskie	Jeleńska Huta
 Europe	Poland	Pomorskie	Kacik
 Europe	Poland	Pomorskie	Kartuzy
+Europe	Poland	Pomorskie	Kosakowo
+Europe	Poland	Pomorskie	Kowale (Pomorskie)
 Europe	Poland	Pomorskie	Kościerzyna
 Europe	Poland	Pomorskie	Kwidzyn
 Europe	Poland	Pomorskie	Lebork
@@ -3749,46 +3835,95 @@ Europe	Poland	Pomorskie	Lubkowo
 Europe	Poland	Pomorskie	Malbork
 Europe	Poland	Pomorskie	Mikolajki Pomorskie
 Europe	Poland	Pomorskie	Miloradz
+Europe	Poland	Pomorskie	Nowe Ostrowite
+Europe	Poland	Pomorskie	Nowiec
+Europe	Poland	Pomorskie	Nowodworski
 Europe	Poland	Pomorskie	Nowy Dwor Gdanski
+Europe	Poland	Pomorskie	Nowy Staw
 Europe	Poland	Pomorskie	Objazda
 Europe	Poland	Pomorskie	Pogorze
 Europe	Poland	Pomorskie	Pruszcz Gdanski
 Europe	Poland	Pomorskie	Przelek
 Europe	Poland	Pomorskie	Puck
+Europe	Poland	Pomorskie	Rakowo
 Europe	Poland	Pomorskie	Raniewo
+Europe	Poland	Pomorskie	Reda
 Europe	Poland	Pomorskie	Rumia
+Europe	Poland	Pomorskie	Sapolno
 Europe	Poland	Pomorskie	Sopot
+Europe	Poland	Pomorskie	Stare Pole
+Europe	Poland	Pomorskie	Starogardzki
 Europe	Poland	Pomorskie	Stegna
 Europe	Poland	Pomorskie	Sztum
 Europe	Poland	Pomorskie	Sztumskie Pole
 Europe	Poland	Pomorskie	Słupsk
 Europe	Poland	Pomorskie	Wejherowo
+Europe	Poland	Pomorskie	Wierzchowo-Dworzec
+Europe	Poland	Pomorskie	Wyczechy
+Europe	Poland	Pomorskie	Zalesie (Pomorskie)
 Europe	Poland	Slask	
 Europe	Poland	Slaskie	
+Europe	Poland	Slaskie	Bakow
 Europe	Poland	Slaskie	Bielsko-Biała
 Europe	Poland	Slaskie	Chałupki
 Europe	Poland	Slaskie	Cieszyn
 Europe	Poland	Slaskie	Czechowice-Dziedzice
 Europe	Poland	Slaskie	Dankowice
 Europe	Poland	Slaskie	Gliwice
+Europe	Poland	Slaskie	Gorki Wielkie
 Europe	Poland	Slaskie	Hażlach
+Europe	Poland	Slaskie	Kaczyce
 Europe	Poland	Slaskie	Katowice
+Europe	Poland	Slaskie	Konczyce Wielkie
+Europe	Poland	Slaskie	Kozy
+Europe	Poland	Slaskie	Lodygowice
+Europe	Poland	Slaskie	Mazancowice
 Europe	Poland	Slaskie	Pawłowice
+Europe	Poland	Slaskie	Pruchna
 Europe	Poland	Slaskie	Ruda Śląska
 Europe	Poland	Slaskie	Rudziczka
+Europe	Poland	Slaskie	Siemianowice Slaskie
 Europe	Poland	Slaskie	Sosnicowice
 Europe	Poland	Slaskie	Suszec
 Europe	Poland	Slaskie	Wilkowice
+Europe	Poland	Slaskie	Wisla
+Europe	Poland	Slaskie	Wisla Glebce
 Europe	Poland	Slaskie	Wojska
+Europe	Poland	Slaskie	Zawiercie
 Europe	Poland	Slaskie	Żywiec
 Europe	Poland	Swietokrzyskie	
+Europe	Poland	Swietokrzyskie	Bieliny
+Europe	Poland	Swietokrzyskie	Bodzechow
+Europe	Poland	Swietokrzyskie	Cmielow
+Europe	Poland	Swietokrzyskie	Jedrzejow
+Europe	Poland	Swietokrzyskie	Jeziorko
 Europe	Poland	Swietokrzyskie	Kielce
+Europe	Poland	Swietokrzyskie	Kunow
+Europe	Poland	Swietokrzyskie	Lechow
+Europe	Poland	Swietokrzyskie	Maslow Pierwszy
+Europe	Poland	Swietokrzyskie	Michalow
+Europe	Poland	Swietokrzyskie	Micigozd
+Europe	Poland	Swietokrzyskie	Mniow
 Europe	Poland	Swietokrzyskie	Modliszewice
+Europe	Poland	Swietokrzyskie	Oksa
+Europe	Poland	Swietokrzyskie	Ostrowiec Swietokrzyski
+Europe	Poland	Swietokrzyskie	Pinczow
+Europe	Poland	Swietokrzyskie	Porzecze
+Europe	Poland	Swietokrzyskie	Sedziszow
+Europe	Poland	Swietokrzyskie	Sukow
+Europe	Poland	Swietokrzyskie	Wodzislaw
+Europe	Poland	Swietokrzyskie	Wolka Baltowska
+Europe	Poland	Swietokrzyskie	Zagnansk
+Europe	Poland	Swietokrzyskie	Zagrody
 Europe	Poland	Warminsko-Mazurskie	
 Europe	Poland	Warminsko-Mazurskie	Bartoszycki
+Europe	Poland	Warminsko-Mazurskie	Belk
 Europe	Poland	Warminsko-Mazurskie	Bialczyn
 Europe	Poland	Warminsko-Mazurskie	Biały Grunt
+Europe	Poland	Warminsko-Mazurskie	Braniewo
 Europe	Poland	Warminsko-Mazurskie	Braniewski
+Europe	Poland	Warminsko-Mazurskie	Ciborz
+Europe	Poland	Warminsko-Mazurskie	Dabrowa (Warminsko-Mazurskie)
 Europe	Poland	Warminsko-Mazurskie	Dobry
 Europe	Poland	Warminsko-Mazurskie	Dywity
 Europe	Poland	Warminsko-Mazurskie	Dzialdowski
@@ -3799,10 +3934,12 @@ Europe	Poland	Warminsko-Mazurskie	Gizycki
 Europe	Poland	Warminsko-Mazurskie	Goldapski
 Europe	Poland	Warminsko-Mazurskie	Gutkowo
 Europe	Poland	Warminsko-Mazurskie	Ilawski
+Europe	Poland	Warminsko-Mazurskie	Kanigowo
 Europe	Poland	Warminsko-Mazurskie	Ketrzynski
 Europe	Poland	Warminsko-Mazurskie	Komorniki WN
 Europe	Poland	Warminsko-Mazurskie	Korsze
 Europe	Poland	Warminsko-Mazurskie	Kozłowo
+Europe	Poland	Warminsko-Mazurskie	Lidzbark
 Europe	Poland	Warminsko-Mazurskie	Lidzbarski
 Europe	Poland	Warminsko-Mazurskie	Lodwigowo
 Europe	Poland	Warminsko-Mazurskie	Lubowidz
@@ -3810,6 +3947,7 @@ Europe	Poland	Warminsko-Mazurskie	Lupstych
 Europe	Poland	Warminsko-Mazurskie	Lutry PL
 Europe	Poland	Warminsko-Mazurskie	Lysakowo
 Europe	Poland	Warminsko-Mazurskie	Matki
+Europe	Poland	Warminsko-Mazurskie	Michalki
 Europe	Poland	Warminsko-Mazurskie	Mierki
 Europe	Poland	Warminsko-Mazurskie	Mokajny
 Europe	Poland	Warminsko-Mazurskie	Mragowski
@@ -3817,21 +3955,32 @@ Europe	Poland	Warminsko-Mazurskie	Napiwoda
 Europe	Poland	Warminsko-Mazurskie	Nidzicki
 Europe	Poland	Warminsko-Mazurskie	Nowomiejski
 Europe	Poland	Warminsko-Mazurskie	Olecki
+Europe	Poland	Warminsko-Mazurskie	Olecko
 Europe	Poland	Warminsko-Mazurskie	Olsztyn
 Europe	Poland	Warminsko-Mazurskie	Orzysz
 Europe	Poland	Warminsko-Mazurskie	Ostrodzki
 Europe	Poland	Warminsko-Mazurskie	Paslek
 Europe	Poland	Warminsko-Mazurskie	Piski
+Europe	Poland	Warminsko-Mazurskie	Rogity
+Europe	Poland	Warminsko-Mazurskie	Rybno
+Europe	Poland	Warminsko-Mazurskie	Siemiatki
 Europe	Poland	Warminsko-Mazurskie	Sorkwity
+Europe	Poland	Warminsko-Mazurskie	Spychowo
+Europe	Poland	Warminsko-Mazurskie	Stebark
+Europe	Poland	Warminsko-Mazurskie	Stegny
+Europe	Poland	Warminsko-Mazurskie	Stepien
 Europe	Poland	Warminsko-Mazurskie	Swiatki
 Europe	Poland	Warminsko-Mazurskie	Szabruk
 Europe	Poland	Warminsko-Mazurskie	Szczycienski
+Europe	Poland	Warminsko-Mazurskie	Szczytno
+Europe	Poland	Warminsko-Mazurskie	Szkotowo
 Europe	Poland	Warminsko-Mazurskie	Szymany
 Europe	Poland	Warminsko-Mazurskie	Sławka Mała
 Europe	Poland	Warminsko-Mazurskie	Wegorzewski
 Europe	Poland	Warminsko-Mazurskie	Wieckowo
 Europe	Poland	Warminsko-Mazurskie	Wólka
 Europe	Poland	Warminsko-Mazurskie	Zalesie
+Europe	Poland	Warminsko-Mazurskie	Zalesie (Warminsko-Mazurskie)
 Europe	Poland	Wielkopolskie	
 Europe	Poland	Wielkopolskie	Baranowo
 Europe	Poland	Wielkopolskie	Buk
@@ -3840,6 +3989,7 @@ Europe	Poland	Wielkopolskie	Czajkow
 Europe	Poland	Wielkopolskie	Czapury
 Europe	Poland	Wielkopolskie	Czerniejewo
 Europe	Poland	Wielkopolskie	Dabrowa
+Europe	Poland	Wielkopolskie	Dabrowa (Wielkopolskie)
 Europe	Poland	Wielkopolskie	Dalki
 Europe	Poland	Wielkopolskie	Debienko
 Europe	Poland	Wielkopolskie	Duszniki
@@ -3853,6 +4003,7 @@ Europe	Poland	Wielkopolskie	Jarosławiec
 Europe	Poland	Wielkopolskie	Jeziorki
 Europe	Poland	Wielkopolskie	Kalisz
 Europe	Poland	Wielkopolskie	Kamionki
+Europe	Poland	Wielkopolskie	Kepno
 Europe	Poland	Wielkopolskie	Kobylniki
 Europe	Poland	Wielkopolskie	Komorniki
 Europe	Poland	Wielkopolskie	Komorniki WP
@@ -3875,6 +4026,7 @@ Europe	Poland	Wielkopolskie	Nowy Tomysl
 Europe	Poland	Wielkopolskie	Oborniki
 Europe	Poland	Wielkopolskie	Orchowo
 Europe	Poland	Wielkopolskie	Orlowo
+Europe	Poland	Wielkopolskie	Ostrow
 Europe	Poland	Wielkopolskie	Ostrzeszow
 Europe	Poland	Wielkopolskie	Paledzie
 Europe	Poland	Wielkopolskie	Pecna
@@ -3918,40 +4070,72 @@ Europe	Poland	Wielkopolskie	Zielatkowo
 Europe	Poland	Wielkopolskie	Zlotniki
 Europe	Poland	Wielkopolskie	Zydowo
 Europe	Poland	Zachodniopomorskie	
+Europe	Poland	Zachodniopomorskie	Banie
+Europe	Poland	Zachodniopomorskie	Bialogard
+Europe	Poland	Zachodniopomorskie	Bonin
 Europe	Poland	Zachodniopomorskie	Choszczno
+Europe	Poland	Zachodniopomorskie	Chwarstnica
+Europe	Poland	Zachodniopomorskie	Czepino
+Europe	Poland	Zachodniopomorskie	Drawno
+Europe	Poland	Zachodniopomorskie	Dziwnow
+Europe	Poland	Zachodniopomorskie	Golczewo
 Europe	Poland	Zachodniopomorskie	Goleniow
 Europe	Poland	Zachodniopomorskie	Gryfice
 Europe	Poland	Zachodniopomorskie	Gryfino
 Europe	Poland	Zachodniopomorskie	Grzedzice
+Europe	Poland	Zachodniopomorskie	Kamien Pomorski
+Europe	Poland	Zachodniopomorskie	Karlino
+Europe	Poland	Zachodniopomorskie	Koszalin
+Europe	Poland	Zachodniopomorskie	Kretlewo
 Europe	Poland	Zachodniopomorskie	Kukułowo
+Europe	Poland	Zachodniopomorskie	Lipiany
 Europe	Poland	Zachodniopomorskie	Lobez
+Europe	Poland	Zachodniopomorskie	Międzyzdroje
 Europe	Poland	Zachodniopomorskie	Mysliborz
 Europe	Poland	Zachodniopomorskie	Nowe Brynki
+Europe	Poland	Zachodniopomorskie	Nowe Warpno
+Europe	Poland	Zachodniopomorskie	Pniewo
 Europe	Poland	Zachodniopomorskie	Police
+Europe	Poland	Zachodniopomorskie	Pyrzyce
 Europe	Poland	Zachodniopomorskie	Płoty
 Europe	Poland	Zachodniopomorskie	Recz
+Europe	Poland	Zachodniopomorskie	Samlino
+Europe	Poland	Zachodniopomorskie	Skoszewo
 Europe	Poland	Zachodniopomorskie	Stare Brynki
 Europe	Poland	Zachodniopomorskie	Stargard
+Europe	Poland	Zachodniopomorskie	Stradzewo
 Europe	Poland	Zachodniopomorskie	Swidwin
 Europe	Poland	Zachodniopomorskie	Swinoujscie
 Europe	Poland	Zachodniopomorskie	Szczecin
 Europe	Poland	Zachodniopomorskie	Szczecinek
+Europe	Poland	Zachodniopomorskie	Trzcinsko-Zdroj
 Europe	Poland	Zachodniopomorskie	Witkowo Drugie
+Europe	Poland	Zachodniopomorskie	Zaborze
 Europe	Poland	Zielonogorskie	
 Europe	Poland	Łódzkie	
 Europe	Poland	Łódzkie	Adolfow
+Europe	Poland	Łódzkie	Bedon Przykoscielny
+Europe	Poland	Łódzkie	Bedon-Wies
 Europe	Poland	Łódzkie	Belchatow County
 Europe	Poland	Łódzkie	Brzeziny
+Europe	Poland	Łódzkie	Brzeznio
+Europe	Poland	Łódzkie	Charbice Gorne
+Europe	Poland	Łódzkie	Jezow
 Europe	Poland	Łódzkie	Justynow
 Europe	Poland	Łódzkie	Koluszki
+Europe	Poland	Łódzkie	Konstantynow Lodzki
 Europe	Poland	Łódzkie	Kutno
 Europe	Poland	Łódzkie	Lodz
+Europe	Poland	Łódzkie	Losieniec
 Europe	Poland	Łódzkie	Pabianice
 Europe	Poland	Łódzkie	Pajeczno County
+Europe	Poland	Łódzkie	Rogow
 Europe	Poland	Łódzkie	Sieradz
 Europe	Poland	Łódzkie	Skierniewice County
 Europe	Poland	Łódzkie	Suliszewice
+Europe	Poland	Łódzkie	Wiaczyn Dolny
 Europe	Poland	Łódzkie	Wisniowa Gora
+Europe	Poland	Łódzkie	Zgierz
 Europe	Portugal	Beja	
 Europe	Portugal	Beja	Santa Clara de Louredo
 Europe	Portugal	Coimbra	
@@ -4366,6 +4550,7 @@ Europe	Slovakia	Banska Bystrica	Zarnovica
 Europe	Slovakia	Banska Bystrica	Zelovce
 Europe	Slovakia	Banska Bystrica	Ziar nad Hronom
 Europe	Slovakia	Bartosova Lehotka	
+Europe	Slovakia	Batizovce	
 Europe	Slovakia	Bela nad Cirochou	
 Europe	Slovakia	Bobrov	
 Europe	Slovakia	Bratislava	
@@ -4379,6 +4564,7 @@ Europe	Slovakia	Bratislava	Vinosady
 Europe	Slovakia	Dolny Kubin	
 Europe	Slovakia	Doľany	
 Europe	Slovakia	Drahovce	
+Europe	Slovakia	Dubnica Nd Váhom	
 Europe	Slovakia	Hlohovec	
 Europe	Slovakia	Hnusta	
 Europe	Slovakia	Humenne	
@@ -4386,6 +4572,7 @@ Europe	Slovakia	Ilava
 Europe	Slovakia	Ivanka Pri Dunaji	
 Europe	Slovakia	Jatov	
 Europe	Slovakia	Kamenicna	
+Europe	Slovakia	Kolárovo	
 Europe	Slovakia	Komarno	
 Europe	Slovakia	Kosice	
 Europe	Slovakia	Kosice	Gelnica
@@ -4396,10 +4583,12 @@ Europe	Slovakia	Kosice	Spisska Nova Ves
 Europe	Slovakia	Kosice	Trebisov
 Europe	Slovakia	Kosice	Zehra
 Europe	Slovakia	Kostoliste	
+Europe	Slovakia	Kravany	
 Europe	Slovakia	Krivá	
 Europe	Slovakia	Levice	
 Europe	Slovakia	Malacky	
 Europe	Slovakia	Malacky	Studienka
+Europe	Slovakia	Malý Dunaj	
 Europe	Slovakia	Martin	
 Europe	Slovakia	Medvedzie	
 Europe	Slovakia	Miloslavov	
@@ -4456,7 +4645,9 @@ Europe	Slovakia	Senec
 Europe	Slovakia	Slovakia	
 Europe	Slovakia	Stupava	
 Europe	Slovakia	Surany	
+Europe	Slovakia	Svit	
 Europe	Slovakia	Tapesovo	
+Europe	Slovakia	Tatranská Štrba	
 Europe	Slovakia	Topolcany	
 Europe	Slovakia	Trencianska Tepla	
 Europe	Slovakia	Trencin	
@@ -4487,7 +4678,9 @@ Europe	Slovakia	Trnava	Voderady
 Europe	Slovakia	Trnava	Šaštín-Stráže
 Europe	Slovakia	Tvrdosin	
 Europe	Slovakia	Tvrdosovce	
+Europe	Slovakia	Važec	
 Europe	Slovakia	Velky Krtis	
+Europe	Slovakia	Velký Harcáš	
 Europe	Slovakia	Zabiedovo	
 Europe	Slovakia	Zilina	
 Europe	Slovakia	Zilina	Cadca
@@ -4509,6 +4702,7 @@ Europe	Slovakia	Zilina	Turzovka
 Europe	Slovakia	Zilina	Vitanova
 Europe	Slovakia	Zilina	Zuberec
 Europe	Slovakia	Zilina	Zubrohlava
+Europe	Slovakia	Zvolen	
 Europe	Slovenia	Celje	
 Europe	Slovenia	Gorenjska	
 Europe	Slovenia	Gorenjska	Kranj
@@ -6101,6 +6295,7 @@ North America	USA	Alabama	Chambers County
 North America	USA	Alabama	Cherokee County
 North America	USA	Alabama	Chilton County
 North America	USA	Alabama	Clay County
+North America	USA	Alabama	Clay County AL
 North America	USA	Alabama	Cleburne County
 North America	USA	Alabama	Coffee County
 North America	USA	Alabama	Colbert County
@@ -6119,11 +6314,13 @@ North America	USA	Alabama	Fayette County AL
 North America	USA	Alabama	Geneva County
 North America	USA	Alabama	Hale County
 North America	USA	Alabama	Henry County
+North America	USA	Alabama	Henry County AL
 North America	USA	Alabama	Houston County AL
 North America	USA	Alabama	Jackson County AL
 North America	USA	Alabama	Jefferson County AL
 North America	USA	Alabama	Lauderdale County
 North America	USA	Alabama	Lawrence County
+North America	USA	Alabama	Lawrence County AL
 North America	USA	Alabama	Lee County AL
 North America	USA	Alabama	Limestone County AL
 North America	USA	Alabama	Lowndes County
@@ -6332,10 +6529,12 @@ North America	USA	Idaho	Madison County ID
 North America	USA	Idaho	Nez Perce County
 North America	USA	Illinois	
 North America	USA	Illinois	Adams County IL
+North America	USA	Illinois	Alexander County
 North America	USA	Illinois	Bond County
 North America	USA	Illinois	Boone County
 North America	USA	Illinois	Brown County IL
 North America	USA	Illinois	Bureau County
+North America	USA	Illinois	Calhoun County IL
 North America	USA	Illinois	Carroll County IL
 North America	USA	Illinois	Cass County IL
 North America	USA	Illinois	Champaign County
@@ -6343,15 +6542,19 @@ North America	USA	Illinois	Champaign County IL
 North America	USA	Illinois	Chicago
 North America	USA	Illinois	Christian County
 North America	USA	Illinois	Clark County IL
+North America	USA	Illinois	Clay County IL
 North America	USA	Illinois	Clinton County IL
 North America	USA	Illinois	Coles County IL
 North America	USA	Illinois	Cook County
 North America	USA	Illinois	Crawford County IL
 North America	USA	Illinois	Cumberland County
+North America	USA	Illinois	De Witt County
 North America	USA	Illinois	Dekalb County
 North America	USA	Illinois	Dekalb County IL
 North America	USA	Illinois	Douglas County IL
 North America	USA	Illinois	Dupage County
+North America	USA	Illinois	Edgar County
+North America	USA	Illinois	Edwards County
 North America	USA	Illinois	Effingham County
 North America	USA	Illinois	Fayette County IL
 North America	USA	Illinois	Franklin County IL
@@ -6362,7 +6565,9 @@ North America	USA	Illinois	Greene County IL
 North America	USA	Illinois	Grundy County IL
 North America	USA	Illinois	Hamilton County IL
 North America	USA	Illinois	Hancock County
+North America	USA	Illinois	Hardin County IL
 North America	USA	Illinois	Henderson County IL
+North America	USA	Illinois	Henry County IL
 North America	USA	Illinois	Iroquois County
 North America	USA	Illinois	Jackson County IL
 North America	USA	Illinois	Jefferson County IL
@@ -6376,6 +6581,7 @@ North America	USA	Illinois	Kendall County IL
 North America	USA	Illinois	Knox County IL
 North America	USA	Illinois	Lake County IL
 North America	USA	Illinois	Lasalle County
+North America	USA	Illinois	Lawrence County IL
 North America	USA	Illinois	Lee County IL
 North America	USA	Illinois	Livingston County IL
 North America	USA	Illinois	Logan County IL
@@ -6399,11 +6605,14 @@ North America	USA	Illinois	Ogle County
 North America	USA	Illinois	Ogle County IL
 North America	USA	Illinois	Peoria County
 North America	USA	Illinois	Perry County IL
+North America	USA	Illinois	Piatt County
 North America	USA	Illinois	Pike County IL
+North America	USA	Illinois	Pope County
 North America	USA	Illinois	Pulaski County
 North America	USA	Illinois	Putnam County IL
 North America	USA	Illinois	Randolph County
 North America	USA	Illinois	Randolph County IL
+North America	USA	Illinois	Richland County IL
 North America	USA	Illinois	Rock Island County
 North America	USA	Illinois	Saline County IL
 North America	USA	Illinois	Sangamon County
@@ -7329,6 +7538,7 @@ South America	Argentina	Santa Fe	Rafaela
 South America	Argentina	Santa Fe	Reconquista
 South America	Argentina	Santa Fe	Ricardone
 South America	Argentina	Santa Fe	Rosario
+South America	Argentina	Santa Fe	Rosario AR
 South America	Argentina	Santa Fe	Rueda
 South America	Argentina	Santa Fe	San Carlos AR
 South America	Argentina	Santa Fe	San Jose de la Esquina
@@ -7475,13 +7685,28 @@ South America	Brazil	Goiás	Goiania
 South America	Brazil	Goiás	Jaragua
 South America	Brazil	Goiás	Jatai
 South America	Brazil	Goiás	Mangueira
+South America	Brazil	Goiás	Rio Verde
 South America	Brazil	Goiás	Sanclerlandia
 South America	Brazil	Goiás	Santa Barbara de Goias
 South America	Brazil	Goiás	Senador Canedo
+South America	Brazil	Goiás	Simao
+South America	Brazil	Goiás	Trindade
 South America	Brazil	Goiás	Turvania
 South America	Brazil	Maranhão	
+South America	Brazil	Maranhão	Anapurus
+South America	Brazil	Maranhão	Cachoeira Grande
+South America	Brazil	Maranhão	Cajapio
+South America	Brazil	Maranhão	Caxias
+South America	Brazil	Maranhão	Imperatriz
+South America	Brazil	Maranhão	Miranda do Norte
+South America	Brazil	Maranhão	Peritoro
+South America	Brazil	Maranhão	Pirapemas
+South America	Brazil	Maranhão	Rosario BR
+South America	Brazil	Maranhão	Santa Ines
 South America	Brazil	Maranhão	Sao Jose de Ribamar
 South America	Brazil	Maranhão	Sao Luis
+South America	Brazil	Maranhão	Timon
+South America	Brazil	Maranhão	Vargem Grande
 South America	Brazil	Mato Grosso	
 South America	Brazil	Mato Grosso	Cuiaba
 South America	Brazil	Mato Grosso	Primavera do Leste
@@ -7902,8 +8127,10 @@ South America	Brazil	São Paulo	Fernandopolis
 South America	Brazil	São Paulo	Franca
 South America	Brazil	São Paulo	Francisco Morato
 South America	Brazil	São Paulo	Garca
+South America	Brazil	São Paulo	Guaira
 South America	Brazil	São Paulo	Guapiacu
 South America	Brazil	São Paulo	Guapiara
+South America	Brazil	São Paulo	Guara
 South America	Brazil	São Paulo	Guararapes
 South America	Brazil	São Paulo	Guararema
 South America	Brazil	São Paulo	Guariba
@@ -7926,6 +8153,7 @@ South America	Brazil	São Paulo	Itarare
 South America	Brazil	São Paulo	Itariri
 South America	Brazil	São Paulo	Itatiba
 South America	Brazil	São Paulo	Itu
+South America	Brazil	São Paulo	Ituverava
 South America	Brazil	São Paulo	Jacareí
 South America	Brazil	São Paulo	Jaguariuna
 South America	Brazil	São Paulo	Jales
@@ -7956,16 +8184,19 @@ South America	Brazil	São Paulo	Mococa
 South America	Brazil	São Paulo	Mogi Das Cruzes
 South America	Brazil	São Paulo	Mogi-Guacu
 South America	Brazil	São Paulo	Mongagua
+South America	Brazil	São Paulo	Monte Azul Pulista
 South America	Brazil	São Paulo	Morro Agudo
 South America	Brazil	São Paulo	Narandiba
 South America	Brazil	São Paulo	Nova Odessa
 South America	Brazil	São Paulo	Olimpia
 South America	Brazil	São Paulo	Oriente
+South America	Brazil	São Paulo	Orlandia
 South America	Brazil	São Paulo	Osasco
 South America	Brazil	São Paulo	Oswaldo Cruz
 South America	Brazil	São Paulo	Ourinhos
 South America	Brazil	São Paulo	Ouro Verde
 South America	Brazil	São Paulo	Pariquera-Acu
+South America	Brazil	São Paulo	Patrocinio Paulista
 South America	Brazil	São Paulo	Pedreira
 South America	Brazil	São Paulo	Pereira Barreto
 South America	Brazil	São Paulo	Peruibe
@@ -8040,6 +8271,7 @@ South America	Brazil	São Paulo	Valparaiso BR
 South America	Brazil	São Paulo	Vargem Grande Paulista
 South America	Brazil	São Paulo	Vargem Grande do Sul
 South America	Brazil	São Paulo	Vera Cruz (São Paulo)
+South America	Brazil	São Paulo	Viradouro
 South America	Brazil	São Paulo	Votorantim
 South America	Brazil	São Paulo	Votuporanga
 South America	Brazil	Tocantins	
@@ -8190,10 +8422,12 @@ South America	Colombia	Antioquia	Itagui
 South America	Colombia	Antioquia	Medellin
 South America	Colombia	Antioquia	Sabaneta
 South America	Colombia	Arauca	
+South America	Colombia	Arauca	Arauca
 South America	Colombia	Atlantico	
 South America	Colombia	Atlantico	Barranquilla
 South America	Colombia	Atlantico	Soledad
 South America	Colombia	Bogota	
+South America	Colombia	Bogota	Bogota
 South America	Colombia	Bolivar	
 South America	Colombia	Bolivar	Cartagena
 South America	Colombia	Boyaca	
@@ -8272,6 +8506,7 @@ South America	Colombia	Santander	Bucaramanga
 South America	Colombia	Santander de Quilichao	
 South America	Colombia	Soledad	
 South America	Colombia	Sucre	
+South America	Colombia	Sucre	Sincelejo
 South America	Colombia	Suesca	
 South America	Colombia	Tolemaida	
 South America	Colombia	Tolima	
