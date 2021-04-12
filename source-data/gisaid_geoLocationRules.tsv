@@ -12,7 +12,7 @@ Europe/Netherlands/Loon op Zand/	Europe/Netherlands/North Brabant/Loon op Zand
 Europe/Netherlands/Naarden/	Europe/Netherlands/North Holland/Naarden
 Europe/Netherlands/Nieuwendijk/	Europe/Netherlands/North Brabant/Nieuwendijk
 Europe/Netherlands/Nootdorp/	Europe/Netherlands/South Holland/Nootdorp
-Europe/Netherlands/Delft/	Europe/Netherlands/South Holland/Delft
+Europe/Netherlands/Delft/	Europe/Netherlands/South Holland/Delft NL
 Europe/Netherlands/Zeewolde/	Europe/Netherlands/Flevoland/Zeewolde
 Europe/Netherlands/Andel/	Europe/Netherlands/North Brabant/Andel
 Europe/Netherlands/Berlicum/	Europe/Netherlands/North Brabant/Berlicum
@@ -33,6 +33,7 @@ Europe/Netherlands/Zealand/*	Europe/Netherlands/Zeeland/*
 Europe/Netherlands/Unknown/	Europe/Netherlands/Netherlands/
 Europe/Netherlands/North Brabant/Loon op zand	Europe/Netherlands/North Brabant/Loon op Zand
 Europe/Netherlands/South Holland/Hardinxveld-Giessendam	Europe/Netherlands/South Holland/Hardinxveld Giessendam
+Europe/Netherlands/South Holland/Delft	Europe/Netherlands/South Holland/Delft NL
 Europe/France/Grand-Est/*	Europe/France/Grand Est/*
 Europe/France/Hauts-de-France/Crépy-en -Valois	Europe/France/Hauts de France/Crépy en Valois
 Europe/France/Hauts-de-France/Pontoise	Europe/France/Ile de France/Pontoise
@@ -186,6 +187,7 @@ Europe/France/Marseille/	Europe/France/Provence-Alpes-Côte d'Azur/Marseille
 Europe/France/Ile-de France/*	Europe/France/Ile de France/*
 Europe/France/Bourgogne-France-Comté/Chalon-sur-Saone	Europe/France/Bourgogne-France-Comté/Chalon sur Saone
 Europe/France/Nouvelle Aquitaine/*	Europe/France/Nouvelle-Aquitaine/*
+Europe/France/Normandie/Rouen Cedex	Europe/France/Normandie/Rouen
 Europe/Germany/North Rhine-Westphalia/Düsseldorf	Europe/Germany/North Rhine Westphalia/Duesseldorf
 Europe/Germany/North Rhine-Westphalia/Duesseldorf Area	Europe/Germany/North Rhine Westphalia/Duesseldorf
 Europe/Germany/North Rhine-Westphalia/Dusseldorf Health Department	Europe/Germany/North Rhine Westphalia/Duesseldorf
@@ -6358,6 +6360,7 @@ Europe/Czech Republic/Olomoucky Region/*	Europe/Czech Republic/Olomouc Region/*
 Europe/Czech Republic/Praha/*	Europe/Czech Republic/Prague/*
 Europe/Czech Republic/Pardubicky Region/*	Europe/Czech Republic/Pardubice Region/*
 Europe/Czech Republic/Hradec Kralove/*	Europe/Czech Republic/Hradec Králové Region/*
+Europe/Czech Republic/Ostrava/	Europe/Czech Republic/Moravian-Silesian Region/Ostrava
 Europe/Crimea//	Europe/Ukraine/Crimea/Crimea
 Europe/Crimea/Simpheropol/	Europe/Ukraine/Crimea/Simpheropol
 Europe/Crimea/Alushta/	Europe/Ukraine/Crimea/Alushta
@@ -6385,6 +6388,7 @@ Europe/Spain/Comunitat Valenciana/Castellon_de_la_Plana_h	Europe/Spain/Comunitat
 Europe/Spain/Comunitat Valenciana/Sagunto	Europe/Spain/Comunitat Valenciana/Sagunt
 Europe/Spain/Comunitat Valenciana/Valencia	Europe/Spain/Comunitat Valenciana/Valencia ES
 Europe/Spain/Comunitat Valenciana/Port de Sagunt	Europe/Spain/Comunitat Valenciana/Sagunt
+Europe/Spain/Comunitat Valenciana/Miramar	Europe/Spain/Comunitat Valenciana/Miramar ES
 Europe/Spain/Navarra/Torres de Elorz	Europe/Spain/Navarra/Torres De Elorz
 Europe/Spain/Navarra/Cizur	Europe/Spain/Navarra/Cizur Menor
 Europe/Spain/Illes Balears/Marrachi	Europe/Spain/Balear Islands/Marratxí
@@ -6512,6 +6516,9 @@ Europe/Poland/Malopolska/*	Europe/Poland/Malopolskie/*
 Europe/Poland/Wielkopolska/*	Europe/Poland/Wielkopolskie/*
 Europe/Poland/Lodzkie/*	Europe/Poland/Łódzkie/*
 Europe/Poland/Mazowieckie/Warsaw	Europe/Poland/Mazowieckie/Warszawa
+Europe/Poland/Mazowieckie/Lodz	Europe/Poland/Łódzkie/Lodz
+Europe/Poland/Mazowieckie/Minskmazowiecki	Europe/Poland/Mazowieckie/Minsk Mazowiecki
+Europe/Poland/Mazowieckie/Bialystok	Europe/Poland/Podlaskie/Białystok
 Europe/Poland/Iodzkie/*	Europe/Poland/Łódzkie/*
 Europe/Poland/Zuid Holland/*	Europe/Poland/Poland/*
 Europe/Poland/Warmińsko-Mazurskie/*	Europe/Poland/Warminsko-Mazurskie/*
@@ -6522,6 +6529,12 @@ Europe/Poland/Wielkopolskie/Dabrowka	Europe/Poland/Lubuskie/Dabrowka
 Europe/Poland/Wielkopolskie/Uscikowo Folwark	Europe/Poland/Wielkopolskie/Uscikowo
 Europe/Poland/Wielkopolskie/Komorniki	Europe/Poland/Wielkopolskie/Komorniki WP
 Europe/Poland/Wielkopolskie/Dabrowa	Europe/Poland/Wielkopolskie/Dabrowa (Wielkopolskie)
+Europe/Poland/Wielkopolskie/Znin	Europe/Poland/Kujawsko-Pomorskie/Znin
+Europe/Poland/Wielkopolskie/Srodawielkopolska	Europe/Poland/Wielkopolskie/Sroda Wielkopolska
+Europe/Poland/Wielkopolskie/Kostrzyn	Europe/Poland/Wielkopolskie/Kostrzyn (Wielkopolskie)
+Europe/Poland/Wielkopolskie/Gorzyca	Europe/Poland/Lubuskie/Gorzyca
+Europe/Poland/Wielkopolskie/Slubice	Europe/Poland/Lubuskie/Slubice
+Europe/Poland/Wielkopolskie/Osnolubuskie	Europe/Poland/Lubuskie/Osnolubuskie
 Europe/Poland/Warminsko-Mazurskie/Olsztynski	Europe/Poland/Warminsko-Mazurskie/Olsztyn
 Europe/Poland/Warminsko-Mazurskie/Komorniki	Europe/Poland/Warminsko-Mazurskie/Komorniki WN
 Europe/Poland/Warminsko-Mazurskie/Lutry	Europe/Poland/Warminsko-Mazurskie/Lutry PL
@@ -6542,6 +6555,8 @@ Europe/Poland/Podlaskie/Bialystok	Europe/Poland/Podlaskie/Białystok
 Europe/Poland/Podlaskie/Sokolka	Europe/Poland/Podlaskie/Sokółka
 Europe/Poland/Podlaskie/Kowale	Europe/Poland/Podlaskie/Kowale (Podlaskie)
 Europe/Poland/Podlaskie/Lomza	Europe/Poland/Podlaskie/Łomża
+Europe/Poland/Podlaskie/Olecki	Europe/Poland/Warminsko-Mazurskie/Olecki
+Europe/Poland/Podlaskie/Suwalki	Europe/Poland/Podlaskie/Suwałki
 Europe/Poland/Bielsk Podlaski/	Europe/Poland/Podlaskie/Bielsk Podlaski
 Europe/Poland/Malopolskie/Krakow	Europe/Poland/Malopolskie/Kraków
 Europe/Poland/Malopolskie/Wegrzce Wielkie	Europe/Poland/Malopolskie/Węgrzce Wielkie
@@ -6566,11 +6581,14 @@ Europe/Poland/Dolnośląskie/Swidnica	Europe/Poland/Dolnośląskie/Swidnica DS
 Europe/Poland/Dolnośląskie/Zabkowice Slaskie	Europe/Poland/Dolnośląskie/Ząbkowice Śląskie
 Europe/Poland/Dolnośląskie/Kamieniec Wroclawski	Europe/Poland/Dolnośląskie/Kamieniec Wrocławski
 Europe/Poland/Dolnośląskie/Kepno	Europe/Poland/Wielkopolskie/Kepno
+Europe/Poland/Dolnośląskie/Lipno	Europe/Poland/Kujawsko-Pomorskie/Lipno
 Europe/Poland/Pomorskie/Gdańsk	Europe/Poland/Pomorskie/Gdansk
 Europe/Poland/Pomorskie/Slupsk	Europe/Poland/Pomorskie/Słupsk
 Europe/Poland/Pomorskie/Koscierzyna	Europe/Poland/Pomorskie/Kościerzyna
 Europe/Poland/Pomorskie/Kowale	Europe/Poland/Pomorskie/Kowale (Pomorskie)
 Europe/Poland/Pomorskie/Zalesie	Europe/Poland/Pomorskie/Zalesie (Pomorskie)
+Europe/Poland/Pomorskie/Nowydworgdanski	Europe/Poland/Pomorskie/Nowy Dwor Gdanski
+Europe/Poland/Pomorskie/Pruszczgdanski	Europe/Poland/Pomorskie/Pruszcz Gdanski
 Europe/Poland/Łódzkie/Łódź	Europe/Poland/Łódzkie/Lodz
 Europe/Poland/Łódzkie/Kalisz	Europe/Poland/Wielkopolskie/Kalisz
 Europe/Poland/Łódzkie/Szowsko	Europe/Poland/Podkarpackie/Szowsko
@@ -6580,10 +6598,12 @@ Europe/Poland/Śląskie/*	Europe/Poland/Slaskie/*
 Europe/Poland/Opolskie/Kedzierzyn-Kozle	Europe/Poland/Opolskie/Kedzierzyn Kozle
 Europe/Poland/Opolskie/Kędzierzyn-Koźle	Europe/Poland/Opolskie/Kedzierzyn Kozle
 Europe/Poland/Opolskie/Namyslow	Europe/Poland/Opolskie/Namysłów
+Europe/Poland/Opolskie/Kedzierzynkozle	Europe/Poland/Opolskie/Kedzierzyn Kozle
 Europe/Poland/Zuid-Holland/*	Europe/Netherlands/South Holland/*
 Europe/Poland/Małopolska/*	Europe/Poland/Malopolskie/*
 Europe/Poland/Mujawsko-Pomorskie/*	Europe/Poland/Kujawsko-Pomorskie/*
 Europe/Poland/Lubuskie/Swidnica	Europe/Poland/Lubuskie/Swidnica LB
+Europe/Poland/Lubuskie/Kostrzyn	Europe/Poland/Lubuskie/Kostrzyn (Lubuskie)
 Europe/Poland/Slaskie/Bielsko-Biala	Europe/Poland/Slaskie/Bielsko-Biała
 Europe/Poland/Slaskie/Zywiec	Europe/Poland/Slaskie/Żywiec
 Europe/Poland/Slaskie/Glucholazy	Europe/Poland/Opolskie/Głuchołazy
@@ -6591,6 +6611,7 @@ Europe/Poland/Zachodniopomorskie/Kamaleien Pomaleorski	Europe/Poland/Zachodniopo
 Europe/Poland/Zachodniopomorskie/Pomaleianowo	Europe/Poland/Zachodniopomorskie/
 Europe/Poland/Zachodniopomorskie/Borzymale	Europe/Poland/Zachodniopomorskie/
 Europe/Poland/Zachodniopomorskie/Maleiedzyzdroje	Europe/Poland/Zachodniopomorskie/Międzyzdroje
+Europe/Poland/Lubelskie/Zamosc	Europe/Poland/Lubelskie/Zamość
 Europe/Italy/Apulia/Bat	Europe/Italy/Apulia/Barletta-Andria-Trani
 Europe/Italy/Apulia/Potenza	Europe/Italy/Basilicata/Potenza
 Europe/Italy/Padova/	Europe/Italy/Veneto/Padova
@@ -6606,6 +6627,7 @@ Europe/Italy/Campania/Napoli	Europe/Italy/Campania/Naples
 Europe/Italy/Molise/Padova	Europe/Italy/Veneto/Padova
 Europe/Italy/South Tyrol/	Europe/Italy/Trentino-Alto Adige/South Tyrol
 Europe/Italy/South Tyrol/ 	Europe/Italy/Trentino-Alto Adige/South Tyrol
+Europe/Italy/Lombrady/*	Europe/Italy/Lombardy/*
 Europe/Finland/Lapland/	Europe/Finland/Finland/Rovaniemi
 Europe/Serbia/Kraljevo/	Europe/Serbia/Raška District/Kraljevo
 Europe/Serbia/Novi Pazar/	Europe/Serbia/Raška District/Novi Pazar
@@ -6877,24 +6899,24 @@ Europe/Slovakia/Velka Frankova/	Europe/Slovakia/Prešov/Velka Frankova
 Europe/Slovakia/Oravska Jasenica/	Europe/Slovakia/Zilina/Oravska Jasenica
 Europe/Slovakia/Horne Saliby/	Europe/Slovakia/Trnava/Horne Saliby
 Europe/Slovakia/Kostolna-Zariecie/	Europe/Slovakia/Trenčín/Kostolna-Zariecie
-Europe/Slovakia/Oravske Vesele/	Europe/Slovakia/Namestovo/Oravske Vesele
+Europe/Slovakia/Oravske Vesele/	Europe/Slovakia/Zilina/Oravske Vesele
 Europe/Slovakia/Nizna/	Europe/Slovakia/Zilina/Nizna
 Europe/Slovakia/Dolne Saliby/	Europe/Slovakia/Trnava/Dolne Saliby
 Europe/Slovakia/Velke Ulany/	Europe/Slovakia/Trnava/Velke Ulany
 Europe/Slovakia/Beckov/	Europe/Slovakia/Trenčín/Beckov
 Europe/Slovakia/Slovensky Grob/	Europe/Slovakia/Bratislava/Slovensky Grob
-Europe/Slovakia/Benadovo/	Europe/Slovakia/Namestovo/Benadovo
+Europe/Slovakia/Benadovo/	Europe/Slovakia/Zilina/Benadovo
 Europe/Slovakia/Kolta/	Europe/Slovakia/Nitra/Kolta
 Europe/Slovakia/Voderady/	Europe/Slovakia/Trnava/Voderady
 Europe/Slovakia/Tvrdosín/*	Europe/Slovakia/Tvrdosin/*
 Europe/Slovakia/Nova Dubnica/	Europe/Slovakia/Trenčín/Nova Dubnica
 Europe/Slovakia/Turzovka/	Europe/Slovakia/Zilina/Turzovka
-Europe/Slovakia/Vavrecka/	Europe/Slovakia/Namestovo/Vavrecka
+Europe/Slovakia/Vavrecka/	Europe/Slovakia/Zilina/Vavrecka
 Europe/Slovakia/Batorove Kosihy/	Europe/Slovakia/Nitra/Batorove Kosihy
 Europe/Slovakia/Rovinka/	Europe/Slovakia/Bratislava/Rovinka
 Europe/Slovakia/Soporna/	Europe/Slovakia/Trnava/Soporna
 Europe/Slovakia/Spisske Podhradie/	Europe/Slovakia/Prešov/Spisske Podhradie
-Europe/Slovakia/Klin/	Europe/Slovakia/Namestovo/Klin
+Europe/Slovakia/Klin/	Europe/Slovakia/Zilina/Klin
 Europe/Slovakia/Mútne Dulov/*	Europe/Slovakia/Mutne Dulov/*
 Europe/Slovakia/Kriva/*	Europe/Slovakia/Krivá/*
 Europe/Slovakia/Velke Ludince/	Europe/Slovakia/Nitra/Velke Ludince
@@ -6905,12 +6927,12 @@ Europe/Slovakia/Dolna Suca/	Europe/Slovakia/Trenčín/Dolná Súča
 Europe/Slovakia/Handlova/	Europe/Slovakia/Trenčín/Handlová
 Europe/Slovakia/Sastin-Straze/	Europe/Slovakia/Trnava/Šaštín-Stráže
 Europe/Slovakia/Hradiste Pod Vratnom/	Europe/Slovakia/Trnava/Hradište pod Vrátnom
-Europe/Slovakia/Komjatice/	Europe/Slovakia/Nove Zamky/Komjatice
-Europe/Slovakia/Dubnik/	Europe/Slovakia/Nove Zamky/Dubnik
+Europe/Slovakia/Komjatice/	Europe/Slovakia/Nitra/Komjatice
+Europe/Slovakia/Dubnik/	Europe/Slovakia/Nitra/Dubnik
 Europe/Slovakia/Horna Stubna/	Europe/Slovakia/Zilina/Horná Štubňa
 Europe/Slovakia/Brestovany/	Europe/Slovakia/Trnava/Brestovany
 Europe/Slovakia/Boleraz/	Europe/Slovakia/Trnava/Boleraz
-Europe/Slovakia/Dolny Ohaj/	Europe/Slovakia/Nove Zamky/Dolny Ohaj
+Europe/Slovakia/Dolny Ohaj/	Europe/Slovakia/Nitra/Dolny Ohaj
 Europe/Slovakia/Velke Levare/	Europe/Slovakia/Bratislava/Veľké Leváre
 Europe/Slovakia/Malinovo/	Europe/Slovakia/Bratislava/Malinovo
 Europe/Slovakia/Nemsova/	Europe/Slovakia/Trenčín/Nemšová
@@ -6953,6 +6975,135 @@ Europe/Slovakia/Komárno/*	Europe/Slovakia/Komarno/*
 Europe/Slovakia/Palovce nad Uhom/*	Europe/Slovakia/Pavlovce nad Uhom/*
 Europe/Slovakia/Banská Bystrica/*	Europe/Slovakia/Banska Bystrica/*
 Europe/Slovakia/Nové Zámky/*	Europe/Slovakia/Nove Zamky/*
+Europe/Slovakia/Unknown/	Europe/Slovakia/Slovakia/
+Europe/Slovakia/Malý Dunaj/	Europe/Slovakia/Slovakia/
+Europe/Slovakia/Nove Zamky/Ulany nad Zitavou	Europe/Slovakia/Nitra/Ulany nad Zitavou
+Europe/Slovakia/Nove Zamky/Komjatice	Europe/Slovakia/Nitra/Komjatice
+Europe/Slovakia/Nove Zamky/Dubnik	Europe/Slovakia/Nitra/Dubnik
+Europe/Slovakia/Nove Zamky/Dolny Ohaj	Europe/Slovakia/Nitra/Dolny Ohaj
+Europe/Slovakia/Nove Zamky/	Europe/Slovakia/Nitra/Nove Zamky
+Europe/Slovakia/Namestovo/	Europe/Slovakia/Zilina/Namestovo
+Europe/Slovakia/Namestovo/Vavrecka	Europe/Slovakia/Zilina/Vavrecka
+Europe/Slovakia/Namestovo/Klin	Europe/Slovakia/Zilina/Klin
+Europe/Slovakia/Namestovo/Oravske Vesele	Europe/Slovakia/Zilina/Oravske Vesele
+Europe/Slovakia/Namestovo/Benadovo	Europe/Slovakia/Zilina/Benadovo
+Europe/Slovakia/Topolcany/	Europe/Slovakia/Nitra/Topolcany
+Europe/Slovakia/Topolcany/Solcany	Europe/Slovakia/Nitra/Solcany
+Europe/Slovakia/Bruniste/	Europe/Slovakia/Slovakia/
+Europe/Slovakia/Malacky/Studienka	Europe/Slovakia/Bratislava/Studienka
+Europe/Slovakia/Malacky/	Europe/Slovakia/Bratislava/Malacky
+Europe/Slovakia/Dvory N/Zitavou	Europe/Slovakia/Nitra/Dvory nad Žitavou
+Europe/Slovakia/Mala N/Hronom	Europe/Slovakia/Nitra/Malá nad Hronom
+Europe/Slovakia/Komarno/	Europe/Slovakia/Nitra/Komarno
+Europe/Slovakia/Pavlovce nad Uhom/	Europe/Slovakia/Kosice/Pavlovce nad Uhom
+Europe/Slovakia/Dubnica Nd Váhom/	Europe/Slovakia/Trenčín/Dubnica nad Vahom
+Europe/Slovakia/Poprad/	Europe/Slovakia/Prešov/Poprad
+Europe/Slovakia/Važec/	Europe/Slovakia/Zilina/Važec
+Europe/Slovakia/Batizovce/	Europe/Slovakia/Prešov/Batizovce
+Europe/Slovakia/Kravany/	Europe/Slovakia/Prešov/Kravany
+Europe/Slovakia/Svit/	Europe/Slovakia/Prešov/Svit
+Europe/Slovakia/Tatranská Štrba/	Europe/Slovakia/Prešov/Tatranská Štrba
+Europe/Slovakia/Velký Harcáš/	Europe/Slovakia/Nitra/Velký Harcáš
+Europe/Slovakia/Kolárovo/	Europe/Slovakia/Nitra/Kolárovo
+Europe/Slovakia/Zvolen/	Europe/Slovakia/Banska Bystrica/Zvolen
+Europe/Slovakia/Kostoliste/	Europe/Slovakia/Bratislava/Kostoliste
+Europe/Slovakia/Martin/	Europe/Slovakia/Zilina/Martin
+Europe/Slovakia/Dolny Kubin/	Europe/Slovakia/Zilina/Dolný Kubín
+Europe/Slovakia/Ruzomberok/	Europe/Slovakia/Zilina/Ruzomberok
+Europe/Slovakia/Rimavska Sobota/	Europe/Slovakia/Banska Bystrica/Rimavska Sobota
+Europe/Slovakia/Revuca/	Europe/Slovakia/Banska Bystrica/Revuca
+Europe/Slovakia/Trencianska Tepla/	Europe/Slovakia/Trenčín/Trencianska Tepla
+Europe/Slovakia/Bartosova Lehotka/	Europe/Slovakia/Banska Bystrica/Bartosova Lehotka
+Europe/Slovakia/Muranska Huta/	Europe/Slovakia/Banska Bystrica/Muranska Huta
+Europe/Slovakia/Velky Krtis/	Europe/Slovakia/Banska Bystrica/Velky Krtis
+Europe/Slovakia/Myto Pod Dumbierom/	Europe/Slovakia/Banska Bystrica/Myto Pod Dumbierom
+Europe/Slovakia/Tvrdosin/	Europe/Slovakia/Zilina/Tvrdosin
+Europe/Slovakia/Hnusta/	Europe/Slovakia/Banska Bystrica/Hnusta
+Europe/Slovakia/Bela nad Cirochou/	Europe/Slovakia/Prešov/Bela nad Cirochou
+Europe/Slovakia/Drahovce/	Europe/Slovakia/Trnava/Drahovce
+Europe/Slovakia/Stupava/	Europe/Slovakia/Bratislava/Stupava
+Europe/Slovakia/Medvedzie/	Europe/Slovakia/Zilina/Medvedzie
+Europe/Slovakia/Sala/	Europe/Slovakia/Nitra/Sala
+Europe/Slovakia/Hlohovec/	Europe/Slovakia/Trnava/Hlohovec
+Europe/Slovakia/Sahy/	Europe/Slovakia/Nitra/Sahy
+Europe/Slovakia/Mutne Dulov/	Europe/Slovakia/Trenčín/Mutne Dulov
+Europe/Slovakia/Krivá/	Europe/Slovakia/Zilina/Krivá
+Europe/Slovakia/Piestany/	Europe/Slovakia/Trnava/Piestany
+Europe/Slovakia/Pezinok/	Europe/Slovakia/Bratislava/Pezinok
+Europe/Slovakia/Ivanka Pri Dunaji/	Europe/Slovakia/Bratislava/Ivanka Pri Dunaji
+Europe/Slovakia/Zabiedovo/	Europe/Slovakia/Zilina/Zabiedovo
+Europe/Slovakia/Rabca/	Europe/Slovakia/Zilina/Rabca
+Europe/Slovakia/Bobrov/	Europe/Slovakia/Zilina/Bobrov
+Europe/Slovakia/Tapesovo/	Europe/Slovakia/Zilina/Tapesovo
+Europe/Slovakia/Senec/	Europe/Slovakia/Bratislava/Senec
+Europe/Slovakia/Nove Mesto nad Vahom/	Europe/Slovakia/Trenčín/Nove Mesto nad Vahom
+Europe/Slovakia/Humenne/	Europe/Slovakia/Prešov/Humenne
+Europe/Slovakia/Surany/	Europe/Slovakia/Nitra/Surany
+Europe/Slovakia/Tvrdosovce/	Europe/Slovakia/Nitra/Tvrdosovce
+Europe/Slovakia/Jatov/	Europe/Slovakia/Nitra/Jatov
+Europe/Slovakia/Kamenicna/	Europe/Slovakia/Nitra/Kamenicna
+Europe/Slovakia/Levice/	Europe/Slovakia/Nitra/Levice
+Europe/Slovakia/Doľany/	Europe/Slovakia/Prešov/Doľany
+Europe/Slovakia/Miloslavov/	Europe/Slovakia/Bratislava/Miloslavov
+Europe/Slovakia/Partizanske/	Europe/Slovakia/Trenčín/Partizanske
+Europe/Slovakia/Prievidza/	Europe/Slovakia/Trenčín/Prievidza
+Europe/Slovakia/Banovce nad Bebravou/	Europe/Slovakia/Trenčín/Banovce nad Bebravou
+Europe/Slovakia/Oravska Lesna/	Europe/Slovakia/Zilina/Oravska Lesna
+Europe/Slovakia/Ilava/	Europe/Slovakia/Trenčín/Ilava
+Europe/Slovakia/Galanta/	Europe/Slovakia/Trnava/Galanta
+Europe/Slovakia/Svidnik/	Europe/Slovakia/Prešov/Svidnik
+Europe/Slovakia/Medzilaborce/	Europe/Slovakia/Prešov/Medzilaborce
+Europe/Slovakia/Turciansketeplice/	Europe/Slovakia/Zilina/Turcianske Teplice
+Europe/Slovakia/Kysucke Nove Mesto/	Europe/Slovakia/Zilina/Kysucke Nove Mesto
+Europe/Slovakia/Povazska Bystrica/	Europe/Slovakia/Trenčín/Povazska Bystrica
+Europe/Slovakia/Senica/	Europe/Slovakia/Trnava/Senica
+Europe/Slovakia/Bytca/	Europe/Slovakia/Zilina/Bytca
+Europe/Slovakia/Vranov nad Toplov/	Europe/Slovakia/Prešov/Vranov nad Toplov
+Europe/Slovakia/Banska Stiavnica/	Europe/Slovakia/Banska Bystrica/Banska Stiavnica
+Europe/Slovakia/Krupina/	Europe/Slovakia/Banska Bystrica/Krupina
+Europe/Slovakia/Myjava/	Europe/Slovakia/Trenčín/Myjava
+Europe/Slovakia/Vasilov/	Europe/Slovakia/Zilina/Vasilov
+Europe/Slovakia/Levoca/	Europe/Slovakia/Prešov/Levoca
+Europe/Slovakia/Poltar/	Europe/Slovakia/Banska Bystrica/Poltar
+Europe/Slovakia/Sucha Hora/	Europe/Slovakia/Zilina/Suchá Hora
+Europe/Slovakia/Klizska Nema/	Europe/Slovakia/Nitra/Klizska Nema
+Europe/Slovakia/Nesvady/	Europe/Slovakia/Nitra/Nesvady
+Europe/Slovakia/Besenov/	Europe/Slovakia/Nitra/Besenov
+Europe/Slovakia/Oravsky Biely Potok/	Europe/Slovakia/Zilina/Oravsky Biely Potok
+Europe/Slovakia/Moca/	Europe/Slovakia/Nitra/Moca
+Europe/Slovakia/Salka/	Europe/Slovakia/Nitra/Salka
+Europe/Slovakia/Donovaly/	Europe/Slovakia/Banska Bystrica/Donovaly
+Europe/Slovakia/Sturovo/	Europe/Slovakia/Nitra/Sturovo
+Europe/Slovakia/Banov/	Europe/Slovakia/Nitra/Banov
+Europe/Slovakia/Kopcany/	Europe/Slovakia/Trnava/Kopcany
+Europe/Slovakia/Slanicka Osada/	Europe/Slovakia/Zilina/Slanicka Osada
+Europe/Slovakia/Semerovo/	Europe/Slovakia/Nitra/Semerovo
+Europe/Slovakia/Velky Meder/	Europe/Slovakia/Trnava/Velky Meder
+Europe/Slovakia/Jasova/	Europe/Slovakia/Nitra/Jasova
+Europe/Slovakia/Velky Kyr/	Europe/Slovakia/Nitra/Velky Kyr
+Europe/Slovakia/Dolna Streda/	Europe/Slovakia/Trnava/Dolna Streda
+Europe/Slovakia/Zemianska Olca/	Europe/Slovakia/Nitra/Zemianska Olca
+Europe/Slovakia/Sihla/	Europe/Slovakia/Banska Bystrica/Sihla
+Europe/Slovakia/Podhajska/	Europe/Slovakia/Nitra/Podhajska
+Europe/Slovakia/Oravska Jasenic/	Europe/Slovakia/Zilina/Oravska Jasenica
+Europe/Slovakia/Velke Lovce/	Europe/Slovakia/Nitra/Velke Lovce
+Europe/Slovakia/Imel/	Europe/Slovakia/Nitra/Imel
+Europe/Slovakia/Bajc/	Europe/Slovakia/Nitra/Bajc
+Europe/Slovakia/Hniezdne/	Europe/Slovakia/Prešov/Hniezdne
+Europe/Slovakia/Hrustin/	Europe/Slovakia/Zilina/Hrustin
+Europe/Slovakia/Bystricany/	Europe/Slovakia/Trenčín/Bystricany
+Europe/Slovakia/Dubnica nad Vahom/	Europe/Slovakia/Trenčín/Dubnica nad Vahom
+Europe/Slovakia/Timoradza/	Europe/Slovakia/Trenčín/Timoradza
+Europe/Slovakia/Sobotiste/	Europe/Slovakia/Trnava/Sobotiste
+Europe/Slovakia/Svrcinovec/	Europe/Slovakia/Zilina/Svrcinovec
+Europe/Slovakia/Bab/	Europe/Slovakia/Nitra/Bab
+Europe/Slovakia/Bzenica/	Europe/Slovakia/Banska Bystrica/Bzenica
+Europe/Slovakia/Maly Krtis/	Europe/Slovakia/Banska Bystrica/Maly Krtis
+Europe/Slovakia/Vrutky/	Europe/Slovakia/Zilina/Vrutky
+Europe/Slovakia/Zavodie/	Europe/Slovakia/Zilina/Zavodie
+Europe/Slovakia/Vlcany/	Europe/Slovakia/Nitra/Vlcany
+Europe/Slovakia/Novaky/	Europe/Slovakia/Trenčín/Novaky
+Europe/Slovakia/Podbrezova/	Europe/Slovakia/Banska Bystrica/Podbrezova
 Europe/Denmark/Na/	Europe/Denmark/Denmark/
 Europe/Denmark/Na/*	Europe/Denmark//*
 Europe/Ireland/Limerick/Limerick County	Europe/Ireland/Limerick/
@@ -6966,6 +7117,7 @@ Europe/Portugal/Setúbal/Montijo	Europe/Portugal/Setúbal/Montijo PT
 Europe/Macedonia/*/*	Europe/North Macedonia/*/*
 Europe/Belarus/Homel Region/*	Europe/Belarus/Gomel Region/*
 Europe/Belarus/Gomel/*	Europe/Belarus/Gomel Region/*
+Europe/Belarus/Rrcem/	Europe/Belarus/Belarus/
 Europe/Blegium/*/*	Europe/Belgium/*/*
 Europe/Country/Namen/	Europe/Belgium/Namur/
 Europe/Croatia/The City of Zagreb/	Europe/Croatia/Zagreb/Zagreb
@@ -7160,6 +7312,9 @@ Asia/Bangladesh/Chattogram/Cumilla	Asia/Bangladesh/Chattogram/Comilla
 Asia/Bangladesh/Chattogram/Khagrachhari	Asia/Bangladesh/Chattogram/Khagrachari
 Asia/Bangladesh/Dhaka/Naraynganj	Asia/Bangladesh/Dhaka/Narayanganj
 Asia/Bangladesh/Dhaka/Kishoregonj	Asia/Bangladesh/Dhaka/Kishoreganj
+Asia/Bangladesh/Dhaka/Dhaka Dental College	Asia/Bangladesh/Dhaka/Dhaka
+Asia/Bangladesh/Dhaka/Agargoan	Asia/Bangladesh/Dhaka/Agargaon
+Asia/Bangladesh/Dhaka/National Kidney Hospital	Asia/Bangladesh/Dhaka/Dhaka
 Asia/Bangladesh/Sunamganj/	Asia/Bangladesh/Sylhet/Sunamganj
 Asia/Bangladesh/Unknown/	Asia/Bangladesh/Bangladesh/
 Asia/Bangladesh/Sylthet/*	Asia/Bangladesh/Sylhet/*
@@ -7209,6 +7364,7 @@ Asia/Sri Lanka/Puttalam/	Asia/Sri Lanka/North Western Province/Puttalam
 Asia/Sri Lanka/Mahiyangana/	Asia/Sri Lanka/Uva Province/Mahiyangana
 Asia/Sri Lanka/Badulla/	Asia/Sri Lanka/Uva Province/Badulla
 Asia/Sri Lanka/Anuradhapura/	Asia/Sri Lanka/North Central Province/Anuradhapura
+Asia/Sri Lanka/Qurantine/	Asia/Sri Lanka/Sri Lanka/
 Asia/Palestine/Tulkarem/	Asia/Palestine/West Bank/Tulkarem
 Asia/Palestine/West Bank/Jericho	Asia/Palestine/Jericho/
 Asia/Palestine/West Bank/Ramallah	Asia/Palestine/Ramallah and al-Bireh Governorate/Ramallah
@@ -7431,6 +7587,16 @@ North America/USA/Washington/Sumas	North America/USA/Washington/Whatcom County
 North America/USA/Washington/Swinomish	North America/USA/Washington/Skagit County
 North America/USA/Washington/Maple Falls	North America/USA/Washington/Whatcom County
 North America/USA/Washington/USA	North America/USA/Washington/
+North America/USA/Washington/Pierce	North America/USA/Washington/Pierce County WA
+North America/USA/Washington/Mount Vernon	North America/USA/Washington/Skagit County
+North America/USA/Washington/Snohomish	North America/USA/Washington/Snohomish County
+North America/USA/Washington/Stanwood	North America/USA/Washington/Snohomish County
+North America/USA/Washington/Mountlake Ter	North America/USA/Washington/Snohomish County
+North America/USA/Washington/Camano Island	North America/USA/Washington/Island County
+North America/USA/Washington/Skagit	North America/USA/Washington/Skagit County
+North America/USA/Washington/Kitsap	North America/USA/Washington/Kitsap County
+North America/USA/Washington/Chelan	North America/USA/Washington/Chelan County
+North America/USA/Washington/Stevens	North America/USA/Washington/Stevens County
 North America/USA/New York/Orange County	North America/USA/New York/Orange County NY
 North America/USA/New York/Franklin County	North America/USA/New York/Franklin County NY
 North America/USA/New York/Jefferson County	North America/USA/New York/Jefferson County NY
@@ -7494,6 +7660,8 @@ North America/USA/Arizona/Santa Cruz	North America/USA/Arizona/Santa Cruz County
 North America/USA/Arizona/Galveston	North America/USA/Arizona/
 North America/USA/Arizona/Sumner	North America/USA/Arizona/
 North America/USA/Arizona/Olmsted County	North America/USA/Minnesota/Olmsted County
+North America/USA/Arizona/Weld	North America/USA/Arizona/
+North America/USA/Arizona/San Juan	North America/USA/Arizona/Pinal County
 North America/USA/Indiana/Marion County	North America/USA/Indiana/Marion County IN
 North America/USA/Indiana/Lake County	North America/USA/Indiana/Lake County IN
 North America/USA/Indiana/Jefferson County	North America/USA/Indiana/Jefferson County IN
@@ -7578,6 +7746,12 @@ North America/USA/Oregon/Washington	North America/USA/Oregon/Washington County O
 North America/USA/Oregon/Lincoln County	North America/USA/Oregon/Lincoln County OR
 North America/USA/Oregon/Grant	North America/USA/Oregon/Grant County OR
 North America/USA/Oregon/Grant County	North America/USA/Oregon/Grant County OR
+North America/USA/Oregon/Benton	North America/USA/Oregon/Benton County OR
+North America/USA/Oregon/Harney	North America/USA/Oregon/Harney County
+North America/USA/Oregon/Marion	North America/USA/Oregon/Marion County OR
+North America/USA/Oregon/Union	North America/USA/Oregon/Union County OR
+North America/USA/Oregon/Polk	North America/USA/Oregon/Polk County OR
+North America/USA/Oregon/Jackson	North America/USA/Oregon/Jackson County OR
 North America/USA/Texas/Houston County	North America/USA/Texas/Harris County
 North America/USA/Texas/Washington County	North America/USA/Texas/Washington County TX
 North America/USA/Texas/Williamson County	North America/USA/Texas/Williamson County TX
@@ -7739,6 +7913,8 @@ North America/USA/Texas/Matagorda	North America/USA/Texas/Matagorda County
 North America/USA/Texas/Navarro	North America/USA/Texas/Navarro County
 North America/USA/Texas/Burnet	North America/USA/Texas/Burnet County
 North America/USA/Texas/Gillespie	North America/USA/Texas/Gillespie County
+North America/USA/Texas/Rockwall	North America/USA/Texas/Rockwall County
+North America/USA/Texas/Montague	North America/USA/Texas/Montague County
 North America/USA/Louisiana/Desoto Parish	North America/USA/Louisiana/DeSoto Parish
 North America/USA/Louisiana/St. Tammany Parish	North America/USA/Louisiana/St Tammany Parish
 North America/USA/Louisiana/St. Bernard Parish	North America/USA/Louisiana/St Bernard Parish
@@ -7798,6 +7974,7 @@ North America/USA/Pennsylvania/Montgomery County	North America/USA/Pennsylvania/
 North America/USA/Pennsylvania/Philadelphia	North America/USA/Pennsylvania/Philadelphia County
 North America/USA/Pennsylvania/Delaware County	North America/USA/Pennsylvania/Delaware County PA
 North America/USA/Pennsylvania/Monroe County	North America/USA/Pennsylvania/Monroe County PA
+North America/USA/Pennsylvania/Se Pennsylvania	North America/USA/Pennsylvania/Chester County
 North America/USA/Minnesota/Houston County	North America/USA/Minnesota/Houston County MN
 North America/USA/Massachusetts/Middlesex County	North America/USA/Massachusetts/Middlesex County MA
 North America/USA/Idaho/Madison County	North America/USA/Idaho/Madison County ID
@@ -7930,6 +8107,7 @@ North America/USA/Montana/Gallatin County	North America/USA/Montana/Gallatin Cou
 North America/USA/Montana/Belgrade	North America/USA/Montana/Gallatin County MT
 North America/USA/Florida/Walton County	North America/USA/Florida/Walton County FL
 North America/USA/DC/*	North America/USA/Washington DC/*
+North America/USA/Virgin Islands of the U.S./*	North America/USA/Virgin Islands/*
 North America/Costa Rica/Tibas/	North America/Costa Rica/San Jose/Tibas
 North America/Costa Rica/Cartago/Tres Rios	North America/Costa Rica/Cartago CR/Tres Rios CR
 North America/Costa Rica/Cartago/San Isidro	North America/Costa Rica/Cartago CR/San Isidro CR
@@ -7946,6 +8124,9 @@ North America/Costa Rica/Alajuela/San Carlos	North America/Costa Rica/Alajuela/S
 North America/Costa Rica/Alajuela/San Ramon	North America/Costa Rica/Alajuela/San Ramon CR
 North America/Costa Rica/Heredia/San Francisco	North America/Costa Rica/Heredia/San Francisco CR
 North America/Costa Rica/Heredia/San Pablo	North America/Costa Rica/Heredia/San Pablo CR
+North America/Costa Rica/Heredia/Santo Domingo	North America/Costa Rica/Heredia/Santo Domingo CR
+North America/Costa Rica/Heredia/Santa Barbara	North America/Costa Rica/Heredia/Santa Barbara de Heredia
+North America/Costa Rica/Heredia/San Rafael	North America/Costa Rica/Heredia/San Rafael Heredia
 North America/Costa Rica/San Jose/San Rafael	North America/Costa Rica/San Jose/San Rafael de Escazú
 North America/Costa Rica/San Jose/Santiago	North America/Costa Rica/San Jose/Santiago de Puriscal
 North America/Costa Rica/San Jose/San Pedro	North America/Costa Rica/San Jose/San Pedro CR
@@ -7978,7 +8159,7 @@ North America/Panama/Panama North/*	North America/Panama/Panama Center/*
 North America/Panama/Na/*	North America/Panama/Panama Center/*
 North America/Panama/Santiago de Veraguas/*	North America/Panama/Veraguas/*
 North America/Panama/*/Barrio Colon	North America/Panama/Panama Oeste/Barrio Colon
-North America/Panama/*/El Coco	North America/Panama/Panama Oeste/El Coco
+North America/Panama/*/El Coco	North America/Panama/Panama Oeste/El Coco (Panama Oeste)
 North America/Panama/*/Las Tablas	North America/Panama/Los Santos/Las Tablas
 North America/Panama/*/David	North America/Panama/Chiriqui/David
 North America/Panama/*/Pocri	North America/Panama/Los Santos/Pocri
@@ -7989,6 +8170,7 @@ North America/Panama/*/Aguadulce	North America/Panama/Cocle/Aguadulce
 North America/Panama/*/Guabito	North America/Panama/Bocas del Toro/Guabito
 North America/Panama/*/Puerto Armuelles	North America/Panama/Chiriqui/Puerto Armuelles
 North America/Panama/Colon/San Juan	North America/Panama/Colon/San Juan PA
+North America/Panama/Colon/Cativa	North America/Panama/Colon/Cativá
 North America/Panama/Cocle/Santa Rita	North America/Panama/Chiriqui/Santa Rita PA
 North America/Panama/Guna Yala/Bugaba	North America/Panama/Chiriqui/Bugaba
 North America/Panama/Guna Yala/Pinogana	North America/Panama/Darien/Pinogana
@@ -7997,6 +8179,8 @@ North America/Panama/Guna Yala/Barrios Unidos	North America/Panama/Cocle/Barrios
 North America/Panama/Guna Yala/El Calabacito	North America/Panama/Herrera/El Calabacito
 North America/Panama/Guna Yala/Feuillet	North America/Panama/Panama Oeste/Feuillet
 North America/Panama/Guna Yala/Baco	North America/Panama/Chiriqui/Baco
+North America/Panama/Guna Yala/Aliganda	North America/Panama/Guna Yala/Aligandí
+North America/Panama/Guna Yala/Ailigandi	North America/Panama/Guna Yala/Aligandí
 North America/Panama/San Miguelito/Atalaya	North America/Panama/Veraguas/Atalaya
 North America/Panama/San Miguelito/Pegregal	North America/Panama/Panama Center/Pedregal
 North America/Panama/San Miguelito/Amelia Denis de Icaza	North America/Panama/Panama Center/Amelia Denis de Icaza
@@ -8005,6 +8189,9 @@ North America/Panama/Panama/*	North America/Panama/Panama Center/*
 North America/Panama/Veraguas/San Francisco PA	North America/Panama/Panama Center/San Francisco PA
 North America/Panama/Veraguas/Montijo	North America/Panama/Veraguas/Montijo PA
 North America/Panama/Panama Oeste/Guadalupe	North America/Panama/Panama Oeste/Guadalupe PA
+North America/Panama/Panama Este/*	North America/Panama/Panama Oeste/*
+North America/Panama/Unspecified/	North America/Panama/Panama Center/
+North America/Panama/Metropolitana/*	North America/Panama/Panama Center/*
 North America/El Salvador/San Salvado/*	North America/El Salvador/San Salvador/*
 North America/Canada/Toronto/	North America/Canada/Ontario/Toronto
 North America/Puerto Rico/Puerto Rico/*	North America/USA/Puerto Rico/*
@@ -8030,6 +8217,7 @@ South America/Brazil/Mato Grosso do Sul/	South America/Brazil/Mato Grosso/
 South America/Brazil/Mato Grosso do Sul/Alcinopilis	South America/Brazil/Mato Grosso do Sul/Alcinópolis
 South America/Brazil/Rondônia/*	South America/Brazil/Rondonia/*
 South America/Brazil/Sergipe/Cabedelo	South America/Brazil/Sergipe/
+South America/Brazil/Sergipe/Laranjeiras	South America/Brazil/Sergipe/Laranjeiras (Sergipe)
 South America/Brazil/São Paulo/Guaruja	South America/Brazil/São Paulo/Guarujá
 South America/Brazil/São Paulo/Aracatuba	South America/Brazil/São Paulo/Araçatuba
 South America/Brazil/São Paulo/Teixeira de Freitas	South America/Brazil/Bahia/Teixeira de Freitas
@@ -8052,6 +8240,7 @@ South America/Brazil/São Paulo/Petrolandia	South America/Brazil/Pernambuco/Petr
 South America/Brazil/São Paulo/Itapetim	South America/Brazil/Pernambuco/Itapetim
 South America/Brazil/São Paulo/Taguaritinga	South America/Brazil/São Paulo/Taquaritinga
 South America/Brazil/São Paulo/Valparaiso	South America/Brazil/São Paulo/Valparaiso BR
+South America/Brazil/São Paulo/Biritiba-Mirim	South America/Brazil/São Paulo/Biritiba Mirim
 South America/Brazil/Paraíba/*	South America/Brazil/Paraiba/*
 South America/Brazil/Rio de Janeiro/Nova Iguaçu	South America/Brazil/Rio de Janeiro/Nova Iguacu
 South America/Brazil/Rio de Janeiro/São Gonçalo	South America/Brazil/Rio de Janeiro/Sao Goncalo
@@ -8105,6 +8294,7 @@ South America/Brazil/Paraná/Astorga	South America/Brazil/Paraná/Astorga BR
 South America/Brazil/Minas Gerais/Esmeraldas	South America/Brazil/Minas Gerais/Esmeraldas BR
 South America/Brazil/Minas Gerais/Guaira	South America/Brazil/São Paulo/Guaira
 South America/Brazil/Espirito Santo/Lorena	South America/Brazil/São Paulo/Lorena SP
+South America/Brazil/Espirito Santo/Laranjeiras	South America/Brazil/Espirito Santo/Laranjeiras (Espirito Santo)
 South America/Brazil/Distrito Federal/Santa Maria	South America/Brazil/Distrito Federal/Santa Maria DF
 South America/Brazil/Pernambuco/Tamandare	South America/Brazil/Pernambuco/Tamandaré
 South America/Brazil/Maranhão/Rosario	South America/Brazil/Maranhão/Rosario BR
