@@ -14,6 +14,10 @@ configfile: "snake_config.yaml"
 wildcard_constraints:
     database = "gisaid|genbank"
 
+
+localrules: all_then_clean , fetch , notify_and_upload
+
+
 ## defining some of the behaviour depending on 
 ## which git branch we are
 
