@@ -120,8 +120,11 @@ rule transform_genbank:
 rule dowload_old_clades :
     output:
         "data/{database}/nextclade.old.tsv"
+    params:
+        dst_source=S3_DST+'/nextclade.tsv.gz',
+        src_source='$S3_SRC/nextclade.tsv.gz',
     shell:
-        '( aws s3 cp --no-progress "$S3_DST/nextclade.tsv.gz" - || aws s3 cp --no-progress "$S3_SRC/nextclade.tsv.gz" -) | gunzip -cfq > {output} '
+        '( aws s3 cp --no-progress "{params.dst_source}" - || aws s3 cp --no-progress "{params.src_source}" -) | gunzip -cfq > {output} '
 
 
 rule filter_fasta :
@@ -196,7 +199,7 @@ rule notify_and_upload:
         destination_additional_info = lambda wildcards : "$S3_SRC/"+ wildcards.database +"_additional_info.tsv.gz",
         destination_flagged_metadata = lambda wildcards : "$S3_SRC/"+ wildcards.database +"_flagged_metadata.txt.gz",
         destination_sequences = lambda wildcards : "$S3_SRC/"+ wildcards.database +"_sequences.fasta.gz",
-        destination_nextclade = lambda wildcards : "$S3_SRC/"+ wildcards.database +"_nextclade.tsv.gz",
+        destination_nextclade = "$S3_SRC/nextclade.tsv.gz",
         quiet = "--quiet"*(SILENT=='yes')
     shell :
         """
