@@ -11,7 +11,27 @@ Africa	Algeria	Ouargla
 Africa	Algeria	Sétif	
 Africa	Algeria	Tipaza	
 Africa	Algeria	Tizi-Ouzou	
+Africa	Angola	Cabinda	
+Africa	Angola	Cuanza Sul	
+Africa	Angola	Cuanza Sul	Libolo
+Africa	Angola	Huíla	
+Africa	Angola	Huíla	Lubango
 Africa	Angola	Luanda	
+Africa	Angola	Luanda	Alvalade
+Africa	Angola	Luanda	Belas
+Africa	Angola	Luanda	Benguela
+Africa	Angola	Luanda	Cacuaco
+Africa	Angola	Luanda	Calemba
+Africa	Angola	Luanda	Cazenga
+Africa	Angola	Luanda	Kilamba Kiaxi
+Africa	Angola	Luanda	Maianga
+Africa	Angola	Luanda	Martires
+Africa	Angola	Luanda	Povo Grande
+Africa	Angola	Luanda	Sumbe
+Africa	Angola	Luanda	São Paulo AN
+Africa	Angola	Luanda	Talatona
+Africa	Angola	Luanda	Viana AN
+Africa	Angola	Luanda	Vila Alice
 Africa	Benin	Cotonou	
 Africa	Benin	Oueme	
 Africa	Botswana	Botswana	
@@ -434,12 +454,16 @@ Asia	Bangladesh	Narail
 Asia	Bangladesh	Narail	Kalia
 Asia	Bangladesh	Rajshahi	
 Asia	Bangladesh	Rajshahi	Pabna
+Asia	Bangladesh	Rajshahi	Sirajganj
 Asia	Bangladesh	Rangpur	
 Asia	Bangladesh	Rangpur	Nilphamari
 Asia	Bangladesh	Sirajganj	
 Asia	Bangladesh	Sylhet	
 Asia	Bangladesh	Sylhet	Habiganj
+Asia	Bangladesh	Sylhet	Kasdobir
 Asia	Bangladesh	Sylhet	Moulvibazar
+Asia	Bangladesh	Sylhet	Sadipur
+Asia	Bangladesh	Sylhet	Subid Bazar
 Asia	Bangladesh	Sylhet	Sunamganj
 Asia	Bangladesh	Sylhet	Sylhet
 Asia	Bangladesh	Tangail	
@@ -540,6 +564,8 @@ Asia	India	Andhra Pradesh	Guntur
 Asia	India	Andhra Pradesh	Kadapa
 Asia	India	Andhra Pradesh	Kurnool
 Asia	India	Andhra Pradesh	Nellore
+Asia	India	Andhra Pradesh	Tirupati
+Asia	India	Andhra Pradesh	Vijayawada
 Asia	India	Assam	
 Asia	India	Bihar	
 Asia	India	Chandigarh	
@@ -556,6 +582,7 @@ Asia	India	Gujarat
 Asia	India	Gujarat	Adajan
 Asia	India	Gujarat	Ahmedabad
 Asia	India	Gujarat	Anand
+Asia	India	Gujarat	Banaskantha
 Asia	India	Gujarat	Bardoli
 Asia	India	Gujarat	Bayad
 Asia	India	Gujarat	Bharuch
@@ -567,6 +594,8 @@ Asia	India	Gujarat	Choryasi
 Asia	India	Gujarat	Chuda
 Asia	India	Gujarat	Dahegam
 Asia	India	Gujarat	Dahod
+Asia	India	Gujarat	Dasa
+Asia	India	Gujarat	Dashrath
 Asia	India	Gujarat	Daskroi
 Asia	India	Gujarat	Dhandhuka
 Asia	India	Gujarat	Dhanera
@@ -580,6 +609,7 @@ Asia	India	Gujarat	Godhra
 Asia	India	Gujarat	Gondal
 Asia	India	Gujarat	Himatnagar
 Asia	India	Gujarat	Jamnagar
+Asia	India	Gujarat	Jarod
 Asia	India	Gujarat	Jetpur
 Asia	India	Gujarat	Junagadh
 Asia	India	Gujarat	Kadi
@@ -594,18 +624,28 @@ Asia	India	Gujarat	Kodinar
 Asia	India	Gujarat	Limkheda
 Asia	India	Gujarat	Mahemdavad
 Asia	India	Gujarat	Mahuva
+Asia	India	Gujarat	Malsar
 Asia	India	Gujarat	Mandvi
 Asia	India	Gujarat	Mangrol
 Asia	India	Gujarat	Mansa
 Asia	India	Gujarat	Mehsana
 Asia	India	Gujarat	Modasa
+Asia	India	Gujarat	Morbi
 Asia	India	Gujarat	Nadiad
+Asia	India	Gujarat	Narmada
+Asia	India	Gujarat	Navsari
 Asia	India	Gujarat	Olpad
+Asia	India	Gujarat	Padra
 Asia	India	Gujarat	Palanpur
+Asia	India	Gujarat	Panchmahal
 Asia	India	Gujarat	Patan
 Asia	India	Gujarat	Prantij
 Asia	India	Gujarat	Radhanpur
 Asia	India	Gujarat	Rajkot
+Asia	India	Gujarat	Rajpara
+Asia	India	Gujarat	Rajpipla
+Asia	India	Gujarat	Sabarkantha
+Asia	India	Gujarat	Sandhasal
 Asia	India	Gujarat	Savali
 Asia	India	Gujarat	Savli
 Asia	India	Gujarat	Siddhpur
@@ -614,8 +654,10 @@ Asia	India	Gujarat	Sutrapada
 Asia	India	Gujarat	Talala
 Asia	India	Gujarat	Talod
 Asia	India	Gujarat	Una
+Asia	India	Gujarat	Vadiya
 Asia	India	Gujarat	Vadodara
 Asia	India	Gujarat	Veraval
+Asia	India	Gujarat	Waghodia
 Asia	India	Haryana	
 Asia	India	Haryana	Faridabad
 Asia	India	Haryana	Gurugram
@@ -638,6 +680,7 @@ Asia	India	Ladakh
 Asia	India	Ladakh	Kargil
 Asia	India	Madhya Pradesh	
 Asia	India	Madhya Pradesh	Burhanpur
+Asia	India	Madhya Pradesh	Dungari
 Asia	India	Madhya Pradesh	Mandsaur
 Asia	India	Madhya Pradesh	Neemach
 Asia	India	Madhya Pradesh	Raisen
@@ -796,6 +839,7 @@ Asia	Indonesia	Maluku
 Asia	Indonesia	Maluku	Ambon
 Asia	Indonesia	North Kalimantan	
 Asia	Indonesia	North Kalimantan	Malinau
+Asia	Indonesia	North Kalimantan	Tarakan
 Asia	Indonesia	North Maluku	
 Asia	Indonesia	North Sulawesi	
 Asia	Indonesia	North Sulawesi	Manado
@@ -809,6 +853,8 @@ Asia	Indonesia	Papua
 Asia	Indonesia	Papua	Timika
 Asia	Indonesia	Pasuruan	
 Asia	Indonesia	Riau	
+Asia	Indonesia	Riau Island	
+Asia	Indonesia	Riau Island	Batam
 Asia	Indonesia	Riau Islands	
 Asia	Indonesia	South Kalimantan	
 Asia	Indonesia	South Sulawesi	
@@ -858,6 +904,7 @@ Asia	Iran	Alborz Province
 Asia	Iran	Gilan	
 Asia	Iran	Gorgan	
 Asia	Iran	Hamedan	
+Asia	Iran	Hormozgan	
 Asia	Iran	Iran	
 Asia	Iran	Karaj	
 Asia	Iran	Kashmar	
@@ -2445,17 +2492,21 @@ Europe	Czech Republic	Central Bohemian Region	Ondřejov
 Europe	Czech Republic	Central Bohemian Region	Poděbrady
 Europe	Czech Republic	Central Bohemian Region	Příbram
 Europe	Czech Republic	Central Bohemian Region	Radonice
+Europe	Czech Republic	Central Bohemian Region	Rudna U Prahy
 Europe	Czech Republic	Central Bohemian Region	Slaný
 Europe	Czech Republic	Central Bohemian Region	Slatina
 Europe	Czech Republic	Central Bohemian Region	Tehovec
 Europe	Czech Republic	Central Bohemian Region	Tuklaty
+Europe	Czech Republic	Central Bohemian Region	Velké Popovice
 Europe	Czech Republic	Central Bohemian Region	Veltrusy
 Europe	Czech Republic	Central Bohemian Region	Zdiby
 Europe	Czech Republic	Central Bohemian Region	Zeleneč
 Europe	Czech Republic	Central Bohemian Region	Zvánovice
 Europe	Czech Republic	Central Bohemian Region	Zápy
 Europe	Czech Republic	Central Bohemian Region	Únětice
+Europe	Czech Republic	Central Bohemian Region	Černošice
 Europe	Czech Republic	Central Bohemian Region	Čerčany
+Europe	Czech Republic	Central Bohemian Region	Český Brod
 Europe	Czech Republic	Central Bohemian Region	Říčany
 Europe	Czech Republic	Cheb	
 Europe	Czech Republic	Chyne	
@@ -2464,6 +2515,7 @@ Europe	Czech Republic	Hostivice
 Europe	Czech Republic	Hradec Králové Region	
 Europe	Czech Republic	Hradec Králové Region	Jičín
 Europe	Czech Republic	Hradec Králové Region	Police nad Metují
+Europe	Czech Republic	Hradec Králové Region	Rychnov nad Kněžnou
 Europe	Czech Republic	Hradec Králové Region	Sběř
 Europe	Czech Republic	Hradec Králové Region	Staré Hrady
 Europe	Czech Republic	Hradec Králové Region	Trutnov
@@ -2471,6 +2523,7 @@ Europe	Czech Republic	Hradec Králové Region	Červený Kostelec
 Europe	Czech Republic	Hranice Na Moravě	
 Europe	Czech Republic	Hranice Na Moravě	Prostějov
 Europe	Czech Republic	Jihlava	
+Europe	Czech Republic	Karlovy Vary	
 Europe	Czech Republic	Kralovehradecky Region	
 Europe	Czech Republic	Kunice	
 Europe	Czech Republic	Liberec Region	
@@ -2496,6 +2549,7 @@ Europe	Czech Republic	Olomouc Region
 Europe	Czech Republic	Olomouc Region	Litovel
 Europe	Czech Republic	Olomouc Region	Písařov
 Europe	Czech Republic	Olomouc Region	Sumperk
+Europe	Czech Republic	Olomouc Region	Tištín
 Europe	Czech Republic	Pardubice Region	
 Europe	Czech Republic	Pardubice Region	Horni Jeleni
 Europe	Czech Republic	Pardubice Region	Pardubice
@@ -2509,7 +2563,14 @@ Europe	Czech Republic	Plzeň Region	Tachov
 Europe	Czech Republic	Prague	
 Europe	Czech Republic	Prague	Kvetnice
 Europe	Czech Republic	Prague	Prague-Miskovice
+Europe	Czech Republic	Prague	Praha 17
+Europe	Czech Republic	Prague	Praha 3
+Europe	Czech Republic	Prague	Praha 5
+Europe	Czech Republic	Prague	Praha 6
+Europe	Czech Republic	Prague	Praha 8
+Europe	Czech Republic	Prague	Praha 9
 Europe	Czech Republic	Prague	Sedlec
+Europe	Czech Republic	Prague	Stodůlky
 Europe	Czech Republic	Sezimovo Usti	
 Europe	Czech Republic	Slavetin	
 Europe	Czech Republic	South Moravian Region	
@@ -2554,6 +2615,7 @@ Europe	Czech Republic	Velke Prilepy
 Europe	Czech Republic	Vysocina Region	
 Europe	Czech Republic	Vysocina Region	Bela - Ledec Na Sazavou
 Europe	Czech Republic	Vysocina Region	Kynice
+Europe	Czech Republic	Vysocina Region	Náměšť nad Oslavou
 Europe	Czech Republic	Zabreh Na Morave	
 Europe	Czech Republic	Zabrezi	
 Europe	Czech Republic	Zlin	
@@ -2594,10 +2656,12 @@ Europe	France	Auvergne-Rhône-Alpes	Apchat
 Europe	France	Auvergne-Rhône-Alpes	Aubenas
 Europe	France	Auvergne-Rhône-Alpes	Aubiere
 Europe	France	Auvergne-Rhône-Alpes	Aulnat
+Europe	France	Auvergne-Rhône-Alpes	Aumont Aubrac
 Europe	France	Auvergne-Rhône-Alpes	Aurillac
 Europe	France	Auvergne-Rhône-Alpes	Aydat
 Europe	France	Auvergne-Rhône-Alpes	Bayet
 Europe	France	Auvergne-Rhône-Alpes	Beaumont
+Europe	France	Auvergne-Rhône-Alpes	Beauregard Vendon
 Europe	France	Auvergne-Rhône-Alpes	Bellegarde-sur-Valserine
 Europe	France	Auvergne-Rhône-Alpes	Bellerive sur Allier
 Europe	France	Auvergne-Rhône-Alpes	Billom
@@ -2605,6 +2669,7 @@ Europe	France	Auvergne-Rhône-Alpes	Blanzat
 Europe	France	Auvergne-Rhône-Alpes	Bourg-Lès-Valence
 Europe	France	Auvergne-Rhône-Alpes	Bourg-en-Bresse
 Europe	France	Auvergne-Rhône-Alpes	Bourgoin-Jallieu
+Europe	France	Auvergne-Rhône-Alpes	Brassac Les Mines
 Europe	France	Auvergne-Rhône-Alpes	Bron
 Europe	France	Auvergne-Rhône-Alpes	Cebazat
 Europe	France	Auvergne-Rhône-Alpes	Ceyrat
@@ -2612,6 +2677,7 @@ Europe	France	Auvergne-Rhône-Alpes	Challes-Les-Eaux
 Europe	France	Auvergne-Rhône-Alpes	Chamalieres
 Europe	France	Auvergne-Rhône-Alpes	Chambaron sur Morge
 Europe	France	Auvergne-Rhône-Alpes	Chambery
+Europe	France	Auvergne-Rhône-Alpes	Chambon sur Lac
 Europe	France	Auvergne-Rhône-Alpes	Champeix
 Europe	France	Auvergne-Rhône-Alpes	Champs sur Tarentaine
 Europe	France	Auvergne-Rhône-Alpes	Chaniat
@@ -2630,6 +2696,7 @@ Europe	France	Auvergne-Rhône-Alpes	Combronde
 Europe	France	Auvergne-Rhône-Alpes	Condat
 Europe	France	Auvergne-Rhône-Alpes	Contamine-sur-Arve
 Europe	France	Auvergne-Rhône-Alpes	Contamines
+Europe	France	Auvergne-Rhône-Alpes	Corbel
 Europe	France	Auvergne-Rhône-Alpes	Coulandon
 Europe	France	Auvergne-Rhône-Alpes	Cournon
 Europe	France	Auvergne-Rhône-Alpes	Cournon D Auvergne
@@ -2643,9 +2710,11 @@ Europe	France	Auvergne-Rhône-Alpes	Davezieux
 Europe	France	Auvergne-Rhône-Alpes	Decines
 Europe	France	Auvergne-Rhône-Alpes	Decines-Charpieu
 Europe	France	Auvergne-Rhône-Alpes	Deneuille Les Mines
+Europe	France	Auvergne-Rhône-Alpes	Domerat
 Europe	France	Auvergne-Rhône-Alpes	Durtol
 Europe	France	Auvergne-Rhône-Alpes	Ennezat
 Europe	France	Auvergne-Rhône-Alpes	Entraigues
+Europe	France	Auvergne-Rhône-Alpes	Enval
 Europe	France	Auvergne-Rhône-Alpes	Escurolles
 Europe	France	Auvergne-Rhône-Alpes	Espinchal
 Europe	France	Auvergne-Rhône-Alpes	Gannat
@@ -2663,31 +2732,40 @@ Europe	France	Auvergne-Rhône-Alpes	La Roche Blanche
 Europe	France	Auvergne-Rhône-Alpes	Lafeuillade en Vezie
 Europe	France	Auvergne-Rhône-Alpes	Laqueuille
 Europe	France	Auvergne-Rhône-Alpes	Le Breuil sur Couze
+Europe	France	Auvergne-Rhône-Alpes	Le Mayet de Montagne
 Europe	France	Auvergne-Rhône-Alpes	Le Mont Dore
 Europe	France	Auvergne-Rhône-Alpes	Le Puy-en-Velay
 Europe	France	Auvergne-Rhône-Alpes	Lempdes
+Europe	France	Auvergne-Rhône-Alpes	Lempdes sur Allagnon
 Europe	France	Auvergne-Rhône-Alpes	Les Martres D'Artiere
 Europe	France	Auvergne-Rhône-Alpes	Les Martres de Veyre
 Europe	France	Auvergne-Rhône-Alpes	Les Martres sur Morge
 Europe	France	Auvergne-Rhône-Alpes	Lezoux
+Europe	France	Auvergne-Rhône-Alpes	Loubeyrat
 Europe	France	Auvergne-Rhône-Alpes	Luzillat
 Europe	France	Auvergne-Rhône-Alpes	Lyon
 Europe	France	Auvergne-Rhône-Alpes	Macon
+Europe	France	Auvergne-Rhône-Alpes	Malauzat
 Europe	France	Auvergne-Rhône-Alpes	Manzat
 Europe	France	Auvergne-Rhône-Alpes	Maringues
 Europe	France	Auvergne-Rhône-Alpes	Marsat
 Europe	France	Auvergne-Rhône-Alpes	Mazet-Saint-Voy
 Europe	France	Auvergne-Rhône-Alpes	Menat
+Europe	France	Auvergne-Rhône-Alpes	Messeix
+Europe	France	Auvergne-Rhône-Alpes	Mirefleurs
 Europe	France	Auvergne-Rhône-Alpes	Molles
 Europe	France	Auvergne-Rhône-Alpes	Montagnieu
 Europe	France	Auvergne-Rhône-Alpes	Montaigut
+Europe	France	Auvergne-Rhône-Alpes	Montboudif
 Europe	France	Auvergne-Rhône-Alpes	Montelimar
 Europe	France	Auvergne-Rhône-Alpes	Montlucon
 Europe	France	Auvergne-Rhône-Alpes	Montmorin
 Europe	France	Auvergne-Rhône-Alpes	Moulins
+Europe	France	Auvergne-Rhône-Alpes	Mozac
 Europe	France	Auvergne-Rhône-Alpes	Murat le Quaire
 Europe	France	Auvergne-Rhône-Alpes	Murol
 Europe	France	Auvergne-Rhône-Alpes	Nohanent
+Europe	France	Auvergne-Rhône-Alpes	Olby
 Europe	France	Auvergne-Rhône-Alpes	Oyonnax
 Europe	France	Auvergne-Rhône-Alpes	Paslieres
 Europe	France	Auvergne-Rhône-Alpes	Paulhenc
@@ -2704,13 +2782,17 @@ Europe	France	Auvergne-Rhône-Alpes	Riom
 Europe	France	Auvergne-Rhône-Alpes	Riom Es Montagnes
 Europe	France	Auvergne-Rhône-Alpes	Roanne
 Europe	France	Auvergne-Rhône-Alpes	Rochefort Montagne
+Europe	France	Auvergne-Rhône-Alpes	Romagnat
 Europe	France	Auvergne-Rhône-Alpes	Romans-sur-Isere
 Europe	France	Auvergne-Rhône-Alpes	Roussillon
 Europe	France	Auvergne-Rhône-Alpes	Royat
+Europe	France	Auvergne-Rhône-Alpes	Saint Andre le Coq
 Europe	France	Auvergne-Rhône-Alpes	Saint Beauzire
 Europe	France	Auvergne-Rhône-Alpes	Saint Bonnet Pres Riom
+Europe	France	Auvergne-Rhône-Alpes	Saint Christophe
 Europe	France	Auvergne-Rhône-Alpes	Saint Germain des Fosses
 Europe	France	Auvergne-Rhône-Alpes	Saint Julien de Coppel
+Europe	France	Auvergne-Rhône-Alpes	Saint Prix
 Europe	France	Auvergne-Rhône-Alpes	Saint Sandoux
 Europe	France	Auvergne-Rhône-Alpes	Saint-Etienne
 Europe	France	Auvergne-Rhône-Alpes	Saint-Etienne-de-Saint-Geoirs
@@ -2728,11 +2810,13 @@ Europe	France	Auvergne-Rhône-Alpes	St Georges de Mons
 Europe	France	Auvergne-Rhône-Alpes	St Gervais D Auvergne
 Europe	France	Auvergne-Rhône-Alpes	St Hilaire la Croix
 Europe	France	Auvergne-Rhône-Alpes	St Laure
+Europe	France	Auvergne-Rhône-Alpes	St Mamet la Salvetat
 Europe	France	Auvergne-Rhône-Alpes	St Ours Les Roches
 Europe	France	Auvergne-Rhône-Alpes	St Priest des Champs
 Europe	France	Auvergne-Rhône-Alpes	St Yorre
 Europe	France	Auvergne-Rhône-Alpes	Tarare
 Europe	France	Auvergne-Rhône-Alpes	Thiers
+Europe	France	Auvergne-Rhône-Alpes	Thiezac
 Europe	France	Auvergne-Rhône-Alpes	Thonon-Les-Bains
 Europe	France	Auvergne-Rhône-Alpes	Valence
 Europe	France	Auvergne-Rhône-Alpes	Vallon en Sully
@@ -2740,6 +2824,7 @@ Europe	France	Auvergne-Rhône-Alpes	Venissieux
 Europe	France	Auvergne-Rhône-Alpes	Vertaizon
 Europe	France	Auvergne-Rhône-Alpes	Veyre Monton
 Europe	France	Auvergne-Rhône-Alpes	Vezeronce-Curtin
+Europe	France	Auvergne-Rhône-Alpes	Vic le Comte
 Europe	France	Auvergne-Rhône-Alpes	Vichy
 Europe	France	Auvergne-Rhône-Alpes	Vienne
 Europe	France	Auvergne-Rhône-Alpes	Villefranche-d'Allier
@@ -2749,6 +2834,7 @@ Europe	France	Auvergne-Rhône-Alpes	Voiron
 Europe	France	Auvergne-Rhône-Alpes	Volvic
 Europe	France	Auvergne-Rhône-Alpes	Yssac la Tourette
 Europe	France	Auvergne-Rhône-Alpes	Ytrac
+Europe	France	Auvergne-Rhône-Alpes	Yzeure
 Europe	France	Bourgogne	
 Europe	France	Bourgogne	Dijon
 Europe	France	Bourgogne-France-Comté	
@@ -3366,6 +3452,7 @@ Europe	Italy	Italian cruise ship
 Europe	Italy	Italy	
 Europe	Italy	Lazio	
 Europe	Italy	Lazio	Rome
+Europe	Italy	Lazio	Viterbo IT
 Europe	Italy	Liguria	
 Europe	Italy	Lombardy	
 Europe	Italy	Lombardy	Brescia
@@ -3720,6 +3807,7 @@ Europe	Poland	Lubuskie	Bytom Odrzanski
 Europe	Poland	Lubuskie	Czerwiensk
 Europe	Poland	Lubuskie	Dabrowka
 Europe	Poland	Lubuskie	Dobiegniew
+Europe	Poland	Lubuskie	Gorzow Wielkopolski
 Europe	Poland	Lubuskie	Gorzow Wlkp
 Europe	Poland	Lubuskie	Gorzyca
 Europe	Poland	Lubuskie	Kostrzyn
@@ -3806,6 +3894,7 @@ Europe	Poland	Mazowieckie	Sokolow Podlaski
 Europe	Poland	Mazowieckie	Sulejowek
 Europe	Poland	Mazowieckie	Warszawa
 Europe	Poland	Mazowieckie	Wesola
+Europe	Poland	Mazowieckie	Wolomin
 Europe	Poland	Mazowieckie	Zakret
 Europe	Poland	Mazowieckie	Łaz
 Europe	Poland	Opolskie	
@@ -4089,6 +4178,7 @@ Europe	Poland	Wielkopolskie	Kepno
 Europe	Poland	Wielkopolskie	Kobylniki
 Europe	Poland	Wielkopolskie	Komorniki
 Europe	Poland	Wielkopolskie	Komorniki WP
+Europe	Poland	Wielkopolskie	Konin
 Europe	Poland	Wielkopolskie	Koscian
 Europe	Poland	Wielkopolskie	Kostrzyn (Wielkopolskie)
 Europe	Poland	Wielkopolskie	Kowanowko
@@ -4727,11 +4817,13 @@ Europe	Slovakia	Namestovo	Klin
 Europe	Slovakia	Namestovo	Oravske Vesele
 Europe	Slovakia	Namestovo	Vavrecka
 Europe	Slovakia	Nitra	
+Europe	Slovakia	Nitra	Andovce
 Europe	Slovakia	Nitra	Bab
 Europe	Slovakia	Nitra	Bajc
 Europe	Slovakia	Nitra	Banov
 Europe	Slovakia	Nitra	Batorove Kosihy
 Europe	Slovakia	Nitra	Besenov
+Europe	Slovakia	Nitra	Diakovce
 Europe	Slovakia	Nitra	Dolny Ohaj
 Europe	Slovakia	Nitra	Dubnik
 Europe	Slovakia	Nitra	Dvory nad Žitavou
@@ -4740,6 +4832,7 @@ Europe	Slovakia	Nitra	Imel
 Europe	Slovakia	Nitra	Jasova
 Europe	Slovakia	Nitra	Jatov
 Europe	Slovakia	Nitra	Kamenicna
+Europe	Slovakia	Nitra	Ket
 Europe	Slovakia	Nitra	Klizska Nema
 Europe	Slovakia	Nitra	Kolta
 Europe	Slovakia	Nitra	Kolárovo
@@ -4749,9 +4842,11 @@ Europe	Slovakia	Nitra	Levice
 Europe	Slovakia	Nitra	Malá nad Hronom
 Europe	Slovakia	Nitra	Marcelova
 Europe	Slovakia	Nitra	Moca
+Europe	Slovakia	Nitra	Nana
 Europe	Slovakia	Nitra	Nesvady
 Europe	Slovakia	Nitra	Nove Zamky
 Europe	Slovakia	Nitra	Podhajska
+Europe	Slovakia	Nitra	Pohronsky Ruskov
 Europe	Slovakia	Nitra	Sahy
 Europe	Slovakia	Nitra	Sala
 Europe	Slovakia	Nitra	Salka
@@ -4759,6 +4854,7 @@ Europe	Slovakia	Nitra	Semerovo
 Europe	Slovakia	Nitra	Solcany
 Europe	Slovakia	Nitra	Sturovo
 Europe	Slovakia	Nitra	Surany
+Europe	Slovakia	Nitra	Svaty Peter
 Europe	Slovakia	Nitra	Ton
 Europe	Slovakia	Nitra	Topolcany
 Europe	Slovakia	Nitra	Tvrdosovce
@@ -4787,20 +4883,25 @@ Europe	Slovakia	Prešov	Batizovce
 Europe	Slovakia	Prešov	Bela nad Cirochou
 Europe	Slovakia	Prešov	Doľany
 Europe	Slovakia	Prešov	Hniezdne
+Europe	Slovakia	Prešov	Hozelec
 Europe	Slovakia	Prešov	Hranovnica
 Europe	Slovakia	Prešov	Humenne
 Europe	Slovakia	Prešov	Janovce
+Europe	Slovakia	Prešov	Kamienka SL
 Europe	Slovakia	Prešov	Kezmarok
 Europe	Slovakia	Prešov	Kravany
 Europe	Slovakia	Prešov	Levoca
 Europe	Slovakia	Prešov	Livovska Huta
 Europe	Slovakia	Prešov	Medzilaborce
+Europe	Slovakia	Prešov	Nova Lesna
+Europe	Slovakia	Prešov	Podolinec
 Europe	Slovakia	Prešov	Poprad
 Europe	Slovakia	Prešov	Sabinov
 Europe	Slovakia	Prešov	Snina
 Europe	Slovakia	Prešov	Spisske Bystre
 Europe	Slovakia	Prešov	Spisske Podhradie
 Europe	Slovakia	Prešov	Stara Lubovna
+Europe	Slovakia	Prešov	Strba
 Europe	Slovakia	Prešov	Stropkov
 Europe	Slovakia	Prešov	Svidnik
 Europe	Slovakia	Prešov	Svit
@@ -4808,7 +4909,10 @@ Europe	Slovakia	Prešov	Tatranská Štrba
 Europe	Slovakia	Prešov	Turany nad Ondavou
 Europe	Slovakia	Prešov	Velka Frankova
 Europe	Slovakia	Prešov	Vikartovce
+Europe	Slovakia	Prešov	Vranov nad Toplou
 Europe	Slovakia	Prešov	Vranov nad Toplov
+Europe	Slovakia	Prešov	Vysne Hagy
+Europe	Slovakia	Prešov	Žakovce
 Europe	Slovakia	Prievidza	
 Europe	Slovakia	Rabca	
 Europe	Slovakia	Revuca	
@@ -4858,6 +4962,7 @@ Europe	Slovakia	Trnava	Drahovce
 Europe	Slovakia	Trnava	Galanta
 Europe	Slovakia	Trnava	Hlohovec
 Europe	Slovakia	Trnava	Holice
+Europe	Slovakia	Trnava	Holíč
 Europe	Slovakia	Trnava	Horne Saliby
 Europe	Slovakia	Trnava	Hradište pod Vrátnom
 Europe	Slovakia	Trnava	Kopcany
@@ -4880,10 +4985,12 @@ Europe	Slovakia	Velky Krtis
 Europe	Slovakia	Velký Harcáš	
 Europe	Slovakia	Zabiedovo	
 Europe	Slovakia	Zilina	
+Europe	Slovakia	Zilina	Bela
 Europe	Slovakia	Zilina	Benadovo
 Europe	Slovakia	Zilina	Bobrov
 Europe	Slovakia	Zilina	Bytca
 Europe	Slovakia	Zilina	Cadca
+Europe	Slovakia	Zilina	Cimhova
 Europe	Slovakia	Zilina	Dolný Kubín
 Europe	Slovakia	Zilina	Horná Štubňa
 Europe	Slovakia	Zilina	Hrustin
@@ -5499,6 +5606,7 @@ Europe	Spain	Catalunya	Santa Maria de Martorelle
 Europe	Spain	Catalunya	Santa Maria de Palautordera
 Europe	Spain	Catalunya	Santa Pau
 Europe	Spain	Catalunya	Santa Perpetua de Mogoda
+Europe	Spain	Catalunya	Santa Susanna
 Europe	Spain	Catalunya	Santpedor
 Europe	Spain	Catalunya	Sarroca de Lleida
 Europe	Spain	Catalunya	Seros
@@ -5968,29 +6076,39 @@ Europe	Switzerland	Sankt Gallen	Bazenheid
 Europe	Switzerland	Sankt Gallen	Buchs
 Europe	Switzerland	Sankt Gallen	Buchs SG
 Europe	Switzerland	Sankt Gallen	Bütschwil
+Europe	Switzerland	Sankt Gallen	Diepoldsau
+Europe	Switzerland	Sankt Gallen	Ebnat-Kappel
+Europe	Switzerland	Sankt Gallen	Flawil
 Europe	Switzerland	Sankt Gallen	Flums
 Europe	Switzerland	Sankt Gallen	Gams
 Europe	Switzerland	Sankt Gallen	Gossau
 Europe	Switzerland	Sankt Gallen	Grabs
 Europe	Switzerland	Sankt Gallen	Grabserberg
 Europe	Switzerland	Sankt Gallen	Grub
+Europe	Switzerland	Sankt Gallen	Haag Rheintal
 Europe	Switzerland	Sankt Gallen	Heerbrugg
 Europe	Switzerland	Sankt Gallen	Jona
+Europe	Switzerland	Sankt Gallen	Kaltbrunn
 Europe	Switzerland	Sankt Gallen	Kriessern
+Europe	Switzerland	Sankt Gallen	Marbach SG
 Europe	Switzerland	Sankt Gallen	Mels
 Europe	Switzerland	Sankt Gallen	Mörschwil
 Europe	Switzerland	Sankt Gallen	Niederuzwil
 Europe	Switzerland	Sankt Gallen	Oberriet
+Europe	Switzerland	Sankt Gallen	Oberterzen
 Europe	Switzerland	Sankt Gallen	Rapperswil
 Europe	Switzerland	Sankt Gallen	Rebstein
 Europe	Switzerland	Sankt Gallen	Rheineck
 Europe	Switzerland	Sankt Gallen	Rheintal
 Europe	Switzerland	Sankt Gallen	Rorschach
+Europe	Switzerland	Sankt Gallen	Rorschacherberg
 Europe	Switzerland	Sankt Gallen	Ruthi
+Europe	Switzerland	Sankt Gallen	Sankt Gallenkappel
 Europe	Switzerland	Sankt Gallen	Sargans
 Europe	Switzerland	Sankt Gallen	Schmerikon
 Europe	Switzerland	Sankt Gallen	Schänis
 Europe	Switzerland	Sankt Gallen	Sevelen
+Europe	Switzerland	Sankt Gallen	Speicher
 Europe	Switzerland	Sankt Gallen	St Gallen
 Europe	Switzerland	Sankt Gallen	St. Margrethen
 Europe	Switzerland	Sankt Gallen	Walenstadt
@@ -5998,6 +6116,7 @@ Europe	Switzerland	Sankt Gallen	Wattwil
 Europe	Switzerland	Sankt Gallen	Werdenberg
 Europe	Switzerland	Sankt Gallen	Widnau
 Europe	Switzerland	Sankt Gallen	Wil
+Europe	Switzerland	Sankt Gallen	Wittenbach
 Europe	Switzerland	Schaffhausen	
 Europe	Switzerland	Schaffhausen	Flurlingen
 Europe	Switzerland	Schaffhausen	Schaffhausen
@@ -6036,6 +6155,7 @@ Europe	Switzerland	Solothurn	Witterswil
 Europe	Switzerland	Switzerland	
 Europe	Switzerland	Tessin	
 Europe	Switzerland	Thurgau	
+Europe	Switzerland	Thurgau	Altnau
 Europe	Switzerland	Thurgau	Arbon
 Europe	Switzerland	Thurgau	Bischofszell
 Europe	Switzerland	Thurgau	Erlen
@@ -6772,6 +6892,7 @@ North America	USA	Hawaii	Maui County
 North America	USA	Howland Island	
 North America	USA	Idaho	
 North America	USA	Idaho	Ada County
+North America	USA	Idaho	Bonneville County
 North America	USA	Idaho	Kootenai County
 North America	USA	Idaho	Madison County
 North America	USA	Idaho	Madison County ID
@@ -6938,6 +7059,7 @@ North America	USA	Louisiana	Madison Parish
 North America	USA	Louisiana	Morehouse Parish
 North America	USA	Louisiana	Natchitoches Parish
 North America	USA	Louisiana	New Orleans
+North America	USA	Louisiana	Orleans Parish
 North America	USA	Louisiana	Ouachita Parish
 North America	USA	Louisiana	Rapides Parish
 North America	USA	Louisiana	Red River Parish
@@ -7422,7 +7544,9 @@ North America	USA	Vermont
 North America	USA	Virgin Islands	
 North America	USA	Virginia	
 North America	USA	Virginia	Alexandria
+North America	USA	Virginia	Fairfax County
 North America	USA	Virginia	Frederick County
+North America	USA	Virginia	Loudoun County
 North America	USA	Wake Island	
 North America	USA	Washington	
 North America	USA	Washington	Adams County WA
@@ -8566,6 +8690,7 @@ South America	Chile	Araucanía	Cunco
 South America	Chile	Araucanía	Lautaro
 South America	Chile	Araucanía	Padre las Casas
 South America	Chile	Araucanía	Perquenco
+South America	Chile	Araucanía	Pucon
 South America	Chile	Araucanía	Temuco
 South America	Chile	Araucanía	Villarrica
 South America	Chile	Arica and Parinacota	
@@ -8909,6 +9034,7 @@ South America	Peru	Ancash
 South America	Peru	Ancash	Huaraz
 South America	Peru	Ancash	Huarmey
 South America	Peru	Ancash	Santa
+South America	Peru	Apurimac	
 South America	Peru	Arequipa	
 South America	Peru	Arequipa	Arequipa
 South America	Peru	Ayacucho	
