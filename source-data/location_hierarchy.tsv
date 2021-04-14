@@ -225,6 +225,7 @@ Africa	Namibia	ǁKaras
 Africa	Niger	Niger	
 Africa	Nigeria	Abuja	
 Africa	Nigeria	Akwa-Ibom	
+Africa	Nigeria	Bauchi	
 Africa	Nigeria	Benue State	
 Africa	Nigeria	Borno State	
 Africa	Nigeria	Delta	
@@ -459,6 +460,8 @@ Asia	Bangladesh	Rangpur
 Asia	Bangladesh	Rangpur	Nilphamari
 Asia	Bangladesh	Sirajganj	
 Asia	Bangladesh	Sylhet	
+Asia	Bangladesh	Sylhet	Barutkhana
+Asia	Bangladesh	Sylhet	Fenchuganj
 Asia	Bangladesh	Sylhet	Habiganj
 Asia	Bangladesh	Sylhet	Kasdobir
 Asia	Bangladesh	Sylhet	Moulvibazar
@@ -856,6 +859,7 @@ Asia	Indonesia	Riau
 Asia	Indonesia	Riau Island	
 Asia	Indonesia	Riau Island	Batam
 Asia	Indonesia	Riau Islands	
+Asia	Indonesia	Riau Islands	Batam
 Asia	Indonesia	South Kalimantan	
 Asia	Indonesia	South Sulawesi	
 Asia	Indonesia	South Sulawesi	Makassar
@@ -1559,6 +1563,7 @@ Europe	Belgium	Antwerpen	Deurne
 Europe	Belgium	Antwerpen	Edegem
 Europe	Belgium	Antwerpen	Ekeren
 Europe	Belgium	Antwerpen	Emblem
+Europe	Belgium	Antwerpen	Essen BE
 Europe	Belgium	Antwerpen	Hemiksem
 Europe	Belgium	Antwerpen	Hoboken
 Europe	Belgium	Antwerpen	Hoevenen
@@ -2222,6 +2227,7 @@ Europe	Belgium	Thuin
 Europe	Belgium	Thuin	Anderlues
 Europe	Belgium	Thuin	Barbençon
 Europe	Belgium	Thuin	Chimay
+Europe	Belgium	Thuin	Erquelinnes
 Europe	Belgium	Thuin	Fontaine-Valmont
 Europe	Belgium	Thuin	Lobbes
 Europe	Belgium	Thuin	Nalinnes
@@ -2262,6 +2268,7 @@ Europe	Belgium	Tongeren	Riemst
 Europe	Belgium	Tongeren	Uikhoven
 Europe	Belgium	Tongeren	Vliermaal
 Europe	Belgium	Tongeren	Voeren
+Europe	Belgium	Tongeren	Waltwilder
 Europe	Belgium	Tongeren	Wellen
 Europe	Belgium	Tournai-Mouscron	
 Europe	Belgium	Tournai-Mouscron	Blandain
@@ -2333,6 +2340,7 @@ Europe	Belgium	Turnhout	Ramsel
 Europe	Belgium	Turnhout	Ravels
 Europe	Belgium	Turnhout	Retie
 Europe	Belgium	Turnhout	Rijkevorsel
+Europe	Belgium	Turnhout	Tielen
 Europe	Belgium	Turnhout	Varendonk
 Europe	Belgium	Turnhout	Veerle
 Europe	Belgium	Turnhout	Vorselaar
@@ -2844,6 +2852,7 @@ Europe	France	Bourgogne-France-Comté	Besancon
 Europe	France	Bourgogne-France-Comté	Brognard
 Europe	France	Bourgogne-France-Comté	Chalon sur Saone
 Europe	France	Bourgogne-France-Comté	Dijon
+Europe	France	Bourgogne-France-Comté	Lons le Saunier
 Europe	France	Bourgogne-France-Comté	Macon
 Europe	France	Bourgogne-France-Comté	Montcenis
 Europe	France	Bourgogne-France-Comté	Montreux-Chateau
@@ -3315,6 +3324,7 @@ Europe	Germany	North Rhine Westphalia	Bielefeld
 Europe	Germany	North Rhine Westphalia	Cologne
 Europe	Germany	North Rhine Westphalia	Duesseldorf
 Europe	Germany	North Rhine Westphalia	Essen
+Europe	Germany	North Rhine Westphalia	Essen DE
 Europe	Germany	North Rhine Westphalia	Greven
 Europe	Germany	North Rhine Westphalia	Guetersloh
 Europe	Germany	North Rhine Westphalia	Heinsberg
@@ -3583,6 +3593,7 @@ Europe	Moldova	Straseni
 Europe	Monaco	Monaco	
 Europe	Montenegro	Montenegro	
 Europe	Netherlands	Drenthe	
+Europe	Netherlands	Drenthe	Assen
 Europe	Netherlands	Drenthe	Coevorden
 Europe	Netherlands	Drenthe	Dalen
 Europe	Netherlands	Drenthe	Meppel
@@ -3597,6 +3608,7 @@ Europe	Netherlands	Gelderland	Arnhem
 Europe	Netherlands	Gelderland	Nijmegen
 Europe	Netherlands	Gelderland	Wijchen
 Europe	Netherlands	Groningen	
+Europe	Netherlands	Groningen	Leek
 Europe	Netherlands	Leiden	
 Europe	Netherlands	Limburg	
 Europe	Netherlands	Limburg	Beek
@@ -3665,6 +3677,7 @@ Europe	Netherlands	North Holland	Schiphol
 Europe	Netherlands	North Holland	Wervershoof
 Europe	Netherlands	Overijssel	
 Europe	Netherlands	Overijssel	Hengelo
+Europe	Netherlands	Overijssel	Oldenzaal
 Europe	Netherlands	Overijssel	Raalte
 Europe	Netherlands	Roermond	
 Europe	Netherlands	South Holland	
@@ -5555,6 +5568,7 @@ Europe	Spain	Catalunya	Palol D'Onyar
 Europe	Spain	Catalunya	Parets del Valles
 Europe	Spain	Catalunya	Pineda de Mar
 Europe	Spain	Catalunya	Porqueres
+Europe	Spain	Catalunya	Prats de Lluçanès
 Europe	Spain	Catalunya	Premia de Dalt
 Europe	Spain	Catalunya	Premia de Mar
 Europe	Spain	Catalunya	Pubol
@@ -5564,6 +5578,7 @@ Europe	Spain	Catalunya	Ripoll
 Europe	Spain	Catalunya	Ripollet
 Europe	Spain	Catalunya	Riudarenes
 Europe	Spain	Catalunya	Riudellots de la Selva
+Europe	Spain	Catalunya	Roda de Ter
 Europe	Spain	Catalunya	Roses
 Europe	Spain	Catalunya	Rubi
 Europe	Spain	Catalunya	S'Agaro
@@ -5587,14 +5602,18 @@ Europe	Spain	Catalunya	Sant Fost de Campsentelles
 Europe	Spain	Catalunya	Sant Fruitos de Bages
 Europe	Spain	Catalunya	Sant Gregori
 Europe	Spain	Catalunya	Sant Hilari Sacalm
+Europe	Spain	Catalunya	Sant Hipolit de Voltrega
 Europe	Spain	Catalunya	Sant Jaume de Llierca
 Europe	Spain	Catalunya	Sant Joan Despi
 Europe	Spain	Catalunya	Sant Joan Les Fonts
 Europe	Spain	Catalunya	Sant Joan Vilatorrada
 Europe	Spain	Catalunya	Sant Joan de les Abadesses
 Europe	Spain	Catalunya	Sant Julia de Ramis
+Europe	Spain	Catalunya	Sant Julia de Vilatorta
 Europe	Spain	Catalunya	Sant Pere de Riudebitlles
+Europe	Spain	Catalunya	Sant Pere de Torello
 Europe	Spain	Catalunya	Sant Pere de Vilamajor
+Europe	Spain	Catalunya	Sant Quirze de Besora
 Europe	Spain	Catalunya	Sant Quirze del Valles
 Europe	Spain	Catalunya	Sant Vicenç de Montalt
 Europe	Spain	Catalunya	Santa Coloma de Cervello
@@ -5602,6 +5621,7 @@ Europe	Spain	Catalunya	Santa Coloma de Farners
 Europe	Spain	Catalunya	Santa Coloma de Gramenet
 Europe	Spain	Catalunya	Santa Eulàlia de Ronçana
 Europe	Spain	Catalunya	Santa Margarida de Montbui
+Europe	Spain	Catalunya	Santa Maria de Corcó
 Europe	Spain	Catalunya	Santa Maria de Martorelle
 Europe	Spain	Catalunya	Santa Maria de Palautordera
 Europe	Spain	Catalunya	Santa Pau
@@ -6808,6 +6828,7 @@ North America	USA	Colorado
 North America	USA	Colorado	Colorado Springs
 North America	USA	Colorado	Denver County
 North America	USA	Colorado	Mesa County
+North America	USA	Colorado	Pitkin County
 North America	USA	Connecticut	
 North America	USA	Connecticut	Beacon Falls
 North America	USA	Connecticut	Bethany
@@ -6901,25 +6922,23 @@ North America	USA	Illinois
 North America	USA	Illinois	Adams County IL
 North America	USA	Illinois	Alexander County
 North America	USA	Illinois	Bond County
-North America	USA	Illinois	Boone County
+North America	USA	Illinois	Boone County IL
 North America	USA	Illinois	Brown County IL
 North America	USA	Illinois	Bureau County
 North America	USA	Illinois	Calhoun County IL
 North America	USA	Illinois	Carroll County IL
 North America	USA	Illinois	Cass County IL
-North America	USA	Illinois	Champaign County
 North America	USA	Illinois	Champaign County IL
 North America	USA	Illinois	Chicago
-North America	USA	Illinois	Christian County
+North America	USA	Illinois	Christian County IL
 North America	USA	Illinois	Clark County IL
 North America	USA	Illinois	Clay County IL
 North America	USA	Illinois	Clinton County IL
 North America	USA	Illinois	Coles County IL
-North America	USA	Illinois	Cook County
+North America	USA	Illinois	Cook County IL
 North America	USA	Illinois	Crawford County IL
 North America	USA	Illinois	Cumberland County
 North America	USA	Illinois	De Witt County
-North America	USA	Illinois	Dekalb County
 North America	USA	Illinois	Dekalb County IL
 North America	USA	Illinois	Douglas County IL
 North America	USA	Illinois	Dupage County
@@ -6929,7 +6948,6 @@ North America	USA	Illinois	Effingham County
 North America	USA	Illinois	Fayette County IL
 North America	USA	Illinois	Franklin County IL
 North America	USA	Illinois	Fulton County IL
-North America	USA	Illinois	Gallatin County
 North America	USA	Illinois	Gallatin County IL
 North America	USA	Illinois	Greene County IL
 North America	USA	Illinois	Grundy County IL
@@ -6946,17 +6964,17 @@ North America	USA	Illinois	Jo Daviess County
 North America	USA	Illinois	Johnson County IL
 North America	USA	Illinois	Kane County
 North America	USA	Illinois	Kankakee County
-North America	USA	Illinois	Kendall County
 North America	USA	Illinois	Kendall County IL
 North America	USA	Illinois	Knox County IL
+North America	USA	Illinois	LaSalle County IL
 North America	USA	Illinois	Lake County IL
-North America	USA	Illinois	Lasalle County
 North America	USA	Illinois	Lawrence County IL
 North America	USA	Illinois	Lee County IL
 North America	USA	Illinois	Livingston County IL
 North America	USA	Illinois	Logan County IL
-North America	USA	Illinois	Macon County
+North America	USA	Illinois	Macon County IL
 North America	USA	Illinois	Macoupin County
+North America	USA	Illinois	Madison
 North America	USA	Illinois	Madison County IL
 North America	USA	Illinois	Marion County IL
 North America	USA	Illinois	Marshall County IL
@@ -6971,7 +6989,6 @@ North America	USA	Illinois	Monroe County IL
 North America	USA	Illinois	Montgomery County IL
 North America	USA	Illinois	Morgan County IL
 North America	USA	Illinois	Moultrie County
-North America	USA	Illinois	Ogle County
 North America	USA	Illinois	Ogle County IL
 North America	USA	Illinois	Peoria County
 North America	USA	Illinois	Perry County IL
@@ -6980,7 +6997,6 @@ North America	USA	Illinois	Pike County IL
 North America	USA	Illinois	Pope County
 North America	USA	Illinois	Pulaski County
 North America	USA	Illinois	Putnam County IL
-North America	USA	Illinois	Randolph County
 North America	USA	Illinois	Randolph County IL
 North America	USA	Illinois	Richland County IL
 North America	USA	Illinois	Rock Island County
@@ -6989,10 +7005,9 @@ North America	USA	Illinois	Sangamon County
 North America	USA	Illinois	Schuyler County IL
 North America	USA	Illinois	Scott County
 North America	USA	Illinois	Shelby County IL
-North America	USA	Illinois	St. Clair County
 North America	USA	Illinois	St. Clair County IL
 North America	USA	Illinois	Stephenson County
-North America	USA	Illinois	Tazewell County
+North America	USA	Illinois	Tazewell County IL
 North America	USA	Illinois	Union County IL
 North America	USA	Illinois	Vermilion County
 North America	USA	Illinois	Wabash County
@@ -7004,7 +7019,9 @@ North America	USA	Illinois	Whiteside County
 North America	USA	Illinois	Will County
 North America	USA	Illinois	Williamson County IL
 North America	USA	Illinois	Winnebago County IL
+North America	USA	Illinois	Woodford County IL
 North America	USA	Indiana	
+North America	USA	Indiana	Boone County IN
 North America	USA	Indiana	Elkhart County
 North America	USA	Indiana	Indianapolis
 North America	USA	Indiana	Jefferson County IN
@@ -7267,6 +7284,7 @@ North America	USA	Ohio	Pickaway County
 North America	USA	Ohio	Richland County OH
 North America	USA	Ohio	Ross
 North America	USA	Ohio	Summit County OH
+North America	USA	Ohio	Trumbull County
 North America	USA	Ohio	Warren County OH
 North America	USA	Ohio	Williams County OH
 North America	USA	Oklahoma	
@@ -7573,6 +7591,7 @@ North America	USA	Washington	Lincoln County WA
 North America	USA	Washington	Mason County
 North America	USA	Washington	Mason County WA
 North America	USA	Washington	Mercer Island
+North America	USA	Washington	Okanogan County
 North America	USA	Washington	Pacific County
 North America	USA	Washington	Pierce County WA
 North America	USA	Washington	San Juan County
@@ -8649,6 +8668,7 @@ South America	Brazil	São Paulo	Taboao Da Serra
 South America	Brazil	São Paulo	Taciba
 South America	Brazil	São Paulo	Taiacu
 South America	Brazil	São Paulo	Taquaritinga
+South America	Brazil	São Paulo	Taquarituba
 South America	Brazil	São Paulo	Tarabai
 South America	Brazil	São Paulo	Taruma
 South America	Brazil	São Paulo	Tatui
@@ -9081,4 +9101,8 @@ South America	Uruguay	Rocha
 South America	Uruguay	Rocha	Chuy
 South America	Uruguay	Treinta y Tres	
 South America	Uruguay	Uruguay	
+South America	Venezuela	Los Roques	
+South America	Venezuela	Miranda	
+South America	Venezuela	Nueva Esparta	
 South America	Venezuela	Venezuela	
+South America	Venezuela	Zulia	
