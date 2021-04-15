@@ -44,9 +44,6 @@ else:
 print( "S3_SRC is" , os.environ['S3_SRC'] , file=sys.stderr )
 print( "S3_DST is" , S3_DST , file=sys.stderr )
 
-## defining the slack channel that will be notified:
-
-os.environ["SLACK_CHANNELS"] = lambda wildcards : config['slack_channel'][wildcards.database]
 
 
 
@@ -80,7 +77,8 @@ rule fetch:
         "data/{database}.ndjson"
     params:
         s3_dst=S3_DST,
-        database = lambda wildcards : wildcards.database
+        database = lambda wildcards : wildcards.database ,
+        slack_channel = lambda wildcards : config['slack_channel'][wildcards.database]
     shell:
            '''
             if [[ "$FETCH" == 1 ]]; then
@@ -104,7 +102,7 @@ rule fetch:
                     msg="📈 New nCoV records (n=$added_records) found on {params.database}."
                 fi
 
-                ./bin/notify-slack $msg $SLACK_TOKEN $SLACK_CHANNELS 
+                ./bin/notify-slack $msg $SLACK_TOKEN {params.slack_channel}
 
               fi
               ./bin/upload-to-s3 --quiet {output} "{params.s3_dst}/{params.database}.ndjson.gz"
@@ -236,13 +234,14 @@ rule notify_and_upload:
         destination_flagged_metadata = lambda wildcards : "$S3_SRC/"+ wildcards.database +"_flagged_metadata.txt.gz",
         destination_sequences = lambda wildcards : "$S3_SRC/"+ wildcards.database +"_sequences.fasta.gz",
         destination_nextclade = "$S3_SRC/nextclade.tsv.gz",
-        quiet = (SILENT=='yes')
+        quiet = (SILENT=='yes') ,
+        slack_channel = lambda wildcards : config['slack_channel'][wildcards.database]
     run :
         if GIT_BRANCH == "master" :
             # upload flagged annotations
             shell(f"""
                 # upload flagged annotations
-                ./bin/notify-slack --upload "flagged-annotations" $SLACK_TOKEN $SLACK_CHANNELS < {input.flagged_annotation}
+                ./bin/notify-slack --upload "flagged-annotations" $SLACK_TOKEN {params.slack_channel} < {input.flagged_annotation}
             """)
 
             # "Notifying Slack about metadata change."
@@ -260,17 +259,17 @@ rule notify_and_upload:
                 # csv-diff outputs two newlines which -n ignores but -s does not
                 if [[ -n "$(< "$diff")" ]]; then
                     # "Notifying Slack about metadata change."
-                    ./bin/notify-slack --upload "metadata-changes.txt" $SLACK_TOKEN $SLACK_CHANNELS < "$diff"
+                    ./bin/notify-slack --upload "metadata-changes.txt" $SLACK_TOKEN {params.slack_channel} < "$diff"
                 else
                     echo "No metadata change."
                 fi
                 # checking additions
                 if [[ -s "$additions" ]]; then
                     # "Notifying Slack about metadata additions."
-                    ./bin/notify-slack --upload "metadata-additions.tsv" $SLACK_TOKEN $SLACK_CHANNELS < "$additions"
+                    ./bin/notify-slack --upload "metadata-additions.tsv" $SLACK_TOKEN {params.slack_channel} < "$additions"
                  
                     if [[ "{params.idcolumn}" == "gisaid_epi_isl" ]]; then
-                        ./bin/notify-users-on-new-locations "$additions" --slack-token $SLACK_TOKEN --slack-channel $SLACK_CHANNELS
+                        ./bin/notify-users-on-new-locations "$additions" --slack-token $SLACK_TOKEN --slack-channel {params.slack_channel}
                     fi
                 fi
             """)
@@ -291,8 +290,8 @@ rule notify_and_upload:
                     message+="_./source-data/location_hierarchy.tsv_ or create new annotations "
                     message+="to correct them."
                 
-                    ./bin/notify-slack "$message" $SLACK_TOKEN $SLACK_CHANNELS
-                    ./bin/notify-slack --upload "location-hierarchy-additions.tsv" $SLACK_TOKEN $SLACK_CHANNELS < "$diff"
+                    ./bin/notify-slack "$message" $SLACK_TOKEN {params.slack_channel}
+                    ./bin/notify-slack --upload "location-hierarchy-additions.tsv" $SLACK_TOKEN {params.slack_channel} < "$diff"
                 fi
 
             """)
@@ -307,7 +306,7 @@ rule notify_and_upload:
 
                 if [[ -n "$diff" ]]; then
                     # "Notifying Slack about additional info change."
-                    ./bin/notify-slack --upload "additional-info-changes.txt" $SLACK_TOKEN $SLACK_CHANNELS < "$diff"
+                    ./bin/notify-slack --upload "additional-info-changes.txt" $SLACK_TOKEN {params.slack_channel} < "$diff"
                 else
                     echo "No additional info change."
                 fi
@@ -324,8 +323,8 @@ rule notify_and_upload:
                 ./bin/compute-flagged-metadata-change {input.flagged_metadata} "{params.destination_flagged_metadata}" $dst_local $diff
                 if [[ -s "$diff" ]]; then
                     # "Notifying Slack about flagged metadata additions."
-                    ./bin/notify-slack ":waving_black_flag: Newly flagged metadata" $SLACK_TOKEN $SLACK_CHANNELS
-                    ./bin/notify-slack --upload "flagged-metadata-additions.txt" $SLACK_TOKEN $SLACK_CHANNELS < "$diff"
+                    ./bin/notify-slack ":waving_black_flag: Newly flagged metadata" $SLACK_TOKEN {params.slack_channel}
+                    ./bin/notify-slack --upload "flagged-metadata-additions.txt" $SLACK_TOKEN {params.slack_channel} < "$diff"
                 else
                     echo "No flagged metadata additions."
                 fi
@@ -337,7 +336,7 @@ rule notify_and_upload:
             
                 if [[ -s "data/genbank/problem_data.tsv" ]]; then
                     # "Notifying Slack about problem data."
-                    ./bin/notify-slack --upload "genbank-problem-data.tsv" $SLACK_TOKEN $SLACK_CHANNELS < "data/genbank/problem_data.tsv"
+                    ./bin/notify-slack --upload "genbank-problem-data.tsv" $SLACK_TOKEN {params.slack_channel} < "data/genbank/problem_data.tsv"
                 fi
 
             """)
@@ -354,7 +353,7 @@ rule notify_and_upload:
             shell("""
                 for dst in  "{params.destination_metadata}" "{params.destination_sequences}" "{params.destination_nextclade}" "{params.destination_additional_info}" "{params.destination_flagged_metadata}"
                 do
-                 ./bin/notify-slack "Updated $dst available."  $SLACK_TOKEN $SLACK_CHANNELS
+                 ./bin/notify-slack "Updated $dst available."  $SLACK_TOKEN {params.slack_channel}
                 done
             """)
 
