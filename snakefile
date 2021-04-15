@@ -5,7 +5,6 @@ envvars:
     "GISAID_API_ENDPOINT",
     "GISAID_USERNAME_AND_PASSWORD",
     "SLACK_TOKEN",
-    "SLACK_CHANNELS",
     "FETCH"
 
 
@@ -45,29 +44,34 @@ else:
 print( "S3_SRC is" , os.environ['S3_SRC'] , file=sys.stderr )
 print( "S3_DST is" , S3_DST , file=sys.stderr )
 
+## defining the slack channel that will be notified:
+
+os.environ["SLACK_CHANNELS"] = lambda wildcards : config['slack_channel'][wildcards.database]
+
+
 
 ## target rule all 
 rule all_then_clean:
-	input:
-		"notify_and_upload.gisaid.mock_output.txt",
-		"notify_and_upload.genbank.mock_output.txt"
-	shell:
-		".bin/clean"
+    input:
+        "notify_and_upload.gisaid.mock_output.txt",
+        "notify_and_upload.genbank.mock_output.txt"
+    shell:
+        ".bin/clean"
 
 
 ## target rule gisaid
 rule gisaid_then_clean:
-	input:
-		"notify_and_upload.gisaid.mock_output.txt",
-	shell:
-		".bin/clean"
+    input:
+        "notify_and_upload.gisaid.mock_output.txt",
+    shell:
+        ".bin/clean"
 
 ## target rule genbank
 rule genbank_then_clean:
-	input:
-		"notify_and_upload.genbank.mock_output.txt",
-	shell:
-		".bin/clean"
+    input:
+        "notify_and_upload.genbank.mock_output.txt",
+    shell:
+        ".bin/clean"
 
 
 
@@ -82,7 +86,26 @@ rule fetch:
             if [[ "$FETCH" == 1 ]]; then
               ./bin/fetch-from-{params.database} > {output}
               if [[ "$branch" == master ]]; then
-                ./bin/notify-on-record-change {output} "$S3_SRC/{params.database}.ndjson.gz" "GISAID"
+
+                dst=$S3_SRC/{params.database}.ndjson.gz
+
+                src_record_count="$(wc -l < "$src")"
+                dst_record_count="$(wc -l < <(aws s3 cp --no-progress "$dst" - | gunzip -cfq))"
+                added_records="$(( src_record_count - dst_record_count ))"
+
+                msg=""
+
+                if [[ $added_records -gt 0 ]]; then
+                    msg="📈 New nCoV records (n=$added_records) found on {params.database}."
+                elif [[ $added_records -lt 0 ]]; then
+                    msg="WARNING: the new version of {params.database} has fewer records‽"
+                
+                else
+                    msg="📈 New nCoV records (n=$added_records) found on {params.database}."
+                fi
+
+				./bin/notify-slack $msg $SLACK_TOKEN $SLACK_CHANNELS 
+
               fi
               ./bin/upload-to-s3 --quiet {output} "{params.s3_dst}/{params.database}.ndjson.gz"
             else
@@ -214,24 +237,103 @@ rule notify_and_upload:
         destination_sequences = lambda wildcards : "$S3_SRC/"+ wildcards.database +"_sequences.fasta.gz",
         destination_nextclade = "$S3_SRC/nextclade.tsv.gz",
         quiet = "--quiet"*(SILENT=='yes')
-    shell :
-        """
-         if [[ "$branch" == master ]]; then
-             ./bin/notify-slack --upload "flagged-annotations" < {input.flagged_annotation}
+    run :
+        if GIT_BRANCH == "master" :
+            shell(f"""
+                # upload flagged annotations
+                ./bin/notify-slack --upload "flagged-annotations" $SLACK_TOKEN $SLACK_CHANNELS < {input.flagged_annotation}
+            """)
+			
+			shell(f"""
+                # notify and upload metadata change
+                
+                dst_local="$(mktemp -t metadata-XXXXXX.tsv)"
+				diff="$(mktemp -t metadata-changes-XXXXXX)"
+				additions="$(mktemp -t metadata-additions-XXXXXX)"
+				trap "rm -f '$dst_local' '$diff' '$additions'" EXIT
 
-             ./bin/notify-on-metadata-change {input.metadata} "{params.destination_metadata}" params.idcolumn
-             ./bin/notify-on-location-hierarchy-addition {input.location_hierarchy} source-data/location_hierarchy.tsv
-             
-             ./bin/notify-on-additional-info-change {input.additional_info} "{params.destination_additional_info}"
-             ./bin/notify-on-flagged-metadata-change {input.flagged_metadata} "{params.destination_flagged_metadata}"
-         fi
-     
-         ./bin/upload-to-s3 {params.quiet} {input.metadata} "{params.destination_metadata}"
-         ./bin/upload-to-s3 {params.quiet} {input.sequences} "{params.destination_sequences}"
-         ./bin/upload-to-s3 {params.quiet} {input.nextclade} "{params.destination_nextclade}"
+				./bin/compute-metadata-change {input.metadata} "{params.destination_metadata}" {params.idcolumn} $dst_local $diff $additions
 
-         ./bin/upload-to-s3 {params.quiet} {input.additional_info} "{params.destination_additional_info}"
-         ./bin/upload-to-s3 {params.quiet} {input.flagged_metadata} "{params.destination_flagged_metadata}"
 
-         touch {output}
-        """
+                # csv-diff outputs two newlines which -n ignores but -s does not
+                if [[ -n "$(< "$diff")" ]]; then
+                    # "Notifying Slack about metadata change."
+				    ./bin/notify-slack --upload "metadata-changes.txt" $SLACK_TOKEN $SLACK_CHANNELS < "$diff"
+                else
+                    echo "No metadata change."
+                fi
+                # checking additions
+                if [[ -s "$additions" ]]; then
+                    # "Notifying Slack about metadata additions."
+                    ./bin/notify-slack --upload "metadata-additions.tsv" $SLACK_TOKEN $SLACK_CHANNELS < "$additions"
+                 
+                    if [[ "{params.idcolumn}" == "gisaid_epi_isl" ]]; then
+                        ./bin/notify-users-on-new-locations "$additions" --slack-token $SLACK_TOKEN --slack-channel $SLACK_CHANNELS
+                    fi
+                fi
+            """)
+
+			shell(f"""
+
+                diff="$(mktemp -t location-hierarchy-changes-XXXXXX)"
+                trap "rm -f '$diff'" EXIT
+
+                ./bin/compute-location-hierarchy-addition {input.location_hierarchy} source-data/location_hierarchy.tsv $diff
+
+                if [[ -s "$diff" ]]; then
+                    # "Notifying Slack about location hierarchy additions."
+                    message=":world_map: $(wc -l < "$diff") new location hierarchies. "
+                    message+="Note that these are case-sensitive. Please review these "
+                    message+="hierarchies and either add them to "
+                    message+="_./source-data/location_hierarchy.tsv_ or create new annotations "
+                    message+="to correct them."
+                
+                    ./bin/notify-slack "$message" $SLACK_TOKEN $SLACK_CHANNELS
+                    ./bin/notify-slack --upload "location-hierarchy-additions.tsv" $SLACK_TOKEN $SLACK_CHANNELS < "$diff"
+                fi
+
+            """)
+
+			shell(f"""
+
+                diff="$(mktemp -t location-hierarchy-changes-XXXXXX)"
+                trap "rm -f '$diff'" EXIT
+
+                ./bin/compute-additional-info-change {input.additional_info} "{params.destination_additional_info}" $diff
+
+                if [[ -n "$diff" ]]; then
+                    # "Notifying Slack about additional info change."
+                    ./bin/notify-slack --upload "additional-info-changes.txt" $SLACK_TOKEN $SLACK_CHANNELS < "$diff"
+                else
+                    echo "No additional info change."
+                fi
+
+			""")
+
+			shell(f"""
+
+                dst_local="$(mktemp -t flagged-metadata-XXXXXX.txt)"
+                diff="$(mktemp -t flagged-metadata-additions-XXXXXX)"
+                trap "rm -f '$dst_local' '$diff'" EXIT
+
+                ./bin/compute-flagged-metadata-change {input.flagged_metadata} "{params.destination_flagged_metadata}" $dst_local $diff
+                if [[ -s "$diff" ]]; then
+                    # "Notifying Slack about flagged metadata additions."
+                    ./bin/notify-slack ":waving_black_flag: Newly flagged metadata" $SLACK_TOKEN $SLACK_CHANNELS
+                    ./bin/notify-slack --upload "flagged-metadata-additions.txt" $SLACK_TOKEN $SLACK_CHANNELS < "$diff"
+                else
+                    echo "No flagged metadata additions."
+                fi
+
+            """)
+
+        shell(f"""
+            ./bin/upload-to-s3 {params.quiet} {input.metadata} "{params.destination_metadata}"
+            ./bin/upload-to-s3 {params.quiet} {input.sequences} "{params.destination_sequences}"
+            ./bin/upload-to-s3 {params.quiet} {input.nextclade} "{params.destination_nextclade}"
+   
+            ./bin/upload-to-s3 {params.quiet} {input.additional_info} "{params.destination_additional_info}"
+            ./bin/upload-to-s3 {params.quiet} {input.flagged_metadata} "{params.destination_flagged_metadata}"
+   
+            touch {output}
+        """)

@@ -1,0 +1,22 @@
+#!/bin/bash
+set -euo pipefail
+
+bin="$(dirname "$0")"
+
+src="${1:?A source flagged metadata txt file is required as the first argument.}"
+dst="${2:?A destination flagged metadata txt s3:// URL is required as the second argument.}"
+
+dst_local="${3:?A local file to store the s3:// data  is required as the third argument.}"
+diff="${4:?A file to store the difference between the old and new data is required as the fourth argument.}"
+
+
+# if the file is not already present, just exit
+"$bin"/s3-object-exists "$dst" || exit 0
+
+aws s3 cp --no-progress "$dst" - | gunzip -cfq > "$dst_local"
+
+comm -13 \
+    <(sort "$dst_local") \
+    <(sort "$src") \
+    > "$diff"
+
