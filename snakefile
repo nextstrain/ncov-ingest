@@ -236,7 +236,7 @@ rule notify_and_upload:
         destination_flagged_metadata = lambda wildcards : "$S3_SRC/"+ wildcards.database +"_flagged_metadata.txt.gz",
         destination_sequences = lambda wildcards : "$S3_SRC/"+ wildcards.database +"_sequences.fasta.gz",
         destination_nextclade = "$S3_SRC/nextclade.tsv.gz",
-        quiet = "--quiet"*(SILENT=='yes')
+        quiet = (SILENT=='yes')
     run :
         if GIT_BRANCH == "master" :
             # upload flagged annotations
@@ -349,6 +349,15 @@ rule notify_and_upload:
    
             ./bin/upload-to-s3 {params.quiet} {input.additional_info} "{params.destination_additional_info}"
             ./bin/upload-to-s3 {params.quiet} {input.flagged_metadata} "{params.destination_flagged_metadata}"
-   
+        """)
+        if not params.quiet :
+            shell("""
+                for dst in  "{params.destination_metadata}" "{params.destination_sequences}" "{params.destination_nextclade}" "{params.destination_additional_info}" "{params.destination_flagged_metadata}"
+                do
+                 ./bin/notify-slack "Updated $dst available."  $SLACK_TOKEN $SLACK_CHANNELS
+                done
+            """)
+
+        shell(f"""   
             touch {output}
         """)
