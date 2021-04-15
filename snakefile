@@ -104,7 +104,7 @@ rule fetch:
                     msg="📈 New nCoV records (n=$added_records) found on {params.database}."
                 fi
 
-				./bin/notify-slack $msg $SLACK_TOKEN $SLACK_CHANNELS 
+                ./bin/notify-slack $msg $SLACK_TOKEN $SLACK_CHANNELS 
 
               fi
               ./bin/upload-to-s3 --quiet {output} "{params.s3_dst}/{params.database}.ndjson.gz"
@@ -239,26 +239,28 @@ rule notify_and_upload:
         quiet = "--quiet"*(SILENT=='yes')
     run :
         if GIT_BRANCH == "master" :
+            # upload flagged annotations
             shell(f"""
                 # upload flagged annotations
                 ./bin/notify-slack --upload "flagged-annotations" $SLACK_TOKEN $SLACK_CHANNELS < {input.flagged_annotation}
             """)
-			
-			shell(f"""
+
+            # "Notifying Slack about metadata change."
+            shell(f"""
                 # notify and upload metadata change
                 
                 dst_local="$(mktemp -t metadata-XXXXXX.tsv)"
-				diff="$(mktemp -t metadata-changes-XXXXXX)"
-				additions="$(mktemp -t metadata-additions-XXXXXX)"
-				trap "rm -f '$dst_local' '$diff' '$additions'" EXIT
+                diff="$(mktemp -t metadata-changes-XXXXXX)"
+                additions="$(mktemp -t metadata-additions-XXXXXX)"
+                trap "rm -f '$dst_local' '$diff' '$additions'" EXIT
 
-				./bin/compute-metadata-change {input.metadata} "{params.destination_metadata}" {params.idcolumn} $dst_local $diff $additions
+                ./bin/compute-metadata-change {input.metadata} "{params.destination_metadata}" {params.idcolumn} $dst_local $diff $additions
 
 
                 # csv-diff outputs two newlines which -n ignores but -s does not
                 if [[ -n "$(< "$diff")" ]]; then
                     # "Notifying Slack about metadata change."
-				    ./bin/notify-slack --upload "metadata-changes.txt" $SLACK_TOKEN $SLACK_CHANNELS < "$diff"
+                    ./bin/notify-slack --upload "metadata-changes.txt" $SLACK_TOKEN $SLACK_CHANNELS < "$diff"
                 else
                     echo "No metadata change."
                 fi
@@ -272,8 +274,9 @@ rule notify_and_upload:
                     fi
                 fi
             """)
-
-			shell(f"""
+            
+            # "Notifying Slack about location hierarchy additions."
+            shell(f"""
 
                 diff="$(mktemp -t location-hierarchy-changes-XXXXXX)"
                 trap "rm -f '$diff'" EXIT
@@ -293,8 +296,9 @@ rule notify_and_upload:
                 fi
 
             """)
-
-			shell(f"""
+            
+            # "Notifying Slack about additional info change."
+            shell(f"""
 
                 diff="$(mktemp -t location-hierarchy-changes-XXXXXX)"
                 trap "rm -f '$diff'" EXIT
@@ -308,9 +312,10 @@ rule notify_and_upload:
                     echo "No additional info change."
                 fi
 
-			""")
+            """)
 
-			shell(f"""
+            # "Notifying Slack about flagged metadata additions."
+            shell(f"""
 
                 dst_local="$(mktemp -t flagged-metadata-XXXXXX.txt)"
                 diff="$(mktemp -t flagged-metadata-additions-XXXXXX)"
@@ -323,6 +328,16 @@ rule notify_and_upload:
                     ./bin/notify-slack --upload "flagged-metadata-additions.txt" $SLACK_TOKEN $SLACK_CHANNELS < "$diff"
                 else
                     echo "No flagged metadata additions."
+                fi
+
+            """)
+
+            # "Notifying Slack about problem data."
+            shell(f"""
+            
+                if [[ -s "data/genbank/problem_data.tsv" ]]; then
+                    # "Notifying Slack about problem data."
+                    ./bin/notify-slack --upload "genbank-problem-data.tsv" $SLACK_TOKEN $SLACK_CHANNELS < "data/genbank/problem_data.tsv"
                 fi
 
             """)
