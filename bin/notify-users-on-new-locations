@@ -47,7 +47,9 @@ def create_new_areas_lists(metadata: pd.DataFrame) -> Dict[str, List[str]]:
 
 
 def alert_user_of_new_strains(entry: Dict[str, Union[str, List[str]]],
-    new_areas: Dict[str, List[str]]):
+                              new_areas: Dict[str, List[str]],
+                              slack_channel : str ,
+                              slack_token : str ):
     """
     Using the given configuration *entry*, sends a Slack alert to the configured
     user if there are new strains in the user's interested location hierarchy
@@ -75,29 +77,37 @@ def alert_user_of_new_strains(entry: Dict[str, Union[str, List[str]]],
     alert_text = f"There are new strains from {', '.join(alerts)}"
 
     subprocess.run([
-        f"{base}/bin/notify-slack", f"<@{member_id}>: {alert_text}"
+        f"{base}/bin/notify-slack", f"<@{member_id}>: {alert_text}" , slack_token , slack_channel
     ])
 
+if __name__ == "__main__" :
+    parser = argparse.ArgumentParser(
+        description="Sends Slack alerts to certain, configurable users when "
+            "there are new strains available from their interested areas.",
+        formatter_class=argparse.RawTextHelpFormatter
+    )
+    parser.add_argument("incoming_metadata",
+        default=sys.stdin,
+        help="A TSV of incoming metadata.")
+    parser.add_argument("--config",
+        default=base / "new-sequence-alerts-config.json",
+        help="A config file declaring which users want to be notified of new strains in which areas.")
+    
+    parser.add_argument("--slack-channel",
+        required=True,
+        help="slack channel to post to.")
 
-parser = argparse.ArgumentParser(
-    description="Sends Slack alerts to certain, configurable users when "
-        "there are new strains available from their interested areas.",
-    formatter_class=argparse.RawTextHelpFormatter
-)
-parser.add_argument("incoming_metadata",
-    default=sys.stdin,
-    help="A TSV of incoming metadata.")
-parser.add_argument("--config",
-    default=base / "new-sequence-alerts-config.json",
-    help="A config file declaring which users want to be notified of new strains in which areas.")
+    parser.add_argument("--slack-token",
+        required=True,
+        help="slack token.")
 
-args = parser.parse_args()
-
-with open(args.config, 'r') as f:
-    config = json.load(f)
-
-incoming_metadata = pd.read_csv(args.incoming_metadata, sep='\t')
-new_areas = create_new_areas_lists(incoming_metadata)
-
-for entry in config:
-    alert_user_of_new_strains(entry, new_areas)
+    args = parser.parse_args()
+    
+    with open(args.config, 'r') as f:
+        config = json.load(f)
+    
+    incoming_metadata = pd.read_csv(args.incoming_metadata, sep='\t')
+    new_areas = create_new_areas_lists(incoming_metadata)
+    
+    for entry in config:
+        alert_user_of_new_strains(entry, new_areas , args.slack_channel , args.slack_token )

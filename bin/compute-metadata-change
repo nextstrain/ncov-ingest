@@ -1,0 +1,30 @@
+#!/bin/bash
+set -euo pipefail
+
+bin="$(dirname "$0")"
+
+src="${1:?A source metadata TSV file is required as the first argument.}"
+dst="${2:?A destination metadata TSV s3:// URL is required as the second argument.}"
+key="${3:?A key column to use as a unique ID for each row is required as the third argument.}"
+
+dst_local="${4:?A temporary file to receive the metadata from the s3:// repository is required as the fourth argument.}"
+diff="${5:?A temporary file to store the difference between the new and old file is required as the fifth argument.}"
+additions="${6:?A temporary file to store the addition in the new file is required as the sixth argument.}"
+
+
+# if the file is not already present, just exit
+"$bin"/s3-object-exists "$dst" || exit 0
+
+aws s3 cp --no-progress "$dst" - | gunzip -cfq > "$dst_local"
+
+csv-diff \
+    "$dst_local" \
+    "$src" \
+    --format tsv \
+    --key "$key" \
+    --singular sequence \
+    --plural sequences \
+    > "$diff"
+
+"$bin"/metadata-additions "$dst_local" "$src" "$key" > "$additions"
+

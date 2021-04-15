@@ -2,3 +2,8 @@
 idcolumn:
     gisaid:  gisaid_epi_isl
     genbank: genbank_accession
+
+
+slack_channel: 
+    genbank: ncov-genbank-updates
+    gisaid: ncov-gisaid-updates

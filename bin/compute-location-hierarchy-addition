@@ -1,0 +1,14 @@
+#!/bin/bash
+set -euo pipefail
+
+bin="$(dirname "$0")"
+
+src="${1:?A source location hierarchy TSV file is required as the first argument.}"
+dst="${2:?A destination location hierarchy TSV file is required as the second argument.}"
+diff="${3:?file to store the difference is required as the third argument.}"
+
+comm -13 \
+    <(sort "$dst") \
+    <(sort "$src") \
+    > "$diff"
+
