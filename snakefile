@@ -77,7 +77,7 @@ rule fetch:
         "data/{database}.ndjson"
     params:
         s3_dst=S3_DST,
-        database = lambda wildcards : wildcards.database ,
+        database = "{database}" ,
         slack_channel = lambda wildcards : config['slack_channel'][wildcards.database]
     shell:
            '''
@@ -142,7 +142,7 @@ rule transform_genbank:
         '''
         ./bin/transform-genbank {input} \
             --output-metadata {output.metadata} \
-            --output-fasta {output.sequences} \
+            --output-fasta {output.fasta} \
             --problem-data {output.problem} > {output.flagged_annotation}
 
         touch {output.additional_info}
@@ -151,7 +151,7 @@ rule transform_genbank:
 
 
 
-rule dowload_old_clades :
+rule download_old_clades :
     output:
         "data/{database}/nextclade.old.tsv"
     params:
@@ -163,8 +163,8 @@ rule dowload_old_clades :
 
 rule filter_fasta :
     input:
-        fasta = lambda wildcards : "data/"+wildcards.database+"/sequences.fasta",
-        tsv = rules.dowload_old_clades.output
+        fasta = "data/{database}/sequences.fasta",
+        tsv = rules.download_old_clades.output
     output:
         "data/{database}/nextclade.sequences.fasta"
     shell: 
@@ -180,7 +180,7 @@ rule run_nextclade :
 
 rule join_clades :
     input:
-        old=rules.dowload_old_clades.output ,
+        old=rules.download_old_clades.output ,
         new=rules.run_nextclade.output
     output:
         "data/{database}/nextclade.tsv"
@@ -191,7 +191,7 @@ rule join_clades :
 rule join_metadata_and_clades :
     input:
         clades = rules.join_clades.output ,
-        meta = lambda wildcards : "data/"+wildcards.database+"/metadata.noClade.tsv"
+        meta = "data/{database}/metadata.noClade.tsv"
     output:
         "data/{database}/metadata.tsv"
     shell:
@@ -218,21 +218,21 @@ rule check_locations :
 
 rule notify_and_upload:
     input :
-        sequences = lambda wildcards : "data/"+wildcards.database+"/sequences.fasta",
-        metadata = lambda wildcards : "data/"+wildcards.database+"/metadata.tsv",
-        nextclade = lambda wildcards : "data/"+wildcards.database+"/nextclade.tsv",
-        additional_info = lambda wildcards : "data/"+wildcards.database+"/additional_info.tsv",
-        flagged_metadata = lambda wildcards : "data/"+wildcards.database+"/flagged_metadata.txt",
-        flagged_annotation = lambda wildcards : "data/"+wildcards.database+"/transform-log.txt",
-        location_hierarchy = lambda wildcards : "data/"+wildcards.database+"/location_hierarchy.tsv"
+        sequences = "data/{database}/sequences.fasta",
+        metadata = "data/{database}/metadata.tsv",
+        nextclade = "data/{database}/nextclade.tsv",
+        additional_info = "data/{database}/additional_info.tsv",
+        flagged_metadata = "data/{database}/flagged_metadata.txt",
+        flagged_annotation = "data/{database}/transform-log.txt",
+        location_hierarchy = "data/{database}/location_hierarchy.tsv"
     output :
         "notify_and_upload.{database}.mock_output.txt"
     params :
         idcolumn=lambda wildcards : config['idcolumn'][wildcards.database],
-        destination_metadata = lambda wildcards : "$S3_SRC/"+ wildcards.database +"_metadata.tsv.gz",
-        destination_additional_info = lambda wildcards : "$S3_SRC/"+ wildcards.database +"_additional_info.tsv.gz",
-        destination_flagged_metadata = lambda wildcards : "$S3_SRC/"+ wildcards.database +"_flagged_metadata.txt.gz",
-        destination_sequences = lambda wildcards : "$S3_SRC/"+ wildcards.database +"_sequences.fasta.gz",
+        destination_metadata = "$S3_SRC/{database}_metadata.tsv.gz",
+        destination_additional_info = "$S3_SRC/{database}_additional_info.tsv.gz",
+        destination_flagged_metadata = "$S3_SRC/{database}_flagged_metadata.txt.gz",
+        destination_sequences = "$S3_SRC/{database}_sequences.fasta.gz",
         destination_nextclade = "$S3_SRC/nextclade.tsv.gz",
         quiet = (SILENT=='yes') ,
         slack_channel = lambda wildcards : config['slack_channel'][wildcards.database]
