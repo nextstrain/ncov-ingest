@@ -102,6 +102,7 @@ Europe/France/Bretagne/Lanilis	Europe/France/Bretagne/Lannilis
 Europe/France/Bretagne/Dinan Cedex	Europe/France/Bretagne/Dinan
 Europe/France/Bretagne/La Rochelle	Europe/France/Nouvelle-Aquitaine/La Rochelle
 Europe/France/Bretagne/Noyal Chatillion sur Seiche	Europe/France/Bretagne/Noyal Chatillon sur Seiche
+Europe/France/Bretagne/Saint-Malo	Europe/France/Bretagne/Saint Malo
 Europe/France/Centre Val de Loire/Nantes	Europe/France/Pays de la Loire/Nantes
 Europe/France/Centre Val de Loire/*	Europe/France/Centre-Val de Loire/*
 Europe/France/Auvergne-Rhone-Alpes/Andrezieux-Boutheon	Europe/France/Auvergne-Rhône-Alpes/Andrézieux-Bouthéon
@@ -150,6 +151,7 @@ Europe/France/Occitanie/Saint-Gilles	Europe/France/Occitanie/Saint-Gilles FR
 Europe/France/Occitanie/Béziers	Europe/France/Occitanie/Beziers
 Europe/France/Occitanie/Nimes	Europe/France/Occitanie/Nîmes
 Europe/France/Occitanie/Uzes	Europe/France/Occitanie/Uzès
+Europe/France/Occitanie/Toulon	Europe/France/Provence-Alpes-Côte d'Azur/Toulon
 Europe/France/Alpes Maritimes/	Europe/France/Provence-Alpes-Côte d'Azur/Alpes Maritimes
 Europe/France/Centre/*	Europe/France/Centre-Val de Loire/*
 Europe/France/Nord Pas de Calais/Lille	Europe/France/Hauts de France/Lille FR
@@ -6190,6 +6192,10 @@ Europe/Switzerland/Sankt Gallen/Altnau	Europe/Switzerland/Thurgau/Altnau
 Europe/Switzerland/Sankt Gallen/Sankt Gallen	Europe/Switzerland/Sankt Gallen/St Gallen
 Europe/Switzerland/Sankt Gallen/Marbach Sg	Europe/Switzerland/Sankt Gallen/Marbach SG
 Europe/Switzerland/Sankt Gallen/Haag (Rheintal)	Europe/Switzerland/Sankt Gallen/Haag Rheintal
+Europe/Switzerland/Sankt Gallen/Gossau Sg	Europe/Switzerland/Sankt Gallen/Gossau
+Europe/Switzerland/Sankt Gallen/St. Gallenkappel	Europe/Switzerland/Sankt Gallen/Sankt Gallenkappel
+Europe/Switzerland/Sankt Gallen/Jona Sg	Europe/Switzerland/Sankt Gallen/Jona
+Europe/Switzerland/Sankt Gallen/Grabserberg Sg	Europe/Switzerland/Sankt Gallen/Grabserberg
 Europe/Switzerland/Schwyz/Rickenbach B. Schwyz	Europe/Switzerland/Schwyz/Rickenbach CH
 Europe/Switzerland/Be/Bernv	Europe/Switzerland/Bern/
 Europe/Switzerland/Be/*	Europe/Switzerland/Bern/*
@@ -6381,6 +6387,7 @@ Europe/Czech Republic/Cesky Brod/	Europe/Czech Republic/Central Bohemian Region/
 Europe/Czech Republic/Cernosice/	Europe/Czech Republic/Central Bohemian Region/Černošice
 Europe/Czech Republic/Praha 5 Stodulky/	Europe/Czech Republic/Prague/Stodůlky
 Europe/Czech Republic/Namest Na Oslavou/	Europe/Czech Republic/Vysocina Region/Náměšť nad Oslavou
+Europe/Czech Republic/Karlovy Vary Region/*	Europe/Czech Republic/Karlovy Vary/*
 Europe/Crimea//	Europe/Ukraine/Crimea/Crimea
 Europe/Crimea/Simpheropol/	Europe/Ukraine/Crimea/Simpheropol
 Europe/Crimea/Alushta/	Europe/Ukraine/Crimea/Alushta
@@ -6559,6 +6566,8 @@ Europe/Poland/Wielkopolskie/Gorzyca	Europe/Poland/Lubuskie/Gorzyca
 Europe/Poland/Wielkopolskie/Slubice	Europe/Poland/Lubuskie/Slubice
 Europe/Poland/Wielkopolskie/Osnolubuskie	Europe/Poland/Lubuskie/Osnolubuskie
 Europe/Poland/Wielkopolskie/Wągrowiec	Europe/Poland/Wielkopolskie/Wagrowiec
+Europe/Poland/Wielkopolskie/Miedzyrzecz	Europe/Poland/Lubuskie/Miedzyrzecz
+Europe/Poland/Wielkopolskie/Grodziski	Europe/Poland/Wielkopolskie/Grodzisk
 Europe/Poland/Warminsko-Mazurskie/Olsztynski	Europe/Poland/Warminsko-Mazurskie/Olsztyn
 Europe/Poland/Warminsko-Mazurskie/Komorniki	Europe/Poland/Warminsko-Mazurskie/Komorniki WN
 Europe/Poland/Warminsko-Mazurskie/Lutry	Europe/Poland/Warminsko-Mazurskie/Lutry PL
@@ -6573,6 +6582,10 @@ Europe/Poland/Warminsko-Mazurskie/Kętrzyn	Europe/Poland/Warminsko-Mazurskie/Ket
 Europe/Poland/Warminsko-Mazurskie/Ostroda	Europe/Poland/Warminsko-Mazurskie/Ostrodzki
 Europe/Poland/Warminsko-Mazurskie/Dabrowa	Europe/Poland/Warminsko-Mazurskie/Dabrowa (Warminsko-Mazurskie)
 Europe/Poland/Warminsko-Mazurskie/Zalesie	Europe/Poland/Warminsko-Mazurskie/Zalesie (Warminsko-Mazurskie)
+Europe/Poland/Warminsko-Mazurskie/Bartoszyce	Europe/Poland/Warminsko-Mazurskie/Bartoszycki
+Europe/Poland/Warminsko-Mazurskie/Wegorzewo	Europe/Poland/Warminsko-Mazurskie/Wegorzewski
+Europe/Poland/Warminsko-Mazurskie/Gizycko	Europe/Poland/Warminsko-Mazurskie/Gizycki
+Europe/Poland/Warminsko-Mazurskie/Mragowo	Europe/Poland/Warminsko-Mazurskie/Mragowski
 Europe/Poland/Podlaskie/Bielsk Podlaski	Europe/Poland/Podlaskie/Bielsk Podlaski
 Europe/Poland/Podlaskie/Orzysz	Europe/Poland/Warminsko-Mazurskie/Orzysz
 Europe/Poland/Podlaskie/Bialystok	Europe/Poland/Podlaskie/Białystok
@@ -6606,6 +6619,7 @@ Europe/Poland/Dolnośląskie/Zabkowice Slaskie	Europe/Poland/Dolnośląskie/Ząb
 Europe/Poland/Dolnośląskie/Kamieniec Wroclawski	Europe/Poland/Dolnośląskie/Kamieniec Wrocławski
 Europe/Poland/Dolnośląskie/Kepno	Europe/Poland/Wielkopolskie/Kepno
 Europe/Poland/Dolnośląskie/Lipno	Europe/Poland/Kujawsko-Pomorskie/Lipno
+Europe/Poland/Dolnośląskie/Wraclaw	Europe/Poland/Dolnośląskie/Wroclaw
 Europe/Poland/Pomorskie/Gdańsk	Europe/Poland/Pomorskie/Gdansk
 Europe/Poland/Pomorskie/Slupsk	Europe/Poland/Pomorskie/Słupsk
 Europe/Poland/Pomorskie/Koscierzyna	Europe/Poland/Pomorskie/Kościerzyna
@@ -6629,6 +6643,7 @@ Europe/Poland/Mujawsko-Pomorskie/*	Europe/Poland/Kujawsko-Pomorskie/*
 Europe/Poland/Lubuskie/Swidnica	Europe/Poland/Lubuskie/Swidnica LB
 Europe/Poland/Lubuskie/Kostrzyn	Europe/Poland/Lubuskie/Kostrzyn (Lubuskie)
 Europe/Poland/Lubuskie/Gorzow Wlkp	Europe/Poland/Lubuskie/Gorzow Wielkopolski
+Europe/Poland/Lubuskie/Gorzow Wlkp.	Europe/Poland/Lubuskie/Gorzow Wielkopolski
 Europe/Poland/Slaskie/Bielsko-Biala	Europe/Poland/Slaskie/Bielsko-Biała
 Europe/Poland/Slaskie/Zywiec	Europe/Poland/Slaskie/Żywiec
 Europe/Poland/Slaskie/Glucholazy	Europe/Poland/Opolskie/Głuchołazy
@@ -6819,6 +6834,12 @@ Europe/Austria/Roitham/	Europe/Austria/Upper Austria/Roitham am Traunfall
 Europe/Austria/Schoerfling Am Attersee/	Europe/Austria/Upper Austria/Schörfling Am Attersee
 Europe/Austria/Ebensee/	Europe/Austria/Upper Austria/Ebensee Am Traunsee
 Europe/Austria/Waidhofen/Thaya	Europe/Austria/Lower Austria/Thaya
+Europe/Austria/Aigen-Voglhub/	Europe/Austria/Upper Austria/Aigen-Voglhub
+Europe/Austria/Nussgorf Am Attersee/	Europe/Austria/Upper Austria/Nussdorf Am Attersee
+Europe/Austria/Manning/	Europe/Austria/Upper Austria/Manning
+Europe/Austria/Pöndorf/	Europe/Austria/Upper Austria/Pöndorf
+Europe/Austria/Nussdorf Am Attersee/	Europe/Austria/Upper Austria/Nussdorf Am Attersee
+Europe/Austria/Ziar nad Hronom/	Europe/Slovakia/Banska Bystrica/Ziar nad Hronom
 Europe/Romania/Lalomita/*	Europe/Romania/Ialomița/*
 Europe/Romania/Ialomita/*	Europe/Romania/Ialomița/*
 Europe/Romania/Targu Mures/	Europe/Romania/Mures/Targu Mures
@@ -7152,6 +7173,18 @@ Europe/Slovakia/Cimhova/	Europe/Slovakia/Zilina/Cimhova
 Europe/Slovakia/Bela/	Europe/Slovakia/Zilina/Bela
 Europe/Slovakia/Holic/	Europe/Slovakia/Trnava/Holíč
 Europe/Slovakia/Prešov/Vranov nad Toplou	Europe/Slovakia/Prešov/Vranov nad Toplov
+Europe/Slovakia/Turcianska Stavnicka/	Europe/Slovakia/Zilina/Turčianska Štiavnička
+Europe/Slovakia/Mosovce/	Europe/Slovakia/Zilina/Mosovce
+Europe/Slovakia/Bystricka/	Europe/Slovakia/Zilina/Bystricka
+Europe/Slovakia/Valaliky/	Europe/Slovakia/Kosice/Valaliky
+Europe/Slovakia/Tornala/	Europe/Slovakia/Banska Bystrica/Tornala
+Europe/Slovakia/Jazernica/	Europe/Slovakia/Zilina/Jazernica
+Europe/Slovakia/Mala Trna/	Europe/Slovakia/Kosice/Mala Trna
+Europe/Slovakia/Krasnohorska Dlha Luka/	Europe/Slovakia/Kosice/Krasnohorska Dlha Luka
+Europe/Slovakia/Ozdany/	Europe/Slovakia/Banska Bystrica/Ozdany
+Europe/Slovakia/Velky Cepcin/	Europe/Slovakia/Zilina/Velky Cepcin
+Europe/Slovakia/Tvrodsin/	Europe/Slovakia/Zilina/Tvrdosin
+Europe/Slovakia/Haj/	Europe/Slovakia/Kosice/Haj
 Europe/Denmark/Na/	Europe/Denmark/Denmark/
 Europe/Denmark/Na/*	Europe/Denmark//*
 Europe/Ireland/Limerick/Limerick County	Europe/Ireland/Limerick/
@@ -7375,6 +7408,7 @@ Asia/Bangladesh/Sylhet/La Rose Hotel	Asia/Bangladesh/Sylhet/Sylhet
 Asia/Bangladesh/Sylhet/Uhc Fenchuganj	Asia/Bangladesh/Sylhet/Fenchuganj
 Asia/Bangladesh/Chitattong/Cumilla	Asia/Bangladesh/Chattogram/Comilla
 Asia/Bangladesh/Sunamganj/*	Asia/Bangladesh/Sylhet/Sunamganj
+Asia/Bangladesh/Noakhali/	Asia/Bangladesh/Chattogram/Noakhali
 Asia/Thailand/Phatum Thani/	Asia/Thailand/Pathum Thani/
 Asia/Thailand/Samut Sakorn/*	Asia/Thailand/Samut Sakhon/*
 Asia/Thailand/Angthong/*	Asia/Thailand/Ang Thong/*
@@ -7590,6 +7624,18 @@ North America/USA/Illinois/Macoupin	North America/USA/Illinois/Macoupin County
 North America/USA/Illinois/Mason	North America/USA/Illinois/Mason County IL
 North America/USA/Illinois/Montgomery	North America/USA/Illinois/Montgomery County IL
 North America/USA/Illinois/Whiteside	North America/USA/Illinois/Whiteside County
+North America/USA/Illinois/Kankakee	North America/USA/Illinois/Kankakee County
+North America/USA/Illinois/Bureau	North America/USA/Illinois/Bureau County
+North America/USA/Illinois/Putnam	North America/USA/Illinois/Putnam County IL
+North America/USA/Illinois/Unknown	North America/USA/Illinois/
+North America/USA/Illinois/Logan	North America/USA/Illinois/Logan County IL
+North America/USA/Illinois/Iroquois	North America/USA/Illinois/Iroquois County
+North America/USA/Illinois/Livuingston	North America/USA/Illinois/Livingston County IL
+North America/USA/Illinois/Dekalb	North America/USA/Illinois/Dekalb County IL
+North America/USA/Illinois/Cass	North America/USA/Illinois/Cass County IL
+North America/USA/Illinois/Kissack	North America/USA/Illinois/
+North America/USA/Illinois/Dewitt	North America/USA/Illinois/DeWitt County IL
+North America/USA/Illinois/Mchenry	North America/USA/Illinois/McHenry County
 North America/USA/Wisconsin/Monroe County	North America/USA/Wisconsin/Monroe County WI
 North America/USA/Wisconsin/Richland County	North America/USA/Wisconsin/Richland County WI
 North America/USA/Wisconsin/Grant County	North America/USA/Wisconsin/Grant County WI
@@ -7626,6 +7672,7 @@ North America/USA/Wisconsin/Douglas County	North America/USA/Wisconsin/Douglas C
 North America/USA/Wisconsin/Crawford County	North America/USA/Wisconsin/Crawford County WI
 North America/USA/Wisconsin/Oneida County	North America/USA/Wisconsin/Oneida County WI
 North America/USA/Wisconsin/Waupun County	North America/USA/Wisconsin/Waupun
+North America/USA/Wisconsin/Rusk County	North America/USA/Wisconsin/Rusk County WI
 North America/USA/Ohio/Columbus	North America/USA/Ohio/Columbus OH
 North America/USA/Ohio/Franklin County	North America/USA/Ohio/Franklin County OH
 North America/USA/Ohio/Colombus	North America/USA/Ohio/Columbus OH
@@ -7764,6 +7811,7 @@ North America/USA/Indiana/Jefferson County	North America/USA/Indiana/Jefferson C
 North America/USA/Indiana/Johnson County	North America/USA/Indiana/Johnson County IN
 North America/USA/Indiana/Boone	North America/USA/Indiana/Boone County IN
 North America/USA/Indiana/Boone County	North America/USA/Indiana/Boone County IN
+North America/USA/Indiana/Mason	North America/USA/Indiana/
 North America/USA/California/Orange County	North America/USA/California/Orange County CA
 North America/USA/California/Kings County	North America/USA/California/Kings County CA
 North America/USA/California/Lake County	North America/USA/California/Lake County CA
@@ -7789,6 +7837,7 @@ North America/USA/California/San Bernadino County	North America/USA/California/S
 North America/USA/California/San Luis Obispo	North America/USA/California/San Luis Obispo County
 North America/USA/California/Santa Cruz	North America/USA/California/Santa Cruz County CA
 North America/USA/California/Santa Cruz County	North America/USA/California/Santa Cruz County CA
+North America/USA/California/Santa Clara	North America/USA/California/Santa Clara County
 North America/USA/New Jersey/Essex County	North America/USA/New Jersey/Essex County NJ
 North America/USA/New Jersey/Hudson	North America/USA/New Jersey/Hudson County
 North America/USA/New Jersey/Morris County	North America/USA/New Jersey/Morris County NJ
@@ -7853,6 +7902,9 @@ North America/USA/Oregon/Polk	North America/USA/Oregon/Polk County OR
 North America/USA/Oregon/Jackson	North America/USA/Oregon/Jackson County OR
 North America/USA/Oregon/Linn	North America/USA/Oregon/Linn County
 North America/USA/Oregon/Josephine	North America/USA/Oregon/Josephine County
+North America/USA/Oregon/Lincoln	North America/USA/Oregon/Lincoln County OR
+North America/USA/Oregon/Lane	North America/USA/Oregon/Lane County OR
+North America/USA/Oregon/Klamath	North America/USA/Oregon/Klamath County
 North America/USA/Texas/Houston County	North America/USA/Texas/Harris County
 North America/USA/Texas/Washington County	North America/USA/Texas/Washington County TX
 North America/USA/Texas/Williamson County	North America/USA/Texas/Williamson County TX
@@ -8021,8 +8073,39 @@ North America/USA/Texas/Ascension	North America/USA/Texas/
 North America/USA/Texas/Hardin	North America/USA/Texas/Liberty County
 North America/USA/Texas/Tyler	North America/USA/Texas/Smith County
 North America/USA/Texas/Williams	North America/USA/Texas/Brown County TX
-North America/USA/Texas/De Witt	North America/USA/Texas/DeWitt County
+North America/USA/Texas/De Witt	North America/USA/Texas/DeWitt County TX
 North America/USA/Texas/Refugio	North America/USA/Texas/Refugio County
+North America/USA/Texas/Woodway	North America/USA/Texas/Mclennan County
+North America/USA/Texas/Magnolia	North America/USA/Texas/Montgomery County TX
+North America/USA/Texas/Axtell	North America/USA/Texas/Mclennan County
+North America/USA/Texas/Kempner	North America/USA/Texas/Lampasas County
+North America/USA/Texas/Bellville	North America/USA/Texas/Austin County
+North America/USA/Texas/Navasota	North America/USA/Texas/Grimes County
+North America/USA/Texas/Brenham	North America/USA/Texas/Washington County TX
+North America/USA/Texas/Robinson	North America/USA/Texas/Mclennan County
+North America/USA/Texas/Teague	North America/USA/Texas/Freestone County
+North America/USA/Texas/Manor	North America/USA/Texas/Travis County
+North America/USA/Texas/Harker Heights	North America/USA/Texas/Bell County
+North America/USA/Texas/Pflugerville	North America/USA/Texas/Travis County
+North America/USA/Texas/Briggs	North America/USA/Texas/Burnet County
+North America/USA/Texas/Spring	North America/USA/Texas/Harris County
+North America/USA/Texas/West	North America/USA/Texas/Mclennan County
+North America/USA/Texas/Huntsville	North America/USA/Texas/Walker County TX
+North America/USA/Texas/Leander	North America/USA/Texas/Williamson County TX
+North America/USA/Texas/Thorndale	North America/USA/Texas/Milam County
+North America/USA/Texas/Katy	North America/USA/Texas/Fort Bend County
+North America/USA/Texas/Clifton	North America/USA/Texas/Bosque County
+North America/USA/Texas/The Woodlands	North America/USA/Texas/Montgomery County TX
+North America/USA/Texas/Lexington	North America/USA/Texas/Lee County TX
+North America/USA/Texas/Euless	North America/USA/Texas/Tarrant County
+North America/USA/Texas/Winkler	North America/USA/Texas/Winkler County
+North America/USA/Texas/Randall	North America/USA/Texas/Randall County
+North America/USA/Texas/Roosevelt	North America/USA/Texas/Kimble County
+North America/USA/Texas/La Salle	North America/USA/Texas/La Salle County
+North America/USA/Texas/Little River	North America/USA/Texas/Bell County
+North America/USA/Texas/Newton	North America/USA/Texas/Newton County
+North America/USA/Texas/Rusk County	North America/USA/Texas/Rusk County TX
+North America/USA/Texas/DeWitt County	North America/USA/Texas/DeWitt County TX
 North America/USA/Louisiana/Desoto Parish	North America/USA/Louisiana/DeSoto Parish
 North America/USA/Louisiana/St. Tammany Parish	North America/USA/Louisiana/St Tammany Parish
 North America/USA/Louisiana/St. Bernard Parish	North America/USA/Louisiana/St Bernard Parish
@@ -8085,6 +8168,7 @@ North America/USA/Pennsylvania/Monroe County	North America/USA/Pennsylvania/Monr
 North America/USA/Pennsylvania/Se Pennsylvania	North America/USA/Pennsylvania/Chester County
 North America/USA/Minnesota/Houston County	North America/USA/Minnesota/Houston County MN
 North America/USA/Massachusetts/Middlesex County	North America/USA/Massachusetts/Middlesex County MA
+North America/USA/Massachusetts/Worcester	North America/USA/Massachusetts/Worcester County
 North America/USA/Idaho/Madison County	North America/USA/Idaho/Madison County ID
 North America/USA/Nevada/Clark County	North America/USA/Nevada/Clark County NV
 North America/USA/Nevada/Douglas County	North America/USA/Nevada/Douglas County NV
@@ -8142,6 +8226,7 @@ North America/USA/Alabama/Butler County	North America/USA/Alabama/Butler County 
 North America/USA/Alabama/Clay County	North America/USA/Alabama/Clay County AL
 North America/USA/Alabama/Lawrence County	North America/USA/Alabama/Lawrence County AL
 North America/USA/Alabama/Henry County	North America/USA/Alabama/Henry County AL
+North America/USA/Alabama/Huntsville	North America/USA/Alabama/Madison County AL
 North America/USA/Texas Terry/*	North America/USA/Texas/Terry County
 North America/USA/Texas Mclennan/*	North America/USA/Texas/Mclennan County
 North America/USA/Al/*	North America/USA/Alabama/*
@@ -8352,6 +8437,8 @@ South America/Brazil/São Paulo/Itapetim	South America/Brazil/Pernambuco/Itapeti
 South America/Brazil/São Paulo/Taguaritinga	South America/Brazil/São Paulo/Taquaritinga
 South America/Brazil/São Paulo/Valparaiso	South America/Brazil/São Paulo/Valparaiso BR
 South America/Brazil/São Paulo/Biritiba-Mirim	South America/Brazil/São Paulo/Biritiba Mirim
+South America/Brazil/São Paulo/Pariquera Acu	South America/Brazil/São Paulo/Pariquera-Acu
+South America/Brazil/São Paulo/Robeirao Preto	South America/Brazil/São Paulo/Ribeirao Preto
 South America/Brazil/Paraíba/*	South America/Brazil/Paraiba/*
 South America/Brazil/Rio de Janeiro/Nova Iguaçu	South America/Brazil/Rio de Janeiro/Nova Iguacu
 South America/Brazil/Rio de Janeiro/São Gonçalo	South America/Brazil/Rio de Janeiro/Sao Goncalo
@@ -8388,6 +8475,7 @@ South America/Brazil/Sao Paulo/Embu	South America/Brazil/São Paulo/Embu Das Art
 South America/Brazil/Sao Paulo/Maceio	South America/Brazil/Alagoas/Maceio
 South America/Brazil/Sao Paulo/Petrolandia	South America/Brazil/Pernambuco/Petrolandia
 South America/Brazil/Sao Paulo/Itapetim	South America/Brazil/Pernambuco/Itapetim
+South America/Brazil/Sao Paulo/Pariquera Acu	South America/Brazil/São Paulo/Pariquera-Acu
 South America/Brazil/Paraiba/Itambe	South America/Brazil/Pernambuco/Itambe
 South America/Brazil/Paraiba/Santa Rita	South America/Brazil/Paraiba/Santa Rita PB
 South America/Brazil/Parana/*	South America/Brazil/Paraná/*
@@ -8528,6 +8616,16 @@ South America/Bolivia/Sucre/	South America/Bolivia/Chuquisaca/Sucre BO
 South America/Guyane Francaise/Guyane Francaise/	Europe/France/French Guiana/
 South America/Guyane Francaise/Cayenne/	Europe/France/French Guiana/Cayenne GF
 South America/French Guiana/Cayenne/	Europe/France/French Guiana/Cayenne GF
+South America/French Guiana/Papaichton/	Europe/France/French Guiana/Papaichton
+South America/French Guiana/Regina/	Europe/France/French Guiana/Regina
+South America/French Guiana/Grand Santi/	Europe/France/French Guiana/Grand Santi
+South America/French Guiana/St Laurent Du Maroni/	Europe/France/French Guiana/St Laurent Du Maroni
+South America/French Guiana/Kourou/	Europe/France/French Guiana/Kourou
+South America/French Guiana/Javouhey/	Europe/France/French Guiana/Javouhey
+South America/French Guiana/Apatou/	Europe/France/French Guiana/Apatou
+South America/French Guiana/Macouria/	Europe/France/French Guiana/Macouria
+South America/French Guiana/Remire-Montjoly/	Europe/France/French Guiana/Remire-Montjoly
+South America/French Guiana/Sinnamary/	Europe/France/French Guiana/Sinnamary
 South America/Mexico/*/*	North America/Mexico/*/*
 Oceania/Australia/Victoria/Clayton	Oceania/Australia/Victoria/Clayton AU
 Oceania/Australia/Act/*	Oceania/Australia/Australian Capital Territory/*
@@ -8579,6 +8677,7 @@ Africa/South Africa/KwaZulu-Natal/Ethekweni	Africa/South Africa/KwaZulu-Natal/eT
 Africa/South Africa/Kwazulu Natal/*	Africa/South Africa/KwaZulu-Natal/*
 Africa/South Africa/Northern Cape Province/*	Africa/South Africa/Northern Cape/*
 Africa/Democratic Republic of the Congo/Sud-Kivu/*	Africa/Democratic Republic of the Congo/Sud Kivu/*
+Africa/Democratic Republic of the Congo/Nord-Kivu/*	Africa/Democratic Republic of the Congo/Nord Kivu/*
 Africa/Madagascar/Analamanga/Fenoarivo	Africa/Madagascar/Analanjirofo/Fenoarivo
 Africa/Madagascar/Antananarivo/	Africa/Madagascar/Analamanga/Antananarivo
 Africa/Egypt/Fayoum/*	Africa/Egypt/Faiyum/*
