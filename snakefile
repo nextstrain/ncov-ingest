@@ -42,13 +42,13 @@ else:
 
 ## defining some environment variables for gisaid fetching:
 if config['gisaid_endpoint'] != "NA" :
-	os.environ["GISAID_API_ENDPOINT"] = config['gisaid_endpoint']
+    os.environ["GISAID_API_ENDPOINT"] = config['gisaid_endpoint']
 if config['gisaid_login'] != "NA" :
-	os.environ["GISAID_USERNAME_AND_PASSWORD"] = config['gisaid_login']
+    os.environ["GISAID_USERNAME_AND_PASSWORD"] = config['gisaid_login']
 
 ## defining some environment variables for slack notifications:
 if config['slack_token'] != "NA" :
-	os.environ["SLACK_TOKEN"] = config['slack_token']
+    os.environ["SLACK_TOKEN"] = config['slack_token']
 
 
 
@@ -106,38 +106,11 @@ rule fetch:
     output:
         "data/{database}.ndjson"
     params:
-        s3_dst=S3_DST,
-        database = "{database}" ,
-        slack_channel = lambda wildcards : config['slack_channel'][wildcards.database]
+        database = "{database}" 
     run:
         
         if config['fetch'].lower() in ['1','yes','true']:
             shell( './bin/fetch-from-{params.database} > {output}')
-
-            if GIT_BRANCH == "master" : 
-                shell( '''
-                dst=$S3_SRC/{params.database}.ndjson.gz
-
-                src_record_count="$(wc -l < "$src")"
-                dst_record_count="$(wc -l < <(aws s3 cp --no-progress "$dst" - | gunzip -cfq))"
-                added_records="$(( src_record_count - dst_record_count ))"
-
-                msg=""
-
-                if [[ $added_records -gt 0 ]]; then
-                    msg="📈 New nCoV records (n=$added_records) found on {params.database}."
-                elif [[ $added_records -lt 0 ]]; then
-                    msg="WARNING: the new version of {params.database} has fewer records‽"
-                
-                else
-                    msg="📈 New nCoV records (n=$added_records) found on {params.database}."
-                fi
-
-                ./bin/notify-slack $msg $SLACK_TOKEN {params.slack_channel}
-                ''')
-
-            shell('./bin/upload-to-s3 --quiet {output} "{params.s3_dst}/{params.database}.ndjson.gz"')
-
         else :
             shell('aws s3 cp --no-progress "{params.s3_dst}/{params.database}.ndjson.gz" - | gunzip -cfq > {output}')
 
@@ -258,20 +231,46 @@ rule notify_and_upload:
     output :
         "notify_and_upload.{database}.mock_output.txt"
     params :
+        database="{database}",
         idcolumn=lambda wildcards : config['idcolumn'][wildcards.database],
         destination_metadata = "$S3_SRC/{database}_metadata.tsv.gz",
         destination_additional_info = "$S3_SRC/{database}_additional_info.tsv.gz",
         destination_flagged_metadata = "$S3_SRC/{database}_flagged_metadata.txt.gz",
         destination_sequences = "$S3_SRC/{database}_sequences.fasta.gz",
         destination_nextclade = "$S3_SRC/nextclade.tsv.gz",
+        destination_json = "$S3_SRC/{database}.ndjson.gz",
         quiet = (SILENT=='yes') ,
-        slack_channel = lambda wildcards : config['slack_channel'][wildcards.database]
+        slack_channel = lambda wildcards : config['slack_channel'][wildcards.database],
+
     run :
-    	if config['slack_token'] == 'NA' :
-    		print( "ERROR : no slack_tocken.\nDefine one using --config slack_token=..." , file = sys.stderr)
-    		exit(1)
+        if config['slack_token'] == 'NA' :
+            print( "ERROR : no slack_token defined.\nDefine one using --config slack_token=..." , file = sys.stderr)
+            exit(1)
 
         if GIT_BRANCH == "master" :
+
+            shell( '''
+                dst={params.destination_json}
+
+                src_record_count="$(wc -l < "$src")"
+                dst_record_count="$(wc -l < <(aws s3 cp --no-progress "$dst" - | gunzip -cfq))"
+                added_records="$(( src_record_count - dst_record_count ))"
+
+                msg=""
+
+                if [[ $added_records -gt 0 ]]; then
+                    msg="📈 New nCoV records (n=$added_records) found on {params.database}."
+                elif [[ $added_records -lt 0 ]]; then
+                    msg="WARNING: the new version of {params.database} has fewer records‽"
+                
+                else
+                    msg="📈 New nCoV records (n=$added_records) found on {params.database}."
+                fi
+
+                ./bin/notify-slack $msg $SLACK_TOKEN {params.slack_channel}
+                ''')
+
+
             # upload flagged annotations
             shell(f"""
                 # upload flagged annotations
@@ -374,6 +373,9 @@ rule notify_and_upload:
                 fi
 
             """)
+
+
+        shell('./bin/upload-to-s3 --quiet {output} "{destination_json}"')
 
         shell(f"""
             ./bin/upload-to-s3 {params.quiet} {input.metadata} "{params.destination_metadata}"
