@@ -4,8 +4,7 @@ envvars:
     "GITHUB_REF",
     "GISAID_API_ENDPOINT",
     "GISAID_USERNAME_AND_PASSWORD",
-    "SLACK_TOKEN",
-    "FETCH"
+    "SLACK_TOKEN"
 
 
 configfile: "snake_config.yaml"
@@ -44,7 +43,7 @@ else:
 print( "S3_SRC is" , os.environ['S3_SRC'] , file=sys.stderr )
 print( "S3_DST is" , S3_DST , file=sys.stderr )
 
-
+#print('fetch' , config)
 
 
 ## target rule all 
@@ -79,12 +78,13 @@ rule fetch:
         s3_dst=S3_DST,
         database = "{database}" ,
         slack_channel = lambda wildcards : config['slack_channel'][wildcards.database]
-    shell:
-           '''
-            if [[ "$FETCH" == 1 ]]; then
-              ./bin/fetch-from-{params.database} > {output}
-              if [[ "$branch" == master ]]; then
+    run:
+        
+        if config['fetch'].lower() in ['1','yes','true']:
+            shell( './bin/fetch-from-{params.database} > {output}')
 
+            if GIT_BRANCH == "master" : 
+                shell( '''
                 dst=$S3_SRC/{params.database}.ndjson.gz
 
                 src_record_count="$(wc -l < "$src")"
@@ -103,13 +103,12 @@ rule fetch:
                 fi
 
                 ./bin/notify-slack $msg $SLACK_TOKEN {params.slack_channel}
+                ''')
 
-              fi
-              ./bin/upload-to-s3 --quiet {output} "{params.s3_dst}/{params.database}.ndjson.gz"
-            else
-              aws s3 cp --no-progress "{params.s3_dst}/{params.database}.ndjson.gz" - | gunzip -cfq > {output}
-            fi
-           '''
+            shell('./bin/upload-to-s3 --quiet {output} "{params.s3_dst}/{params.database}.ndjson.gz"')
+
+        else :
+            shell('aws s3 cp --no-progress "{params.s3_dst}/{params.database}.ndjson.gz" - | gunzip -cfq > {output}')
 
 
 rule transform_gisaid:
