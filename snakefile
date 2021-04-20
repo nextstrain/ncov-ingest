@@ -1,10 +1,7 @@
 
 envvars:
     "S3_SRC",
-    "GITHUB_REF",
-    "GISAID_API_ENDPOINT",
-    "GISAID_USERNAME_AND_PASSWORD",
-    "SLACK_TOKEN"
+    "GITHUB_REF"
 
 
 configfile: "snake_config.yaml"
@@ -41,6 +38,19 @@ elif github_ref=='':
 else:
     print("skipping ingest for ref",github_ref)
     exit(0)
+
+
+## defining some environment variables for gisaid fetching:
+if config['gisaid_endpoint'] != "NA" :
+	os.environ["GISAID_API_ENDPOINT"] = config['gisaid_endpoint']
+if config['gisaid_login'] != "NA" :
+	os.environ["GISAID_USERNAME_AND_PASSWORD"] = config['gisaid_login']
+
+## defining some environment variables for slack notifications:
+if config['slack_token'] != "NA" :
+	os.environ["SLACK_TOKEN"] = config['slack_token']
+
+
 
 print( "S3_SRC is" , os.environ['S3_SRC'] , file=sys.stderr )
 print( "S3_DST is" , S3_DST , file=sys.stderr )
@@ -257,6 +267,10 @@ rule notify_and_upload:
         quiet = (SILENT=='yes') ,
         slack_channel = lambda wildcards : config['slack_channel'][wildcards.database]
     run :
+    	if config['slack_token'] == 'NA' :
+    		print( "ERROR : no slack_tocken.\nDefine one using --config slack_token=..." , file = sys.stderr)
+    		exit(1)
+
         if GIT_BRANCH == "master" :
             # upload flagged annotations
             shell(f"""
