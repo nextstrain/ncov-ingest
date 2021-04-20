@@ -13,7 +13,9 @@ wildcard_constraints:
     database = "gisaid|genbank"
 
 
-localrules: all_then_clean , fetch , notify_and_upload
+localrules: all_then_clean, gisaid_then_clean , genbank_then_clean ,
+            ingest_genbank , ingest_gisaid ,
+            fetch , notify_and_upload
 
 
 ## defining some of the behaviour depending on 
@@ -43,8 +45,6 @@ else:
 print( "S3_SRC is" , os.environ['S3_SRC'] , file=sys.stderr )
 print( "S3_DST is" , S3_DST , file=sys.stderr )
 
-#print('fetch' , config)
-
 
 ## target rule all 
 rule all_then_clean:
@@ -68,6 +68,27 @@ rule genbank_then_clean:
         "notify_and_upload.genbank.mock_output.txt",
     shell:
         ".bin/clean"
+
+
+rule ingest_gisaid:
+    input :
+        sequences = "data/gisaid/sequences.fasta",
+        metadata = "data/gisaid/metadata.tsv",
+        nextclade = "data/gisaid/nextclade.tsv",
+        additional_info = "data/gisaid/additional_info.tsv",
+        flagged_metadata = "data/gisaid/flagged_metadata.txt",
+        flagged_annotation = "data/gisaid/transform-log.txt",
+        location_hierarchy = "data/gisaid/location_hierarchy.tsv"        
+
+rule ingest_genbank:
+    input :
+        sequences = "data/genbank/sequences.fasta",
+        metadata = "data/genbank/metadata.tsv",
+        nextclade = "data/genbank/nextclade.tsv",
+        additional_info = "data/genbank/additional_info.tsv",
+        flagged_metadata = "data/genbank/flagged_metadata.txt",
+        flagged_annotation = "data/genbank/transform-log.txt",
+        location_hierarchy = "data/genbank/location_hierarchy.tsv"        
 
 
 
