@@ -389,10 +389,12 @@ Africa	Tunisia	Tunis	Bouchoucha
 Africa	Tunisia	Tunis	La Marsa
 Africa	Tunisia	Tunis	Tunis
 Africa	Tunisia	Tunisia	
+Africa	Uganda	Central Uganda	
 Africa	Uganda	Uganda	
 Africa	Union of the Comoros	Moheli	
 Africa	Union of the Comoros	Ngazidja	
 Africa	Zambia	Central	
+Africa	Zambia	Central Zambia	
 Africa	Zambia	Copperbelt	
 Africa	Zambia	Livingstone	
 Africa	Zambia	Lusaka	
@@ -409,6 +411,7 @@ Asia	Bangladesh	Bagherhat
 Asia	Bangladesh	Bagherhat	Sador
 Asia	Bangladesh	Bangladesh	
 Asia	Bangladesh	Barishal	
+Asia	Bangladesh	Barishal	Barisal
 Asia	Bangladesh	Barishal	Bhola
 Asia	Bangladesh	Barishal	Pirojpur
 Asia	Bangladesh	Brahmanbaria	
@@ -438,6 +441,7 @@ Asia	Bangladesh	Dhaka	Cantonment
 Asia	Bangladesh	Dhaka	Dhaka
 Asia	Bangladesh	Dhaka	Dhamrai
 Asia	Bangladesh	Dhaka	Faridpur
+Asia	Bangladesh	Dhaka	Gazipur
 Asia	Bangladesh	Dhaka	Gulshan
 Asia	Bangladesh	Dhaka	Jatrabari
 Asia	Bangladesh	Dhaka	Keraniganj
@@ -448,6 +452,8 @@ Asia	Bangladesh	Dhaka	Manikganj
 Asia	Bangladesh	Dhaka	Mirpur
 Asia	Bangladesh	Dhaka	Mohammadpur
 Asia	Bangladesh	Dhaka	Narayanganj
+Asia	Bangladesh	Dhaka	Narsingdi
+Asia	Bangladesh	Dhaka	Panthapath
 Asia	Bangladesh	Dhaka	Shariatpur
 Asia	Bangladesh	Dhaka	Tangail
 Asia	Bangladesh	Dhaka	Tejgaon
@@ -470,6 +476,7 @@ Asia	Bangladesh	Rajshahi	Pabna
 Asia	Bangladesh	Rajshahi	Sirajganj
 Asia	Bangladesh	Rangpur	
 Asia	Bangladesh	Rangpur	Nilphamari
+Asia	Bangladesh	Rangpur	Panchagarh
 Asia	Bangladesh	Sirajganj	
 Asia	Bangladesh	Sylhet	
 Asia	Bangladesh	Sylhet	Barutkhana
@@ -3245,11 +3252,14 @@ Europe	France	Occitanie	Uzès
 Europe	France	Pays de la Loire	
 Europe	France	Pays de la Loire	Angers
 Europe	France	Pays de la Loire	Challans
+Europe	France	Pays de la Loire	Chateau-Gontier
 Europe	France	Pays de la Loire	Cholet
+Europe	France	Pays de la Loire	Fontenay le Comte
 Europe	France	Pays de la Loire	La Roche-sur-Yon
 Europe	France	Pays de la Loire	Laval
 Europe	France	Pays de la Loire	Le Mans
 Europe	France	Pays de la Loire	Les Sables D'Olonne
+Europe	France	Pays de la Loire	Loire Atlantique
 Europe	France	Pays de la Loire	Luçon
 Europe	France	Pays de la Loire	Mayenne
 Europe	France	Pays de la Loire	Montval sur Loir
@@ -3347,6 +3357,7 @@ Europe	Germany	Bavaria	Schlusselfeld
 Europe	Germany	Bavaria	Schwabach
 Europe	Germany	Bavaria	Starnberg
 Europe	Germany	Berlin	
+Europe	Germany	Berlin	Berlin
 Europe	Germany	Berlin	Berlin	
 Europe	Germany	Brandenburg	
 Europe	Germany	Bremen	
@@ -3845,6 +3856,7 @@ Europe	Poland	Dolnośląskie	Mikowice
 Europe	Poland	Dolnośląskie	Myslakowice
 Europe	Poland	Dolnośląskie	Nadolice Wielkie
 Europe	Poland	Dolnośląskie	Nowizna
+Europe	Poland	Dolnośląskie	Olesnica
 Europe	Poland	Dolnośląskie	Oława
 Europe	Poland	Dolnośląskie	Pieszyce
 Europe	Poland	Dolnośląskie	Pilawa Gorna
@@ -3873,6 +3885,7 @@ Europe	Poland	Kujawsko-Pomorskie	Pruszcz
 Europe	Poland	Kujawsko-Pomorskie	Sepolno Krajenskie
 Europe	Poland	Kujawsko-Pomorskie	Swiecie
 Europe	Poland	Kujawsko-Pomorskie	Torun
+Europe	Poland	Kujawsko-Pomorskie	Tuchola
 Europe	Poland	Kujawsko-Pomorskie	Wabrzezno
 Europe	Poland	Kujawsko-Pomorskie	Wloclawek
 Europe	Poland	Kujawsko-Pomorskie	Znin
@@ -4015,6 +4028,7 @@ Europe	Poland	Podkarpackie	Mielec
 Europe	Poland	Podkarpackie	Nagoszyn
 Europe	Poland	Podkarpackie	Ropczyce
 Europe	Poland	Podkarpackie	Rzeszow
+Europe	Poland	Podkarpackie	Sanok
 Europe	Poland	Podkarpackie	Siedliska-Bogusz
 Europe	Poland	Podkarpackie	Strzyzow
 Europe	Poland	Podkarpackie	Szowsko
@@ -4082,6 +4096,7 @@ Europe	Poland	Pomorskie	Hel
 Europe	Poland	Pomorskie	Jantar
 Europe	Poland	Pomorskie	Jeleńska Huta
 Europe	Poland	Pomorskie	Kacik
+Europe	Poland	Pomorskie	Kartuski
 Europe	Poland	Pomorskie	Kartuzy
 Europe	Poland	Pomorskie	Kosakowo
 Europe	Poland	Pomorskie	Kowale (Pomorskie)
@@ -4143,6 +4158,7 @@ Europe	Poland	Slaskie	Pawłowice
 Europe	Poland	Slaskie	Pruchna
 Europe	Poland	Slaskie	Ruda Śląska
 Europe	Poland	Slaskie	Rudziczka
+Europe	Poland	Slaskie	Rybnik
 Europe	Poland	Slaskie	Siemianowice Slaskie
 Europe	Poland	Slaskie	Sosnicowice
 Europe	Poland	Slaskie	Suszec
@@ -4421,6 +4437,7 @@ Europe	Poland	Łódzkie	Losieniec
 Europe	Poland	Łódzkie	Pabianice
 Europe	Poland	Łódzkie	Pajeczno County
 Europe	Poland	Łódzkie	Piotrkow Trybunalski
+Europe	Poland	Łódzkie	Radomsko
 Europe	Poland	Łódzkie	Rogow
 Europe	Poland	Łódzkie	Sieradz
 Europe	Poland	Łódzkie	Skierniewice County
@@ -4644,6 +4661,7 @@ Europe	Russia	Krasnodar	Sochi
 Europe	Russia	Krasnoyarsk	
 Europe	Russia	Krasnoyarsk	Krasnoyarsk
 Europe	Russia	Leningrad Oblast	
+Europe	Russia	Leningrad Oblast	Fedorovskoe
 Europe	Russia	Leningrad Oblast	Gatchina
 Europe	Russia	Leningrad Oblast	Kipen
 Europe	Russia	Leningrad Oblast	Kirishi
@@ -4662,6 +4680,7 @@ Europe	Russia	Magadan	Magadan
 Europe	Russia	Mari El	
 Europe	Russia	Mari El	Kozmodemyansk
 Europe	Russia	Moscow Oblast	
+Europe	Russia	Moscow Oblast	Balashikha
 Europe	Russia	Moscow Oblast	Bronnitsy
 Europe	Russia	Moscow Oblast	Dmitrov
 Europe	Russia	Moscow Oblast	Dolgoprudny
@@ -4714,6 +4733,7 @@ Europe	Russia	Orenburg	Orsk
 Europe	Russia	Oryol	
 Europe	Russia	Oryol	Oryol
 Europe	Russia	Penza	
+Europe	Russia	Penza	Penza
 Europe	Russia	Perm Krai	
 Europe	Russia	Perm Krai	Perm
 Europe	Russia	Primorsky	
@@ -4740,6 +4760,7 @@ Europe	Russia	Saint-Petersburg
 Europe	Russia	Saint-Petersburg	Kolpino
 Europe	Russia	Saint-Petersburg	Saint Petersburg
 Europe	Russia	Saint-Petersburg	Saint-Petersburg
+Europe	Russia	Saint-Petersburg	Sestroretsk
 Europe	Russia	Sakhalin	
 Europe	Russia	Samara	
 Europe	Russia	Saratov	
@@ -4757,13 +4778,17 @@ Europe	Russia	Sverdlovsk	Ekaterinburg
 Europe	Russia	Sverdlovsk	Ivdel
 Europe	Russia	Sverdlovsk	Kachkanar
 Europe	Russia	Sverdlovsk	Kamensk-Uralsky
+Europe	Russia	Sverdlovsk	Kamyshlov
 Europe	Russia	Sverdlovsk	Kashino
 Europe	Russia	Sverdlovsk	Kedrovoye
 Europe	Russia	Sverdlovsk	Kirovgrad
+Europe	Russia	Sverdlovsk	Krasnoufimsk
 Europe	Russia	Sverdlovsk	Krasnouralsk
 Europe	Russia	Sverdlovsk	Krasnyi Aduy
+Europe	Russia	Sverdlovsk	Kushva
 Europe	Russia	Sverdlovsk	Nizhny Tagil
 Europe	Russia	Sverdlovsk	Pervouralsk
+Europe	Russia	Sverdlovsk	Pokrovskoe
 Europe	Russia	Sverdlovsk	Polevskoy
 Europe	Russia	Sverdlovsk	Revda
 Europe	Russia	Sverdlovsk	Serov
@@ -4785,9 +4810,11 @@ Europe	Russia	Tula Region
 Europe	Russia	Tula Region	Novomoskovsk
 Europe	Russia	Tver	
 Europe	Russia	Tver	Torzhok
+Europe	Russia	Tver	Tver
 Europe	Russia	Tyumen Region	
 Europe	Russia	Tyumen Region	Tyumen
 Europe	Russia	Vladimir Region	
+Europe	Russia	Vladimir Region	Kovrov
 Europe	Russia	Vladimir Region	Vladimir
 Europe	Russia	Volgograd Region	
 Europe	Russia	Volgograd Region	Volgograd
@@ -5684,6 +5711,7 @@ Europe	Spain	Catalunya	Llanca
 Europe	Spain	Catalunya	Lleida
 Europe	Spain	Catalunya	Llerona
 Europe	Spain	Catalunya	Llica D'Amunt
+Europe	Spain	Catalunya	Llimiana
 Europe	Spain	Catalunya	Llinars del Valles
 Europe	Spain	Catalunya	Llissa de Munt
 Europe	Spain	Catalunya	Lliça de Vall
@@ -5764,6 +5792,7 @@ Europe	Spain	Catalunya	Sant Joan Vilatorrada
 Europe	Spain	Catalunya	Sant Joan de les Abadesses
 Europe	Spain	Catalunya	Sant Julia de Ramis
 Europe	Spain	Catalunya	Sant Julia de Vilatorta
+Europe	Spain	Catalunya	Sant Llorenc Savall
 Europe	Spain	Catalunya	Sant Pere de Riudebitlles
 Europe	Spain	Catalunya	Sant Pere de Torello
 Europe	Spain	Catalunya	Sant Pere de Vilamajor
@@ -5782,6 +5811,7 @@ Europe	Spain	Catalunya	Santa Pau
 Europe	Spain	Catalunya	Santa Perpetua de Mogoda
 Europe	Spain	Catalunya	Santa Susanna
 Europe	Spain	Catalunya	Santpedor
+Europe	Spain	Catalunya	Sarria de Ter
 Europe	Spain	Catalunya	Sarroca de Lleida
 Europe	Spain	Catalunya	Seros
 Europe	Spain	Catalunya	Seva
@@ -7153,6 +7183,7 @@ North America	USA	Illinois	McHenry County
 North America	USA	Illinois	McLean County IL
 North America	USA	Illinois	Mchenry County
 North America	USA	Illinois	Menard County IL
+North America	USA	Illinois	Mercer County
 North America	USA	Illinois	Monroe County IL
 North America	USA	Illinois	Montgomery County IL
 North America	USA	Illinois	Morgan County IL
@@ -8005,6 +8036,7 @@ South America	Argentina	Cordoba AR	Cordoba Villa El Libertador
 South America	Argentina	Cordoba AR	Corral de Bustos
 South America	Argentina	Cordoba AR	General Deheza
 South America	Argentina	Cordoba AR	Jesus Maria
+South America	Argentina	Cordoba AR	Jesus Maria AR
 South America	Argentina	Cordoba AR	La Falda
 South America	Argentina	Cordoba AR	Las Varillas
 South America	Argentina	Cordoba AR	Marcos Juarez
@@ -8901,6 +8933,7 @@ South America	Brazil	Tocantins	Presidente Kennedy
 South America	Brazil	Tocantins	Sandolandia
 South America	Chile	Antofagasta	
 South America	Chile	Antofagasta	Antofagasta
+South America	Chile	Antofagasta	Calama
 South America	Chile	Araucanía	
 South America	Chile	Araucanía	Angol
 South America	Chile	Araucanía	Cholchol
@@ -8925,15 +8958,19 @@ South America	Chile	Atacama	Paipote
 South America	Chile	Atacama	Tierra Amarilla
 South America	Chile	Atacama	Vallenar
 South America	Chile	Aysén	
+South America	Chile	Aysén	Aisen
 South America	Chile	Aysén	Coyhaique
 South America	Chile	Aysén	Guaitecas
+South America	Chile	Aysén	Rio Ibanez
 South America	Chile	Biobío	
+South America	Chile	Biobío	Cabrero
 South America	Chile	Biobío	Chiguayante
 South America	Chile	Biobío	Concepcion
 South America	Chile	Biobío	Concepcion CL
 South America	Chile	Biobío	Coronel
 South America	Chile	Biobío	Hualpen
 South America	Chile	Biobío	Los Angeles
+South America	Chile	Biobío	Lota
 South America	Chile	Biobío	San Pedro de la Paz
 South America	Chile	Biobío	Talcahuano
 South America	Chile	Coquimbo	
@@ -8948,6 +8985,8 @@ South America	Chile	Los Lagos	Puerto Varas
 South America	Chile	Los Lagos	Quellon
 South America	Chile	Los Rios CL	
 South America	Chile	Los Rios CL	La Union CL
+South America	Chile	Los Rios CL	Lago Ranco
+South America	Chile	Los Rios CL	Mafil
 South America	Chile	Los Rios CL	Paillaco
 South America	Chile	Los Rios CL	Panguipulli
 South America	Chile	Los Rios CL	Valdivia
@@ -8960,6 +8999,7 @@ South America	Chile	Magallanes	Punta Arenas
 South America	Chile	Maule	
 South America	Chile	Maule	Constitucion
 South America	Chile	Maule	Curico
+South America	Chile	Maule	Linares
 South America	Chile	Maule	Maule
 South America	Chile	Maule	Molina
 South America	Chile	Maule	San Clemente CL
@@ -8971,7 +9011,9 @@ South America	Chile	O'Higgins	Lolol
 South America	Chile	O'Higgins	Machali
 South America	Chile	O'Higgins	Pichidegua
 South America	Chile	O'Higgins	Rancagua
+South America	Chile	O'Higgins	San Fernando CL
 South America	Chile	O'Higgins	San Francisco de Mostazal
+South America	Chile	O'Higgins	San Vicente
 South America	Chile	Region Metropolitana de Santiago	
 South America	Chile	Region Metropolitana de Santiago	Buin
 South America	Chile	Region Metropolitana de Santiago	Colina
@@ -8988,6 +9030,7 @@ South America	Chile	Region Metropolitana de Santiago	Lampa
 South America	Chile	Region Metropolitana de Santiago	Las Condes
 South America	Chile	Region Metropolitana de Santiago	Lo Barnechea
 South America	Chile	Region Metropolitana de Santiago	Lo Prado
+South America	Chile	Region Metropolitana de Santiago	Macul
 South America	Chile	Region Metropolitana de Santiago	Maipu
 South America	Chile	Region Metropolitana de Santiago	Melipilla
 South America	Chile	Region Metropolitana de Santiago	Padre Hurtado
@@ -9011,10 +9054,13 @@ South America	Chile	Region Metropolitana de Santiago	Talagante
 South America	Chile	Region Metropolitana de Santiago	Vitacura
 South America	Chile	Region Metropolitana de Santiago	Ñuñoa
 South America	Chile	Tarapacá	
+South America	Chile	Tarapacá	Alto Hospicio
 South America	Chile	Tarapacá	Iquique
+South America	Chile	Tarapacá	Pozo Almonte
 South America	Chile	Valparaiso	
 South America	Chile	Valparaiso	Casablanca
 South America	Chile	Valparaiso	Con-Con
+South America	Chile	Valparaiso	La Ligua
 South America	Chile	Valparaiso	Limache
 South America	Chile	Valparaiso	Los Andes
 South America	Chile	Valparaiso	San Felipe CL
@@ -9056,6 +9102,7 @@ South America	Colombia	Caqueta
 South America	Colombia	Cartago CO	
 South America	Colombia	Cartago CO	Cartago CO
 South America	Colombia	Casanare	
+South America	Colombia	Casanare	Yopal
 South America	Colombia	Cauca	
 South America	Colombia	Cauca	Popayan
 South America	Colombia	Cauca	Santander de Quilichao
@@ -9278,6 +9325,7 @@ South America	Peru	Lambayeque	Chiclayo
 South America	Peru	Lima	
 South America	Peru	Lima	Cañete
 South America	Peru	Lima	Huarochiri
+South America	Peru	Lima	Jesus Maria PE
 South America	Peru	Lima	Jesús María
 South America	Peru	Lima	Lima
 South America	Peru	Lima	San Isidro PE
