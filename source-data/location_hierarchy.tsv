@@ -1388,6 +1388,7 @@ Europe	Austria	Lower Austria	Mödling
 Europe	Austria	Lower Austria	Oed
 Europe	Austria	Lower Austria	Pöggstall
 Europe	Austria	Lower Austria	Sankt Polten-Land
+Europe	Austria	Lower Austria	Sankt Pölten-Stadt
 Europe	Austria	Lower Austria	Schönau an der Triesting
 Europe	Austria	Lower Austria	Thaya
 Europe	Austria	Lower Austria	Waidhofen An Der Thaya
@@ -1424,6 +1425,7 @@ Europe	Austria	Styria	Gamlitz
 Europe	Austria	Styria	Graz
 Europe	Austria	Styria	Gutenberg-Stenzengreith
 Europe	Austria	Styria	Hartberg-Fürstenfeld
+Europe	Austria	Styria	Haus
 Europe	Austria	Styria	Kalsdorf Bei Graz
 Europe	Austria	Styria	Kapfenberg
 Europe	Austria	Styria	Leibnitz
@@ -1576,6 +1578,8 @@ Europe	Belarus	Mogilev Region	Babruysk
 Europe	Belarus	Vitebsk Region	
 Europe	Belarus	Vitebsk Region	Dubrowna
 Europe	Belgium	Aalst	
+Europe	Belgium	Aalst	Appelterre-Eichem
+Europe	Belgium	Aalst	Bavegem
 Europe	Belgium	Aalst	Borsbeke
 Europe	Belgium	Aalst	Denderhoutem
 Europe	Belgium	Aalst	Denderleeuw
@@ -1631,6 +1635,7 @@ Europe	Belgium	Antwerpen	Schoten
 Europe	Belgium	Antwerpen	Sint-Lenaarts
 Europe	Belgium	Antwerpen	Stabroek
 Europe	Belgium	Antwerpen	Vremde
+Europe	Belgium	Antwerpen	Waarloos
 Europe	Belgium	Antwerpen	Westmalle
 Europe	Belgium	Antwerpen	Wijnegem
 Europe	Belgium	Antwerpen	Wilrijk
@@ -1771,6 +1776,7 @@ Europe	Belgium	Dinant	Sorinnes
 Europe	Belgium	Eeklo	
 Europe	Belgium	Eeklo	Assenede
 Europe	Belgium	Eeklo	Maldegem
+Europe	Belgium	Eeklo	Middelburg BE
 Europe	Belgium	Eeklo	Oosteeklo
 Europe	Belgium	Flandre-Orientale	
 Europe	Belgium	Flemish Brabant	
@@ -2421,6 +2427,7 @@ Europe	Belgium	Wallonia	Gouy-Lez-Pieton
 Europe	Belgium	Waremme	
 Europe	Belgium	Waremme	Acosse
 Europe	Belgium	Waremme	Berloz
+Europe	Belgium	Waremme	Bettincourt
 Europe	Belgium	Waremme	Braives
 Europe	Belgium	Waremme	Hannut
 Europe	Belgium	Waremme	Lamine
@@ -2696,7 +2703,9 @@ Europe	Europe	Europe
 Europe	Finland	Finland	
 Europe	Finland	Finland	Rovaniemi
 Europe	Finland	Helsinki	
+Europe	Finland	Kanta-Häme	
 Europe	Finland	Keski-Suomi	
+Europe	Finland	Pirkanmaa	
 Europe	Finland	Southern Finland	
 Europe	Finland	Uusimaa	
 Europe	France	Auvergne-Rhône-Alpes	
@@ -3790,10 +3799,13 @@ Europe	Netherlands	Utrecht	Utrecht
 Europe	Netherlands	Utrecht	Zeist
 Europe	Netherlands	Zeeland	
 Europe	Netherlands	Zeeland	Middelburg
+Europe	Netherlands	Zeeland	Middelburg NL
 Europe	North Macedonia	Debar	
 Europe	North Macedonia	Eastern Region	
 Europe	North Macedonia	Eastern Region	Shtip
 Europe	North Macedonia	Eastern Region MK	
+Europe	North Macedonia	Eastern Region MK	Berovo
+Europe	North Macedonia	Eastern Region MK	Delčevo
 Europe	North Macedonia	Eastern Region MK	Kochani
 Europe	North Macedonia	Eastern Region MK	Shtip
 Europe	North Macedonia	Gevgelija	
@@ -3956,6 +3968,7 @@ Europe	Poland	Malopolskie	Gruszów
 Europe	Poland	Malopolskie	Kraków
 Europe	Poland	Malopolskie	Krzyszkowice
 Europe	Poland	Malopolskie	Limanowa
+Europe	Poland	Malopolskie	Lopon
 Europe	Poland	Malopolskie	Miechow
 Europe	Poland	Malopolskie	Modrzewiowa
 Europe	Poland	Malopolskie	Mogilany
@@ -3977,6 +3990,7 @@ Europe	Poland	Malopolskie	Suchabeskidzka
 Europe	Poland	Malopolskie	Sułków
 Europe	Poland	Malopolskie	Szczytniki
 Europe	Poland	Malopolskie	Tarnow
+Europe	Poland	Malopolskie	Tymowa
 Europe	Poland	Malopolskie	Wieliczka
 Europe	Poland	Malopolskie	Wola Batorska
 Europe	Poland	Malopolskie	Wrzosowa
@@ -4653,6 +4667,7 @@ Europe	Russia	Karelia	Porosoozero
 Europe	Russia	Karelia	Povenets
 Europe	Russia	Karelia	Shuya
 Europe	Russia	Karelia	Shuya (Karelia)
+Europe	Russia	Karelia	Sortavala
 Europe	Russia	Karelia	Sosnovka
 Europe	Russia	Kemerovo	
 Europe	Russia	Kemerovo	Kemerovo
@@ -4682,11 +4697,13 @@ Europe	Russia	Leningrad Oblast	Kipen
 Europe	Russia	Leningrad Oblast	Kirishi
 Europe	Russia	Leningrad Oblast	Kirovsk
 Europe	Russia	Leningrad Oblast	Lomonosov
+Europe	Russia	Leningrad Oblast	Roshchino
 Europe	Russia	Leningrad Oblast	Sertolovo
 Europe	Russia	Leningrad Oblast	Sosnovyi Bor
 Europe	Russia	Leningrad Oblast	Tosno
 Europe	Russia	Leningrad Oblast	Volkhov
 Europe	Russia	Leningrad Oblast	Vsevolozhsk
+Europe	Russia	Leningrad Oblast	Vyborg
 Europe	Russia	Leningrad Oblast	Yanino
 Europe	Russia	Leningrad Oblast	Yanino-1
 Europe	Russia	Lipetsk	
@@ -4797,16 +4814,21 @@ Europe	Russia	Sverdlovsk	Kamyshlov
 Europe	Russia	Sverdlovsk	Kashino
 Europe	Russia	Sverdlovsk	Kedrovoye
 Europe	Russia	Sverdlovsk	Kirovgrad
+Europe	Russia	Sverdlovsk	Kirpichny
 Europe	Russia	Sverdlovsk	Krasnoufimsk
 Europe	Russia	Sverdlovsk	Krasnouralsk
 Europe	Russia	Sverdlovsk	Krasnyi Aduy
 Europe	Russia	Sverdlovsk	Kushva
 Europe	Russia	Sverdlovsk	Nizhny Tagil
+Europe	Russia	Sverdlovsk	Olhovka
 Europe	Russia	Sverdlovsk	Pervouralsk
 Europe	Russia	Sverdlovsk	Pokrovskoe
 Europe	Russia	Sverdlovsk	Polevskoy
 Europe	Russia	Sverdlovsk	Revda
+Europe	Russia	Sverdlovsk	Rezh
+Europe	Russia	Sverdlovsk	Romanovka
 Europe	Russia	Sverdlovsk	Serov
+Europe	Russia	Sverdlovsk	Shadrinsk
 Europe	Russia	Sverdlovsk	Shalya
 Europe	Russia	Sverdlovsk	Sokolova
 Europe	Russia	Sverdlovsk	Sredneuralsk
@@ -5331,6 +5353,7 @@ Europe	Spain	Andalusia	Tarifa
 Europe	Spain	Andalusia	Teba
 Europe	Spain	Andalusia	Torre del Mar
 Europe	Spain	Andalusia	Torremolinos
+Europe	Spain	Andalusia	Torrenueva
 Europe	Spain	Andalusia	Ubeda
 Europe	Spain	Andalusia	Valderrubio
 Europe	Spain	Andalusia	Vegas del Genil
@@ -5459,7 +5482,9 @@ Europe	Spain	Cantabria	Cabezon de la Sal
 Europe	Spain	Cantabria	Camargo
 Europe	Spain	Cantabria	Campuzano
 Europe	Spain	Cantabria	Carandia
+Europe	Spain	Cantabria	Cartes
 Europe	Spain	Cantabria	Castro Urdiales
+Europe	Spain	Cantabria	Cerecedas
 Europe	Spain	Cantabria	Cieza
 Europe	Spain	Cantabria	Cillorigo de Liebana
 Europe	Spain	Cantabria	Colindres
@@ -5472,9 +5497,12 @@ Europe	Spain	Cantabria	Guriezo
 Europe	Spain	Cantabria	Hazas de Cesto
 Europe	Spain	Cantabria	Herrera de Camargo
 Europe	Spain	Cantabria	Hinojedo
+Europe	Spain	Cantabria	Hoz de Anero
 Europe	Spain	Cantabria	La Cavada
 Europe	Spain	Cantabria	La Penilla
+Europe	Spain	Cantabria	La Revilla
 Europe	Spain	Cantabria	Laredo
+Europe	Spain	Cantabria	Las Fraguas
 Europe	Spain	Cantabria	Las Presillas
 Europe	Spain	Cantabria	Liano
 Europe	Spain	Cantabria	Liencres
@@ -5504,6 +5532,7 @@ Europe	Spain	Cantabria	Puente San Miguel
 Europe	Spain	Cantabria	Puente Viesgo
 Europe	Spain	Cantabria	Quijas
 Europe	Spain	Cantabria	Ramales de la Victoria
+Europe	Spain	Cantabria	Reinosa
 Europe	Spain	Cantabria	Renedo
 Europe	Spain	Cantabria	Renedo de Pielago
 Europe	Spain	Cantabria	Ruiloba
@@ -5514,6 +5543,7 @@ Europe	Spain	Cantabria	Santa Cruz de Bezana
 Europe	Spain	Cantabria	Santa Maria de Cayon
 Europe	Spain	Cantabria	Santander
 Europe	Spain	Cantabria	Santiago de Cartes
+Europe	Spain	Cantabria	Santibanez
 Europe	Spain	Cantabria	Santillana
 Europe	Spain	Cantabria	Santona
 Europe	Spain	Cantabria	Saron
@@ -5526,6 +5556,7 @@ Europe	Spain	Cantabria	Suances
 Europe	Spain	Cantabria	Tanos
 Europe	Spain	Cantabria	Torrelavega
 Europe	Spain	Cantabria	Tudanca
+Europe	Spain	Cantabria	Ubiarco
 Europe	Spain	Cantabria	Valderredible
 Europe	Spain	Cantabria	Vargas
 Europe	Spain	Cantabria	Vega de Pas
@@ -5535,48 +5566,69 @@ Europe	Spain	Cantabria	Zurita
 Europe	Spain	Castilla la Mancha	
 Europe	Spain	Castilla la Mancha	Albacete
 Europe	Spain	Castilla la Mancha	Albalate de Zorita
+Europe	Spain	Castilla la Mancha	Almaden
+Europe	Spain	Castilla la Mancha	Almagro
 Europe	Spain	Castilla la Mancha	Almansa
 Europe	Spain	Castilla la Mancha	Almoguera
+Europe	Spain	Castilla la Mancha	Almuradiel
 Europe	Spain	Castilla la Mancha	Alovera
 Europe	Spain	Castilla la Mancha	Ayna
 Europe	Spain	Castilla la Mancha	Azuqueca de Henares
 Europe	Spain	Castilla la Mancha	Balazote
 Europe	Spain	Castilla la Mancha	Belmonte
 Europe	Spain	Castilla la Mancha	Bogarra
+Europe	Spain	Castilla la Mancha	Bolanos de Calatrava
 Europe	Spain	Castilla la Mancha	Brihuega
 Europe	Spain	Castilla la Mancha	Cabanillas del Campo
 Europe	Spain	Castilla la Mancha	Chiloeches
 Europe	Spain	Castilla la Mancha	Cifuentes
+Europe	Spain	Castilla la Mancha	Ciudad Real
 Europe	Spain	Castilla la Mancha	Corduente
+Europe	Spain	Castilla la Mancha	Corral de Calatrava
 Europe	Spain	Castilla la Mancha	Cuenca ES
+Europe	Spain	Castilla la Mancha	Daimiel
 Europe	Spain	Castilla la Mancha	Driebes
 Europe	Spain	Castilla la Mancha	El Casar
+Europe	Spain	Castilla la Mancha	Fernan Caballero
+Europe	Spain	Castilla la Mancha	Fuente el Fresno
 Europe	Spain	Castilla la Mancha	Guadalajara
 Europe	Spain	Castilla la Mancha	Hellin
+Europe	Spain	Castilla la Mancha	Hinojosas Calatrava
 Europe	Spain	Castilla la Mancha	Horcajo de los Montes
 Europe	Spain	Castilla la Mancha	Humanes
 Europe	Spain	Castilla la Mancha	Jadraque
 Europe	Spain	Castilla la Mancha	Lezuza
 Europe	Spain	Castilla la Mancha	Luzon
 Europe	Spain	Castilla la Mancha	Madrigueras
+Europe	Spain	Castilla la Mancha	Malagon
 Europe	Spain	Castilla la Mancha	Marchamalo
+Europe	Spain	Castilla la Mancha	Miguelturra
 Europe	Spain	Castilla la Mancha	Mingogil
 Europe	Spain	Castilla la Mancha	Molina de Aragon
+Europe	Spain	Castilla la Mancha	Moral de Calatrava
 Europe	Spain	Castilla la Mancha	Motilleja
 Europe	Spain	Castilla la Mancha	Pastrana
+Europe	Spain	Castilla la Mancha	Piedrabuena
 Europe	Spain	Castilla la Mancha	Pinilla de Jadraque
 Europe	Spain	Castilla la Mancha	Pozo de Guadalajara
+Europe	Spain	Castilla la Mancha	Pozuelo de Calatrava
+Europe	Spain	Castilla la Mancha	Puertollano
 Europe	Spain	Castilla la Mancha	Riopar
 Europe	Spain	Castilla la Mancha	San Clemente
 Europe	Spain	Castilla la Mancha	San Clemente ES
 Europe	Spain	Castilla la Mancha	Socuellamos
 Europe	Spain	Castilla la Mancha	Tazona
 Europe	Spain	Castilla la Mancha	Tobarra
+Europe	Spain	Castilla la Mancha	Tomelloso
 Europe	Spain	Castilla la Mancha	Torija
+Europe	Spain	Castilla la Mancha	Torralba de Calatrava
+Europe	Spain	Castilla la Mancha	Valdepenas
+Europe	Spain	Castilla la Mancha	Villahermosa
 Europe	Spain	Castilla la Mancha	Villanueva de Alcoron
 Europe	Spain	Castilla la Mancha	Villanueva de la Jara
 Europe	Spain	Castilla la Mancha	Villanueva de la Torre
 Europe	Spain	Castilla la Mancha	Villarrobledo
+Europe	Spain	Castilla la Mancha	Villarrubia de los Ojos
 Europe	Spain	Castilla la Mancha	Villel de Mesa
 Europe	Spain	Castilla y Leon	
 Europe	Spain	Castilla y Leon	Antonan del Valle
@@ -5617,6 +5669,7 @@ Europe	Spain	Castilla y Leon	Villaturiel
 Europe	Spain	Catalunya	
 Europe	Spain	Catalunya	Agramunt
 Europe	Spain	Catalunya	Aiguafreda
+Europe	Spain	Catalunya	Aitona
 Europe	Spain	Catalunya	Albanya
 Europe	Spain	Catalunya	Alcarras
 Europe	Spain	Catalunya	Alcoletge
@@ -5625,6 +5678,7 @@ Europe	Spain	Catalunya	Algerri
 Europe	Spain	Catalunya	Alguaire
 Europe	Spain	Catalunya	Almacelles
 Europe	Spain	Catalunya	Alpicat
+Europe	Spain	Catalunya	Altet
 Europe	Spain	Catalunya	Angles
 Europe	Spain	Catalunya	Arbúcies
 Europe	Spain	Catalunya	Arenys de Mar
@@ -5646,6 +5700,7 @@ Europe	Spain	Catalunya	Bescano
 Europe	Spain	Catalunya	Bigues I Riells
 Europe	Spain	Catalunya	Blanes
 Europe	Spain	Catalunya	Bordils
+Europe	Spain	Catalunya	Bossòst
 Europe	Spain	Catalunya	Breda
 Europe	Spain	Catalunya	Cabrera de Mar
 Europe	Spain	Catalunya	Cabrils
@@ -5686,6 +5741,7 @@ Europe	Spain	Catalunya	El Port de la Selva
 Europe	Spain	Catalunya	El Prat de Llobregat
 Europe	Spain	Catalunya	El Vendrell
 Europe	Spain	Catalunya	Els Alamus
+Europe	Spain	Catalunya	Empuriabrava
 Europe	Spain	Catalunya	Esplugues de Llobregat
 Europe	Spain	Catalunya	Figaro
 Europe	Spain	Catalunya	Figaro-Montmany
@@ -5694,6 +5750,7 @@ Europe	Spain	Catalunya	Fogars de la Selva
 Europe	Spain	Catalunya	Fontcoberta
 Europe	Spain	Catalunya	Gaia
 Europe	Spain	Catalunya	Gallecs
+Europe	Spain	Catalunya	Garriguella
 Europe	Spain	Catalunya	Gava
 Europe	Spain	Catalunya	Gavet de La Conca
 Europe	Spain	Catalunya	Gerona
@@ -5718,6 +5775,7 @@ Europe	Spain	Catalunya	La Roca del Valles
 Europe	Spain	Catalunya	La Selva de Mar
 Europe	Spain	Catalunya	La Vall D'en Bas
 Europe	Spain	Catalunya	La Virreina
+Europe	Spain	Catalunya	Les
 Europe	Spain	Catalunya	Les Borges Blanques
 Europe	Spain	Catalunya	Les Masies de Voltrega
 Europe	Spain	Catalunya	Les Preses
@@ -5731,6 +5789,7 @@ Europe	Spain	Catalunya	Llica D'Amunt
 Europe	Spain	Catalunya	Llimiana
 Europe	Spain	Catalunya	Llinars del Valles
 Europe	Spain	Catalunya	Llissa de Munt
+Europe	Spain	Catalunya	Llivia
 Europe	Spain	Catalunya	Lliça de Vall
 Europe	Spain	Catalunya	Lloret de Mar
 Europe	Spain	Catalunya	Macanet de la Selva
@@ -5738,9 +5797,12 @@ Europe	Spain	Catalunya	Malgrat de Mar
 Europe	Spain	Catalunya	Manlleu
 Europe	Spain	Catalunya	Manresa
 Europe	Spain	Catalunya	Martorelles
+Europe	Spain	Catalunya	Masarac
 Europe	Spain	Catalunya	Masquefa
 Europe	Spain	Catalunya	Massanes
+Europe	Spain	Catalunya	Matadepera
 Europe	Spain	Catalunya	Mataro
+Europe	Spain	Catalunya	Miralcamp
 Europe	Spain	Catalunya	Moia
 Europe	Spain	Catalunya	Mollerussa
 Europe	Spain	Catalunya	Mollet del Valles
@@ -5752,6 +5814,7 @@ Europe	Spain	Catalunya	Montmelo
 Europe	Spain	Catalunya	Montornes del Valles
 Europe	Spain	Catalunya	Navarcles
 Europe	Spain	Catalunya	Navas
+Europe	Spain	Catalunya	Olesa de Montserrat
 Europe	Spain	Catalunya	Olot
 Europe	Spain	Catalunya	Oris
 Europe	Spain	Catalunya	Orrius
@@ -5764,13 +5827,16 @@ Europe	Spain	Catalunya	Parets del Valles
 Europe	Spain	Catalunya	Penelles
 Europe	Spain	Catalunya	Pineda de Mar
 Europe	Spain	Catalunya	Platja D'Aro
+Europe	Spain	Catalunya	Ponts
 Europe	Spain	Catalunya	Porqueres
 Europe	Spain	Catalunya	Prats de Lluçanès
 Europe	Spain	Catalunya	Premia de Dalt
 Europe	Spain	Catalunya	Premia de Mar
 Europe	Spain	Catalunya	Pubol
+Europe	Spain	Catalunya	Puigcerda
 Europe	Spain	Catalunya	Puigverd d'Agramunt
 Europe	Spain	Catalunya	Regencos
+Europe	Spain	Catalunya	Reus
 Europe	Spain	Catalunya	Riells I Viabrea
 Europe	Spain	Catalunya	Ripoll
 Europe	Spain	Catalunya	Ripollet
@@ -5781,6 +5847,7 @@ Europe	Spain	Catalunya	Roses
 Europe	Spain	Catalunya	Rubi
 Europe	Spain	Catalunya	S'Agaro
 Europe	Spain	Catalunya	Sabadell
+Europe	Spain	Catalunya	Sallent de Llobregat
 Europe	Spain	Catalunya	Salt
 Europe	Spain	Catalunya	San Cugat del Valles
 Europe	Spain	Catalunya	San Pol de Mar
@@ -5791,6 +5858,7 @@ Europe	Spain	Catalunya	Sant Andreu de la Barca
 Europe	Spain	Catalunya	Sant Antoni de Vilamajor
 Europe	Spain	Catalunya	Sant Boi de Llobregat
 Europe	Spain	Catalunya	Sant Celoni
+Europe	Spain	Catalunya	Sant Dalmai
 Europe	Spain	Catalunya	Sant Esteve Sesrovires
 Europe	Spain	Catalunya	Sant Esteve de Guialbes
 Europe	Spain	Catalunya	Sant Esteve de Palautordera
@@ -5846,6 +5914,7 @@ Europe	Spain	Catalunya	Tona
 Europe	Spain	Catalunya	Tordera
 Europe	Spain	Catalunya	Torelló
 Europe	Spain	Catalunya	Torre-Romeu
+Europe	Spain	Catalunya	Torrefarrera
 Europe	Spain	Catalunya	Torruella de Baix
 Europe	Spain	Catalunya	Tortellà
 Europe	Spain	Catalunya	Tremp
@@ -5856,16 +5925,21 @@ Europe	Spain	Catalunya	Vallirana
 Europe	Spain	Catalunya	Vallromanes
 Europe	Spain	Catalunya	Vic
 Europe	Spain	Catalunya	Vidreres
+Europe	Spain	Catalunya	Viella Mitg Aran
+Europe	Spain	Catalunya	Vilabertran
 Europe	Spain	Catalunya	Vilablareix
 Europe	Spain	Catalunya	Viladecans
 Europe	Spain	Catalunya	Viladecavalls
 Europe	Spain	Catalunya	Vilafant
 Europe	Spain	Catalunya	Vilamalla
+Europe	Spain	Catalunya	Vilanova de Segria
+Europe	Spain	Catalunya	Vilanova de la Barca
 Europe	Spain	Catalunya	Vilanova del Vallés
 Europe	Spain	Catalunya	Vilanova i la Geltru
 Europe	Spain	Catalunya	Vilassar de Dalt
 Europe	Spain	Catalunya	Vilassar de Mar
 Europe	Spain	Catalunya	Vilatenim
+Europe	Spain	Catalunya	Vilobi Donyar
 Europe	Spain	Ceuta	
 Europe	Spain	Comunitat Valenciana	
 Europe	Spain	Comunitat Valenciana	Alaquas
@@ -5952,15 +6026,21 @@ Europe	Spain	Comunitat Valenciana	Xeraco
 Europe	Spain	Donostia-San Sebatian	
 Europe	Spain	Extremadura	
 Europe	Spain	Extremadura	Alcantara
+Europe	Spain	Extremadura	Aldeanueva del Camino
 Europe	Spain	Extremadura	Arroyo de la Luz
 Europe	Spain	Extremadura	Caceres
 Europe	Spain	Extremadura	Campo Lugar
+Europe	Spain	Extremadura	Casas de Millan
 Europe	Spain	Extremadura	Garrovillas de Alconetar
 Europe	Spain	Extremadura	Guadalupe ES
 Europe	Spain	Extremadura	Herrera del Duque
+Europe	Spain	Extremadura	Hinojal
 Europe	Spain	Extremadura	Jaraicejo
+Europe	Spain	Extremadura	Jarandilla de la Vera
+Europe	Spain	Extremadura	Madronera
 Europe	Spain	Extremadura	Malpartida de Plasencia
 Europe	Spain	Extremadura	Miajadas
+Europe	Spain	Extremadura	Moraleja
 Europe	Spain	Extremadura	Navalmoral de la Mata
 Europe	Spain	Extremadura	Plasencia
 Europe	Spain	Extremadura	Pueblonuevo de Miramontes
@@ -7247,6 +7327,7 @@ North America	USA	Indiana	Johnson County IN
 North America	USA	Indiana	Lake County IN
 North America	USA	Indiana	Marion County IN
 North America	USA	Indiana	Porter County
+North America	USA	Indiana	St. Joseph County
 North America	USA	Indiana	Tippecanoe County
 North America	USA	Iowa	
 North America	USA	Iowa	Allamakee County
@@ -7304,6 +7385,7 @@ North America	USA	Louisiana	St Bernard Parish
 North America	USA	Louisiana	St Landry Parish
 North America	USA	Louisiana	St Tammany Parish
 North America	USA	Louisiana	Tensas Parish
+North America	USA	Louisiana	Terrebonne Parish
 North America	USA	Louisiana	Union Parish
 North America	USA	Louisiana	Webster Parish
 North America	USA	Maine	
@@ -7753,6 +7835,7 @@ North America	USA	Texas	Rusk County TX
 North America	USA	Texas	San Jacinto County
 North America	USA	Texas	San Patricio County
 North America	USA	Texas	San Saba County
+North America	USA	Texas	Shelby County TX
 North America	USA	Texas	Smith County
 North America	USA	Texas	Starr County
 North America	USA	Texas	Swisher County
@@ -8636,10 +8719,15 @@ South America	Brazil	Rio Grande do Sul	Viamao
 South America	Brazil	Rio Grande do Sul	Vista Gaucha
 South America	Brazil	Rio Grande do Sul	Xangri-la
 South America	Brazil	Rio de Janeiro	
+South America	Brazil	Rio de Janeiro	Aperibe
 South America	Brazil	Rio de Janeiro	Belford Roxo
+South America	Brazil	Rio de Janeiro	Bom Jardim
 South America	Brazil	Rio de Janeiro	Bom Jesus do Itabapoana
 South America	Brazil	Rio de Janeiro	Cabo Frio
+South America	Brazil	Rio de Janeiro	Cambuci
 South America	Brazil	Rio de Janeiro	Campos Dos Goytacazes
+South America	Brazil	Rio de Janeiro	Conceicao de Macabu
+South America	Brazil	Rio de Janeiro	Duas Barras
 South America	Brazil	Rio de Janeiro	Duque de Caxias
 South America	Brazil	Rio de Janeiro	Guapimirim
 South America	Brazil	Rio de Janeiro	Itaborai
@@ -8648,6 +8736,7 @@ South America	Brazil	Rio de Janeiro	Itaguaí
 South America	Brazil	Rio de Janeiro	Itaperuna
 South America	Brazil	Rio de Janeiro	Macaé
 South America	Brazil	Rio de Janeiro	Mage
+South America	Brazil	Rio de Janeiro	Mangaratiba
 South America	Brazil	Rio de Janeiro	Maricá
 South America	Brazil	Rio de Janeiro	Mesquita
 South America	Brazil	Rio de Janeiro	Miracema
@@ -8658,15 +8747,20 @@ South America	Brazil	Rio de Janeiro	Nova Friburgo
 South America	Brazil	Rio de Janeiro	Nova Iguacu
 South America	Brazil	Rio de Janeiro	Paracambi
 South America	Brazil	Rio de Janeiro	Paraiba do Sul
+South America	Brazil	Rio de Janeiro	Paty do Alferes
 South America	Brazil	Rio de Janeiro	Petropolis
 South America	Brazil	Rio de Janeiro	Porto Real
 South America	Brazil	Rio de Janeiro	Queimados
 South America	Brazil	Rio de Janeiro	Resende
 South America	Brazil	Rio de Janeiro	Rio Bonito
 South America	Brazil	Rio de Janeiro	Rio Claro RJ
+South America	Brazil	Rio de Janeiro	Rio Das Flores
+South America	Brazil	Rio de Janeiro	Rio Das Ostras
 South America	Brazil	Rio de Janeiro	Rio de Janeiro
+South America	Brazil	Rio de Janeiro	Sao Francisco de Itabapoana
 South America	Brazil	Rio de Janeiro	Sao Goncalo
 South America	Brazil	Rio de Janeiro	Sao Joao de Meriti
+South America	Brazil	Rio de Janeiro	Sao Pedro Da Aldeia
 South America	Brazil	Rio de Janeiro	Seropédica
 South America	Brazil	Rio de Janeiro	São João de Meriti
 South America	Brazil	Rio de Janeiro	Teresopolis
