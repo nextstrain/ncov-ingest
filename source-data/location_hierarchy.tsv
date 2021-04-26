@@ -46,6 +46,8 @@ Africa	Botswana	Maun
 Africa	Botswana	North-East District	
 Africa	Botswana	North-East District	Masunga
 Africa	Botswana	Orapa	
+Africa	Botswana	Southern District	
+Africa	Botswana	Southern District	Jwaneng
 Africa	Botswana	Southern East	
 Africa	Burkina Faso	Burkina Faso	
 Africa	Burkina Faso	Cascades	
@@ -175,6 +177,7 @@ Africa	Madagascar	Toamasina
 Africa	Madagascar	Vakinankaratra	
 Africa	Malawi	Central Region MW	
 Africa	Malawi	Central Region MW	Lilongwe
+Africa	Malawi	Malawi	
 Africa	Malawi	Northern Region MW	
 Africa	Malawi	Northern Region MW	Karonga
 Africa	Malawi	Northern Region MW	Mzimba
@@ -260,6 +263,7 @@ Africa	Nigeria	Osun State
 Africa	Nigeria	Oyo State	
 Africa	Nigeria	Plateau State	
 Africa	Nigeria	Rivers	
+Africa	Nigeria	Sokoto	
 Africa	Nigeria	Zamfara State	
 Africa	Republic of the Congo	Brazzaville	
 Africa	Rwanda	Kigali	
@@ -443,6 +447,7 @@ Asia	Bangladesh	Cox'S Bazar
 Asia	Bangladesh	Cumilla	
 Asia	Bangladesh	Dhaka	
 Asia	Bangladesh	Dhaka	Agargaon
+Asia	Bangladesh	Dhaka	Ashkona
 Asia	Bangladesh	Dhaka	Azimpur
 Asia	Bangladesh	Dhaka	Banani
 Asia	Bangladesh	Dhaka	Baridhara
@@ -451,9 +456,11 @@ Asia	Bangladesh	Dhaka	Dhaka
 Asia	Bangladesh	Dhaka	Dhamrai
 Asia	Bangladesh	Dhaka	Dhanmondi
 Asia	Bangladesh	Dhaka	Faridpur
+Asia	Bangladesh	Dhaka	Farmgate
 Asia	Bangladesh	Dhaka	Gazipur
 Asia	Bangladesh	Dhaka	Gulshan
 Asia	Bangladesh	Dhaka	Jatrabari
+Asia	Bangladesh	Dhaka	Kalabagan
 Asia	Bangladesh	Dhaka	Keraniganj
 Asia	Bangladesh	Dhaka	Kishoreganj
 Asia	Bangladesh	Dhaka	Kodomtoly
@@ -462,9 +469,12 @@ Asia	Bangladesh	Dhaka	Manikganj
 Asia	Bangladesh	Dhaka	Mirpur
 Asia	Bangladesh	Dhaka	Mohammadpur
 Asia	Bangladesh	Dhaka	Narayanganj
+Asia	Bangladesh	Dhaka	Narayanganj Sadar
 Asia	Bangladesh	Dhaka	Narsingdi
+Asia	Bangladesh	Dhaka	Niketan
 Asia	Bangladesh	Dhaka	Nikunja
 Asia	Bangladesh	Dhaka	Panthapath
+Asia	Bangladesh	Dhaka	Savar
 Asia	Bangladesh	Dhaka	Shariatpur
 Asia	Bangladesh	Dhaka	Shaymoli
 Asia	Bangladesh	Dhaka	Tangail
@@ -540,6 +550,7 @@ Asia	China	Hebei	Shijiazhuang
 Asia	China	Hebei	Xingtai
 Asia	China	Heilongjiang	
 Asia	China	Heilongjiang	Harbin
+Asia	China	Heilongjiang	Huanan City
 Asia	China	Henan	
 Asia	China	Henan	Zhengzhou
 Asia	China	Hong Kong	
@@ -689,6 +700,7 @@ Asia	India	Gujarat	Surat
 Asia	India	Gujarat	Sutrapada
 Asia	India	Gujarat	Talala
 Asia	India	Gujarat	Talod
+Asia	India	Gujarat	Tapi
 Asia	India	Gujarat	Una
 Asia	India	Gujarat	Vadiya
 Asia	India	Gujarat	Vadodara
@@ -1096,6 +1108,7 @@ Asia	Japan	Kyusyu
 Asia	Japan	Nagasaki	
 Asia	Japan	Nara	
 Asia	Japan	Niigata	
+Asia	Japan	Okinawa	
 Asia	Japan	Osaka	
 Asia	Japan	Saitama	
 Asia	Japan	Tochigi	
@@ -1459,6 +1472,7 @@ Europe	Austria	Tyrol	Kramsach
 Europe	Austria	Tyrol	Kufstein
 Europe	Austria	Tyrol	Laengenfeld
 Europe	Austria	Tyrol	Landeck
+Europe	Austria	Tyrol	Lienz
 Europe	Austria	Tyrol	Matrei am Brenner
 Europe	Austria	Tyrol	Mayrhofen
 Europe	Austria	Tyrol	Nauders
@@ -1697,6 +1711,7 @@ Europe	Belgium	Brussels	Evere
 Europe	Belgium	Brussels	Forest
 Europe	Belgium	Brussels	Ganshoren
 Europe	Belgium	Brussels	Haren
+Europe	Belgium	Brussels	Haren BE
 Europe	Belgium	Brussels	Ixelles
 Europe	Belgium	Brussels	Jette
 Europe	Belgium	Brussels	Koekelberg
@@ -2504,6 +2519,7 @@ Europe	Croatia	Osijek-Baranja
 Europe	Croatia	Osijek-Baranja	Osijek
 Europe	Croatia	Osijek-Baranja County	
 Europe	Croatia	Pozega-Slavonia County	
+Europe	Croatia	Primorje-Gorski Kotar County	
 Europe	Croatia	Pula	
 Europe	Croatia	Sibenik-Knin County	
 Europe	Croatia	Sisak-Moslavina County	
@@ -2969,12 +2985,14 @@ Europe	France	Bretagne	Saint Gregoire
 Europe	France	Bretagne	Saint Malo
 Europe	France	Bretagne	Saint Pierre Quiberon
 Europe	France	Bretagne	Saint-Brieuc
+Europe	France	Bretagne	Saint-M'Herve
 Europe	France	Bretagne	Sene
 Europe	France	Bretagne	Tinteniac
 Europe	France	Bretagne	Vannes
 Europe	France	Bretagne	Vitre
 Europe	France	Centre-Val de Loire	
 Europe	France	Centre-Val de Loire	Abondant
+Europe	France	Centre-Val de Loire	Amilly
 Europe	France	Centre-Val de Loire	Angers
 Europe	France	Centre-Val de Loire	Blois
 Europe	France	Centre-Val de Loire	Bourges
@@ -3465,6 +3483,7 @@ Europe	Greece	Central Greece	Livadeia
 Europe	Greece	Central Macedonia	
 Europe	Greece	Crete	
 Europe	Greece	Drama	
+Europe	Greece	Epirus	
 Europe	Greece	Evros	
 Europe	Greece	Greece	
 Europe	Greece	Rodopi	
@@ -3693,13 +3712,22 @@ Europe	Monaco	Monaco
 Europe	Montenegro	Montenegro	
 Europe	Netherlands	Drenthe	
 Europe	Netherlands	Drenthe	Assen
+Europe	Netherlands	Drenthe	Bovensmilde
 Europe	Netherlands	Drenthe	Coevorden
 Europe	Netherlands	Drenthe	Dalen
 Europe	Netherlands	Drenthe	Meppel
+Europe	Netherlands	Drenthe	Peize
+Europe	Netherlands	Drenthe	Zuidwolde
 Europe	Netherlands	Flevoland	
+Europe	Netherlands	Flevoland	Almere
+Europe	Netherlands	Flevoland	Lelystad
 Europe	Netherlands	Flevoland	Zeewolde
 Europe	Netherlands	Friesland	
+Europe	Netherlands	Friesland	Buitenpost
 Europe	Netherlands	Friesland	Franeker
+Europe	Netherlands	Friesland	Rottevalle
+Europe	Netherlands	Friesland	Sneek
+Europe	Netherlands	Friesland	Waaksens
 Europe	Netherlands	Friesland	Weststellingwerf
 Europe	Netherlands	Gelderland	
 Europe	Netherlands	Gelderland	Apeldoorn
@@ -3707,7 +3735,14 @@ Europe	Netherlands	Gelderland	Arnhem
 Europe	Netherlands	Gelderland	Nijmegen
 Europe	Netherlands	Gelderland	Wijchen
 Europe	Netherlands	Groningen	
+Europe	Netherlands	Groningen	Appingedam
+Europe	Netherlands	Groningen	Delfzijl
+Europe	Netherlands	Groningen	Groningen
+Europe	Netherlands	Groningen	Haren NL
 Europe	Netherlands	Groningen	Leek
+Europe	Netherlands	Groningen	Uithuizermeeden
+Europe	Netherlands	Groningen	Wildervank
+Europe	Netherlands	Groningen	Zuidhorn
 Europe	Netherlands	Leiden	
 Europe	Netherlands	Limburg	
 Europe	Netherlands	Limburg	Beek
@@ -3718,6 +3753,7 @@ Europe	Netherlands	Limburg	Eijsden-Margraten
 Europe	Netherlands	Limburg	Geleen
 Europe	Netherlands	Limburg	Gulpen-Wittem
 Europe	Netherlands	Limburg	Heerlen
+Europe	Netherlands	Limburg	Herten
 Europe	Netherlands	Limburg	Horst Aan de Maas
 Europe	Netherlands	Limburg	Kerkrade
 Europe	Netherlands	Limburg	Landgraaf
@@ -3740,6 +3776,7 @@ Europe	Netherlands	Limburg	Voerendaal
 Europe	Netherlands	Limburg	Weert NL
 Europe	Netherlands	Netherlands	
 Europe	Netherlands	North Brabant	
+Europe	Netherlands	North Brabant	'S-Hertogenbosch
 Europe	Netherlands	North Brabant	Andel
 Europe	Netherlands	North Brabant	Bergeijk
 Europe	Netherlands	North Brabant	Berlicum
@@ -3748,6 +3785,7 @@ Europe	Netherlands	North Brabant	Bladel
 Europe	Netherlands	North Brabant	Blaricum
 Europe	Netherlands	North Brabant	Cranendonck
 Europe	Netherlands	North Brabant	Eindhoven
+Europe	Netherlands	North Brabant	Geffen
 Europe	Netherlands	North Brabant	Heeswijk Dinther
 Europe	Netherlands	North Brabant	Heeze-Leende
 Europe	Netherlands	North Brabant	Helmond
@@ -3762,40 +3800,101 @@ Europe	Netherlands	North Brabant	Tilburg
 Europe	Netherlands	North Brabant	Valkenswaard
 Europe	Netherlands	North Brabant	Veldhoven
 Europe	Netherlands	North Holland	
+Europe	Netherlands	North Holland	Aalsmeer
 Europe	Netherlands	North Holland	Alkmaar
+Europe	Netherlands	North Holland	Amstelveen
 Europe	Netherlands	North Holland	Amsterdam
 Europe	Netherlands	North Holland	Amsterdam West
+Europe	Netherlands	North Holland	Amsterdam-Zuidoost
+Europe	Netherlands	North Holland	Assendelft
+Europe	Netherlands	North Holland	Badhoevedorp
+Europe	Netherlands	North Holland	Benningbroek
 Europe	Netherlands	North Holland	Beverwijk
 Europe	Netherlands	North Holland	Blaricum
+Europe	Netherlands	North Holland	Bloemendaal
+Europe	Netherlands	North Holland	Blokker
+Europe	Netherlands	North Holland	Broek In Waterland
+Europe	Netherlands	North Holland	Bussum
+Europe	Netherlands	North Holland	De Goorn
+Europe	Netherlands	North Holland	De Rijp
+Europe	Netherlands	North Holland	Den Helder
 Europe	Netherlands	North Holland	Diemen
+Europe	Netherlands	North Holland	Duivendrecht
 Europe	Netherlands	North Holland	Gooise Meren
 Europe	Netherlands	North Holland	Haarlem
+Europe	Netherlands	North Holland	Halfweg
+Europe	Netherlands	North Holland	Heemstede
+Europe	Netherlands	North Holland	Heerhugowaard
+Europe	Netherlands	North Holland	Heiloo
+Europe	Netherlands	North Holland	Hilversum
+Europe	Netherlands	North Holland	Hoofddorp
+Europe	Netherlands	North Holland	Hoogkarspel
+Europe	Netherlands	North Holland	Hoorn
+Europe	Netherlands	North Holland	Huizen
+Europe	Netherlands	North Holland	Ijmuiden
 Europe	Netherlands	North Holland	Katwoude
+Europe	Netherlands	North Holland	Koog Aan de Zaan
+Europe	Netherlands	North Holland	Kreileroord
+Europe	Netherlands	North Holland	Krommenie
+Europe	Netherlands	North Holland	Kudelstaart
+Europe	Netherlands	North Holland	Marken
+Europe	Netherlands	North Holland	Midwoud
+Europe	Netherlands	North Holland	Monnickendam
 Europe	Netherlands	North Holland	Naarden
+Europe	Netherlands	North Holland	Opmeer
+Europe	Netherlands	North Holland	Purmerend
 Europe	Netherlands	North Holland	Schiphol
+Europe	Netherlands	North Holland	Spanbroek
+Europe	Netherlands	North Holland	Uitgeest
+Europe	Netherlands	North Holland	Uithoorn
+Europe	Netherlands	North Holland	Velserbroek
+Europe	Netherlands	North Holland	Volendam
+Europe	Netherlands	North Holland	Weesp
 Europe	Netherlands	North Holland	Wervershoof
+Europe	Netherlands	North Holland	Wormer
+Europe	Netherlands	North Holland	Zaandam
+Europe	Netherlands	North Holland	Zaandijk
+Europe	Netherlands	North Holland	Zwaag
 Europe	Netherlands	Overijssel	
 Europe	Netherlands	Overijssel	Hengelo
 Europe	Netherlands	Overijssel	Oldenzaal
 Europe	Netherlands	Overijssel	Raalte
 Europe	Netherlands	Roermond	
 Europe	Netherlands	South Holland	
+Europe	Netherlands	South Holland	Alphen Aan Den Rijn
+Europe	Netherlands	South Holland	Bleiswijk
 Europe	Netherlands	South Holland	Delft
 Europe	Netherlands	South Holland	Delft NL
+Europe	Netherlands	South Holland	Den Haag
 Europe	Netherlands	South Holland	Dordrecht
 Europe	Netherlands	South Holland	Gouda
 Europe	Netherlands	South Holland	Hardinxveld Giessendam
+Europe	Netherlands	South Holland	Hillegom
+Europe	Netherlands	South Holland	Katwijk
 Europe	Netherlands	South Holland	Leiden
 Europe	Netherlands	South Holland	Molenlanden
 Europe	Netherlands	South Holland	Nootdorp
 Europe	Netherlands	South Holland	Rotterdam
+Europe	Netherlands	South Holland	Spijkenisse
+Europe	Netherlands	South Holland	Valkenburg
+Europe	Netherlands	South Holland	Voorschoten
+Europe	Netherlands	South Holland	Zoetermeer
 Europe	Netherlands	St Eustatius	
 Europe	Netherlands	St Eustatius	St Eustatius
 Europe	Netherlands	Utrecht	
+Europe	Netherlands	Utrecht	Abcoude
 Europe	Netherlands	Utrecht	Amersfoort
+Europe	Netherlands	Utrecht	Baarn
+Europe	Netherlands	Utrecht	Hoogland
 Europe	Netherlands	Utrecht	Houten
+Europe	Netherlands	Utrecht	Maarssen
+Europe	Netherlands	Utrecht	Mijdrecht
 Europe	Netherlands	Utrecht	Overvecht
 Europe	Netherlands	Utrecht	Utrecht
+Europe	Netherlands	Utrecht	Vinkeveen
+Europe	Netherlands	Utrecht	Vleuten
+Europe	Netherlands	Utrecht	Westbroek
+Europe	Netherlands	Utrecht	Woerden
 Europe	Netherlands	Utrecht	Zeist
 Europe	Netherlands	Zeeland	
 Europe	Netherlands	Zeeland	Middelburg
@@ -5998,13 +6097,16 @@ Europe	Spain	Comunitat Valenciana	Museros
 Europe	Spain	Comunitat Valenciana	Novelda
 Europe	Spain	Comunitat Valenciana	Oliva
 Europe	Spain	Comunitat Valenciana	Olleria
+Europe	Spain	Comunitat Valenciana	Paiporta
 Europe	Spain	Comunitat Valenciana	Palma de Gandia
 Europe	Spain	Comunitat Valenciana	Paterna
+Europe	Spain	Comunitat Valenciana	Picanya
 Europe	Spain	Comunitat Valenciana	Picassent
 Europe	Spain	Comunitat Valenciana	Piles
 Europe	Spain	Comunitat Valenciana	Polop
 Europe	Spain	Comunitat Valenciana	Puzol
 Europe	Spain	Comunitat Valenciana	Quart de Poblet
+Europe	Spain	Comunitat Valenciana	Real de Montroy
 Europe	Spain	Comunitat Valenciana	Requena
 Europe	Spain	Comunitat Valenciana	Sagunt
 Europe	Spain	Comunitat Valenciana	Segorbe
@@ -6023,6 +6125,7 @@ Europe	Spain	Comunitat Valenciana	Villajoyosa
 Europe	Spain	Comunitat Valenciana	Villena
 Europe	Spain	Comunitat Valenciana	Vinalesa
 Europe	Spain	Comunitat Valenciana	Xeraco
+Europe	Spain	Comunitat Valenciana	Xirivella
 Europe	Spain	Donostia-San Sebatian	
 Europe	Spain	Extremadura	
 Europe	Spain	Extremadura	Alcantara
@@ -6585,6 +6688,7 @@ Europe	United Kingdom	Gibraltar
 Europe	United Kingdom	Gibraltar	Gibraltar
 Europe	United Kingdom	Northern Ireland	
 Europe	United Kingdom	Scotland	
+Europe	United Kingdom	Scotland	Fraserburgh
 Europe	United Kingdom	United Kingdom	
 Europe	United Kingdom	Wales	
 Europe	United Kingdom	Wales	Cardiff
@@ -6615,6 +6719,7 @@ North America	Costa Rica	Alajuela	Cutris
 North America	Costa Rica	Alajuela	Grecia
 North America	Costa Rica	Alajuela	Guacima
 North America	Costa Rica	Alajuela	Guatuso
+North America	Costa Rica	Alajuela	Naranjo
 North America	Costa Rica	Alajuela	Orotina
 North America	Costa Rica	Alajuela	Quesada
 North America	Costa Rica	Alajuela	Sabanilla
@@ -6645,6 +6750,7 @@ North America	Costa Rica	Cartago CR	Paraiso
 North America	Costa Rica	Cartago CR	San Diego CR
 North America	Costa Rica	Cartago CR	San Isidro
 North America	Costa Rica	Cartago CR	San Isidro CR
+North America	Costa Rica	Cartago CR	San Isidro CR-C
 North America	Costa Rica	Cartago CR	San Juan
 North America	Costa Rica	Cartago CR	San Juan CR
 North America	Costa Rica	Cartago CR	San Rafael Cartago
@@ -6657,7 +6763,9 @@ North America	Costa Rica	Cartago CR	Tres Rios CR
 North America	Costa Rica	Cartago CR	Turrialba
 North America	Costa Rica	Costa Rica	
 North America	Costa Rica	Guanacaste	
+North America	Costa Rica	Guanacaste	Abangares
 North America	Costa Rica	Guanacaste	Bagaces
+North America	Costa Rica	Guanacaste	Carrillo
 North America	Costa Rica	Guanacaste	La Cruz
 North America	Costa Rica	Guanacaste	Liberia
 North America	Costa Rica	Guanacaste	Nicoya
@@ -6673,16 +6781,19 @@ North America	Costa Rica	Heredia	Mercedes
 North America	Costa Rica	Heredia	Paracito
 North America	Costa Rica	Heredia	Puerto Viejo
 North America	Costa Rica	Heredia	San Francisco CR
+North America	Costa Rica	Heredia	San Isidro CR-H
 North America	Costa Rica	Heredia	San Pablo CR
 North America	Costa Rica	Heredia	San Rafael Heredia
 North America	Costa Rica	Heredia	Santa Barbara de Heredia
 North America	Costa Rica	Heredia	Santo Domingo CR
 North America	Costa Rica	Heredia	Sarapiqui
 North America	Costa Rica	Limon	
+North America	Costa Rica	Limon	Guacimo
 North America	Costa Rica	Limon	Guapiles
 North America	Costa Rica	Limon	Limon
 North America	Costa Rica	Limon	Pococi
 North America	Costa Rica	Limon	Siquirres
+North America	Costa Rica	Limon	Talamanca
 North America	Costa Rica	Puntarenas	
 North America	Costa Rica	Puntarenas	Buenos Aires
 North America	Costa Rica	Puntarenas	Canoas CR
@@ -7138,6 +7249,7 @@ North America	USA	Connecticut	Glastonbury
 North America	USA	Connecticut	Greenwich
 North America	USA	Connecticut	Hamden
 North America	USA	Connecticut	Hartford County
+North America	USA	Connecticut	Litchfield County
 North America	USA	Connecticut	Madison CT
 North America	USA	Connecticut	Manchester
 North America	USA	Connecticut	Meriden
@@ -7305,6 +7417,7 @@ North America	USA	Illinois	Scott County
 North America	USA	Illinois	Shelby County IL
 North America	USA	Illinois	St. Clair County IL
 North America	USA	Illinois	Stephenson County
+North America	USA	Illinois	Stephenson County IL
 North America	USA	Illinois	Tazewell County IL
 North America	USA	Illinois	Union County IL
 North America	USA	Illinois	Vermilion County
@@ -7574,13 +7687,17 @@ North America	USA	Ohio	Cincinnati
 North America	USA	Ohio	Clark County OH
 North America	USA	Ohio	Columbus OH
 North America	USA	Ohio	Cuyahoga County
+North America	USA	Ohio	Delaware County OH
 North America	USA	Ohio	Franklin County OH
 North America	USA	Ohio	Greene County OH
+North America	USA	Ohio	Hamilton County OH
 North America	USA	Ohio	Hardin County OH
 North America	USA	Ohio	Hocking County
 North America	USA	Ohio	Lorain County
 North America	USA	Ohio	Marion County OH
+North America	USA	Ohio	Medina County OH
 North America	USA	Ohio	Montgomery County OH
+North America	USA	Ohio	Morrow County
 North America	USA	Ohio	Pickaway County
 North America	USA	Ohio	Richland County OH
 North America	USA	Ohio	Ross
@@ -8355,6 +8472,7 @@ South America	Brazil	Bahia	Marau
 South America	Brazil	Bahia	Pau Brasil
 South America	Brazil	Bahia	Porto Seguro
 South America	Brazil	Bahia	Salvador
+South America	Brazil	Bahia	Santo Antonio de Jesus
 South America	Brazil	Bahia	Sao Sebastiao do Passe
 South America	Brazil	Bahia	Teixeira de Freitas
 South America	Brazil	Brazil	
@@ -8389,21 +8507,45 @@ South America	Brazil	Espirito Santo	Vila Valerio
 South America	Brazil	Espirito Santo	Vila Velha
 South America	Brazil	Espirito Santo	Vitoria
 South America	Brazil	Goiás	
+South America	Brazil	Goiás	Abadia de Goias
+South America	Brazil	Goiás	Anapolis
 South America	Brazil	Goiás	Aparecida de Goiania
+South America	Brazil	Goiás	Araguapaz
+South America	Brazil	Goiás	Bom Jesus de Goias
 South America	Brazil	Goiás	Britania
+South America	Brazil	Goiás	Catalao
 South America	Brazil	Goiás	Ceres BR
 South America	Brazil	Goiás	Cidade Ocidental
+South America	Brazil	Goiás	Cristalina
+South America	Brazil	Goiás	Damolandia
+South America	Brazil	Goiás	Davinopolis
+South America	Brazil	Goiás	Faina
+South America	Brazil	Goiás	Formosa
 South America	Brazil	Goiás	Goiania
+South America	Brazil	Goiás	Iaciara
+South America	Brazil	Goiás	Itapaci
+South America	Brazil	Goiás	Itumbiara
 South America	Brazil	Goiás	Jaragua
 South America	Brazil	Goiás	Jatai
+South America	Brazil	Goiás	Jussara
 South America	Brazil	Goiás	Mangueira
+South America	Brazil	Goiás	Monte Alegre de Goias
+South America	Brazil	Goiás	Montes Claros de Goias
+South America	Brazil	Goiás	Morrinhos
+South America	Brazil	Goiás	Mundo Novo
+South America	Brazil	Goiás	Ouvidor
+South America	Brazil	Goiás	Quirinopolis
 South America	Brazil	Goiás	Rio Verde
 South America	Brazil	Goiás	Sanclerlandia
 South America	Brazil	Goiás	Santa Barbara de Goias
+South America	Brazil	Goiás	Santa Fe de Goias
+South America	Brazil	Goiás	Sao Luis de Montes Belos
 South America	Brazil	Goiás	Senador Canedo
 South America	Brazil	Goiás	Simao
+South America	Brazil	Goiás	São Simão
 South America	Brazil	Goiás	Trindade
 South America	Brazil	Goiás	Turvania
+South America	Brazil	Goiás	Valparaiso de Goias
 South America	Brazil	Maranhão	
 South America	Brazil	Maranhão	Anapurus
 South America	Brazil	Maranhão	Cachoeira Grande
@@ -8892,6 +9034,7 @@ South America	Brazil	São Paulo	Itabera
 South America	Brazil	São Paulo	Itanhaem
 South America	Brazil	São Paulo	Itapecerica Da Serra
 South America	Brazil	São Paulo	Itapetininga
+South America	Brazil	São Paulo	Itapevi
 South America	Brazil	São Paulo	Itapolis
 South America	Brazil	São Paulo	Itaquaquecetuba
 South America	Brazil	São Paulo	Itarare
@@ -9082,6 +9225,7 @@ South America	Chile	Biobío	Concepcion
 South America	Chile	Biobío	Concepcion CL
 South America	Chile	Biobío	Coronel
 South America	Chile	Biobío	Hualpen
+South America	Chile	Biobío	Hualqui
 South America	Chile	Biobío	Los Angeles
 South America	Chile	Biobío	Lota
 South America	Chile	Biobío	San Pedro de la Paz
@@ -9188,10 +9332,15 @@ South America	Chile	Ñuble	Quillon
 South America	Chile	Ñuble	San Carlos CL
 South America	Chile	Ñuble	Treguaco
 South America	Colombia	Antioquia	
+South America	Colombia	Antioquia	Amagá
+South America	Colombia	Antioquia	Apartado
+South America	Colombia	Antioquia	Argelia
 South America	Colombia	Antioquia	Bello
 South America	Colombia	Antioquia	Envigado
 South America	Colombia	Antioquia	Itagui
 South America	Colombia	Antioquia	Medellin
+South America	Colombia	Antioquia	Retiro
+South America	Colombia	Antioquia	Rionegro
 South America	Colombia	Antioquia	Sabaneta
 South America	Colombia	Arauca	
 South America	Colombia	Arauca	Arauca
@@ -9305,6 +9454,7 @@ South America	Colombia	Valle del Cauca	Yumbo
 South America	Colombia	Vichada	
 South America	Colombia	Vichada	Puerto Carreno
 South America	Curacao	Curacao	
+South America	Curacao	Willemstad	
 South America	Ecuador	Azuay	
 South America	Ecuador	Azuay	Baños
 South America	Ecuador	Azuay	Cuenca EC
