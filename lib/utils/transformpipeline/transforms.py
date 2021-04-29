@@ -217,6 +217,7 @@ class RenameAndAddColumns(Transformer):
                 'covv_add_location': 'additional_location_info',
                 'covv_subm_date': 'date_submitted',
                 'covv_location': 'location',
+                'covv_sampling_strategy': 'sampling_strategy',
             }
 
     def transform_value(self, entry: dict) -> dict:
@@ -402,7 +403,6 @@ class AddHardcodedMetadata(Transformer):
         entry['segment'] = 'genome'
         entry['title'] = '?'
         entry['paper_url'] = '?'
-        entry['purpose_of_sequencing'] = '?'
 
         return entry
 
@@ -607,7 +607,7 @@ class AddHardcodedMetadataGenbank(Transformer):
         entry['originating_lab']   = '?'
         entry['submitting_lab']    = '?'
         entry['paper_url']         = '?'
-        entry['purpose_of_sequencing']         = '?'
+        entry['sampling_strategy']         = '?'
     
         entry['url'] = "https://www.ncbi.nlm.nih.gov/nuccore/" + entry['genbank_accession']
         return entry
