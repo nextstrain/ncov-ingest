@@ -89,6 +89,9 @@ Europe/France/Auvergne-Rhône-Alpes/St Julien de Coppel	Europe/France/Auvergne-R
 Europe/France/Auvergne-Rhône-Alpes/St Germain des Fosses	Europe/France/Auvergne-Rhône-Alpes/Saint Germain des Fosses
 Europe/France/Auvergne-Rhône-Alpes/Harbonnieres Les Varennes	Europe/France/Auvergne-Rhône-Alpes/Charbonnieres Les Varenne
 Europe/France/Auvergne-Rhône-Alpes/St Bonnet Pres Riom	Europe/France/Auvergne-Rhône-Alpes/Saint Bonnet Pres Riom
+Europe/France/Auvergne-Rhône-Alpes/Clermond-Ferrand	Europe/France/Auvergne-Rhône-Alpes/Clermont-Ferrand
+Europe/France/Auvergne-Rhône-Alpes/Coulounieix Chamiers	Europe/France/Nouvelle-Aquitaine/Coulounieix Chamiers
+Europe/France/Auvergne-Rhône-Alpes/Crocq	Europe/France/Nouvelle-Aquitaine/Crocq
 Europe/France/Provence-Alpes-Côte-D’Azur/*	Europe/France/Provence-Alpes-Côte d'Azur/*
 Europe/France/Centre-Val de Loire/Angers	Europe/France/Pays de la Loire/Angers
 Europe/France/Centre-Val de Loire/Rouziers de Touraine	Europe/France/Centre-Val de Loire/Rouziers-de-Touraine
@@ -6131,6 +6134,7 @@ Europe/Belgium/Imde/	Europe/Belgium/Halle-Vilvoorde/Meise
 Europe/Belgium/Concelles/	Europe/Belgium/Charleroi/Courcelles
 Europe/Belgium/Heist Aan Zee/	Europe/Belgium/Brugge/Heist
 Europe/Belgium/Sint-Jan-Molenbeek/	Europe/Belgium/Brussels/Molenbeek-Saint-Jean
+Europe/Belgium/Flanders/Limburg	Europe/Belgium/Limburg BE/
 Europe/Switzerland/Graubunden/*	Europe/Switzerland/Graubünden/*
 Europe/Switzerland/Graubã¼Nden/*	Europe/Switzerland/Graubünden/*
 Europe/Switzerland/Basel/	Europe/Switzerland/Basel-Stadt/
@@ -6240,6 +6244,9 @@ Europe/Switzerland/Tg/*	Europe/Switzerland/Thurgau/*
 Europe/Switzerland/Ti/*	Europe/Switzerland/Ticino/*
 Europe/Switzerland/Zg/*	Europe/Switzerland/Zug/*
 Europe/Switzerland/Zh/*	Europe/Switzerland/Zürich/*
+Europe/Switzerland/Zaerich/*	Europe/Switzerland/Zürich/*
+Europe/Switzerland/Zoerich/*	Europe/Switzerland/Zürich/*
+Europe/Switzerland/Neuenburg/*	Europe/Switzerland/Neuchâtel/*
 Europe/Russia/Saint Petersburg/Saint Petersburg	Europe/Russia/Saint-Petersburg/Saint-Petersburg
 Europe/Russia/Saint Petersburg/*	Europe/Russia/Saint-Petersburg/*
 Europe/Russia/Moscow/*	Europe/Russia/Moscow Oblast/*
@@ -6426,6 +6433,9 @@ Europe/Czech Republic/Cernosice/	Europe/Czech Republic/Central Bohemian Region/�
 Europe/Czech Republic/Praha 5 Stodulky/	Europe/Czech Republic/Prague/Stodůlky
 Europe/Czech Republic/Namest Na Oslavou/	Europe/Czech Republic/Vysocina Region/Náměšť nad Oslavou
 Europe/Czech Republic/Karlovy Vary Region/*	Europe/Czech Republic/Karlovy Vary/*
+Europe/Czech Republic/Kolin 2/	Europe/Czech Republic/Central Bohemian Region/Kolin 2
+Europe/Czech Republic/Lochovice/	Europe/Czech Republic/Central Bohemian Region/Lochovice
+Europe/Czech Republic/Pruhonice/	Europe/Czech Republic/Central Bohemian Region/Pruhonice
 Europe/Crimea//	Europe/Ukraine/Crimea/Crimea
 Europe/Crimea/Simpheropol/	Europe/Ukraine/Crimea/Simpheropol
 Europe/Crimea/Alushta/	Europe/Ukraine/Crimea/Alushta
@@ -6554,6 +6564,9 @@ Europe/Spain/Catalunya/Sant Vicenc de Castellet	Europe/Spain/Catalunya/San Vicen
 Europe/Spain/Catalunya/Arbucies	Europe/Spain/Catalunya/Arbúcies
 Europe/Spain/Catalunya/Sant Pol de Mar	Europe/Spain/Catalunya/San Pol de Mar
 Europe/Spain/Catalunya/Sant Joan de Les Abadesse	Europe/Spain/Catalunya/Sant Joan de les Abadesses
+Europe/Spain/Catalunya/La Bisbal D'Emporda	Europe/Spain/Catalunya/La Bisbal d'Empordà
+Europe/Spain/Catalunya/La Bisbal de l'Emporda	Europe/Spain/Catalunya/La Bisbal d'Empordà
+Europe/Spain/Catalunya/Santa Perpetua de la Mogoda	Europe/Spain/Catalunya/Santa Perpetua de Mogoda
 Europe/Spain/Extremadura/Alcantara	Europe/Spain/Extremadura/Caceres
 Europe/Spain/Extremadura/Guadalupe	Europe/Spain/Extremadura/Guadalupe ES
 Europe/Spain/Extremadura/Trujillo	Europe/Spain/Extremadura/Trujillo ES
@@ -6615,6 +6628,9 @@ Europe/Poland/Wielkopolskie/Osnolubuskie	Europe/Poland/Lubuskie/Osnolubuskie
 Europe/Poland/Wielkopolskie/Wągrowiec	Europe/Poland/Wielkopolskie/Wagrowiec
 Europe/Poland/Wielkopolskie/Miedzyrzecz	Europe/Poland/Lubuskie/Miedzyrzecz
 Europe/Poland/Wielkopolskie/Grodziski	Europe/Poland/Wielkopolskie/Grodzisk
+Europe/Poland/Wielkopolskie/Ciborz	Europe/Poland/Warminsko-Mazurskie/Ciborz
+Europe/Poland/Wielkopolskie/Gorzow Wielkopolski	Europe/Poland/Lubuskie/Gorzow Wielkopolski
+Europe/Poland/Wielkopolskie/Ostrow	Europe/Poland/Wielkopolskie/Ostrow (Wielkopolskie)
 Europe/Poland/Warminsko-Mazurskie/Olsztynski	Europe/Poland/Warminsko-Mazurskie/Olsztyn
 Europe/Poland/Warminsko-Mazurskie/Komorniki	Europe/Poland/Warminsko-Mazurskie/Komorniki WN
 Europe/Poland/Warminsko-Mazurskie/Lutry	Europe/Poland/Warminsko-Mazurskie/Lutry PL
@@ -6648,6 +6664,8 @@ Europe/Poland/Malopolskie/Wegrzce Wielkie	Europe/Poland/Malopolskie/Węgrzce Wie
 Europe/Poland/Malopolskie/Niepolomice	Europe/Poland/Malopolskie/Niepołomice
 Europe/Poland/Malopolskie/Myslenice	Europe/Poland/Malopolskie/Myślenice
 Europe/Poland/Malopolskie/Tarnobrzeg	Europe/Poland/Podkarpackie/Tarnobrzeg
+Europe/Poland/Malopolskie/Lezajsk	Europe/Poland/Podkarpackie/Lezajsk
+Europe/Poland/Malopolskie/Ostrow	Europe/Poland/Malopolskie/Ostrow (Malopolskie)
 Europe/Poland/Małopolskie/*	Europe/Poland/Malopolskie/*
 Europe/Poland/Świętokrzyskie/*	Europe/Poland/Swietokrzyskie/*
 Europe/Poland/Dolnośląskie/Wrocław	Europe/Poland/Dolnośląskie/Wroclaw
@@ -6684,6 +6702,7 @@ Europe/Poland/Łódzkie/Kalisz	Europe/Poland/Wielkopolskie/Kalisz
 Europe/Poland/Łódzkie/Szowsko	Europe/Poland/Podkarpackie/Szowsko
 Europe/Poland/Łódzkie/Zuki	Europe/Poland/Łódzkie/
 Europe/Poland/Łódzkie/Malealkow	Europe/Poland/Łódzkie/
+Europe/Poland/Łódzkie/Belchatow	Europe/Poland/Łódzkie/Belchatow County
 Europe/Poland/Śląskie/*	Europe/Poland/Slaskie/*
 Europe/Poland/Opolskie/Kedzierzyn-Kozle	Europe/Poland/Opolskie/Kedzierzyn Kozle
 Europe/Poland/Opolskie/Kędzierzyn-Koźle	Europe/Poland/Opolskie/Kedzierzyn Kozle
@@ -6726,6 +6745,7 @@ Europe/Italy/Molise/Padova	Europe/Italy/Veneto/Padova
 Europe/Italy/South Tyrol/	Europe/Italy/Trentino-Alto Adige/South Tyrol
 Europe/Italy/South Tyrol/ 	Europe/Italy/Trentino-Alto Adige/South Tyrol
 Europe/Italy/Lombrady/*	Europe/Italy/Lombardy/*
+Europe/Italy/Valle D'Asota/*	Europe/Italy/Valle D'Aosta/*
 Europe/Finland/Lapland/	Europe/Finland/Finland/Rovaniemi
 Europe/Serbia/Kraljevo/	Europe/Serbia/Raška District/Kraljevo
 Europe/Serbia/Novi Pazar/	Europe/Serbia/Raška District/Novi Pazar
@@ -7310,6 +7330,7 @@ Europe/Republic of Moldova//	Europe/Moldova//
 Europe/Republic of Moldova/Republic of Moldova/*	Europe/Moldova/Moldova/*
 Europe/Republic of Moldova/Chisinau/*	Europe/Moldova/Chisinau/*
 Europe/Slovaia/*/*	Europe/Slovakia/*/*
+Europe/Swizterland/*/*	Europe/Switzerland/*/*
 Asia/Taiwan/Taipei/	Asia/Taiwan/Taiwan/Taipei
 Asia/Taiwan/Taoyuan/	Asia/Taiwan/Taiwan/Taoyuan
 Asia/Taiwan/Kaohsiung/	Asia/Taiwan/Taiwan/Kaohsiung
@@ -7540,6 +7561,13 @@ Asia/Sri Lanka/Mahiyangana/	Asia/Sri Lanka/Uva Province/Mahiyangana
 Asia/Sri Lanka/Badulla/	Asia/Sri Lanka/Uva Province/Badulla
 Asia/Sri Lanka/Anuradhapura/	Asia/Sri Lanka/North Central Province/Anuradhapura
 Asia/Sri Lanka/Qurantine/	Asia/Sri Lanka/Sri Lanka/
+Asia/Sri Lanka/Horana/	Asia/Sri Lanka/Kalutara/Horana
+Asia/Sri Lanka/Polonnaruwa/	Asia/Sri Lanka/North Central Province/Polonnaruwa
+Asia/Sri Lanka/Kahathuduwa/	Asia/Sri Lanka/Western Province/Kahathuduwa
+Asia/Sri Lanka/Piliyandala/	Asia/Sri Lanka/Western Province/Piliyandala
+Asia/Sri Lanka/Maligawatta/	Asia/Sri Lanka/Western Province/Maligawatta
+Asia/Sri Lanka/Negombo/	Asia/Sri Lanka/Western Province/Negombo
+Asia/Sri Lanka/Kaluthara/*	Asia/Sri Lanka/Kalutara/*
 Asia/Palestine/Tulkarem/	Asia/Palestine/West Bank/Tulkarem
 Asia/Palestine/West Bank/Jericho	Asia/Palestine/Jericho/
 Asia/Palestine/West Bank/Ramallah	Asia/Palestine/Ramallah and al-Bireh Governorate/Ramallah
@@ -7726,6 +7754,10 @@ North America/USA/Illinois/Menard	North America/USA/Illinois/Menard County IL
 North America/USA/Illinois/Lee	North America/USA/Illinois/Lee County IL
 North America/USA/Illinois/Henry	North America/USA/Illinois/Henry County IL
 North America/USA/Illinois/Stephenson	North America/USA/Illinois/Stephenson County IL
+North America/USA/Illinois/Will	North America/USA/Illinois/Will County IL
+North America/USA/Illinois/Ford	North America/USA/Illinois/Ford County IL
+North America/USA/Illinois/Jersey	North America/USA/Illinois/Jersey County IL
+North America/USA/Illinois/Jackson	North America/USA/Illinois/Jackson County IL
 North America/USA/Wisconsin/Monroe County	North America/USA/Wisconsin/Monroe County WI
 North America/USA/Wisconsin/Richland County	North America/USA/Wisconsin/Richland County WI
 North America/USA/Wisconsin/Grant County	North America/USA/Wisconsin/Grant County WI
@@ -7785,6 +7817,7 @@ North America/USA/Ohio/Adams	North America/USA/Ohio/Adams County OH
 North America/USA/Ohio/Hamilton County	North America/USA/Ohio/Hamilton County OH
 North America/USA/Ohio/Delaware County	North America/USA/Ohio/Delaware County OH
 North America/USA/Ohio/Medina County	North America/USA/Ohio/Medina County OH
+North America/USA/Ohio/Morrow County	North America/USA/Ohio/Morrow County OH
 North America/USA/Colorado/El Paso County	North America/USA/Colorado/Colorado Springs
 North America/USA/Colorado/Mesa	North America/USA/Colorado/Mesa County
 North America/USA/Washington/Pierce County	North America/USA/Washington/Pierce County WA
@@ -7833,6 +7866,7 @@ North America/USA/Washington/Okanogan	North America/USA/Washington/Okanogan Coun
 North America/USA/Washington/Lewis	North America/USA/Washington/Lewis County WA
 North America/USA/Washington/Grant	North America/USA/Washington/Grant County WA
 North America/USA/Washington/Island	North America/USA/Washington/Island County
+North America/USA/Washington/Harbor County	North America/USA/Washington/Grays Harbor County
 North America/USA/New York/Orange County	North America/USA/New York/Orange County NY
 North America/USA/New York/Franklin County	North America/USA/New York/Franklin County NY
 North America/USA/New York/Jefferson County	North America/USA/New York/Jefferson County NY
@@ -7999,6 +8033,8 @@ North America/USA/Oregon/Josephine	North America/USA/Oregon/Josephine County
 North America/USA/Oregon/Lincoln	North America/USA/Oregon/Lincoln County OR
 North America/USA/Oregon/Lane	North America/USA/Oregon/Lane County OR
 North America/USA/Oregon/Klamath	North America/USA/Oregon/Klamath County
+North America/USA/Oregon/Out of State	North America/USA/Oregon/
+North America/USA/Oregon/Clark	North America/USA/Oregon/Morrow County OR
 North America/USA/Texas/Houston County	North America/USA/Texas/Harris County
 North America/USA/Texas/Washington County	North America/USA/Texas/Washington County TX
 North America/USA/Texas/Williamson County	North America/USA/Texas/Williamson County TX
@@ -8408,6 +8444,7 @@ North America/USA/DC/*	North America/USA/Washington DC/*
 North America/USA/Virgin Islands of the U.S./*	North America/USA/Virgin Islands/*
 North America/USA/Ae/	North America/USA/USA/
 North America/USA/North Dalota/*	North America/USA/North Dakota/*
+North America/USA/Las Vegas/	North America/USA/Nevada/Las Vegas
 North America/Costa Rica/Tibas/	North America/Costa Rica/San Jose/Tibas
 North America/Costa Rica/Cartago/Tres Rios	North America/Costa Rica/Cartago CR/Tres Rios CR
 North America/Costa Rica/Cartago/Cartago	North America/Costa Rica/Cartago CR/Cartago CR
@@ -8546,6 +8583,7 @@ South America/Brazil/São Paulo/Valparaiso	South America/Brazil/São Paulo/Valpa
 South America/Brazil/São Paulo/Biritiba-Mirim	South America/Brazil/São Paulo/Biritiba Mirim
 South America/Brazil/São Paulo/Pariquera Acu	South America/Brazil/São Paulo/Pariquera-Acu
 South America/Brazil/São Paulo/Robeirao Preto	South America/Brazil/São Paulo/Ribeirao Preto
+South America/Brazil/São Paulo/Votarantim	South America/Brazil/São Paulo/Votorantim
 South America/Brazil/Paraíba/*	South America/Brazil/Paraiba/*
 South America/Brazil/Rio de Janeiro/Nova Iguaçu	South America/Brazil/Rio de Janeiro/Nova Iguacu
 South America/Brazil/Rio de Janeiro/São Gonçalo	South America/Brazil/Rio de Janeiro/Sao Goncalo
@@ -8667,6 +8705,7 @@ South America/Ecuador/Esmeraldas/Esmeraldas	South America/Ecuador/Esmeraldas/Esm
 South America/Ecuador/Manabi/Sucre	South America/Ecuador/Manabi/Sucre EC
 South America/Ecuador/Cañar/Azoguez	South America/Ecuador/Cañar/Azogues
 South America/Ecuador/Loja/Loja	South America/Ecuador/Loja/Loja EC
+South America/Ecuador/Pichicnha/*	South America/Ecuador/Pichincha/*
 South America/Chile/Los Lagos/Llanquihue	South America/Chile/Los Lagos/Puerto Montt
 South America/Chile/La Araucania/*	South America/Chile/Araucanía/*
 South America/Chile/Biobio/Diguillin	South America/Chile/Ñuble/Chillan
@@ -9025,28 +9064,3 @@ North-America/*/*/*	North America/*/*/*
 Afrique/*/*/*	Africa/*/*/*
 Switzerland/Basel-Landschaft/*/*	Europe/Switzerland/Basel-Land/*
 Euorpe/Italy/Umbria/	Europe/Italy/Umbria/
-North America/USA/Las Vegas/	North America/USA/Nevada/Las Vegas
-Europe/Belgium/Flanders/Limburg	Europe/Belgium/Limburg BE/
-Europe/France/Auvergne-Rhône-Alpes/Clermond-Ferrand	Europe/France/Auvergne-Rhône-Alpes/Clermont-Ferrand
-Europe/Spain/Catalunya/La Bisbal D'Emporda	Europe/Spain/Catalunya/La Bisbal d'Empordà
-Europe/Spain/Catalunya/La Bisbal de l'Emporda	Europe/Spain/Catalunya/La Bisbal d'Empordà
-North America/USA/Illinois/Will	North America/USA/Illinois/Will County IL
-North America/USA/Illinois/Ford	North America/USA/Illinois/Ford County IL
-North America/USA/Illinois/Jersey	North America/USA/Illinois/Jersey County IL
-North America/USA/Illinois/Jackson	North America/USA/Illinois/Jackson County IL
-South America/Brazil/São Paulo/Votarantim	South America/Brazil/São Paulo/Votorantim
-Asia/Sri Lanka/Horana/	Asia/Sri Lanka/Kalutara/Horana
-Asia/Sri Lanka/Polonnaruwa/	Asia/Sri Lanka/North Central Province/Polonnaruwa
-Asia/Sri Lanka/Kahathuduwa/	Asia/Sri Lanka/Western Province/Kahathuduwa
-Asia/Sri Lanka/Piliyandala/	Asia/Sri Lanka/Western Province/Piliyandala
-Asia/Sri Lanka/Maligawatta/	Asia/Sri Lanka/Western Province/Maligawatta
-Asia/Sri Lanka/Negombo/	Asia/Sri Lanka/Western Province/Negombo
-Asia/Sri Lanka/Kaluthara/*	Asia/Sri Lanka/Kalutara/*
-Europe/Czech Republic/Kolin 2/	Europe/Czech Republic/Central Bohemian Region/Kolin 2
-Europe/Czech Republic/Lochovice/	Europe/Czech Republic/Central Bohemian Region/Lochovice
-Europe/Czech Republic/Pruhonice/	Europe/Czech Republic/Central Bohemian Region/Pruhonice
-Europe/Italy/Valle D'Asota/*	Europe/Italy/Valle D'Aosta/*
-South America/Ecuador/Pichicnha/*	South America/Ecuador/Pichincha/*
-Europe/Spain/Catalunya/Santa Perpetua de la Mogoda	Europe/Spain/Catalunya/Santa Perpetua de Mogoda
-Europe/France/Auvergne-Rhône-Alpes/Coulounieix Chamiers	Europe/France/Nouvelle-Aquitaine/Coulounieix Chamiers
-Europe/France/Auvergne-Rhône-Alpes/Crocq	Europe/France/Nouvelle-Aquitaine/Crocq
