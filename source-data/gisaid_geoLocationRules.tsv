@@ -6567,6 +6567,9 @@ Europe/Spain/Catalunya/Sant Joan de Les Abadesse	Europe/Spain/Catalunya/Sant Joa
 Europe/Spain/Catalunya/La Bisbal D'Emporda	Europe/Spain/Catalunya/La Bisbal d'Empordà
 Europe/Spain/Catalunya/La Bisbal de l'Emporda	Europe/Spain/Catalunya/La Bisbal d'Empordà
 Europe/Spain/Catalunya/Santa Perpetua de la Mogoda	Europe/Spain/Catalunya/Santa Perpetua de Mogoda
+Europe/Spain/Catalunya/Torello	Europe/Spain/Catalunya/Torelló
+Europe/Spain/Catalunya/Santa Maria de Corco	Europe/Spain/Catalunya/Santa Maria de Corcó
+Europe/Spain/Catalunya/Prats de Llucanes	Europe/Spain/Catalunya/Prats de Lluçanès
 Europe/Spain/Extremadura/Alcantara	Europe/Spain/Extremadura/Caceres
 Europe/Spain/Extremadura/Guadalupe	Europe/Spain/Extremadura/Guadalupe ES
 Europe/Spain/Extremadura/Trujillo	Europe/Spain/Extremadura/Trujillo ES
@@ -6635,6 +6638,7 @@ Europe/Poland/Wielkopolskie/Lagow	Europe/Poland/Lubuskie/Lagow
 Europe/Poland/Wielkopolskie/Kunowice	Europe/Poland/Lubuskie/Kunowice
 Europe/Poland/Wielkopolskie/Staropole	Europe/Poland/Lubuskie/Staropole
 Europe/Poland/Wielkopolskie/Bobowicko	Europe/Poland/Lubuskie/Bobowicko
+Europe/Poland/Wielkopolskie/Lusowko	Europe/Poland/Wielkopolskie/Lusowo
 Europe/Poland/Warminsko-Mazurskie/Olsztynski	Europe/Poland/Warminsko-Mazurskie/Olsztyn
 Europe/Poland/Warminsko-Mazurskie/Komorniki	Europe/Poland/Warminsko-Mazurskie/Komorniki WN
 Europe/Poland/Warminsko-Mazurskie/Lutry	Europe/Poland/Warminsko-Mazurskie/Lutry PL
@@ -6709,6 +6713,7 @@ Europe/Poland/Pomorskie/Nowydworgdanski	Europe/Poland/Pomorskie/Nowy Dwor Gdansk
 Europe/Poland/Pomorskie/Pruszczgdanski	Europe/Poland/Pomorskie/Pruszcz Gdanski
 Europe/Poland/Pomorskie/Pruszcz Gdański	Europe/Poland/Pomorskie/Pruszcz Gdanski
 Europe/Poland/Pomorskie/Starogard Gdanski	Europe/Poland/Pomorskie/Starogard Gdański
+Europe/Poland/Pomorskie/Bojano	Europe/Poland/Pomorskie/Bojano (Pomorskie)
 Europe/Poland/Łódzkie/Łódź	Europe/Poland/Łódzkie/Lodz
 Europe/Poland/Łódzkie/Kalisz	Europe/Poland/Wielkopolskie/Kalisz
 Europe/Poland/Łódzkie/Szowsko	Europe/Poland/Podkarpackie/Szowsko
@@ -6755,6 +6760,8 @@ Europe/Italy/Toscana/*	Europe/Italy/Tuscany/*
 Europe/Italy/Trentino Alto Adige/*	Europe/Italy/Trentino-Alto Adige/*
 Europe/Italy/Campania/Napoli	Europe/Italy/Campania/Naples
 Europe/Italy/Molise/Padova	Europe/Italy/Veneto/Padova
+Europe/Italy/Molise/Bojano	Europe/Italy/Molise/Bojano (Molise)
+Europe/Italy/Molise/Roma	Europe/Italy/Lazio/Rome
 Europe/Italy/South Tyrol/	Europe/Italy/Trentino-Alto Adige/South Tyrol
 Europe/Italy/South Tyrol/ 	Europe/Italy/Trentino-Alto Adige/South Tyrol
 Europe/Italy/Lombrady/*	Europe/Italy/Lombardy/*
@@ -6851,8 +6858,6 @@ Europe/Austria/Vienna/Wien	Europe/Austria/Vienna/Vienna
 Europe/Austria/Tyrol/Innsbruck-Stadt	Europe/Austria/Tyrol/Innsbruck
 Europe/Austria/Tyrol/Innsbruck, Aldrans, Axams, Birgitz, Ellbögen, Götzens, Grinzens, Lans, Mutters, Natters, Patsch, Rum, Schönberg Im Stubaital, Sistrans, Völs	Europe/Austria/Tyrol/Innsbruck-Land
 Europe/Austria/Tyrol/Achenkirch, Aschau Im Zillertal, Brandberg, Bruck Am Ziller, Buch In Tirol, Eben Am Achensee, Finkenberg, Fügen, Fügenberg, Gallzein, Gerlos, Gerlosberg, Hainzenberg, Hart Im Zillertal, Hippach, Jenbach, Kaltenbach, Mayrhofen, Ramsau Im Zillertal, Ried Im Zillertal, Rohrberg, Schlitters, Schwendau, Steinberg Am Rofan, Strass Im Zillertal, Stumm, Stummerberg, Tux, Uderns, Wiesing, Zell Am Ziller, Zellberg	Europe/Austria/Tyrol/Schwaz
-Europe/Austria/Tyrol/Kitzbühel-Stadt	Europe/Austria/Tyrol/Kitzbuhel-Stadt
-Europe/Austria/Tyrol/Kitzbühel-Land	Europe/Austria/Tyrol/Kitzbühel
 Europe/Austria/Tyrol/Kitzbuehel	Europe/Austria/Tyrol/Kitzbühel
 Europe/Austria/Tyrol/Going	Europe/Austria/Tyrol/Going am Wilden Kaiser
 Europe/Austria/Styria/Altaussee, Bad Aussee, Grundlsee, Bad Mitterndorf	Europe/Austria/Styria/Liezen
@@ -6864,7 +6869,7 @@ Europe/Austria/Lower Austria/Guntramsdorf, Traiskirchen	Europe/Austria/Lower Aus
 Europe/Austria/Lower Austria/Baden, Pfaffstätten	Europe/Austria/Lower Austria/Baden
 Europe/Austria/Lower Austria/Hennersdorf, Enzersdorf An Der Fischa, Götzendorf An Der Leitha, Haslau-Maria Ellend, Ebergassing, Fischamend, Schwechat, Klein-Neusiedl, Leopoldsdorf, Maria-Lanzendorf, Lanzendorf, Rauchenwarth, Schwadorf, Zwölfaxing	Europe/Austria/Lower Austria/Bruck An Der Leitha
 Europe/Austria/Lower Austria/Schöu An Der Triesting	Europe/Austria/Lower Austria/Schönau an der Triesting
-Europe/Austria/Lower Austria/Sankt Pölten-Land	Europe/Austria/Lower Austria/Sankt Polten-Land
+Europe/Austria/Lower Austria/Sankt Pölten-Land	Europe/Austria/Lower Austria/Sankt Pölten-Land
 Europe/Austria/Lower Austria/Zwettl	Europe/Austria/Lower Austria/Zwettl-Niederösterreich
 Europe/Austria/Vorarlberg/Bregenz, Kennelbach, Lochau	Europe/Austria/Vorarlberg/Bregenz
 Europe/Austria/Vorarlberg/Schwarzach, Dornbirn	Europe/Austria/Vorarlberg/Schwarzach
@@ -7026,6 +7031,7 @@ Europe/Lithuania/Taurages/*	Europe/Lithuania/Taurages Apskritis/*
 Europe/Lithuania/Telsiu/*	Europe/Lithuania/Telsiai Apskritis/*
 Europe/Lithuania/Utenos/*	Europe/Lithuania/Utena Apskritis/*
 Europe/Lithuania/Siauliu/*	Europe/Lithuania/Siauliu Apskritis/*
+Europe/Lithuania/Unknown/	Europe/Lithuania/Lithuania/
 Europe/Ukraine/Lutsk/	Europe/Ukraine/Volyn/Lutsk
 Europe/Ukraine/Ivano-Frankivs'K/*	Europe/Ukraine/Ivano-Frankivsk/*
 Europe/Slovakia/Martincek/	Europe/Slovakia/Zilina/Martincek
@@ -7483,6 +7489,8 @@ Asia/Israel/North District/Tiberias	Asia/Israel/North District/Tveria
 Asia/Israel/Jerusalem District/Bet Shemesh	Asia/Israel/Jerusalem District/Beit Shemesh
 Asia/Israel/South District/Beer Sheva	Asia/Israel/South District/Beer-Sheva
 Asia/Israel/Hafia/*	Asia/Israel/Haifa District/*
+Asia/Israel/קרית עקרון/	Asia/Israel/Central District/Kiryat Ekron
+Asia/Israel/מודיעין עילית/	Asia/Israel/Judea and Samaria/Modi'in Illit
 Asia/India/Delhi/Delhi National Capital Region	Asia/India/Delhi/
 Asia/India/Delhi/Tuklakabad	Asia/India/Delhi/Tughlakabad
 Asia/India/Jammu and Kashmir/Kargil	Asia/India/Ladakh/Kargil
@@ -8262,6 +8270,11 @@ North America/USA/Texas/Dekalb	North America/USA/Texas/Bowie County
 North America/USA/Texas/East Baton Roufe	North America/USA/Louisiana/East Baton Rouge Parish
 North America/USA/Texas/Shelby	North America/USA/Texas/Shelby County TX
 North America/USA/Texas/Terrebonne	North America/USA/Louisiana/Terrebonne Parish
+North America/USA/Texas/Pottawatomie	North America/USA/Texas/
+North America/USA/Texas/Harros	North America/USA/Texas/Harris County
+North America/USA/Texas/Collingsworth	North America/USA/Texas/Collingsworth County
+North America/USA/Texas/Hale	North America/USA/Texas/Hale County TX
+North America/USA/Texas/Hockley	North America/USA/Texas/Hockley County
 North America/USA/Louisiana/Desoto Parish	North America/USA/Louisiana/DeSoto Parish
 North America/USA/Louisiana/St. Tammany Parish	North America/USA/Louisiana/St Tammany Parish
 North America/USA/Louisiana/St. Bernard Parish	North America/USA/Louisiana/St Bernard Parish
@@ -8384,6 +8397,7 @@ North America/USA/Alabama/Clay County	North America/USA/Alabama/Clay County AL
 North America/USA/Alabama/Lawrence County	North America/USA/Alabama/Lawrence County AL
 North America/USA/Alabama/Henry County	North America/USA/Alabama/Henry County AL
 North America/USA/Alabama/Huntsville	North America/USA/Alabama/Madison County AL
+North America/USA/Alabama/Hale County	North America/USA/Alabama/Hale County AL
 North America/USA/Texas Terry/*	North America/USA/Texas/Terry County
 North America/USA/Texas Mclennan/*	North America/USA/Texas/Mclennan County
 North America/USA/Al/*	North America/USA/Alabama/*
