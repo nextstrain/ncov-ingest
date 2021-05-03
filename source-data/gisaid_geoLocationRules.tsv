@@ -6390,6 +6390,7 @@ Europe/Czech Republic/Prague-Miskovice/	Europe/Czech Republic/Prague/Prague-Misk
 Europe/Czech Republic/Plzen/Domazlice	Europe/Czech Republic/Plzeň Region/Domažlice
 Europe/Czech Republic/Plzen/*	Europe/Czech Republic/Plzeň Region/*
 Europe/Czech Republic/Central Bohemian Region/Mlada Boleslav	Europe/Czech Republic/Central Bohemian Region/Mladá Boleslav
+Europe/Czech Republic/Central Bohemian Region/Zeleneč	Europe/Czech Republic/Central Bohemian Region/Zelenec CZ
 Europe/Czech Republic/Usti nad Labem Region/*	Europe/Czech Republic/Usti nad Labem/*
 Europe/Czech Republic/Ústí nad Labem Region/Litoměřice	Europe/Czech Republic/Usti nad Labem/Litomerice
 Europe/Czech Republic/Ústí nad Labem Region/*	Europe/Czech Republic/Usti nad Labem/*
@@ -7323,7 +7324,8 @@ Europe/Slovakia/Nova Vieska/	Europe/Slovakia/Nitra/Nova Vieska
 Europe/Slovakia/Spisska Teplica/	Europe/Slovakia/Prešov/Spisska Teplica
 Europe/Slovakia/Cernik/	Europe/Slovakia/Nitra/Cernik
 Europe/Slovakia/Chrast nad Hornadom/	Europe/Slovakia/Kosice/Chrast nad Hornadom
-Europe/Slovakia/Zelenec/	Europe/Slovakia/Trnava/Zelenec
+Europe/Slovakia/Zelenec/	Europe/Slovakia/Trnava/Zelenec SK
+Europe/Slovakia/Trnava/Zelenec	Europe/Slovakia/Trnava/Zelenec SK
 Europe/Slovakia/Palarikovo/	Europe/Slovakia/Nitra/Palarikovo
 Europe/Slovakia/Dvory nad Zitavou/	Europe/Slovakia/Nitra/Dvory nad Žitavou
 Europe/Slovakia/Kolarovo/	Europe/Slovakia/Nitra/Kolárovo
@@ -7868,6 +7870,7 @@ North America/USA/Wisconsin/Crawford County	North America/USA/Wisconsin/Crawford
 North America/USA/Wisconsin/Oneida County	North America/USA/Wisconsin/Oneida County WI
 North America/USA/Wisconsin/Waupun County	North America/USA/Wisconsin/Waupun
 North America/USA/Wisconsin/Rusk County	North America/USA/Wisconsin/Rusk County WI
+North America/USA/Wisconsin/Dickinson County	North America/USA/Wisconsin/
 North America/USA/Ohio/Columbus	North America/USA/Ohio/Columbus OH
 North America/USA/Ohio/Franklin County	North America/USA/Ohio/Franklin County OH
 North America/USA/Ohio/Colombus	North America/USA/Ohio/Columbus OH
@@ -7978,7 +7981,7 @@ North America/USA/New York/Queens	North America/USA/New York/Queens County
 North America/USA/New York/Bronx	North America/USA/New York/Bronx County
 North America/USA/New York/Livingston County	North America/USA/New York/Livingston County NY
 North America/USA/New York/Uniondale	North America/USA/New York/Nassau County
-North America/USA/New York/Hudson County	North America/USA/New York/Hudson County NY
+North America/USA/New York/Hudson County	North America/USA/New York/
 North America/USA/Arizona/Phoenix County	North America/USA/Arizona/Maricopa County
 North America/USA/Arizona/Tucson	North America/USA/Arizona/Pima County
 North America/USA/Arizona/Navajo	North America/USA/Arizona/Navajo County
@@ -8116,7 +8119,7 @@ North America/USA/Oregon/Lane	North America/USA/Oregon/Lane County OR
 North America/USA/Oregon/Klamath	North America/USA/Oregon/Klamath County
 North America/USA/Oregon/Out of State	North America/USA/Oregon/
 North America/USA/Oregon/Clark	North America/USA/Oregon/Morrow County OR
-North America/USA/Oregon/Clark County	North America/USA/Oregon/Clark County OR
+North America/USA/Oregon/Clark County	North America/USA/Oregon/
 North America/USA/Texas/Houston County	North America/USA/Texas/Harris County
 North America/USA/Texas/Washington County	North America/USA/Texas/Washington County TX
 North America/USA/Texas/Williamson County	North America/USA/Texas/Williamson County TX
@@ -8524,8 +8527,9 @@ North America/USA/Maryland/Prince George'S County	North America/USA/Maryland/Pri
 North America/USA/Maryland/Montgomery County	North America/USA/Maryland/Montgomery County MD
 North America/USA/New York County/*	North America/USA/New York/*
 North America/USA/Tennessee/Shelby	North America/USA/Tennessee/Shelby County TN
+North America/USA/Tennessee/Shelby County	North America/USA/Tennessee/Shelby County TN
 North America/USA/Tennessee/Cumberland County	North America/USA/Tennessee/Cumberland County TN
-North America/USA/Tennessee/Memphis	North America/USA/Tennessee/Shelby County
+North America/USA/Tennessee/Memphis	North America/USA/Tennessee/Shelby County TN
 North America/USA/Tennessee/Grainger	North America/USA/Tennessee/Grainger County
 North America/USA/Missourintana/*	North America/USA/Missouri/*
 North America/USA/Houston/	North America/USA/Texas/Houston
@@ -8551,6 +8555,7 @@ North America/Costa Rica/Alajuela/Santiago	North America/Costa Rica/Alajuela/San
 North America/Costa Rica/Alajuela/San Isidro	North America/Costa Rica/Alajuela/San Isidro (Alajuela)
 North America/Costa Rica/Alajuela/San Carlos	North America/Costa Rica/Alajuela/San Carlos CR
 North America/Costa Rica/Alajuela/San Ramon	North America/Costa Rica/Alajuela/San Ramon CR
+North America/Costa Rica/Alajuela/Central	North America/Costa Rica/Alajuela/
 North America/Costa Rica/Heredia/San Francisco	North America/Costa Rica/Heredia/San Francisco CR
 North America/Costa Rica/Heredia/San Pablo	North America/Costa Rica/Heredia/San Pablo CR
 North America/Costa Rica/Heredia/Santo Domingo	North America/Costa Rica/Heredia/Santo Domingo CR
@@ -8679,6 +8684,7 @@ South America/Brazil/São Paulo/Robeirao Preto	South America/Brazil/São Paulo/R
 South America/Brazil/São Paulo/Votarantim	South America/Brazil/São Paulo/Votorantim
 South America/Brazil/São Paulo/Monte Azul Pulista	South America/Brazil/São Paulo/Monte Azul Paulista
 South America/Brazil/São Paulo/Mogi Guacu	South America/Brazil/São Paulo/Mogi-Guacu
+South America/Brazil/São Paulo/Sao Simao	South America/Brazil/São Paulo/Sao Simao (São Paulo)
 South America/Brazil/Paraíba/*	South America/Brazil/Paraiba/*
 South America/Brazil/Rio de Janeiro/Nova Iguaçu	South America/Brazil/Rio de Janeiro/Nova Iguacu
 South America/Brazil/Rio de Janeiro/São Gonçalo	South America/Brazil/Rio de Janeiro/Sao Goncalo
@@ -8717,6 +8723,7 @@ South America/Brazil/Sao Paulo/Maceio	South America/Brazil/Alagoas/Maceio
 South America/Brazil/Sao Paulo/Petrolandia	South America/Brazil/Pernambuco/Petrolandia
 South America/Brazil/Sao Paulo/Itapetim	South America/Brazil/Pernambuco/Itapetim
 South America/Brazil/Sao Paulo/Pariquera Acu	South America/Brazil/São Paulo/Pariquera-Acu
+South America/Brazil/Sao Paulo/Sao Simao	South America/Brazil/São Paulo/Sao Simao (São Paulo)
 South America/Brazil/Paraiba/Itambe	South America/Brazil/Pernambuco/Itambe
 South America/Brazil/Paraiba/Santa Rita	South America/Brazil/Paraiba/Santa Rita PB
 South America/Brazil/Parana/*	South America/Brazil/Paraná/*
@@ -8740,8 +8747,8 @@ South America/Brazil/Pernambuco/Tamandare	South America/Brazil/Pernambuco/Tamand
 South America/Brazil/Maranhão/Rosario	South America/Brazil/Maranhão/Rosario BR
 South America/Brazil/Goiás/Ceres	South America/Brazil/Goiás/Ceres BR
 South America/Brazil/Goiás/Nova Andradina	South America/Brazil/Mato Grosso do Sul/Nova Andradina
-South America/Brazil/Goiás/Simao	South America/Brazil/Goiás/São Simão
-South America/Brazil/Goiás/Sao Simao	South America/Brazil/Goiás/São Simão
+South America/Brazil/Goiás/Simao	South America/Brazil/Goiás/Sao Simao (Goiás)
+South America/Brazil/Goiás/Sao Simao	South America/Brazil/Goiás/Sao Simao (Goiás)
 South America/Argentina/Cordoba/Cordoba	South America/Argentina/Cordoba AR/Cordoba AR
 South America/Argentina/Cordoba/Brikman	South America/Argentina/Cordoba AR/Brinkmann
 South America/Argentina/Cordoba/*	South America/Argentina/Cordoba AR/*
@@ -8934,6 +8941,7 @@ Africa/South Africa/Lm/*	Africa/South Africa/Limpopo/*
 Africa/South Africa/Western Cape Province/Southern	Africa/South Africa/Western Cape Province/
 Africa/South Africa/Western Cape Province/Western	Africa/South Africa/Western Cape Province/
 Africa/South Africa/Western Cape Province/Kilpfontein	Africa/South Africa/Western Cape Province/Klipfontein
+Africa/South Africa/Western Cape Province/Karoo Hoogland	Africa/South Africa/Northern Cape/Karoo Hoogland
 Africa/South Africa/KwaZulu-Natal/Amathole	Africa/South Africa/KwaZulu-Natal/
 Africa/South Africa/KwaZulu-Natal/King Cetswayo	Africa/South Africa/KwaZulu-Natal/King Cetshwayo
 Africa/South Africa/KwaZulu-Natal/Ethekweni	Africa/South Africa/KwaZulu-Natal/eThekwini
