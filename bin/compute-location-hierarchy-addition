@@ -1,7 +1,6 @@
 #!/bin/bash
 set -euo pipefail
 
-bin="$(dirname "$0")"
 
 src="${1:?A source location hierarchy TSV file is required as the first argument.}"
 dst="${2:?A destination location hierarchy TSV file is required as the second argument.}"

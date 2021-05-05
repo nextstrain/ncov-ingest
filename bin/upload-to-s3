@@ -4,17 +4,7 @@ set -euo pipefail
 bin="$(dirname "$0")"
 
 main() {
-    local quiet=0
 
-    for arg; do
-        case "$arg" in
-            --quiet)
-                quiet=1
-                shift;;
-            *)
-                break;;
-        esac
-    done
 
     local src="${1:?A source file is required as the first argument.}"
     local dst="${2:?A destination s3:// URL is required as the second argument.}"

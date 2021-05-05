@@ -18,6 +18,6 @@ csv-diff \
         --format tsv \
         --key gisaid_epi_isl \
         --singular "additional info" \
-        --plural "additional info" > $diff
+        --plural "additional info" > "$diff"
 
 
