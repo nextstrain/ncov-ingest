@@ -1,7 +1,4 @@
 
-envvars:
-    "S3_SRC",
-    "GITHUB_REF"
 
 
 configfile: "snake_config.yaml"
@@ -13,6 +10,15 @@ wildcard_constraints:
 localrules: all_then_clean, gisaid_then_clean , genbank_then_clean ,
             ingest_genbank , ingest_gisaid ,
             fetch , notify_and_upload
+
+
+# we want to check if some environment variable exists. 
+#since the envvars: directive only works for later versions of snakemake, we have to do this "nmanually":
+requiredEnvironmentVariables = [ "S3_SRC", "GITHUB_REF"]
+absentRequiredEnvironmentVariables = [v for v in requiredEnvironmentVariables if not v in os.environ ]
+if len( absentRequiredEnvironmentVariables )>0:
+    raise Exception("The following environment variables are requested by the workflow but undefined. Please make sure that they are correctly defined before running Snakemake:\n" + '\n'.join(absentRequiredEnvironmentVariables) )
+
 
 
 ## defining some of the behaviour depending on 
