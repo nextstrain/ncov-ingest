@@ -92,6 +92,10 @@ Europe/France/Auvergne-Rhône-Alpes/St Bonnet Pres Riom	Europe/France/Auvergne-R
 Europe/France/Auvergne-Rhône-Alpes/Clermond-Ferrand	Europe/France/Auvergne-Rhône-Alpes/Clermont-Ferrand
 Europe/France/Auvergne-Rhône-Alpes/Coulounieix Chamiers	Europe/France/Nouvelle-Aquitaine/Coulounieix Chamiers
 Europe/France/Auvergne-Rhône-Alpes/Crocq	Europe/France/Nouvelle-Aquitaine/Crocq
+Europe/France/Auvergne-Rhône-Alpes/Tutrakan	Europe/France/Auvergne-Rhône-Alpes/
+Europe/France/Auvergne-Rhône-Alpes/St Jeanvrin	Europe/France/Centre-Val de Loire/St Jeanvrin
+Europe/France/Auvergne-Rhône-Alpes/Dreux 28	Europe/France/Centre-Val de Loire/Dreux
+Europe/France/Auvergne-Rhône-Alpes/Varenne Sous Usson	Europe/France/Auvergne-Rhône-Alpes/Varennes-sur-Usson
 Europe/France/Provence-Alpes-Côte-D’Azur/*	Europe/France/Provence-Alpes-Côte d'Azur/*
 Europe/France/Centre-Val de Loire/Angers	Europe/France/Pays de la Loire/Angers
 Europe/France/Centre-Val de Loire/Rouziers de Touraine	Europe/France/Centre-Val de Loire/Rouziers-de-Touraine
@@ -6576,6 +6580,7 @@ Europe/Spain/Catalunya/Santa Perpetua de la Mogoda	Europe/Spain/Catalunya/Santa 
 Europe/Spain/Catalunya/Torello	Europe/Spain/Catalunya/Torelló
 Europe/Spain/Catalunya/Santa Maria de Corco	Europe/Spain/Catalunya/Santa Maria de Corcó
 Europe/Spain/Catalunya/Prats de Llucanes	Europe/Spain/Catalunya/Prats de Lluçanès
+Europe/Spain/Catalunya/Vilblareix	Europe/Spain/Catalunya/Vilablareix
 Europe/Spain/Extremadura/Alcantara	Europe/Spain/Extremadura/Caceres
 Europe/Spain/Extremadura/Guadalupe	Europe/Spain/Extremadura/Guadalupe ES
 Europe/Spain/Extremadura/Trujillo	Europe/Spain/Extremadura/Trujillo ES
@@ -6859,6 +6864,8 @@ Europe/Austria/Salzburg/Golling An Der Salzach, Kuchl, Sankt Koloman, Scheffau A
 Europe/Austria/Salzburg/Sankt Johann Im Pongau	Europe/Austria/Salzburg/St. Johann im Pongau
 Europe/Austria/Salzburg/Mondsee	Europe/Austria/Upper Austria/Mondsee
 Europe/Austria/Salzburg/Saalfelden	Europe/Austria/Salzburg/Saalfelden am Steinernen Meer
+Europe/Austria/Salzburg/Saalfelden Am Steinernen Meer	Europe/Austria/Salzburg/Saalfelden am Steinernen Meer
+Europe/Austria/Salzburg/Zell Am See	Europe/Austria/Salzburg/Zell am See
 Europe/Austria/Vienna/Wien, Hagenbrunn, Langenzersdorf, Gerasdorf Bei Wien, Kaltenleutgeben, Perchtoldsdorf, Vösendorf, Mauerbach, Purkersdorf	Europe/Austria/Lower Austria/Korneuburg
 Europe/Austria/Vienna/Wien-Stadt	Europe/Austria/Vienna/Vienna
 Europe/Austria/Vienna/Wien	Europe/Austria/Vienna/Vienna
@@ -6880,6 +6887,9 @@ Europe/Austria/Lower Austria/Schöu An Der Triesting	Europe/Austria/Lower Austri
 Europe/Austria/Lower Austria/Sankt Pölten-Land	Europe/Austria/Lower Austria/Sankt Pölten-Land
 Europe/Austria/Lower Austria/Zwettl	Europe/Austria/Lower Austria/Zwettl-Niederösterreich
 Europe/Austria/Lower Austria/Sankt Polten-Land	Europe/Austria/Lower Austria/Sankt Pölten-Land
+Europe/Austria/Lower Austria/Wien	Europe/Austria/Vienna/Vienna
+Europe/Austria/Lower Austria/St. Pölten	Europe/Austria/Lower Austria/Sankt Pölten
+Europe/Austria/Lower Austria/Krems An Der Dou	Europe/Austria/Lower Austria/Krems an der Donau
 Europe/Austria/Vorarlberg/Bregenz, Kennelbach, Lochau	Europe/Austria/Vorarlberg/Bregenz
 Europe/Austria/Vorarlberg/Schwarzach, Dornbirn	Europe/Austria/Vorarlberg/Schwarzach
 Europe/Austria/Vorarlberg/Bildstein, Fußach, Gaißau, Hard, Höchst, Lauterach, Wolfurt, Lusteu	Europe/Austria/Vorarlberg/Bregenz
@@ -7560,6 +7570,10 @@ Asia/Bangladesh/Khulna/Jessore	Asia/Bangladesh/Khulna/Jashore
 Asia/Bangladesh/Chattogram/Cox'S Bazar	Asia/Bangladesh/Chattogram/Cox's Bazar
 Asia/Bangladesh/Chattogram/Cumilla	Asia/Bangladesh/Chattogram/Comilla
 Asia/Bangladesh/Chattogram/Khagrachhari	Asia/Bangladesh/Chattogram/Khagrachari
+Asia/Bangladesh/Chattogram/Medibagh	Asia/Bangladesh/Chattogram/
+Asia/Bangladesh/Chattogram/Kunjochaya	Asia/Bangladesh/Chattogram/Kunjachaya
+Asia/Bangladesh/Chattogram/Muradpuur	Asia/Bangladesh/Chattogram/Muradpur
+Asia/Bangladesh/Chattogram/Rahamatganj	Asia/Bangladesh/Dhaka/Rahmatganj
 Asia/Bangladesh/Dhaka/Naraynganj	Asia/Bangladesh/Dhaka/Narayanganj
 Asia/Bangladesh/Dhaka/Kishoregonj	Asia/Bangladesh/Dhaka/Kishoreganj
 Asia/Bangladesh/Dhaka/Dhaka Dental College	Asia/Bangladesh/Dhaka/Dhaka
@@ -7833,6 +7847,16 @@ North America/USA/Illinois/Hancock	North America/USA/Illinois/Hancock County
 North America/USA/Illinois/Rock Island	North America/USA/Illinois/Rock Island County
 North America/USA/Illinois/Clark	North America/USA/Illinois/Clark County IL
 North America/USA/Illinois/Japan County	North America/USA/Illinois/
+North America/USA/Illinois/Marshall	North America/USA/Illinois/Marshall County IL
+North America/USA/Illinois/Coles	North America/USA/Illinois/Coles County IL
+North America/USA/Illinois/Shelby	North America/USA/Illinois/Shelby County IL
+North America/USA/Illinois/Moultrie	North America/USA/Illinois/Moultrie County
+North America/USA/Illinois/Fayette	North America/USA/Illinois/Fayette County IL
+North America/USA/Illinois/Douglas	North America/USA/Illinois/Douglas County IL
+North America/USA/Illinois/Mcclean	North America/USA/Illinois/McLean County IL
+North America/USA/Illinois/Morgan	North America/USA/Illinois/Morgan County IL
+North America/USA/Illinois/Adams	North America/USA/Illinois/Adams County IL
+North America/USA/Illinois/Mercer	North America/USA/Illinois/Mercer County
 North America/USA/Wisconsin/Monroe County	North America/USA/Wisconsin/Monroe County WI
 North America/USA/Wisconsin/Richland County	North America/USA/Wisconsin/Richland County WI
 North America/USA/Wisconsin/Grant County	North America/USA/Wisconsin/Grant County WI
@@ -8048,6 +8072,7 @@ North America/USA/California/Contra Costa	North America/USA/California/Contra Co
 North America/USA/California/Sutter	North America/USA/California/Sutter County
 North America/USA/California/Sonoma	North America/USA/California/Sonoma County
 North America/USA/California/Sacramento	North America/USA/California/Sacramento County
+North America/USA/California/Unavailable County	North America/USA/California/
 North America/USA/New Jersey/Essex County	North America/USA/New Jersey/Essex County NJ
 North America/USA/New Jersey/Hudson	North America/USA/New Jersey/Hudson County NJ
 North America/USA/New Jersey/Morris County	North America/USA/New Jersey/Morris County NJ
@@ -8569,6 +8594,7 @@ North America/Costa Rica/San Jose/Pitaya	North America/Costa Rica/San Jose/Pitah
 North America/Costa Rica/San Jose/San Isidro del General	North America/Costa Rica/San Jose/San Isidro de El General
 North America/Costa Rica/San Jose/San Felipe	North America/Costa Rica/San Jose/San Felipe CR
 North America/Costa Rica/Puntarenas/Canoas	North America/Costa Rica/Puntarenas/Canoas CR
+North America/Costa Rica/Puntarenas/Aguirre	North America/Costa Rica/Puntarenas/Quepos
 North America/Costa Rica/Cartago CR/San Rafael	North America/Costa Rica/Cartago CR/San Rafael Cartago
 North America/Costa Rica/Cartago CR/San Francisco O Agua Caliente	North America/Costa Rica/Cartago CR/Aguacaliente
 North America/Costa Rica/Cartago CR/San Juan	North America/Costa Rica/Cartago CR/San Juan CR
@@ -8911,6 +8937,7 @@ Africa/Senegal/Ds Mbour/	Africa/Senegal/Thies/Mbour
 Africa/Senegal/Ds Tivaoune/	Africa/Senegal/Thies/Tivaoune
 Africa/Senegal/Ds Khombole/	Africa/Senegal/Thies/Khombole
 Africa/Senegal/Iressef Ngor/	Africa/Senegal/Dakar/Ngor
+Africa/Senegal/Iressef Diamniadio/	Africa/Senegal/Dakar/Diamniadio
 Africa/South Africa/Western Cape/Northern	Africa/South Africa/Northern Cape/
 Africa/South Africa/Western Cape/Southern	Africa/South Africa/Western Cape Province/
 Africa/South Africa/Western Cape/Western	Africa/South Africa/Western Cape Province/
@@ -9064,6 +9091,8 @@ Africa/Botswana/Palapye/	Africa/Botswana/Central District BW/Palapye
 Africa/Botswana/Jwaneng/	Africa/Botswana/Southern District/Jwaneng
 Africa/Congo/*/*	Africa/Republic of the Congo/*/*
 Africa/Guyane/Cayenne/	Europe/France/French Guiana/Cayenne GF
+Africa/Mauritius/Plaine Wilhems/*	Africa/Mauritius/Plaine-Wilhems/*
+Africa/Mauritius/Mauritian/	Africa/Mauritius/Mauritius/
 Italy/Apulia/Bari/	Europe/Italy/Apulia/Bari
 North Macedonia/Kochani/Kochani/	Europe/North Macedonia/Eastern Region MK/Kochani
 North Macedonia/Kavadarci/Kavadarci/	Europe/North Macedonia/Kavadarci/Kavadarci
@@ -9179,21 +9208,3 @@ North-America/*/*/*	North America/*/*/*
 Afrique/*/*/*	Africa/*/*/*
 Switzerland/Basel-Landschaft/*/*	Europe/Switzerland/Basel-Land/*
 Euorpe/Italy/Umbria/	Europe/Italy/Umbria/
-North America/USA/California/Unavailable County	North America/USA/California/
-North America/USA/Illinois/Marshall	North America/USA/Illinois/Marshall County IL
-North America/USA/Illinois/Coles	North America/USA/Illinois/Coles County IL
-North America/USA/Illinois/Shelby	North America/USA/Illinois/Shelby County IL
-North America/USA/Illinois/Moultrie	North America/USA/Illinois/Moultrie County
-North America/USA/Illinois/Fayette	North America/USA/Illinois/Fayette County IL
-North America/USA/Illinois/Douglas	North America/USA/Illinois/Douglas County IL
-North America/USA/Illinois/Mcclean	North America/USA/Illinois/McLean County IL
-North America/USA/Illinois/Morgan	North America/USA/Illinois/Morgan County IL
-North America/USA/Illinois/Adams	North America/USA/Illinois/Adams County IL
-North America/USA/Illinois/Mercer	North America/USA/Illinois/Mercer County
-Africa/Mauritius/Plaine Wilhems/*	Africa/Mauritius/Plaine-Wilhems/*
-Africa/Mauritius/Mauritian/	Africa/Mauritius/Mauritius/
-Asia/Bangladesh/Chattogram/Medibagh	Asia/Bangladesh/Chattogram/
-Asia/Bangladesh/Chattogram/Kunjochaya	Asia/Bangladesh/Chattogram/Kunjachaya
-Asia/Bangladesh/Chattogram/Muradpuur	Asia/Bangladesh/Chattogram/Muradpur
-Asia/Bangladesh/Chattogram/Rahamatganj	Asia/Bangladesh/Dhaka/Rahmatganj
-North America/Costa Rica/Puntarenas/Aguirre	North America/Costa Rica/Puntarenas/Quepos
