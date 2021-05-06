@@ -168,8 +168,9 @@ rule download_old_clades :
         src_source='$S3_SRC/nextclade.tsv.gz',
     shell:
         '''
+        set +e
         ./bin/s3-object-exists "{params.dst_source}" && ( aws s3 cp --no-progress "{params.dst_source}" - || aws s3 cp --no-progress "{params.src_source}" -) | gunzip -cfq > {output} 
-
+        set -e
         if[ ! -f {output} ]
         then
          echo("the distant nextclade file could not be retrived (is this a new branch?). Creating an emtpy file")
