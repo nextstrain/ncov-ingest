@@ -167,7 +167,15 @@ rule download_old_clades :
         dst_source=S3_DST+'/nextclade.tsv.gz',
         src_source='$S3_SRC/nextclade.tsv.gz',
     shell:
-        '( aws s3 cp --no-progress "{params.dst_source}" - || aws s3 cp --no-progress "{params.src_source}" -) | gunzip -cfq > {output} '
+        '''
+        ./bin/s3-object-exists "{params.dst_source}" && ( aws s3 cp --no-progress "{params.dst_source}" - || aws s3 cp --no-progress "{params.src_source}" -) | gunzip -cfq > {output} 
+
+        if[ ! -f {output} ]
+        then
+         echo("the distant nextclade file could not be retrived (is this a new branch?). Creating an emtpy file")
+         echo "seqName   clade   qc.overallScore qc.overallStatus    totalGaps   totalInsertions totalMissing    totalMutations  totalNonACGTNs  totalPcrPrimerChanges   substitutions   deletions   insertions  missing nonACGTNs   pcrPrimerChanges    aaSubstitutions totalAminoacidSubstitutions aaDeletions totalAminoacidDeletions alignmentEnd    alignmentScore  alignmentStart  qc.missingData.missingDataThreshold qc.missingData.score    qc.missingData.status   qc.missingData.totalMissing qc.mixedSites.mixedSitesThreshold   qc.mixedSites.score qc.mixedSites.status    qc.mixedSites.totalMixedSites   qc.privateMutations.cutoff  qc.privateMutations.excess  qc.privateMutations.score   qc.privateMutations.status  qc.privateMutations.total   qc.snpClusters.clusteredSNPs    qc.snpClusters.score    qc.snpClusters.status   qc.snpClusters.totalSNPs    errors  qc.seqName  nearestTreeNodeId" > {output}
+        fi
+        '''
 
 
 rule filter_fasta :
@@ -177,7 +185,7 @@ rule filter_fasta :
     output:
         "data/{database}/nextclade.sequences.fasta"
     shell: 
-        "./bin/filter-fasta --input_fasta=input.fasta --input_tsv=input.tsv --output_fasta={output}" 
+        "./bin/filter-fasta --input_fasta={input.fasta} --input_tsv={input.tsv} --output_fasta={output}" 
 
 rule run_nextclade :
     input:
