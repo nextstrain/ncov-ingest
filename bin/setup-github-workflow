@@ -4,8 +4,8 @@ set -euo pipefail
 # Adds $HOME/.local/bin to PATH for subsequent workflow steps (but not this one!).
 echo "$HOME/.local/bin" | tee -a "$GITHUB_PATH"
 
-echo "::group::Installing/upgrading Pip, setuptools, wheel, and snakemake"
-python3 -m pip install --upgrade pip setuptools wheel snakemake
+echo "::group::Installing/upgrading Pip, setuptools, amd wheel"
+python3 -m pip install --upgrade pip setuptools wheel
 echo "::endgroup::"
 
 echo "::group::Installing nextstrain-cli"
