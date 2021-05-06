@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-: "${S3_SRC:=s3://nextstrain-data/ncov-ingest}"
+: "${S3_SRC:=s3://nextstrain-data/files/ncov/open}"
 : "${S3_DST:=$S3_SRC}"
 
 # Determine where to save data files based on if we're running as a result of a
@@ -21,12 +21,12 @@ case "${GITHUB_REF:-}" in
         # Save data files under a per-branch prefix
         silent=yes
         branch="${GITHUB_REF##refs/heads/}"
-        S3_DST="$S3_DST/branch/$branch"
+        S3_DST="${S3_DST/nextstrain-data/nextstrain-staging}/branch/$branch"
         ;;
     "")
         # Save data files under a tmp prefix
         silent=yes
-        S3_DST="$S3_DST/tmp"
+        S3_DST="${S3_DST/nextstrain-data/nextstrain-staging}/tmp"
         ;;
     *)
         echo "Skipping ingest for ref $GITHUB_REF"
@@ -88,13 +88,13 @@ fi
 
 
 if [[ "$branch" == master ]]; then
-    ./bin/notify-on-metadata-change data/genbank/metadata.tsv "$S3_SRC/genbank_metadata.tsv.gz" genbank_accession
+    ./bin/notify-on-metadata-change data/genbank/metadata.tsv "$S3_SRC/metadata.tsv.gz" genbank_accession
     ./bin/notify-on-problem-data data/genbank/problem_data.tsv
     ./bin/notify-on-location-hierarchy-addition data/genbank/location_hierarchy.tsv source-data/location_hierarchy.tsv
 fi
 
-./bin/upload-to-s3 ${silent:+--quiet} data/genbank/metadata.tsv "$S3_DST/genbank_metadata.tsv.gz"
-./bin/upload-to-s3 ${silent:+--quiet} data/genbank/sequences.fasta "$S3_DST/genbank_sequences.fasta.gz"
+./bin/upload-to-s3 ${silent:+--quiet} data/genbank/metadata.tsv "$S3_DST/metadata.tsv.gz"
+./bin/upload-to-s3 ${silent:+--quiet} data/genbank/sequences.fasta "$S3_DST/sequences.fasta.gz"
 ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/nextclade.tsv "$S3_DST/nextclade.tsv.gz"
 
 ./bin/clean
