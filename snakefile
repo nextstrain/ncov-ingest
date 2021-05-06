@@ -173,7 +173,7 @@ rule download_old_clades :
         set -e
         if[ ! -f {output} ]
         then
-         echo("the distant nextclade file could not be retrived (is this a new branch?). Creating an emtpy file")
+         echo "the distant nextclade file could not be retrived (is this a new branch?). Creating an emtpy file"
          echo "seqName   clade   qc.overallScore qc.overallStatus    totalGaps   totalInsertions totalMissing    totalMutations  totalNonACGTNs  totalPcrPrimerChanges   substitutions   deletions   insertions  missing nonACGTNs   pcrPrimerChanges    aaSubstitutions totalAminoacidSubstitutions aaDeletions totalAminoacidDeletions alignmentEnd    alignmentScore  alignmentStart  qc.missingData.missingDataThreshold qc.missingData.score    qc.missingData.status   qc.missingData.totalMissing qc.mixedSites.mixedSitesThreshold   qc.mixedSites.score qc.mixedSites.status    qc.mixedSites.totalMixedSites   qc.privateMutations.cutoff  qc.privateMutations.excess  qc.privateMutations.score   qc.privateMutations.status  qc.privateMutations.total   qc.snpClusters.clusteredSNPs    qc.snpClusters.score    qc.snpClusters.status   qc.snpClusters.totalSNPs    errors  qc.seqName  nearestTreeNodeId" > {output}
         fi
         '''
