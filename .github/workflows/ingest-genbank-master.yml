@@ -9,9 +9,12 @@ on:
     paths:
       - source-data/genbank_annotations.tsv
 
-  # Manually triggered using `./bin/trigger ingest`
+  # Manually triggered using `./bin/trigger genbank/ingest` (or `ingest`, which
+  # includes GISAID)
   repository_dispatch:
-    types: ingest
+    types:
+      - genbank/ingest
+      - ingest
 
   # Manually triggered using GitHub's UI
   workflow_dispatch:
