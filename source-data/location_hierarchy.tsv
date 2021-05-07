@@ -1,4 +1,3 @@
-region	country	division	location
 Africa	Algeria	Adrar	
 Africa	Algeria	Alger	
 Africa	Algeria	Blida	
@@ -9,6 +8,7 @@ Africa	Algeria	El Oued
 Africa	Algeria	Laghouat	
 Africa	Algeria	Ouargla	
 Africa	Algeria	Sétif	
+region	country	division	location
 Africa	Algeria	Tipaza	
 Africa	Algeria	Tizi-Ouzou	
 Africa	Angola	Cabinda	
@@ -215,7 +215,9 @@ Africa	Mauritius	Plaine-Wilhems	Highlands
 Africa	Mauritius	Plaine-Wilhems	Phoenix
 Africa	Mauritius	Plaine-Wilhems	Quatre Bornes
 Africa	Mauritius	Plaine-Wilhems	Rose Hill
+Africa	Morocco	Berrechid	
 Africa	Morocco	Casablanca	
+Africa	Morocco	Dakhla	
 Africa	Morocco	Harhoura	
 Africa	Morocco	Kenitra	
 Africa	Morocco	Khemisset	
@@ -226,9 +228,11 @@ Africa	Morocco	Ouarzazate
 Africa	Morocco	Rabat	
 Africa	Morocco	Rabat	Ain Aouda
 Africa	Morocco	Salé	
+Africa	Morocco	Settat	
 Africa	Morocco	Sidi Kacem	
 Africa	Morocco	Sidi Lahcen	
 Africa	Morocco	Temara	
+Africa	Morocco	Tinghir	
 Africa	Mozambique	Cabo Delgado	
 Africa	Mozambique	Cabo Delgado	Pemba
 Africa	Mozambique	Gaza	
@@ -335,11 +339,13 @@ Africa	South Africa	Eastern Cape	Nelson Mandela Bay
 Africa	South Africa	Eastern Cape	Sarah Baartman
 Africa	South Africa	Free State	
 Africa	South Africa	Gauteng	
+Africa	South Africa	Gauteng	City of Tshwane
 Africa	South Africa	Gauteng	Ekurhuleni Metro
 Africa	South Africa	Gauteng	Emfuleni
 Africa	South Africa	Gauteng	Johannesburg Metro
 Africa	South Africa	Gauteng	Midvaal
 Africa	South Africa	Gauteng	Mogale City
+Africa	South Africa	Gauteng	Moretele
 Africa	South Africa	Gauteng	West Rand
 Africa	South Africa	KwaZulu-Natal	
 Africa	South Africa	KwaZulu-Natal	Amajuba
@@ -360,6 +366,8 @@ Africa	South Africa	KwaZulu-Natal	uMzinyathi
 Africa	South Africa	KwaZulu-Natal	uThukela
 Africa	South Africa	Limpopo	
 Africa	South Africa	Mpumalanga	
+Africa	South Africa	Mpumalanga	Dr. JS Moroka
+Africa	South Africa	Mpumalanga	Thembisile Hani
 Africa	South Africa	North-West	
 Africa	South Africa	Northern Cape	
 Africa	South Africa	Northern Cape	Alexander Bay
@@ -674,8 +682,10 @@ Asia	India	Bihar
 Asia	India	Bihar	Munger
 Asia	India	Chandigarh	
 Asia	India	Chhattisgarh	
+Asia	India	Chhattisgarh	Bhilai
 Asia	India	Chhattisgarh	Bilaspur
 Asia	India	Chhattisgarh	Durg
+Asia	India	Chhattisgarh	Gariyaband
 Asia	India	Chhattisgarh	Janjgir-Champa
 Asia	India	Chhattisgarh	Raipur
 Asia	India	Delhi	
@@ -952,6 +962,7 @@ Asia	Indonesia	Jambi
 Asia	Indonesia	Jambi	Merangin
 Asia	Indonesia	Jambi	Muaro Bungo
 Asia	Indonesia	Jambi	Sarolangun
+Asia	Indonesia	Kalimantan Selatan	
 Asia	Indonesia	Kendari	
 Asia	Indonesia	Kepulauan Bangka Belitung	
 Asia	Indonesia	Kepulauan Riau	
@@ -971,6 +982,8 @@ Asia	Indonesia	North Sumatra	Langkat
 Asia	Indonesia	North Sumatra	Mandailing
 Asia	Indonesia	North Sumatra	Medan
 Asia	Indonesia	North Sumatra	Simalungun
+Asia	Indonesia	Nusa Tenggara Barat	
+Asia	Indonesia	Palu	
 Asia	Indonesia	Papua	
 Asia	Indonesia	Papua	Timika
 Asia	Indonesia	Pasuruan	
@@ -986,6 +999,7 @@ Asia	Indonesia	South Sumatra
 Asia	Indonesia	South Sumatra	Palembang
 Asia	Indonesia	Special Region of Yogyakarta	
 Asia	Indonesia	Sumatera Barat	
+Asia	Indonesia	Sumatera Selatan	
 Asia	Indonesia	Surabaya	
 Asia	Indonesia	West Java	
 Asia	Indonesia	West Java	Bandung
@@ -1215,6 +1229,7 @@ Asia	Kuwait	Kuwait	Hawali
 Asia	Kyrgyzstan	Kyrgyzstan	
 Asia	Lebanon	Beirut	
 Asia	Lebanon	Lebanon	
+Asia	Lebanon	Tyr	
 Asia	Malaysia	Kuala Lumpur	
 Asia	Malaysia	Malaysia	
 Asia	Malaysia	Negeri Sembilan	
@@ -2853,6 +2868,7 @@ Europe	France	Auvergne-Rhône-Alpes	Abrest
 Europe	France	Auvergne-Rhône-Alpes	Aigueperse
 Europe	France	Auvergne-Rhône-Alpes	Andrezieux-Boutheon
 Europe	France	Auvergne-Rhône-Alpes	Andrézieux-Bouthéon
+Europe	France	Auvergne-Rhône-Alpes	Anglards de Salers
 Europe	France	Auvergne-Rhône-Alpes	Annecy
 Europe	France	Auvergne-Rhône-Alpes	Annemasse
 Europe	France	Auvergne-Rhône-Alpes	Annonay
@@ -2881,12 +2897,14 @@ Europe	France	Auvergne-Rhône-Alpes	Brioude
 Europe	France	Auvergne-Rhône-Alpes	Brives Charensac
 Europe	France	Auvergne-Rhône-Alpes	Brommat
 Europe	France	Auvergne-Rhône-Alpes	Bron
+Europe	France	Auvergne-Rhône-Alpes	Bulhon
 Europe	France	Auvergne-Rhône-Alpes	Cebazat
 Europe	France	Auvergne-Rhône-Alpes	Ceyrat
 Europe	France	Auvergne-Rhône-Alpes	Challes-Les-Eaux
 Europe	France	Auvergne-Rhône-Alpes	Chamalieres
 Europe	France	Auvergne-Rhône-Alpes	Chambaron sur Morge
 Europe	France	Auvergne-Rhône-Alpes	Chambery
+Europe	France	Auvergne-Rhône-Alpes	Chamblet
 Europe	France	Auvergne-Rhône-Alpes	Chambon sur Lac
 Europe	France	Auvergne-Rhône-Alpes	Champeix
 Europe	France	Auvergne-Rhône-Alpes	Champs sur Tarentaine
@@ -2906,6 +2924,7 @@ Europe	France	Auvergne-Rhône-Alpes	Clermont-Ferrand
 Europe	France	Auvergne-Rhône-Alpes	Cluses
 Europe	France	Auvergne-Rhône-Alpes	Combronde
 Europe	France	Auvergne-Rhône-Alpes	Condat
+Europe	France	Auvergne-Rhône-Alpes	Condat Les Montboissier
 Europe	France	Auvergne-Rhône-Alpes	Contamine-sur-Arve
 Europe	France	Auvergne-Rhône-Alpes	Contamines
 Europe	France	Auvergne-Rhône-Alpes	Corbel
@@ -2913,6 +2932,7 @@ Europe	France	Auvergne-Rhône-Alpes	Cormoz
 Europe	France	Auvergne-Rhône-Alpes	Coulandon
 Europe	France	Auvergne-Rhône-Alpes	Cournon
 Europe	France	Auvergne-Rhône-Alpes	Cournon D Auvergne
+Europe	France	Auvergne-Rhône-Alpes	Courpiere
 Europe	France	Auvergne-Rhône-Alpes	Crandelles
 Europe	France	Auvergne-Rhône-Alpes	Craponne
 Europe	France	Auvergne-Rhône-Alpes	Creuzier le Vieux
@@ -2927,6 +2947,7 @@ Europe	France	Auvergne-Rhône-Alpes	Decines-Charpieu
 Europe	France	Auvergne-Rhône-Alpes	Deneuille Les Mines
 Europe	France	Auvergne-Rhône-Alpes	Domerat
 Europe	France	Auvergne-Rhône-Alpes	Dorat
+Europe	France	Auvergne-Rhône-Alpes	Dun sur Auron
 Europe	France	Auvergne-Rhône-Alpes	Durtol
 Europe	France	Auvergne-Rhône-Alpes	Ennezat
 Europe	France	Auvergne-Rhône-Alpes	Entraigues
@@ -2941,6 +2962,7 @@ Europe	France	Auvergne-Rhône-Alpes	Gelles
 Europe	France	Auvergne-Rhône-Alpes	Gerzat
 Europe	France	Auvergne-Rhône-Alpes	Giou de Mamou
 Europe	France	Auvergne-Rhône-Alpes	Givors
+Europe	France	Auvergne-Rhône-Alpes	Glaine Montaigut
 Europe	France	Auvergne-Rhône-Alpes	Grenoble
 Europe	France	Auvergne-Rhône-Alpes	Herment
 Europe	France	Auvergne-Rhône-Alpes	Huriel
@@ -2959,6 +2981,7 @@ Europe	France	Auvergne-Rhône-Alpes	Lapalisse
 Europe	France	Auvergne-Rhône-Alpes	Laqueuille
 Europe	France	Auvergne-Rhône-Alpes	Laroquebrou
 Europe	France	Auvergne-Rhône-Alpes	Le Breuil sur Couze
+Europe	France	Auvergne-Rhône-Alpes	Le Cendre
 Europe	France	Auvergne-Rhône-Alpes	Le Mayet de Montagne
 Europe	France	Auvergne-Rhône-Alpes	Le Mont Dore
 Europe	France	Auvergne-Rhône-Alpes	Le Puy-en-Velay
@@ -3000,11 +3023,13 @@ Europe	France	Auvergne-Rhône-Alpes	Nohanent
 Europe	France	Auvergne-Rhône-Alpes	Olby
 Europe	France	Auvergne-Rhône-Alpes	Orcines
 Europe	France	Auvergne-Rhône-Alpes	Oyonnax
+Europe	France	Auvergne-Rhône-Alpes	Pardines
 Europe	France	Auvergne-Rhône-Alpes	Paslieres
 Europe	France	Auvergne-Rhône-Alpes	Paulhac
 Europe	France	Auvergne-Rhône-Alpes	Paulhenc
 Europe	France	Auvergne-Rhône-Alpes	Pessat Villeneuve
 Europe	France	Auvergne-Rhône-Alpes	Pierre-Bénite
+Europe	France	Auvergne-Rhône-Alpes	Plauzat
 Europe	France	Auvergne-Rhône-Alpes	Pollionnay
 Europe	France	Auvergne-Rhône-Alpes	Pont Du Chateau
 Europe	France	Auvergne-Rhône-Alpes	Pontaumur
@@ -3042,10 +3067,12 @@ Europe	France	Auvergne-Rhône-Alpes	Saint-Martin-D'Hères
 Europe	France	Auvergne-Rhône-Alpes	Saint-Priest
 Europe	France	Auvergne-Rhône-Alpes	Saint-Verand
 Europe	France	Auvergne-Rhône-Alpes	Sayat
+Europe	France	Auvergne-Rhône-Alpes	Sermentizon
 Europe	France	Auvergne-Rhône-Alpes	St Amant Tallende
 Europe	France	Auvergne-Rhône-Alpes	St Bonnet Les Alliers
 Europe	France	Auvergne-Rhône-Alpes	St Denis Combarnazat
 Europe	France	Auvergne-Rhône-Alpes	St Georges de Mons
+Europe	France	Auvergne-Rhône-Alpes	St Georges sur Allier
 Europe	France	Auvergne-Rhône-Alpes	St Gervais D Auvergne
 Europe	France	Auvergne-Rhône-Alpes	St Hilaire la Croix
 Europe	France	Auvergne-Rhône-Alpes	St Ignat
@@ -3064,6 +3091,7 @@ Europe	France	Auvergne-Rhône-Alpes	Teilhede
 Europe	France	Auvergne-Rhône-Alpes	Thiers
 Europe	France	Auvergne-Rhône-Alpes	Thiezac
 Europe	France	Auvergne-Rhône-Alpes	Thonon-Les-Bains
+Europe	France	Auvergne-Rhône-Alpes	Usson
 Europe	France	Auvergne-Rhône-Alpes	Valence
 Europe	France	Auvergne-Rhône-Alpes	Vallon en Sully
 Europe	France	Auvergne-Rhône-Alpes	Varennes-sur-Usson
@@ -3078,6 +3106,7 @@ Europe	France	Auvergne-Rhône-Alpes	Villefranche-d'Allier
 Europe	France	Auvergne-Rhône-Alpes	Villefranche-sur-Saône
 Europe	France	Auvergne-Rhône-Alpes	Villeurbanne
 Europe	France	Auvergne-Rhône-Alpes	Villosanges
+Europe	France	Auvergne-Rhône-Alpes	Vinzelles
 Europe	France	Auvergne-Rhône-Alpes	Voiron
 Europe	France	Auvergne-Rhône-Alpes	Volvic
 Europe	France	Auvergne-Rhône-Alpes	Yssac la Tourette
@@ -3164,6 +3193,7 @@ Europe	France	Centre-Val de Loire	Joue-Les-Tours
 Europe	France	Centre-Val de Loire	Mehun sur Yevre
 Europe	France	Centre-Val de Loire	Orléans
 Europe	France	Centre-Val de Loire	Pannes
+Europe	France	Centre-Val de Loire	Romilly sur Aigre
 Europe	France	Centre-Val de Loire	Romorantin
 Europe	France	Centre-Val de Loire	Rouziers-de-Touraine
 Europe	France	Centre-Val de Loire	St Jeanvrin
@@ -3411,6 +3441,7 @@ Europe	France	Nouvelle-Aquitaine	La Rochelle
 Europe	France	Nouvelle-Aquitaine	Langon
 Europe	France	Nouvelle-Aquitaine	Le Haillan
 Europe	France	Nouvelle-Aquitaine	Limoges
+Europe	France	Nouvelle-Aquitaine	Marmande
 Europe	France	Nouvelle-Aquitaine	Merignac
 Europe	France	Nouvelle-Aquitaine	Niort
 Europe	France	Nouvelle-Aquitaine	Notre-Dame-de-Sanilhac
@@ -4154,19 +4185,26 @@ Europe	Poland	Dolnośląskie	Blazejow
 Europe	Poland	Dolnośląskie	Blazkowa
 Europe	Poland	Dolnośląskie	Bobolice
 Europe	Poland	Dolnośląskie	Bogdaszowice
+Europe	Poland	Dolnośląskie	Bojanice
 Europe	Poland	Dolnośląskie	Bolkow
+Europe	Poland	Dolnośląskie	Budzow Kolonia
 Europe	Poland	Dolnośląskie	Cieplowody
 Europe	Poland	Dolnośląskie	Czarny Bor
 Europe	Poland	Dolnośląskie	Debrznik
+Europe	Poland	Dolnośląskie	Dobkow
 Europe	Poland	Dolnośląskie	Dzierzoniow
+Europe	Poland	Dolnośląskie	Henrykow
+Europe	Poland	Dolnośląskie	Jagodnik
 Europe	Poland	Dolnośląskie	Janowice Wielkie
 Europe	Poland	Dolnośląskie	Jelenia Gora
+Europe	Poland	Dolnośląskie	Jenkowice
 Europe	Poland	Dolnośląskie	Jezow Sudecki
 Europe	Poland	Dolnośląskie	Kamieniec Wrocławski
 Europe	Poland	Dolnośląskie	Kamienna Gora
 Europe	Poland	Dolnośląskie	Kepno
 Europe	Poland	Dolnośląskie	Kielczow
 Europe	Poland	Dolnośląskie	Kochanow
+Europe	Poland	Dolnośląskie	Kostrza
 Europe	Poland	Dolnośląskie	Kostrzyca
 Europe	Poland	Dolnośląskie	Krzeszow
 Europe	Poland	Dolnośląskie	Legnica
@@ -4184,22 +4222,39 @@ Europe	Poland	Dolnośląskie	Nadolice Wielkie
 Europe	Poland	Dolnośląskie	Nowizna
 Europe	Poland	Dolnośląskie	Olesnica
 Europe	Poland	Dolnośląskie	Oława
+Europe	Poland	Dolnośląskie	Piechowice
 Europe	Poland	Dolnośląskie	Pieszyce
 Europe	Poland	Dolnośląskie	Pilawa Gorna
+Europe	Poland	Dolnośląskie	Pruszowice
 Europe	Poland	Dolnośląskie	Przedborowa
+Europe	Poland	Dolnośląskie	Przyborow
 Europe	Poland	Dolnośląskie	Przylesie
+Europe	Poland	Dolnośląskie	Siedlecin
+Europe	Poland	Dolnośląskie	Sieroszow
 Europe	Poland	Dolnośląskie	Sosnowa
+Europe	Poland	Dolnośląskie	Srebrna Gora
+Europe	Poland	Dolnośląskie	Strzegom
 Europe	Poland	Dolnośląskie	Strzelin
+Europe	Poland	Dolnośląskie	Sulislawice
 Europe	Poland	Dolnośląskie	Swidnica DS
+Europe	Poland	Dolnośląskie	Swidnik
+Europe	Poland	Dolnośląskie	Swiebodzice
 Europe	Poland	Dolnośląskie	Sycow
+Europe	Poland	Dolnośląskie	Tarnawa
 Europe	Poland	Dolnośląskie	Trzebnica
 Europe	Poland	Dolnośląskie	Walbrzych
+Europe	Poland	Dolnośląskie	Wegry
+Europe	Poland	Dolnośląskie	Wilkow Wielki
 Europe	Poland	Dolnośląskie	Witkow
 Europe	Poland	Dolnośląskie	Wojcieszyce
 Europe	Poland	Dolnośląskie	Wojnowice
+Europe	Poland	Dolnośląskie	Wrociszow
 Europe	Poland	Dolnośląskie	Wroclaw
 Europe	Poland	Dolnośląskie	Zabor
+Europe	Poland	Dolnośląskie	Zarow
 Europe	Poland	Dolnośląskie	Zatonie
+Europe	Poland	Dolnośląskie	Ziebice
+Europe	Poland	Dolnośląskie	Zloty Stok
 Europe	Poland	Dolnośląskie	Ząbkowice Śląskie
 Europe	Poland	Kujawsko-Pomorskie	
 Europe	Poland	Kujawsko-Pomorskie	Bobrowo
@@ -4218,13 +4273,17 @@ Europe	Poland	Kujawsko-Pomorskie	Znin
 Europe	Poland	Lubelskie	
 Europe	Poland	Lubelskie	Biała Podlaska
 Europe	Poland	Lubelskie	Bilgoraj
+Europe	Poland	Lubelskie	Bochotnica
 Europe	Poland	Lubelskie	Chełm
+Europe	Poland	Lubelskie	Gmina Trzeszczany
 Europe	Poland	Lubelskie	Hanna
 Europe	Poland	Lubelskie	Krasnystaw
+Europe	Poland	Lubelskie	Leczna
 Europe	Poland	Lubelskie	Lublin
 Europe	Poland	Lubelskie	Milejów-Osada
 Europe	Poland	Lubelskie	Parczew
 Europe	Poland	Lubelskie	Puławy
+Europe	Poland	Lubelskie	Turkowice
 Europe	Poland	Lubelskie	Wlodawa
 Europe	Poland	Lubelskie	Zamość
 Europe	Poland	Lubuskie	
@@ -4235,16 +4294,21 @@ Europe	Poland	Lubuskie	Czerwiensk
 Europe	Poland	Lubuskie	Dabrowka
 Europe	Poland	Lubuskie	Dobiegniew
 Europe	Poland	Lubuskie	Drezdenko
+Europe	Poland	Lubuskie	Glisno
 Europe	Poland	Lubuskie	Gorzow Wielkopolski
 Europe	Poland	Lubuskie	Gorzow Wlkp
 Europe	Poland	Lubuskie	Gorzyca
+Europe	Poland	Lubuskie	Grochowo
+Europe	Poland	Lubuskie	Gubin
 Europe	Poland	Lubuskie	Kostrzyn
 Europe	Poland	Lubuskie	Kostrzyn (Lubuskie)
 Europe	Poland	Lubuskie	Kostrzyn nad Odra
 Europe	Poland	Lubuskie	Krosno Odrzańskie
 Europe	Poland	Lubuskie	Kunowice
 Europe	Poland	Lubuskie	Lagow
+Europe	Poland	Lubuskie	Lubniewice
 Europe	Poland	Lubuskie	Lubrza
+Europe	Poland	Lubuskie	Lubrza (Lubuskie)
 Europe	Poland	Lubuskie	Lubsko
 Europe	Poland	Lubuskie	Miedzyrzecz
 Europe	Poland	Lubuskie	Nowa Sol
@@ -4254,18 +4318,23 @@ Europe	Poland	Lubuskie	Slubice
 Europe	Poland	Lubuskie	Staropole
 Europe	Poland	Lubuskie	Strzelce Krajenskie
 Europe	Poland	Lubuskie	Sulecin
+Europe	Poland	Lubuskie	Sulecin (Lubuskie)
 Europe	Poland	Lubuskie	Swidnica
 Europe	Poland	Lubuskie	Swidnica LB
+Europe	Poland	Lubuskie	Swiebodzin
 Europe	Poland	Lubuskie	Szprotawa
 Europe	Poland	Lubuskie	Tomaszowo
 Europe	Poland	Lubuskie	Zielona Gora
+Europe	Poland	Lubuskie	Zubrow
 Europe	Poland	Malopolskie	
 Europe	Poland	Malopolskie	Biertowice
 Europe	Poland	Malopolskie	Bochnia
 Europe	Poland	Malopolskie	Borzęta
 Europe	Poland	Malopolskie	Brzezie
+Europe	Poland	Malopolskie	Brzezie (Malopolskie)
 Europe	Poland	Malopolskie	Brzezowka
 Europe	Poland	Malopolskie	Brzączowice
+Europe	Poland	Malopolskie	Bulowice
 Europe	Poland	Malopolskie	Bysina
 Europe	Poland	Malopolskie	Byszyce
 Europe	Poland	Malopolskie	Choragwica
@@ -4281,6 +4350,7 @@ Europe	Poland	Malopolskie	Gruszów
 Europe	Poland	Malopolskie	Harbutowice
 Europe	Poland	Malopolskie	Janowice
 Europe	Poland	Malopolskie	Jasienica
+Europe	Poland	Malopolskie	Jasienica (Malopolskie)
 Europe	Poland	Malopolskie	Jelna
 Europe	Poland	Malopolskie	Klaj
 Europe	Poland	Malopolskie	Kraków
@@ -4338,40 +4408,67 @@ Europe	Poland	Malopolskie	Zelkow
 Europe	Poland	Malopolskie	Zeroslawice
 Europe	Poland	Masovia	
 Europe	Poland	Mazowieckie	
+Europe	Poland	Mazowieckie	Aleksandrow
+Europe	Poland	Mazowieckie	Baranow
 Europe	Poland	Mazowieckie	Bialobrzegi
+Europe	Poland	Mazowieckie	Bleszno
+Europe	Poland	Mazowieckie	Bobrek Kolonia
+Europe	Poland	Mazowieckie	Boiska-Kolonia
 Europe	Poland	Mazowieckie	Brodno-Warszawa
+Europe	Poland	Mazowieckie	Bukowno
+Europe	Poland	Mazowieckie	Ciecierowka
 Europe	Poland	Mazowieckie	Cisie
+Europe	Poland	Mazowieckie	Cyganka
+Europe	Poland	Mazowieckie	Dluga Szlachecka
 Europe	Poland	Mazowieckie	Gora Kalwaria
 Europe	Poland	Mazowieckie	Grodzisk Mazowiecki
 Europe	Poland	Mazowieckie	Halinow
 Europe	Poland	Mazowieckie	Jozefin
 Europe	Poland	Mazowieckie	Jozefow
+Europe	Poland	Mazowieckie	Korzen
+Europe	Poland	Mazowieckie	Koszary
+Europe	Poland	Mazowieckie	Leczyca
+Europe	Poland	Mazowieckie	Lipsko
+Europe	Poland	Mazowieckie	Marki
+Europe	Poland	Mazowieckie	Miedniewice
 Europe	Poland	Mazowieckie	Miedzylesie
 Europe	Poland	Mazowieckie	Minsk Mazowiecki
+Europe	Poland	Mazowieckie	Okuniew
 Europe	Poland	Mazowieckie	Piaseczno
+Europe	Poland	Mazowieckie	Piaskow
 Europe	Poland	Mazowieckie	Piastow
 Europe	Poland	Mazowieckie	Plock
 Europe	Poland	Mazowieckie	Plonsk
 Europe	Poland	Mazowieckie	Pruszkow
+Europe	Poland	Mazowieckie	Przedmiescie Dalsze
 Europe	Poland	Mazowieckie	Radom
 Europe	Poland	Mazowieckie	Rudzienko
+Europe	Poland	Mazowieckie	Rzeczniow
 Europe	Poland	Mazowieckie	Siedlce
+Europe	Poland	Mazowieckie	Sienno
 Europe	Poland	Mazowieckie	Sokolow Podlaski
 Europe	Poland	Mazowieckie	Sulejowek
 Europe	Poland	Mazowieckie	Warszawa
 Europe	Poland	Mazowieckie	Wesola
+Europe	Poland	Mazowieckie	Wielgie
 Europe	Poland	Mazowieckie	Wolomin
 Europe	Poland	Mazowieckie	Zakret
 Europe	Poland	Mazowieckie	Łaz
 Europe	Poland	Opolskie	
+Europe	Poland	Opolskie	Baborow
 Europe	Poland	Opolskie	Biała
 Europe	Poland	Opolskie	Bierzow
+Europe	Poland	Opolskie	Bogdanowice
 Europe	Poland	Opolskie	Bąkowice
+Europe	Poland	Opolskie	Glubczyce
+Europe	Poland	Opolskie	Grobniki
 Europe	Poland	Opolskie	Głogówek
 Europe	Poland	Opolskie	Głuchołazy
 Europe	Poland	Opolskie	K-Kozle
 Europe	Poland	Opolskie	Kedzierzyn Kozle
+Europe	Poland	Opolskie	Kietrz
 Europe	Poland	Opolskie	Kluczbork
+Europe	Poland	Opolskie	Lisiecice
 Europe	Poland	Opolskie	Namysłów
 Europe	Poland	Opolskie	Nysa
 Europe	Poland	Opolskie	Olesno
@@ -4381,6 +4478,7 @@ Europe	Poland	Opolskie	Prudnik
 Europe	Poland	Opolskie	Stary las
 Europe	Poland	Opolskie	Strzelce Opolskie
 Europe	Poland	Opolskie	Sucha
+Europe	Poland	Opolskie	Zopowy-Osiedle
 Europe	Poland	Opolskie	Łąka Prudnicka
 Europe	Poland	Podkarpackie	
 Europe	Poland	Podkarpackie	Bachórzec
@@ -4520,59 +4618,106 @@ Europe	Poland	Slask
 Europe	Poland	Slaskie	
 Europe	Poland	Slaskie	Bakow
 Europe	Poland	Slaskie	Bielsko-Biała
+Europe	Poland	Slaskie	Bystra
 Europe	Poland	Slaskie	Bytom
 Europe	Poland	Slaskie	Chałupki
+Europe	Poland	Slaskie	Chybie
 Europe	Poland	Slaskie	Cieszyn
+Europe	Poland	Slaskie	Czaniec
 Europe	Poland	Slaskie	Czechowice-Dziedzice
 Europe	Poland	Slaskie	Dankowice
 Europe	Poland	Slaskie	Gliwice
+Europe	Poland	Slaskie	Golasowice
+Europe	Poland	Slaskie	Goleszow
+Europe	Poland	Slaskie	Golkowice
 Europe	Poland	Slaskie	Gorki Wielkie
+Europe	Poland	Slaskie	Grodziec
 Europe	Poland	Slaskie	Hażlach
+Europe	Poland	Slaskie	Jasienica (Slaskie)
+Europe	Poland	Slaskie	Jastrzebie-Zdroj
+Europe	Poland	Slaskie	Jaworze
+Europe	Poland	Slaskie	Jaworzno
+Europe	Poland	Slaskie	Jelesnia
 Europe	Poland	Slaskie	Kaczyce
 Europe	Poland	Slaskie	Katowice
+Europe	Poland	Slaskie	Kobiernice
 Europe	Poland	Slaskie	Konczyce Wielkie
 Europe	Poland	Slaskie	Kozy
+Europe	Poland	Slaskie	Lipowa
 Europe	Poland	Slaskie	Lodygowice
 Europe	Poland	Slaskie	Mazancowice
+Europe	Poland	Slaskie	Miedzyrzecze Dolne
+Europe	Poland	Slaskie	Mszana
 Europe	Poland	Slaskie	Myszkow
 Europe	Poland	Slaskie	Pawłowice
+Europe	Poland	Slaskie	Pisarzowice
 Europe	Poland	Slaskie	Pruchna
+Europe	Poland	Slaskie	Przybedza
 Europe	Poland	Slaskie	Raciborz
 Europe	Poland	Slaskie	Ruda Śląska
 Europe	Poland	Slaskie	Rudziczka
 Europe	Poland	Slaskie	Rybnik
 Europe	Poland	Slaskie	Siemianowice Slaskie
+Europe	Poland	Slaskie	Skrbensko
+Europe	Poland	Slaskie	Slemien
 Europe	Poland	Slaskie	Sosnicowice
 Europe	Poland	Slaskie	Suszec
+Europe	Poland	Slaskie	Swinna
 Europe	Poland	Slaskie	Tychy
+Europe	Poland	Slaskie	Wilamowice
 Europe	Poland	Slaskie	Wilkowice
 Europe	Poland	Slaskie	Wisla
 Europe	Poland	Slaskie	Wisla Glebce
 Europe	Poland	Slaskie	Wojska
 Europe	Poland	Slaskie	Zawiercie
+Europe	Poland	Slaskie	Zebrzydowice
 Europe	Poland	Slaskie	Żywiec
 Europe	Poland	Swietokrzyskie	
+Europe	Poland	Swietokrzyskie	Bidziny
 Europe	Poland	Swietokrzyskie	Bieliny
 Europe	Poland	Swietokrzyskie	Bodzechow
+Europe	Poland	Swietokrzyskie	Brzezie (Swietokrzyskie)
+Europe	Poland	Swietokrzyskie	Chmielnik
+Europe	Poland	Swietokrzyskie	Chroberz
 Europe	Poland	Swietokrzyskie	Cmielow
+Europe	Poland	Swietokrzyskie	Daleszyce
+Europe	Poland	Swietokrzyskie	Drugnia
+Europe	Poland	Swietokrzyskie	Ilza
+Europe	Poland	Swietokrzyskie	Iwaniska
 Europe	Poland	Swietokrzyskie	Jedrzejow
 Europe	Poland	Swietokrzyskie	Jeziorko
 Europe	Poland	Swietokrzyskie	Kielce
+Europe	Poland	Swietokrzyskie	Krasocin
 Europe	Poland	Swietokrzyskie	Kunow
 Europe	Poland	Swietokrzyskie	Lechow
+Europe	Poland	Swietokrzyskie	Lubienia
 Europe	Poland	Swietokrzyskie	Maslow Pierwszy
 Europe	Poland	Swietokrzyskie	Michalow
 Europe	Poland	Swietokrzyskie	Micigozd
+Europe	Poland	Swietokrzyskie	Mirzec
+Europe	Poland	Swietokrzyskie	Mlynek
 Europe	Poland	Swietokrzyskie	Mniow
 Europe	Poland	Swietokrzyskie	Modliszewice
+Europe	Poland	Swietokrzyskie	Naglowice
 Europe	Poland	Swietokrzyskie	Oksa
+Europe	Poland	Swietokrzyskie	Opatow
 Europe	Poland	Swietokrzyskie	Ostrowiec Swietokrzyski
+Europe	Poland	Swietokrzyskie	Pawlow
 Europe	Poland	Swietokrzyskie	Pinczow
+Europe	Poland	Swietokrzyskie	Podmachocice
 Europe	Poland	Swietokrzyskie	Porzecze
+Europe	Poland	Swietokrzyskie	Rzepin
 Europe	Poland	Swietokrzyskie	Sedziszow
+Europe	Poland	Swietokrzyskie	Sobkow
+Europe	Poland	Swietokrzyskie	Starachowice
 Europe	Poland	Swietokrzyskie	Sukow
+Europe	Poland	Swietokrzyskie	Tarlow
+Europe	Poland	Swietokrzyskie	Wachock
+Europe	Poland	Swietokrzyskie	Wloszczowa
 Europe	Poland	Swietokrzyskie	Wodzislaw
+Europe	Poland	Swietokrzyskie	Wojciechowice
 Europe	Poland	Swietokrzyskie	Wolka Baltowska
+Europe	Poland	Swietokrzyskie	Wymyslow
 Europe	Poland	Swietokrzyskie	Zagnansk
 Europe	Poland	Swietokrzyskie	Zagrody
 Europe	Poland	Warminsko-Mazurskie	
@@ -4681,9 +4826,11 @@ Europe	Poland	Wielkopolskie	Baranowo
 Europe	Poland	Wielkopolskie	Borowo-Mlyn
 Europe	Poland	Wielkopolskie	Buk
 Europe	Poland	Wielkopolskie	Cieradz Koscielny
+Europe	Poland	Wielkopolskie	Cybinka
 Europe	Poland	Wielkopolskie	Czajkow
 Europe	Poland	Wielkopolskie	Czapury
 Europe	Poland	Wielkopolskie	Czerniejewo
+Europe	Poland	Wielkopolskie	Dabroszyn
 Europe	Poland	Wielkopolskie	Dabrowa
 Europe	Poland	Wielkopolskie	Dabrowa (Wielkopolskie)
 Europe	Poland	Wielkopolskie	Dalki
@@ -4704,6 +4851,7 @@ Europe	Poland	Wielkopolskie	Jarosławiec
 Europe	Poland	Wielkopolskie	Jesionowo
 Europe	Poland	Wielkopolskie	Jeziorki
 Europe	Poland	Wielkopolskie	Kalisz
+Europe	Poland	Wielkopolskie	Kamien Maly
 Europe	Poland	Wielkopolskie	Kamionki
 Europe	Poland	Wielkopolskie	Kepno
 Europe	Poland	Wielkopolskie	Kobylniki
@@ -4712,6 +4860,7 @@ Europe	Poland	Wielkopolskie	Komorniki WP
 Europe	Poland	Wielkopolskie	Konin
 Europe	Poland	Wielkopolskie	Koscian
 Europe	Poland	Wielkopolskie	Kostrzyn (Wielkopolskie)
+Europe	Poland	Wielkopolskie	Kowale Panskie-Kolonia
 Europe	Poland	Wielkopolskie	Kowanowko
 Europe	Poland	Wielkopolskie	Koziegłowy
 Europe	Poland	Wielkopolskie	Krotoszyn
@@ -4720,6 +4869,7 @@ Europe	Poland	Wielkopolskie	Leszczynski
 Europe	Poland	Wielkopolskie	Leszno
 Europe	Poland	Wielkopolskie	Lipka
 Europe	Poland	Wielkopolskie	Lubon
+Europe	Poland	Wielkopolskie	Lubrza (Wielkopolskie)
 Europe	Poland	Wielkopolskie	Ludomki
 Europe	Poland	Wielkopolskie	Lulinek
 Europe	Poland	Wielkopolskie	Lusowo
@@ -4728,9 +4878,11 @@ Europe	Poland	Wielkopolskie	Maniewo
 Europe	Poland	Wielkopolskie	Miaty
 Europe	Poland	Wielkopolskie	Miedzychod
 Europe	Poland	Wielkopolskie	Miedzyrzecz
+Europe	Poland	Wielkopolskie	Milaczewek
 Europe	Poland	Wielkopolskie	Mosina
 Europe	Poland	Wielkopolskie	Mrowino
 Europe	Poland	Wielkopolskie	Murowana Goslina
+Europe	Poland	Wielkopolskie	Mysliborz (Wielkopolskie)
 Europe	Poland	Wielkopolskie	Niechanowo
 Europe	Poland	Wielkopolskie	Niepruszewo
 Europe	Poland	Wielkopolskie	Niewierz
@@ -4738,6 +4890,7 @@ Europe	Poland	Wielkopolskie	Nowa Wioska
 Europe	Poland	Wielkopolskie	Nowy Tomysl
 Europe	Poland	Wielkopolskie	Oborniki
 Europe	Poland	Wielkopolskie	Obrzycko
+Europe	Poland	Wielkopolskie	Olobok
 Europe	Poland	Wielkopolskie	Orchowo
 Europe	Poland	Wielkopolskie	Orlowo
 Europe	Poland	Wielkopolskie	Ostrow
@@ -4746,6 +4899,7 @@ Europe	Poland	Wielkopolskie	Ostrzeszow
 Europe	Poland	Wielkopolskie	Pakawie
 Europe	Poland	Wielkopolskie	Paledzie
 Europe	Poland	Wielkopolskie	Pecna
+Europe	Poland	Wielkopolskie	Pietno
 Europe	Poland	Wielkopolskie	Pila
 Europe	Poland	Wielkopolskie	Pleszew
 Europe	Poland	Wielkopolskie	Plewiska
@@ -4756,6 +4910,7 @@ Europe	Poland	Wielkopolskie	Poznan
 Europe	Poland	Wielkopolskie	Poznan-Wilda
 Europe	Poland	Wielkopolskie	Przebedowo
 Europe	Poland	Wielkopolskie	Przeclaw
+Europe	Poland	Wielkopolskie	Przeclaw (Wielkopolskie)
 Europe	Poland	Wielkopolskie	Przeźmierowo
 Europe	Poland	Wielkopolskie	Puszczykowo
 Europe	Poland	Wielkopolskie	Rawicz
@@ -4765,6 +4920,7 @@ Europe	Poland	Wielkopolskie	Rokietnica
 Europe	Poland	Wielkopolskie	Ryczywol
 Europe	Poland	Wielkopolskie	Sady
 Europe	Poland	Wielkopolskie	Sierosław
+Europe	Poland	Wielkopolskie	Skarbki
 Europe	Poland	Wielkopolskie	Skwierzyna
 Europe	Poland	Wielkopolskie	Skórzewo
 Europe	Poland	Wielkopolskie	Smogorzewo
@@ -4772,13 +4928,16 @@ Europe	Poland	Wielkopolskie	Srem
 Europe	Poland	Wielkopolskie	Sroda Wielkopolska
 Europe	Poland	Wielkopolskie	Strykowo
 Europe	Poland	Wielkopolskie	Suchy las
+Europe	Poland	Wielkopolskie	Sulecin (Wielkopolskie)
 Europe	Poland	Wielkopolskie	Swarzedz
 Europe	Poland	Wielkopolskie	Szamotuly
 Europe	Poland	Wielkopolskie	Szczytniki Czerniejewskie
 Europe	Poland	Wielkopolskie	Tarnowo Podgorne
+Europe	Poland	Wielkopolskie	Trzciel
 Europe	Poland	Wielkopolskie	Trzemeszno
 Europe	Poland	Wielkopolskie	Trzuskołon
 Europe	Poland	Wielkopolskie	Tulce
+Europe	Poland	Wielkopolskie	Tuliszkow
 Europe	Poland	Wielkopolskie	Turek
 Europe	Poland	Wielkopolskie	Uscikowo
 Europe	Poland	Wielkopolskie	Wagrowiec
@@ -4804,14 +4963,22 @@ Europe	Poland	Wielkopolskie	Zlotniki
 Europe	Poland	Wielkopolskie	Zydowo
 Europe	Poland	Zachodniopomorskie	
 Europe	Poland	Zachodniopomorskie	Banie
+Europe	Poland	Zachodniopomorskie	Barlinek
+Europe	Poland	Zachodniopomorskie	Barnislaw
 Europe	Poland	Zachodniopomorskie	Bialogard
 Europe	Poland	Zachodniopomorskie	Bonin
 Europe	Poland	Zachodniopomorskie	Choszczno
+Europe	Poland	Zachodniopomorskie	Chrzaszczewo
 Europe	Poland	Zachodniopomorskie	Chwarstnica
+Europe	Poland	Zachodniopomorskie	Czaplinek
 Europe	Poland	Zachodniopomorskie	Czepino
+Europe	Poland	Zachodniopomorskie	Dargikowo
+Europe	Poland	Zachodniopomorskie	Dobra
 Europe	Poland	Zachodniopomorskie	Drawno
 Europe	Poland	Zachodniopomorskie	Drawsko Pomomorskie
+Europe	Poland	Zachodniopomorskie	Drawsko Pomorskie
 Europe	Poland	Zachodniopomorskie	Dziwnow
+Europe	Poland	Zachodniopomorskie	Dziwnowek
 Europe	Poland	Zachodniopomorskie	Golczewo
 Europe	Poland	Zachodniopomorskie	Goleniow
 Europe	Poland	Zachodniopomorskie	Gryfice
@@ -4819,62 +4986,101 @@ Europe	Poland	Zachodniopomorskie	Gryfino
 Europe	Poland	Zachodniopomorskie	Grzedzice
 Europe	Poland	Zachodniopomorskie	Kamien Pomorski
 Europe	Poland	Zachodniopomorskie	Karlino
+Europe	Poland	Zachodniopomorskie	Kobylanka
 Europe	Poland	Zachodniopomorskie	Kolobrzeg
 Europe	Poland	Zachodniopomorskie	Koszalin
 Europe	Poland	Zachodniopomorskie	Kretlewo
+Europe	Poland	Zachodniopomorskie	Krzecin
 Europe	Poland	Zachodniopomorskie	Kukułowo
 Europe	Poland	Zachodniopomorskie	Lipiany
 Europe	Poland	Zachodniopomorskie	Lobez
+Europe	Poland	Zachodniopomorskie	Lubianka
+Europe	Poland	Zachodniopomorskie	Miedzywodzie
+Europe	Poland	Zachodniopomorskie	Mielno
+Europe	Poland	Zachodniopomorskie	Mierzyn
+Europe	Poland	Zachodniopomorskie	Miroslawiec
 Europe	Poland	Zachodniopomorskie	Międzyzdroje
 Europe	Poland	Zachodniopomorskie	Mysliborz
+Europe	Poland	Zachodniopomorskie	Mysliborz (Zachodniopomorskie)
 Europe	Poland	Zachodniopomorskie	Nowe Brynki
 Europe	Poland	Zachodniopomorskie	Nowe Warpno
+Europe	Poland	Zachodniopomorskie	Parsowek
+Europe	Poland	Zachodniopomorskie	Pelczyce
+Europe	Poland	Zachodniopomorskie	Pilchowo
 Europe	Poland	Zachodniopomorskie	Pniewo
 Europe	Poland	Zachodniopomorskie	Police
+Europe	Poland	Zachodniopomorskie	Przeclaw (Zachodniopomorskie)
 Europe	Poland	Zachodniopomorskie	Pyrzyce
 Europe	Poland	Zachodniopomorskie	Płoty
 Europe	Poland	Zachodniopomorskie	Recz
+Europe	Poland	Zachodniopomorskie	Rzecko
 Europe	Poland	Zachodniopomorskie	Samlino
 Europe	Poland	Zachodniopomorskie	Skoszewo
 Europe	Poland	Zachodniopomorskie	Slawno
+Europe	Poland	Zachodniopomorskie	Sokoliniec
+Europe	Poland	Zachodniopomorskie	Sowno
 Europe	Poland	Zachodniopomorskie	Stare Brynki
 Europe	Poland	Zachodniopomorskie	Stargard
 Europe	Poland	Zachodniopomorskie	Stradzewo
+Europe	Poland	Zachodniopomorskie	Stuchowo
 Europe	Poland	Zachodniopomorskie	Swidwin
 Europe	Poland	Zachodniopomorskie	Swinoujscie
 Europe	Poland	Zachodniopomorskie	Szczecin
 Europe	Poland	Zachodniopomorskie	Szczecinek
+Europe	Poland	Zachodniopomorskie	Tanowo
 Europe	Poland	Zachodniopomorskie	Trzcinsko-Zdroj
 Europe	Poland	Zachodniopomorskie	Walcz
+Europe	Poland	Zachodniopomorskie	Wapnica
+Europe	Poland	Zachodniopomorskie	Warzymice
 Europe	Poland	Zachodniopomorskie	Witkowo Drugie
+Europe	Poland	Zachodniopomorskie	Witolubie
+Europe	Poland	Zachodniopomorskie	Wolin
 Europe	Poland	Zachodniopomorskie	Zaborze
+Europe	Poland	Zachodniopomorskie	Zagozd
+Europe	Poland	Zachodniopomorskie	Zaleze
+Europe	Poland	Zachodniopomorskie	Zlocieniec
 Europe	Poland	Zielonogorskie	
 Europe	Poland	Łódzkie	
+Europe	Poland	Łódzkie	Adamow
 Europe	Poland	Łódzkie	Adolfow
 Europe	Poland	Łódzkie	Bedon Przykoscielny
 Europe	Poland	Łódzkie	Bedon-Wies
 Europe	Poland	Łódzkie	Belchatow County
+Europe	Poland	Łódzkie	Bogdanka
 Europe	Poland	Łódzkie	Brzeziny
 Europe	Poland	Łódzkie	Brzeznio
+Europe	Poland	Łódzkie	Bukowiec
 Europe	Poland	Łódzkie	Charbice Gorne
+Europe	Poland	Łódzkie	Dmosin
+Europe	Poland	Łódzkie	Jasienin Maly
 Europe	Poland	Łódzkie	Jezow
 Europe	Poland	Łódzkie	Justynow
+Europe	Poland	Łódzkie	Kalinki
 Europe	Poland	Łódzkie	Koluszki
 Europe	Poland	Łódzkie	Konstantynow Lodzki
+Europe	Poland	Łódzkie	Kraszew
 Europe	Poland	Łódzkie	Kutno
+Europe	Poland	Łódzkie	Laski
 Europe	Poland	Łódzkie	Lodz
 Europe	Poland	Łódzkie	Losieniec
+Europe	Poland	Łódzkie	Ostrow (Łódzkie)
 Europe	Poland	Łódzkie	Pabianice
 Europe	Poland	Łódzkie	Pajeczno County
 Europe	Poland	Łódzkie	Piotrkow Trybunalski
+Europe	Poland	Łódzkie	Przylek Duzy
 Europe	Poland	Łódzkie	Radomsko
 Europe	Poland	Łódzkie	Rogow
 Europe	Poland	Łódzkie	Sieradz
 Europe	Poland	Łódzkie	Skierniewice County
+Europe	Poland	Łódzkie	Strzalki
 Europe	Poland	Łódzkie	Suliszewice
+Europe	Poland	Łódzkie	Teodorow
+Europe	Poland	Łódzkie	Wartkowice
 Europe	Poland	Łódzkie	Wiaczyn Dolny
 Europe	Poland	Łódzkie	Wielun
 Europe	Poland	Łódzkie	Wisniowa Gora
+Europe	Poland	Łódzkie	Wojkow
+Europe	Poland	Łódzkie	Wągry
 Europe	Poland	Łódzkie	Zdunska Wola
 Europe	Poland	Łódzkie	Zgierz
 Europe	Portugal	Beja	
@@ -6347,6 +6553,7 @@ Europe	Spain	Catalunya	Sant Joan de les Abadesses
 Europe	Spain	Catalunya	Sant Julia de Ramis
 Europe	Spain	Catalunya	Sant Julia de Vilatorta
 Europe	Spain	Catalunya	Sant Llorenc Savall
+Europe	Spain	Catalunya	Sant Miquel de Balenya
 Europe	Spain	Catalunya	Sant Pere de Riudebitlles
 Europe	Spain	Catalunya	Sant Pere de Torello
 Europe	Spain	Catalunya	Sant Pere de Vilamajor
@@ -6418,6 +6625,7 @@ Europe	Spain	Ceuta
 Europe	Spain	Comunitat Valenciana	
 Europe	Spain	Comunitat Valenciana	Alaquas
 Europe	Spain	Comunitat Valenciana	Albal
+Europe	Spain	Comunitat Valenciana	Albalat De La Ribera
 Europe	Spain	Comunitat Valenciana	Albalat dels Sorells
 Europe	Spain	Comunitat Valenciana	Alboraia
 Europe	Spain	Comunitat Valenciana	Alboraya
@@ -6427,11 +6635,14 @@ Europe	Spain	Comunitat Valenciana	Algemesi
 Europe	Spain	Comunitat Valenciana	Alginet
 Europe	Spain	Comunitat Valenciana	Alicante
 Europe	Spain	Comunitat Valenciana	Almassera
+Europe	Spain	Comunitat Valenciana	Almassora
 Europe	Spain	Comunitat Valenciana	Almenara
 Europe	Spain	Comunitat Valenciana	Almussafes
 Europe	Spain	Comunitat Valenciana	Altea
 Europe	Spain	Comunitat Valenciana	Alzira
 Europe	Spain	Comunitat Valenciana	Antella
+Europe	Spain	Comunitat Valenciana	Aspe
+Europe	Spain	Comunitat Valenciana	Benicassim
 Europe	Spain	Comunitat Valenciana	Benidorm
 Europe	Spain	Comunitat Valenciana	Benifaio
 Europe	Spain	Comunitat Valenciana	Beniganim
@@ -6458,8 +6669,10 @@ Europe	Spain	Comunitat Valenciana	Godella
 Europe	Spain	Comunitat Valenciana	Grau de Sagunt
 Europe	Spain	Comunitat Valenciana	Guadassuar
 Europe	Spain	Comunitat Valenciana	La Nucia
+Europe	Spain	Comunitat Valenciana	La Pobla Tornesa
 Europe	Spain	Comunitat Valenciana	La Pobla de Vallbona
 Europe	Spain	Comunitat Valenciana	Llombai
+Europe	Spain	Comunitat Valenciana	Llucena
 Europe	Spain	Comunitat Valenciana	Llutxent
 Europe	Spain	Comunitat Valenciana	L’Eliana
 Europe	Spain	Comunitat Valenciana	Massalaves
@@ -6475,6 +6688,7 @@ Europe	Spain	Comunitat Valenciana	Olleria
 Europe	Spain	Comunitat Valenciana	Paiporta
 Europe	Spain	Comunitat Valenciana	Palma de Gandia
 Europe	Spain	Comunitat Valenciana	Paterna
+Europe	Spain	Comunitat Valenciana	Petrer
 Europe	Spain	Comunitat Valenciana	Picanya
 Europe	Spain	Comunitat Valenciana	Picassent
 Europe	Spain	Comunitat Valenciana	Piles
@@ -6484,6 +6698,8 @@ Europe	Spain	Comunitat Valenciana	Quart de Poblet
 Europe	Spain	Comunitat Valenciana	Real de Montroy
 Europe	Spain	Comunitat Valenciana	Requena
 Europe	Spain	Comunitat Valenciana	Sagunt
+Europe	Spain	Comunitat Valenciana	Santa Pola
+Europe	Spain	Comunitat Valenciana	Sax ES
 Europe	Spain	Comunitat Valenciana	Segorbe
 Europe	Spain	Comunitat Valenciana	Simat de la Valldigna
 Europe	Spain	Comunitat Valenciana	Sollana
@@ -6899,6 +7115,7 @@ Europe	Switzerland	Sankt Gallen	Ruthi
 Europe	Switzerland	Sankt Gallen	Sankt Gallenkappel
 Europe	Switzerland	Sankt Gallen	Sargans
 Europe	Switzerland	Sankt Gallen	Sax
+Europe	Switzerland	Sankt Gallen	Sax CH
 Europe	Switzerland	Sankt Gallen	Schmerikon
 Europe	Switzerland	Sankt Gallen	Schänis
 Europe	Switzerland	Sankt Gallen	Sennwald
