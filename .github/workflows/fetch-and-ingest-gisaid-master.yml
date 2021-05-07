@@ -6,9 +6,11 @@ on:
     # "At 03:00 (05:00 CET) on every day-of-week from Monday through Friday."
     - cron:  '0 3 * * MON-FRI'
 
-  # Manually triggered using `./bin/trigger fetch-and-ingest`
+  # Manually triggered using `./bin/trigger gisaid/fetch-and-ingest`
   repository_dispatch:
-    types: fetch-and-ingest
+    types:
+      - gisaid/fetch-and-ingest
+      - fetch-and-ingest
 
   # Manually triggered using GitHub's UI
   workflow_dispatch:

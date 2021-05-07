@@ -10,9 +10,12 @@ on:
       - source-data/gisaid_annotations.tsv
       - source-data/gisaid_geoLocationRules.tsv
 
-  # Manually triggered using `./bin/trigger ingest`
+  # Manually triggered using `./bin/trigger gisaid/ingest` (or `ingest`, which
+  # includes GenBank)
   repository_dispatch:
-    types: ingest
+    types:
+      - gisaid/ingest
+      - ingest
 
   # Manually triggered using GitHub's UI
   workflow_dispatch:
