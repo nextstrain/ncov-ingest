@@ -43,3 +43,4 @@ jobs:
         GISAID_API_ENDPOINT: ${{ secrets.GISAID_API_ENDPOINT }}
         GISAID_USERNAME_AND_PASSWORD: ${{ secrets.GISAID_USERNAME_AND_PASSWORD }}
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        S3_SRC: s3://nextstrain-data/ncov-ingest
