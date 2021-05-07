@@ -25,7 +25,6 @@ if len( absentRequiredEnvironmentVariables )>0:
 ## which git branch we are
 
 GIT_BRANCH = ""
-SILENT = ""
 S3_DST = ''
 
 github_ref = os.environ[ "GITHUB_REF" ]
@@ -34,12 +33,12 @@ if github_ref == "refs/heads/master" :
     S3_DST = os.environ['S3_SRC']
 
 elif github_ref.startswith('refs/heads/') :
-    SILENT = 'yes'
+
     GIT_BRANCH = github_ref[ len('refs/heads/') : ]
     S3_DST = os.environ['S3_SRC'] + "/branch/" + GIT_BRANCH
 
 elif github_ref=='':
-    SILENT = 'yes'
+
     S3_DST = os.environ['S3_SRC'] + "/tmp"
 else:
     print("skipping ingest for ref",github_ref)
@@ -253,7 +252,6 @@ rule notify_and_upload:
         destination_sequences = "$S3_SRC/{database}_sequences.fasta.gz",
         destination_nextclade = S3_DST+"/nextclade.tsv.gz", # intead of "$S3_SRC/nextclade.tsv.gz" ... 
         destination_json = "$S3_SRC/{database}.ndjson.gz",
-        quiet = (SILENT=='yes') ,
         slack_channel = lambda wildcards : config['slack_channel'][wildcards.database],
 
     run :
@@ -389,17 +387,17 @@ rule notify_and_upload:
             """)
 
 
-        shell('./bin/upload-to-s3 --quiet {input.json} "{params.destination_json}"')
+        shell('./bin/upload-to-s3 {input.json} "{params.destination_json}"')
 
         shell("""
-            ./bin/upload-to-s3 {params.quiet} {input.metadata} "{params.destination_metadata}"
-            ./bin/upload-to-s3 {params.quiet} {input.sequences} "{params.destination_sequences}"
-            ./bin/upload-to-s3 {params.quiet} {input.nextclade} "{params.destination_nextclade}"
+            ./bin/upload-to-s3 {input.metadata} "{params.destination_metadata}"
+            ./bin/upload-to-s3 {input.sequences} "{params.destination_sequences}"
+            ./bin/upload-to-s3 {input.nextclade} "{params.destination_nextclade}"
    
-            ./bin/upload-to-s3 {params.quiet} {input.additional_info} "{params.destination_additional_info}"
-            ./bin/upload-to-s3 {params.quiet} {input.flagged_metadata} "{params.destination_flagged_metadata}"
+            ./bin/upload-to-s3 {input.additional_info} "{params.destination_additional_info}"
+            ./bin/upload-to-s3 {input.flagged_metadata} "{params.destination_flagged_metadata}"
         """)
-        if not params.quiet :
+        if GIT_BRANCH == "master" :
             shell("""
                 for dst in  "{params.destination_metadata}" "{params.destination_sequences}" "{params.destination_nextclade}" "{params.destination_additional_info}" "{params.destination_flagged_metadata}"
                 do
