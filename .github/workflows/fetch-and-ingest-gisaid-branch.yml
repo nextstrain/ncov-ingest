@@ -23,7 +23,8 @@ jobs:
           GISAID_API_ENDPOINT \
           GISAID_USERNAME_AND_PASSWORD \
           GITHUB_REF \
-          SLACK_TOKEN
+          SLACK_TOKEN \
+          S3_SRC
 
         nextstrain build \
           --aws-batch \
