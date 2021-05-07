@@ -67,7 +67,7 @@ rule all_then_clean:
         "notify_and_upload.gisaid.mock_output.txt",
         "notify_and_upload.genbank.mock_output.txt"
     shell:
-        ".bin/clean"
+        "./bin/clean"
 
 
 ## target rule gisaid
@@ -75,14 +75,14 @@ rule gisaid_then_clean:
     input:
         "notify_and_upload.gisaid.mock_output.txt",
     shell:
-        ".bin/clean"
+        "./bin/clean"
 
 ## target rule genbank
 rule genbank_then_clean:
     input:
         "notify_and_upload.genbank.mock_output.txt",
     shell:
-        ".bin/clean"
+        "./bin/clean"
 
 
 rule ingest_gisaid:
