@@ -234,6 +234,7 @@ rule check_locations :
 
 rule notify_and_upload:
     input :
+        json = "data/{database}.ndjson",
         sequences = "data/{database}/sequences.fasta",
         metadata = "data/{database}/metadata.tsv",
         nextclade = "data/{database}/nextclade.tsv",
@@ -250,7 +251,7 @@ rule notify_and_upload:
         destination_additional_info = "$S3_SRC/{database}_additional_info.tsv.gz",
         destination_flagged_metadata = "$S3_SRC/{database}_flagged_metadata.txt.gz",
         destination_sequences = "$S3_SRC/{database}_sequences.fasta.gz",
-        destination_nextclade = "$S3_SRC/nextclade.tsv.gz",
+        destination_nextclade = S3_DST+"/nextclade.tsv.gz", # intead of "$S3_SRC/nextclade.tsv.gz" ... 
         destination_json = "$S3_SRC/{database}.ndjson.gz",
         quiet = (SILENT=='yes') ,
         slack_channel = lambda wildcards : config['slack_channel'][wildcards.database],
@@ -265,7 +266,7 @@ rule notify_and_upload:
             shell( '''
                 dst={params.destination_json}
 
-                src_record_count="$(wc -l < "$src")"
+                src_record_count="$(wc -l < "{input.json}")"
                 dst_record_count="$(wc -l < <(aws s3 cp --no-progress "$dst" - | gunzip -cfq))"
                 added_records="$(( src_record_count - dst_record_count ))"
 
@@ -388,9 +389,9 @@ rule notify_and_upload:
             """)
 
 
-        shell('./bin/upload-to-s3 --quiet {output} "{destination_json}"')
+        shell('./bin/upload-to-s3 --quiet {input.json} "{params.destination_json}"')
 
-        shell(f"""
+        shell("""
             ./bin/upload-to-s3 {params.quiet} {input.metadata} "{params.destination_metadata}"
             ./bin/upload-to-s3 {params.quiet} {input.sequences} "{params.destination_sequences}"
             ./bin/upload-to-s3 {params.quiet} {input.nextclade} "{params.destination_nextclade}"
@@ -406,6 +407,6 @@ rule notify_and_upload:
                 done
             """)
 
-        shell(f"""   
+        shell("""   
             touch {output}
         """)
