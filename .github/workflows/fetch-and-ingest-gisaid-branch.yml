@@ -33,7 +33,9 @@ jobs:
           --memory 15GiB \
           --exec env \
           . \
-            envdir env.d ingest-gisaid --fetch
+            envdir env.d snakemake gisaid_then_clean \
+              --config fetch=yes slack_token='${{ secrets.SLACK_TOKEN }}' \
+                       gisaid_login='${{ secrets.GISAID_USERNAME_AND_PASSWORD }}' gisaid_endpoint='${{ secrets.GISAID_API_ENDPOINT }}'
       env:
         AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
