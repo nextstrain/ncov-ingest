@@ -191,7 +191,13 @@ rule run_nextclade :
     output:
         "data/{database}/nextclade.new.tsv"
     shell:
-        "./bin/run-nextclade {input} {output}"
+        """./bin/run-nextclade {input} {output}
+        if [ ! -f {output} ]
+        then
+         echo "creating an empty output file"
+         echo "seqName clade   qc.overallScore qc.overallStatus    totalGaps   totalInsertions totalMissing    totalMutations  totalNonACGTNs  totalPcrPrimerChanges   substitutions   deletions   insertions  missing nonACGTNs   pcrPrimerChanges    aaSubstitutions totalAminoacidSubstitutions aaDeletions totalAminoacidDeletions alignmentEnd    alignmentScore  alignmentStart  qc.missingData.missingDataThreshold qc.missingData.score    qc.missingData.status   qc.missingData.totalMissing qc.mixedSites.mixedSitesThreshold   qc.mixedSites.score qc.mixedSites.status    qc.mixedSites.totalMixedSites   qc.privateMutations.cutoff  qc.privateMutations.excess  qc.privateMutations.score   qc.privateMutations.status  qc.privateMutations.total   qc.snpClusters.clusteredSNPs    qc.snpClusters.score    qc.snpClusters.status   qc.snpClusters.totalSNPs    errors  qc.seqName  nearestTreeNodeId > {output}
+        fi
+        """
 
 rule join_clades :
     input:
