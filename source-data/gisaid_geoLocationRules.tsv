@@ -37,6 +37,11 @@ Europe/Netherlands/South Holland/Delft	Europe/Netherlands/South Holland/Delft NL
 Europe/Netherlands/Zeeland/Middelburg	Europe/Netherlands/Zeeland/Middelburg NL
 Europe/Netherlands/Groningen/Haren	Europe/Netherlands/Groningen/Haren NL
 Europe/Netherlands/Groningen/Wildevank	Europe/Netherlands/Groningen/Wildervank
+Europe/Netherlands/Not Collected/*	Europe/Netherlands/Netherlands/*
+Europe/Netherlands/Diemen/	Europe/Netherlands/North Holland/Diemen
+Europe/Netherlands/Leiden/	Europe/Netherlands/South Holland/Leiden
+Europe/Netherlands/Hardinxveld/	Europe/Netherlands/South Holland/Hardinxveld Giessendam
+Europe/Netherlands/Milheeze/	Europe/Netherlands/North Brabant/Milheeze
 Europe/France/Grand-Est/*	Europe/France/Grand Est/*
 Europe/France/Hauts-de-France/Crépy-en -Valois	Europe/France/Hauts de France/Crépy en Valois
 Europe/France/Hauts-de-France/Pontoise	Europe/France/Ile de France/Pontoise
@@ -6266,6 +6271,10 @@ Europe/Switzerland/Obwald/*	Europe/Switzerland/Obwalden/*
 Europe/Switzerland/Baden-Wuerttemberg/	Europe/Germany/Baden-Wuerttemberg/
 Europe/Switzerland/Appenzell-Ausserrhoden/*	Europe/Switzerland/Appenzell Ausserrhoden/*
 Europe/Switzerland/Saint-Gallen/*	Europe/Switzerland/Sankt Gallen/*
+Europe/Switzerland/So/*	Europe/Switzerland/Solothurn/*
+Europe/Switzerland/Gl/*	Europe/Switzerland/Glarus/*
+Europe/Switzerland/Ow/*	Europe/Switzerland/Obwalden/*
+Europe/Switzerland/Ur/*	Europe/Switzerland/Uri/*
 Europe/Russia/Saint Petersburg/Saint Petersburg	Europe/Russia/Saint-Petersburg/Saint-Petersburg
 Europe/Russia/Saint Petersburg/*	Europe/Russia/Saint-Petersburg/*
 Europe/Russia/Moscow/*	Europe/Russia/Moscow Oblast/*
@@ -6994,6 +7003,17 @@ Europe/Austria/Upper Austria/Amstetten	Europe/Austria/Lower Austria/Amstetten
 Europe/Austria/Upper Austria/Horn	Europe/Austria/Lower Austria/Horn
 Europe/Austria/Upper Austria/Liezen	Europe/Austria/Styria/Liezen
 Europe/Austria/Upper Austria/Baden	Europe/Austria/Lower Austria/Baden
+Europe/Austria/Upper Austria/Schoerfling Am Attersee	Europe/Austria/Upper Austria/Schörfling Am Attersee
+Europe/Austria/Upper Austria/Voecklamarkt	Europe/Austria/Upper Austria/Vöcklamarkt
+Europe/Austria/Upper Austria/Gruenau Im Almtal	Europe/Austria/Upper Austria/Grünau im Almtal
+Europe/Austria/Upper Austria/Altmuenster	Europe/Austria/Upper Austria/Altmünster
+Europe/Austria/Upper Austria/St.Georgen Im Attergau	Europe/Austria/Upper Austria/St. Georgen Im Attergau
+Europe/Austria/Upper Austria/Badgoisern	Europe/Austria/Upper Austria/Bad Goisern
+Europe/Austria/Upper Austria/Poendorf	Europe/Austria/Upper Austria/Pöndorf
+Europe/Austria/Upper Austria/Attnangpuchheim	Europe/Austria/Upper Austria/Attnang-Puchheim
+Europe/Austria/Upper Austria/Badischl	Europe/Austria/Upper Austria/Bad Ischl
+Europe/Austria/Upper Austria/Voecklabruck	Europe/Austria/Upper Austria/Vöcklabruck
+Europe/Austria/Upper Austria/Seewalchen	Europe/Austria/Upper Austria/Seewalchen Am Attersee
 Europe/Austria/Attnang-Puchheim/	Europe/Austria/Upper Austria/Attnang-Puchheim
 Europe/Austria/Gmunden/	Europe/Austria/Upper Austria/Gmunden
 Europe/Austria/Vöcklabruck/	Europe/Austria/Upper Austria/Vöcklabruck
@@ -7667,6 +7687,25 @@ Asia/India/Kerela/*	Asia/India/Kerala/*
 Asia/India/Himachla Pradesh/*	Asia/India/Himachal Pradesh/*
 Asia/India/Harayana/*	Asia/India/Haryana/*
 Asia/India/Maharastra/*	Asia/India/Maharashtra/*
+Asia/India/Jamnagar/	Asia/India/Gujarat/Jamnagar
+Asia/India/Vadodara/	Asia/India/Gujarat/Vadodara
+Asia/India/Ahmedabad/	Asia/India/Gujarat/Ahmedabad
+Asia/India/Gandhinagar/	Asia/India/Gujarat/Gandhinagar
+Asia/India/Kalol/	Asia/India/Gujarat/Kalol
+Asia/India/Bharuch/	Asia/India/Gujarat/Bharuch
+Asia/India/Modasa/	Asia/India/Gujarat/Modasa
+Asia/India/Daskroi/	Asia/India/Gujarat/Daskroi
+Asia/India/Khambhaliya/	Asia/India/Gujarat/Khambhaliya
+Asia/India/Mehsana/	Asia/India/Gujarat/Mehsana
+Asia/India/Dahegam/	Asia/India/Gujarat/Dahegam
+Asia/India/Mansa/	Asia/India/Gujarat/Mansa
+Asia/India/Dhandhuka/	Asia/India/Gujarat/Dhandhuka
+Asia/India/Patan/	Asia/India/Gujarat/Patan
+Asia/India/Siddhpur/	Asia/India/Gujarat/Siddhpur
+Asia/India/Adajan/	Asia/India/Gujarat/Adajan
+Asia/India/Anand/	Asia/India/Gujarat/Anand
+Asia/India/Diu/	Asia/India/Gujarat/Diu
+Asia/India/Kerala State/*	Asia/India/Kerala/*
 Asia/Bangladesh/Chittagong/Cox'S Bazar	Asia/Bangladesh/Chattogram/Cox's Bazar
 Asia/Bangladesh/Khulna/Jessore	Asia/Bangladesh/Khulna/Jashore
 Asia/Bangladesh/Khulna/Jheniahdah	Asia/Bangladesh/Khulna/Jhenaidah
@@ -8565,6 +8604,7 @@ North America/USA/South Carolina/Orangeburg	North America/USA/South Carolina/Ora
 North America/USA/South Carolina/Laurens County	North America/USA/South Carolina/Laurens County SC
 North America/USA/South Carolina/Marion	North America/USA/South Carolina/Marion County SC
 North America/USA/South Carolina/Anderson County	North America/USA/South Carolina/Anderson County SC
+North America/USA/South Carolina/Unknown	North America/USA/South Carolina/
 North America/USA/Pennsylvania/Montgomery County	North America/USA/Pennsylvania/Montgomery County PA
 North America/USA/Pennsylvania/Philadelphia	North America/USA/Pennsylvania/Philadelphia County
 North America/USA/Pennsylvania/Delaware County	North America/USA/Pennsylvania/Delaware County PA
@@ -8717,6 +8757,10 @@ North America/USA/Ae/	North America/USA/USA/
 North America/USA/North Dalota/*	North America/USA/North Dakota/*
 North America/USA/Las Vegas/	North America/USA/Nevada/Las Vegas
 North America/USA/North Carolina/Charlotte	North America/USA/North Carolina/Mecklenburg County
+North America/USA/North Carolina/Unknown	North America/USA/North Carolina/
+North America/USA/Californi/*	North America/USA/California/*
+North America/USA/U.S. Virgin Islands/*	North America/USA/Virgin Islands/*
+North America/USA/Newyork/*	North America/USA/New York/*
 North America/Costa Rica/Tibas/	North America/Costa Rica/San Jose/Tibas
 North America/Costa Rica/Cartago/Tres Rios	North America/Costa Rica/Cartago CR/Tres Rios CR
 North America/Costa Rica/Cartago/Cartago	North America/Costa Rica/Cartago CR/Cartago CR
