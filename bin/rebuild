@@ -55,7 +55,7 @@ main() {
 
     output=$(
         "$bin"/launch-build \
-            ncov deploy_to_staging upload \
+            ncov deploy upload \
             --config slack_token="$SLACK_TOKEN"
     )
 
@@ -65,7 +65,7 @@ main() {
     aws_batch_job_id=$(grep "AWS Batch Job ID" <<<"$output" | cut -d ' ' -f 5)
 
     echo "Notifying Slack about rebuild."
-    "$bin"/notify-slack "A new staging build was submitted. Follow along in your local ncov repo with: "'```'"nextstrain build --aws-batch --attach $aws_batch_job_id ."'```'
+    "$bin"/notify-slack "A new build was submitted. Follow along in your local ncov repo with: "'```'"nextstrain build --aws-batch --attach $aws_batch_job_id ."'```'
 }
 
 # Returns 1 if both files match (have identical hashes). Else returns 0.
