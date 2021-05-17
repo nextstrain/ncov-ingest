@@ -285,7 +285,7 @@ rule notify_and_upload:
                     msg="📈 New nCoV records (n=$added_records) found on {params.database}."
                 fi
 
-                ./bin/notify-slack $msg $SLACK_TOKEN {params.slack_channel}
+                ./bin/notify-slack "$msg" $SLACK_TOKEN {params.slack_channel}
                 ''')
 
 
