@@ -173,6 +173,8 @@ rule download_old_clades :
         then
          exit 1
         fi
+
+        echo "{output} :" `wc -l {output}` 
         '''
 
 
@@ -183,7 +185,12 @@ rule filter_fasta :
     output:
         "data/{database}/nextclade.sequences.fasta"
     shell: 
-        "./bin/filter-fasta --input_fasta={input.fasta} --input_tsv={input.tsv} --output_fasta={output}" 
+        """./bin/filter-fasta --input_fasta={input.fasta} --input_tsv={input.tsv} --output_fasta={output}
+
+        echo "input " `grep -c ">" {input.fasta}`
+        echo "old   " `wc -l {input.tsv}`
+        echo "output" `grep -c ">" {output}`
+        """
 
 rule run_nextclade :
     input:
