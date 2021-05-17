@@ -261,6 +261,8 @@ Europe/Germany/Baden-Wuertemberg/*	Europe/Germany/Baden-Wuerttemberg/*
 Europe/Germany/Baden-Wuertemberg/Lorrach	Europe/Germany/Baden-Wuerttemberg/Lörrach
 Europe/Germany/Baden-Wuertemberg/Tubingen	Europe/Germany/Baden-Wuerttemberg/Tuebingen
 Europe/Germany/Unknown/	Europe/Germany/Germany/
+Europe/Germany/Bw/*	Europe/Germany/Baden-Wuerttemberg/*
+Europe/Germany/Bavaria/Neuburg A.D. Donau	Europe/Germany/Bavaria/Neuburg an der Donau
 Europe/Belgium/Couthuin/	Europe/Belgium/Huy/Couthuin
 Europe/Belgium/Kessel-Lo/	Europe/Belgium/Leuven/Kessel-Lo
 Europe/Belgium/Holsbeek/	Europe/Belgium/Leuven/Holsbeek
@@ -6396,6 +6398,7 @@ Europe/Russia/Nizhny Novgorod Region/*	Europe/Russia/Nizhny Novgorod/*
 Europe/Russia/Penza Region/*	Europe/Russia/Penza/*
 Europe/Russia/Kursk Region/Zheleznogorsk	Europe/Russia/Krasnoyarsk/Zheleznogorsk
 Europe/Russia/Crimea/*	Europe/Ukraine/Crimea/*
+Europe/Russia/Republic of Tatarstan/*	Europe/Russia/Tatarstan/*
 Europe/Hungary/Baranya/*	Europe/Hungary/Baranya County/*
 Europe/Hungary/Budapest/	Europe/Hungary/Central Hungary/Budapest
 Europe/Hungary/Borsod-Abauj-Zemplen County/*	Europe/Hungary/Borsod-Abaúj-Zemplén County/*
@@ -7602,6 +7605,7 @@ Asia/Vietnam/Haiduong/*	Asia/Vietnam/Hai Duong/*
 Asia/Pakistan/Gilgit/	Asia/Pakistan/Gilgit Baltistan/Gilgit
 Asia/Pakistan/Kpk/	Asia/Pakistan/Khyber Pakhtunkhwa/
 Asia/Pakistan/Punjab/*	Asia/Pakistan/Punjab PK/*
+Asia/Pakistan/Vehari./	Asia/Pakistan/Punjab PK/Vehari
 Asia/Israel/Ramat Gan/	Asia/Israel/Tel Aviv District/Ramat Gan
 Asia/Israel/South Coast District/	Asia/Israel/South District/South Coast District
 Asia/Israel/Bat-Yam/	Asia/Israel/Tel Aviv District/Bat Yam
@@ -7809,6 +7813,12 @@ Asia/Philippines/4-A/*	Asia/Philippines/Calabarzon/*
 Asia/Philippines/7/*	Asia/Philippines/Central Visayas/*
 Asia/Philippines/11/*	Asia/Philippines/Davao Region/*
 Asia/Philippines/3/*	Asia/Philippines/Central Luzon/*
+Asia/Philippines/Quezon City/	Asia/Philippines/Manila/Quezon City
+Asia/Philippines/Pasay City/	Asia/Philippines/Manila/Pasay City
+Asia/Philippines/Taguig City/	Asia/Philippines/Manila/Taguig City
+Asia/Philippines/Navotas City/	Asia/Philippines/Manila/Navotas City
+Asia/Philippines/Manila City/	Asia/Philippines/Manila/Manila City
+Asia/Philippines/Caloocan City/	Asia/Philippines/Manila/Caloocan City
 Asia/Indonesia/Special Region of Yogyakarta/*	Asia/Indonesia/Yogyakarta/*
 Asia/Indonesia/Central Kalimantan/*	Asia/Indonesia/Center Kalimantan/*
 Asia/Indonesia/Bangka Belitung Islands/*	Asia/Indonesia/Kepulauan Bangka Belitung/*
@@ -8075,6 +8085,7 @@ North America/USA/Illinois/Mercer County	North America/USA/Illinois/Mercer Count
 North America/USA/Illinois/Tazwell	North America/USA/Illinois/Tazewell County IL
 North America/USA/Illinois/Piatt	North America/USA/Illinois/Piatt County
 North America/USA/Illinois/Union	North America/USA/Illinois/Union County IL
+North America/USA/Illinois/Wayne County	North America/USA/Illinois/Wayne County IL
 North America/USA/Wisconsin/Monroe County	North America/USA/Wisconsin/Monroe County WI
 North America/USA/Wisconsin/Richland County	North America/USA/Wisconsin/Richland County WI
 North America/USA/Wisconsin/Grant County	North America/USA/Wisconsin/Grant County WI
@@ -8193,6 +8204,8 @@ North America/USA/Washington/Grant	North America/USA/Washington/Grant County WA
 North America/USA/Washington/Island	North America/USA/Washington/Island County
 North America/USA/Washington/Harbor County	North America/USA/Washington/Grays Harbor County
 North America/USA/Washington/Cheney County	North America/USA/Washington/Spokane County
+North America/USA/Washington/H A R B O R County	North America/USA/Washington/Grays Harbor County
+North America/USA/Washington/W A l l A County	North America/USA/Washington/Walla Walla County
 North America/USA/New York/Orange County	North America/USA/New York/Orange County NY
 North America/USA/New York/Franklin County	North America/USA/New York/Franklin County NY
 North America/USA/New York/Jefferson County	North America/USA/New York/Jefferson County NY
@@ -8232,6 +8245,7 @@ North America/USA/New York/Livingston County	North America/USA/New York/Livingst
 North America/USA/New York/Uniondale	North America/USA/New York/Nassau County
 North America/USA/New York/Hudson County	North America/USA/New York/
 North America/USA/New York/Onondaga	North America/USA/New York/Onondaga County
+North America/USA/New York/Schuyler County	North America/USA/New York/Schuyler County NY
 North America/USA/Arizona/Phoenix County	North America/USA/Arizona/Maricopa County
 North America/USA/Arizona/Tucson	North America/USA/Arizona/Pima County
 North America/USA/Arizona/Navajo	North America/USA/Arizona/Navajo County
@@ -8377,6 +8391,7 @@ North America/USA/Oregon/Clark County	North America/USA/Oregon/
 North America/USA/Oregon/Unknown	North America/USA/Oregon/
 North America/USA/Oregon/Gilliam Hood-River Sherman Wasco Counties	North America/USA/Oregon/
 North America/USA/Oregon/Crook	North America/USA/Oregon/Crook County
+North America/USA/Oregon/Clatsop Tillamook Counties	North America/USA/Oregon/Tillamook County
 North America/USA/Texas/Houston County	North America/USA/Texas/Harris County
 North America/USA/Texas/Washington County	North America/USA/Texas/Washington County TX
 North America/USA/Texas/Williamson County	North America/USA/Texas/Williamson County TX
@@ -8626,6 +8641,7 @@ North America/USA/Louisiana/Madison	North America/USA/Louisiana/Madison Parish
 North America/USA/Louisiana/De Soto Parish	North America/USA/Louisiana/DeSoto Parish
 North America/USA/Louisiana/East Baton Rouge	North America/USA/Louisiana/East Baton Rouge Parish
 North America/USA/Louisiana/Ascension	North America/USA/Louisiana/Ascension Parish
+North America/USA/Louisiana/Saint Landry Parish	North America/USA/Louisiana/St Landry Parish
 North America/USA/Connecticut/Middlesex County	North America/USA/Connecticut/Woodbridge
 North America/USA/Connecticut/New Haven	North America/USA/Connecticut/New Haven County
 North America/USA/Connecticut/Hartford	North America/USA/Connecticut/Hartford County
@@ -8854,6 +8870,8 @@ North America/Costa Rica/San Jose/Pitaya	North America/Costa Rica/San Jose/Pitah
 North America/Costa Rica/San Jose/San Isidro del General	North America/Costa Rica/San Jose/San Isidro de El General
 North America/Costa Rica/San Jose/San Felipe	North America/Costa Rica/San Jose/San Felipe CR
 North America/Costa Rica/San Jose/San Jose	North America/Costa Rica/San Jose/San Jose CR
+North America/Costa Rica/San Jose/Vazquez De Coronado	North America/Costa Rica/San Jose/Vazquez de Coronado
+North America/Costa Rica/San Jose/Santa Ana	North America/Costa Rica/San Jose/Santa Ana CR
 North America/Costa Rica/Puntarenas/Canoas	North America/Costa Rica/Puntarenas/Canoas CR
 North America/Costa Rica/Puntarenas/Aguirre	North America/Costa Rica/Puntarenas/Quepos
 North America/Costa Rica/Cartago CR/San Rafael	North America/Costa Rica/Cartago CR/San Rafael Cartago
@@ -8987,6 +9005,8 @@ South America/Brazil/Rio de Janeiro/Nilopolis	South America/Brazil/Rio de Janeir
 South America/Brazil/Rio de Janeiro/Itaguai	South America/Brazil/Rio de Janeiro/Itaguaí
 South America/Brazil/Rio de Janeiro/Macae	South America/Brazil/Rio de Janeiro/Macaé
 South America/Brazil/Rio de Janeiro/Tres Rios	South America/Brazil/Rio de Janeiro/Tres Rios BR
+South America/Brazil/Rio de Janeiro/Seropedica	South America/Brazil/Rio de Janeiro/Seropédica
+South America/Brazil/Rio de Janeiro/Marica	South America/Brazil/Rio de Janeiro/Maricá
 South America/Brazil/Rio Grande do Sul/Torres	South America/Brazil/Rio Grande do Sul/Torres BR
 South America/Brazil/Rio Grande do Sul/Canoas	South America/Brazil/Rio Grande do Sul/Canoas BR
 South America/Brazil/Rio Grande do Sul/Nanuque	South America/Brazil/Rio Grande do Sul/
@@ -9108,7 +9128,11 @@ South America/Ecuador/Pichicnha/*	South America/Ecuador/Pichincha/*
 South America/Ecuador/Portoviejo/Pueblo Nuevo	South America/Ecuador/Manabi/Pueblo Nuevo EC
 South America/Ecuador/Portoviejo/Colon	South America/Ecuador/Manabi/Colon
 South America/Ecuador/Portoviejo/18 de Octubre	South America/Ecuador/Manabi/18 de Octubre
+South America/Ecuador/Portoviejo/Andres de Vera	South America/Ecuador/Manabi/Andres de Vera
+South America/Ecuador/Portoviejo/San Pablo	South America/Ecuador/Manabi/San Pablo (Portoviejo)
+South America/Ecuador/Portoviejo/Crucita	South America/Ecuador/Manabi/Crucita
 South America/Ecuador/Manabí/*	South America/Ecuador/Manabi/*
+South America/Ecuador/Santo Domingo de los Tsáchilas/Santo Domingo	South America/Ecuador/Santo Domingo de los Tsachilas/Santo Domingo de los Colorados
 South America/Chile/Los Lagos/Llanquihue	South America/Chile/Los Lagos/Puerto Montt
 South America/Chile/La Araucania/*	South America/Chile/Araucanía/*
 South America/Chile/Biobio/Diguillin	South America/Chile/Ñuble/Chillan
