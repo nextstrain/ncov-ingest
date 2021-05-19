@@ -168,7 +168,8 @@ rule download_old_clades :
     shell:
         '''
         set +e
-        ( aws s3 cp --no-progress "{params.dst_source}" - || aws s3 cp --no-progress "{params.src_source}" -) | gunzip -cfq > {output} 
+        #( aws s3 cp --no-progress "{params.dst_source}" - || aws s3 cp --no-progress "{params.src_source}" -) | gunzip -cfq > {output} 
+        ( aws s3 cp --no-progress "{params.src_source}" -) | gunzip -cfq > {output} 
         if [ ! -f {output} ]
         then
          exit 1
