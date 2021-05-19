@@ -107,6 +107,8 @@ Europe/France/Auvergne-Rhône-Alpes/Clermont	Europe/France/Auvergne-Rhône-Alpes
 Europe/France/Auvergne-Rhône-Alpes/Saint Ignat	Europe/France/Auvergne-Rhône-Alpes/St Ignat
 Europe/France/Auvergne-Rhône-Alpes/Cournon D'Auvergne	Europe/France/Auvergne-Rhône-Alpes/Cournon D Auvergne
 Europe/France/Auvergne-Rhône-Alpes/Clermont-Fd	Europe/France/Auvergne-Rhône-Alpes/Clermont-Ferrand
+Europe/France/Auvergne-Rhône-Alpes/St Christophe	Europe/France/Auvergne-Rhône-Alpes/Saint Christophe
+Europe/France/Auvergne-Rhône-Alpes/Rive de Giers	Europe/France/Auvergne-Rhône-Alpes/Rive de Gier
 Europe/France/Provence-Alpes-Côte-D’Azur/*	Europe/France/Provence-Alpes-Côte d'Azur/*
 Europe/France/Centre-Val de Loire/Angers	Europe/France/Pays de la Loire/Angers
 Europe/France/Centre-Val de Loire/Rouziers de Touraine	Europe/France/Centre-Val de Loire/Rouziers-de-Touraine
@@ -6641,7 +6643,8 @@ Europe/Spain/Balear Islands/Marratxi	Europe/Spain/Balear Islands/Marratxí
 Europe/Spain/Cantabria/Penacastillo	Europe/Spain/Cantabria/Peñacastillo
 Europe/Spain/Islas Canarias/*	Europe/Spain/Canary Islands/*
 Europe/Spain/Asturias/Oviedo City	Europe/Spain/Asturias/Oviedo
-Europe/Spain/La Rioja/Albelda	Europe/Spain/La Rioja/Albelda de Iregua
+Europe/Spain/La Rioja/Albelda	Europe/Spain/La Rioja ES/Albelda de Iregua
+Europe/Spain/La Rioja/*	Europe/Spain/La Rioja ES/*
 Europe/Spain/Cataluna/*	Europe/Spain/Catalunya/*
 Europe/Spain/Castilla y Leon/Astorga	Europe/Spain/Castilla y Leon/Astorga ES
 Europe/Spain/Castilla y Leon/Villamor De Orbigo	Europe/Spain/Castilla y Leon/Villarejo de Orbigo
@@ -6888,6 +6891,30 @@ Europe/Poland/Swietokrzyskie/Trzeszczany	Europe/Poland/Lubelskie/Gmina Trzeszcza
 Europe/Poland/Swietokrzyskie/Leczna	Europe/Poland/Lubelskie/Leczna
 Europe/Poland/Swietokrzyskie/Busko - Zdroj	Europe/Poland/Swietokrzyskie/Busko-Zdrój
 Europe/Poland/Swietokrzyskie/Skarzysko - Kamienna	Europe/Poland/Swietokrzyskie/Skarzysko-Kamienna
+Europe/Poland/Kartuzy/	Europe/Poland/Pomorskie/Kartuzy
+Europe/Poland/Wejherowo/	Europe/Poland/Pomorskie/Wejherowo
+Europe/Poland/Czluchow/	Europe/Poland/Pomorskie/Czluchow
+Europe/Poland/Chojnice/	Europe/Poland/Pomorskie/Chojnice
+Europe/Poland/Puck/	Europe/Poland/Pomorskie/Puck
+Europe/Poland/Pruszcz Gdanski/	Europe/Poland/Pomorskie/Pruszcz Gdanski
+Europe/Poland/Tczew/	Europe/Poland/Pomorskie/Tczew
+Europe/Poland/Warszawa/	Europe/Poland/Mazowieckie/Warszawa
+Europe/Poland/Radom/	Europe/Poland/Mazowieckie/Radom
+Europe/Poland/Siedlce/	Europe/Poland/Mazowieckie/Siedlce
+Europe/Poland/Plock/	Europe/Poland/Mazowieckie/Plock
+Europe/Poland/Minsk Mazowiecki/	Europe/Poland/Mazowieckie/Minsk Mazowiecki
+Europe/Poland/Piaseczno/	Europe/Poland/Mazowieckie/Piaseczno
+Europe/Poland/Bialobrzegi/	Europe/Poland/Mazowieckie/Bialobrzegi
+Europe/Poland/Tuchola/	Europe/Poland/Kujawsko-Pomorskie/Tuchola
+Europe/Poland/Koscierzyna/	Europe/Poland/Pomorskie/Kościerzyna
+Europe/Poland/Slupsk/	Europe/Poland/Pomorskie/Słupsk
+Europe/Poland/Otwock/	Europe/Poland/Mazowieckie/Otwock
+Europe/Poland/Sochaczew/	Europe/Poland/Mazowieckie/Sochaczew
+Europe/Poland/Warszawa Zachow/	Europe/Poland/Mazowieckie/Warszawa
+Europe/Poland/Gostynin/	Europe/Poland/Mazowieckie/Gostynin
+Europe/Poland/Legionowo/	Europe/Poland/Mazowieckie/Legionowo
+Europe/Poland/Węgrow/	Europe/Poland/Mazowieckie/Węgrow
+Europe/Poland/Zyrardow/	Europe/Poland/Mazowieckie/Zyrardow
 Europe/Italy/Apulia/Bat	Europe/Italy/Apulia/Barletta-Andria-Trani
 Europe/Italy/Apulia/Potenza	Europe/Italy/Basilicata/Potenza
 Europe/Italy/Padova/	Europe/Italy/Veneto/Padova
@@ -7105,6 +7132,7 @@ Europe/Austria/Manning/	Europe/Austria/Upper Austria/Manning
 Europe/Austria/Pöndorf/	Europe/Austria/Upper Austria/Pöndorf
 Europe/Austria/Nussdorf Am Attersee/	Europe/Austria/Upper Austria/Nussdorf Am Attersee
 Europe/Austria/Ziar nad Hronom/	Europe/Slovakia/Banska Bystrica/Ziar nad Hronom
+Europe/Austria/East Tyrol/*	Europe/Austria/Tyrol/*
 Europe/Romania/Lalomita/*	Europe/Romania/Ialomița/*
 Europe/Romania/Ialomita/*	Europe/Romania/Ialomița/*
 Europe/Romania/Targu Mures/	Europe/Romania/Mures/Targu Mures
@@ -7590,6 +7618,7 @@ Asia/China/Hong Kong/Hong Kong	Asia/Hong Kong/Hong Kong/Hong Kong
 Asia/China/Hong Kong/	Asia/Hong Kong/Hong Kong/Hong Kong
 Asia/China/Changde/	Asia/China/Hunan/Changde
 Asia/China/Huanan City/	Asia/China/Heilongjiang/Huanan City
+Asia/China/Lu'An/	Asia/China/Anhui/Lu'An
 Asia/South Korea/Gyeonggi-do/	Asia/South Korea/Gyeonggi Province/Gyeonggi
 Asia/South Korea/Chungcheongnam-do/	Asia/South Korea/Chungcheongnam/Chungcheongnam
 Asia/South Korea/Uijeongbu/	Asia/South Korea/Gyeonggi Province/Uijeongbu
@@ -7819,6 +7848,7 @@ Asia/Philippines/Taguig City/	Asia/Philippines/Manila/Taguig City
 Asia/Philippines/Navotas City/	Asia/Philippines/Manila/Navotas City
 Asia/Philippines/Manila City/	Asia/Philippines/Manila/Manila City
 Asia/Philippines/Caloocan City/	Asia/Philippines/Manila/Caloocan City
+Asia/Philippines/Davao/*	Asia/Philippines/Davao Region/*
 Asia/Indonesia/Special Region of Yogyakarta/*	Asia/Indonesia/Yogyakarta/*
 Asia/Indonesia/Central Kalimantan/*	Asia/Indonesia/Center Kalimantan/*
 Asia/Indonesia/Bangka Belitung Islands/*	Asia/Indonesia/Kepulauan Bangka Belitung/*
@@ -7913,6 +7943,8 @@ North America/Mexico/Tamaullipas/*	North America/Mexico/Tamaulipas/*
 North America/Mexico/Quintanaroo/*	North America/Mexico/Quintana Roo/*
 North America/Mexico/Distrito Federal/*	North America/Mexico/Mexico City/*
 North America/Mexico/Yucatán/*	North America/Mexico/Yucatan/*
+North America/Mexico/Ganajuato/*	North America/Mexico/Guanajuato/*
+North America/Mexico/Baja California/Ensenada	North America/Mexico/Baja California/Ensenada MX
 North America/USA/Illinois/Winnebago County	North America/USA/Illinois/Winnebago County IL
 North America/USA/Illinois/Dekalb County	North America/USA/Illinois/Dekalb County IL
 North America/USA/Illinois/Randolph County	North America/USA/Illinois/Randolph County IL
@@ -8086,6 +8118,7 @@ North America/USA/Illinois/Tazwell	North America/USA/Illinois/Tazewell County IL
 North America/USA/Illinois/Piatt	North America/USA/Illinois/Piatt County
 North America/USA/Illinois/Union	North America/USA/Illinois/Union County IL
 North America/USA/Illinois/Wayne County	North America/USA/Illinois/Wayne County IL
+North America/USA/Illinois/Effingham	North America/USA/Illinois/Effingham County
 North America/USA/Wisconsin/Monroe County	North America/USA/Wisconsin/Monroe County WI
 North America/USA/Wisconsin/Richland County	North America/USA/Wisconsin/Richland County WI
 North America/USA/Wisconsin/Grant County	North America/USA/Wisconsin/Grant County WI
@@ -9075,6 +9108,9 @@ South America/Argentina/Buenos Aires/Jose C Paz	South America/Argentina/Buenos A
 South America/Argentina/Buenos Aires/San Martin AR	South America/Argentina/Buenos Aires/San Martin BA
 South America/Argentina/Buenos Aires/San Martin	South America/Argentina/Buenos Aires/San Martin BA
 South America/Argentina/Buenos Aires/Pilar	South America/Argentina/Buenos Aires/Pilar AR
+South America/Argentina/Buenos Aires/Gral Rodriguez	South America/Argentina/Buenos Aires/General Rodriguez
+South America/Argentina/Buenos Aires/San Miguel	South America/Argentina/Buenos Aires/San Miguel AR
+South America/Argentina/Buenos Aires/Ensenada	South America/Argentina/Buenos Aires/Ensenada AR
 South America/Argentina/Santa Fe/Santa Fe	South America/Argentina/Santa Fe/Santa Fe AR
 South America/Argentina/Santa Fe/San Carlos	South America/Argentina/Santa Fe/San Carlos AR
 South America/Argentina/Santa Fe/Avellaneda	South America/Argentina/Santa Fe/Avellaneda AR
@@ -9103,6 +9139,9 @@ South America/Argentina/Mendoza/Maipu	South America/Argentina/Mendoza/Maipu AR
 South America/Argentina/Chaco/El Sauzalito	South America/Argentina/Chaco/Sauzalito
 South America/Argentina/Chaco/Saenz Peña	South America/Argentina/Chaco/Sanz Peña
 South America/Argentina/Ciudad de Buenos Aires/*	South America/Argentina/Buenos Aires/*
+South America/Argentina/La Rioja/*	South America/Argentina/La Rioja AR/*
+South America/Argentina/Santa Cruz/*	South America/Argentina/Santa Cruz AR/*
+South America/Argentina/Entre Rios/Colon	South America/Argentina/Entre Rios/Colon AR
 South America/Ecuador/Quito/	South America/Ecuador/Pichincha/Quito
 South America/Ecuador/Guayaquil/	South America/Ecuador/Guayas/Guayaquil
 South America/Ecuador/Carchi/Reciento	South America/Ecuador/Carchi/Awa Reserve
@@ -9122,11 +9161,12 @@ South America/Ecuador/Gusayas/*	South America/Ecuador/Guayas/*
 South America/Ecuador/Daule/	South America/Ecuador/Guayas/Daule
 South America/Ecuador/Esmeraldas/Esmeraldas	South America/Ecuador/Esmeraldas/Esmeraldas EC
 South America/Ecuador/Manabi/Sucre	South America/Ecuador/Manabi/Sucre EC
+South America/Ecuador/Manabi/Colon	South America/Ecuador/Manabi/Colon EC
 South America/Ecuador/Cañar/Azoguez	South America/Ecuador/Cañar/Azogues
 South America/Ecuador/Loja/Loja	South America/Ecuador/Loja/Loja EC
 South America/Ecuador/Pichicnha/*	South America/Ecuador/Pichincha/*
 South America/Ecuador/Portoviejo/Pueblo Nuevo	South America/Ecuador/Manabi/Pueblo Nuevo EC
-South America/Ecuador/Portoviejo/Colon	South America/Ecuador/Manabi/Colon
+South America/Ecuador/Portoviejo/Colon	South America/Ecuador/Manabi/Colon EC
 South America/Ecuador/Portoviejo/18 de Octubre	South America/Ecuador/Manabi/18 de Octubre
 South America/Ecuador/Portoviejo/Andres de Vera	South America/Ecuador/Manabi/Andres de Vera
 South America/Ecuador/Portoviejo/San Pablo	South America/Ecuador/Manabi/San Pablo (Portoviejo)
@@ -9153,6 +9193,7 @@ South America/Chile/Nuble/*	South America/Chile/Ñuble/*
 South America/Chile/Region Metropolitana de Santiago/San Ramon	South America/Chile/Region Metropolitana de Santiago/San Ramon CL
 South America/Chile/Region Metropolitana de Santiago/Sanjoaquin	South America/Chile/Region Metropolitana de Santiago/San Joaquin
 South America/Chile/Region Metropolitana de Santiago/ÃUãOa	South America/Chile/Region Metropolitana de Santiago/Ñuñoa
+South America/Chile/Region Metropolitana de Santiago/San Miguel	South America/Chile/Region Metropolitana de Santiago/San Miguel CL
 South America/Chile/Valparaiso/San Felipe	South America/Chile/Valparaiso/San Felipe CL
 South America/Chile/Valparaiso/Viña del Mar	South America/Chile/Valparaiso/Vina del Mar
 South America/Chile/Valparaiso/Valparaiso	South America/Chile/Valparaiso/Valparaiso CL
@@ -9201,9 +9242,10 @@ South America/Uruguay/Chuy/	South America/Uruguay/Rocha/Chuy
 South America/Uruguay/Bella Union/	South America/Uruguay/Artigas/Bella Union
 South America/Uruguay/San Jose/*	South America/Uruguay/Departamento San Jose/*
 South America/Uruguay/Rio Negro/*	South America/Uruguay/Departamento Rio Negro/*
-South America/Bolivia/Santa Cruz-El Torno/*	South America/Bolivia/Santa Cruz/El Torno
-South America/Bolivia/Santa Cruz-Pailon/*	South America/Bolivia/Santa Cruz/Pailon
+South America/Bolivia/Santa Cruz-El Torno/*	South America/Bolivia/Santa Cruz BO/El Torno
+South America/Bolivia/Santa Cruz-Pailon/*	South America/Bolivia/Santa Cruz BO/Pailon
 South America/Bolivia/Sucre/	South America/Bolivia/Chuquisaca/Sucre BO
+South America/Bolivia/Santa Cruz/*	South America/Bolivia/Santa Cruz BO/*
 South America/Guyane Francaise/Guyane Francaise/	Europe/France/French Guiana/
 South America/Guyane Francaise/Cayenne/	Europe/France/French Guiana/Cayenne GF
 South America/French Guiana/Cayenne/	Europe/France/French Guiana/Cayenne GF
@@ -9304,6 +9346,8 @@ Africa/Nigeria/Akwa-Ibom State/*	Africa/Nigeria/Akwa-Ibom/*
 Africa/Nigeria/Fct/*	Africa/Nigeria/Federal Capital Territory/*
 Africa/Nigeria/Edo State/*	Africa/Nigeria/Edo/*
 Africa/Nigeria/Ebonyi State/*	Africa/Nigeria/Ebonyi/*
+Africa/Nigeria/Ogun/*	Africa/Nigeria/Ogun State/*
+Africa/Nigeria/Nasarawa/*	Africa/Nigeria/Nasarawa State/*
 Africa/Côte D'Ivoire/Boauké/	Africa/Côte d'Ivoire/Bouaké/
 Africa/Côte D'Ivoire/Brobo/	Africa/Côte d'Ivoire/Bouaké/Brobo
 Africa/Côte D'Ivoire/*/*	Africa/Côte d'Ivoire/*/*
@@ -9399,6 +9443,7 @@ Africa/Congo/*/*	Africa/Republic of the Congo/*/*
 Africa/Guyane/Cayenne/	Europe/France/French Guiana/Cayenne GF
 Africa/Mauritius/Plaine Wilhems/*	Africa/Mauritius/Plaine-Wilhems/*
 Africa/Mauritius/Mauritian/	Africa/Mauritius/Mauritius/
+Africa/Somalia/Marodi-Jex/*	Africa/Somalia/Maroodi Jeex/*
 Italy/Apulia/Bari/	Europe/Italy/Apulia/Bari
 North Macedonia/Kochani/Kochani/	Europe/North Macedonia/Eastern Region MK/Kochani
 North Macedonia/Kavadarci/Kavadarci/	Europe/North Macedonia/Kavadarci/Kavadarci
@@ -9515,7 +9560,3 @@ Afrique/*/*/*	Africa/*/*/*
 Switzerland/Basel-Landschaft/*/*	Europe/Switzerland/Basel-Land/*
 Euorpe/Italy/Umbria/	Europe/Italy/Umbria/
 Aisa/Malaysia/*/*	Asia/Malaysia/*/*
-Asia/Philippines/Davao/*	Asia/Philippines/Davao Region/*
-Europe/Austria/East Tyrol/*	Europe/Austria/Tyrol/*
-Africa/Somalia/Marodi-Jex/*	Africa/Somalia/Maroodi Jeex/*
-North America/Mexico/Ganajuato/*	North America/Mexico/Guanajuato/*
