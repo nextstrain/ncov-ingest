@@ -259,12 +259,12 @@ rule notify_and_upload:
     params :
         database="{database}",
         idcolumn=lambda wildcards : config['idcolumn'][wildcards.database],
-        destination_metadata = "$S3_SRC/{database}_metadata.tsv.gz",
-        destination_additional_info = "$S3_SRC/{database}_additional_info.tsv.gz",
-        destination_flagged_metadata = "$S3_SRC/{database}_flagged_metadata.txt.gz",
-        destination_sequences = "$S3_SRC/{database}_sequences.fasta.gz",
+        destination_metadata = S3_DST+"/{database}_metadata.tsv.gz",
+        destination_additional_info = S3_DST+"/{database}_additional_info.tsv.gz",
+        destination_flagged_metadata = S3_DST+"/{database}_flagged_metadata.txt.gz",
+        destination_sequences = S3_DST+"{database}_sequences.fasta.gz",
         destination_nextclade = S3_DST+"/nextclade.tsv.gz", # intead of "$S3_SRC/nextclade.tsv.gz" ... 
-        destination_json = "$S3_SRC/{database}.ndjson.gz",
+        destination_json = S3_DST+"/{database}.ndjson.gz",
         slack_channel = lambda wildcards : config['slack_channel'][wildcards.database],
 
     run :
@@ -357,7 +357,7 @@ rule notify_and_upload:
             # "Notifying Slack about additional info change."
             shell(f"""
 
-                diff="$(mktemp -t location-hierarchy-changes-XXXXXX)"
+                diff="$(mktemp -t additionnal-info-changes-XXXXXX)"
                 trap "rm -f '$diff'" EXIT
 
                 ./bin/compute-additional-info-change {input.additional_info} "{params.destination_additional_info}" $diff
@@ -400,16 +400,16 @@ rule notify_and_upload:
             """)
 
 
-        shell('./bin/upload-to-s3 {input.json} "{params.destination_json}"')
-
-        shell("""
-            ./bin/upload-to-s3 {input.metadata} "{params.destination_metadata}"
-            ./bin/upload-to-s3 {input.sequences} "{params.destination_sequences}"
-            ./bin/upload-to-s3 {input.nextclade} "{params.destination_nextclade}"
-   
-            ./bin/upload-to-s3 {input.additional_info} "{params.destination_additional_info}"
-            ./bin/upload-to-s3 {input.flagged_metadata} "{params.destination_flagged_metadata}"
-        """)
+#        shell('./bin/upload-to-s3 {input.json} "{params.destination_json}"')
+#
+#        shell("""
+#            ./bin/upload-to-s3 {input.metadata} "{params.destination_metadata}"
+#            ./bin/upload-to-s3 {input.sequences} "{params.destination_sequences}"
+#            ./bin/upload-to-s3 {input.nextclade} "{params.destination_nextclade}"
+#   
+#            ./bin/upload-to-s3 {input.additional_info} "{params.destination_additional_info}"
+#            ./bin/upload-to-s3 {input.flagged_metadata} "{params.destination_flagged_metadata}"
+#        """)
         if GIT_BRANCH == "snakemake" :
             shell("""
                 for dst in  "{params.destination_metadata}" "{params.destination_sequences}" "{params.destination_nextclade}" "{params.destination_additional_info}" "{params.destination_flagged_metadata}"
