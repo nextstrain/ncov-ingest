@@ -94,7 +94,7 @@ if [[ "$branch" == master ]]; then
 fi
 
 ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/metadata.tsv "$S3_DST/metadata.tsv.gz"
-./bin/upload-to-s3 ${silent:+--quiet} data/genbank/sequences.fasta "$S3_DST/sequences.fasta.gz"
+./bin/upload-to-s3 ${silent:+--quiet} data/genbank/sequences.fasta "$S3_DST/sequences.fasta.xz"
 ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/nextclade.tsv "$S3_DST/nextclade.tsv.gz"
 
 ./bin/clean
