@@ -24,6 +24,8 @@ column_map = {
     "qc.mixedSites.status": "QC_mixed_sites",
     "qc.privateMutations.status": "QC_rare_mutations",
     "qc.snpClusters.status": "QC_snp_clusters",
+    "substitutions": "substitutions",
+    "aaSubstitutions": "aaubstitutions"
 }
 
 def reorder_columns(result: pd.DataFrame):
