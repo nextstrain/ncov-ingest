@@ -171,7 +171,7 @@ upload-outputs() {
   ./bin/upload-to-s3 "${OUTPUT_DIR}/metadata.tsv" "${S3_BUCKET}/metadata.tsv.gz"
   ./bin/upload-to-s3 "${OUTPUT_DIR}/additional_info.tsv" "${S3_BUCKET}/additional_info.tsv.gz"
   ./bin/upload-to-s3 "${OUTPUT_DIR}/flagged_metadata.txt" "${S3_BUCKET}/flagged_metadata.txt.gz"
-  ./bin/upload-to-s3 "${OUTPUT_DIR}/sequences.fasta" "${S3_BUCKET}/sequences.fasta.gz"
+  ./bin/upload-to-s3 "${OUTPUT_DIR}/sequences.fasta" "${S3_BUCKET}/sequences.fasta.xz"
 }
 
 print-help() {
