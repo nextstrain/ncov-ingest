@@ -401,16 +401,16 @@ rule notify_and_upload:
             """)
 
 
-#        shell('./bin/upload-to-s3 {input.json} "{params.destination_json}"')
-#
-#        shell("""
-#            ./bin/upload-to-s3 {input.metadata} "{params.destination_metadata}"
-#            ./bin/upload-to-s3 {input.sequences} "{params.destination_sequences}"
-#            ./bin/upload-to-s3 {input.nextclade} "{params.destination_nextclade}"
-#   
-#            ./bin/upload-to-s3 {input.additional_info} "{params.destination_additional_info}"
-#            ./bin/upload-to-s3 {input.flagged_metadata} "{params.destination_flagged_metadata}"
-#        """)
+        shell('./bin/upload-to-s3 {input.json} "{params.destination_json}"')
+
+        shell("""
+            ./bin/upload-to-s3 {input.metadata} "{params.destination_metadata}"
+            ./bin/upload-to-s3 {input.sequences} "{params.destination_sequences}"
+            ./bin/upload-to-s3 {input.nextclade} "{params.destination_nextclade}"
+   
+            ./bin/upload-to-s3 {input.additional_info} "{params.destination_additional_info}"
+            ./bin/upload-to-s3 {input.flagged_metadata} "{params.destination_flagged_metadata}"
+        """)
         if GIT_BRANCH == "snakemake" :
             shell("""
                 for dst in  "{params.destination_metadata}" "{params.destination_sequences}" "{params.destination_nextclade}" "{params.destination_additional_info}" "{params.destination_flagged_metadata}"
