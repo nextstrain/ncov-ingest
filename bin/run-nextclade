@@ -38,10 +38,11 @@ pushd "${NEXTCLADE_INPUTS_DIR}" >/dev/null
   curl -fsSLOJ "${NEXTCLADE_INPUTS_URL_BASE}/primers.csv"
 popd >/dev/null
 
-printf "[ INFO] ${0}:${LINENO}: Running nextclade"
-/usr/bin/time -f 'Wall clock time:         %E\nMaximum resident memory: %M KB\n' \
+printf "[ INFO] ${0}:${LINENO}: Running nextclade\n"
+/usr/bin/time -f "[ INFO] ${0}:${LINENO}: Nextclade run statistics: Wall clock time: %E, Maximum resident memory: %M KB\n" \
 nextclade \
   --in-order \
+  --verbosity=error \
   --input-fasta="data/gisaid/nextclade.sequences.fasta" \
   --output-tsv="data/gisaid/nextclade.tsv" \
   --input-root-seq="${NEXTCLADE_INPUTS_DIR}/reference.fasta" \
@@ -50,5 +51,5 @@ nextclade \
   --input-qc-config="${NEXTCLADE_INPUTS_DIR}/qc.json" \
   --input-pcr-primers="${NEXTCLADE_INPUTS_DIR}/primers.csv" \
   --genes=E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S \
-  --output-dir="${NEXTCLADE_OUTPUTS_DIR}" \  # For peptides
-  --output-basename="nextclade"           # For peptides
+  --output-dir="${NEXTCLADE_OUTPUTS_DIR}" \
+  --output-basename="nextclade"
