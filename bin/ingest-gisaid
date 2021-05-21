@@ -93,16 +93,26 @@ main() {
       --input_tsv="data/gisaid/nextclade.tsv" \
       --output_fasta="data/gisaid/nextclade.sequences.fasta" \
 
-    # ... and assign clades to them
-    ./bin/run-nextclade \
-      "data/gisaid/nextclade.sequences.fasta" \
-      "data/gisaid/nextclade.tsv" \
+    # Check if the file with these extracted sequences is not empty
+    if [ ! -s "data/gisaid/nextclade.sequences.fasta" ]; then
+       printf "[ INFO] ${0}:${LINENO}: No new sequences for Nextclade to process. Skipping.\n"
+    else
 
-    # Join these clades into metadata
-    ./bin/join-metadata-and-clades \
-      "data/gisaid/metadata.tsv" \
-      "data/gisaid/nextclade.tsv" \
-      -o "data/gisaid/metadata.tsv"
+      # And if it's not empty, run nextclade analysis on these sequences,
+      # to assign clades and calculate other useful metrics
+      ./bin/run-nextclade \
+        "data/gisaid/nextclade.sequences.fasta" \
+        "data/gisaid/nextclade.tsv" \
+        "data/gisaid/nextclade-inputs" \
+        "data/gisaid/nextclade"
+
+      # Join clades and analysis results into metadata
+      ./bin/join-metadata-and-clades \
+        "data/gisaid/metadata.tsv" \
+        "data/gisaid/nextclade.tsv" \
+        -o "data/gisaid/metadata.tsv"
+
+    fi
 
     ./bin/flag-metadata data/gisaid/metadata.tsv > data/gisaid/flagged_metadata.txt
     ./bin/check-locations data/gisaid/metadata.tsv \
