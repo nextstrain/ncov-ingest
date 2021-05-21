@@ -55,6 +55,7 @@ Africa	Burkina Faso	Boucle du Mouhoun Region	Boromo
 Africa	Burkina Faso	Burkina Faso	
 Africa	Burkina Faso	Cascades	
 Africa	Burkina Faso	Cascades	Banfora
+Africa	Burkina Faso	Diebougou	
 Africa	Burkina Faso	Hauts-Bassins	
 Africa	Burkina Faso	Hauts-Bassins	Bobo Dioulasso
 Africa	Burkina Faso	Hauts-Bassins	Houndé
@@ -274,6 +275,7 @@ Africa	Namibia	Oshikoto
 Africa	Namibia	Otjozondjupa	
 Africa	Namibia	Zambezi	
 Africa	Namibia	ǁKaras	
+Africa	Niger	Niamey	
 Africa	Niger	Niger	
 Africa	Nigeria	Abuja	
 Africa	Nigeria	Adamawa	
@@ -342,12 +344,15 @@ Africa	South Africa	Eastern Cape
 Africa	South Africa	Eastern Cape	Amathole
 Africa	South Africa	Eastern Cape	Buffalo City
 Africa	South Africa	Eastern Cape	Chris Hani
+Africa	South Africa	Eastern Cape	Jeffreys Bay
 Africa	South Africa	Eastern Cape	Joe Gqabi
 Africa	South Africa	Eastern Cape	Kempton Park
 Africa	South Africa	Eastern Cape	Middleburg
 Africa	South Africa	Eastern Cape	Nelson Mandela Bay
 Africa	South Africa	Eastern Cape	Sarah Baartman
 Africa	South Africa	Free State	
+Africa	South Africa	Free State	Kroonstad
+Africa	South Africa	Free State	Welkom
 Africa	South Africa	Gauteng	
 Africa	South Africa	Gauteng	City of Tshwane
 Africa	South Africa	Gauteng	Ekurhuleni Metro
@@ -357,6 +362,7 @@ Africa	South Africa	Gauteng	Midvaal
 Africa	South Africa	Gauteng	Mogale City
 Africa	South Africa	Gauteng	Moretele
 Africa	South Africa	Gauteng	Pretoria
+Africa	South Africa	Gauteng	Soshanguve
 Africa	South Africa	Gauteng	West Rand
 Africa	South Africa	KwaZulu-Natal	
 Africa	South Africa	KwaZulu-Natal	Amajuba
@@ -376,9 +382,13 @@ Africa	South Africa	KwaZulu-Natal	uMkhanyakude
 Africa	South Africa	KwaZulu-Natal	uMzinyathi
 Africa	South Africa	KwaZulu-Natal	uThukela
 Africa	South Africa	Limpopo	
+Africa	South Africa	Limpopo	Polokwane
 Africa	South Africa	Mpumalanga	
 Africa	South Africa	Mpumalanga	Dr. JS Moroka
+Africa	South Africa	Mpumalanga	Ermelo
+Africa	South Africa	Mpumalanga	Middelburg
 Africa	South Africa	Mpumalanga	Thembisile Hani
+Africa	South Africa	Mpumalanga	Trichardt
 Africa	South Africa	North-West	
 Africa	South Africa	Northern Cape	
 Africa	South Africa	Northern Cape	Alexander Bay
@@ -1302,6 +1312,7 @@ Asia	Myanmar	Rakhine
 Asia	Myanmar	Yangon	
 Asia	Nepal	Baglung	
 Asia	Nepal	Bhaktapur	
+Asia	Nepal	Central Nepal	
 Asia	Nepal	Dolakha	
 Asia	Nepal	Kapilvastu	
 Asia	Nepal	Kathmandu	
@@ -1407,6 +1418,7 @@ Asia	Philippines	Davao Region
 Asia	Philippines	Eastern Visayas	
 Asia	Philippines	Ilocos	
 Asia	Philippines	Kalinga	
+Asia	Philippines	Lanao del Norte	
 Asia	Philippines	Manila	
 Asia	Philippines	Manila	Caloocan City
 Asia	Philippines	Manila	Manila City
@@ -1612,6 +1624,7 @@ Europe	Austria	Lower Austria	Sankt Pölten-Stadt
 Europe	Austria	Lower Austria	Schwechat
 Europe	Austria	Lower Austria	Schönau an der Triesting
 Europe	Austria	Lower Austria	Sollenau
+Europe	Austria	Lower Austria	St. Valentin
 Europe	Austria	Lower Austria	St.Valentin
 Europe	Austria	Lower Austria	Strasshof an der Nordbahn
 Europe	Austria	Lower Austria	Thaya
@@ -1652,6 +1665,7 @@ Europe	Austria	Styria	Bad Gams
 Europe	Austria	Styria	Bad Mitterndorf
 Europe	Austria	Styria	Bruck-Mürzzuschlag
 Europe	Austria	Styria	Diemlach
+Europe	Austria	Styria	Feldbach
 Europe	Austria	Styria	Gamlitz
 Europe	Austria	Styria	Graz
 Europe	Austria	Styria	Gutenberg-Stenzengreith
@@ -1722,6 +1736,7 @@ Europe	Austria	Upper Austria
 Europe	Austria	Upper Austria	Aigen-Voglhub
 Europe	Austria	Upper Austria	Altenhof Am Hausruck
 Europe	Austria	Upper Austria	Altmünster
+Europe	Austria	Upper Austria	Ampflwang Im Hausruckwald
 Europe	Austria	Upper Austria	Attersee
 Europe	Austria	Upper Austria	Attnang-Puchheim
 Europe	Austria	Upper Austria	Aurach Am Hongar
@@ -1763,6 +1778,9 @@ Europe	Austria	Upper Austria	Mondsee
 Europe	Austria	Upper Austria	Natternbach
 Europe	Austria	Upper Austria	Neukirchen
 Europe	Austria	Upper Austria	Nussdorf Am Attersee
+Europe	Austria	Upper Austria	Oberndorf bei Schwanenstadt
+Europe	Austria	Upper Austria	Oberwang
+Europe	Austria	Upper Austria	Oberweis
 Europe	Austria	Upper Austria	Ohlsdorf
 Europe	Austria	Upper Austria	Pettenbach
 Europe	Austria	Upper Austria	Pfaffing
@@ -1782,7 +1800,9 @@ Europe	Austria	Upper Austria	St. Konrad
 Europe	Austria	Upper Austria	Steinerkirchen an der Traun
 Europe	Austria	Upper Austria	Steyr-Land
 Europe	Austria	Upper Austria	Timelkam
+Europe	Austria	Upper Austria	Traunkirchen
 Europe	Austria	Upper Austria	Unterach Am Attersee
+Europe	Austria	Upper Austria	Vorchdorf
 Europe	Austria	Upper Austria	Vöcklabruck
 Europe	Austria	Upper Austria	Vöcklamarkt
 Europe	Austria	Upper Austria	Weißkirchen An Der Traun
@@ -3456,6 +3476,7 @@ Europe	France	Hauts de France
 Europe	France	Hauts de France	Amiens
 Europe	France	Hauts de France	Armentieres
 Europe	France	Hauts de France	Arras
+Europe	France	Hauts de France	Beauvais
 Europe	France	Hauts de France	Bethune
 Europe	France	Hauts de France	Boulogne sur Mer
 Europe	France	Hauts de France	Bousbecque
@@ -3568,6 +3589,7 @@ Europe	France	Lorraine
 Europe	France	Lorraine	Epinal
 Europe	France	Martinique	
 Europe	France	Martinique	Fort-de-France
+Europe	France	Martinique	Le Lamentin
 Europe	France	Martinique	Schoelcher
 Europe	France	Mayotte	
 Europe	France	Mayotte	Mamoudzou
@@ -3656,6 +3678,7 @@ Europe	France	Pays de la Loire	Challans
 Europe	France	Pays de la Loire	Chateau-Gontier
 Europe	France	Pays de la Loire	Cholet
 Europe	France	Pays de la Loire	Fontenay le Comte
+Europe	France	Pays de la Loire	La Fleche
 Europe	France	Pays de la Loire	La Roche-sur-Yon
 Europe	France	Pays de la Loire	Laval
 Europe	France	Pays de la Loire	Le Mans
@@ -6065,6 +6088,7 @@ Europe	Slovakia	Prešov
 Europe	Slovakia	Prešov	Batizovce
 Europe	Slovakia	Prešov	Bela nad Cirochou
 Europe	Slovakia	Prešov	Brezovica
+Europe	Slovakia	Prešov	Brezovica (Prešov)
 Europe	Slovakia	Prešov	Dlhe nad Cirochou
 Europe	Slovakia	Prešov	Doľany
 Europe	Slovakia	Prešov	Hniezdne
@@ -6685,13 +6709,18 @@ Europe	Spain	Castilla la Mancha	Cuenca ES
 Europe	Spain	Castilla la Mancha	Daimiel
 Europe	Spain	Castilla la Mancha	Driebes
 Europe	Spain	Castilla la Mancha	El Casar
+Europe	Spain	Castilla la Mancha	Espinosa de Henares
 Europe	Spain	Castilla la Mancha	Fernan Caballero
 Europe	Spain	Castilla la Mancha	Fuente el Fresno
+Europe	Spain	Castilla la Mancha	Fuentenovilla
+Europe	Spain	Castilla la Mancha	Galapagos ES
 Europe	Spain	Castilla la Mancha	Guadalajara
 Europe	Spain	Castilla la Mancha	Hellin
 Europe	Spain	Castilla la Mancha	Hinojosas Calatrava
 Europe	Spain	Castilla la Mancha	Horcajo de los Montes
+Europe	Spain	Castilla la Mancha	Horche
 Europe	Spain	Castilla la Mancha	Humanes
+Europe	Spain	Castilla la Mancha	Iriepal
 Europe	Spain	Castilla la Mancha	Jadraque
 Europe	Spain	Castilla la Mancha	La Solana
 Europe	Spain	Castilla la Mancha	Lezuza
@@ -6734,6 +6763,7 @@ Europe	Spain	Castilla la Mancha	Villarrobledo
 Europe	Spain	Castilla la Mancha	Villarrubia de los Ojos
 Europe	Spain	Castilla la Mancha	Villel de Mesa
 Europe	Spain	Castilla la Mancha	Yebes
+Europe	Spain	Castilla la Mancha	Yunquera de Henares
 Europe	Spain	Castilla y Leon	
 Europe	Spain	Castilla y Leon	Algadefe
 Europe	Spain	Castilla y Leon	Alija Del Infantado
@@ -10865,6 +10895,7 @@ South America	Colombia	Antioquia	Apartado
 South America	Colombia	Antioquia	Argelia
 South America	Colombia	Antioquia	Bello
 South America	Colombia	Antioquia	Caldas
+South America	Colombia	Antioquia	Caldas (Antioquia)
 South America	Colombia	Antioquia	Copacabana
 South America	Colombia	Antioquia	Envigado
 South America	Colombia	Antioquia	Estrella
