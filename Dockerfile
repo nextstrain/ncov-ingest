@@ -46,6 +46,7 @@ RUN apt-get install -y --no-install-recommends gnupg1 \
 # Install Node.js and Yarn, along with a Python package for which Python 3.7
 # wheels do not yet exist on PyPI.
 RUN apt-get update && apt-get install -y --no-install-recommends \
+        xz-utils \
         nodejs \
         python3-netifaces \
         yarn
