@@ -60,6 +60,11 @@ COPY package.json yarn.lock /nextstrain/ncov-ingest/
 RUN cd /nextstrain/ncov-ingest && yarn install --non-interactive
 ENV PATH="/nextstrain/ncov-ingest/node_modules/.bin:$PATH"
 
+# Install Nextclade C++
+RUN curl -fsSL https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-Linux-x86_64 \
+         -o /usr/local/bin/nextclade \
+ && chmod a+rx /usr/local/bin/nextclade
+
 # Put any bin/ dir in the cwd on the path for more convenient invocation of
 # ncov-ingest's programs.
 ENV PATH="./bin:$PATH"
