@@ -24,7 +24,7 @@ main() {
     local key="${s3path#*/}"
 
     local src_hash dst_hash no_hash=0000000000000000000000000000000000000000000000000000000000000000
-    dst_hash="$(sha256sum $dst 2>/dev/null | awk '{ print $1 }' || true)"
+    dst_hash="$(sha256sum "$dst" 2>/dev/null | awk '{ print $1 }' || true)"
     src_hash="$(aws s3api head-object --bucket "$bucket" --key "$key" --query Metadata.sha256sum --output text || echo "$no_hash")"
 
     echo "$src_hash $src"
