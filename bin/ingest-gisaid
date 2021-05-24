@@ -95,7 +95,7 @@ main() {
 
     # Check if the file with these extracted sequences is not empty
     if [ ! -s "data/gisaid/nextclade.sequences.fasta" ]; then
-       printf "[ INFO] ${0}:${LINENO}: No new sequences for Nextclade to process. Skipping.\n"
+       echo "[ INFO] ${0}:${LINENO}: No new sequences for Nextclade to process. Skipping."
     else
 
       # And if it's not empty, run nextclade analysis on these sequences,
