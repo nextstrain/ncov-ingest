@@ -27,7 +27,7 @@ jobs:
           GITHUB_REF \
           SLACK_TOKEN
 
-        nextstrain build \
+        stdbuf -i0 -o0 -e0 nextstrain build \
           --aws-batch \
           --no-download \
           --image nextstrain/ncov-ingest \
@@ -35,7 +35,7 @@ jobs:
           --memory 15GiB \
           --exec env \
           . \
-            envdir env.d ingest-gisaid --fetch
+            stdbuf -i0 -o0 -e0 envdir env.d ingest-gisaid --fetch
       env:
         AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
