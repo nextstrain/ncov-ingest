@@ -17,12 +17,12 @@ OUTPUT_TSV="${2}"
 NEXTCLADE_INPUTS_DIR="${3}" # external data required for nextclade to function will be downloaded there
 NEXTCLADE_OUTPUTS_DIR="${4}" # files other than TSV will be written by Nextclade there (aligned sequences, peptides, etc.)
 
-if ! command -v nextclade &>/dev/null; then
+if ! command -v /usr/local/bin/nextclade &>/dev/null; then
   printf "[ERROR] ${0}:${LINENO}: Nextclade executable not found\n"
   exit 1
 fi
 
-NEXTCLADE_VERSION="$(nextclade --version)"
+NEXTCLADE_VERSION="$(/usr/local/bin/nextclade --version)"
 printf "[ INFO] ${0}:${LINENO}: Nextclade version: ${NEXTCLADE_VERSION}\n"
 
 NEXTCLADE_INPUTS_URL_BASE="https://raw.githubusercontent.com/nextstrain/nextclade/${NEXTCLADE_VERSION}/data/sars-cov-2"
@@ -40,7 +40,7 @@ popd >/dev/null
 
 printf "[ INFO] ${0}:${LINENO}: Running nextclade\n"
 /usr/bin/time -f "[ INFO] ${0}:${LINENO}: Nextclade run statistics: Wall clock time: %E, Maximum resident memory: %M KB\n" \
-nextclade \
+/usr/local/bin/nextclade \
   --in-order \
   --verbosity=error \
   --input-fasta="data/gisaid/nextclade.sequences.fasta" \
