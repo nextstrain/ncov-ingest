@@ -85,6 +85,9 @@ response.raise_for_status()
 
 response_content = response.iter_lines(decode_unicode = True)
 
+# 10 MiB; default is 128 KiB
+csv.field_size_limit(10 * 1024 * 1024)
+
 for row in csv.DictReader(response_content):
     json.dump(row, stdout, allow_nan = False, indent = None, separators = ',:')
     print()
