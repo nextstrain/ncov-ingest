@@ -85,12 +85,12 @@ main() {
     (   aws s3 cp --no-progress "$S3_DST/nextclade.tsv.gz" - \
      || aws s3 cp --no-progress "$S3_SRC/nextclade.tsv.gz" -) \
         | gunzip -cfq \
-        > "data/gisaid/nextclade.tsv"
+        > "data/gisaid/nextclade_old.tsv"
 
     # Find sequences in FASTA which don't have clades assigned yet
     ./bin/filter-fasta \
       --input_fasta="data/gisaid/sequences.fasta" \
-      --input_tsv="data/gisaid/nextclade.tsv" \
+      --input_tsv="data/gisaid/nextclade_old.tsv" \
       --output_fasta="data/gisaid/nextclade.sequences.fasta" \
 
     # Check if the file with these extracted sequences is not empty
@@ -102,16 +102,21 @@ main() {
       # to assign clades and calculate other useful metrics
       ./bin/run-nextclade \
         "data/gisaid/nextclade.sequences.fasta" \
-        "data/gisaid/nextclade.tsv" \
+        "data/gisaid/nextclade_new.tsv" \
         "data/gisaid/nextclade-inputs" \
         "data/gisaid/nextclade"
 
       # Join clades and analysis results into metadata
       ./bin/join-metadata-and-clades \
         "data/gisaid/metadata.tsv" \
-        "data/gisaid/nextclade.tsv" \
+        "data/gisaid/nextclade_new.tsv" \
         -o "data/gisaid/metadata.tsv"
 
+      # Join new and old clades, so that next run won't need to process sequences that are already processed
+      ./bin/join-rows \
+        "data/gisaid/nextclade_old.tsv" \
+        "data/gisaid/nextclade_new.tsv" \
+        -o "data/gisaid/nextclade.tsv"
     fi
 
     ./bin/flag-metadata data/gisaid/metadata.tsv > data/gisaid/flagged_metadata.txt
