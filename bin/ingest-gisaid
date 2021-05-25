@@ -96,6 +96,7 @@ main() {
     # Check if the file with these extracted sequences is not empty
     if [ ! -s "data/gisaid/nextclade.sequences.fasta" ]; then
        echo "[ INFO] ${0}:${LINENO}: No new sequences for Nextclade to process. Skipping."
+       mv data/gisaid/nextclade_old.tsv data/gisaid/nextclade.tsv
     else
 
       # And if it's not empty, run nextclade analysis on these sequences,
@@ -112,13 +113,13 @@ main() {
         "data/gisaid/nextclade_new.tsv" \
         -o "data/gisaid/nextclade.tsv"
 
-      # Join clades and analysis results into metadata
-      ./bin/join-metadata-and-clades \
-        "data/gisaid/metadata.tsv" \
-        "data/gisaid/nextclade.tsv" \
-        -o "data/gisaid/metadata.tsv"
-
     fi
+
+    # Join clades and analysis results into metadata
+    ./bin/join-metadata-and-clades \
+      "data/gisaid/metadata.tsv" \
+      "data/gisaid/nextclade.tsv" \
+      -o "data/gisaid/metadata.tsv"
 
     ./bin/flag-metadata data/gisaid/metadata.tsv > data/gisaid/flagged_metadata.txt
     ./bin/check-locations data/gisaid/metadata.tsv \
