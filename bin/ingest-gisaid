@@ -106,17 +106,18 @@ main() {
         "data/gisaid/nextclade-inputs" \
         "data/gisaid/nextclade"
 
-      # Join clades and analysis results into metadata
-      ./bin/join-metadata-and-clades \
-        "data/gisaid/metadata.tsv" \
-        "data/gisaid/nextclade_new.tsv" \
-        -o "data/gisaid/metadata.tsv"
-
       # Join new and old clades, so that next run won't need to process sequences that are already processed
       ./bin/join-rows \
         "data/gisaid/nextclade_old.tsv" \
         "data/gisaid/nextclade_new.tsv" \
         -o "data/gisaid/nextclade.tsv"
+
+      # Join clades and analysis results into metadata
+      ./bin/join-metadata-and-clades \
+        "data/gisaid/metadata.tsv" \
+        "data/gisaid/nextclade.tsv" \
+        -o "data/gisaid/metadata.tsv"
+
     fi
 
     ./bin/flag-metadata data/gisaid/metadata.tsv > data/gisaid/flagged_metadata.txt
