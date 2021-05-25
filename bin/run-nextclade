@@ -43,8 +43,8 @@ echo "[ INFO] ${0}:${LINENO}: Running Nextclade"
 /usr/local/bin/nextclade \
   --in-order \
   --verbosity=error \
-  --input-fasta="data/gisaid/nextclade.sequences.fasta" \
-  --output-tsv="data/gisaid/nextclade.tsv" \
+  --input-fasta="${INPUT_FASTA}" \
+  --output-tsv="${OUTPUT_TSV}" \
   --input-root-seq="${NEXTCLADE_INPUTS_DIR}/reference.fasta" \
   --input-gene-map="${NEXTCLADE_INPUTS_DIR}/genemap.gff" \
   --input-tree="${NEXTCLADE_INPUTS_DIR}/tree.json" \
