@@ -16,7 +16,7 @@ reference_day = datetime(2020,1,1).toordinal()
 column_map = {
     "clade": "Nextstrain_clade",
     "totalMissing": "missing_data",
-    "totalMutations": "divergence",
+    "totalSubstitutions": "divergence",
     "totalNonACGTNs": "nonACGTN",
     "qc.privateMutations.total":  "rare_mutations",
     "qc.snpClusters.totalSNPs": "snp_clusters",
