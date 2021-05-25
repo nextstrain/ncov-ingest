@@ -39,7 +39,7 @@ pushd "${NEXTCLADE_INPUTS_DIR}" >/dev/null
 popd >/dev/null
 
 echo "[ INFO] ${0}:${LINENO}: Running Nextclade"
-/usr/bin/time -f "[ INFO] ${0}:${LINENO}: Nextclade run statistics: Wall clock time: %E, Maximum resident memory: %M KB\n" \
+# /usr/bin/time -f "[ INFO] ${0}:${LINENO}: Nextclade run statistics: Wall clock time: %E, Maximum resident memory: %M KB\n" \
 /usr/local/bin/nextclade \
   --in-order \
   --verbosity=error \
