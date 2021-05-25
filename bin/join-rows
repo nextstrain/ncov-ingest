@@ -1,0 +1,34 @@
+#!/usr/bin/env python3
+import argparse
+import sys
+
+import pandas as pd
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Joins rows of two TSV files, making sure to preserve all the columns and rows (full outer join)",
+    )
+    parser.add_argument("first_file")
+    parser.add_argument("second_file")
+    parser.add_argument("-o", default=sys.stdout)
+    return parser.parse_args()
+
+
+def main():
+    args = parse_args()
+
+    left = pd.read_csv(args.first_file, sep='\t', low_memory=False, na_filter = False)
+
+    try:
+        right = pd.read_csv(args.second_file, sep='\t', low_memory=False, na_filter = False)
+    except FileNotFoundError:
+        right = pd.DataFrame().reindex_like(left)
+
+    result = pd.concat([left, right], join='outer')
+
+    result.to_csv(args.o, index=False, sep='\t')
+
+
+if __name__ == '__main__':
+    main()
