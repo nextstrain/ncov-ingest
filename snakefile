@@ -168,14 +168,13 @@ rule download_old_clades :
     shell:
         '''
         set +e
-        #( aws s3 cp --no-progress "{params.dst_source}" - || aws s3 cp --no-progress "{params.src_source}" -) | gunzip -cfq > {output} 
-        ( aws s3 cp --no-progress "{params.src_source}" -) | gunzip -cfq > {output} 
+        ( aws s3 cp --no-progress "{params.dst_source}" - || aws s3 cp --no-progress "{params.src_source}" -) | gunzip -cfq > {output} 
+        #( aws s3 cp --no-progress "{params.src_source}" -) | gunzip -cfq > {output} 
         if [ ! -f {output} ]
         then
          exit 1
         fi
 
-        echo "{output} :" `wc -l {output}` 
         '''
 
 
@@ -188,9 +187,6 @@ rule filter_fasta :
     shell: 
         """./bin/filter-fasta --input_fasta={input.fasta} --input_tsv={input.tsv} --output_fasta={output}
 
-        echo "input " `grep -c ">" {input.fasta}`
-        echo "old   " `wc -l {input.tsv}`
-        echo "output" `grep -c ">" {output}`
         """
 
 rule run_nextclade :
@@ -273,7 +269,7 @@ rule notify_and_upload:
             print( "ERROR : no slack_token defined.\nDefine one using --config slack_token=..." , file = sys.stderr)
             exit(1)
 
-        if GIT_BRANCH == "snakemake" :
+        if GIT_BRANCH == "master" :
 
             shell( '''
                 dst={params.destination_json}
@@ -411,7 +407,7 @@ rule notify_and_upload:
             ./bin/upload-to-s3 {input.additional_info} "{params.destination_additional_info}"
             ./bin/upload-to-s3 {input.flagged_metadata} "{params.destination_flagged_metadata}"
         """)
-        if GIT_BRANCH == "snakemake" :
+        if GIT_BRANCH == "master" :
             shell("""
                 for dst in  "{params.destination_metadata}" "{params.destination_sequences}" "{params.destination_nextclade}" "{params.destination_additional_info}" "{params.destination_flagged_metadata}"
                 do

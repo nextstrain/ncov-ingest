@@ -22,23 +22,23 @@ channel="${3:?slack channel.}"
 
 if [[ "$upload" == 1 ]]; then
     echo "Uploading data to Slack with the message: $text"
-    #curl https://slack.com/api/files.upload \
-    #    --header "Authorization: Bearer $token" \
-    #    --form-string channels="$channel" \
-    #    --form-string title="$text" \
-    #    --form-string filename="$text" \
-    #    --form file=@/dev/stdin \
-    #    --form filetype=text \
-    #    --fail --silent --show-error \
-    #    --http1.1 \
-    #    --include
+    curl https://slack.com/api/files.upload \
+        --header "Authorization: Bearer $token" \
+        --form-string channels="$channel" \
+        --form-string title="$text" \
+        --form-string filename="$text" \
+        --form file=@/dev/stdin \
+        --form filetype=text \
+        --fail --silent --show-error \
+        --http1.1 \
+        --include
 else
     echo "Posting Slack message: $text"
-    #curl https://slack.com/api/chat.postMessage \
-    #    --header "Authorization: Bearer $token" \
-    #    --form-string channel="$channel" \
-    #    --form-string text="$text" \
-    #    --fail --silent --show-error \
-    #    --http1.1 \
-    #    --include
+    curl https://slack.com/api/chat.postMessage \
+        --header "Authorization: Bearer $token" \
+        --form-string channel="$channel" \
+        --form-string text="$text" \
+        --fail --silent --show-error \
+        --http1.1 \
+        --include
 fi
