@@ -195,6 +195,7 @@ rule run_nextclade :
     output:
         "data/{database}/nextclade.new.tsv"
     params:
+        old_tsv = rules.download_old_clades.output,
         input_folder="data/{database}/nextclade-inputs",
         output_folder="data/{database}/nextclade"
     shell:
@@ -212,7 +213,7 @@ rule run_nextclade :
         if [ ! -f {output} ]
         then
          echo "creating an empty output file"
-         echo "seqName clade   qc.overallScore qc.overallStatus    totalGaps   totalInsertions totalMissing    totalSubstitutions  totalNonACGTNs  totalPcrPrimerChanges   substitutions   deletions   insertions  missing nonACGTNs   pcrPrimerChanges    aaSubstitutions totalAminoacidSubstitutions aaDeletions totalAminoacidDeletions alignmentEnd    alignmentScore  alignmentStart  qc.missingData.missingDataThreshold qc.missingData.score    qc.missingData.status   qc.missingData.totalMissing qc.mixedSites.mixedSitesThreshold   qc.mixedSites.score qc.mixedSites.status    qc.mixedSites.totalMixedSites   qc.privateMutations.cutoff  qc.privateMutations.excess  qc.privateMutations.score   qc.privateMutations.status  qc.privateMutations.total   qc.snpClusters.clusteredSNPs    qc.snpClusters.score    qc.snpClusters.status   qc.snpClusters.totalSNPs    errors  qc.seqName  nearestTreeNodeId" > {output}
+         head -n 1 {params.old_tsv} > {output}
         fi
         """
 
@@ -278,11 +279,10 @@ rule notify_and_upload:
         slack_channel = lambda wildcards : config['slack_channel'][wildcards.database],
 
     run :
-        if config['slack_token'] == 'NA' :
-            print( "ERROR : no slack_token defined.\nDefine one using --config slack_token=..." , file = sys.stderr)
-            exit(1)
 
         if GIT_BRANCH == "master" :
+            if config['slack_token'] == 'NA' :
+                print( "WARNING : no slack_token defined.\nDefine one using --config slack_token=..." , file = sys.stderr)
 
             shell( '''
                 dst={params.destination_json}
