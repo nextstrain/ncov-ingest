@@ -201,14 +201,14 @@ rule run_nextclade :
     shell:
         """
         # Check if the file with these extracted sequences is not empty
-        if [ ! -s "{input}"" ]; then
+        if [ ! -s "{input}" ]; then
            echo "[ INFO] : No new sequences for Nextclade to process. Skipping."
         else
 
            ./bin/run-nextclade {input} \
-                                  {output} \
-                                  {params.input_folder} \
-                                  {params.output_folder}
+                               {output} \
+                               {params.input_folder} \
+                               {params.output_folder}
         fi
         if [ ! -f {output} ]
         then
