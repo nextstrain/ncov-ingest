@@ -194,6 +194,9 @@ rule run_nextclade :
         rules.filter_fasta.output
     output:
         "data/{database}/nextclade.new.tsv"
+    params:
+        input_folder="data/{database}/nextclade-inputs",
+        output_folder="data/{database}/nextclade"
     shell:
         """
         # Check if the file with these extracted sequences is not empty
@@ -203,8 +206,8 @@ rule run_nextclade :
 
            ./bin/run-nextclade {input} \
                                   {output} \
-                                  "data/{database}/nextclade-inputs" \
-                                  "data/{database}/nextclade"
+                                  {params.input_folder} \
+                                  {params.output_folder}
         fi
         if [ ! -f {output} ]
         then
