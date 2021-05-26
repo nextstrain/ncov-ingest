@@ -22,7 +22,8 @@ if ! command -v /usr/local/bin/nextclade &>/dev/null; then
   exit 1
 fi
 
-NEXTCLADE_VERSION="$(/usr/local/bin/nextclade --version)"
+# NEXTCLADE_VERSION="$(/usr/local/bin/nextclade --version)"
+NEXTCLADE_VERSION="master"
 echo "[ INFO] ${0}:${LINENO}: Nextclade version: ${NEXTCLADE_VERSION}"
 
 NEXTCLADE_INPUTS_URL_BASE="https://raw.githubusercontent.com/nextstrain/nextclade/${NEXTCLADE_VERSION}/data/sars-cov-2"
