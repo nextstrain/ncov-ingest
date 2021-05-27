@@ -7,9 +7,9 @@ wildcard_constraints:
     database = "gisaid|genbank"
 
 
-localrules: all_then_clean, gisaid_then_clean , genbank_then_clean ,
-            ingest_genbank , ingest_gisaid ,
-            fetch , notify_and_upload
+localrules: all_then_clean, gisaid_then_clean , genbank_then_clean,
+            ingest_genbank, ingest_gisaid, download_old_clades,
+            fetch, notify_and_upload
 
 
 # we want to check if some environment variable exists. 
@@ -111,7 +111,8 @@ rule fetch:
     output:
         "data/{database}.ndjson"
     params:
-        database = "{database}" 
+        database = "{database}",
+        s3_dst = S3_DST
     run:
         
         if config['fetch'].lower() in ['1','yes','true']:

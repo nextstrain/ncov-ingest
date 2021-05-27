@@ -8,7 +8,7 @@ slack_channel:
     genbank: ncov-genbank-updates
     gisaid: ncov-gisaid-updates
 
-fetch: no
+fetch: "no"
 
 gisaid_endpoint: NA
 gisaid_login: NA
