@@ -200,6 +200,7 @@ Africa	Mauritius	Black River
 Africa	Mauritius	Black River	Canot
 Africa	Mauritius	Black River	Tamarin
 Africa	Mauritius	Flacq	
+Africa	Mauritius	Flacq	Ecroignard
 Africa	Mauritius	Flacq	Poste La Fayette
 Africa	Mauritius	Grand Port	
 Africa	Mauritius	Grand Port	Grand Bel Air
@@ -212,6 +213,7 @@ Africa	Mauritius	Plaine-Wilhems
 Africa	Mauritius	Plaine-Wilhems	Allee Brillant
 Africa	Mauritius	Plaine-Wilhems	Candos
 Africa	Mauritius	Plaine-Wilhems	Castel
+Africa	Mauritius	Plaine-Wilhems	Cite Lóiseau
 Africa	Mauritius	Plaine-Wilhems	Curepipe
 Africa	Mauritius	Plaine-Wilhems	Eau Coulee
 Africa	Mauritius	Plaine-Wilhems	Engrais Martial
@@ -222,6 +224,9 @@ Africa	Mauritius	Plaine-Wilhems	Highlands
 Africa	Mauritius	Plaine-Wilhems	Phoenix
 Africa	Mauritius	Plaine-Wilhems	Quatre Bornes
 Africa	Mauritius	Plaine-Wilhems	Rose Hill
+Africa	Mauritius	Plaine-Wilhems	Vacoas
+Africa	Mauritius	Savanne	
+Africa	Mauritius	Savanne	Chemin Grenier
 Africa	Morocco	Beni Mellal	
 Africa	Morocco	Berrechid	
 Africa	Morocco	Casablanca	
@@ -359,6 +364,7 @@ Africa	South Africa	Gauteng	City of Tshwane
 Africa	South Africa	Gauteng	Ekurhuleni Metro
 Africa	South Africa	Gauteng	Emfuleni
 Africa	South Africa	Gauteng	Johannesburg Metro
+Africa	South Africa	Gauteng	Lesedi
 Africa	South Africa	Gauteng	Midvaal
 Africa	South Africa	Gauteng	Mogale City
 Africa	South Africa	Gauteng	Moretele
@@ -386,6 +392,7 @@ Africa	South Africa	Limpopo
 Africa	South Africa	Limpopo	Polokwane
 Africa	South Africa	Mpumalanga	
 Africa	South Africa	Mpumalanga	Dr. JS Moroka
+Africa	South Africa	Mpumalanga	Emalahleni
 Africa	South Africa	Mpumalanga	Ermelo
 Africa	South Africa	Mpumalanga	Middelburg
 Africa	South Africa	Mpumalanga	Thembisile Hani
@@ -580,6 +587,7 @@ Asia	Bangladesh	Jhenaidha
 Asia	Bangladesh	Jhenaidha	Shailokupa
 Asia	Bangladesh	Khulna	
 Asia	Bangladesh	Khulna	Bagerhat
+Asia	Bangladesh	Khulna	Chuadanga
 Asia	Bangladesh	Khulna	Jashore
 Asia	Bangladesh	Khulna	Jhenaidah
 Asia	Bangladesh	Khulna	Magura
@@ -592,10 +600,12 @@ Asia	Bangladesh	Mymensingh	Sherpur
 Asia	Bangladesh	Narail	
 Asia	Bangladesh	Narail	Kalia
 Asia	Bangladesh	Rajshahi	
+Asia	Bangladesh	Rajshahi	Chapainawabgonj
 Asia	Bangladesh	Rajshahi	Pabna
 Asia	Bangladesh	Rajshahi	Sirajganj
 Asia	Bangladesh	Rangpur	
 Asia	Bangladesh	Rangpur	Dinajpur
+Asia	Bangladesh	Rangpur	Gaibandha
 Asia	Bangladesh	Rangpur	Nilphamari
 Asia	Bangladesh	Rangpur	Panchagarh
 Asia	Bangladesh	Sirajganj	
@@ -2129,6 +2139,7 @@ Europe	Belgium	Halle-Vilvoorde	Liedekerke
 Europe	Belgium	Halle-Vilvoorde	Linkebeek
 Europe	Belgium	Halle-Vilvoorde	Londerzeel
 Europe	Belgium	Halle-Vilvoorde	Lot
+Europe	Belgium	Halle-Vilvoorde	Lot BE
 Europe	Belgium	Halle-Vilvoorde	Machelen
 Europe	Belgium	Halle-Vilvoorde	Meise
 Europe	Belgium	Halle-Vilvoorde	Melsbroek
@@ -3686,6 +3697,7 @@ Europe	France	Nouvelle-Aquitaine	La Rochelle
 Europe	France	Nouvelle-Aquitaine	Langon
 Europe	France	Nouvelle-Aquitaine	Le Haillan
 Europe	France	Nouvelle-Aquitaine	Limoges
+Europe	France	Nouvelle-Aquitaine	Lot-Et-Garonne
 Europe	France	Nouvelle-Aquitaine	Marmande
 Europe	France	Nouvelle-Aquitaine	Merignac
 Europe	France	Nouvelle-Aquitaine	Niort
@@ -3707,11 +3719,18 @@ Europe	France	Nouvelle-Aquitaine	Tonneins
 Europe	France	Nouvelle-Aquitaine	Tulle
 Europe	France	Occitanie	
 Europe	France	Occitanie	Albi
+Europe	France	Occitanie	Ariege
+Europe	France	Occitanie	Aude
+Europe	France	Occitanie	Aveyron
 Europe	France	Occitanie	Beziers
 Europe	France	Occitanie	Cahors
 Europe	France	Occitanie	Caraman
 Europe	France	Occitanie	Carcassonne
 Europe	France	Occitanie	Castelnaudary
+Europe	France	Occitanie	Gers
+Europe	France	Occitanie	Haute-Garonne
+Europe	France	Occitanie	Hautes-Pyrenees
+Europe	France	Occitanie	Lot FR
 Europe	France	Occitanie	Millau
 Europe	France	Occitanie	Montauban
 Europe	France	Occitanie	Montpellier
@@ -3719,6 +3738,7 @@ Europe	France	Occitanie	Muret
 Europe	France	Occitanie	Narbonne
 Europe	France	Occitanie	Nîmes
 Europe	France	Occitanie	Perpignan
+Europe	France	Occitanie	Pyrenees-Orientales
 Europe	France	Occitanie	Rodez
 Europe	France	Occitanie	Saint-Affrique
 Europe	France	Occitanie	Saint-Aunes
@@ -3726,6 +3746,8 @@ Europe	France	Occitanie	Saint-Gaudens
 Europe	France	Occitanie	Saint-Gely-Du-Fesc
 Europe	France	Occitanie	Saint-Gilles FR
 Europe	France	Occitanie	Tarbes
+Europe	France	Occitanie	Tarn
+Europe	France	Occitanie	Tarn-Et-Garonne
 Europe	France	Occitanie	Toulouse
 Europe	France	Occitanie	Uzès
 Europe	France	Pays de la Loire	
@@ -4248,6 +4270,7 @@ Europe	Netherlands	Drenthe	Nieuw Annerveen
 Europe	Netherlands	Drenthe	Norg
 Europe	Netherlands	Drenthe	Peize
 Europe	Netherlands	Drenthe	Roden
+Europe	Netherlands	Drenthe	Ruinen
 Europe	Netherlands	Drenthe	Vries
 Europe	Netherlands	Drenthe	Zuidlaren
 Europe	Netherlands	Drenthe	Zuidwolde
@@ -4279,6 +4302,7 @@ Europe	Netherlands	Groningen	Bellingwolde
 Europe	Netherlands	Groningen	Delfzijl
 Europe	Netherlands	Groningen	Finsterwolde
 Europe	Netherlands	Groningen	Groningen
+Europe	Netherlands	Groningen	Grootegast
 Europe	Netherlands	Groningen	Haren
 Europe	Netherlands	Groningen	Haren NL
 Europe	Netherlands	Groningen	Heiligerlee
@@ -4295,6 +4319,7 @@ Europe	Netherlands	Groningen	Stadskanaal
 Europe	Netherlands	Groningen	Uithuizen
 Europe	Netherlands	Groningen	Uithuizermeeden
 Europe	Netherlands	Groningen	Wildervank
+Europe	Netherlands	Groningen	Woldendorp
 Europe	Netherlands	Groningen	Zuidbroek
 Europe	Netherlands	Groningen	Zuidhorn
 Europe	Netherlands	Leiden	
@@ -4358,6 +4383,7 @@ Europe	Netherlands	North Brabant	Tilburg
 Europe	Netherlands	North Brabant	Valkenswaard
 Europe	Netherlands	North Brabant	Veldhoven
 Europe	Netherlands	North Brabant	Vught
+Europe	Netherlands	North Brabant	Waalwijk
 Europe	Netherlands	North Holland	
 Europe	Netherlands	North Holland	Aalsmeer
 Europe	Netherlands	North Holland	Alkmaar
@@ -7097,6 +7123,7 @@ Europe	Spain	Catalunya	La Granja d’Escarp
 Europe	Spain	Catalunya	La Jonquera
 Europe	Spain	Catalunya	La Llagosta
 Europe	Spain	Catalunya	La Pobla de Segur
+Europe	Spain	Catalunya	La Roca
 Europe	Spain	Catalunya	La Roca del Valles
 Europe	Spain	Catalunya	La Selva de Mar
 Europe	Spain	Catalunya	La Vall D'en Bas
@@ -8658,6 +8685,7 @@ North America	USA	Florida	Walton County FL
 North America	USA	Georgia	
 North America	USA	Georgia	Atlanta
 North America	USA	Georgia	Cobb
+North America	USA	Georgia	Liberty County GA
 North America	USA	Georgia	Thomas County
 North America	USA	Grand Princess	
 North America	USA	Grand Princess	Grand Princess Cruise Ship
@@ -8714,6 +8742,7 @@ North America	USA	Illinois	Greene County IL
 North America	USA	Illinois	Grundy County IL
 North America	USA	Illinois	Hamilton County IL
 North America	USA	Illinois	Hancock County
+North America	USA	Illinois	Hancock County IL
 North America	USA	Illinois	Hardin County IL
 North America	USA	Illinois	Henderson County IL
 North America	USA	Illinois	Henry County IL
@@ -8871,17 +8900,30 @@ North America	USA	Louisiana	Union Parish
 North America	USA	Louisiana	Webster Parish
 North America	USA	Louisiana	West Feliciana Parish
 North America	USA	Maine	
+North America	USA	Maine	Androscoggin County
+North America	USA	Maine	Cumberland County ME
+North America	USA	Maine	Hancock County ME
+North America	USA	Maine	Kennebec County
+North America	USA	Maine	Oxford County
 North America	USA	Maine	Penobscot County
+North America	USA	Maine	Waldo County
+North America	USA	Maine	York County ME
 North America	USA	Maryland	
 North America	USA	Maryland	Baltimore
 North America	USA	Maryland	Montgomery County MD
 North America	USA	Maryland	Prince George'S County
 North America	USA	Maryland	Prince George's County
 North America	USA	Massachusetts	
+North America	USA	Massachusetts	Barnstable County
 North America	USA	Massachusetts	Boston
+North America	USA	Massachusetts	Bristol County
+North America	USA	Massachusetts	Essex County MA
 North America	USA	Massachusetts	Hampden County
+North America	USA	Massachusetts	Hampshire County
 North America	USA	Massachusetts	Middlesex County MA
 North America	USA	Massachusetts	Norfolk County
+North America	USA	Massachusetts	Plymouth County
+North America	USA	Massachusetts	Suffolk County MA
 North America	USA	Massachusetts	Worcester County
 North America	USA	Michigan	
 North America	USA	Michigan	Alpena County
@@ -8939,6 +8981,7 @@ North America	USA	Nevada	Washoe County
 North America	USA	New Hampshire	
 North America	USA	New Hampshire	Hillsborough County
 North America	USA	New Hampshire	Merrimack
+North America	USA	New Hampshire	Rockingham County
 North America	USA	New Jersey	
 North America	USA	New Jersey	Bergen County
 North America	USA	New Jersey	Bloomfield
@@ -9059,6 +9102,7 @@ North America	USA	New York	St. Lawrence County
 North America	USA	New York	Staten Island
 North America	USA	New York	Steuben County
 North America	USA	New York	Suffolk County
+North America	USA	New York	Suffolk County NY
 North America	USA	New York	Sullivan County
 North America	USA	New York	Tioga County
 North America	USA	New York	Tompkins County
@@ -9073,7 +9117,9 @@ North America	USA	New York	Westchester County
 North America	USA	New York	Wyoming County
 North America	USA	New York	Yates County
 North America	USA	North Carolina	
+North America	USA	North Carolina	Cumberland County NC
 North America	USA	North Carolina	Forsyth County
+North America	USA	North Carolina	Guilford County
 North America	USA	North Carolina	Mecklenburg County
 North America	USA	North Dakota	
 North America	USA	Northern Mariana Islands	
@@ -9167,6 +9213,7 @@ North America	USA	Pennsylvania
 North America	USA	Pennsylvania	Allegheny County
 North America	USA	Pennsylvania	Chester County
 North America	USA	Pennsylvania	Delaware County PA
+North America	USA	Pennsylvania	Lehigh County
 North America	USA	Pennsylvania	Monroe County PA
 North America	USA	Pennsylvania	Montgomery County PA
 North America	USA	Pennsylvania	Philadelphia County
@@ -9208,6 +9255,7 @@ North America	USA	South Carolina	Spartanburg County
 North America	USA	South Carolina	Williamsburg
 North America	USA	South Carolina	Williamsburg County
 North America	USA	South Carolina	York County
+North America	USA	South Carolina	York County SC
 North America	USA	South Dakota	
 North America	USA	South Dakota	Beadle County
 North America	USA	South Dakota	Minnehaha County
@@ -9328,6 +9376,7 @@ North America	USA	Texas	Lavaca County
 North America	USA	Texas	Lee County TX
 North America	USA	Texas	Leon County
 North America	USA	Texas	Liberty County
+North America	USA	Texas	Liberty County TX
 North America	USA	Texas	Limestone County
 North America	USA	Texas	Limestone County TX
 North America	USA	Texas	Little River Academy
@@ -9930,11 +9979,20 @@ South America	Brazil	Acre
 South America	Brazil	Acre	Cruzeiro do Sul
 South America	Brazil	Acre	Rodrigues Alves
 South America	Brazil	Alagoas	
+South America	Brazil	Alagoas	Anadia
+South America	Brazil	Alagoas	Capela (Alagoas)
+South America	Brazil	Alagoas	Cha Preta
 South America	Brazil	Alagoas	Delmiro Gouveia
+South America	Brazil	Alagoas	Flexeiras
+South America	Brazil	Alagoas	Girau do Ponciano
 South America	Brazil	Alagoas	Maceio
 South America	Brazil	Alagoas	Marechal Deodoro
+South America	Brazil	Alagoas	Palmeira Dos Indios
 South America	Brazil	Alagoas	Rio Largo
 South America	Brazil	Alagoas	Santana do Ipanema
+South America	Brazil	Alagoas	Santana do Mundau
+South America	Brazil	Alagoas	Sao Sebastiao (Alagoas)
+South America	Brazil	Alagoas	Uniao Dos Palmares
 South America	Brazil	Amapa	
 South America	Brazil	Amapa	Cutias
 South America	Brazil	Amapa	Macapá
@@ -9982,7 +10040,9 @@ South America	Brazil	Bahia	Itacare
 South America	Brazil	Bahia	Itagimirim
 South America	Brazil	Bahia	Itajuipe
 South America	Brazil	Bahia	Itamaraju
+South America	Brazil	Bahia	Itapicuru
 South America	Brazil	Bahia	Itapitanga
+South America	Brazil	Bahia	Jandaira
 South America	Brazil	Bahia	Jussari
 South America	Brazil	Bahia	Marau
 South America	Brazil	Bahia	Nazaré
@@ -9992,6 +10052,7 @@ South America	Brazil	Bahia	Porto Seguro
 South America	Brazil	Bahia	Salvador
 South America	Brazil	Bahia	Santo Antonio de Jesus
 South America	Brazil	Bahia	Sao Sebastiao do Passe
+South America	Brazil	Bahia	Satiro Dias
 South America	Brazil	Bahia	Serrinha
 South America	Brazil	Bahia	Teixeira de Freitas
 South America	Brazil	Brazil	
@@ -10294,6 +10355,7 @@ South America	Brazil	Paraná	Ponta Grossa
 South America	Brazil	Paraná	Primeiro de Maio
 South America	Brazil	Paraná	Quedas do Iguacu
 South America	Brazil	Paraná	Reboucas
+South America	Brazil	Paraná	Renascenca
 South America	Brazil	Paraná	Rolandia
 South America	Brazil	Paraná	Santa Helena
 South America	Brazil	Paraná	Santo Antonio Da Platina
@@ -10380,6 +10442,7 @@ South America	Brazil	Rio Grande do Norte	Santana do Matos
 South America	Brazil	Rio Grande do Norte	São José de Mipibu
 South America	Brazil	Rio Grande do Norte	Água Nova
 South America	Brazil	Rio Grande do Sul	
+South America	Brazil	Rio Grande do Sul	Acegua
 South America	Brazil	Rio Grande do Sul	Alegrete
 South America	Brazil	Rio Grande do Sul	Alto Feliz
 South America	Brazil	Rio Grande do Sul	Alvorada
@@ -10389,6 +10452,7 @@ South America	Brazil	Rio Grande do Sul	Arvorezinha
 South America	Brazil	Rio Grande do Sul	Bage
 South America	Brazil	Rio Grande do Sul	Balneario Pinhal
 South America	Brazil	Rio Grande do Sul	Barao
+South America	Brazil	Rio Grande do Sul	Bento Goncalves
 South America	Brazil	Rio Grande do Sul	Bom Principio
 South America	Brazil	Rio Grande do Sul	Bom Retiro do Sul
 South America	Brazil	Rio Grande do Sul	Butia
@@ -10405,9 +10469,12 @@ South America	Brazil	Rio Grande do Sul	Carazinho
 South America	Brazil	Rio Grande do Sul	Carlos Barbosa
 South America	Brazil	Rio Grande do Sul	Caxias do Sul
 South America	Brazil	Rio Grande do Sul	Cerro Grande do Sul
+South America	Brazil	Rio Grande do Sul	Condor
 South America	Brazil	Rio Grande do Sul	Cotipora
 South America	Brazil	Rio Grande do Sul	Cruz Alta
 South America	Brazil	Rio Grande do Sul	Dois Irmãos
+South America	Brazil	Rio Grande do Sul	Dom Pedrito
+South America	Brazil	Rio Grande do Sul	Encantado
 South America	Brazil	Rio Grande do Sul	Erechim
 South America	Brazil	Rio Grande do Sul	Espumoso
 South America	Brazil	Rio Grande do Sul	Esteio
@@ -10457,6 +10524,7 @@ South America	Brazil	Rio Grande do Sul	Rio Grande BR
 South America	Brazil	Rio Grande do Sul	Riozinho
 South America	Brazil	Rio Grande do Sul	Rolante
 South America	Brazil	Rio Grande do Sul	Saldanha Marinho
+South America	Brazil	Rio Grande do Sul	Santa Cruz do Sul
 South America	Brazil	Rio Grande do Sul	Santa Maria
 South America	Brazil	Rio Grande do Sul	Santa Maria RS
 South America	Brazil	Rio Grande do Sul	Santa Rosa
@@ -10466,10 +10534,12 @@ South America	Brazil	Rio Grande do Sul	Santana do Livramento
 South America	Brazil	Rio Grande do Sul	Santo Angelo
 South America	Brazil	Rio Grande do Sul	Santo Antonio Da Patrulha
 South America	Brazil	Rio Grande do Sul	Sao Borja
+South America	Brazil	Rio Grande do Sul	Sao Jose Dos Ausentes
 South America	Brazil	Rio Grande do Sul	Sao Sebastiao do Cai
 South America	Brazil	Rio Grande do Sul	Sapiranga
 South America	Brazil	Rio Grande do Sul	Sapucaia do Sul
 South America	Brazil	Rio Grande do Sul	Seberi
+South America	Brazil	Rio Grande do Sul	Selbach
 South America	Brazil	Rio Grande do Sul	Serafina Correa
 South America	Brazil	Rio Grande do Sul	Sertao
 South America	Brazil	Rio Grande do Sul	São Domingos do Sul
@@ -10487,8 +10557,10 @@ South America	Brazil	Rio Grande do Sul	Tres Passos
 South America	Brazil	Rio Grande do Sul	Triunfo
 South America	Brazil	Rio Grande do Sul	Três Cachoeiras
 South America	Brazil	Rio Grande do Sul	Três Coroas
+South America	Brazil	Rio Grande do Sul	Tunas
 South America	Brazil	Rio Grande do Sul	Tupandi
 South America	Brazil	Rio Grande do Sul	Uruguaiana
+South America	Brazil	Rio Grande do Sul	Vale do Sol
 South America	Brazil	Rio Grande do Sul	Venancio Aires
 South America	Brazil	Rio Grande do Sul	Vera Cruz
 South America	Brazil	Rio Grande do Sul	Vera Cruz (Rio Grande do Sul)
@@ -10620,6 +10692,7 @@ South America	Brazil	Santa Catarina	Itaiopolis
 South America	Brazil	Santa Catarina	Itapema
 South America	Brazil	Santa Catarina	Ituporanga
 South America	Brazil	Santa Catarina	Jaguaruna
+South America	Brazil	Santa Catarina	Jaragua do Sul
 South America	Brazil	Santa Catarina	Joacaba
 South America	Brazil	Santa Catarina	Joinville
 South America	Brazil	Santa Catarina	Lages
@@ -10650,6 +10723,7 @@ South America	Brazil	Sergipe	Aracaju
 South America	Brazil	Sergipe	Barra Dos Coqueiros
 South America	Brazil	Sergipe	Caninde de Sao Francisco
 South America	Brazil	Sergipe	Capela
+South America	Brazil	Sergipe	Capela (Sergipe)
 South America	Brazil	Sergipe	Estancia
 South America	Brazil	Sergipe	Itaporanga Dajuda
 South America	Brazil	Sergipe	Jaboatiana
@@ -10937,6 +11011,7 @@ South America	Brazil	São Paulo	Sao Pedro
 South America	Brazil	São Paulo	Sao Pedro do Turvo
 South America	Brazil	São Paulo	Sao Roque
 South America	Brazil	São Paulo	Sao Sebastiao
+South America	Brazil	São Paulo	Sao Sebastiao (São Paulo)
 South America	Brazil	São Paulo	Sao Simao (São Paulo)
 South America	Brazil	São Paulo	Sao Vicente
 South America	Brazil	São Paulo	Sebastianopolis do Sul
