@@ -210,7 +210,8 @@ rule get_nextclade_inputs:
 
 rule run_nextclade :
     input:
-        rules.filter_fasta.output + rules.get_nextclade_inputs.output
+        fasta = rules.filter_fasta.output,
+        nextclade_inputs = rules.get_nextclade_inputs.output
     output:
         "data/{database}/nextclade.new.tsv"
     params:
@@ -220,11 +221,11 @@ rule run_nextclade :
     shell:
         """
         # Check if the file with these extracted sequences is not empty
-        if [ ! -s "{input}" ]; then
+        if [ ! -s "{input.fasta}" ]; then
            echo "[ INFO] : No new sequences for Nextclade to process. Skipping."
         else
 
-           ./bin/run-nextclade {input} \
+           ./bin/run-nextclade {input.fasta} \
                                {output} \
                                {params.input_folder} \
                                {params.output_folder}
