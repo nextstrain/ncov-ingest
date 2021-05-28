@@ -298,9 +298,9 @@ rule upload_file:
 
 rule upload_ndjson:
     input :
-        json = "data/{database}/data.ndjson",
-        log = "logs/{database}_data.ndjson.upload.log"
+        json = "data/{database}/data.ndjson"
     params:
+        s3_dst=_get_S3_DST,
         destination_json = lambda w: _get_S3_DST(w) + "/{database}.ndjson.gz",
         database = "{database}",
         slack_channel = _get_slack_channel
@@ -326,6 +326,8 @@ rule upload_ndjson:
 
         ./bin/notify-slack "$msg" $SLACK_TOKEN {params.slack_channel}
         echo "$msg" > {output.msg}
+
+        ./bin/upload-to-s3 {input.json} {params.destination_json} 2>&1 >> {output}
         '''
 
 rule upload_and_notify_generic:
