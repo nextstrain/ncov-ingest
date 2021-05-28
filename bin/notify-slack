@@ -20,6 +20,12 @@ text="${1:?Some message text is required.}"
 token="${2:?slack token.}"
 channel="${3:?slack channel.}"
 
+if [ "$channel" == "none" ]; then
+    echo "no slack channel provided, won't notify"
+    echo $text
+    exit
+fi
+
 if [[ "$upload" == 1 ]]; then
     echo "Uploading data to Slack with the message: $text"
     curl https://slack.com/api/files.upload \
