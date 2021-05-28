@@ -9,7 +9,9 @@ wildcard_constraints:
 
 localrules: all_then_clean, gisaid_then_clean , genbank_then_clean,
             ingest_genbank, ingest_gisaid, download_old_clades,
-            fetch, notify_and_upload, get_nextclade_inputs
+            fetch, notify_and_upload, get_nextclade_inputs, additional_info_changes,
+            new_flagged_metadata, additional_info_changes, location_hierarchy_additions,
+            metadata_change, upload_and_notify_generic, upload_ndjson
 
 
 # we want to check if some environment variable exists.
