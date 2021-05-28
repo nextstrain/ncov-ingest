@@ -11,7 +11,7 @@ localrules: all_then_clean, gisaid_then_clean , genbank_then_clean,
             ingest_genbank, ingest_gisaid, download_old_clades,
             fetch, notify_and_upload, get_nextclade_inputs, additional_info_changes,
             new_flagged_metadata, additional_info_changes, location_hierarchy_additions,
-            metadata_change, upload_and_notify_generic, upload_ndjson
+            metadata_change, upload_and_notify_generic, upload_ndjson, upload_file, additional_info_changes
 
 
 # we want to check if some environment variable exists.
@@ -290,7 +290,7 @@ rule upload_file:
         compression='gz'
     shell:
         """
-        ./bin/upload_to_s3 {input} {params.s3_dst}/{wildcards.file}.{params.compression} 2>&1 | tee {output}
+        ./bin/upload-to-s3 {input} {params.s3_dst}/{wildcards.file}.{params.compression} 2>&1 | tee {output}
         """
 
 rule upload_ndjson:
