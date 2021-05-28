@@ -40,11 +40,6 @@ RUN python3 -m pip install pipenv
 COPY Pipfile Pipfile.lock /nextstrain/ncov-ingest/
 RUN PIPENV_PIPFILE=/nextstrain/ncov-ingest/Pipfile pipenv sync --system
 
-# Install Nextclade
-RUN curl -fsSL https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-Linux-x86_64 \
-         -o /usr/local/bin/nextclade \
- && chmod a+rx /usr/local/bin/nextclade
-
 # Install Nextclade C++
 RUN curl -fsSL https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-Linux-x86_64 \
          -o /usr/local/bin/nextclade \

@@ -16,7 +16,7 @@ localrules: all_then_clean, gisaid_then_clean , genbank_then_clean,
 
 # we want to check if some environment variable exists.
 #since the envvars: directive only works for later versions of snakemake, we have to do this "nmanually":
-requiredEnvironmentVariables = [ "S3_SRC", "GITHUB_REF"]
+requiredEnvironmentVariables = [ "GITHUB_REF"]
 absentRequiredEnvironmentVariables = [v for v in requiredEnvironmentVariables if not v in os.environ ]
 if len( absentRequiredEnvironmentVariables )>0:
     raise Exception("The following environment variables are requested by the workflow but undefined. Please make sure that they are correctly defined before running Snakemake:\n" + '\n'.join(absentRequiredEnvironmentVariables) )
@@ -26,46 +26,49 @@ if len( absentRequiredEnvironmentVariables )>0:
 ## defining some of the behaviour depending on
 ## which git branch we are
 
-GIT_BRANCH = ""
-S3_DST = ''
-
 github_ref = os.environ[ "GITHUB_REF" ]
 if github_ref == "refs/heads/master" :
-    GIT_BRANCH = "master"
-    S3_DST = os.environ['S3_SRC']
-
+    BRANCH_SUFFIX = ""
+    NOTIFY = True
 elif github_ref.startswith('refs/heads/') :
-
-    GIT_BRANCH = github_ref[ len('refs/heads/') : ]
-    S3_DST = os.environ['S3_SRC'] + "/branch/" + GIT_BRANCH
-
-elif github_ref=='':
-
-    S3_DST = os.environ['S3_SRC'] + "/tmp"
+    BRANCH_SUFFIX = "/branch/" + github_ref[ len('refs/heads/') : ]
+    NOTIFY = False
 else:
     print("skipping ingest for ref",github_ref)
     exit(0)
 
-
 ## defining some environment variables for gisaid fetching:
-if config['gisaid_endpoint'] != "NA" :
+if "gisaid_endpoint" in config:
     os.environ["GISAID_API_ENDPOINT"] = config['gisaid_endpoint']
-if config['gisaid_login'] != "NA" :
+if "gisaid_login" in config :
     os.environ["GISAID_USERNAME_AND_PASSWORD"] = config['gisaid_login']
 
 ## defining some environment variables for slack notifications:
-if config['slack_token'] != "NA" :
+if "slack_token" in config:
     os.environ["SLACK_TOKEN"] = config['slack_token']
 
-
-
-print( "S3_SRC is" , os.environ['S3_SRC'] , file=sys.stderr )
-print( "S3_DST is" , S3_DST , file=sys.stderr )
 def _get_slack_channel(w):
-    if GIT_BRANCH=='master':
+    if NOTIFY:
         return config['slack_channel'][w.database]
     else:
         "none"
+
+def _get_S3_DST(w):
+    if w.database=='gisaid':
+        return "s3://nextstrain-ncov-private" + BRANCH_SUFFIX
+    elif w.database=='genbank':
+        return "s3://nextstrain-data/files/ncov/open" + BRANCH_SUFFIX
+    else:
+        ValueError(f"get_S3_DST: database {w.database} is unknown.")
+
+def _get_S3_SRC(w):
+    if w.database=='gisaid':
+        return "s3://nextstrain-ncov-private"
+    elif w.database=='genbank':
+        return "s3://nextstrain-data/files/ncov/open"
+    else:
+        ValueError(f"get_S3_SRC: database {w.database} is unknown.")
+
 
 ## target rule all
 rule all_then_clean:
@@ -118,7 +121,7 @@ rule fetch:
         "data/{database}/data.ndjson"
     params:
         database = "{database}",
-        s3_dst = S3_DST
+        s3_dst = _get_S3_DST
     run:
 
         if config['fetch'].lower() in ['1','yes','true']:
@@ -170,8 +173,8 @@ rule download_old_clades :
     output:
         "data/{database}/nextclade.old.tsv"
     params:
-        dst_source=S3_DST+'/nextclade.tsv.gz',
-        src_source='$S3_SRC/nextclade.tsv.gz',
+        dst_source=lambda w: _get_S3_DST(w) + '/nextclade.tsv.gz',
+        src_source=lambda w: _get_S3_SRC(w) + '/nextclade.tsv.gz',
     shell:
         '''
         set +e
@@ -286,7 +289,7 @@ rule upload_file:
     output:
         "logs/{database}_{file}.upload.log"
     params:
-        s3_dst=S3_DST,
+        s3_dst=_get_S3_DST,
         compression='gz'
     shell:
         """
@@ -298,7 +301,7 @@ rule upload_ndjson:
         json = "data/{database}/data.ndjson",
         log = "logs/{database}_data.ndjson.upload.log"
     params:
-        destination_json = S3_DST+"/{database}.ndjson.gz",
+        destination_json = lambda w: _get_S3_DST(w) + "/{database}.ndjson.gz",
         database = "{database}",
         slack_channel = _get_slack_channel
     output:
@@ -344,8 +347,8 @@ rule metadata_change:
     output:
         "logs/{database}_metadata_change.msg"
     params:
-        destination_metadata = S3_DST+"/{database}_metadata.tsv.gz",
-        idcolumn=lambda wildcards : config['idcolumn'][wildcards.database],
+        destination_metadata = lambda w: _get_S3_DST(w)+f"/{w.database}_metadata.tsv.gz",
+        idcolumn=lambda w : config['idcolumn'][w.database],
         slack_channel = _get_slack_channel
     shell:
         """
@@ -413,7 +416,7 @@ rule additional_info_changes:
         "logs/{database}/additional_info_changes.msg"
     params:
         slack_channel = _get_slack_channel,
-        destination_additional_info = S3_DST+"/{database}_additional_info.tsv.gz",
+        destination_additional_info = lambda w: _get_S3_DST(w)+"/{w.database}_additional_info.tsv.gz",
     shell:
         """
             diff="$(mktemp -t additionnal-info-changes-XXXXXX)"
@@ -437,7 +440,7 @@ rule new_flagged_metadata:
         "logs/{database}/new_flagged_metadata.msg"
     params:
         slack_channel = _get_slack_channel,
-        destination_flagged_metadata = S3_DST+"/{database}_flagged_metadata.tsv.gz",
+        destination_flagged_metadata = lambda w: _get_S3_DST(w)+"/{w.database}_flagged_metadata.tsv.gz",
     shell:
         """
             dst_local="$(mktemp -t flagged-metadata-XXXXXX.txt)"

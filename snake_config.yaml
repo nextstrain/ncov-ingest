@@ -4,13 +4,12 @@ idcolumn:
     genbank: genbank_accession
 
 
-slack_channel: 
+slack_channel:
     genbank: ncov-genbank-updates
     gisaid: ncov-gisaid-updates
 
 fetch: "no"
 
-gisaid_endpoint: NA
-gisaid_login: NA
-
-slack_token : NA
+# gisaid_endpoint: url
+# gisaid_login: mylogin:password
+# slack_token : slack_token

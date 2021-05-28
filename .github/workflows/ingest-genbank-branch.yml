@@ -39,4 +39,3 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-        S3_SRC: s3://nextstrain-data/ncov-ingest
