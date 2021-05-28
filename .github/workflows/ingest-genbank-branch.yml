@@ -21,8 +21,7 @@ jobs:
         ./bin/write-envdir env.d \
           AWS_DEFAULT_REGION \
           GITHUB_REF \
-          SLACK_TOKEN \
-          S3_SRC
+          SLACK_TOKEN
 
         nextstrain build \
           --aws-batch \

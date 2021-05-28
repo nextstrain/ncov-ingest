@@ -22,7 +22,7 @@ channel="${3:?slack channel.}"
 
 if [ "$channel" == "none" ]; then
     echo "no slack channel provided, won't notify"
-    echo $text
+    echo "$text"
     exit
 fi
 
