@@ -201,11 +201,11 @@ rule get_nextclade_inputs:
         url = "https://raw.githubusercontent.com/nextstrain/nextclade/master/data/sars-cov-2"
     shell:
         """
-        curl -fsSLJ --write-out "[ INFO] curl: %{{url_effective}}\n" "{params.url}/reference.fasta -o {output.ref}"
-        curl -fsSLJ --write-out "[ INFO] curl: %{{url_effective}}\n" "{params.url}/genemap.gff -o {output.genemap}"
-        curl -fsSLJ --write-out "[ INFO] curl: %{{url_effective}}\n" "{params.url}/tree.json -o {output.tree}"
-        curl -fsSLJ --write-out "[ INFO] curl: %{{url_effective}}\n" "{params.url}/qc.json -o {output.qc}"
-        curl -fsSLJ --write-out "[ INFO] curl: %{{url_effective}}\n" "{params.url}/primers.csv -o {output.primers}"
+        curl -fsSLJ {params.url}/reference.fasta -o {output.ref}
+        curl -fsSLJ {params.url}/genemap.gff -o {output.genemap}
+        curl -fsSLJ {params.url}/tree.json -o {output.tree}
+        curl -fsSLJ {params.url}/qc.json -o {output.qc}
+        curl -fsSLJ {params.url}/primers.csv -o {output.primers}
         """
 
 rule run_nextclade :
