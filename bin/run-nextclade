@@ -23,22 +23,6 @@ if ! command -v nextclade &>/dev/null; then
 fi
 
 # NEXTCLADE_VERSION="$(/usr/local/bin/nextclade --version)"
-NEXTCLADE_VERSION="master"
-echo "[ INFO] ${0}:${LINENO}: Nextclade version: ${NEXTCLADE_VERSION}"
-
-NEXTCLADE_INPUTS_URL_BASE="https://raw.githubusercontent.com/nextstrain/nextclade/${NEXTCLADE_VERSION}/data/sars-cov-2"
-echo "[ INFO] ${0}:${LINENO}: Downloading Nextclade input data:"
-echo "[ INFO] ${0}:${LINENO}:   From: \"${NEXTCLADE_INPUTS_URL_BASE}\""
-echo "[ INFO] ${0}:${LINENO}:   To:   \"${NEXTCLADE_INPUTS_DIR}\""
-mkdir -p "${NEXTCLADE_INPUTS_DIR}"
-pushd "${NEXTCLADE_INPUTS_DIR}" >/dev/null
-  curl -fsSLOJ --write-out "[ INFO] curl: %{url_effective}\n" "${NEXTCLADE_INPUTS_URL_BASE}/reference.fasta"
-  curl -fsSLOJ --write-out "[ INFO] curl: %{url_effective}\n" "${NEXTCLADE_INPUTS_URL_BASE}/genemap.gff"
-  curl -fsSLOJ --write-out "[ INFO] curl: %{url_effective}\n" "${NEXTCLADE_INPUTS_URL_BASE}/tree.json"
-  curl -fsSLOJ --write-out "[ INFO] curl: %{url_effective}\n" "${NEXTCLADE_INPUTS_URL_BASE}/qc.json"
-  curl -fsSLOJ --write-out "[ INFO] curl: %{url_effective}\n" "${NEXTCLADE_INPUTS_URL_BASE}/primers.csv"
-popd >/dev/null
-
 echo "[ INFO] ${0}:${LINENO}: Running Nextclade"
 # /usr/bin/time -f "[ INFO] ${0}:${LINENO}: Nextclade run statistics: Wall clock time: %E, Maximum resident memory: %M KB\n" \
 nextclade \

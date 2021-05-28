@@ -9,10 +9,10 @@ wildcard_constraints:
 
 localrules: all_then_clean, gisaid_then_clean , genbank_then_clean,
             ingest_genbank, ingest_gisaid, download_old_clades,
-            fetch, notify_and_upload
+            fetch, notify_and_upload, get_nextclade_inputs
 
 
-# we want to check if some environment variable exists. 
+# we want to check if some environment variable exists.
 #since the envvars: directive only works for later versions of snakemake, we have to do this "nmanually":
 requiredEnvironmentVariables = [ "S3_SRC", "GITHUB_REF"]
 absentRequiredEnvironmentVariables = [v for v in requiredEnvironmentVariables if not v in os.environ ]
@@ -21,7 +21,7 @@ if len( absentRequiredEnvironmentVariables )>0:
 
 
 
-## defining some of the behaviour depending on 
+## defining some of the behaviour depending on
 ## which git branch we are
 
 GIT_BRANCH = ""
@@ -61,7 +61,7 @@ print( "S3_SRC is" , os.environ['S3_SRC'] , file=sys.stderr )
 print( "S3_DST is" , S3_DST , file=sys.stderr )
 
 
-## target rule all 
+## target rule all
 rule all_then_clean:
     input:
         "notify_and_upload.gisaid.mock_output.txt",
@@ -93,7 +93,7 @@ rule ingest_gisaid:
         additional_info = "data/gisaid/additional_info.tsv",
         flagged_metadata = "data/gisaid/flagged_metadata.txt",
         flagged_annotation = "data/gisaid/transform-log.txt",
-        location_hierarchy = "data/gisaid/location_hierarchy.tsv"        
+        location_hierarchy = "data/gisaid/location_hierarchy.tsv"
 
 rule ingest_genbank:
     input :
@@ -103,7 +103,7 @@ rule ingest_genbank:
         additional_info = "data/genbank/additional_info.tsv",
         flagged_metadata = "data/genbank/flagged_metadata.txt",
         flagged_annotation = "data/genbank/transform-log.txt",
-        location_hierarchy = "data/genbank/location_hierarchy.tsv"        
+        location_hierarchy = "data/genbank/location_hierarchy.tsv"
 
 
 
@@ -114,7 +114,7 @@ rule fetch:
         database = "{database}",
         s3_dst = S3_DST
     run:
-        
+
         if config['fetch'].lower() in ['1','yes','true']:
             shell( './bin/fetch-from-{params.database} > {output}')
         else :
@@ -169,8 +169,8 @@ rule download_old_clades :
     shell:
         '''
         set +e
-        ( aws s3 cp --no-progress "{params.dst_source}" - || aws s3 cp --no-progress "{params.src_source}" -) | gunzip -cfq > {output} 
-        #( aws s3 cp --no-progress "{params.src_source}" -) | gunzip -cfq > {output} 
+        ( aws s3 cp --no-progress "{params.dst_source}" - || aws s3 cp --no-progress "{params.src_source}" -) | gunzip -cfq > {output}
+        #( aws s3 cp --no-progress "{params.src_source}" -) | gunzip -cfq > {output}
         if [ ! -f {output} ]
         then
          exit 1
@@ -185,14 +185,32 @@ rule filter_fasta :
         tsv = rules.download_old_clades.output
     output:
         "data/{database}/nextclade.sequences.fasta"
-    shell: 
+    shell:
         """./bin/filter-fasta --input_fasta={input.fasta} --input_tsv={input.tsv} --output_fasta={output}
 
         """
 
+rule get_nextclade_inputs:
+    output:
+        ref = "data/{database}/nextclade-inputs/reference.fasta",
+        genemap = "data/{database}/nextclade-inputs/genemap.gff",
+        tree = "data/{database}/nextclade-inputs/tree.json",
+        qc = "data/{database}/nextclade-inputs/qc.json",
+        primers = "data/{database}/nextclade-inputs/primers.csv"
+    params:
+        url = "https://raw.githubusercontent.com/nextstrain/nextclade/master/data/sars-cov-2"
+    shell:
+        """
+        curl -fsSLJ --write-out "[ INFO] curl: %{{url_effective}}\n" "{params.url}/reference.fasta -o {output.ref}"
+        curl -fsSLJ --write-out "[ INFO] curl: %{{url_effective}}\n" "{params.url}/genemap.gff -o {output.genemap}"
+        curl -fsSLJ --write-out "[ INFO] curl: %{{url_effective}}\n" "{params.url}/tree.json -o {output.tree}"
+        curl -fsSLJ --write-out "[ INFO] curl: %{{url_effective}}\n" "{params.url}/qc.json -o {output.qc}"
+        curl -fsSLJ --write-out "[ INFO] curl: %{{url_effective}}\n" "{params.url}/primers.csv -o {output.primers}"
+        """
+
 rule run_nextclade :
     input:
-        rules.filter_fasta.output
+        rules.filter_fasta.output + rules.get_nextclade_inputs.output
     output:
         "data/{database}/nextclade.new.tsv"
     params:
@@ -275,7 +293,7 @@ rule notify_and_upload:
         destination_additional_info = S3_DST+"/{database}_additional_info.tsv.gz",
         destination_flagged_metadata = S3_DST+"/{database}_flagged_metadata.txt.gz",
         destination_sequences = S3_DST+"{database}_sequences.fasta.gz",
-        destination_nextclade = S3_DST+"/nextclade.tsv.gz", # intead of "$S3_SRC/nextclade.tsv.gz" ... 
+        destination_nextclade = S3_DST+"/nextclade.tsv.gz", # intead of "$S3_SRC/nextclade.tsv.gz" ...
         destination_json = S3_DST+"/{database}.ndjson.gz",
         slack_channel = lambda wildcards : config['slack_channel'][wildcards.database],
 
@@ -298,7 +316,7 @@ rule notify_and_upload:
                     msg="📈 New nCoV records (n=$added_records) found on {params.database}."
                 elif [[ $added_records -lt 0 ]]; then
                     msg="WARNING: the new version of {params.database} has fewer records‽"
-                
+
                 else
                     msg="📈 New nCoV records (n=$added_records) found on {params.database}."
                 fi
@@ -316,7 +334,7 @@ rule notify_and_upload:
             # "Notifying Slack about metadata change."
             shell(f"""
                 # notify and upload metadata change
-                
+
                 dst_local="$(mktemp -t metadata-XXXXXX.tsv)"
                 diff="$(mktemp -t metadata-changes-XXXXXX)"
                 additions="$(mktemp -t metadata-additions-XXXXXX)"
@@ -336,13 +354,13 @@ rule notify_and_upload:
                 if [[ -s "$additions" ]]; then
                     # "Notifying Slack about metadata additions."
                     ./bin/notify-slack --upload "metadata-additions.tsv" $SLACK_TOKEN {params.slack_channel} < "$additions"
-                 
+
                     if [[ "{params.idcolumn}" == "gisaid_epi_isl" ]]; then
                         ./bin/notify-users-on-new-locations "$additions" --slack-token $SLACK_TOKEN --slack-channel {params.slack_channel}
                     fi
                 fi
             """)
-            
+
             # "Notifying Slack about location hierarchy additions."
             shell(f"""
 
@@ -358,13 +376,13 @@ rule notify_and_upload:
                     message+="hierarchies and either add them to "
                     message+="_./source-data/location_hierarchy.tsv_ or create new annotations "
                     message+="to correct them."
-                
+
                     ./bin/notify-slack "$message" $SLACK_TOKEN {params.slack_channel}
                     ./bin/notify-slack --upload "location-hierarchy-additions.tsv" $SLACK_TOKEN {params.slack_channel} < "$diff"
                 fi
 
             """)
-            
+
             # "Notifying Slack about additional info change."
             shell(f"""
 
@@ -402,7 +420,7 @@ rule notify_and_upload:
 
             # "Notifying Slack about problem data."
             shell(f"""
-            
+
                 if [[ -s "data/genbank/problem_data.tsv" ]]; then
                     # "Notifying Slack about problem data."
                     ./bin/notify-slack --upload "genbank-problem-data.tsv" $SLACK_TOKEN {params.slack_channel} < "data/genbank/problem_data.tsv"
@@ -417,7 +435,7 @@ rule notify_and_upload:
             ./bin/upload-to-s3 {input.metadata} "{params.destination_metadata}"
             ./bin/upload-to-s3 {input.sequences} "{params.destination_sequences}"
             ./bin/upload-to-s3 {input.nextclade} "{params.destination_nextclade}"
-   
+
             ./bin/upload-to-s3 {input.additional_info} "{params.destination_additional_info}"
             ./bin/upload-to-s3 {input.flagged_metadata} "{params.destination_flagged_metadata}"
         """)
@@ -429,6 +447,6 @@ rule notify_and_upload:
                 done
             """)
 
-        shell("""   
+        shell("""
             touch {output}
         """)
