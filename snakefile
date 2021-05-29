@@ -301,7 +301,7 @@ rule upload_ndjson:
         json = "data/{database}/data.ndjson"
     params:
         s3_dst=_get_S3_DST,
-        destination_json = lambda w: _get_S3_DST(w) + "/{database}.ndjson.gz",
+        destination_json = lambda w: _get_S3_DST(w) + f"/{w.database}.ndjson.gz",
         database = "{database}",
         slack_channel = _get_slack_channel
     output:
