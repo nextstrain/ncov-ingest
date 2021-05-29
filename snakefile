@@ -335,12 +335,14 @@ rule upload_and_notify_generic:
         upload_file = "data/{database}/{file}",
         log = "logs/{database}_{file}.upload.log"
     params:
+        s3_dst=_get_S3_DST,
+        compression='gz',
         slack_channel = _get_slack_channel
     output:
         msg = "logs/{database}_{file}.log"
     shell:
         '''
-        ./bin/notify-slack "Updated {input.upload_file} available."  $SLACK_TOKEN {params.slack_channel} 2>&1 |tee {output.msg}
+        ./bin/notify-slack "Updated {params.s3_dst}/{wildcards.file}.{params.compression} available."  $SLACK_TOKEN {params.slack_channel} 2>&1 |tee {output.msg}
         '''
 
 rule metadata_change:
