@@ -312,7 +312,7 @@ rule metadata_change:
                 ./bin/notify-slack --upload "metadata-changes.txt" $SLACK_TOKEN {params.slack_channel} < "$diff"
             else
                 echo "No metadata change."
-            fi | cat > {output}
+            fi
             # checking additions
             if [[ -s "$additions" ]]; then
                 # "Notifying Slack about metadata additions."
@@ -321,7 +321,8 @@ rule metadata_change:
                 if [[ "{params.idcolumn}" == "gisaid_epi_isl" ]]; then
                     ./bin/notify-users-on-new-locations "$additions" --slack-token $SLACK_TOKEN --slack-channel {params.slack_channel}
                 fi
-            fi | cat >> {output}
+            fi
+            touch {output}
         """
 
 rule location_hierarchy_additions:
@@ -346,11 +347,12 @@ rule location_hierarchy_additions:
                 message+="_./source-data/location_hierarchy.tsv_ or create new annotations "
                 message+="to correct them."
 
-                ./bin/notify-slack "$message" $SLACK_TOKEN {params.slack_channel} > {output}
+                ./bin/notify-slack "$message" $SLACK_TOKEN {params.slack_channel}
                 ./bin/notify-slack --upload "location-hierarchy-additions.tsv" $SLACK_TOKEN {params.slack_channel} < "$diff" >> {output}
             else
-                echo "No location hierarchy changes" > {output}
+                echo "No location hierarchy changes"
             fi
+            touch {output}
         """
 
 rule additional_info_changes:
@@ -373,7 +375,8 @@ rule additional_info_changes:
                 ./bin/notify-slack --upload "additional-info-changes.txt" $SLACK_TOKEN {params.slack_channel} < "$diff"
             else
                 echo "No additional info change."
-            fi | cat > {output}
+            fi
+            touch {output}
         """
 
 
@@ -398,7 +401,8 @@ rule new_flagged_metadata:
                 ./bin/notify-slack --upload "flagged-metadata-additions.txt" $SLACK_TOKEN {params.slack_channel} < "$diff"
             else
                 echo "No flagged metadata additions."
-            fi | cat > {output}
+            fi
+            touch {output}
         """
 
 
@@ -448,9 +452,10 @@ rule upload_ndjson:
         fi
 
         ./bin/notify-slack "$msg" $SLACK_TOKEN {params.slack_channel}
-        echo "$msg" > {output.msg}
+        echo "$msg"
 
-        ./bin/upload-to-s3 {input.json} {params.destination_json} 2>&1 >> {output.msg}
+        ./bin/upload-to-s3 {input.json} {params.destination_json} 2>&1
+        touch {output.msg}
         '''
 
 rule upload_and_notify_generic:
