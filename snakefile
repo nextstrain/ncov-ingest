@@ -1,11 +1,7 @@
-
-
-
 configfile: "snake_config.yaml"
 
 wildcard_constraints:
     database = "gisaid|genbank"
-
 
 localrules: all_then_clean, gisaid_then_clean , genbank_then_clean,
             ingest_genbank, ingest_gisaid, download_old_clades,
@@ -17,7 +13,8 @@ localrules: all_then_clean, gisaid_then_clean , genbank_then_clean,
 # we want to check if some environment variable exists.
 #since the envvars: directive only works for later versions of snakemake, we have to do this "nmanually":
 requiredEnvironmentVariables = [ "GITHUB_REF"]
-absentRequiredEnvironmentVariables = [v for v in requiredEnvironmentVariables if not v in os.environ ]
+absentRequiredEnvironmentVariables = [v for v in requiredEnvironmentVariables
+                                      if not v in os.environ ]
 if len( absentRequiredEnvironmentVariables )>0:
     raise Exception("The following environment variables are requested by the workflow but undefined. Please make sure that they are correctly defined before running Snakemake:\n" + '\n'.join(absentRequiredEnvironmentVariables) )
 
@@ -56,8 +53,10 @@ def _get_slack_channel(w):
 def _get_S3_DST(w):
     if w.database=='gisaid':
         return "s3://nextstrain-ncov-private" + BRANCH_SUFFIX
+    elif w.database=='genbank' and len(BRANCH_SUFFIX):
+        return "s3://nextstrain-staging/files/ncov/open" + BRANCH_SUFFIX
     elif w.database=='genbank':
-        return "s3://nextstrain-data/files/ncov/open" + BRANCH_SUFFIX
+        return "s3://nextstrain-data/files/ncov/open"
     else:
         ValueError(f"get_S3_DST: database {w.database} is unknown.")
 
@@ -115,7 +114,7 @@ rule ingest_genbank:
         location_hierarchy = "data/genbank/location_hierarchy.tsv"
 
 
-
+#########################################################################
 rule fetch:
     output:
         "data/{database}/data.ndjson"
@@ -123,7 +122,6 @@ rule fetch:
         database = "{database}",
         s3_dst = _get_S3_DST
     run:
-
         if config['fetch'].lower() in ['1','yes','true']:
             shell( './bin/fetch-from-{params.database} > {output}')
         else :
@@ -151,11 +149,11 @@ rule transform_genbank:
     input:
         "data/genbank/data.ndjson"
     output:
-        metadata="data/genbank/metadata.noClade.tsv",
-        fasta="data/genbank/sequences.fasta",
-        problem="data/genbank/problem_data.tsv",
-        flagged_annotation="data/genbank/transform-log.txt",
-        additional_info="data/genbank/additional_info.tsv",
+        metadata = "data/genbank/metadata.noClade.tsv",
+        fasta = "data/genbank/sequences.fasta",
+        problem = "data/genbank/problem_data.tsv",
+        flagged_annotation = "data/genbank/transform-log.txt",
+        additional_info = "data/genbank/additional_info.tsv"
     shell :
         '''
         ./bin/transform-genbank {input} \
@@ -166,8 +164,9 @@ rule transform_genbank:
         touch {output.additional_info}
         '''
 
-
-
+###################################################################################
+## Nextclade
+###################################################################################
 
 rule download_old_clades :
     output:
@@ -179,12 +178,10 @@ rule download_old_clades :
         '''
         set +e
         ( aws s3 cp --no-progress "{params.dst_source}" - || aws s3 cp --no-progress "{params.src_source}" -) | gunzip -cfq > {output}
-        #( aws s3 cp --no-progress "{params.src_source}" -) | gunzip -cfq > {output}
         if [ ! -f {output} ]
         then
-         exit 1
+          exit 1
         fi
-
         '''
 
 
@@ -195,8 +192,8 @@ rule filter_fasta :
     output:
         "data/{database}/nextclade.sequences.fasta"
     shell:
-        """./bin/filter-fasta --input_fasta={input.fasta} --input_tsv={input.tsv} --output_fasta={output}
-
+        """
+        ./bin/filter-fasta --input_fasta={input.fasta} --input_tsv={input.tsv} --output_fasta={output}
         """
 
 rule get_nextclade_inputs:
@@ -265,6 +262,11 @@ rule join_metadata_and_clades :
     shell:
         "./bin/join-metadata-and-clades {input.meta} {input.clades} -o {output}"
 
+
+###################################################################################
+## nCoV workflow helpers and files for slack
+###################################################################################
+
 rule flag_metadata :
     input :
         rules.join_metadata_and_clades.output
@@ -282,68 +284,6 @@ rule check_locations :
         "data/{database}/location_hierarchy.tsv"
     shell:
         "./bin/check-locations {input} {output} {params.idcolumn}"
-
-rule upload_file:
-    input:
-        "data/{database}/{file}"
-    output:
-        "logs/{database}_{file}.upload.log"
-    params:
-        s3_dst=_get_S3_DST,
-        compression='gz'
-    shell:
-        """
-        ./bin/upload-to-s3 {input} {params.s3_dst}/{wildcards.file}.{params.compression} 2>&1 | tee {output}
-        """
-
-rule upload_ndjson:
-    input :
-        json = "data/{database}/data.ndjson"
-    params:
-        s3_dst=_get_S3_DST,
-        destination_json = lambda w: _get_S3_DST(w) + f"/{w.database}.ndjson.gz",
-        database = "{database}",
-        slack_channel = _get_slack_channel
-    output:
-        msg = "logs/{database}_data.ndjson.msg"
-    shell:
-        '''
-        dst={params.destination_json}
-
-        src_record_count="$(wc -l < "{input.json}")"
-        dst_record_count="$(wc -l < <(aws s3 cp --no-progress "$dst" - | gunzip -cfq))"
-        added_records="$(( src_record_count - dst_record_count ))"
-
-        msg=""
-
-        if [[ $added_records -gt 0 ]]; then
-            msg="📈 New nCoV records (n=$added_records) found on {params.database}."
-        elif [[ $added_records -lt 0 ]]; then
-            msg="WARNING: the new version of {params.database} has fewer records‽"
-        else
-            msg="📈 No new nCoV records found on {params.database}."
-        fi
-
-        ./bin/notify-slack "$msg" $SLACK_TOKEN {params.slack_channel}
-        echo "$msg" > {output.msg}
-
-        ./bin/upload-to-s3 {input.json} {params.destination_json} 2>&1 >> {output}
-        '''
-
-rule upload_and_notify_generic:
-    input :
-        upload_file = "data/{database}/{file}",
-        log = "logs/{database}_{file}.upload.log"
-    params:
-        s3_dst=_get_S3_DST,
-        compression='gz',
-        slack_channel = _get_slack_channel
-    output:
-        msg = "logs/{database}_{file}.log"
-    shell:
-        '''
-        ./bin/notify-slack "Updated {params.s3_dst}/{wildcards.file}.{params.compression} available."  $SLACK_TOKEN {params.slack_channel} 2>&1 |tee {output.msg}
-        '''
 
 rule metadata_change:
     input:
@@ -461,6 +401,72 @@ rule new_flagged_metadata:
             fi | cat > {output}
         """
 
+
+###########################################################################
+### upload
+###########################################################################
+
+rule upload_file:
+    input:
+        "data/{database}/{file}"
+    output:
+        "logs/{database}_{file}.upload.log"
+    params:
+        s3_dst=_get_S3_DST,
+        compression='gz'
+    shell:
+        """
+        ./bin/upload-to-s3 {input} {params.s3_dst}/{wildcards.file}.{params.compression} 2>&1 | tee {output}
+        """
+
+rule upload_ndjson:
+    input :
+        json = "data/{database}/data.ndjson"
+    params:
+        s3_dst=_get_S3_DST,
+        destination_json = lambda w: _get_S3_DST(w) + f"/{w.database}.ndjson.gz",
+        database = "{database}",
+        slack_channel = _get_slack_channel
+    output:
+        msg = "logs/{database}_data.ndjson.msg"
+    shell:
+        '''
+        dst={params.destination_json}
+
+        src_record_count="$(wc -l < "{input.json}")"
+        dst_record_count="$(wc -l < <(aws s3 cp --no-progress "$dst" - | gunzip -cfq))"
+        added_records="$(( src_record_count - dst_record_count ))"
+
+        msg=""
+
+        if [[ $added_records -gt 0 ]]; then
+            msg="📈 New nCoV records (n=$added_records) found on {params.database}."
+        elif [[ $added_records -lt 0 ]]; then
+            msg="WARNING: the new version of {params.database} has fewer records‽"
+        else
+            msg="📈 No new nCoV records found on {params.database}."
+        fi
+
+        ./bin/notify-slack "$msg" $SLACK_TOKEN {params.slack_channel}
+        echo "$msg" > {output.msg}
+
+        ./bin/upload-to-s3 {input.json} {params.destination_json} 2>&1 >> {output.msg}
+        '''
+
+rule upload_and_notify_generic:
+    input :
+        upload_file = "data/{database}/{file}",
+        log = "logs/{database}_{file}.upload.log"
+    params:
+        s3_dst=_get_S3_DST,
+        compression='gz',
+        slack_channel = _get_slack_channel
+    output:
+        msg = "logs/{database}_{file}.log"
+    shell:
+        '''
+        ./bin/notify-slack "Updated {params.s3_dst}/{wildcards.file}.{params.compression} available."  $SLACK_TOKEN {params.slack_channel} 2>&1 |tee {output.msg}
+        '''
 
 rule notify_and_upload:
     input :
