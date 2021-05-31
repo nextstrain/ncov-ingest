@@ -54,11 +54,7 @@ main() {
 }
 
 content-type() {
-    BASENAME="${1}"
-    BASENAME="${BASENAME%.gz}"  # Remove trailing ".gz"
-    BASENAME="${BASENAME%.xz}"  # Remove trailing ".xz"
-
-    case "${BASENAME}" in
+    case "${1%.[gx]z}" in
         *.tsv)      echo --content-type=text/tab-separated-values;;
         *.csv)      echo --content-type=text/comma-separated-values;;
         *.ndjson)   echo --content-type=application/x-ndjson;;
