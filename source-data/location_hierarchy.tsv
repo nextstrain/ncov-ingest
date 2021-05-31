@@ -55,6 +55,7 @@ Africa	Burkina Faso	Boucle du Mouhoun Region	Boromo
 Africa	Burkina Faso	Burkina Faso	
 Africa	Burkina Faso	Cascades	
 Africa	Burkina Faso	Cascades	Banfora
+Africa	Burkina Faso	Dandé	
 Africa	Burkina Faso	Diebougou	
 Africa	Burkina Faso	Hauts-Bassins	
 Africa	Burkina Faso	Hauts-Bassins	Bobo Dioulasso
@@ -345,6 +346,7 @@ Africa	Sierra Leone	Sierra Leone
 Africa	Somalia	Awdal	
 Africa	Somalia	Benadir	
 Africa	Somalia	Maroodi Jeex	
+Africa	Somalia	Mudug	
 Africa	Somalia	Somalia	
 Africa	South Africa	Eastern Cape	
 Africa	South Africa	Eastern Cape	Amathole
@@ -739,9 +741,11 @@ Asia	India	Chandigarh
 Asia	India	Chhattisgarh	
 Asia	India	Chhattisgarh	Bhilai
 Asia	India	Chhattisgarh	Bilaspur
+Asia	India	Chhattisgarh	Dhamtari
 Asia	India	Chhattisgarh	Durg
 Asia	India	Chhattisgarh	Gariyaband
 Asia	India	Chhattisgarh	Janjgir-Champa
+Asia	India	Chhattisgarh	Mahasamund
 Asia	India	Chhattisgarh	Raipur
 Asia	India	Delhi	
 Asia	India	Delhi	New Delhi
@@ -3519,6 +3523,7 @@ Europe	France	Grand Est	Rosenau
 Europe	France	Grand Est	Saint Dizier
 Europe	France	Grand Est	Saint-Avold
 Europe	France	Grand Est	Saint-Ulrich
+Europe	France	Grand Est	Sainte Marie Aux Mines
 Europe	France	Grand Est	Sarreguemines
 Europe	France	Grand Est	Soultz Haut Rhin
 Europe	France	Grand Est	Soultzeren
@@ -3572,6 +3577,7 @@ Europe	France	Hauts de France	Saint Omer
 Europe	France	Hauts de France	Saint Quentin
 Europe	France	Hauts de France	Saint-Saulve
 Europe	France	Hauts de France	Santes
+Europe	France	Hauts de France	Senlis
 Europe	France	Hauts de France	Somain
 Europe	France	Hauts de France	Thiant
 Europe	France	Hauts de France	Tourcoing
@@ -3634,6 +3640,7 @@ Europe	France	Ile de France	Rambouillet
 Europe	France	Ile de France	Saint Germain en Laye
 Europe	France	Ile de France	Saint Mandé
 Europe	France	Ile de France	Saint Ouen l'Aumone
+Europe	France	Ile de France	Saint-Cloud
 Europe	France	Ile de France	Saint-Denis
 Europe	France	Ile de France	Saint-Ouen-sur-Seine
 Europe	France	Ile de France	Saint-Thibault-des-Vignes
@@ -3978,6 +3985,7 @@ Europe	Greece	Central Macedonia
 Europe	Greece	Chalkidiki	
 Europe	Greece	Crete	
 Europe	Greece	Drama	
+Europe	Greece	Eastern Macedonia and Thrace	
 Europe	Greece	Edessa	
 Europe	Greece	Epirus	
 Europe	Greece	Evros	
@@ -4265,12 +4273,14 @@ Europe	Netherlands	Drenthe	Dalen
 Europe	Netherlands	Drenthe	Eelde
 Europe	Netherlands	Drenthe	Een
 Europe	Netherlands	Drenthe	Emmen
+Europe	Netherlands	Drenthe	Koekange
 Europe	Netherlands	Drenthe	Meppel
 Europe	Netherlands	Drenthe	Nieuw Annerveen
 Europe	Netherlands	Drenthe	Norg
 Europe	Netherlands	Drenthe	Peize
 Europe	Netherlands	Drenthe	Roden
 Europe	Netherlands	Drenthe	Ruinen
+Europe	Netherlands	Drenthe	Valthermond
 Europe	Netherlands	Drenthe	Vries
 Europe	Netherlands	Drenthe	Zuidlaren
 Europe	Netherlands	Drenthe	Zuidwolde
@@ -4371,6 +4381,7 @@ Europe	Netherlands	North Brabant	Gilze en Rijen
 Europe	Netherlands	North Brabant	Heeswijk Dinther
 Europe	Netherlands	North Brabant	Heeze-Leende
 Europe	Netherlands	North Brabant	Helmond
+Europe	Netherlands	North Brabant	Kaatsheuvel
 Europe	Netherlands	North Brabant	Loon op Zand
 Europe	Netherlands	North Brabant	Loon op zand
 Europe	Netherlands	North Brabant	Milheeze
@@ -4441,6 +4452,7 @@ Europe	Netherlands	North Holland	Zaandam
 Europe	Netherlands	North Holland	Zaandijk
 Europe	Netherlands	North Holland	Zwaag
 Europe	Netherlands	Overijssel	
+Europe	Netherlands	Overijssel	Almelo
 Europe	Netherlands	Overijssel	Borne
 Europe	Netherlands	Overijssel	Genemuiden
 Europe	Netherlands	Overijssel	Hengelo
@@ -8951,13 +8963,18 @@ North America	USA	Missouri	St. Louis MO
 North America	USA	Montana	
 North America	USA	Montana	Belgrade
 North America	USA	Montana	Big Sky
+North America	USA	Montana	Blaine County
 North America	USA	Montana	Bozeman
+North America	USA	Montana	Cascade County
+North America	USA	Montana	Chouteau County
 North America	USA	Montana	Ennis
 North America	USA	Montana	Flathead County
 North America	USA	Montana	Gallatin County MT
 North America	USA	Montana	Lewis and Clark County
 North America	USA	Montana	Ravalli County
+North America	USA	Montana	Sweet Grass County
 North America	USA	Montana	West Yellowstone
+North America	USA	Montana	Yellowstone County
 North America	USA	Navassa Island	
 North America	USA	Nebraska	
 North America	USA	Nebraska	Lancaster County
@@ -9018,6 +9035,7 @@ North America	USA	New Mexico	Cibola County
 North America	USA	New Mexico	Colfax County
 North America	USA	New Mexico	Dona Ana County
 North America	USA	New Mexico	Grant County NM
+North America	USA	New Mexico	Guadalupe County NM
 North America	USA	New Mexico	Los Alamos County
 North America	USA	New Mexico	Luna County
 North America	USA	New Mexico	Otero County
@@ -9121,6 +9139,7 @@ North America	USA	North Carolina	Cumberland County NC
 North America	USA	North Carolina	Forsyth County
 North America	USA	North Carolina	Guilford County
 North America	USA	North Carolina	Mecklenburg County
+North America	USA	North Carolina	Wake County NC
 North America	USA	North Dakota	
 North America	USA	Northern Mariana Islands	
 North America	USA	Ohio	
@@ -9227,31 +9246,44 @@ North America	USA	Rhode Island	Washington County RI
 North America	USA	South Carolina	
 North America	USA	South Carolina	Abbeville County
 North America	USA	South Carolina	Aiken
+North America	USA	South Carolina	Allendale County
 North America	USA	South Carolina	Anderson County
 North America	USA	South Carolina	Anderson County SC
+North America	USA	South Carolina	Bamberg County
+North America	USA	South Carolina	Barnwell County
 North America	USA	South Carolina	Beaufort County
 North America	USA	South Carolina	Berkeley County
 North America	USA	South Carolina	Charleston County
+North America	USA	South Carolina	Chesterfield County SC
 North America	USA	South Carolina	Colleton County
 North America	USA	South Carolina	Columbia SC
 North America	USA	South Carolina	Darlington County
 North America	USA	South Carolina	Dorchester County
+North America	USA	South Carolina	Edgefield County
 North America	USA	South Carolina	Fairfield County SC
 North America	USA	South Carolina	Florence County
 North America	USA	South Carolina	Georgetown
 North America	USA	South Carolina	Georgetown County
 North America	USA	South Carolina	Greenville County
 North America	USA	South Carolina	Greenwood County
+North America	USA	South Carolina	Greenwood County SC
 North America	USA	South Carolina	Hampton County
 North America	USA	South Carolina	Horry
 North America	USA	South Carolina	Horry County
+North America	USA	South Carolina	Jasper County SC
+North America	USA	South Carolina	Kershaw County
 North America	USA	South Carolina	Lancaster County SC
 North America	USA	South Carolina	Laurens County SC
+North America	USA	South Carolina	Lee County SC
+North America	USA	South Carolina	Lexington County
 North America	USA	South Carolina	Marion County SC
+North America	USA	South Carolina	Marlboro County
 North America	USA	South Carolina	Orangeburg County
 North America	USA	South Carolina	Pickens County SC
 North America	USA	South Carolina	Richland County SC
 North America	USA	South Carolina	Spartanburg County
+North America	USA	South Carolina	Sumter County SC
+North America	USA	South Carolina	Union County SC
 North America	USA	South Carolina	Williamsburg
 North America	USA	South Carolina	Williamsburg County
 North America	USA	South Carolina	York County
@@ -9980,23 +10012,32 @@ South America	Brazil	Acre	Cruzeiro do Sul
 South America	Brazil	Acre	Rodrigues Alves
 South America	Brazil	Alagoas	
 South America	Brazil	Alagoas	Anadia
+South America	Brazil	Alagoas	Arapiraca
 South America	Brazil	Alagoas	Capela (Alagoas)
 South America	Brazil	Alagoas	Cha Preta
+South America	Brazil	Alagoas	Colonia Leopoldina
 South America	Brazil	Alagoas	Delmiro Gouveia
 South America	Brazil	Alagoas	Flexeiras
 South America	Brazil	Alagoas	Girau do Ponciano
 South America	Brazil	Alagoas	Maceio
+South America	Brazil	Alagoas	Maragogi
 South America	Brazil	Alagoas	Marechal Deodoro
+South America	Brazil	Alagoas	Murici
 South America	Brazil	Alagoas	Palmeira Dos Indios
 South America	Brazil	Alagoas	Rio Largo
 South America	Brazil	Alagoas	Santana do Ipanema
 South America	Brazil	Alagoas	Santana do Mundau
+South America	Brazil	Alagoas	Sao Miguel Dos Campos
 South America	Brazil	Alagoas	Sao Sebastiao (Alagoas)
 South America	Brazil	Alagoas	Uniao Dos Palmares
+South America	Brazil	Alagoas	Vicosa
 South America	Brazil	Amapa	
 South America	Brazil	Amapa	Cutias
+South America	Brazil	Amapa	Laranjal do Jari
 South America	Brazil	Amapa	Macapá
 South America	Brazil	Amapa	Santana BR
+South America	Brazil	Amapa	Sao Francisco
+South America	Brazil	Amapa	Vitoria do Jari
 South America	Brazil	Amazonas BR	
 South America	Brazil	Amazonas BR	Anori
 South America	Brazil	Amazonas BR	Autazes
@@ -10067,24 +10108,29 @@ South America	Brazil	Distrito Federal	Planaltina
 South America	Brazil	Distrito Federal	Santa Maria DF
 South America	Brazil	Espirito Santo	
 South America	Brazil	Espirito Santo	Aguia Branca
+South America	Brazil	Espirito Santo	Anchieta
 South America	Brazil	Espirito Santo	Aracruz
 South America	Brazil	Espirito Santo	Baixo Guandu
 South America	Brazil	Espirito Santo	Barra do Sao Francisco
 South America	Brazil	Espirito Santo	Cachoeiro de Itapemirim
 South America	Brazil	Espirito Santo	Cariacica
 South America	Brazil	Espirito Santo	Domingos Martins
+South America	Brazil	Espirito Santo	Dores do Rio Preto
 South America	Brazil	Espirito Santo	Fundao
 South America	Brazil	Espirito Santo	Governador Lindenberg
 South America	Brazil	Espirito Santo	Guarapari
 South America	Brazil	Espirito Santo	Irupi
+South America	Brazil	Espirito Santo	Jeronimo Monteiro
 South America	Brazil	Espirito Santo	Laranjeiras (Espirito Santo)
 South America	Brazil	Espirito Santo	Linhares
 South America	Brazil	Espirito Santo	Marataizes
+South America	Brazil	Espirito Santo	Mimoso do Sul
 South America	Brazil	Espirito Santo	Rochedo
 South America	Brazil	Espirito Santo	Santa Maria de Jetiba
 South America	Brazil	Espirito Santo	Santa Teresa
 South America	Brazil	Espirito Santo	Sao Gabriel Da Palha
 South America	Brazil	Espirito Santo	Serra
+South America	Brazil	Espirito Santo	Viana BR
 South America	Brazil	Espirito Santo	Vila Pavao
 South America	Brazil	Espirito Santo	Vila Valerio
 South America	Brazil	Espirito Santo	Vila Velha
@@ -10132,17 +10178,23 @@ South America	Brazil	Goiás	Turvania
 South America	Brazil	Goiás	Valparaiso de Goias
 South America	Brazil	Maranhão	
 South America	Brazil	Maranhão	Anapurus
+South America	Brazil	Maranhão	Aracagy
 South America	Brazil	Maranhão	Balsas
 South America	Brazil	Maranhão	Cachoeira Grande
 South America	Brazil	Maranhão	Cajapio
 South America	Brazil	Maranhão	Caxias
+South America	Brazil	Maranhão	Governador Edson Lobao
+South America	Brazil	Maranhão	Grajau
 South America	Brazil	Maranhão	Imperatriz
+South America	Brazil	Maranhão	Lima Campos
+South America	Brazil	Maranhão	Marica
 South America	Brazil	Maranhão	Miranda do Norte
 South America	Brazil	Maranhão	Paco do Lumiar
 South America	Brazil	Maranhão	Peritoro
 South America	Brazil	Maranhão	Pirapemas
 South America	Brazil	Maranhão	Rosario BR
 South America	Brazil	Maranhão	Santa Ines
+South America	Brazil	Maranhão	Santa Luzia
 South America	Brazil	Maranhão	Sao Jose de Ribamar
 South America	Brazil	Maranhão	Sao Luis
 South America	Brazil	Maranhão	Timon
@@ -10201,6 +10253,7 @@ South America	Brazil	Minas Gerais	Coromandel
 South America	Brazil	Minas Gerais	Desterro do Melo
 South America	Brazil	Minas Gerais	Divinopolis
 South America	Brazil	Minas Gerais	Esmeraldas BR
+South America	Brazil	Minas Gerais	Formiga
 South America	Brazil	Minas Gerais	Governador Valadares
 South America	Brazil	Minas Gerais	Guaira
 South America	Brazil	Minas Gerais	Guape
@@ -10222,21 +10275,26 @@ South America	Brazil	Minas Gerais	Ouro Branco
 South America	Brazil	Minas Gerais	Paracatu
 South America	Brazil	Minas Gerais	Patrocinio
 South America	Brazil	Minas Gerais	Pocos de Caldas
+South America	Brazil	Minas Gerais	Recreio
 South America	Brazil	Minas Gerais	Rio Paranaiba
 South America	Brazil	Minas Gerais	Sabara
 South America	Brazil	Minas Gerais	Santo Antonio do Aventureiro
 South America	Brazil	Minas Gerais	Sete Lagoas
+South America	Brazil	Minas Gerais	Tres Marias
 South America	Brazil	Minas Gerais	Uberaba
 South America	Brazil	Minas Gerais	Unai
+South America	Brazil	Minas Gerais	Varginha
 South America	Brazil	Para	
 South America	Brazil	Para	Ananindeua
 South America	Brazil	Para	Augusto Correa
 South America	Brazil	Para	Belem do Para
 South America	Brazil	Para	Belém
+South America	Brazil	Para	Benevides
 South America	Brazil	Para	Braganca
 South America	Brazil	Para	Breves
 South America	Brazil	Para	Cachoeira do Arari
 South America	Brazil	Para	Cametá
+South America	Brazil	Para	Canaa Doa Carajas
 South America	Brazil	Para	Castanhal
 South America	Brazil	Para	Conceição do Araguaia
 South America	Brazil	Para	Concórdia do Pará
@@ -10380,11 +10438,13 @@ South America	Brazil	Pernambuco	Bezerros
 South America	Brazil	Pernambuco	Cabo de Santo Agostinho
 South America	Brazil	Pernambuco	Camaragibe
 South America	Brazil	Pernambuco	Camocim de Sao Felix
+South America	Brazil	Pernambuco	Carnaiba
 South America	Brazil	Pernambuco	Carpina
 South America	Brazil	Pernambuco	Caruaru
 South America	Brazil	Pernambuco	Catende
 South America	Brazil	Pernambuco	Cha Grande
 South America	Brazil	Pernambuco	Condado
+South America	Brazil	Pernambuco	Fernando de Noronha
 South America	Brazil	Pernambuco	Gameleira
 South America	Brazil	Pernambuco	Goiana
 South America	Brazil	Pernambuco	Gravata
@@ -10432,6 +10492,7 @@ South America	Brazil	Piaui	União
 South America	Brazil	Rio Grande do Norte	
 South America	Brazil	Rio Grande do Norte	Caicó
 South America	Brazil	Rio Grande do Norte	Currais Novos
+South America	Brazil	Rio Grande do Norte	Guamare
 South America	Brazil	Rio Grande do Norte	João Câmara
 South America	Brazil	Rio Grande do Norte	Natal
 South America	Brazil	Rio Grande do Norte	Paranamirim
@@ -10664,6 +10725,7 @@ South America	Brazil	Rondonia	Sao Miguel do Guapore
 South America	Brazil	Roraima	
 South America	Brazil	Roraima	Boa Vista
 South America	Brazil	Roraima	Bonfim
+South America	Brazil	Roraima	Caroebe
 South America	Brazil	Santa Catarina	
 South America	Brazil	Santa Catarina	Araquari
 South America	Brazil	Santa Catarina	Ararangua
@@ -10678,7 +10740,9 @@ South America	Brazil	Santa Catarina	Blumenau
 South America	Brazil	Santa Catarina	Braco do Norte
 South America	Brazil	Santa Catarina	Brusque
 South America	Brazil	Santa Catarina	Camboriu
+South America	Brazil	Santa Catarina	Campo Alegre
 South America	Brazil	Santa Catarina	Canoinhas
+South America	Brazil	Santa Catarina	Capivari de Baixo
 South America	Brazil	Santa Catarina	Chapeco
 South America	Brazil	Santa Catarina	Concordia BR
 South America	Brazil	Santa Catarina	Florianopolis
@@ -10733,6 +10797,8 @@ South America	Brazil	Sergipe	Laranjeiras (Sergipe)
 South America	Brazil	Sergipe	Nossa Senhora Da Gloria
 South America	Brazil	Sergipe	Nossa Senhora do Socorro
 South America	Brazil	Sergipe	Porto Da Folha
+South America	Brazil	Sergipe	Propria
+South America	Brazil	Sergipe	Riachao do Dantas
 South America	Brazil	Sergipe	Riachuelo
 South America	Brazil	Sergipe	Simao Dias
 South America	Brazil	Sergipe	Tobias Barreto

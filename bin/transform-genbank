@@ -303,7 +303,7 @@ if __name__ == '__main__':
         description=__doc__,
         formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument("genbank_data",
-        default="s3://nextstrain-data/ncov-ingest/genbank.ndjson.gz",
+        default="s3://nextstrain-data/files/ncov/open/genbank.ndjson.gz",
         nargs="?",
         help="Newline-delimited GenBank JSON data")
     parser.add_argument("--annotations",
