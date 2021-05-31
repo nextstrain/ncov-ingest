@@ -39,7 +39,9 @@ echo "S3_DST is $S3_DST"
 
 cd "$(dirname "$0")/.."
 
-set -x
+#if [[ "$branch" == master ]]; then
+  bin/notify-on-job-start "🥣 GenBank ingest"
+#fi
 
 ./bin/fetch-from-genbank > data/genbank.ndjson
 if [[ "$branch" == master ]]; then
