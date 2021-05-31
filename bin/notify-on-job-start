@@ -2,7 +2,8 @@
 set -euo pipefail
 
 : "${SLACK_TOKEN:?The SLACK_TOKEN environment variable is required.}"
-: "${SLACK_CHANNELS:?The SLACK_CHANNELS environment variable is required.}"
+#: "${SLACK_CHANNELS:?The SLACK_CHANNELS environment variable is required.}"
+export SLACK_CHANNELS="ncov-gisaid-updates"
 
 bin="$(dirname "$0")"
 
