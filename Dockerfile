@@ -30,26 +30,11 @@
 #   -trs, 19 Jan 2020
 FROM nextstrain/base:branch-python-base
 
-# Configure third-party apt repos for Node.js and Yarn
-RUN apt-get install -y --no-install-recommends gnupg1 \
- && curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key \
-        | gpg1 --no-default-keyring --keyring /etc/apt/trusted.gpg.d/nodesource.gpg --import - \
- && curl -fsSL https://dl.yarnpkg.com/debian/pubkey.gpg \
-        | gpg1 --no-default-keyring --keyring /etc/apt/trusted.gpg.d/yarn.gpg --import - \
- && chmod a+r /etc/apt/trusted.gpg.d/*.gpg \
- && echo deb https://deb.nodesource.com/node_12.x buster main \
-        > /etc/apt/sources.list.d/nodesource.list \
- && echo deb https://dl.yarnpkg.com/debian/ stable main \
-        > /etc/apt/sources.list.d/yarn.list \
- && apt-get purge -y --auto-remove gnupg1
-
-# Install Node.js and Yarn, along with a Python package for which Python 3.7
-# wheels do not yet exist on PyPI.
+# Install Python package for which Python 3.7 wheels do not yet exist on PyPI.
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        xz-utils \
-        nodejs \
         python3-netifaces \
-        yarn
+        time \
+        xz-utils
 
 # Install Python deps
 RUN python3 -m pip install pipenv
@@ -57,9 +42,14 @@ COPY Pipfile Pipfile.lock /nextstrain/ncov-ingest/
 RUN PIPENV_PIPFILE=/nextstrain/ncov-ingest/Pipfile pipenv sync --system
 
 # Install Nextclade
-COPY package.json yarn.lock /nextstrain/ncov-ingest/
-RUN cd /nextstrain/ncov-ingest && yarn install --non-interactive
-ENV PATH="/nextstrain/ncov-ingest/node_modules/.bin:$PATH"
+RUN curl -fsSL https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-Linux-x86_64 \
+         -o /usr/local/bin/nextclade \
+ && chmod a+rx /usr/local/bin/nextclade
+
+# Install Nextclade C++
+RUN curl -fsSL https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-Linux-x86_64 \
+         -o /usr/local/bin/nextclade \
+ && chmod a+rx /usr/local/bin/nextclade
 
 # Put any bin/ dir in the cwd on the path for more convenient invocation of
 # ncov-ingest's programs.

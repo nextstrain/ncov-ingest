@@ -16,7 +16,7 @@ reference_day = datetime(2020,1,1).toordinal()
 column_map = {
     "clade": "Nextstrain_clade",
     "totalMissing": "missing_data",
-    "totalMutations": "divergence",
+    "totalSubstitutions": "divergence",
     "totalNonACGTNs": "nonACGTN",
     "qc.privateMutations.total":  "rare_mutations",
     "qc.snpClusters.totalSNPs": "snp_clusters",
@@ -24,6 +24,14 @@ column_map = {
     "qc.mixedSites.status": "QC_mixed_sites",
     "qc.privateMutations.status": "QC_rare_mutations",
     "qc.snpClusters.status": "QC_snp_clusters",
+}
+
+preferred_types = {
+    "divergence": "int32",
+    "nonACGTN": "int32",
+    "missing_data": "int32",
+    "snp_clusters": "int32",
+    "rare_mutations": "int32"
 }
 
 def reorder_columns(result: pd.DataFrame):
@@ -69,6 +77,7 @@ def main():
     clades = pd.read_csv(args.second_file, index_col=NEXTCLADE_JOIN_COLUMN_NAME,
                          sep='\t', low_memory=False, na_filter = False) \
             .rename(columns=column_map)
+    # clades.astype(preferred_types)
 
     clades = clades[list(column_map.values())]
     divergence = pd.read_csv("source-data/clade_divergence.tsv", sep='\t', index_col="clade")
