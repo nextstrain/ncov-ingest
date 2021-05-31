@@ -4,18 +4,6 @@ set -euo pipefail
 bin="$(dirname "$0")"
 
 main() {
-    local quiet=0
-
-    for arg; do
-        case "$arg" in
-            --quiet)
-                quiet=1
-                shift;;
-            *)
-                break;;
-        esac
-    done
-
     local src="${1:?A source s3:// URL is required as the first argument.}"
     local dst="${2:?A destination file path is required as the second argument.}"
 
@@ -40,34 +28,9 @@ main() {
         else
             cat
         fi > "$dst"
-
-        if [[ $quiet == 1 ]]; then
-            echo "Quiet mode. No Slack notification sent."
-            exit 0
-        fi
-
-        if ! "$bin"/notify-slack "Updated $dst available."; then
-            echo "Notifying Slack failed, but exiting with success anyway."
-        fi
     else
         echo "Files are identical, skipping upload"
     fi
-}
-
-content-type() {
-    case "${1%.[gx]z}" in
-        *.tsv)      echo --content-type=text/tab-separated-values;;
-        *.csv)      echo --content-type=text/comma-separated-values;;
-        *.ndjson)   echo --content-type=application/x-ndjson;;
-        *)          echo --content-type=text/plain;;
-    esac
-}
-
-content-encoding() {
-    case "$1" in
-        *.gz) echo --content-encoding=gzip;;
-        *.xz) echo --content-encoding=xz;;
-    esac
 }
 
 main "$@"
