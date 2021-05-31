@@ -29,7 +29,7 @@ if github_ref == "refs/heads/master" :
     NOTIFY = True
 elif github_ref.startswith('refs/heads/') :
     BRANCH_SUFFIX = "/branch/" + github_ref[ len('refs/heads/') : ]
-    NOTIFY = True
+    NOTIFY = False
 else:
     print("skipping ingest for ref",github_ref)
     exit(0)
