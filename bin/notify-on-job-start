@@ -17,5 +17,5 @@ if [ -n "${AWS_BATCH_JOB_ID}" ]; then
 
     msg_command="Follow along in your local \`ncov-ingest\` repo with: "'```'"nextstrain build --aws-batch --attach ${AWS_BATCH_JOB_ID} ."'```'
 
-    "bin"/notify-slack "${msg_job_id}. ${msg_action}. ${msg_command}"
+    "$bin"/notify-slack "${msg_job_id}. ${msg_action}. ${msg_command}"
 fi
