@@ -39,64 +39,64 @@ echo "S3_DST is $S3_DST"
 
 cd "$(dirname "$0")/.."
 
-#if [[ "$branch" == master ]]; then
+if [[ "$branch" == master ]]; then
   bin/notify-on-job-start "🥣 GenBank ingest"
-#fi
+fi
 
-#./bin/fetch-from-genbank > data/genbank.ndjson
-#if [[ "$branch" == master ]]; then
-#    ./bin/notify-on-record-change data/genbank.ndjson "$S3_SRC/genbank.ndjson.gz" "GenBank"
-#fi
-#./bin/upload-to-s3 ${silent:+--quiet} data/genbank.ndjson "$S3_DST/genbank.ndjson.gz"
-#
-#./bin/transform-genbank data/genbank.ndjson \
-#    --output-metadata data/genbank/metadata.tsv \
-#    --output-fasta data/genbank/sequences.fasta
-#./bin/check-locations data/genbank/metadata.tsv \
-#    data/genbank/location_hierarchy.tsv \
-#    genbank_accession
-#
-## Download old clades
-#(   aws s3 cp --no-progress "$S3_DST/nextclade.tsv.gz" - \
-#    || aws s3 cp --no-progress "$S3_SRC/nextclade.tsv.gz" -) \
-#    | gunzip -cfq \
-#    > "data/genbank/nextclade_old.tsv"
-#
-## Find sequences in FASTA which don't have clades assigned yet
-#./bin/filter-fasta \
-#    --input_fasta="data/genbank/sequences.fasta" \
-#    --input_tsv="data/genbank/nextclade_old.tsv" \
-#    --output_fasta="data/genbank/nextclade.sequences.fasta" \
-#
-## And if it's not empty, run nextclade analysis on these sequences,
-## to assign clades and calculate other useful metrics
-#./bin/run-nextclade \
-#  "data/genbank/nextclade.sequences.fasta" \
-#  "data/genbank/nextclade_new.tsv" \
-#  "data/genbank/nextclade-inputs" \
-#  "data/genbank/nextclade"
-#
-## Join new and old clades, so that next run won't need to process sequences that are already processed
-#./bin/join-rows \
-#  "data/genbank/nextclade_old.tsv" \
-#  "data/genbank/nextclade_new.tsv" \
-#  -o "data/genbank/nextclade.tsv"
-#
-## Join these clades into metadata
-#./bin/join-metadata-and-clades \
-#    "data/genbank/metadata.tsv" \
-#    "data/genbank/nextclade.tsv" \
-#    -o "data/genbank/metadata.tsv"
-#
-#
-#if [[ "$branch" == master ]]; then
-#    ./bin/notify-on-metadata-change data/genbank/metadata.tsv "$S3_SRC/metadata.tsv.gz" genbank_accession
-#    ./bin/notify-on-problem-data data/genbank/problem_data.tsv
-#    ./bin/notify-on-location-hierarchy-addition data/genbank/location_hierarchy.tsv source-data/location_hierarchy.tsv
-#fi
-#
-#./bin/upload-to-s3 ${silent:+--quiet} data/genbank/metadata.tsv "$S3_DST/metadata.tsv.gz"
-#./bin/upload-to-s3 ${silent:+--quiet} data/genbank/sequences.fasta "$S3_DST/sequences.fasta.gz"
-#./bin/upload-to-s3 ${silent:+--quiet} data/genbank/nextclade.tsv "$S3_DST/nextclade.tsv.gz"
+./bin/fetch-from-genbank > data/genbank.ndjson
+if [[ "$branch" == master ]]; then
+    ./bin/notify-on-record-change data/genbank.ndjson "$S3_SRC/genbank.ndjson.gz" "GenBank"
+fi
+./bin/upload-to-s3 ${silent:+--quiet} data/genbank.ndjson "$S3_DST/genbank.ndjson.gz"
+
+./bin/transform-genbank data/genbank.ndjson \
+    --output-metadata data/genbank/metadata.tsv \
+    --output-fasta data/genbank/sequences.fasta
+./bin/check-locations data/genbank/metadata.tsv \
+    data/genbank/location_hierarchy.tsv \
+    genbank_accession
+
+# Download old clades
+(   aws s3 cp --no-progress "$S3_DST/nextclade.tsv.gz" - \
+    || aws s3 cp --no-progress "$S3_SRC/nextclade.tsv.gz" -) \
+    | gunzip -cfq \
+    > "data/genbank/nextclade_old.tsv"
+
+# Find sequences in FASTA which don't have clades assigned yet
+./bin/filter-fasta \
+    --input_fasta="data/genbank/sequences.fasta" \
+    --input_tsv="data/genbank/nextclade_old.tsv" \
+    --output_fasta="data/genbank/nextclade.sequences.fasta" \
+
+# And if it's not empty, run nextclade analysis on these sequences,
+# to assign clades and calculate other useful metrics
+./bin/run-nextclade \
+  "data/genbank/nextclade.sequences.fasta" \
+  "data/genbank/nextclade_new.tsv" \
+  "data/genbank/nextclade-inputs" \
+  "data/genbank/nextclade"
+
+# Join new and old clades, so that next run won't need to process sequences that are already processed
+./bin/join-rows \
+  "data/genbank/nextclade_old.tsv" \
+  "data/genbank/nextclade_new.tsv" \
+  -o "data/genbank/nextclade.tsv"
+
+# Join these clades into metadata
+./bin/join-metadata-and-clades \
+    "data/genbank/metadata.tsv" \
+    "data/genbank/nextclade.tsv" \
+    -o "data/genbank/metadata.tsv"
+
+
+if [[ "$branch" == master ]]; then
+    ./bin/notify-on-metadata-change data/genbank/metadata.tsv "$S3_SRC/metadata.tsv.gz" genbank_accession
+    ./bin/notify-on-problem-data data/genbank/problem_data.tsv
+    ./bin/notify-on-location-hierarchy-addition data/genbank/location_hierarchy.tsv source-data/location_hierarchy.tsv
+fi
+
+./bin/upload-to-s3 ${silent:+--quiet} data/genbank/metadata.tsv "$S3_DST/metadata.tsv.gz"
+./bin/upload-to-s3 ${silent:+--quiet} data/genbank/sequences.fasta "$S3_DST/sequences.fasta.gz"
+./bin/upload-to-s3 ${silent:+--quiet} data/genbank/nextclade.tsv "$S3_DST/nextclade.tsv.gz"
 
 ./bin/clean
