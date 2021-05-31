@@ -29,7 +29,7 @@ main() {
             cat
         fi > "$dst"
     else
-        echo "Files are identical, skipping upload"
+        echo "[ INFO] Files are identical, skipping download"
     fi
 }
 
