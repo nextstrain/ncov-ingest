@@ -333,6 +333,7 @@ Africa	Senegal	Kolda
 Africa	Senegal	Kolda	Velingara
 Africa	Senegal	Mbour	
 Africa	Senegal	Senegal	
+Africa	Senegal	Senegal	Ngor
 Africa	Senegal	St-Louis	
 Africa	Senegal	Thies	
 Africa	Senegal	Thies	Guereo
@@ -537,6 +538,7 @@ Asia	Bangladesh	Chattogram	Sholokbahar
 Asia	Bangladesh	Cox'S Bazar	
 Asia	Bangladesh	Cumilla	
 Asia	Bangladesh	Dhaka	
+Asia	Bangladesh	Dhaka	Aftabnagar
 Asia	Bangladesh	Dhaka	Agargaon
 Asia	Bangladesh	Dhaka	Ashkona
 Asia	Bangladesh	Dhaka	Azimpur
@@ -549,10 +551,13 @@ Asia	Bangladesh	Dhaka	Damudya Upazila
 Asia	Bangladesh	Dhaka	Dhaka
 Asia	Bangladesh	Dhaka	Dhamrai
 Asia	Bangladesh	Dhaka	Dhanmondi
+Asia	Bangladesh	Dhaka	East Shewrapara
+Asia	Bangladesh	Dhaka	Elephant Road
 Asia	Bangladesh	Dhaka	Faridpur
 Asia	Bangladesh	Dhaka	Farmgate
 Asia	Bangladesh	Dhaka	Gazipur
 Asia	Bangladesh	Dhaka	Gosairhat Upazila
+Asia	Bangladesh	Dhaka	Green Road
 Asia	Bangladesh	Dhaka	Gulshan
 Asia	Bangladesh	Dhaka	Jatrabari
 Asia	Bangladesh	Dhaka	Kalabagan
@@ -573,6 +578,7 @@ Asia	Bangladesh	Dhaka	Naria Upazila
 Asia	Bangladesh	Dhaka	Narsingdi
 Asia	Bangladesh	Dhaka	Niketan
 Asia	Bangladesh	Dhaka	Nikunja
+Asia	Bangladesh	Dhaka	North Shajahanpur
 Asia	Bangladesh	Dhaka	Old Dhaka
 Asia	Bangladesh	Dhaka	Panthapath
 Asia	Bangladesh	Dhaka	Rahmatganj
@@ -584,7 +590,9 @@ Asia	Bangladesh	Dhaka	Shariatpur Sadar Upazila
 Asia	Bangladesh	Dhaka	Shaymoli
 Asia	Bangladesh	Dhaka	Tangail
 Asia	Bangladesh	Dhaka	Tejgaon
+Asia	Bangladesh	Dhaka	Tejkunipara
 Asia	Bangladesh	Dhaka	Uttara
+Asia	Bangladesh	Dhaka	West Dhanmondi
 Asia	Bangladesh	Dinajpur	
 Asia	Bangladesh	Jhenaidha	
 Asia	Bangladesh	Jhenaidha	Shailokupa
@@ -1129,13 +1137,17 @@ Asia	Indonesia	Yogyakarta	Sleman
 Asia	Iran	Abadan	
 Asia	Iran	Alborz Province	
 Asia	Iran	Arak	
+Asia	Iran	Bushehr	
 Asia	Iran	Gilan	
 Asia	Iran	Gorgan	
 Asia	Iran	Hamedan	
 Asia	Iran	Hormozgan	
 Asia	Iran	Iran	
+Asia	Iran	Isfahan	
 Asia	Iran	Karaj	
 Asia	Iran	Kashmar	
+Asia	Iran	Kerman	
+Asia	Iran	Maku	
 Asia	Iran	Qom	
 Asia	Iran	Semnan	
 Asia	Iran	Shiraz	
@@ -1576,6 +1588,7 @@ Asia	Thailand	Nakhonnayok
 Asia	Thailand	Narathiwat	
 Asia	Thailand	Nonthaburi	
 Asia	Thailand	Pathum Thani	
+Asia	Thailand	Pattani	
 Asia	Thailand	Phetchaburi	
 Asia	Thailand	Phitsanulok	
 Asia	Thailand	Phuket	
@@ -1587,6 +1600,7 @@ Asia	Thailand	Samut Sakhon
 Asia	Thailand	Samut Songkhram	
 Asia	Thailand	Saraburi	
 Asia	Thailand	Singburi	
+Asia	Thailand	Songkhla	
 Asia	Thailand	Thailand	
 Asia	Thailand	Trang	
 Asia	Timor-Leste	Timor-Leste	
@@ -1813,6 +1827,7 @@ Europe	Austria	Upper Austria	Ebensee Am Traunsee
 Europe	Austria	Upper Austria	Eberstalzell
 Europe	Austria	Upper Austria	Edt Bei Lambach
 Europe	Austria	Upper Austria	Eferding
+Europe	Austria	Upper Austria	Engerwitzdorf
 Europe	Austria	Upper Austria	Eschenau Im Hausruckkreis
 Europe	Austria	Upper Austria	Fischlham
 Europe	Austria	Upper Austria	Fornach
@@ -1856,6 +1871,8 @@ Europe	Austria	Upper Austria	Pöndorf
 Europe	Austria	Upper Austria	Regau
 Europe	Austria	Upper Austria	Ried
 Europe	Austria	Upper Austria	Roitham am Traunfall
+Europe	Austria	Upper Austria	Rüstorf
+Europe	Austria	Upper Austria	Sankt Lorenz
 Europe	Austria	Upper Austria	Scharnstein
 Europe	Austria	Upper Austria	Schwanenstadt
 Europe	Austria	Upper Austria	Schörfling Am Attersee
@@ -1864,6 +1881,7 @@ Europe	Austria	Upper Austria	St. Georgen Im Attergau
 Europe	Austria	Upper Austria	St. Konrad
 Europe	Austria	Upper Austria	Steinerkirchen an der Traun
 Europe	Austria	Upper Austria	Steyr-Land
+Europe	Austria	Upper Austria	Strass Im Attergau
 Europe	Austria	Upper Austria	Timelkam
 Europe	Austria	Upper Austria	Traunkirchen
 Europe	Austria	Upper Austria	Unterach Am Attersee
@@ -3503,6 +3521,7 @@ Europe	France	French Guiana	Iracoubo
 Europe	France	French Guiana	Javouhey
 Europe	France	French Guiana	Kourou
 Europe	France	French Guiana	Macouria
+Europe	France	French Guiana	Matoury
 Europe	France	French Guiana	Papaichton
 Europe	France	French Guiana	Regina
 Europe	France	French Guiana	Remire-Montjoly
@@ -4013,13 +4032,22 @@ Europe	Germany	Thuringia
 Europe	Germany	Thuringia	Jena
 Europe	Germany	Western Pomerania	
 Europe	Germany	Western Pomerania	Rostock
+Europe	Greece	Aegean Islands	
+Europe	Greece	Aegean Islands	Ikaria
+Europe	Greece	Aegean Islands	Kalymnos
+Europe	Greece	Aegean Islands	Kos
+Europe	Greece	Aegean Islands	Lesvos
 Europe	Greece	Amyntaio	
 Europe	Greece	Aridaia	
 Europe	Greece	Arnissa	
 Europe	Greece	Athens	
 Europe	Greece	Attica	
 Europe	Greece	Central Greece	
+Europe	Greece	Central Greece	Euvoia
+Europe	Greece	Central Greece	Evritania
 Europe	Greece	Central Greece	Livadeia
+Europe	Greece	Central Greece	Phthiotis
+Europe	Greece	Central Greece	Voiotia
 Europe	Greece	Central Macedonia	
 Europe	Greece	Chalkidiki	
 Europe	Greece	Crete	
@@ -4027,6 +4055,7 @@ Europe	Greece	Drama
 Europe	Greece	Eastern Macedonia and Thrace	
 Europe	Greece	Edessa	
 Europe	Greece	Epirus	
+Europe	Greece	Epirus	Thesprotia
 Europe	Greece	Evros	
 Europe	Greece	Florina	
 Europe	Greece	Giannitsa	
@@ -4035,6 +4064,7 @@ Europe	Greece	Greece
 Europe	Greece	Grevena	
 Europe	Greece	Imathia	
 Europe	Greece	Ionian Islands	
+Europe	Greece	Ionian Islands	Corfu
 Europe	Greece	Kastoria	
 Europe	Greece	Katerini	
 Europe	Greece	Kilkis	
@@ -4042,6 +4072,10 @@ Europe	Greece	Kozani
 Europe	Greece	Naousa	
 Europe	Greece	North Aegean	
 Europe	Greece	Peloponnese	
+Europe	Greece	Peloponnese	Argolida
+Europe	Greece	Peloponnese	Arkadia
+Europe	Greece	Peloponnese	Korinthos
+Europe	Greece	Peloponnese	Lakonia
 Europe	Greece	Ptolemaida	
 Europe	Greece	Rodopi	
 Europe	Greece	Serres	
@@ -4050,9 +4084,13 @@ Europe	Greece	South Aegean
 Europe	Greece	South Aegean Region	
 Europe	Greece	Thessaloniki	
 Europe	Greece	Thessaly	
+Europe	Greece	Thessaly	Karditsa
+Europe	Greece	Thessaly	Larissa
+Europe	Greece	Thessaly	Magnesia
 Europe	Greece	Thrace	
 Europe	Greece	Veria	
 Europe	Greece	Western Greece	
+Europe	Greece	Western Greece	Aetolia Acarnania
 Europe	Greece	Western Macedonia	
 Europe	Greece	Xanthi	
 Europe	Hungary	Balassagyarmat	
@@ -4311,6 +4349,7 @@ Europe	Netherlands	Drenthe	Beilen
 Europe	Netherlands	Drenthe	Bovensmilde
 Europe	Netherlands	Drenthe	Coevorden
 Europe	Netherlands	Drenthe	Dalen
+Europe	Netherlands	Drenthe	Donderen
 Europe	Netherlands	Drenthe	Eelde
 Europe	Netherlands	Drenthe	Een
 Europe	Netherlands	Drenthe	Emmen
@@ -4369,6 +4408,8 @@ Europe	Netherlands	Groningen	Slochteren
 Europe	Netherlands	Groningen	Stadskanaal
 Europe	Netherlands	Groningen	Uithuizen
 Europe	Netherlands	Groningen	Uithuizermeeden
+Europe	Netherlands	Groningen	Veendam
+Europe	Netherlands	Groningen	Vierhuizen
 Europe	Netherlands	Groningen	Wildervank
 Europe	Netherlands	Groningen	Woldendorp
 Europe	Netherlands	Groningen	Zuidbroek
@@ -4682,11 +4723,15 @@ Europe	Poland	Dolnośląskie	Zloty Stok
 Europe	Poland	Dolnośląskie	Ząbkowice Śląskie
 Europe	Poland	Kujawsko-Pomorskie	
 Europe	Poland	Kujawsko-Pomorskie	Bobrowo
+Europe	Poland	Kujawsko-Pomorskie	Brodnica
 Europe	Poland	Kujawsko-Pomorskie	Bydgoszcz
+Europe	Poland	Kujawsko-Pomorskie	Chełmno
 Europe	Poland	Kujawsko-Pomorskie	Dziarnowo
 Europe	Poland	Kujawsko-Pomorskie	Grudziadz
 Europe	Poland	Kujawsko-Pomorskie	Lipno
+Europe	Poland	Kujawsko-Pomorskie	Mogilno
 Europe	Poland	Kujawsko-Pomorskie	Nadborowo
+Europe	Poland	Kujawsko-Pomorskie	Nakło
 Europe	Poland	Kujawsko-Pomorskie	Pruszcz
 Europe	Poland	Kujawsko-Pomorskie	Sepolno Krajenskie
 Europe	Poland	Kujawsko-Pomorskie	Swiecie
@@ -4946,6 +4991,7 @@ Europe	Poland	Opolskie	Biała
 Europe	Poland	Opolskie	Bierzow
 Europe	Poland	Opolskie	Bogdanowice
 Europe	Poland	Opolskie	Branice
+Europe	Poland	Opolskie	Brzeg
 Europe	Poland	Opolskie	Bąkowice
 Europe	Poland	Opolskie	Chroscina
 Europe	Poland	Opolskie	Dabrowice
@@ -4959,6 +5005,7 @@ Europe	Poland	Opolskie	Kedzierzyn Kozle
 Europe	Poland	Opolskie	Kietrz
 Europe	Poland	Opolskie	Kluczbork
 Europe	Poland	Opolskie	Komprachcice
+Europe	Poland	Opolskie	Krapkowice
 Europe	Poland	Opolskie	Laskowiec
 Europe	Poland	Opolskie	Lisiecice
 Europe	Poland	Opolskie	Namysłów
@@ -5379,11 +5426,13 @@ Europe	Poland	Wielkopolskie
 Europe	Poland	Wielkopolskie	Baranowo
 Europe	Poland	Wielkopolskie	Borowo-Mlyn
 Europe	Poland	Wielkopolskie	Buk
+Europe	Poland	Wielkopolskie	Chodzież
 Europe	Poland	Wielkopolskie	Chwalkowo
 Europe	Poland	Wielkopolskie	Cieradz Koscielny
 Europe	Poland	Wielkopolskie	Cybinka
 Europe	Poland	Wielkopolskie	Czajkow
 Europe	Poland	Wielkopolskie	Czapury
+Europe	Poland	Wielkopolskie	Czarnków
 Europe	Poland	Wielkopolskie	Czerniejewo
 Europe	Poland	Wielkopolskie	Dabroszyn
 Europe	Poland	Wielkopolskie	Dabrowa
@@ -5422,6 +5471,7 @@ Europe	Poland	Wielkopolskie	Kostrzyn (Wielkopolskie)
 Europe	Poland	Wielkopolskie	Kowale Panskie-Kolonia
 Europe	Poland	Wielkopolskie	Kowanowko
 Europe	Poland	Wielkopolskie	Koziegłowy
+Europe	Poland	Wielkopolskie	Koło
 Europe	Poland	Wielkopolskie	Krotoszyn
 Europe	Poland	Wielkopolskie	Kruchowo
 Europe	Poland	Wielkopolskie	Leszczynski
@@ -5497,6 +5547,7 @@ Europe	Poland	Wielkopolskie	Sulecin (Wielkopolskie)
 Europe	Poland	Wielkopolskie	Swarzedz
 Europe	Poland	Wielkopolskie	Szamotuly
 Europe	Poland	Wielkopolskie	Szczytniki Czerniejewskie
+Europe	Poland	Wielkopolskie	Słupca
 Europe	Poland	Wielkopolskie	Tarnowo Podgorne
 Europe	Poland	Wielkopolskie	Trzciel
 Europe	Poland	Wielkopolskie	Trzemeszno
@@ -5519,6 +5570,7 @@ Europe	Poland	Wielkopolskie	Witnica
 Europe	Poland	Wielkopolskie	Wola Lagiewnicka
 Europe	Poland	Wielkopolskie	Wolsztynski
 Europe	Poland	Wielkopolskie	Wronki
+Europe	Poland	Wielkopolskie	Września
 Europe	Poland	Wielkopolskie	Wymyslowo
 Europe	Poland	Wielkopolskie	Wysogotowo
 Europe	Poland	Wielkopolskie	Wysławice
@@ -5527,6 +5579,7 @@ Europe	Poland	Wielkopolskie	Zielatkowo
 Europe	Poland	Wielkopolskie	Zimotki
 Europe	Poland	Wielkopolskie	Zlotniki
 Europe	Poland	Wielkopolskie	Zydowo
+Europe	Poland	Wielkopolskie	Złotów
 Europe	Poland	Zachodniopomorskie	
 Europe	Poland	Zachodniopomorskie	Banie
 Europe	Poland	Zachodniopomorskie	Barlinek
@@ -6152,18 +6205,23 @@ Europe	Slovakia	Banska Bystrica	Brezno
 Europe	Slovakia	Banska Bystrica	Busince
 Europe	Slovakia	Banska Bystrica	Bzenica
 Europe	Slovakia	Banska Bystrica	Chanava
+Europe	Slovakia	Banska Bystrica	Detva
 Europe	Slovakia	Banska Bystrica	Donovaly
+Europe	Slovakia	Banska Bystrica	Halic
 Europe	Slovakia	Banska Bystrica	Hnusta
 Europe	Slovakia	Banska Bystrica	Horne Strhare
 Europe	Slovakia	Banska Bystrica	Hrinova
 Europe	Slovakia	Banska Bystrica	Krupina
 Europe	Slovakia	Banska Bystrica	Lucenec
 Europe	Slovakia	Banska Bystrica	Maly Krtis
+Europe	Slovakia	Banska Bystrica	Michalova
 Europe	Slovakia	Banska Bystrica	Muranska Huta
 Europe	Slovakia	Banska Bystrica	Myto Pod Dumbierom
+Europe	Slovakia	Banska Bystrica	Nova Bana
 Europe	Slovakia	Banska Bystrica	Ozdany
 Europe	Slovakia	Banska Bystrica	Podbrezova
 Europe	Slovakia	Banska Bystrica	Poltar
+Europe	Slovakia	Banska Bystrica	Rapovce
 Europe	Slovakia	Banska Bystrica	Revuca
 Europe	Slovakia	Banska Bystrica	Rimavska Sobota
 Europe	Slovakia	Banska Bystrica	Sihla
@@ -6182,6 +6240,7 @@ Europe	Slovakia	Bratislava
 Europe	Slovakia	Bratislava	Ivanka Pri Dunaji
 Europe	Slovakia	Bratislava	Kalinkovo
 Europe	Slovakia	Bratislava	Kostoliste
+Europe	Slovakia	Bratislava	Lozorno
 Europe	Slovakia	Bratislava	Malacky
 Europe	Slovakia	Bratislava	Malinovo
 Europe	Slovakia	Bratislava	Miloslavov
@@ -6192,6 +6251,7 @@ Europe	Slovakia	Bratislava	Senec
 Europe	Slovakia	Bratislava	Slovensky Grob
 Europe	Slovakia	Bratislava	Studienka
 Europe	Slovakia	Bratislava	Stupava
+Europe	Slovakia	Bratislava	Tomasov
 Europe	Slovakia	Bratislava	Veľké Leváre
 Europe	Slovakia	Bratislava	Vinosady
 Europe	Slovakia	Dolny Kubin	
@@ -6404,6 +6464,7 @@ Europe	Slovakia	Trenčín	Drietoma
 Europe	Slovakia	Trenčín	Dubnica nad Vahom
 Europe	Slovakia	Trenčín	Handlová
 Europe	Slovakia	Trenčín	Hornany
+Europe	Slovakia	Trenčín	Hradiste
 Europe	Slovakia	Trenčín	Ilava
 Europe	Slovakia	Trenčín	Kostolna-Zariecie
 Europe	Slovakia	Trenčín	Moravske Lieskove
@@ -6436,6 +6497,7 @@ Europe	Slovakia	Trnava	Horne Saliby
 Europe	Slovakia	Trnava	Hradište pod Vrátnom
 Europe	Slovakia	Trnava	Kopcany
 Europe	Slovakia	Trnava	Mostova
+Europe	Slovakia	Trnava	Petrova Ves
 Europe	Slovakia	Trnava	Piestany
 Europe	Slovakia	Trnava	Senica
 Europe	Slovakia	Trnava	Sereď
@@ -6464,6 +6526,7 @@ Europe	Slovakia	Zilina	Bytca
 Europe	Slovakia	Zilina	Cadca
 Europe	Slovakia	Zilina	Cimhova
 Europe	Slovakia	Zilina	Dolný Kubín
+Europe	Slovakia	Zilina	Fackov
 Europe	Slovakia	Zilina	Horná Štubňa
 Europe	Slovakia	Zilina	Hrustin
 Europe	Slovakia	Zilina	Jazernica
@@ -6475,6 +6538,7 @@ Europe	Slovakia	Zilina	Kysucke Nove Mesto
 Europe	Slovakia	Zilina	Liesek
 Europe	Slovakia	Zilina	Lietavska Lucka
 Europe	Slovakia	Zilina	Liptovsky Mikulas
+Europe	Slovakia	Zilina	Lutise
 Europe	Slovakia	Zilina	Malatina
 Europe	Slovakia	Zilina	Maly Cepcin
 Europe	Slovakia	Zilina	Martin
@@ -6483,6 +6547,7 @@ Europe	Slovakia	Zilina	Medvedzie
 Europe	Slovakia	Zilina	Mosovce
 Europe	Slovakia	Zilina	Mutne
 Europe	Slovakia	Zilina	Namestovo
+Europe	Slovakia	Zilina	Neslusa
 Europe	Slovakia	Zilina	Nizna
 Europe	Slovakia	Zilina	Novot
 Europe	Slovakia	Zilina	Oravska Jasenica
@@ -6505,6 +6570,7 @@ Europe	Slovakia	Zilina	Tapesovo
 Europe	Slovakia	Zilina	Teplicka nad Vahom
 Europe	Slovakia	Zilina	Trstena
 Europe	Slovakia	Zilina	Turcianske Teplice
+Europe	Slovakia	Zilina	Turie
 Europe	Slovakia	Zilina	Turzovka
 Europe	Slovakia	Zilina	Turčianska Štiavnička
 Europe	Slovakia	Zilina	Tvrdosin
@@ -7514,6 +7580,7 @@ Europe	Spain	Comunitat Valenciana	Massanassa
 Europe	Spain	Comunitat Valenciana	Meliana
 Europe	Spain	Comunitat Valenciana	Miramar
 Europe	Spain	Comunitat Valenciana	Miramar ES
+Europe	Spain	Comunitat Valenciana	Mislata
 Europe	Spain	Comunitat Valenciana	Moncada
 Europe	Spain	Comunitat Valenciana	Monovar
 Europe	Spain	Comunitat Valenciana	Montserrat
@@ -9358,6 +9425,7 @@ North America	USA	South Carolina	Beaufort County
 North America	USA	South Carolina	Berkeley County
 North America	USA	South Carolina	Calhoun County SC
 North America	USA	South Carolina	Charleston County
+North America	USA	South Carolina	Chester County SC
 North America	USA	South Carolina	Chesterfield County SC
 North America	USA	South Carolina	Colleton County
 North America	USA	South Carolina	Columbia SC
