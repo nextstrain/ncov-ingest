@@ -135,6 +135,7 @@ Europe/France/Bretagne/Saint-Malo	Europe/France/Bretagne/Saint Malo
 Europe/France/Bretagne/Noyal-Pontivy	Europe/France/Bretagne/Noyal Pontivy
 Europe/France/Bretagne/Vannes Cedex	Europe/France/Bretagne/Vannes
 Europe/France/Bretagne/Montigny le Bretonneux	Europe/France/Ile de France/Montigny le Bretonneux
+Europe/France/Bretagne/Saint Gilles	Europe/France/Bretagne/Saint Gilles (Bretagne)
 Europe/France/Centre Val de Loire/Nantes	Europe/France/Pays de la Loire/Nantes
 Europe/France/Centre Val de Loire/*	Europe/France/Centre-Val de Loire/*
 Europe/France/Auvergne-Rhone-Alpes/Andrezieux-Boutheon	Europe/France/Auvergne-Rhône-Alpes/Andrézieux-Bouthéon
@@ -180,7 +181,7 @@ Europe/France/Picardie/*	Europe/France/Hauts de France/*
 Europe/France/Poitou Charentes/Saintes	Europe/France/Nouvelle-Aquitaine/Saintes
 Europe/France/Basse Normandie/*	Europe/France/Normandie/*
 Europe/France/Occitanie/Marseille	Europe/France/Provence-Alpes-Côte d'Azur/Marseille
-Europe/France/Occitanie/Saint-Gilles	Europe/France/Occitanie/Saint-Gilles FR
+Europe/France/Occitanie/Saint-Gilles	Europe/France/Occitanie/Saint-Gilles (Occitanie)
 Europe/France/Occitanie/Béziers	Europe/France/Occitanie/Beziers
 Europe/France/Occitanie/Nimes	Europe/France/Occitanie/Nîmes
 Europe/France/Occitanie/Uzes	Europe/France/Occitanie/Uzès
@@ -212,6 +213,7 @@ Europe/France/Hauts de France/Compiegne	Europe/France/Hauts de France/Compiègne
 Europe/France/Hauts de France/Nord-Pas-de-Calais	Europe/France/Hauts de France/Nord Pas de Calais
 Europe/France/Hauts de France/Saint Omer Cedex	Europe/France/Hauts de France/Saint Omer
 Europe/France/Hauts de France/Saint-Quentin	Europe/France/Hauts de France/Saint Quentin
+Europe/France/Hauts de France/Lens	Europe/France/Hauts de France/Lens FR
 Europe/France/Pays de la Loire/Nantes Cedex	Europe/France/Pays de la Loire/Nantes
 Europe/France/Pays de la Loire/Le Mans Cedex	Europe/France/Pays de la Loire/Le Mans
 Europe/France/Pays de la Loire/Chollet	Europe/France/Pays de la Loire/Cholet
@@ -1395,7 +1397,7 @@ Europe/Belgium/*/Erbisœul	Europe/Belgium/Mons/Erbisœul
 Europe/Belgium/*/Herchies	Europe/Belgium/Mons/Herchies
 Europe/Belgium/*/Masnuy-Saint-Jean	Europe/Belgium/Mons/Masnuy-Saint-Jean
 Europe/Belgium/*/Masnuy-Saint-Pierre	Europe/Belgium/Mons/Masnuy-Saint-Pierre
-Europe/Belgium/*/Lens	Europe/Belgium/Mons/Lens
+Europe/Belgium/*/Lens	Europe/Belgium/Mons/Lens BE
 Europe/Belgium/*/Bauffe	Europe/Belgium/Mons/Bauffe
 Europe/Belgium/*/Cambron-Saint-Vincent	Europe/Belgium/Mons/Cambron-Saint-Vincent
 Europe/Belgium/*/Lombise	Europe/Belgium/Mons/Lombise
@@ -4113,7 +4115,7 @@ Europe/Belgium/Erbisœul/	Europe/Belgium/Mons/Erbisœul
 Europe/Belgium/Herchies/	Europe/Belgium/Mons/Herchies
 Europe/Belgium/Masnuy-Saint-Jean/	Europe/Belgium/Mons/Masnuy-Saint-Jean
 Europe/Belgium/Masnuy-Saint-Pierre/	Europe/Belgium/Mons/Masnuy-Saint-Pierre
-Europe/Belgium/Lens/	Europe/Belgium/Mons/Lens
+Europe/Belgium/Lens/	Europe/Belgium/Mons/Lens BE
 Europe/Belgium/Cambron-Saint-Vincent/	Europe/Belgium/Mons/Cambron-Saint-Vincent
 Europe/Belgium/Lombise/	Europe/Belgium/Mons/Lombise
 Europe/Belgium/Montignies-lez-Lens/	Europe/Belgium/Mons/Montignies-lez-Lens
@@ -6207,7 +6209,6 @@ Europe/Belgium/Gozee/	Europe/Belgium/Thuin/Gozée
 Europe/Belgium/Epinois/	Europe/Belgium/La Louvière/Épinois
 Europe/Belgium/Lillois-Witterzee/	Europe/Belgium/Nivelles/Lillois-Witterzée
 Europe/Belgium/Marchienne-Au-Pont/	Europe/Belgium/Charleroi/Marchienne-au-Pont
-Europe/Belgium/Maaseik/Gruitrode	Europe/Belgium/Maaseik/Meeuwen-Gruitrode
 Europe/Belgium/Sint-Katarina-Lombeek/	Europe/Belgium/Halle-Vilvoorde/Sint-Katherina-Lombeek
 Europe/Belgium/Anderlechtt/	Europe/Belgium/Brussels/Anderlecht
 Europe/Belgium/Affliogem/	Europe/Belgium/Halle-Vilvoorde/Affligem
@@ -6766,13 +6767,14 @@ Europe/Poland/Mazowieckie/Niewodnica Koscielna	Europe/Poland/Podlaskie/Niewodnic
 Europe/Poland/Mazowieckie/Wolka	Europe/Poland/Mazowieckie/Wólka (Mazowieckie)
 Europe/Poland/Mazowieckie/Leczyca	Europe/Poland/Mazowieckie/Leczyca (Mazowieckie)
 Europe/Poland/Mazowieckie/Gizycko	Europe/Poland/Warminsko-Mazurskie/Gizycki
+Europe/Poland/Mazowieckie/Dabrowka	Europe/Poland/Mazowieckie/Dabrowka (Mazowieckie)
 Europe/Poland/Iodzkie/*	Europe/Poland/Łódzkie/*
 Europe/Poland/Zuid Holland/*	Europe/Poland/Poland/*
 Europe/Poland/Warmińsko-Mazurskie/*	Europe/Poland/Warminsko-Mazurskie/*
 Europe/Poland/Wielkopolskie/Poznań	Europe/Poland/Wielkopolskie/Poznan
 Europe/Poland/Wielkopolskie/Przezmierowo	Europe/Poland/Wielkopolskie/Przeźmierowo
 Europe/Poland/Wielkopolskie/Skorzewo	Europe/Poland/Wielkopolskie/Skórzewo
-Europe/Poland/Wielkopolskie/Dabrowka	Europe/Poland/Lubuskie/Dabrowka
+Europe/Poland/Wielkopolskie/Dabrowka	Europe/Poland/Lubuskie/Dabrowka (Lubuskie)
 Europe/Poland/Wielkopolskie/Uscikowo Folwark	Europe/Poland/Wielkopolskie/Uscikowo
 Europe/Poland/Wielkopolskie/Komorniki	Europe/Poland/Wielkopolskie/Komorniki WP
 Europe/Poland/Wielkopolskie/Dabrowa	Europe/Poland/Wielkopolskie/Dabrowa (Wielkopolskie)
@@ -6819,6 +6821,10 @@ Europe/Poland/Wielkopolskie/Kępno	Europe/Poland/Wielkopolskie/Kepno
 Europe/Poland/Wielkopolskie/Grodzisk Wlkp.	Europe/Poland/Wielkopolskie/Grodzisk
 Europe/Poland/Wielkopolskie/Nowy Tomyśl	Europe/Poland/Wielkopolskie/Nowy Tomysl
 Europe/Poland/Wielkopolskie/Wolsztyn	Europe/Poland/Wielkopolskie/Wolsztynski
+Europe/Poland/Wielkopolskie/Kozieglowy	Europe/Poland/Wielkopolskie/Koziegłowy
+Europe/Poland/Wielkopolskie/Dobrylewo	Europe/Poland/Kujawsko-Pomorskie/Dobrylewo
+Europe/Poland/Wielkopolskie/Barcin	Europe/Poland/Kujawsko-Pomorskie/Barcin
+Europe/Poland/Wielkopolskie/Redczyce	Europe/Poland/Kujawsko-Pomorskie/Redczyce
 Europe/Poland/Warminsko-Mazurskie/Olsztynski	Europe/Poland/Warminsko-Mazurskie/Olsztyn
 Europe/Poland/Warminsko-Mazurskie/Komorniki	Europe/Poland/Warminsko-Mazurskie/Komorniki WN
 Europe/Poland/Warminsko-Mazurskie/Lutry	Europe/Poland/Warminsko-Mazurskie/Lutry PL
@@ -6918,6 +6924,8 @@ Europe/Poland/Pomorskie/Bytowski	Europe/Poland/Pomorskie/Bytow
 Europe/Poland/Pomorskie/Sztumski	Europe/Poland/Pomorskie/Sztum
 Europe/Poland/Pomorskie/Mielno	Europe/Poland/Zachodniopomorskie/Mielno
 Europe/Poland/Pomorskie/Cyganka	Europe/Poland/Pomorskie/Cyganka PM
+Europe/Poland/Pomorskie/Ludwichowo	Europe/Poland/Kujawsko-Pomorskie/Ludwichowo
+Europe/Poland/Pomorskie/Bialy Bor	Europe/Poland/Kujawsko-Pomorskie/Bialy Bor
 Europe/Poland/Łódzkie/Łódź	Europe/Poland/Łódzkie/Lodz
 Europe/Poland/Łódzkie/Kalisz	Europe/Poland/Wielkopolskie/Kalisz
 Europe/Poland/Łódzkie/Szowsko	Europe/Poland/Podkarpackie/Szowsko
@@ -6936,6 +6944,8 @@ Europe/Poland/Łódzkie/Jaroszewice Grodzieckie	Europe/Poland/Wielkopolskie/Jaro
 Europe/Poland/Łódzkie/Zimotki	Europe/Poland/Wielkopolskie/Zimotki
 Europe/Poland/Łódzkie/Leczyca	Europe/Poland/Łódzkie/Leczyca (Łódzkie)
 Europe/Poland/Łódzkie/Milaczew	Europe/Poland/Wielkopolskie/Milaczew
+Europe/Poland/Łódzkie/Kowale Ksieze	Europe/Poland/Wielkopolskie/Kowale Ksieze
+Europe/Poland/Łódzkie/Targowka	Europe/Poland/Wielkopolskie/Targowka
 Europe/Poland/Śląskie/*	Europe/Poland/Slaskie/*
 Europe/Poland/Opolskie/Kedzierzyn-Kozle	Europe/Poland/Opolskie/Kedzierzyn Kozle
 Europe/Poland/Opolskie/Kędzierzyn-Koźle	Europe/Poland/Opolskie/Kedzierzyn Kozle
@@ -6956,6 +6966,7 @@ Europe/Poland/Lubuskie/Gorzow Wlkp.	Europe/Poland/Lubuskie/Gorzow Wielkopolski
 Europe/Poland/Lubuskie/Krosno Odrzanskie	Europe/Poland/Lubuskie/Krosno Odrzańskie
 Europe/Poland/Lubuskie/Lubrza	Europe/Poland/Lubuskie/Lubrza (Lubuskie)
 Europe/Poland/Lubuskie/Sulecin	Europe/Poland/Lubuskie/Sulecin (Lubuskie)
+Europe/Poland/Lubuskie/Dabrowka	Europe/Poland/Lubuskie/Dabrowka (Lubuskie)
 Europe/Poland/Slaskie/Bielsko-Biala	Europe/Poland/Slaskie/Bielsko-Biała
 Europe/Poland/Slaskie/Zywiec	Europe/Poland/Slaskie/Żywiec
 Europe/Poland/Slaskie/Glucholazy	Europe/Poland/Opolskie/Głuchołazy
@@ -6977,6 +6988,15 @@ Europe/Poland/Slaskie/Zedowice	Europe/Poland/Opolskie/Zedowice
 Europe/Poland/Slaskie/Chroscina	Europe/Poland/Opolskie/Chroscina
 Europe/Poland/Slaskie/Branice	Europe/Poland/Opolskie/Branice
 Europe/Poland/Slaskie/Opole	Europe/Poland/Opolskie/Opole
+Europe/Poland/Slaskie/Krapkowice	Europe/Poland/Opolskie/Krapkowice
+Europe/Poland/Slaskie/Stare Kotkowice	Europe/Poland/Opolskie/Stare Kotkowice
+Europe/Poland/Slaskie/Bodzanow	Europe/Poland/Opolskie/Bodzanow
+Europe/Poland/Slaskie/Ujazd	Europe/Poland/Opolskie/Ujazd
+Europe/Poland/Slaskie/Barut	Europe/Poland/Opolskie/Barut
+Europe/Poland/Slaskie/Ligota Czamborowa	Europe/Poland/Opolskie/Ligota Czamborowa
+Europe/Poland/Slaskie/Gluszyna	Europe/Poland/Opolskie/Gluszyna
+Europe/Poland/Slaskie/Nowe Goluszowice	Europe/Poland/Opolskie/Nowe Goluszowice
+Europe/Poland/Slaskie/Laka Prudnicka	Europe/Poland/Opolskie/Laka Prudnicka
 Europe/Poland/Zachodniopomorskie/Kamaleien Pomaleorski	Europe/Poland/Zachodniopomorskie/Kamien Pomorski
 Europe/Poland/Zachodniopomorskie/Pomaleianowo	Europe/Poland/Zachodniopomorskie/
 Europe/Poland/Zachodniopomorskie/Borzymale	Europe/Poland/Zachodniopomorskie/
@@ -7002,6 +7022,7 @@ Europe/Poland/Swietokrzyskie/Trzeszczany	Europe/Poland/Lubelskie/Gmina Trzeszcza
 Europe/Poland/Swietokrzyskie/Leczna	Europe/Poland/Lubelskie/Leczna
 Europe/Poland/Swietokrzyskie/Busko - Zdroj	Europe/Poland/Swietokrzyskie/Busko-Zdrój
 Europe/Poland/Swietokrzyskie/Skarzysko - Kamienna	Europe/Poland/Swietokrzyskie/Skarzysko-Kamienna
+Europe/Poland/Swietokrzyskie/Ostrowiec Swietokrszyski	Europe/Poland/Swietokrzyskie/Ostrowiec Swietokrzyski
 Europe/Poland/Kartuzy/	Europe/Poland/Pomorskie/Kartuzy
 Europe/Poland/Wejherowo/	Europe/Poland/Pomorskie/Wejherowo
 Europe/Poland/Czluchow/	Europe/Poland/Pomorskie/Czluchow
@@ -9216,6 +9237,8 @@ North America/USA/Missourintana/*	North America/USA/Missouri/*
 North America/USA/Houston/	North America/USA/Texas/Houston
 North America/USA/Montana/Gallatin County	North America/USA/Montana/Gallatin County MT
 North America/USA/Montana/Belgrade	North America/USA/Montana/Gallatin County MT
+North America/USA/Montana/Lake County	North America/USA/Montana/Lake County MT
+North America/USA/Montana/Jefferson County	North America/USA/Montana/Jefferson County MT
 North America/USA/Florida/Walton County	North America/USA/Florida/Walton County FL
 North America/USA/Florida/Palm Beach	North America/USA/Florida/Palm Beach County
 North America/USA/DC/*	North America/USA/Washington DC/*
@@ -9354,6 +9377,7 @@ North America/Panama/Panama Oeste/Guadalupe	North America/Panama/Panama Oeste/Gu
 North America/Panama/Panama Este/*	North America/Panama/Panama Oeste/*
 North America/Panama/Unspecified/	North America/Panama/Panama Center/
 North America/Panama/Metropolitana/*	North America/Panama/Panama Center/*
+North America/Panama/Bocas del Toro/El Empalme	North America/Panama/Bocas del Toro/El Empalme PA
 North America/El Salvador/San Salvado/*	North America/El Salvador/San Salvador/*
 North America/Canada/Toronto/	North America/Canada/Ontario/Toronto
 North America/Puerto Rico/Puerto Rico/*	North America/USA/Puerto Rico/*
@@ -9639,6 +9663,7 @@ South America/Ecuador/Los Ríos/*	South America/Ecuador/Los Rios EC/*
 South America/Ecuador/Galápagos/Santa Cruz	South America/Ecuador/Galapagos/Santa Cruz EC
 South America/Ecuador/Galápagos/San Cristóbal	South America/Ecuador/Galapagos/San Cristobal EC
 South America/Ecuador/Guayas/Samborondón	South America/Ecuador/Guayas/Samborondon
+South America/Ecuador/Guayas/El Empalme	South America/Ecuador/Guayas/El Empalme EC
 South America/Chile/Los Lagos/Llanquihue	South America/Chile/Los Lagos/Puerto Montt
 South America/Chile/La Araucania/*	South America/Chile/Araucanía/*
 South America/Chile/Biobio/Diguillin	South America/Chile/Ñuble/Chillan
@@ -9937,6 +9962,8 @@ Africa/Ghana/Greater-Accra/*	Africa/Ghana/Greater Accra/*
 Africa/Ghana/Greater Accra Region/*	Africa/Ghana/Greater Accra/*
 Africa/Ghana/Northern Region/*	Africa/Ghana/Northern Region GH/*
 Africa/Ghana/Eastern Region/*	Africa/Ghana/Eastern Region GH/*
+Africa/Ghana/Eastern Region/Akyem Mansa	Africa/Ghana/Eastern Region GH/Akyemansa
+Africa/Ghana/Eastern Region GH/Akyem Mansa	Africa/Ghana/Eastern Region GH/Akyemansa
 Africa/La Reunion/Saint-Denis/	Europe/France/Réunion/Saint-Denis de la Réunion
 Africa/La Reunion/Saint-Benoit/	Europe/France/Réunion/Saint-Benoit
 Africa/Martinique/Fort-de-France/	Europe/France/Martinique/Fort-de-France
@@ -10079,6 +10106,8 @@ Israel/Asia/Southern/	Asia/Israel/South District/
 */Mauritius/Flacq/Lécroignard	*/Mauritius/Flacq/Ecroignard
 */Mauritius/Flacq/Cite Lóiseau	*/Mauritius/Flacq/Cite L'oiseau
 */Guadeloupe/Fort de France/	Europe/France/Martinique/Fort-de-France
+*/French Guiana/Maripasoula/	Europe/France/French Guiana/Maripasoula
+*/Anguilla/Caribbean/	Europe/United Kingdom/Anguilla/
 Asian/*/*/*	Asia/*/*/*
 North-America/*/*/*	North America/*/*/*
 Afrique/*/*/*	Africa/*/*/*
