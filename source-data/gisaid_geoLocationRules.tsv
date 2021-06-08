@@ -256,6 +256,7 @@ Europe/France/Ariege/	Europe/France/Occitanie/Ariege
 Europe/France/Nice/	Europe/France/Provence-Alpes-Côte d'Azur/Nice
 Europe/France/Auvergne Rhone Alpes/*	Europe/France/Auvergne-Rhône-Alpes/*
 Europe/France/Centre-Val-de-Loire/*	Europe/France/Centre-Val de Loire/*
+Europe/France/Pac/*	Europe/France/Provence-Alpes-Côte d'Azur/*
 Europe/Germany/North Rhine-Westphalia/Düsseldorf	Europe/Germany/North Rhine Westphalia/Duesseldorf
 Europe/Germany/North Rhine-Westphalia/Duesseldorf Area	Europe/Germany/North Rhine Westphalia/Duesseldorf
 Europe/Germany/North Rhine-Westphalia/Dusseldorf Health Department	Europe/Germany/North Rhine Westphalia/Duesseldorf
@@ -6232,6 +6233,11 @@ Europe/Belgium/Sint-Pietsers-Woluwe/	Europe/Belgium/Brussels/Woluwe-Saint-Pierre
 Europe/Belgium/Sint-Pierters-Woluwe/	Europe/Belgium/Brussels/Woluwe-Saint-Pierre
 Europe/Belgium/Schulden/	Europe/Belgium/Belgium/
 Europe/Belgium/Marbaix/	Europe/Belgium/Thuin/Ham-sur-Heure-Nalinnes
+Europe/Belgium/Kortijk/	Europe/Belgium/Kortrijk/
+Europe/Belgium/Beveren (Leie)/	Europe/Belgium/Kortrijk/Beveren-Leie
+Europe/Belgium/Jabeke/	Europe/Belgium/Brugge/Jabbeke
+Europe/Belgium/Westerloo/	Europe/Belgium/Turnhout/Westerlo
+Europe/Belgium/Mariakerke (Gent)/	Europe/Belgium/Gent/Mariakerke
 Europe/Switzerland/Graubunden/*	Europe/Switzerland/Graubünden/*
 Europe/Switzerland/Graubã¼Nden/*	Europe/Switzerland/Graubünden/*
 Europe/Switzerland/Basel/	Europe/Switzerland/Basel-Stadt/
@@ -6604,6 +6610,7 @@ Europe/Spain/Galicia/Padron	Europe/Spain/Galicia/Padrón
 Europe/Spain/Galicia/Boqueijon	Europe/Spain/Galicia/Boqueixón
 Europe/Spain/Galicia/La Coruna	Europe/Spain/Galicia/A Coruna
 Europe/Spain/Galicia/Santiago	Europe/Spain/Galicia/Santiago de Compostela
+Europe/Spain/Galicia/Pobra Do Caramiñal	Europe/Spain/Galicia/A Pobra do Caramiñal
 Europe/Spain/Castilla la Mancha/Cuenca	Europe/Spain/Castilla la Mancha/Cuenca ES
 Europe/Spain/Castilla la Mancha/San Clemente	Europe/Spain/Castilla la Mancha/San Clemente ES
 Europe/Spain/Basque Country/San Sebatian	Europe/Spain/Basque Country/San Sebastian ES
@@ -6712,6 +6719,7 @@ Europe/Spain/Andalusia/Málaga	Europe/Spain/Andalusia/Malaga
 Europe/Spain/Andalusia/Huetor de Santillan	Europe/Spain/Andalusia/Huetor Santillan
 Europe/Spain/Andalusia/Granada	Europe/Spain/Andalusia/Granada ES
 Europe/Spain/Andalusia/Loja	Europe/Spain/Andalusia/Loja ES
+Europe/Spain/Andalusia/La Canada	Europe/Spain/Andalusia/La Canada de San Urbano
 Europe/Spain/Catalonia/*	Europe/Spain/Catalunya/*
 Europe/Spain/Canarias/*	Europe/Spain/Canary Islands/*
 Europe/Spain/Castilla La Mancha/*	Europe/Spain/Castilla la Mancha/*
@@ -6734,6 +6742,7 @@ Europe/Spain/Balearic Islands/*	Europe/Spain/Balear Islands/*
 Europe/Spain/Islas Baleares/*	Europe/Spain/Balear Islands/*
 Europe/Spain/Rota/	Europe/Spain/Andalusia/Rota
 Europe/Spain/Donostia-San Sebatian/	Europe/Spain/Basque Country/Donostia-San Sebastian
+Europe/Spain/Aragon/Zaragoza	Europe/Spain/Aragon/Zaragoza ES
 Europe/Sweden/Västerbotten/	Europe/Sweden/Vasterbotten/
 Europe/Sweden/Västra Götaland/*	Europe/Sweden/Vastra Gotaland/*
 Europe/Sweden/Unknown/	Europe/Sweden/Sweden/
@@ -7408,6 +7417,8 @@ Europe/Lithuania/Elektrenu/	Europe/Lithuania/Vilnius/Elektrėnai
 Europe/Lithuania/Svencioniu/	Europe/Lithuania/Vilnius/Švenčionių rajono savivaldybė
 Europe/Lithuania/Traku/	Europe/Lithuania/Vilnius/Trakų rajono savivaldybė
 Europe/Lithuania/Varenos/	Europe/Lithuania/Alytaus Apskritis/Varėnos rajono savivaldybė
+Europe/Lithuania/Vilniaus Apskr/*	Europe/Lithuania/Vilniaus Apskritis/*
+Europe/Lithuania/Vilniaus Apskr./*	Europe/Lithuania/Vilniaus Apskritis/*
 Europe/Ukraine/Lutsk/	Europe/Ukraine/Volyn/Lutsk
 Europe/Ukraine/Ivano-Frankivs'K/*	Europe/Ukraine/Ivano-Frankivsk/*
 Europe/Slovakia/Martincek/	Europe/Slovakia/Zilina/Martincek
@@ -7987,6 +7998,7 @@ Asia/India/Jammu and Kashmir/Kargil	Asia/India/Ladakh/Kargil
 Asia/India/Telangana/Nagakurnool	Asia/India/Telangana/Nagarkurnool
 Asia/India/Telangana/Rangaraddy	Asia/India/Telangana/Rangareddy
 Asia/India/Telangana/Warangal	Asia/India/Andhra Pradesh/Warangal
+Asia/India/Telangana/Peddapally	Asia/India/Telangana/Peddapalli
 Asia/India/Uttar Pradesh/Kalwa	Asia/India/Uttar Pradesh/Aligarh
 Asia/India/Uttar Pradesh/Farukhabad	Asia/India/Uttar Pradesh/Farrukhabad
 Asia/India/Uttar Pradesh/Shahjahapur	Asia/India/Uttar Pradesh/Shahjahanpur
@@ -8088,6 +8100,13 @@ Asia/Bangladesh/Shariatpur/Damudya Upazila	Asia/Bangladesh/Dhaka/Damudya Upazila
 Asia/Bangladesh/Shariatpur/Naria Upazila	Asia/Bangladesh/Dhaka/Naria Upazila
 Asia/Bangladesh/Shariatpur/Shariatpur Sadar Upazila	Asia/Bangladesh/Dhaka/Shariatpur Sadar Upazila
 Asia/Bangladesh/Shariatpur/Bhedarganj Upazila	Asia/Bangladesh/Dhaka/Bhedarganj Upazila
+Asia/Bangladesh/Nawabgonj/	Asia/Bangladesh/Dhaka/Nawabgonj
+Asia/Bangladesh/Gopalgonj/	Asia/Bangladesh/Dhaka/Gopalgonj
+Asia/Bangladesh/Chapainawabgonj/	Asia/Bangladesh/Rajshahi/Chapainawabgonj
+Asia/Bangladesh/B.Baria/	Asia/Bangladesh/Chattogram/Brahmanbaria
+Asia/Bangladesh/B.Baria/Sarail	Asia/Bangladesh/Chattogram/Sarail
+Asia/Bangladesh/B. Baria Sadar/	Asia/Bangladesh/Chattogram/Brahmanbaria Sadar
+Asia/Bangladesh/B.Baria Sadar/	Asia/Bangladesh/Chattogram/Brahmanbaria Sadar
 Asia/Thailand/Phatum Thani/	Asia/Thailand/Pathum Thani/
 Asia/Thailand/Samut Sakorn/*	Asia/Thailand/Samut Sakhon/*
 Asia/Thailand/Angthong/*	Asia/Thailand/Ang Thong/*
@@ -8218,6 +8237,8 @@ Asia/Kazakhstan/Aktobe City/	Asia/Kazakhstan/Aktobe Region/Aktobe City
 Asia/Kazakhstan/South Kazakhstan Region/*	Asia/Kazakhstan/Turkistan Region/*
 Asia/Kazakhstan/Turkestan Region/*	Asia/Kazakhstan/Turkistan Region/*
 Asia/Kazakhstan/West Kazakhstan Region/*	Asia/Kazakhstan/West-Kazakhstan Region/*
+Asia/Kazakhstan/Zhambyl Region/Taraz	Asia/Kazakhstan/Jambyl Region/Taraz
+Asia/Kazakhstan/Zhambyl Region/	Asia/Kazakhstan/Jambyl Region/
 Asia/Kazkahstan/*/*	Asia/Kazakhstan/*/*
 Asia/Uzbekistan/Tashkent/Tashkent Region	Asia/Uzbekistan/Tashkent/Tashkent City
 Asia/Nepal/Central/	Asia/Nepal/Central Nepal/
@@ -8986,6 +9007,7 @@ North America/USA/Texas/Liberty County	North America/USA/Texas/Liberty County TX
 North America/USA/Texas/Morris	North America/USA/Texas/Morris County TX
 North America/USA/Texas/Brooks	North America/USA/Texas/Brooks County
 North America/USA/Texas/Newton County	North America/USA/Texas/Newton County TX
+North America/USA/Texas/Wilbarger	North America/USA/Texas/Wilbarger County
 North America/USA/Louisiana/Desoto Parish	North America/USA/Louisiana/DeSoto Parish
 North America/USA/Louisiana/St. Tammany Parish	North America/USA/Louisiana/St Tammany Parish
 North America/USA/Louisiana/St. Bernard Parish	North America/USA/Louisiana/St Bernard Parish
@@ -9728,6 +9750,10 @@ South America/Colombia/Antioquia/La Estrella	South America/Colombia/Antioquia/La
 South America/Colombia/Antioquia/Caldas	South America/Colombia/Antioquia/Caldas (Antioquia)
 South America/Colombia/Antioquia/San Roque	South America/Colombia/Antioquia/San Roque CO
 South America/Colombia/Antioquia/Retiro	South America/Colombia/Antioquia/Retiro CO
+South America/Colombia/Antioquia/San Pedro	South America/Colombia/Antioquia/San Pedro CO
+South America/Colombia/Antioquia/Amaga	South America/Colombia/Antioquia/Amagá
+South America/Colombia/Antioquia/Peñol	South America/Colombia/Antioquia/El Peñol
+South America/Colombia/Antioquia/Zaragoza	South America/Colombia/Antioquia/Zaragoza CO
 South America/Colombia/Boyaca/Santana	South America/Colombia/Boyaca/Santana CO
 South America/Colombia/Caquetá/*	South America/Colombia/Caqueta/*
 South America/Peru/Cusco/*	South America/Peru/Cuzco/*
