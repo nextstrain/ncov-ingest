@@ -114,6 +114,7 @@ Europe/France/Auvergne-Rhône-Alpes/St Christophe	Europe/France/Auvergne-Rhône-
 Europe/France/Auvergne-Rhône-Alpes/Rive de Giers	Europe/France/Auvergne-Rhône-Alpes/Rive de Gier
 Europe/France/Auvergne-Rhône-Alpes/Saint Yorre	Europe/France/Auvergne-Rhône-Alpes/St Yorre
 Europe/France/Auvergne-Rhône-Alpes/St Chely D Apcher	Europe/France/Occitanie/Saint-Chély-d'Apcher
+Europe/France/Auvergne-Rhône-Alpes/Saint-Vérand	Europe/France/Auvergne-Rhône-Alpes/Saint-Verand
 Europe/France/Provence-Alpes-Côte-D’Azur/*	Europe/France/Provence-Alpes-Côte d'Azur/*
 Europe/France/Centre-Val de Loire/Angers	Europe/France/Pays de la Loire/Angers
 Europe/France/Centre-Val de Loire/Rouziers de Touraine	Europe/France/Centre-Val de Loire/Rouziers-de-Touraine
@@ -197,6 +198,7 @@ Europe/France/Bourgogne-Franche-Comte/*	Europe/France/Bourgogne-France-Comté/*
 Europe/France/Nouvelle-Aquitaine/Saint Paul des Dax	Europe/France/Nouvelle-Aquitaine/Saint-Paul-lès-Dax
 Europe/France/Nouvelle-Aquitaine/La Brede	Europe/France/Nouvelle-Aquitaine/La Brède
 Europe/France/Nouvelle-Aquitaine/Rochefort	Europe/France/Nouvelle-Aquitaine/Rochefort FR
+Europe/France/Nouvelle-Aquitaine/Angoulême	Europe/France/Nouvelle-Aquitaine/Angouleme
 Europe/France/Provence-Alpes-Cote-D'Azur/*	Europe/France/Provence-Alpes-Côte d'Azur/*
 Europe/France/Val D'Oise/	Europe/France/Ile de France/Val D'Oise
 Europe/France/Paca/*	Europe/France/Provence-Alpes-Côte d'Azur/*
@@ -294,6 +296,7 @@ Europe/Germany/Baden-Wuertemberg/Tubingen	Europe/Germany/Baden-Wuerttemberg/Tueb
 Europe/Germany/Unknown/	Europe/Germany/Germany/
 Europe/Germany/Bw/*	Europe/Germany/Baden-Wuerttemberg/*
 Europe/Germany/Bavaria/Neuburg A.D. Donau	Europe/Germany/Bavaria/Neuburg an der Donau
+Europe/Germany/Bavaria/Pfafenhoffen	Europe/Germany/Bavaria/Pfaffenhofen
 Europe/Belgium/Couthuin/	Europe/Belgium/Huy/Couthuin
 Europe/Belgium/Kessel-Lo/	Europe/Belgium/Leuven/Kessel-Lo
 Europe/Belgium/Holsbeek/	Europe/Belgium/Leuven/Holsbeek
@@ -6421,6 +6424,7 @@ Europe/Russia/Kemerovo Region/*	Europe/Russia/Kemerovo/*
 Europe/Russia/Amur/Svobodnyi	Europe/Russia/Amur Region/Svobodny (Amur)
 Europe/Russia/Amur/*	Europe/Russia/Amur Region/*
 Europe/Russia/Amur Region/Svobodnyi	Europe/Russia/Amur Region/Svobodny (Amur)
+Europe/Russia/Amur Region/Svobodny	Europe/Russia/Amur Region/Svobodny (Amur)
 Europe/Russia/Omsk Region/*	Europe/Russia/Omsk/*
 Europe/Russia/Kamchatka/*	Europe/Russia/Kamchatka Krai/*
 Europe/Russia/Krasnoyarsk Krai/*	Europe/Russia/Krasnoyarsk/*
@@ -6711,6 +6715,7 @@ Europe/Spain/Catalunya/Palma del Rio	Europe/Spain/Andalusia/Palma del Rio
 Europe/Spain/Catalunya/Laroca	Europe/Spain/Catalunya/La Roca
 Europe/Spain/Catalunya/Sant Hipòlit de Voltregà	Europe/Spain/Catalunya/Sant Hipolit de Voltrega
 Europe/Spain/Catalunya/Sant Julià de Vilatorta	Europe/Spain/Catalunya/Sant Julia de Vilatorta
+Europe/Spain/Catalunya/Olost de Llucanes	Europe/Spain/Catalunya/Olost
 Europe/Spain/Extremadura/Alcantara	Europe/Spain/Extremadura/Caceres
 Europe/Spain/Extremadura/Guadalupe	Europe/Spain/Extremadura/Guadalupe ES
 Europe/Spain/Extremadura/Trujillo	Europe/Spain/Extremadura/Trujillo ES
@@ -6955,6 +6960,9 @@ Europe/Poland/Łódzkie/Leczyca	Europe/Poland/Łódzkie/Leczyca (Łódzkie)
 Europe/Poland/Łódzkie/Milaczew	Europe/Poland/Wielkopolskie/Milaczew
 Europe/Poland/Łódzkie/Kowale Ksieze	Europe/Poland/Wielkopolskie/Kowale Ksieze
 Europe/Poland/Łódzkie/Targowka	Europe/Poland/Wielkopolskie/Targowka
+Europe/Poland/Łódzkie/Skierniewice County	Europe/Poland/Łódzkie/Skierniewice
+Europe/Poland/Łódzkie/Skierniwice	Europe/Poland/Łódzkie/Skierniewice
+Europe/Poland/Łódzkie/W Zgierzu	Europe/Poland/Łódzkie/Zgierz
 Europe/Poland/Śląskie/*	Europe/Poland/Slaskie/*
 Europe/Poland/Opolskie/Kedzierzyn-Kozle	Europe/Poland/Opolskie/Kedzierzyn Kozle
 Europe/Poland/Opolskie/Kędzierzyn-Koźle	Europe/Poland/Opolskie/Kedzierzyn Kozle
@@ -7032,6 +7040,8 @@ Europe/Poland/Swietokrzyskie/Leczna	Europe/Poland/Lubelskie/Leczna
 Europe/Poland/Swietokrzyskie/Busko - Zdroj	Europe/Poland/Swietokrzyskie/Busko-Zdrój
 Europe/Poland/Swietokrzyskie/Skarzysko - Kamienna	Europe/Poland/Swietokrzyskie/Skarzysko-Kamienna
 Europe/Poland/Swietokrzyskie/Ostrowiec Swietokrszyski	Europe/Poland/Swietokrzyskie/Ostrowiec Swietokrzyski
+Europe/Poland/Swietokrzyskie/Busko- Zdroj	Europe/Poland/Swietokrzyskie/Busko-Zdrój
+Europe/Poland/Swietokrzyskie/Busko-Zdroj	Europe/Poland/Swietokrzyskie/Busko-Zdrój
 Europe/Poland/Kartuzy/	Europe/Poland/Pomorskie/Kartuzy
 Europe/Poland/Wejherowo/	Europe/Poland/Pomorskie/Wejherowo
 Europe/Poland/Czluchow/	Europe/Poland/Pomorskie/Czluchow
@@ -7062,6 +7072,7 @@ Europe/Poland/Kujawsko Pomorskie/*	Europe/Poland/Kujawsko-Pomorskie/*
 Europe/Poland/Silesia/	Europe/Poland/Poland/
 Europe/Poland/Kujawsko-Pomorskie/Grudziądz	Europe/Poland/Kujawsko-Pomorskie/Grudziadz
 Europe/Poland/Kujawsko-Pomorskie/Włocławek	Europe/Poland/Kujawsko-Pomorskie/Wloclawek
+Europe/Poland/Greater Poland/*	Europe/Poland/Wielkopolskie/*
 Europe/Italy/Apulia/Bat	Europe/Italy/Apulia/Barletta-Andria-Trani
 Europe/Italy/Apulia/Potenza	Europe/Italy/Basilicata/Potenza
 Europe/Italy/Padova/	Europe/Italy/Veneto/Padova
@@ -7777,6 +7788,38 @@ Europe/Slovakia/Hradiste/	Europe/Slovakia/Trenčín/Hradiste (Trenčín)
 Europe/Slovakia/Rapovce/	Europe/Slovakia/Banska Bystrica/Rapovce
 Europe/Slovakia/Petrova Ves/	Europe/Slovakia/Trnava/Petrova Ves
 Europe/Slovakia/Dunajska Streda/	Europe/Slovakia/Trnava/Dunajska Streda
+Europe/Slovakia/Chonkovce/	Europe/Slovakia/Kosice/Chonkovce
+Europe/Slovakia/Orechova/	Europe/Slovakia/Kosice/Orechova
+Europe/Slovakia/Cigla/	Europe/Slovakia/Prešov/Cigla
+Europe/Slovakia/Zalobin/	Europe/Slovakia/Prešov/Zalobin
+Europe/Slovakia/Bardejov/	Europe/Slovakia/Prešov/Bardejov
+Europe/Slovakia/Vysne Nemecke/	Europe/Slovakia/Kosice/Vysne Nemecke
+Europe/Slovakia/Nizny Hrabovec/	Europe/Slovakia/Prešov/Nizny Hrabovec
+Europe/Slovakia/Velky Lapas/	Europe/Slovakia/Nitra/Velky Lapas
+Europe/Slovakia/Kecovo/	Europe/Slovakia/Kosice/Kecovo
+Europe/Slovakia/Regetovka/	Europe/Slovakia/Prešov/Regetovka
+Europe/Slovakia/Dobsina/	Europe/Slovakia/Kosice/Dobsina
+Europe/Slovakia/Maskovce/	Europe/Slovakia/Prešov/Maskovce
+Europe/Slovakia/Mojmirovce/	Europe/Slovakia/Nitra/Mojmirovce
+Europe/Slovakia/Roznava/	Europe/Slovakia/Kosice/Roznava
+Europe/Slovakia/Hrabovec/	Europe/Slovakia/Prešov/Hrabovec
+Europe/Slovakia/Plesivec/	Europe/Slovakia/Kosice/Plesivec
+Europe/Slovakia/Hajnacka/	Europe/Slovakia/Banska Bystrica/Hajnacka
+Europe/Slovakia/Sacurov/	Europe/Slovakia/Prešov/Sacurov
+Europe/Slovakia/Martinova/	Europe/Slovakia/Banska Bystrica/Martinova
+Europe/Slovakia/Borsa/	Europe/Slovakia/Kosice/Borsa
+Europe/Slovakia/Kruzlova/	Europe/Slovakia/Prešov/Kruzlova
+Europe/Slovakia/Raslavice/	Europe/Slovakia/Prešov/Raslavice
+Europe/Slovakia/Velke Zaluzie/	Europe/Slovakia/Nitra/Velke Zaluzie
+Europe/Slovakia/Kruzno/	Europe/Slovakia/Banska Bystrica/Kruzno
+Europe/Slovakia/Gemersky Sad/	Europe/Slovakia/Banska Bystrica/Gemersky Sad
+Europe/Slovakia/Koksov-Baksa/	Europe/Slovakia/Kosice/Koksov-Baksa
+Europe/Slovakia/Sol/	Europe/Slovakia/Prešov/Sol
+Europe/Slovakia/Maly Lapas/	Europe/Slovakia/Nitra/Maly Lapas
+Europe/Slovakia/Vinodol/	Europe/Slovakia/Nitra/Vinodol
+Europe/Slovakia/Inovce/	Europe/Slovakia/Kosice/Inovce
+Europe/Slovakia/Poliakovce/	Europe/Slovakia/Prešov/Poliakovce
+Europe/Slovakia/Bardejovska Nova Ves/	Europe/Slovakia/Prešov/Bardejovska Nova Ves
 Europe/Denmark/Na/	Europe/Denmark/Denmark/
 Europe/Denmark/Na/*	Europe/Denmark//*
 Europe/Ireland/Limerick/Limerick County	Europe/Ireland/Limerick/
@@ -8107,6 +8150,8 @@ Asia/Bangladesh/B.Baria/	Asia/Bangladesh/Chattogram/Brahmanbaria
 Asia/Bangladesh/B.Baria/Sarail	Asia/Bangladesh/Chattogram/Sarail
 Asia/Bangladesh/B. Baria Sadar/	Asia/Bangladesh/Chattogram/Brahmanbaria Sadar
 Asia/Bangladesh/B.Baria Sadar/	Asia/Bangladesh/Chattogram/Brahmanbaria Sadar
+Asia/Bangladesh/B. Baria/Srail	Asia/Bangladesh/Chattogram/Sarail
+Asia/Bangladesh/B. Baria/Sarail	Asia/Bangladesh/Chattogram/Sarail
 Asia/Thailand/Phatum Thani/	Asia/Thailand/Pathum Thani/
 Asia/Thailand/Samut Sakorn/*	Asia/Thailand/Samut Sakhon/*
 Asia/Thailand/Angthong/*	Asia/Thailand/Ang Thong/*
@@ -9803,6 +9848,8 @@ South America/Trinidad and Tobago/Caribbean/	South America/Trinidad and Tobago/T
 South America/Paraguay/Central/San Lorenzo	South America/Paraguay/Central/San Lorenzo PY
 South America/Paraguay/Central/Jasaldivar	South America/Paraguay/Central/Juan Augusto Saldívar
 South America/Paraguay/Central/Fdo de la Mora	South America/Paraguay/Central/Fernando de la Mora
+South America/Paraguay/Central/J.Augusto Saldivar	South America/Paraguay/Central/Juan Augusto Saldívar
+South America/Paraguay/Central/San Antonio	South America/Paraguay/Central/San Antonio PY
 South America/Antigua/Caribbean/*	North America/Antigua and Barbuda/Antigua and Barbuda/*
 Oceania/Australia/Victoria/Clayton	Oceania/Australia/Victoria/Clayton AU
 Oceania/Australia/Act/*	Oceania/Australia/Australian Capital Territory/*
