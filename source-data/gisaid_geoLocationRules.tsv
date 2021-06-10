@@ -166,6 +166,7 @@ Europe/France/Ile de France/Levallois Perret	Europe/France/Ile de France/Levallo
 Europe/France/Ile de France/Saint-Ouen-Laumone	Europe/France/Ile de France/Saint Ouen l'Aumone
 Europe/France/Ile de France/Schoelcher	Europe/France/Martinique/Schoelcher
 Europe/France/Ile de France/Villeneuve Saint Georges	Europe/France/Ile de France/Villeneuve-Saint-Georges
+Europe/France/Ile de France/Poissy Cedex	Europe/France/Ile de France/Poissy
 Europe/France/Lorraine/*	Europe/France/Grand Est/*
 Europe/France/Aquitaine/*	Europe/France/Nouvelle-Aquitaine/*
 Europe/France/Champagne Ardenne/*	Europe/France/Grand Est/*
@@ -216,6 +217,7 @@ Europe/France/Hauts de France/Nord-Pas-de-Calais	Europe/France/Hauts de France/N
 Europe/France/Hauts de France/Saint Omer Cedex	Europe/France/Hauts de France/Saint Omer
 Europe/France/Hauts de France/Saint-Quentin	Europe/France/Hauts de France/Saint Quentin
 Europe/France/Hauts de France/Lens	Europe/France/Hauts de France/Lens FR
+Europe/France/Hauts de France/Llille	Europe/France/Hauts de France/Lille FR
 Europe/France/Pays de la Loire/Nantes Cedex	Europe/France/Pays de la Loire/Nantes
 Europe/France/Pays de la Loire/Le Mans Cedex	Europe/France/Pays de la Loire/Le Mans
 Europe/France/Pays de la Loire/Chollet	Europe/France/Pays de la Loire/Cholet
@@ -7343,6 +7345,10 @@ Europe/Greece/Northern Aegean Islands/*	Europe/Greece/North Aegean/*
 Europe/Greece/Peloponese/*	Europe/Greece/Peloponnese/*
 Europe/Greece/Southern Aegean Islands/*	Europe/Greece/South Aegean Region/*
 Europe/Greece/Halkidiki/	Europe/Greece/Chalkidiki/
+Europe/Greece/Aetolia Acarnania/	Europe/Greece/Western Greece/Aetolia Acarnania
+Europe/Greece/Corfu/	Europe/Greece/Ionian Islands/Corfu
+Europe/Greece/Evritania/	Europe/Greece/Central Greece/Evritania
+Europe/Greece/Mtticm/	Europe/Greece/Greece/
 Europe/North Macedonia/Prilep/	Europe/North Macedonia/Pelagonia/Prilep
 Europe/North Macedonia/Kumanovo/	Europe/North Macedonia/Northeastern Region MK/Kumanovo
 Europe/North Macedonia/Shtip/	Europe/North Macedonia/Eastern Region MK/Shtip
@@ -7926,6 +7932,7 @@ Asia/Vietnam/Thanhhoa/	Asia/Vietnam/Thanh Hoa/
 Asia/Vietnam/Laocai/	Asia/Vietnam/Lao Cai/
 Asia/Vietnam/Vinh Phuc/*	Asia/Vietnam/Vinhphuc/*
 Asia/Vietnam/Haiduong/*	Asia/Vietnam/Hai Duong/*
+Asia/Vietnam/Hanam/*	Asia/Vietnam/Ha Nam/*
 Asia/Pakistan/Gilgit/	Asia/Pakistan/Gilgit Baltistan/Gilgit
 Asia/Pakistan/Kpk/	Asia/Pakistan/Khyber Pakhtunkhwa/
 Asia/Pakistan/Punjab/*	Asia/Pakistan/Punjab PK/*
@@ -8088,6 +8095,8 @@ Asia/India/Kerala State/*	Asia/India/Kerala/*
 Asia/India/Andhra Pradesh/Anantapuramu	Asia/India/Andhra Pradesh/Ananthapur
 Asia/India/Tamil Nadu/Trichy	Asia/India/Tamil Nadu/Tiruchirapalli
 Asia/India/Tamil Nadu/Thirunelveli	Asia/India/Tamil Nadu/Tirunelveli
+Asia/India/Tamil Nadu/Kanchipuram	Asia/India/Tamil Nadu/Kancheepuram
+Asia/India/Tamil Nadu/Kavisri	Asia/India/Tamil Nadu/
 Asia/India/New Delhi/	Asia/India/Delhi/New Delhi
 Asia/Bangladesh/Chittagong/Cox'S Bazar	Asia/Bangladesh/Chattogram/Cox's Bazar
 Asia/Bangladesh/Khulna/Jessore	Asia/Bangladesh/Khulna/Jashore
@@ -8255,6 +8264,8 @@ Asia/Iran/Alboraz Province/*	Asia/Iran/Alborz Province/*
 Asia/Iran/Hormozghan/*	Asia/Iran/Hormozgan/*
 Asia/Iran/Boshehr/*	Asia/Iran/Bushehr/*
 Asia/Iran/Esfahan/*	Asia/Iran/Isfahan/*
+Asia/Iran/Gazvin/*	Asia/Iran/Qazvin/*
+Asia/Iran/Ghazvin/*	Asia/Iran/Qazvin/*
 Asia/Viet Nam/*/*	Asia/Vietnam/*/*
 Asia/Saudi Arabia/Qatif/	Asia/Saudi Arabia/Eastern Province SA/Qatif
 Asia/Saudi Arabia/Eastern Province/*	Asia/Saudi Arabia/Eastern Province SA/*
@@ -8771,6 +8782,7 @@ North America/USA/Alaska/Mat Su	North America/USA/Alaska/Anchorage and Matanuska
 North America/USA/Alaska/Northern	North America/USA/Alaska/Northern Alaska
 North America/USA/Alaska/Western Alaska	North America/USA/Alaska/
 North America/USA/Alaska/Anchorage- Mat Su	North America/USA/Alaska/Anchorage and Matanuska-Susitna
+North America/USA/Alaska/Utah	North America/USA/Alaska/
 North America/USA/Oregon/Columbia County	North America/USA/Oregon/Columbia County OR
 North America/USA/Oregon/Washington County	North America/USA/Oregon/Washington County OR
 North America/USA/Oregon/Marion County	North America/USA/Oregon/Marion County OR
@@ -9464,9 +9476,11 @@ North America/Germany/Rhineland-Palatinate/*	Europe/Germany/Rheinland-Pfalz/*
 North America/México/*/*	North America/Mexico/*/*
 North America/Trinidad and Tobago/*/*	South America/Trinidad and Tobago/*/*
 North America/Martinique/Fort-de-France/	Europe/France/Martinique/Fort-de-France
+North America/Martinique/Le Lorrain/	Europe/France/Martinique/Le Lorrain
 North America/French Guiana/Cayenne/	Europe/France/French Guiana/Cayenne GF
 North America/Guam/Guam/*	North America/USA/Guam/*
 North America/Guam//	North America/USA/Guam/
+North America/USA? Ohio/USA? Ohio/	North America/USA/Ohio/
 South America/Brazil/Espírito Santo/*	South America/Brazil/Espirito Santo/*
 South America/Brazil/Amazonas/*	South America/Brazil/Amazonas BR/*
 South America/Brazil/Maranhao/*	South America/Brazil/Maranhão/*
@@ -9921,6 +9935,7 @@ Africa/South Africa/Northern Cape Province/*	Africa/South Africa/Northern Cape/*
 Africa/South Africa/Northern Cape/Concordia	Africa/South Africa/Northern Cape/Concordia SA
 Africa/South Africa/Mpumalanga/Trichard	Africa/South Africa/Mpumalanga/Trichardt
 Africa/South Africa/Cape Town/	Africa/South Africa/Western Cape Province/Cape Town
+Africa/South Africa/Gauteng/Johannesburg	Africa/South Africa/Gauteng/Johannesburg Metro
 Africa/Democratic Republic of the Congo/Sud-Kivu/*	Africa/Democratic Republic of the Congo/Sud Kivu/*
 Africa/Democratic Republic of the Congo/Nord-Kivu/*	Africa/Democratic Republic of the Congo/Nord Kivu/*
 Africa/Democratic Republic of the Congo/Haut Katanga/*	Africa/Democratic Republic of the Congo/Haut-Katanga/*
