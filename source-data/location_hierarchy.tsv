@@ -378,6 +378,7 @@ Africa	South Africa	Eastern Cape	Middleburg
 Africa	South Africa	Eastern Cape	Nelson Mandela Bay
 Africa	South Africa	Eastern Cape	Sarah Baartman
 Africa	South Africa	Free State	
+Africa	South Africa	Free State	Bloemfontein
 Africa	South Africa	Free State	Kroonstad
 Africa	South Africa	Free State	Welkom
 Africa	South Africa	Gauteng	
@@ -391,6 +392,7 @@ Africa	South Africa	Gauteng	Mogale City
 Africa	South Africa	Gauteng	Moretele
 Africa	South Africa	Gauteng	Pretoria
 Africa	South Africa	Gauteng	Soshanguve
+Africa	South Africa	Gauteng	Vosloorus
 Africa	South Africa	Gauteng	West Rand
 Africa	South Africa	KwaZulu-Natal	
 Africa	South Africa	KwaZulu-Natal	Amajuba
@@ -898,7 +900,9 @@ Asia	India	Karnataka	Bengaluru Urban
 Asia	India	Karnataka	Chikkaballapura
 Asia	India	Karnataka	Haveri
 Asia	India	Karnataka	Kolar
+Asia	India	Karnataka	Mangalore
 Asia	India	Karnataka	Tumakuru
+Asia	India	Karnataka	Udupi
 Asia	India	Kerala	
 Asia	India	Kerala	Ernakulam
 Asia	India	Kerala	Idukki
@@ -954,6 +958,7 @@ Asia	India	Odisha
 Asia	India	Odisha	Ganjam
 Asia	India	Odisha	Jharsuguda
 Asia	India	Puducherry	
+Asia	India	Puducherry	Puducherry
 Asia	India	Punjab IN	
 Asia	India	Punjab IN	Mohali
 Asia	India	Punjab IN	Rupnagar
@@ -987,16 +992,21 @@ Asia	India	Tamil Nadu	Ramanathapuram
 Asia	India	Tamil Nadu	Ranipet
 Asia	India	Tamil Nadu	Salem
 Asia	India	Tamil Nadu	Sivagangai
+Asia	India	Tamil Nadu	Sivakasi
+Asia	India	Tamil Nadu	Tenkasi
 Asia	India	Tamil Nadu	Thanjavur
 Asia	India	Tamil Nadu	The Nilgiris
 Asia	India	Tamil Nadu	Theni
 Asia	India	Tamil Nadu	Thiruvallur
 Asia	India	Tamil Nadu	Thiruvarur
+Asia	India	Tamil Nadu	Thoothukudi
 Asia	India	Tamil Nadu	Tiruchirapalli
 Asia	India	Tamil Nadu	Tirunelveli
 Asia	India	Tamil Nadu	Tirupattur
 Asia	India	Tamil Nadu	Tiruppur
 Asia	India	Tamil Nadu	Tiruvannamalai
+Asia	India	Tamil Nadu	Vellore
+Asia	India	Tamil Nadu	Villupuram
 Asia	India	Telangana	
 Asia	India	Telangana	Adilabad
 Asia	India	Telangana	Gadwal
@@ -1220,6 +1230,7 @@ Asia	Iran	Karaj
 Asia	Iran	Kashmar	
 Asia	Iran	Kerman	
 Asia	Iran	Maku	
+Asia	Iran	Qazvin	
 Asia	Iran	Qom	
 Asia	Iran	Semnan	
 Asia	Iran	Shiraz	
@@ -1658,6 +1669,7 @@ Asia	Sri Lanka	Western Province	Nugegoda
 Asia	Sri Lanka	Western Province	Panadura
 Asia	Sri Lanka	Western Province	Piliyandala
 Asia	Syria	Syria	
+Asia	Taiwan	Changhua County	
 Asia	Taiwan	Keelung	
 Asia	Taiwan	New Taipei City	
 Asia	Taiwan	Tainan	
@@ -1703,15 +1715,31 @@ Asia	United Arab Emirates	United Arab Emirates
 Asia	Uzbekistan	Tashkent	
 Asia	Uzbekistan	Tashkent	Tashkent City
 Asia	Uzbekistan	Uzbekistan	
+Asia	Vietnam	Bac Giang	
+Asia	Vietnam	Bac Ninh	
+Asia	Vietnam	Cao Bang	
+Asia	Vietnam	Da Nang	
+Asia	Vietnam	Ha Nam	
 Asia	Vietnam	Hai Duong	
+Asia	Vietnam	Hai Phong	
 Asia	Vietnam	Ho Chi Minh City	
+Asia	Vietnam	Hoa Binh	
+Asia	Vietnam	Hung Yen	
+Asia	Vietnam	Kien Giang	
+Asia	Vietnam	Lang Son	
 Asia	Vietnam	Lao Cai	
+Asia	Vietnam	Nam Dinh	
+Asia	Vietnam	Phu Tho	
 Asia	Vietnam	Quangninh	
 Asia	Vietnam	Red River Delta	
 Asia	Vietnam	Red River Delta	Hanoi
+Asia	Vietnam	Son la	
+Asia	Vietnam	Thai Binh	
+Asia	Vietnam	Thai Nguyen	
 Asia	Vietnam	Thanh Hoa	
 Asia	Vietnam	Vietnam	
 Asia	Vietnam	Vinhphuc	
+Asia	Vietnam	Yen Bai	
 Asia	Yemen	Yemen	
 Europe	Albania	Albania	
 Europe	Andorra	Andorra	
@@ -2257,10 +2285,12 @@ Europe	Belgium	Gent	Aalter
 Europe	Belgium	Gent	Asper
 Europe	Belgium	Gent	Bottelare
 Europe	Belgium	Gent	Deinze
+Europe	Belgium	Gent	Evergem
 Europe	Belgium	Gent	Gavere
 Europe	Belgium	Gent	Gent
 Europe	Belgium	Gent	Gentbrugge
 Europe	Belgium	Gent	Heusden
+Europe	Belgium	Gent	Lochristi
 Europe	Belgium	Gent	Lotenhulle
 Europe	Belgium	Gent	Lovendegem
 Europe	Belgium	Gent	Mariakerke
@@ -3603,6 +3633,7 @@ Europe	France	Bretagne	Josselin
 Europe	France	Bretagne	La Gacilly
 Europe	France	Bretagne	La Roche Bernard
 Europe	France	Bretagne	La Rochelle
+Europe	France	Bretagne	Lamballe
 Europe	France	Bretagne	Lannilis
 Europe	France	Bretagne	Lannion
 Europe	France	Bretagne	Lesneven
@@ -3768,6 +3799,7 @@ Europe	France	Hauts de France	Boulogne sur Mer
 Europe	France	Hauts de France	Bousbecque
 Europe	France	Hauts de France	Calais
 Europe	France	Hauts de France	Cambrai
+Europe	France	Hauts de France	Chambly
 Europe	France	Hauts de France	Chateau-Thierry
 Europe	France	Hauts de France	Compiègne
 Europe	France	Hauts de France	Coquelles
@@ -3883,6 +3915,7 @@ Europe	France	Lorraine	Epinal
 Europe	France	Martinique	
 Europe	France	Martinique	Fort-de-France
 Europe	France	Martinique	Le Lamentin
+Europe	France	Martinique	Le Lorrain
 Europe	France	Martinique	Schoelcher
 Europe	France	Mayotte	
 Europe	France	Mayotte	Mamoudzou
@@ -4237,7 +4270,9 @@ Europe	Greece	Ionian Islands
 Europe	Greece	Ionian Islands	Corfu
 Europe	Greece	Kastoria	
 Europe	Greece	Katerini	
+Europe	Greece	Kefalonia	
 Europe	Greece	Kilkis	
+Europe	Greece	Korinthia	
 Europe	Greece	Kozani	
 Europe	Greece	Naousa	
 Europe	Greece	North Aegean	
@@ -6144,6 +6179,7 @@ Europe	Russia	Amur Region	Konstantinovka
 Europe	Russia	Amur Region	Novokiyevsky Uval
 Europe	Russia	Amur Region	Poyarkovo
 Europe	Russia	Amur Region	Progress
+Europe	Russia	Amur Region	Raychikhinsk
 Europe	Russia	Amur Region	Romny
 Europe	Russia	Amur Region	Svobodny (Amur)
 Europe	Russia	Amur Region	Tambovka
@@ -9497,11 +9533,13 @@ North America	USA	Montana	Jefferson County MT
 North America	USA	Montana	Lake County MT
 North America	USA	Montana	Lewis and Clark County
 North America	USA	Montana	Missoula County
+North America	USA	Montana	Musselshell County
 North America	USA	Montana	Ravalli County
 North America	USA	Montana	Roosevelt County
 North America	USA	Montana	Stillwater County
 North America	USA	Montana	Sweet Grass County
 North America	USA	Montana	Teton County
+North America	USA	Montana	Toole County
 North America	USA	Montana	Valley County
 North America	USA	Montana	West Yellowstone
 North America	USA	Montana	Yellowstone County
