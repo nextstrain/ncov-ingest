@@ -32,7 +32,7 @@ jobs:
           --exec env \
           . \
             envdir env.d snakemake genbank_then_clean \
-               --config fetch="yes" slack_token='${{ secrets.SLACK_TOKEN }}'
+               --config fetch="yes" 
       env:
         AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}

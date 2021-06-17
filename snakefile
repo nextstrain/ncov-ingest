@@ -11,8 +11,8 @@ localrules: all_then_clean, gisaid_then_clean , genbank_then_clean,
 
 
 # we want to check if some environment variable exists.
-#since the envvars: directive only works for later versions of snakemake, we have to do this "nmanually":
-requiredEnvironmentVariables = [ "GITHUB_REF"]
+#since the envvars: directive only works for later versions of snakemake, we have to do this "manually":
+requiredEnvironmentVariables = [ "GITHUB_REF" ]
 absentRequiredEnvironmentVariables = [v for v in requiredEnvironmentVariables
                                       if not v in os.environ ]
 if len( absentRequiredEnvironmentVariables )>0:
@@ -34,15 +34,9 @@ else:
     print("skipping ingest for ref",github_ref)
     exit(0)
 
-## defining some environment variables for gisaid fetching:
-if "gisaid_endpoint" in config:
-    os.environ["GISAID_API_ENDPOINT"] = config['gisaid_endpoint']
-if "gisaid_login" in config :
-    os.environ["GISAID_USERNAME_AND_PASSWORD"] = config['gisaid_login']
+if NOTIFY and not "SLACK_TOKEN" in os.environ:
+    raise Exception("The SLACK_TOKEN environment variable is required in the current context.")
 
-## defining some environment variables for slack notifications:
-if "slack_token" in config:
-    os.environ["SLACK_TOKEN"] = config['slack_token']
 
 def _get_slack_channel(w):
     if NOTIFY:
