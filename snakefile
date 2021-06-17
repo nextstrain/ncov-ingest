@@ -331,7 +331,7 @@ rule location_hierarchy_additions:
             diff="$(mktemp -t location-hierarchy-changes-XXXXXX)"
             trap "rm -f '$diff'" EXIT
 
-            ./bin/compute-location-hierarchy-addition {input.location_hierarchy} source-data/location_hierarchy.tsv $diff
+            ./bin/compute-location-hierarchy-addition {input.location_hierarchy} source-data/location_hierarchy.tsv > $diff
 
             if [[ -s "$diff" ]]; then
                 # "Notifying Slack about location hierarchy additions."
@@ -362,7 +362,7 @@ rule additional_info_changes:
             diff="$(mktemp -t additionnal-info-changes-XXXXXX)"
             trap "rm -f '$diff'" EXIT
 
-            ./bin/compute-additional-info-change {input.additional_info} "{params.destination_additional_info}" $diff
+            ./bin/compute-additional-info-change {input.additional_info} "{params.destination_additional_info}" > $diff
 
             if [[ -n "$diff" ]]; then
                 # "Notifying Slack about additional info change."
@@ -388,7 +388,7 @@ rule new_flagged_metadata:
             diff="$(mktemp -t flagged-metadata-additions-XXXXXX)"
             trap "rm -f '$dst_local' '$diff'" EXIT
 
-            ./bin/compute-flagged-metadata-change {input.flagged_metadata} "{params.destination_flagged_metadata}" $dst_local $diff
+            ./bin/compute-flagged-metadata-change {input.flagged_metadata} "{params.destination_flagged_metadata}" $dst_local > $diff
             if [[ -s "$diff" ]]; then
                 # "Notifying Slack about flagged metadata additions."
                 ./bin/notify-slack ":waving_black_flag: Newly flagged metadata" $SLACK_TOKEN {params.slack_channel}
