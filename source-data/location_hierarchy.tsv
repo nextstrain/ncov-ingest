@@ -1273,6 +1273,7 @@ Asia	Indonesia	West Sumatra	West Pasaman
 Asia	Indonesia	Yogyakarta	
 Asia	Indonesia	Yogyakarta	Sleman
 Asia	Iran	Abadan	
+Asia	Iran	Ahvaz	
 Asia	Iran	Alborz Province	
 Asia	Iran	Arak	
 Asia	Iran	Bushehr	
@@ -1600,6 +1601,13 @@ Asia	Pakistan	Muzafargarh
 Asia	Pakistan	Pakistan	
 Asia	Pakistan	Peshawar	
 Asia	Pakistan	Punjab PK	
+Asia	Pakistan	Punjab PK	Faisalabad
+Asia	Pakistan	Punjab PK	Gujrat
+Asia	Pakistan	Punjab PK	Layyah
+Asia	Pakistan	Punjab PK	Muridke
+Asia	Pakistan	Punjab PK	Nankana Sahib
+Asia	Pakistan	Punjab PK	Okara
+Asia	Pakistan	Punjab PK	Pakpattan
 Asia	Pakistan	Punjab PK	Raiwand
 Asia	Pakistan	Punjab PK	Vehari
 Asia	Pakistan	Rajanpur	
@@ -2137,6 +2145,7 @@ Europe	Belgium	Aalst	Bavegem
 Europe	Belgium	Aalst	Borsbeke
 Europe	Belgium	Aalst	Denderhoutem
 Europe	Belgium	Aalst	Denderleeuw
+Europe	Belgium	Aalst	Erembodegem
 Europe	Belgium	Aalst	Erpe-Mere
 Europe	Belgium	Aalst	Geraardsbergen
 Europe	Belgium	Aalst	Haaltert
@@ -4070,12 +4079,14 @@ Europe	France	Nouvelle-Aquitaine	Royan
 Europe	France	Nouvelle-Aquitaine	Saint-Astier
 Europe	France	Nouvelle-Aquitaine	Saint-Mexant
 Europe	France	Nouvelle-Aquitaine	Saint-Paul-lès-Dax
+Europe	France	Nouvelle-Aquitaine	Saint-Vincent-de-Tyrosse
 Europe	France	Nouvelle-Aquitaine	Saintes
 Europe	France	Nouvelle-Aquitaine	Tonneins
 Europe	France	Nouvelle-Aquitaine	Tulle
 Europe	France	Occitanie	
 Europe	France	Occitanie	Albi
 Europe	France	Occitanie	Ariege
+Europe	France	Occitanie	Aubiet
 Europe	France	Occitanie	Aude
 Europe	France	Occitanie	Aveyron
 Europe	France	Occitanie	Beziers
@@ -4143,6 +4154,7 @@ Europe	France	Provence-Alpes-Côte d'Azur	Aubagne
 Europe	France	Provence-Alpes-Côte d'Azur	Auribeau-sur-Siagne
 Europe	France	Provence-Alpes-Côte d'Azur	Biot
 Europe	France	Provence-Alpes-Côte d'Azur	Bollene
+Europe	France	Provence-Alpes-Côte d'Azur	Bouilladisse
 Europe	France	Provence-Alpes-Côte d'Azur	Cagnes-sur-Mer
 Europe	France	Provence-Alpes-Côte d'Azur	Cannes
 Europe	France	Provence-Alpes-Côte d'Azur	Digne Les Bains
@@ -7945,6 +7957,7 @@ Europe	Spain	Catalunya	Santa Coloma de Farners
 Europe	Spain	Catalunya	Santa Coloma de Gramenet
 Europe	Spain	Catalunya	Santa Eugenia de Berga
 Europe	Spain	Catalunya	Santa Eulàlia de Ronçana
+Europe	Spain	Catalunya	Santa Fe de Montseny
 Europe	Spain	Catalunya	Santa Llogaia D'Alguema
 Europe	Spain	Catalunya	Santa Margarida de Montbui
 Europe	Spain	Catalunya	Santa Maria de Corcó
@@ -8970,6 +8983,7 @@ North America	Mexico	Quintana Roo
 North America	Mexico	Quintana Roo	Cozumel
 North America	Mexico	San Luis Potosi	
 North America	Mexico	Sinaloa	
+North America	Mexico	Sinaloa	Ahome
 North America	Mexico	Sinaloa	Culiacán
 North America	Mexico	Sinaloa	Guasave
 North America	Mexico	Sinaloa	Mazatlan
@@ -9293,6 +9307,7 @@ North America	USA	California	Santa Clara County
 North America	USA	California	Santa Cruz County
 North America	USA	California	Santa Cruz County CA
 North America	USA	California	Shasta County
+North America	USA	California	Siskiyou County
 North America	USA	California	Solano County
 North America	USA	California	Sonoma County
 North America	USA	California	Stanislaus County
@@ -9658,6 +9673,7 @@ North America	USA	Missouri	Pleasant Hill
 North America	USA	Missouri	Saint Louis County
 North America	USA	Missouri	St. Louis MO
 North America	USA	Montana	
+North America	USA	Montana	Beaverhead County
 North America	USA	Montana	Belgrade
 North America	USA	Montana	Big Horn County
 North America	USA	Montana	Big Sky
@@ -9672,6 +9688,8 @@ North America	USA	Montana	Gallatin County MT
 North America	USA	Montana	Jefferson County MT
 North America	USA	Montana	Lake County MT
 North America	USA	Montana	Lewis and Clark County
+North America	USA	Montana	Liberty County MT
+North America	USA	Montana	Mineral County MT
 North America	USA	Montana	Missoula County
 North America	USA	Montana	Musselshell County
 North America	USA	Montana	Ravalli County
@@ -10842,6 +10860,7 @@ South America	Brazil	Brazil
 South America	Brazil	Brazilian Cruise	
 South America	Brazil	Ceará	
 South America	Brazil	Ceará	Arneiroz
+South America	Brazil	Ceará	Crateus
 South America	Brazil	Ceará	Fortaleza
 South America	Brazil	Ceará	Tururu
 South America	Brazil	Distrito Federal	
@@ -10981,6 +11000,7 @@ South America	Brazil	Mato Grosso do Sul	Sonora
 South America	Brazil	Mato Grosso do Sul	Tres Lagoas
 South America	Brazil	Mato Grosso do Sul	Vicentina
 South America	Brazil	Minas Gerais	
+South America	Brazil	Minas Gerais	Alem Paraiba
 South America	Brazil	Minas Gerais	Alem do Paraiba
 South America	Brazil	Minas Gerais	Alfenas
 South America	Brazil	Minas Gerais	Aracuai
@@ -11255,6 +11275,7 @@ South America	Brazil	Rio Grande do Norte	Currais Novos
 South America	Brazil	Rio Grande do Norte	Extremoz
 South America	Brazil	Rio Grande do Norte	Florânia
 South America	Brazil	Rio Grande do Norte	Guamare
+South America	Brazil	Rio Grande do Norte	Ipanguacu
 South America	Brazil	Rio Grande do Norte	Jardim de Piranhas
 South America	Brazil	Rio Grande do Norte	Jardim do Seridó
 South America	Brazil	Rio Grande do Norte	João Câmara
@@ -11425,8 +11446,10 @@ South America	Brazil	Rio de Janeiro	Belford Roxo
 South America	Brazil	Rio de Janeiro	Bom Jardim
 South America	Brazil	Rio de Janeiro	Bom Jesus do Itabapoana
 South America	Brazil	Rio de Janeiro	Cabo Frio
+South America	Brazil	Rio de Janeiro	Cachoeiras de Macacu
 South America	Brazil	Rio de Janeiro	Cambuci
 South America	Brazil	Rio de Janeiro	Campos Dos Goytacazes
+South America	Brazil	Rio de Janeiro	Cantagalo
 South America	Brazil	Rio de Janeiro	Carapebus
 South America	Brazil	Rio de Janeiro	Cardoso Moreira
 South America	Brazil	Rio de Janeiro	Carmo
@@ -11531,10 +11554,13 @@ South America	Brazil	Santa Catarina	Braco do Norte
 South America	Brazil	Santa Catarina	Brusque
 South America	Brazil	Santa Catarina	Camboriu
 South America	Brazil	Santa Catarina	Campo Alegre
+South America	Brazil	Santa Catarina	Campo Belo do Sul
+South America	Brazil	Santa Catarina	Canelinha
 South America	Brazil	Santa Catarina	Canoinhas
 South America	Brazil	Santa Catarina	Capivari de Baixo
 South America	Brazil	Santa Catarina	Chapeco
 South America	Brazil	Santa Catarina	Concordia BR
+South America	Brazil	Santa Catarina	Criciuma
 South America	Brazil	Santa Catarina	Florianopolis
 South America	Brazil	Santa Catarina	Forquilhinha
 South America	Brazil	Santa Catarina	Garopaba
@@ -11561,17 +11587,20 @@ South America	Brazil	Santa Catarina	Nova Trento
 South America	Brazil	Santa Catarina	Palhoca
 South America	Brazil	Santa Catarina	Penha
 South America	Brazil	Santa Catarina	Planalto Alegre
+South America	Brazil	Santa Catarina	Ponte Alta
 South America	Brazil	Santa Catarina	Porto Belo
 South America	Brazil	Santa Catarina	Porto Uniao
 South America	Brazil	Santa Catarina	Praia Grande SC
 South America	Brazil	Santa Catarina	Presidente Getulio
 South America	Brazil	Santa Catarina	Rio Fortuna
 South America	Brazil	Santa Catarina	Rio Negrinho
+South America	Brazil	Santa Catarina	Rio Rufino
 South America	Brazil	Santa Catarina	Rio do Sul
 South America	Brazil	Santa Catarina	Salete
 South America	Brazil	Santa Catarina	Santa Rosa de Lima
 South America	Brazil	Santa Catarina	Sao Bento do Sul
 South America	Brazil	Santa Catarina	Sao Francisco do Sul
+South America	Brazil	Santa Catarina	Sao Joao Batista
 South America	Brazil	Santa Catarina	Sao Joaquim
 South America	Brazil	Santa Catarina	Sao Jose
 South America	Brazil	Santa Catarina	Sao Miguel do Oeste
@@ -11579,6 +11608,7 @@ South America	Brazil	Santa Catarina	Schroeder
 South America	Brazil	Santa Catarina	Sombrio
 South America	Brazil	Santa Catarina	Taio
 South America	Brazil	Santa Catarina	Tijucas
+South America	Brazil	Santa Catarina	Treze de Maio
 South America	Brazil	Santa Catarina	Trombudo Central
 South America	Brazil	Santa Catarina	Tubarao
 South America	Brazil	Santa Catarina	Videira
@@ -11742,6 +11772,7 @@ South America	Brazil	São Paulo	Itobi
 South America	Brazil	São Paulo	Itu
 South America	Brazil	São Paulo	Ituverava
 South America	Brazil	São Paulo	Jacareí
+South America	Brazil	São Paulo	Jaci
 South America	Brazil	São Paulo	Jacupiranga
 South America	Brazil	São Paulo	Jaguariuna
 South America	Brazil	São Paulo	Jales
@@ -11785,6 +11816,7 @@ South America	Brazil	São Paulo	Mogi Das Cruzes
 South America	Brazil	São Paulo	Mogi Mirim
 South America	Brazil	São Paulo	Mogi-Guacu
 South America	Brazil	São Paulo	Mongagua
+South America	Brazil	São Paulo	Monte Aprazivel
 South America	Brazil	São Paulo	Monte Azul Paulista
 South America	Brazil	São Paulo	Monte Azul Pulista
 South America	Brazil	São Paulo	Morro Agudo
@@ -11796,6 +11828,7 @@ South America	Brazil	São Paulo	Nova Europa
 South America	Brazil	São Paulo	Nova Granada
 South America	Brazil	São Paulo	Nova Odessa
 South America	Brazil	São Paulo	Olimpia
+South America	Brazil	São Paulo	Onda Verde
 South America	Brazil	São Paulo	Oriente
 South America	Brazil	São Paulo	Orindiuva
 South America	Brazil	São Paulo	Orlandia
@@ -11996,6 +12029,7 @@ South America	Chile	Coquimbo
 South America	Chile	Coquimbo	Coquimbo
 South America	Chile	Coquimbo	La Serena
 South America	Chile	Coquimbo	Ovalle
+South America	Chile	Coquimbo	Vicuna
 South America	Chile	Los Lagos	
 South America	Chile	Los Lagos	Ancud
 South America	Chile	Los Lagos	Calbuco
@@ -12036,6 +12070,7 @@ South America	Chile	Maule	Licanten
 South America	Chile	Maule	Linares
 South America	Chile	Maule	Maule
 South America	Chile	Maule	Molina
+South America	Chile	Maule	Pelarco
 South America	Chile	Maule	Pencahue
 South America	Chile	Maule	Retiro CL
 South America	Chile	Maule	Rio Claro
@@ -12056,10 +12091,12 @@ South America	Chile	O'Higgins	La Estrella CL
 South America	Chile	O'Higgins	Litueche
 South America	Chile	O'Higgins	Lolol
 South America	Chile	O'Higgins	Machali
+South America	Chile	O'Higgins	Peumo
 South America	Chile	O'Higgins	Pichidegua
 South America	Chile	O'Higgins	Pichilemu
 South America	Chile	O'Higgins	Rancagua
 South America	Chile	O'Higgins	Rengo
+South America	Chile	O'Higgins	Requinoa
 South America	Chile	O'Higgins	San Fernando CL
 South America	Chile	O'Higgins	San Francisco de Mostazal
 South America	Chile	O'Higgins	San Vicente
@@ -12139,6 +12176,7 @@ South America	Chile	Ñuble	Niquen
 South America	Chile	Ñuble	Quillon
 South America	Chile	Ñuble	San Carlos CL
 South America	Chile	Ñuble	San Ignacio
+South America	Chile	Ñuble	San Nicolas
 South America	Chile	Ñuble	Treguaco
 South America	Colombia	Antioquia	
 South America	Colombia	Antioquia	Amagá
@@ -12488,6 +12526,7 @@ South America	Peru	Peru
 South America	Peru	Piura	
 South America	Peru	San Martin	
 South America	Peru	Tacna	
+South America	Peru	Tumbes	
 South America	Peru	Ucayali	
 South America	Peru	Ucayali	Coronel Portillo
 South America	Sint Maarten	Sint Maarten	
