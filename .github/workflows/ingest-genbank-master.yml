@@ -48,7 +48,7 @@ jobs:
           --memory 30GiB \
           --exec env \
           . \
-            envdir env.d snakemake genbank_then_clean -j 16 \
+            envdir env.d snakemake genbank_then_clean \
                --config fetch="yes" slack_token='${{ secrets.SLACK_TOKEN }}'
       env:
         AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}

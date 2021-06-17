@@ -46,7 +46,7 @@ jobs:
           --memory 15GiB \
           --exec env \
           . \
-            envdir env.d snakemake gisaid_then_clean -j 8 \
+            envdir env.d snakemake gisaid_then_clean \
               --config fetch="yes" slack_token='${{ secrets.SLACK_TOKEN }}' \
                        gisaid_login='${{ secrets.GISAID_USERNAME_AND_PASSWORD }}' \
                        gisaid_endpoint='${{ secrets.GISAID_API_ENDPOINT }}'
