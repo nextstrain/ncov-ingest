@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Downloads data required for Nextclade to functions and runs nextclade
+# Downloads data required for Nextclade to function and runs nextclade
 
 set -o errexit
 set -o nounset
