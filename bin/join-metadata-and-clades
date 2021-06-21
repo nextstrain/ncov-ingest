@@ -10,7 +10,7 @@ METADATA_JOIN_COLUMN_NAME = 'strain'
 NEXTCLADE_JOIN_COLUMN_NAME = 'seqName'
 VALUE_MISSING_DATA = '?'
 
-rate_per_day = 0.0006 * 29903 / 365
+rate_per_day = 0.0007 * 29903 / 365
 reference_day = datetime(2020,1,1).toordinal()
 
 column_map = {
@@ -80,13 +80,6 @@ def main():
     # clades.astype(preferred_types)
 
     clades = clades[list(column_map.values())]
-    divergence = pd.read_csv("source-data/clade_divergence.tsv", sep='\t', index_col="clade")
-    def clade_to_offset(x):
-        try:
-            return divergence.loc[x]['intercept']
-        except:
-            # expected number of mutations in jan 2020
-            return 2.0
 
     # Concatenate on columns
     result = pd.merge(
@@ -96,11 +89,18 @@ def main():
         how='left'
     )
 
-    # extract divergence, time and offset information into vectors or series
+    all_clades = result.Nextstrain_clade.unique()
     t = result["date"].apply(datestr_to_ordinal)
-    offset = result["Nextstrain_clade"].apply(clade_to_offset)
-    div = result["divergence"]
-    div_array = np.array([float(x) if isfloat(x) else np.nan for x in div])
+    div_array = np.array([float(x) if isfloat(x) else np.nan for x in result.divergence])
+    offset_by_clade = {}
+    for clade in all_clades:
+        ind = result.Nextstrain_clade==clade
+        if ind.sum()>100:
+            deviation = div_array[ind] - (t[ind] - reference_day)*rate_per_day
+            offset_by_clade[clade] = np.mean(deviation[~np.isnan(deviation)])
+
+    # extract divergence, time and offset information into vectors or series
+    offset = result["Nextstrain_clade"].apply(lambda x: offset_by_clade.get(x, 2.0))
     # calculate divergence
     result["clock_deviation"] = div_array - ((t-reference_day)*rate_per_day + offset)
 
