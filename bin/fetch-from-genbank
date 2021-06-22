@@ -4,13 +4,18 @@ set -euo pipefail
 bin="$(dirname "$0")"
 
 main() {
-    fetch | "$bin"/csv-to-ndjson
+    fetch | filter | "$bin"/csv-to-ndjson
 }
 
 fetch() {
     curl "$("$bin"/genbank-url)" \
         --fail --silent --show-error --http1.1 \
         --header 'User-Agent: https://github.com/nextstrain/ncov-ingest (hello@nextstrain.org)'
+}
+
+filter() {
+    # Filter out an erroneous (and retracted elsewhere) 114M base pair sequence
+    grep -vE '^OD928958,' || true
 }
 
 main "$@"
