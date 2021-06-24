@@ -649,6 +649,7 @@ Asia	Bangladesh	Dhaka	Baridhara
 Asia	Bangladesh	Dhaka	Basundhara Residential Area
 Asia	Bangladesh	Dhaka	Bhedarganj Upazila
 Asia	Bangladesh	Dhaka	Cantonment
+Asia	Bangladesh	Dhaka	Damudya
 Asia	Bangladesh	Dhaka	Damudya Upazila
 Asia	Bangladesh	Dhaka	Dhaka
 Asia	Bangladesh	Dhaka	Dhamrai
@@ -658,6 +659,7 @@ Asia	Bangladesh	Dhaka	Elephant Road
 Asia	Bangladesh	Dhaka	Faridpur
 Asia	Bangladesh	Dhaka	Farmgate
 Asia	Bangladesh	Dhaka	Gazipur
+Asia	Bangladesh	Dhaka	Goalanda
 Asia	Bangladesh	Dhaka	Gopalgonj
 Asia	Bangladesh	Dhaka	Gosairhat Upazila
 Asia	Bangladesh	Dhaka	Green Road
@@ -672,7 +674,9 @@ Asia	Bangladesh	Dhaka	Madaripur
 Asia	Bangladesh	Dhaka	Madhukhali
 Asia	Bangladesh	Dhaka	Manikganj
 Asia	Bangladesh	Dhaka	Mirpur
+Asia	Bangladesh	Dhaka	Modhubag
 Asia	Bangladesh	Dhaka	Moghbazar
+Asia	Bangladesh	Dhaka	Mohakhali
 Asia	Bangladesh	Dhaka	Mohammadpur
 Asia	Bangladesh	Dhaka	Munshiganj
 Asia	Bangladesh	Dhaka	Narayanganj
@@ -685,6 +689,7 @@ Asia	Bangladesh	Dhaka	Nikunja
 Asia	Bangladesh	Dhaka	Nimtola
 Asia	Bangladesh	Dhaka	North Shajahanpur
 Asia	Bangladesh	Dhaka	Old Dhaka
+Asia	Bangladesh	Dhaka	Pangsha Upazila
 Asia	Bangladesh	Dhaka	Panthapath
 Asia	Bangladesh	Dhaka	Rahmatganj
 Asia	Bangladesh	Dhaka	Rajbari
@@ -1357,6 +1362,8 @@ Asia	Iran	Semnan
 Asia	Iran	Shiraz	
 Asia	Iran	Sistan and Baluchestan	
 Asia	Iran	Sistan and Baluchestan	Zahedan
+Asia	Iran	South Khorasan	
+Asia	Iran	South Khorasan	Birjand
 Asia	Iran	Tehran	
 Asia	Iran	Tehran	Abmangol
 Asia	Iran	Urmia	
@@ -2481,6 +2488,7 @@ Europe	Belgium	Halle-Vilvoorde	Dilbeek
 Europe	Belgium	Halle-Vilvoorde	Drogenbos
 Europe	Belgium	Halle-Vilvoorde	Dworp
 Europe	Belgium	Halle-Vilvoorde	Elewijt
+Europe	Belgium	Halle-Vilvoorde	Gaasbeek
 Europe	Belgium	Halle-Vilvoorde	Grimbergen
 Europe	Belgium	Halle-Vilvoorde	Groot-Bijgaarden
 Europe	Belgium	Halle-Vilvoorde	Halle
@@ -3045,6 +3053,7 @@ Europe	Belgium	Tongeren	Riemst
 Europe	Belgium	Tongeren	Uikhoven
 Europe	Belgium	Tongeren	Vechmaal
 Europe	Belgium	Tongeren	Vliermaal
+Europe	Belgium	Tongeren	Vliermaalroot
 Europe	Belgium	Tongeren	Voeren
 Europe	Belgium	Tongeren	Waltwilder
 Europe	Belgium	Tongeren	Wellen
@@ -3452,6 +3461,20 @@ Europe	Denmark	Sjaelland
 Europe	Denmark	Syddanmark	
 Europe	Estonia	Estonia	
 Europe	Estonia	Harjumaa	
+Europe	Estonia	Hiiu	
+Europe	Estonia	Ida-Viru	
+Europe	Estonia	Järva	
+Europe	Estonia	Jõgeva	
+Europe	Estonia	Lääne	
+Europe	Estonia	Lääne-Viru	
+Europe	Estonia	Pärnu	
+Europe	Estonia	Põlva	
+Europe	Estonia	Rapla	
+Europe	Estonia	Saare	
+Europe	Estonia	Tartu	
+Europe	Estonia	Valga	
+Europe	Estonia	Viljandi	
+Europe	Estonia	Võru	
 Europe	Europe	Europe	
 Europe	Finland	Finland	
 Europe	Finland	Finland	Rovaniemi
@@ -3891,6 +3914,7 @@ Europe	France	Corse	Sarrola-Carcopino
 Europe	France	France	
 Europe	France	French Guiana	
 Europe	France	French Guiana	Apatou
+Europe	France	French Guiana	Cacao
 Europe	France	French Guiana	Camopi
 Europe	France	French Guiana	Cayenne GF
 Europe	France	French Guiana	Grand Santi
@@ -4151,6 +4175,7 @@ Europe	France	Nouvelle-Aquitaine	Limoges
 Europe	France	Nouvelle-Aquitaine	Lot-Et-Garonne
 Europe	France	Nouvelle-Aquitaine	Marmande
 Europe	France	Nouvelle-Aquitaine	Merignac
+Europe	France	Nouvelle-Aquitaine	Mont-de-Marsan
 Europe	France	Nouvelle-Aquitaine	Montmorillon
 Europe	France	Nouvelle-Aquitaine	Niort
 Europe	France	Nouvelle-Aquitaine	Notre-Dame-de-Sanilhac
@@ -4181,6 +4206,7 @@ Europe	France	Occitanie	Cahors
 Europe	France	Occitanie	Caraman
 Europe	France	Occitanie	Carcassonne
 Europe	France	Occitanie	Castelnaudary
+Europe	France	Occitanie	Cornebarrieu
 Europe	France	Occitanie	Gers
 Europe	France	Occitanie	Haute-Garonne
 Europe	France	Occitanie	Hautes-Pyrenees
@@ -4951,6 +4977,7 @@ Europe	Netherlands	North Holland	Zwaag
 Europe	Netherlands	Overijssel	
 Europe	Netherlands	Overijssel	Almelo
 Europe	Netherlands	Overijssel	Borne
+Europe	Netherlands	Overijssel	Deventer
 Europe	Netherlands	Overijssel	Genemuiden
 Europe	Netherlands	Overijssel	Hengelo
 Europe	Netherlands	Overijssel	Oldenzaal
@@ -4971,6 +4998,7 @@ Europe	Netherlands	South Holland	Katwijk
 Europe	Netherlands	South Holland	Leiden
 Europe	Netherlands	South Holland	Lisse
 Europe	Netherlands	South Holland	Molenlanden
+Europe	Netherlands	South Holland	Nissewaard
 Europe	Netherlands	South Holland	Nootdorp
 Europe	Netherlands	South Holland	Rotterdam
 Europe	Netherlands	South Holland	Spijkenisse
@@ -6329,6 +6357,12 @@ Europe	Portugal	Santarem	Benavente
 Europe	Portugal	Santarem	Rio Maior
 Europe	Portugal	Santarem	Santarem
 Europe	Portugal	Santarem	Torres Novas
+Europe	Portugal	Santarem PT	
+Europe	Portugal	Santarem PT	Almeirim
+Europe	Portugal	Santarem PT	Benavente
+Europe	Portugal	Santarem PT	Rio Maior
+Europe	Portugal	Santarem PT	Santarem PT
+Europe	Portugal	Santarem PT	Torres Novas
 Europe	Portugal	Setúbal	
 Europe	Portugal	Setúbal	Alcacer do Sal
 Europe	Portugal	Setúbal	Alcochete
@@ -7428,6 +7462,7 @@ Europe	Spain	Balear Islands	Marratxí
 Europe	Spain	Balear Islands	Menorca
 Europe	Spain	Balear Islands	Muro
 Europe	Spain	Balear Islands	Palma
+Europe	Spain	Balear Islands	Palma ES
 Europe	Spain	Balear Islands	Palma de Mallorca
 Europe	Spain	Balear Islands	Palmanova
 Europe	Spain	Balear Islands	Pollenca
@@ -9034,6 +9069,7 @@ North America	Costa Rica	San Jose	Vazquez de Coronado
 North America	Costa Rica	San Jose	Zapote
 North America	Costa Rica	Unknown	
 North America	Cuba	Cuba	
+North America	Dominica	Dominica	
 North America	Dominican Republic	Dominican Republic	
 North America	El Salvador	San Salvador	
 North America	Grenada	Grenada	
@@ -9797,20 +9833,25 @@ North America	USA	Montana	Broadwater County
 North America	USA	Montana	Carbon County
 North America	USA	Montana	Cascade County
 North America	USA	Montana	Chouteau County
+North America	USA	Montana	Dawson County MT
 North America	USA	Montana	Ennis
 North America	USA	Montana	Fergus County
 North America	USA	Montana	Flathead County
 North America	USA	Montana	Gallatin County MT
+North America	USA	Montana	Glacier County
 North America	USA	Montana	Hill County MT
 North America	USA	Montana	Jefferson County MT
 North America	USA	Montana	Lake County MT
 North America	USA	Montana	Lewis and Clark County
 North America	USA	Montana	Liberty County MT
+North America	USA	Montana	Madison County MT
 North America	USA	Montana	Mineral County MT
 North America	USA	Montana	Missoula County
 North America	USA	Montana	Musselshell County
+North America	USA	Montana	Powell County MT
 North America	USA	Montana	Ravalli County
 North America	USA	Montana	Roosevelt County
+North America	USA	Montana	Sanders County
 North America	USA	Montana	Stillwater County
 North America	USA	Montana	Sweet Grass County
 North America	USA	Montana	Teton County
@@ -9983,6 +10024,7 @@ North America	USA	North Carolina	Forsyth County
 North America	USA	North Carolina	Guilford County
 North America	USA	North Carolina	Mecklenburg County
 North America	USA	North Carolina	Pitt County
+North America	USA	North Carolina	Rutherford County NC
 North America	USA	North Carolina	Wake County NC
 North America	USA	North Dakota	
 North America	USA	Northern Mariana Islands	
@@ -10126,6 +10168,7 @@ North America	USA	South Carolina	Lee County SC
 North America	USA	South Carolina	Lexington County
 North America	USA	South Carolina	Marion County SC
 North America	USA	South Carolina	Marlboro County
+North America	USA	South Carolina	McCormick County
 North America	USA	South Carolina	Oconee County
 North America	USA	South Carolina	Orangeburg County
 North America	USA	South Carolina	Pickens County SC
@@ -10888,6 +10931,8 @@ South America	Brazil	Alagoas
 South America	Brazil	Alagoas	Anadia
 South America	Brazil	Alagoas	Arapiraca
 South America	Brazil	Alagoas	Barra de Sao Miguel
+South America	Brazil	Alagoas	Boca Da Mata
+South America	Brazil	Alagoas	Branquinha
 South America	Brazil	Alagoas	Capela (Alagoas)
 South America	Brazil	Alagoas	Cha Preta
 South America	Brazil	Alagoas	Colonia Leopoldina
@@ -10900,6 +10945,7 @@ South America	Brazil	Alagoas	Marechal Deodoro
 South America	Brazil	Alagoas	Matriz de Camaragibe
 South America	Brazil	Alagoas	Murici
 South America	Brazil	Alagoas	Palmeira Dos Indios
+South America	Brazil	Alagoas	Passo de Camaragibe
 South America	Brazil	Alagoas	Rio Largo
 South America	Brazil	Alagoas	Roteiro
 South America	Brazil	Alagoas	Santa Luzia do Norte
@@ -10980,11 +11026,13 @@ South America	Brazil	Bahia	Riachao do Jacuipe
 South America	Brazil	Bahia	Salvador
 South America	Brazil	Bahia	Santo Amaro
 South America	Brazil	Bahia	Santo Antonio de Jesus
+South America	Brazil	Bahia	Sao Francisco do Conde
 South America	Brazil	Bahia	Sao Sebastiao do Passe
 South America	Brazil	Bahia	Satiro Dias
 South America	Brazil	Bahia	Serrinha
 South America	Brazil	Bahia	Tanhacu
 South America	Brazil	Bahia	Teixeira de Freitas
+South America	Brazil	Bahia	Utinga
 South America	Brazil	Brazil	
 South America	Brazil	Brazilian Cruise	
 South America	Brazil	Ceará	
@@ -10997,29 +11045,40 @@ South America	Brazil	Distrito Federal	Brasilia
 South America	Brazil	Distrito Federal	Planaltina
 South America	Brazil	Distrito Federal	Santa Maria DF
 South America	Brazil	Espirito Santo	
+South America	Brazil	Espirito Santo	Afonso Claudio
 South America	Brazil	Espirito Santo	Aguia Branca
+South America	Brazil	Espirito Santo	Alegre
+South America	Brazil	Espirito Santo	Alfredo Chaves
 South America	Brazil	Espirito Santo	Anchieta
 South America	Brazil	Espirito Santo	Aracruz
 South America	Brazil	Espirito Santo	Baixo Guandu
 South America	Brazil	Espirito Santo	Barra do Sao Francisco
 South America	Brazil	Espirito Santo	Cachoeiro de Itapemirim
 South America	Brazil	Espirito Santo	Cariacica
+South America	Brazil	Espirito Santo	Colatina
 South America	Brazil	Espirito Santo	Domingos Martins
 South America	Brazil	Espirito Santo	Dores do Rio Preto
 South America	Brazil	Espirito Santo	Fundao
 South America	Brazil	Espirito Santo	Governador Lindenberg
 South America	Brazil	Espirito Santo	Guarapari
+South America	Brazil	Espirito Santo	Ibitirama
+South America	Brazil	Espirito Santo	Iconha
 South America	Brazil	Espirito Santo	Irupi
+South America	Brazil	Espirito Santo	Itapemirim
 South America	Brazil	Espirito Santo	Jeronimo Monteiro
 South America	Brazil	Espirito Santo	Laranjeiras (Espirito Santo)
 South America	Brazil	Espirito Santo	Linhares
 South America	Brazil	Espirito Santo	Marataizes
 South America	Brazil	Espirito Santo	Mimoso do Sul
+South America	Brazil	Espirito Santo	Presidente Kennedy ES
+South America	Brazil	Espirito Santo	Rio Novo do Sul
 South America	Brazil	Espirito Santo	Rochedo
 South America	Brazil	Espirito Santo	Santa Maria de Jetiba
 South America	Brazil	Espirito Santo	Santa Teresa
 South America	Brazil	Espirito Santo	Sao Gabriel Da Palha
+South America	Brazil	Espirito Santo	Sao Mateus
 South America	Brazil	Espirito Santo	Serra
+South America	Brazil	Espirito Santo	Sooretama
 South America	Brazil	Espirito Santo	Vargem Alta
 South America	Brazil	Espirito Santo	Viana BR
 South America	Brazil	Espirito Santo	Vila Pavao
@@ -11175,6 +11234,7 @@ South America	Brazil	Minas Gerais	Muriae
 South America	Brazil	Minas Gerais	Nova Serrana
 South America	Brazil	Minas Gerais	Ouro Branco
 South America	Brazil	Minas Gerais	Ouro Branco MG
+South America	Brazil	Minas Gerais	Palma BR
 South America	Brazil	Minas Gerais	Paracatu
 South America	Brazil	Minas Gerais	Patos de Minas
 South America	Brazil	Minas Gerais	Patrocinio
@@ -11192,35 +11252,64 @@ South America	Brazil	Minas Gerais	Uberaba
 South America	Brazil	Minas Gerais	Unai
 South America	Brazil	Minas Gerais	Varginha
 South America	Brazil	Para	
+South America	Brazil	Para	Abaetetuba
+South America	Brazil	Para	Altamira
 South America	Brazil	Para	Ananindeua
 South America	Brazil	Para	Augusto Correa
+South America	Brazil	Para	Baiao
 South America	Brazil	Para	Belem do Para
 South America	Brazil	Para	Belém
 South America	Brazil	Para	Benevides
 South America	Brazil	Para	Braganca
+South America	Brazil	Para	Brasil Novo
 South America	Brazil	Para	Breves
+South America	Brazil	Para	Bujaru
 South America	Brazil	Para	Cachoeira do Arari
 South America	Brazil	Para	Cametá
 South America	Brazil	Para	Canaa Doa Carajas
 South America	Brazil	Para	Castanhal
+South America	Brazil	Para	Colares
 South America	Brazil	Para	Conceição do Araguaia
 South America	Brazil	Para	Concórdia do Pará
+South America	Brazil	Para	Curua
+South America	Brazil	Para	Curuca
+South America	Brazil	Para	Dom Eliseu
 South America	Brazil	Para	Garrafão do Norte
+South America	Brazil	Para	Goianesia do Para
 South America	Brazil	Para	Igarapé-Açú
+South America	Brazil	Para	Irituia
+South America	Brazil	Para	Itupiranga
 South America	Brazil	Para	Juruti
 South America	Brazil	Para	Marabá
+South America	Brazil	Para	Maracana
 South America	Brazil	Para	Moju
+South America	Brazil	Para	Monte Alegre
 South America	Brazil	Para	Nova Timboteua
+South America	Brazil	Para	Novo Repartimento
+South America	Brazil	Para	Obidos
 South America	Brazil	Para	Obidos BR
 South America	Brazil	Para	Paragominas
 South America	Brazil	Para	Prainha
+South America	Brazil	Para	Primavera PA
 South America	Brazil	Para	Quatipuru
+South America	Brazil	Para	Redencao
+South America	Brazil	Para	Ruropolis
+South America	Brazil	Para	Santa Barbara do Para
 South America	Brazil	Para	Santa Isabel do Pará
 South America	Brazil	Para	Santa Maria do Pará
+South America	Brazil	Para	Santarem BR
 South America	Brazil	Para	Santo Antônio do Tauá
+South America	Brazil	Para	Sao Caetano de Odivelas
+South America	Brazil	Para	Sao Domingos do Capim
+South America	Brazil	Para	Sao Francisco do Para
+South America	Brazil	Para	Sao Joao Da Ponta
+South America	Brazil	Para	Sao Joao de Pirabas
 South America	Brazil	Para	São Miguel do Guamá
+South America	Brazil	Para	Terra Alta
 South America	Brazil	Para	Tracuateua
 South America	Brazil	Para	Trairao
+South America	Brazil	Para	Tucurui
+South America	Brazil	Para	Vigia
 South America	Brazil	Para	Viseu
 South America	Brazil	Paraiba	
 South America	Brazil	Paraiba	Aguiar
@@ -11312,7 +11401,9 @@ South America	Brazil	Paraná	Itambaraca
 South America	Brazil	Paraná	Itambe PR
 South America	Brazil	Paraná	Itaperucu
 South America	Brazil	Paraná	Ivaipora
+South America	Brazil	Paraná	Jacarezinho
 South America	Brazil	Paraná	Jaguariaiva
+South America	Brazil	Paraná	Jandaia do Sul
 South America	Brazil	Paraná	Joaquim Tavora
 South America	Brazil	Paraná	Jussara PR
 South America	Brazil	Paraná	Lapa
@@ -11323,6 +11414,7 @@ South America	Brazil	Paraná	Mandaguari
 South America	Brazil	Paraná	Mangueirinha
 South America	Brazil	Paraná	Marechal Candido Rondon
 South America	Brazil	Paraná	Maringa
+South America	Brazil	Paraná	Marumbi
 South America	Brazil	Paraná	Medianeira
 South America	Brazil	Paraná	Nova America Da Colina
 South America	Brazil	Paraná	Palmeira
@@ -11353,6 +11445,7 @@ South America	Brazil	Paraná	Terra Boa
 South America	Brazil	Paraná	Toledo
 South America	Brazil	Paraná	Toledo PR
 South America	Brazil	Paraná	Tomazina
+South America	Brazil	Paraná	Ubirata
 South America	Brazil	Paraná	Umuarama
 South America	Brazil	Paraná	Uniao Da Vitoria
 South America	Brazil	Paraná	Vere
@@ -11395,6 +11488,7 @@ South America	Brazil	Pernambuco	Petrolina
 South America	Brazil	Pernambuco	Poção
 South America	Brazil	Pernambuco	Primavera
 South America	Brazil	Pernambuco	Primavera
+South America	Brazil	Pernambuco	Primavera PE
 South America	Brazil	Pernambuco	Recife
 South America	Brazil	Pernambuco	Santa Cruz do Capibaribe
 South America	Brazil	Pernambuco	Sao Bento do Una
@@ -12122,6 +12216,7 @@ South America	Brazil	Tocantins
 South America	Brazil	Tocantins	Araguaiana
 South America	Brazil	Tocantins	Araguaina
 South America	Brazil	Tocantins	Araguatins
+South America	Brazil	Tocantins	Combinado
 South America	Brazil	Tocantins	Figueiropolis
 South America	Brazil	Tocantins	Formoso do Araguaia
 South America	Brazil	Tocantins	Guarai
@@ -12129,7 +12224,9 @@ South America	Brazil	Tocantins	Gurupi
 South America	Brazil	Tocantins	Mateiros
 South America	Brazil	Tocantins	Palmas
 South America	Brazil	Tocantins	Paraiso do Tacantins
+South America	Brazil	Tocantins	Pium
 South America	Brazil	Tocantins	Presidente Kennedy
+South America	Brazil	Tocantins	Presidente Kennedy TO
 South America	Brazil	Tocantins	Sandolandia
 South America	Chile	Antofagasta	
 South America	Chile	Antofagasta	Antofagasta
@@ -12400,6 +12497,8 @@ South America	Colombia	Bogota
 South America	Colombia	Bogota	Bogota
 South America	Colombia	Bolivar	
 South America	Colombia	Bolivar	Cartagena
+South America	Colombia	Bolivar CO	
+South America	Colombia	Bolivar CO	Cartagena
 South America	Colombia	Boyaca	
 South America	Colombia	Boyaca	Santa Sofia
 South America	Colombia	Boyaca	Santana
@@ -12737,8 +12836,16 @@ South America	Uruguay	Soriano
 South America	Uruguay	Tacuarembo	
 South America	Uruguay	Treinta y Tres	
 South America	Uruguay	Uruguay	
+South America	Venezuela	Amazonas VE	
+South America	Venezuela	Aragua	
+South America	Venezuela	Bolivar VE	
+South America	Venezuela	Carabobo	
+South America	Venezuela	Delta Amacuro	
+South America	Venezuela	Distrito Capital	
+South America	Venezuela	La Guaira	
 South America	Venezuela	Los Roques	
 South America	Venezuela	Miranda	
 South America	Venezuela	Nueva Esparta	
 South America	Venezuela	Venezuela	
+South America	Venezuela	Yaracuy	
 South America	Venezuela	Zulia	
