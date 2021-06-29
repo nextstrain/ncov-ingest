@@ -325,6 +325,8 @@ Africa	Morocco	Salé
 Africa	Morocco	Settat	
 Africa	Morocco	Sidi Kacem	
 Africa	Morocco	Sidi Lahcen	
+Africa	Morocco	Souss-Massa	
+Africa	Morocco	Souss-Massa	Inezgane
 Africa	Morocco	Temara	
 Africa	Morocco	Tinghir	
 Africa	Mozambique	Cabo Delgado	
@@ -486,6 +488,7 @@ Africa	South Africa	Mpumalanga	Dr. JS Moroka
 Africa	South Africa	Mpumalanga	Emalahleni
 Africa	South Africa	Mpumalanga	Ermelo
 Africa	South Africa	Mpumalanga	Middelburg
+Africa	South Africa	Mpumalanga	Nkangala
 Africa	South Africa	Mpumalanga	Thembisile Hani
 Africa	South Africa	Mpumalanga	Trichardt
 Africa	South Africa	North-West	
@@ -872,6 +875,7 @@ Asia	India	Arunachal Pradesh	Papum Pare
 Asia	India	Assam	
 Asia	India	Assam	Darrang
 Asia	India	Assam	Dhubri
+Asia	India	Assam	Dibrugarh
 Asia	India	Assam	Goalpara
 Asia	India	Assam	Hojai
 Asia	India	Assam	Kamrup
@@ -1280,6 +1284,7 @@ Asia	Indonesia	Gorontalo
 Asia	Indonesia	Gorontalo	Bone Bolango
 Asia	Indonesia	Indonesia	
 Asia	Indonesia	Jakarta	
+Asia	Indonesia	Jakarta	Central Jakarta
 Asia	Indonesia	Jakarta	South Jakarta
 Asia	Indonesia	Jambi	
 Asia	Indonesia	Jambi	Merangin
@@ -1868,6 +1873,7 @@ Asia	Syria	Syria
 Asia	Taiwan	Changhua County	
 Asia	Taiwan	Keelung	
 Asia	Taiwan	New Taipei City	
+Asia	Taiwan	Pingtung County	
 Asia	Taiwan	Tainan	
 Asia	Taiwan	Taiwan	
 Asia	Taiwan	Taiwan	Kaohsiung
@@ -3230,6 +3236,8 @@ Europe	Bosnia and Herzegovina	Vitez
 Europe	Bosnia and Herzegovina	Vogosca	
 Europe	Bosnia and Herzegovina	Zavidovici	
 Europe	Bosnia and Herzegovina	Zenica	
+Europe	Bosnia and Herzegovina	Zenica-Doboj	
+Europe	Bosnia and Herzegovina	Zenica-Doboj	Visoko
 Europe	Bosnia and Herzegovina	Zepce	
 Europe	Bosnia and Herzegovina	Čelinac	
 Europe	Bulgaria	Blagoevgrad	
@@ -3866,6 +3874,7 @@ Europe	France	Bretagne	Betton
 Europe	France	Bretagne	Brest
 Europe	France	Bretagne	Carentoir
 Europe	France	Bretagne	Cayenne BRE
+Europe	France	Bretagne	Cesson Sevigne
 Europe	France	Bretagne	Chateaulin
 Europe	France	Bretagne	Dinan
 Europe	France	Bretagne	Etables sur Mer
@@ -3880,10 +3889,12 @@ Europe	France	Bretagne	La Rochelle
 Europe	France	Bretagne	Lamballe
 Europe	France	Bretagne	Lannilis
 Europe	France	Bretagne	Lannion
+Europe	France	Bretagne	Les Iffs
 Europe	France	Bretagne	Lesneven
 Europe	France	Bretagne	Lorient
 Europe	France	Bretagne	Maxent
 Europe	France	Bretagne	Melesse
+Europe	France	Bretagne	Mordelles
 Europe	France	Bretagne	Morlaix
 Europe	France	Bretagne	Noyal Chatillon sur Seiche
 Europe	France	Bretagne	Noyal Pontivy
@@ -3897,6 +3908,7 @@ Europe	France	Bretagne	Quimper
 Europe	France	Bretagne	Quimperle
 Europe	France	Bretagne	Redon
 Europe	France	Bretagne	Rennes
+Europe	France	Bretagne	Romille
 Europe	France	Bretagne	Saint Gilles (Bretagne)
 Europe	France	Bretagne	Saint Gregoire
 Europe	France	Bretagne	Saint Malo
@@ -5166,6 +5178,7 @@ Europe	Poland	Dolnośląskie	Mikowice
 Europe	Poland	Dolnośląskie	Muszkowice
 Europe	Poland	Dolnośląskie	Myslakowice
 Europe	Poland	Dolnośląskie	Nadolice Wielkie
+Europe	Poland	Dolnośląskie	Niemcza
 Europe	Poland	Dolnośląskie	Nowizna
 Europe	Poland	Dolnośląskie	Olesnica
 Europe	Poland	Dolnośląskie	Oława
@@ -5180,6 +5193,7 @@ Europe	Poland	Dolnośląskie	Pruszowice
 Europe	Poland	Dolnośląskie	Przedborowa
 Europe	Poland	Dolnośląskie	Przyborow
 Europe	Poland	Dolnośląskie	Przylesie
+Europe	Poland	Dolnośląskie	Rynarcice
 Europe	Poland	Dolnośląskie	Siedlecin
 Europe	Poland	Dolnośląskie	Sieroszow
 Europe	Poland	Dolnośląskie	Sosnowa
@@ -5199,6 +5213,7 @@ Europe	Poland	Dolnośląskie	Walbrzych
 Europe	Poland	Dolnośląskie	Wegry
 Europe	Poland	Dolnośląskie	Wilkow Wielki
 Europe	Poland	Dolnośląskie	Witkow
+Europe	Poland	Dolnośląskie	Witoszow Gorny
 Europe	Poland	Dolnośląskie	Wojcieszyce
 Europe	Poland	Dolnośląskie	Wojnowice
 Europe	Poland	Dolnośląskie	Wojnowice (Dolnośląskie)
@@ -5225,6 +5240,7 @@ Europe	Poland	Kujawsko-Pomorskie	Dobrylewo
 Europe	Poland	Kujawsko-Pomorskie	Dziarnowo
 Europe	Poland	Kujawsko-Pomorskie	Grudziadz
 Europe	Poland	Kujawsko-Pomorskie	Lipno
+Europe	Poland	Kujawsko-Pomorskie	Lipnowski
 Europe	Poland	Kujawsko-Pomorskie	Ludwichowo
 Europe	Poland	Kujawsko-Pomorskie	Mogilno
 Europe	Poland	Kujawsko-Pomorskie	Nadborowo
@@ -5237,6 +5253,7 @@ Europe	Poland	Kujawsko-Pomorskie	Torun
 Europe	Poland	Kujawsko-Pomorskie	Tuchola
 Europe	Poland	Kujawsko-Pomorskie	Wabrzezno
 Europe	Poland	Kujawsko-Pomorskie	Wloclawek
+Europe	Poland	Kujawsko-Pomorskie	Wloclawski
 Europe	Poland	Kujawsko-Pomorskie	Znin
 Europe	Poland	Lubelskie	
 Europe	Poland	Lubelskie	Biała Podlaska
@@ -5293,7 +5310,9 @@ Europe	Poland	Lubuskie	Lubsko
 Europe	Poland	Lubuskie	Lubów
 Europe	Poland	Lubuskie	Miedzyrzecz
 Europe	Poland	Lubuskie	Milow
+Europe	Poland	Lubuskie	Modrzyca
 Europe	Poland	Lubuskie	Nowa Sol
+Europe	Poland	Lubuskie	Nowe Miasteczko
 Europe	Poland	Lubuskie	Nowogrod Bobrzanski
 Europe	Poland	Lubuskie	Osno Lubuskie
 Europe	Poland	Lubuskie	Osnolubuskie
@@ -5434,6 +5453,7 @@ Europe	Poland	Mazowieckie	Cyganka MZ
 Europe	Poland	Mazowieckie	Dabrowka (Mazowieckie)
 Europe	Poland	Mazowieckie	Dluga Szlachecka
 Europe	Poland	Mazowieckie	Dobre
+Europe	Poland	Mazowieckie	Dylew
 Europe	Poland	Mazowieckie	Falecice
 Europe	Poland	Mazowieckie	Gora Kalwaria
 Europe	Poland	Mazowieckie	Gostynin
@@ -5449,6 +5469,7 @@ Europe	Poland	Mazowieckie	Konstancin Jeziorna
 Europe	Poland	Mazowieckie	Korzen
 Europe	Poland	Mazowieckie	Kostrzyn (Mazowieckie)
 Europe	Poland	Mazowieckie	Koszary
+Europe	Poland	Mazowieckie	Latchorzew
 Europe	Poland	Mazowieckie	Laziska
 Europe	Poland	Mazowieckie	Leczyca
 Europe	Poland	Mazowieckie	Leczyca (Mazowieckie)
@@ -5491,6 +5512,7 @@ Europe	Poland	Mazowieckie	Stromiec
 Europe	Poland	Mazowieckie	Stromiecka Wola
 Europe	Poland	Mazowieckie	Sulejowek
 Europe	Poland	Mazowieckie	Swierze Gorne
+Europe	Poland	Mazowieckie	Szczyty
 Europe	Poland	Mazowieckie	Szymanow
 Europe	Poland	Mazowieckie	Ulow
 Europe	Poland	Mazowieckie	Walendow
@@ -5501,6 +5523,7 @@ Europe	Poland	Mazowieckie	Wolomin
 Europe	Poland	Mazowieckie	Wólka (Mazowieckie)
 Europe	Poland	Mazowieckie	Węgrow
 Europe	Poland	Mazowieckie	Zakret
+Europe	Poland	Mazowieckie	Zaluskow
 Europe	Poland	Mazowieckie	Zelechow
 Europe	Poland	Mazowieckie	Zyrardow
 Europe	Poland	Mazowieckie	Łaz
@@ -5515,6 +5538,7 @@ Europe	Poland	Opolskie	Bogdanowice
 Europe	Poland	Opolskie	Branice
 Europe	Poland	Opolskie	Brzeg
 Europe	Poland	Opolskie	Bąkowice
+Europe	Poland	Opolskie	Chroscice
 Europe	Poland	Opolskie	Chroscina
 Europe	Poland	Opolskie	Dabrowice
 Europe	Poland	Opolskie	Daniec
@@ -5526,17 +5550,20 @@ Europe	Poland	Opolskie	Goscice
 Europe	Poland	Opolskie	Grobniki
 Europe	Poland	Opolskie	Głogówek
 Europe	Poland	Opolskie	Głuchołazy
+Europe	Poland	Opolskie	Janinow
 Europe	Poland	Opolskie	K-Kozle
 Europe	Poland	Opolskie	Kedzierzyn Kozle
 Europe	Poland	Opolskie	Kietrz
 Europe	Poland	Opolskie	Kluczbork
 Europe	Poland	Opolskie	Komprachcice
+Europe	Poland	Opolskie	Koscierzyce
 Europe	Poland	Opolskie	Krapkowice
 Europe	Poland	Opolskie	Laka Prudnicka
 Europe	Poland	Opolskie	Lambinowice
 Europe	Poland	Opolskie	Laskowiec
 Europe	Poland	Opolskie	Ligota Czamborowa
 Europe	Poland	Opolskie	Lisiecice
+Europe	Poland	Opolskie	Malerzowice Wielkie
 Europe	Poland	Opolskie	Malujowice
 Europe	Poland	Opolskie	Namysłów
 Europe	Poland	Opolskie	Nowe Goluszowice
@@ -5545,8 +5572,11 @@ Europe	Poland	Opolskie	Olesno
 Europe	Poland	Opolskie	Opole
 Europe	Poland	Opolskie	Otmice
 Europe	Poland	Opolskie	Otmuchow
+Europe	Poland	Opolskie	Paczkow
 Europe	Poland	Opolskie	Polski Swietow
 Europe	Poland	Opolskie	Prudnik
+Europe	Poland	Opolskie	Rogow (Opolskie)
+Europe	Poland	Opolskie	Smicz
 Europe	Poland	Opolskie	Stare Kotkowice
 Europe	Poland	Opolskie	Stary las
 Europe	Poland	Opolskie	Strzelce Opolskie
@@ -6016,6 +6046,7 @@ Europe	Poland	Wielkopolskie	Cybinka
 Europe	Poland	Wielkopolskie	Czajkow
 Europe	Poland	Wielkopolskie	Czapury
 Europe	Poland	Wielkopolskie	Czarnków
+Europe	Poland	Wielkopolskie	Czerlejno
 Europe	Poland	Wielkopolskie	Czerniejewo
 Europe	Poland	Wielkopolskie	Dabroszyn
 Europe	Poland	Wielkopolskie	Dabrowa
@@ -6042,6 +6073,7 @@ Europe	Poland	Wielkopolskie	Jaroszewo
 Europe	Poland	Wielkopolskie	Jarosławiec
 Europe	Poland	Wielkopolskie	Jesionowo
 Europe	Poland	Wielkopolskie	Jeziorki
+Europe	Poland	Wielkopolskie	Kaczki Srednie
 Europe	Poland	Wielkopolskie	Kalisz
 Europe	Poland	Wielkopolskie	Kamien Maly
 Europe	Poland	Wielkopolskie	Kamionki
@@ -6130,6 +6162,7 @@ Europe	Poland	Wielkopolskie	Skórzewo
 Europe	Poland	Wielkopolskie	Smogorzewo
 Europe	Poland	Wielkopolskie	Srem
 Europe	Poland	Wielkopolskie	Sroda Wielkopolska
+Europe	Poland	Wielkopolskie	Stary Dwor
 Europe	Poland	Wielkopolskie	Strozki
 Europe	Poland	Wielkopolskie	Strykowo
 Europe	Poland	Wielkopolskie	Suchy las
@@ -6149,6 +6182,7 @@ Europe	Poland	Wielkopolskie	Turek
 Europe	Poland	Wielkopolskie	Tworzymirki
 Europe	Poland	Wielkopolskie	Uscikowo
 Europe	Poland	Wielkopolskie	Wagrowiec
+Europe	Poland	Wielkopolskie	Wasosz
 Europe	Poland	Wielkopolskie	Welnica
 Europe	Poland	Wielkopolskie	Wielen
 Europe	Poland	Wielkopolskie	Wielichowo
@@ -6296,6 +6330,7 @@ Europe	Poland	Łódzkie	Brzeznio
 Europe	Poland	Łódzkie	Bukowiec
 Europe	Poland	Łódzkie	Charbice Dolne
 Europe	Poland	Łódzkie	Charbice Gorne
+Europe	Poland	Łódzkie	Chojne
 Europe	Poland	Łódzkie	Dmosin
 Europe	Poland	Łódzkie	Glowno
 Europe	Poland	Łódzkie	Jasienin Maly
@@ -6329,9 +6364,11 @@ Europe	Poland	Łódzkie	Radomsko
 Europe	Poland	Łódzkie	Rawa Mazowiecka
 Europe	Poland	Łódzkie	Rewica Szlachecka
 Europe	Poland	Łódzkie	Rogow
+Europe	Poland	Łódzkie	Rogow (Łódzkie)
 Europe	Poland	Łódzkie	Sieradz
 Europe	Poland	Łódzkie	Skierniewice
 Europe	Poland	Łódzkie	Skierniewice County
+Europe	Poland	Łódzkie	Sokolow
 Europe	Poland	Łódzkie	Strzalki
 Europe	Poland	Łódzkie	Suliszewice
 Europe	Poland	Łódzkie	Szymaniszki
@@ -6345,6 +6382,7 @@ Europe	Poland	Łódzkie	Wisniowa Gora
 Europe	Poland	Łódzkie	Wojkow
 Europe	Poland	Łódzkie	Wola Cyrusowa
 Europe	Poland	Łódzkie	Wągry
+Europe	Poland	Łódzkie	Zalesie (Łódzkie)
 Europe	Poland	Łódzkie	Zdunska Wola
 Europe	Poland	Łódzkie	Zgierz
 Europe	Portugal	Beja	
@@ -9856,6 +9894,7 @@ North America	USA	Louisiana	Bienville Parish
 North America	USA	Louisiana	Bossier Parish
 North America	USA	Louisiana	Caddo Parish
 North America	USA	Louisiana	Calcasieu Parish
+North America	USA	Louisiana	Cameron Parish
 North America	USA	Louisiana	Claiborne Parish
 North America	USA	Louisiana	DeSoto Parish
 North America	USA	Louisiana	East Baton Rouge
