@@ -77,7 +77,6 @@ def main():
     clades = pd.read_csv(args.second_file, index_col=NEXTCLADE_JOIN_COLUMN_NAME,
                          sep='\t', low_memory=False, na_filter = False) \
             .rename(columns=column_map)
-    # clades.astype(preferred_types)
 
     clades = clades[list(column_map.values())]
 
@@ -103,12 +102,13 @@ def main():
     offset = result["Nextstrain_clade"].apply(lambda x: offset_by_clade.get(x, 2.0))
     # calculate divergence
     result["clock_deviation"] = np.array(div_array - ((t-reference_day)*rate_per_day + offset), dtype=int)
+    result["clock_deviation"][np.isnan(div_array)] = np.nan
 
     for col in list(column_map.values()) + ["clock_deviation"]:
         result[col] = result[col].fillna(VALUE_MISSING_DATA)
 
     # Move the new column so that it's next to other clade columns
-    result = reorder_columns(result)
+    result = reorder_columns(result).astype(preferred_types)
 
     result.to_csv(args.o, index_label=METADATA_JOIN_COLUMN_NAME, sep='\t')
 
