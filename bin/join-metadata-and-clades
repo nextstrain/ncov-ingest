@@ -102,7 +102,7 @@ def main():
     # extract divergence, time and offset information into vectors or series
     offset = result["Nextstrain_clade"].apply(lambda x: offset_by_clade.get(x, 2.0))
     # calculate divergence
-    result["clock_deviation"] = div_array - ((t-reference_day)*rate_per_day + offset)
+    result["clock_deviation"] = np.array(div_array - ((t-reference_day)*rate_per_day + offset), dtype=int)
 
     for col in list(column_map.values()) + ["clock_deviation"]:
         result[col] = result[col].fillna(VALUE_MISSING_DATA)
