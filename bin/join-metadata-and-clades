@@ -108,7 +108,7 @@ def main():
         result[col] = result[col].fillna(VALUE_MISSING_DATA)
 
     # Move the new column so that it's next to other clade columns
-    result = reorder_columns(result).astype(preferred_types)
+    result = reorder_columns(result) #.astype(preferred_types)
 
     result.to_csv(args.o, index_label=METADATA_JOIN_COLUMN_NAME, sep='\t')
 
