@@ -2354,6 +2354,7 @@ Europe	Belgium	Ath	Thoricourt
 Europe	Belgium	Ath	Villers-Saint-Amand
 Europe	Belgium	Ath	Wadelincourt
 Europe	Belgium	Bastogne	
+Europe	Belgium	Bastogne	Bertogne
 Europe	Belgium	Bastogne	Vielsalm
 Europe	Belgium	Belgium	
 Europe	Belgium	Brabant Wallon	
@@ -2410,6 +2411,7 @@ Europe	Belgium	Brussels	Woluwe-Saint-Lambert
 Europe	Belgium	Brussels	Woluwe-Saint-Pierre
 Europe	Belgium	Charleroi	
 Europe	Belgium	Charleroi	Aiseau
+Europe	Belgium	Charleroi	Aiseau-Presles
 Europe	Belgium	Charleroi	Bouffioulx
 Europe	Belgium	Charleroi	Buzet
 Europe	Belgium	Charleroi	Chapelle-Lez-Herlaimont
@@ -2431,6 +2433,7 @@ Europe	Belgium	Charleroi	Joncret
 Europe	Belgium	Charleroi	Jumet
 Europe	Belgium	Charleroi	Landelies
 Europe	Belgium	Charleroi	Leernes
+Europe	Belgium	Charleroi	Les Bons Villers
 Europe	Belgium	Charleroi	Liberchies
 Europe	Belgium	Charleroi	Lodelinsart
 Europe	Belgium	Charleroi	Luttre
@@ -2486,6 +2489,7 @@ Europe	Belgium	Eeklo	Bassevelde
 Europe	Belgium	Eeklo	Maldegem
 Europe	Belgium	Eeklo	Middelburg BE
 Europe	Belgium	Eeklo	Oosteeklo
+Europe	Belgium	Eeklo	Zelzate
 Europe	Belgium	Flandre-Orientale	
 Europe	Belgium	Flemish Brabant	
 Europe	Belgium	Flines-lès-Mortagne	
@@ -2494,11 +2498,13 @@ Europe	Belgium	Gent	Aalter
 Europe	Belgium	Gent	Asper
 Europe	Belgium	Gent	Bottelare
 Europe	Belgium	Gent	Deinze
+Europe	Belgium	Gent	Drongen
 Europe	Belgium	Gent	Evergem
 Europe	Belgium	Gent	Gavere
 Europe	Belgium	Gent	Gent
 Europe	Belgium	Gent	Gentbrugge
 Europe	Belgium	Gent	Heusden
+Europe	Belgium	Gent	Ledeberg
 Europe	Belgium	Gent	Lochristi
 Europe	Belgium	Gent	Lotenhulle
 Europe	Belgium	Gent	Lovendegem
@@ -2508,6 +2514,7 @@ Europe	Belgium	Gent	Merelbeke
 Europe	Belgium	Gent	Nevele
 Europe	Belgium	Gent	Oosterzele
 Europe	Belgium	Gent	Sint-Amandsberg
+Europe	Belgium	Gent	Sint-Martens-Latem
 Europe	Belgium	Gent	Wachtebeke
 Europe	Belgium	Gent	Wondelgem
 Europe	Belgium	Gent	Zulte
@@ -2596,15 +2603,18 @@ Europe	Belgium	Hasselt	Kermt
 Europe	Belgium	Hasselt	Koersel
 Europe	Belgium	Hasselt	Kuringen
 Europe	Belgium	Hasselt	Leopoldsburg
+Europe	Belgium	Hasselt	Linkhout
 Europe	Belgium	Hasselt	Loksbergen
 Europe	Belgium	Hasselt	Lummen
 Europe	Belgium	Hasselt	Nieuwerkerken
+Europe	Belgium	Hasselt	Oostham
 Europe	Belgium	Hasselt	Paal
 Europe	Belgium	Hasselt	Sint-Truiden
 Europe	Belgium	Hasselt	Stevoort
 Europe	Belgium	Hasselt	Tessenderlo
 Europe	Belgium	Hasselt	Velm
 Europe	Belgium	Hasselt	Waterschei-Zwartberg
+Europe	Belgium	Hasselt	Wimmertingen
 Europe	Belgium	Hasselt	Zepperen
 Europe	Belgium	Hasselt	Zolder
 Europe	Belgium	Hasselt	Zonhoven
@@ -2613,14 +2623,18 @@ Europe	Belgium	Huy
 Europe	Belgium	Huy	Amay
 Europe	Belgium	Huy	Antheit
 Europe	Belgium	Huy	Burdinne
+Europe	Belgium	Huy	Clavier
 Europe	Belgium	Huy	Couthuin
 Europe	Belgium	Huy	Moha
 Europe	Belgium	Huy	Villers-le-Bouillet
 Europe	Belgium	Huy	Wanze
 Europe	Belgium	Huy	Yernée-Fraineux
 Europe	Belgium	Ieper	
+Europe	Belgium	Ieper	Boezinge
 Europe	Belgium	Ieper	Brielen
+Europe	Belgium	Ieper	Elverdinge
 Europe	Belgium	Ieper	Geluwe
+Europe	Belgium	Ieper	Hollebeke
 Europe	Belgium	Ieper	Kemmel
 Europe	Belgium	Ieper	Langemark
 Europe	Belgium	Ieper	Langemark-Poelkapelle
@@ -2630,6 +2644,7 @@ Europe	Belgium	Ieper	Vlamertinge
 Europe	Belgium	Ieper	Vleteren
 Europe	Belgium	Ieper	Watou
 Europe	Belgium	Ieper	Wervik
+Europe	Belgium	Ieper	Westouter
 Europe	Belgium	Ieper	Wijtschate
 Europe	Belgium	Ieper	Wulvergem
 Europe	Belgium	Ieper	Zillebeke
@@ -2644,9 +2659,11 @@ Europe	Belgium	Kortrijk	Bossuit
 Europe	Belgium	Kortrijk	Deerlijk
 Europe	Belgium	Kortrijk	Desselgem
 Europe	Belgium	Kortrijk	Harelbeke
+Europe	Belgium	Kortrijk	Heestert
 Europe	Belgium	Kortrijk	Herthoek
 Europe	Belgium	Kortrijk	Heule
 Europe	Belgium	Kortrijk	Hulste
+Europe	Belgium	Kortrijk	Kaster
 Europe	Belgium	Kortrijk	Kuurne
 Europe	Belgium	Kortrijk	Lauwe
 Europe	Belgium	Kortrijk	Lendelede
@@ -2674,6 +2691,7 @@ Europe	Belgium	La Louvière	Trivières
 Europe	Belgium	La Louvière	Épinois
 Europe	Belgium	Leuven	
 Europe	Belgium	Leuven	Aarschot
+Europe	Belgium	Leuven	Assent
 Europe	Belgium	Leuven	Attenhoven
 Europe	Belgium	Leuven	Attenrode
 Europe	Belgium	Leuven	Averbode
@@ -2722,6 +2740,7 @@ Europe	Belgium	Leuven	Linden
 Europe	Belgium	Leuven	Linter
 Europe	Belgium	Leuven	Loonbeek
 Europe	Belgium	Leuven	Lubbeek
+Europe	Belgium	Leuven	Meensel-Kiezegem
 Europe	Belgium	Leuven	Meerbeek
 Europe	Belgium	Leuven	Meldert
 Europe	Belgium	Leuven	Messelbroek
@@ -2730,21 +2749,26 @@ Europe	Belgium	Leuven	Molenstede
 Europe	Belgium	Leuven	Neerlinter
 Europe	Belgium	Leuven	Neerwinden
 Europe	Belgium	Leuven	Nieuwrode
+Europe	Belgium	Leuven	Ottenburg
 Europe	Belgium	Leuven	Oud-Heverlee
+Europe	Belgium	Leuven	Outgaarden
 Europe	Belgium	Leuven	Pellenberg
 Europe	Belgium	Leuven	Rillaar
 Europe	Belgium	Leuven	Roosbeek
 Europe	Belgium	Leuven	Rotselaar
 Europe	Belgium	Leuven	Rummen
+Europe	Belgium	Leuven	Schaffen
 Europe	Belgium	Leuven	Scherpenheuvel
 Europe	Belgium	Leuven	Scherpenheuvel-Zichem
 Europe	Belgium	Leuven	Sint-Agatha-Rode
 Europe	Belgium	Leuven	Sint-Joris-Weert
 Europe	Belgium	Leuven	Sint-Joris-Winge
+Europe	Belgium	Leuven	Sint-Pieters-Rode
 Europe	Belgium	Leuven	Tervuren
 Europe	Belgium	Leuven	Testelt
 Europe	Belgium	Leuven	Tielt-Winge
 Europe	Belgium	Leuven	Tienen
+Europe	Belgium	Leuven	Tildonk
 Europe	Belgium	Leuven	Tremelo
 Europe	Belgium	Leuven	Veltem-Beisem
 Europe	Belgium	Leuven	Vossem
@@ -2776,10 +2800,13 @@ Europe	Belgium	Liège	Dalhem
 Europe	Belgium	Liège	Dolembreux
 Europe	Belgium	Liège	Flémalle
 Europe	Belgium	Liège	Fléron
+Europe	Belgium	Liège	Fraipont
 Europe	Belgium	Liège	Glain
 Europe	Belgium	Liège	Grivegnée
+Europe	Belgium	Liège	Grâce-Hollogne
 Europe	Belgium	Liège	Harzé
 Europe	Belgium	Liège	Herstal
+Europe	Belgium	Liège	Loncin
 Europe	Belgium	Liège	Lontzen
 Europe	Belgium	Liège	Ougrée
 Europe	Belgium	Liège	Retinne
@@ -2811,9 +2838,11 @@ Europe	Belgium	Maaseik	Lommel
 Europe	Belgium	Maaseik	Meeuwen
 Europe	Belgium	Maaseik	Meeuwen-Gruitrode
 Europe	Belgium	Maaseik	Molenbeersel
+Europe	Belgium	Maaseik	Neerglabbeek
 Europe	Belgium	Maaseik	Neeroeteren
 Europe	Belgium	Maaseik	Neerpelt
 Europe	Belgium	Maaseik	Opglabbeek
+Europe	Belgium	Maaseik	Ophoven
 Europe	Belgium	Maaseik	Oudsbergen
 Europe	Belgium	Maaseik	Overpelt
 Europe	Belgium	Maaseik	Peer
@@ -2923,6 +2952,8 @@ Europe	Belgium	Namur	Éghezée
 Europe	Belgium	Namur	Émines
 Europe	Belgium	Namur	Évelette
 Europe	Belgium	Neufchâteau	
+Europe	Belgium	Neufchâteau	Auby-sur-Semois
+Europe	Belgium	Neufchâteau	Bras
 Europe	Belgium	Neufchâteau	Saint-Hubert
 Europe	Belgium	Neufchâteau	Tellin
 Europe	Belgium	Nivelles	
@@ -2930,6 +2961,7 @@ Europe	Belgium	Nivelles	Autre-Église
 Europe	Belgium	Nivelles	Baulers
 Europe	Belgium	Nivelles	Beauvechain
 Europe	Belgium	Nivelles	Bierghes
+Europe	Belgium	Nivelles	Biez
 Europe	Belgium	Nivelles	Braine-l'Alleud
 Europe	Belgium	Nivelles	Braine-le-Château
 Europe	Belgium	Nivelles	Chastre
@@ -2942,6 +2974,7 @@ Europe	Belgium	Nivelles	Genval
 Europe	Belgium	Nivelles	Glimes
 Europe	Belgium	Nivelles	Grez-Doiceau
 Europe	Belgium	Nivelles	Houtain-le-Val
+Europe	Belgium	Nivelles	Hélécine
 Europe	Belgium	Nivelles	Ittre
 Europe	Belgium	Nivelles	Jodoigne
 Europe	Belgium	Nivelles	La Hulpe
@@ -2949,6 +2982,7 @@ Europe	Belgium	Nivelles	Lasne
 Europe	Belgium	Nivelles	Lillois-Witterzée
 Europe	Belgium	Nivelles	Limelette
 Europe	Belgium	Nivelles	Loupoigne
+Europe	Belgium	Nivelles	Marilles
 Europe	Belgium	Nivelles	Monstreux
 Europe	Belgium	Nivelles	Mont-Saint-Guibert
 Europe	Belgium	Nivelles	Mélin
@@ -2958,8 +2992,10 @@ Europe	Belgium	Nivelles	Ottignies-Louvain-la-Neuve
 Europe	Belgium	Nivelles	Perwez
 Europe	Belgium	Nivelles	Plancenoit
 Europe	Belgium	Nivelles	Pécrot
+Europe	Belgium	Nivelles	Ramillies
 Europe	Belgium	Nivelles	Rebecq
 Europe	Belgium	Nivelles	Rixensart
+Europe	Belgium	Nivelles	Rosières
 Europe	Belgium	Nivelles	Sart-Dames-Avelines
 Europe	Belgium	Nivelles	Thines
 Europe	Belgium	Nivelles	Tourinnes-la-Grosse
@@ -2969,6 +3005,7 @@ Europe	Belgium	Nivelles	Villers-la-Ville
 Europe	Belgium	Nivelles	Walhain
 Europe	Belgium	Nivelles	Waterloo
 Europe	Belgium	Nivelles	Wavre
+Europe	Belgium	Nivelles	Énines
 Europe	Belgium	Oost-Vlaanderen	
 Europe	Belgium	Oostende	
 Europe	Belgium	Oostende	Bekegem
@@ -2984,11 +3021,15 @@ Europe	Belgium	Oostende	Middelkerke
 Europe	Belgium	Oostende	Oudenburg
 Europe	Belgium	Oostende	Schore
 Europe	Belgium	Oostende	Westende
+Europe	Belgium	Oostende	Wilskerke
 Europe	Belgium	Oostende	Zandvoorde
 Europe	Belgium	Oostende	Zevekote
 Europe	Belgium	Oudenaarde	
 Europe	Belgium	Oudenaarde	Bevere
 Europe	Belgium	Oudenaarde	Brakel
+Europe	Belgium	Oudenaarde	Horebeke
+Europe	Belgium	Oudenaarde	Kluisbergen
+Europe	Belgium	Oudenaarde	Nokere
 Europe	Belgium	Oudenaarde	Ronse
 Europe	Belgium	Oudenaarde	Wortegem-Petegem
 Europe	Belgium	Philippeville	
@@ -2996,6 +3037,7 @@ Europe	Belgium	Philippeville	Couvin
 Europe	Belgium	Philippeville	Doische
 Europe	Belgium	Philippeville	Florennes
 Europe	Belgium	Philippeville	Gourdinne
+Europe	Belgium	Philippeville	Sautour
 Europe	Belgium	Philippeville	Walcourt
 Europe	Belgium	Roesa	
 Europe	Belgium	Roeselare	
@@ -3019,8 +3061,10 @@ Europe	Belgium	Sint-Niklaas	Kemzeke
 Europe	Belgium	Sint-Niklaas	Kieldrecht
 Europe	Belgium	Sint-Niklaas	Kruibeke
 Europe	Belgium	Sint-Niklaas	Lokeren
+Europe	Belgium	Sint-Niklaas	Melsele
 Europe	Belgium	Sint-Niklaas	Rupelmonde
 Europe	Belgium	Sint-Niklaas	Sint-Gillis-Waas
+Europe	Belgium	Sint-Niklaas	Sint-Niklaas
 Europe	Belgium	Sint-Niklaas	Stekene
 Europe	Belgium	Sint-Niklaas	Temse
 Europe	Belgium	Sint-Niklaas	Vrasene
@@ -3042,6 +3086,7 @@ Europe	Belgium	Soignies	Écaussinnes
 Europe	Belgium	Thuin	
 Europe	Belgium	Thuin	Anderlues
 Europe	Belgium	Thuin	Barbençon
+Europe	Belgium	Thuin	Beaumont BE
 Europe	Belgium	Thuin	Chimay
 Europe	Belgium	Thuin	Cour-sur-Heure
 Europe	Belgium	Thuin	Erquelinnes
@@ -3055,6 +3100,7 @@ Europe	Belgium	Thuin	Mont-Sainte-Geneviève
 Europe	Belgium	Thuin	Nalinnes
 Europe	Belgium	Thuin	Thirimont
 Europe	Belgium	Tielt	
+Europe	Belgium	Tielt	Aarsele
 Europe	Belgium	Tielt	Ardooie
 Europe	Belgium	Tielt	Dentergem
 Europe	Belgium	Tielt	Koolskamp
@@ -3087,9 +3133,11 @@ Europe	Belgium	Tongeren	Leut
 Europe	Belgium	Tongeren	Maasmechelen
 Europe	Belgium	Tongeren	Mechelen-aan-de-Maas
 Europe	Belgium	Tongeren	Millen
+Europe	Belgium	Tongeren	Neerharen
 Europe	Belgium	Tongeren	Opgrimbie
 Europe	Belgium	Tongeren	Rekem
 Europe	Belgium	Tongeren	Riemst
+Europe	Belgium	Tongeren	Sint-Huibrechts-Hern
 Europe	Belgium	Tongeren	Uikhoven
 Europe	Belgium	Tongeren	Vechmaal
 Europe	Belgium	Tongeren	Vliermaal
@@ -3180,6 +3228,7 @@ Europe	Belgium	Turnhout	Westerlo
 Europe	Belgium	Turnhout	Wortel
 Europe	Belgium	Turnhout	Zoerle-Parwijs
 Europe	Belgium	Verviers	
+Europe	Belgium	Verviers	Bra
 Europe	Belgium	Verviers	Büllingen
 Europe	Belgium	Verviers	Chaineux
 Europe	Belgium	Verviers	Eupen
@@ -3195,8 +3244,10 @@ Europe	Belgium	Veurne
 Europe	Belgium	Veurne	Beveren
 Europe	Belgium	Veurne	De Panne
 Europe	Belgium	Veurne	Koksijde
+Europe	Belgium	Veurne	Leisele
 Europe	Belgium	Veurne	Nieuwpoort
 Europe	Belgium	Veurne	Oostduinkerke
+Europe	Belgium	Veurne	Sint-Joris (Veurne)
 Europe	Belgium	Virton	
 Europe	Belgium	Virton	Dampicourt
 Europe	Belgium	Virton	Valansart
@@ -3552,6 +3603,7 @@ Europe	France	Auvergne-Rhône-Alpes	Aydat
 Europe	France	Auvergne-Rhône-Alpes	Bayet
 Europe	France	Auvergne-Rhône-Alpes	Beaulieu
 Europe	France	Auvergne-Rhône-Alpes	Beaumont
+Europe	France	Auvergne-Rhône-Alpes	Beaumont FR
 Europe	France	Auvergne-Rhône-Alpes	Beauregard Vendon
 Europe	France	Auvergne-Rhône-Alpes	Beauregard l Eveque
 Europe	France	Auvergne-Rhône-Alpes	Bellegarde-sur-Valserine
@@ -4097,6 +4149,7 @@ Europe	France	Hauts de France	Tourcoing
 Europe	France	Hauts de France	Valenciennes
 Europe	France	Hauts de France	Wambrechies
 Europe	France	Hauts de France	Wasquehal
+Europe	France	Hon-Hergies	
 Europe	France	Ile de France	
 Europe	France	Ile de France	Argenteuil
 Europe	France	Ile de France	Arpajon
@@ -4343,6 +4396,7 @@ Europe	France	Provence-Alpes-Côte d'Azur	Saint-Laurent-Du-Var
 Europe	France	Provence-Alpes-Côte d'Azur	Saint-Vallier-de-Thiey
 Europe	France	Provence-Alpes-Côte d'Azur	Salon-de-Provence
 Europe	France	Provence-Alpes-Côte d'Azur	Sanary-sur-Mer
+Europe	France	Provence-Alpes-Côte d'Azur	Sisteron
 Europe	France	Provence-Alpes-Côte d'Azur	Tende
 Europe	France	Provence-Alpes-Côte d'Azur	Toulon
 Europe	France	Provence-Alpes-Côte d'Azur	Var
@@ -4875,6 +4929,7 @@ Europe	Netherlands	Friesland	Weststellingwerf
 Europe	Netherlands	Gelderland	
 Europe	Netherlands	Gelderland	Apeldoorn
 Europe	Netherlands	Gelderland	Arnhem
+Europe	Netherlands	Gelderland	Brummen
 Europe	Netherlands	Gelderland	Nijmegen
 Europe	Netherlands	Gelderland	Oldebroek
 Europe	Netherlands	Gelderland	Wijchen
@@ -5033,6 +5088,7 @@ Europe	Netherlands	Overijssel	Borne
 Europe	Netherlands	Overijssel	Deventer
 Europe	Netherlands	Overijssel	Genemuiden
 Europe	Netherlands	Overijssel	Hengelo
+Europe	Netherlands	Overijssel	Ijsselmuiden
 Europe	Netherlands	Overijssel	Oldenzaal
 Europe	Netherlands	Overijssel	Raalte
 Europe	Netherlands	Roermond	
@@ -5053,6 +5109,7 @@ Europe	Netherlands	South Holland	Lisse
 Europe	Netherlands	South Holland	Molenlanden
 Europe	Netherlands	South Holland	Nissewaard
 Europe	Netherlands	South Holland	Nootdorp
+Europe	Netherlands	South Holland	Rijswijk
 Europe	Netherlands	South Holland	Rotterdam
 Europe	Netherlands	South Holland	Spijkenisse
 Europe	Netherlands	South Holland	Valkenburg
@@ -8152,6 +8209,7 @@ Europe	Spain	Catalunya	Palamos
 Europe	Spain	Catalunya	Palau Solita i Plegamans
 Europe	Spain	Catalunya	Palleja
 Europe	Spain	Catalunya	Palol D'Onyar
+Europe	Spain	Catalunya	Pals
 Europe	Spain	Catalunya	Parets del Valles
 Europe	Spain	Catalunya	Penelles
 Europe	Spain	Catalunya	Pineda de Bages
@@ -8594,6 +8652,7 @@ Europe	Spain	Madrid	Soto del Real
 Europe	Spain	Madrid	Valdaracete
 Europe	Spain	Melilla	
 Europe	Spain	Murcia	
+Europe	Spain	Murcia	El Palmar
 Europe	Spain	Murcia	Murcia
 Europe	Spain	Navarra	
 Europe	Spain	Navarra	Andosilla
@@ -9732,6 +9791,7 @@ North America	USA	Idaho	Kootenai County
 North America	USA	Idaho	Madison County
 North America	USA	Idaho	Madison County ID
 North America	USA	Idaho	Nez Perce County
+North America	USA	Idaho	Shoshone County
 North America	USA	Illinois	
 North America	USA	Illinois	Adams County IL
 North America	USA	Illinois	Alexander County
@@ -10022,12 +10082,14 @@ North America	USA	Montana	Powell County MT
 North America	USA	Montana	Ravalli County
 North America	USA	Montana	Roosevelt County
 North America	USA	Montana	Sanders County
+North America	USA	Montana	Silver Bow County
 North America	USA	Montana	Stillwater County
 North America	USA	Montana	Sweet Grass County
 North America	USA	Montana	Teton County
 North America	USA	Montana	Toole County
 North America	USA	Montana	Valley County
 North America	USA	Montana	West Yellowstone
+North America	USA	Montana	Wheatland County
 North America	USA	Montana	Yellowstone County
 North America	USA	Navassa Island	
 North America	USA	Nebraska	
@@ -10323,6 +10385,7 @@ North America	USA	South Carolina	Dorchester County
 North America	USA	South Carolina	Edgefield County
 North America	USA	South Carolina	Fairfield County SC
 North America	USA	South Carolina	Florence County
+North America	USA	South Carolina	Florence County SC
 North America	USA	South Carolina	Georgetown
 North America	USA	South Carolina	Georgetown County
 North America	USA	South Carolina	Greenville County
@@ -10652,6 +10715,7 @@ North America	USA	Wisconsin	Door County
 North America	USA	Wisconsin	Douglas County WI
 North America	USA	Wisconsin	Dunn County
 North America	USA	Wisconsin	Eau Claire County
+North America	USA	Wisconsin	Florence County WI
 North America	USA	Wisconsin	Fond Du Lac County
 North America	USA	Wisconsin	Grant County WI
 North America	USA	Wisconsin	Green County
@@ -11297,6 +11361,7 @@ South America	Brazil	Goiás	Montes Claros de Goias
 South America	Brazil	Goiás	Morrinhos
 South America	Brazil	Goiás	Mundo Novo
 South America	Brazil	Goiás	Ouvidor
+South America	Brazil	Goiás	Pires do Rio
 South America	Brazil	Goiás	Quirinopolis
 South America	Brazil	Goiás	Rio Verde
 South America	Brazil	Goiás	Sanclerlandia
@@ -11348,13 +11413,17 @@ South America	Brazil	Mato Grosso do Sul	Bonito
 South America	Brazil	Mato Grosso do Sul	Camapua
 South America	Brazil	Mato Grosso do Sul	Campo Grande
 South America	Brazil	Mato Grosso do Sul	Chapadao do Sul
+South America	Brazil	Mato Grosso do Sul	Corumba
 South America	Brazil	Mato Grosso do Sul	Coxim
+South America	Brazil	Mato Grosso do Sul	Dois Irmaos do Buriti
 South America	Brazil	Mato Grosso do Sul	Douradinho
 South America	Brazil	Mato Grosso do Sul	Dourados
+South America	Brazil	Mato Grosso do Sul	Eldorado
 South America	Brazil	Mato Grosso do Sul	Fatima do Sul
 South America	Brazil	Mato Grosso do Sul	Figueirao
 South America	Brazil	Mato Grosso do Sul	Guia Lopes Da Laguna
 South America	Brazil	Mato Grosso do Sul	Iguatemi
+South America	Brazil	Mato Grosso do Sul	Itapora
 South America	Brazil	Mato Grosso do Sul	Itaquirai
 South America	Brazil	Mato Grosso do Sul	Jardim
 South America	Brazil	Mato Grosso do Sul	Ladario
@@ -11364,6 +11433,8 @@ South America	Brazil	Mato Grosso do Sul	Miranda
 South America	Brazil	Mato Grosso do Sul	Navirai
 South America	Brazil	Mato Grosso do Sul	Nova Alvorada do Sul
 South America	Brazil	Mato Grosso do Sul	Nova Andradina
+South America	Brazil	Mato Grosso do Sul	Paraiso Das Aguas
+South America	Brazil	Mato Grosso do Sul	Paranhos
 South America	Brazil	Mato Grosso do Sul	Ponta Pora
 South America	Brazil	Mato Grosso do Sul	Rondonopolis
 South America	Brazil	Mato Grosso do Sul	Selviria
@@ -12261,6 +12332,7 @@ South America	Brazil	São Paulo	Ibitinga
 South America	Brazil	São Paulo	Ibiuna
 South America	Brazil	São Paulo	Icem
 South America	Brazil	São Paulo	Igaracu do Tiete
+South America	Brazil	São Paulo	Igarapava
 South America	Brazil	São Paulo	Iguape
 South America	Brazil	São Paulo	Ilha Bela
 South America	Brazil	São Paulo	Ilha Solteira
@@ -12491,14 +12563,17 @@ South America	Brazil	Tocantins
 South America	Brazil	Tocantins	Araguaiana
 South America	Brazil	Tocantins	Araguaina
 South America	Brazil	Tocantins	Araguatins
+South America	Brazil	Tocantins	Arraias
 South America	Brazil	Tocantins	Combinado
 South America	Brazil	Tocantins	Figueiropolis
 South America	Brazil	Tocantins	Formoso do Araguaia
 South America	Brazil	Tocantins	Guarai
 South America	Brazil	Tocantins	Gurupi
 South America	Brazil	Tocantins	Mateiros
+South America	Brazil	Tocantins	Miracema do Tocantins
 South America	Brazil	Tocantins	Palmas
 South America	Brazil	Tocantins	Paraiso do Tacantins
+South America	Brazil	Tocantins	Pedro Afonso
 South America	Brazil	Tocantins	Pium
 South America	Brazil	Tocantins	Presidente Kennedy
 South America	Brazil	Tocantins	Presidente Kennedy TO
@@ -12513,6 +12588,7 @@ South America	Chile	Araucanía	Carahue
 South America	Chile	Araucanía	Cholchol
 South America	Chile	Araucanía	Collipulli
 South America	Chile	Araucanía	Cunco
+South America	Chile	Araucanía	Freire
 South America	Chile	Araucanía	Galvarino
 South America	Chile	Araucanía	Lautaro
 South America	Chile	Araucanía	Loncoche
@@ -12600,10 +12676,13 @@ South America	Chile	Magallanes	Puerto Natales
 South America	Chile	Magallanes	Puerto Williams
 South America	Chile	Magallanes	Punta Arenas
 South America	Chile	Maule	
+South America	Chile	Maule	Cauquenes
 South America	Chile	Maule	Colbun
 South America	Chile	Maule	Constitucion
 South America	Chile	Maule	Curepto
 South America	Chile	Maule	Curico
+South America	Chile	Maule	Empedrado
+South America	Chile	Maule	Hualane
 South America	Chile	Maule	Licanten
 South America	Chile	Maule	Linares
 South America	Chile	Maule	Maule
@@ -12630,7 +12709,9 @@ South America	Chile	O'Higgins	La Estrella CL
 South America	Chile	O'Higgins	Litueche
 South America	Chile	O'Higgins	Lolol
 South America	Chile	O'Higgins	Machali
+South America	Chile	O'Higgins	Mostazal
 South America	Chile	O'Higgins	Nancagua
+South America	Chile	O'Higgins	Navidad
 South America	Chile	O'Higgins	Paredones
 South America	Chile	O'Higgins	Peumo
 South America	Chile	O'Higgins	Pichidegua
@@ -12644,12 +12725,14 @@ South America	Chile	O'Higgins	San Vicente
 South America	Chile	Region Metropolitana de Santiago	
 South America	Chile	Region Metropolitana de Santiago	Alhue
 South America	Chile	Region Metropolitana de Santiago	Buin
+South America	Chile	Region Metropolitana de Santiago	Calera de Tango
 South America	Chile	Region Metropolitana de Santiago	Cerrillos
 South America	Chile	Region Metropolitana de Santiago	Cerro Navia
 South America	Chile	Region Metropolitana de Santiago	Colina
 South America	Chile	Region Metropolitana de Santiago	Conchali
 South America	Chile	Region Metropolitana de Santiago	Curacavi
 South America	Chile	Region Metropolitana de Santiago	El Bosque
+South America	Chile	Region Metropolitana de Santiago	El Monte
 South America	Chile	Region Metropolitana de Santiago	Estacion Central
 South America	Chile	Region Metropolitana de Santiago	Huechuraba
 South America	Chile	Region Metropolitana de Santiago	Independencia
@@ -12663,10 +12746,13 @@ South America	Chile	Region Metropolitana de Santiago	Las Condes
 South America	Chile	Region Metropolitana de Santiago	Lo Barnechea
 South America	Chile	Region Metropolitana de Santiago	Lo Espejo
 South America	Chile	Region Metropolitana de Santiago	Lo Prado
+South America	Chile	Region Metropolitana de Santiago	Los Sauces
 South America	Chile	Region Metropolitana de Santiago	Macul
 South America	Chile	Region Metropolitana de Santiago	Maipu
 South America	Chile	Region Metropolitana de Santiago	Melipilla
 South America	Chile	Region Metropolitana de Santiago	Padre Hurtado
+South America	Chile	Region Metropolitana de Santiago	Paine
+South America	Chile	Region Metropolitana de Santiago	Pedro Aguirre Cerda
 South America	Chile	Region Metropolitana de Santiago	Penaflor
 South America	Chile	Region Metropolitana de Santiago	Penalolen
 South America	Chile	Region Metropolitana de Santiago	Pirque
@@ -12699,6 +12785,7 @@ South America	Chile	Valparaiso	Con-Con
 South America	Chile	Valparaiso	La Ligua
 South America	Chile	Valparaiso	Limache
 South America	Chile	Valparaiso	Los Andes
+South America	Chile	Valparaiso	Quillota
 South America	Chile	Valparaiso	Quilpue
 South America	Chile	Valparaiso	Rinconada
 South America	Chile	Valparaiso	San Antonio CL
@@ -12715,12 +12802,14 @@ South America	Chile	Ñuble	Coelemu
 South America	Chile	Ñuble	Coihueco
 South America	Chile	Ñuble	Ninhue
 South America	Chile	Ñuble	Niquen
+South America	Chile	Ñuble	Pemuco
 South America	Chile	Ñuble	Portezuelo
 South America	Chile	Ñuble	Quillon
 South America	Chile	Ñuble	San Carlos CL
 South America	Chile	Ñuble	San Ignacio
 South America	Chile	Ñuble	San Nicolas
 South America	Chile	Ñuble	Treguaco
+South America	Chile	Ñuble	Yungay
 South America	Colombia	Antioquia	
 South America	Colombia	Antioquia	Amagá
 South America	Colombia	Antioquia	Amalfi
