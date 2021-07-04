@@ -26,7 +26,7 @@ params = {
     'fq': [
         '{!tag=SeqType_s}SeqType_s:("Nucleotide")', # Nucleotide sequences (as opposed to protein)
         'VirusLineageId_ss:(2697049)',              # NCBI Taxon id for SARS-CoV-2,
-        '{!tag=Region_s}Region_s:("Africa")',       # Useful for debugging
+#        '{!tag=Region_s}Region_s:("Africa")',       # Useful for debugging
 #        '{!tag=SLen_i}SLen_i:(["15000 TO 50000"])', # doesn't work, but might be useful
     ],
 
