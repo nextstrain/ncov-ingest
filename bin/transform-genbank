@@ -231,7 +231,7 @@ def apply_geoRules( genbank_data: pd.DataFrame , rulesFile : str) -> pd.DataFram
             newVal = tuple( replaceInList(list(newVal),'',None) ) ## re-putting the default expected by the rest of the code
             for i,key in enumerate(LOCATION_COLUMNS):
                 row[key] = newVal[i]
-    
+
     return genbank_data
 
 def update_metadata(genbank_data: pd.DataFrame) -> pd.DataFrame:
@@ -275,10 +275,14 @@ def find_and_drop_problem_records(genbank_data: pd.DataFrame) -> pd.DataFrame:
     strain_name_regex = r'([\w]*/)?[\w]*/[-_\.\w]*/[\d]{4}'
 
     problem_data = genbank_data.loc[(genbank_data.region == '') \
-        | (genbank_data.country == '') \
+        | (genbank_data.country == '')]
+        # \
         # All strain names should have structure {}/{}/{year} or {}/{}/{}/{year}
         # with the exception of 'Wuhan-Hu-1/2019'
-        | (~(genbank_data.strain.str.match(strain_name_regex)) & (genbank_data.strain != 'Wuhan-Hu-1/2019'))]
+        #| (~(genbank_data.strain.str.match(strain_name_regex)) & (genbank_data.strain != 'Wuhan-Hu-1/2019'))]
+
+    replace_name_by_accession = ~(genbank_data.strain.str.match(strain_name_regex))
+    genbank_data.loc[replace_name_by_accession, 'strain'] = genbank_data.loc[replace_name_by_accession, 'genbank_accession']
 
     # Print problem records for manual curation
     if not problem_data.empty:
@@ -382,7 +386,7 @@ if __name__ == '__main__':
                     "gisaid_epi_isl",
                     row["gisaid_epi_isl"],
                 )
-    
+
     geoRules = UserProvidedGeoLocationSubstitutionRules()
     if args.geo_location_rules :
         # use curated rules to subtitute known spurious locations with correct ones
@@ -414,9 +418,9 @@ if __name__ == '__main__':
                               | FillDefaultLocationData()
                               | GenbankProblematicFilter( args.problem_data,
                                                           ['genbank_accession', 'strain', 'region', 'country', 'url'],
-                                                          restval = '?' , 
-                                                          extrasaction ='ignore' , 
-                                                          delimiter  = '\t', 
+                                                          restval = '?' ,
+                                                          extrasaction ='ignore' ,
+                                                          delimiter  = '\t',
                                                           dict_writer_kwargs  = {'lineterminator': args.newline} )
         )
 
@@ -448,7 +452,7 @@ if __name__ == '__main__':
 
 
     with open( args.output_metadata , 'wt' ) as metadata_OUT:
-        dict_writer_kwargs = {'lineterminator': args.newline} 
+        dict_writer_kwargs = {'lineterminator': args.newline}
 
         metadata_csv = csv.DictWriter(
             metadata_OUT,
@@ -463,19 +467,19 @@ if __name__ == '__main__':
         for entry in sorted_metadata :
             if entry[LINE_NUMBER_KEY] in line_numbers:
                 metadata_csv.writerow(entry)
-    
+
     if args.sorted_fasta:
         with open( args.output_fasta , 'wt' ) as fasta_OUT:
             for entry in sorted_metadata :
                 if entry[LINE_NUMBER_KEY] in line_numbers:
                     strain_name = updated_strain_names_by_line_no[entry[LINE_NUMBER_KEY]]
                     print( '>' , strain_name , sep='' , file= fasta_OUT)
-                    print( entry['sequence'] , file= fasta_OUT)                
+                    print( entry['sequence'] , file= fasta_OUT)
 
 
 
     if not args.sorted_fasta:
-        
+
         with open(args.genbank_data, "r") as genbank_IN , open(args.output_fasta, "wt", newline=args.newline) as fasta_OUT:
                 for entry in (
                         LineToJsonDataSource(genbank_IN)
@@ -487,4 +491,4 @@ if __name__ == '__main__':
                     strain_name = updated_strain_names_by_line_no[entry[LINE_NUMBER_KEY]]
                     print( '>' , strain_name , sep='' , file= fasta_OUT)
                     print( entry['sequence'] , file= fasta_OUT)
-                    
+
