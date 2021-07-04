@@ -1,6 +1,6 @@
 from typing import Container , List, Dict
-import csv 
-import re 
+import csv
+import re
 
 from . import LINE_NUMBER_KEY
 from ._base import Filter
@@ -28,11 +28,11 @@ class GenbankProblematicFilter(Filter):
     name structure and print them out for manual curation. Drop the problem
     records and duplicate records and return the modified DataFrame.
     """
-    def __init__(self, fileName: str , 
-                 columns : List[str] , 
-                 restval : str = '?' , 
-                 extrasaction : str ='ignore' , 
-                 delimiter : str = ',', 
+    def __init__(self, fileName: str ,
+                 columns : List[str] ,
+                 restval : str = '?' ,
+                 extrasaction : str ='ignore' ,
+                 delimiter : str = ',',
                  dict_writer_kwargs : Dict[str,str] = {} ):
 
         self.printProblem = fileName !=''
@@ -67,11 +67,11 @@ class GenbankProblematicFilter(Filter):
         # All strain names should have structure {}/{}/{year} or {}/{}/{}/{year}
         # with the exception of 'Wuhan-Hu-1/2019'
         elif ( strain_name_regex.match( inp['strain'] ) is None ) and ( inp['strain'] != 'Wuhan-Hu-1/2019' ) :
-            OK = False
+            inp['strain'] = inp['genbank_accession']
 
         if not OK and self.printProblem :
             self.writer.writerow(inp)
 
         return OK
- 
+
 
