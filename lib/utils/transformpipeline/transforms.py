@@ -567,7 +567,7 @@ class ParseGeographicColumnsGenbank(Transformer):
 
 
         # Special parsing for US locations because the format varies
-        if country == 'USA' and not division is '':
+        if country == 'USA' and division:
             # Switch location & division if location is a US state
             if location and any(location.strip() in s for s in self.us_states.items()):
                 state = location
@@ -581,6 +581,10 @@ class ParseGeographicColumnsGenbank(Transformer):
         location = location.strip().lower().title() if location else ''
         division = division.strip().lower().title() if division else ''
 
+        # fix German divisions
+        for stripstr in ['Europe/', 'Germany/']:
+            if division.startswith(stripstr):
+                division = division[len(stripstr):]
 
         #print(entry , '->' , geographic_data , country, division, location)
         entry['country']     = country
@@ -623,4 +627,57 @@ class Tracker(Transformer):
     def transform_value(self, entry : dict) -> dict :
         if entry[ self.interestField ] in self.interestIds:
             print(entry)
+        return entry
+
+class patchUKData(Transformer):
+    """
+    COG-UK explicitly suggests to use metadata provided om CLIMB to patch missing metadata.
+    Below is a sample comment in the genbank record.
+    ```
+    COG_ACCESSION:COG-UK/BCNYJH/BIRM:20210316_1221_X5_FAP43200_37a8944f; COG_BASIC_QC COG_HIGH_QC:PASS;
+    COG_NOTE:Sample metadata and QC flags may been updated since deposition in public databases.
+    COG recommends users refer to data.covid19.climb.ac.uk for metadata and QC tables before
+    conducting analysis.
+    ```
+
+    This transformer fetches the CLIMB data, matches records via sample accession, and fills in missing metadata
+    """
+    def __init__(self, sample_id_table, metadata_file):
+        import uuid
+        # load table with all sample IDs
+        samples_ids = pd.read_csv(sample_id_table, sep='\t', index_col="central_sample_id")
+        samples_ids = samples_ids.loc[~samples_ids.index.duplicated(keep='first')]
+
+        # function to generated sample id from sequence name
+        def get_sample_id(x):
+            try:
+                sample_id = x.split('/')[1]
+            except:
+                sample_id = f'problemsample_{str(uuid.uuid4())}'
+            return sample_id
+
+        # load metadata and produce IDs with no proper ID
+        metadata = pd.read_csv(metadata_file, sep=',')[['sequence_name', 'country', 'adm1', 'is_pillar_2', 'sample_date','epi_week', 'lineage', 'lineages_version']]
+        coguk_sample_ids = metadata.sequence_name.apply(get_sample_id)
+        metadata.index=coguk_sample_ids
+        metadata = metadata.loc[~metadata.index.duplicated(keep='first')]
+
+        # merge tables and make a reduced table with unique sample accession (ena_sample.secondary_accession)
+        merged_meta = pd.concat([samples_ids, metadata], axis='columns', copy=False).fillna('?')
+        has_sample = merged_meta.loc[~merged_meta["ena_sample.secondary_accession"].isna()]
+        has_sample.index = has_sample["ena_sample.secondary_accession"]
+
+        self.metadata_lookup = {}
+        geo_lookup = {'UK-ENG':('United Kingdom', 'England'),
+                      'UK-SCT':('United Kingdom', 'Scotland'),
+                      'UK-WLS':('United Kingdom', 'Wales'),
+                      'UK-NIR':('United Kingdom', 'Northern Ireland')}
+        for k,v in has_sample.iterrows():
+            self.metadata_lookup[k]= {'strain':v['sequence_name'], 'date':v['sample_date'], 'pango_lineage':v['lineage'],
+                                      'region':'Europe', 'country': 'United Kingdom', 'division':geo_lookup.get(v['adm1'],['?'])[1]}
+
+    def transform_value(self, entry: dict) -> dict:
+        if entry["biosample_accession"] in self.metadata_lookup:
+            entry.update(self.metadata_lookup[entry["biosample_accession"]])
+
         return entry

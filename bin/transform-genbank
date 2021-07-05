@@ -36,6 +36,7 @@ from utils.transformpipeline.transforms import (
     Tracker,
     UserProvidedAnnotations,
     UserProvidedGeoLocationSubstitutionRules,
+    patchUKData
 )
 
 assert 'sequence' not in METADATA_COLUMNS, "Sequences should not appear in metadata!"
@@ -382,6 +383,7 @@ if __name__ == '__main__':
                               | MergeUserAnnotatedMetadata(annotations, idKey = 'genbank_accession' )
                               | MergeUserAnnotatedMetadata(accessions, idKey = 'genbank_accession_rev' )
                               | FillDefaultLocationData()
+                              | patchUKData("https://cog-uk.s3.climb.ac.uk/accessions/latest.tsv", "https://cog-uk.s3.climb.ac.uk/phylogenetics/latest/cog_metadata.csv")
                               | GenbankProblematicFilter( args.problem_data,
                                                           ['genbank_accession', 'strain', 'region', 'country', 'url'],
                                                           restval = '?' ,
