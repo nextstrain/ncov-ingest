@@ -674,7 +674,8 @@ class patchUKData(Transformer):
                       'UK-NIR':('United Kingdom', 'Northern Ireland')}
         for k,v in has_sample.iterrows():
             self.metadata_lookup[k]= {'strain':v['sequence_name'], 'date':v['sample_date'], 'pango_lineage':v['lineage'],
-                                      'region':'Europe', 'country': 'United Kingdom', 'division':geo_lookup.get(v['adm1'],['?'])[1]}
+                                      'region':'Europe', 'country': 'United Kingdom', 'division':geo_lookup.get(v['adm1'],('?', '?'))[1],
+                                      'gisaid_epi_isl':v['gisaid.accession']}
 
     def transform_value(self, entry: dict) -> dict:
         if entry["biosample_accession"] in self.metadata_lookup:
