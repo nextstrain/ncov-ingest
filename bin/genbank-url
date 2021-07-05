@@ -25,7 +25,9 @@ params = {
     # Search criteria
     'fq': [
         '{!tag=SeqType_s}SeqType_s:("Nucleotide")', # Nucleotide sequences (as opposed to protein)
-        'VirusLineageId_ss:(2697049)',              # NCBI Taxon id for SARS-CoV-2
+        'VirusLineageId_ss:(2697049)',              # NCBI Taxon id for SARS-CoV-2,
+#        '{!tag=Region_s}Region_s:("Africa")',       # Useful for debugging
+#        '{!tag=SLen_i}SLen_i:(["15000 TO 50000"])', # doesn't work, but might be useful
     ],
 
     # Unclear, but seems necessary.
@@ -46,11 +48,13 @@ params = {
             ('genbank_accession',       'id'),
             ('genbank_accession_rev',   'AccVer_s'),
             ('database',                'SourceDB_s'),
+            ('sra_accession',           'SRALink_ss'),
             ('strain',                  'Isolate_s'),
             ('region',                  'Region_s'),
             ('location',                'CountryFull_s'),
             ('collected',               'CollectionDate_s'),
             ('submitted',               'CreateDate_dt'),
+            ('pango_lineage',           'Lineage_s'),
             ('length',                  'SLen_i'),
             ('host',                    'Host_s'),
             ('isolation_source',        'Isolation_csv'),

@@ -50,7 +50,7 @@ class UserProvidedGeoLocationSubstitutionRules:
             start: Tuple[str,str,str,str],
             arrival: Tuple[str,str,str,str],
     ) -> None:
-        
+
         self.entries[ start[0] ][ start[1] ][ start[2] ][ start[3] ] = arrival
 
         self.use_count[start] = 0
@@ -84,7 +84,7 @@ class UserProvidedGeoLocationSubstitutionRules:
             if not rule is None : # means a rule was found in all underlying levels
                 return tuple(rule )
 
-        if '*' in ruleDic: # if no corresponding rule was found, look up the general substitution rules 
+        if '*' in ruleDic: # if no corresponding rule was found, look up the general substitution rules
             current[level] = '*'
             rule = self.findApplicableRule(start, current , level+1)
             if not rule is None : # means a rule was found in all underlying levels
@@ -110,14 +110,14 @@ class UserProvidedGeoLocationSubstitutionRules:
                 EU , France , Haut-De-France , foo
             will first become
                 Europe , France , Haut-De-France , foo
-            and then 
+            and then
                 Europe , France , Haut de France , foo
 
 
             Takes :
                 - Tuple[str,str,str,str] : region, country, division, location tuple
             Returns :
-                Tuple[str,str,str,str] -> tuple updated. 
+                Tuple[str,str,str,str] -> tuple updated.
         """
 
         arrival = start
@@ -146,9 +146,9 @@ class UserProvidedGeoLocationSubstitutionRules:
                 print("\tfaulty entry",start)
                 exit(1)
 
-            
+
         return arrival
-        
+
     def _replaceEntry( self, start , arrival ):
         """ takes into account * character, which will not cause a change """
         new = list(start)
@@ -348,7 +348,7 @@ class AbbreviateAuthors(Transformer):
         else:
             entry['authors'] = re.split(r'(?:\s*[,，;；]\s*|\s+(?:and|&)\s+)', entry['authors'])[0]
 
-            if not entry['authors'].strip('. ').endswith(" et al"): # if it does not already finishes with " et al.", add it 
+            if not entry['authors'].strip('. ').endswith(" et al"): # if it does not already finishes with " et al.", add it
                 entry['authors'] += ' et al'
 
         return entry
@@ -438,11 +438,11 @@ class ApplyUserGeoLocationSubstitutionRules(Transformer):
 
 class WriteCSV(Transformer):
     """writes the data to a CSV file."""
-    def __init__(self, fileName: str , 
-                 columns : List[str] , 
-                 restval : str = '?' , 
-                 extrasaction : str ='ignore' , 
-                 delimiter : str = ',', 
+    def __init__(self, fileName: str ,
+                 columns : List[str] ,
+                 restval : str = '?' ,
+                 extrasaction : str ='ignore' ,
+                 delimiter : str = ',',
                  dict_writer_kwargs : Dict[str,str] = {} ):
 
         self.OUT = open( fileName , 'wt')
@@ -518,20 +518,20 @@ class StandardizeGenbankStrainNames(Transformer):
 
         # Parse strain name from title to fill in strains that are empty strings
         entry['strain_from_title'] = self.parse_strain_from_title( entry['title'] )
-    
+
         if entry['strain'] == '':
             entry['strain'] = entry['strain_from_title']
-    
+
 
         # Standardize strain names using list of regex replacements
         for regex, replacement in regex_replacement:
 
             entry['strain'] = re.sub( regex, replacement, entry['strain'], flags=re.IGNORECASE)
-    
+
         # Strip all spaces
         entry['strain'] = re.sub( r'\s', '' , entry['strain'] )
 
-    
+
         return entry
 
 class ParseGeographicColumnsGenbank(Transformer):
@@ -552,22 +552,22 @@ class ParseGeographicColumnsGenbank(Transformer):
 
 
     def transform_value(self, entry : dict) -> dict :
-    
+
         geographic_data = entry['location'].split(':')
-        
+
         country = geographic_data[0].strip()
         division = ''
         location = ''
 
         if len(geographic_data) == 2 :
             division , j , location = geographic_data[1].partition(',')
-            
+
         elif len(geographic_data) > 2:
             assert False, f"Found unknown format for geographic data: {value}"
-    
+
 
         # Special parsing for US locations because the format varies
-        if country == 'USA' and not division is '':
+        if country == 'USA' and division:
             # Switch location & division if location is a US state
             if location and any(location.strip() in s for s in self.us_states.items()):
                 state = location
@@ -576,11 +576,15 @@ class ParseGeographicColumnsGenbank(Transformer):
             # Convert US state codes to full names
             if self.us_states.get(division.strip().upper()):
                 division = self.us_states[division.strip().upper()]
-    
-    
+
+
         location = location.strip().lower().title() if location else ''
         division = division.strip().lower().title() if division else ''
-    
+
+        # fix German divisions
+        for stripstr in ['Europe/', 'Germany/']:
+            if division.startswith(stripstr):
+                division = division[len(stripstr):]
 
         #print(entry , '->' , geographic_data , country, division, location)
         entry['country']     = country
@@ -602,17 +606,16 @@ class AddHardcodedMetadataGenbank(Transformer):
         entry['segment']           = 'genome'
         entry['age']               = '?'
         entry['sex']               = '?'
-        entry['pango_lineage']  = '?'
         entry['GISAID_clade']      = '?'
         entry['originating_lab']   = '?'
         entry['submitting_lab']    = '?'
         entry['paper_url']         = '?'
         entry['sampling_strategy']         = '?'
-    
+
         entry['url'] = "https://www.ncbi.nlm.nih.gov/nuccore/" + entry['genbank_accession']
         return entry
 
-        
+
 class Tracker(Transformer):
     """
     here to print a number of entries when seen
@@ -624,4 +627,58 @@ class Tracker(Transformer):
     def transform_value(self, entry : dict) -> dict :
         if entry[ self.interestField ] in self.interestIds:
             print(entry)
+        return entry
+
+class patchUKData(Transformer):
+    """
+    COG-UK explicitly suggests to use metadata provided om CLIMB to patch missing metadata.
+    Below is a sample comment in the genbank record.
+    ```
+    COG_ACCESSION:COG-UK/BCNYJH/BIRM:20210316_1221_X5_FAP43200_37a8944f; COG_BASIC_QC COG_HIGH_QC:PASS;
+    COG_NOTE:Sample metadata and QC flags may been updated since deposition in public databases.
+    COG recommends users refer to data.covid19.climb.ac.uk for metadata and QC tables before
+    conducting analysis.
+    ```
+
+    This transformer fetches the CLIMB data, matches records via sample accession, and fills in missing metadata
+    """
+    def __init__(self, sample_id_table, metadata_file):
+        import uuid
+        # load table with all sample IDs
+        samples_ids = pd.read_csv(sample_id_table, sep='\t', index_col="central_sample_id")
+        samples_ids = samples_ids.loc[~samples_ids.index.duplicated(keep='first')]
+
+        # function to generated sample id from sequence name
+        def get_sample_id(x):
+            try:
+                sample_id = x.split('/')[1]
+            except:
+                sample_id = f'problemsample_{str(uuid.uuid4())}'
+            return sample_id
+
+        # load metadata and produce IDs with no proper ID
+        metadata = pd.read_csv(metadata_file, sep=',')[['sequence_name', 'country', 'adm1', 'is_pillar_2', 'sample_date','epi_week', 'lineage', 'lineages_version']]
+        coguk_sample_ids = metadata.sequence_name.apply(get_sample_id)
+        metadata.index=coguk_sample_ids
+        metadata = metadata.loc[~metadata.index.duplicated(keep='first')]
+
+        # merge tables and make a reduced table with unique sample accession (ena_sample.secondary_accession)
+        merged_meta = pd.concat([samples_ids, metadata], axis='columns', copy=False).fillna('?')
+        has_sample = merged_meta.loc[~merged_meta["ena_sample.secondary_accession"].isna()]
+        has_sample.index = has_sample["ena_sample.secondary_accession"]
+
+        self.metadata_lookup = {}
+        geo_lookup = {'UK-ENG':('United Kingdom', 'England'),
+                      'UK-SCT':('United Kingdom', 'Scotland'),
+                      'UK-WLS':('United Kingdom', 'Wales'),
+                      'UK-NIR':('United Kingdom', 'Northern Ireland')}
+        for k,v in has_sample.iterrows():
+            self.metadata_lookup[k]= {'strain':v['sequence_name'], 'date':v['sample_date'], 'pango_lineage':v['lineage'],
+                                      'region':'Europe', 'country': 'United Kingdom', 'division':geo_lookup.get(v['adm1'],('?', '?'))[1],
+                                      'gisaid_epi_isl':v['gisaid.accession']}
+
+    def transform_value(self, entry: dict) -> dict:
+        if entry["biosample_accession"] in self.metadata_lookup:
+            entry.update(self.metadata_lookup[entry["biosample_accession"]])
+
         return entry
