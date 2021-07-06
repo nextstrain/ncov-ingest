@@ -32,8 +32,9 @@ FROM nextstrain/base:branch-python-base
 
 # Install Python package for which Python 3.7 wheels do not yet exist on PyPI.
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        time \
-        python3-netifaces
+        python3-netifaces \
+        time\
+        xz-utils
 
 # Install Python deps
 RUN python3 -m pip install pipenv
