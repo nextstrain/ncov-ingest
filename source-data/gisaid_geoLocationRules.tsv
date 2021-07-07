@@ -7005,6 +7005,7 @@ Europe/Poland/Dolnośląskie/Komprachcice	Europe/Poland/Opolskie/Komprachcice
 Europe/Poland/Dolnośląskie/Kamieniec Zabkowicki	Europe/Poland/Dolnośląskie/Kamieniec Wrocławski
 Europe/Poland/Dolnośląskie/Gora	Europe/Poland/Dolnośląskie/Gora (Dolnośląskie)
 Europe/Poland/Dolnośląskie/Wojnowice	Europe/Poland/Dolnośląskie/Wojnowice (Dolnośląskie)
+Europe/Poland/Dolnośląskie/Przylesie	Europe/Poland/Dolnośląskie/Przylesie (Dolnośląskie)
 Europe/Poland/Pomorskie/Gdańsk	Europe/Poland/Pomorskie/Gdansk
 Europe/Poland/Pomorskie/Slupsk	Europe/Poland/Pomorskie/Słupsk
 Europe/Poland/Pomorskie/Koscierzyna	Europe/Poland/Pomorskie/Kościerzyna
@@ -7064,6 +7065,7 @@ Europe/Poland/Opolskie/Głubczyce	Europe/Poland/Opolskie/Glubczyce
 Europe/Poland/Opolskie/Kedzierzyn-Koźle	Europe/Poland/Opolskie/Kedzierzyn Kozle
 Europe/Poland/Opolskie/K- Kozle	Europe/Poland/Opolskie/K-Kozle
 Europe/Poland/Opolskie/Rogow	Europe/Poland/Opolskie/Rogow (Opolskie)
+Europe/Poland/Opolskie/Przylesie	Europe/Poland/Opolskie/Przylesie (Opolskie)
 Europe/Poland/Zuid-Holland/*	Europe/Netherlands/South Holland/*
 Europe/Poland/Małopolska/*	Europe/Poland/Malopolskie/*
 Europe/Poland/Mujawsko-Pomorskie/*	Europe/Poland/Kujawsko-Pomorskie/*
@@ -7113,6 +7115,7 @@ Europe/Poland/Zachodniopomorskie/Maleiedzyzdroje	Europe/Poland/Zachodniopomorski
 Europe/Poland/Zachodniopomorskie/Drawsko Pomomorskie	Europe/Poland/Zachodniopomorskie/Drawsko Pomorskie
 Europe/Poland/Zachodniopomorskie/Mysliborz	Europe/Poland/Zachodniopomorskie/Mysliborz (Zachodniopomorskie)
 Europe/Poland/Zachodniopomorskie/Przeclaw	Europe/Poland/Zachodniopomorskie/Przeclaw (Zachodniopomorskie)
+Europe/Poland/Zachodniopomorskie/Prudnik	Europe/Poland/Opolskie/Prudnik
 Europe/Poland/Lubelskie/Zamosc	Europe/Poland/Lubelskie/Zamość
 Europe/Poland/Lubelskie/Chelm	Europe/Poland/Lubelskie/Chełm
 Europe/Poland/Lubelskie/Biała Podl.	Europe/Poland/Lubelskie/Biała Podlaska
@@ -7174,6 +7177,7 @@ Europe/Poland/Lublin/	Europe/Poland/Lubelskie/Lublin
 Europe/Poland/?L?Skie/*	Europe/Poland/Slaskie/*
 Europe/Italy/Apulia/Bat	Europe/Italy/Apulia/Barletta-Andria-Trani
 Europe/Italy/Apulia/Potenza	Europe/Italy/Basilicata/Potenza
+Europe/Italy/Apulia/Matera	Europe/Italy/Basilicata/Matera
 Europe/Italy/Padova/	Europe/Italy/Veneto/Padova
 Europe/Italy/Puglia/*	Europe/Italy/Apulia/*
 Europe/Italy/Bozen/	Europe/Italy/Trentino-Alto Adige/Autonomous Province of Bolzano
@@ -8410,6 +8414,7 @@ Asia/India/Assam/Kamrup Rural	Asia/India/Assam/Kamrup
 Asia/India/Puducherry/Puducherry	Asia/India/Tamil Nadu/Puducherry
 Asia/India/Puducherry/	Asia/India/Tamil Nadu/Puducherry
 Asia/India/Karnataka/Bengaluru	Asia/India/Karnataka/Bengaluru Urban
+Asia/India/Manipur/Imhal West	Asia/India/Manipur/Imphal West
 Asia/Bangladesh/Chittagong/Cox'S Bazar	Asia/Bangladesh/Chattogram/Cox's Bazar
 Asia/Bangladesh/Chittagong/Nimtola	Asia/Bangladesh/Dhaka/Nimtola
 Asia/Bangladesh/Khulna/Jessore	Asia/Bangladesh/Khulna/Jashore
@@ -8502,8 +8507,8 @@ Asia/Bangladesh/Chapai/	Asia/Bangladesh/Rajshahi/Chapainawabgonj
 Asia/Bangladesh/Chapai/Police Line	Asia/Bangladesh/Rajshahi/Chapainawabgonj
 Asia/Bangladesh/Chapai/Shibganj	Asia/Bangladesh/Rajshahi/Shibganj
 Asia/Bangladesh/Naogaon/	Asia/Bangladesh/Rajshahi/Naogaon
-Asia/Bangladesh/Naogaon/Kalitola	Asia/Bangladesh/Rajshahi/Kalitola
 Asia/Bangladesh/Naogaon/Ukilpara	Asia/Bangladesh/Rajshahi/Naogaon
+Asia/Bangladesh/Naogaon/*	Asia/Bangladesh/Rajshahi/*
 Asia/Bangladesh/Chuadanga/	Asia/Bangladesh/Khulna/Chuadanga
 Asia/Bangladesh/Pirojpur/	Asia/Bangladesh/Barishal/Pirojpur
 Asia/Bangladesh/Madaripur/	Asia/Bangladesh/Dhaka/Madaripur
@@ -9779,6 +9784,9 @@ North America/USA/Alabama/Hayneville	North America/USA/Alabama/Lowndes County
 North America/USA/Alabama/Millbrook	North America/USA/Alabama/Elmore County
 North America/USA/Alabama/Madison	North America/USA/Alabama/Madison County AL
 North America/USA/Alabama/Cherokee County	North America/USA/Alabama/Cherokee County AL
+North America/USA/Alabama/Helena	North America/USA/Alabama/Shelby County AL
+North America/USA/Alabama/Wetumpka	North America/USA/Alabama/Elmore County
+North America/USA/Alabama/Billingsley	North America/USA/Alabama/Autauga County
 North America/USA/Texas Terry/*	North America/USA/Texas/Terry County
 North America/USA/Texas Mclennan/*	North America/USA/Texas/Mclennan County
 North America/USA/Al/*	North America/USA/Alabama/*
@@ -9918,6 +9926,7 @@ North America/USA/Maine/Waldo	North America/USA/Maine/Waldo County
 North America/USA/Maine/Cumberland	North America/USA/Maine/Cumberland County ME
 North America/USA/Georgia/Liberty	North America/USA/Georgia/Liberty County GA
 North America/USA/Georgia/Richmond	North America/USA/Georgia/Richmond County GA
+North America/USA/Georgia/Mcdonough	North America/USA/Georgia/Henry County GA
 North America/USA/District Of Columbia/District Of Columbia County	North America/USA/Washington DC/District of Columbia County
 North America/USA/District Of Columbia/*	North America/USA/Washington DC/*
 North America/USA/Kansas/Shawnee	North America/USA/Kansas/Johnson County KS
@@ -9930,6 +9939,7 @@ North America/USA/Conneticut/Hartford	North America/USA/Connecticut/Hartford Cou
 North America/USA/Conneticut/Windham	North America/USA/Connecticut/Windham County
 North America/USA/Conneticut/Westchester	North America/USA/Connecticut/New London County
 North America/USA/Mississippi/Pearl River	North America/USA/Mississippi/Pearl River County
+North America/USA/Mississippi/Srarkville	North America/USA/Mississippi/Oktibbeha County
 North America/USA/Ng/	North America/USA/USA/
 North America/USA/Cb/*	North America/USA/California/*
 North America/USA/Arkansas/Little Rock	North America/USA/Arkansas/Pulaski County AR
@@ -9941,6 +9951,7 @@ North America/USA/North America/Oregon, Klamath County	North America/USA/Oregon/
 North America/USA/North America/Oregon, Multnomah County	North America/USA/Oregon/Multnomah County
 North America/USA/North America/Oregon, Marion County	North America/USA/Oregon/Marion County OR
 North America/USA/Virginia/Frederick County	North America/USA/Virginia/Frederick County VA
+North America/USA/Los Angeles/	North America/USA/California/Los Angeles County
 North America/Costa Rica/Tibas/	North America/Costa Rica/San Jose/Tibas
 North America/Costa Rica/Cartago/Tres Rios	North America/Costa Rica/Cartago CR/Tres Rios CR
 North America/Costa Rica/Cartago/Cartago	North America/Costa Rica/Cartago CR/Cartago CR
@@ -10147,6 +10158,7 @@ South America/Brazil/Rio de Janeiro/Saofidelis	South America/Brazil/Rio de Janei
 South America/Brazil/Rio de Janeiro/Varre-Sai	South America/Brazil/Rio de Janeiro/Varre Sai
 South America/Brazil/Rio de Janeiro/Bahiarra Mansa	South America/Brazil/Rio de Janeiro/Barra Mansa
 South America/Brazil/Rio de Janeiro/Bahiarra do Pirai	South America/Brazil/Rio de Janeiro/Barra do Pirai
+South America/Brazil/Rio de Janeiro/Bom Jardim	South America/Brazil/Rio de Janeiro/Bom Jardim (Rio de Janeiro)
 South America/Brazil/Rio Grande do Sul/Torres	South America/Brazil/Rio Grande do Sul/Torres BR
 South America/Brazil/Rio Grande do Sul/Canoas	South America/Brazil/Rio Grande do Sul/Canoas BR
 South America/Brazil/Rio Grande do Sul/Nanuque	South America/Brazil/Rio Grande do Sul/
@@ -10234,6 +10246,11 @@ South America/Brazil/Distrito Federal/Santa Maria	South America/Brazil/Distrito 
 South America/Brazil/Pernambuco/Tamandare	South America/Brazil/Pernambuco/Tamandaré
 South America/Brazil/Pernambuco/Itambe	South America/Brazil/Pernambuco/Itambe PE
 South America/Brazil/Pernambuco/Primavera	South America/Brazil/Pernambuco/Primavera PE
+South America/Brazil/Pernambuco/Jaboatão Dos Guararapes	South America/Brazil/Pernambuco/Jaboatao Dos Guararapes
+South America/Brazil/Pernambuco/São Caetano	South America/Brazil/Pernambuco/Sao Caetano
+South America/Brazil/Pernambuco/Moreno	South America/Brazil/Pernambuco/Moreno BR
+South America/Brazil/Pernambuco/Trindade	South America/Brazil/Pernambuco/Trindade (Pernambuco)
+South America/Brazil/Pernambuco/Bom Jardim	South America/Brazil/Pernambuco/Bom Jardim (Pernambuco)
 South America/Brazil/Maranhão/Rosario	South America/Brazil/Maranhão/Rosario BR
 South America/Brazil/Maranhão/São Luis	South America/Brazil/Maranhão/Sao Luis
 South America/Brazil/Maranhão/São Jose de Ribamar	South America/Brazil/Maranhão/Sao Jose de Ribamar
@@ -10244,6 +10261,9 @@ South America/Brazil/Goiás/Ceres	South America/Brazil/Goiás/Ceres BR
 South America/Brazil/Goiás/Nova Andradina	South America/Brazil/Mato Grosso do Sul/Nova Andradina
 South America/Brazil/Goiás/Simao	South America/Brazil/Goiás/Sao Simao (Goiás)
 South America/Brazil/Goiás/Sao Simao	South America/Brazil/Goiás/Sao Simao (Goiás)
+South America/Brazil/Goiás/Anápolis	South America/Brazil/Goiás/Anapolis
+South America/Brazil/Goiás/Goiânia	South America/Brazil/Goiás/Goiania
+South America/Brazil/Goiás/Trindade	South America/Brazil/Goiás/Trindade (Goiás)
 South America/Brazil/Santa Catarina/Mafra	South America/Brazil/Santa Catarina/Mafra BR
 South America/Brazil/Santa Catarina/Concordia	South America/Brazil/Santa Catarina/Concordia BR
 South America/Brazil/Santa Catarina/Balneario Camboriu	South America/Brazil/Santa Catarina/Balneario Camburiu
@@ -10306,6 +10326,7 @@ South America/Argentina/Buenos Aires/Gral Rodriguez	South America/Argentina/Buen
 South America/Argentina/Buenos Aires/San Miguel	South America/Argentina/Buenos Aires/San Miguel AR
 South America/Argentina/Buenos Aires/Ensenada	South America/Argentina/Buenos Aires/Ensenada AR
 South America/Argentina/Buenos Aires/Moron	South America/Argentina/Buenos Aires/Morón
+South America/Argentina/Buenos Aires/Moreno	South America/Argentina/Buenos Aires/Moreno AR
 South America/Argentina/Santa Fe/Santa Fe	South America/Argentina/Santa Fe/Santa Fe AR
 South America/Argentina/Santa Fe/San Carlos	South America/Argentina/Santa Fe/San Carlos AR
 South America/Argentina/Santa Fe/Avellaneda	South America/Argentina/Santa Fe/Avellaneda AR
@@ -10787,6 +10808,7 @@ Africa/Botswana/Jwaneng/	Africa/Botswana/Southern District/Jwaneng
 Africa/Botswana/Mathethe/	Africa/Botswana/Southern District/Mmathethe
 Africa/Botswana/Serowe/	Africa/Botswana/Central District BW/Serowe
 Africa/Botswana/Ramotswa/	Africa/Botswana/Southern East/Ramotswa
+Africa/Botswana/Mabete/	Africa/Botswana/Botswana/
 Africa/Congo/*/*	Africa/Republic of the Congo/*/*
 Africa/Guyane/Cayenne/	Europe/France/French Guiana/Cayenne GF
 Africa/Mauritius/Plaine Wilhems/*	Africa/Mauritius/Plaine-Wilhems/*
