@@ -288,6 +288,7 @@ Europe/France/Guyane/*	Europe/France/French Guiana/*
 Europe/France/Provence-Alpes-Côte-D'Azur/*	Europe/France/Provence-Alpes-Côte d'Azur/*
 Europe/France/Corse/Porto Vecchio	Europe/France/Corse/Porto-Vecchio
 Europe/France/Haut-De-France/*	Europe/France/Hauts de France/*
+Europe/France/Grenoble/	Europe/France/Auvergne-Rhône-Alpes/Grenoble
 Europe/Germany/North Rhine-Westphalia/Düsseldorf	Europe/Germany/North Rhine Westphalia/Duesseldorf
 Europe/Germany/North Rhine-Westphalia/Duesseldorf Area	Europe/Germany/North Rhine Westphalia/Duesseldorf
 Europe/Germany/North Rhine-Westphalia/Dusseldorf Health Department	Europe/Germany/North Rhine Westphalia/Duesseldorf
@@ -6288,6 +6289,19 @@ Europe/Belgium/Louvain-la-Neuve/	Europe/Belgium/Nivelles/Ottignies-Louvain-la-Ne
 Europe/Belgium/Hiest-op-Den-Berg/	Europe/Belgium/Mechelen/Heist-op-den-Berg
 Europe/Belgium/1367/	Europe/Belgium/Nivelles/Ramillies
 Europe/Belgium/Winkesele/	Europe/Belgium/Leuven/Winksele
+Europe/Belgium/Saint-Josse-Ten-Noode/	Europe/Belgium/Brussels/Saint-Josse-ten-Noode
+Europe/Belgium/Neupre/	Europe/Belgium/Liège/Neupré
+Europe/Belgium/Girona/	Europe/Belgium/Belgium/
+Europe/Belgium/Lettingen/	Europe/Belgium/Ath/Lettelingen
+Europe/Belgium/Mecchelen-Aan-de-Maas/	Europe/Belgium/Tongeren/Mechelen-aan-de-Maas
+Europe/Belgium/Sint-Joost-Te-Node/	Europe/Belgium/Brussels/Saint-Josse-ten-Noode
+Europe/Belgium/Beerts/	Europe/Belgium/Turnhout/Beerse
+Europe/Belgium/Meeuwe-Gruitrode/	Europe/Belgium/Maaseik/Meeuwen-Gruitrode
+Europe/Belgium/Afsnee/	Europe/Belgium/Gent/Sint-Denijs-Westrem - Afsnee
+Europe/Belgium/Bervelo/	Europe/Belgium/Hasselt/Beverlo
+Europe/Belgium/Pietrebas/	Europe/Belgium/Nivelles/Piétrebais
+Europe/Belgium/Jemeppe-sur-Sombre/	Europe/Belgium/Namur/Jemeppe-sur-Sambre
+Europe/Belgium/Verdrin/	Europe/Belgium/Namur/Vedrin - Daussoulx
 Europe/Switzerland/Graubunden/*	Europe/Switzerland/Graubünden/*
 Europe/Switzerland/Graubã¼Nden/*	Europe/Switzerland/Graubünden/*
 Europe/Switzerland/Basel/	Europe/Switzerland/Basel-Stadt/
@@ -6812,6 +6826,7 @@ Europe/Spain/La Rioja/*	Europe/Spain/La Rioja ES/*
 Europe/Spain/Cataluna/*	Europe/Spain/Catalunya/*
 Europe/Spain/Castilla y Leon/Astorga	Europe/Spain/Castilla y Leon/Astorga ES
 Europe/Spain/Castilla y Leon/Villamor De Orbigo	Europe/Spain/Castilla y Leon/Villarejo de Orbigo
+Europe/Spain/Castilla y Leon/Palencia	Europe/Spain/Castilla y Leon/Palencia ES
 Europe/Spain/Barcelona/	Europe/Spain/Catalunya/Barcelona
 Europe/Spain/Canaray Islands/*	Europe/Spain/Canary Islands/*
 Europe/Spain/Leganes/	Europe/Spain/Madrid/Leganés
@@ -6821,6 +6836,7 @@ Europe/Spain/Rota/	Europe/Spain/Andalusia/Rota
 Europe/Spain/Donostia-San Sebatian/	Europe/Spain/Basque Country/Donostia-San Sebastian
 Europe/Spain/Aragon/Zaragoza	Europe/Spain/Aragon/Zaragoza ES
 Europe/Spain/Pais Vasco/*	Europe/Spain/Basque Country/*
+Europe/Spain/Valence/	Europe/Spain/Comunitat Valenciana/
 Europe/Sweden/Västerbotten/	Europe/Sweden/Vasterbotten/
 Europe/Sweden/Västra Götaland/*	Europe/Sweden/Vastra Gotaland/*
 Europe/Sweden/Unknown/	Europe/Sweden/Sweden/
@@ -8518,6 +8534,9 @@ Asia/Bangladesh/Cox'S Bazar/	Asia/Bangladesh/Chattogram/Cox's Bazar
 Asia/Bangladesh/Jheniahdah/	Asia/Bangladesh/Khulna/Jhenaidah
 Asia/Bangladesh/Chadpur/	Asia/Bangladesh/Chattogram/Chandpur
 Asia/Bangladesh/Laxmipur/	Asia/Bangladesh/Chattogram/Lakshmipur
+Asia/Bangladesh/Pabna/	Asia/Bangladesh/Rajshahi/Pabna
+Asia/Bangladesh/Pabna/Issordi	Asia/Bangladesh/Rajshahi/Issordi
+Asia/Bangladesh/Noagaon/	Asia/Bangladesh/Rajshahi/Noagaon
 Asia/Thailand/Phatum Thani/	Asia/Thailand/Pathum Thani/
 Asia/Thailand/Samut Sakorn/*	Asia/Thailand/Samut Sakhon/*
 Asia/Thailand/Angthong/*	Asia/Thailand/Ang Thong/*
@@ -9190,6 +9209,7 @@ North America/USA/California/Modoc	North America/USA/California/Modoc County
 North America/USA/California/Sierra	North America/USA/California/Sierra County CA
 North America/USA/California/Plumas	North America/USA/California/Plumas County
 North America/USA/California/Del Norte	North America/USA/California/Del Norte County
+North America/USA/California/Lassen	North America/USA/California/Lassen County
 North America/USA/New Jersey/Essex County	North America/USA/New Jersey/Essex County NJ
 North America/USA/New Jersey/Hudson	North America/USA/New Jersey/Hudson County NJ
 North America/USA/New Jersey/Morris County	North America/USA/New Jersey/Morris County NJ
@@ -9276,6 +9296,7 @@ North America/USA/Oregon/Clatsop Tillamook Counties	North America/USA/Oregon/Til
 North America/USA/Oregon/Morrow County	North America/USA/Oregon/Morrow County OR
 North America/USA/Oregon/Lake County	North America/USA/Oregon/Lake County OR
 North America/USA/Oregon/Wasco	North America/USA/Oregon/Wasco County
+North America/USA/Oregon/Nan County	North America/USA/Oregon/
 North America/USA/Texas/Houston County	North America/USA/Texas/Harris County
 North America/USA/Texas/Washington County	North America/USA/Texas/Washington County TX
 North America/USA/Texas/Williamson County	North America/USA/Texas/Williamson County TX
@@ -10026,8 +10047,9 @@ North America/Panama/*/Arraijan	North America/Panama/Panama Oeste/Arraiján
 North America/Panama/*/Aguadulce	North America/Panama/Cocle/Aguadulce
 North America/Panama/*/Guabito	North America/Panama/Bocas del Toro/Guabito
 North America/Panama/*/Puerto Armuelles	North America/Panama/Chiriqui/Puerto Armuelles
-North America/Panama/Colon/San Juan	North America/Panama/Colon/San Juan PA
-North America/Panama/Colon/Cativa	North America/Panama/Colon/Cativá
+North America/Panama/Colon/San Juan	North America/Panama/Colon Province/San Juan PA
+North America/Panama/Colon/Cativa	North America/Panama/Colon Province/Cativá
+North America/Panama/Colon/*	North America/Panama/Colon Province/*
 North America/Panama/Cocle/Santa Rita	North America/Panama/Chiriqui/Santa Rita PA
 North America/Panama/Guna Yala/Bugaba	North America/Panama/Chiriqui/Bugaba
 North America/Panama/Guna Yala/Pinogana	North America/Panama/Darien/Pinogana
@@ -10076,6 +10098,22 @@ North America/Guam//	North America/USA/Guam/
 North America/Honduras/La Paz/	North America/Honduras/La Paz HN/
 North America/Honduras/Danlí/	North America/Honduras/El Paraíso/Danlí
 North America/Honduras/Colón/*	North America/Honduras/Colón Department/*
+North America/Honduras/Colon/*	North America/Honduras/Departamento Colon/*
+North America/Honduras/Copan/*	North America/Honduras/Copán/*
+North America/Honduras/Atlantida/*	North America/Honduras/Atlántida/*
+North America/Honduras/Cortes/*	North America/Honduras/Cortés/*
+North America/Honduras/El Paraiso/*	North America/Honduras/El Paraíso/*
+North America/Honduras/Francisco Morazan/*	North America/Honduras/Francisco Morazán/*
+North America/Honduras/Danli/	North America/Honduras/El Paraíso/Danli
+North America/Guatemala/De El Quiche/Quiche	North America/Guatemala/Quiche/
+North America/Guatemala/Quiche/Quiche	North America/Guatemala/Quiche/
+North America/Guatemala/Quiche/Pueblo Nuevo	North America/Guatemala/Quiche/Pueblo Nuevo GT
+North America/Guatemala/Guatemala/Palencia	North America/Guatemala/Guatemala/Palencia GT
+North America/Guatemala/Guatemala/Lo de Fuente	North America/Guatemala/Guatemala/Lo de Fuentes
+North America/Guatemala/Guatemala/Guazacapan	North America/Guatemala/Santa Rosa/Guazacapan
+North America/Guatemala/Zacapa/La Union	North America/Guatemala/Zacapa/La Union GT
+North America/Guatemala/San Marcos/Malacatancito	North America/Guatemala/Huehuetenango/Malacatancito
+North America/Turks and Caicos Islands/Turks and Caicos Islands/	Europe/United Kingdom/Turks and Caicos Islands/
 South America/Brazil/Espírito Santo/*	South America/Brazil/Espirito Santo/*
 South America/Brazil/Amazonas/*	South America/Brazil/Amazonas BR/*
 South America/Brazil/Maranhao/*	South America/Brazil/Maranhão/*
@@ -10501,6 +10539,7 @@ South America/Colombia/Atlántico/*	South America/Colombia/Atlantico/*
 South America/Colombia/San Andrés y Providencia/San Andrés	South America/Colombia/San Andres y Providencia/San Andres
 South America/Colombia/Santander/Bucaramanda	South America/Colombia/Santander/Bucaramanga
 South America/Colombia/Vaupés/Mitú	South America/Colombia/Vaupes/Mitu
+South America/Colombia/Bolívar/*	South America/Colombia/Bolivar CO/*
 South America/Peru/Cusco/*	South America/Peru/Cuzco/*
 South America/Peru/Lima/Canete	South America/Peru/Lima/Cañete
 South America/Peru/Lima/San Isidro	South America/Peru/Lima/San Isidro PE
@@ -10550,11 +10589,12 @@ South America/Grenada/Caribbean/	North America/Grenada/Grenada/
 South America/Grenada/*/*	North America/Grenada/*/*
 South America/Guyana/Caribbean/	South America/Guyana/Guyana/
 South America/Trinidad and Tobago/Caribbean/	South America/Trinidad and Tobago/Trinidad and Tobago/
-South America/Paraguay/Central/San Lorenzo	South America/Paraguay/Central/San Lorenzo PY
-South America/Paraguay/Central/Jasaldivar	South America/Paraguay/Central/Juan Augusto Saldívar
-South America/Paraguay/Central/Fdo de la Mora	South America/Paraguay/Central/Fernando de la Mora
-South America/Paraguay/Central/J.Augusto Saldivar	South America/Paraguay/Central/Juan Augusto Saldívar
-South America/Paraguay/Central/San Antonio	South America/Paraguay/Central/San Antonio PY
+South America/Paraguay/Central/San Lorenzo	South America/Paraguay/Central Paraguay/San Lorenzo PY
+South America/Paraguay/Central/Jasaldivar	South America/Paraguay/Central Paraguay/Juan Augusto Saldívar
+South America/Paraguay/Central/Fdo de la Mora	South America/Paraguay/Central Paraguay/Fernando de la Mora
+South America/Paraguay/Central/J.Augusto Saldivar	South America/Paraguay/Central Paraguay/Juan Augusto Saldívar
+South America/Paraguay/Central/San Antonio	South America/Paraguay/Central Paraguay/San Antonio PY
+South America/Paraguay/Central/*	South America/Paraguay/Central Paraguay/*
 South America/Antigua/Caribbean/*	North America/Antigua and Barbuda/Antigua and Barbuda/*
 South America/Antigua/*/*	North America/Antigua and Barbuda/*/*
 South America/Anguilla//	Europe/United Kingdom/Anguilla/
@@ -10846,6 +10886,7 @@ Africa/Canary Islands/Las Palmas de Gran Canaria/Teror	Europe/Spain/Canary Islan
 Africa/Canary Islands/Las Palmas de Gran Canaria/Moya	Europe/Spain/Canary Islands/Moya
 Africa/Canary Islands/Las Palmas/	Europe/Spain/Canary Islands/Las Palmas de Gran Canaria
 Africa/Sierra Leone/Freetown/	Africa/Sierra Leone/Western Area/Freetown
+Africa/Djibouti/Djbouti/*	Africa/Djibouti/Djibouti/*
 Italy/Apulia/Bari/	Europe/Italy/Apulia/Bari
 North Macedonia/Kochani/Kochani/	Europe/North Macedonia/Eastern Region MK/Kochani
 North Macedonia/Kavadarci/Kavadarci/	Europe/North Macedonia/Kavadarci/Kavadarci
