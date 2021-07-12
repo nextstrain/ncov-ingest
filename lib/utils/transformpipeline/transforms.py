@@ -396,9 +396,10 @@ class AddHardcodedMetadata(Transformer):
     metadata.
     """
     def transform_value(self, entry: dict) -> dict:
+        epi_id = entry["gisaid_epi_isl"].upper()
         entry['virus'] = 'ncov'
         entry['genbank_accession'] = '?'
-        entry['url'] = 'https://www.gisaid.org'
+        entry['url'] = f'https://www.epicov.org/acknowledgement/{epi_id[-4:-2]}/{epi_id[-2:]}/{epi_id}.json'
         # TODO verify these are all actually true
         entry['segment'] = 'genome'
         entry['title'] = '?'
