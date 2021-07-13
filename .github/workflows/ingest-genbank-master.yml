@@ -8,6 +8,7 @@ on:
       - '**'
     paths:
       - source-data/genbank_annotations.tsv
+      - source-data/gisaid_geoLocationRules.tsv
 
   # Manually triggered using `./bin/trigger genbank/ingest` (or `ingest`, which
   # includes GISAID)
