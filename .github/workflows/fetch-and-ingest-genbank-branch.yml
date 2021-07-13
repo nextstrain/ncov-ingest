@@ -1,4 +1,4 @@
-name: GenBank ingest (on branch)
+name: GenBank fetch and ingest (on branch)
 
 on:
   push:
@@ -31,7 +31,7 @@ jobs:
           --memory 30GiB \
           --exec env \
           . \
-            envdir env.d ingest-genbank
+            envdir env.d ingest-genbank --fetch
       env:
         AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
