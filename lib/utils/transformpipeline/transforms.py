@@ -399,7 +399,11 @@ class AddHardcodedMetadata(Transformer):
         epi_id = entry["gisaid_epi_isl"].upper()
         entry['virus'] = 'ncov'
         entry['genbank_accession'] = '?'
-        entry['url'] = f'https://www.epicov.org/acknowledgement/{epi_id[-4:-2]}/{epi_id[-2:]}/{epi_id}.json'
+        if len(epi_id)>4: # gisaid epi ids don't have a fixed length, but check for at least length 4 to avoid a crash here
+            entry['url'] = f'https://www.epicov.org/acknowledgement/{epi_id[-4:-2]}/{epi_id[-2:]}/{epi_id}.json'
+        else:
+            entry['url'] = 'https://gisaid.org'
+
         # TODO verify these are all actually true
         entry['segment'] = 'genome'
         entry['title'] = '?'
