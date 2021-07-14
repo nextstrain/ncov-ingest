@@ -67,11 +67,11 @@ main() {
     if [[ "$fetch" == 1 ]]; then
         ./bin/fetch-from-gisaid > data/gisaid.ndjson
         if [[ "$branch" == master ]]; then
-            ./bin/notify-on-record-change data/gisaid.ndjson "$S3_SRC/gisaid.ndjson.gz" "GISAID"
+            ./bin/notify-on-record-change data/gisaid.ndjson "$S3_SRC/gisaid.ndjson.xz" "GISAID"
         fi
-        ./bin/upload-to-s3 --quiet data/gisaid.ndjson "$S3_DST/gisaid.ndjson.gz"
+        ./bin/upload-to-s3 --quiet data/gisaid.ndjson "$S3_DST/gisaid.ndjson.xz"
     else
-        aws s3 cp --no-progress "$S3_DST/gisaid.ndjson.gz" - | gunzip -cfq > data/gisaid.ndjson
+        aws s3 cp --no-progress "$S3_DST/gisaid.ndjson.xz" - | xz -cdfq > data/gisaid.ndjson
     fi
 
     flagged_annotations="$(mktemp -t flagged-annotations-XXXXXX)"
