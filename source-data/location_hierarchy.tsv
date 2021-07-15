@@ -74,6 +74,7 @@ Africa	Angola	Luanda	Vila Alice
 Africa	Angola	Luanda	Zango 4
 Africa	Angola	Namibe	
 Africa	Angola	Namibe	Mocamedes
+Africa	Benin	Benin	
 Africa	Benin	Cotonou	
 Africa	Benin	Oueme	
 Africa	Botswana	Botswana	
@@ -153,6 +154,7 @@ Africa	Democratic Republic of the Congo	Kongo Central
 Africa	Democratic Republic of the Congo	Lualaba	
 Africa	Democratic Republic of the Congo	Nord Kivu	
 Africa	Democratic Republic of the Congo	Sud Kivu	
+Africa	Djibouti	Camp Lemonnier	
 Africa	Djibouti	Djibouti	
 Africa	Egypt	Cairo	
 Africa	Egypt	Cairo	Al Matariyyah
@@ -452,9 +454,13 @@ Africa	Senegal	Thies	Popenguine
 Africa	Senegal	Thies	Saly Portudal
 Africa	Senegal	Thies	Thiadiaye
 Africa	Senegal	Thies	Tivaoune
+Africa	Sierra Leone	Bonthe	
 Africa	Sierra Leone	Sierra Leone	
+Africa	Sierra Leone	Western Area	
+Africa	Sierra Leone	Western Area	Freetown
 Africa	Somalia	Awdal	
 Africa	Somalia	Benadir	
+Africa	Somalia	Benadir	Mogadishu
 Africa	Somalia	Maroodi Jeex	
 Africa	Somalia	Mudug	
 Africa	Somalia	Somalia	
@@ -1799,6 +1805,7 @@ Asia	Malaysia	Melaka
 Asia	Malaysia	Negeri Sembilan	
 Asia	Malaysia	Negeri Sembilan	Rembau
 Asia	Malaysia	Pahang	
+Asia	Malaysia	Pahang	Kuantan
 Asia	Malaysia	Perak	
 Asia	Malaysia	Sabah	
 Asia	Malaysia	Sarawak	
@@ -1878,6 +1885,7 @@ Asia	Pakistan	Attock
 Asia	Pakistan	Azad Kashmir	
 Asia	Pakistan	Bakhar	
 Asia	Pakistan	Balochistan	
+Asia	Pakistan	Gilgit Baltistan	
 Asia	Pakistan	Gilgit Baltistan	Gilgit
 Asia	Pakistan	Guranwala	
 Asia	Pakistan	Islamabad	
@@ -1951,10 +1959,14 @@ Asia	Philippines	Bicol
 Asia	Philippines	Bohol	
 Asia	Philippines	Cagayan Valley	
 Asia	Philippines	Calabarzon	
+Asia	Philippines	Calabarzon	Calamba City
 Asia	Philippines	Calabarzon	Indang
 Asia	Philippines	Calabarzon	Rizal
+Asia	Philippines	Calabarzon	Rodriguez
+Asia	Philippines	Calabarzon	Tanay
 Asia	Philippines	Caraga	
 Asia	Philippines	Central Luzon	
+Asia	Philippines	Central Luzon	San Jose Del Monte City
 Asia	Philippines	Central Visayas	
 Asia	Philippines	Cordillera Administrative Region	
 Asia	Philippines	Davao Region	
@@ -1964,10 +1976,14 @@ Asia	Philippines	Kalinga
 Asia	Philippines	Lanao del Norte	
 Asia	Philippines	Manila	
 Asia	Philippines	Manila	Caloocan City
+Asia	Philippines	Manila	Cavite City
+Asia	Philippines	Manila	Makati City
 Asia	Philippines	Manila	Manila City
 Asia	Philippines	Manila	Navotas City
+Asia	Philippines	Manila	Paco
 Asia	Philippines	Manila	Pasay City
 Asia	Philippines	Manila	Quezon City
+Asia	Philippines	Manila	San Juan City
 Asia	Philippines	Manila	Taguig City
 Asia	Philippines	Mimaropa	
 Asia	Philippines	National Capital Region	
@@ -2362,6 +2378,7 @@ Europe	Austria	Upper Austria	Bad Goisern Am Hallstattersee
 Europe	Austria	Upper Austria	Bad Goisern Am Hallstättersee
 Europe	Austria	Upper Austria	Bad Ischl
 Europe	Austria	Upper Austria	Buchkirchen
+Europe	Austria	Upper Austria	Ebensee
 Europe	Austria	Upper Austria	Ebensee Am Traunsee
 Europe	Austria	Upper Austria	Eberstalzell
 Europe	Austria	Upper Austria	Edt Bei Lambach
@@ -2374,6 +2391,7 @@ Europe	Austria	Upper Austria	Fraham
 Europe	Austria	Upper Austria	Frankenburg Am Hausruck
 Europe	Austria	Upper Austria	Frankenmarkt
 Europe	Austria	Upper Austria	Freistadt
+Europe	Austria	Upper Austria	Gampern
 Europe	Austria	Upper Austria	Gaspoltshofen
 Europe	Austria	Upper Austria	Gmunden
 Europe	Austria	Upper Austria	Gosau
@@ -2410,6 +2428,7 @@ Europe	Austria	Upper Austria	Prambachkirchen
 Europe	Austria	Upper Austria	Pöndorf
 Europe	Austria	Upper Austria	Regau
 Europe	Austria	Upper Austria	Ried
+Europe	Austria	Upper Austria	Roitham
 Europe	Austria	Upper Austria	Roitham am Traunfall
 Europe	Austria	Upper Austria	Rüstorf
 Europe	Austria	Upper Austria	Sankt Lorenz
@@ -3871,6 +3890,7 @@ Europe	Estonia	Estonia
 Europe	Estonia	Harjumaa	
 Europe	Estonia	Hiiu	
 Europe	Estonia	Ida-Viru	
+Europe	Estonia	Jarva Maakond	
 Europe	Estonia	Järva	
 Europe	Estonia	Jõgeva	
 Europe	Estonia	Lääne	
@@ -4999,6 +5019,7 @@ Europe	Hungary	Szabolcs-Szatmár-Bereg County
 Europe	Hungary	Szeged	
 Europe	Hungary	Vas	
 Europe	Hungary	Veszprém County	
+Europe	Iceland	Iceland	
 Europe	Iceland	Reykjavik	
 Europe	Ireland	Carlow	
 Europe	Ireland	Cavan	
@@ -5357,6 +5378,7 @@ Europe	Netherlands	North Brabant	Heeswijk Dinther
 Europe	Netherlands	North Brabant	Heeze-Leende
 Europe	Netherlands	North Brabant	Helmond
 Europe	Netherlands	North Brabant	Kaatsheuvel
+Europe	Netherlands	North Brabant	Loon
 Europe	Netherlands	North Brabant	Loon op Zand
 Europe	Netherlands	North Brabant	Loon op zand
 Europe	Netherlands	North Brabant	Milheeze
@@ -9172,6 +9194,7 @@ Europe	Sweden	Vasterbotten
 Europe	Sweden	Vasternorrland	
 Europe	Sweden	Vastmanland	
 Europe	Sweden	Vastra Gotaland	
+Europe	Sweden	Vastra Gotaland	Goteborg
 Europe	Sweden	Vastra Gotaland	Skovde
 Europe	Sweden	Öland	
 Europe	Switzerland	Aargau	
@@ -9326,6 +9349,7 @@ Europe	Switzerland	Neuchâtel
 Europe	Switzerland	Nidwalden	
 Europe	Switzerland	Nidwalden	Stans
 Europe	Switzerland	Nidwalden	Stansstad
+Europe	Switzerland	North-West CH	
 Europe	Switzerland	Obwalden	
 Europe	Switzerland	Obwalden	Sarnen
 Europe	Switzerland	Sankt Gallen	
@@ -9533,6 +9557,7 @@ Europe	Ukraine	Uzhgorod
 Europe	Ukraine	Vinnytsia	
 Europe	Ukraine	Volyn	
 Europe	Ukraine	Volyn	Lutsk
+Europe	United Kingdom	?	
 Europe	United Kingdom	Anguilla	
 Europe	United Kingdom	British Virgin Islands	
 Europe	United Kingdom	Cayman Islands	
@@ -9540,8 +9565,10 @@ Europe	United Kingdom	England
 Europe	United Kingdom	England	Derbyshire
 Europe	United Kingdom	England	Liverpool
 Europe	United Kingdom	England	London
+Europe	United Kingdom	England	Norfolk
 Europe	United Kingdom	England	Northamtonshire
 Europe	United Kingdom	England	Nottinghamshire
+Europe	United Kingdom	England	Oxford
 Europe	United Kingdom	England	South Yorkshire
 Europe	United Kingdom	England	Warwickshire
 Europe	United Kingdom	England	Yorkshire
@@ -10165,6 +10192,7 @@ North America	USA	Arizona	Yuma
 North America	USA	Arizona	Yuma County
 North America	USA	Arizona	Yuma County AZ
 North America	USA	Arkansas	
+North America	USA	Arkansas	Pulaski County AR
 North America	USA	Baker Island	
 North America	USA	California	
 North America	USA	California	Alameda County
@@ -10174,6 +10202,8 @@ North America	USA	California	Butte County
 North America	USA	California	Calaveras County
 North America	USA	California	Colusa County
 North America	USA	California	Contra Costa County
+North America	USA	California	Cruise_Ship_1
+North America	USA	California	Cruise_Ship_2
 North America	USA	California	Davis
 North America	USA	California	Del Norte County
 North America	USA	California	El Dorado County
@@ -10323,7 +10353,9 @@ North America	USA	Florida	Walton County FL
 North America	USA	Georgia	
 North America	USA	Georgia	Atlanta
 North America	USA	Georgia	Cobb
+North America	USA	Georgia	Henry County GA
 North America	USA	Georgia	Liberty County GA
+North America	USA	Georgia	Richmond County GA
 North America	USA	Georgia	Thomas County
 North America	USA	Grand Princess	
 North America	USA	Grand Princess	Grand Princess Cruise Ship
@@ -10568,6 +10600,7 @@ North America	USA	Maryland	Prince George'S County
 North America	USA	Maryland	Prince George's County
 North America	USA	Massachusetts	
 North America	USA	Massachusetts	Barnstable County
+North America	USA	Massachusetts	Berkshire County
 North America	USA	Massachusetts	Boston
 North America	USA	Massachusetts	Bristol County
 North America	USA	Massachusetts	Essex County MA
@@ -10599,6 +10632,7 @@ North America	USA	Minnesota	Winona County
 North America	USA	Mississippi	
 North America	USA	Mississippi	Harrison County
 North America	USA	Mississippi	Harrison County MS
+North America	USA	Mississippi	Oktibbeha County
 North America	USA	Mississippi	Pearl River County
 North America	USA	Missouri	
 North America	USA	Missouri	Gasconade County
@@ -10813,11 +10847,13 @@ North America	USA	New York	Wyoming County
 North America	USA	New York	Yates County
 North America	USA	North Carolina	
 North America	USA	North Carolina	Cumberland County NC
+North America	USA	North Carolina	Durham County
 North America	USA	North Carolina	Forsyth County
 North America	USA	North Carolina	Guilford County
 North America	USA	North Carolina	Mecklenburg County
 North America	USA	North Carolina	Pitt County
 North America	USA	North Carolina	Rutherford County NC
+North America	USA	North Carolina	Scotland County
 North America	USA	North Carolina	Wake County NC
 North America	USA	North Dakota	
 North America	USA	Northern Mariana Islands	
@@ -10837,6 +10873,7 @@ North America	USA	Ohio	Hardin County OH
 North America	USA	Ohio	Hocking County
 North America	USA	Ohio	Jefferson County OH
 North America	USA	Ohio	Lake County OH
+North America	USA	Ohio	Licking County
 North America	USA	Ohio	Lorain County
 North America	USA	Ohio	Lucas County
 North America	USA	Ohio	Mahoning County
@@ -10944,6 +10981,7 @@ North America	USA	South Carolina	Beaufort County
 North America	USA	South Carolina	Berkeley County
 North America	USA	South Carolina	Calhoun County SC
 North America	USA	South Carolina	Charleston County
+North America	USA	South Carolina	Cherokee County SC
 North America	USA	South Carolina	Chester County SC
 North America	USA	South Carolina	Chesterfield County SC
 North America	USA	South Carolina	Clarendon County
@@ -10978,6 +11016,7 @@ North America	USA	South Carolina	Oconee County
 North America	USA	South Carolina	Orangeburg County
 North America	USA	South Carolina	Pickens County SC
 North America	USA	South Carolina	Richland County SC
+North America	USA	South Carolina	Saluda County
 North America	USA	South Carolina	Spartanburg County
 North America	USA	South Carolina	Sumter County SC
 North America	USA	South Carolina	Union County SC
@@ -13896,6 +13935,10 @@ South America	Peru	La Libertad
 South America	Peru	La Libertad	La Libertad
 South America	Peru	Lambayeque	
 South America	Peru	Lambayeque	Chiclayo
+South America	Peru	Lambayeque	Jose Leonardo Ortiz
+South America	Peru	Lambayeque	La Victoria
+South America	Peru	Lambayeque	Lambayeque
+South America	Peru	Lambayeque	Monsefu
 South America	Peru	Lima	
 South America	Peru	Lima	Cañete
 South America	Peru	Lima	Huarochiri
