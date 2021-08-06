@@ -129,6 +129,8 @@ Europe/France/Auvergne-Rhône-Alpes/Bourg en Bresse	Europe/France/Auvergne-Rhôn
 Europe/France/Auvergne-Rhône-Alpes/Romans sur Isere	Europe/France/Auvergne-Rhône-Alpes/Romans-sur-Isere
 Europe/France/Auvergne-Rhône-Alpes/Saint Martin D Heres	Europe/France/Auvergne-Rhône-Alpes/Saint-Martin-D'Hères
 Europe/France/Auvergne-Rhône-Alpes/Beaumont	Europe/France/Auvergne-Rhône-Alpes/Beaumont FR
+Europe/France/Auvergne-Rhône-Alpes/Montpellier	Europe/France/Occitanie/Montpellier
+Europe/France/Auvergne-Rhône-Alpes/Toulouse	Europe/France/Occitanie/Toulouse
 Europe/France/Provence-Alpes-Côte-D’Azur/*	Europe/France/Provence-Alpes-Côte d'Azur/*
 Europe/France/Centre-Val de Loire/Angers	Europe/France/Pays de la Loire/Angers
 Europe/France/Centre-Val de Loire/Rouziers de Touraine	Europe/France/Centre-Val de Loire/Rouziers-de-Touraine
@@ -6629,6 +6631,7 @@ Europe/Hungary/Bacs-Kiskun County/*	Europe/Hungary/Bács-Kiskun County/*
 Europe/Hungary/Hajdu-Bihar County/*	Europe/Hungary/Hajdú-Bihar County/*
 Europe/Hungary/Szabolcs-Szatmar-Bereg County/*	Europe/Hungary/Szabolcs-Szatmár-Bereg County/*
 Europe/United Kingdom/England/Nottinghamhisre	Europe/United Kingdom/England/Nottinghamshire
+Europe/United Kingdom/England/Norfolk	Europe/United Kingdom/England/Norfolk UK
 Europe/United Kingdom/London/	Europe/United Kingdom/England/London
 Europe/United Kingdom/Scotland/Fraserburg	Europe/United Kingdom/Scotland/Fraserburgh
 Europe/United Kingdom/?/	Europe/United Kingdom/United Kingdom/
@@ -7384,6 +7387,7 @@ Europe/Austria/Carinthia/Klagenfurt	Europe/Austria/Carinthia/Klagenfurt Am Wört
 Europe/Austria/Carinthia/Stadl-Predlitz	Europe/Austria/Styria/Stadl-Predlitz
 Europe/Austria/Carinthia/Feldkirchen	Europe/Austria/Carinthia/Feldkirchen in Kärnten
 Europe/Austria/Carinthia/Klagenfurt Land	Europe/Austria/Carinthia/Klagenfurt-Land
+Europe/Austria/Carinthia/Statutory City	Europe/Austria/Carinthia/Statutory City (Carinthia)
 Europe/Austria/Salzburg/Haizing	Europe/Austria/Upper Austria/Haizing
 Europe/Austria/Salzburg/Kramsach	Europe/Austria/Tyrol/Kramsach
 Europe/Austria/Salzburg/Attnang-Puchheim	Europe/Austria/Upper Austria/Attnang-Puchheim
@@ -7414,6 +7418,7 @@ Europe/Austria/Tyrol/Rangersdorf	Europe/Austria/Carinthia/Rangersdorf
 Europe/Austria/Tyrol/Ramsau Am Dachstein	Europe/Austria/Styria/Ramsau Am Dachstein
 Europe/Austria/Tyrol/Bad Mitterndorf	Europe/Austria/Styria/Bad Mitterndorf
 Europe/Austria/Tyrol/Wien	Europe/Austria/Vienna/Vienna
+Europe/Austria/Tyrol/Statutory City	Europe/Austria/Tyrol/Statutory City (Tyrol)
 Europe/Austria/Styria/Altaussee, Bad Aussee, Grundlsee, Bad Mitterndorf	Europe/Austria/Styria/Liezen
 Europe/Austria/Styria/Graz-Stadt	Europe/Austria/Styria/Graz
 Europe/Austria/Styria/Graz-Land	Europe/Austria/Styria/Graz
@@ -7567,6 +7572,7 @@ Europe/Bosnia and Herzegovina/Medjugorje/	Europe/Bosnia and Herzegovina/Herzegow
 Europe/Bosnia and Herzegovina/Velika Kladuša/	Europe/Bosnia and Herzegovina/Una-Sana/Velika Kladuša
 Europe/Bosnia and Herzegovina/Bihać/*	Europe/Bosnia and Herzegovina/Bihac/*
 Europe/Bosnia and Herzegovina/Vogošća/*	Europe/Bosnia and Herzegovina/Vogosca/*
+Europe/Bosnia and Herzegovina/Capljina/	Europe/Bosnia and Herzegovina/Herzegowina-Neretva/Capljina
 Europe/Greece/Livadia/	Europe/Greece/Central Greece/Livadeia
 Europe/Greece/Livadia/*	Europe/Greece/Livadeia/*
 Europe/Greece/Central Greece/Livadia	Europe/Greece/Central Greece/Livadeia
@@ -8153,14 +8159,11 @@ Europe/Slovakia/Vranov nad Toplou Region/Sacurov	Europe/Slovakia/Prešov/Sacurov
 Europe/Slovakia/Vranov nad Toplou Region/Sol	Europe/Slovakia/Prešov/Sol
 Europe/Slovakia/Vranov nad Toplou Region/Secovska Polianka	Europe/Slovakia/Prešov/Secovska Polianka
 Europe/Slovakia/Vranov nad Toplou Region/Ondavské Matiašovce	Europe/Slovakia/Prešov/Ondavské Matiašovce
-Europe/Slovakia/Medzilaborce Region/Hrabovec nad Laborcom	Europe/Slovakia/Prešov/Hrabovec nad Laborcom
-Europe/Slovakia/Medzilaborce Region/Roskovce	Europe/Slovakia/Prešov/Roskovce
 Europe/Slovakia/Medzilaborce Region/Roškovce	Europe/Slovakia/Prešov/Roskovce
-Europe/Slovakia/Medzilaborce Region/Brestov nad Laborcom	Europe/Slovakia/Prešov/Brestov nad Laborcom
 Europe/Slovakia/Medzilaborce Region/	Europe/Slovakia/Prešov/Medzilaborce
+Europe/Slovakia/Medzilaborce Region/*	Europe/Slovakia/Prešov/*
 Europe/Slovakia/Humenneregion/Topolovka	Europe/Slovakia/Prešov/Topolovka
-Europe/Slovakia/Roznava Region/Kecovo	Europe/Slovakia/Kosice/Kecovo
-Europe/Slovakia/Roznava Region/Silica	Europe/Slovakia/Kosice/Silica
+Europe/Slovakia/Roznava Region/*	Europe/Slovakia/Kosice/*
 Europe/Slovakia/Michalovce Region/Lozin	Europe/Slovakia/Kosice/Lozin
 Europe/Slovakia/Michalovce Region/Slavkovce	Europe/Slovakia/Kosice/Slavkovce
 Europe/Slovakia/Michalovce Region/Malčice	Europe/Slovakia/Kosice/Malčice
@@ -8199,13 +8202,9 @@ Europe/Slovakia/Poprad Region/Gerlachov	Europe/Slovakia/Prešov/Gerlachov (Popra
 Europe/Slovakia/Gelnica Region/Zavadka	Europe/Slovakia/Kosice/Závadka (Gelnica)
 Europe/Slovakia/Gelnica Region/Prakovce	Europe/Slovakia/Kosice/Prakovce
 Europe/Slovakia/Rimavske Sobota/	Europe/Slovakia/Banska Bystrica/Rimavska Sobota
-Europe/Slovakia/Rimavská Sobota Region/Žíp	Europe/Slovakia/Banska Bystrica/Žíp
-Europe/Slovakia/Rimavská Sobota Region/Bátka	Europe/Slovakia/Banska Bystrica/Bátka
-Europe/Slovakia/Rimavská Sobota Region/Stránska	Europe/Slovakia/Banska Bystrica/Stránska
-Europe/Slovakia/Rimavská Sobota Region/Radnovce	Europe/Slovakia/Banska Bystrica/Radnovce
-Europe/Slovakia/Rimavská Sobota Region/Hrachovo	Europe/Slovakia/Banska Bystrica/Hrachovo
 Europe/Slovakia/Rimavská Sobota Region/Martinová	Europe/Slovakia/Banska Bystrica/Martinova
 Europe/Slovakia/Rimavská Sobota Region/Jesenské	Europe/Slovakia/Banska Bystrica/Jesenské (Rimavska Sobota)
+Europe/Slovakia/Rimavská Sobota Region/*	Europe/Slovakia/Banska Bystrica/*
 Europe/Slovakia/Vranov nad Topľou Region/Hlinné	Europe/Slovakia/Prešov/Hlinné
 Europe/Slovakia/Vranov nad Topľou Region/Ondavské Matiašovce	Europe/Slovakia/Prešov/Ondavské Matiašovce
 Europe/Slovakia/Vranov nad Topľou Region/Sečovská Polianka	Europe/Slovakia/Prešov/Secovska Polianka
@@ -8221,9 +8220,8 @@ Europe/Slovakia/Humenné Region/Ľubiša	Europe/Slovakia/Prešov/Lubisa
 Europe/Slovakia/Humenné Region/	Europe/Slovakia/Prešov/Humenne
 Europe/Slovakia/Humennéregion/Pakostov	Europe/Slovakia/Prešov/Pakostov
 Europe/Slovakia/Rimavská Sobora Region/Radnovce	Europe/Slovakia/Banska Bystrica/Radnovce
-Europe/Slovakia/Rožňava Region/Štítnik	Europe/Slovakia/Kosice/Štítnik
-Europe/Slovakia/Rožňava Region/Slavec	Europe/Slovakia/Kosice/Slavec
 Europe/Slovakia/Rožňava Region/	Europe/Slovakia/Kosice/Roznava
+Europe/Slovakia/Rožňava Region/*	Europe/Slovakia/Kosice/*
 Europe/Slovakia/Vrbovce/	Europe/Slovakia/Trenčín/Vrbovce
 Europe/Slovakia/Rimavská Soborta Region/Hrachovo	Europe/Slovakia/Banska Bystrica/Hrachovo
 Europe/Slovakia/Trebišov Region/Byšta	Europe/Slovakia/Kosice/Byšta
@@ -8280,6 +8278,8 @@ Europe/Slovakia/Zilin/Divina	Europe/Slovakia/Zilina/Divina
 Europe/Slovakia/Kosice/Rudnik	Europe/Slovakia/Kosice/Rudník, district Kosice - okolie
 Europe/Slovakia/Michalove/	Europe/Slovakia/Kosice/Michalovce
 Europe/Slovakia/Banska Stavnica/	Europe/Slovakia/Banska Bystrica/Banska Stiavnica
+Europe/Slovakia/Vranov nad Top'Ou Region/*	Europe/Slovakia/Prešov/*
+Europe/Slovakia/Revúca Region/*	Europe/Slovakia/Banska Bystrica/*
 Europe/Denmark/Na/	Europe/Denmark/Denmark/
 Europe/Denmark/Na/*	Europe/Denmark//*
 Europe/Ireland/Limerick/Limerick County	Europe/Ireland/Limerick/
@@ -10527,6 +10527,8 @@ North America/USA/Illinois/Clay	North America/USA/Illinois/Clay County IL
 North America/USA/Illinois/Wayne	North America/USA/Illinois/Wayne County IL
 North America/USA/Illinois/Pike	North America/USA/Illinois/Pike County IL
 North America/USA/Illinois/Gilmer	North America/USA/Illinois/Lake County IL
+North America/USA/Illinois/Saint Clair County	North America/USA/Illinois/St. Clair County IL
+North America/USA/Illinois/St Clair County	North America/USA/Illinois/St. Clair County IL
 North America/USA/Wisconsin/Monroe County	North America/USA/Wisconsin/Monroe County WI
 North America/USA/Wisconsin/Richland County	North America/USA/Wisconsin/Richland County WI
 North America/USA/Wisconsin/Grant County	North America/USA/Wisconsin/Grant County WI
@@ -13628,6 +13630,7 @@ North America/USA/Washington/Marion	North America/USA/Oregon/Marion County OR
 North America/USA/Washington/Cowlitz	North America/USA/Washington/Cowlitz County
 North America/USA/Washington/Clark County County	North America/USA/Washington/Clark County WA
 North America/USA/Washington/Louisiana	North America/USA/Louisiana/
+North America/USA/Washington/Gig Harbor County	North America/USA/Washington/Pierce County WA
 North America/USA/New York/Orange County	North America/USA/New York/Orange County NY
 North America/USA/New York/Franklin County	North America/USA/New York/Franklin County NY
 North America/USA/New York/Jefferson County	North America/USA/New York/Jefferson County NY
@@ -22937,6 +22940,8 @@ North America/USA/Missouri/Clark	North America/USA/Missouri/Clark County MO
 North America/USA/Missouri/Unknown	North America/USA/Missouri/
 North America/USA/Missouri/St-Louis	North America/USA/Missouri/St. Louis MO
 North America/USA/Missouri/Ralls	North America/USA/Missouri/Ralls County
+North America/USA/Missouri/Lewis	North America/USA/Missouri/Lewis County MO
+North America/USA/Missouri/Marion	North America/USA/Missouri/Marion County MO
 North America/USA/South Carolina/Richland County	North America/USA/South Carolina/Richland County SC
 North America/USA/South Carolina/Fairfield County	North America/USA/South Carolina/Fairfield County SC
 North America/USA/South Carolina/Du Bois	North America/USA/South Carolina/
@@ -30143,6 +30148,7 @@ North America/USA/Florida/Marineland	North America/USA/Florida/Flagler County
 North America/USA/Florida/Lake Lindsey	North America/USA/Florida/Hernando County
 North America/USA/Florida/Escambia	North America/USA/Florida/Escambia County FL
 North America/USA/Florida/Miami-Dade	North America/USA/Florida/Miami-Dade County
+North America/USA/Florida/Marion	North America/USA/Florida/Marion County FL
 North America/USA/DC/*	North America/USA/Washington DC/*
 North America/USA/Virgin Islands of the U.S./*	North America/USA/Virgin Islands/*
 North America/USA/Ae/	North America/USA/USA/
@@ -30873,6 +30879,8 @@ North America/USA/North Carolina/Hobucken	North America/USA/North Carolina/Pamli
 North America/USA/North Carolina/Grandfather	North America/USA/North Carolina/Avery County
 North America/USA/North Carolina/Fontana Dam	North America/USA/North Carolina/Graham County NC
 North America/USA/North Carolina/Blue Clay Farms	North America/USA/North Carolina/New Hanover County
+North America/USA/North Carolina/Union	North America/USA/North Carolina/Union County NC
+North America/USA/North Carolina/Gaston	North America/USA/North Carolina/Gaston County
 North America/USA/Californi/*	North America/USA/California/*
 North America/USA/U.S. Virgin Islands/*	North America/USA/Virgin Islands/*
 North America/USA/Newyork/*	North America/USA/New York/*
@@ -34270,7 +34278,6 @@ North America/USA/Virginia/Frederick County	North America/USA/Virginia/Frederick
 North America/USA/Virginia/Virginia Beach	North America/USA/Virginia/Virginia Beach County
 North America/USA/Virginia/Richmond	North America/USA/Virginia/Richmond County VA
 North America/USA/Virginia/Chesapeake	North America/USA/Virginia/Chesapeake County
-North America/USA/Virginia/Norfolk	North America/USA/Virginia/Norfolk County VA
 North America/USA/Virginia/Arlington	North America/USA/Virginia/Arlington County
 North America/USA/Virginia/Roanoke	North America/USA/Virginia/Roanoke County
 North America/USA/Virginia/Newport News	North America/USA/Virginia/Newport News County
@@ -34849,6 +34856,8 @@ North America/USA/Virginia/Lancaster	North America/USA/Virginia/Lancaster County
 North America/USA/Virginia/Fancy Gap	North America/USA/Virginia/Carroll County VA
 North America/USA/Virginia/Deep Creek	North America/USA/Virginia/Accomack County
 North America/USA/Virginia/Greenbackville	North America/USA/Virginia/Accomack County
+North America/USA/Virginia/Norfolk County VA	North America/USA/Virginia/Norfolk VA
+North America/USA/Virginia/Norfolk	North America/USA/Virginia/Norfolk VA
 North America/USA/Los Angeles/	North America/USA/California/Los Angeles County
 North America/USA/Puerto Rico/Florida	North America/USA/Puerto Rico/Florida PR
 North America/USA/Puerto Rico/San Juan	North America/USA/Puerto Rico/San Juan PR
@@ -35396,6 +35405,7 @@ North America/USA/Utah/Clear Creek	North America/USA/Utah/Carbon County UT
 North America/USA/Utah/Sutherland	North America/USA/Utah/Millard County
 North America/USA/Utah/Oasis	North America/USA/Utah/Millard County
 North America/USA/Utah/Scofield	North America/USA/Utah/Carbon County UT
+North America/USA/Utah/Salt Lake	North America/USA/Utah/Salt Lake County
 North America/USA/Kentucky/Louisville	North America/USA/Kentucky/Jefferson County KY
 North America/USA/Kentucky/Lexington	North America/USA/Kentucky/Fayette County KY
 North America/USA/Kentucky/Bowling Green	North America/USA/Kentucky/Warren County KY
@@ -38027,6 +38037,7 @@ North America/USA/Wyoming/Hawk Springs	North America/USA/Wyoming/Goshen County
 North America/USA/Wyoming/Lost Springs	North America/USA/Wyoming/Converse County
 North America/USA/Na/Santa Isabel	North America/USA/USA/
 North America/USA/Dominican Republic/	North America/Dominican Republic/Dominican Republic/
+North America/USA/Middlesex County/	North America/USA/USA/
 North America/Costa Rica/Tibas/	North America/Costa Rica/San Jose/Tibas
 North America/Costa Rica/Cartago/Tres Rios	North America/Costa Rica/Cartago CR/Tres Rios CR
 North America/Costa Rica/Cartago/Cartago	North America/Costa Rica/Cartago CR/Cartago CR
