@@ -68,7 +68,22 @@ main() {
     set -x
 
     if [[ "$fetch" == 1 ]]; then
-        ./bin/fetch-from-genbank > data/genbank.ndjson
+        local attempt=0 max_attempts=5
+
+        while [[ $((++attempt)) -le $max_attempts ]]; do
+            echo "Fetch attempt $attempt"
+            if ./bin/fetch-from-genbank > data/genbank.ndjson; then
+                break
+            else
+                echo "...FAILED"
+                rm data/genbank.ndjson
+                sleep 10
+            fi
+        done
+        if [[ ! -f data/genbank.ndjson ]]; then
+            echo "Failed to fetch"
+            exit 1
+        fi
         if [[ "$branch" == master ]]; then
             ./bin/notify-on-record-change data/genbank.ndjson "$S3_SRC/genbank.ndjson.xz" "GenBank"
         fi
