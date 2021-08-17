@@ -65,7 +65,22 @@ main() {
     cd "$(dirname "$0")/.."
 
     if [[ "$fetch" == 1 ]]; then
-        ./bin/fetch-from-gisaid > data/gisaid.ndjson
+        local attempt=0 max_attempts=5
+
+        while [[ $((++attempt)) -le $max_attempts ]]; do
+            echo "Fetch attempt $attempt"
+            if ./bin/fetch-from-gisaid > data/gisaid.ndjson; then
+                break
+            else
+                echo "...FAILED"
+                rm data/gisaid.ndjson
+                sleep 10
+            fi
+        done
+        if [[ ! -f data/gisaid.ndjson ]]; then
+            echo "Failed to fetch"
+            exit 1
+        fi
         if [[ "$branch" == master ]]; then
             ./bin/notify-on-record-change data/gisaid.ndjson "$S3_SRC/gisaid.ndjson.xz" "GISAID"
         fi
