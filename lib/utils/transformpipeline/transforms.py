@@ -498,6 +498,9 @@ class StandardizeGenbankStrainNames(Transformer):
     """
     Attempt to standardize strain names by removing extra prefixes,
     stripping spaces, and correcting known common error patterns.
+
+    If the strain name still does not have the expected format, default to the
+    GenBank accession as the strain name.
     """
     def parse_strain_from_title(self,title: str) -> str:
         """
@@ -536,6 +539,13 @@ class StandardizeGenbankStrainNames(Transformer):
         # Strip all spaces
         entry['strain'] = re.sub( r'\s', '' , entry['strain'] )
 
+        # All strain names should have structure {}/{}/{year} or {}/{}/{}/{year}
+        # with the exception of 'Wuhan-Hu-1/2019'
+        # If strain name still doesn't match, default to the GenBank accession
+        strain_name_regex = re.compile(  r'([\w]*/)?[\w]*/[-_\.\w]*/[\d]{4}' )
+        if (( strain_name_regex.match( entry['strain'] ) is None ) and
+            ( entry['strain'] != 'Wuhan-Hu-1/2019' )):
+            entry['strain'] = entry['genbank_accession']
 
         return entry
 

@@ -69,7 +69,7 @@ if __name__ == '__main__':
         help="Output location of generated FASTA file. Defaults to `data/genbank/sequences.fasta`")
     parser.add_argument("--problem-data",
         default=base / "data/genbank/problem_data.tsv",
-        help="Output location of generated tsv of problem records missing geography region or a valid strain name")
+        help="Output location of generated tsv of problem records missing geography region or country")
     parser.add_argument("--sorted-fasta", action="store_true",
         help="Sort the fasta file in the same order as the metadata file.  WARNING: Enabling this option can consume a lot of memory.")
     parser.add_argument("--geo-location-rules",
