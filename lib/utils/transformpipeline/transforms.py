@@ -697,3 +697,156 @@ class patchUKData(Transformer):
             entry.update(self.metadata_lookup[entry["biosample_accession"]])
 
         return entry
+
+
+class ParseBiosample(Transformer):
+    """
+    Flattens the nested BioSample dictionary into a single level dictionary
+    with standardized columns as keys.
+
+    See all Biosample attributes at
+    https://www.ncbi.nlm.nih.gov/biosample/docs/attributes/
+    """
+    def __init__(self, columns: List[str]):
+        self.columns = columns
+
+    # Multiple BioSample attribute fields can represent the same metadata.
+    # We take the first value that matches the field regex from the most
+    # standardized attribute field. The following metadata attribute fields
+    # are listed in order with the most standardized first.
+    #   -Jover, 2021-08-16
+    STRAIN_ATTR = ['strain', 'isolate', 'sample_name', 'gisaid_virus_name', 'title']
+    STRAIN_REGEX = r'([-\w\s]*/)?([-\w\s]*/)?[-\w\s]*/[-\w\s]*/[0-9]{4}$'
+
+    ORIG_LAB_ATTR = ['collected_by', 'collecting institution', 'collecting institute']
+    ORIG_LAB_REGEX = r'^(?!\s*$).+' # Matches any string that is not empty or just whitespace
+
+    GISAID_EPI_ATTR = ['gisaid_accession', 'GISAID Accession ID', 'gisaid id', 'gisaid']
+    GISAID_EPI_REGEX = r'EPI_ISL_[0-9]*'
+
+    # Location metadata is handled differently since a subset of records split
+    # the location metadata into multiple attributes
+    #   -Jover, 2021-08-17
+    LOCATION_ATTR = ['geo_loc_name', 'geographic location (region and locality)', 'region']
+
+    # Potential BioSample values that represent null values
+    NULL_VALUES = ['missing', 'nan', 'none', 'not applicable', 'not collected',
+                   'not determined', 'not provided', 'restricted access', 'unknown']
+
+    def parse_first_regex_match(self, regex: str, value: str) -> str:
+        """
+        Return the first regex match found in *value*.
+        Returns an empty string if there is no match.
+        """
+        matches = re.search(regex, value)
+        return matches.group(0) if matches else ''
+
+    def parse_location(self, potential_values: Dict[str, str]) -> str:
+        """
+        Parse the location from the provided *potential_values*
+        Returns empty string if no location data provided in *potential_values*
+        """
+        country = potential_values.get('geo_loc_name')
+        division = potential_values.get('geographic location (region and locality)')\
+                or potential_values.get('region')
+
+        # A subset of records have full location in second field in the GISAID
+        # format of region/country/division or region/country
+        if country and division and country in division:
+            division_parts = division.split('/')
+            if len(division_parts) == 3:
+                division = division_parts[-1]
+            else:
+                division = None
+
+        if country and division:
+            location = f'{country}: {division}'
+        elif country:
+            location = country
+        else:
+            location = ''
+
+        return location
+
+    def transform_value(self, entry: dict) -> dict:
+        # Ensure all expected columns are included in the new entry
+        new_entry = dict.fromkeys(self.columns, '')
+
+        new_entry['biosample_accession'] = entry['accession']
+        if entry.get('bioprojects'):
+            # Arbitrarily chooses the first BioProject accession
+            new_entry['bioproject_accession'] = entry['bioprojects'][0]['accession']
+
+        # We can assume the owner/submitter of the BioSample record is the same as
+        # the GenBank record because NCBI currently requires the same person/group
+        # submit the linked records.
+        # See: https://www.protocols.io/view/sars-cov-2-ncbi-consensus-submission-protocol-genb-bid7ka9n?step=2.5
+        #   -Jover, 2021-08-16
+        if (entry.get('owner') and
+            entry['owner']['name'].lower() not in ParseBiosample.NULL_VALUES):
+            new_entry['submitting_lab'] = entry['owner']['name']
+
+        if entry.get('sampleIds'):
+            for sample_id in entry['sampleIds']:
+                if sample_id.get('db') == 'SRA':
+                    new_entry['sra_accession'] = sample_id['value']
+                else:
+                    # If the sample ID is not from SRA, try to parse as strain name
+                    new_entry['strain'] = self.parse_first_regex_match(ParseBiosample.STRAIN_REGEX, sample_id['value'])
+
+        # Store the lowest index of the attribute field that we've processed
+        # so that we use the value with the highest priority
+        # Default with the length of the list of attribute fields
+        strain_idx = len(ParseBiosample.STRAIN_ATTR)
+        orig_lab_idx = len(ParseBiosample.ORIG_LAB_ATTR)
+        gisaid_epi_idx = len(ParseBiosample.GISAID_EPI_ATTR)
+
+        # Store all potential location values since they may need to be
+        # combined to get the full location
+        potential_locations = {}
+
+        for attribute in entry['attributes']:
+            key, value = attribute['name'], attribute['value']
+
+            # Skip attributes that have null values
+            if value.lower() in ParseBiosample.NULL_VALUES:
+                continue
+
+            # Seemingly standardized fields that do not have other field name variations
+            #   -Jover, 2021-08-16
+            if key == 'host_age':
+                new_entry['age'] = value
+            elif key == 'host_sex':
+                new_entry['sex'] = value
+            elif key == 'collection_date':
+                new_entry['date'] = value
+
+            # Store regex matched values for metadata if the field index is
+            # lower than the field index of the stored value
+            elif key in ParseBiosample.STRAIN_ATTR:
+                field_idx = ParseBiosample.STRAIN_ATTR.index(key)
+                value = self.parse_first_regex_match(ParseBiosample.STRAIN_REGEX, value)
+                if field_idx < strain_idx and len(value) > 0:
+                    strain_idx = field_idx
+                    new_entry['strain'] = value
+
+            elif key in ParseBiosample.ORIG_LAB_ATTR:
+                field_idx = ParseBiosample.ORIG_LAB_ATTR.index(key)
+                value = self.parse_first_regex_match(ParseBiosample.ORIG_LAB_REGEX, value)
+                if field_idx < orig_lab_idx and len(value) > 0:
+                    orig_lab_idx = field_idx
+                    new_entry['originating_lab'] = value
+
+            elif key in ParseBiosample.GISAID_EPI_ATTR:
+                field_idx = ParseBiosample.GISAID_EPI_ATTR.index(key)
+                value = self.parse_first_regex_match(ParseBiosample.GISAID_EPI_REGEX, value)
+                if field_idx < gisaid_epi_idx:
+                    gisaid_epi_idx = field_idx
+                    new_entry['gisaid_epi_isl'] = value
+
+            elif key in ParseBiosample.LOCATION_ATTR:
+                potential_locations[key] = value
+
+        new_entry['location'] = self.parse_location(potential_locations)
+
+        return new_entry

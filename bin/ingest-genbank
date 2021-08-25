@@ -111,6 +111,9 @@ main() {
         aws s3 cp --no-progress "$S3_DST/biosample.ndjson.xz" - | xz -cdfq > data/biosample.ndjson
     fi
 
+    ./bin/transform-biosample data/biosample.ndjson \
+        --output data/genbank/biosample.tsv
+
     ./bin/transform-genbank data/genbank.ndjson \
         --output-metadata data/genbank/metadata.tsv \
         --output-fasta data/genbank/sequences.fasta
@@ -160,6 +163,7 @@ main() {
     ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/metadata.tsv "$S3_DST/metadata.tsv.gz"
     ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/sequences.fasta "$S3_DST/sequences.fasta.xz"
     ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/nextclade.tsv "$S3_DST/nextclade.tsv.gz"
+    ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/biosample.tsv "$S3_DST/biosample.tsv.gz"
 
     ./bin/clean
 }
