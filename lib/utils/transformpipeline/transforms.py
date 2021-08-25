@@ -850,3 +850,24 @@ class ParseBiosample(Transformer):
         new_entry['location'] = self.parse_location(potential_locations)
 
         return new_entry
+
+
+class MergeBiosampleMetadata(Transformer):
+    """
+    BioSample records contain extra metadata for GenBank sequences such as
+    originating lab and submitting lab.
+
+    This transformer updates the GenBank entry with the extra BioSample
+    metadata. Only fill in the values from BioSample if the GenBank value is
+    empty or '?'.
+    """
+    def __init__(self, biosample_metadata: dict):
+        self.biosample_metadata = biosample_metadata
+
+    def transform_value(self, entry: dict) -> dict:
+        extra_metadata = self.biosample_metadata.get(entry['biosample_accession'], {})
+        for key,value in extra_metadata.items():
+            if not entry.get(key) or entry.get(key) == '?':
+                entry[key] = value
+
+        return entry

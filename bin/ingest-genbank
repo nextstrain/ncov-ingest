@@ -115,6 +115,7 @@ main() {
         --output data/genbank/biosample.tsv
 
     ./bin/transform-genbank data/genbank.ndjson \
+        --biosample data/genbank/biosample.tsv \
         --output-metadata data/genbank/metadata.tsv \
         --output-fasta data/genbank/sequences.fasta
     ./bin/check-locations data/genbank/metadata.tsv \

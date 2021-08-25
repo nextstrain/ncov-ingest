@@ -7,6 +7,7 @@ import argparse
 import csv
 import sys
 from pathlib import Path
+import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "lib"))
 from utils.transform import (
@@ -21,8 +22,12 @@ from utils.transformpipeline.transforms import (
     AddHardcodedMetadataGenbank,
     DropSequenceData,
     FillDefaultLocationData,
+    FixLabs,
+    MergeBiosampleMetadata,
     MergeUserAnnotatedMetadata,
     ParseGeographicColumnsGenbank,
+    ParsePatientAge,
+    ParseSex,
     RenameAndAddColumns,
     StandardizeData,
     StandardizeGenbankStrainNames,
@@ -61,6 +66,10 @@ if __name__ == '__main__':
     parser.add_argument("--accessions",
         default=base / "source-data/accessions.tsv",
         help="Optional manually curated TSV cross-referencing accessions between databases (e.g. GISAID and GenBank/INSDC).")
+    parser.add_argument("--biosample",
+        default=base / "data/genbank/biosample.tsv",
+        help="Optional BioSample metadata TSV.\n"
+            "The TSV file should be the output of `transform-biosample.py`")
     parser.add_argument("--output-metadata",
         default=base / "data/genbank/metadata.tsv",
         help="Output location of generated metadata tsv. Defaults to `data/genbank/metadata.tsv`")
@@ -129,6 +138,12 @@ if __name__ == '__main__':
             for line in geo_location_rules_fh:
                 geoRules.readFromLine( line )
 
+    biosample = {}
+    if args.biosample:
+        biosample = pd.read_csv(args.biosample, sep='\t', dtype='string', index_col='biosample_accession')\
+                      .fillna('?') \
+                      .to_dict(orient='index')
+
 
     with open(args.genbank_data, "r") as genbank_fh :
 
@@ -143,10 +158,14 @@ if __name__ == '__main__':
         if not args.sorted_fasta:
             pipeline = pipeline | DropSequenceData()
 
-        pipeline = ( pipeline | StandardizeGenbankStrainNames()
+        pipeline = ( pipeline | AddHardcodedMetadataGenbank()
+                              | MergeBiosampleMetadata(biosample)
+                              | FixLabs()
+                              | ParsePatientAge()
+                              | ParseSex()
+                              | StandardizeGenbankStrainNames()
                               | ParseGeographicColumnsGenbank( base / 'source-data/us-state-codes.tsv' )
                               | AbbreviateAuthors()
-                              | AddHardcodedMetadataGenbank()
                               | ApplyUserGeoLocationSubstitutionRules(geoRules)
                               | MergeUserAnnotatedMetadata(annotations, idKey = 'genbank_accession' )
                               | MergeUserAnnotatedMetadata(accessions, idKey = 'genbank_accession_rev' )
