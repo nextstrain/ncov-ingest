@@ -71,7 +71,7 @@ main() {
         local attempt=0 max_attempts=5
 
         while [[ $((++attempt)) -le $max_attempts ]]; do
-            echo "Fetch attempt $attempt"
+            echo "Fetch GenBank attempt $attempt"
             if ./bin/fetch-from-genbank > data/genbank.ndjson; then
                 break
             else
@@ -81,15 +81,34 @@ main() {
             fi
         done
         if [[ ! -f data/genbank.ndjson ]]; then
-            echo "Failed to fetch"
+            echo "Failed to fetch from GenBank"
             exit 1
         fi
+
+        attempt=0
+        while [[ $((++attempt)) -le $max_attempts ]]; do
+            echo "Fetch BioSample attempt $attempt"
+            if ./bin/fetch-from-biosample > data/biosample.ndjson; then
+                break
+            else
+                echo "...FAILED"
+                rm data/biosample.ndjson
+                sleep 10
+            fi
+        done
+        if [[ ! -f data/biosample.ndjson ]]; then
+            echo "Failed to fetch from BioSample"
+            exit 1
+        fi
+
         if [[ "$branch" == master ]]; then
             ./bin/notify-on-record-change data/genbank.ndjson "$S3_SRC/genbank.ndjson.xz" "GenBank"
         fi
         ./bin/upload-to-s3 ${silent:+--quiet} data/genbank.ndjson "$S3_DST/genbank.ndjson.xz"
+        ./bin/upload-to-s3 ${silent:+--quiet} data/biosample.ndjson "$S3_DST/biosample.ndjson.xz"
     else
         aws s3 cp --no-progress "$S3_DST/genbank.ndjson.xz" - | xz -cdfq > data/genbank.ndjson
+        aws s3 cp --no-progress "$S3_DST/biosample.ndjson.xz" - | xz -cdfq > data/biosample.ndjson
     fi
 
     ./bin/transform-genbank data/genbank.ndjson \
