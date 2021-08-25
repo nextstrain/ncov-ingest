@@ -161,6 +161,7 @@ Europe/France/Bretagne/Saint Gilles	Europe/France/Bretagne/Saint Gilles (Bretagn
 Europe/France/Bretagne/Pau	Europe/France/Nouvelle-Aquitaine/Pau
 Europe/France/Bretagne/Leon	Europe/France/Bretagne/Saint-Pol-de-Léon
 Europe/France/Bretagne/Combronde	Europe/France/Auvergne-Rhône-Alpes/Combronde
+Europe/France/Bretagne/Mesnil Roc H	Europe/France/Bretagne/Mesnil-Roc’h
 Europe/France/Centre Val de Loire/Nantes	Europe/France/Pays de la Loire/Nantes
 Europe/France/Centre Val de Loire/*	Europe/France/Centre-Val de Loire/*
 Europe/France/Auvergne-Rhone-Alpes/Andrezieux-Boutheon	Europe/France/Auvergne-Rhône-Alpes/Andrézieux-Bouthéon
@@ -6509,7 +6510,7 @@ Europe/Russia/Perm/	Europe/Russia/Perm Krai/Perm
 Europe/Russia/Perm/Perm	Europe/Russia/Perm Krai/Perm
 Europe/Russia/Moscow Region/*	Europe/Russia/Moscow Oblast/*
 Europe/Russia/Chechen/*	Europe/Russia/Chechen Republic/*
-Europe/Russia/Pskov/Borisovichi	Europe/Russia/Pskov Oblast/Borovichi (Pskov)
+Europe/Russia/Pskov/Borisovichi	Europe/Russia/Pskov Oblast/Borovichi (Pskov Oblast)
 Europe/Russia/Pskov/*	Europe/Russia/Pskov Oblast/*
 Europe/Russia/Leningrad/Yanino	Europe/Russia/Leningrad Oblast/Yanino-1
 Europe/Russia/Leningrad/*	Europe/Russia/Leningrad Oblast/*
@@ -6548,7 +6549,7 @@ Europe/Russia/Republic of Kalmykia/*	Europe/Russia/Kalmykia/*
 Europe/Russia/Leningrad Region/*	Europe/Russia/Leningrad Oblast/*
 Europe/Russia/Saint-Peterburg/Saint Petersburg	Europe/Russia/Saint-Petersburg/Saint-Petersburg
 Europe/Russia/Saint-Peterburg/*	Europe/Russia/Saint-Petersburg/*
-Europe/Russia/Pskov Region/Borisovichi	Europe/Russia/Pskov Oblast/Borovichi (Pskov)
+Europe/Russia/Pskov Region/Borisovichi	Europe/Russia/Pskov Oblast/Borovichi (Pskov Oblast)
 Europe/Russia/Pskov Region/*	Europe/Russia/Pskov Oblast/*
 Europe/Russia/Novgorod Region/Borovichi	Europe/Russia/Novgorod/Borovichi (Novgorod)
 Europe/Russia/Novgorod Region/*	Europe/Russia/Novgorod/*
@@ -6557,10 +6558,10 @@ Europe/Russia/Irkutsk/*	Europe/Russia/Irkutsk Region/*
 Europe/Russia/Komi Republic/*	Europe/Russia/Komi/*
 Europe/Russia/Ryazan Region/*	Europe/Russia/Ryazan/*
 Europe/Russia/Kemerovo Region/*	Europe/Russia/Kemerovo/*
-Europe/Russia/Amur/Svobodnyi	Europe/Russia/Amur Region/Svobodny (Amur)
+Europe/Russia/Amur/Svobodnyi	Europe/Russia/Amur Region/Svobodny (Amur Region)
 Europe/Russia/Amur/*	Europe/Russia/Amur Region/*
-Europe/Russia/Amur Region/Svobodnyi	Europe/Russia/Amur Region/Svobodny (Amur)
-Europe/Russia/Amur Region/Svobodny	Europe/Russia/Amur Region/Svobodny (Amur)
+Europe/Russia/Amur Region/Svobodnyi	Europe/Russia/Amur Region/Svobodny (Amur Region)
+Europe/Russia/Amur Region/Svobodny	Europe/Russia/Amur Region/Svobodny (Amur Region)
 Europe/Russia/Omsk Region/*	Europe/Russia/Omsk/*
 Europe/Russia/Kamchatka/*	Europe/Russia/Kamchatka Krai/*
 Europe/Russia/Krasnoyarsk Krai/*	Europe/Russia/Krasnoyarsk/*
@@ -6747,6 +6748,7 @@ Europe/Czech Republic/South Moravian Region/Pribyslavice	Europe/Czech Republic/S
 Europe/Czech Republic/Jihlava/	Europe/Czech Republic/Vysocina Region/Jihlava
 Europe/Czech Republic/Liberecregion/*	Europe/Czech Republic/Liberec Region/*
 Europe/Czech Republic/Vysocina Region/Pribyslavice	Europe/Czech Republic/Vysocina Region/Pribyslavice (Vysocina Region)
+Europe/Czech Republic/Southern Bohemia Region/Cesky Krumlov, Postcode	Europe/Czech Republic/Southern Bohemia Region/Cesky Krumlov
 Europe/Crimea//	Europe/Ukraine/Crimea/Crimea
 Europe/Crimea/Simpheropol/	Europe/Ukraine/Crimea/Simpheropol
 Europe/Crimea/Alushta/	Europe/Ukraine/Crimea/Alushta
@@ -6790,7 +6792,7 @@ Europe/Spain/Madrid/Alcala Deenares	Europe/Spain/Madrid/Alcala de Henares
 Europe/Spain/Madrid/Arganda	Europe/Spain/Madrid/Arganda del Rey
 Europe/Spain/Madrid/Rivas Vaciamadrid	Europe/Spain/Madrid/Rivas-Vaciamadrid
 Europe/Spain/Madrid/San Fernando	Europe/Spain/Madrid/San Fernando de Henares
-Europe/Spain/Madrid/Madrid	Europe/Spain/Madrid/Madrid E
+Europe/Spain/Madrid/Madrid	Europe/Spain/Madrid/Madrid ES
 Europe/Spain/Galicia/Noya	Europe/Spain/Galicia/Noia
 Europe/Spain/Galicia/Riveira	Europe/Spain/Galicia/Ribeira
 Europe/Spain/Galicia/Padron	Europe/Spain/Galicia/Padrón
@@ -7950,7 +7952,7 @@ Europe/Slovakia/Myjava/Brezova Pod Bradlom	Europe/Slovakia/Trenčín/Brezova Pod
 Europe/Slovakia/Vasilov/	Europe/Slovakia/Zilina/Vasilov
 Europe/Slovakia/Levoca/	Europe/Slovakia/Prešov/Levoca
 Europe/Slovakia/Poltar/	Europe/Slovakia/Banska Bystrica/Poltar
-Europe/Slovakia/Poltar/Breznicka	Europe/Slovakia/Banska Bystrica/Breznička, district Poltar
+Europe/Slovakia/Poltar/Breznicka	Europe/Slovakia/Banska Bystrica/Breznička (Banska Bystrica)
 Europe/Slovakia/Sucha Hora/	Europe/Slovakia/Zilina/Suchá Hora
 Europe/Slovakia/Klizska Nema/	Europe/Slovakia/Nitra/Klizska Nema
 Europe/Slovakia/Nesvady/	Europe/Slovakia/Nitra/Nesvady
@@ -8198,7 +8200,7 @@ Europe/Slovakia/Humenne Region/Sopkovce	Europe/Slovakia/Prešov/Sopkovce
 Europe/Slovakia/Humenne Region/Slovenska Volova	Europe/Slovakia/Prešov/Slovenska Volova
 Europe/Slovakia/Humenne Region/Brekov	Europe/Slovakia/Prešov/Brekov
 Europe/Slovakia/Humenne Region/	Europe/Slovakia/Prešov/Humenne
-Europe/Slovakia/Humenne Region/Kochanovce	Europe/Slovakia/Prešov/Kochanovce (Humenne)
+Europe/Slovakia/Humenne Region/Kochanovce	Europe/Slovakia/Prešov/Kochanovce (Prešov)
 Europe/Slovakia/Medzilaborce Region/Roškovce	Europe/Slovakia/Prešov/Roskovce
 Europe/Slovakia/Medzilaborce Region/	Europe/Slovakia/Prešov/Medzilaborce
 Europe/Slovakia/Medzilaborce Region/*	Europe/Slovakia/Prešov/*
@@ -8233,15 +8235,15 @@ Europe/Slovakia/Kosice Region/*	Europe/Slovakia/Kosice/*
 Europe/Slovakia/Senec Region/	Europe/Slovakia/Bratislava/Senec
 Europe/Slovakia/Senec Region/*	Europe/Slovakia/Bratislava/*
 Europe/Slovakia/Banovce nad Bebravou Region/	Europe/Slovakia/Trenčín/Banovce nad Bebravou
-Europe/Slovakia/Jesenske/	Europe/Slovakia/Banska Bystrica/Jesenské (Rimavska Sobota)
+Europe/Slovakia/Jesenske/	Europe/Slovakia/Banska Bystrica/Jesenské (Banska Bystrica)
 Europe/Slovakia/Porubka/	Europe/Slovakia/Zilina/Porúbka (Zilina)
-Europe/Slovakia/Poprad Region/Gerlachov	Europe/Slovakia/Prešov/Gerlachov (Poprad)
+Europe/Slovakia/Poprad Region/Gerlachov	Europe/Slovakia/Prešov/Gerlachov (Prešov)
 Europe/Slovakia/Poprad Region/*	Europe/Slovakia/Prešov/*
-Europe/Slovakia/Gelnica Region/Zavadka	Europe/Slovakia/Kosice/Závadka (Gelnica)
+Europe/Slovakia/Gelnica Region/Zavadka	Europe/Slovakia/Kosice/Závadka (Kosice)
 Europe/Slovakia/Gelnica Region/*	Europe/Slovakia/Kosice/*
 Europe/Slovakia/Rimavske Sobota/	Europe/Slovakia/Banska Bystrica/Rimavska Sobota
 Europe/Slovakia/Rimavská Sobota Region/Martinová	Europe/Slovakia/Banska Bystrica/Martinova
-Europe/Slovakia/Rimavská Sobota Region/Jesenské	Europe/Slovakia/Banska Bystrica/Jesenské (Rimavska Sobota)
+Europe/Slovakia/Rimavská Sobota Region/Jesenské	Europe/Slovakia/Banska Bystrica/Jesenské (Banska Bystrica)
 Europe/Slovakia/Rimavská Sobota Region/*	Europe/Slovakia/Banska Bystrica/*
 Europe/Slovakia/Vranov nad Topľou Region/Hlinné	Europe/Slovakia/Prešov/Hlinné
 Europe/Slovakia/Vranov nad Topľou Region/Ondavské Matiašovce	Europe/Slovakia/Prešov/Ondavské Matiašovce
@@ -8313,12 +8315,12 @@ Europe/Slovakia/Spiska Nova Ves/	Europe/Slovakia/Kosice/Spišská Nová Ves
 Europe/Slovakia/Dubova/	Europe/Slovakia/Prešov/Dubová
 Europe/Slovakia/Tvrdosinregion/Hladovka	Europe/Slovakia/Zilina/Hladovka
 Europe/Slovakia/Zilin/Divina	Europe/Slovakia/Zilina/Divina
-Europe/Slovakia/Kosice/Rudnik	Europe/Slovakia/Kosice/Rudník, district Kosice - okolie
+Europe/Slovakia/Kosice/Rudnik	Europe/Slovakia/Kosice/Rudník (Kosice)
 Europe/Slovakia/Michalove/	Europe/Slovakia/Kosice/Michalovce
 Europe/Slovakia/Banska Stavnica/	Europe/Slovakia/Banska Bystrica/Banska Stiavnica
 Europe/Slovakia/Vranov nad Top'Ou Region/*	Europe/Slovakia/Prešov/*
 Europe/Slovakia/Revúca Region/*	Europe/Slovakia/Banska Bystrica/*
-Europe/Slovakia/Kucin/	Europe/Slovakia/Prešov/Kučín, district Bardejov
+Europe/Slovakia/Kucin/	Europe/Slovakia/Prešov/Kučín (Prešov)
 Europe/Slovakia/Zemplinska Teplica/	Europe/Slovakia/Kosice/Zemplínska Teplica
 Europe/Slovakia/Lehota/	Europe/Slovakia/Nitra/Lehota
 Europe/Slovakia/Tovarniky/	Europe/Slovakia/Nitra/Tovarníky
@@ -8372,7 +8374,7 @@ Europe/Slovakia/Vojkovce/	Europe/Slovakia/Kosice/Vojkovce
 Europe/Slovakia/Vlkanova/	Europe/Slovakia/Banska Bystrica/Vlkanová
 Europe/Slovakia/Letanovce/	Europe/Slovakia/Kosice/Letanovce
 Europe/Slovakia/Markusovce/	Europe/Slovakia/Kosice/Markušovce
-Europe/Slovakia/Jamnik/	Europe/Slovakia/Kosice/Jamník, district Spisska Nova Ves
+Europe/Slovakia/Jamnik/	Europe/Slovakia/Kosice/Jamník (Kosice)
 Europe/Slovakia/Zborov nad Bystricou/	Europe/Slovakia/Zilina/Zborov nad Bystricou
 Europe/Denmark/Na/	Europe/Denmark/Denmark/
 Europe/Denmark/Na/*	Europe/Denmark//*
@@ -19769,7 +19771,7 @@ North America/USA/Texas/Dallas	North America/USA/Texas/Dallas County TX
 North America/USA/Texas/Brown	North America/USA/Texas/Brown County TX
 North America/USA/Texas/Calhoun	North America/USA/Texas/Calhoun County TX
 North America/USA/Texas/Moris	North America/USA/Texas/Morris County TX
-North America/USA/Texas/Lorena	North America/USA/Texas/McLennan County
+North America/USA/Texas/Lorena	North America/USA/Texas/Mclennan County
 North America/USA/Texas/Georgetown	North America/USA/Texas/Georgetown TX
 North America/USA/Texas/Willacy	North America/USA/Texas/Willacy County
 North America/USA/Texas/Leon	North America/USA/Texas/Leon County
@@ -38512,11 +38514,14 @@ North America/Turks and Caicos Islands//	Europe/United Kingdom/Turks and Caicos 
 North America/Guadeloupe/Trois-Rivieres/*	North America/Guadeloupe/Trois-Rivières/*
 North America/Guadeloupe/Saint-Francois/*	North America/Guadeloupe/Saint-François/*
 North America/USA Alabama/USA Alabama/	North America/USA/Alabama/
+North America/USA Alabama//	North America/USA/Alabama/
 North America/USA Florida/USA Florida/	North America/USA/Florida/
+North America/USA Florida//	North America/USA/Florida/
 North America/USA Kansas/USA Kansas/	North America/USA/Kansas/
+North America/USA Kansas//	North America/USA/Kansas/
 South America/Brazil/Espírito Santo/*	South America/Brazil/Espirito Santo/*
 South America/Brazil/Amazonas/*	South America/Brazil/Amazonas BR/*
-South America/Brazil/Amazonas/Tabatinga	South America/Brazil/Amazonas BR/Tabatinga (Amazonas)
+South America/Brazil/Amazonas/Tabatinga	South America/Brazil/Amazonas BR/Tabatinga (Amazonas BR)
 South America/Brazil/Maranhao/*	South America/Brazil/Maranhão/*
 South America/Brazil/Ceara/*	South America/Brazil/Ceará/*
 South America/Brazil/Pará/*	South America/Brazil/Para/*
@@ -38670,7 +38675,7 @@ South America/Brazil/Amazonas BR/Bocadoacre	South America/Brazil/Amazonas BR/Boc
 South America/Brazil/Amazonas BR/Rpe	South America/Brazil/Amazonas BR/
 South America/Brazil/Amazonas BR/Sai	South America/Brazil/Amazonas BR/
 South America/Brazil/Amazonas BR/Rio	South America/Brazil/Amazonas BR/
-South America/Brazil/Amazonas BR/Tabatinga	South America/Brazil/Amazonas BR/Tabatinga (Amazonas)
+South America/Brazil/Amazonas BR/Tabatinga	South America/Brazil/Amazonas BR/Tabatinga (Amazonas BR)
 South America/Brazil/Tocantins/Paraiso do Tocantins	South America/Brazil/Tocantins/Paraiso do Tacantins
 South America/Brazil/Tocantins/Presidente Kennedy	South America/Brazil/Tocantins/Presidente Kennedy (Tocantins)
 South America/Brazil/Tocantins/Parana	South America/Brazil/Tocantins/Paranã
@@ -38735,6 +38740,7 @@ South America/Brazil/Goiás/Goiânia	South America/Brazil/Goiás/Goiania
 South America/Brazil/Goiás/Trindade	South America/Brazil/Goiás/Trindade (Goiás)
 South America/Brazil/Goiás/Mundo Novo	South America/Brazil/Goiás/Mundo Novo (Goiás)
 South America/Brazil/Goiás/Ituiutaba	South America/Brazil/Minas Gerais/Ituiutaba
+South America/Brazil/Goiás/Jussara	South America/Brazil/Goiás/Jussara (Goiás)
 South America/Brazil/Santa Catarina/Mafra	South America/Brazil/Santa Catarina/Mafra BR
 South America/Brazil/Santa Catarina/Concordia	South America/Brazil/Santa Catarina/Concordia BR
 South America/Brazil/Santa Catarina/Balneario Camboriu	South America/Brazil/Santa Catarina/Balneario Camburiu
@@ -38782,6 +38788,7 @@ South America/Brazil/Rio Grande do Norte/Sao Goncalo do Amarante	South America/B
 South America/Brazil/Rio Grande do Norte/Sao Luis	South America/Brazil/Maranhão/Sao Luis
 South America/Brazil/Rio Grande do Norte/Salgueiro	South America/Brazil/Pernambuco/Salgueiro
 South America/Brazil/Rio Grande do Norte/Vera Cruz	South America/Brazil/Rio Grande do Norte/Vera Cruz (Rio Grande do Norte)
+South America/Brazil/Rio Grande do Norte/Santa Maria	South America/Brazil/Rio Grande do Norte/Santa Maria (Rio Grande do Norte)
 South America/Brazil/Mato Gosso do Sul/*	South America/Brazil/Mato Grosso do Sul/*
 South America/Brazil/Alagoas/Capela	South America/Brazil/Alagoas/Capela (Alagoas)
 South America/Brazil/Alagoas/Sao Sebastiao	South America/Brazil/Alagoas/Sao Sebastiao (Alagoas)
@@ -38901,7 +38908,7 @@ South America/Ecuador/Portoviejo/Pueblo Nuevo	South America/Ecuador/Manabi/Puebl
 South America/Ecuador/Portoviejo/Colon	South America/Ecuador/Manabi/Colon EC
 South America/Ecuador/Portoviejo/18 de Octubre	South America/Ecuador/Manabi/18 de Octubre
 South America/Ecuador/Portoviejo/Andres de Vera	South America/Ecuador/Manabi/Andres de Vera
-South America/Ecuador/Portoviejo/San Pablo	South America/Ecuador/Manabi/San Pablo (Portoviejo)
+South America/Ecuador/Portoviejo/San Pablo	South America/Ecuador/Manabi/San Pablo (Manabi)
 South America/Ecuador/Portoviejo/Crucita	South America/Ecuador/Manabi/Crucita
 South America/Ecuador/Portoviejo/Manabi	South America/Ecuador/Manabi/Portoviejo
 South America/Ecuador/Portoviejo/Manabí	South America/Ecuador/Manabi/Portoviejo
@@ -38938,7 +38945,7 @@ South America/Chile/Puerto Montt/	South America/Chile/Los Lagos/Puerto Montt
 South America/Chile/Santiago/*	South America/Chile/Region Metropolitana de Santiago/*
 South America/Chile/Araucania/*	South America/Chile/Araucanía/*
 South America/Chile/Los Rios/*	South America/Chile/Los Rios CL/*
-South America/Chile/Los Rios/Los Lagos	South America/Chile/Los Rios CL/Los Lagos (Los Rios)
+South America/Chile/Los Rios/Los Lagos	South America/Chile/Los Rios CL/Los Lagos (Los Rios CL)
 South America/Chile/Arica y Parinacota/*	South America/Chile/Arica and Parinacota/*
 South America/Chile/Nuble/*	South America/Chile/Ñuble/*
 South America/Chile/Region Metropolitana de Santiago/San Ramon	South America/Chile/Region Metropolitana de Santiago/San Ramon CL
@@ -38972,17 +38979,18 @@ South America/Chile/Biobío/Los Angeles	South America/Chile/Biobío/Los Angeles 
 South America/Chile/Maule/San Clemente	South America/Chile/Maule/San Clemente CL
 South America/Chile/Maule/Retiro	South America/Chile/Maule/Retiro CL
 South America/Chile/Maule/San Rafael	South America/Chile/Maule/San Rafael CL
+South America/Chile/Maule/Rio Claro	South America/Chile/Maule/Rio Claro CL
 South America/Chile/Ñuble/San Carlos	South America/Chile/Ñuble/San Carlos CL
 South America/Chile/Ñuble/AIquen	South America/Chile/Ñuble/
 South America/Chile/Ñuble/San Nicolas	South America/Chile/Ñuble/San Nicolas CL
 South America/Chile/Ñuble/El Carmen	South America/Chile/Ñuble/El Carmen CL
 South America/Chile/Los Rios CL/La Union	South America/Chile/Los Rios CL/La Union CL
-South America/Chile/Los Rios CL/Los Lagos	South America/Chile/Los Rios CL/Los Lagos (Los Rios)
+South America/Chile/Los Rios CL/Los Lagos	South America/Chile/Los Rios CL/Los Lagos (Los Rios CL)
 South America/Chile/O'Higgins/San Fernando	South America/Chile/O'Higgins/San Fernando CL
 South America/Chile/O'Higgins/La Estrella	South America/Chile/O'Higgins/La Estrella CL
 South America/Chile/�Uble/*	South America/Chile/Ñuble/*
 South America/Chile/�Uble/San Carlos	South America/Chile/Ñuble/San Carlos CL
-South America/Chile/Los Ríos/Los Lagos	South America/Chile/Los Rios CL/Los Lagos (Los Rios)
+South America/Chile/Los Ríos/Los Lagos	South America/Chile/Los Rios CL/Los Lagos (Los Rios CL)
 South America/Chile/Los Ríos/*	South America/Chile/Los Rios CL/*
 South America/Chile/Coquimbo/Canela	South America/Chile/Coquimbo/Canela CL
 South America/Chile/Region de Coquimbo/*	South America/Chile/Coquimbo/*
@@ -39089,7 +39097,7 @@ South America/French Guiana/Matoury/	Europe/France/French Guiana/Matoury
 South America/French Guiana/Rémire-Montjoly/	Europe/France/French Guiana/Remire-Montjoly
 South America/French Guiana/Cacao/	Europe/France/French Guiana/Cacao
 South America/French Guiana/Papaïchton/	Europe/France/French Guiana/Papaichton
-South America/French Guiana/Mana/	Europe/France/French Guiana/Mana GF
+South America/French Guiana/Mana/	Europe/France/French Guiana/Mana (French Guiana)
 South America/French Guiana/Saint-Laurent Du Maroni/	Europe/France/French Guiana/St Laurent Du Maroni
 South America/French Guiana/Awala Yalimapo/	Europe/France/French Guiana/Awala-Yalimapo
 South America/French Guiana/Remire Montjoly/	Europe/France/French Guiana/Remire-Montjoly
