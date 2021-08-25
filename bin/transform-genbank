@@ -7,6 +7,7 @@ import argparse
 import csv
 import sys
 from pathlib import Path
+from collections import defaultdict
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "lib"))
@@ -79,6 +80,10 @@ if __name__ == '__main__':
     parser.add_argument("--problem-data",
         default=base / "data/genbank/problem_data.tsv",
         help="Output location of generated tsv of problem records missing geography region or country")
+    parser.add_argument("--duplicate-biosample",
+        default=base / "data/genbank/duplicate_biosample.txt",
+        help="Output location of generated TXT file in the Nextstrain exclusions.txt convention.\n"
+             "Used for flagging sequences with duplicate BioSample accessions")
     parser.add_argument("--sorted-fasta", action="store_true",
         help="Sort the fasta file in the same order as the metadata file.  WARNING: Enabling this option can consume a lot of memory.")
     parser.add_argument("--geo-location-rules",
@@ -188,14 +193,16 @@ if __name__ == '__main__':
                 obj[LINE_NUMBER_KEY]
             )
         )
-        #print( type( sorted_metadata ) )
-        #print( sorted_metadata )
 
     # this should be moved further down
     # dedup by strain and compile a list of relevant line numbers.
     seen_strains = set()
     line_numbers = set()
     updated_strain_names_by_line_no = {}
+    # During dedup process also track unique strains for all BioSample accessions
+    # Used to flag sequences that have duplicate BioSample accessions
+    biosamples = defaultdict(list)
+
     for entry in sorted_metadata:
 
         if entry['strain'] in seen_strains:
@@ -204,6 +211,20 @@ if __name__ == '__main__':
         seen_strains.add(entry['strain'])
         line_numbers.add(entry[LINE_NUMBER_KEY])
         updated_strain_names_by_line_no[entry[LINE_NUMBER_KEY]] = entry['strain']
+
+        if entry['biosample_accession']:
+            biosamples[entry['biosample_accession']].append(entry['strain'])
+
+
+    with open( args.duplicate_biosample, 'wt' ) as biosample_OUT:
+        for biosample, strains in biosamples.items():
+            # Only flag BioSample accessions with more than one linked strain
+            if len(strains) > 1:
+                # Keep the first strain of duplicates
+                strain_to_keep = strains.pop(0)
+                for strain in strains:
+                    reason = f"# Strain has same BioSample accession ({biosample}) as {strain_to_keep}"
+                    biosample_OUT.write(f"{strain}\t{reason}{args.newline}")
 
 
     with open( args.output_metadata , 'wt' ) as metadata_OUT:
