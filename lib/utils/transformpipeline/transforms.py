@@ -498,6 +498,9 @@ class StandardizeGenbankStrainNames(Transformer):
     """
     Attempt to standardize strain names by removing extra prefixes,
     stripping spaces, and correcting known common error patterns.
+
+    If the strain name still does not have the expected format, default to the
+    GenBank accession as the strain name.
     """
     def parse_strain_from_title(self,title: str) -> str:
         """
@@ -536,6 +539,13 @@ class StandardizeGenbankStrainNames(Transformer):
         # Strip all spaces
         entry['strain'] = re.sub( r'\s', '' , entry['strain'] )
 
+        # All strain names should have structure {}/{}/{year} or {}/{}/{}/{year}
+        # with the exception of 'Wuhan-Hu-1/2019'
+        # If strain name still doesn't match, default to the GenBank accession
+        strain_name_regex = re.compile(  r'([\w]*/)?[\w]*/[-_\.\w]*/[\d]{4}' )
+        if (( strain_name_regex.match( entry['strain'] ) is None ) and
+            ( entry['strain'] != 'Wuhan-Hu-1/2019' )):
+            entry['strain'] = entry['genbank_accession']
 
         return entry
 
@@ -685,5 +695,158 @@ class patchUKData(Transformer):
     def transform_value(self, entry: dict) -> dict:
         if entry["biosample_accession"] in self.metadata_lookup:
             entry.update(self.metadata_lookup[entry["biosample_accession"]])
+
+        return entry
+
+
+class ParseBiosample(Transformer):
+    """
+    Flattens the nested BioSample dictionary into a single level dictionary
+    with standardized columns as keys.
+
+    See all Biosample attributes at
+    https://www.ncbi.nlm.nih.gov/biosample/docs/attributes/
+    """
+    def __init__(self, columns: List[str]):
+        self.columns = columns
+
+    STRAIN_REGEX = r'([-\w\s]*/)?([-\w\s]*/)?[-\w\s]*/[-\w\s]*/[0-9]{4}$'
+
+    # Multiple BioSample attribute fields can represent the same metadata.
+    # We take the first value that matches the field regex from the most
+    # standardized attribute field. The following metadata attribute fields
+    # are listed in order with the most standardized first.
+    #   -Jover, 2021-08-16
+    MULTI_ATTR = {
+        'strain' : {
+            'fields': ['strain', 'isolate', 'sample_name', 'gisaid_virus_name', 'title'],
+            'regex': STRAIN_REGEX
+        },
+        'originating_lab' : {
+            'fields': ['collected_by', 'collecting institution', 'collecting institute'],
+            'regex': r'^(?!\s*$).+' # Matches any string that is not empty or just whitespace
+        },
+        'gisaid_epi_isl': {
+            'fields': ['gisaid_accession', 'GISAID Accession ID', 'gisaid id', 'gisaid'],
+            'regex': r'EPI_ISL_[0-9]*'
+        }
+    }
+
+    # Location metadata is handled differently since a subset of records split
+    # the location metadata into multiple attributes
+    #   -Jover, 2021-08-17
+    LOCATION_ATTR = ['geo_loc_name', 'geographic location (region and locality)', 'region']
+
+    # Potential BioSample values that represent null values
+    NULL_VALUES = ['missing', 'nan', 'none', 'not applicable', 'not collected',
+                   'not determined', 'not provided', 'restricted access', 'unknown']
+
+    def parse_first_regex_match(self, regex: str, value: str) -> str:
+        """
+        Return the first regex match found in *value*.
+        Returns an empty string if there is no match.
+        """
+        matches = re.search(regex, value)
+        return matches.group(0) if matches else ''
+
+    def parse_location(self, potential_values: Dict[str, str]) -> str:
+        """
+        Parse the location from the provided *potential_values*
+        Returns empty string if no location data provided in *potential_values*
+        """
+        country = potential_values.get('geo_loc_name')
+        division = potential_values.get('geographic location (region and locality)')\
+                or potential_values.get('region')
+
+        # A subset of records have full location in second field in the GISAID
+        # format of region/country/division or region/country
+        if country and division and country in division:
+            division_parts = division.split('/')
+            if len(division_parts) == 3:
+                division = division_parts[-1]
+            else:
+                division = None
+
+        if country and division:
+            location = f'{country}: {division}'
+        elif country:
+            location = country
+        else:
+            location = ''
+
+        return location
+
+    def transform_value(self, entry: dict) -> dict:
+        # Ensure all expected columns are included in the new entry
+        new_entry = dict.fromkeys(self.columns, '')
+
+        new_entry['biosample_accession'] = entry['accession']
+        if entry.get('bioprojects'):
+            # Arbitrarily chooses the first BioProject accession
+            new_entry['bioproject_accession'] = entry['bioprojects'][0]['accession']
+
+        # We can assume the owner/submitter of the BioSample record is the same as
+        # the GenBank record because NCBI currently requires the same person/group
+        # submit the linked records.
+        # See: https://www.protocols.io/view/sars-cov-2-ncbi-consensus-submission-protocol-genb-bid7ka9n?step=2.5
+        #   -Jover, 2021-08-16
+        if (entry.get('owner') and
+            entry['owner']['name'].lower() not in ParseBiosample.NULL_VALUES):
+            new_entry['submitting_lab'] = entry['owner']['name']
+
+        if entry.get('sampleIds'):
+            for sample_id in entry['sampleIds']:
+                if sample_id.get('db') == 'SRA':
+                    new_entry['sra_accession'] = sample_id['value']
+                else:
+                    # If the sample ID is not from SRA, try to parse as strain name
+                    new_entry['strain'] = self.parse_first_regex_match(ParseBiosample.STRAIN_REGEX, sample_id['value'])
+
+        # Convert list of attributes to dict of field names and values
+        # Only includes attribute fields that do not have null values
+        attributes = { attribute['name']: attribute['value'] for attribute in entry['attributes'] \
+                        if attribute['value'].lower() not in ParseBiosample.NULL_VALUES }
+
+        # Seemingly standardized fields that do not have other field name variations
+        #   -Jover, 2021-08-16
+        new_entry['age'] = attributes.get('host_age')
+        new_entry['sex'] = attributes.get('host_sex')
+        new_entry['date'] = attributes.get('collection_date')
+
+        new_entry['location'] = self.parse_location({ attr: attributes.get(attr) for attr in ParseBiosample.LOCATION_ATTR })
+
+        # Process metadata fields that have multiple potential attribute fields
+        for metadata_field, attr_group in ParseBiosample.MULTI_ATTR.items():
+            # Potential attribute fields are listed in priority order
+            # break out of for loop when we find the first regex match
+            for attr in attr_group['fields']:
+                if not attributes.get(attr):
+                    continue
+
+                value = self.parse_first_regex_match(attr_group['regex'], attributes[attr])
+                if len(value) > 0:
+                    new_entry[metadata_field] = value
+                    break
+
+        return new_entry
+
+
+class MergeBiosampleMetadata(Transformer):
+    """
+    BioSample records contain extra metadata for GenBank sequences such as
+    originating lab and submitting lab.
+
+    This transformer updates the GenBank entry with the extra BioSample
+    metadata. Only fill in the values from BioSample if the GenBank value is
+    empty or '?'.
+    """
+    def __init__(self, biosample_metadata: dict):
+        self.biosample_metadata = biosample_metadata
+
+    def transform_value(self, entry: dict) -> dict:
+        extra_metadata = self.biosample_metadata.get(entry['biosample_accession'], {})
+        for key,value in extra_metadata.items():
+            if not entry.get(key) or entry.get(key) == '?':
+                entry[key] = value
 
         return entry

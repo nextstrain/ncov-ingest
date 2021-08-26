@@ -71,7 +71,7 @@ main() {
         local attempt=0 max_attempts=5
 
         while [[ $((++attempt)) -le $max_attempts ]]; do
-            echo "Fetch attempt $attempt"
+            echo "Fetch GenBank attempt $attempt"
             if ./bin/fetch-from-genbank > data/genbank.ndjson; then
                 break
             else
@@ -81,18 +81,42 @@ main() {
             fi
         done
         if [[ ! -f data/genbank.ndjson ]]; then
-            echo "Failed to fetch"
+            echo "Failed to fetch from GenBank"
             exit 1
         fi
+
+        attempt=0
+        while [[ $((++attempt)) -le $max_attempts ]]; do
+            echo "Fetch BioSample attempt $attempt"
+            if ./bin/fetch-from-biosample > data/biosample.ndjson; then
+                break
+            else
+                echo "...FAILED"
+                rm data/biosample.ndjson
+                sleep 10
+            fi
+        done
+        if [[ ! -f data/biosample.ndjson ]]; then
+            echo "Failed to fetch from BioSample"
+            exit 1
+        fi
+
         if [[ "$branch" == master ]]; then
             ./bin/notify-on-record-change data/genbank.ndjson "$S3_SRC/genbank.ndjson.xz" "GenBank"
         fi
         ./bin/upload-to-s3 ${silent:+--quiet} data/genbank.ndjson "$S3_DST/genbank.ndjson.xz"
+        ./bin/upload-to-s3 ${silent:+--quiet} data/biosample.ndjson "$S3_DST/biosample.ndjson.xz"
     else
         aws s3 cp --no-progress "$S3_DST/genbank.ndjson.xz" - | xz -cdfq > data/genbank.ndjson
+        aws s3 cp --no-progress "$S3_DST/biosample.ndjson.xz" - | xz -cdfq > data/biosample.ndjson
     fi
 
+    ./bin/transform-biosample data/biosample.ndjson \
+        --output data/genbank/biosample.tsv
+
     ./bin/transform-genbank data/genbank.ndjson \
+        --biosample data/genbank/biosample.tsv \
+        --duplicate-biosample data/genbank/duplicate_biosample.txt \
         --output-metadata data/genbank/metadata.tsv \
         --output-fasta data/genbank/sequences.fasta
     ./bin/check-locations data/genbank/metadata.tsv \
@@ -136,11 +160,14 @@ main() {
         ./bin/notify-on-metadata-change data/genbank/metadata.tsv "$S3_SRC/metadata.tsv.gz" genbank_accession
         ./bin/notify-on-problem-data data/genbank/problem_data.tsv
         ./bin/notify-on-location-hierarchy-addition data/genbank/location_hierarchy.tsv source-data/location_hierarchy.tsv
+        ./bin/notify-on-duplicate-biosample-change data/genbank/duplicate_biosample.txt "$S3_SRC/duplicate_biosample.txt.gz"
     fi
 
     ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/metadata.tsv "$S3_DST/metadata.tsv.gz"
     ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/sequences.fasta "$S3_DST/sequences.fasta.xz"
     ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/nextclade.tsv "$S3_DST/nextclade.tsv.gz"
+    ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/biosample.tsv "$S3_DST/biosample.tsv.gz"
+    ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/duplicate_biosample.txt "$S3_DST/duplicate_biosample.txt.gz"
 
     ./bin/clean
 }
