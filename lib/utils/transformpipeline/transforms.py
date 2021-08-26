@@ -710,19 +710,27 @@ class ParseBiosample(Transformer):
     def __init__(self, columns: List[str]):
         self.columns = columns
 
+    STRAIN_REGEX = r'([-\w\s]*/)?([-\w\s]*/)?[-\w\s]*/[-\w\s]*/[0-9]{4}$'
+
     # Multiple BioSample attribute fields can represent the same metadata.
     # We take the first value that matches the field regex from the most
     # standardized attribute field. The following metadata attribute fields
     # are listed in order with the most standardized first.
     #   -Jover, 2021-08-16
-    STRAIN_ATTR = ['strain', 'isolate', 'sample_name', 'gisaid_virus_name', 'title']
-    STRAIN_REGEX = r'([-\w\s]*/)?([-\w\s]*/)?[-\w\s]*/[-\w\s]*/[0-9]{4}$'
-
-    ORIG_LAB_ATTR = ['collected_by', 'collecting institution', 'collecting institute']
-    ORIG_LAB_REGEX = r'^(?!\s*$).+' # Matches any string that is not empty or just whitespace
-
-    GISAID_EPI_ATTR = ['gisaid_accession', 'GISAID Accession ID', 'gisaid id', 'gisaid']
-    GISAID_EPI_REGEX = r'EPI_ISL_[0-9]*'
+    MULTI_ATTR = {
+        'strain' : {
+            'fields': ['strain', 'isolate', 'sample_name', 'gisaid_virus_name', 'title'],
+            'regex': STRAIN_REGEX
+        },
+        'originating_lab' : {
+            'fields': ['collected_by', 'collecting institution', 'collecting institute'],
+            'regex': r'^(?!\s*$).+' # Matches any string that is not empty or just whitespace
+        },
+        'gisaid_epi_isl': {
+            'fields': ['gisaid_accession', 'GISAID Accession ID', 'gisaid id', 'gisaid'],
+            'regex': r'EPI_ISL_[0-9]*'
+        }
+    }
 
     # Location metadata is handled differently since a subset of records split
     # the location metadata into multiple attributes
@@ -794,60 +802,31 @@ class ParseBiosample(Transformer):
                     # If the sample ID is not from SRA, try to parse as strain name
                     new_entry['strain'] = self.parse_first_regex_match(ParseBiosample.STRAIN_REGEX, sample_id['value'])
 
-        # Store the lowest index of the attribute field that we've processed
-        # so that we use the value with the highest priority
-        # Default with the length of the list of attribute fields
-        strain_idx = len(ParseBiosample.STRAIN_ATTR)
-        orig_lab_idx = len(ParseBiosample.ORIG_LAB_ATTR)
-        gisaid_epi_idx = len(ParseBiosample.GISAID_EPI_ATTR)
+        # Convert list of attributes to dict of field names and values
+        # Only includes attribute fields that do not have null values
+        attributes = { attribute['name']: attribute['value'] for attribute in entry['attributes'] \
+                        if attribute['value'].lower() not in ParseBiosample.NULL_VALUES }
 
-        # Store all potential location values since they may need to be
-        # combined to get the full location
-        potential_locations = {}
+        # Seemingly standardized fields that do not have other field name variations
+        #   -Jover, 2021-08-16
+        new_entry['age'] = attributes.get('host_age')
+        new_entry['sex'] = attributes.get('host_sex')
+        new_entry['date'] = attributes.get('collection_date')
 
-        for attribute in entry['attributes']:
-            key, value = attribute['name'], attribute['value']
+        new_entry['location'] = self.parse_location({ attr: attributes.get(attr) for attr in ParseBiosample.LOCATION_ATTR })
 
-            # Skip attributes that have null values
-            if value.lower() in ParseBiosample.NULL_VALUES:
-                continue
+        # Process metadata fields that have multiple potential attribute fields
+        for metadata_field, attr_group in ParseBiosample.MULTI_ATTR.items():
+            # Potential attribute fields are listed in priority order
+            # break out of for loop when we find the first regex match
+            for attr in attr_group['fields']:
+                if not attributes.get(attr):
+                    continue
 
-            # Seemingly standardized fields that do not have other field name variations
-            #   -Jover, 2021-08-16
-            if key == 'host_age':
-                new_entry['age'] = value
-            elif key == 'host_sex':
-                new_entry['sex'] = value
-            elif key == 'collection_date':
-                new_entry['date'] = value
-
-            # Store regex matched values for metadata if the field index is
-            # lower than the field index of the stored value
-            elif key in ParseBiosample.STRAIN_ATTR:
-                field_idx = ParseBiosample.STRAIN_ATTR.index(key)
-                value = self.parse_first_regex_match(ParseBiosample.STRAIN_REGEX, value)
-                if field_idx < strain_idx and len(value) > 0:
-                    strain_idx = field_idx
-                    new_entry['strain'] = value
-
-            elif key in ParseBiosample.ORIG_LAB_ATTR:
-                field_idx = ParseBiosample.ORIG_LAB_ATTR.index(key)
-                value = self.parse_first_regex_match(ParseBiosample.ORIG_LAB_REGEX, value)
-                if field_idx < orig_lab_idx and len(value) > 0:
-                    orig_lab_idx = field_idx
-                    new_entry['originating_lab'] = value
-
-            elif key in ParseBiosample.GISAID_EPI_ATTR:
-                field_idx = ParseBiosample.GISAID_EPI_ATTR.index(key)
-                value = self.parse_first_regex_match(ParseBiosample.GISAID_EPI_REGEX, value)
-                if field_idx < gisaid_epi_idx:
-                    gisaid_epi_idx = field_idx
-                    new_entry['gisaid_epi_isl'] = value
-
-            elif key in ParseBiosample.LOCATION_ATTR:
-                potential_locations[key] = value
-
-        new_entry['location'] = self.parse_location(potential_locations)
+                value = self.parse_first_regex_match(attr_group['regex'], attributes[attr])
+                if len(value) > 0:
+                    new_entry[metadata_field] = value
+                    break
 
         return new_entry
 
