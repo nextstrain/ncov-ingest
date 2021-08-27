@@ -28,7 +28,8 @@ Europe/Netherlands/Zuidholland/*	Europe/Netherlands/South Holland/*
 Europe/Netherlands/Noord-Holland/*	Europe/Netherlands/North Holland/*
 Europe/Netherlands/Noord-Brabant/*	Europe/Netherlands/North Brabant/*
 Europe/Netherlands/Zuid-Holland/*	Europe/Netherlands/South Holland/*
-Europe/Netherlands/Limburg/Weert	Europe/Netherlands/Limburg/Weert NL
+Europe/Netherlands/Limburg/Weert	Europe/Netherlands/Limburg NL/Weert NL
+Europe/Netherlands/Limburg/*	Europe/Netherlands/Limburg NL/*
 Europe/Netherlands/Zealand/*	Europe/Netherlands/Zeeland/*
 Europe/Netherlands/Unknown/	Europe/Netherlands/Netherlands/
 Europe/Netherlands/North Brabant/Loon op zand	Europe/Netherlands/North Brabant/Loon op Zand
@@ -310,6 +311,7 @@ Europe/France/Alpes-Maritimes/Nice	Europe/France/Provence-Alpes-Côte d'Azur/Nic
 Europe/France/Meurthe-Et-Moselle/*	Europe/France/Grand Est/*
 Europe/France/Provence- Centre-Val de Loire/*	Europe/France/Centre-Val de Loire/*
 Europe/France/Auvernia-Rodano-Alpes/*	Europe/France/Auvergne-Rhône-Alpes/*
+Europe/France/Provence-Alpes-Cote- D'Azur/*	Europe/France/Provence-Alpes-Côte d'Azur/*
 Europe/Germany/North Rhine-Westphalia/Düsseldorf	Europe/Germany/North Rhine Westphalia/Duesseldorf
 Europe/Germany/North Rhine-Westphalia/Duesseldorf Area	Europe/Germany/North Rhine Westphalia/Duesseldorf
 Europe/Germany/North Rhine-Westphalia/Dusseldorf Health Department	Europe/Germany/North Rhine Westphalia/Duesseldorf
@@ -6504,6 +6506,7 @@ Europe/Switzerland/Z√ºrich/*	Europe/Switzerland/Zürich/*
 Europe/Switzerland/Schafhausen/*	Europe/Switzerland/Schaffhausen/*
 Europe/Switzerland/Graub√ºnden/*	Europe/Switzerland/Graubünden/*
 Europe/Switzerland/Unknown/	Europe/Switzerland/Switzerland/
+Europe/Switzerland/Genève/*	Europe/Switzerland/Geneva/*
 Europe/Russia/Saint Petersburg/Saint Petersburg	Europe/Russia/Saint-Petersburg/Saint-Petersburg
 Europe/Russia/Saint Petersburg/*	Europe/Russia/Saint-Petersburg/*
 Europe/Russia/Moscow/*	Europe/Russia/Moscow Oblast/*
@@ -8517,6 +8520,8 @@ Europe/Serbiapozarevac/Serbiapozarevac/	Europe/Serbia/Braničevo District/Pozare
 Europe/Serbiapozarevac//	Europe/Serbia/Braničevo District/Pozarevac
 Europe/Andorre/Andorre/*	Europe/Andorra/Andorra/*
 Europe/Andorre/*/*	Europe/Andorra/*/*
+Europe/Luxembourg/Luxembourg/*	Europe/Luxembourg/Luxembourg LU/*
+Europe/Montenegro/Heceg Novi/	Europe/Montenegro/Herceg Novi/
 Asia/Taiwan/Taipei/	Asia/Taiwan/Taiwan/Taipei
 Asia/Taiwan/Taoyuan/	Asia/Taiwan/Taiwan/Taoyuan
 Asia/Taiwan/Kaohsiung/	Asia/Taiwan/Taiwan/Kaohsiung
@@ -8594,94 +8599,95 @@ Asia/Israel/Ramat Gan/	Asia/Israel/Tel Aviv District/Ramat Gan
 Asia/Israel/South Coast District/	Asia/Israel/South District/South Coast District
 Asia/Israel/Bat-Yam/	Asia/Israel/Tel Aviv District/Bat Yam
 Asia/Israel/Holon/	Asia/Israel/Tel Aviv District/Holon
-Asia/Israel/Yehud/	Asia/Israel/Central District/Yehud
+Asia/Israel/Yehud/	Asia/Israel/Central District IL/Yehud
 Asia/Israel/Ashdod/	Asia/Israel/South District/Ashdod
 Asia/Israel/Beni-Brak/*	Asia/Israel/Tel Aviv District/Bnei Brak
 Asia/Israel/Tel-Aviv/	Asia/Israel/Tel Aviv District/Tel-Aviv
-Asia/Israel/Netanya/	Asia/Israel/Central District/Netanya
+Asia/Israel/Netanya/	Asia/Israel/Central District IL/Netanya
 Asia/Israel/Netivot/	Asia/Israel/South District/Netivot
-Asia/Israel/Yavne/	Asia/Israel/Central District/Yavne
-Asia/Israel/Gani Tikva/	Asia/Israel/Central District/Gani Tikva
+Asia/Israel/Yavne/	Asia/Israel/Central District IL/Yavne
+Asia/Israel/Gani Tikva/	Asia/Israel/Central District IL/Gani Tikva
 Asia/Israel/Hukuk/	Asia/Israel/North District/Hukuk
-Asia/Israel/Raanana/	Asia/Israel/Central District/Raanana
-Asia/Israel/Pardesia/	Asia/Israel/Central District/Pardesia
+Asia/Israel/Raanana/	Asia/Israel/Central District IL/Raanana
+Asia/Israel/Pardesia/	Asia/Israel/Central District IL/Pardesia
 Asia/Israel/Ramat-Gan/*	Asia/Israel/Tel Aviv District/Ramat Gan
 Asia/Israel/Jerusalem/Bet Shemesh	Asia/Israel/Jerusalem District/Beit Shemesh
 Asia/Israel/Jerusalem/Maale Edomim	Asia/Palestine/West Bank/Maale-Edumim
 Asia/Israel/Jerusalem/*	Asia/Israel/Jerusalem District/*
 Asia/Israel/Kiryat-Gat/*	Asia/Israel/South District/Kiryat Gat
-Asia/Israel/Shoam/	Asia/Israel/Central District/Shoham
+Asia/Israel/Shoam/	Asia/Israel/Central District IL/Shoham
 Asia/Israel/Beit Shemesh/	Asia/Israel/Jerusalem District/Beit Shemesh
-Asia/Israel/Petah-Tikva/	Asia/Israel/Central District/Petah Tikva
+Asia/Israel/Petah-Tikva/	Asia/Israel/Central District IL/Petah Tikva
 Asia/Israel/Petah-Tikva/*	Asia/Israel/South District/Petah Tikva
-Asia/Israel/Kfar-Habad/*	Asia/Israel/Central District/Kfar Habad
+Asia/Israel/Kfar-Habad/*	Asia/Israel/Central District IL/Kfar Habad
 Asia/Israel/Kiryat Ono/	Asia/Israel/Tel Aviv District/Kiryat Ono
-Asia/Israel/Kefar Sava/	Asia/Israel/Central District/Kefar Sava
+Asia/Israel/Kefar Sava/	Asia/Israel/Central District IL/Kefar Sava
 Asia/Israel/Tveria/	Asia/Israel/North District/Tveria
-Asia/Israel/Gedera/	Asia/Israel/Central District/Gedera
-Asia/Israel/Elad/	Asia/Israel/Central District/Elad
+Asia/Israel/Gedera/	Asia/Israel/Central District IL/Gedera
+Asia/Israel/Elad/	Asia/Israel/Central District IL/Elad
 Asia/Israel/Elkana/*	Asia/Palestine/West Bank/Elkana
 Asia/Israel/Maalot-Tarshicha/*	Asia/Israel/North District/Maalot Tarshicha
-Asia/Israel/Ramla/	Asia/Israel/Central District/Ramla
+Asia/Israel/Ramla/	Asia/Israel/Central District IL/Ramla
 Asia/Israel/Haifa/Akko	Asia/Israel/Haifa District/Haifa
 Asia/Israel/Haifa/*	Asia/Israel/Haifa District/*
 Asia/Israel/Tirat Zvi/	Asia/Israel/North District/Tirat Zvi
 Asia/Israel/Zefat/	Asia/Israel/North District/Zefat
-Asia/Israel/Kfar Saba/	Asia/Israel/Central District/Kfar Saba
+Asia/Israel/Kfar Saba/	Asia/Israel/Central District IL/Kfar Saba
 Asia/Israel/Northern District/*	Asia/Israel/North District/*
 Asia/Israel/Southern District/*	Asia/Israel/South District/*
 Asia/Israel/Tel Aviv/Tel Aviv	Asia/Israel/Tel Aviv District/Tel-Aviv
 Asia/Israel/Tel Aviv/*	Asia/Israel/Tel Aviv District/*
 Asia/Israel/Southern Coast District/	Asia/Israel/South District/South Coast District
 Asia/Israel/Southern Coast District/*	Asia/Israel/South Coast District/*
-Asia/Israel/Central Region/*	Asia/Israel/Central District/*
+Asia/Israel/Central Region/*	Asia/Israel/Central District IL/*
 Asia/Israel/Yeruham/	Asia/Israel/South District/Yeruham
 Asia/Israel/Tkoa/*	Asia/Palestine/West Bank/Tkoa
-Asia/Israel/Beerot-Itzhak/	Asia/Israel/Central District/Beerot-Itzhak
+Asia/Israel/Beerot-Itzhak/	Asia/Israel/Central District IL/Beerot-Itzhak
 Asia/Israel/Beer-Sheva/	Asia/Israel/South District/Beer-Sheva
 Asia/Israel/Ceasaria/	Asia/Israel/Haifa District/Ceasaria
 Asia/Israel/Chaspin/	Asia/Israel/North District/Chaspin
-Asia/Israel/Lod/	Asia/Israel/Central District/Lod
+Asia/Israel/Lod/	Asia/Israel/Central District IL/Lod
 Asia/Israel/Maale-Edumim/*	Asia/Palestine/West Bank/Maale-Edumim
-Asia/Israel/Modiin/	Asia/Israel/Central District/Modiin
-Asia/Israel/Nir-Tzvi/	Asia/Israel/Central District/Nir-Tzvi
-Asia/Israel/Orot/	Asia/Israel/Central District/Orot
+Asia/Israel/Modiin/	Asia/Israel/Central District IL/Modiin
+Asia/Israel/Nir-Tzvi/	Asia/Israel/Central District IL/Nir-Tzvi
+Asia/Israel/Orot/	Asia/Israel/Central District IL/Orot
 Asia/Israel/Or-Yehuda/	Asia/Israel/Tel Aviv District/Or-Yehuda
-Asia/Israel/Petach-Tikva/	Asia/Israel/Central District/Petah Tikva
+Asia/Israel/Petach-Tikva/	Asia/Israel/Central District IL/Petah Tikva
 Asia/Israel/Petach-Tikva/*	Asia/Israel/South District/Petah Tikva
 Asia/Israel/Ramat-Hasharon/	Asia/Israel/Tel Aviv District/Ramat-Hasharon
-Asia/Israel/Rishon-Letsion/	Asia/Israel/Central District/Rishon-Letsion
-Asia/Israel/Rishpon/	Asia/Israel/Central District/Rishpon
-Asia/Israel/Sdema/	Asia/Israel/Central District/Sdema
-Asia/Israel/Shoham/	Asia/Israel/Central District/Shoham
+Asia/Israel/Rishon-Letsion/	Asia/Israel/Central District IL/Rishon-Letsion
+Asia/Israel/Rishpon/	Asia/Israel/Central District IL/Rishpon
+Asia/Israel/Sdema/	Asia/Israel/Central District IL/Sdema
+Asia/Israel/Shoham/	Asia/Israel/Central District IL/Shoham
 Asia/Israel/Tzfat/	Asia/Israel/North District/Zefat
 Asia/Israel/Yuvalim/	Asia/Israel/North District/Yuvalim
 Asia/Israel/Northern/Tiberias	Asia/Israel/North District/Tveria
 Asia/Israel/Northern/*	Asia/Israel/North District/*
-Asia/Israel/Central/Natanya	Asia/Israel/Central District/Netanya
+Asia/Israel/Central/Natanya	Asia/Israel/Central District IL/Netanya
 Asia/Israel/Central/Or Yehuda	Asia/Israel/Tel Aviv District/Or-Yehuda
 Asia/Israel/Central/Ramat Hasharon	Asia/Israel/Tel Aviv District/Ramat-Hasharon
 Asia/Israel/Central/Modi'In Ilit	Asia/Israel/Judea and Samaria/Modi'in Illit
-Asia/Israel/Central/Rishon Letzion	Asia/Israel/Central District/Rishon-Letsion
-Asia/Israel/Central/*	Asia/Israel/Central District/*
+Asia/Israel/Central/Rishon Letzion	Asia/Israel/Central District IL/Rishon-Letsion
+Asia/Israel/Central/*	Asia/Israel/Central District IL/*
 Asia/Israel/Southern Coast/*	Asia/Israel/South District/*
 Asia/Israel/Southern/Beer Sheva	Asia/Israel/South District/Beer-Sheva
 Asia/Israel/Southern/*	Asia/Israel/South District/*
 Asia/Israel/Cenral/Moi'In Ilit	Asia/Israel/Judea and Samaria/Modi'in Illit
-Asia/Israel/Cenral/Petachtikva	Asia/Israel/Central District/Petah Tikva
-Asia/Israel/Cenral/*	Asia/Israel/Central District/*
+Asia/Israel/Cenral/Petachtikva	Asia/Israel/Central District IL/Petah Tikva
+Asia/Israel/Cenral/*	Asia/Israel/Central District IL/*
 Asia/Israel/Judea and Samaria/מבוא חורון	Asia/Israel/Judea and Samaria/Mevo Horon
 Asia/Israel/Judea and Samaria/Ariel	Asia/Palestine/West Bank/Ariel
 Asia/Israel/Central District/Herzelia	Asia/Israel/Tel Aviv District/Herzelia
 Asia/Israel/Central District/Bat Yam	Asia/Israel/Tel Aviv District/Bat Yam
-Asia/Israel/Central District/Natanya	Asia/Israel/Central District/Netanya
-Asia/Israel/Central District/Rishon Letzion	Asia/Israel/Central District/Rishon-Letsion
-Asia/Israel/Central District/Petach Tikva	Asia/Israel/Central District/Petah Tikva
-Asia/Israel/Central District/Pardesiya	Asia/Israel/Central District/Pardesia
-Asia/Israel/Central District/Petachtikva	Asia/Israel/Central District/Petah Tikva
+Asia/Israel/Central District/Natanya	Asia/Israel/Central District IL/Netanya
+Asia/Israel/Central District/Rishon Letzion	Asia/Israel/Central District IL/Rishon-Letsion
+Asia/Israel/Central District/Petach Tikva	Asia/Israel/Central District IL/Petah Tikva
+Asia/Israel/Central District/Pardesiya	Asia/Israel/Central District IL/Pardesia
+Asia/Israel/Central District/Petachtikva	Asia/Israel/Central District IL/Petah Tikva
+Asia/Israel/Central District/*	Asia/Israel/Central District IL/*
 Asia/Israel/Nothtern District/*	Asia/Israel/North District/*
-Asia/Israel/Central Distrcit/Natanya	Asia/Israel/Central District/Netanya
-Asia/Israel/Central Distrcit/*	Asia/Israel/Central District/*
+Asia/Israel/Central Distrcit/Natanya	Asia/Israel/Central District IL/Netanya
+Asia/Israel/Central Distrcit/*	Asia/Israel/Central District IL/*
 Asia/Israel/*/Ramat Hasharon	Asia/Israel/Tel Aviv District/Ramat-Hasharon
 Asia/Israel/*/Or Yehuda	Asia/Israel/Tel Aviv District/Or-Yehuda
 Asia/Israel/*/Beni Brak	Asia/Israel/Tel Aviv District/Bnei Brak
@@ -8692,7 +8698,7 @@ Asia/Israel/North District/Tiberias	Asia/Israel/North District/Tveria
 Asia/Israel/Jerusalem District/Bet Shemesh	Asia/Israel/Jerusalem District/Beit Shemesh
 Asia/Israel/South District/Beer Sheva	Asia/Israel/South District/Beer-Sheva
 Asia/Israel/Hafia/*	Asia/Israel/Haifa District/*
-Asia/Israel/קרית עקרון/	Asia/Israel/Central District/Kiryat Ekron
+Asia/Israel/קרית עקרון/	Asia/Israel/Central District IL/Kiryat Ekron
 Asia/Israel/מודיעין עילית/	Asia/Israel/Judea and Samaria/Modi'in Illit
 Asia/India/Delhi/Delhi National Capital Region	Asia/India/Delhi/
 Asia/India/Delhi/Tuklakabad	Asia/India/Delhi/Tughlakabad
@@ -8815,6 +8821,7 @@ Asia/Bangladesh/Dhaka/Mirour-12	Asia/Bangladesh/Dhaka/Mirpur
 Asia/Bangladesh/Dhaka/East Mothertak	Asia/Bangladesh/Dhaka/
 Asia/Bangladesh/Dhaka/Mirpur-10	Asia/Bangladesh/Dhaka/Mirpur
 Asia/Bangladesh/Dhaka/Shahjahanpur	Asia/Bangladesh/Dhaka/Shahjahanpur BD
+Asia/Bangladesh/Dhaka/Jamalpur	Asia/Bangladesh/Dhaka/Jamalpur (Dhaka)
 Asia/Bangladesh/Unknown/	Asia/Bangladesh/Bangladesh/
 Asia/Bangladesh/Sylthet/*	Asia/Bangladesh/Sylhet/*
 Asia/Bangladesh/Habiganj/*	Asia/Bangladesh/Sylhet/Habiganj
@@ -8902,6 +8909,8 @@ Asia/Bangladesh/Jessore/*	Asia/Bangladesh/Khulna/*
 Asia/Bangladesh/Lalmonirhat/*	Asia/Bangladesh/Rangpur/*
 Asia/Bangladesh/Kurigram/*	Asia/Bangladesh/Rangpur/*
 Asia/Bangladesh/Rajshahi/Rajpara	Asia/Bangladesh/Rajshahi/Rajpara BD
+Asia/Bangladesh/Mymensingh/Jamalpur	Asia/Bangladesh/Mymensingh/Jamalpur (Mymensingh)
+Asia/Bangladesh/Sirajgonj/	Asia/Bangladesh/Rajshahi/Sirajgonj
 Asia/Thailand/Phatum Thani/	Asia/Thailand/Pathum Thani/
 Asia/Thailand/Samut Sakorn/*	Asia/Thailand/Samut Sakhon/*
 Asia/Thailand/Angthong/*	Asia/Thailand/Ang Thong/*
@@ -8917,6 +8926,7 @@ Asia/Thailand/Chonuri/*	Asia/Thailand/Chonburi/*
 Asia/Thailand/Suratthani/*	Asia/Thailand/Surat Thani/*
 Asia/Thailand/Nakhonratchasima/*	Asia/Thailand/Nakhon Ratchasima/*
 Asia/Thailand/Kamphaengphet/*	Asia/Thailand/Kamphaeng Phet/*
+Asia/Thailand/Mahasarakham/*	Asia/Thailand/Maha Sarakham/*
 Asia/Oman/Musca/	Asia/Oman/Muscat/
 Asia/Oman/Muscta/	Asia/Oman/Muscat/
 Asia/Oman/Buraymi/Buraymi	Asia/Oman/Buraimi/Buraimi
@@ -9358,7 +9368,7 @@ North America/USA/Illinois/Lake	North America/USA/Illinois/Lake County IL
 North America/USA/Illinois/Hancock County	North America/USA/Illinois/Hancock County IL
 North America/USA/Illinois/Williamson	North America/USA/Illinois/Williamson County IL
 North America/USA/Illinois/Perry	North America/USA/Illinois/Perry County IL
-North America/USA/Illinois/De Witt	North America/USA/Illinois/De Witt County
+North America/USA/Illinois/De Witt	North America/USA/Illinois/DeWitt County IL
 North America/USA/Illinois/Carroll	North America/USA/Illinois/Carroll County IL
 North America/USA/Illinois/Cumberland	North America/USA/Illinois/Cumberland County IL
 North America/USA/Illinois/Du Page County	North America/USA/Illinois/Dupage County
@@ -9870,7 +9880,7 @@ North America/USA/Illinois/Carbon Cliff	North America/USA/Illinois/Rock Island C
 North America/USA/Illinois/Prophetstown	North America/USA/Illinois/Whiteside County
 North America/USA/Illinois/Mount Olive	North America/USA/Illinois/Macoupin County
 North America/USA/Illinois/Fisher	North America/USA/Illinois/Champaign County IL
-North America/USA/Illinois/Farmer City	North America/USA/Illinois/De Witt County
+North America/USA/Illinois/Farmer City	North America/USA/Illinois/DeWitt County IL
 North America/USA/Illinois/Prairie Grove	North America/USA/Illinois/McHenry County IL
 North America/USA/Illinois/Catlin	North America/USA/Illinois/Vermilion County IL
 North America/USA/Illinois/Rockdale	North America/USA/Illinois/Will County IL
@@ -10253,7 +10263,7 @@ North America/USA/Illinois/Grand Ridge	North America/USA/Illinois/LaSalle County
 North America/USA/Illinois/Pesotum	North America/USA/Illinois/Champaign County IL
 North America/USA/Illinois/Cullom	North America/USA/Illinois/Livingston County IL
 North America/USA/Illinois/Hutsonville	North America/USA/Illinois/Crawford County IL
-North America/USA/Illinois/Wapella	North America/USA/Illinois/De Witt County
+North America/USA/Illinois/Wapella	North America/USA/Illinois/DeWitt County IL
 North America/USA/Illinois/Equality	North America/USA/Illinois/Gallatin County IL
 North America/USA/Illinois/Chadwick	North America/USA/Illinois/Carroll County IL
 North America/USA/Illinois/Rankin	North America/USA/Illinois/Vermilion County IL
@@ -10331,10 +10341,10 @@ North America/USA/Illinois/Ipava	North America/USA/Illinois/Fulton County IL
 North America/USA/Illinois/Sublette	North America/USA/Illinois/Lee County IL
 North America/USA/Illinois/Humboldt	North America/USA/Illinois/Coles County IL
 North America/USA/Illinois/Cutler	North America/USA/Illinois/Perry County IL
-North America/USA/Illinois/Weldon	North America/USA/Illinois/De Witt County
+North America/USA/Illinois/Weldon	North America/USA/Illinois/DeWitt County IL
 North America/USA/Illinois/Bay View Gardens	North America/USA/Illinois/Woodford County IL
 North America/USA/Illinois/Melvin	North America/USA/Illinois/Ford County IL
-North America/USA/Illinois/Waynesville	North America/USA/Illinois/De Witt County
+North America/USA/Illinois/Waynesville	North America/USA/Illinois/DeWitt County IL
 North America/USA/Illinois/Benson	North America/USA/Illinois/Woodford County IL
 North America/USA/Illinois/St. Rose	North America/USA/Illinois/Clinton County IL
 North America/USA/Illinois/Leaf River	North America/USA/Illinois/Ogle County IL
@@ -10403,7 +10413,7 @@ North America/USA/Illinois/Hanaford	North America/USA/Illinois/Franklin County I
 North America/USA/Illinois/West Union	North America/USA/Illinois/Clark County IL
 North America/USA/Illinois/Thebes	North America/USA/Illinois/Alexander County IL
 North America/USA/Illinois/Panama	North America/USA/Illinois/Bond County
-North America/USA/Illinois/Kenney	North America/USA/Illinois/De Witt County
+North America/USA/Illinois/Kenney	North America/USA/Illinois/DeWitt County IL
 North America/USA/Illinois/Winslow	North America/USA/Illinois/Stephenson County IL
 North America/USA/Illinois/Little York	North America/USA/Illinois/Warren County IL
 North America/USA/Illinois/Campbell Hill	North America/USA/Illinois/Jackson County IL
@@ -10727,6 +10737,8 @@ North America/USA/Illinois/Ogle County	North America/USA/Illinois/Ogle County IL
 North America/USA/Illinois/Will County	North America/USA/Illinois/Will County IL
 North America/USA/Illinois/Kane County	North America/USA/Illinois/Kane County IL
 North America/USA/Illinois/Jersey County	North America/USA/Illinois/Jersey County IL
+North America/USA/Illinois/Ford County	North America/USA/Illinois/Ford County IL
+North America/USA/Illinois/De Witt County	North America/USA/Illinois/DeWitt County IL
 North America/USA/Wisconsin/Monroe County	North America/USA/Wisconsin/Monroe County WI
 North America/USA/Wisconsin/Richland County	North America/USA/Wisconsin/Richland County WI
 North America/USA/Wisconsin/Grant County	North America/USA/Wisconsin/Grant County WI
@@ -15233,6 +15245,12 @@ North America/USA/Arizona/La Paz Co.	North America/USA/Arizona/La Paz County
 North America/USA/Arizona/Pennington	North America/USA/Arizona/
 North America/USA/Arizona/Lee	North America/USA/Arizona/
 North America/USA/Arizona/Yuma County	North America/USA/Arizona/Yuma County AZ
+North America/USA/Arizona/Taylor (Texas)	North America/USA/Texas/Williamson County TX
+North America/USA/Arizona/Cook	North America/USA/Arizona/
+North America/USA/Arizona/Placer	North America/USA/Arizona/
+North America/USA/Arizona/Hennepin	North America/USA/Arizona/
+North America/USA/Arizona/Alameda	North America/USA/Arizona/Maricopa County
+North America/USA/Arizona/Redwood	North America/USA/Arizona/
 North America/USA/Indiana/Marion County	North America/USA/Indiana/Marion County IN
 North America/USA/Indiana/Lake County	North America/USA/Indiana/Lake County IN
 North America/USA/Indiana/Jefferson County	North America/USA/Indiana/Jefferson County IN
@@ -21541,6 +21559,7 @@ North America/USA/Texas/Bell County	North America/USA/Texas/Bell County TX
 North America/USA/Texas/Robertson County	North America/USA/Texas/Robertson County TX
 North America/USA/Texas/Hidalgo County	North America/USA/Texas/Hidalgo County TX
 North America/USA/Texas/Colorado County	North America/USA/Texas/Colorado County TX
+North America/USA/Texas/LaSalle County	North America/USA/Texas/La Salle County
 North America/USA/Louisiana/Desoto Parish	North America/USA/Louisiana/DeSoto Parish
 North America/USA/Louisiana/St. Tammany Parish	North America/USA/Louisiana/St Tammany Parish
 North America/USA/Louisiana/St. Bernard Parish	North America/USA/Louisiana/St Bernard Parish
@@ -33713,6 +33732,7 @@ North America/USA/Michigan/Filer City	North America/USA/Michigan/Manistee County
 North America/USA/Michigan/Crystal Mountain	North America/USA/Michigan/Benzie County
 North America/USA/Michigan/Ponshewaing	North America/USA/Michigan/Emmet County MI
 North America/USA/Michigan/Pilgrim	North America/USA/Michigan/Benzie County
+North America/USA/Michigan/Arizona	North America/USA/Michigan/
 North America/USA/Ontario/	North America/USA/USA/
 North America/USA/Conneticut/	North America/USA/Connecticut/
 North America/USA/Conneticut/Hartford	North America/USA/Connecticut/Hartford County
@@ -38405,6 +38425,11 @@ North America/USA/Pacific/	North America/USA/USA/
 North America/USA/Xx/	North America/USA/USA/
 North America/USA/Massachusets/*	North America/USA/Massachusetts/*
 North America/USA/Massachusets/Suffolk	North America/USA/Massachusetts/Suffolk County MA
+North America/USA/Montana Fergus County/	North America/USA/Montana/Fergus County
+North America/USA/Montana Liberty County/	North America/USA/Montana/Liberty County MT
+North America/USA/Montana Granite County/	North America/USA/Montana/Granite County
+North America/USA/Montana Cascade County/	North America/USA/Montana/Cascade County
+North America/USA/Montana Missoula County/	North America/USA/Montana/Missoula County
 North America/Costa Rica/Tibas/	North America/Costa Rica/San Jose/Tibas
 North America/Costa Rica/Cartago/Tres Rios	North America/Costa Rica/Cartago CR/Tres Rios CR
 North America/Costa Rica/Cartago/Cartago	North America/Costa Rica/Cartago CR/Cartago CR
@@ -38878,6 +38903,7 @@ South America/Brazil/Mina Gerais/*	South America/Brazil/Minas Gerais/*
 South America/Brazil/Sp/*	South America/Brazil/São Paulo/*
 South America/Brazil/Es/*	South America/Brazil/Espirito Santo/*
 South America/Brazil/Ba/*	South America/Brazil/Bahia/*
+South America/Brazil/Goais/*	South America/Brazil/Goiás/*
 South America/Argentina/Cordoba/Cordoba	South America/Argentina/Cordoba AR/Cordoba AR
 South America/Argentina/Cordoba/Brikman	South America/Argentina/Cordoba AR/Brinkmann
 South America/Argentina/Cordoba/*	South America/Argentina/Cordoba AR/*
@@ -39086,7 +39112,7 @@ South America/Colombia/Antioquia/La Estrella	South America/Colombia/Antioquia/La
 South America/Colombia/Antioquia/Caldas	South America/Colombia/Antioquia/Caldas (Antioquia)
 South America/Colombia/Antioquia/San Roque	South America/Colombia/Antioquia/San Roque CO
 South America/Colombia/Antioquia/Retiro	South America/Colombia/Antioquia/Retiro CO
-South America/Colombia/Antioquia/San Pedro	South America/Colombia/Antioquia/San Pedro CO
+South America/Colombia/Antioquia/San Pedro	South America/Colombia/Antioquia/San Pedro (Antioquia)
 South America/Colombia/Antioquia/Amaga	South America/Colombia/Antioquia/Amagá
 South America/Colombia/Antioquia/Peñol	South America/Colombia/Antioquia/El Peñol
 South America/Colombia/Antioquia/Zaragoza	South America/Colombia/Antioquia/Zaragoza CO
@@ -39096,6 +39122,7 @@ South America/Colombia/Antioquia/La Union	South America/Colombia/Antioquia/La Un
 South America/Colombia/Antioquia/El Carmen	South America/Colombia/Antioquia/Carmen de Viboral
 South America/Colombia/Antioquia/Caceres	South America/Colombia/Antioquia/Caceres CO
 South America/Colombia/Antioquia/San Rafael	South America/Colombia/Antioquia/San Rafael CO
+South America/Colombia/Antioquia/San Pedro CO	South America/Colombia/Antioquia/San Pedro (Antioquia)
 South America/Colombia/Boyaca/Santana	South America/Colombia/Boyaca/Santana CO
 South America/Colombia/Caquetá/*	South America/Colombia/Caqueta/*
 South America/Colombia/San Andres/	South America/Colombia/San Andres y Providencia/San Andres
@@ -39116,6 +39143,9 @@ South America/Colombia/Vaupez/*	South America/Colombia/Vaupes/*
 South America/Colombia/Bolivar CO/San Cristobal	South America/Colombia/Bolivar CO/San Cristobal CO
 South America/Colombia/Quindío/*	South America/Colombia/Quindio/*
 South America/Colombia/Magdalena/Santa Ana	South America/Colombia/Magdalena/Santa Ana CO
+South America/Colombia/Bogota/Bogota	South America/Colombia/Cundinamarca/Bogota
+South America/Colombia/Bogota/	South America/Colombia/Cundinamarca/Bogota
+South America/Colombia/Sucre/San Pedro	South America/Colombia/Sucre/San Pedro (Sucre)
 South America/Peru/Cusco/*	South America/Peru/Cuzco/*
 South America/Peru/Lima/Canete	South America/Peru/Lima/Cañete
 South America/Peru/Lima/San Isidro	South America/Peru/Lima/San Isidro PE
@@ -39275,7 +39305,7 @@ Africa/South Africa/Kwazulu-Natal/Umkhanyakude	Africa/South Africa/KwaZulu-Natal
 Africa/South Africa/Kwazulu-Natal/Amathole	Africa/South Africa/KwaZulu-Natal/
 Africa/South Africa/Kwazulu-Natal/King Cetswayo	Africa/South Africa/KwaZulu-Natal/King Cetshwayo
 Africa/South Africa/Kwazulu-Natal/*	Africa/South Africa/KwaZulu-Natal/*
-Africa/South Africa/North West/*	Africa/South Africa/North-West/*
+Africa/South Africa/North West/*	Africa/South Africa/North-West ZA/
 Africa/South Africa/Eastern Cape/Nelson Mandela Bay Metropolitan Municipality	Africa/South Africa/Eastern Cape/Nelson Mandela Bay
 Africa/South Africa/Eastern Cape/Chris Hani Distict Municipality	Africa/South Africa/Eastern Cape/Chris Hani
 Africa/South Africa/Eastern Cape/Sarah Baartman Distrct Municipality	Africa/South Africa/Eastern Cape/Sarah Baartman
@@ -39303,6 +39333,7 @@ Africa/South Africa/Mpumalanga/Middelburg	Africa/South Africa/Mpumalanga/Middelb
 Africa/South Africa/Cape Town/	Africa/South Africa/Western Cape Province/Cape Town
 Africa/South Africa/Gauteng/Johannesburg	Africa/South Africa/Gauteng/Johannesburg Metro
 Africa/South Africa/Unknown/	Africa/South Africa/South Africa/
+Africa/South Africa/North-West/*	Africa/South Africa/North-West ZA/
 Africa/Democratic Republic of the Congo/Sud-Kivu/*	Africa/Democratic Republic of the Congo/Sud Kivu/*
 Africa/Democratic Republic of the Congo/Nord-Kivu/*	Africa/Democratic Republic of the Congo/Nord Kivu/*
 Africa/Democratic Republic of the Congo/Haut Katanga/*	Africa/Democratic Republic of the Congo/Haut-Katanga/*
@@ -39535,7 +39566,7 @@ Italy/Apulia/Bari/	Europe/Italy/Apulia/Bari
 North Macedonia/Kochani/Kochani/	Europe/North Macedonia/Eastern Region MK/Kochani
 North Macedonia/Kavadarci/Kavadarci/	Europe/North Macedonia/Kavadarci/Kavadarci
 Afirica/Morocoo/Ouarzazate/	Africa/Morocco/Ouarzazate/
-Israel/Asia/Central/	Asia/Israel/Central District/
+Israel/Asia/Central/	Asia/Israel/Central District IL/
 Israel/Asia/Asia/	Asia/Israel/Israel/
 Israel/Asia/Southern/	Asia/Israel/South District/
 */Georgia/*/*	Asia/Georgia/*/*
@@ -39691,3 +39722,8 @@ Soth America/Brazil/Espirito Santo/Barra de Sao Francisco	South America/Brazil/E
 Soth America/Brazil/Espirito Santo/Viana	South America/Brazil/Espirito Santo/Viana BR
 Soth America/*/*/*	South America/*/*/*
 Mexico/Baja California/Tijuana/	North America/Mexico/Baja California/Tijuana
+North Americal/*/*/*	North America/*/*/*
+South Smerica/*/*/*	South America/*/*/*
+Central Asia/*/*/*	Asia/*/*/*
+USA/Montana/Montana/	North America/USA/Montana/
+USA/Montana//	North America/USA/Montana/
