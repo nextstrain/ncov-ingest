@@ -6965,6 +6965,7 @@ Europe/Spain/Pais Vasco/*	Europe/Spain/Basque Country/*
 Europe/Spain/Valence/	Europe/Spain/Comunitat Valenciana/
 Europe/Spain/Asturiash/*	Europe/Spain/Asturias/*
 Europe/Spain/Balearic Island/*	Europe/Spain/Balear Islands/*
+Europe/Spain/Cadiz/Rota	Europe/Spain/Andalusia/Rota
 Europe/Sweden/Västerbotten/	Europe/Sweden/Vasterbotten/
 Europe/Sweden/Västra Götaland/*	Europe/Sweden/Vastra Gotaland/*
 Europe/Sweden/Unknown/	Europe/Sweden/Sweden/
@@ -21785,6 +21786,7 @@ North America/USA/Texas/LaSalle County	North America/USA/Texas/La Salle County
 North America/USA/Texas/Marion County	North America/USA/Texas/Marion County TX
 North America/USA/Texas/Smith County	North America/USA/Texas/Smith County TX
 North America/USA/Texas/Wilson County	North America/USA/Texas/Wilson County TX
+North America/USA/Texas/Jackson County	North America/USA/Texas/Jackson County TX
 North America/USA/Louisiana/Desoto Parish	North America/USA/Louisiana/DeSoto Parish
 North America/USA/Louisiana/St. Tammany Parish	North America/USA/Louisiana/St Tammany Parish
 North America/USA/Louisiana/St. Bernard Parish	North America/USA/Louisiana/St Bernard Parish
@@ -29019,6 +29021,7 @@ North America/USA/Maryland/Waterview	North America/USA/Maryland/Wicomico County
 North America/USA/Maryland/Middleburg	North America/USA/Maryland/Washington County MD
 North America/USA/Maryland/West Denton	North America/USA/Maryland/Caroline County MD
 North America/USA/Maryland/Port Tobacco Village	North America/USA/Maryland/Charles County
+North America/USA/Maryland/Harford	North America/USA/Maryland/Harford County
 North America/USA/New York County/*	North America/USA/New York/*
 North America/USA/Tennessee/Shelby	North America/USA/Tennessee/Shelby County TN
 North America/USA/Tennessee/Shelby County	North America/USA/Tennessee/Shelby County TN
@@ -30741,6 +30744,8 @@ North America/USA/Florida/Collier	North America/USA/Florida/Collier County
 North America/USA/Florida/Hillsborough	North America/USA/Florida/Hillsborough County FL
 North America/USA/Florida/Pasco	North America/USA/Florida/Pasco County
 North America/USA/Florida/Hillsborough County	North America/USA/Florida/Hillsborough County FL
+North America/USA/Florida/Lee	North America/USA/Florida/Lee County FL
+North America/USA/Florida/Charlotte	North America/USA/Florida/Charlotte County
 North America/USA/DC/*	North America/USA/Washington DC/*
 North America/USA/Virgin Islands of the U.S./*	North America/USA/Virgin Islands/*
 North America/USA/Ae/	North America/USA/USA/
@@ -34361,6 +34366,7 @@ North America/USA/Mississippi/Diberville	North America/USA/Mississippi/Harrison 
 North America/USA/Mississippi/Steens	North America/USA/Mississippi/Lowndes County MS
 North America/USA/Mississippi/Belden	North America/USA/Mississippi/Lee County MS
 North America/USA/Mississippi/Sarah	North America/USA/Mississippi/Tate County
+North America/USA/Mississippi/Benton	North America/USA/Mississippi/Yazoo County
 North America/USA/Ng/	North America/USA/USA/
 North America/USA/Cb/*	North America/USA/California/*
 North America/USA/Arkansas/Little Rock	North America/USA/Arkansas/Pulaski County AR
@@ -38681,6 +38687,9 @@ North America/USA/Montana Liberty County/	North America/USA/Montana/Liberty Coun
 North America/USA/Montana Granite County/	North America/USA/Montana/Granite County
 North America/USA/Montana Cascade County/	North America/USA/Montana/Cascade County
 North America/USA/Montana Missoula County/	North America/USA/Montana/Missoula County
+North America/USA/Brooklyn/New York	North America/USA/New York/Kings County NY
+North America/USA/Bronx/New York	North America/USA/New York/Bronx County
+North America/USA/Us Virgin Islands/*	North America/USA/Virgin Islands/*
 North America/Costa Rica/Tibas/	North America/Costa Rica/San Jose/Tibas
 North America/Costa Rica/Cartago/Tres Rios	North America/Costa Rica/Cartago CR/Tres Rios CR
 North America/Costa Rica/Cartago/Cartago	North America/Costa Rica/Cartago CR/Cartago CR
@@ -38837,9 +38846,11 @@ North America/Guatemala/Guatemala/Palencia	North America/Guatemala/Guatemala/Pal
 North America/Guatemala/Guatemala/Lo de Fuente	North America/Guatemala/Guatemala/Lo de Fuentes
 North America/Guatemala/Guatemala/Guazacapan	North America/Guatemala/Santa Rosa/Guazacapan
 North America/Guatemala/Guatemala/San Pedro Sacatepéquez	North America/Guatemala/Guatemala/San Pedro Sacatepequez
+North America/Guatemala/Guatemala/San José Pinula	North America/Guatemala/Guatemala/San Jose Pinula
 North America/Guatemala/Zacapa/La Union	North America/Guatemala/Zacapa/La Union GT
 North America/Guatemala/San Marcos/Malacatancito	North America/Guatemala/Huehuetenango/Malacatancito
 North America/Guatemala/San Marcos/San Lorenzo	North America/Guatemala/San Marcos/San Lorenzo GT
+North America/Guatemala/San Marcos/San Miguel	North America/Guatemala/San Marcos/San Miguel GT
 North America/Guatemala/Santa Lucía Cotzumalguapa/	North America/Guatemala/Escuintla/Santa Lucía Cotzumalguapa
 North America/Guatemala/San Raymundo/	North America/Guatemala/Guatemala/San Raymundo
 North America/Guatemala/Chimaltenango/Zaragoza	North America/Guatemala/Chimaltenango/Zaragoza GT
@@ -38847,7 +38858,9 @@ North America/Guatemala/Totonicapán/*	North America/Guatemala/Totonicapan/*
 North America/Guatemala/Villa Nueva/	North America/Guatemala/Guatemala/Villa Nueva
 North America/Guatemala/San Pedro Ayampuc/	North America/Guatemala/Guatemala/San Pedro Ayampuc
 North America/Guatemala/El Progreso/San Cristobal	North America/Guatemala/El Progreso/San Cristobal GT
+North America/Guatemala/El Progreso/San Agustín	North America/Guatemala/El Progreso/San Agustín Acasaguastlán
 North America/Guatemala/Alta Verapaz/Coban	North America/Guatemala/Alta Verapaz/Cobán
+North America/Guatemala/Sacatepéquez/*	North America/Guatemala/Sacatepequez/*
 North America/Turks and Caicos Islands/Turks and Caicos Islands/	Europe/United Kingdom/Turks and Caicos Islands/
 North America/Turks and Caicos Islands//	Europe/United Kingdom/Turks and Caicos Islands/
 North America/Guadeloupe/Trois-Rivieres/*	North America/Guadeloupe/Trois-Rivières/*
@@ -39067,6 +39080,7 @@ South America/Brazil/Pernambuco/Flores	South America/Brazil/Pernambuco/Flores BR
 South America/Brazil/Pernambuco/Aracoiaba	South America/Brazil/Pernambuco/Aracoiaba (Pernambuco)
 South America/Brazil/Pernambuco/Betania	South America/Brazil/Pernambuco/Betania BR
 South America/Brazil/Pernambuco/Palmares	South America/Brazil/Pernambuco/Palmares BR
+South America/Brazil/Pernambuco/Ananindeua	South America/Brazil/Para/Ananindeua
 South America/Brazil/Maranhão/Rosario	South America/Brazil/Maranhão/Rosario BR
 South America/Brazil/Maranhão/São Luis	South America/Brazil/Maranhão/Sao Luis
 South America/Brazil/Maranhão/São Jose de Ribamar	South America/Brazil/Maranhão/Sao Jose de Ribamar
@@ -39188,7 +39202,7 @@ South America/Argentina/Buenos Aires/San Nicolas	South America/Argentina/Buenos 
 South America/Argentina/Buenos Aires/Salto	South America/Argentina/Buenos Aires/Salto AR
 South America/Argentina/Buenos Aires/Avellaneda	South America/Argentina/Buenos Aires/Avellaneda (Buenos Aires)
 South America/Argentina/Santa Fe/Santa Fe	South America/Argentina/Santa Fe/Santa Fe AR
-South America/Argentina/Santa Fe/San Carlos	South America/Argentina/Santa Fe/San Carlos AR
+South America/Argentina/Santa Fe/San Carlos	South America/Argentina/Santa Fe/San Carlos (Santa Fe)
 South America/Argentina/Santa Fe/Avellaneda	South America/Argentina/Santa Fe/Avellaneda (Santa Fe)
 South America/Argentina/Santa Fe/Santa Isabel	South America/Argentina/Santa Fe/Santa Isabel AR
 South America/Argentina/Santa Fe/Rosario	South America/Argentina/Santa Fe/Rosario AR
@@ -39196,6 +39210,7 @@ South America/Argentina/Santa Fe/San Lorenzo	South America/Argentina/Santa Fe/Sa
 South America/Argentina/Santa Fe/Santo Domingo	South America/Argentina/Santa Fe/Santo Domingo AR
 South America/Argentina/Santa Fe/San Cristobal	South America/Argentina/Santa Fe/San Cristobal AR
 South America/Argentina/Santa Fe/Gdor Crespo	South America/Argentina/Santa Fe/Gobernador Crespo
+South America/Argentina/Santa Fe/San Carlos AR	South America/Argentina/Santa Fe/San Carlos (Santa Fe)
 South America/Argentina/Cordoba AR/Brikman	South America/Argentina/Cordoba AR/Brinkmann
 South America/Argentina/Cordoba AR/San Francisco	South America/Argentina/Cordoba AR/San Francisco AR
 South America/Argentina/Cordoba AR/Oliva	South America/Argentina/Cordoba AR/Oliva AR
@@ -39230,6 +39245,7 @@ South America/Argentina/Entre Rios/Concordia	South America/Argentina/Entre Rios/
 South America/Argentina/Entre Rios/Colon	South America/Argentina/Entre Rios/Colon (Entre Rios)
 South America/Argentina/Jujuy/El Carmen	South America/Argentina/Jujuy/El Carmen AR
 South America/Argentina/Neuquen/Las Lajas	South America/Argentina/Neuquen/Las Lajas AR
+South America/Argentina/Salta/San Carlos	South America/Argentina/Salta/San Carlos (Salta)
 South America/Ecuador/Quito/	South America/Ecuador/Pichincha/Quito
 South America/Ecuador/Guayaquil/	South America/Ecuador/Guayas/Guayaquil
 South America/Ecuador/Carchi/Reciento	South America/Ecuador/Carchi/Awa Reserve
@@ -39655,6 +39671,7 @@ Africa/Nigeria/Akwa Ibom/*	Africa/Nigeria/Akwa-Ibom/*
 Africa/Nigeria/Delta State/*	Africa/Nigeria/Delta/*
 Africa/Nigeria/Kaduna/*	Africa/Nigeria/Kaduna State/*
 Africa/Nigeria/Bayelsa/*	Africa/Nigeria/Bayelsa State/*
+Africa/Nigeria/Kumbotso/	Africa/Nigeria/Kano State/Kumbotso
 Africa/Côte D'Ivoire/Boauké/	Africa/Côte d'Ivoire/Bouaké/
 Africa/Côte D'Ivoire/Brobo/	Africa/Côte d'Ivoire/Bouaké/Brobo
 Africa/Côte D'Ivoire/*/*	Africa/Côte d'Ivoire/*/*
@@ -39746,6 +39763,7 @@ Africa/Ghana/Northern Region/*	Africa/Ghana/Northern Region GH/*
 Africa/Ghana/Eastern Region/*	Africa/Ghana/Eastern Region GH/*
 Africa/Ghana/Eastern Region/Akyem Mansa	Africa/Ghana/Eastern Region GH/Akyemansa
 Africa/Ghana/Eastern Region GH/Akyem Mansa	Africa/Ghana/Eastern Region GH/Akyemansa
+Africa/Ghana/Western Region/Koforidua	Africa/Ghana/Eastern Region GH/Koforidua
 Africa/La Reunion/Saint-Denis/	Europe/France/Réunion/Saint-Denis de la Réunion
 Africa/La Reunion/Saint-Benoit/	Europe/France/Réunion/Saint-Benoit
 Africa/Martinique/Fort-de-France/	Europe/France/Martinique/Fort-de-France
@@ -39772,6 +39790,7 @@ Africa/Angola/Luanda/Viana	Africa/Angola/Luanda/Viana AO
 Africa/Angola/Luanda/C Sequele	Africa/Angola/Luanda/Cacuaco
 Africa/Angola/C. Cubango/*	Africa/Angola/Cuando Cubango/*
 Africa/Angola/Capalacassa/Tchinjenje	Africa/Angola/Huambo/Tchindjenje
+Africa/Angola/Huila/*	Africa/Angola/Huila AO/*
 Africa/Uganda/Central/*	Africa/Uganda/Central Uganda/*
 Africa/Zambia/Central/*	Africa/Zambia/Central Zambia/*
 Africa/Zambia/Southern/*	Africa/Zambia/Southern Zambia/*
