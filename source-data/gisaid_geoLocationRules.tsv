@@ -54,6 +54,7 @@ Europe/Netherlands/Loon/	Europe/Netherlands/North Brabant/Loon
 Europe/Netherlands/Drenthe/Wildervank	Europe/Netherlands/Groningen/Wildervank
 Europe/Netherlands/Graauw/	Europe/Netherlands/Zeeland/Graauw
 Europe/Netherlands/Breda/	Europe/Netherlands/North Brabant/Breda NL
+Europe/Netherlands/Etten-Leur/	Europe/Netherlands/North Brabant/Etten-Leur
 Europe/France/Grand-Est/*	Europe/France/Grand Est/*
 Europe/France/Hauts-de-France/Crépy-en -Valois	Europe/France/Hauts de France/Crépy en Valois
 Europe/France/Hauts-de-France/Pontoise	Europe/France/Ile de France/Pontoise
@@ -8437,6 +8438,20 @@ Europe/Slovakia/Slovenska Kajna/	Europe/Slovakia/Prešov/Slovenska Kajna
 Europe/Slovakia/Blatne/	Europe/Slovakia/Bratislava/Blatne
 Europe/Slovakia/Bajany/	Europe/Slovakia/Kosice/Bajany
 Europe/Slovakia/Chvojnica/	Europe/Slovakia/Trenčín/Chvojnica, district Myjava
+Europe/Slovakia/Velke Dvorany/	Europe/Slovakia/Nitra/Velke Dvorany
+Europe/Slovakia/Nizna Jedlova/	Europe/Slovakia/Prešov/Nizna Jedlova
+Europe/Slovakia/Jablon/	Europe/Slovakia/Prešov/Jablon
+Europe/Slovakia/Gocovo/	Europe/Slovakia/Kosice/Gocovo
+Europe/Slovakia/Slanec/	Europe/Slovakia/Kosice/Slanec
+Europe/Slovakia/Hazlin/	Europe/Slovakia/Prešov/Hazlin
+Europe/Slovakia/Bystre/	Europe/Slovakia/Prešov/Bystre
+Europe/Slovakia/Hrabovcik/	Europe/Slovakia/Prešov/Hrabovcik
+Europe/Slovakia/Hylov/	Europe/Slovakia/Kosice/Hylov
+Europe/Slovakia/Giglovce/	Europe/Slovakia/Prešov/Giglovce
+Europe/Slovakia/Modra/	Europe/Slovakia/Bratislava/Modra
+Europe/Slovakia/Mala Domasa/	Europe/Slovakia/Prešov/Mala Domasa
+Europe/Slovakia/Tovarne/	Europe/Slovakia/Prešov/Tovarne
+Europe/Slovakia/Pavlovce/	Europe/Slovakia/Slovakia/
 Europe/Denmark/Na/	Europe/Denmark/Denmark/
 Europe/Denmark/Na/*	Europe/Denmark//*
 Europe/Ireland/Limerick/Limerick County	Europe/Ireland/Limerick/
@@ -8904,6 +8919,7 @@ Asia/Israel/South District/Beer Sheva	Asia/Israel/South District/Beer-Sheva
 Asia/Israel/Hafia/*	Asia/Israel/Haifa District/*
 Asia/Israel/קרית עקרון/	Asia/Israel/Central District IL/Kiryat Ekron
 Asia/Israel/מודיעין עילית/	Asia/Israel/Judea and Samaria/Modi'in Illit
+Asia/Israel/Herzliya/	Asia/Israel/Tel Aviv District/Herzelia
 Asia/India/Delhi/Delhi National Capital Region	Asia/India/Delhi/
 Asia/India/Delhi/Tuklakabad	Asia/India/Delhi/Tughlakabad
 Asia/India/Jammu and Kashmir/Kargil	Asia/India/Ladakh/Kargil
@@ -9328,6 +9344,7 @@ Asia/Malaysia/Rembau/	Asia/Malaysia/Negeri Sembilan/Rembau
 Asia/Malaysia/Bukit Bintang/	Asia/Malaysia/Kuala Lumpur/Bukit Bintang
 Asia/Malaysia/Salak/	Asia/Malaysia/Kuala Lumpur/Salak
 Asia/Malaysia/Dengkil/	Asia/Malaysia/Selangor/Dengkil
+Asia/Malaysia/Wp Kuala Lumpur/*	Asia/Malaysia/Kuala Lumpur/*
 Asia/Bangaldesh/*/*	Asia/Bangladesh/*/*
 Asia/Georgia/Georgia/*	Asia/Georgia/Georgia (Asia)/*
 Asia/Georgia//	Asia/Georgia/Georgia (Asia)/
@@ -9413,6 +9430,13 @@ Asia/Maldives/Gdh. Gadhdhoo/	Asia/Maldives/Gaafu Dhaalu Atoll/Gadhdhoo
 Asia/Maldives/Gdh. Thinadhoo/	Asia/Maldives/Gaafu Dhaalu Atoll/Thinadhoo
 Asia/Maldives/Himandhoo/	Asia/Maldives/Alif Alif Atoll/Himandhoo
 Asia/Maldives/Maafushi/	Asia/Maldives/Kaafu Atoll/Maafushi
+Asia/Srilanka/*/*	Asia/Sri Lanka/*/*
+Asia/Srilanka/Piliyandala/	Asia/Sri Lanka/Western Province/Piliyandala
+Asia/Srilanka/Nugegoda/	Asia/Sri Lanka/Western Province/Nugegoda
+Asia/Srilanka/Sri Jayawardenepura Kotte/	Asia/Sri Lanka/Western Province/Sri Jayawardenepura Kotte
+Asia/Srilanka/Malabe/	Asia/Sri Lanka/Western Province/Malabe
+Asia/Srilanka/Kadawatha/	Asia/Sri Lanka/Western Province/Kadawatha
+Asia/Srilanka/Jaffna/	Asia/Sri Lanka/Northern Province/Jaffna
 North America/Mexico/Baja California sur/*	North America/Mexico/Baja California Sur/*
 North America/Mexico/Coahuila de Zaragoza/*	North America/Mexico/Coahuila/*
 North America/Mexico/Ciudad de Mexico/*	North America/Mexico/Mexico City/*
@@ -14100,6 +14124,7 @@ North America/USA/Washington/San Juan	North America/USA/Washington/San Juan Coun
 North America/USA/Washington/San Juan County	North America/USA/Washington/San Juan County WA
 North America/USA/Washington/Columbia County	North America/USA/Washington/Columbia County WA
 North America/USA/Washington/District of Columbia	North America/USA/Washington DC/District of Columbia County
+North America/USA/Washington/Skamina County	North America/USA/Washington/Skamania County
 North America/USA/New York/Orange County	North America/USA/New York/Orange County NY
 North America/USA/New York/Franklin County	North America/USA/New York/Franklin County NY
 North America/USA/New York/Jefferson County	North America/USA/New York/Jefferson County NY
@@ -34960,7 +34985,6 @@ North America/USA/North America/Oregon,Yamhill County	North America/USA/Oregon/Y
 North America/USA/North America/Oregon,Crook County	North America/USA/Oregon/Crook County OR
 North America/USA/North America/Oregon,Lake County	North America/USA/Oregon/Lake County OR
 North America/USA/Virginia/Frederick County	North America/USA/Virginia/Frederick County VA
-North America/USA/Virginia/Virginia Beach	North America/USA/Virginia/Virginia Beach County
 North America/USA/Virginia/Richmond	North America/USA/Virginia/Richmond County VA
 North America/USA/Virginia/Arlington	North America/USA/Virginia/Arlington County
 North America/USA/Virginia/Roanoke	North America/USA/Virginia/Roanoke County
@@ -35543,6 +35567,7 @@ North America/USA/Virginia/Greenbackville	North America/USA/Virginia/Accomack Co
 North America/USA/Virginia/Norfolk County VA	North America/USA/Virginia/Norfolk VA
 North America/USA/Virginia/Norfolk	North America/USA/Virginia/Norfolk VA
 North America/USA/Virginia/Alexandria	North America/USA/Virginia/Alexandria VA
+North America/USA/Virginia/Virginia Beach County	North America/USA/Virginia/Virginia Beach
 North America/USA/Los Angeles/	North America/USA/California/Los Angeles County
 North America/USA/Puerto Rico/Florida	North America/USA/Puerto Rico/Florida PR
 North America/USA/Puerto Rico/San Juan	North America/USA/Puerto Rico/San Juan PR
@@ -38922,6 +38947,7 @@ North America/USA Florida//	North America/USA/Florida/
 North America/USA Kansas/USA Kansas/	North America/USA/Kansas/
 North America/USA Kansas//	North America/USA/Kansas/
 North America/Anguilla/Anguilla/*	Europe/United Kingdom/Anguilla/*
+North America/Anguilla//	Europe/United Kingdom/Anguilla/
 North America/Barbados/Caribbean/*	North America/Barbados/Barbados/*
 North America/Dominica/Caribbean/*	North America/Dominica/Dominica/*
 North America/Grenada/Caribbean/*	North America/Grenada/Grenada/*
@@ -38929,6 +38955,7 @@ North America/Jamaica/Caribbean/*	North America/Jamaica/Jamaica/*
 North America/Saint Kitts and Nevis/Caribbean/*	North America/Saint Kitts and Nevis/Saint Kitts and Nevis/*
 North America/Montserrat/Caribbean/*	Europe/United Kingdom/Montserrat/*
 North America/Montserrat/Montserrat/*	Europe/United Kingdom/Montserrat/*
+North America/Montserrat//	Europe/United Kingdom/Montserrat/
 North America/Saint Lucia/Caribbean/*	North America/Saint Lucia/Saint Lucia/*
 North America/Saint Vincent and the Grenadines/Caribbean/*	North America/Saint Vincent and the Grenadines/Saint Vincent and the Grenadines/*
 South America/Brazil/Espírito Santo/*	South America/Brazil/Espirito Santo/*
@@ -39429,6 +39456,7 @@ South America/Chile/Region de Coquimbo/*	South America/Chile/Coquimbo/*
 South America/Chile/Region de Valparaiso/*	South America/Chile/Valparaiso/*
 South America/Chile/Region de Valparaiso/San Antonio	South America/Chile/Valparaiso/San Antonio CL
 South America/Chile/Region Metropolitana/*	South America/Chile/Region Metropolitana de Santiago/*
+South America/Chile/Antofagasta./*	South America/Chile/Antofagasta/*
 South America/Colombia/Cundinamarca/Madrid	South America/Colombia/Cundinamarca/Madrid CO
 South America/Colombia/Cundinamarca/Tolemaida	South America/Colombia/Tolima/Tolemaida
 South America/Colombia/Cundinamarca/Cajicá	South America/Colombia/Cundinamarca/Cajica
@@ -39882,6 +39910,22 @@ Africa/Botswana/Selebi Phikwe/	Africa/Botswana/Central District BW/Selebi Phikwe
 Africa/Botswana/Paje/	Africa/Botswana/Central District BW/Paje
 Africa/Botswana/Malatswai/	Africa/Botswana/Central District BW/Malatswai
 Africa/Botswana/Mabeleapudi/	Africa/Botswana/Central District BW/Mabeleapudi
+Africa/Botswana/Mochud/*	Africa/Botswana/Mochudi/*
+Africa/Botswana/Bokaa/	Africa/Botswana/Kgatleng District/Bokaa
+Africa/Botswana/Tlokweng/	Africa/Botswana/Southern East/Tlokweng
+Africa/Botswana/Molepolole/	Africa/Botswana/Kweneng District/Molepolole
+Africa/Botswana/Hukuntsi/	Africa/Botswana/Kgalagadi District/Hukuntsi
+Africa/Botswana/Rasesa/	Africa/Botswana/Kgatleng District/Rasesa
+Africa/Botswana/Modipane/	Africa/Botswana/Kgatleng District/Modipane
+Africa/Botswana/Oodi/	Africa/Botswana/Kgatleng District/Oodi
+Africa/Botswana/Kanye/	Africa/Botswana/Southern District/Kanye
+Africa/Botswana/Mahalapye/	Africa/Botswana/Central District BW/Mahalapye
+Africa/Botswana/Kopong/	Africa/Botswana/Kweneng District/Kopong
+Africa/Botswana/Kgalagadi/	Africa/Botswana/Kgalagadi District/
+Africa/Botswana/Digawana/	Africa/Botswana/Southern District/Digawana
+Africa/Botswana/Morwa/	Africa/Botswana/Kgatleng District/Morwa
+Africa/Botswana/Letlhakeng/	Africa/Botswana/Kweneng District/Letlhakeng
+Africa/Botswana/Phaphane/	Africa/Botswana/Botswana/
 Africa/Congo/*/*	Africa/Republic of the Congo/*/*
 Africa/Guyane/Cayenne/	Europe/France/French Guiana/Cayenne (French Guiana)
 Africa/Mauritius/Plaine Wilhems/*	Africa/Mauritius/Plaine-Wilhems/*
@@ -39908,6 +39952,7 @@ Africa/Kenya/Kyadondo/	Africa/Kenya/Kenya/
 Africa/Kenya/North Kivu/	Africa/Kenya/Kenya/
 Africa/Kenya/Hhohho/*	Africa/Eswatini/Hhohho/*
 Africa/Kenya/Manzini/*	Africa/Eswatini/Manzini/*
+Africa/Kenya/Lubombo/	Africa/Kenya/Kenya/
 Africa/Canary Islands/Madrid/*	Europe/Spain/Madrid/*
 Africa/Canary Islands/Canary Islands/*	Europe/Spain/Canary Islands/*
 Africa/Canary Islands//	Europe/Spain/Canary Islands/
@@ -39932,6 +39977,7 @@ Africa/Guinea/Dubreka/	Africa/Guinea/Dubréka/
 Africa/Guinea/Guekedou/	Africa/Guinea/Gueckedou/
 Africa/Guinea/Siguri/	Africa/Guinea/Siguiri/
 Africa/Algeria/Alger/	Africa/Algeria/Algiers/Alger
+Africa/Algeria/Eddis/	Africa/Algeria/M'Sila Province/Eddis
 Africa/Liberia/Maryland/	Africa/Liberia/Maryland LR/
 Africa/Zimbabwe/Mash. East/*	Africa/Zimbabwe/Mashonaland East Province/*
 Italy/Apulia/Bari/	Europe/Italy/Apulia/Bari
