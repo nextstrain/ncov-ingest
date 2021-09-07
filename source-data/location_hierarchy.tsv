@@ -107,6 +107,7 @@ Africa	Benin	Oueme
 Africa	Botswana	Botswana	
 Africa	Botswana	Central District BW	
 Africa	Botswana	Central District BW	Mabeleapudi
+Africa	Botswana	Central District BW	Mahalapye
 Africa	Botswana	Central District BW	Malatswai
 Africa	Botswana	Central District BW	Mmashoro
 Africa	Botswana	Central District BW	Paje
@@ -121,6 +122,18 @@ Africa	Botswana	Ghanzi District
 Africa	Botswana	Ghanzi District	Mamuno
 Africa	Botswana	Goodhope	
 Africa	Botswana	Kasane	
+Africa	Botswana	Kgalagadi District	
+Africa	Botswana	Kgalagadi District	Hukuntsi
+Africa	Botswana	Kgatleng District	
+Africa	Botswana	Kgatleng District	Bokaa
+Africa	Botswana	Kgatleng District	Modipane
+Africa	Botswana	Kgatleng District	Morwa
+Africa	Botswana	Kgatleng District	Oodi
+Africa	Botswana	Kgatleng District	Rasesa
+Africa	Botswana	Kweneng District	
+Africa	Botswana	Kweneng District	Kopong
+Africa	Botswana	Kweneng District	Letlhakeng
+Africa	Botswana	Kweneng District	Molepolole
 Africa	Botswana	Lobatse	
 Africa	Botswana	Maun	
 Africa	Botswana	Mochudi	
@@ -133,10 +146,13 @@ Africa	Botswana	Pitsane
 Africa	Botswana	Rakhuna	
 Africa	Botswana	Sikwane	
 Africa	Botswana	Southern District	
+Africa	Botswana	Southern District	Digawana
 Africa	Botswana	Southern District	Jwaneng
+Africa	Botswana	Southern District	Kanye
 Africa	Botswana	Southern District	Mmathethe
 Africa	Botswana	Southern East	
 Africa	Botswana	Southern East	Ramotswa
+Africa	Botswana	Southern East	Tlokweng
 Africa	Botswana	Tlhareseleele	
 Africa	Burkina Faso	Boromo	
 Africa	Burkina Faso	Boucle du Mouhoun Region	
@@ -307,6 +323,7 @@ Africa	Guinea	Mamou
 Africa	Guinea	Siguiri	
 Africa	Guinea	Tougue	
 Africa	Guinea Bissau	Guinea Bissau	
+Africa	Guinea-Bissau	Guinea-Bissau	
 Africa	Ivory Coast	Ivory Coast	
 Africa	Kenya	Baringo	
 Africa	Kenya	Bomet	
@@ -722,6 +739,7 @@ Africa	Togo	Centrale Region TG	Tchaoudjo
 Africa	Togo	Golfe	
 Africa	Togo	Golfe	Lome
 Africa	Togo	Grand Lome	
+Africa	Togo	Maritime	
 Africa	Togo	Plateaux	
 Africa	Togo	Togo	
 Africa	Tunisia	Ariana	
@@ -789,6 +807,7 @@ Africa	Zimbabwe	Zimbabwe
 Asia	Afghanistan	Afghanistan	
 Asia	Afghanistan	Kabul	
 Asia	Armenia	Armenia	
+Asia	Armenia	Yerevan	
 Asia	Asia	Asia	
 Asia	Bahrain	Bahrain	
 Asia	Bahrain	Capital Governorate	
@@ -918,6 +937,7 @@ Asia	Bangladesh	Dhaka	Moghbazar
 Asia	Bangladesh	Dhaka	Mohakhali
 Asia	Bangladesh	Dhaka	Mohammadpur
 Asia	Bangladesh	Dhaka	Mothejhel
+Asia	Bangladesh	Dhaka	Motjill
 Asia	Bangladesh	Dhaka	Munshiganj
 Asia	Bangladesh	Dhaka	Narayanganj
 Asia	Bangladesh	Dhaka	Narayanganj Sadar
@@ -930,6 +950,7 @@ Asia	Bangladesh	Dhaka	Nikunja
 Asia	Bangladesh	Dhaka	Nimtola
 Asia	Bangladesh	Dhaka	North Shajahanpur
 Asia	Bangladesh	Dhaka	Old Dhaka
+Asia	Bangladesh	Dhaka	Pallabi
 Asia	Bangladesh	Dhaka	Palton
 Asia	Bangladesh	Dhaka	Pangsha Upazila
 Asia	Bangladesh	Dhaka	Panthapath
@@ -1597,6 +1618,7 @@ Asia	India	Telangana	Malkajgiri
 Asia	India	Telangana	Mancherial
 Asia	India	Telangana	Medak
 Asia	India	Telangana	Medchal
+Asia	India	Telangana	Medchal–Malkajgiri
 Asia	India	Telangana	Mulgu
 Asia	India	Telangana	Mulugu
 Asia	India	Telangana	Musheerabad
@@ -2246,32 +2268,43 @@ Asia	Malaysia	Selangor	Dengkil
 Asia	Malaysia	Wilayah Persekutuan	
 Asia	Maldives	Addu	
 Asia	Maldives	Alif Alif Atoll	
+Asia	Maldives	Alif Alif Atoll	Himandhoo
 Asia	Maldives	Alif Alif Atoll	Thoddoo
+Asia	Maldives	Alifu Dhaalu Atoll	
+Asia	Maldives	Alifu Dhaalu Atoll	Mahibadhoo
 Asia	Maldives	Dhaalu Atoll	
 Asia	Maldives	Dhaalu Atoll	Kudahuvadhoo
 Asia	Maldives	Feeali	
 Asia	Maldives	Gaafu Alifu Atoll	
 Asia	Maldives	Gaafu Alifu Atoll	Villingili
 Asia	Maldives	Gaafu Dhaalu Atoll	
+Asia	Maldives	Gaafu Dhaalu Atoll	Gadhdhoo
 Asia	Maldives	Gaafu Dhaalu Atoll	Nadella
 Asia	Maldives	Gaafu Dhaalu Atoll	Thinadhoo
 Asia	Maldives	Haa Alif Atoll	
 Asia	Maldives	Haa Alif Atoll	Dhidhdhooo
+Asia	Maldives	Haa Alif Atoll	Thakandhoo
 Asia	Maldives	Haa Dhaalu Atoll	
 Asia	Maldives	Haa Dhaalu Atoll	Kulhudhuffushi
 Asia	Maldives	Himandhoo	
 Asia	Maldives	Himmafushi	
 Asia	Maldives	Huraa	
 Asia	Maldives	Kaafu Atoll	
+Asia	Maldives	Kaafu Atoll	Gaafaru
 Asia	Maldives	Kaafu Atoll	Kaashidhoo
+Asia	Maldives	Kaafu Atoll	Maafushi
 Asia	Maldives	Laamu Atoll	
 Asia	Maldives	Laamu Atoll	Gan
 Asia	Maldives	Maafushi	
 Asia	Maldives	Maldives	
 Asia	Maldives	Malé	
 Asia	Maldives	Mathiveri	
+Asia	Maldives	Meemu Atoll	
+Asia	Maldives	Meemu Atoll	Muli
 Asia	Maldives	Raa Atoll	
 Asia	Maldives	Raa Atoll	Dhuvaafaru
+Asia	Maldives	Raa Atoll	Kinolhas
+Asia	Maldives	Raa Atoll	Maduvvari
 Asia	Maldives	Raa Atoll	Meedhoo
 Asia	Maldives	Rasdhoo	
 Asia	Maldives	Shaviyani Atoll	
@@ -2414,6 +2447,7 @@ Asia	Palestine	Nablus	Deir al-Hatab
 Asia	Palestine	Nablus	Majdal Bani Fadil
 Asia	Palestine	Nablus	Nablus
 Asia	Palestine	Nablus	Qusra
+Asia	Palestine	Palestine	
 Asia	Palestine	Qalqilya	
 Asia	Palestine	Qalqilya	Qalqilya
 Asia	Palestine	Ramallah	
@@ -2555,6 +2589,7 @@ Asia	Sri Lanka	Uva Province	Passara
 Asia	Sri Lanka	Vavuniya	
 Asia	Sri Lanka	Western Province	
 Asia	Sri Lanka	Western Province	Angoda
+Asia	Sri Lanka	Western Province	Attanagalla
 Asia	Sri Lanka	Western Province	Avissawella
 Asia	Sri Lanka	Western Province	Bandaragama
 Asia	Sri Lanka	Western Province	Biyagama
@@ -3465,6 +3500,7 @@ Europe	Belgium	Halle-Vilvoorde	Strombeek-Bever
 Europe	Belgium	Halle-Vilvoorde	Ternat
 Europe	Belgium	Halle-Vilvoorde	Vilvoorde
 Europe	Belgium	Halle-Vilvoorde	Vlezenbeek
+Europe	Belgium	Halle-Vilvoorde	Wambeek
 Europe	Belgium	Halle-Vilvoorde	Wemmel
 Europe	Belgium	Halle-Vilvoorde	Wezembeek-Oppem
 Europe	Belgium	Halle-Vilvoorde	Wolvertem
@@ -3716,6 +3752,7 @@ Europe	Belgium	Liège	Horion-Hozémont
 Europe	Belgium	Liège	Loncin
 Europe	Belgium	Liège	Lontzen
 Europe	Belgium	Liège	Montegnee
+Europe	Belgium	Liège	Montegnée
 Europe	Belgium	Liège	Neupré
 Europe	Belgium	Liège	Ougrée
 Europe	Belgium	Liège	Plainevaux
@@ -4065,6 +4102,7 @@ Europe	Belgium	Tongeren
 Europe	Belgium	Tongeren	's Herenelderen
 Europe	Belgium	Tongeren	Alken
 Europe	Belgium	Tongeren	Batsheers
+Europe	Belgium	Tongeren	Berlingen
 Europe	Belgium	Tongeren	Beverst
 Europe	Belgium	Tongeren	Bilzen
 Europe	Belgium	Tongeren	Bommershoven
@@ -4339,6 +4377,7 @@ Europe	Croatia	Zadar County
 Europe	Croatia	Zagreb	
 Europe	Croatia	Zagreb	Zagreb
 Europe	Cyprus	Cyprus	
+Europe	Cyprus	Larnaca	
 Europe	Czech Republic	Carlsbad	
 Europe	Czech Republic	Caslavice	
 Europe	Czech Republic	Central Bohemian Region	
@@ -4835,10 +4874,12 @@ Europe	France	Auvergne-Rhône-Alpes	Chateauneuf Les Bains
 Europe	France	Auvergne-Rhône-Alpes	Chatel Guyon
 Europe	France	Auvergne-Rhône-Alpes	Chauriat
 Europe	France	Auvergne-Rhône-Alpes	Chausseterre
+Europe	France	Auvergne-Rhône-Alpes	Chaville
 Europe	France	Auvergne-Rhône-Alpes	Chazemais
 Europe	France	Auvergne-Rhône-Alpes	Chenerailles
 Europe	France	Auvergne-Rhône-Alpes	Clemront-Ferrand
 Europe	France	Auvergne-Rhône-Alpes	Clerlande
+Europe	France	Auvergne-Rhône-Alpes	Clermont Ferrandrand
 Europe	France	Auvergne-Rhône-Alpes	Clermont-Ferrand
 Europe	France	Auvergne-Rhône-Alpes	Cluses
 Europe	France	Auvergne-Rhône-Alpes	Combronde
@@ -4886,6 +4927,7 @@ Europe	France	Auvergne-Rhône-Alpes	Escurolles
 Europe	France	Auvergne-Rhône-Alpes	Espinasse Vozelle
 Europe	France	Auvergne-Rhône-Alpes	Espinchal
 Europe	France	Auvergne-Rhône-Alpes	Espirat
+Europe	France	Auvergne-Rhône-Alpes	Fayet le Chateau
 Europe	France	Auvergne-Rhône-Alpes	Feurs
 Europe	France	Auvergne-Rhône-Alpes	Firminy
 Europe	France	Auvergne-Rhône-Alpes	Fontans
@@ -4907,6 +4949,7 @@ Europe	France	Auvergne-Rhône-Alpes	Isserteaux
 Europe	France	Auvergne-Rhône-Alpes	Issoire
 Europe	France	Auvergne-Rhône-Alpes	Jassans-Riottier
 Europe	France	Auvergne-Rhône-Alpes	Joze
+Europe	France	Auvergne-Rhône-Alpes	Jumeaux
 Europe	France	Auvergne-Rhône-Alpes	Jussac
 Europe	France	Auvergne-Rhône-Alpes	La Bourboule
 Europe	France	Auvergne-Rhône-Alpes	La Combelle
@@ -4937,6 +4980,7 @@ Europe	France	Auvergne-Rhône-Alpes	Le Puy-en-Velay
 Europe	France	Auvergne-Rhône-Alpes	Le Vernet
 Europe	France	Auvergne-Rhône-Alpes	Lempdes
 Europe	France	Auvergne-Rhône-Alpes	Lempdes sur Allagnon
+Europe	France	Auvergne-Rhône-Alpes	Lencloitre
 Europe	France	Auvergne-Rhône-Alpes	Leotoing
 Europe	France	Auvergne-Rhône-Alpes	Les Ancizes Comps
 Europe	France	Auvergne-Rhône-Alpes	Les Ancizes-Comps
@@ -5061,6 +5105,7 @@ Europe	France	Auvergne-Rhône-Alpes	St Alyre D Arlanc
 Europe	France	Auvergne-Rhône-Alpes	St Amant Tallende
 Europe	France	Auvergne-Rhône-Alpes	St Bonnet Les Alliers
 Europe	France	Auvergne-Rhône-Alpes	St Cernin
+Europe	France	Auvergne-Rhône-Alpes	St Cyr sur Mer
 Europe	France	Auvergne-Rhône-Alpes	St Denis Combarnazat
 Europe	France	Auvergne-Rhône-Alpes	St Eloy Les Mines
 Europe	France	Auvergne-Rhône-Alpes	St Felix
@@ -5087,6 +5132,7 @@ Europe	France	Auvergne-Rhône-Alpes	St Saturnin
 Europe	France	Auvergne-Rhône-Alpes	St Sauves D Auvergne
 Europe	France	Auvergne-Rhône-Alpes	St Simon
 Europe	France	Auvergne-Rhône-Alpes	St Sylvestre Pragoulin
+Europe	France	Auvergne-Rhône-Alpes	St Urcize
 Europe	France	Auvergne-Rhône-Alpes	St Victor
 Europe	France	Auvergne-Rhône-Alpes	St Yorre
 Europe	France	Auvergne-Rhône-Alpes	Ste Florine
@@ -5097,6 +5143,7 @@ Europe	France	Auvergne-Rhône-Alpes	Tarare
 Europe	France	Auvergne-Rhône-Alpes	Tauves
 Europe	France	Auvergne-Rhône-Alpes	Teilhede
 Europe	France	Auvergne-Rhône-Alpes	Thedes
+Europe	France	Auvergne-Rhône-Alpes	Theillay
 Europe	France	Auvergne-Rhône-Alpes	Thiers
 Europe	France	Auvergne-Rhône-Alpes	Thiezac
 Europe	France	Auvergne-Rhône-Alpes	Thonon-Les-Bains
@@ -5257,6 +5304,7 @@ Europe	France	Bretagne	Rueil Malmaison
 Europe	France	Bretagne	Saint Gilles (Bretagne)
 Europe	France	Bretagne	Saint Gregoire
 Europe	France	Bretagne	Saint Malo
+Europe	France	Bretagne	Saint Malo C
 Europe	France	Bretagne	Saint Perreux
 Europe	France	Bretagne	Saint Pierre Quiberon
 Europe	France	Bretagne	Saint-Brieuc
@@ -5823,6 +5871,8 @@ Europe	France	Réunion	Sainte-Clotilde
 Europe	France	Toulouse	
 Europe	France	Wallis and Futuna	
 Europe	France	Wallis and Futuna	Wallis
+Europe	France	Wallis and Futuna Islands	
+Europe	France	Wallis and Futuna Islands	Wallis
 Europe	Germany	Baden-Wuerttemberg	
 Europe	Germany	Baden-Wuerttemberg	Albbruck
 Europe	Germany	Baden-Wuerttemberg	Bad Krozingen
@@ -6319,11 +6369,16 @@ Europe	Luxembourg	Luxembourg	Luxembourg
 Europe	Malta	Malta	
 Europe	Moldova	Balti	
 Europe	Moldova	Cahul	
+Europe	Moldova	Causeni	
 Europe	Moldova	Chisinau	
+Europe	Moldova	Cimislia	
+Europe	Moldova	Dubasari	
+Europe	Moldova	Hincesti	
 Europe	Moldova	Moldova	
 Europe	Moldova	Rezina	
 Europe	Moldova	Rezina	Rabnita
 Europe	Moldova	Soroca	
+Europe	Moldova	Stefan Voda	
 Europe	Moldova	Straseni	
 Europe	Monaco	Monaco	
 Europe	Montenegro	Bar	
@@ -8246,6 +8301,7 @@ Europe	Romania	Ialomița	Slobozia
 Europe	Romania	Iasi	
 Europe	Romania	Iasi	Iasi
 Europe	Romania	Ilfov	
+Europe	Romania	Maramures	
 Europe	Romania	Mehedinti	
 Europe	Romania	Mioveni	
 Europe	Romania	Mures	
@@ -8738,6 +8794,7 @@ Europe	Slovakia	Bratislava	Lozorno
 Europe	Slovakia	Bratislava	Malacky
 Europe	Slovakia	Bratislava	Malinovo
 Europe	Slovakia	Bratislava	Miloslavov
+Europe	Slovakia	Bratislava	Modra
 Europe	Slovakia	Bratislava	Nová Dedinka
 Europe	Slovakia	Bratislava	Pezinok
 Europe	Slovakia	Bratislava	Plavecký Štvrtok
@@ -8778,9 +8835,11 @@ Europe	Slovakia	Kosice	Chonkovce
 Europe	Slovakia	Kosice	Chrast nad Hornadom
 Europe	Slovakia	Kosice	Dobsina
 Europe	Slovakia	Kosice	Gelnica
+Europe	Slovakia	Kosice	Gocovo
 Europe	Slovakia	Kosice	Haj
 Europe	Slovakia	Kosice	Hatalov
 Europe	Slovakia	Kosice	Hlivistia
+Europe	Slovakia	Kosice	Hylov
 Europe	Slovakia	Kosice	Iliasovce
 Europe	Slovakia	Kosice	Inovce
 Europe	Slovakia	Kosice	Jablonov nad Turnou
@@ -8816,6 +8875,7 @@ Europe	Slovakia	Kosice	Rudník (Kosice)
 Europe	Slovakia	Kosice	Rudník, district Kosice - okolie
 Europe	Slovakia	Kosice	Seňa
 Europe	Slovakia	Kosice	Silica
+Europe	Slovakia	Kosice	Slanec
 Europe	Slovakia	Kosice	Slavec
 Europe	Slovakia	Kosice	Slavkovce
 Europe	Slovakia	Kosice	Slovinky
@@ -8940,6 +9000,7 @@ Europe	Slovakia	Nitra	Tovarníky
 Europe	Slovakia	Nitra	Travnica
 Europe	Slovakia	Nitra	Tvrdosovce
 Europe	Slovakia	Nitra	Ulany nad Zitavou
+Europe	Slovakia	Nitra	Velke Dvorany
 Europe	Slovakia	Nitra	Velke Lovce
 Europe	Slovakia	Nitra	Velke Ludince
 Europe	Slovakia	Nitra	Velke Zaluzie
@@ -8972,6 +9033,7 @@ Europe	Slovakia	Prešov	Brekov
 Europe	Slovakia	Prešov	Brestov nad Laborcom
 Europe	Slovakia	Prešov	Brezovica
 Europe	Slovakia	Prešov	Brezovica (Prešov)
+Europe	Slovakia	Prešov	Bystre
 Europe	Slovakia	Prešov	Cernina
 Europe	Slovakia	Prešov	Chotca
 Europe	Slovakia	Prešov	Cicava
@@ -8983,19 +9045,23 @@ Europe	Slovakia	Prešov	Dubová
 Europe	Slovakia	Prešov	Gaboltov
 Europe	Slovakia	Prešov	Gerlachov (Poprad)
 Europe	Slovakia	Prešov	Gerlachov (Prešov)
+Europe	Slovakia	Prešov	Giglovce
 Europe	Slovakia	Prešov	Giraltovce
 Europe	Slovakia	Prešov	Gruzovce
+Europe	Slovakia	Prešov	Hazlin
 Europe	Slovakia	Prešov	Hencovce
 Europe	Slovakia	Prešov	Hermanovce nad Toplou
 Europe	Slovakia	Prešov	Hlinne
 Europe	Slovakia	Prešov	Hlinné
 Europe	Slovakia	Prešov	Hniezdne
 Europe	Slovakia	Prešov	Hozelec
+Europe	Slovakia	Prešov	Hrabovcik
 Europe	Slovakia	Prešov	Hrabovec
 Europe	Slovakia	Prešov	Hrabovec nad Laborcom
 Europe	Slovakia	Prešov	Hranovnica
 Europe	Slovakia	Prešov	Humenne
 Europe	Slovakia	Prešov	Huncovce
+Europe	Slovakia	Prešov	Jablon
 Europe	Slovakia	Prešov	Janovce
 Europe	Slovakia	Prešov	Kamenica nad Cirochou
 Europe	Slovakia	Prešov	Kamienka SK
@@ -9020,6 +9086,7 @@ Europe	Slovakia	Prešov	Liptovska Teplicka
 Europe	Slovakia	Prešov	Livov
 Europe	Slovakia	Prešov	Livovska Huta
 Europe	Slovakia	Prešov	Lubisa
+Europe	Slovakia	Prešov	Mala Domasa
 Europe	Slovakia	Prešov	Malcov
 Europe	Slovakia	Prešov	Maskovce
 Europe	Slovakia	Prešov	Medzilaborce
@@ -9027,6 +9094,7 @@ Europe	Slovakia	Prešov	Mestisko
 Europe	Slovakia	Prešov	Miňovce
 Europe	Slovakia	Prešov	Mlynceky
 Europe	Slovakia	Prešov	Nechvalova Polianka
+Europe	Slovakia	Prešov	Nizna Jedlova
 Europe	Slovakia	Prešov	Nizne Ladickovce
 Europe	Slovakia	Prešov	Nizny Hrabovec
 Europe	Slovakia	Prešov	Nova Lesna
@@ -9074,6 +9142,7 @@ Europe	Slovakia	Prešov	Tatranská Štrba
 Europe	Slovakia	Prešov	Teriakovce
 Europe	Slovakia	Prešov	Tisinec
 Europe	Slovakia	Prešov	Topolovka
+Europe	Slovakia	Prešov	Tovarne
 Europe	Slovakia	Prešov	Turany nad Ondavou
 Europe	Slovakia	Prešov	Ubla
 Europe	Slovakia	Prešov	Valkovce
@@ -11083,6 +11152,7 @@ Europe	United Kingdom	England	Northamtonshire
 Europe	United Kingdom	England	Nottinghamshire
 Europe	United Kingdom	England	Oxford
 Europe	United Kingdom	England	South Yorkshire
+Europe	United Kingdom	England	Suffolk
 Europe	United Kingdom	England	Warwickshire
 Europe	United Kingdom	England	Yorkshire
 Europe	United Kingdom	Gibraltar	
@@ -11435,6 +11505,8 @@ North America	Mexico	Baja California Sur
 North America	Mexico	Campeche	
 North America	Mexico	Chiapas	
 North America	Mexico	Chihuahua	
+North America	Mexico	Chihuahua	Chihuahua
+North America	Mexico	Chihuahua	Ciudad Juarez
 North America	Mexico	Coahuila	
 North America	Mexico	Colima	
 North America	Mexico	Durango	
@@ -11447,6 +11519,7 @@ North America	Mexico	Guerrero
 North America	Mexico	Hidalgo	
 North America	Mexico	Jalisco	
 North America	Mexico	Jalisco	Puerto Vallarta
+North America	Mexico	Jalisco	Vallarta
 North America	Mexico	Jalisco	Zapopan
 North America	Mexico	Mexico	
 North America	Mexico	Mexico City	
@@ -11466,11 +11539,13 @@ North America	Mexico	Sinaloa
 North America	Mexico	Sinaloa	Ahome
 North America	Mexico	Sinaloa	Culiacán
 North America	Mexico	Sinaloa	Guasave
+North America	Mexico	Sinaloa	Los Mochis
 North America	Mexico	Sinaloa	Mazatlan
 North America	Mexico	Sinaloa	Navolato
 North America	Mexico	Sonora	
 North America	Mexico	Sonora	Caborca
 North America	Mexico	Sonora	Hermosillo
+North America	Mexico	Sonora	Obregon
 North America	Mexico	Sonora	San Luis Rio Colorado
 North America	Mexico	Tabasco	
 North America	Mexico	Tabasco	Centla
@@ -11787,6 +11862,7 @@ North America	USA	California	Alameda County
 North America	USA	California	Amador County
 North America	USA	California	Brentwood County
 North America	USA	California	Butte County
+North America	USA	California	Butte County CA
 North America	USA	California	Calaveras County
 North America	USA	California	Colusa County
 North America	USA	California	Contra Costa County
@@ -11860,6 +11936,7 @@ North America	USA	Colorado	Denver County
 North America	USA	Colorado	Douglas County CO
 North America	USA	Colorado	El Paso County CO
 North America	USA	Colorado	Jefferson County CO
+North America	USA	Colorado	Larimer County
 North America	USA	Colorado	Mesa County
 North America	USA	Colorado	Pitkin County
 North America	USA	Colorado	Weld County
@@ -11953,6 +12030,7 @@ North America	USA	Georgia	Atlanta
 North America	USA	Georgia	Cobb
 North America	USA	Georgia	Cobb County
 North America	USA	Georgia	Cobb County
+North America	USA	Georgia	Columbia County GA
 North America	USA	Georgia	Dekalb County GA
 North America	USA	Georgia	Fayette County GA
 North America	USA	Georgia	Fulton County GA
@@ -11980,11 +12058,13 @@ North America	USA	Idaho	Benewah County
 North America	USA	Idaho	Bingham County
 North America	USA	Idaho	Bonner County
 North America	USA	Idaho	Bonneville County
+North America	USA	Idaho	Butte County ID
 North America	USA	Idaho	Canyon County
 North America	USA	Idaho	Elmore County
 North America	USA	Idaho	Elmore County ID
 North America	USA	Idaho	Fremont County ID
 North America	USA	Idaho	Gem County
+North America	USA	Idaho	Gooding County
 North America	USA	Idaho	Idaho County
 North America	USA	Idaho	Jefferson County ID
 North America	USA	Idaho	Jerome County
@@ -12001,6 +12081,7 @@ North America	USA	Idaho	Power County
 North America	USA	Idaho	Shoshone County
 North America	USA	Idaho	Twin Falls County
 North America	USA	Idaho	Valley County ID
+North America	USA	Idaho	Washington County ID
 North America	USA	Illinois	
 North America	USA	Illinois	Adams County IL
 North America	USA	Illinois	Alexander County
@@ -12123,6 +12204,7 @@ North America	USA	Indiana	Boone County IN
 North America	USA	Indiana	Daviess County IN
 North America	USA	Indiana	Dearborn County
 North America	USA	Indiana	Elkhart County
+North America	USA	Indiana	Fountain County
 North America	USA	Indiana	Hendricks County
 North America	USA	Indiana	Indianapolis
 North America	USA	Indiana	Jasper County IN
@@ -12265,6 +12347,8 @@ North America	USA	Michigan
 North America	USA	Michigan	Alpena County
 North America	USA	Michigan	Berrien County
 North America	USA	Michigan	Ingham County
+North America	USA	Michigan	Midland County MI
+North America	USA	Michigan	Oakland County
 North America	USA	Midway Islands	
 North America	USA	Minnesota	
 North America	USA	Minnesota	Anoka County
@@ -12282,6 +12366,7 @@ North America	USA	Minnesota	Winona County
 North America	USA	Mississippi	
 North America	USA	Mississippi	Adams County MS
 North America	USA	Mississippi	Alcorn County
+North America	USA	Mississippi	Attala County
 North America	USA	Mississippi	Bolivar County
 North America	USA	Mississippi	Calhoun County MS
 North America	USA	Mississippi	Chickasaw County MS
@@ -12293,12 +12378,14 @@ North America	USA	Mississippi	Copiah County
 North America	USA	Mississippi	DeSoto County MS
 North America	USA	Mississippi	Forrest County
 North America	USA	Mississippi	George County
+North America	USA	Mississippi	Grenada County
 North America	USA	Mississippi	Hancock County MS
 North America	USA	Mississippi	Harrison County
 North America	USA	Mississippi	Harrison County MS
 North America	USA	Mississippi	Hinds County
 North America	USA	Mississippi	Hinds County
 North America	USA	Mississippi	Holmes County MS
+North America	USA	Mississippi	Itawamba County
 North America	USA	Mississippi	Jackson County MS
 North America	USA	Mississippi	Lafayette County MS
 North America	USA	Mississippi	Lee County MS
@@ -12308,16 +12395,20 @@ North America	USA	Mississippi	Marion County MS
 North America	USA	Mississippi	Marshall County MS
 North America	USA	Mississippi	Neshoba County
 North America	USA	Mississippi	Oktibbeha County
+North America	USA	Mississippi	Panola County MS
 North America	USA	Mississippi	Pearl River County
 North America	USA	Mississippi	Pike County MS
 North America	USA	Mississippi	Pontotoc County MS
 North America	USA	Mississippi	Rankin County
 North America	USA	Mississippi	Scott County MS
+North America	USA	Mississippi	Sharkey County
 North America	USA	Mississippi	Tallahatchie County
 North America	USA	Mississippi	Tate County
 North America	USA	Mississippi	Tippah County
+North America	USA	Mississippi	Union County MS
 North America	USA	Mississippi	Walthall County
 North America	USA	Mississippi	Washington County MS
+North America	USA	Mississippi	Webster County MS
 North America	USA	Mississippi	Yalobusha County
 North America	USA	Mississippi	Yazoo County
 North America	USA	Missouri	
@@ -12370,6 +12461,7 @@ North America	USA	Montana	Park County MT
 North America	USA	Montana	Pondera County
 North America	USA	Montana	Powder River County
 North America	USA	Montana	Powell County MT
+North America	USA	Montana	Prairie County
 North America	USA	Montana	Ravalli County
 North America	USA	Montana	Richland County MT
 North America	USA	Montana	Roosevelt County
@@ -12564,6 +12656,7 @@ North America	USA	North Carolina
 North America	USA	North Carolina	Alamance County
 North America	USA	North Carolina	Cabarrus County
 North America	USA	North Carolina	Catawba County
+North America	USA	North Carolina	Cleveland County
 North America	USA	North Carolina	Columbus County
 North America	USA	North Carolina	Cumberland County NC
 North America	USA	North Carolina	Davidson County NC
@@ -12978,6 +13071,7 @@ North America	USA	Texas	Ochiltree County
 North America	USA	Texas	Oldham County
 North America	USA	Texas	Orange County TX
 North America	USA	Texas	Panola County
+North America	USA	Texas	Panola County TX
 North America	USA	Texas	Parker County
 North America	USA	Texas	Parmer County
 North America	USA	Texas	Pecos
@@ -13062,6 +13156,7 @@ North America	USA	Virginia	Frederick County
 North America	USA	Virginia	Frederick County VA
 North America	USA	Virginia	Loudoun County
 North America	USA	Virginia	Norfolk VA
+North America	USA	Virginia	Virginia Beach
 North America	USA	Wake Island	
 North America	USA	Washington	
 North America	USA	Washington	Adams County WA
@@ -13817,6 +13912,7 @@ South America	Brazil	Bahia	Maracas
 South America	Brazil	Bahia	Marau
 South America	Brazil	Bahia	Nazaré
 South America	Brazil	Bahia	Pau Brasil
+South America	Brazil	Bahia	Paulo Afonso
 South America	Brazil	Bahia	Pojuca
 South America	Brazil	Bahia	Porto Seguro
 South America	Brazil	Bahia	Retirolandia
@@ -13840,6 +13936,7 @@ South America	Brazil	Brazil
 South America	Brazil	Brazilian Cruise	
 South America	Brazil	Ceará	
 South America	Brazil	Ceará	Abaiara
+South America	Brazil	Ceará	Acarau
 South America	Brazil	Ceará	Acopiara
 South America	Brazil	Ceará	Alto Santo
 South America	Brazil	Ceará	Antonina do Norte
@@ -13847,6 +13944,7 @@ South America	Brazil	Ceará	Aquiraz
 South America	Brazil	Ceará	Aracati
 South America	Brazil	Ceará	Aracoiaba (Ceará)
 South America	Brazil	Ceará	Aracoiaba CE
+South America	Brazil	Ceará	Araripe
 South America	Brazil	Ceará	Aratuba
 South America	Brazil	Ceará	Arneiroz
 South America	Brazil	Ceará	Arneizoz
@@ -13854,17 +13952,23 @@ South America	Brazil	Ceará	Barreira
 South America	Brazil	Ceará	Baturite
 South America	Brazil	Ceará	Beberibe
 South America	Brazil	Ceará	Boa Viagem
+South America	Brazil	Ceará	Brejo Santo
 South America	Brazil	Ceará	Camocim
+South America	Brazil	Ceará	Campos Sales
 South America	Brazil	Ceará	Capistrano
+South America	Brazil	Ceará	Carire
 South America	Brazil	Ceará	Carius
 South America	Brazil	Ceará	Carnaubal
 South America	Brazil	Ceará	Cascavel (Ceará)
 South America	Brazil	Ceará	Cascavel CE
+South America	Brazil	Ceará	Catunda
 South America	Brazil	Ceará	Caucaia
+South America	Brazil	Ceará	Cedro (Ceará)
 South America	Brazil	Ceará	Choro
 South America	Brazil	Ceará	Chorozinho
 South America	Brazil	Ceará	Crateus
 South America	Brazil	Ceará	Crato
+South America	Brazil	Ceará	Cruz
 South America	Brazil	Ceará	Eusebio
 South America	Brazil	Ceará	Fortaleza
 South America	Brazil	Ceará	Fortim
@@ -13878,6 +13982,7 @@ South America	Brazil	Ceará	Ibicuitinga
 South America	Brazil	Ceará	Icapui
 South America	Brazil	Ceará	Ico
 South America	Brazil	Ceará	Iguatu
+South America	Brazil	Ceará	Independencia BR
 South America	Brazil	Ceará	Ipaporanga
 South America	Brazil	Ceará	Ipu
 South America	Brazil	Ceará	Iracema
@@ -13898,6 +14003,8 @@ South America	Brazil	Ceará	Limoeiro do Norte
 South America	Brazil	Ceará	Maraba
 South America	Brazil	Ceará	Maracanau
 South America	Brazil	Ceará	Maranguape
+South America	Brazil	Ceará	Marco
+South America	Brazil	Ceará	Martinopole
 South America	Brazil	Ceará	Mauriti
 South America	Brazil	Ceará	Meruoca
 South America	Brazil	Ceará	Milagres
@@ -13905,16 +14012,24 @@ South America	Brazil	Ceará	Milha
 South America	Brazil	Ceará	Missao Velha
 South America	Brazil	Ceará	Morada Nova
 South America	Brazil	Ceará	Morada Nova 4
+South America	Brazil	Ceará	Moraujo
+South America	Brazil	Ceará	Morrinhos (Ceará)
 South America	Brazil	Ceará	Mulungu
+South America	Brazil	Ceará	Novo Oriente
 South America	Brazil	Ceará	Ocara
 South America	Brazil	Ceará	Oros
 South America	Brazil	Ceará	Pacajus
+South America	Brazil	Ceará	Pacatuba
+South America	Brazil	Ceará	Palhano
 South America	Brazil	Ceará	Palmacia
 South America	Brazil	Ceará	Paracuru
 South America	Brazil	Ceará	Paramoti
 South America	Brazil	Ceará	Pedra Branca
 South America	Brazil	Ceará	Pentecoste
+South America	Brazil	Ceará	Pereiro
 South America	Brazil	Ceará	Piquet Carneiro
+South America	Brazil	Ceará	Poranga
+South America	Brazil	Ceará	Porteiras
 South America	Brazil	Ceará	Quiterianopolis
 South America	Brazil	Ceará	Quixada
 South America	Brazil	Ceará	Quixeramobim
@@ -13924,6 +14039,7 @@ South America	Brazil	Ceará	Redencao CE
 South America	Brazil	Ceará	Reriutaba
 South America	Brazil	Ceará	Russas
 South America	Brazil	Ceará	Salitre BR
+South America	Brazil	Ceará	Santa Quiteria
 South America	Brazil	Ceará	Sao Benedito
 South America	Brazil	Ceará	Sao Goncalo do Amarante
 South America	Brazil	Ceará	Sao Goncalo do Amarante (Ceará)
@@ -13936,7 +14052,9 @@ South America	Brazil	Ceará	Tamboril
 South America	Brazil	Ceará	Taua
 South America	Brazil	Ceará	Tejucuoca
 South America	Brazil	Ceará	Tiangua
+South America	Brazil	Ceará	Trairi
 South America	Brazil	Ceará	Tururu
+South America	Brazil	Ceará	Uruburetama
 South America	Brazil	Ceará	Uruoca
 South America	Brazil	Ceará	Varzea Alegre
 South America	Brazil	Ceará	Vicosa do Ceara
@@ -13944,6 +14062,7 @@ South America	Brazil	Distrito Federal
 South America	Brazil	Distrito Federal	Brasilia
 South America	Brazil	Distrito Federal	Ceilandia
 South America	Brazil	Distrito Federal	Planaltina
+South America	Brazil	Distrito Federal	Recanto Das Emas
 South America	Brazil	Distrito Federal	Samambaia
 South America	Brazil	Distrito Federal	Santa Maria (Distrito Federal)
 South America	Brazil	Distrito Federal	Santa Maria DF
@@ -14017,6 +14136,7 @@ South America	Brazil	Goiás	Americano do Brasil
 South America	Brazil	Goiás	Anapolis
 South America	Brazil	Goiás	Aparecida de Goiania
 South America	Brazil	Goiás	Aparecida de Goiânia
+South America	Brazil	Goiás	Aparecida de Goias
 South America	Brazil	Goiás	Aragarças
 South America	Brazil	Goiás	Araguapaz
 South America	Brazil	Goiás	Bom Jardim de Goias
@@ -14070,6 +14190,7 @@ South America	Brazil	Goiás	Mineiros
 South America	Brazil	Goiás	Monte Alegre de Goias
 South America	Brazil	Goiás	Montes Claros de Goias
 South America	Brazil	Goiás	Morrinhos
+South America	Brazil	Goiás	Morrinhos (Goiás)
 South America	Brazil	Goiás	Morro Agudo de Goias
 South America	Brazil	Goiás	Mundo Novo
 South America	Brazil	Goiás	Mundo Novo (Goiás)
@@ -14289,6 +14410,7 @@ South America	Brazil	Minas Gerais	Carmo de Minas
 South America	Brazil	Minas Gerais	Carmo do Paranaiba
 South America	Brazil	Minas Gerais	Cataguases
 South America	Brazil	Minas Gerais	Chacara
+South America	Brazil	Minas Gerais	Chiador
 South America	Brazil	Minas Gerais	Conceicao do Mato Dentro
 South America	Brazil	Minas Gerais	Confins
 South America	Brazil	Minas Gerais	Congonhas
@@ -14615,8 +14737,10 @@ South America	Brazil	Paraná	Formosa do Oeste
 South America	Brazil	Paraná	Foz do Iguacu
 South America	Brazil	Paraná	Francisco Beltrao
 South America	Brazil	Paraná	Goioere
+South America	Brazil	Paraná	Guaraci
 South America	Brazil	Paraná	Guaraniacu
 South America	Brazil	Paraná	Guarapuava
+South America	Brazil	Paraná	Guaraquecaba
 South America	Brazil	Paraná	Ibaiti
 South America	Brazil	Paraná	Ibipora
 South America	Brazil	Paraná	Imbituva
@@ -14742,6 +14866,7 @@ South America	Brazil	Pernambuco	Carpina
 South America	Brazil	Pernambuco	Caruaru
 South America	Brazil	Pernambuco	Catende
 South America	Brazil	Pernambuco	Cedro
+South America	Brazil	Pernambuco	Cedro (Pernambuco)
 South America	Brazil	Pernambuco	Cha Grande
 South America	Brazil	Pernambuco	Condado
 South America	Brazil	Pernambuco	Cupira
@@ -15351,6 +15476,7 @@ South America	Brazil	Santa Catarina	Witmarsum
 South America	Brazil	Santa Catarina	Xavantina
 South America	Brazil	São Paulo	
 South America	Brazil	São Paulo	Adamantina
+South America	Brazil	São Paulo	Agua de Santa Barbara
 South America	Brazil	São Paulo	Aguas de Santa Barbara
 South America	Brazil	São Paulo	Aguas de Sao Pedro
 South America	Brazil	São Paulo	Agudos
@@ -15692,6 +15818,7 @@ South America	Brazil	São Paulo	Sao Joao Da Boa Vista
 South America	Brazil	São Paulo	Sao Joao Da Boa Vista (São Paulo)
 South America	Brazil	São Paulo	Sao Joaquim Da Barra
 South America	Brazil	São Paulo	Sao Jose Dos Campos
+South America	Brazil	São Paulo	São Jose Dos Campos
 South America	Brazil	São Paulo	Sao Jose do Rio Pardo
 South America	Brazil	São Paulo	Sao Jose do Rio Preto
 South America	Brazil	São Paulo	São Lourenco Da Serra
@@ -16058,6 +16185,7 @@ South America	Chile	Region Metropolitana de Santiago	El Monte
 South America	Chile	Region Metropolitana de Santiago	Estacion Central
 South America	Chile	Region Metropolitana de Santiago	Huechuraba
 South America	Chile	Region Metropolitana de Santiago	Independencia
+South America	Chile	Region Metropolitana de Santiago	Independencia CL
 South America	Chile	Region Metropolitana de Santiago	Isla de Maipo
 South America	Chile	Region Metropolitana de Santiago	La Cisterna
 South America	Chile	Region Metropolitana de Santiago	La Florida
@@ -16219,6 +16347,7 @@ South America	Colombia	Boyaca	Sogamoso
 South America	Colombia	Boyaca	Togui
 South America	Colombia	Boyaca	Tunja
 South America	Colombia	Caldas	
+South America	Colombia	Caldas	Aguadas
 South America	Colombia	Caldas	Anserma
 South America	Colombia	Caldas	Chinchina
 South America	Colombia	Caldas	La Dorada
@@ -16342,6 +16471,7 @@ South America	Colombia	Tolima	Tolemaida
 South America	Colombia	Tunja	
 South America	Colombia	Valle del Cauca	
 South America	Colombia	Valle del Cauca	Andalucia
+South America	Colombia	Valle del Cauca	Buenaventura
 South America	Colombia	Valle del Cauca	Buga
 South America	Colombia	Valle del Cauca	Cali
 South America	Colombia	Valle del Cauca	El Cerrito
