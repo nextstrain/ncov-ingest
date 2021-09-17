@@ -322,6 +322,7 @@ Europe/France/Provence-Alpes-Cote-D Azur/*	Europe/France/Provence-Alpes-Côte d'
 Europe/France/Provence Alpes Cote D’Azur/*	Europe/France/Provence-Alpes-Côte d'Azur/*
 Europe/France/Haute Garonne/*	Europe/France/Occitanie/*
 Europe/France/Seine Saint Denis/	Europe/France/Ile de France/Seine Saint Denis
+Europe/France/Meuthe-Et-Moselle/	Europe/France/Grand Est/Meuthe-Et-Moselle
 Europe/Germany/North Rhine-Westphalia/Düsseldorf	Europe/Germany/North Rhine Westphalia/Duesseldorf
 Europe/Germany/North Rhine-Westphalia/Duesseldorf Area	Europe/Germany/North Rhine Westphalia/Duesseldorf
 Europe/Germany/North Rhine-Westphalia/Dusseldorf Health Department	Europe/Germany/North Rhine Westphalia/Duesseldorf
@@ -7370,6 +7371,7 @@ Europe/Poland/?Wi?Tokrzyskie/*	Europe/Poland/Swietokrzyskie/*
 Europe/Poland/Not Provided/	Europe/Poland/Poland/
 Europe/Poland/Pomorkie/*	Europe/Poland/Pomorskie/*
 Europe/Poland/Podkarpakie/*	Europe/Poland/Podkarpackie/*
+Europe/Poland/Ma?Opolskie/*	Europe/Poland/Malopolskie/*
 Europe/Italy/Apulia/Bat	Europe/Italy/Apulia/Barletta-Andria-Trani
 Europe/Italy/Apulia/Potenza	Europe/Italy/Basilicata/Potenza
 Europe/Italy/Apulia/Matera	Europe/Italy/Basilicata/Matera
@@ -8507,6 +8509,12 @@ Europe/Slovakia/Sokol/	Europe/Slovakia/Kosice/Sokol
 Europe/Slovakia/Stebnik/	Europe/Slovakia/Prešov/Stebnik
 Europe/Slovakia/Velky Biel/	Europe/Slovakia/Bratislava/Velky Biel
 Europe/Slovakia/Nove Mesto and Vahom/	Europe/Slovakia/Trenčín/Nove Mesto and Vahom
+Europe/Slovakia/Druzsteva Pri Hornade/	Europe/Slovakia/Kosice/Druzsteva Pri Hornade
+Europe/Slovakia/Svatus/	Europe/Slovakia/Kosice/Svatus
+Europe/Slovakia/Ulicsne Krive/	Europe/Slovakia/Slovakia/
+Europe/Slovakia/Banovce nad Babravou/	Europe/Slovakia/Trenčín/Banovce nad Bebravou
+Europe/Slovakia/Povazska Bystrcia/	Europe/Slovakia/Trenčín/Povazska Bystrica
+Europe/Slovakia/Ruzomerok/	Europe/Slovakia/Zilina/Ruzomberok
 Europe/Denmark/Na/	Europe/Denmark/Denmark/
 Europe/Denmark/Na/*	Europe/Denmark//*
 Europe/Ireland/Limerick/Limerick County	Europe/Ireland/Limerick/
@@ -9410,6 +9418,10 @@ Asia/Sri Lanka/Balapitiya/	Asia/Sri Lanka/Southern Province/Balapitiya
 Asia/Sri Lanka/Mulleriyawa/	Asia/Sri Lanka/Western Province/Mulleriyawa
 Asia/Sri Lanka/Narahenpita/	Asia/Sri Lanka/Western Province/Narahenpita
 Asia/Sri Lanka/Wellampitiya/	Asia/Sri Lanka/Western Province/Wellampitiya
+Asia/Sri Lanka/Dondangaslanda/	Asia/Sri Lanka/Sri Lanka/
+Asia/Sri Lanka/Opanayaka/	Asia/Sri Lanka/Sabaragamuwa Province/Opanayaka
+Asia/Sri Lanka/Bataganwila/	Asia/Sri Lanka/Southern Province/Bataganwila
+Asia/Sri Lanka/Boralasgamuwa/	Asia/Sri Lanka/Western Province/Boralasgamuwa
 Asia/Palestine/Tulkarem/	Asia/Palestine/West Bank/Tulkarem
 Asia/Palestine/West Bank/Jericho	Asia/Palestine/Jericho/
 Asia/Palestine/West Bank/Ramallah	Asia/Palestine/Ramallah and al-Bireh Governorate/Ramallah
@@ -9448,6 +9460,7 @@ Asia/Malaysia/Bukit Bintang/	Asia/Malaysia/Kuala Lumpur/Bukit Bintang
 Asia/Malaysia/Salak/	Asia/Malaysia/Kuala Lumpur/Salak
 Asia/Malaysia/Dengkil/	Asia/Malaysia/Selangor/Dengkil
 Asia/Malaysia/Wp Kuala Lumpur/*	Asia/Malaysia/Kuala Lumpur/*
+Asia/Malaysia/Pulau Pinang/*	Asia/Malaysia/Penang/*
 Asia/Bangaldesh/*/*	Asia/Bangladesh/*/*
 Asia/Georgia/Georgia/*	Asia/Georgia/Georgia (Asia)/*
 Asia/Georgia//	Asia/Georgia/Georgia (Asia)/
@@ -39185,6 +39198,7 @@ South America/Brazil/São Paulo/Salto	South America/Brazil/São Paulo/Salto BR
 South America/Brazil/São Paulo/Quintana	South America/Brazil/São Paulo/Quintana BR
 South America/Brazil/São Paulo/São Paulo	South America/Brazil/São Paulo/São Paulo BR
 South America/Brazil/São Paulo/Santa Isabel	South America/Brazil/São Paulo/Santa Isabel BR
+South America/Brazil/São Paulo/Santo Andre	South America/Brazil/São Paulo/Santo Andre (São Paulo)
 South America/Brazil/Paraíba/*	South America/Brazil/Paraiba/*
 South America/Brazil/Rio de Janeiro/Nova Iguaçu	South America/Brazil/Rio de Janeiro/Nova Iguacu
 South America/Brazil/Rio de Janeiro/São Gonçalo	South America/Brazil/Rio de Janeiro/Sao Goncalo
@@ -39257,6 +39271,8 @@ South America/Brazil/Paraiba/Cuité	South America/Brazil/Paraiba/Cuite
 South America/Brazil/Paraiba/Catolé do Rocha	South America/Brazil/Paraiba/Catole do Rocha
 South America/Brazil/Paraiba/Itaporanga	South America/Brazil/Paraiba/Itaporanga (Paraiba)
 South America/Brazil/Paraiba/Itabaiana	South America/Brazil/Paraiba/Itabaiana (Paraiba)
+South America/Brazil/Paraiba/Santo Andre	South America/Brazil/Paraiba/Santo Andre (Paraiba)
+South America/Brazil/Paraiba/Araruna	South America/Brazil/Paraiba/Araruna (Paraiba)
 South America/Brazil/Parana/*	South America/Brazil/Paraná/*
 South America/Brazil/Southeast/Minas Gerais	South America/Brazil/Minas Gerais/
 South America/Brazil/Southeast/*	South America/Brazil/Southeast Region/*
@@ -39289,6 +39305,7 @@ South America/Brazil/Paraná/Bandeirantes	South America/Brazil/Paraná/Bandeiran
 South America/Brazil/Paraná/Joao Pessoa	South America/Brazil/Paraiba/Joao Pessoa
 South America/Brazil/Paraná/Castro	South America/Brazil/Paraná/Castro BR
 South America/Brazil/Paraná/Parana	South America/Brazil/Paraná/Parana BR
+South America/Brazil/Paraná/Araruna	South America/Brazil/Paraná/Araruna (Paraná)
 South America/Brazil/Minas Gerais/Esmeraldas	South America/Brazil/Minas Gerais/Esmeraldas BR
 South America/Brazil/Minas Gerais/Guaira	South America/Brazil/São Paulo/Guaira
 South America/Brazil/Minas Gerais/Pocos de Calda	South America/Brazil/Minas Gerais/Pocos de Caldas
