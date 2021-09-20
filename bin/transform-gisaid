@@ -7,6 +7,7 @@ import argparse
 import csv
 import sys
 from pathlib import Path
+from itertools import tee
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "lib"))
 from utils.transform import (
@@ -176,13 +177,19 @@ if __name__ == '__main__':
         # applying the substitution rules (temporary : writing the intermediary data to verify effect )
         dict_writer_kwargs = {'lineterminator': args.newline}
 
-        
         pipeline = (pipeline
             | ApplyUserGeoLocationSubstitutionRules(geoRules)
             | MergeUserAnnotatedMetadata(annotations)
             | MergeUserAnnotatedMetadata(accessions)
             | FillDefaultLocationData()
         )
+
+        # check how many rows are being changed by substition rules
+        pipeline, pipeline_copy = tee(pipeline)
+        count_geo_corrected = len(list(filter(lambda entry: entry['geo_corrected'], pipeline)))
+        count_total = len(list(pipeline_copy))
+        raise Exception(f'{count_geo_corrected} out of {count_total} were corrected by geo location rules.')
+
 
         sorted_metadata = sorted(
             pipeline,
@@ -193,6 +200,7 @@ if __name__ == '__main__':
                 obj[LINE_NUMBER_KEY]
             )
         )
+
 
     #for unused_gisaid_epi_isl in annotations.get_unused_annotations():
     #    print(f"WARNING: annotation for {unused_gisaid_epi_isl} was not used.")

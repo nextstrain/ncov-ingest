@@ -435,8 +435,12 @@ class ApplyUserGeoLocationSubstitutionRules(Transformer):
     def transform_value(self, entry: dict) -> dict:
         LOCATION_COLUMNS = ['region', 'country', 'division', 'location']
         newVal = self.rules.get_user_rules( tuple( [ entry[col] for col in LOCATION_COLUMNS ] ) )
+        corrected = False
         for i,key in enumerate(LOCATION_COLUMNS):
+            if entry[key] != newVal[i]:
+                corrected = True
             entry[key] = newVal[i]
+            entry['geo_corrected'] = corrected
         return entry
 
 
