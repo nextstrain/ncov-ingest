@@ -8333,7 +8333,6 @@ Europe/Slovakia/Nitra Region/	Europe/Slovakia/Nitra/
 Europe/Slovakia/Stara Lubovna Region/Kamienka	Europe/Slovakia/Prešov/Kamienka SK
 Europe/Slovakia/Stara Lubovna Region/*	Europe/Slovakia/Prešov/*
 Europe/Slovakia/Komano/	Europe/Slovakia/Nitra/Komarno
-Europe/Slovakia/Kosice Region/Bukovec	Europe/Slovakia/Kosice/Bukovec (Kosice)
 Europe/Slovakia/Kosice Region/*	Europe/Slovakia/Kosice/*
 Europe/Slovakia/Senec Region/	Europe/Slovakia/Bratislava/Senec
 Europe/Slovakia/Senec Region/*	Europe/Slovakia/Bratislava/*
@@ -26875,6 +26874,7 @@ North America/USA/Massachusetts/Rockland	North America/USA/Massachusetts/Plymout
 North America/USA/Massachusetts/Acton	North America/USA/Massachusetts/Middlesex County MA
 North America/USA/Massachusetts/Worcester County	North America/USA/Massachusetts/Worcester County MA
 North America/USA/Massachusetts/Bristol County	North America/USA/Massachusetts/Bristol County MA
+North America/USA/Massachusetts/Essex County	North America/USA/Massachusetts/Essex County MA
 North America/USA/Idaho/Madison County	North America/USA/Idaho/Madison County ID
 North America/USA/Idaho/Bonneville	North America/USA/Idaho/Bonneville County
 North America/USA/Idaho/Nampa	North America/USA/Idaho/Canyon County
@@ -39222,6 +39222,8 @@ North America/U.S. Virgin Islands//	North America/USA/Virgin Islands/
 North America/U.S. Virgin Islands/U.S. Virgin Islands/	North America/USA/Virgin Islands/
 North America/U.S. Virgin Islands/St. Thomas/	North America/USA/Virgin Islands/St. Thomas
 North America/U.S. Virgin Islands/St. Croix/	North America/USA/Virgin Islands/St. Croix
+North America/Belize/San Pedro/	North America/Belize/Belize/San Pedro Town
+North America/Belize/San Pedro Town/	North America/Belize/Belize/San Pedro Town
 South America/Brazil/Espírito Santo/*	South America/Brazil/Espirito Santo/*
 South America/Brazil/Amazonas/*	South America/Brazil/Amazonas BR/*
 South America/Brazil/Amazonas/Tabatinga	South America/Brazil/Amazonas BR/Tabatinga (Amazonas BR)
@@ -39236,6 +39238,7 @@ South America/Brazil/Mato Grosso do Sul/Mundo Novo	South America/Brazil/Mato Gro
 South America/Brazil/Mato Grosso do Sul/Rondonopolis	South America/Brazil/Mato Grosso/Rondonopolis
 South America/Brazil/Mato Grosso do Sul/Bandeirantes	South America/Brazil/Mato Grosso do Sul/Bandeirantes (Mato Grosso do Sul)
 South America/Brazil/Mato Grosso do Sul/Rio Negro	South America/Brazil/Mato Grosso do Sul/Rio Negro BR
+South America/Brazil/Mato Grosso do Sul/Eldorado	South America/Brazil/Mato Grosso do Sul/Eldorado (Mato Grosso do Sul)
 South America/Brazil/Rondônia/*	South America/Brazil/Rondonia/*
 South America/Brazil/Sergipe/Cabedelo	South America/Brazil/Sergipe/
 South America/Brazil/Sergipe/Laranjeiras	South America/Brazil/Sergipe/Laranjeiras (Sergipe)
@@ -39296,6 +39299,7 @@ South America/Brazil/São Paulo/São Paulo	South America/Brazil/São Paulo/São 
 South America/Brazil/São Paulo/Santa Isabel	South America/Brazil/São Paulo/Santa Isabel BR
 South America/Brazil/São Paulo/Santo Andre	South America/Brazil/São Paulo/Santo Andre (São Paulo)
 South America/Brazil/São Paulo/Colina	South America/Brazil/São Paulo/Colina BR
+South America/Brazil/São Paulo/Eldorado	South America/Brazil/São Paulo/Eldorado (São Paulo)
 South America/Brazil/Paraíba/*	South America/Brazil/Paraiba/*
 South America/Brazil/Rio de Janeiro/Nova Iguaçu	South America/Brazil/Rio de Janeiro/Nova Iguacu
 South America/Brazil/Rio de Janeiro/São Gonçalo	South America/Brazil/Rio de Janeiro/Sao Goncalo
@@ -39816,6 +39820,7 @@ South America/Colombia/Bogota/Bogota D.C.	South America/Colombia/Cundinamarca/Bo
 South America/Colombia/Sucre/San Pedro	South America/Colombia/Sucre/San Pedro (Sucre)
 South America/Colombia/Atlantico/Valledupar	South America/Colombia/Cesar/Valledupar
 South America/Colombia/Meta/Granada CO	South America/Colombia/Meta/Granada (Meta)
+South America/Colombia/Cesar/San Diego	South America/Colombia/Cesar/San Diego CO
 South America/Peru/Cusco/*	South America/Peru/Cuzco/*
 South America/Peru/Lima/Canete	South America/Peru/Lima/Cañete
 South America/Peru/Lima/San Isidro	South America/Peru/Lima/San Isidro PE
@@ -39910,6 +39915,7 @@ South America/Paraguay/Caazapá/San Ignacio	South America/Paraguay/Caazapá/San 
 South America/Paraguay/Ypané/	South America/Paraguay/Central Paraguay/Ypané
 South America/Paraguay/Itá/	South America/Paraguay/Central Paraguay/Itá
 South America/Paraguay/Jose Domindo Campos/	South America/Paraguay/Caaguazu/José Domingo Ocampos
+South America/Paraguay/Eastern/Ñeembucu	South America/Paraguay/Neembucu/
 South America/Antigua/Caribbean/*	North America/Antigua and Barbuda/Antigua and Barbuda/*
 South America/Antigua/*/*	North America/Antigua and Barbuda/*/*
 South America/Anguilla//	Europe/United Kingdom/Anguilla/
@@ -40076,12 +40082,16 @@ Africa/Madagascar/Antananarivo/	Africa/Madagascar/Analamanga/Antananarivo
 Africa/Madagascar/Antananarivo/Analamanga	Africa/Madagascar/Analamanga/
 Africa/Madagascar/Antananarivo/Vakinankaratra	Africa/Madagascar/Vakinankaratra/
 Africa/Madagascar/Antananarivo/Itasy	Africa/Madagascar/Itasy/
+Africa/Madagascar/Antananarivo/Bongolava	Africa/Madagascar/Bongolava/
 Africa/Madagascar/Fianarantsoa/Haute-Matsiatra	Africa/Madagascar/Haute Matsiatra/
 Africa/Madagascar/Fianarantsoa/Amoron'I-Mania	Africa/Madagascar/Amoron'i Mania/
 Africa/Madagascar/Mahajanga/Boeny	Africa/Madagascar/Boeny/
 Africa/Madagascar/Toliara/Atsimo-Andrefana	Africa/Madagascar/Atsimo-Andrefana/
 Africa/Madagascar/Toliara/Menabe	Africa/Madagascar/Menabe/
 Africa/Madagascar/Antsiranana/Diana	Africa/Madagascar/Diana/
+Africa/Madagascar/Toamasina/Atsinanana	Africa/Madagascar/Atsinanana/
+Africa/Madagascar/Toamasina/Analanjirofo	Africa/Madagascar/Analanjirofo/
+Africa/Madagascar/Toamasina/Aloatra-Mangoro	Africa/Madagascar/Aloatra-Mangoro/
 Africa/Egypt/Fayoum/*	Africa/Egypt/Faiyum/*
 Africa/Egypt/Cairo/Giza	Africa/Egypt/Giza/
 Africa/Egypt/Sohage/*	Africa/Egypt/Sohag/*
@@ -40116,6 +40126,7 @@ Africa/Nigeria/Bayelsa/*	Africa/Nigeria/Bayelsa State/*
 Africa/Nigeria/Kumbotso/	Africa/Nigeria/Kano State/Kumbotso
 Africa/Nigeria/Borno/*	Africa/Nigeria/Borno State/*
 Africa/Nigeria/Kano/*	Africa/Nigeria/Kano State/*
+Africa/Nigeria/Katsina/*	Africa/Nigeria/Katsina State/*
 Africa/Côte D'Ivoire/Boauké/	Africa/Côte d'Ivoire/Bouaké/
 Africa/Côte D'Ivoire/Brobo/	Africa/Côte d'Ivoire/Bouaké/Brobo
 Africa/Côte D'Ivoire/*/*	Africa/Côte d'Ivoire/*/*
@@ -40272,6 +40283,11 @@ Africa/Botswana/Digawana/	Africa/Botswana/Southern District/Digawana
 Africa/Botswana/Morwa/	Africa/Botswana/Kgatleng District/Morwa
 Africa/Botswana/Letlhakeng/	Africa/Botswana/Kweneng District/Letlhakeng
 Africa/Botswana/Phaphane/	Africa/Botswana/Botswana/
+Africa/Botswana/Kgagodi/	Africa/Botswana/Central District BW/Kgagodi
+Africa/Botswana/Seolwane/	Africa/Botswana/Central District BW/Seolwane
+Africa/Botswana/Moiyabana/	Africa/Botswana/Central District BW/Moiyabana
+Africa/Botswana/Selebe Phikwe/	Africa/Botswana/Central District BW/Selebe Phikwe
+Africa/Botswana/Metlojane/	Africa/Botswana/Southern District/Metlojane
 Africa/Congo/*/*	Africa/Republic of the Congo/*/*
 Africa/Guyane/Cayenne/	Europe/France/French Guiana/Cayenne (French Guiana)
 Africa/Mauritius/Plaine Wilhems/*	Africa/Mauritius/Plaine-Wilhems/*
@@ -40335,6 +40351,10 @@ Africa/Algeria/Eddis/	Africa/Algeria/M'Sila Province/Eddis
 Africa/Liberia/Maryland/	Africa/Liberia/Maryland LR/
 Africa/Zimbabwe/Mash. East/*	Africa/Zimbabwe/Mashonaland East Province/*
 Africa/Gabon/Central Africa/	Africa/Gabon/Gabon/
+Africa/Eswatini/Piggs Peak/	Africa/Eswatini/Hhohho/Piggs Peak
+Africa/Eswatini/Siteki/	Africa/Eswatini/Lubombo/Siteki
+Africa/Eswatini/Siphofaneni/	Africa/Eswatini/Lubombo/Siphofaneni
+Africa/Eswatini/Matsapha/	Africa/Eswatini/Manzini/Matsapha
 Italy/Apulia/Bari/	Europe/Italy/Apulia/Bari
 North Macedonia/Kochani/Kochani/	Europe/North Macedonia/Eastern Region MK/Kochani
 North Macedonia/Kavadarci/Kavadarci/	Europe/North Macedonia/Kavadarci/Kavadarci
