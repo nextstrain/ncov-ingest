@@ -18,7 +18,7 @@ NEXTCLADE_DATASET_DIR="${3}" # external data required for nextclade to function 
 NEXTCLADE_OUTPUTS_DIR="${4}" # files other than TSV will be written by Nextclade there (aligned sequences, peptides, etc.)
 
 echo "[ INFO] ${0}:${LINENO}: Downloading latest Nextclade version"
-curl -fsSL "https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-Linux-x86_64" -o "nextclade"
+curl -fsSL "https://github.com/neherlab/nextclade-prereleases/releases/download/2021-09-30/nextclade-Linux-x86_64" -o "nextclade"
 chmod +x nextclade
 
 if ! command -v ./nextclade &>/dev/null; then
