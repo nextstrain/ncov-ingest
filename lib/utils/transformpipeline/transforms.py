@@ -802,6 +802,15 @@ class ParseBiosample(Transformer):
                     # If the sample ID is not from SRA, try to parse as strain name
                     new_entry['strain'] = self.parse_first_regex_match(ParseBiosample.STRAIN_REGEX, sample_id['value'])
 
+                    # Special processing of BioSample records pulled from EBI/ENA
+                    # If the owner is "European Bioinformatics Institute",
+                    # then the `db` field of the id labeled as "Sample name"
+                    # represents the original submitting lab
+                    #   -Jover, 2021-09-02
+                    if (new_entry['submitting_lab'] == 'European Bioinformatics Institute' and
+                        sample_id.get('label') == 'Sample name'):
+                        new_entry['submitting_lab'] = sample_id.get('db')
+
         # Convert list of attributes to dict of field names and values
         # Only includes attribute fields that do not have null values
         attributes = { attribute['name']: attribute['value'] for attribute in entry['attributes'] \
@@ -814,6 +823,13 @@ class ParseBiosample(Transformer):
         new_entry['date'] = attributes.get('collection_date')
 
         new_entry['location'] = self.parse_location({ attr: attributes.get(attr) for attr in ParseBiosample.LOCATION_ATTR })
+
+        # Special processing of BioSample records pulled from EBI/ENA
+        # The owner/submitter is "EBI" but we want to pull the original submitter to EBI
+        # which seems to be stored in the `INSDC center name` attribute
+        #   -Jover, 2021-09-02
+        if new_entry['submitting_lab'] == 'EBI':
+            new_entry['submitting_lab'] = attributes.get('INSDC center name')
 
         # Process metadata fields that have multiple potential attribute fields
         for metadata_field, attr_group in ParseBiosample.MULTI_ATTR.items():
