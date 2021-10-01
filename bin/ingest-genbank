@@ -1,5 +1,5 @@
 #!/bin/bash
-# usage: ingest-genbank [--fetch]
+# usage: ingest-genbank [--fetch] [--nextclade_full_run]
 #        ingest-genbank --help
 #
 # Ingest SARS-CoV-2 metadata and sequences from GenBank.
@@ -7,7 +7,13 @@
 # If the --fetch flag is given, new records are fetched from GenBank. Otherwise,
 # ingest from the existing GenBank NDJSON file on S3.
 #
-
+# If the --nextclade_full_run flag is given, the existing clade data is ignored
+# and a full Nextclade run is performed, recomputing clades and other metrics
+# for all sequences. This is necessary every time when new clades are defined or
+# when upgrading to the new version of Nextclade with breaking changes.
+# Note: this might take very long time to run, depending on available
+# computational resources.
+#
 set -euo pipefail
 
 : "${S3_SRC:=s3://nextstrain-data/files/ncov/open}"
@@ -15,6 +21,7 @@ set -euo pipefail
 
 main() {
     local fetch=0
+    local nextclade_full_run=0
 
     for arg; do
         case "$arg" in
@@ -24,6 +31,11 @@ main() {
                 ;;
             --fetch)
                 fetch=1
+                shift
+                break
+                ;;
+            --nextclade_full_run)
+                nextclade_full_run=1
                 shift
                 break
                 ;;
@@ -123,11 +135,16 @@ main() {
         data/genbank/location_hierarchy.tsv \
         genbank_accession
 
-    # Download old clades
-    (   aws s3 cp --no-progress "$S3_DST/nextclade.tsv.gz" - \
-        || aws s3 cp --no-progress "$S3_SRC/nextclade.tsv.gz" -) \
-        | gunzip -cfq \
-        > "data/genbank/nextclade_old.tsv"
+    # Nextclade will recompute all rows if nextclade_old.tsv is empty
+    if [ "$nextclade_full_run" == 0 ]; then
+      # Download old clades
+      (   aws s3 cp --no-progress "$S3_DST/nextclade.tsv.gz" - \
+          || aws s3 cp --no-progress "$S3_SRC/nextclade.tsv.gz" -) \
+          | gunzip -cfq \
+          > "data/genbank/nextclade_old.tsv"
+    else
+      touch "data/gisaid/nextclade_old.tsv"
+    fi
 
     # Find sequences in FASTA which don't have clades assigned yet
     ./bin/filter-fasta \

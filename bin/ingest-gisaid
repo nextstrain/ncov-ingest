@@ -1,11 +1,18 @@
 #!/bin/bash
-# usage: ingest-gisaid [--fetch]
+# usage: ingest-gisaid [--fetch] [--nextclade_full_run]
 #        ingest-gisaid --help
 #
 # Ingest SARS-CoV-2 metadata and sequences from GISAID.
 #
 # If the --fetch flag is given, new records are fetched from GISAID. Otherwise,
 # ingest from the existing GISAID NDJSON file on S3.
+#
+# If the --nextclade_full_run flag is given, the existing clade data is ignored
+# and a full Nextclade run is performed, recomputing clades and other metrics
+# for all sequences. This is necessary every time when new clades are defined or
+# when upgrading to the new version of Nextclade with breaking changes.
+# Note: this might take very long time to run, depending on available
+# computational resources.
 #
 set -euo pipefail
 
@@ -14,6 +21,7 @@ set -euo pipefail
 
 main() {
     local fetch=0
+    local nextclade_full_run=0
 
     for arg; do
         case "$arg" in
@@ -23,6 +31,11 @@ main() {
                 ;;
             --fetch)
                 fetch=1
+                shift
+                break
+                ;;
+            --nextclade_full_run)
+                nextclade_full_run=1
                 shift
                 break
                 ;;
@@ -96,11 +109,16 @@ main() {
         --output-fasta data/gisaid/sequences.fasta \
         --output-unix-newline > "$flagged_annotations"
 
-    # Download old clades
-    (   aws s3 cp --no-progress "$S3_DST/nextclade.tsv.gz" - \
-     || aws s3 cp --no-progress "$S3_SRC/nextclade.tsv.gz" -) \
-        | gunzip -cfq \
-        > "data/gisaid/nextclade_old.tsv"
+    # Nextclade will recompute all rows if nextclade_old.tsv is empty
+    if [ "$nextclade_full_run" == 0 ]; then
+      # Download old clades
+      (   aws s3 cp --no-progress "$S3_DST/nextclade.tsv.gz" - \
+       || aws s3 cp --no-progress "$S3_SRC/nextclade.tsv.gz" -) \
+          | gunzip -cfq \
+          > "data/gisaid/nextclade_old.tsv"
+    else
+      touch "data/gisaid/nextclade_old.tsv"
+    fi
 
     # Find sequences in FASTA which don't have clades assigned yet
     ./bin/filter-fasta \
