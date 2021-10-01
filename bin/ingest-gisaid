@@ -85,6 +85,8 @@ main() {
 
     cd "$(dirname "$0")/.."
 
+    set -x
+
     if [[ "$fetch" == 1 ]]; then
         local attempt=0 max_attempts=5
 
@@ -102,6 +104,7 @@ main() {
             echo "Failed to fetch"
             exit 1
         fi
+
         if [[ "$branch" == master ]]; then
             ./bin/notify-on-record-change data/gisaid.ndjson "$S3_SRC/gisaid.ndjson.xz" "GISAID"
         fi
