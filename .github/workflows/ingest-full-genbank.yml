@@ -1,0 +1,47 @@
+name: GenBank ingest with full Nextclade run
+
+on:
+  # Manually triggered using `./bin/trigger genbank/ingest-full`
+  # (or `ingest-full`, which includes GISAID)
+  repository_dispatch:
+    types:
+      - genbank/ingest-full
+      - ingest-full
+
+  # Manually triggered using GitHub's UI
+  workflow_dispatch:
+
+jobs:
+  ingest-genbank-with-full-nextclade-run:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: 'nextclade-full-run-2021-09-30'
+
+    - name: setup
+      run: ./bin/setup-github-workflow
+
+    - name: ingest-genbank-with-full-nextclade-run
+      run: |
+        ./bin/write-envdir env.d \
+          AWS_DEFAULT_REGION \
+          GITHUB_REF \
+          SLACK_TOKEN \
+          SLACK_CHANNELS
+
+        nextstrain build \
+          --aws-batch \
+          --no-download \
+          --image nextstrain/ncov-ingest \
+          --cpus 32 \
+          --memory 64GiB \
+          --exec env \
+          . \
+            envdir env.d ingest-genbank --nextclade_full_run
+      env:
+        AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        SLACK_CHANNELS: ncov-genbank-updates
