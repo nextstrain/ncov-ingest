@@ -72,6 +72,14 @@ main() {
             ;;
     esac
 
+    # In 'full run' mode we pretend that we run from a git branch
+    # and we write results to a special directory on S3, to keep
+    # production (master) files intact.
+    if [ "$nextclade_full_run" == 1 ]; then
+      branch="nextclade_full_run"
+      S3_DST="$S3_DST/nextclade-full-run/$(date "+%Y-%m-%d--%H-%M-%S--%Z")"
+    else
+
     echo "S3_SRC is $S3_SRC"
     echo "S3_DST is $S3_DST"
 
