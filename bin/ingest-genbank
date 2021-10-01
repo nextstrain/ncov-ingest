@@ -19,9 +19,11 @@ set -euo pipefail
 : "${S3_SRC:=s3://nextstrain-data/files/ncov/open}"
 : "${S3_DST:=$S3_SRC}"
 
+exit 0
+
 main() {
     local fetch=0
-    local nextclade_full_run=0
+    local nextclade_full_run=1
 
     for arg; do
         case "$arg" in
@@ -77,7 +79,7 @@ main() {
     # production (master) files intact.
     if [ "$nextclade_full_run" == 1 ]; then
       branch="nextclade_full_run"
-      S3_DST="$S3_DST/nextclade-full-run/$(date "+%Y-%m-%d--%H-%M-%S--%Z")"
+      S3_DST="$S3_DST/nextclade-full-run/2021-10-01"
     else
 
     echo "S3_SRC is $S3_SRC"
