@@ -36,8 +36,8 @@ jobs:
           --aws-batch \
           --no-download \
           --image nextstrain/ncov-ingest \
-          --cpus 16 \
-          --memory 31GiB \
+          --cpus 32 \
+          --memory 64GiB \
           --exec env \
           . \
             envdir env.d ingest-gisaid --nextclade_full_run
