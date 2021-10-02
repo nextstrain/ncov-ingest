@@ -65,13 +65,28 @@ main() {
     cd "$(dirname "$0")/.."
 
     if [[ "$fetch" == 1 ]]; then
-        ./bin/fetch-from-gisaid > data/gisaid.ndjson
-        if [[ "$branch" == master ]]; then
-            ./bin/notify-on-record-change data/gisaid.ndjson "$S3_SRC/gisaid.ndjson.gz" "GISAID"
+        local attempt=0 max_attempts=5
+
+        while [[ $((++attempt)) -le $max_attempts ]]; do
+            echo "Fetch attempt $attempt"
+            if ./bin/fetch-from-gisaid > data/gisaid.ndjson; then
+                break
+            else
+                echo "...FAILED"
+                rm data/gisaid.ndjson
+                sleep 10
+            fi
+        done
+        if [[ ! -f data/gisaid.ndjson ]]; then
+            echo "Failed to fetch"
+            exit 1
         fi
-        ./bin/upload-to-s3 --quiet data/gisaid.ndjson "$S3_DST/gisaid.ndjson.gz"
+        if [[ "$branch" == master ]]; then
+            ./bin/notify-on-record-change data/gisaid.ndjson "$S3_SRC/gisaid.ndjson.xz" "GISAID"
+        fi
+        ./bin/upload-to-s3 --quiet data/gisaid.ndjson "$S3_DST/gisaid.ndjson.xz"
     else
-        aws s3 cp --no-progress "$S3_DST/gisaid.ndjson.gz" - | gunzip -cfq > data/gisaid.ndjson
+        aws s3 cp --no-progress "$S3_DST/gisaid.ndjson.xz" - | xz -cdfq > data/gisaid.ndjson
     fi
 
     flagged_annotations="$(mktemp -t flagged-annotations-XXXXXX)"
@@ -85,20 +100,37 @@ main() {
     (   aws s3 cp --no-progress "$S3_DST/nextclade.tsv.gz" - \
      || aws s3 cp --no-progress "$S3_SRC/nextclade.tsv.gz" -) \
         | gunzip -cfq \
-        > "data/gisaid/nextclade.tsv"
+        > "data/gisaid/nextclade_old.tsv"
 
     # Find sequences in FASTA which don't have clades assigned yet
     ./bin/filter-fasta \
       --input_fasta="data/gisaid/sequences.fasta" \
-      --input_tsv="data/gisaid/nextclade.tsv" \
+      --input_tsv="data/gisaid/nextclade_old.tsv" \
       --output_fasta="data/gisaid/nextclade.sequences.fasta" \
 
-    # ... and assign clades to them
-    ./bin/run-nextclade \
-      "data/gisaid/nextclade.sequences.fasta" \
-      "data/gisaid/nextclade.tsv" \
+    # Check if the file with these extracted sequences is not empty
+    if [ ! -s "data/gisaid/nextclade.sequences.fasta" ]; then
+       echo "[ INFO] ${0}:${LINENO}: No new sequences for Nextclade to process. Skipping."
+       mv data/gisaid/nextclade_old.tsv data/gisaid/nextclade.tsv
+    else
 
-    # Join these clades into metadata
+      # And if it's not empty, run nextclade analysis on these sequences,
+      # to assign clades and calculate other useful metrics
+      ./bin/run-nextclade \
+        "data/gisaid/nextclade.sequences.fasta" \
+        "data/gisaid/nextclade_new.tsv" \
+        "data/gisaid/nextclade-inputs" \
+        "data/gisaid/nextclade"
+
+      # Join new and old clades, so that next run won't need to process sequences that are already processed
+      ./bin/join-rows \
+        "data/gisaid/nextclade_old.tsv" \
+        "data/gisaid/nextclade_new.tsv" \
+        -o "data/gisaid/nextclade.tsv"
+
+    fi
+
+    # Join clades and analysis results into metadata
     ./bin/join-metadata-and-clades \
       "data/gisaid/metadata.tsv" \
       "data/gisaid/nextclade.tsv" \
@@ -111,7 +143,8 @@ main() {
 
     if [[ "$branch" == master ]]; then
         ./bin/notify-slack --upload "flagged-annotations" < "$flagged_annotations"
-        ./bin/notify-on-metadata-change data/gisaid/metadata.tsv "$S3_SRC/metadata.tsv.gz" gisaid_epi_isl
+        # csv-diff runs out of memory
+        #./bin/notify-on-metadata-change data/gisaid/metadata.tsv "$S3_SRC/metadata.tsv.gz" gisaid_epi_isl
         ./bin/notify-on-additional-info-change data/gisaid/additional_info.tsv "$S3_SRC/additional_info.tsv.gz"
         ./bin/notify-on-flagged-metadata-change data/gisaid/flagged_metadata.txt "$S3_SRC/flagged_metadata.txt.gz"
         ./bin/notify-on-location-hierarchy-addition data/gisaid/location_hierarchy.tsv source-data/location_hierarchy.tsv
@@ -121,7 +154,7 @@ main() {
     ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/nextclade.tsv "$S3_DST/nextclade.tsv.gz"
     ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/additional_info.tsv "$S3_DST/additional_info.tsv.gz"
     ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/flagged_metadata.txt "$S3_DST/flagged_metadata.txt.gz"
-    ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/sequences.fasta "$S3_DST/sequences.fasta.gz"
+    ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/sequences.fasta "$S3_DST/sequences.fasta.xz"
 
     ./bin/clean
 }

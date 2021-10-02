@@ -1,0 +1,34 @@
+#!/bin/bash
+set -euo pipefail
+
+main() {
+    local src="${1:?A source s3:// URL is required as the first argument.}"
+    local dst="${2:?A destination file path is required as the second argument.}"
+
+    local s3path="${src#s3://}"
+    local bucket="${s3path%%/*}"
+    local key="${s3path#*/}"
+
+    local src_hash dst_hash no_hash=0000000000000000000000000000000000000000000000000000000000000000
+    dst_hash="$(sha256sum "$dst" 2>/dev/null | awk '{ print $1 }' || true)"
+    src_hash="$(aws s3api head-object --bucket "$bucket" --key "$key" --query Metadata.sha256sum --output text || echo "$no_hash")"
+
+    echo "$src_hash $src"
+    echo "$dst_hash $dst"
+
+    echo "[ INFO] Downloading $src → $dst"
+    if [[ $src_hash != "$dst_hash" ]]; then
+        aws s3 cp --no-progress "$src" - |
+        if [[ "$src" == *.gz ]]; then
+            gunzip -cfq
+        elif  [[ "$src" == *.xz ]]; then
+            xz -dcq
+        else
+            cat
+        fi > "$dst"
+    else
+        echo "[ INFO] Files are identical, skipping download"
+    fi
+}
+
+main "$@"

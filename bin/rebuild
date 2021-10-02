@@ -11,25 +11,24 @@ fi
 bin="$(dirname "$0")"
 
 main() {
-    if [[ $# -ne 0 ]]; then
-        local metadata_src="${1:?A source metadata TSV file is required as the first argument.}"
-        local metadata_dst="${2:?A destination metadata TSV s3:// URL is required as the second argument.}"
-
-        local sequences_src="${3:?A source sequences fasta file is required as the third argument.}"
-        local sequences_dst="${4:?A destination sequences fasta s3:// URL is required as the fourth argument.}"
-
-        if hashes-match "$metadata_src" "$metadata_dst" &&
-           hashes-match "$sequences_src" "$sequences_dst"
-        then
-            echo "No metadata or sequence changes"
-            echo "Exiting"
-            exit 0
-        fi
-
-        echo "Changes detected in metadata or sequences. Continuing"
-    else
-        echo "Rebuilding using remote data files."
+    if [[ $# -ne 1 ]]; then
+        echo "'./bin/rebuild' now must be run with a single argument"
+        exit 1
     fi
+
+    local data_source profile_name
+    if [[ $1 == "gisaid" || $1 == "GISAID" ]]; then
+      data_source="GISAID"
+      profile_name="nextstrain_profiles/nextstrain-gisaid"
+    elif [[ $1 == "genbank" || $1 == "GenBank" || $1 == "open" ]]; then
+      data_source="GenBank (open)"
+      profile_name="nextstrain_profiles/nextstrain-open"
+    else
+      echo "Invalid source name. Options: 'gisaid', 'genbank' or 'open'. 'genbank' and 'open' both run using 'nextstrain-open' profile."
+      exit 1
+    fi
+
+    echo "Rebuilding for ${data_source} data using remote data files."
 
     if [[ -d "ncov" ]]; then
         echo "Downloading latest version of the ncov repo (master branch)"
@@ -39,23 +38,13 @@ main() {
         git clone https://github.com/nextstrain/ncov.git
     fi
 
-    if [[ -n "${metadata_src:-}" && -n "${sequences_src:-}" ]]; then
-        # Run on these exact data files by uploading them with the build context for
-        # the Batch job, instead of roundtripping them through S3.
-        #
-        # Since the Batch job is submitted before the rest of the GitHub workflow
-        # updates the files on S3, this also avoids a narrow race condition if AWS
-        # Batch is quick or the upload to S3 slow.
-        mkdir -p ncov/data/
-        cp -v "$metadata_src" "$sequences_src" ncov/data/
-    fi
-
-
     local output aws_batch_job_id
 
     output=$(
         "$bin"/launch-build \
-            ncov deploy upload \
+            ncov \
+            --profile ${profile_name} \
+            deploy upload \
             --config slack_token="$SLACK_TOKEN"
     )
 
@@ -65,20 +54,7 @@ main() {
     aws_batch_job_id=$(grep "AWS Batch Job ID" <<<"$output" | cut -d ' ' -f 5)
 
     echo "Notifying Slack about rebuild."
-    "$bin"/notify-slack "A new build was submitted. Follow along in your local ncov repo with: "'```'"nextstrain build --aws-batch --attach $aws_batch_job_id ."'```'
-}
-
-# Returns 1 if both files match (have identical hashes). Else returns 0.
-hashes-match() {
-    local dst_s3path="${2#s3://}"
-    local dst_bucket="${dst_s3path%%/*}"
-    local dst_key="${dst_s3path#*/}"
-
-    local src_hash dst_hash no_hash=0000000000000000000000000000000000000000000000000000000000000000
-    src_hash="$("$bin/sha256sum" < "$1")"
-    dst_hash="$(aws s3api head-object --bucket "$dst_bucket" --key "$dst_key" --query Metadata.sha256sum --output text || echo "$no_hash")"
-
-    [[ "$src_hash" == "$dst_hash" ]]
+    "$bin"/notify-slack "A new build was submitted using ${data_source} data. Follow along in your local ncov repo with: "'```'"nextstrain build --aws-batch --attach $aws_batch_job_id ."'```'
 }
 
 main "$@"

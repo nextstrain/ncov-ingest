@@ -1,0 +1,50 @@
+name: GenBank fetch and ingest
+
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    # "At 03:00 (05:00 CET, 20:00 PDT the previous day) every weekday."
+    - cron:  '0 3 * * MON-FRI'
+
+  # Manually triggered using `./bin/trigger genbank/fetch-and-ingest` (or `fetch-and-ingest`, which
+  # includes GISAID)
+  repository_dispatch:
+    types:
+      - genbank/fetch-and-ingest
+      - fetch-and-ingest
+
+  # Manually triggered using GitHub's UI
+  workflow_dispatch:
+
+jobs:
+  fetch-and-ingest:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: setup
+      run: ./bin/setup-github-workflow
+
+    - name: fetch-and-ingest
+      run: |
+        ./bin/write-envdir env.d \
+          AWS_DEFAULT_REGION \
+          GITHUB_REF \
+          SLACK_TOKEN \
+          SLACK_CHANNELS
+
+        nextstrain build \
+          --aws-batch \
+          --no-download \
+          --image nextstrain/ncov-ingest \
+          --cpus 16 \
+          --memory 30GiB \
+          --exec env \
+          . \
+            envdir env.d ingest-genbank --fetch
+      env:
+        AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        SLACK_CHANNELS: ncov-genbank-updates

@@ -38,8 +38,8 @@ jobs:
           --aws-batch \
           --no-download \
           --image nextstrain/ncov-ingest \
-          --cpus 8 \
-          --memory 15GiB \
+          --cpus 16 \
+          --memory 31GiB \
           --exec env \
           . \
             envdir env.d ingest-gisaid --fetch

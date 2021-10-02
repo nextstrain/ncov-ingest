@@ -1,0 +1,31 @@
+name: Rebuild nextstrain.org/ncov/gisaid
+
+on:
+  # Manually triggered using `./bin/trigger open/rebuild` (or `./bin/trigger rebuild`,
+  # which triggers this workflow + `./rebuild-open.yml`)
+  repository_dispatch:
+    types:
+      - rebuild
+      - gisaid/rebuild
+
+  # Manually triggered using GitHub's UI
+  workflow_dispatch:
+
+jobs:
+  rebuild-gisaid:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: setup
+      run: ./bin/setup-github-workflow
+
+    - name: rebuild
+      run: ./bin/rebuild gisaid
+      env:
+        AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        SLACK_CHANNELS: ncov-gisaid-updates
+

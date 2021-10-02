@@ -1,11 +1,6 @@
 name: GenBank ingest
 
 on:
-  schedule:
-    # * is a special character in YAML so you have to quote this string
-    # "At 03:00 (05:00 CET, 20:00 PDT the previous day) every Tuesday."
-    - cron:  '0 3 * * TUE'
-
   push:
     branches:
       - master
@@ -13,6 +8,7 @@ on:
       - '**'
     paths:
       - source-data/genbank_annotations.tsv
+      - source-data/gisaid_geoLocationRules.tsv
 
   # Manually triggered using `./bin/trigger genbank/ingest` (or `ingest`, which
   # includes GISAID)

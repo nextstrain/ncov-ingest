@@ -1,88 +1,45 @@
 #!/usr/bin/env bash
 
-# HACK: Allows running nextclade on a large input fasta file:
-#
-#   - Splits fasta file into batches of a given size (Node.js is limited to max
-#     GBytes file size)
-#
-#   - Runs batches one at a time. Nextclade uses a thread pool to schedule the
-#     analysis of sequences in parallel, on per-sequence basis.
-#
-#   - Concatenates outputs from all batches
-#
-# TODO: This this script will be redundant when Nextclade implements a proper
-#  streaming fasta reader, thus lifting the 2 GBytes limit. This will
-#  effectively move batching inside Nextclade
-#
+# Downloads data required for Nextclade to function and runs nextclade
 
 set -o errexit
 set -o nounset
 set -o pipefail
 trap "exit" INT
 
-INPUT_FASTA=${1}
-OUTPUT_TSV=${2}
-TMP_DIR_FASTA="tmp/fasta"
-TMP_DIR_CLADES="tmp/clades"
-INPUT_WILDCARD="${TMP_DIR_FASTA}/*.fasta"
-OUTPUT_WILDCARD="${TMP_DIR_CLADES}/*.tsv"
+: "${1:?\"[ERROR] ${0}: Input fasta filename as the 1st argument is required.\"}"
+: "${2:?\"[ERROR] ${0}: Output TSV filename as the 2nd argument is required.\"}"
+: "${3:?\"[ERROR] ${0}: Directory for Nextclade input data as the 3rd argument is required.\"}"
+: "${4:?\"[ERROR] ${0}: Output directory as the 4th argument is required.\"}"
 
-BATCH_SIZE=${BATCH_SIZE:=200}
+INPUT_FASTA="${1}"
+OUTPUT_TSV="${2}"
+NEXTCLADE_DATASET_DIR="${3}" # external data required for nextclade to function will be downloaded there
+NEXTCLADE_OUTPUTS_DIR="${4}" # files other than TSV will be written by Nextclade there (aligned sequences, peptides, etc.)
 
-# Default number of processes, if not provided.
-# Usually equals to the sum of numbers of logical cores ("threads") on all CPUs
-# in the system combined, including "hyperthreads".
-N_PROCESSES_DEFAULT=$(getconf _NPROCESSORS_ONLN)
+echo "[ INFO] ${0}:${LINENO}: Downloading latest Nextclade version"
+curl -fsSL "https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-Linux-x86_64" -o "nextclade"
+chmod +x nextclade
 
-# Alternatively, use number of processes provided as the third argument
-N_PROCESSES=${4:-"${N_PROCESSES_DEFAULT}"}
-
-# By default, suppress debugging messages which fill logs with noise
-: "${NODE_ENV:=production}"
-export NODE_ENV
-
-# Split fasta file to multiple batches
-mkdir -p "${TMP_DIR_FASTA}"
-./bin/split-fasta \
-  "${INPUT_FASTA}" \
-  --batch_size=${BATCH_SIZE} \
-  --output_dir="${TMP_DIR_FASTA}"
-
-# Check if batches exist and report
-if ls ${INPUT_WILDCARD} 1>/dev/null 2>&1; then
-  NUM_BATCHES="$(ls -Ubad1 2>/dev/null -- ${INPUT_WILDCARD} | wc -l)"
-  echo "There are ${NUM_BATCHES} batches of sequences to process with Nextclade (batch size is ${BATCH_SIZE})"
-else
-  echo "There are no new sequences to process. Skipping Nextclade step."
-  rm -rf "${TMP_DIR_FASTA}"
-  exit 0
+if ! command -v ./nextclade &>/dev/null; then
+  echo "[ERROR] ${0}:${LINENO}: Nextclade executable not found"
+  exit 1
 fi
 
-# Run batches in parallel
-echo "Using ${N_PROCESSES} parallel processes"
-mkdir -p "${TMP_DIR_CLADES}"
-for input in ${INPUT_WILDCARD}; do
-  if [ ! -e "${input}" ]; then
-    # If ${input} does not exist, this means that INPUT_WILDCARD was not expanded,
-    # there are no batch files and we should not attempt to run the processing.
-    # If we would, then it will crash.
-    break
-  fi
+NEXTCLADE_VERSION="$(./nextclade --version)"
+echo "[ INFO] ${0}:${LINENO}: Nextclade version: ${NEXTCLADE_VERSION}"
 
-  input_basename="$(basename "${input}")"
-  output_basename="${input_basename%.fasta}.tsv"
-  output_filename="${TMP_DIR_CLADES}/${output_basename}"
+echo "[ INFO] ${0}:${LINENO}: Downloading Nextclade dataset \"sars-cov-2\""
+./nextclade dataset get --name=sars-cov-2 --output-dir="${NEXTCLADE_DATASET_DIR}" --verbose
 
-  echo "Processing ${input}"
-  nextclade.js \
-    --jobs="${N_PROCESSES}" \
-    --input-fasta="${input}" \
-    --output-tsv="${output_filename}"
-done
 
-# Concatenate output batches together
-for output in ${OUTPUT_WILDCARD}; do
-  ./bin/join-rows $output "${OUTPUT_TSV}" -o "${OUTPUT_TSV}"
-done
-
-rm -rf "${TMP_DIR_FASTA}" "${TMP_DIR_CLADES}"
+echo "[ INFO] ${0}:${LINENO}: Running Nextclade"
+./nextclade run \
+  --in-order \
+  --verbosity=error \
+  --input-fasta="${INPUT_FASTA}" \
+  --input-dataset="${NEXTCLADE_DATASET_DIR}" \
+  --output-tsv="${OUTPUT_TSV}" \
+  --genes=E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S \
+  --output-dir="${NEXTCLADE_OUTPUTS_DIR}" \
+  --output-basename="nextclade"
