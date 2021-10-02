@@ -123,7 +123,9 @@ main() {
     --output_dir="${TMP_DIR_FASTA}"
 
   # Check if batches exist and report
+  # shellcheck disable=SC2086 # We want globbing here
   if ls ${INPUT_WILDCARD} 1>/dev/null 2>&1; then
+    # shellcheck disable=SC2086,SC2012 # We want globbing here
     NUM_BATCHES="$(ls -Ubad1 -- ${INPUT_WILDCARD} 2>/dev/null | wc -l)"
     echo "[ INFO] ${0}:${LINENO}: There are now ${NUM_BATCHES} batches of sequences to process with Nextclade (batch size is ${BATCH_SIZE})"
   else
@@ -161,6 +163,7 @@ main() {
     output_filename="${TMP_DIR_TSV}/${output_basename}"
 
     # Wait until there is an empty job slot to run. This is to avoid oversubscription.
+    # shellcheck disable=SC2004  # It does not seem to be working without the '$'
     while ((${N_JOBS_CURRENT@P} >= $N_CONCURRENT_JOBS_MAX)); do
       wait -n
     done
@@ -181,11 +184,13 @@ main() {
 
   for job in $(jobs -p); do
     echo "[ INFO] ${0}:${LINENO}: Waiting until all Nextclade background jobs finish"
-    wait $job
+    wait "$job"
   done
 
   # Check if output batches exist and report
+  # shellcheck disable=SC2086 # We want globbing here
   if ls ${OUTPUT_WILDCARD} 1>/dev/null 2>&1; then
+    # shellcheck disable=SC2012 # We want globbing here
     NUM_OUTPUT_BATCHES="$(ls -Ubad1 -- ${OUTPUT_WILDCARD} 2>/dev/null | wc -l)"
     echo "[ INFO] ${0}:${LINENO}: There are now ${NUM_OUTPUT_BATCHES} output batches to concatenate (batch size is ${BATCH_SIZE})"
     echo "[ INFO] ${0}:${LINENO}: Concatenating Nextclade output batches from '${OUTPUT_WILDCARD}' into '${OUTPUT_TSV}'"
@@ -198,6 +203,7 @@ main() {
   fi
 
   # Check if output batches exist and report
+  # shellcheck disable=SC2086 # We want globbing here
   if ! ls ${OUTPUT_TSV} 1>/dev/null 2>&1; then
     echo "[ERROR] ${0}:${LINENO}: Concatenated result not found: '${OUTPUT_TSV}'. Concatenation of output batches must have failed."
     exit 1
