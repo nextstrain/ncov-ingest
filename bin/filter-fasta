@@ -30,8 +30,12 @@ but missing the input TSV file. This is useful in order to find which sequences 
 def main():
     args = parse_args()
 
-    tsv = pd.read_csv(args.input_tsv, sep="\t", low_memory=False)
-    tsv_ids = set(tsv['seqName'])
+    tsv_ids = set()
+    try:
+        tsv = pd.read_csv(args.input_tsv, sep="\t", low_memory=False)
+        tsv_ids = set(tsv['seqName'])
+    except pd.errors.EmptyDataError:
+        pass
 
     with open(args.input_fasta) as f_input:
         with open(args.output_fasta, "w") as f_output:
