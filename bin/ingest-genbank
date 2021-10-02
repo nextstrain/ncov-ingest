@@ -107,8 +107,8 @@ main() {
         ./bin/upload-to-s3 ${silent:+--quiet} data/genbank.ndjson "$S3_DST/genbank.ndjson.xz"
         ./bin/upload-to-s3 ${silent:+--quiet} data/biosample.ndjson "$S3_DST/biosample.ndjson.xz"
     else
-        aws s3 cp --no-progress "$S3_DST/genbank.ndjson.xz" - | xz -cdfq > data/genbank.ndjson
-        aws s3 cp --no-progress "$S3_DST/biosample.ndjson.xz" - | xz -cdfq > data/biosample.ndjson
+        aws s3 cp --no-progress "$S3_DST/genbank.ndjson.xz" - | xz -T0 -cdfq > data/genbank.ndjson
+        aws s3 cp --no-progress "$S3_DST/biosample.ndjson.xz" - | xz -T0 -cdfq > data/biosample.ndjson
     fi
 
     ./bin/transform-biosample data/biosample.ndjson \
