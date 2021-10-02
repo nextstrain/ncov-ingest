@@ -107,8 +107,8 @@ main() {
         ./bin/upload-to-s3 ${silent:+--quiet} data/genbank.ndjson "$S3_DST/genbank.ndjson.xz"
         ./bin/upload-to-s3 ${silent:+--quiet} data/biosample.ndjson "$S3_DST/biosample.ndjson.xz"
     else
-        aws s3 cp --no-progress "$S3_DST/genbank.ndjson.xz" - | xz -cdfq > data/genbank.ndjson
-        aws s3 cp --no-progress "$S3_DST/biosample.ndjson.xz" - | xz -cdfq > data/biosample.ndjson
+        ./bin/download-from-s3 "$S3_DST/genbank.ndjson.xz" "data/genbank.ndjson"
+        ./bin/download-from-s3 "$S3_DST/biosample.ndjson.xz" "data/biosample.ndjson"
     fi
 
     ./bin/transform-biosample data/biosample.ndjson \
@@ -124,10 +124,8 @@ main() {
         genbank_accession
 
     # Download old clades
-    (   aws s3 cp --no-progress "$S3_DST/nextclade.tsv.gz" - \
-        || aws s3 cp --no-progress "$S3_SRC/nextclade.tsv.gz" -) \
-        | gunzip -cfq \
-        > "data/genbank/nextclade_old.tsv"
+    ./bin/download-from-s3 "$S3_DST/nextclade.tsv.gz" "data/genbank/nextclade_old.tsv" ||  \
+    ./bin/download-from-s3 "$S3_SRC/nextclade.tsv.gz" "data/genbank/nextclade_old.tsv"
 
     # Find sequences in FASTA which don't have clades assigned yet
     ./bin/filter-fasta \
