@@ -204,6 +204,14 @@ main() {
   fi
 
   ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_TSV}" "$S3_DST/nextclade.tsv.gz"
+
+  # Cut the running time by deleting working directory and avoiding zipping it.
+  # We are unlikely to inspect it anyways. But keep the result file, just in
+  # case.
+  mv "${OUTPUT_TSV}" "nextclade.tsv"
+  rm -rf data tmp "${NEXTCLADE_BIN}"
+  mkdir -p "$(dirname "${OUTPUT_TSV}")"
+  mv "nextclade.tsv" "${OUTPUT_TSV}"
 }
 
 print-help() {
