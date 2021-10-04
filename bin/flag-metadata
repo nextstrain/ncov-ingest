@@ -33,7 +33,7 @@ if __name__ == '__main__':
 
     metadata = pd.read_csv(args.metadata, sep="\t", dtype="string")
     metadata.loc[metadata.date > str(date.today()), 'reason'] = '# Collection date in the future'
-    divergence = np.array([int(x) if isfloat(x) else np.nan for x in metadata.divergence])
+    divergence = np.array([int(float(x)) if isfloat(x) else np.nan for x in metadata.divergence])
     metadata.loc[(metadata.date < "2020-03-01") & (metadata.date.str.len() == 10) & ((divergence>5) | np.isnan(divergence)), 'reason'] = '# Collection date prior to March 2020'
 
     clock_deviation = np.array([float(x) if isfloat(x) else np.nan for x in metadata.clock_deviation])
