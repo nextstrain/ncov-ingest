@@ -96,6 +96,9 @@ main() {
         --output-fasta data/gisaid/sequences.fasta \
         --output-unix-newline > "$flagged_annotations"
 
+    # Remove gisaid.ndjson to save disk space.
+    rm data/gisaid.ndjson
+
     # Download old clades
     (   aws s3 cp --no-progress "$S3_DST/nextclade.tsv.gz" - \
      || aws s3 cp --no-progress "$S3_SRC/nextclade.tsv.gz" -) \
