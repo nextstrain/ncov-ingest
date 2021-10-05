@@ -31,9 +31,10 @@
 FROM nextstrain/base:branch-python-base
 
 # Install Python package for which Python 3.7 wheels do not yet exist on PyPI.
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get --allow-releaseinfo-change-suite update && apt-get install -y --no-install-recommends \
         python3-netifaces \
         time\
+        csvkit \
         xz-utils
 
 # Install Python deps
@@ -41,15 +42,15 @@ RUN python3 -m pip install pipenv
 COPY Pipfile Pipfile.lock /nextstrain/ncov-ingest/
 RUN PIPENV_PIPFILE=/nextstrain/ncov-ingest/Pipfile pipenv sync --system
 
-# Install Nextclade
-RUN curl -fsSL https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-Linux-x86_64 \
-         -o /usr/local/bin/nextclade \
- && chmod a+rx /usr/local/bin/nextclade
-
-# Install Nextclade C++
-RUN curl -fsSL https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-Linux-x86_64 \
-         -o /usr/local/bin/nextclade \
- && chmod a+rx /usr/local/bin/nextclade
+## Install Nextclade
+#RUN curl -fsSL https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-Linux-x86_64 \
+#         -o /usr/local/bin/nextclade \
+# && chmod a+rx /usr/local/bin/nextclade
+#
+## Install Nextclade C++
+#RUN curl -fsSL https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-Linux-x86_64 \
+#         -o /usr/local/bin/nextclade \
+# && chmod a+rx /usr/local/bin/nextclade
 
 # Put any bin/ dir in the cwd on the path for more convenient invocation of
 # ncov-ingest's programs.

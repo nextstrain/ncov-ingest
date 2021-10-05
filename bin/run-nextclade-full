@@ -111,6 +111,13 @@ main() {
   curl -fsSL ${NEXTCLADE_BIN_URL} -o "${NEXTCLADE_BIN}"
   chmod +x "${NEXTCLADE_BIN}"
 
+  echo "[ INFO] ${0}:${LINENO}: installing csvkit"
+  if ! command -v "csvstack"; then
+    pip3 install --upgrade --quiet csvkit
+    BIN="/tmp/.local/bin"
+    export PATH=${BIN}${PATH:+:$PATH}
+  fi
+
   echo "[ INFO] ${0}:${LINENO}: Downloading '${S3_SRC}/sequences.fasta.xz' to '${INPUT_FASTA}'"
   aws s3 cp --no-progress "${S3_SRC}/sequences.fasta.xz" - | xz -T0 -cdfq >"${INPUT_FASTA}"
 
@@ -194,9 +201,7 @@ main() {
     NUM_OUTPUT_BATCHES="$(ls -Ubad1 -- ${OUTPUT_WILDCARD} 2>/dev/null | wc -l)"
     echo "[ INFO] ${0}:${LINENO}: There are now ${NUM_OUTPUT_BATCHES} output batches to concatenate (batch size is ${BATCH_SIZE})"
     echo "[ INFO] ${0}:${LINENO}: Concatenating Nextclade output batches from '${OUTPUT_WILDCARD}' into '${OUTPUT_TSV}'"
-    for output in ${OUTPUT_WILDCARD}; do
-      ./bin/join-rows "$output" "${OUTPUT_TSV}" -o "${OUTPUT_TSV}"
-    done
+    csvstack --tabs ${OUTPUT_WILDCARD} | csvformat --out-tabs > "${OUTPUT_TSV}"
   else
     echo "[ERROR] ${0}:${LINENO}: Output batches are not found: '${OUTPUT_WILDCARD}'. Nextclade jobs mush have failed to write their results."
     exit 1
