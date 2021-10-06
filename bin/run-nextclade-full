@@ -77,7 +77,8 @@ main() {
     exit 1
   fi
 
-  S3_DST="$S3_SRC/nextclade-full-run"
+  DATE_UTC=$(date -u "+%Y-%m-%d--%H-%M-%S--%Z")
+  S3_DST="$S3_SRC/nextclade-full-run-${DATE_UTC}"
 
   INPUT_FASTA="data/${DATABASE}/sequences.fasta"
   OUTPUT_TSV="data/${DATABASE}/nextclade.tsv"
