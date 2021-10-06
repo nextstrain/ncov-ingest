@@ -1,0 +1,68 @@
+#!/usr/bin/env python3
+import argparse
+import os
+
+from Bio import SeqIO
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="Splits a fasta file into batch of given size")
+    parser.add_argument("input_file", help="Path to the input fasta file.")
+    parser.add_argument(
+        "--batch_size", "-c",
+        required=True,
+        help="Size of each batch. Note that the last batch might be smaller than that."
+    )
+    parser.add_argument(
+        "--output_dir", "-o",
+        required=True,
+        help="Output directory. Batches will be named as `{output_dir}/{basename(input_file)}.batch-{i:05}.fasta`, where `i:05` is the index of a batch zeri-padded to length of 5."
+    )
+    return parser.parse_args()
+
+
+# From https://biopython.org/wiki/Split_large_file
+def batch_iterator(iterator, batch_size):
+    """Returns lists of length batch_size.
+
+    This can be used on any iterator, for example to batch up
+    SeqRecord objects from Bio.SeqIO.parse(...), or to batch
+    Alignment objects from Bio.AlignIO.parse(...), or simply
+    lines from a file handle.
+
+    This is a generator function, and it returns lists of the
+    entries from the supplied iterator.  Each list will have
+    batch_size entries, although the final list may be shorter.
+    """
+    entry = True  # Make sure we loop once
+    while entry:
+        batch = []
+        while len(batch) < batch_size:
+            try:
+                entry = next(iterator)
+            except StopIteration:
+                entry = None
+            if entry is None:
+                # End of file
+                break
+            batch.append(entry)
+        if batch:
+            yield batch
+
+
+def main():
+    file_format = "fasta"
+    args = parse_args()
+    input_filename = os.path.basename(args.input_file)
+    batch_size = int(args.batch_size)
+
+    with open(args.input_file) as f_input:
+        record_iter = SeqIO.parse(f_input, file_format)
+        for i, batch in enumerate(batch_iterator(record_iter, batch_size)):
+            filename = os.path.join(args.output_dir, f"{input_filename}.batch-{i:05}.fasta")
+            with open(filename, "w") as f_output:
+                count = SeqIO.write(batch, f_output, file_format)
+
+
+if __name__ == '__main__':
+    main()
