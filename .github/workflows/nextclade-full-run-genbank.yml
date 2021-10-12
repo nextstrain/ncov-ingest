@@ -1,0 +1,33 @@
+name: GenBank full Nextclade run
+
+on:
+  # Manually triggered using:
+  #  - ./bin/trigger genbank/nextclade-full-run   (only GenBank)
+  #  - ./bin/trigger nextclade-full-run           (GISAID and GenBank)
+  repository_dispatch:
+    types:
+      - genbank/nextclade-full-run
+      - nextclade-full-run
+
+  # Manually triggered using GitHub's UI
+  workflow_dispatch:
+
+jobs:
+  GenBank-Full-Nextclade-Run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: "./bin/setup-github-workflow"
+        run: ./bin/setup-github-workflow
+
+      - name: "./bin/run-nextclade-full-aws --database=genbank"
+        run: |
+          ./bin/run-nextclade-full-aws --database=genbank
+
+        env:
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          SLACK_CHANNELS: ncov-genbank-updates
