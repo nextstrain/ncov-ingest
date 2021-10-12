@@ -31,7 +31,8 @@ jobs:
           AWS_DEFAULT_REGION \
           GITHUB_REF \
           SLACK_TOKEN \
-          SLACK_CHANNELS
+          SLACK_CHANNELS \
+          PAT_GITHUB_DISPATCH
 
         nextstrain build \
           --aws-batch \
@@ -48,3 +49,4 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
         SLACK_CHANNELS: ncov-genbank-updates
+        PAT_GITHUB_DISPATCH: ${{ secrets.PAT_GITHUB_DISPATCH }}
