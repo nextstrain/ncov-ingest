@@ -28,6 +28,17 @@
 #                             instance of Nextclade
 set -euo pipefail
 
+disk_info() {
+  echo "[ INFO] ${0}:${LINENO}: Summary of block devices:"
+  lsblk -o MOUNTPOINT,FSSIZE,FSAVAIL,TYPE,NAME,ROTA,SIZE,MODEL || true
+
+  echo "[ INFO] ${0}:${LINENO}: Summary of disk space usage:"
+  df -Th  || true | awk 'NR == 1; NR > 1 {print $0 | "sort -n"}'
+
+  echo "[ INFO] ${0}:${LINENO}: Summary of occupied disk space:"
+  du -bsch ./* 2>/dev/null || true | sort -h
+}
+
 main() {
   # Total number of processors in the system that Nextclade can use.
   # Default equals to the number of threads on all CPUs combined.
@@ -108,6 +119,8 @@ main() {
   echo "[ INFO] ${0}:${LINENO}:   S3_DST=${S3_DST}"
   echo "[ INFO] ${0}:${LINENO}:   NEXTCLADE_BIN_URL=${NEXTCLADE_BIN_URL}"
 
+  disk_info
+
   ./bin/notify-on-job-start "🦬 'Nextclade full run: ${DATABASE}'" "The job involves ${N_PROCESSORS} CPUs and will run ${N_CONCURRENT_JOBS_MAX} Nextclade instances in parallel, each processing ${BATCH_SIZE} sequences at a time. The results will be uploaded to \`${S3_DST}\`. Someone needs to inspect these results and then copy them over to the S3 directory where the next scheduled ingest can find them, replacing the old files. For more details, see PR #218 in ncov-ingest."
 
   echo "[ INFO] ${0}:${LINENO}: Downloading latest Nextclade version from '${NEXTCLADE_BIN_URL}' to '${NEXTCLADE_BIN}'"
@@ -140,9 +153,14 @@ main() {
     echo "[ INFO] ${0}:${LINENO}: There are now ${NUM_BATCHES} batches of sequences to process with Nextclade (batch size is ${BATCH_SIZE})"
   else
     echo "[ INFO] ${0}:${LINENO}: There are no sequences to process. Skipping Nextclade step."
-    rm -rf "${TMP_DIR_FASTA}"
+    rm -rf "${INPUT_FASTA} ${TMP_DIR_FASTA} ${TMP_DIR_UNUSED}"
     exit 0
   fi
+
+  disk_info
+  echo "[ INFO] ${0}:${LINENO}: Delete original fasta to save up disk space"
+  rm -rf "${INPUT_FASTA}"
+  disk_info
 
   if ! command -v ./${NEXTCLADE_BIN} &>/dev/null; then
     echo "[ERROR] ${0}:${LINENO}: Nextclade executable not found"
@@ -197,6 +215,11 @@ main() {
     wait "$job"
   done
 
+  disk_info
+  echo "[ INFO] ${0}:${LINENO}: Cleanup fasta batches to save up disk space"
+  rm -rf "${TMP_DIR_FASTA} ${TMP_DIR_UNUSED}"
+  disk_info
+
   # Check if output batches exist and report
   # shellcheck disable=SC2086 # We want globbing here
   if ls ${OUTPUT_WILDCARD} 1>/dev/null 2>&1; then
@@ -217,6 +240,7 @@ main() {
     exit 1
   fi
 
+  echo "[ INFO] ${0}:${LINENO}: Upload results"
   ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_TSV}" "$S3_DST/nextclade.tsv.gz"
 
   # Cut the running time by deleting working directory and avoiding zipping it.
