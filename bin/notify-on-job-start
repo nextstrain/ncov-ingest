@@ -15,7 +15,7 @@ if [ -n "${AWS_BATCH_JOB_ID}" ]; then
 
     msg_action="The job was submitted by GitHub Action <https://github.com/nextstrain/ncov-ingest/actions/runs/${GITHUB_RUN_ID}?check_suite_focus=true|${GITHUB_RUN_ID}>"
 
-    msg_command="Follow along in your local \`ncov-ingest\` repo with: "'```'"nextstrain build --aws-batch --attach ${AWS_BATCH_JOB_ID} ."'```'
+    msg_command="Follow along in your local \`ncov-ingest\` repo with: "'```'"nextstrain build --aws-batch --no-download --attach ${AWS_BATCH_JOB_ID} ."'```'
 
     "$bin"/notify-slack "${msg_job_id}. ${msg_action}. ${msg_command}"
 fi
