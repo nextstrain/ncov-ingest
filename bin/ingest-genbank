@@ -65,7 +65,9 @@ main() {
 
     cd "$(dirname "$0")/.."
 
-    set -x
+    if [[ "$branch" == master ]]; then
+      ./bin/notify-on-job-start "🥣 GenBank ingest"
+    fi
 
     if [[ "$fetch" == 1 ]]; then
         local attempt=0 max_attempts=5
