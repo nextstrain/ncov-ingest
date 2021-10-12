@@ -20,7 +20,7 @@ trap "rm -f '$dst_local' '$diff' '$additions'" EXIT
 # if the file is not already present, just exit
 "$bin"/s3-object-exists "$dst" || exit 0
 
-aws s3 cp --no-progress "$dst" - | gunzip -cfq > "$dst_local"
+"$bin"/download-from-s3 "$dst" "$dst_local"
 
 csv-diff \
     "$dst_local" \

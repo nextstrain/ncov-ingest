@@ -33,14 +33,15 @@ jobs:
           GITHUB_REF \
           GITHUB_RUN_ID \
           SLACK_TOKEN \
-          SLACK_CHANNELS
+          SLACK_CHANNELS \
+          PAT_GITHUB_DISPATCH
 
         nextstrain build \
           --aws-batch \
           --no-download \
           --image nextstrain/ncov-ingest \
-          --cpus 8 \
-          --memory 15GiB \
+          --cpus 16 \
+          --memory 31GiB \
           --exec env \
           . \
             envdir env.d ingest-gisaid --fetch
@@ -53,3 +54,4 @@ jobs:
         GITHUB_RUN_ID: ${{ github.run_id }}
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
         SLACK_CHANNELS: ncov-gisaid-updates
+        PAT_GITHUB_DISPATCH: ${{ secrets.PAT_GITHUB_DISPATCH }}

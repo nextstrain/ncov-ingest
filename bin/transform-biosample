@@ -1,0 +1,64 @@
+#!/usr/bin/env python3
+"""
+Parse the BioSample NDJSON into a BioSample TSV file.
+"""
+import argparse
+import csv
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent.parent / "lib"))
+from utils.transformpipeline.datasource import LineToJsonDataSource
+from utils.transformpipeline.transforms import ParseBiosample
+
+BIOSAMPLE_COLUMNS = [
+    'biosample_accession',
+    'sra_accession',
+    'bioproject_accession',
+    'gisaid_epi_isl',
+    'originating_lab',
+    'submitting_lab',
+    'strain',
+    'date',
+    'location',
+    'age',
+    'sex',
+]
+
+
+if __name__ == '__main__':
+    base = Path(__file__).resolve().parent.parent
+
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.RawTextHelpFormatter)
+    parser.add_argument("biosample_data",
+        help="Newline-delimited BioSample JSON data")
+    parser.add_argument("--output",
+        default=base / "data/genbank/biosample.tsv",
+        help="Output location of generated BioSample TSV. Defaults to `data/genbank/biosample.tsv`")
+    args = parser.parse_args()
+
+    with open(args.biosample_data, "r") as biosample_fh:
+        pipeline = (
+            LineToJsonDataSource(biosample_fh)
+            | ParseBiosample(columns = BIOSAMPLE_COLUMNS)
+        )
+
+        sorted_biosample = sorted(
+            pipeline,
+            key=lambda obj: obj['biosample_accession']
+        )
+
+    with open(args.output, 'wt') as biosample_out:
+        biosample_tsv = csv.DictWriter(
+            biosample_out,
+            BIOSAMPLE_COLUMNS,
+            restval="",
+            extrasaction='ignore',
+            delimiter='\t'
+        )
+        biosample_tsv.writeheader()
+
+        for entry in sorted_biosample:
+            biosample_tsv.writerow(entry)

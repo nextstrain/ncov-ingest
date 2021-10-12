@@ -1,0 +1,41 @@
+name: GenBank fetch and ingest (on branch)
+
+on:
+  push:
+    branches-ignore:
+      - master
+    tags-ignore:
+      - '**'
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: setup
+      run: ./bin/setup-github-workflow
+
+    - name: ingest
+      run: |
+        ./bin/write-envdir env.d \
+          AWS_DEFAULT_REGION \
+          GITHUB_REF \
+          GITHUB_RUN_ID \
+          SLACK_TOKEN
+
+        nextstrain build \
+          --aws-batch \
+          --no-download \
+          --image nextstrain/ncov-ingest \
+          --cpus 16 \
+          --memory 30GiB \
+          --exec env \
+          . \
+            envdir env.d ingest-genbank --fetch
+      env:
+        AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        GITHUB_RUN_ID: ${{ github.run_id }}
+        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}

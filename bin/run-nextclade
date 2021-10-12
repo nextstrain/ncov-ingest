@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Downloads data required for Nextclade to functions and runs nextclade
+# Downloads data required for Nextclade to function and runs nextclade
 
 set -o errexit
 set -o nounset
@@ -14,43 +14,32 @@ trap "exit" INT
 
 INPUT_FASTA="${1}"
 OUTPUT_TSV="${2}"
-NEXTCLADE_INPUTS_DIR="${3}" # external data required for nextclade to function will be downloaded there
+NEXTCLADE_DATASET_DIR="${3}" # external data required for nextclade to function will be downloaded there
 NEXTCLADE_OUTPUTS_DIR="${4}" # files other than TSV will be written by Nextclade there (aligned sequences, peptides, etc.)
 
-if ! command -v /usr/local/bin/nextclade &>/dev/null; then
+echo "[ INFO] ${0}:${LINENO}: Downloading latest Nextclade version"
+curl -fsSL "https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-Linux-x86_64" -o "nextclade"
+chmod +x nextclade
+
+if ! command -v ./nextclade &>/dev/null; then
   echo "[ERROR] ${0}:${LINENO}: Nextclade executable not found"
   exit 1
 fi
 
-# NEXTCLADE_VERSION="$(/usr/local/bin/nextclade --version)"
-NEXTCLADE_VERSION="master"
+NEXTCLADE_VERSION="$(./nextclade --version)"
 echo "[ INFO] ${0}:${LINENO}: Nextclade version: ${NEXTCLADE_VERSION}"
 
-NEXTCLADE_INPUTS_URL_BASE="https://raw.githubusercontent.com/nextstrain/nextclade/${NEXTCLADE_VERSION}/data/sars-cov-2"
-echo "[ INFO] ${0}:${LINENO}: Downloading Nextclade input data:"
-echo "[ INFO] ${0}:${LINENO}:   From: \"${NEXTCLADE_INPUTS_URL_BASE}\""
-echo "[ INFO] ${0}:${LINENO}:   To:   \"${NEXTCLADE_INPUTS_DIR}\""
-mkdir -p "${NEXTCLADE_INPUTS_DIR}"
-pushd "${NEXTCLADE_INPUTS_DIR}" >/dev/null
-  curl -fsSLOJ --write-out "[ INFO] curl: %{url_effective}\n" "${NEXTCLADE_INPUTS_URL_BASE}/reference.fasta"
-  curl -fsSLOJ --write-out "[ INFO] curl: %{url_effective}\n" "${NEXTCLADE_INPUTS_URL_BASE}/genemap.gff"
-  curl -fsSLOJ --write-out "[ INFO] curl: %{url_effective}\n" "${NEXTCLADE_INPUTS_URL_BASE}/tree.json"
-  curl -fsSLOJ --write-out "[ INFO] curl: %{url_effective}\n" "${NEXTCLADE_INPUTS_URL_BASE}/qc.json"
-  curl -fsSLOJ --write-out "[ INFO] curl: %{url_effective}\n" "${NEXTCLADE_INPUTS_URL_BASE}/primers.csv"
-popd >/dev/null
+echo "[ INFO] ${0}:${LINENO}: Downloading Nextclade dataset \"sars-cov-2\""
+./nextclade dataset get --name=sars-cov-2 --output-dir="${NEXTCLADE_DATASET_DIR}" --verbose
+
 
 echo "[ INFO] ${0}:${LINENO}: Running Nextclade"
-# /usr/bin/time -f "[ INFO] ${0}:${LINENO}: Nextclade run statistics: Wall clock time: %E, Maximum resident memory: %M KB\n" \
-/usr/local/bin/nextclade \
+./nextclade run \
   --in-order \
   --verbosity=error \
   --input-fasta="${INPUT_FASTA}" \
+  --input-dataset="${NEXTCLADE_DATASET_DIR}" \
   --output-tsv="${OUTPUT_TSV}" \
-  --input-root-seq="${NEXTCLADE_INPUTS_DIR}/reference.fasta" \
-  --input-gene-map="${NEXTCLADE_INPUTS_DIR}/genemap.gff" \
-  --input-tree="${NEXTCLADE_INPUTS_DIR}/tree.json" \
-  --input-qc-config="${NEXTCLADE_INPUTS_DIR}/qc.json" \
-  --input-pcr-primers="${NEXTCLADE_INPUTS_DIR}/primers.csv" \
   --genes=E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S \
   --output-dir="${NEXTCLADE_OUTPUTS_DIR}" \
   --output-basename="nextclade"

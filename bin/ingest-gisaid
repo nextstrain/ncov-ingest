@@ -69,13 +69,28 @@ main() {
     fi
 
     if [[ "$fetch" == 1 ]]; then
-        ./bin/fetch-from-gisaid > data/gisaid.ndjson
-        if [[ "$branch" == master ]]; then
-            ./bin/notify-on-record-change data/gisaid.ndjson "$S3_SRC/gisaid.ndjson.gz" "GISAID"
+        local attempt=0 max_attempts=5
+
+        while [[ $((++attempt)) -le $max_attempts ]]; do
+            echo "Fetch attempt $attempt"
+            if ./bin/fetch-from-gisaid > data/gisaid.ndjson; then
+                break
+            else
+                echo "...FAILED"
+                rm data/gisaid.ndjson
+                sleep 10
+            fi
+        done
+        if [[ ! -f data/gisaid.ndjson ]]; then
+            echo "Failed to fetch"
+            exit 1
         fi
-        ./bin/upload-to-s3 --quiet data/gisaid.ndjson "$S3_DST/gisaid.ndjson.gz"
+        if [[ "$branch" == master ]]; then
+            ./bin/notify-on-record-change data/gisaid.ndjson "$S3_SRC/gisaid.ndjson.xz" "GISAID"
+        fi
+        ./bin/upload-to-s3 --quiet data/gisaid.ndjson "$S3_DST/gisaid.ndjson.xz"
     else
-        aws s3 cp --no-progress "$S3_DST/gisaid.ndjson.gz" - | gunzip -cfq > data/gisaid.ndjson
+        ./bin/download-from-s3 "$S3_DST/gisaid.ndjson.xz" "data/gisaid.ndjson"
     fi
 
     flagged_annotations="$(mktemp -t flagged-annotations-XXXXXX)"
@@ -85,11 +100,12 @@ main() {
         --output-fasta data/gisaid/sequences.fasta \
         --output-unix-newline > "$flagged_annotations"
 
+    # Remove gisaid.ndjson to save disk space.
+    rm data/gisaid.ndjson
+
     # Download old clades
-    (   aws s3 cp --no-progress "$S3_DST/nextclade.tsv.gz" - \
-     || aws s3 cp --no-progress "$S3_SRC/nextclade.tsv.gz" -) \
-        | gunzip -cfq \
-        > "data/gisaid/nextclade_old.tsv"
+    ./bin/download-from-s3 "$S3_DST/nextclade.tsv.gz" "data/gisaid/nextclade_old.tsv" ||  \
+    ./bin/download-from-s3 "$S3_SRC/nextclade.tsv.gz" "data/gisaid/nextclade_old.tsv"
 
     # Find sequences in FASTA which don't have clades assigned yet
     ./bin/filter-fasta \
@@ -132,7 +148,8 @@ main() {
 
     if [[ "$branch" == master ]]; then
         ./bin/notify-slack --upload "flagged-annotations" < "$flagged_annotations"
-        ./bin/notify-on-metadata-change data/gisaid/metadata.tsv "$S3_SRC/metadata.tsv.gz" gisaid_epi_isl
+        # csv-diff runs out of memory
+        #./bin/notify-on-metadata-change data/gisaid/metadata.tsv "$S3_SRC/metadata.tsv.gz" gisaid_epi_isl
         ./bin/notify-on-additional-info-change data/gisaid/additional_info.tsv "$S3_SRC/additional_info.tsv.gz"
         ./bin/notify-on-flagged-metadata-change data/gisaid/flagged_metadata.txt "$S3_SRC/flagged_metadata.txt.gz"
         ./bin/notify-on-location-hierarchy-addition data/gisaid/location_hierarchy.tsv source-data/location_hierarchy.tsv
@@ -142,9 +159,20 @@ main() {
     ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/nextclade.tsv "$S3_DST/nextclade.tsv.gz"
     ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/additional_info.tsv "$S3_DST/additional_info.tsv.gz"
     ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/flagged_metadata.txt "$S3_DST/flagged_metadata.txt.gz"
-    ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/sequences.fasta "$S3_DST/sequences.fasta.gz"
+    ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/sequences.fasta "$S3_DST/sequences.fasta.xz"
 
     ./bin/clean
+
+    if [[ "$fetch" == 1 && "$branch" == master ]]; then
+        echo "Triggering ncov preprocessing GitHub action via repository dispatch."
+        curl -fsS https://api.github.com/repos/nextstrain/ncov/dispatches \
+          -H 'Accept: application/vnd.github.v3+json' \
+          -H 'Content-Type: application/json' \
+          -H "authorization: Bearer ${PAT_GITHUB_DISPATCH}" \
+          -d '{"event_type":"preprocess-gisaid"}'
+    else
+        echo "Skipping running of ncov preprocessing workflow as the current branch is not master or we are running an ingest only (not a fetch-and-ingest)."
+    fi
 }
 
 print-help() {
