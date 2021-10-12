@@ -82,8 +82,8 @@ main() {
 download-inputs() {
   mkdir -p "${INPUT_DIR}"
 
-  aws s3 cp "${S3_BUCKET}/additional_info.tsv.gz" - | gunzip -cq >"data/gisaid/inputs/additional_info.tsv"
-  aws s3 cp "${S3_BUCKET}/metadata.tsv.gz" - | gunzip -cq >"data/gisaid/inputs/metadata.tsv"
+  ./bin/download-from-s3 "${S3_BUCKET}/additional_info.tsv.gz" "data/gisaid/inputs/additional_info.tsv"
+  ./bin/download-from-s3 "${S3_BUCKET}/metadata.tsv.gz" "data/gisaid/inputs/metadata.tsv"
 }
 
 download-gisaid() {

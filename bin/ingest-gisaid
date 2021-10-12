@@ -86,7 +86,7 @@ main() {
         fi
         ./bin/upload-to-s3 --quiet data/gisaid.ndjson "$S3_DST/gisaid.ndjson.xz"
     else
-        aws s3 cp --no-progress "$S3_DST/gisaid.ndjson.xz" - | xz -T0 -cdfq > data/gisaid.ndjson
+        ./bin/download-from-s3 "$S3_DST/gisaid.ndjson.xz" "data/gisaid.ndjson"
     fi
 
     flagged_annotations="$(mktemp -t flagged-annotations-XXXXXX)"
@@ -100,10 +100,8 @@ main() {
     rm data/gisaid.ndjson
 
     # Download old clades
-    (   aws s3 cp --no-progress "$S3_DST/nextclade.tsv.gz" - \
-     || aws s3 cp --no-progress "$S3_SRC/nextclade.tsv.gz" -) \
-        | gunzip -cfq \
-        > "data/gisaid/nextclade_old.tsv"
+    ./bin/download-from-s3 "$S3_DST/nextclade.tsv.gz" "data/gisaid/nextclade_old.tsv" ||  \
+    ./bin/download-from-s3 "$S3_SRC/nextclade.tsv.gz" "data/gisaid/nextclade_old.tsv"
 
     # Find sequences in FASTA which don't have clades assigned yet
     ./bin/filter-fasta \
