@@ -108,6 +108,8 @@ main() {
   echo "[ INFO] ${0}:${LINENO}:   S3_DST=${S3_DST}"
   echo "[ INFO] ${0}:${LINENO}:   NEXTCLADE_BIN_URL=${NEXTCLADE_BIN_URL}"
 
+  ./bin/notify-on-job-start "🦬 'Nextclade full run: ${DATABASE}'" "The job involves ${N_PROCESSORS} CPUs and will run ${N_CONCURRENT_JOBS_MAX} Nextclade instances in parallel, each processing ${BATCH_SIZE} sequences at a time. The results will be uploaded to \`${S3_DST}\`. Someone needs to inspect these results and then copy them over to the S3 directory where the next scheduled ingest can find them, replacing the old files. For more details, see PR #218 in ncov-ingest."
+
   echo "[ INFO] ${0}:${LINENO}: Downloading latest Nextclade version from '${NEXTCLADE_BIN_URL}' to '${NEXTCLADE_BIN}'"
   curl -fsSL ${NEXTCLADE_BIN_URL} -o "${NEXTCLADE_BIN}"
   chmod +x "${NEXTCLADE_BIN}"
