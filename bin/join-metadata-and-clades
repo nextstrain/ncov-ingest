@@ -19,11 +19,12 @@ column_map = {
     "totalSubstitutions": "divergence",
     "totalNonACGTNs": "nonACGTN",
     "qc.privateMutations.total":  "rare_mutations",
-    "qc.snpClusters.totalSNPs": "snp_clusters",
     "qc.missingData.status": "QC_missing_data",
     "qc.mixedSites.status": "QC_mixed_sites",
     "qc.privateMutations.status": "QC_rare_mutations",
     "qc.snpClusters.status": "QC_snp_clusters",
+    "substitutions": "substitutions",
+    "aaSubstitutions": "aaSubstitutions"
 }
 
 preferred_types = {
