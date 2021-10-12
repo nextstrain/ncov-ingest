@@ -86,7 +86,7 @@ main() {
         fi
         ./bin/upload-to-s3 --quiet data/gisaid.ndjson "$S3_DST/gisaid.ndjson.xz"
     else
-        aws s3 cp --no-progress "$S3_DST/gisaid.ndjson.xz" - | xz -cdfq > data/gisaid.ndjson
+        aws s3 cp --no-progress "$S3_DST/gisaid.ndjson.xz" - | xz -T0 -cdfq > data/gisaid.ndjson
     fi
 
     flagged_annotations="$(mktemp -t flagged-annotations-XXXXXX)"
