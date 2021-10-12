@@ -96,6 +96,9 @@ main() {
         --output-fasta data/gisaid/sequences.fasta \
         --output-unix-newline > "$flagged_annotations"
 
+    # Remove gisaid.ndjson to save disk space.
+    rm data/gisaid.ndjson
+
     # Download old clades
     ./bin/download-from-s3 "$S3_DST/nextclade.tsv.gz" "data/gisaid/nextclade_old.tsv" ||  \
     ./bin/download-from-s3 "$S3_SRC/nextclade.tsv.gz" "data/gisaid/nextclade_old.tsv"
@@ -155,6 +158,17 @@ main() {
     ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/sequences.fasta "$S3_DST/sequences.fasta.xz"
 
     ./bin/clean
+
+    if [[ "$fetch" == 1 && "$branch" == master ]]; then
+        echo "Triggering ncov preprocessing GitHub action via repository dispatch."
+        curl -fsS https://api.github.com/repos/nextstrain/ncov/dispatches \
+          -H 'Accept: application/vnd.github.v3+json' \
+          -H 'Content-Type: application/json' \
+          -H "authorization: Bearer ${PAT_GITHUB_DISPATCH}" \
+          -d '{"event_type":"preprocess-gisaid"}'
+    else
+        echo "Skipping running of ncov preprocessing workflow as the current branch is not master or we are running an ingest only (not a fetch-and-ingest)."
+    fi
 }
 
 print-help() {

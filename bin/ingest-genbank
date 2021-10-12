@@ -168,6 +168,17 @@ main() {
     ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/duplicate_biosample.txt "$S3_DST/duplicate_biosample.txt.gz"
 
     ./bin/clean
+
+    if [[ "$fetch" == 1 && "$branch" == master ]]; then
+        echo "Triggering ncov preprocessing GitHub action via repository dispatch."
+        curl -fsS https://api.github.com/repos/nextstrain/ncov/dispatches \
+          -H 'Accept: application/vnd.github.v3+json' \
+          -H 'Content-Type: application/json' \
+          -H "authorization: Bearer ${PAT_GITHUB_DISPATCH}" \
+          -d '{"event_type":"preprocess-open"}'
+    else
+        echo "Skipping running of ncov preprocessing workflow as the current branch is not master or we are running an ingest only (not a fetch-and-ingest)."
+    fi
 }
 
 print-help() {
