@@ -10,7 +10,7 @@ export GITHUB_RUN_ID="${GITHUB_RUN_ID:-}"
 export SLACK_TOKEN="${SLACK_TOKEN:-}"
 export SLACK_CHANNELS="${SLACK_CHANNELS:-}"
 
-if [ -n "${AWS_BATCH_JOB_ID}" ]; then
+if [ -n "${SLACK_TOKEN}" ] && [ -n "${SLACK_CHANNELS}" ]  && [ -n "${AWS_BATCH_JOB_ID}" ]; then
     echo "Notifying Slack about started AWS Batch job. AWS_BATCH_JOB_ID=\"${AWS_BATCH_JOB_ID}\"."
 
     msg_job_id="${JOB_NAME} from AWS Batch job \`${AWS_BATCH_JOB_ID}\` (<https://console.aws.amazon.com/batch/v2/home?region=us-east-1#jobs/detail/${AWS_BATCH_JOB_ID}|link>) started."
