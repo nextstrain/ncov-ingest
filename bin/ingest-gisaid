@@ -65,7 +65,7 @@ main() {
     cd "$(dirname "$0")/.."
 
     if [[ "$branch" == master ]]; then
-      bin/notify-on-job-start "🥗 GISAID ingest"
+      ./bin/notify-on-job-start "🥗 GISAID ingest"
     fi
 
     if [[ "$fetch" == 1 ]]; then
