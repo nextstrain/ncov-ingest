@@ -8972,6 +8972,8 @@ Asia/Pakistan/Faisalabad/	Asia/Pakistan/Punjab PK/Faisalabad
 Asia/Pakistan/Alhore/*	Asia/Pakistan/Punjab PK/Lahore
 Asia/Pakistan/Punajb/*	Asia/Pakistan/Punjab PK/*
 Asia/Pakistan/Lahore/	Asia/Pakistan/Punjab PK/Lahore
+Asia/Pakistan/Lahore/Mayo Hospital	Asia/Pakistan/Punjab PK/Lahore
+Asia/Pakistan/Lahore/Al Khidmat	Asia/Pakistan/Punjab PK/Lahore
 Asia/Pakistan/Dera Ismail Khan/	Asia/Pakistan/Khyber Pakhtunkhwa/Dera Ismail Khan
 Asia/Pakistan/Shangla/	Asia/Pakistan/Khyber Pakhtunkhwa/Shangla
 Asia/Pakistan/Sialkot/	Asia/Pakistan/Punjab PK/Sialkot
@@ -8994,6 +8996,9 @@ Asia/Pakistan/Swabi/	Asia/Pakistan/Khyber Pakhtunkhwa/Swabi
 Asia/Pakistan/Swat/	Asia/Pakistan/Khyber Pakhtunkhwa/Swat
 Asia/Pakistan/Murree/	Asia/Pakistan/Punjab PK/Murree
 Asia/Pakistan/Islamabad/	Asia/Pakistan/Islamabad Capital Territory/Islamabad
+Asia/Pakistan/Karachi/Al Khidmat	Asia/Pakistan/Karachi/Al Khidmat (Karachi)
+Asia/Pakistan/Multan/Al Khidmat	Asia/Pakistan/Multan/Al Khidmat (Multan)
+Asia/Pakistan/Peshawar/Al Khidmat	Asia/Pakistan/Peshawar/Al Khidmat (Peshawar)
 Asia/Israel/Ramat Gan/	Asia/Israel/Tel Aviv District/Ramat Gan
 Asia/Israel/South Coast District/	Asia/Israel/South District/South Coast District
 Asia/Israel/Bat-Yam/	Asia/Israel/Tel Aviv District/Bat Yam
@@ -9110,6 +9115,7 @@ Asia/India/Telangana/Warangal	Asia/India/Andhra Pradesh/Warangal
 Asia/India/Telangana/Peddapally	Asia/India/Telangana/Peddapalli
 Asia/India/Telangana/Hyderabad	Asia/India/Telangana/Hyderabad IN
 Asia/India/Telangana/Kurnool	Asia/India/Andhra Pradesh/Kurnool
+Asia/India/Telangana/Srikakulam	Asia/India/Telangana/Srikakulam (Telangana)
 Asia/India/Uttar Pradesh/Kalwa	Asia/India/Uttar Pradesh/Aligarh
 Asia/India/Uttar Pradesh/Farukhabad	Asia/India/Uttar Pradesh/Farrukhabad
 Asia/India/Uttar Pradesh/Shahjahapur	Asia/India/Uttar Pradesh/Shahjahanpur IN
@@ -9164,6 +9170,7 @@ Asia/India/Anand/	Asia/India/Gujarat/Anand
 Asia/India/Diu/	Asia/India/Gujarat/Diu
 Asia/India/Kerala State/*	Asia/India/Kerala/*
 Asia/India/Andhra Pradesh/Anantapuramu	Asia/India/Andhra Pradesh/Ananthapur
+Asia/India/Andhra Pradesh/Srikakulam	Asia/India/Andhra Pradesh/Srikakulam (Andhra Pradesh)
 Asia/India/Tamil Nadu/Trichy	Asia/India/Tamil Nadu/Tiruchirapalli
 Asia/India/Tamil Nadu/Thirunelveli	Asia/India/Tamil Nadu/Tirunelveli
 Asia/India/Tamil Nadu/Kanchipuram	Asia/India/Tamil Nadu/Kancheepuram
@@ -9679,6 +9686,8 @@ Asia/Maldives/Adh. Hangnaameedhoo/	Asia/Maldives/Alifu Dhaalu Atoll/Hangnaameedh
 Asia/Maldives/Ga. Kanduhulhudhoo/	Asia/Maldives/Gaafu Alifu Atoll/Kanduhulhudhoo
 Asia/Maldives/V. Fulidhoo/	Asia/Maldives/Vaavu Atoll/Fulidhoo
 Asia/Maldives/L. Mundoo/	Asia/Maldives/Laamu Atoll/Mundoo
+Asia/Maldives/Maamendhoo/	Asia/Maldives/Gaafu Alifu Atoll/Maamendhoo
+Asia/Maldives/Ga Gemanafushi/	Asia/Maldives/Gaafu Alifu Atoll/Gemanafushi
 Asia/Srilanka/*/*	Asia/Sri Lanka/*/*
 Asia/Srilanka/Piliyandala/	Asia/Sri Lanka/Western Province/Piliyandala
 Asia/Srilanka/Nugegoda/	Asia/Sri Lanka/Western Province/Nugegoda
@@ -15797,6 +15806,7 @@ North America/USA/Arizona/Marcopa	North America/USA/Arizona/Maricopa County
 North America/USA/Arizona/Sandoval County	North America/USA/New Mexico/Sandoval County
 North America/USA/Arizona/Iron County	North America/USA/Utah/Iron County UT
 North America/USA/Arizona/Imperial County	North America/USA/Arizona/Imperial County AZ
+North America/USA/Arizona/Franklin County	North America/USA/Arizona/Franklin County AZ
 North America/USA/Indiana/Marion County	North America/USA/Indiana/Marion County IN
 North America/USA/Indiana/Lake County	North America/USA/Indiana/Lake County IN
 North America/USA/Indiana/Jefferson County	North America/USA/Indiana/Jefferson County IN
@@ -26819,6 +26829,7 @@ North America/USA/Minnesota/Kinbrae	North America/USA/Minnesota/Nobles County
 North America/USA/Minnesota/Funkley	North America/USA/Minnesota/Beltrami County
 North America/USA/Minnesota/The Ranch	North America/USA/Minnesota/Mahnomen County
 North America/USA/Minnesota/Dakota	North America/USA/Minnesota/Winona County
+North America/USA/Minnesota/Cass County	North America/USA/Minnesota/Cass County MN
 North America/USA/Massachusetts/Middlesex County	North America/USA/Massachusetts/Middlesex County MA
 North America/USA/Massachusetts/Worcester	North America/USA/Massachusetts/Worcester County MA
 North America/USA/Massachusetts/Hampden	North America/USA/Massachusetts/Hampden County
@@ -27236,6 +27247,8 @@ North America/USA/Idaho/Salt Lake County	North America/USA/Utah/Salt Lake County
 North America/USA/Idaho/Riverside County	North America/USA/California/Riverside County
 North America/USA/Idaho/Malheur County	North America/USA/Oregon/Malheur County
 North America/USA/Idaho/Valley County	North America/USA/Idaho/Valley County ID
+North America/USA/Idaho/Jefferson County	North America/USA/Idaho/Jefferson County ID
+North America/USA/Idaho/Adams County	North America/USA/Idaho/Adams County ID
 North America/USA/Nevada/Clark County	North America/USA/Nevada/Clark County NV
 North America/USA/Nevada/Douglas County	North America/USA/Nevada/Douglas County NV
 North America/USA/Nevada/Casron	North America/USA/Nevada/Carson
@@ -39478,6 +39491,8 @@ South America/Brazil/Rio Grande do Sul/Santiago	South America/Brazil/Rio Grande 
 South America/Brazil/Rio Grande do Sul/Canela	South America/Brazil/Rio Grande do Sul/Canela BR
 South America/Brazil/Rio Grande do Sul/Porto Alegre	South America/Brazil/Rio Grande do Sul/Porto Alegre (Rio Grande do Sul)
 South America/Brazil/Rio Grande do Sul/Nonoai	South America/Brazil/Rio Grande do Sul/Nonoai (Rio Grande do Sul)
+South America/Brazil/Rio Grande do Sul/Candelaria	South America/Brazil/Rio Grande do Sul/Candelaria BR
+South America/Brazil/Rio Grande do Sul/Cerrito	South America/Brazil/Rio Grande do Sul/Cerrito BR
 South America/Brazil/Sao Paulo/Sao Paulo	South America/Brazil/São Paulo/São Paulo BR
 South America/Brazil/Sao Paulo/Sao Matetus	South America/Brazil/São Paulo/Sao Mateus
 South America/Brazil/Sao Paulo/São Jose Dos Campo	South America/Brazil/São Paulo/Sao Jose Dos Campos
@@ -39825,6 +39840,7 @@ South America/Ecuador/Bolivar EC/San Miguel	South America/Ecuador/Bolivar EC/San
 South America/Ecuador/Nueva Loja/Lago Agrio	South America/Ecuador/Sucumbios/Nueva Loja
 South America/Ecuador/Nueva Loja/	South America/Ecuador/Sucumbios/Nueva Loja
 South America/Ecuador/Zamora-Chinchipe/Zamora	South America/Ecuador/Zamora-Chinchipe/Zamora EC
+South America/Ecuador/Napo/Tena	South America/Ecuador/Napo/Tena EC
 South America/Chile/Los Lagos/Llanquihue	South America/Chile/Los Lagos/Puerto Montt
 South America/Chile/Los Lagos/Rio Negro	South America/Chile/Los Lagos/Rio Negro CL
 South America/Chile/Los Lagos/Castro	South America/Chile/Los Lagos/Castro CL
@@ -39927,25 +39943,33 @@ South America/Colombia/Cundinamarca/Cajicá	South America/Colombia/Cundinamarca/
 South America/Colombia/Cundinamarca/Zipaquirá	South America/Colombia/Cundinamarca/Zipaquira
 South America/Colombia/Cundinamarca/Granada	South America/Colombia/Cundinamarca/Granada (Cundinamarca)
 South America/Colombia/Cundinamarca/San Bernardo	South America/Colombia/Cundinamarca/San Bernardo CO
+South America/Colombia/Cundinamarca/Tena	South America/Colombia/Cundinamarca/Tena CO
+South America/Colombia/Cundinamarca/Ibague	South America/Colombia/Cundinamarca/Ibague (Cundinamarca)
+South America/Colombia/Cundinamarca/Planadas	South America/Colombia/Cundinamarca/Planadas (Cundinamarca)
+South America/Colombia/Cundinamarca/Girardot	South America/Colombia/Cundinamarca/Girardot (Cundinamarca)
+South America/Colombia/Cundinamarca/Mariquita	South America/Colombia/Cundinamarca/Mariquita (Cundinamarca)
 South America/Colombia/Caldas/Pereira	South America/Colombia/Risaralda/Pereira
 South America/Colombia/Caldas/	South America/Colombia/Antioquia/Caldas (Antioquia)
 South America/Colombia/Caldas/Palestina	South America/Colombia/Caldas/Palestina CO
+South America/Colombia/Caldas/Arboleda	South America/Colombia/Caldas/Arboleda (Caldas)
 South America/Colombia/Valle del Cauca/Ansermo	South America/Colombia/Caldas/Anserma
 South America/Colombia/Valle del Cauca/Cartago	South America/Colombia/Cartago CO/Cartago CO
 South America/Colombia/Valle del Cauca/Trujillo	South America/Colombia/Valle del Cauca/Trujillo CO
 South America/Colombia/Valle del Cauca/La Union	South America/Colombia/Valle del Cauca/La Union (Valle del Cauca)
 South America/Colombia/Valle del Cauca/Armenia	South America/Colombia/Valle del Cauca/Armenia (Valle del Cauca)
+South America/Colombia/Valle del Cauca/Candelaria	South America/Colombia/Valle del Cauca/Candelaria CO
+South America/Colombia/Valle del Cauca/Cerrito	South America/Colombia/Valle del Cauca/Cerrito CO
 South America/Colombia/Norte de Santander/Cúcuta	South America/Colombia/Norte de Santander/Cucuta
 South America/Colombia/Norte de Santander/Pamplona	South America/Colombia/Norte de Santander/Pamplona CO
 South America/Colombia/Cordoba/*	South America/Colombia/Cordoba CO/*
 South America/Colombia/Amazonas/*	South America/Colombia/Departamento de Amazonas/*
-South America/Colombia/Bogotá/*	South America/Colombia/Bogota/*
+South America/Colombia/Bogotá/*	South America/Colombia/Cundinamarca/*
 South America/Colombia/Boyacá/*	South America/Colombia/Boyaca/*
 South America/Colombia/Nariño/*	South America/Colombia/Narino/*
 South America/Colombia/Córdoba/*	South America/Colombia/Cordoba CO/*
 South America/Colombia/Norte Santander/*	South America/Colombia/Norte de Santander/*
 South America/Colombia/La la Guajira/*	South America/Colombia/La Guajira/*
-South America/Colombia/Bogota D.C./*	South America/Colombia/Bogota/*
+South America/Colombia/Bogota D.C./*	South America/Colombia/Cundinamarca/*
 South America/Colombia/Huila/*	South America/Colombia/Huila CO/*
 South America/Colombia/Antioquia/Medellín	South America/Colombia/Antioquia/Medellin
 South America/Colombia/Antioquia/Apartadó	South America/Colombia/Antioquia/Apartado
@@ -39969,6 +39993,7 @@ South America/Colombia/Antioquia/La Union CO	South America/Colombia/Antioquia/La
 South America/Colombia/Antioquia/Valdivia	South America/Colombia/Antioquia/Valdivia CO
 South America/Colombia/Antioquia/San Carlos	South America/Colombia/Antioquia/San Carlos (Antioquia)
 South America/Colombia/Boyaca/Santana	South America/Colombia/Boyaca/Santana CO
+South America/Colombia/Boyaca/Sogamoso	South America/Colombia/Boyaca/Sogamoso (Boyaca)
 South America/Colombia/Caquetá/*	South America/Colombia/Caqueta/*
 South America/Colombia/San Andres/	South America/Colombia/San Andres y Providencia/San Andres
 South America/Colombia/Vichada/Inirida	South America/Colombia/Guiania/Inirida
@@ -39979,7 +40004,11 @@ South America/Colombia/Cordoba CO/Sahagun	South America/Colombia/Cordoba CO/Saha
 South America/Colombia/Cordoba CO/San Carlos	South America/Colombia/Cordoba CO/San Carlos (Cordoba CO)
 South America/Colombia/Cordoba CO/San Carlos CO	South America/Colombia/Cordoba CO/San Carlos (Cordoba CO)
 South America/Colombia/Cauca/Popayán	South America/Colombia/Cauca/Popayan
-South America/Colombia/Tolima/Ibagué	South America/Colombia/Tolima/Ibague
+South America/Colombia/Tolima/Ibagué	South America/Colombia/Tolima/Ibague (Tolima)
+South America/Colombia/Tolima/Sogamoso	South America/Colombia/Tolima/Sogamoso (Tolima)
+South America/Colombia/Tolima/Girardot	South America/Colombia/Tolima/Girardot (Tolima)
+South America/Colombia/Tolima/Ibague	South America/Colombia/Tolima/Ibague (Tolima)
+South America/Colombia/Tolima/Planadas	South America/Colombia/Tolima/Planadas (Tolima)
 South America/Colombia/Atlántico/*	South America/Colombia/Atlantico/*
 South America/Colombia/San Andrés y Providencia/San Andrés	South America/Colombia/San Andres y Providencia/San Andres
 South America/Colombia/San Andrés y Providencia/*	South America/Colombia/San Andres y Providencia/*
@@ -39993,12 +40022,17 @@ South America/Colombia/Vaupez/*	South America/Colombia/Vaupes/*
 South America/Colombia/Bolivar CO/San Cristobal	South America/Colombia/Bolivar CO/San Cristobal CO
 South America/Colombia/Quindío/*	South America/Colombia/Quindio/*
 South America/Colombia/Magdalena/Santa Ana	South America/Colombia/Magdalena/Santa Ana CO
-South America/Colombia/Bogota/Bogota	South America/Colombia/Cundinamarca/Bogota
+South America/Colombia/Magdalena/Guamal	South America/Colombia/Magdalena/Guamal (Magdalena)
+South America/Colombia/Magdalena/Santa Marta	South America/Colombia/Magdalena/Santa Marta (Magdalena)
 South America/Colombia/Bogota/	South America/Colombia/Cundinamarca/Bogota
 South America/Colombia/Bogota/Bogota D.C.	South America/Colombia/Cundinamarca/Bogota
+South America/Colombia/Bogota/*	South America/Colombia/Cundinamarca/*
 South America/Colombia/Sucre/San Pedro	South America/Colombia/Sucre/San Pedro (Sucre)
 South America/Colombia/Atlantico/Valledupar	South America/Colombia/Cesar/Valledupar
+South America/Colombia/Atlantico/Santa Marta	South America/Colombia/Atlantico/Santa Marta (Atlantico)
 South America/Colombia/Meta/Granada CO	South America/Colombia/Meta/Granada (Meta)
+South America/Colombia/Meta/Guamal	South America/Colombia/Meta/Guamal (Meta)
+South America/Colombia/Meta/Mariquita	South America/Colombia/Meta/Mariquita (Meta)
 South America/Colombia/Cesar/San Diego	South America/Colombia/Cesar/San Diego CO
 South America/Colombia/Narino/La Union	South America/Colombia/Narino/La Union (Narino)
 South America/Colombia/Narino/Los Andes	South America/Colombia/Narino/Los Andes CO
@@ -40006,6 +40040,7 @@ South America/Colombia/Narino/San Pablo	South America/Colombia/Narino/San Pablo 
 South America/Colombia/Narino/San Lorenzo	South America/Colombia/Narino/San Lorenzo CO
 South America/Colombia/Narino/Linares	South America/Colombia/Narino/Linares CO
 South America/Colombia/Narino/Sibundoy	South America/Colombia/Narino/Sibundoy (Narino)
+South America/Colombia/Narino/Arboleda	South America/Colombia/Narino/Arboleda (Narino)
 South America/Colombia/Putumayo/San Miguel	South America/Colombia/Putumayo/San Miguel CO
 South America/Colombia/Putumayo/Santa Lucia	South America/Colombia/Putumayo/Santa Lucia CO
 South America/Colombia/Putumayo/Colon	South America/Colombia/Putumayo/Colon CO
