@@ -73,35 +73,35 @@ main() {
 
         while [[ $((++attempt)) -le $max_attempts ]]; do
             echo "Fetch attempt $attempt"
-            if ./bin/fetch-from-gisaid > data/gisaid.ndjson; then
+            if ./bin/fetch-from-gisaid > data/gisaid.ndjson.xz; then
                 break
             else
                 echo "...FAILED"
-                rm data/gisaid.ndjson
+                rm data/gisaid.ndjson.xz
                 sleep 10
             fi
         done
-        if [[ ! -f data/gisaid.ndjson ]]; then
+        if [[ ! -f data/gisaid.ndjson.xz ]]; then
             echo "Failed to fetch"
             exit 1
         fi
         if [[ "$branch" == master ]]; then
-            ./bin/notify-on-record-change data/gisaid.ndjson "$S3_SRC/gisaid.ndjson.xz" "GISAID"
+            ./bin/notify-on-record-change data/gisaid.ndjson.xz "$S3_SRC/gisaid.ndjson.xz" "GISAID"
         fi
-        ./bin/upload-to-s3 --quiet data/gisaid.ndjson "$S3_DST/gisaid.ndjson.xz"
+        ./bin/upload-to-s3 --quiet data/gisaid.ndjson.xz "$S3_DST/gisaid.ndjson.xz"
     else
-        ./bin/download-from-s3 "$S3_DST/gisaid.ndjson.xz" "data/gisaid.ndjson"
+        ./bin/download-from-s3 "$S3_DST/gisaid.ndjson.xz" "data/gisaid.ndjson.xz"
     fi
 
     flagged_annotations="$(mktemp -t flagged-annotations-XXXXXX)"
     trap "rm -f '$flagged_annotations'" EXIT
-    ./bin/transform-gisaid data/gisaid.ndjson \
+    ./bin/transform-gisaid data/gisaid.ndjson.xz \
         --output-metadata data/gisaid/metadata.tsv \
         --output-fasta data/gisaid/sequences.fasta \
         --output-unix-newline > "$flagged_annotations"
 
-    # Remove gisaid.ndjson to save disk space.
-    rm data/gisaid.ndjson
+    # Remove gisaid.ndjson.xz to save disk space.
+    rm data/gisaid.ndjson.xz
 
     # Download old clades
     ./bin/download-from-s3 "$S3_DST/nextclade.tsv.gz" "data/gisaid/nextclade_old.tsv" ||  \
