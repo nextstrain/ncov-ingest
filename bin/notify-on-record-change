@@ -13,7 +13,12 @@ source_name=${3:?A record source name is required as the third argument.}
 # if the file is not already present, just exit
 "$bin"/s3-object-exists "$dst" || exit 0
 
-src_record_count="$(wc -l < "$src")"
+if [[ "$src" == *.xz ]]; then
+    src_record_count="$(wc -l < <(xz -T0 -dcfq "$src"))"
+else
+    src_record_count="$(wc -l < "$src")"
+fi
+
 dst_record_count="$(wc -l < <(aws s3 cp --no-progress "$dst" - | xz -T0 -dcfq))"
 added_records="$(( src_record_count - dst_record_count ))"
 
