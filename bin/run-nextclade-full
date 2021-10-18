@@ -91,7 +91,7 @@ main() {
   DATE_UTC=$(date -u "+%Y-%m-%d--%H-%M-%S--%Z")
   S3_DST="$S3_SRC/nextclade-full-run-${DATE_UTC}"
 
-  INPUT_FASTA="data/${DATABASE}/sequences.fasta"
+  INPUT_FASTA="data/${DATABASE}/sequences.fasta.xz"
   OUTPUT_TSV="data/${DATABASE}/nextclade.tsv"
   TMP_DIR_FASTA="tmp/${DATABASE}/fasta"
   TMP_DIR_TSV="tmp/${DATABASE}/clades"
@@ -135,7 +135,7 @@ main() {
   fi
 
   echo "[ INFO] ${0}:${LINENO}: Downloading '${S3_SRC}/sequences.fasta.xz' to '${INPUT_FASTA}'"
-  aws s3 cp --no-progress "${S3_SRC}/sequences.fasta.xz" - | xz -T0 -cdfq >"${INPUT_FASTA}"
+  aws s3 cp --no-progress "${S3_SRC}/sequences.fasta.xz" "${INPUT_FASTA}"
 
   echo "[ INFO] ${0}:${LINENO}: Splitting '${INPUT_FASTA}' into batches of size ${BATCH_SIZE} sequences and storing them in '${INPUT_WILDCARD}'"
   # Split fasta file to multiple batches
