@@ -14,11 +14,12 @@ main() {
     src_hash="$(aws s3api head-object --bucket "$bucket" --key "$key" --query Metadata.sha256sum --output text 2>/dev/null || echo "$no_hash")"
 
     echo "[ INFO] Downloading $src → $dst"
+    # shellcheck disable=SC2094 # Only checking dst filename without reading contents
     if [[ $src_hash != "$dst_hash" ]]; then
         aws s3 cp --no-progress "$src" - |
-        if [[ "$src" == *.gz ]]; then
+        if [[ "$src" == *.gz && "$dst" != *.gz ]]; then
             gunzip -cfq
-        elif  [[ "$src" == *.xz ]]; then
+        elif  [[ "$src" == *.xz && "$dst" != *.xz ]]; then
             xz -T0 -dcq
         else
             cat
