@@ -335,6 +335,7 @@ Europe/France/Seine Saint Denis/	Europe/France/Ile de France/Seine Saint Denis
 Europe/France/Meuthe-Et-Moselle/	Europe/France/Grand Est/Meuthe-Et-Moselle
 Europe/France/Provence-Alpes-Cote D Azur/*	Europe/France/Provence-Alpes-Côte d'Azur/*
 Europe/France/Provence-Alpes-Cote- D Azur/*	Europe/France/Provence-Alpes-Côte d'Azur/*
+Europe/France/Réunion/Saint-Pierre	Europe/France/Réunion/Saint-Pierre FR
 Europe/Germany/North Rhine-Westphalia/Düsseldorf	Europe/Germany/North Rhine Westphalia/Duesseldorf
 Europe/Germany/North Rhine-Westphalia/Duesseldorf Area	Europe/Germany/North Rhine Westphalia/Duesseldorf
 Europe/Germany/North Rhine-Westphalia/Dusseldorf Health Department	Europe/Germany/North Rhine Westphalia/Duesseldorf
@@ -1614,7 +1615,7 @@ Europe/Belgium/*/Merbes-Sainte-Marie	Europe/Belgium/Thuin/Merbes-Sainte-Marie
 Europe/Belgium/*/Momignies	Europe/Belgium/Thuin/Momignies
 Europe/Belgium/*/Beauwelz	Europe/Belgium/Thuin/Beauwelz
 Europe/Belgium/*/Forge-Philippe	Europe/Belgium/Thuin/Forge-Philippe
-Europe/Belgium/*/Macon	Europe/Belgium/Thuin/Macon
+Europe/Belgium/*/Macon	Europe/Belgium/Thuin/Macon BE
 Europe/Belgium/*/Macquenoise	Europe/Belgium/Thuin/Macquenoise
 Europe/Belgium/*/Monceau-Imbrechies	Europe/Belgium/Thuin/Monceau-Imbrechies
 Europe/Belgium/*/Seloignes	Europe/Belgium/Thuin/Seloignes
@@ -2454,7 +2455,7 @@ Europe/Belgium/*/Moircy	Europe/Belgium/Neufchâteau/Moircy
 Europe/Belgium/*/Recogne	Europe/Belgium/Neufchâteau/Recogne
 Europe/Belgium/*/Remagne	Europe/Belgium/Neufchâteau/Remagne
 Europe/Belgium/*/Sainte-Marie-Chevigny	Europe/Belgium/Neufchâteau/Sainte-Marie-Chevigny
-Europe/Belgium/*/Saint-Pierre	Europe/Belgium/Neufchâteau/Saint-Pierre
+Europe/Belgium/*/Saint-Pierre	Europe/Belgium/Neufchâteau/Saint-Pierre BE
 Europe/Belgium/*/Neufchâteau	Europe/Belgium/Neufchâteau/Neufchâteau
 Europe/Belgium/*/Grandvoir	Europe/Belgium/Neufchâteau/Grandvoir
 Europe/Belgium/*/Grapfontaine	Europe/Belgium/Neufchâteau/Grapfontaine
@@ -4304,7 +4305,7 @@ Europe/Belgium/Merbes-Sainte-Marie/	Europe/Belgium/Thuin/Merbes-Sainte-Marie
 Europe/Belgium/Momignies/	Europe/Belgium/Thuin/Momignies
 Europe/Belgium/Beauwelz/	Europe/Belgium/Thuin/Beauwelz
 Europe/Belgium/Forge-Philippe/	Europe/Belgium/Thuin/Forge-Philippe
-Europe/Belgium/Macon/	Europe/Belgium/Thuin/Macon
+Europe/Belgium/Macon/	Europe/Belgium/Thuin/Macon BE
 Europe/Belgium/Macquenoise/	Europe/Belgium/Thuin/Macquenoise
 Europe/Belgium/Monceau-Imbrechies/	Europe/Belgium/Thuin/Monceau-Imbrechies
 Europe/Belgium/Seloignes/	Europe/Belgium/Thuin/Seloignes
@@ -5038,7 +5039,7 @@ Europe/Belgium/Moircy/	Europe/Belgium/Neufchâteau/Moircy
 Europe/Belgium/Recogne/	Europe/Belgium/Neufchâteau/Recogne
 Europe/Belgium/Remagne/	Europe/Belgium/Neufchâteau/Remagne
 Europe/Belgium/Sainte-Marie-Chevigny/	Europe/Belgium/Neufchâteau/Sainte-Marie-Chevigny
-Europe/Belgium/Saint-Pierre/	Europe/Belgium/Neufchâteau/Saint-Pierre
+Europe/Belgium/Saint-Pierre/	Europe/Belgium/Neufchâteau/Saint-Pierre BE
 Europe/Belgium/Grandvoir/	Europe/Belgium/Neufchâteau/Grandvoir
 Europe/Belgium/Grapfontaine/	Europe/Belgium/Neufchâteau/Grapfontaine
 Europe/Belgium/Hamipré/	Europe/Belgium/Neufchâteau/Hamipré
@@ -6728,6 +6729,7 @@ Europe/Czech Republic/Ústí nad Labem Region/Litoměřice	Europe/Czech Republic
 Europe/Czech Republic/Ústí nad Labem Region/*	Europe/Czech Republic/Usti nad Labem/*
 Europe/Czech Republic/Olomouc Region/Pisarov	Europe/Czech Republic/Olomouc Region/Písařov
 Europe/Czech Republic/Olomouc Region/Prerov	Europe/Czech Republic/Olomouc Region/Prerov (Olomouc Region)
+Europe/Czech Republic/Olomouc Region/Kojetin	Europe/Czech Republic/Olomouc Region/Kojetin (Olomouc Region)
 Europe/Czech Republic/Central Bohemia Region/Prague	Europe/Czech Republic/Prague/
 Europe/Czech Republic/Central Bohemia Region/*	Europe/Czech Republic/Central Bohemian Region/*
 Europe/Czech Republic/Northern Bohemia Region/Litomerice	Europe/Czech Republic/Usti nad Labem/Litomerice
@@ -6813,6 +6815,7 @@ Europe/Czech Republic/South Moravian Region/Velke Mezirici	Europe/Czech Republic
 Europe/Czech Republic/South Moravian Region/Starec	Europe/Czech Republic/South Moravian Region/Starec (South Moravian Region)
 Europe/Czech Republic/South Moravian Region/Svatoslav	Europe/Czech Republic/South Moravian Region/Svatoslav (South Moravian Region)
 Europe/Czech Republic/South Moravian Region/Chornice	Europe/Czech Republic/South Moravian Region/Chornice (South Moravian Region)
+Europe/Czech Republic/South Moravian Region/Plavec	Europe/Czech Republic/South Moravian Region/Plavec CZ
 Europe/Czech Republic/Jihlava/	Europe/Czech Republic/Vysocina Region/Jihlava
 Europe/Czech Republic/Liberecregion/*	Europe/Czech Republic/Liberec Region/*
 Europe/Czech Republic/Vysocina Region/Pribyslavice	Europe/Czech Republic/Vysocina Region/Pribyslavice (Vysocina Region)
@@ -6844,6 +6847,7 @@ Europe/Czech Republic/Plzensky Kraj/Klatovy	Europe/Czech Republic/Plzensky Kraj/
 Europe/Czech Republic/Kralovehradecky Kraj/*	Europe/Czech Republic/Kralovehradecky Region/*
 Europe/Czech Republic/Melnik/	Europe/Czech Republic/Central Bohemian Region/Melnik
 Europe/Czech Republic/Zlín Region/Prerov	Europe/Czech Republic/Zlín Region/Prerov (Zlín Region)
+Europe/Czech Republic/Zlín Region/Kojetin	Europe/Czech Republic/Zlín Region/Kojetin (Zlín Region)
 Europe/Czech Republic/Jihomoravský Kraj/*	Europe/Czech Republic/Jihomoravsky Kraj/*
 Europe/Czech Republic/Usti Region/*	Europe/Czech Republic/Usti nad Labem/*
 Europe/Czech Republic/Hl. M. Prague/Prague 9	Europe/Czech Republic/Prague/
@@ -7072,6 +7076,7 @@ Europe/Spain/Balearic Island/*	Europe/Spain/Balear Islands/*
 Europe/Spain/Cadiz/Rota	Europe/Spain/Andalusia/Rota
 Europe/Spain/Logrono/	Europe/Spain/La Rioja ES/Logrono
 Europe/Spain/Valencian Community/*	Europe/Spain/Comunitat Valenciana/*
+Europe/Spain/Albacete/	Europe/Spain/Castilla la Mancha/Albacete
 Europe/Sweden/Västerbotten/	Europe/Sweden/Vasterbotten/
 Europe/Sweden/Västra Götaland/*	Europe/Sweden/Vastra Gotaland/*
 Europe/Sweden/Unknown/	Europe/Sweden/Sweden/
@@ -7277,6 +7282,7 @@ Europe/Poland/Dolnośląskie/Wojnowice	Europe/Poland/Dolnośląskie/Wojnowice (D
 Europe/Poland/Dolnośląskie/Przylesie	Europe/Poland/Dolnośląskie/Przylesie (Dolnośląskie)
 Europe/Poland/Dolnośląskie/Zabor	Europe/Poland/Dolnośląskie/Zabor (Dolnośląskie)
 Europe/Poland/Dolnośląskie/Komorow	Europe/Poland/Dolnośląskie/Komorow (Dolnośląskie)
+Europe/Poland/Dolnośląskie/Paczkow	Europe/Poland/Dolnośląskie/Paczkow (Dolnośląskie)
 Europe/Poland/Pomorskie/Gdańsk	Europe/Poland/Pomorskie/Gdansk
 Europe/Poland/Pomorskie/Slupsk	Europe/Poland/Pomorskie/Słupsk
 Europe/Poland/Pomorskie/Koscierzyna	Europe/Poland/Pomorskie/Kościerzyna
@@ -7342,6 +7348,7 @@ Europe/Poland/Opolskie/Kedzierzyn-Koźle	Europe/Poland/Opolskie/Kedzierzyn Kozle
 Europe/Poland/Opolskie/K- Kozle	Europe/Poland/Opolskie/K-Kozle
 Europe/Poland/Opolskie/Rogow	Europe/Poland/Opolskie/Rogow (Opolskie)
 Europe/Poland/Opolskie/Przylesie	Europe/Poland/Opolskie/Przylesie (Opolskie)
+Europe/Poland/Opolskie/Paczkow	Europe/Poland/Opolskie/Paczkow (Opolskie)
 Europe/Poland/Zuid-Holland/*	Europe/Netherlands/South Holland/*
 Europe/Poland/Małopolska/*	Europe/Poland/Malopolskie/*
 Europe/Poland/Mujawsko-Pomorskie/*	Europe/Poland/Kujawsko-Pomorskie/*
@@ -8194,6 +8201,7 @@ Europe/Slovakia/Prešov/Vranov nad Toplou	Europe/Slovakia/Prešov/Vranov nad Top
 Europe/Slovakia/Prešov/Brezovica	Europe/Slovakia/Prešov/Brezovica (Prešov)
 Europe/Slovakia/Prešov/Podhorany	Europe/Slovakia/Prešov/Podhorany (Prešov)
 Europe/Slovakia/Prešov/Bystre	Europe/Slovakia/Prešov/Bystre SK
+Europe/Slovakia/Prešov/Plavec	Europe/Slovakia/Prešov/Plavec SK
 Europe/Slovakia/Turcianska Stavnicka/	Europe/Slovakia/Zilina/Turčianska Štiavnička
 Europe/Slovakia/Mosovce/	Europe/Slovakia/Zilina/Mosovce
 Europe/Slovakia/Bystricka/	Europe/Slovakia/Zilina/Bystricka
@@ -8241,7 +8249,7 @@ Europe/Slovakia/Liptovska Teplicka/	Europe/Slovakia/Prešov/Liptovska Teplicka
 Europe/Slovakia/Rastislavice/	Europe/Slovakia/Nitra/Rastislavice
 Europe/Slovakia/Budkovce/	Europe/Slovakia/Kosice/Budkovce
 Europe/Slovakia/Velky Slavkov/	Europe/Slovakia/Prešov/Velky Slavkov
-Europe/Slovakia/Plavec/	Europe/Slovakia/Prešov/Plavec
+Europe/Slovakia/Plavec/	Europe/Slovakia/Prešov/Plavec SK
 Europe/Slovakia/Mana/	Europe/Slovakia/Nitra/Mana SK
 Europe/Slovakia/Travnica/	Europe/Slovakia/Nitra/Travnica
 Europe/Slovakia/Bruty/	Europe/Slovakia/Nitra/Bruty
@@ -8645,6 +8653,7 @@ Europe/Slovakia/Hlboke/	Europe/Slovakia/Trnava/Hlboke
 Europe/Slovakia/Prievaly/	Europe/Slovakia/Trnava/Prievaly
 Europe/Slovakia/Cana/	Europe/Slovakia/Kosice/Cana
 Europe/Slovakia/Zamarovce/	Europe/Slovakia/Trenčín/Zamarovce
+Europe/Slovakia/Turna nad Bodvou/	Europe/Slovakia/Kosice/Turna nad Bodvou
 Europe/Denmark/Na/	Europe/Denmark/Denmark/
 Europe/Denmark/Na/*	Europe/Denmark//*
 Europe/Ireland/Limerick/Limerick County	Europe/Ireland/Limerick/
@@ -9028,6 +9037,7 @@ Asia/Pakistan/Islamabad/	Asia/Pakistan/Islamabad Capital Territory/Islamabad
 Asia/Pakistan/Karachi/Al Khidmat	Asia/Pakistan/Karachi/Al Khidmat (Karachi)
 Asia/Pakistan/Multan/Al Khidmat	Asia/Pakistan/Multan/Al Khidmat (Multan)
 Asia/Pakistan/Peshawar/Al Khidmat	Asia/Pakistan/Peshawar/Al Khidmat (Peshawar)
+Asia/Pakistan/Unknown/	Asia/Pakistan/Pakistan/
 Asia/Israel/Ramat Gan/	Asia/Israel/Tel Aviv District/Ramat Gan
 Asia/Israel/South Coast District/	Asia/Israel/South District/South Coast District
 Asia/Israel/Bat-Yam/	Asia/Israel/Tel Aviv District/Bat Yam
@@ -9748,6 +9758,7 @@ North America/Mexico/Sonoramx/*	North America/Mexico/Sonora/*
 North America/Mexico/Chiapas/Baja California	North America/Mexico/Chiapas/Baja California (Chiapas)
 North America/Mexico/Nuevo Leon/Guadalupe	North America/Mexico/Nuevo Leon/Guadalupe MX
 North America/Mexico/Baja California Norte/*	North America/Mexico/Baja California/*
+North America/Mexico/Unknown/	North America/Mexico/Mexico/
 North America/USA/Illinois/Winnebago County	North America/USA/Illinois/Winnebago County IL
 North America/USA/Illinois/Dekalb County	North America/USA/Illinois/Dekalb County IL
 North America/USA/Illinois/Randolph County	North America/USA/Illinois/Randolph County IL
@@ -11306,6 +11317,7 @@ North America/USA/Illinois/Pope	North America/USA/Illinois/Pope County
 North America/USA/Illinois/Dewitt County	North America/USA/Illinois/DeWitt County IL
 North America/USA/Illinois/Alexander County	North America/USA/Illinois/Alexander County IL
 North America/USA/Illinois/Franklin	North America/USA/Illinois/Franklin IL
+North America/USA/Illinois/Lawrence	North America/USA/Illinois/Lawrence IL
 North America/USA/Wisconsin/Monroe County	North America/USA/Wisconsin/Monroe County WI
 North America/USA/Wisconsin/Richland County	North America/USA/Wisconsin/Richland County WI
 North America/USA/Wisconsin/Grant County	North America/USA/Wisconsin/Grant County WI
@@ -11346,8 +11358,8 @@ North America/USA/Wisconsin/Rusk County	North America/USA/Wisconsin/Rusk County 
 North America/USA/Wisconsin/Dickinson County	North America/USA/Wisconsin/
 North America/USA/Wisconsin/Illinois County	North America/USA/Wisconsin/
 North America/USA/Wisconsin/Florence County	North America/USA/Wisconsin/Florence County WI
-North America/USA/Wisconsin/Mount Horeb	North America/USA/Wisconsin/Dane County
-North America/USA/Wisconsin/Madison	North America/USA/Wisconsin/Dane County
+North America/USA/Wisconsin/Mount Horeb	North America/USA/Wisconsin/Dane County WI
+North America/USA/Wisconsin/Madison	North America/USA/Wisconsin/Dane County WI
 North America/USA/Wisconsin/Appleton	North America/USA/Wisconsin/Outagamie County
 North America/USA/Wisconsin/Green Bay	North America/USA/Wisconsin/Brown County WI
 North America/USA/Wisconsin/Racine	North America/USA/Wisconsin/Racine County
@@ -11372,8 +11384,8 @@ North America/USA/Wisconsin/Menomonee Falls	North America/USA/Wisconsin/Waukesha
 North America/USA/Wisconsin/Greenfield	North America/USA/Wisconsin/Milwaukee County
 North America/USA/Wisconsin/Oak Creek	North America/USA/Wisconsin/Milwaukee County
 North America/USA/Wisconsin/Franklin	North America/USA/Wisconsin/Milwaukee County
-North America/USA/Wisconsin/Sun Prairie	North America/USA/Wisconsin/Dane County
-North America/USA/Wisconsin/Fitchburg	North America/USA/Wisconsin/Dane County
+North America/USA/Wisconsin/Sun Prairie	North America/USA/Wisconsin/Dane County WI
+North America/USA/Wisconsin/Fitchburg	North America/USA/Wisconsin/Dane County WI
 North America/USA/Wisconsin/Wisconsin Rapids	North America/USA/Wisconsin/Wood County WI
 North America/USA/Wisconsin/Mount Pleasant	North America/USA/Wisconsin/Racine County
 North America/USA/Wisconsin/Neenah	North America/USA/Wisconsin/Winnebago County WI
@@ -11391,7 +11403,7 @@ North America/USA/Wisconsin/Pleasant Prairie	North America/USA/Wisconsin/Kenosha
 North America/USA/Wisconsin/South Milwaukee	North America/USA/Wisconsin/Milwaukee County
 North America/USA/Wisconsin/Howard	North America/USA/Wisconsin/Brown County WI
 North America/USA/Wisconsin/Germantown	North America/USA/Wisconsin/Washington County WI
-North America/USA/Wisconsin/Middleton	North America/USA/Wisconsin/Dane County
+North America/USA/Wisconsin/Middleton	North America/USA/Wisconsin/Dane County WI
 North America/USA/Wisconsin/Fox Crossing	North America/USA/Wisconsin/Winnebago County WI
 North America/USA/Wisconsin/Onalaska	North America/USA/Wisconsin/La Crosse County
 North America/USA/Wisconsin/Marshfield	North America/USA/Wisconsin/Wood County WI
@@ -11413,17 +11425,17 @@ North America/USA/Wisconsin/Salem Lakes	North America/USA/Wisconsin/Kenosha Coun
 North America/USA/Wisconsin/Pewaukee	North America/USA/Wisconsin/Waukesha County
 North America/USA/Wisconsin/Chippewa Falls	North America/USA/Wisconsin/Chippewa County WI
 North America/USA/Wisconsin/Greendale	North America/USA/Wisconsin/Milwaukee County
-North America/USA/Wisconsin/Waunakee	North America/USA/Wisconsin/Dane County
+North America/USA/Wisconsin/Waunakee	North America/USA/Wisconsin/Dane County WI
 North America/USA/Wisconsin/Allouez	North America/USA/Wisconsin/Brown County WI
 North America/USA/Wisconsin/Baraboo	North America/USA/Wisconsin/Sauk County
 North America/USA/Wisconsin/Whitefish Bay	North America/USA/Wisconsin/Milwaukee County
-North America/USA/Wisconsin/Verona	North America/USA/Wisconsin/Dane County
+North America/USA/Wisconsin/Verona	North America/USA/Wisconsin/Dane County WI
 North America/USA/Wisconsin/Shorewood	North America/USA/Wisconsin/Milwaukee County
-North America/USA/Wisconsin/Stoughton	North America/USA/Wisconsin/Dane County
+North America/USA/Wisconsin/Stoughton	North America/USA/Wisconsin/Dane County WI
 North America/USA/Wisconsin/Plover	North America/USA/Wisconsin/Portage County WI
 North America/USA/Wisconsin/Suamico	North America/USA/Wisconsin/Brown County WI
 North America/USA/Wisconsin/Glendale	North America/USA/Wisconsin/Milwaukee County
-North America/USA/Wisconsin/Oregon	North America/USA/Wisconsin/Dane County
+North America/USA/Wisconsin/Oregon	North America/USA/Wisconsin/Dane County WI
 North America/USA/Wisconsin/Elkhorn	North America/USA/Wisconsin/Walworth County WI
 North America/USA/Wisconsin/Harrison	North America/USA/Wisconsin/Calumet County
 North America/USA/Wisconsin/Platteville	North America/USA/Wisconsin/Grant County WI
@@ -11437,7 +11449,7 @@ North America/USA/Wisconsin/Cedarburg	North America/USA/Wisconsin/Ozaukee County
 North America/USA/Wisconsin/Waupun	North America/USA/Wisconsin/Fond Du Lac County
 North America/USA/Wisconsin/Two Rivers	North America/USA/Wisconsin/Manitowoc County
 North America/USA/Wisconsin/Sussex	North America/USA/Wisconsin/Waukesha County
-North America/USA/Wisconsin/DeForest	North America/USA/Wisconsin/Dane County
+North America/USA/Wisconsin/DeForest	North America/USA/Wisconsin/Dane County WI
 North America/USA/Wisconsin/Sparta	North America/USA/Wisconsin/Monroe County WI
 North America/USA/Wisconsin/Shawano	North America/USA/Wisconsin/Shawano County
 North America/USA/Wisconsin/Hobart	North America/USA/Wisconsin/Brown County WI
@@ -11450,12 +11462,12 @@ North America/USA/Wisconsin/New Richmond	North America/USA/Wisconsin/St. Croix C
 North America/USA/Wisconsin/Tomah	North America/USA/Wisconsin/Monroe County WI
 North America/USA/Wisconsin/Hartland	North America/USA/Wisconsin/Waukesha County
 North America/USA/Wisconsin/Plymouth	North America/USA/Wisconsin/Sheboygan County
-North America/USA/Wisconsin/McFarland	North America/USA/Wisconsin/Dane County
+North America/USA/Wisconsin/McFarland	North America/USA/Wisconsin/Dane County WI
 North America/USA/Wisconsin/Sturgeon Bay	North America/USA/Wisconsin/Door County
 North America/USA/Wisconsin/Rhinelander	North America/USA/Wisconsin/Oneida County WI
 North America/USA/Wisconsin/Prairie du Sac	North America/USA/Wisconsin/Sauk County
 North America/USA/Wisconsin/Somers	North America/USA/Wisconsin/Kenosha County
-North America/USA/Wisconsin/Monona	North America/USA/Wisconsin/Dane County
+North America/USA/Wisconsin/Monona	North America/USA/Wisconsin/Dane County WI
 North America/USA/Wisconsin/Kronenwetter	North America/USA/Wisconsin/Marathon County
 North America/USA/Wisconsin/Ripon	North America/USA/Wisconsin/Fond Du Lac County
 North America/USA/Wisconsin/Jefferson	North America/USA/Wisconsin/Jefferson County WI
@@ -11463,14 +11475,14 @@ North America/USA/Wisconsin/Sheboygan Falls	North America/USA/Wisconsin/Sheboyga
 North America/USA/Wisconsin/Altoona	North America/USA/Wisconsin/Eau Claire County
 North America/USA/Wisconsin/Ashland	North America/USA/Wisconsin/Ashland County WI
 North America/USA/Wisconsin/Antigo	North America/USA/Wisconsin/Langlade County
-North America/USA/Wisconsin/Windsor	North America/USA/Wisconsin/Dane County
+North America/USA/Wisconsin/Windsor	North America/USA/Wisconsin/Dane County WI
 North America/USA/Wisconsin/Waupaca	North America/USA/Wisconsin/Waupaca County
 North America/USA/Wisconsin/Hales Corners	North America/USA/Wisconsin/Milwaukee County
 North America/USA/Wisconsin/Delafield	North America/USA/Wisconsin/Waukesha County
 North America/USA/Wisconsin/Edgerton	North America/USA/Wisconsin/Rock County WI
 North America/USA/Wisconsin/New London	North America/USA/Wisconsin/Waupaca County
 North America/USA/Wisconsin/Union Grove	North America/USA/Wisconsin/Racine County
-North America/USA/Wisconsin/Cottage Grove	North America/USA/Wisconsin/Dane County
+North America/USA/Wisconsin/Cottage Grove	North America/USA/Wisconsin/Dane County WI
 North America/USA/Wisconsin/Kiel	North America/USA/Wisconsin/Manitowoc County
 North America/USA/Wisconsin/Lake Mills	North America/USA/Wisconsin/Jefferson County WI
 North America/USA/Wisconsin/Kimberly	North America/USA/Wisconsin/Outagamie County
@@ -11513,12 +11525,12 @@ North America/USA/Wisconsin/French Island	North America/USA/Wisconsin/La Crosse 
 North America/USA/Wisconsin/East Troy	North America/USA/Wisconsin/Walworth County WI
 North America/USA/Wisconsin/Bayside	North America/USA/Wisconsin/Milwaukee County
 North America/USA/Wisconsin/Prescott	North America/USA/Wisconsin/Pierce County WI
-North America/USA/Wisconsin/Cross Plains	North America/USA/Wisconsin/Dane County
+North America/USA/Wisconsin/Cross Plains	North America/USA/Wisconsin/Dane County WI
 North America/USA/Wisconsin/Medford	North America/USA/Wisconsin/Taylor County WI
 North America/USA/Wisconsin/Kewaskum	North America/USA/Wisconsin/Washington County WI
 North America/USA/Wisconsin/West Milwaukee	North America/USA/Wisconsin/Milwaukee County
 North America/USA/Wisconsin/Mosinee	North America/USA/Wisconsin/Marathon County
-North America/USA/Wisconsin/Marshall	North America/USA/Wisconsin/Dane County
+North America/USA/Wisconsin/Marshall	North America/USA/Wisconsin/Dane County WI
 North America/USA/Wisconsin/Rochester	North America/USA/Wisconsin/Racine County
 North America/USA/Wisconsin/Chilton	North America/USA/Wisconsin/Calumet County
 North America/USA/Wisconsin/Abbotsford	North America/USA/Wisconsin/Clark County WI
@@ -11555,7 +11567,7 @@ North America/USA/Wisconsin/Brillion	North America/USA/Wisconsin/Calumet County
 North America/USA/Wisconsin/Algoma	North America/USA/Wisconsin/Kewaunee County
 North America/USA/Wisconsin/Sherwood	North America/USA/Wisconsin/Calumet County
 North America/USA/Wisconsin/Johnson Creek	North America/USA/Wisconsin/Jefferson County WI
-North America/USA/Wisconsin/Mazomanie	North America/USA/Wisconsin/Dane County
+North America/USA/Wisconsin/Mazomanie	North America/USA/Wisconsin/Dane County WI
 North America/USA/Wisconsin/Oostburg	North America/USA/Wisconsin/Sheboygan County
 North America/USA/Wisconsin/Wisconsin Dells	North America/USA/Wisconsin/Columbia County WI
 North America/USA/Wisconsin/Genoa City	North America/USA/Wisconsin/Walworth County WI
@@ -11578,12 +11590,12 @@ North America/USA/Wisconsin/Luxemburg	North America/USA/Wisconsin/Kewaunee Count
 North America/USA/Wisconsin/Mondovi	North America/USA/Wisconsin/Buffalo County WI
 North America/USA/Wisconsin/Delavan Lake	North America/USA/Wisconsin/Walworth County WI
 North America/USA/Wisconsin/New Lisbon	North America/USA/Wisconsin/Juneau County WI
-North America/USA/Wisconsin/Deerfield	North America/USA/Wisconsin/Dane County
+North America/USA/Wisconsin/Deerfield	North America/USA/Wisconsin/Dane County WI
 North America/USA/Wisconsin/Poynette	North America/USA/Wisconsin/Columbia County WI
 North America/USA/Wisconsin/Tainter Lake	North America/USA/Wisconsin/Dunn County WI
 North America/USA/Wisconsin/Wautoma	North America/USA/Wisconsin/Waushara County
 North America/USA/Wisconsin/Mineral Point	North America/USA/Wisconsin/Iowa County WI
-North America/USA/Wisconsin/Belleville	North America/USA/Wisconsin/Dane County
+North America/USA/Wisconsin/Belleville	North America/USA/Wisconsin/Dane County WI
 North America/USA/Wisconsin/Fennimore	North America/USA/Wisconsin/Grant County WI
 North America/USA/Wisconsin/Lomira	North America/USA/Wisconsin/Dodge County WI
 North America/USA/Wisconsin/Nekoosa	North America/USA/Wisconsin/Wood County WI
@@ -11609,7 +11621,7 @@ North America/USA/Wisconsin/Pardeeville	North America/USA/Wisconsin/Columbia Cou
 North America/USA/Wisconsin/Kohler	North America/USA/Wisconsin/Sheboygan County
 North America/USA/Wisconsin/St. Croix Falls	North America/USA/Wisconsin/Polk County WI
 North America/USA/Wisconsin/Cuba City	North America/USA/Wisconsin/Grant County WI
-North America/USA/Wisconsin/Shorewood Hills	North America/USA/Wisconsin/Dane County
+North America/USA/Wisconsin/Shorewood Hills	North America/USA/Wisconsin/Dane County WI
 North America/USA/Wisconsin/Colby	North America/USA/Wisconsin/Clark County WI
 North America/USA/Wisconsin/Ixonia	North America/USA/Wisconsin/Jefferson County WI
 North America/USA/Wisconsin/Adams	North America/USA/Wisconsin/Adams County WI
@@ -11662,7 +11674,7 @@ North America/USA/Wisconsin/Hurley	North America/USA/Wisconsin/Iron County WI
 North America/USA/Wisconsin/St. Peter	North America/USA/Wisconsin/Fond Du Lac County
 North America/USA/Wisconsin/Cadott	North America/USA/Wisconsin/Chippewa County WI
 North America/USA/Wisconsin/West Baraboo	North America/USA/Wisconsin/Sauk County
-North America/USA/Wisconsin/Black Earth	North America/USA/Wisconsin/Dane County
+North America/USA/Wisconsin/Black Earth	North America/USA/Wisconsin/Dane County WI
 North America/USA/Wisconsin/Bonduel	North America/USA/Wisconsin/Shawano County
 North America/USA/Wisconsin/Cornell	North America/USA/Wisconsin/Chippewa County WI
 North America/USA/Wisconsin/Markesan	North America/USA/Wisconsin/Green Lake County
@@ -11673,7 +11685,7 @@ North America/USA/Wisconsin/Woodville	North America/USA/Wisconsin/St. Croix Coun
 North America/USA/Wisconsin/Spring Valley	North America/USA/Wisconsin/Pierce County WI
 North America/USA/Wisconsin/Blair	North America/USA/Wisconsin/Trempealeau County
 North America/USA/Wisconsin/Phillips	North America/USA/Wisconsin/Price County
-North America/USA/Wisconsin/Maple Bluff	North America/USA/Wisconsin/Dane County
+North America/USA/Wisconsin/Maple Bluff	North America/USA/Wisconsin/Dane County WI
 North America/USA/Wisconsin/Shell Lake	North America/USA/Wisconsin/Washburn County
 North America/USA/Wisconsin/Black Creek	North America/USA/Wisconsin/Outagamie County
 North America/USA/Wisconsin/Independence	North America/USA/Wisconsin/Trempealeau County
@@ -11699,7 +11711,7 @@ North America/USA/Wisconsin/Marion	North America/USA/Wisconsin/Waupaca County
 North America/USA/Wisconsin/Princeton	North America/USA/Wisconsin/Green Lake County
 North America/USA/Wisconsin/Colfax	North America/USA/Wisconsin/Dunn County WI
 North America/USA/Wisconsin/Reedsville	North America/USA/Wisconsin/Manitowoc County
-North America/USA/Wisconsin/Dane	North America/USA/Wisconsin/Dane County
+North America/USA/Wisconsin/Dane	North America/USA/Wisconsin/Dane County WI
 North America/USA/Wisconsin/Lake Koshkonong	North America/USA/Wisconsin/Jefferson County WI
 North America/USA/Wisconsin/Boyceville	North America/USA/Wisconsin/Dunn County WI
 North America/USA/Wisconsin/Cashton	North America/USA/Wisconsin/Monroe County WI
@@ -11726,7 +11738,7 @@ North America/USA/Wisconsin/Greenwood	North America/USA/Wisconsin/Clark County W
 North America/USA/Wisconsin/Albany	North America/USA/Wisconsin/Green County WI
 North America/USA/Wisconsin/Turtle Lake	North America/USA/Wisconsin/Barron County
 North America/USA/Wisconsin/Wittenberg	North America/USA/Wisconsin/Shawano County
-North America/USA/Wisconsin/Blue Mounds	North America/USA/Wisconsin/Dane County
+North America/USA/Wisconsin/Blue Mounds	North America/USA/Wisconsin/Dane County WI
 North America/USA/Wisconsin/Balsam Lake	North America/USA/Wisconsin/Polk County WI
 North America/USA/Wisconsin/Belmont	North America/USA/Wisconsin/Lafayette County WI
 North America/USA/Wisconsin/Green Lake	North America/USA/Wisconsin/Green Lake County
@@ -11989,7 +12001,7 @@ North America/USA/Wisconsin/Gratiot	North America/USA/Wisconsin/Lafayette County
 North America/USA/Wisconsin/Goodman	North America/USA/Wisconsin/Marinette County
 North America/USA/Wisconsin/Waukau	North America/USA/Wisconsin/Winnebago County WI
 North America/USA/Wisconsin/Van Dyne	North America/USA/Wisconsin/Fond Du Lac County
-North America/USA/Wisconsin/Rockdale	North America/USA/Wisconsin/Dane County
+North America/USA/Wisconsin/Rockdale	North America/USA/Wisconsin/Dane County WI
 North America/USA/Wisconsin/Mount Hope	North America/USA/Wisconsin/Grant County WI
 North America/USA/Wisconsin/Weyerhaeuser	North America/USA/Wisconsin/Rusk County WI
 North America/USA/Wisconsin/Elderon	North America/USA/Wisconsin/Marathon County
@@ -12115,6 +12127,7 @@ North America/USA/Wisconsin/Rock	North America/USA/Wisconsin/Rock County
 North America/USA/Wisconsin/Buffalo	North America/USA/Wisconsin/Buffalo County
 North America/USA/Wisconsin/Marquette County	North America/USA/Wisconsin/Marquette County WI
 North America/USA/Wisconsin/Iron County	North America/USA/Wisconsin/Iron County WI
+North America/USA/Wisconsin/Dane County	North America/USA/Wisconsin/Dane County WI
 North America/USA/Ohio/Columbus	North America/USA/Ohio/Columbus OH
 North America/USA/Ohio/Franklin County	North America/USA/Ohio/Franklin County OH
 North America/USA/Ohio/Colombus	North America/USA/Ohio/Columbus OH
@@ -15838,6 +15851,8 @@ North America/USA/Arizona/Iron County	North America/USA/Utah/Iron County UT
 North America/USA/Arizona/Imperial County	North America/USA/Arizona/Imperial County AZ
 North America/USA/Arizona/Franklin County	North America/USA/Arizona/Franklin County AZ
 North America/USA/Arizona/Fresno	North America/USA/Arizona/Fresno AZ
+North America/USA/Arizona/Utah	North America/USA/Arizona/Utah AZ
+North America/USA/Arizona/San Diego	North America/USA/Arizona/San Diego AZ
 North America/USA/Indiana/Marion County	North America/USA/Indiana/Marion County IN
 North America/USA/Indiana/Lake County	North America/USA/Indiana/Lake County IN
 North America/USA/Indiana/Jefferson County	North America/USA/Indiana/Jefferson County IN
@@ -22707,6 +22722,7 @@ North America/USA/Louisiana/Washington County	North America/USA/Louisiana/Washin
 North America/USA/Louisiana/Calcasieu County	North America/USA/Louisiana/Calcasieu Parish
 North America/USA/Louisiana/Livingston County	North America/USA/Louisiana/Livingston Parish
 North America/USA/Louisiana/Orleans County	North America/USA/Louisiana/Orleans Parish LA
+North America/USA/Louisiana/Dane County	North America/USA/Louisiana/Dane County LA
 North America/USA/Connecticut/Middlesex County	North America/USA/Connecticut/Woodbridge
 North America/USA/Connecticut/New Haven	North America/USA/Connecticut/New Haven County
 North America/USA/Connecticut/Hartford	North America/USA/Connecticut/Hartford County
@@ -27025,6 +27041,7 @@ North America/USA/Massachusetts/Bristol County	North America/USA/Massachusetts/B
 North America/USA/Massachusetts/Essex County	North America/USA/Massachusetts/Essex County MA
 North America/USA/Massachusetts/Clemson	North America/USA/Massachusetts/Clemson MA
 North America/USA/Massachusetts/Berkshire	North America/USA/Massachusetts/Berkshire MA
+North America/USA/Massachusetts/Suffolk County	North America/USA/Massachusetts/Suffolk County MA
 North America/USA/Idaho/Madison County	North America/USA/Idaho/Madison County ID
 North America/USA/Idaho/Bonneville	North America/USA/Idaho/Bonneville County
 North America/USA/Idaho/Nampa	North America/USA/Idaho/Canyon County
@@ -34820,6 +34837,7 @@ North America/USA/Mississippi/Sarah	North America/USA/Mississippi/Tate County
 North America/USA/Mississippi/Benton	North America/USA/Mississippi/Yazoo County
 North America/USA/Mississippi/Southhaven	North America/USA/Mississippi/DeSoto County MS
 North America/USA/Mississippi/Nesbit	North America/USA/Mississippi/DeSoto County MS
+North America/USA/Mississippi/Lawrence	North America/USA/Mississippi/Lawrence MS
 North America/USA/Ng/	North America/USA/USA/
 North America/USA/Cb/*	North America/USA/California/*
 North America/USA/Arkansas/Little Rock	North America/USA/Arkansas/Pulaski County AR
@@ -39645,6 +39663,7 @@ South America/Brazil/Pernambuco/Cedro	South America/Brazil/Pernambuco/Cedro (Per
 South America/Brazil/Pernambuco/Petrolandia	South America/Brazil/Pernambuco/Petrolandia (Pernambuco)
 South America/Brazil/Pernambuco/Mossoro	South America/Brazil/Rio Grande do Norte/Mossoro
 South America/Brazil/Pernambuco/Sao Joao	South America/Brazil/Pernambuco/Sao Joao (Pernambuco)
+South America/Brazil/Pernambuco/Brejinho	South America/Brazil/Pernambuco/Brejinho (Pernambuco)
 South America/Brazil/Maranhão/Rosario	South America/Brazil/Maranhão/Rosario BR
 South America/Brazil/Maranhão/São Luis	South America/Brazil/Maranhão/Sao Luis
 South America/Brazil/Maranhão/São Jose de Ribamar	South America/Brazil/Maranhão/Sao Jose de Ribamar
@@ -39721,6 +39740,7 @@ South America/Brazil/Rio Grande do Norte/Salgueiro	South America/Brazil/Pernambu
 South America/Brazil/Rio Grande do Norte/Vera Cruz	South America/Brazil/Rio Grande do Norte/Vera Cruz (Rio Grande do Norte)
 South America/Brazil/Rio Grande do Norte/Santa Maria	South America/Brazil/Rio Grande do Norte/Santa Maria (Rio Grande do Norte)
 South America/Brazil/Rio Grande do Norte/Ares	South America/Brazil/Rio Grande do Norte/Ares BR
+South America/Brazil/Rio Grande do Norte/Brejinho	South America/Brazil/Rio Grande do Norte/Brejinho (Rio Grande do Norte)
 South America/Brazil/Mato Gosso do Sul/*	South America/Brazil/Mato Grosso do Sul/*
 South America/Brazil/Alagoas/Capela	South America/Brazil/Alagoas/Capela (Alagoas)
 South America/Brazil/Alagoas/Sao Sebastiao	South America/Brazil/Alagoas/Sao Sebastiao (Alagoas)
@@ -40401,7 +40421,7 @@ Africa/Reunion/Saint-Benoit/	Europe/France/Réunion/Saint-Benoit
 Africa/Reunion/Saint-Louis/	Europe/France/Réunion/Saint-Louis
 Africa/Reunion/Le Port/	Europe/France/Réunion/Le Port
 Africa/Reunion/Sainte-Clotilde/	Europe/France/Réunion/Sainte-Clotilde
-Africa/Reunion/Saint-Pierre/	Europe/France/Réunion/Saint-Pierre
+Africa/Reunion/Saint-Pierre/	Europe/France/Réunion/Saint-Pierre FR
 Africa/Reunion/Saint Joseph/	Europe/France/Réunion/Saint-Joseph
 Africa/Nigeria/Ekiti/*	Africa/Nigeria/Ekiti State/*
 Africa/Nigeria/Ondo/*	Africa/Nigeria/Ondo State/*
@@ -40459,6 +40479,8 @@ Africa/Morocco/Inzegane/	Africa/Morocco/Souss-Massa/Inezgane
 Africa/Morocco/Inezgane/	Africa/Morocco/Souss-Massa/Inezgane
 Africa/Mayotte/Mamoudzou/	Europe/France/Mayotte/Mamoudzou
 Africa/Mayotte/Mayotte/Mamoudzou	Europe/France/Mayotte/Mamoudzou
+Africa/Mayotte/Mayotte/	Europe/France/Mayotte/
+Africa/Mayotte//	Europe/France/Mayotte/
 Africa/Mosambik/Munich/*	Africa/Mozambique/Mozambique/*
 Africa/Mosambik/*/*	Africa/Mozambique/*/*
 Africa/Gaborone/Lobatse/	Africa/Botswana/Lobatse/
