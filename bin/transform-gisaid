@@ -6,6 +6,7 @@ import os
 import argparse
 import csv
 import sys
+import lzma
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "lib"))
@@ -53,7 +54,7 @@ if __name__ == '__main__':
         formatter_class=argparse.RawTextHelpFormatter
     )
     parser.add_argument("gisaid_data",
-        default="s3://nextstrain-ncov-private/gisaid.ndjson.gz",
+        default="s3://nextstrain-ncov-private/gisaid.ndjson.xz",
         help="Newline-delimited GISAID JSON data")
     parser.add_argument("--annotations",
         default=str( base / "source-data/gisaid_annotations.tsv" ),
@@ -142,7 +143,7 @@ if __name__ == '__main__':
     RAW_METADATA_FILENAME = args.output_metadata + '.raw'
 
 
-    with open(args.gisaid_data, "r") as gisaid_fh :
+    with lzma.open(args.gisaid_data, "r") as gisaid_fh :
 
         pipeline = (
             LineToJsonDataSource(gisaid_fh)
@@ -245,7 +246,7 @@ if __name__ == '__main__':
                         updated_strain_names_by_line_no[entry[LINE_NUMBER_KEY]] = entry['strain']
 
         if not args.sorted_fasta:
-            with open(args.gisaid_data, "r") as gisaid_fh:
+            with lzma.open(args.gisaid_data, "r") as gisaid_fh:
                 for entry in (
                         LineToJsonDataSource(gisaid_fh)
                         | RenameAndAddColumns()
