@@ -5,7 +5,6 @@ scripts. If the validations succeed, saves a location hierarchy from the
 given metadata to a local file.
 """
 import sys
-import copy
 import argparse
 import pandas as pd
 from pathlib import Path
@@ -15,35 +14,6 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "lib"))
 from utils.hierarchy_dataframe import hierarchy_dataframe
 
 LOCATION_HIERARCHY_COLUMNS = ['region', 'country', 'division', 'location']
-
-
-def validate_metadata(metadata: pd.DataFrame, columns: List[str]):
-    def no_missing_hierarchy_data():
-        """
-        Raises an ``AssertionError`` if the metadata have missing values in the
-        given location hierarchy *columns* (except for 'location', which is
-        allowed to have missing values).
-        """
-        try:
-            non_null_columns = columns.copy()
-            non_null_columns.remove('location')
-        except ValueError:
-            non_null_columns = columns
-
-        non_null_columns += [ f"{resolution}_exposure" for resolution in non_null_columns ]
-
-        ids_missing_hierarchy_data = list(
-            metadata[metadata[non_null_columns] \
-                .isnull() \
-                .any(axis='columns')][args.unique_id])
-
-        assert metadata[non_null_columns].notnull().all().all(), \
-            "The following strains have missing values in one or more of the " \
-            f"location hierarchy columns «{non_null_columns}»: " \
-            f"«{ids_missing_hierarchy_data}». At this point, we expect all " \
-            "missing values to be interpolated."
-
-    no_missing_hierarchy_data()
 
 
 def print_new_location_hierarchy(metadata: pd.DataFrame, columns: List[str]):
@@ -73,5 +43,4 @@ args = parser.parse_args()
 
 metadata = pd.read_csv(args.metadata, sep="\t")
 
-validate_metadata(metadata, LOCATION_HIERARCHY_COLUMNS)
 print_new_location_hierarchy(metadata, LOCATION_HIERARCHY_COLUMNS)
