@@ -25,6 +25,8 @@ column_map = {
     "qc.snpClusters.status": "QC_snp_clusters",
     "qc.frameShifts.frameShifts": "QC_frame_shifts",
     "qc.stopCodons.stopCodons": "QC_stop_codons",
+    "frameShifts": "frame_shifts",
+    "insertions": "insertions",
     "substitutions": "substitutions",
     "aaSubstitutions": "aaSubstitutions"
 }
