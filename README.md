@@ -90,7 +90,7 @@ If needed, the runs can be also launched from a local machine, by one of these s
 ./bin/run-nextclade-full-docker    # Schedules an AWS Batch Job and runs there
 ```
 
-In case of AWS Batch option, the results of the computation, the new `nextclade.tsv` will be uploaded to S3 into a subdirectory in the directory which is the usual location of this file for the database. The subdirectory name will contain a date, so that there is no confusion about versions. The Slack announcement will contain the full path. These files then need to be manually inspected for correctness and scientific soundness and id all good, copied to the usual location where the daily ingest can find them. From that point the clades are considered fresh.
+With the AWS Batch option, the results of the computation – the new `nextclade.tsv` – will be uploaded to S3 into a subdirectory of the directory which is the usual location of this file for the database. The subdirectory name will contain a date, so that there is no confusion about versions. The Slack announcement will contain the full path. These files then need to be manually inspected for correctness and scientific soundness and if all good, copied to the usual location where the daily ingest can find them. From that point the clades are considered fresh.
 
 For detailed explanation see PR [#218](https://github.com/nextstrain/ncov-ingest/pull/218).
 
