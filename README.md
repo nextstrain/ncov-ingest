@@ -69,38 +69,31 @@ Then, click on 'More'.
 You can then copy your Slack member ID from the menu that appears.
 Enter this into the `slack_member_id` field of your alert configuration.
 
-## Refreshing clades
+## Refreshing clades: Nextclade full run
 
-Clades assigned with Nextclade are currently cached in `nextclade.tsv` on S3 bucket and only incremental updates for new sequences are performed during the daily ingests. This clade cache goes stale with time. It is necessary to perform full update of `nextclade.tsv` file periodically, recomputing clades for all of the GISAID sequences all over again, to account for changes in the data. Same goes for when updating Nextclade versions, as they may lead to changes in clade assignment logic. Massive amounts of compute is required and it is not currently feasible to do this computation on current infrastructure, so it should be done elsewhere. As of November 2020, for 200k sequences, it takes approximately 2-3 hours on an on-prem Xeon machine with 16 cores/32 threads.
+Clades assigned with Nextclade are currently cached in `nextclade.tsv` in the S3 bucket and only incremental additions for the new sequences are performed during the daily ingests. This clade cache goes stale with time. It is necessary to perform full update of `nextclade.tsv` file periodically, recomputing clades for all of the GISAID and GenBank sequences all over again, to account for changes in the data and in Nextclade algorithms. 
 
-Use `./bin/gisaid-get-all-clades` to perform this update.
-Python >= 3.6+, Node.js >= 12 (14 recommended) and yarn v1 are required.
+The most convenient option is to trigger it through the corresponding GitHub Action:
 
+ - [GISAID full Nextclade run](https://github.com/nextstrain/ncov-ingest/actions/workflows/nextclade-full-run-gisaid.yml)
+ - [GenBank full Nextclade run](https://github.com/nextstrain/ncov-ingest/actions/workflows/nextclade-full-run-genbank.yml)
+
+They will simply run the `./bin/run-nextclade-full-aws --database=<name of the database>` and will announce the beginning of the job and the AWS Batch Job ID on Nextstrain Slack. 
+
+For that, go to the GitHub Actions UI using one of the links above, click the button "Run workflow", choosing "branch: master" from the list and confirming.
+
+If needed, the runs can be also launched from a local machine, by one of these scripts, depending on whether you want to run the computation locally, in docker, or to schedule an AWS Batch Job (the latter is what GitHub Actions do):
+
+```bash
+./bin/run-nextclade-full           # Runs locally (requires significant computational resources)
+./bin/run-nextclade-full-aws       # Runs in docker (requires significant computational resources)
+./bin/run-nextclade-full-docker    # Schedules an AWS Batch Job and runs there
 ```
-git clone https://github.com/nextstrain/ncov-ingest
-cd ncov-ingest
-yarn install
-pipenv sync
-BATCH_SIZE=1000 pipenv run ./bin/gisaid-get-all-clades
-```
 
-The resulting `data/gisaid/nextclade.tsv` should be placed on S3 bucked, replacing the one produced by the last daily ingest:
+In case of AWS Batch option, the results of the computation, the new `nextclade.tsv` will be uploaded to S3 into a subdirectory in the directory which is the usual location of this file for the database. The subdirectory name will contain a date, so that there is no confusion about versions. The Slack announcement will contain the full path. These files then need to be manually inspected for correctness and scientific soundness and id all good, copied to the usual location where the daily ingest can find them. From that point the clades are considered fresh.
 
-```
-./bin/upload-to-s3 data/gisaid/nextclade.tsv s3://nextstrain-ncov-private/nextclade.tsv.gz
-```
+For detailed explanation see PR [#218](https://github.com/nextstrain/ncov-ingest/pull/218).
 
-It will be picked up by the next ingest.
-
-The best time for the update is between daily builds. There is usually no rush, even if the globally recomputed `nextclade.tsv` is lagging behind one or two days, it will be incrementally updated by the next daily ingest.
-
-
-## Required dependencies
-Run `pipenv sync` to setup an isolated Python 3.7 environment using the pinned dependencies.
-
-If you don't have Pipenv, [install it](https://pipenv.pypa.io/en/latest/install/#installing-pipenv) first with `brew install pipenv` or `python3 -m pip install pipenv`.
-
-Node.js >= 12 and yarn v1 are required for the Nextclade part. Make sure you run `yarn install` to install Nextclade. A global installation should also work, however a specific version is required. (see `package.json`). Check [Nextclade CLI readme](https://github.com/nextstrain/nextclade/blob/master/packages/cli/README.md#getting-started) for more details.
 
 ## Required environment variables
 * `GISAID_API_ENDPOINT`
