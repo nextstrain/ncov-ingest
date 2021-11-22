@@ -69,18 +69,19 @@ Then, click on 'More'.
 You can then copy your Slack member ID from the menu that appears.
 Enter this into the `slack_member_id` field of your alert configuration.
 
-## Refreshing clades: Nextclade full run
+## Nextclade full run after Nextclade dataset is updated
 
-Clades assigned with Nextclade are currently cached in `nextclade.tsv` in the S3 bucket and only incremental additions for the new sequences are performed during the daily ingests. This clade cache goes stale with time. It is necessary to perform full update of `nextclade.tsv` file periodically, recomputing clades for all of the GISAID and GenBank sequences all over again, to account for changes in the data and in Nextclade algorithms. 
+Clade assignments and other QC metadata output by Nextclade are currently cached in `nextclade.tsv` in the S3 bucket and only incremental additions for the new sequences are performed during the daily ingests.
+Whenever the underlying nextclade dataset (reference tree, QC rules) and/or nextclade software are updated, it is necessary to perform a full update of `nextclade.tsv`, rerunning for all of the GISAID and GenBank sequences all over again, to account for changes in the data and in Nextclade algorithms.
 
 The most convenient option is to trigger it through the corresponding GitHub Action:
 
- - [GISAID full Nextclade run](https://github.com/nextstrain/ncov-ingest/actions/workflows/nextclade-full-run-gisaid.yml)
- - [GenBank full Nextclade run](https://github.com/nextstrain/ncov-ingest/actions/workflows/nextclade-full-run-genbank.yml)
+* [GISAID full Nextclade run](https://github.com/nextstrain/ncov-ingest/actions/workflows/nextclade-full-run-gisaid.yml)
+* [GenBank full Nextclade run](https://github.com/nextstrain/ncov-ingest/actions/workflows/nextclade-full-run-genbank.yml)
 
-They will simply run the `./bin/run-nextclade-full-aws --database=<name of the database>` and will announce the beginning of the job and the AWS Batch Job ID on Nextstrain Slack. 
+They will simply run `./bin/run-nextclade-full-aws --database=<name of the database>` and will announce the beginning of the job and the AWS Batch Job ID on Nextstrain Slack.
 
-For that, go to the GitHub Actions UI using one of the links above, click the button "Run workflow", choosing "branch: master" from the list and confirming.
+For that, go to the GitHub Actions UI using one of the links above, click the button "Run workflow", choosing "branch: master" from the list and confirm.
 
 If needed, the runs can be also launched from a local machine, by one of these scripts, depending on whether you want to run the computation locally, in docker, or to schedule an AWS Batch Job (the latter is what GitHub Actions do):
 
@@ -90,10 +91,23 @@ If needed, the runs can be also launched from a local machine, by one of these s
 ./bin/run-nextclade-full-docker    # Schedules an AWS Batch Job and runs there
 ```
 
-With the AWS Batch option, the results of the computation – the new `nextclade.tsv` – will be uploaded to S3 into a subdirectory of the directory which is the usual location of this file for the database. The subdirectory name will contain a date, so that there is no confusion about versions. The Slack announcement will contain the full path. These files then need to be manually inspected for correctness and scientific soundness and if all good, copied to the usual location where the daily ingest can find them. From that point the clades are considered fresh.
+The resulting nextclade.tsv.gz should be then available in the subdirectory nextclade-full-run in the usual S3 location for the particular database:
+
+```txt
+s3://nextstrain-ncov-private/nextclade-full-run/nextclade.tsv.gz
+s3://nextstrain-data/files/ncov/open/nextclade-full-run/nextclade.tsv.gz
+```
+
+The nextclade.tsv.gz should be manually inspected for scientific correctness, comparing to the old one, if necessary. If all went well, after agreeing with ingest team, the nextclade.tsv.gz should then be copied to the location where the daily ingest can find it, overwriting the old one. These locations are:
+
+```txt
+s3://nextstrain-ncov-private/nextclade.tsv.gz
+s3://nextstrain-data/files/ncov/open/nextclade.tsv.gz
+```
+
+(just omit the subdirectory nextclade-full-run)
 
 For detailed explanation see PR [#218](https://github.com/nextstrain/ncov-ingest/pull/218).
-
 
 ## Required environment variables
 * `GISAID_API_ENDPOINT`
