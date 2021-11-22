@@ -93,12 +93,27 @@ If needed, the runs can be also launched from a local machine, by one of these s
 
 The resulting nextclade.tsv.gz should be then available in the subdirectory nextclade-full-run in the usual S3 location for the particular database:
 
-```txt
-s3://nextstrain-ncov-private/nextclade-full-run/nextclade.tsv.gz
-s3://nextstrain-data/files/ncov/open/nextclade-full-run/nextclade.tsv.gz
+```bash
+aws s3 ls s3://nextstrain-data/files/ncov/open/nextclade-full-run
+aws s3 ls s3://nextstrain-ncov-private/nextclade-full-run
 ```
 
-The nextclade.tsv.gz should be manually inspected for scientific correctness, comparing to the old one, if necessary. If all went well, after agreeing with ingest team, the nextclade.tsv.gz should then be copied to the location where the daily ingest can find it, overwriting the old one. These locations are:
+Copy the output files to your local machine by using the path returned by `aws s3 ls` or using tab completion from `aws s3 cp s3://nextstrain-data/files/ncov/open/nextclade-full-run`:
+
+```bash
+# enter aws s3 cp s3://nextstrain-data/files/ncov/open/nextclade-full-run and use tab completion for exact date
+aws s3 cp s3://nextstrain-data/files/ncov/open/nextclade-full-run-2021-11-19--02-34-23--UTC/nextclade.tsv.gz open.tsv.gz
+aws s3 cp s3://nextstrain-ncov-private/nextclade-full-run-2021-11-18--23-37-14--UTC/nextclade.tsv.gz private.tsv.gz
+```
+
+The nextclade.tsv.gz should be manually inspected for scientific correctness, comparing to the old one, if necessary. Check that clades aren't broken by running for example:
+
+```bash
+gzcat open.tsv.gz | tsv-summarize -H --group-by clade --count | sort
+gzcat private.tsv.gz | tsv-summarize -H --group-by clade --count | sort
+```
+
+If all went well, after agreeing with ingest team, the nextclade.tsv.gz should then be copied to the location where the daily ingest can find it, overwriting the old one. These locations are:
 
 ```txt
 s3://nextstrain-ncov-private/nextclade.tsv.gz
@@ -106,6 +121,13 @@ s3://nextstrain-data/files/ncov/open/nextclade.tsv.gz
 ```
 
 (just omit the subdirectory nextclade-full-run)
+
+You can use the following commands:
+
+```bash
+aws s3 cp private.tsv.gz s3://nextstrain-ncov-private/nextclade.tsv.gz
+aws s3 cp open.tsv.gz s3://nextstrain-data/ncov/open/nextclade.tsv.gz
+```
 
 For detailed explanation see PR [#218](https://github.com/nextstrain/ncov-ingest/pull/218).
 
