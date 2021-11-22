@@ -24,17 +24,22 @@ jobs:
     - name: setup
       run: ./bin/setup-github-workflow
 
-    - name: ingest
+    - name: run_pipeline
       run: |
         ./bin/write-envdir env.d \
           AWS_DEFAULT_REGION \
           GISAID_API_ENDPOINT \
           GISAID_USERNAME_AND_PASSWORD \
-          GITHUB_REF \
           GITHUB_RUN_ID \
           SLACK_TOKEN \
           SLACK_CHANNELS \
           PAT_GITHUB_DISPATCH
+
+        declare -a config
+        config+=(
+          fetch_from_database=True
+          trigger_preprocessing=True
+        )
 
         nextstrain build \
           --aws-batch \
@@ -44,7 +49,12 @@ jobs:
           --memory 31GiB \
           --exec env \
           . \
-            envdir env.d ingest-gisaid --fetch
+            envdir env.d snakemake \
+              --configfile config/gisaid.yaml \
+              --config "${config[@]}" \
+              --cores 16 \
+              --resources mem_mb=31000 \
+              --printshellcmds
       env:
         AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
