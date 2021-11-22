@@ -126,7 +126,7 @@ You can use the following commands:
 
 ```bash
 aws s3 cp private.tsv.gz s3://nextstrain-ncov-private/nextclade.tsv.gz
-aws s3 cp open.tsv.gz s3://nextstrain-data/ncov/open/nextclade.tsv.gz
+aws s3 cp open.tsv.gz s3://nextstrain-data/files/ncov/open/nextclade.tsv.gz
 ```
 
 For detailed explanation see PR [#218](https://github.com/nextstrain/ncov-ingest/pull/218).
