@@ -3,7 +3,6 @@ name: GISAID fetch and ingest
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    # "At 03:00 (05:00 CET) on every day-of-week from Monday through Friday."
     - cron:  '7 13 * * *'
 
   # Manually triggered using `./bin/trigger gisaid/fetch-and-ingest`
