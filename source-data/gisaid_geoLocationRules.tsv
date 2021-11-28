@@ -338,6 +338,8 @@ Europe/France/Meuthe-Et-Moselle/	Europe/France/Grand Est/Meuthe-Et-Moselle
 Europe/France/Provence-Alpes-Cote D Azur/*	Europe/France/Provence-Alpes-Côte d'Azur/*
 Europe/France/Provence-Alpes-Cote- D Azur/*	Europe/France/Provence-Alpes-Côte d'Azur/*
 Europe/France/Réunion/Saint-Pierre	Europe/France/Réunion/Saint-Pierre FR
+Europe/France/Limoges/	Europe/France/Nouvelle-Aquitaine/Limoges
+Europe/France/Gironde/	Europe/France/Nouvelle-Aquitaine/Gironde
 Europe/Germany/North Rhine-Westphalia/Düsseldorf	Europe/Germany/North Rhine Westphalia/Duesseldorf
 Europe/Germany/North Rhine-Westphalia/Duesseldorf Area	Europe/Germany/North Rhine Westphalia/Duesseldorf
 Europe/Germany/North Rhine-Westphalia/Dusseldorf Health Department	Europe/Germany/North Rhine Westphalia/Duesseldorf
@@ -385,6 +387,7 @@ Europe/Germany/Baden-W√ºrttemberg/*	Europe/Germany/Baden-Wuerttemberg/*
 Europe/Germany/Ueckermunde/	Europe/Germany/Mecklenburg-Vorpommern/Ueckermunde
 Europe/Germany/Niedersachsten/*	Europe/Germany/Niedersachsen/*
 Europe/Germany/Langen/	Europe/Germany/Hesse/Langen
+Europe/Germany/Thueringen/*	Europe/Germany/Thuringia/*
 Europe/Belgium/Couthuin/	Europe/Belgium/Huy/Couthuin
 Europe/Belgium/Kessel-Lo/	Europe/Belgium/Leuven/Kessel-Lo
 Europe/Belgium/Holsbeek/	Europe/Belgium/Leuven/Holsbeek
@@ -6878,6 +6881,10 @@ Europe/Czech Republic/Kladno/*	Europe/Czech Republic/Central Bohemian Region/*
 Europe/Czech Republic/Karlovarsky Kraj/As	Europe/Czech Republic/Karlovarsky Kraj/As CZ
 Europe/Czech Republic/South Bomemian Region/*	Europe/Czech Republic/Southern Bohemia Region/*
 Europe/Czech Republic/Jihocesky Kraj/*	Europe/Czech Republic/Southern Bohemia Region/*
+Europe/Czech Republic/Sezimovo Usti/	Europe/Czech Republic/Southern Bohemia Region/Sezimovo Usti
+Europe/Czech Republic/Nachod/	Europe/Czech Republic/Hradec Králové Region/Nachod
+Europe/Czech Republic/Central Bohemian/*	Europe/Czech Republic/Central Bohemian Region/*
+Europe/Czech Republic/South Bohemian/*	Europe/Czech Republic/Southern Bohemia Region/*
 Europe/Crimea//	Europe/Ukraine/Crimea/Crimea
 Europe/Crimea/Simpheropol/	Europe/Ukraine/Crimea/Simpheropol
 Europe/Crimea/Alushta/	Europe/Ukraine/Crimea/Alushta
@@ -7793,6 +7800,7 @@ Europe/Austria/Vocklabruck/	Europe/Austria/Upper Austria/Vocklabruck
 Europe/Austria/Carinthis/*	Europe/Austria/Carinthia/*
 Europe/Austria/Austria/Melk	Europe/Austria/Lower Austria/Melk
 Europe/Austria/Austria/Krems-Land	Europe/Austria/Lower Austria/Krems-Land
+Europe/Austria/Nis/	Europe/Austria/Austria/
 Europe/Romania/Lalomita/*	Europe/Romania/Ialomița/*
 Europe/Romania/Ialomita/*	Europe/Romania/Ialomița/*
 Europe/Romania/Targu Mures/	Europe/Romania/Mures/Targu Mures
@@ -7808,6 +7816,8 @@ Europe/Romania/Danbovita/*	Europe/Romania/Dambovita/*
 Europe/Romania/Piatra Neamt/	Europe/Romania/Neamt/Piatra Neamt
 Europe/Romania/Iffov/*	Europe/Romania/Ilfov/*
 Europe/Romania/Calaras/*	Europe/Romania/Calarasi/*
+Europe/Romania/Olt/*	Europe/Romania/Sud-Vest/*
+Europe/Romania/Oltenia/*	Europe/Romania/Sud-Vest/*
 Europe/Bosnia and Herzegovina/Dz Vitez/	Europe/Bosnia and Herzegovina/Vitez/
 Europe/Bosnia and Herzegovina/Kz Kakanj/	Europe/Bosnia and Herzegovina/Kakanj/
 Europe/Bosnia and Herzegovina/Visoko/	Europe/Bosnia and Herzegovina/Zenica-Doboj/Visoko
@@ -7816,6 +7826,7 @@ Europe/Bosnia and Herzegovina/Velika Kladuša/	Europe/Bosnia and Herzegovina/Una
 Europe/Bosnia and Herzegovina/Bihać/*	Europe/Bosnia and Herzegovina/Bihac/*
 Europe/Bosnia and Herzegovina/Vogošća/*	Europe/Bosnia and Herzegovina/Vogosca/*
 Europe/Bosnia and Herzegovina/Capljina/	Europe/Bosnia and Herzegovina/Herzegowina-Neretva/Capljina
+Europe/Bosnia and Herzegovina/Foca/	Europe/Bosnia and Herzegovina/Republic of Srpska/Foca
 Europe/Greece/Livadia/	Europe/Greece/Central Greece/Livadeia
 Europe/Greece/Livadia/*	Europe/Greece/Livadeia/*
 Europe/Greece/Central Greece/Livadia	Europe/Greece/Central Greece/Livadeia
@@ -7834,6 +7845,7 @@ Europe/Greece/Thessalia/*	Europe/Greece/Thessaly/*
 Europe/Greece/Dodecanese/	Europe/Greece/South Aegean/Dodecanese
 Europe/Greece/South Aegean Region/*	Europe/Greece/South Aegean/*
 Europe/Greece/Sporades/	Europe/Greece/Thessaly/Sporades
+Europe/Greece/Alexandria/	Europe/Greece/Central Macedonia/Alexandria
 Europe/North Macedonia/Prilep/	Europe/North Macedonia/Pelagonia/Prilep
 Europe/North Macedonia/Kumanovo/	Europe/North Macedonia/Northeastern Region MK/Kumanovo
 Europe/North Macedonia/Shtip/	Europe/North Macedonia/Eastern Region MK/Shtip
@@ -7951,6 +7963,7 @@ Europe/Ukraine/Lutsk/	Europe/Ukraine/Volyn/Lutsk
 Europe/Ukraine/Ivano-Frankivs'K/*	Europe/Ukraine/Ivano-Frankivsk/*
 Europe/Ukraine/Uzhorod/*	Europe/Ukraine/Uzhgorod/*
 Europe/Ukraine/Mariupol/	Europe/Ukraine/Donezk/Mariupol
+Europe/Ukraine/Severodonetsk/	Europe/Ukraine/Luhansk Oblast/Severodonetsk
 Europe/Slovakia/Martincek/	Europe/Slovakia/Zilina/Martincek
 Europe/Slovakia/Zehra/	Europe/Slovakia/Kosice/Zehra
 Europe/Slovakia/Hurbanovo/	Europe/Slovakia/Nitra/Hurbanovo
@@ -8691,6 +8704,11 @@ Europe/Slovakia/Turna nad Bodvou/	Europe/Slovakia/Kosice/Turna nad Bodvou
 Europe/Slovakia/Hladovka/	Europe/Slovakia/Zilina/Hladovka
 Europe/Slovakia/Cierne/	Europe/Slovakia/Zilina/Cierne
 Europe/Slovakia/Rakova/	Europe/Slovakia/Zilina/Rakova
+Europe/Slovakia/Badin/	Europe/Slovakia/Banska Bystrica/Badin
+Europe/Slovakia/Zakamenne/	Europe/Slovakia/Zilina/Zakamenne
+Europe/Slovakia/Belusa/	Europe/Slovakia/Trenčín/Belusa
+Europe/Slovakia/Golianovo/	Europe/Slovakia/Nitra/Golianovo
+Europe/Slovakia/Kosice Okolie/*	Europe/Slovakia/Kosice/Kosice-Okolie
 Europe/Denmark/Na/	Europe/Denmark/Denmark/
 Europe/Denmark/Na/*	Europe/Denmark//*
 Europe/Ireland/Limerick/Limerick County	Europe/Ireland/Limerick/
@@ -8718,7 +8736,7 @@ Europe/Blegium/*/*	Europe/Belgium/*/*
 Europe/Country/Namen/	Europe/Belgium/Namur/
 Europe/Croatia/The City of Zagreb/	Europe/Croatia/Zagreb/Zagreb
 Europe/Croatia/Zagreb County/	Europe/Croatia/Zagreb/
-Europe/Croatia/Osijek/	Europe/Croatia/Osijek-Baranja/Osijek
+Europe/Croatia/Osijek/	Europe/Croatia/Osijek-Baranja County/Osijek
 Europe/Croatia/Šibenik-Knin County/*	Europe/Croatia/Sibenik-Knin County/*
 Europe/Croatia/Požega-Slavonia County/*	Europe/Croatia/Pozega-Slavonia County/*
 Europe/Croatia/Međimurje County/*	Europe/Croatia/Medimurje County/*
@@ -8766,6 +8784,16 @@ Europe/Croatia/Rijeka-Gorski Kotar County/*	Europe/Croatia/Primorje-Gorski Kotar
 Europe/Croatia/Rijeka-Primorje County/	Europe/Croatia/Primorje-Gorski Kotar County/Rijeka
 Europe/Croatia/Koprivnica Križevci County/*	Europe/Croatia/Koprivnica-Križevci County/*
 Europe/Croatia/Pozega-Slavonija County/*	Europe/Croatia/Pozega-Slavonia County/*
+Europe/Croatia/Sibenik - Knin County/*	Europe/Croatia/Sibenik-Knin County/*
+Europe/Croatia/Šibenik - Knin County/*	Europe/Croatia/Sibenik-Knin County/*
+Europe/Croatia/Dubrovnik - Neretva County/*	Europe/Croatia/Dubrovnik-Neretva County/*
+Europe/Croatia/Dubrovnika - Neretva County/*	Europe/Croatia/Dubrovnik-Neretva County/*
+Europe/Croatia/Virovitica - Podravina County/*	Europe/Croatia/Virovitica-Podravina County/*
+Europe/Croatia/Bjelovar - Bilogora County/*	Europe/Croatia/Bjelovar-Bilogora County/*
+Europe/Croatia/Osijek - Baranja County/*	Europe/Croatia/Osijek-Baranja County/*
+Europe/Croatia/Osijek-Baranja/*	Europe/Croatia/Osijek-Baranja County/*
+Europe/Croatia/Primorje County/	Europe/Croatia/Primorje-Gorski Kotar County/
+Europe/Croatia/Virovtica-Podravina County/*	Europe/Croatia/Virovitica-Podravina County/*
 Europe/Estonia/Central Estonia/*	Europe/Estonia/Estonia/*
 Europe/Estonia/North-Eastern Estonia/*	Europe/Estonia/Estonia/*
 Europe/Estonia/Northern Estonia/*	Europe/Estonia/Estonia/*
@@ -8826,6 +8854,8 @@ Europe/Kosovo/Prishtinë/*	Europe/Kosovo/Pristina/*
 Europe/Kosovo/Podujevë/	Europe/Kosovo/Pristina/Podujevë
 Europe/Kosovo/Mitrovice/*	Europe/Kosovo/Mitrovica/*
 Europe/Kosovo/Mitrovicë/*	Europe/Kosovo/Mitrovica/*
+Europe/Kosovo/Fushe Kosove/	Europe/Kosovo/Pristina/Fushe Kosove
+Europe/Kosovo/Obiliq/	Europe/Kosovo/Pristina/Obiliq
 Europe/The Netherlands/Graauw/	Europe/Netherlands/Zeeland/Graauw
 Europe/The Netherlands/Etten-Leur/	Europe/Netherlands/North Brabant/Etten-Leur
 Europe/Coatia/*/*	Europe/Croatia/*/*
@@ -9032,6 +9062,14 @@ Asia/Vietnam/Da Nang/	Asia/Vietnam/South Central Coast/Da Nang
 Asia/Vietnam/Ho Chi Minh City/	Asia/Vietnam/Southeast Region/Ho Chi Minh City
 Asia/Vietnam/Ho Chi Minh City/Phu Nhuan	Asia/Vietnam/Southeast Region/Phu Nhuan
 Asia/Vietnam/South-Eastern Region/Ho Chi Minh City	Asia/Vietnam/Southeast Region/Ho Chi Minh City
+Asia/Vietnam/Binh Duong/Thu Dau Mot	Asia/Vietnam/Southeast Region/Thu Dau Mot
+Asia/Vietnam/Binh Duong/Thuan An	Asia/Vietnam/Southeast Region/Thuan An
+Asia/Vietnam/Binh Duong/Dau Tieng	Asia/Vietnam/Southeast Region/Dau Tieng
+Asia/Vietnam/Binh Duong/Di An	Asia/Vietnam/Southeast Region/Di An
+Asia/Vietnam/Binh Duong/	Asia/Vietnam/Southeast Region/Binh Duong
+Asia/Vietnam/Bình Dương/Thủ Dầu Một	Asia/Vietnam/Southeast Region/Thu Dau Mot
+Asia/Vietnam/Bình Dương/Tân Uyên	Asia/Vietnam/Southeast Region/Tân Uyên
+Asia/Vietnam/Bình Dương/Thuận An	Asia/Vietnam/Southeast Region/Thuan An
 Asia/Pakistan/Gilgit/	Asia/Pakistan/Gilgit Baltistan/Gilgit
 Asia/Pakistan/Kpk/	Asia/Pakistan/Khyber Pakhtunkhwa/
 Asia/Pakistan/Punjab/*	Asia/Pakistan/Punjab PK/*
@@ -9272,6 +9310,7 @@ Asia/India/Andra Pradesh/*	Asia/India/Andhra Pradesh/*
 Asia/India/Jaipur/	Asia/India/Rajasthan/Jaipur
 Asia/India/Jammu & Kashmir/*	Asia/India/Jammu and Kashmir/*
 Asia/India/Maharshtra/*	Asia/India/Maharashtra/*
+Asia/India/Pondicherry/*	Asia/India/Puducherry/*
 Asia/Bangladesh/Chittagong/Cox'S Bazar	Asia/Bangladesh/Chattogram/Cox's Bazar
 Asia/Bangladesh/Chittagong/Nimtola	Asia/Bangladesh/Dhaka/Nimtola
 Asia/Bangladesh/Khulna/Jessore	Asia/Bangladesh/Khulna/Jashore
@@ -9441,6 +9480,7 @@ Asia/Thailand/Chiangmai/*	Asia/Thailand/Chiang Mai/*
 Asia/Thailand/Roiet/*	Asia/Thailand/Roi Et/*
 Asia/Thailand/Nakhonphanom/*	Asia/Thailand/Nakhon Pathom/*
 Asia/Thailand/Lopburi/*	Asia/Thailand/Lop Buri/*
+Asia/Thailand/Prachin Buri/*	Asia/Thailand/Prachinburi/*
 Asia/Oman/Musca/	Asia/Oman/Muscat/
 Asia/Oman/Muscta/	Asia/Oman/Muscat/
 Asia/Oman/Buraymi/Buraymi	Asia/Oman/Buraimi/Buraimi
@@ -9475,6 +9515,8 @@ Asia/Philippines/Region 4A (Laguna)/Calamba City	Asia/Philippines/Calabarzon/Cal
 Asia/Philippines/Region 4A (Rizal)/Rodriguez	Asia/Philippines/Calabarzon/Rodriguez
 Asia/Philippines/Region 3 (Bulacan)/San Jose Del Monte City	Asia/Philippines/Central Luzon/San Jose Del Monte City
 Asia/Philippines/Region Vi/*	Asia/Philippines/Western Visayas/*
+Asia/Philippines/Region X (Northern Mindanao)/*	Asia/Philippines/Northern Mindanao/*
+Asia/Philippines/Region Xi (Davao Region)/*	Asia/Philippines/Davao Region/*
 Asia/Indonesia/Special Region of Yogyakarta/*	Asia/Indonesia/Yogyakarta/*
 Asia/Indonesia/Central Kalimantan/*	Asia/Indonesia/Center Kalimantan/*
 Asia/Indonesia/Bangka Belitung Islands/*	Asia/Indonesia/Kepulauan Bangka Belitung/*
@@ -9542,11 +9584,11 @@ Asia/Sri Lanka/Kandy/	Asia/Sri Lanka/Central Province/Kandy
 Asia/Sri Lanka/Boralesgamuwa/	Asia/Sri Lanka/Western Province/Boralesgamuwa
 Asia/Sri Lanka/Panadura/	Asia/Sri Lanka/Western Province/Panadura
 Asia/Sri Lanka/Bandaragama/	Asia/Sri Lanka/Western Province/Bandaragama
-Asia/Sri Lanka/Jaffna/	Asia/Sri Lanka/Northern Province/Jaffna
+Asia/Sri Lanka/Jaffna/	Asia/Sri Lanka/Northern Province LK/Jaffna
 Asia/Sri Lanka/Batticaloa/	Asia/Sri Lanka/Eastern Province LK/Batticaloa
 Asia/Sri Lanka/Eastern Province/*	Asia/Sri Lanka/Eastern Province LK/*
 Asia/Sri Lanka/Nugegoda/	Asia/Sri Lanka/Western Province/Nugegoda
-Asia/Sri Lanka/Karapitiya/	Asia/Sri Lanka/Southern Province/Karapitiya
+Asia/Sri Lanka/Karapitiya/	Asia/Sri Lanka/Southern Province LK/Karapitiya
 Asia/Sri Lanka/Dematagoda/	Asia/Sri Lanka/Western Province/Dematagoda
 Asia/Sri Lanka/Angoda/	Asia/Sri Lanka/Western Province/Angoda
 Asia/Sri Lanka/Ragama/	Asia/Sri Lanka/Western Province/Ragama
@@ -9564,30 +9606,30 @@ Asia/Sri Lanka/Kaleniya/	Asia/Sri Lanka/Western Province/Kelaniya
 Asia/Sri Lanka/Kalubowila/	Asia/Sri Lanka/Western Province/Kalubowila
 Asia/Sri Lanka/Wadduwa/	Asia/Sri Lanka/Western Province/Wadduwa
 Asia/Sri Lanka/Moratuwa/	Asia/Sri Lanka/Western Province/Moratuwa
-Asia/Sri Lanka/Point Pedro/	Asia/Sri Lanka/Northern Province/Point Pedro
-Asia/Sri Lanka/Karainagar/	Asia/Sri Lanka/Northern Province/Karainagar
-Asia/Sri Lanka/Mullaitivu/	Asia/Sri Lanka/Northern Province/Mullaitivu
-Asia/Sri Lanka/Kilinochchi/	Asia/Sri Lanka/Northern Province/Kilinochchi
+Asia/Sri Lanka/Point Pedro/	Asia/Sri Lanka/Northern Province LK/Point Pedro
+Asia/Sri Lanka/Karainagar/	Asia/Sri Lanka/Northern Province LK/Karainagar
+Asia/Sri Lanka/Mullaitivu/	Asia/Sri Lanka/Northern Province LK/Mullaitivu
+Asia/Sri Lanka/Kilinochchi/	Asia/Sri Lanka/Northern Province LK/Kilinochchi
 Asia/Sri Lanka/Nawagamuwa/	Asia/Sri Lanka/Western Province/Nawagamuwa
 Asia/Sri Lanka/Katunayake/	Asia/Sri Lanka/Western Province/Katunayake
 Asia/Sri Lanka/Malabe/	Asia/Sri Lanka/Western Province/Malabe
 Asia/Sri Lanka/Welisara/	Asia/Sri Lanka/Western Province/Welisara
 Asia/Sri Lanka/Mount Lavinia/	Asia/Sri Lanka/Western Province/Mount Lavinia
 Asia/Sri Lanka/Dambulla/	Asia/Sri Lanka/Central Province/Dambulla
-Asia/Sri Lanka/Koggala/	Asia/Sri Lanka/Southern Province/Koggala
+Asia/Sri Lanka/Koggala/	Asia/Sri Lanka/Southern Province LK/Koggala
 Asia/Sri Lanka/Biyagama/	Asia/Sri Lanka/Western Province/Biyagama
 Asia/Sri Lanka/Bogambara/	Asia/Sri Lanka/Central Province/Bogambara
 Asia/Sri Lanka/Weliweriya/	Asia/Sri Lanka/Western Province/Weliweriya
 Asia/Sri Lanka/Kaduwela/	Asia/Sri Lanka/Western Province/Kaduwela
 Asia/Sri Lanka/Kesbewa/	Asia/Sri Lanka/Western Province/Kesbewa
 Asia/Sri Lanka/Kadawatha/	Asia/Sri Lanka/Western Province/Kadawatha
-Asia/Sri Lanka/Ahungalla/	Asia/Sri Lanka/Southern Province/Ahungalla
-Asia/Sri Lanka/Kayts/	Asia/Sri Lanka/Northern Province/Kayts
+Asia/Sri Lanka/Ahungalla/	Asia/Sri Lanka/Southern Province LK/Ahungalla
+Asia/Sri Lanka/Kayts/	Asia/Sri Lanka/Northern Province LK/Kayts
 Asia/Sri Lanka/Passara/	Asia/Sri Lanka/Uva Province/Passara
 Asia/Sri Lanka/Moneragala/*	Asia/Sri Lanka/Monaragala/*
 Asia/Sri Lanka/Sri Jayawardenepura Kotte/	Asia/Sri Lanka/Western Province/Sri Jayawardenepura Kotte
 Asia/Sri Lanka/Makola/	Asia/Sri Lanka/Western Province/Makola
-Asia/Sri Lanka/Ambalangoda/	Asia/Sri Lanka/Southern Province/Ambalangoda
+Asia/Sri Lanka/Ambalangoda/	Asia/Sri Lanka/Southern Province LK/Ambalangoda
 Asia/Sri Lanka/Panagoda/	Asia/Sri Lanka/Western Province/Panagoda
 Asia/Sri Lanka/Colombo 01/	Asia/Sri Lanka/Colombo/Colombo 01
 Asia/Sri Lanka/Colombo 02/	Asia/Sri Lanka/Colombo/Colombo 02
@@ -9615,17 +9657,19 @@ Asia/Sri Lanka/Kolonna/	Asia/Sri Lanka/Sabaragamuwa Province/Kolonna
 Asia/Sri Lanka/Pelmadulla/	Asia/Sri Lanka/Sabaragamuwa Province/Pelmadulla
 Asia/Sri Lanka/Malwana/	Asia/Sri Lanka/Western Province/Malwana
 Asia/Sri Lanka/Bope/	Asia/Sri Lanka/Western Province/Bope
-Asia/Sri Lanka/Tangalle/	Asia/Sri Lanka/Southern Province/Tangalle
-Asia/Sri Lanka/Elpitiya/	Asia/Sri Lanka/Southern Province/Elpitiya
-Asia/Sri Lanka/Balapitiya/	Asia/Sri Lanka/Southern Province/Balapitiya
+Asia/Sri Lanka/Tangalle/	Asia/Sri Lanka/Southern Province LK/Tangalle
+Asia/Sri Lanka/Elpitiya/	Asia/Sri Lanka/Southern Province LK/Elpitiya
+Asia/Sri Lanka/Balapitiya/	Asia/Sri Lanka/Southern Province LK/Balapitiya
 Asia/Sri Lanka/Mulleriyawa/	Asia/Sri Lanka/Western Province/Mulleriyawa
 Asia/Sri Lanka/Narahenpita/	Asia/Sri Lanka/Western Province/Narahenpita
 Asia/Sri Lanka/Wellampitiya/	Asia/Sri Lanka/Western Province/Wellampitiya
 Asia/Sri Lanka/Dondangaslanda/	Asia/Sri Lanka/Sri Lanka/
 Asia/Sri Lanka/Opanayaka/	Asia/Sri Lanka/Sabaragamuwa Province/Opanayaka
-Asia/Sri Lanka/Bataganwila/	Asia/Sri Lanka/Southern Province/Bataganwila
+Asia/Sri Lanka/Bataganwila/	Asia/Sri Lanka/Southern Province LK/Bataganwila
 Asia/Sri Lanka/Boralasgamuwa/	Asia/Sri Lanka/Western Province/Boralasgamuwa
 Asia/Sri Lanka/North Western/*	Asia/Sri Lanka/North Western Province/*
+Asia/Sri Lanka/Southern Province/*	Asia/Sri Lanka/Southern Province LK/*
+Asia/Sri Lanka/Northern Province/*	Asia/Sri Lanka/Northern Province LK/*
 Asia/Palestine/Tulkarem/	Asia/Palestine/West Bank/Tulkarem
 Asia/Palestine/West Bank/Jericho	Asia/Palestine/Jericho/
 Asia/Palestine/West Bank/Ramallah	Asia/Palestine/Ramallah and al-Bireh Governorate/Ramallah
@@ -9659,6 +9703,7 @@ Asia/Iran/Tabriz/	Asia/Iran/East Azerbaijan Province/Tabriz
 Asia/Viet Nam/*/*	Asia/Vietnam/*/*
 Asia/Saudi Arabia/Qatif/	Asia/Saudi Arabia/Eastern Province SA/Qatif
 Asia/Saudi Arabia/Eastern Province/*	Asia/Saudi Arabia/Eastern Province SA/*
+Asia/Saudi Arabia/Eastern Region/*	Asia/Saudi Arabia/Eastern Province SA/*
 Asia/Malaysia/Rembau/	Asia/Malaysia/Negeri Sembilan/Rembau
 Asia/Malaysia/Bukit Bintang/	Asia/Malaysia/Kuala Lumpur/Bukit Bintang
 Asia/Malaysia/Salak/	Asia/Malaysia/Kuala Lumpur/Salak
@@ -9765,13 +9810,14 @@ Asia/Maldives/V. Fulidhoo/	Asia/Maldives/Vaavu Atoll/Fulidhoo
 Asia/Maldives/L. Mundoo/	Asia/Maldives/Laamu Atoll/Mundoo
 Asia/Maldives/Maamendhoo/	Asia/Maldives/Gaafu Alifu Atoll/Maamendhoo
 Asia/Maldives/Ga Gemanafushi/	Asia/Maldives/Gaafu Alifu Atoll/Gemanafushi
+Asia/Maldives/M. Mulah/	Asia/Maldives/Meemu Atoll/Mulah
 Asia/Srilanka/*/*	Asia/Sri Lanka/*/*
 Asia/Srilanka/Piliyandala/	Asia/Sri Lanka/Western Province/Piliyandala
 Asia/Srilanka/Nugegoda/	Asia/Sri Lanka/Western Province/Nugegoda
 Asia/Srilanka/Sri Jayawardenepura Kotte/	Asia/Sri Lanka/Western Province/Sri Jayawardenepura Kotte
 Asia/Srilanka/Malabe/	Asia/Sri Lanka/Western Province/Malabe
 Asia/Srilanka/Kadawatha/	Asia/Sri Lanka/Western Province/Kadawatha
-Asia/Srilanka/Jaffna/	Asia/Sri Lanka/Northern Province/Jaffna
+Asia/Srilanka/Jaffna/	Asia/Sri Lanka/Northern Province LK/Jaffna
 Asia/Sultanate of Oman/*/*	Asia/Oman/*/*
 Asia/Sultanate of Oman/Dakheliya/*	Asia/Oman/Dakhiliyah/*
 Asia/Sultanate of Oman/Dhahira/*	Asia/Oman/Dhahirah/*
@@ -39861,6 +39907,7 @@ South America/Brazil/Guarulhos/São Paulo	South America/Brazil/São Paulo/Guarul
 South America/Brazil/Poa/São Paulo	South America/Brazil/São Paulo/Poa (São Paulo)
 South America/Brazil/Cotia/São Paulo	South America/Brazil/São Paulo/Cotia
 South America/Brazil/Osasco/São Paulo	South America/Brazil/São Paulo/Osasco
+South America/Brazil/Federal District/*	South America/Brazil/Distrito Federal/*
 South America/Argentina/Cordoba/Cordoba	South America/Argentina/Cordoba AR/Cordoba AR
 South America/Argentina/Cordoba/Brikman	South America/Argentina/Cordoba AR/Brinkmann
 South America/Argentina/Cordoba/*	South America/Argentina/Cordoba AR/*
@@ -39978,6 +40025,7 @@ South America/Ecuador/Portoviejo/San Pablo	South America/Ecuador/Manabi/San Pabl
 South America/Ecuador/Portoviejo/Crucita	South America/Ecuador/Manabi/Crucita
 South America/Ecuador/Portoviejo/Manabi	South America/Ecuador/Manabi/Portoviejo
 South America/Ecuador/Portoviejo/Manabí	South America/Ecuador/Manabi/Portoviejo
+South America/Ecuador/Portoviejo/	South America/Ecuador/Manabi/Portoviejo
 South America/Ecuador/Manabí/*	South America/Ecuador/Manabi/*
 South America/Ecuador/Santo Domingo de los Tsáchilas/Santo Domingo	South America/Ecuador/Santo Domingo de los Tsachilas/Santo Domingo de los Colorados
 South America/Ecuador/Galapagos/Santa Cruz	South America/Ecuador/Galapagos/Santa Cruz EC
@@ -40269,6 +40317,9 @@ South America/French Guiana/Awala Yalimapo/	Europe/France/French Guiana/Awala-Ya
 South America/French Guiana/Remire Montjoly/	Europe/France/French Guiana/Remire-Montjoly
 South America/French Guiana/Roura/	Europe/France/French Guiana/Roura
 South America/French Guiana/Macouria-Tonate/	Europe/France/French Guiana/Macouria-Tonate
+South America/French Guiana/Rémire Montjoly/	Europe/France/French Guiana/Rémire Montjoly
+South America/French Guiana/Joseph Melvin/	Europe/France/French Guiana/
+South America/French Guiana/Surinam/	Europe/France/French Guiana/Surinam
 South America/Mexico/*/*	North America/Mexico/*/*
 South America/Guyane/Cayenne/	Europe/France/French Guiana/Cayenne (French Guiana)
 South America/Guyane/Guyane/	Europe/France/French Guiana/
@@ -40421,6 +40472,7 @@ Oceania/Guam/Yigo/	North America/USA/Guam/Yigo
 Oceania/Wallis and Futuna/Wallis/	Europe/France/Wallis and Futuna/Wallis
 Oceania/Wallis and Futuna//	Europe/France/Wallis and Futuna/
 Oceania/Wallis and Futuna Islands/Wallis/	Europe/France/Wallis and Futuna Islands/Wallis
+Oceania/Palau/Pw/	Oceania/Palau/Palau/
 Africa/Senegal/Saint-Louis/*	Africa/Senegal/St-Louis/*
 Africa/Senegal/Pikine/	Africa/Senegal/Dakar/Pikine
 Africa/Senegal/Dakar/Iressef Diamniadio	Africa/Senegal/Dakar/Diamniadio
@@ -40434,6 +40486,8 @@ Africa/Senegal/Iressef/Diamniadio	Africa/Senegal/Dakar/Diamniadio
 Africa/Senegal/Iressef/Ngor	Africa/Senegal/Dakar/Diamniadio
 Africa/Senegal/Thies/Ds Mbour	Africa/Senegal/Thies/Mbour
 Africa/Senegal/Senegal/Ngor	Africa/Senegal/Dakar/Ngor
+Africa/Senegal/Keur Massar/	Africa/Senegal/Dakar/Keur Massar
+Africa/Senegal/St Louis/*	Africa/Senegal/St-Louis/*
 Africa/South Africa/Western Cape/Northern	Africa/South Africa/Northern Cape/
 Africa/South Africa/Western Cape/Southern	Africa/South Africa/Western Cape Province/
 Africa/South Africa/Western Cape/Western	Africa/South Africa/Western Cape Province/
@@ -40506,10 +40560,12 @@ Africa/Egypt/Sohage/*	Africa/Egypt/Sohag/*
 Africa/Egypt/Qulyiubia/*	Africa/Egypt/Qalyubiyya/*
 Africa/Egypt/Kalyoubia/*	Africa/Egypt/Qalyubiyya/*
 Africa/Cameroon/Yaounde/*	Africa/Cameroon/Yaoundé/*
-Africa/Cameroon/Centre/*	Africa/Cameroon/Centre CM/*
+Africa/Cameroon/Centre/*	Africa/Cameroon/Centre Region/*
 Africa/Cameroon/Ebolowa/	Africa/Cameroon/South Region/Ebolowa
 Africa/Cameroon/Dschang/	Africa/Cameroon/West Region/Dschang
 Africa/Cameroon/South/*	Africa/Cameroon/South Region/*
+Africa/Cameroon/Centre CM/*	Africa/Cameroon/Centre Region/*
+Africa/Cameroon/South East Region/	Africa/Cameroon/East Region/
 Africa/Reunion//	Europe/France/Réunion/
 Africa/Reunion/Saint-Denis/	Europe/France/Réunion/Saint-Denis de la Réunion
 Africa/Reunion/Saint-Benoit/	Europe/France/Réunion/Saint-Benoit
@@ -40541,6 +40597,7 @@ Africa/Nigeria/Kano/*	Africa/Nigeria/Kano State/*
 Africa/Nigeria/Katsina/*	Africa/Nigeria/Katsina State/*
 Africa/Nigeria/Nassarawa/*	Africa/Nigeria/Nasarawa State/*
 Africa/Nigeria/Kwara/*	Africa/Nigeria/Kwara State/*
+Africa/Nigeria/Kano Municipal/	Africa/Nigeria/Kano State/Kano Municipal
 Africa/Côte D'Ivoire/Boauké/	Africa/Côte d'Ivoire/Bouaké/
 Africa/Côte D'Ivoire/Brobo/	Africa/Côte d'Ivoire/Bouaké/Brobo
 Africa/Côte D'Ivoire/*/*	Africa/Côte d'Ivoire/*/*
@@ -40572,6 +40629,8 @@ Africa/Morocco/My Youssef/	Africa/Morocco/Morocco/
 Africa/Morocco/Barchid/	Africa/Morocco/Berrechid/
 Africa/Morocco/Inzegane/	Africa/Morocco/Souss-Massa/Inezgane
 Africa/Morocco/Inezgane/	Africa/Morocco/Souss-Massa/Inezgane
+Africa/Morocco/Mohammadia/*	Africa/Morocco/Mohammedia/*
+Africa/Morocco/Awrir/	Africa/Morocco/Souss-Massa/Awrir
 Africa/Mayotte/Mamoudzou/	Europe/France/Mayotte/Mamoudzou
 Africa/Mayotte/Mayotte/Mamoudzou	Europe/France/Mayotte/Mamoudzou
 Africa/Mayotte/Mayotte/	Europe/France/Mayotte/
@@ -40638,6 +40697,8 @@ Africa/Ghana/Eastern Region/*	Africa/Ghana/Eastern Region GH/*
 Africa/Ghana/Eastern Region/Akyem Mansa	Africa/Ghana/Eastern Region GH/Akyemansa
 Africa/Ghana/Eastern Region GH/Akyem Mansa	Africa/Ghana/Eastern Region GH/Akyemansa
 Africa/Ghana/Western Region/Koforidua	Africa/Ghana/Eastern Region GH/Koforidua
+Africa/Ghana/Greater Accra, Ghana/*	Africa/Ghana/Greater Accra/*
+Africa/Ghana/Greater Accra, Ghana Region/*	Africa/Ghana/Greater Accra/*
 Africa/La Reunion/Saint-Denis/	Europe/France/Réunion/Saint-Denis de la Réunion
 Africa/La Reunion/Saint-Benoit/	Europe/France/Réunion/Saint-Benoit
 Africa/Martinique/Fort-de-France/	Europe/France/Martinique/Fort-de-France
@@ -40660,6 +40721,7 @@ Africa/Malawi/Blantyre/	Africa/Malawi/Southern Region MW/Blantyre
 Africa/Malawi/Southern/*	Africa/Malawi/Southern Region MW/*
 Africa/Malawi/Zomba/	Africa/Malawi/Southern Region MW/Zomba
 Africa/Malawi/Lilongwe/	Africa/Malawi/Central Region MW/Lilongwe
+Africa/Malawi/Ntchisi/	Africa/Malawi/Central Region MW/Ntchisi
 Africa/Comoros/*/*	Africa/Union of the Comoros/*/*
 Africa/Angola/Huíla/*	Africa/Angola/Huila AO/*
 Africa/Angola/Luanda/Viana	Africa/Angola/Luanda/Viana AO
@@ -40667,6 +40729,7 @@ Africa/Angola/Luanda/C Sequele	Africa/Angola/Luanda/Cacuaco
 Africa/Angola/C. Cubango/*	Africa/Angola/Cuando Cubango/*
 Africa/Angola/Capalacassa/Tchinjenje	Africa/Angola/Huambo/Tchindjenje
 Africa/Angola/Huila/*	Africa/Angola/Huila AO/*
+Africa/Angola/Bié/*	Africa/Angola/Bie/*
 Africa/Uganda/Central/*	Africa/Uganda/Central Uganda/*
 Africa/Uganda/Central Region/*	Africa/Uganda/Central Region UG/*
 Africa/Uganda/Northern Region/*	Africa/Uganda/Northern Region UG/*
@@ -40676,6 +40739,7 @@ Africa/Zambia/Luapula/Mansa	Africa/Zambia/Luapula/Mansa ZM
 Africa/Zambia/North-Western/*	Africa/Zambia/North-Western Zambia/*
 Africa/Zambia/North Western/*	Africa/Zambia/North-Western Zambia/*
 Africa/Zambia/Lusaka/Kabwe	Africa/Zambia/Central Zambia/Kabwe
+Africa/Zambia/Eastern/*	Africa/Zambia/Eastern Zambia/*
 Africa/Botswana/Palapye/	Africa/Botswana/Central District BW/Palapye
 Africa/Botswana/Jwaneng/	Africa/Botswana/Southern District/Jwaneng
 Africa/Botswana/Mathethe/	Africa/Botswana/Southern District/Mmathethe
@@ -40715,6 +40779,14 @@ Africa/Botswana/Selebe Phikwe/	Africa/Botswana/Central District BW/Selebe Phikwe
 Africa/Botswana/Metlojane/	Africa/Botswana/Southern District/Metlojane
 Africa/Botswana/Hebron/	Africa/Botswana/Southern District/Hebron
 Africa/Botswana/Dimajwe/	Africa/Botswana/Central District BW/Dimajwe
+Africa/Botswana/Kweneg/*	Africa/Botswana/Kweneng District/*
+Africa/Botswana/Kweneng/*	Africa/Botswana/Kweneng District/*
+Africa/Botswana/South East/*	Africa/Botswana/Southern East/*
+Africa/Botswana/Kgalakgadi/*	Africa/Botswana/Kgalagadi District/*
+Africa/Botswana/Mmadinare/	Africa/Botswana/Central District BW/Mmadinare
+Africa/Botswana/Mathangwane/	Africa/Botswana/Central District BW/Mathangwane
+Africa/Botswana/Central/*	Africa/Botswana/Central District BW/*
+Africa/Botswana/Sekakakngwe/	Africa/Botswana/Botswana/
 Africa/Congo/*/*	Africa/Republic of the Congo/*/*
 Africa/Guyane/Cayenne/	Europe/France/French Guiana/Cayenne (French Guiana)
 Africa/Mauritius/Plaine Wilhems/*	Africa/Mauritius/Plaine-Wilhems/*
@@ -40749,6 +40821,13 @@ Africa/Kenya/Murang'A/	Africa/Kenya/Central Kenya/Murang'A
 Africa/Kenya/Meru/	Africa/Kenya/East Kenya/Meru
 Africa/Kenya/Kirinyaga/	Africa/Kenya/Central Kenya/Kirinyaga
 Africa/Kenya/Embu/	Africa/Kenya/East Kenya/Embu
+Africa/Kenya/Transzoia/*	Africa/Kenya/Trans-Nzoia/*
+Africa/Kenya/Kisumu Kenya/*	Africa/Kenya/Kisumu/*
+Africa/Kenya/Moyale/	Africa/Kenya/East Kenya/Moyale
+Africa/Kenya/Kerugoya/	Africa/Kenya/Central Kenya/Kerugoya
+Africa/Kenya/Dadaab/	Africa/Kenya/Northeast Kenya/Dadaab
+Africa/Kenya/Unknown/	Africa/Kenya/Kenya/
+Africa/Kenya/Meru County/	Africa/Kenya/East Kenya/Meru
 Africa/Canary Islands/Madrid/*	Europe/Spain/Madrid/*
 Africa/Canary Islands/Canary Islands/*	Europe/Spain/Canary Islands/*
 Africa/Canary Islands//	Europe/Spain/Canary Islands/
@@ -40774,6 +40853,8 @@ Africa/Guinea/Dubreka/	Africa/Guinea/Dubréka/
 Africa/Guinea/Guekedou/	Africa/Guinea/Gueckedou/
 Africa/Guinea/Siguri/	Africa/Guinea/Siguiri/
 Africa/Guinea/Kindia Region/*	Africa/Guinea/Kindia/*
+Africa/Guinea/Lelouma/	Africa/Guinea/Labe Region/Lelouma
+Africa/Guinea/Labe/*	Africa/Guinea/Labe Region/*
 Africa/Algeria/Alger/	Africa/Algeria/Algiers/Alger
 Africa/Algeria/Eddis/	Africa/Algeria/M'Sila Province/Eddis
 Africa/Liberia/Maryland/	Africa/Liberia/Maryland LR/
@@ -40784,6 +40865,23 @@ Africa/Eswatini/Siteki/	Africa/Eswatini/Lubombo/Siteki
 Africa/Eswatini/Siphofaneni/	Africa/Eswatini/Lubombo/Siphofaneni
 Africa/Eswatini/Matsapha/	Africa/Eswatini/Manzini/Matsapha
 Africa/Rwanda/Kirehe/	Africa/Rwanda/Eastern Province RW/Kirehe
+Africa/Rwanda/Huye/	Africa/Rwanda/Southern Province RW/Huye
+Africa/Rwanda/Rwamagana/	Africa/Rwanda/Eastern Province RW/Rwamagana
+Africa/Rwanda/Musanze/	Africa/Rwanda/Northern Province RW/Musanze
+Africa/Rwanda/Kayonza/	Africa/Rwanda/Eastern Province RW/Kayonza
+Africa/Rwanda/Gakenke/	Africa/Rwanda/Northern Province RW/Gakenke
+Africa/Rwanda/Nyaruguru/	Africa/Rwanda/Southern Province RW/Nyaruguru
+Africa/Rwanda/Bugesera/	Africa/Rwanda/Eastern Province RW/Bugesera
+Africa/Rwanda/Gatsibo/	Africa/Rwanda/Eastern Province RW/Gatsibo
+Africa/Rwanda/Kamonyi/	Africa/Rwanda/Southern Province RW/Kamonyi
+Africa/Rwanda/Rulindo/	Africa/Rwanda/Northern Province RW/Rulindo
+Africa/Rwanda/Rusume Border/	Africa/Rwanda/Eastern Province RW/Rusume Border
+Africa/Ethiopia/Addisababa/*	Africa/Ethiopia/Addis Ababa/*
+Africa/Benin/Come/	Africa/Benin/Mono/Come
+Africa/Benin/Grand-Popo/	Africa/Benin/Mono/Grand-Popo
+Africa/Sudan/East Africa/	Africa/Sudan/Sudan/
+Africa/Sudan/Western Nile/	Africa/Sudan/Sudan/
+Africa/Sudan/Portsudan/	Africa/Sudan/Red Sea State/Port Sudan
 Italy/Apulia/Bari/	Europe/Italy/Apulia/Bari
 North Macedonia/Kochani/Kochani/	Europe/North Macedonia/Eastern Region MK/Kochani
 North Macedonia/Kavadarci/Kavadarci/	Europe/North Macedonia/Kavadarci/Kavadarci
