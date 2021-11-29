@@ -29,3 +29,6 @@ Thumbs.db
 
 node_modules/
 tmp/
+
+# Transient files for ./bin/shellcheck
+/.github/workflows/_shellcheck/

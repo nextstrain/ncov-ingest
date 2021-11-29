@@ -1,3 +1,31 @@
 #!/bin/bash
 set -euo pipefail
-git grep -lz '^#!/bin/bash' | xargs -0 shellcheck "$@"
+
+bin="$(dirname "$0")"
+base="$(realpath --relative-to . "$bin/..")"
+
+main() {
+    find-files | xargs -0 shellcheck "$@"
+}
+
+find-files() {
+    shell-files
+    workflow-shell
+}
+
+shell-files() {
+    git grep -lz '^#!/bin/bash'
+}
+
+workflow-shell() {
+    tmpdir="$base/.github/workflows/_shellcheck/"
+    rm -rf "$tmpdir"
+    mkdir "$tmpdir"
+    trap "rm -rf ${tmpdir@Q}" EXIT
+
+    git ls-files -z :/.github/workflows/'*'.y{a,}ml \
+        | xargs -0 "$bin"/extract-shell-from-gh-workflow "$tmpdir" \
+        | perl -pe 's/\n/\0/'
+}
+
+main "$@"
