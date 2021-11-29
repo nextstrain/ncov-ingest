@@ -3,8 +3,9 @@ name: GenBank fetch and ingest
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    # "At 03:00 (05:00 CET, 20:00 PDT the previous day) every weekday."
-    - cron:  '0 3 * * MON-FRI'
+    # https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows#schedule
+    # https://crontab.guru/
+    - cron:  '7 13 * * *'
 
   # Manually triggered using `./bin/trigger genbank/fetch-and-ingest` (or `fetch-and-ingest`, which
   # includes GISAID)
