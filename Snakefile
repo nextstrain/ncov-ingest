@@ -197,7 +197,7 @@ rule annotate_via_nextclade:
         new_info = temp(f"data/{database}/nextclade_new.tsv"),
         nextclade_input_dir = temp(directory(f"data/{database}/nextclade_inputs")),
         nextclade_output_dir = temp(directory(f"data/{database}/nextclade"))
-    threads: 8
+    threads: 16
     output:
         nextclade_info = f"data/{database}/nextclade.tsv"
 
