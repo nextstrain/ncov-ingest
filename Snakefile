@@ -15,18 +15,17 @@ send_notifications = "SLACK_CHANNELS" in os.environ and "SLACK_TOKEN" in os.envi
 ################ work out what steps to run #####################
 #################################################################
 
-def _compute_targets(wildcards):
-    targets = [f"data/{database}/upload.done"]
-    if config.get("trigger_preprocessing", False):
-        targets.append(f"data/{database}/trigger-preprocessing.done")
-    if send_notifications:
-        targets.append(f"data/{database}/notify.done")
-    if config.get("fetch_from_database", False):
-        targets.append(f"data/{database}/raw.upload.done")
-    return targets
+all_targets = [f"data/{database}/upload.done"]
+
+if config.get("trigger_preprocessing", False):
+    all_targets.append(f"data/{database}/trigger-preprocessing.done")
+if send_notifications:
+    all_targets.append(f"data/{database}/notify.done")
+if config.get("fetch_from_database", False):
+    all_targets.append(f"data/{database}/raw.upload.done")
 
 rule all:
-    input: _compute_targets
+    input: all_targets
 
 #################################################################
 ###################### rule definitions #########################
@@ -80,8 +79,8 @@ rule download_biosample:
     message:
         """Obtaining Biosample data (GenBank only)"""
     params:
-        file_on_s3_dst=lambda w: config["s3_dst"] + '/biosample.ndjson.xz',
-        file_on_s3_src=lambda w: config["s3_src"] + '/biosample.ndjson.xz',
+        file_on_s3_dst = config["s3_dst"] + '/biosample.ndjson.xz',
+        file_on_s3_src = config["s3_src"] + '/biosample.ndjson.xz',
     output:
         biosample = "data/biosample.ndjson"
     run:
@@ -96,15 +95,14 @@ rule download_biosample:
                 ./bin/download-from-s3 {params.file_on_s3_src} {output.biosample}
             """)
 
-def _raw_files_to_upload(wildcards):
-    files = {f"{database}.ndjson.xz": f"data/{database}.ndjson"}
-    if database=="genbank":
-        files["biosample.ndjson.gz"] = f"data/biosample.ndjson"
-    return files
+raw_files_to_upload = {f"{database}.ndjson.xz": f"data/{database}.ndjson"}
+
+if database=="genbank":
+    raw_files_to_upload["biosample.ndjson.gz"] = f"data/biosample.ndjson"
 
 rule upload_raw_ndjson:
     input:
-        unpack(_raw_files_to_upload)
+        **raw_files_to_upload
     output:
         touch(f"data/{database}/raw.upload.done")
     params:
@@ -161,8 +159,8 @@ rule transform_gisaid_data:
 
 rule download_nextclade:
     params:
-        dst_source=lambda w: config["s3_dst"] + '/nextclade.tsv.gz',
-        src_source=lambda w: config["s3_src"] + '/nextclade.tsv.gz',
+        dst_source = config["s3_dst"] + '/nextclade.tsv.gz',
+        src_source = config["s3_src"] + '/nextclade.tsv.gz',
     output:
         nextclade = f"data/{database}/nextclade_old.tsv"
     shell:
@@ -256,7 +254,7 @@ rule check_locations:
     input:
         metadata = f"data/{database}/metadata.tsv"
     params:
-        unique_id = lambda: "gisaid_epi_isl" if database=="gisaid" else "genbank_accession"
+        unique_id = "gisaid_epi_isl" if database=="gisaid" else "genbank_accession"
     output:
         location_hierarchy = f"data/{database}/location_hierarchy.tsv"
     shell:
@@ -299,22 +297,20 @@ rule notify_genbank:
         shell("./bin/notify-on-location-hierarchy-addition {input.location_hierarchy} source-data/location_hierarchy.tsv")
         shell("./bin/notify-on-duplicate-biosample-change {input.duplicate_biosample} {params.s3_bucket}/duplicate_biosample.txt.gz")
 
-def _files_to_upload(wildcards):
-    files = {
-            "metadata.tsv.gz":                f"data/{database}/metadata.tsv",
-            "sequences.fasta.xz":             f"data/{database}/sequences.fasta",
-            "nextclade.tsv.gz":               f"data/{database}/nextclade.tsv"}
-    if database=="genbank":
-        files["biosample.tsv.gz"] =           f"data/{database}/biosample.tsv"
-        files["duplicate_biosample.txt.gz"] = f"data/{database}/duplicate_biosample.txt"
-    elif database=="gisaid":
-        files["additional_info.tsv.gz"] =     f"data/{database}/additional_info.tsv"
-        files["flagged_metadata.txt.gz"] =    f"data/{database}/flagged_metadata.txt"
-    return files
+files_to_upload = {
+                    "metadata.tsv.gz":              f"data/{database}/metadata.tsv",
+                    "sequences.fasta.xz":           f"data/{database}/sequences.fasta",
+                    "nextclade.tsv.gz":             f"data/{database}/nextclade.tsv"}
+if database=="genbank":
+    files_to_upload["biosample.tsv.gz"] =           f"data/{database}/biosample.tsv"
+    files_to_upload["duplicate_biosample.txt.gz"] = f"data/{database}/duplicate_biosample.txt"
+elif database=="gisaid":
+    files_to_upload["additional_info.tsv.gz"] =     f"data/{database}/additional_info.tsv"
+    files_to_upload["flagged_metadata.txt.gz"] =    f"data/{database}/flagged_metadata.txt"
 
 rule upload:
     input:
-        unpack(_files_to_upload)
+        **files_to_upload
     output:
         touch(f"data/{database}/upload.done")
     params:
