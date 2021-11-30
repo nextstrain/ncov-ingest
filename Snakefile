@@ -208,14 +208,15 @@ rule annotate_via_nextclade:
     shell:
         """
         if [ ! -s {input.sequences:q} ]; then
-            echo "[ INFO] No new sequences for Nextclade to process. Skipping. (rule find_clades_via_nextclade)"
+            echo "[ INFO] No new sequences for Nextclade to process. Skipping nextclade."
             mv {input.nextclade_info} {output.nextclade_info}
         else
             ./bin/run-nextclade \
                 {input.sequences:q} \
                 {params.new_info} \
                 {params.nextclade_input_dir} \
-                {params.nextclade_output_dir}
+                {params.nextclade_output_dir} \
+                {threads}
             # Join new and old clades, so that next run won't need to process sequences that are already processed
             ./bin/join-rows \
                 {input.nextclade_info:q} \
