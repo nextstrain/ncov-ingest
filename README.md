@@ -6,8 +6,8 @@ Relies on data from https://simplemaps.com/data/us-cities.
 ## Running locally
 If you're using Pipenv (see below), then run commands from `./bin/…` inside a `pipenv shell` or wrapped with `pipenv run ./bin/…`.
 
-1. Run `./bin/fetch-from-gisaid > data/gisaid.ndjson`
-2. Run `./bin/transform-gisaid data/gisaid.ndjson`
+1. Run `./bin/fetch-from-gisaid > data/gisaid.ndjson.xz`
+2. Run `./bin/transform-gisaid data/gisaid.ndjson.xz`
 3. Look at `data/gisaid/sequences.fasta` and `data/gisaid/metadata.tsv`
 
 ## Running automatically
