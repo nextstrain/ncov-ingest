@@ -10,6 +10,9 @@ environment*.sh
 # Ignore cloned ncov repo
 ncov/
 
+# From Snakemake
+.snakemake/
+
 # For Python #
 ##############
 *.pyc

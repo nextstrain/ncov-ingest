@@ -11,11 +11,20 @@ trap "exit" INT
 : "${2:?\"[ERROR] ${0}: Output TSV filename as the 2nd argument is required.\"}"
 : "${3:?\"[ERROR] ${0}: Directory for Nextclade input data as the 3rd argument is required.\"}"
 : "${4:?\"[ERROR] ${0}: Output directory as the 4th argument is required.\"}"
+# Note: 5th argument is the (max) number of threads for nextclade and is optional
 
 INPUT_FASTA="${1}"
 OUTPUT_TSV="${2}"
 NEXTCLADE_DATASET_DIR="${3}" # external data required for nextclade to function will be downloaded there
 NEXTCLADE_OUTPUTS_DIR="${4}" # files other than TSV will be written by Nextclade there (aligned sequences, peptides, etc.)
+NEXTCLADE_THREADS=""
+if [ $# -eq 5 ]; then
+    echo "[ INFO] ${0}:${LINENO}: Nextclade will be limited to ${5} threads"
+    NEXTCLADE_THREADS="--jobs ${5}"
+elif [ $# -gt 5 ]; then
+    echo "[ INFO] ${0}:${LINENO}: Too many arguments provided"
+    exit 1
+fi
 
 echo "[ INFO] ${0}:${LINENO}: Downloading latest Nextclade version"
 curl -fsSL "https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-Linux-x86_64" -o "nextclade"
@@ -42,4 +51,5 @@ echo "[ INFO] ${0}:${LINENO}: Running Nextclade"
   --output-tsv="${OUTPUT_TSV}" \
   --genes=E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S \
   --output-dir="${NEXTCLADE_OUTPUTS_DIR}" \
-  --output-basename="nextclade"
+  --output-basename="nextclade" \
+  ${NEXTCLADE_THREADS}
