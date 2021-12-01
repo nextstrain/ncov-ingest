@@ -5,3 +5,5 @@ trigger_preprocessing: false
 
 s3_src: "s3://nextstrain-ncov-private"
 s3_dst: "s3://nextstrain-ncov-private"
+
+keep_all_files: False

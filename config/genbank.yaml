@@ -5,3 +5,5 @@ trigger_preprocessing: false
 
 s3_src: "s3://nextstrain-data/files/ncov/open"
 s3_dst: "s3://nextstrain-data/files/ncov/open"
+
+keep_all_files: False
