@@ -369,13 +369,13 @@ onstart:
 onsuccess:
     message = "✅ This pipeline has successfully finished 🎉"
     print(message)
-    if config.get("keep_all_files", False):
+    if not config.get("keep_all_files", False):
         print("Removing intermediate files (set config option keep_all_files to skip this)")
         shell("./bin/clean")
 
 onerror:
     message = "❌ This pipeline has FAILED 😞. Please see linked thread for more information."
     print(message)
-    if config.get("keep_all_files", False):
+    if not config.get("keep_all_files", False):
         print("Removing intermediate files (set config option keep_all_files to skip this)")
         shell("./bin/clean")
