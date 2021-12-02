@@ -331,6 +331,7 @@ rule trigger_preprocessing_pipeline:
         dispatch_type = f"preprocess-{database}",
         token = os.environ.get("PAT_GITHUB_DISPATCH", "")
     run:
+        import requests
         headers = {
                 'Content-type': 'application/json',
                 'authorization': f"Bearer {params.token}",
