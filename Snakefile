@@ -335,7 +335,7 @@ rule trigger_preprocessing_pipeline:
                 'Content-type': 'application/json',
                 'authorization': f"Bearer {params.token}",
                 'Accept': 'application/vnd.github.v3+json'}
-        data = {"event_type": dispatch_type}
+        data = {"event_type": params.dispatch_type}
         print(f"Triggering ncov preprocessing GitHub action via repository dispatch type: {params.dispatch_type}")
         response = requests.post("https://api.github.com/repos/nextstrain/ncov/dispatches", headers=headers, data=json.dumps(data))
         response.raise_for_status()
