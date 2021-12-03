@@ -164,6 +164,17 @@ main() {
         "data/genbank/nextclade.tsv" \
         -o "data/genbank/metadata.tsv"
 
+    # Download old peptides and join with the new ones
+    # Note: gene filenames are in the form: "nextclade.gene.S.fasta"
+    for gene_fasta_path in data/genbank/nextclade/*.gene.*.fasta; do
+      gene_fasta_filename="$(basename "${gene_fasta_path}")"
+
+      ./bin/download-from-s3 "$S3_DST/${gene_fasta_filename}.xz" "data/genbank/old.${gene_fasta_path}.fasta"
+
+      cat "data/genbank/old.${gene_fasta_path}.fasta" \
+          "data/genbank/nextclade/${gene_fasta_path}" \
+         >"data/genbank/${gene_fasta_path}"
+    done
 
     if [[ "$branch" == master ]]; then
         ./bin/notify-on-metadata-change data/genbank/metadata.tsv "$S3_SRC/metadata.tsv.gz" genbank_accession
@@ -181,6 +192,14 @@ main() {
     if [ -f "data/genbank/nextclade.aligned.fasta" ]; then
       ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/nextclade.aligned.fasta "$S3_DST/nextclade.aligned.fasta.xz"
     fi
+
+    # Upload each gene fasta
+    for gene_fasta_path in data/genbank/*.gene.*.fasta; do
+      if [ -f "${gene_fasta_path}" ]; then
+        gene_fasta_filename="$(basename "${gene_fasta_path}")"
+        ./bin/upload-to-s3 ${silent:+--quiet} "${gene_fasta_path}" "$S3_DST/${gene_fasta_filename}.xz"
+      fi
+    done
 
     ./bin/clean
 

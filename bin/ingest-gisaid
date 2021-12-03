@@ -142,6 +142,17 @@ main() {
           "data/gisaid/nextclade.aligned.new.fasta" \
          >"data/gisaid/nextclade.aligned.fasta"
 
+      # Download old peptides and join with the new ones
+      # Note: gene filenames are in the form: "nextclade.gene.S.fasta"
+      for gene_fasta_path in data/gisaid/nextclade/*.gene.*.fasta; do
+        gene_fasta_filename="$(basename "${gene_fasta_path}")"
+
+        ./bin/download-from-s3 "$S3_DST/${gene_fasta_filename}.xz" "data/gisaid/old.${gene_fasta_path}.fasta"
+
+        cat "data/gisaid/old.${gene_fasta_path}.fasta" \
+            "data/gisaid/nextclade/${gene_fasta_path}" \
+           >"data/gisaid/${gene_fasta_path}"
+      done
     fi
 
     # Join clades and analysis results into metadata
@@ -173,6 +184,14 @@ main() {
     if [ -f "data/gisaid/nextclade.aligned.fasta" ]; then
       ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/nextclade.aligned.fasta "$S3_DST/nextclade.aligned.fasta.xz"
     fi
+
+    # Upload each gene fasta
+    for gene_fasta_path in data/gisaid/*.gene.*.fasta; do
+      if [ -f "${gene_fasta_path}" ]; then
+        gene_fasta_filename="$(basename "${gene_fasta_path}")"
+        ./bin/upload-to-s3 ${silent:+--quiet} "${gene_fasta_path}" "$S3_DST/${gene_fasta_filename}.xz"
+      fi
+    done
 
     ./bin/clean
 
