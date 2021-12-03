@@ -23,6 +23,8 @@ if send_notifications:
     all_targets.append(f"data/{database}/notify.done")
 if config.get("fetch_from_database", False):
     all_targets.append(f"data/{database}/raw.upload.done")
+    if send_notifications:
+        all_targets.append(f"data/{database}/notify-on-database-change.done")
 
 rule all:
     input: all_targets
@@ -47,31 +49,44 @@ def run_shell_command_n_times(cmd, msg, cleanup_failed_cmd, retry_num=5):
         print(msg + f" has FAILED {retry_num} times. Exiting.")
         raise Exception("function run_shell_command_n_times has failed")
 
-rule download_main_ndjson:
-    message:
-        """Fetching data using the database API"""
+if config.get("fetch_from_database", False):
+    rule download_main_ndjson:
+        message:
+            """Fetching data using the database API"""
+        output:
+            ndjson = temp(f"data/{database}.ndjson")
+        run:
+            run_shell_command_n_times(
+                msg = f"Fetching from {database}",
+                cmd = f"./bin/fetch-from-{database} > {output.ndjson}",
+                cleanup_failed_cmd = f"rm {output.ndjson}",
+            )
+else:
+    rule download_main_ndjson:
+        message:
+            """Fetching data from our S3 bucket"""
+        params:
+            file_on_s3_dst= f"{config['s3_dst']}/{database}.ndjson.xz",
+            file_on_s3_src= f"{config['s3_src']}/{database}.ndjson.xz"
+        output:
+            ndjson = temp(f"data/{database}.ndjson")
+        shell: """
+            ./bin/download-from-s3 {params.file_on_s3_dst} {output.ndjson} ||  \
+            ./bin/download-from-s3 {params.file_on_s3_src} {output.ndjson}
+        """
+
+
+rule notify_on_database_change:
+    message: "Notifying on database NDJSON change"
+    input:
+        local_file = f"data/{database}.ndjson"
     params:
-        file_on_s3_dst= f"{config['s3_dst']}/{database}.ndjson.xz",
-        file_on_s3_src= f"{config['s3_src']}/{database}.ndjson.xz"
+        remote_file = f"{config['s3_src']}/{database}.ndjson.xz"
     output:
-        ndjson = temp(f"data/{database}.ndjson")
-    run:
-        if config.get("fetch_from_database", False):
-            if database=="gisaid":
-                msg = "Fetching from GISAID API"
-                cmd = f"./bin/fetch-from-gisaid > {output.ndjson}"
-            else:
-                msg = "Fetching from GenBank API"
-                cmd = f"./bin/fetch-from-genbank > {output.ndjson}"
-            cleanup_failed_cmd = f"rm {output.ndjson}"
-            run_shell_command_n_times(cmd, msg, cleanup_failed_cmd)
-            if send_notifications:
-                shell("./bin/notify-on-record-change {output.ndjson} {params.file_on_s3_src} {database}")
-        else:
-            shell("""
-                ./bin/download-from-s3 {params.file_on_s3_dst} {output.ndjson} ||  \
-                ./bin/download-from-s3 {params.file_on_s3_src} {output.ndjson}
-            """)
+        touch(f"data/{database}/notify-on-database-change.done")
+    shell: """
+        ./bin/notify-on-record-change {input.local_file:q} {params.remote_file:q} {database}
+    """
 
 
 rule download_biosample:
