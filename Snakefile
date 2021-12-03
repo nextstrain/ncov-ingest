@@ -54,7 +54,7 @@ if config.get("fetch_from_database", False):
         message:
             """Fetching data using the database API"""
         output:
-            ndjson = temp(f"data/{database}.ndjson")
+            ndjson = temp(f"data/{database}.ndjson" + (".bz2" if database == "gisaid" else ""))
         run:
             run_shell_command_n_times(
                 msg = f"Fetching from {database}",
@@ -74,6 +74,13 @@ else:
             ./bin/download-from-s3 {params.file_on_s3_dst} {output.ndjson} ||  \
             ./bin/download-from-s3 {params.file_on_s3_src} {output.ndjson}
         """
+
+
+rule bunzip2:
+    message: "Decompressing {input}"
+    input: "{stem}.bz2"
+    output: "{stem}"
+    shell: "bunzip2 {input:q}"
 
 
 rule notify_on_database_change:
