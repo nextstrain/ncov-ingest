@@ -93,12 +93,15 @@ main() {
 
   INPUT_FASTA="data/${DATABASE}/sequences.fasta"
   OUTPUT_TSV="data/${DATABASE}/nextclade.tsv"
-  TMP_DIR_FASTA="tmp/${DATABASE}/fasta"
-  TMP_DIR_TSV="tmp/${DATABASE}/clades"
+  OUTPUT_FASTA="data/${DATABASE}/nextclade.aligned.fasta"
+  TMP_INPUT_FASTA_DIR="tmp/${DATABASE}/fasta"
+  TMP_OUTPUT_TSV_DIR="tmp/${DATABASE}/clades"
+  TMP_OUTPUT_FASTA_DIR="tmp/${DATABASE}/aligned"
   TMP_DIR_NEXTCLADE_DATASET="tmp/dataset"
   TMP_DIR_UNUSED="tmp/${DATABASE}/unused"
-  INPUT_WILDCARD="${TMP_DIR_FASTA}/*.fasta"
-  OUTPUT_WILDCARD="${TMP_DIR_TSV}/*.tsv"
+  INPUT_WILDCARD="${TMP_INPUT_FASTA_DIR}/*.fasta"
+  TSV_OUTPUT_WILDCARD="${TMP_OUTPUT_TSV_DIR}/*.tsv"
+  FASTA_OUTPUT_WILDCARD="${TMP_OUTPUT_FASTA_DIR}/*.fasta"
 
   NEXTCLADE_BIN_URL="https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-Linux-x86_64"
   NEXTCLADE_BIN="nextclade"
@@ -143,11 +146,11 @@ main() {
 
   echo "[ INFO] ${0}:${LINENO}: Splitting '${INPUT_FASTA}' into batches of size ${BATCH_SIZE} sequences and storing them in '${INPUT_WILDCARD}'"
   # Split fasta file to multiple batches
-  mkdir -p "${TMP_DIR_FASTA}"
+  mkdir -p "${TMP_INPUT_FASTA_DIR}"
   ./bin/split-fasta \
     "${INPUT_FASTA}" \
     --batch_size="${BATCH_SIZE}" \
-    --output_dir="${TMP_DIR_FASTA}"
+    --output_dir="${TMP_INPUT_FASTA_DIR}"
 
   # Check if batches exist and report
   # shellcheck disable=SC2086 # We want globbing here
@@ -157,7 +160,7 @@ main() {
     echo "[ INFO] ${0}:${LINENO}: There are now ${NUM_BATCHES} batches of sequences to process with Nextclade (batch size is ${BATCH_SIZE})"
   else
     echo "[ INFO] ${0}:${LINENO}: There are no sequences to process. Skipping Nextclade step."
-    rm -rf "${INPUT_FASTA} ${TMP_DIR_FASTA} ${TMP_DIR_UNUSED}"
+    rm -rf "${INPUT_FASTA} ${TMP_INPUT_FASTA_DIR} ${TMP_DIR_UNUSED}"
     exit 0
   fi
 
@@ -184,7 +187,7 @@ main() {
   # Run batches in parallel
   echo "[ INFO] ${0}:${LINENO}: Nextclade is allowed to use ${N_PROCESSORS} threads. Each invocation of Nextclade is allowed to use ${N_NEXTCLADE_THREADS} threads."
   echo "[ INFO] ${0}:${LINENO}: Will run ${NUM_BATCHES} total Nextclade jobs, at most ${N_CONCURRENT_JOBS_MAX} concurrent jobs at a time."
-  mkdir -p "${TMP_DIR_TSV}"
+  mkdir -p "${TMP_OUTPUT_TSV_DIR}"
   N_JOBS_CURRENT="\j"
   for input in ${INPUT_WILDCARD}; do
     if [ ! -e "${input}" ]; then
@@ -195,8 +198,12 @@ main() {
     fi
 
     input_basename="$(basename "${input}")"
-    output_basename="${input_basename%.fasta}.tsv"
-    output_filename="${TMP_DIR_TSV}/${output_basename}"
+
+    output_tsv_basename="${input_basename%.fasta}.tsv"
+    output_tsv_filename="${TMP_OUTPUT_TSV_DIR}/${output_tsv_basename}"
+
+    output_fasta_basename="${input_basename%.fasta}.aligned.fasta"
+    output_fasta_filename="${TMP_OUTPUT_FASTA_DIR}/${output_fasta_basename}"
 
     # Wait until there is an empty job slot to run. This is to avoid oversubscription.
     # shellcheck disable=SC2004  # It does not seem to be working without the '$'
@@ -211,7 +218,8 @@ main() {
       --verbosity=error \
       --input-fasta="${input}" \
       --input-dataset="${TMP_DIR_NEXTCLADE_DATASET}" \
-      --output-tsv="${output_filename}" \
+      --output-tsv="${output_tsv_filename}" \
+      --output-fasta="${output_fasta_filename}" \
       --genes=E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S \
       --output-dir="${TMP_DIR_UNUSED}" \
       --output-basename="nextclade" \
@@ -225,34 +233,48 @@ main() {
 
   disk_info
   echo "[ INFO] ${0}:${LINENO}: Cleanup fasta batches to save up disk space"
-  rm -rf "${TMP_DIR_FASTA} ${TMP_DIR_UNUSED}"
+  rm -rf "${TMP_INPUT_FASTA_DIR} ${TMP_DIR_UNUSED}"
   disk_info
 
-  # Check if output batches exist and report
+  # Check if output TSV batches exist and report
   # shellcheck disable=SC2086 # We want globbing here
-  if ls ${OUTPUT_WILDCARD} 1>/dev/null 2>&1; then
+  if ls ${TSV_OUTPUT_WILDCARD} 1>/dev/null 2>&1; then
     # shellcheck disable=SC2012 # We want globbing here
-    NUM_OUTPUT_BATCHES="$(ls -Ubad1 -- ${OUTPUT_WILDCARD} 2>/dev/null | wc -l)"
-    echo "[ INFO] ${0}:${LINENO}: There are now ${NUM_OUTPUT_BATCHES} output batches to concatenate (batch size is ${BATCH_SIZE})"
-    echo "[ INFO] ${0}:${LINENO}: Concatenating Nextclade output batches from '${OUTPUT_WILDCARD}' into '${OUTPUT_TSV}'"
-    csvstack --tabs ${OUTPUT_WILDCARD} | csvformat --out-tabs > "${OUTPUT_TSV}"
+    NUM_OUTPUT_TSV_BATCHES="$(ls -Ubad1 -- ${TSV_OUTPUT_WILDCARD} 2>/dev/null | wc -l)"
+    echo "[ INFO] ${0}:${LINENO}: There are now ${NUM_OUTPUT_TSV_BATCHES} output TSV batches to concatenate (batch size is ${BATCH_SIZE})"
+    echo "[ INFO] ${0}:${LINENO}: Concatenating Nextclade output TSV batches from '${TSV_OUTPUT_WILDCARD}' into '${OUTPUT_TSV}'"
+    csvstack --tabs ${TSV_OUTPUT_WILDCARD} | csvformat --out-tabs >"${OUTPUT_TSV}"
   else
-    echo "[ERROR] ${0}:${LINENO}: Output batches are not found: '${OUTPUT_WILDCARD}'. Nextclade jobs mush have failed to write their results."
+    echo "[ERROR] ${0}:${LINENO}: Output TSV batches are not found: '${TSV_OUTPUT_WILDCARD}'. Nextclade jobs mush have failed to write their results."
     exit 1
   fi
 
-  # Check if output batches exist and report
+  # Check if output TSV result exist
   # shellcheck disable=SC2086 # We want globbing here
   if ! ls ${OUTPUT_TSV} 1>/dev/null 2>&1; then
-    echo "[ERROR] ${0}:${LINENO}: Concatenated result not found: '${OUTPUT_TSV}'. Concatenation of output batches must have failed."
+    echo "[ERROR] ${0}:${LINENO}: Concatenated TSV result not found: '${OUTPUT_TSV}'. Concatenation of output TSV batches must have failed."
+    exit 1
+  fi
+
+  # Check if output FASTA batches exist and report
+  # shellcheck disable=SC2086 # We want globbing here
+  if ls ${FASTA_OUTPUT_WILDCARD} 1>/dev/null 2>&1; then
+    # shellcheck disable=SC2012 # We want globbing here
+    NUM_OUTPUT_FASTA_BATCHES="$(ls -Ubad1 -- ${FASTA_OUTPUT_WILDCARD} 2>/dev/null | wc -l)"
+    echo "[ INFO] ${0}:${LINENO}: There are now ${NUM_OUTPUT_FASTA_BATCHES} output FASTA batches to concatenate (batch size is ${BATCH_SIZE})"
+    echo "[ INFO] ${0}:${LINENO}: Concatenating Nextclade output FASTA batches from '${FASTA_OUTPUT_WILDCARD}' into '${OUTPUT_FASTA}'"
+    cat ${FASTA_OUTPUT_WILDCARD} >"${OUTPUT_FASTA}"
+  else
+    echo "[ERROR] ${0}:${LINENO}: Output FASTA batches are not found: '${FASTA_OUTPUT_WILDCARD}'. Nextclade jobs mush have failed to write their results."
     exit 1
   fi
 
   echo "[ INFO] ${0}:${LINENO}: Upload results"
   ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_TSV}" "$S3_DST/nextclade.tsv.gz"
+  ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_FASTA}" "$S3_DST/nextclade.aligned.fasta.xz"
 
   # Cut the running time by deleting working directory and avoiding zipping it.
-  # We are unlikely to inspect it anyways. But keep the result file, just in
+  # We are unlikely to inspect it anyways. But keep the TSV result file, just in
   # case.
   mv "${OUTPUT_TSV}" "nextclade.tsv"
   rm -rf data tmp "${NEXTCLADE_BIN}"

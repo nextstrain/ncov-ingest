@@ -141,13 +141,22 @@ main() {
       "data/genbank/nextclade.sequences.fasta" \
       "data/genbank/nextclade_new.tsv" \
       "data/genbank/nextclade-inputs" \
-      "data/genbank/nextclade"
+      "data/genbank/nextclade" \
+      "data/genbank/nextclade.aligned.new.fasta"
 
     # Join new and old clades, so that next run won't need to process sequences that are already processed
     ./bin/join-rows \
       "data/genbank/nextclade_old.tsv" \
       "data/genbank/nextclade_new.tsv" \
       -o "data/genbank/nextclade.tsv"
+
+    # Download old alignment
+    ./bin/download-from-s3 "$S3_DST/nextclade.aligned.fasta.xz" "data/genbank/nextclade.aligned.old.fasta"
+
+    # Join new and old alignment
+    cat "data/genbank/nextclade.aligned.old.fasta" \
+        "data/genbank/nextclade.aligned.new.fasta" \
+       >"data/genbank/nextclade.aligned.fasta"
 
     # Join these clades into metadata
     ./bin/join-metadata-and-clades \
@@ -168,6 +177,10 @@ main() {
     ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/nextclade.tsv "$S3_DST/nextclade.tsv.gz"
     ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/biosample.tsv "$S3_DST/biosample.tsv.gz"
     ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/duplicate_biosample.txt "$S3_DST/duplicate_biosample.txt.gz"
+
+    if [ -f "data/genbank/nextclade.aligned.fasta" ]; then
+      ./bin/upload-to-s3 ${silent:+--quiet} data/genbank/nextclade.aligned.fasta "$S3_DST/nextclade.aligned.fasta.xz"
+    fi
 
     ./bin/clean
 
