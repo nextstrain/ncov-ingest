@@ -51,7 +51,6 @@ rule download_main_ndjson:
     message:
         """Fetching data using the database API"""
     params:
-        s3_src_bucket = config["s3_src"],
         file_on_s3_dst= f"{config['s3_dst']}/{database}.ndjson.xz",
         file_on_s3_src= f"{config['s3_src']}/{database}.ndjson.xz"
     output:
@@ -67,7 +66,7 @@ rule download_main_ndjson:
             cleanup_failed_cmd = f"rm {output.ndjson}"
             run_shell_command_n_times(cmd, msg, cleanup_failed_cmd)
             if send_notifications:
-                shell("./bin/notify-on-record-change {output.ndjson} {params.s3_src_bucket}/gisaid.ndjson.xz {database}")
+                shell("./bin/notify-on-record-change {output.ndjson} {params.file_on_s3_src} {database}")
         else:
             shell("""
                 ./bin/download-from-s3 {params.file_on_s3_dst} {output.ndjson} ||  \
