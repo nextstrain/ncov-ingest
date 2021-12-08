@@ -12,12 +12,16 @@ trap "exit" INT
 : "${3:?\"[ERROR] ${0}: Directory for Nextclade input data as the 3rd argument is required.\"}"
 : "${4:?\"[ERROR] ${0}: Output directory as the 4th argument is required.\"}"
 : "${5:?\"[ERROR] ${0}: Output fasta filename as the 5th argument is required.\"}"
+: "${6:?\"[ERROR] ${0}: Output insertions csv filename as the 6th argument is required.\"}"
+: "${7:?\"[ERROR] ${0}: List of genes as 7th argument is required.\"}"
 
 INPUT_FASTA="${1}"
 OUTPUT_TSV="${2}"
 NEXTCLADE_DATASET_DIR="${3}" # external data required for nextclade to function will be downloaded there
 NEXTCLADE_OUTPUTS_DIR="${4}" # files other than TSV will be written by Nextclade there (aligned sequences, peptides, etc.)
 OUTPUT_FASTA="${5}"
+OUTPUT_INSERTIONS="${6}"
+GENES="${7}"
 
 echo "[ INFO] ${0}:${LINENO}: Downloading latest Nextclade version"
 curl -fsSL "https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-Linux-x86_64" -o "nextclade"
@@ -42,7 +46,8 @@ echo "[ INFO] ${0}:${LINENO}: Running Nextclade"
   --input-fasta="${INPUT_FASTA}" \
   --input-dataset="${NEXTCLADE_DATASET_DIR}" \
   --output-tsv="${OUTPUT_TSV}" \
-  --genes=E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S \
+  --genes="${GENES}" \
   --output-dir="${NEXTCLADE_OUTPUTS_DIR}" \
   --output-basename="nextclade" \
   --output-fasta="${OUTPUT_FASTA}" \
+  --output-insertions="${OUTPUT_INSERTIONS}" \

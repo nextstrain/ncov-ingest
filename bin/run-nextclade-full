@@ -94,17 +94,23 @@ main() {
   INPUT_FASTA="data/${DATABASE}/sequences.fasta"
   OUTPUT_TSV="data/${DATABASE}/nextclade.tsv"
   OUTPUT_FASTA="data/${DATABASE}/nextclade.aligned.fasta"
+  OUTPUT_MUTATION_SUMMARY="data/${DATABASE}/nextclade.mutation_summary.tsv"
   TMP_INPUT_FASTA_DIR="tmp/${DATABASE}/fasta"
   TMP_OUTPUT_TSV_DIR="tmp/${DATABASE}/clades"
   TMP_OUTPUT_FASTA_DIR="tmp/${DATABASE}/aligned"
+  TMP_OUTPUT_MUTATION_SUMMARY_DIR="tmp/${DATABASE}/mutation_summary"
   TMP_DIR_NEXTCLADE_DATASET="tmp/dataset"
-  TMP_DIR_UNUSED="tmp/${DATABASE}/unused"
+  TMP_NEXTCLADE_OUTPUT_DIR="tmp/${DATABASE}/output"
   INPUT_WILDCARD="${TMP_INPUT_FASTA_DIR}/*.fasta"
   TSV_OUTPUT_WILDCARD="${TMP_OUTPUT_TSV_DIR}/*.tsv"
   FASTA_OUTPUT_WILDCARD="${TMP_OUTPUT_FASTA_DIR}/*.fasta"
+  MUTATION_SUMMARY_OUTPUT_WILDCARD="${TMP_OUTPUT_MUTATION_SUMMARY_DIR}/*.tsv"
 
   NEXTCLADE_BIN_URL="https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-Linux-x86_64"
   NEXTCLADE_BIN="nextclade"
+
+  GENES=E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S
+  GENES_SPACE_DELIMITED="$(echo ${GENES} | tr "," " ")"
 
   # Maximum number of Nextclade invocations that can run concurrently
   N_CONCURRENT_JOBS_MAX=$((N_PROCESSORS / N_NEXTCLADE_THREADS + 1))
@@ -160,14 +166,9 @@ main() {
     echo "[ INFO] ${0}:${LINENO}: There are now ${NUM_BATCHES} batches of sequences to process with Nextclade (batch size is ${BATCH_SIZE})"
   else
     echo "[ INFO] ${0}:${LINENO}: There are no sequences to process. Skipping Nextclade step."
-    rm -rf "${INPUT_FASTA} ${TMP_INPUT_FASTA_DIR} ${TMP_DIR_UNUSED}"
+    rm -rf "${INPUT_FASTA} ${TMP_INPUT_FASTA_DIR} ${TMP_NEXTCLADE_OUTPUT_DIR}"
     exit 0
   fi
-
-  disk_info
-  echo "[ INFO] ${0}:${LINENO}: Delete original fasta to save up disk space"
-  rm -rf "${INPUT_FASTA}"
-  disk_info
 
   if ! command -v ./${NEXTCLADE_BIN} &>/dev/null; then
     echo "[ERROR] ${0}:${LINENO}: Nextclade executable not found"
@@ -204,6 +205,7 @@ main() {
 
     output_fasta_basename="${input_basename%.fasta}.aligned.fasta"
     output_fasta_filename="${TMP_OUTPUT_FASTA_DIR}/${output_fasta_basename}"
+    output_dir="${TMP_NEXTCLADE_OUTPUT_DIR}/${input_basename%.fasta}"
 
     # Wait until there is an empty job slot to run. This is to avoid oversubscription.
     # shellcheck disable=SC2004  # It does not seem to be working without the '$'
@@ -220,8 +222,8 @@ main() {
       --input-dataset="${TMP_DIR_NEXTCLADE_DATASET}" \
       --output-tsv="${output_tsv_filename}" \
       --output-fasta="${output_fasta_filename}" \
-      --genes=E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S \
-      --output-dir="${TMP_DIR_UNUSED}" \
+      --genes="${GENES}" \
+      --output-dir="${output_dir}" \
       --output-basename="nextclade" \
       &
   done
@@ -230,11 +232,6 @@ main() {
     echo "[ INFO] ${0}:${LINENO}: Waiting until all Nextclade background jobs finish"
     wait "$job"
   done
-
-  disk_info
-  echo "[ INFO] ${0}:${LINENO}: Cleanup fasta batches to save up disk space"
-  rm -rf "${TMP_INPUT_FASTA_DIR} ${TMP_DIR_UNUSED}"
-  disk_info
 
   # Check if output TSV batches exist and report
   # shellcheck disable=SC2086 # We want globbing here
@@ -269,9 +266,50 @@ main() {
     exit 1
   fi
 
+  echo "[ INFO] ${0}:${LINENO}: Calculate mutation_summary.tsv for every batch"
+  for input in ${INPUT_WILDCARD}; do
+    if [ ! -e "${input}" ]; then
+      # If ${input} does not exist, this means that INPUT_WILDCARD was not expanded,
+      # there are no batch files and we should not attempt to run the processing.
+      # If we would, then it will crash.
+      break
+    fi
+
+    input_basename="$(basename "${input}")"
+    output_fasta_basename="${input_basename%.fasta}.aligned.fasta"
+    output_fasta_filename="${TMP_OUTPUT_FASTA_DIR}/${output_fasta_basename}"
+    output_dir="${TMP_NEXTCLADE_OUTPUT_DIR}/${input_basename%.fasta}"
+    output_mutation_summary="${TMP_OUTPUT_MUTATION_SUMMARY_DIR}/${input_basename%.fasta}.mutation_summary.tsv"
+
+    mkdir -p "${TMP_OUTPUT_MUTATION_SUMMARY_DIR}"
+
+    ./bin/mutation-summary \
+      --directory="${output_dir}" \
+      --alignment="${output_fasta_filename}" \
+      --basename="nextclade" \
+      --genes ${GENES_SPACE_DELIMITED} \
+      --reference="${TMP_DIR_NEXTCLADE_DATASET}/reference.fasta" \
+      --genemap="${TMP_DIR_NEXTCLADE_DATASET}/genemap.gff" \
+      --output="${output_mutation_summary}"
+  done
+
+  # Check if output FASTA batches exist and report
+  # shellcheck disable=SC2086 # We want globbing here
+  if ls ${MUTATION_SUMMARY_OUTPUT_WILDCARD} 1>/dev/null 2>&1; then
+    # shellcheck disable=SC2012 # We want globbing here
+    NUM_OUTPUT_MUTATION_SUMMARY_BATCHES="$(ls -Ubad1 -- ${MUTATION_SUMMARY_OUTPUT_WILDCARD} 2>/dev/null | wc -l)"
+    echo "[ INFO] ${0}:${LINENO}: There are now ${NUM_OUTPUT_MUTATION_SUMMARY_BATCHES} output mutation_summary.tsv batches to concatenate (batch size is ${BATCH_SIZE})"
+    echo "[ INFO] ${0}:${LINENO}: Concatenating Nextclade output mutation_summary.tsv batches from '${MUTATION_SUMMARY_OUTPUT_WILDCARD}' into '${OUTPUT_MUTATION_SUMMARY}'"
+    csvstack --tabs ${MUTATION_SUMMARY_OUTPUT_WILDCARD} | csvformat --out-tabs >"${OUTPUT_MUTATION_SUMMARY}"
+  else
+    echo "[ERROR] ${0}:${LINENO}: Output mutation_summary.tsv batches are not found: '${FASTA_OUTPUT_WILDCARD}'. ./bin/mutation-summary mush have failed to write their results."
+    exit 1
+  fi
+
   echo "[ INFO] ${0}:${LINENO}: Upload results"
   ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_TSV}" "$S3_DST/nextclade.tsv.gz"
   ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_FASTA}" "$S3_DST/nextclade.aligned.fasta.xz"
+  ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_MUTATION_SUMMARY}" "$S3_DST/nextclade.mutation_summary.tsv.xz"
 
   # Cut the running time by deleting working directory and avoiding zipping it.
   # We are unlikely to inspect it anyways. But keep the TSV result file, just in

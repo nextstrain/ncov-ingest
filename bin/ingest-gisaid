@@ -119,6 +119,9 @@ main() {
        mv data/gisaid/nextclade_old.tsv data/gisaid/nextclade.tsv
     else
 
+      GENES=E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S
+      GENES_SPACE_DELIMITED="$(echo ${GENES} | tr "," " ")"
+
       # And if it's not empty, run nextclade analysis on these sequences,
       # to assign clades and calculate other useful metrics
       ./bin/run-nextclade \
@@ -126,7 +129,9 @@ main() {
         "data/gisaid/nextclade_new.tsv" \
         "data/gisaid/nextclade-inputs" \
         "data/gisaid/nextclade" \
-        "data/gisaid/nextclade.aligned.new.fasta"
+        "data/gisaid/nextclade.aligned.new.fasta" \
+        "data/gisaid/nextclade.insertions.csv" \
+        "${GENES}"
 
       # Join new and old clades, so that next run won't need to process sequences that are already processed
       ./bin/join-rows \
@@ -141,6 +146,23 @@ main() {
       cat "data/gisaid/nextclade.aligned.old.fasta" \
           "data/gisaid/nextclade.aligned.new.fasta" \
          >"data/gisaid/nextclade.aligned.fasta"
+
+      ./bin/mutation-summary \
+        --directory="data/gisaid/nextclade" \
+        --alignment="data/gisaid/nextclade.aligned.new.fasta" \
+        --insertions="data/gisaid/nextclade.insertions.csv" \
+        --basename="nextclade" \
+        --reference="data/gisaid/nextclade-inputs/reference.fasta" \
+        --genes ${GENES_SPACE_DELIMITED} \
+        --genemap="data/gisaid/nextclade-inputs/genemap.gff" \
+        --output="data/gisaid/nextclade.mutation_summary.new.tsv"
+
+      ./bin/download-from-s3 "$S3_SRC/mutation_summary.tsv.xz" "data/gisaid/nextclade.mutation_summary.old.tsv"
+
+      ./bin/join-rows \
+        "data/gisaid/nextclade.mutation_summary.old.tsv" \
+        "data/gisaid/nextclade.mutation_summary.new.tsv" \
+        -o "data/gisaid/nextclade.mutation_summary.tsv"
 
     fi
 
@@ -172,6 +194,7 @@ main() {
 
     if [ -f "data/gisaid/nextclade.aligned.fasta" ]; then
       ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/nextclade.aligned.fasta "$S3_DST/nextclade.aligned.fasta.xz"
+      ./bin/upload-to-s3 ${silent:+--quiet} data/gisaid/nextclade.mutation_summary.tsv "$S3_DST/nextclade.mutation_summary.tsv.xz"
     fi
 
     ./bin/clean
