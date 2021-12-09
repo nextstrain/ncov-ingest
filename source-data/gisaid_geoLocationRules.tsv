@@ -9922,6 +9922,7 @@ Asia/Sultanate of Oman/*/*	Asia/Oman/*/*
 Asia/Sultanate of Oman/Dakheliya/*	Asia/Oman/Dakhiliyah/*
 Asia/Sultanate of Oman/Dhahira/*	Asia/Oman/Dhahirah/*
 Asia/Guam/Yigo/	North America/USA/Guam/Yigo
+Asia/Cyprus/*/*	Europe/Cyprus/*/*
 North America/Mexico/Baja California sur/*	North America/Mexico/Baja California Sur/*
 North America/Mexico/Coahuila de Zaragoza/*	North America/Mexico/Coahuila/*
 North America/Mexico/Ciudad de Mexico/*	North America/Mexico/Mexico City/*
@@ -9944,6 +9945,7 @@ North America/Mexico/Nuevo Leon/Guadalupe	North America/Mexico/Nuevo Leon/Guadal
 North America/Mexico/Baja California Norte/*	North America/Mexico/Baja California/*
 North America/Mexico/Unknown/	North America/Mexico/Mexico/
 North America/Mexico/Aguascalientes/Jesus Maria	North America/Mexico/Aguascalientes/Jesus Maria MX
+North America/Mexico/Aguascallientes/*	North America/Mexico/Aguascalientes/*
 North America/USA/Illinois/Winnebago County	North America/USA/Illinois/Winnebago County IL
 North America/USA/Illinois/Dekalb County	North America/USA/Illinois/Dekalb County IL
 North America/USA/Illinois/Randolph County	North America/USA/Illinois/Randolph County IL
@@ -13530,6 +13532,10 @@ North America/USA/Ohio/Putnam County	North America/USA/Ohio/Putnam County OH
 North America/USA/Ohio/Wood	North America/USA/Ohio/Wood OH
 North America/USA/Ohio/Trumbull	North America/USA/Ohio/Trumbull OH
 North America/USA/Ohio/Champaign County	North America/USA/Ohio/Champaign County OH
+North America/USA/Ohio/Wood County	North America/USA/Ohio/Wood County OH
+North America/USA/Ohio/Crawford County	North America/USA/Ohio/Crawford County OH
+North America/USA/Ohio/Erie County	North America/USA/Ohio/Erie County OH
+North America/USA/Ohio/Seneca County	North America/USA/Ohio/Seneca County OH
 North America/USA/Colorado/El Paso County	North America/USA/Colorado/El Paso County CO
 North America/USA/Colorado/Mesa	North America/USA/Colorado/Mesa County
 North America/USA/Colorado/Denver	North America/USA/Colorado/Denver County
@@ -14645,6 +14651,7 @@ North America/USA/Washington/Skamina County	North America/USA/Washington/Skamani
 North America/USA/Washington/Oklahoma	North America/USA/Washington/
 North America/USA/Washington/Spokane County	North America/USA/Washington/Spokane County WA
 North America/USA/Washington/Garfield County	North America/USA/Washington/Garfield County WA
+North America/USA/Washington/Polk County	North America/USA/Washington/Polk County WA
 North America/USA/New York/Orange County	North America/USA/New York/Orange County NY
 North America/USA/New York/Franklin County	North America/USA/New York/Franklin County NY
 North America/USA/New York/Jefferson County	North America/USA/New York/Jefferson County NY
@@ -15566,6 +15573,8 @@ North America/USA/New York/Nassau County	North America/USA/New York/Nassau Count
 North America/USA/New York/Tioga County	North America/USA/New York/Tioga County NY
 North America/USA/New York/Dutchess County	North America/USA/New York/Dutchess County NY
 North America/USA/New York/Jefferson	North America/USA/New York/Jefferson NY
+North America/USA/New York/Erie County	North America/USA/New York/Erie County NY
+North America/USA/New York/Seneca County	North America/USA/New York/Seneca County NY
 North America/USA/Arizona/Phoenix County	North America/USA/Arizona/Maricopa County
 North America/USA/Arizona/Tucson	North America/USA/Arizona/Pima County
 North America/USA/Arizona/Navajo	North America/USA/Arizona/Navajo County
@@ -19819,6 +19828,7 @@ North America/USA/Iowa/Chickasaw County	North America/USA/Iowa/Chickasaw County 
 North America/USA/Iowa/Lee	North America/USA/Iowa/Lee County IA
 North America/USA/Iowa/Scott County	North America/USA/Iowa/Scott County IA
 North America/USA/Iowa/Warren County	North America/USA/Iowa/Warren County IA
+North America/USA/Iowa/Polk County	North America/USA/Iowa/Polk County IA
 North America/USA/Alaska/Southeast	North America/USA/Alaska/Southeast Alaska
 North America/USA/Alaska/Gulf Coast	North America/USA/Alaska/Gulf Coast Alaska
 North America/USA/Alaska/South West	North America/USA/Alaska/Southwest Alaska
@@ -22429,6 +22439,7 @@ North America/USA/Texas/Henderson County	North America/USA/Texas/Henderson Count
 North America/USA/Texas/Morris County	North America/USA/Texas/Morris County TX
 North America/USA/Texas/Dawson County	North America/USA/Texas/Dawson County TX
 North America/USA/Texas/Caldwell County	North America/USA/Texas/Caldwell County TX
+North America/USA/Texas/Carson	North America/USA/Texas/Carson TX
 North America/USA/Louisiana/Desoto Parish	North America/USA/Louisiana/DeSoto Parish
 North America/USA/Louisiana/St. Tammany Parish	North America/USA/Louisiana/St Tammany Parish
 North America/USA/Louisiana/St. Bernard Parish	North America/USA/Louisiana/St Bernard Parish
@@ -27552,7 +27563,7 @@ North America/USA/Idaho/Cassia	North America/USA/Idaho/Cassia ID
 North America/USA/Idaho/Lincoln	North America/USA/Idaho/Lincoln ID
 North America/USA/Nevada/Clark County	North America/USA/Nevada/Clark County NV
 North America/USA/Nevada/Douglas County	North America/USA/Nevada/Douglas County NV
-North America/USA/Nevada/Casron	North America/USA/Nevada/Carson
+North America/USA/Nevada/Casron	North America/USA/Nevada/Carson NV
 North America/USA/Nevada/Chico	North America/USA/California/Butte County CA
 North America/USA/Nevada/Washoe	North America/USA/Nevada/Washoe County
 North America/USA/Nevada/Clark	North America/USA/Nevada/Clark County NV
@@ -27706,6 +27717,7 @@ North America/USA/Nevada/Los Angeles	North America/USA/Nevada/
 North America/USA/Nevada/San Bernadino County	North America/USA/Nevada/
 North America/USA/Nevada/El Dorado County	North America/USA/California/El Dorado County
 North America/USA/Nevada/Carson County	North America/USA/Nevada/Carson City
+North America/USA/Nevada/Carson	North America/USA/Nevada/Carson NV
 North America/USA/Nebraska/Lancaster County	North America/USA/Nebraska/Lancaster County NE
 North America/USA/Nebraska/Omaha	North America/USA/Nebraska/Douglas County NE
 North America/USA/Nebraska/Bellevue	North America/USA/Nebraska/Sarpy County
@@ -28509,6 +28521,7 @@ North America/USA/Delaware/Henlopen Acres	North America/USA/Delaware/Sussex Coun
 North America/USA/Delaware/Farmington	North America/USA/Delaware/Kent County DE
 North America/USA/Delaware/Hartly	North America/USA/Delaware/Kent County DE
 North America/USA/Delaware/Kent County	North America/USA/Delaware/Kent County DE
+North America/USA/Delaware/Lincoln	North America/USA/Delaware/Lincoln DE
 North America/USA/Virgina/*	North America/USA/Virginia/*
 North America/USA/Unknown/*	North America/USA/USA/*
 North America/USA/Alabama/Morgan County	North America/USA/Alabama/Morgan County AL
@@ -38415,6 +38428,7 @@ North America/USA/North Dakota/Grano	North America/USA/North Dakota/Renville Cou
 North America/USA/North Dakota/Heimdal	North America/USA/North Dakota/Wells County ND
 North America/USA/North Dakota/Blanchard	North America/USA/North Dakota/Traill County
 North America/USA/North Dakota/Ruso	North America/USA/North Dakota/McLean County ND
+North America/USA/North Dakota/Cass County	North America/USA/North Dakota/Cass County ND
 North America/USA/South Dakota/Sioux Falls	North America/USA/South Dakota/Minnehaha County
 North America/USA/South Dakota/Rapid City	North America/USA/South Dakota/Pennington County SD
 North America/USA/South Dakota/Aberdeen	North America/USA/South Dakota/Brown County SD
@@ -39849,6 +39863,7 @@ South America/Brazil/Rio de Janeiro/Bahiarra do Pirai	South America/Brazil/Rio d
 South America/Brazil/Rio de Janeiro/Bom Jardim	South America/Brazil/Rio de Janeiro/Bom Jardim (Rio de Janeiro)
 South America/Brazil/Rio de Janeiro/Porto Alegre	South America/Brazil/Rio de Janeiro/Porto Alegre (Rio de Janeiro)
 South America/Brazil/Rio de Janeiro/Cantagalo	South America/Brazil/Rio de Janeiro/Cantagalo (Rio de Janeiro)
+South America/Brazil/Rio de Janeiro/Miracema	South America/Brazil/Rio de Janeiro/Miracema (Rio de Janeiro)
 South America/Brazil/Rio Grande do Sul/Torres	South America/Brazil/Rio Grande do Sul/Torres BR
 South America/Brazil/Rio Grande do Sul/Canoas	South America/Brazil/Rio Grande do Sul/Canoas BR
 South America/Brazil/Rio Grande do Sul/Nanuque	South America/Brazil/Rio Grande do Sul/
@@ -39934,6 +39949,7 @@ South America/Brazil/Tocantins/Presidente Kennedy	South America/Brazil/Tocantins
 South America/Brazil/Tocantins/Parana	South America/Brazil/Tocantins/Paranã
 South America/Brazil/Tocantins/Fatima	South America/Brazil/Tocantins/Fatima (Tocantins)
 South America/Brazil/Tocantins/Alvorada	South America/Brazil/Tocantins/Alvorada (Tocantins)
+South America/Brazil/Tocantins/Miracema	South America/Brazil/Tocantins/Miracema (Tocantins)
 South America/Brazil/Espirito Santos/*	South America/Brazil/Espirito Santo/*
 South America/Brazil/Paraná/Astorga	South America/Brazil/Paraná/Astorga BR
 South America/Brazil/Paraná/Florianopolis	South America/Brazil/Santa Catarina/Florianopolis
@@ -40169,6 +40185,7 @@ South America/Brazil/Federal District/*	South America/Brazil/Distrito Federal/*
 South America/Brazil/Rondonia/Maraba	South America/Brazil/Rondonia/Maraba (Rondonia)
 South America/Brazil/Rondonia/Tangara Da Serra	South America/Brazil/Rondonia/Tangara Da Serra (Rondonia)
 South America/Brazil/Rondonia/Buritis	South America/Brazil/Rondonia/Buritis (Rondonia)
+South America/Brazil/Brasilia/Federal District	South America/Brazil/Distrito Federal/Brasilia
 South America/Argentina/Cordoba/Cordoba	South America/Argentina/Cordoba AR/Cordoba AR
 South America/Argentina/Cordoba/Brikman	South America/Argentina/Cordoba AR/Brinkmann
 South America/Argentina/Cordoba/*	South America/Argentina/Cordoba AR/*
@@ -41056,6 +41073,8 @@ Africa/Zambia/Kabwe/	Africa/Zambia/Central Zambia/Kabwe
 Africa/Zambia/Southern Zambia/Pemba	Africa/Zambia/Southern Zambia/Pemba ZM
 Africa/Zambia/Eastern Zambia/Chipata	Africa/Zambia/Eastern Zambia/Chipata (Eastern Zambia)
 Africa/Zambia/Northen Province/*	Africa/Zambia/Northern Zambia/*
+Africa/Zambia/John Lange/	Africa/Zambia/Lusaka/John Lange
+Africa/Zambia/Marapondi/	Africa/Zambia/Lusaka/Marapondi
 Africa/Botswana/Palapye/	Africa/Botswana/Central District BW/Palapye
 Africa/Botswana/Jwaneng/	Africa/Botswana/Southern District/Jwaneng
 Africa/Botswana/Mathethe/	Africa/Botswana/Southern District/Mmathethe
