@@ -15,6 +15,7 @@ if __name__ == '__main__':
             "2. the GISAID EPI_ISL accession number (used for matching)\n\t"
             "3. the column name to replace from the generated `metadata.tsv` file\n\t"
             "4. the replacement data\n"
+            "(2. missing in case of GenBank data)\n"
         "Lines or parts of lines starting with '#' are treated as comments.\n"
         "e.g.\n\t"
         "USA/MA1/2020    EPI_ISL_409067    location    Boston\n\t"
@@ -56,19 +57,33 @@ if __name__ == '__main__':
             sl = l.strip().split('\t')
             filterOut = False
 
-            if len(sl)>=3 and sl[1] in redundantAnnot:
-                #getting the line without eventual comments
-                i = sl[1]
-                k = sl[2]
-                v = '\t'.join(sl[3:]).partition('#')[0].strip()
+            if "gisaid" in args.annotations:
+                if len(sl)>=3 and sl[1] in redundantAnnot:
+                    #getting the line without eventual comments
+                    i = sl[1]
+                    k = sl[2]
+                    v = '\t'.join(sl[3:]).partition('#')[0].strip()
+                    annotId = '\t'.join([i,k,v])
 
-                annotId = '\t'.join([i,k,v])
+                    if annotId in redundantAnnot[sl[1]] :
+                        redundantAnnot[sl[1]][annotId] +=1
+                        filterOut = True
+                        print("removed redundant :", annotId)
+                        removed+=1
+            if "genbank" in args.annotations:
+                if len(sl) >= 2 and sl[0] in redundantAnnot:
+                    # getting the line without eventual comments
+                    i = sl[0]
+                    k = sl[1]
+                    v = '\t'.join(sl[2:]).partition('#')[0].strip()
+                    annotId = '\t'.join([i, k, v])
 
-                if annotId in redundantAnnot[sl[1]] :
-                    redundantAnnot[sl[1]][annotId] +=1
-                    filterOut = True
-                    print("removed redundant :", annotId)
-                    removed+=1
+                    if annotId in redundantAnnot[sl[0]]:
+                        redundantAnnot[sl[0]][annotId] += 1
+                        filterOut = True
+                        print("removed redundant :", annotId)
+                        removed += 1
+
             if not filterOut:
                 linesToKeep.append(l)
 

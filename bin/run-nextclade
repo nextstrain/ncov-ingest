@@ -14,6 +14,7 @@ trap "exit" INT
 : "${5:?\"[ERROR] ${0}: Output fasta filename as the 5th argument is required.\"}"
 : "${6:?\"[ERROR] ${0}: Output insertions csv filename as the 6th argument is required.\"}"
 : "${7:?\"[ERROR] ${0}: List of genes as 7th argument is required.\"}"
+# Note: 8th argument is the (max) number of threads for nextclade and is optional
 
 INPUT_FASTA="${1}"
 OUTPUT_TSV="${2}"
@@ -22,6 +23,15 @@ NEXTCLADE_OUTPUTS_DIR="${4}" # files other than TSV will be written by Nextclade
 OUTPUT_FASTA="${5}"
 OUTPUT_INSERTIONS="${6}"
 GENES="${7}"
+
+NEXTCLADE_THREADS=""
+if [ $# -eq 8 ]; then
+    echo "[ INFO] ${0}:${LINENO}: Nextclade will be limited to ${8} threads"
+    NEXTCLADE_THREADS="--jobs ${5}"
+elif [ $# -gt 8 ]; then
+    echo "[ INFO] ${0}:${LINENO}: Too many arguments provided"
+    exit 1
+fi
 
 echo "[ INFO] ${0}:${LINENO}: Downloading latest Nextclade version"
 curl -fsSL "https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-Linux-x86_64" -o "nextclade"
@@ -51,3 +61,4 @@ echo "[ INFO] ${0}:${LINENO}: Running Nextclade"
   --output-basename="nextclade" \
   --output-fasta="${OUTPUT_FASTA}" \
   --output-insertions="${OUTPUT_INSERTIONS}" \
+  ${NEXTCLADE_THREADS}
