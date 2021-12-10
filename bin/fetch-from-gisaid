@@ -7,4 +7,4 @@ set -euo pipefail
 curl "$GISAID_API_ENDPOINT" \
     --user "$GISAID_USERNAME_AND_PASSWORD" \
     --fail --silent --show-error --location-trusted --http1.1 \
-    | bunzip2
+    | lbzip2 -d
