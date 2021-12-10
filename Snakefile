@@ -193,20 +193,24 @@ rule run_nextclade:
         sequences = f"data/{database}/nextclade.sequences.fasta",
         nextclade_info = f"data/{database}/nextclade_old.tsv"
     params:
-        old_aligned_fasta_s3 = config["s3_dst"] + "nextclade.aligned.fasta"        # Remote old "cache"
-        old_aligned_fasta = f"data/{database}/nextclade.aligned.old.fasta",        # Local old "cache"
+        old_aligned_fasta_s3 = config["s3_dst"] + "nextclade.aligned.fasta"                  # Old remote cache
+        old_aligned_fasta = f"data/{database}/nextclade.aligned.old.fasta",                  # Old local cache
+        upd_aligned_fasta = temp(f"data/{database}/nextclade.aligned.upd.fasta"),            # Incremental update to the cache
+        aligned_fasta = f"data/{database}/nextclade.aligned.fasta"                           # New local cache
+        aligned_fasta_s3 = config["s3_src"] + "nextclade.mutation_summary.tsv"               # New remote cache
 
+        nextclade_info = f"data/{database}/nextclade.tsv",
         new_info = temp(f"data/{database}/nextclade_new.tsv"),
         nextclade_input_dir = temp(directory(f"data/{database}/nextclade_inputs")),
         nextclade_output_dir = temp(directory(f"data/{database}/nextclade"))
+        new_insertions = temp(f"data/{database}/nextclade.insertions.csv"),
 
         genes = "E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S"   # TODO: deduplicate with compute_mutation_summary step
     threads: 16
     output:
-        nextclade_info = f"data/{database}/nextclade.tsv",
-        new_insertions = temp(f"data/{database}/nextclade.insertions.csv"),
-        upd_aligned_fasta = temp(f"data/{database}/nextclade.aligned.upd.fasta"),  # Incremental update to the "cache"
-        aligned_fasta = f"data/{database}/nextclade.aligned.fasta"                 # New local "cache", to be uploaded
+        aligned_fasta = params.aligned_fasta
+        nextclade_info = params.nextclade_info
+        new_insertions = params.new_insertions
 
     ## todo - move this code into a shell script / expand the abilities of `./bin/run-nextclade`
     ## note - this conditionality on a non-empty input fasta was GISAID only, but it makes sense for GenBank too
@@ -239,6 +243,10 @@ rule run_nextclade:
             cat {params.old_aligned_fasta}  \
                 {params.upd_aligned_fasta} \
                 >"{output.aligned_fasta}"
+
+            # Commit changed alignment to S3
+            # TODO: Should this be moved towards the end of the workflow?
+            ./bin/upload-to-s3 --quiet {aligned_fasta} {aligned_fasta_s3}
         fi
         """
 
@@ -260,16 +268,18 @@ rule compute_mutation_summary:
         new_insertions = rules.run_nextclade.output.new_insertions
 
     params:
-        old_mutation_summary_s3 = config["s3_dst"] + "nextclade.mutation_summary.tsv"        # Remote old "cache"
-        old_mutation_summary = f"data/{database}/nextclade.mutation_summary.old.fasta",      # Local old "cache"
-        upd_mutation_summary = temp(f"data/{database}/nextclade.mutation_summary.upd.tsv"),  # Incremental update to the "cache"
+        old_mutation_summary_s3 = config["s3_src"] + "nextclade.mutation_summary.tsv"        # Old remote cache
+        old_mutation_summary = f"data/{database}/nextclade.mutation_summary.old.fasta",      # Old local cache
+        upd_mutation_summary = temp(f"data/{database}/nextclade.mutation_summary.upd.tsv"),  # Incremental update to the cache
+        new_mutation_summary = f"data/{database}/nextclade.mutation_summary.tsv"             # New local cache
+        new_mutation_summary_s3 = config["s3_dst"] + "nextclade.mutation_summary.tsv"        # New remote cache
 
         nextclade_input_dir = rules.run_nextclade.params.nextclade_input_dir
         nextclade_output_dir = rules.run_nextclade.params.nextclade_output_dir
 
         genes = E M N ORF1a ORF1b ORF3a ORF6 ORF7a ORF7b ORF8 ORF9b S    # TODO: deduplicate with run_nextclade step
     output:
-        mutation_summary = f"data/{database}/nextclade.aligned.fasta"                         # New local "cache", to be uploaded
+        new_mutation_summary = params.new_mutation_summary
 
     ## todo - move this code into a shell script / expand the abilities of `./bin/run-nextclade`
     ## note - this conditionality on a non-empty input fasta was GISAID only, but it makes sense for GenBank too
@@ -297,6 +307,10 @@ rule compute_mutation_summary:
                 {params.old_mutation_summary} \
                 {params.upd_mutation_summary} \
                 -o {output.mutation_summary}
+
+            # Comit updated file to S3
+            # TODO: Should this be moved towards the end of the workflow?
+            ./bin/upload-to-s3 --quiet {params.new_mutation_summary} {params.new_mutation_summary_s3}
         fi
         """
 
