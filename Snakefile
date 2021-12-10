@@ -192,10 +192,14 @@ rule annotate_via_nextclade:
     input:
         sequences = f"data/{database}/nextclade.sequences.fasta",
         nextclade_info = f"data/{database}/nextclade_old.tsv"
+        aligned_fasta = f"data/{database}/nextclade.aligned.old.fasta",
     params:
         new_info = temp(f"data/{database}/nextclade_new.tsv"),
+        new_aligned_fasta = temp(f"data/{database}/nextclade.aligned.new.fasta"),
+        new_insertions_csv = temp(f"data/{database}/nextclade.insertions.new.csv"),
         nextclade_input_dir = temp(directory(f"data/{database}/nextclade_inputs")),
         nextclade_output_dir = temp(directory(f"data/{database}/nextclade"))
+
     threads: 16
     output:
         nextclade_info = f"data/{database}/nextclade.tsv"
@@ -213,7 +217,11 @@ rule annotate_via_nextclade:
                 {params.new_info} \
                 {params.nextclade_input_dir} \
                 {params.nextclade_output_dir} \
-                {threads}
+                {threads} \
+                {params.new_aligned_fasta} \
+                {params.new_insertions_csv} \
+                {params.genes}
+
             # Join new and old clades, so that next run won't need to process sequences that are already processed
             ./bin/join-rows \
                 {input.nextclade_info:q} \
