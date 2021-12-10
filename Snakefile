@@ -193,20 +193,20 @@ rule run_nextclade:
         sequences = f"data/{database}/nextclade.sequences.fasta",
         nextclade_info = f"data/{database}/nextclade_old.tsv"
     params:
-        old_aligned_fasta_s3 = config["s3_dst"] + "nextclade.aligned.old.fasta"    # Remote old "cache"
+        old_aligned_fasta_s3 = config["s3_dst"] + "nextclade.aligned.fasta"        # Remote old "cache"
         old_aligned_fasta = f"data/{database}/nextclade.aligned.old.fasta",        # Local old "cache"
-        upd_aligned_fasta = temp(f"data/{database}/nextclade.aligned.upd.fasta"),  # Incremental update to the "cache"
-        aligned_fasta = f"data/{database}/nextclade.aligned.fasta",
 
         new_info = temp(f"data/{database}/nextclade_new.tsv"),
-        new_insertions = temp(f"data/{database}/nextclade.insertions.csv"),
         nextclade_input_dir = temp(directory(f"data/{database}/nextclade_inputs")),
         nextclade_output_dir = temp(directory(f"data/{database}/nextclade"))
 
+        genes = "E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S"   # TODO: deduplicate with compute_mutation_summary step
     threads: 16
     output:
         nextclade_info = f"data/{database}/nextclade.tsv",
-        aligned_fasta = f"data/{database}/nextclade.aligned.fasta"                # New local "cache", to be uploaded
+        new_insertions = temp(f"data/{database}/nextclade.insertions.csv"),
+        upd_aligned_fasta = temp(f"data/{database}/nextclade.aligned.upd.fasta"),  # Incremental update to the "cache"
+        aligned_fasta = f"data/{database}/nextclade.aligned.fasta"                 # New local "cache", to be uploaded
 
     ## todo - move this code into a shell script / expand the abilities of `./bin/run-nextclade`
     ## note - this conditionality on a non-empty input fasta was GISAID only, but it makes sense for GenBank too
@@ -221,8 +221,8 @@ rule run_nextclade:
                 {params.new_info} \
                 {params.nextclade_input_dir} \
                 {params.nextclade_output_dir} \
-                {params.upd_aligned_fasta} \
-                {params.new_insertions} \
+                {output.upd_aligned_fasta} \
+                {output.new_insertions} \
                 {params.genes} \
                 {threads}
 
@@ -239,6 +239,64 @@ rule run_nextclade:
             cat {params.old_aligned_fasta}  \
                 {params.upd_aligned_fasta} \
                 >"{output.aligned_fasta}"
+        fi
+        """
+
+rule compute_mutation_summary:
+    message:
+        """
+        If there are sequences without clades, then also calculate mutation summary. This is carried over from `ncov` 
+        repo as is.
+        """
+
+        # In ideal world this step should not be needed, because metadata.tsv already contains this info in Nextclade 
+        # format. However, some users may depend on this other format. So we incrementally update mutation_summary.tsv
+        # here from Nextclade results, and store it on s3, as a better alternative to recomputing the whole thing in 
+        # `ncov` every day.
+
+    input:
+        sequences = f"data/{database}/nextclade.sequences.fasta",
+        upd_aligned_fasta = rules.run_nextclade.output.upd_aligned_fasta
+        new_insertions = rules.run_nextclade.output.new_insertions
+
+    params:
+        old_mutation_summary_s3 = config["s3_dst"] + "nextclade.mutation_summary.tsv"        # Remote old "cache"
+        old_mutation_summary = f"data/{database}/nextclade.mutation_summary.old.fasta",      # Local old "cache"
+        upd_mutation_summary = temp(f"data/{database}/nextclade.mutation_summary.upd.tsv"),  # Incremental update to the "cache"
+
+        nextclade_input_dir = rules.run_nextclade.params.nextclade_input_dir
+        nextclade_output_dir = rules.run_nextclade.params.nextclade_output_dir
+
+        genes = E M N ORF1a ORF1b ORF3a ORF6 ORF7a ORF7b ORF8 ORF9b S    # TODO: deduplicate with run_nextclade step
+    output:
+        mutation_summary = f"data/{database}/nextclade.aligned.fasta"                         # New local "cache", to be uploaded
+
+    ## todo - move this code into a shell script / expand the abilities of `./bin/run-nextclade`
+    ## note - this conditionality on a non-empty input fasta was GISAID only, but it makes sense for GenBank too
+    shell:
+        """
+        if [ ! -s {input.sequences:q} ]; then
+            echo "[ INFO] No new sequences for ./bin/mutation-summary to process. Skipping."
+        else
+            # Compute mutation summary for new sequences
+            ./bin/mutation-summary \
+                --basename="nextclade" \
+                --directory={params.nextclade_output_dir} \
+                --alignment={input.upd_aligned_fasta} \
+                --insertions={input.new_insertions} \
+                --reference={params.nextclade_input_dir}/reference.fasta \
+                --genemap={params.nextclade_input_dir}/genemap.gff" \
+                --genes {params.genes} \
+                --output={params.upd_mutation_summary}
+
+            # Download old mutation summary for the entire database so far
+            ./bin/download-from-s3 {params.old_mutation_summary_s3} {old_mutation_summary}
+
+            # Join the new updated mutation summary and old mutation summary to get the new result for the whole database
+            ./bin/join-rows \
+                {params.old_mutation_summary} \
+                {params.upd_mutation_summary} \
+                -o {output.mutation_summary}
         fi
         """
 
