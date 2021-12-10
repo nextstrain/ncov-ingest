@@ -157,7 +157,7 @@ main() {
         --genemap="data/gisaid/nextclade-inputs/genemap.gff" \
         --output="data/gisaid/nextclade.mutation_summary.new.tsv"
 
-      ./bin/download-from-s3 "$S3_SRC/mutation_summary.tsv.xz" "data/gisaid/nextclade.mutation_summary.old.tsv"
+      ./bin/download-from-s3 "$S3_SRC/nextclade.mutation_summary.tsv.xz" "data/gisaid/nextclade.mutation_summary.old.tsv"
 
       ./bin/join-rows \
         "data/gisaid/nextclade.mutation_summary.old.tsv" \
