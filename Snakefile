@@ -183,26 +183,30 @@ rule get_sequences_without_nextclade_annotations:
             --output_fasta={output.fasta} \
         """
 
-rule annotate_via_nextclade:
+rule run_nextclade:
     message:
         """
-        If there are sequences without clades, then run nextclade to assign
-        clades and calculate other useful metrics.
+        If there are sequences without clades, then run Nextclade to align them, assign clades and calculate some of 
+        the other useful metrics which will end up in metadata.tsv.
         """
     input:
         sequences = f"data/{database}/nextclade.sequences.fasta",
         nextclade_info = f"data/{database}/nextclade_old.tsv"
-        aligned_fasta = f"data/{database}/nextclade.aligned.old.fasta",
     params:
+        old_aligned_fasta_s3 = config["s3_dst"] + "nextclade.aligned.old.fasta"    # Remote old "cache"
+        old_aligned_fasta = f"data/{database}/nextclade.aligned.old.fasta",        # Local old "cache"
+        upd_aligned_fasta = temp(f"data/{database}/nextclade.aligned.upd.fasta"),  # Incremental update to the "cache"
+        aligned_fasta = f"data/{database}/nextclade.aligned.fasta",
+
         new_info = temp(f"data/{database}/nextclade_new.tsv"),
-        new_aligned_fasta = temp(f"data/{database}/nextclade.aligned.new.fasta"),
-        new_insertions_csv = temp(f"data/{database}/nextclade.insertions.new.csv"),
+        new_insertions = temp(f"data/{database}/nextclade.insertions.csv"),
         nextclade_input_dir = temp(directory(f"data/{database}/nextclade_inputs")),
         nextclade_output_dir = temp(directory(f"data/{database}/nextclade"))
 
     threads: 16
     output:
-        nextclade_info = f"data/{database}/nextclade.tsv"
+        nextclade_info = f"data/{database}/nextclade.tsv",
+        aligned_fasta = f"data/{database}/nextclade.aligned.fasta"                # New local "cache", to be uploaded
 
     ## todo - move this code into a shell script / expand the abilities of `./bin/run-nextclade`
     ## note - this conditionality on a non-empty input fasta was GISAID only, but it makes sense for GenBank too
@@ -217,16 +221,24 @@ rule annotate_via_nextclade:
                 {params.new_info} \
                 {params.nextclade_input_dir} \
                 {params.nextclade_output_dir} \
-                {threads} \
-                {params.new_aligned_fasta} \
-                {params.new_insertions_csv} \
-                {params.genes}
+                {params.upd_aligned_fasta} \
+                {params.new_insertions} \
+                {params.genes} \
+                {threads}
 
             # Join new and old clades, so that next run won't need to process sequences that are already processed
             ./bin/join-rows \
                 {input.nextclade_info:q} \
                 {params.new_info} \
                 -o {output.nextclade_info:q}
+
+            # Download old alignment
+            ./bin/download-from-s3 {params.old_aligned_fasta_s3} {params.old_aligned_fasta}
+
+            # Join new and old alignment
+            cat {params.old_aligned_fasta}  \
+                {params.upd_aligned_fasta} \
+                >"{output.aligned_fasta}"
         fi
         """
 
