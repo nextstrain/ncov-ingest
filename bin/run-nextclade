@@ -27,7 +27,7 @@ GENES="${7}"
 NEXTCLADE_THREADS=""
 if [ $# -eq 8 ]; then
     echo "[ INFO] ${0}:${LINENO}: Nextclade will be limited to ${8} threads"
-    NEXTCLADE_THREADS="--jobs ${5}"
+    NEXTCLADE_THREADS="--jobs ${8}"
 elif [ $# -gt 8 ]; then
     echo "[ INFO] ${0}:${LINENO}: Too many arguments provided"
     exit 1
