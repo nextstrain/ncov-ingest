@@ -247,7 +247,7 @@ rule run_nextclade:
 
             # Commit changed alignment to S3
             # TODO: Should this be moved towards the end of the workflow?
-            ./bin/upload-to-s3 --quiet {aligned_fasta} {aligned_fasta_s3}
+            ./bin/upload-to-s3 --quiet {output.aligned_fasta} {params.aligned_fasta_s3}
         fi
         """
 
