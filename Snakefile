@@ -193,11 +193,11 @@ rule run_nextclade:
         sequences = f"data/{database}/nextclade.sequences.fasta",
         nextclade_info = f"data/{database}/nextclade_old.tsv"
     params:
-        old_aligned_fasta_s3 = config["s3_dst"] + "nextclade.aligned.fasta",                 # Old remote cache
+        old_aligned_fasta_s3 = f'{config["s3_dst"]}/nextclade.aligned.fasta.xz',             # Old remote cache
         old_aligned_fasta = f"data/{database}/nextclade.aligned.old.fasta",                  # Old local cache
         upd_aligned_fasta = lambda _, output: output.upd_aligned_fasta,                      # Incremental update to the cache
         aligned_fasta = lambda _, output: output.aligned_fasta,                              # New local cache
-        aligned_fasta_s3 = config["s3_src"] + "nextclade.mutation_summary.tsv",              # New remote cache
+        aligned_fasta_s3 = f'{config["s3_src"]}/nextclade.mutation_summary.tsv.gz',          # New remote cache
 
         nextclade_info = lambda _, output: output.nextclade_info,
         new_info = temp(f"data/{database}/nextclade_new.tsv"),
@@ -269,11 +269,11 @@ rule compute_mutation_summary:
         new_insertions = rules.run_nextclade.output.new_insertions
 
     params:
-        old_mutation_summary_s3 = config["s3_src"] + "nextclade.mutation_summary.tsv",       # Old remote cache
-        old_mutation_summary = f"data/{database}/nextclade.mutation_summary.old.fasta",      # Old local cache
+        old_mutation_summary_s3 = f'{config["s3_src"]}/nextclade.mutation_summary.tsv.gz',   # Old remote cache
+        old_mutation_summary = f"data/{database}/nextclade.mutation_summary.old.tsv",        # Old local cache
         upd_mutation_summary = temp(f"data/{database}/nextclade.mutation_summary.upd.tsv"),  # Incremental update to the cache
         new_mutation_summary = lambda _, output: output.new_mutation_summary,                # New local cache
-        new_mutation_summary_s3 = config["s3_dst"] + "nextclade.mutation_summary.tsv",       # New remote cache
+        new_mutation_summary_s3 = f'{config["s3_dst"]}/nextclade.mutation_summary.tsv.gz',   # New remote cache
 
         nextclade_input_dir = rules.run_nextclade.params.nextclade_input_dir,
         nextclade_output_dir = rules.run_nextclade.params.nextclade_output_dir,
