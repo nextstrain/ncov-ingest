@@ -226,7 +226,7 @@ rule join_nextclade_tsv:
         nextclade_tsv = f"data/{database}/nextclade.tsv"
     shell:
         """
-        ./bin/join-rows {input.new_nextclade_tsv:q} {params.old_nextclade_tsv:q} -o {output.nextclade_tsv:q}
+        ./bin/join-rows {input.new_nextclade_tsv:q} {input.old_nextclade_tsv:q} -o {output.nextclade_tsv:q}
         """
 
 rule download_aligned_fasta:
