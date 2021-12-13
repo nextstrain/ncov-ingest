@@ -301,7 +301,7 @@ rule compute_mutation_summary:
                 --output={params.upd_mutation_summary}
 
             # Download old mutation summary for the entire database so far
-            ./bin/download-from-s3 {params.old_mutation_summary_s3} {old_mutation_summary}
+            ./bin/download-from-s3 {params.old_mutation_summary_s3} {params.old_mutation_summary}
 
             # Join the new updated mutation summary and old mutation summary to get the new result for the whole database
             ./bin/join-rows \
