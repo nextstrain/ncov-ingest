@@ -173,7 +173,7 @@ rule get_sequences_without_nextclade_annotations:
     """Find sequences in FASTA which don't have clades assigned yet"""
     input:
         all_unaligned_fasta = f"data/{database}/sequences.fasta",
-        old_nextclade_tsv = rule.download_nextclade_tsv.output.old_nextclade_tsv
+        old_nextclade_tsv = rules.download_nextclade_tsv.output.old_nextclade_tsv
     output:
         new_unalgined_fasta = f"data/{database}/nextclade.sequences.fasta"
     shell:
@@ -187,8 +187,8 @@ rule get_sequences_without_nextclade_annotations:
 rule run_nextclade:
     message: "Run Nextclade: align new sequences, assign clades and calculate other metrics for them"
     input:
-        sequences = rule.get_sequences_without_nextclade_annotations.output.new_unalgined_fasta,
-        nextclade_info = rule.download_nextclade_tsv.output.old_nextclade_tsv
+        sequences = rules.get_sequences_without_nextclade_annotations.output.new_unalgined_fasta,
+        nextclade_info = rules.download_nextclade_tsv.output.old_nextclade_tsv
     params:
         nextclade_input_dir = temp(directory(f"data/{database}/nextclade_inputs")),
         nextclade_output_dir = temp(directory(f"data/{database}/nextclade")),
@@ -220,8 +220,8 @@ rule run_nextclade:
 rule join_nextclade_tsv:
     message: "Append incremental update of nextclade.tsv to the old nextclade.tsv"
     input:
-        new_nextclade_tsv = rule.run_nextclade.new_nextclade_tsv,
-        old_nextclade_tsv = rule.download_nextclade_tsv.output.old_nextclade_tsv
+        new_nextclade_tsv = rules.run_nextclade.output.new_nextclade_tsv,
+        old_nextclade_tsv = rules.download_nextclade_tsv.output.old_nextclade_tsv
     output:
         nextclade_tsv = f"data/{database}/nextclade.tsv"
     shell:
@@ -243,8 +243,8 @@ rule download_aligned_fasta:
 rule join_aligned_fasta:
     message: "Append incremental update of aligned fasta to the old aligned fasta"
     input:
-        old_aligned_fasta = rule.download_aligned_fasta.output.old_aligned_fasta,
-        new_aligned_fasta = rule.run_nextclade.output.new_aligned_fasta
+        old_aligned_fasta = rules.download_aligned_fasta.output.old_aligned_fasta,
+        new_aligned_fasta = rules.run_nextclade.output.new_aligned_fasta
     output:
         aligned_fasta = f"data/{database}/nextclade.aligned.fasta"
     shell:
@@ -255,7 +255,7 @@ rule join_aligned_fasta:
 rule upload_aligned_fasta:
     message: "Upload aligned fsata"
     input:
-        aligned_fasta = rule.join_aligned_fasta.output.aligned_fasta
+        aligned_fasta = rules.join_aligned_fasta.output.aligned_fasta
     params:
         aligned_fasta_s3 = f'{config["s3_src"]}/nextclade.mutation_summary.tsv.gz'
     output:
