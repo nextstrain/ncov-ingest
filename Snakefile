@@ -255,7 +255,7 @@ rule join_aligned_fasta:
 rule upload_aligned_fasta:
     message: "Upload aligned fsata"
     input:
-        aligned_fasta: rule.join_aligned_fasta.output.aligned_fasta
+        aligned_fasta = rule.join_aligned_fasta.output.aligned_fasta
     params:
         aligned_fasta_s3 = f'{config["s3_src"]}/nextclade.mutation_summary.tsv.gz'
     output:
