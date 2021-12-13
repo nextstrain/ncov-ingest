@@ -156,66 +156,50 @@ rule transform_gisaid_data:
             --output-unix-newline > {output.flagged_annotations};
         """
 
-rule download_nextclade:
+rule download_nextclade_tsv:
+    message: "Download nextclade.tsv"
     params:
         dst_source = config["s3_dst"] + '/nextclade.tsv.gz',
-        src_source = config["s3_src"] + '/nextclade.tsv.gz',
+        src_source = config["s3_src"] + '/nextclade.tsv.gz'
     output:
-        nextclade = f"data/{database}/nextclade_old.tsv"
+        old_nextclade_tsv = f"data/{database}/nextclade_old.tsv"
     shell:
         """
-        ./bin/download-from-s3 {params.dst_source} {output.nextclade} ||  \
-        ./bin/download-from-s3 {params.src_source} {output.nextclade}
+        ./bin/download-from-s3 {params.dst_source} {output.old_nextclade_tsv} ||  \
+        ./bin/download-from-s3 {params.src_source} {output.old_nextclade_tsv}
         """
 
 rule get_sequences_without_nextclade_annotations:
     """Find sequences in FASTA which don't have clades assigned yet"""
     input:
-        fasta = f"data/{database}/sequences.fasta",
-        nextclade = f"data/{database}/nextclade_old.tsv",
+        all_unaligned_fasta = f"data/{database}/sequences.fasta",
+        old_nextclade_tsv = rule.download_nextclade_tsv.output.old_nextclade_tsv
     output:
-        fasta = f"data/{database}/nextclade.sequences.fasta"
+        new_unalgined_fasta = f"data/{database}/nextclade.sequences.fasta"
     shell:
         """
         ./bin/filter-fasta \
-            --input_fasta={input.fasta} \
-            --input_tsv={input.nextclade} \
-            --output_fasta={output.fasta} \
+            --input_fasta={input.all_unaligned_fasta} \
+            --input_tsv={input.old_nextclade_tsv} \
+            --output_fasta={output.new_unalgined_fasta} \
         """
 
 rule run_nextclade:
-    message:
-        """
-        If there are sequences without clades, then run Nextclade to align them, assign clades and calculate some of 
-        the other useful metrics which will end up in metadata.tsv.
-        """
+    message: "Run Nextclade: align new sequences, assign clades and calculate other metrics for them"
     input:
-        sequences = f"data/{database}/nextclade.sequences.fasta",
-        nextclade_info = f"data/{database}/nextclade_old.tsv"
+        sequences = rule.get_sequences_without_nextclade_annotations.output.new_unalgined_fasta,
+        nextclade_info = rule.download_nextclade_tsv.output.old_nextclade_tsv
     params:
-        old_aligned_fasta_s3 = f'{config["s3_dst"]}/nextclade.aligned.fasta.xz',             # Old remote cache
-        old_aligned_fasta = f"data/{database}/nextclade.aligned.old.fasta",                  # Old local cache
-        upd_aligned_fasta = lambda _, output: output.upd_aligned_fasta,                      # Incremental update to the cache
-        aligned_fasta = lambda _, output: output.aligned_fasta,                              # New local cache
-        aligned_fasta_s3 = f'{config["s3_src"]}/nextclade.mutation_summary.tsv.gz',          # New remote cache
-
-        nextclade_info = lambda _, output: output.nextclade_info,
-        new_info = temp(f"data/{database}/nextclade_new.tsv"),
         nextclade_input_dir = temp(directory(f"data/{database}/nextclade_inputs")),
         nextclade_output_dir = temp(directory(f"data/{database}/nextclade")),
-        new_insertions = lambda _, output: output.new_insertions,
-
         genes = "E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S"   # TODO: deduplicate with compute_mutation_summary step
     threads: 16
     output:
-        upd_aligned_fasta = temp(f"data/{database}/nextclade.aligned.upd.fasta"),
-        aligned_fasta = f"data/{database}/nextclade.aligned.fasta",
-        nextclade_info = f"data/{database}/nextclade.tsv",
+        new_aligned_fasta = temp(f"data/{database}/nextclade.aligned_new.fasta"),
+        new_nextclade_tsv = temp(f"data/{database}/nextclade_new.tsv"),
         new_insertions = temp(f"data/{database}/nextclade.insertions.csv")
-
-    ## todo - move this code into a shell script / expand the abilities of `./bin/run-nextclade`
-    ## note - this conditionality on a non-empty input fasta was GISAID only, but it makes sense for GenBank too
     shell:
+        # TODO: make this script go away and call Nextclade directly
         """
         if [ ! -s {input.sequences:q} ]; then
             echo "[ INFO] No new sequences for Nextclade to process. Skipping nextclade."
@@ -223,96 +207,126 @@ rule run_nextclade:
         else
             ./bin/run-nextclade \
                 {input.sequences:q} \
-                {params.new_info} \
+                {output.new_nextclade_tsv} \
                 {params.nextclade_input_dir} \
                 {params.nextclade_output_dir} \
-                {output.upd_aligned_fasta} \
+                {output.new_aligned_fasta} \
                 {output.new_insertions} \
                 {params.genes} \
                 {threads}
-
-            # Join new and old clades, so that next run won't need to process sequences that are already processed
-            ./bin/join-rows \
-                {input.nextclade_info:q} \
-                {params.new_info} \
-                -o {output.nextclade_info:q}
-
-            # Download old alignment
-            ./bin/download-from-s3 {params.old_aligned_fasta_s3} {params.old_aligned_fasta}
-
-            # Join new and old alignment
-            cat {params.old_aligned_fasta}  \
-                {output.upd_aligned_fasta} \
-                >"{output.aligned_fasta}"
-
-            # Commit changed alignment to S3
-            # TODO: Should this be moved towards the end of the workflow?
-            ./bin/upload-to-s3 --quiet {output.aligned_fasta} {params.aligned_fasta_s3}
         fi
+        """
+
+rule join_nextclade_tsv:
+    message: "Append incremental update of nextclade.tsv to the old nextclade.tsv"
+    input:
+        new_nextclade_tsv = rule.run_nextclade.new_nextclade_tsv,
+        old_nextclade_tsv = rule.download_nextclade_tsv.output.old_nextclade_tsv
+    output:
+        nextclade_tsv = f"data/{database}/nextclade.tsv"
+    shell:
+        """
+        ./bin/join-rows {input.new_nextclade_tsv:q} {params.old_nextclade_tsv:q} -o {output.nextclade_tsv:q}
+        """
+
+rule download_aligned_fasta:
+    message: "Download aligned fasta"
+    params:
+        old_aligned_fasta_s3 = f'{config["s3_src"]}/nextclade.aligned.fasta.xz'
+    output:
+        old_aligned_fasta = f"data/{database}/nextclade.aligned.old.fasta"
+    shell:
+        """
+        ./bin/download-from-s3 {params.old_aligned_fasta_s3} {params.old_aligned_fasta}
+        """
+
+rule join_aligned_fasta:
+    message: "Append incremental update of aligned fasta to the old aligned fasta"
+    input:
+        old_aligned_fasta = rule.download_aligned_fasta.output.old_aligned_fasta,
+        new_aligned_fasta = rule.run_nextclade.output.new_aligned_fasta
+    output:
+        aligned_fasta = f"data/{database}/nextclade.aligned.fasta"
+    shell:
+        """
+        cat {input.old_aligned_fasta:q} {input.new_aligned_fasta:q} > {output.aligned_fasta:q}
+        """
+
+rule upload_aligned_fasta:
+    message: "Upload aligned fsata"
+    input:
+        aligned_fasta: rule.join_aligned_fasta.output.aligned_fasta
+    params:
+        aligned_fasta_s3 = f'{config["s3_src"]}/nextclade.mutation_summary.tsv.gz'
+    output:
+        touch(f"data/{database}/upload.aligned_fasta.done")
+    shell:
+        """
+        ./bin/upload-to-s3 --quiet {input.aligned_fasta} {params.aligned_fasta_s3}
         """
 
 rule compute_mutation_summary:
-    message:
-        """
-        If there are sequences without clades, then also calculate mutation summary. This is carried over from `ncov` 
-        repo as is.
-        """
-
-        # In ideal world this step should not be needed, because metadata.tsv already contains this info in Nextclade 
-        # format. However, some users may depend on this other format. So we incrementally update mutation_summary.tsv
-        # here from Nextclade results, and store it on s3, as a better alternative to recomputing the whole thing in 
-        # `ncov` every day.
-
+    # In ideal world this step should not be needed, because metadata.tsv already contains this info in Nextclade 
+    # format. However, some users may depend on this other format. So we incrementally update mutation_summary.tsv
+    # here from Nextclade results, and store it on s3, as a better alternative to recomputing the whole thing in 
+    # `ncov` every day.
+    message: "Calculate mutation summary"
     input:
-        sequences = f"data/{database}/nextclade.sequences.fasta",
-        upd_aligned_fasta = rules.run_nextclade.output.upd_aligned_fasta,
+        new_aligned_fasta = rules.run_nextclade.output.new_aligned_fasta,
         new_insertions = rules.run_nextclade.output.new_insertions
-
     params:
-        old_mutation_summary_s3 = f'{config["s3_src"]}/nextclade.mutation_summary.tsv.gz',   # Old remote cache
-        old_mutation_summary = f"data/{database}/nextclade.mutation_summary.old.tsv",        # Old local cache
-        upd_mutation_summary = temp(f"data/{database}/nextclade.mutation_summary.upd.tsv"),  # Incremental update to the cache
-        new_mutation_summary = lambda _, output: output.new_mutation_summary,                # New local cache
-        new_mutation_summary_s3 = f'{config["s3_dst"]}/nextclade.mutation_summary.tsv.gz',   # New remote cache
-
         nextclade_input_dir = rules.run_nextclade.params.nextclade_input_dir,
         nextclade_output_dir = rules.run_nextclade.params.nextclade_output_dir,
-
         genes = "E M N ORF1a ORF1b ORF3a ORF6 ORF7a ORF7b ORF8 ORF9b S"    # TODO: deduplicate with run_nextclade step
     output:
-        new_mutation_summary = f"data/{database}/nextclade.mutation_summary.tsv"
-
-    ## todo - move this code into a shell script / expand the abilities of `./bin/run-nextclade`
-    ## note - this conditionality on a non-empty input fasta was GISAID only, but it makes sense for GenBank too
+        new_mutation_summary = temp(f"data/{database}/nextclade.mutation_summary.new.tsv")
     shell:
         """
-        if [ ! -s {input.sequences:q} ]; then
-            echo "[ INFO] No new sequences for ./bin/mutation-summary to process. Skipping."
-        else
-            # Compute mutation summary for new sequences
-            ./bin/mutation-summary \
-                --basename="nextclade" \
-                --directory={params.nextclade_output_dir} \
-                --alignment={input.upd_aligned_fasta} \
-                --insertions={input.new_insertions} \
-                --reference={params.nextclade_input_dir}/reference.fasta \
-                --genemap={params.nextclade_input_dir}/genemap.gff" \
-                --genes {params.genes} \
-                --output={params.upd_mutation_summary}
+        ./bin/mutation-summary \
+            --basename="nextclade" \
+            --directory={params.nextclade_output_dir} \
+            --alignment={input.new_aligned_fasta} \
+            --insertions={input.new_insertions} \
+            --reference={params.nextclade_input_dir}/reference.fasta \
+            --genemap={params.nextclade_input_dir}/genemap.gff" \
+            --genes {params.genes} \
+            --output={output.new_mutation_summary}
+        """
 
-            # Download old mutation summary for the entire database so far
-            ./bin/download-from-s3 {params.old_mutation_summary_s3} {params.old_mutation_summary}
+rule download_mutation_summary:
+    message: "Download mutation summary"
+    params:
+        old_mutation_summary_s3 = f'{config["s3_src"]}/nextclade.mutation_summary.tsv.gz'
+    output:
+        old_mutation_summary = f"data/{database}/nextclade.mutation_summary.old.tsv"
+    shell:
+        """
+        ./bin/download-from-s3 {params.old_mutation_summary_s3} {output.old_mutation_summary}
+        """
 
-            # Join the new updated mutation summary and old mutation summary to get the new result for the whole database
-            ./bin/join-rows \
-                {params.old_mutation_summary} \
-                {params.upd_mutation_summary} \
-                -o {output.mutation_summary}
+rule join_mutation_summary:
+    message: "Append incremental update of mutation summary to the old mutatiosn summary"
+    input:
+        old_mutation_summary = rules.download_mutation_summary.output.old_mutation_summary,
+        new_mutation_summary = rules.compute_mutation_summary.output.new_mutation_summary
+    output:
+        mutation_summary = f"data/{database}/nextclade.mutation_summary.tsv"
+    shell:
+        """
+        ./bin/join-rows {input.old_mutation_summary} {input.new_mutation_summary} -o {output.mutation_summary}
+        """
 
-            # Comit updated file to S3
-            # TODO: Should this be moved towards the end of the workflow?
-            ./bin/upload-to-s3 --quiet {params.new_mutation_summary} {params.new_mutation_summary_s3}
-        fi
+rule upload_mutation_summary:
+    message: "Calculate mutation summary"
+    input:
+        mutation_summary = rules.join_mutation_summary.output.mutation_summary
+    params:
+        mutation_summary_s3 = f'{config["s3_dst"]}/nextclade.mutation_summary.tsv.gz'
+    output:
+        touch(f"data/{database}/upload.mutation_summary.done")
+    shell:
+        """
+        ./bin/upload-to-s3 --quiet {input.mutation_summary} {params.mutation_summary_s3}
         """
 
 rule generate_metadata:
