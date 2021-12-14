@@ -28,28 +28,26 @@
 # version becomes the new default, if this ncov-ingest image itself is still
 # relevant at that time.
 #   -trs, 19 Jan 2020
-FROM nextstrain/base:branch-python-base
 
-# Install Python package for which Python 3.7 wheels do not yet exist on PyPI.
-RUN apt-get update && apt-get install -y --no-install-recommends \
-        python3-netifaces \
-        time\
-        xz-utils
+# Let's drop dependency on an image of unknown origin and start over.
+#   -ivan.aksamentov 2021-12-13
+FROM python:3.7-buster
+
+SHELL ["/bin/bash", "-c"]
+
+RUN set -euxo pipefail \
+&& apt-get update \
+&& apt-get install -y --no-install-recommends \
+  build-essential \
+  time \
+  xz-utils
+
+COPY Pipfile Pipfile.lock /workdir/
 
 # Install Python deps
-RUN python3 -m pip install pipenv
-COPY Pipfile Pipfile.lock /nextstrain/ncov-ingest/
-RUN PIPENV_PIPFILE=/nextstrain/ncov-ingest/Pipfile pipenv sync --system
-
-# Install Nextclade
-RUN curl -fsSL https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-Linux-x86_64 \
-         -o /usr/local/bin/nextclade \
- && chmod a+rx /usr/local/bin/nextclade
-
-# Install Nextclade C++
-RUN curl -fsSL https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-Linux-x86_64 \
-         -o /usr/local/bin/nextclade \
- && chmod a+rx /usr/local/bin/nextclade
+RUN set -euxo pipefail \
+&& python3 -m pip install pipenv \
+&& PIPENV_PIPFILE=/workdir/Pipfile pipenv sync --system
 
 # Put any bin/ dir in the cwd on the path for more convenient invocation of
 # ncov-ingest's programs.
