@@ -298,7 +298,7 @@ rule mutation_summary:
             --alignment={input.alignment} \
             --insertions={input.insertions} \
             --reference={params.nextclade_input_dir}/reference.fasta \
-            --genemap={params.nextclade_input_dir}/genemap.gff" \
+            --genemap={params.nextclade_input_dir}/genemap.gff \
             --genes {GENES} \
             --output={output.summary}
         """
