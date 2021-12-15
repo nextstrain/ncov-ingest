@@ -15,7 +15,7 @@ config+=(
   s3_dst="s3://nextstrain-ncov-private/branch/${GITHUB_BRANCH}"
   fetch_from_database=false
   trigger_preprocessing=false
-  keep_all_files: true
+  keep_all_files=true
 )
 
 # shellcheck disable=SC2124
