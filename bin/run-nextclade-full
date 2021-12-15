@@ -283,6 +283,8 @@ main() {
 
     mkdir -p "${TMP_OUTPUT_MUTATION_SUMMARY_DIR}"
 
+    # Note we need genes variable to be unquoted
+    # shellcheck disable=SC2086
     ./bin/mutation-summary \
       --directory="${output_dir}" \
       --alignment="${output_fasta_filename}" \
