@@ -419,6 +419,8 @@ def compute_files_to_upload(wildcards):
         files_to_upload["nextclade.mutation_summary.tsv.gz"] = f"data/{database}/nextclade.mutation_summary.tsv"
         files_to_upload["nextclade.aligned.fasta.xz"] =        f"data/{database}/nextclade.aligned.fasta"
 
+    return files_to_upload
+
 
 rule upload:
     input:
