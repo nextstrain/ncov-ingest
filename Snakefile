@@ -185,6 +185,7 @@ checkpoint get_sequences_without_nextclade_annotations:
         """
 
 GENES = "E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S"
+GENES_SPACE_DELIMITED = GENES.replace(",", " ")
 
 rule run_nextclade:
     message:
@@ -299,7 +300,7 @@ rule mutation_summary:
             --insertions={input.insertions} \
             --reference={params.nextclade_input_dir}/reference.fasta \
             --genemap={params.nextclade_input_dir}/genemap.gff \
-            --genes {GENES} \
+            --genes {GENES_SPACE_DELIMITED} \
             --output={output.summary}
         """
 
