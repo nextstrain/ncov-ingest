@@ -17,8 +17,8 @@ send_notifications = "SLACK_CHANNELS" in os.environ and "SLACK_TOKEN" in os.envi
 
 all_targets = [f"data/{database}/upload.done"]
 
-if config.get("trigger_preprocessing", False):
-    all_targets.append(f"data/{database}/trigger-preprocessing.done")
+if config.get("trigger_rebuild", False):
+    all_targets.append(f"data/{database}/trigger-rebuild.done")
 if send_notifications:
     all_targets.append(f"data/{database}/notify.done")
 if config.get("fetch_from_database", False):
@@ -320,14 +320,14 @@ rule upload:
             shell("./bin/upload-to-s3 {params.quiet} {local:q} {params.s3_bucket:q}/{remote:q}")
 
 
-rule trigger_preprocessing_pipeline:
+rule trigger_rebuild_pipeline:
     message: "Triggering nextstrain/ncov rebuild action (via repository dispatch)"
     input:
         f"data/{database}/upload.done"
     output:
-        touch(f"data/{database}/trigger-preprocessing.done")
+        touch(f"data/{database}/trigger-rebuild.done")
     params:
-        dispatch_type = f"preprocess-{database}",
+        dispatch_type = f"{database}/rebuild",
         token = os.environ.get("PAT_GITHUB_DISPATCH", "")
     run:
         import requests
@@ -336,7 +336,7 @@ rule trigger_preprocessing_pipeline:
                 'authorization': f"Bearer {params.token}",
                 'Accept': 'application/vnd.github.v3+json'}
         data = {"event_type": params.dispatch_type}
-        print(f"Triggering ncov preprocessing GitHub action via repository dispatch type: {params.dispatch_type}")
+        print(f"Triggering ncov rebuild GitHub action via repository dispatch type: {params.dispatch_type}")
         response = requests.post("https://api.github.com/repos/nextstrain/ncov/dispatches", headers=headers, data=json.dumps(data))
         response.raise_for_status()
 
@@ -351,7 +351,7 @@ env_variables = {
     "GITHUB_RUN_ID": "Included in slack notification message (optional)",
     "SLACK_TOKEN": "Required for sending slack notifications",
     "SLACK_CHANNELS": "Required for sending slack notifications",
-    "PAT_GITHUB_DISPATCH": "Required for triggering preprocessing GitHub actions",
+    "PAT_GITHUB_DISPATCH": "Required for triggering GitHub actions (e.g. to rebuild nextstrain/ncov)",
     "GISAID_API_ENDPOINT": "Required for GISAID API access",
     "GISAID_USERNAME_AND_PASSWORD": "Required for GISAID API access"
 }
