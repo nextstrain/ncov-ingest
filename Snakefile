@@ -253,8 +253,8 @@ rule download_previous_alignment:
 rule download_previous_mutation_summary:
     ## NOTE see note in `download_previous_alignment`
     params:
-        dst_source = config["s3_dst"] + '/nextclade.mutation_summary.tsv.gz',
-        src_source = config["s3_src"] + '/nextclade.mutation_summary.tsv.gz',
+        dst_source = config["s3_dst"] + '/nextclade.mutation_summary.tsv.xz',
+        src_source = config["s3_src"] + '/nextclade.mutation_summary.tsv.xz',
     output:
         alignment = temp(f"data/{database}/nextclade.mutation_summary.old.tsv")
     shell:
@@ -417,7 +417,7 @@ def compute_files_to_upload(wildcards):
     nextclade_sequences_path = checkpoints.get_sequences_without_nextclade_annotations.get().output.fasta
     if os.path.getsize(nextclade_sequences_path) > 0:
         files_to_upload["nextclade.tsv.gz"] =                  f"data/{database}/nextclade.tsv"
-        files_to_upload["nextclade.mutation_summary.tsv.gz"] = f"data/{database}/nextclade.mutation_summary.tsv"
+        files_to_upload["nextclade.mutation_summary.tsv.xz"] = f"data/{database}/nextclade.mutation_summary.tsv"
         files_to_upload["nextclade.aligned.fasta.xz"] =        f"data/{database}/nextclade.aligned.fasta"
 
     return files_to_upload
