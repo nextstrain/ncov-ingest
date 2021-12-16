@@ -129,6 +129,7 @@ rule transform_genbank_data:
     output:
         fasta = "data/genbank/sequences.fasta",
         metadata = "data/genbank/metadata_transformed.tsv",
+        flagged_annotations = temp("data/genbank/flagged-annotations"),
         duplicate_biosample = "data/genbank/duplicate_biosample.txt"
     shell:
         """
@@ -136,7 +137,7 @@ rule transform_genbank_data:
             --biosample {input.biosample} \
             --duplicate-biosample {output.duplicate_biosample} \
             --output-metadata {output.metadata} \
-            --output-fasta {output.fasta}
+            --output-fasta {output.fasta} > {output.flagged_annotations}
         """
 
 rule transform_gisaid_data:
@@ -282,6 +283,7 @@ rule notify_gisaid:
 
 rule notify_genbank:
     input:
+        flagged_annotations = rules.transform_genbank_data.output.flagged_annotations,
         metadata = "data/genbank/metadata.tsv",
         location_hierarchy = "data/genbank/location_hierarchy.tsv",
         duplicate_biosample = "data/genbank/duplicate_biosample.txt"
@@ -290,6 +292,7 @@ rule notify_genbank:
     output:
         touch("data/genbank/notify.done")
     run:
+        shell("./bin/notify-slack --upload flagged-annotations < {input.flagged_annotations}")
         shell("./bin/notify-on-metadata-change {input.metadata} {params.s3_bucket}/metadata.tsv.gz genbank_accession")
         # TODO - which rule produces data/genbank/problem_data.tsv? (was not explicit in `ingest-genbank` bash script)
         shell("./bin/notify-on-problem-data data/genbank/problem_data.tsv")
