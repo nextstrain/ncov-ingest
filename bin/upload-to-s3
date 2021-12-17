@@ -46,7 +46,7 @@ main() {
             echo "Notifying Slack failed, but exiting with success anyway."
         fi
     else
-        echo "Files are identical, skipping upload"
+        echo "Uploading $src → $dst: files are identical, skipping upload"
     fi
 }
 
