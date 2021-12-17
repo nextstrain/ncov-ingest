@@ -4,7 +4,7 @@ set -euo pipefail
 : "${GISAID_API_ENDPOINT:?The GISAID_API_ENDPOINT environment variable is required.}"
 : "${GISAID_USERNAME_AND_PASSWORD:?The GISAID_USERNAME_AND_PASSWORD environment variable is required.}"
 
-apt-get update && apt-get install lbzip2
+apt-get update --allow-releaseinfo-change && apt-get install lbzip2
 
 curl "$GISAID_API_ENDPOINT" \
     --user "$GISAID_USERNAME_AND_PASSWORD" \
