@@ -23,33 +23,22 @@
 # ncov-ingest themselves.  This means the image only needs to be updated when
 # dependencies change, not when any pipeline change is made, and thus image
 # updates can be far less frequent.
-
-# XXX TODO: This can be updated to :latest eventually when the python-base
-# version becomes the new default, if this ncov-ingest image itself is still
-# relevant at that time.
-#   -trs, 19 Jan 2020
-FROM nextstrain/base:branch-python-base
+FROM nextstrain/base
 
 # Install Python package for which Python 3.7 wheels do not yet exist on PyPI.
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        python3-netifaces \
-        time\
-        xz-utils
+    aria2 \
+    lbzip2 \
+    pigz \
+    pixz \
+    python3-netifaces \
+    time \
+    xz-utils \
 
 # Install Python deps
 RUN python3 -m pip install pipenv
 COPY Pipfile Pipfile.lock /nextstrain/ncov-ingest/
 RUN PIPENV_PIPFILE=/nextstrain/ncov-ingest/Pipfile pipenv sync --system
-
-# Install Nextclade
-RUN curl -fsSL https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-Linux-x86_64 \
-         -o /usr/local/bin/nextclade \
- && chmod a+rx /usr/local/bin/nextclade
-
-# Install Nextclade C++
-RUN curl -fsSL https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-Linux-x86_64 \
-         -o /usr/local/bin/nextclade \
- && chmod a+rx /usr/local/bin/nextclade
 
 # Put any bin/ dir in the cwd on the path for more convenient invocation of
 # ncov-ingest's programs.
