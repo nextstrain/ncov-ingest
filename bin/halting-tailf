@@ -1,0 +1,47 @@
+#!/usr/bin/env python3
+"""
+usage: ... | halting-tailf SEMAPHORE-FILE | ...
+
+Reads stdin, retrying on EOF (e.g. like tail -f) as long as SEMAPHORE-FILE
+still exists, and writes to stdout.  When SEMAPHORE-FILE is removed, exits the
+next time it hits EOF on stdin.
+"""
+import sys
+from pathlib import Path
+from time import sleep
+
+
+def main(semaphore_file):
+    semaphore = Path(semaphore_file)
+
+    def halt_after_semaphore_removed():
+        if not semaphore.exists():
+            return True
+        else:
+            sleep(1)
+            return False
+
+    try:
+        for chunk in tailf(sys.stdin.buffer, halt_after_semaphore_removed):
+            sys.stdout.buffer.write(chunk)
+    except Halted:
+        pass
+
+
+def tailf(stream, halt = lambda: False):
+    while True:
+        try:
+            yield next(stream)
+        except StopIteration:
+            if halt():
+                raise Halted()
+            else:
+                continue
+
+
+class Halted(Exception):
+    pass
+
+
+if __name__ == "__main__":
+    main(*sys.argv[1:])

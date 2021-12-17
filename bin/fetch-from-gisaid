@@ -4,7 +4,34 @@ set -euo pipefail
 : "${GISAID_API_ENDPOINT:?The GISAID_API_ENDPOINT environment variable is required.}"
 : "${GISAID_USERNAME_AND_PASSWORD:?The GISAID_USERNAME_AND_PASSWORD environment variable is required.}"
 
+bin="$(dirname "$0")"
+spool="$(mktemp -t gisaid-XXXXXX.ndjson.bz2)"
+semaphore="$(mktemp)"
+
+# Remove temporary files on exit, regardless of success or failure
+trap "rm -f ${spool@Q} >/dev/null" EXIT
+
+# Download compressed file direct to disk to avoid slowing down the network
+# transfer waiting on decompression.
 curl "$GISAID_API_ENDPOINT" \
     --user "$GISAID_USERNAME_AND_PASSWORD" \
     --fail --silent --show-error --location-trusted --http1.1 \
-    | bunzip2
+    > "$spool" \
+&
+
+# Decompress from disk to stdout on the fly; will wait for more data to appear
+# in the file if it hits EOF.
+"$bin"/halting-tailf "$semaphore" < "$spool" | bunzip2 &
+
+# After the download completes, signal halting-tailf via removal of the
+# semaphore file that it should halt after the next EOF instead of waiting for
+# more data.
+#
+# This wouldn't be necessary if bunzip2 could be configured to stop (and thus
+# break the pipe from tail) when it finds the end of stream marker in the
+# compressed data instead of waiting for another compression stream.
+wait %curl
+rm -f "$semaphore"
+
+# Wait for everything to wrap up.
+wait
