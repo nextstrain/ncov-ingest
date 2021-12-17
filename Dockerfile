@@ -33,7 +33,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     pixz \
     python3-netifaces \
     time \
-    xz-utils \
+    xz-utils
 
 # Install Python deps
 RUN python3 -m pip install pipenv
