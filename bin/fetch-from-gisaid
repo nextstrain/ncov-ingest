@@ -4,7 +4,15 @@ set -euo pipefail
 : "${GISAID_API_ENDPOINT:?The GISAID_API_ENDPOINT environment variable is required.}"
 : "${GISAID_USERNAME_AND_PASSWORD:?The GISAID_USERNAME_AND_PASSWORD environment variable is required.}"
 
+: "${1:?Output file path is required.}"
+
+GISAID_OUTPUT="${1}"
+GISAID_SNAPSHOT="${GISAID_OUTPUT}.bz2"
+
 curl "$GISAID_API_ENDPOINT" \
     --user "$GISAID_USERNAME_AND_PASSWORD" \
-    --fail --silent --show-error --location-trusted --http1.1 \
-    | bunzip2
+    --fail --show-error --location-trusted --http1.1 \
+    --progress-bar \
+    --output "${GISAID_SNAPSHOT}"
+
+bunzip2 -cd "${GISAID_SNAPSHOT}" > "${GISAID_OUTPUT}"
