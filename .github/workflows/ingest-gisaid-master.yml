@@ -1,15 +1,6 @@
 name: GISAID ingest
 
 on:
-  push:
-    branches:
-      - master
-    tags-ignore:
-      - '**'
-    paths:
-      - source-data/gisaid_annotations.tsv
-      - source-data/gisaid_geoLocationRules.tsv
-
   # Manually triggered using `./bin/trigger gisaid/ingest` (or `ingest`, which
   # includes GenBank)
   repository_dispatch:
