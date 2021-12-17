@@ -28,6 +28,7 @@ FROM nextstrain/base
 # Install Python package for which Python 3.7 wheels do not yet exist on PyPI.
 RUN apt-get update && apt-get install -y --no-install-recommends \
     aria2 \
+    build-essential \
     lbzip2 \
     pigz \
     pixz \
