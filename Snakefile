@@ -59,7 +59,7 @@ rule download_main_ndjson:
         if config.get("fetch_from_database", False):
             if database=="gisaid":
                 msg = "Fetching from GISAID API"
-                cmd = f"./bin/fetch-from-gisaid > {output.ndjson}"
+                cmd = f"./bin/fetch-from-gisaid {output.ndjson}"
             else:
                 msg = "Fetching from GenBank API"
                 cmd = f"./bin/fetch-from-genbank > {output.ndjson}"
