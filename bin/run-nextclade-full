@@ -139,7 +139,7 @@ main() {
   fi
 
   echo "[ INFO] ${0}:${LINENO}: Downloading '${S3_SRC}/sequences.fasta.xz' to '${INPUT_FASTA}'"
-  aws s3 cp --no-progress "${S3_SRC}/sequences.fasta.xz" - | xz -T0 -cdfq >"${INPUT_FASTA}"
+  aws s3 cp --no-progress "${S3_SRC}/sequences.fasta.xz" - | pixz -cdq >"${INPUT_FASTA}"
 
   echo "[ INFO] ${0}:${LINENO}: Splitting '${INPUT_FASTA}' into batches of size ${BATCH_SIZE} sequences and storing them in '${INPUT_WILDCARD}'"
   # Split fasta file to multiple batches

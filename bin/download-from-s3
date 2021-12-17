@@ -17,9 +17,9 @@ main() {
     if [[ $src_hash != "$dst_hash" ]]; then
         aws s3 cp --no-progress "$src" - |
         if [[ "$src" == *.gz ]]; then
-            gunzip -cfq
+            pigz -cdq
         elif  [[ "$src" == *.xz ]]; then
-            xz -T0 -dcq
+            pixz -cdq
         else
             cat
         fi > "$dst"

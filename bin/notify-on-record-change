@@ -14,7 +14,7 @@ source_name=${3:?A record source name is required as the third argument.}
 "$bin"/s3-object-exists "$dst" || exit 0
 
 src_record_count="$(wc -l < "$src")"
-dst_record_count="$(wc -l < <(aws s3 cp --no-progress "$dst" - | xz -T0 -dcfq))"
+dst_record_count="$(wc -l < <(aws s3 cp --no-progress "$dst" - | pixz -cdq))"
 added_records="$(( src_record_count - dst_record_count ))"
 
 printf "%'4d %s\n" "$src_record_count" "$src"
