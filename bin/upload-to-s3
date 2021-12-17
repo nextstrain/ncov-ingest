@@ -25,7 +25,7 @@ main() {
 
     local src_hash dst_hash no_hash=0000000000000000000000000000000000000000000000000000000000000000
     src_hash="$("$bin/sha256sum" < "$src")"
-    dst_hash="$(aws s3api head-object --bucket "$bucket" --key "$key" --query Metadata.sha256sum --output text || echo "$no_hash")"
+    dst_hash="$(aws s3api head-object --bucket "$bucket" --key "$key" --query Metadata.sha256sum --output text 2>/dev/null || echo "$no_hash")"
 
     echo "$src_hash $src"
     echo "$dst_hash $dst"
