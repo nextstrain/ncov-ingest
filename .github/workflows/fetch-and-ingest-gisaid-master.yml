@@ -4,10 +4,10 @@ on:
   schedule:
     # * is a special character in YAML so you have to quote this string
     # Note times are in UTC, which is 1 or 2 hours behind CET depending on daylight savings
-    # Currently triggers at 12 UTC which is 13 CET (as of Nov 21)
+    # Currently triggers at 14.00 UTC which is 15.00 CET (as of Nov 2021)
     # https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows#schedule
     # https://crontab.guru/
-    - cron:  '7 12 * * *'
+    - cron:  '7 14 * * *'
 
   # Manually triggered using `./bin/trigger gisaid/fetch-and-ingest`
   repository_dispatch:
