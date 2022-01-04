@@ -46,6 +46,7 @@ if __name__ == '__main__':
                 redundantAnnot[ sl[0] ][ "\t".join([sl[0] , sl[1] , " ".join(sl[2:]) ]) ] = 0
                 n +=1
 
+
     linesToKeep = []
 
     removed = 0
@@ -70,6 +71,7 @@ if __name__ == '__main__':
                         filterOut = True
                         print("removed redundant :", annotId)
                         removed+=1
+
             if "genbank" in args.annotations:
                 if len(sl) >= 2 and sl[0] in redundantAnnot:
                     # getting the line without eventual comments
@@ -83,6 +85,20 @@ if __name__ == '__main__':
                         filterOut = True
                         print("removed redundant :", annotId)
                         removed += 1
+
+            if "accessions" in args.annotations:
+                if len(sl) == 2 and sl[0] in redundantAnnot:
+                    i = sl[0]
+                    k = "gisaid_epi_isl"
+                    v = '\t'.join(sl[1:]).partition('#')[0].strip()
+                    annotId = '\t'.join([i, k, v])
+
+                    if annotId in redundantAnnot[sl[0]]:
+                        redundantAnnot[sl[0]][annotId] += 1
+                        filterOut = True
+                        print("removed redundant :", annotId)
+                        removed += 1
+
 
             if not filterOut:
                 linesToKeep.append(l)
