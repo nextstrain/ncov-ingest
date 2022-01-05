@@ -284,7 +284,6 @@ rule notify_gisaid:
 rule notify_genbank:
     input:
         flagged_annotations = rules.transform_genbank_data.output.flagged_annotations,
-        metadata = "data/genbank/metadata.tsv",
         location_hierarchy = "data/genbank/location_hierarchy.tsv",
         duplicate_biosample = "data/genbank/duplicate_biosample.txt"
     params:
@@ -293,7 +292,6 @@ rule notify_genbank:
         touch("data/genbank/notify.done")
     run:
         shell("./bin/notify-slack --upload flagged-annotations < {input.flagged_annotations}")
-        shell("./bin/notify-on-metadata-change {input.metadata} {params.s3_bucket}/metadata.tsv.gz genbank_accession")
         # TODO - which rule produces data/genbank/problem_data.tsv? (was not explicit in `ingest-genbank` bash script)
         shell("./bin/notify-on-problem-data data/genbank/problem_data.tsv")
         shell("./bin/notify-on-location-hierarchy-addition {input.location_hierarchy} source-data/location_hierarchy.tsv")
