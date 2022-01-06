@@ -241,8 +241,8 @@ rule download_previous_alignment:
     ## (1) race condition. This file may be updated on the remote after download_nextclade has run but before this rule
     ## (2) we may get `download_nextclade` and `download_previous_alignment` from different s3 buckets
     params:
-        dst_source = config["s3_dst"] + '/nextclade.aligned.fasta.xz',
-        src_source = config["s3_src"] + '/nextclade.aligned.fasta.xz',
+        dst_source = config["s3_dst"] + '/aligned.fasta.xz',
+        src_source = config["s3_src"] + '/aligned.fasta.xz',
     output:
         alignment = temp(f"data/{database}/nextclade.aligned.old.fasta")
     shell:
@@ -254,8 +254,8 @@ rule download_previous_alignment:
 rule download_previous_mutation_summary:
     ## NOTE see note in `download_previous_alignment`
     params:
-        dst_source = config["s3_dst"] + '/nextclade.mutation_summary.tsv.xz',
-        src_source = config["s3_src"] + '/nextclade.mutation_summary.tsv.xz',
+        dst_source = config["s3_dst"] + '/mutation_summary.tsv.xz',
+        src_source = config["s3_src"] + '/mutation_summary.tsv.xz',
     output:
         alignment = temp(f"data/{database}/nextclade.mutation_summary.old.tsv")
     shell:
@@ -273,7 +273,7 @@ rule combine_alignments:
         old_alignment = f"data/{database}/nextclade.aligned.old.fasta",
         new_alignment = f"data/{database}/nextclade.aligned.upd.fasta"
     output:
-        alignment = f"data/{database}/nextclade.aligned.fasta"
+        alignment = f"data/{database}/aligned.fasta"
     shell:
         """
         cat {input.old_alignment} {input.new_alignment} > {output.alignment}
@@ -315,7 +315,7 @@ rule combine_mutation_summaries:
         old_mutation_summary = f"data/{database}/nextclade.mutation_summary.old.tsv",
         upd_mutation_summary = f"data/{database}/nextclade.mutation_summary.upd.tsv"
     output:
-        new_mutation_summary = f"data/{database}/nextclade.mutation_summary.tsv"
+        new_mutation_summary = f"data/{database}/mutation_summary.tsv"
     shell:
         """
         ./bin/join-rows {input.old_mutation_summary} {input.upd_mutation_summary} > {output.new_mutation_summary}
@@ -418,8 +418,8 @@ def compute_files_to_upload(wildcards):
     nextclade_sequences_path = checkpoints.get_sequences_without_nextclade_annotations.get().output.fasta
     if os.path.getsize(nextclade_sequences_path) > 0:
         files_to_upload["nextclade.tsv.gz"] =                  f"data/{database}/nextclade.tsv"
-        files_to_upload["nextclade.mutation_summary.tsv.xz"] = f"data/{database}/nextclade.mutation_summary.tsv"
-        files_to_upload["nextclade.aligned.fasta.xz"] =        f"data/{database}/nextclade.aligned.fasta"
+        files_to_upload["mutation_summary.tsv.xz"] = f"data/{database}/mutation_summary.tsv"
+        files_to_upload["aligned.fasta.xz"] =        f"data/{database}/aligned.fasta"
 
     return files_to_upload
 
