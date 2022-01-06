@@ -18,8 +18,8 @@ send_notifications = "SLACK_CHANNELS" in os.environ and "SLACK_TOKEN" in os.envi
 
 all_targets = [f"data/{database}/upload.done"]
 
-if config.get("trigger_preprocessing", False):
-    all_targets.append(f"data/{database}/trigger-preprocessing.done")
+if config.get("trigger_rebuild", False):
+    all_targets.append(f"data/{database}/trigger-rebuild.done")
 if send_notifications:
     all_targets.append(f"data/{database}/notify.done")
 if config.get("fetch_from_database", False):
@@ -130,6 +130,7 @@ rule transform_genbank_data:
     output:
         fasta = "data/genbank/sequences.fasta",
         metadata = "data/genbank/metadata_transformed.tsv",
+        flagged_annotations = temp("data/genbank/flagged-annotations"),
         duplicate_biosample = "data/genbank/duplicate_biosample.txt"
     shell:
         """
@@ -137,7 +138,7 @@ rule transform_genbank_data:
             --biosample {input.biosample} \
             --duplicate-biosample {output.duplicate_biosample} \
             --output-metadata {output.metadata} \
-            --output-fasta {output.fasta}
+            --output-fasta {output.fasta} > {output.flagged_annotations}
         """
 
 rule transform_gisaid_data:
@@ -388,7 +389,7 @@ rule notify_gisaid:
 
 rule notify_genbank:
     input:
-        metadata = "data/genbank/metadata.tsv",
+        flagged_annotations = rules.transform_genbank_data.output.flagged_annotations,
         location_hierarchy = "data/genbank/location_hierarchy.tsv",
         duplicate_biosample = "data/genbank/duplicate_biosample.txt"
     params:
@@ -396,7 +397,7 @@ rule notify_genbank:
     output:
         touch("data/genbank/notify.done")
     run:
-        shell("./bin/notify-on-metadata-change {input.metadata} {params.s3_bucket}/metadata.tsv.gz genbank_accession")
+        shell("./bin/notify-slack --upload flagged-annotations < {input.flagged_annotations}")
         # TODO - which rule produces data/genbank/problem_data.tsv? (was not explicit in `ingest-genbank` bash script)
         shell("./bin/notify-on-problem-data data/genbank/problem_data.tsv")
         shell("./bin/notify-on-location-hierarchy-addition {input.location_hierarchy} source-data/location_hierarchy.tsv")
@@ -436,14 +437,14 @@ rule upload:
             shell("./bin/upload-to-s3 {params.quiet} {local:q} {params.s3_bucket:q}/{remote:q}")
 
 
-rule trigger_preprocessing_pipeline:
+rule trigger_rebuild_pipeline:
     message: "Triggering nextstrain/ncov rebuild action (via repository dispatch)"
     input:
         f"data/{database}/upload.done"
     output:
-        touch(f"data/{database}/trigger-preprocessing.done")
+        touch(f"data/{database}/trigger-rebuild.done")
     params:
-        dispatch_type = f"preprocess-{database}",
+        dispatch_type = f"{database}/rebuild",
         token = os.environ.get("PAT_GITHUB_DISPATCH", "")
     run:
         import requests
@@ -452,7 +453,7 @@ rule trigger_preprocessing_pipeline:
                 'authorization': f"Bearer {params.token}",
                 'Accept': 'application/vnd.github.v3+json'}
         data = {"event_type": params.dispatch_type}
-        print(f"Triggering ncov preprocessing GitHub action via repository dispatch type: {params.dispatch_type}")
+        print(f"Triggering ncov rebuild GitHub action via repository dispatch type: {params.dispatch_type}")
         response = requests.post("https://api.github.com/repos/nextstrain/ncov/dispatches", headers=headers, data=json.dumps(data))
         response.raise_for_status()
 
@@ -467,7 +468,7 @@ env_variables = {
     "GITHUB_RUN_ID": "Included in slack notification message (optional)",
     "SLACK_TOKEN": "Required for sending slack notifications",
     "SLACK_CHANNELS": "Required for sending slack notifications",
-    "PAT_GITHUB_DISPATCH": "Required for triggering preprocessing GitHub actions",
+    "PAT_GITHUB_DISPATCH": "Required for triggering GitHub actions (e.g. to rebuild nextstrain/ncov)",
     "GISAID_API_ENDPOINT": "Required for GISAID API access",
     "GISAID_USERNAME_AND_PASSWORD": "Required for GISAID API access"
 }
