@@ -31,7 +31,7 @@ if [[ "$upload" == 1 ]]; then
         --form filetype=text \
         --fail --silent --show-error \
         --http1.1 \
-        --include
+        --output /dev/null
 else
     echo "Posting Slack message: $text"
     curl https://slack.com/api/chat.postMessage \
@@ -40,5 +40,5 @@ else
         --form-string text="$text" \
         --fail --silent --show-error \
         --http1.1 \
-        --include
+        --output /dev/null
 fi
