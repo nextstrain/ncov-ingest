@@ -1,7 +1,7 @@
 database_name: "gisaid"
 
 fetch_from_database: false
-trigger_preprocessing: false
+trigger_rebuild: false
 
 s3_src: "s3://nextstrain-ncov-private"
 s3_dst: "s3://nextstrain-ncov-private"
