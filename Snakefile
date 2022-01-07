@@ -1,4 +1,5 @@
 from subprocess import CalledProcessError
+import os
 
 #################################################################
 ####################### general setup ###########################
@@ -169,7 +170,7 @@ rule download_nextclade:
         ./bin/download-from-s3 {params.src_source} {output.nextclade}
         """
 
-rule get_sequences_without_nextclade_annotations:
+checkpoint get_sequences_without_nextclade_annotations:
     """Find sequences in FASTA which don't have clades assigned yet"""
     input:
         fasta = f"data/{database}/sequences.fasta",
@@ -184,49 +185,154 @@ rule get_sequences_without_nextclade_annotations:
             --output_fasta={output.fasta} \
         """
 
-rule annotate_via_nextclade:
+GENES = "E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S"
+GENES_SPACE_DELIMITED = GENES.replace(",", " ")
+
+rule run_nextclade:
     message:
         """
-        If there are sequences without clades, then run nextclade to assign
-        clades and calculate other useful metrics.
+        Runs nextclade on sequences which were not in the previously cached nextclade run.
+        This alignes sequences, assigns clades and calculates some of the other useful
+        metrics which will ultimately end up in metadata.tsv.
         """
     input:
-        sequences = f"data/{database}/nextclade.sequences.fasta",
-        nextclade_info = f"data/{database}/nextclade_old.tsv"
+        sequences = f"data/{database}/nextclade.sequences.fasta"
     params:
-        new_info = temp(f"data/{database}/nextclade_new.tsv"),
         nextclade_input_dir = temp(directory(f"data/{database}/nextclade_inputs")),
-        nextclade_output_dir = temp(directory(f"data/{database}/nextclade"))
-    threads: 16
+        nextclade_output_dir = temp(directory(f"data/{database}/nextclade")),
+    threads: 64
     output:
-        nextclade_info = f"data/{database}/nextclade.tsv"
-
-    ## todo - move this code into a shell script / expand the abilities of `./bin/run-nextclade`
-    ## note - this conditionality on a non-empty input fasta was GISAID only, but it makes sense for GenBank too
+        info = f"data/{database}/nextclade_new.tsv",
+        alignment = temp(f"data/{database}/nextclade.aligned.upd.fasta"),
+        insertions = temp(f"data/{database}/nextclade.insertions.csv")
     shell:
         """
-        if [ ! -s {input.sequences:q} ]; then
-            echo "[ INFO] No new sequences for Nextclade to process. Skipping nextclade."
-            mv {input.nextclade_info} {output.nextclade_info}
-        else
-            ./bin/run-nextclade \
-                {input.sequences:q} \
-                {params.new_info} \
-                {params.nextclade_input_dir} \
-                {params.nextclade_output_dir} \
-                {threads}
-            # Join new and old clades, so that next run won't need to process sequences that are already processed
-            ./bin/join-rows \
-                {input.nextclade_info:q} \
-                {params.new_info} \
-                -o {output.nextclade_info:q}
-        fi
+        ./bin/run-nextclade \
+            {input.sequences:q} \
+            {output.info} \
+            {params.nextclade_input_dir} \
+            {params.nextclade_output_dir} \
+            {output.alignment} \
+            {output.insertions} \
+            {GENES} \
+            {threads}
         """
+
+rule nextclade_info:
+    message:
+        """
+        Generates nextclade info TSV for all sequences (new + old)
+        """
+    input:
+        old_info = f"data/{database}/nextclade_old.tsv",
+        new_info = f"data/{database}/nextclade_new.tsv"
+    output:
+        nextclade_info = f"data/{database}/nextclade.tsv"
+    shell:
+        """
+        ./bin/join-rows \
+            {input.old_info:q} \
+            {input.new_info:q} \
+            -o {output.nextclade_info:q}
+        """
+
+rule download_previous_alignment:
+    ## NOTE two potential bugs with this implementation:
+    ## (1) race condition. This file may be updated on the remote after download_nextclade has run but before this rule
+    ## (2) we may get `download_nextclade` and `download_previous_alignment` from different s3 buckets
+    params:
+        dst_source = config["s3_dst"] + '/aligned.fasta.xz',
+        src_source = config["s3_src"] + '/aligned.fasta.xz',
+    output:
+        alignment = temp(f"data/{database}/nextclade.aligned.old.fasta")
+    shell:
+        """
+        ./bin/download-from-s3 {params.dst_source} {output.alignment} ||  \
+        ./bin/download-from-s3 {params.src_source} {output.alignment}
+        """
+
+rule download_previous_mutation_summary:
+    ## NOTE see note in `download_previous_alignment`
+    params:
+        dst_source = config["s3_dst"] + '/mutation-summary.tsv.xz',
+        src_source = config["s3_src"] + '/mutation-summary.tsv.xz',
+    output:
+        alignment = temp(f"data/{database}/nextclade.mutation-summary.old.tsv")
+    shell:
+        """
+        ./bin/download-from-s3 {params.dst_source} {output.alignment} ||  \
+        ./bin/download-from-s3 {params.src_source} {output.alignment}
+        """
+
+rule combine_alignments:
+    message:
+        """
+        Generating full alignment by combining newly aligned sequences with previous (cached) alignment
+        """
+    input:
+        old_alignment = f"data/{database}/nextclade.aligned.old.fasta",
+        new_alignment = f"data/{database}/nextclade.aligned.upd.fasta"
+    output:
+        alignment = f"data/{database}/aligned.fasta"
+    shell:
+        """
+        cat {input.old_alignment} {input.new_alignment} > {output.alignment}
+        """
+
+rule mutation_summary:
+    message:
+        """
+        Computing the mutation summary for new sequences
+        """
+    input:
+        alignment = f"data/{database}/nextclade.aligned.upd.fasta",
+        insertions = f"data/{database}/nextclade.insertions.csv",
+    params:
+        nextclade_input_dir = f"data/{database}/nextclade_inputs",
+        nextclade_output_dir = f"data/{database}/nextclade",
+    output:
+        summary = temp(f"data/{database}/nextclade.mutation-summary.upd.tsv")
+    shell:
+        """
+        ./bin/mutation-summary \
+            --basename="nextclade" \
+            --directory={params.nextclade_output_dir} \
+            --alignment={input.alignment} \
+            --insertions={input.insertions} \
+            --reference={params.nextclade_input_dir}/reference.fasta \
+            --genemap={params.nextclade_input_dir}/genemap.gff \
+            --genes {GENES_SPACE_DELIMITED} \
+            --output={output.summary}
+        """
+
+
+rule combine_mutation_summaries:
+    message:
+        """ 
+        Generating full mutation summary by combining with previous (cached) summary
+        """
+    input:
+        old_mutation_summary = f"data/{database}/nextclade.mutation-summary.old.tsv",
+        upd_mutation_summary = f"data/{database}/nextclade.mutation-summary.upd.tsv"
+    output:
+        new_mutation_summary = f"data/{database}/mutation-summary.tsv"
+    shell:
+        """
+        ./bin/join-rows {input.old_mutation_summary} {input.upd_mutation_summary} > {output.new_mutation_summary}
+        """
+
+def _get_nextclade_info(wildcards):
+    ## the nextclade metadata should represent the entire dataset. If there are new sequences
+    ## this has to be generated; if not then we can use the previous (cached) file.
+    nextclade_sequences_path = checkpoints.get_sequences_without_nextclade_annotations.get().output.fasta
+    if os.path.getsize(nextclade_sequences_path) > 0:
+        return f"data/{database}/nextclade.tsv"
+    return f"data/{database}/nextclade_old.tsv"
 
 rule generate_metadata:
     input:
         existing_metadata = f"data/{database}/metadata_transformed.tsv",
-        new_metadata = f"data/{database}/nextclade.tsv",
+        new_metadata = _get_nextclade_info
     output:
         metadata = f"data/{database}/metadata.tsv"
     # note: the shell scripts which predated this snakemake workflow
@@ -297,20 +403,30 @@ rule notify_genbank:
         shell("./bin/notify-on-location-hierarchy-addition {input.location_hierarchy} source-data/location_hierarchy.tsv")
         shell("./bin/notify-on-duplicate-biosample-change {input.duplicate_biosample} {params.s3_bucket}/duplicate_biosample.txt.gz")
 
-files_to_upload = {
-                    "metadata.tsv.gz":              f"data/{database}/metadata.tsv",
-                    "sequences.fasta.xz":           f"data/{database}/sequences.fasta",
-                    "nextclade.tsv.gz":             f"data/{database}/nextclade.tsv"}
-if database=="genbank":
-    files_to_upload["biosample.tsv.gz"] =           f"data/{database}/biosample.tsv"
-    files_to_upload["duplicate_biosample.txt.gz"] = f"data/{database}/duplicate_biosample.txt"
-elif database=="gisaid":
-    files_to_upload["additional_info.tsv.gz"] =     f"data/{database}/additional_info.tsv"
-    files_to_upload["flagged_metadata.txt.gz"] =    f"data/{database}/flagged_metadata.txt"
+
+def compute_files_to_upload(wildcards):
+    files_to_upload = {
+                        "metadata.tsv.gz":              f"data/{database}/metadata.tsv",
+                        "sequences.fasta.xz":           f"data/{database}/sequences.fasta"}
+    if database=="genbank":
+        files_to_upload["biosample.tsv.gz"] =           f"data/{database}/biosample.tsv"
+        files_to_upload["duplicate_biosample.txt.gz"] = f"data/{database}/duplicate_biosample.txt"
+    elif database=="gisaid":
+        files_to_upload["additional_info.tsv.gz"] =     f"data/{database}/additional_info.tsv"
+        files_to_upload["flagged_metadata.txt.gz"] =    f"data/{database}/flagged_metadata.txt"
+
+    nextclade_sequences_path = checkpoints.get_sequences_without_nextclade_annotations.get().output.fasta
+    if os.path.getsize(nextclade_sequences_path) > 0:
+        files_to_upload["nextclade.tsv.gz"] =                  f"data/{database}/nextclade.tsv"
+        files_to_upload["mutation-summary.tsv.xz"] = f"data/{database}/mutation-summary.tsv"
+        files_to_upload["aligned.fasta.xz"] =        f"data/{database}/aligned.fasta"
+
+    return files_to_upload
+
 
 rule upload:
     input:
-        **files_to_upload
+        unpack(compute_files_to_upload)
     output:
         touch(f"data/{database}/upload.done")
     params:
