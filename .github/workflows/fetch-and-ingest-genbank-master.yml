@@ -2,12 +2,25 @@ name: GenBank fetch and ingest
 
 on:
   schedule:
-    # * is a special character in YAML so you have to quote this string
-    # Note times are in UTC, which is 1 or 2 hours behind CET depending on daylight savings
-    # Currently triggers at 12 UTC which is 13 CET (as of Nov 21)
-    # https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows#schedule
-    # https://crontab.guru/
-    - cron:  '7 12 * * *'
+    # Note times are in UTC, which is 1 or 2 hours behind CET depending on daylight savings.
+    #
+    # Currently, we aim to trigger ingest every day at 14:07 UTC which is 15:07 CET (as of Nov 2021).
+    # Note the actual runs might be late. As of right now, the action starts only around 14:22 UTC.
+    # Numerous people were confused, about that, including me:
+    #  - https://github.community/t/scheduled-action-running-consistently-late/138025/11
+    #  - https://github.com/github/docs/issues/3059
+    #
+    # Note, '*' is a special character in YAML, so you have to quote this string.
+    #
+    # Docs:
+    #  - https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows#schedule
+    #
+    # Tool that deciphers this particular format of crontab string:
+    #  - https://crontab.guru/
+    #
+    # Looks like you are about to modify this schedule? Make sure you also modify the schedule for the
+    # sister GISAID job, so that we don't need to keep two schedules in our heads.
+    - cron:  '7 14 * * *'
 
   # Manually triggered using `./bin/trigger genbank/fetch-and-ingest` (or `fetch-and-ingest`, which
   # includes GISAID)
@@ -23,7 +36,7 @@ jobs:
   fetch-and-ingest:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
 
     - name: setup
       run: ./bin/setup-github-workflow
