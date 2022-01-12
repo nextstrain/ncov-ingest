@@ -93,12 +93,12 @@ main() {
 
   INPUT_FASTA="data/${DATABASE}/sequences.fasta"
   OUTPUT_TSV="data/${DATABASE}/nextclade.tsv"
-  OUTPUT_FASTA="data/${DATABASE}/nextclade.aligned.fasta"
-  OUTPUT_MUTATION_SUMMARY="data/${DATABASE}/nextclade.mutation_summary.tsv"
+  OUTPUT_FASTA="data/${DATABASE}/aligned.fasta"
+  OUTPUT_MUTATION_SUMMARY="data/${DATABASE}/mutation-summary.tsv"
   TMP_INPUT_FASTA_DIR="tmp/${DATABASE}/fasta"
   TMP_OUTPUT_TSV_DIR="tmp/${DATABASE}/clades"
   TMP_OUTPUT_FASTA_DIR="tmp/${DATABASE}/aligned"
-  TMP_OUTPUT_MUTATION_SUMMARY_DIR="tmp/${DATABASE}/mutation_summary"
+  TMP_OUTPUT_MUTATION_SUMMARY_DIR="tmp/${DATABASE}/mutation-summary"
   TMP_DIR_NEXTCLADE_DATASET="tmp/dataset"
   TMP_NEXTCLADE_OUTPUT_DIR="tmp/${DATABASE}/output"
   INPUT_WILDCARD="${TMP_INPUT_FASTA_DIR}/*.fasta"
@@ -242,7 +242,7 @@ main() {
     echo "[ INFO] ${0}:${LINENO}: Concatenating Nextclade output TSV batches from '${TSV_OUTPUT_WILDCARD}' into '${OUTPUT_TSV}'"
     csvstack --tabs ${TSV_OUTPUT_WILDCARD} | csvformat --out-tabs >"${OUTPUT_TSV}"
   else
-    echo "[ERROR] ${0}:${LINENO}: Output TSV batches are not found: '${TSV_OUTPUT_WILDCARD}'. Nextclade jobs mush have failed to write their results."
+    echo "[ERROR] ${0}:${LINENO}: Output TSV batches are not found: '${TSV_OUTPUT_WILDCARD}'. Nextclade jobs must have failed to write their results."
     exit 1
   fi
 
@@ -262,11 +262,11 @@ main() {
     echo "[ INFO] ${0}:${LINENO}: Concatenating Nextclade output FASTA batches from '${FASTA_OUTPUT_WILDCARD}' into '${OUTPUT_FASTA}'"
     cat ${FASTA_OUTPUT_WILDCARD} >"${OUTPUT_FASTA}"
   else
-    echo "[ERROR] ${0}:${LINENO}: Output FASTA batches are not found: '${FASTA_OUTPUT_WILDCARD}'. Nextclade jobs mush have failed to write their results."
+    echo "[ERROR] ${0}:${LINENO}: Output FASTA batches are not found: '${FASTA_OUTPUT_WILDCARD}'. Nextclade jobs must have failed to write their results."
     exit 1
   fi
 
-  echo "[ INFO] ${0}:${LINENO}: Calculate mutation_summary.tsv for every batch"
+  echo "[ INFO] ${0}:${LINENO}: Calculate mutation-summary.tsv for every batch"
   for input in ${INPUT_WILDCARD}; do
     if [ ! -e "${input}" ]; then
       # If ${input} does not exist, this means that INPUT_WILDCARD was not expanded,
@@ -279,7 +279,7 @@ main() {
     output_fasta_basename="${input_basename%.fasta}.aligned.fasta"
     output_fasta_filename="${TMP_OUTPUT_FASTA_DIR}/${output_fasta_basename}"
     output_dir="${TMP_NEXTCLADE_OUTPUT_DIR}/${input_basename%.fasta}"
-    output_mutation_summary="${TMP_OUTPUT_MUTATION_SUMMARY_DIR}/${input_basename%.fasta}.mutation_summary.tsv"
+    output_mutation_summary="${TMP_OUTPUT_MUTATION_SUMMARY_DIR}/${input_basename%.fasta}.mutation-summary.tsv"
 
     mkdir -p "${TMP_OUTPUT_MUTATION_SUMMARY_DIR}"
 
@@ -300,18 +300,18 @@ main() {
   if ls ${MUTATION_SUMMARY_OUTPUT_WILDCARD} 1>/dev/null 2>&1; then
     # shellcheck disable=SC2012 # We want globbing here
     NUM_OUTPUT_MUTATION_SUMMARY_BATCHES="$(ls -Ubad1 -- ${MUTATION_SUMMARY_OUTPUT_WILDCARD} 2>/dev/null | wc -l)"
-    echo "[ INFO] ${0}:${LINENO}: There are now ${NUM_OUTPUT_MUTATION_SUMMARY_BATCHES} output mutation_summary.tsv batches to concatenate (batch size is ${BATCH_SIZE})"
-    echo "[ INFO] ${0}:${LINENO}: Concatenating Nextclade output mutation_summary.tsv batches from '${MUTATION_SUMMARY_OUTPUT_WILDCARD}' into '${OUTPUT_MUTATION_SUMMARY}'"
+    echo "[ INFO] ${0}:${LINENO}: There are now ${NUM_OUTPUT_MUTATION_SUMMARY_BATCHES} output mutation-summary.tsv batches to concatenate (batch size is ${BATCH_SIZE})"
+    echo "[ INFO] ${0}:${LINENO}: Concatenating Nextclade output mutation-summary.tsv batches from '${MUTATION_SUMMARY_OUTPUT_WILDCARD}' into '${OUTPUT_MUTATION_SUMMARY}'"
     csvstack --tabs ${MUTATION_SUMMARY_OUTPUT_WILDCARD} | csvformat --out-tabs >"${OUTPUT_MUTATION_SUMMARY}"
   else
-    echo "[ERROR] ${0}:${LINENO}: Output mutation_summary.tsv batches are not found: '${FASTA_OUTPUT_WILDCARD}'. ./bin/mutation-summary mush have failed to write their results."
+    echo "[ERROR] ${0}:${LINENO}: Output mutation-summary.tsv batches are not found: '${FASTA_OUTPUT_WILDCARD}'. ./bin/mutation-summary must have failed to write their results."
     exit 1
   fi
 
   echo "[ INFO] ${0}:${LINENO}: Upload results"
   ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_TSV}" "$S3_DST/nextclade.tsv.gz"
-  ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_FASTA}" "$S3_DST/nextclade.aligned.fasta.xz"
-  ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_MUTATION_SUMMARY}" "$S3_DST/nextclade.mutation_summary.tsv.xz"
+  ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_FASTA}" "$S3_DST/aligned.fasta.xz"
+  ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_MUTATION_SUMMARY}" "$S3_DST/mutation-summary.tsv.xz"
 
   # Cut the running time by deleting working directory and avoiding zipping it.
   # We are unlikely to inspect it anyways. But keep the TSV result file, just in
