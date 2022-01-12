@@ -4,7 +4,30 @@ set -euo pipefail
 : "${GISAID_API_ENDPOINT:?The GISAID_API_ENDPOINT environment variable is required.}"
 : "${GISAID_USERNAME_AND_PASSWORD:?The GISAID_USERNAME_AND_PASSWORD environment variable is required.}"
 
-curl "$GISAID_API_ENDPOINT" \
-    --user "$GISAID_USERNAME_AND_PASSWORD" \
-    --fail --silent --show-error --location-trusted --http1.1 \
-    | bunzip2
+: "${1:?Output file path is required.}"
+
+GISAID_API_ENDPOINT_WITHOUT_SCHEME=$(echo "${GISAID_API_ENDPOINT}" | sed -E 's/^\s*.*:\/\///g')
+GISAID_API_ENDPOINT_WITH_USERNAME_AND_PASSWORD="https://${GISAID_USERNAME_AND_PASSWORD}@${GISAID_API_ENDPOINT_WITHOUT_SCHEME}"
+
+GISAID_OUTPUT="${1}"
+GISAID_SNAPSHOT="${GISAID_OUTPUT}.bz2"
+
+NUM_CONNECTIONS=8
+TIMEOUT_SECONDS=60
+MAX_RETRIES=5
+RETRY_WAIT_SECONDS=60
+
+aria2c "${GISAID_API_ENDPOINT_WITH_USERNAME_AND_PASSWORD}" \
+  --max-concurrent-downloads=${NUM_CONNECTIONS} \
+  --max-connection-per-server=${NUM_CONNECTIONS} \
+  --split=${NUM_CONNECTIONS} \
+  --continue=true \
+  --file-allocation=none \
+  --allow-overwrite=true \
+  --allow-piece-length-change=true \
+  --max-tries=${MAX_RETRIES} \
+  --retry-wait=${RETRY_WAIT_SECONDS} \
+  --timeout=${TIMEOUT_SECONDS} \
+  --out="${GISAID_SNAPSHOT}"
+
+lbzip2 -cd "${GISAID_SNAPSHOT}" > "${GISAID_OUTPUT}"
