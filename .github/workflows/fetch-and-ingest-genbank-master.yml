@@ -4,7 +4,7 @@ on:
   schedule:
     # * is a special character in YAML so you have to quote this string
     # Note times are in UTC, which is 1 or 2 hours behind CET depending on daylight savings
-    # Currently triggers at 14.00 UTC which is 15.00 CET (as of Nov 2021)
+    # Currently triggers every day at 14:07 UTC which is 15:07 CET (as of Nov 2021)
     # https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows#schedule
     # https://crontab.guru/
     - cron:  '7 14 * * *'
