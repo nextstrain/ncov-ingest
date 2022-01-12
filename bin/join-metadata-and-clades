@@ -26,6 +26,7 @@ column_map = {
     "qc.frameShifts.frameShifts": "QC_frame_shifts",
     "qc.stopCodons.stopCodons": "QC_stop_codons",
     "frameShifts": "frame_shifts",
+    "deletions": "deletions",
     "insertions": "insertions",
     "substitutions": "substitutions",
     "aaSubstitutions": "aaSubstitutions"
