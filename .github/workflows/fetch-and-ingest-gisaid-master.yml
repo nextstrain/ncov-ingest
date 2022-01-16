@@ -62,14 +62,14 @@ jobs:
           --no-download \
           --image nextstrain/ncov-ingest \
           --cpus 16 \
-          --memory 31GiB \
+          --memory 48GiB \
           --exec env \
           . \
             envdir env.d snakemake \
               --configfile config/gisaid.yaml \
               --config "${config[@]}" \
               --cores 16 \
-              --resources mem_mb=31000 \
+              --resources mem_mb=47000 \
               --printshellcmds
       env:
         AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
