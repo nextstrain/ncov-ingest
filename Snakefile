@@ -308,7 +308,7 @@ rule mutation_summary:
 
 rule combine_mutation_summaries:
     message:
-        """ 
+        """
         Generating full mutation summary by combining with previous (cached) summary
         """
     input:
@@ -351,6 +351,9 @@ rule flag_metadata:
         metadata = "data/gisaid/metadata.tsv"
     output:
         metadata = "data/gisaid/flagged_metadata.txt"
+    resources:
+        # Memory use scales primarily with the size of the metadata file.
+        mem_mb=20000
     shell:
         """
         ./bin/flag-metadata {input.metadata} > {output.metadata}
@@ -363,6 +366,9 @@ rule check_locations:
         unique_id = "gisaid_epi_isl" if database=="gisaid" else "genbank_accession"
     output:
         location_hierarchy = f"data/{database}/location_hierarchy.tsv"
+    resources:
+        # Memory use scales primarily with the size of the metadata file.
+        mem_mb=20000
     shell:
         """
         ./bin/check-locations {input.metadata} {output.location_hierarchy} {params.unique_id}
