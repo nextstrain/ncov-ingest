@@ -67,6 +67,7 @@ Europe/Netherlands/Limburg NL/Beek	Europe/Netherlands/Limburg NL/Beek NL
 Europe/Netherlands/Flevoland/Creil	Europe/Netherlands/Flevoland/Creil NL
 Europe/Netherlands/Friesland/Haulerwijk	Europe/Netherlands/Friesland/Haulerwijk (Friesland)
 Europe/Netherlands/Friesland/Noordwolde	Europe/Netherlands/Friesland/Noordwolde (Friesland)
+Europe/Netherlands/Overijssel/Borne	Europe/Netherlands/Overijssel/Borne NL
 Europe/France/Grand-Est/*	Europe/France/Grand Est/*
 Europe/France/Hauts-de-France/Crépy-en -Valois	Europe/France/Hauts de France/Crépy en Valois
 Europe/France/Hauts-de-France/Pontoise	Europe/France/Ile de France/Pontoise
@@ -154,6 +155,8 @@ Europe/France/Auvergne-Rhône-Alpes/Landes	Europe/France/Auvergne-Rhône-Alpes/L
 Europe/France/Auvergne-Rhône-Alpes/Reims	Europe/France/Auvergne-Rhône-Alpes/Reims (Auvergne-Rhône-Alpes)
 Europe/France/Auvergne-Rhône-Alpes/Luisant	Europe/France/Auvergne-Rhône-Alpes/Luisant (Auvergne-Rhône-Alpes)
 Europe/France/Auvergne-Rhône-Alpes/Montargis	Europe/France/Auvergne-Rhône-Alpes/Montargis (Auvergne-Rhône-Alpes)
+Europe/France/Auvergne-Rhône-Alpes/Nevers	Europe/France/Auvergne-Rhône-Alpes/Nevers (Auvergne-Rhône-Alpes)
+Europe/France/Auvergne-Rhône-Alpes/Borne	Europe/France/Auvergne-Rhône-Alpes/Borne FR
 Europe/France/Provence-Alpes-Côte-D’Azur/*	Europe/France/Provence-Alpes-Côte d'Azur/*
 Europe/France/Centre-Val de Loire/Angers	Europe/France/Pays de la Loire/Angers (Pays de la Loire)
 Europe/France/Centre-Val de Loire/Rouziers de Touraine	Europe/France/Centre-Val de Loire/Rouziers-de-Touraine
@@ -318,6 +321,7 @@ Europe/France/Bourgogne-France-Comté/Chalon-sur-Saone	Europe/France/Bourgogne-F
 Europe/France/Bourgogne-France-Comté/Lons-le-Saunier	Europe/France/Bourgogne-France-Comté/Lons le Saunier
 Europe/France/Bourgogne-France-Comté/Macon	Europe/France/Bourgogne-France-Comté/Macon FR
 Europe/France/Bourgogne-France-Comté/Chalon sur Saone	Europe/France/Bourgogne-France-Comté/Chalon sur Saone (Bourgogne-France-Comté)
+Europe/France/Bourgogne-France-Comté/Nevers	Europe/France/Bourgogne-France-Comté/Nevers (Bourgogne-France-Comté)
 Europe/France/Nouvelle Aquitaine/*	Europe/France/Nouvelle-Aquitaine/*
 Europe/France/Normandie/Rouen Cedex	Europe/France/Normandie/Rouen
 Europe/France/Meuse/	Europe/France/Grand Est/Meuse
@@ -6446,6 +6450,7 @@ Europe/Belgium/Vlaanderen/Oost-Vlaanderen	Europe/Belgium/Oost-Vlaanderen/
 Europe/Belgium/Vlaanderen/West-Vlaanderen	Europe/Belgium/West-Vlaanderen/
 Europe/Belgium/Wallonia Or Brussels/	Europe/Belgium/Brussels/
 Europe/Belgium/Ardennes/	Europe/Belgium/Wallonia/Ardennes BE
+Europe/Belgium/Nan/	Europe/Belgium/Belgium/
 Europe/Switzerland/Graubunden/*	Europe/Switzerland/Graubünden/*
 Europe/Switzerland/Graubã¼Nden/*	Europe/Switzerland/Graubünden/*
 Europe/Switzerland/Basel/	Europe/Switzerland/Basel-Stadt/
@@ -6774,6 +6779,7 @@ Europe/Czech Republic/Central Bohemian Region/Zeleneč	Europe/Czech Republic/Cen
 Europe/Czech Republic/Central Bohemian Region/Prague	Europe/Czech Republic/Prague/
 Europe/Czech Republic/Central Bohemian Region/Kamenice	Europe/Czech Republic/Central Bohemian Region/Kamenice CZ
 Europe/Czech Republic/Central Bohemian Region/Benesov	Europe/Czech Republic/Central Bohemian Region/Benesov (Central Bohemian Region)
+Europe/Czech Republic/Central Bohemian Region/Slatina	Europe/Czech Republic/Central Bohemian Region/Slatina (Central Bohemian Region)
 Europe/Czech Republic/Usti nad Labem Region/*	Europe/Czech Republic/Usti nad Labem/*
 Europe/Czech Republic/Ústí nad Labem Region/Litoměřice	Europe/Czech Republic/Usti nad Labem/Litomerice
 Europe/Czech Republic/Ústí nad Labem Region/*	Europe/Czech Republic/Usti nad Labem/*
@@ -6817,6 +6823,7 @@ Europe/Czech Republic/Moravian-Silesian Region/Vysocina Region	Europe/Czech Repu
 Europe/Czech Republic/Moravian-Silesian Region/Bilovec	Europe/Czech Republic/Moravian-Silesian Region/Bilovec (Moravian-Silesian Region)
 Europe/Czech Republic/Moravian-Silesian Region/Zlin Region	Europe/Czech Republic/Moravian-Silesian Region/Zlin Region (Moravian-Silesian Region)
 Europe/Czech Republic/Moravian-Silesian Region/Havirov	Europe/Czech Republic/Moravian-Silesian Region/Havirov (Moravian-Silesian Region)
+Europe/Czech Republic/Moravian-Silesian Region/Slatina	Europe/Czech Republic/Moravian-Silesian Region/Slatina (Moravian-Silesian Region)
 Europe/Czech Republic/Hradec Kralove Region/*	Europe/Czech Republic/Hradec Králové Region/*
 Europe/Czech Republic/Trutnov/	Europe/Czech Republic/Hradec Králové Region/Trutnov
 Europe/Czech Republic/Pardubice/	Europe/Czech Republic/Pardubice Region/Pardubice (Pardubice Region)
@@ -7186,6 +7193,10 @@ Europe/Poland/Pomerania/	Europe/Poland/Pomorskie/
 Europe/Poland/Dolnoslaskie/*	Europe/Poland/Dolnośląskie/*
 Europe/Poland/Dolnoslakie/*	Europe/Poland/Dolnośląskie/*
 Europe/Poland/Pomorze/	Europe/Poland/Pomorskie/
+Europe/Poland/Pomorze/Gdynia	Europe/Poland/Pomorze/Gdynia (Pomorze)
+Europe/Poland/Pomorze/Legowo	Europe/Poland/Pomorze/Legowo (Pomorze)
+Europe/Poland/Pomorze/Rusocin	Europe/Poland/Pomorze/Rusocin (Pomorze)
+Europe/Poland/Pomorze/Rotmanka	Europe/Poland/Pomorze/Rotmanka (Pomorze)
 Europe/Poland/Malopolska/Krakow	Europe/Poland/Malopolskie/Kraków
 Europe/Poland/Malopolska/*	Europe/Poland/Malopolskie/*
 Europe/Poland/Wielkopolska/*	Europe/Poland/Wielkopolskie/*
@@ -7287,6 +7298,9 @@ Europe/Poland/Wielkopolskie/Poznanski	Europe/Poland/Wielkopolskie/Poznanski (Wie
 Europe/Poland/Wielkopolskie/Sredzki	Europe/Poland/Wielkopolskie/Sredzki (Wielkopolskie)
 Europe/Poland/Wielkopolskie/Slupecki	Europe/Poland/Wielkopolskie/Slupecki (Wielkopolskie)
 Europe/Poland/Wielkopolskie/Biskupice	Europe/Poland/Wielkopolskie/Biskupice (Wielkopolskie)
+Europe/Poland/Wielkopolskie/Szamotulski	Europe/Poland/Wielkopolskie/Szamotulski (Wielkopolskie)
+Europe/Poland/Wielkopolskie/Krotoszynski	Europe/Poland/Wielkopolskie/Krotoszynski (Wielkopolskie)
+Europe/Poland/Wielkopolskie/Obornicki	Europe/Poland/Wielkopolskie/Obornicki (Wielkopolskie)
 Europe/Poland/Warminsko-Mazurskie/Olsztynski	Europe/Poland/Warminsko-Mazurskie/Olsztyn
 Europe/Poland/Warminsko-Mazurskie/Komorniki	Europe/Poland/Warminsko-Mazurskie/Komorniki (Warminsko-Mazurskie)
 Europe/Poland/Warminsko-Mazurskie/Lutry	Europe/Poland/Warminsko-Mazurskie/Lutry PL
@@ -7312,6 +7326,7 @@ Europe/Poland/Warminsko-Mazurskie/Elcki	Europe/Poland/Warminsko-Mazurskie/Elk
 Europe/Poland/Warminsko-Mazurskie/Brzeziny	Europe/Poland/Warminsko-Mazurskie/Brzeziny (Warminsko-Mazurskie)
 Europe/Poland/Warminsko-Mazurskie/Krosno	Europe/Poland/Warminsko-Mazurskie/Krosno (Warminsko-Mazurskie)
 Europe/Poland/Warminsko-Mazurskie/Olesno	Europe/Poland/Warminsko-Mazurskie/Olesno (Warminsko-Mazurskie)
+Europe/Poland/Warminsko-Mazurskie/Kolobrzeski	Europe/Poland/Warminsko-Mazurskie/Kolobrzeski (Warminsko-Mazurskie)
 Europe/Poland/Podlaskie/Bielsk Podlaski	Europe/Poland/Podlaskie/Bielsk Podlaski
 Europe/Poland/Podlaskie/Orzysz	Europe/Poland/Warminsko-Mazurskie/Orzysz
 Europe/Poland/Podlaskie/Bialystok	Europe/Poland/Podlaskie/Białystok
@@ -7424,6 +7439,10 @@ Europe/Poland/Pomorskie/Tarnobrzeg	Europe/Poland/Podkarpackie/Tarnobrzeg
 Europe/Poland/Pomorskie/Braniewo	Europe/Poland/Warminsko-Mazurskie/Braniewo
 Europe/Poland/Pomorskie/Zielin	Europe/Poland/Pomorskie/Zielin (Pomorskie)
 Europe/Poland/Pomorskie/Kamien	Europe/Poland/Pomorskie/Kamien (Pomorskie)
+Europe/Poland/Pomorskie/Gdynia	Europe/Poland/Pomorskie/Gdynia (Pomorskie)
+Europe/Poland/Pomorskie/Legowo	Europe/Poland/Pomorskie/Legowo (Pomorskie)
+Europe/Poland/Pomorskie/Rusocin	Europe/Poland/Pomorskie/Rusocin (Pomorskie)
+Europe/Poland/Pomorskie/Rotmanka	Europe/Poland/Pomorskie/Rotmanka (Pomorskie)
 Europe/Poland/Łódzkie/Łódź	Europe/Poland/Łódzkie/Lodz
 Europe/Poland/Łódzkie/Kalisz	Europe/Poland/Wielkopolskie/Kalisz
 Europe/Poland/Łódzkie/Szowsko	Europe/Poland/Podkarpackie/Szowsko
@@ -7466,6 +7485,8 @@ Europe/Poland/Łódzkie/Poznan	Europe/Poland/Łódzkie/Poznan (Łódzkie)
 Europe/Poland/Łódzkie/Poznanski	Europe/Poland/Łódzkie/Poznanski (Łódzkie)
 Europe/Poland/Łódzkie/Sredzki	Europe/Poland/Łódzkie/Sredzki (Łódzkie)
 Europe/Poland/Łódzkie/Slupecki	Europe/Poland/Łódzkie/Slupecki (Łódzkie)
+Europe/Poland/Łódzkie/Szamotulski	Europe/Poland/Łódzkie/Szamotulski (Łódzkie)
+Europe/Poland/Łódzkie/Obornicki	Europe/Poland/Łódzkie/Obornicki (Łódzkie)
 Europe/Poland/Śląskie/*	Europe/Poland/Slaskie/*
 Europe/Poland/Opolskie/Kedzierzyn-Kozle	Europe/Poland/Opolskie/Kedzierzyn Kozle
 Europe/Poland/Opolskie/Kędzierzyn-Koźle	Europe/Poland/Opolskie/Kedzierzyn Kozle
@@ -7539,6 +7560,10 @@ Europe/Poland/Slaskie/Biala	Europe/Poland/Slaskie/Biala (Slaskie)
 Europe/Poland/Slaskie/Lubrza	Europe/Poland/Slaskie/Lubrza (Slaskie)
 Europe/Poland/Slaskie/Pisarzowice	Europe/Poland/Slaskie/Pisarzowice (Slaskie)
 Europe/Poland/Slaskie/Mnich	Europe/Poland/Slaskie/Mnich PL
+Europe/Poland/Slaskie/Cieszyn	Europe/Poland/Slaskie/Cieszyn (Slaskie)
+Europe/Poland/Slaskie/Lodygowice	Europe/Poland/Slaskie/Lodygowice (Slaskie)
+Europe/Poland/Slaskie/Bytom	Europe/Poland/Slaskie/Bytom (Slaskie)
+Europe/Poland/Slaskie/Jastrzebie-Zdroj	Europe/Poland/Slaskie/Jastrzebie-Zdroj (Slaskie)
 Europe/Poland/Zachodniopomorskie/Kamaleien Pomaleorski	Europe/Poland/Zachodniopomorskie/Kamien Pomorski
 Europe/Poland/Zachodniopomorskie/Pomaleianowo	Europe/Poland/Zachodniopomorskie/
 Europe/Poland/Zachodniopomorskie/Borzymale	Europe/Poland/Zachodniopomorskie/
@@ -7633,15 +7658,23 @@ Europe/Poland/Podkarpakie/*	Europe/Poland/Podkarpackie/*
 Europe/Poland/Ma?Opolskie/*	Europe/Poland/Malopolskie/*
 Europe/Poland/Malpolskie/*	Europe/Poland/Malopolskie/*
 Europe/Poland/Kuyavian-Pomeranian/Nakielski	Europe/Poland/Kuyavian-Pomeranian/Nakielski (Kuyavian-Pomeranian)
+Europe/Poland/Woj. Slaskie/*	Europe/Poland/Slaskie/*
+Europe/Poland/Slask/Cieszyn	Europe/Poland/Slask/Cieszyn (Slask)
+Europe/Poland/Slask/Lodygowice	Europe/Poland/Slask/Lodygowice (Slask)
+Europe/Poland/Slask/Bytom	Europe/Poland/Slask/Bytom (Slask)
+Europe/Poland/Slask/Jastrzebie-Zdroj	Europe/Poland/Slask/Jastrzebie-Zdroj (Slask)
+Europe/Poland/West Pomeranian Voivodeship/Kolobrzeski	Europe/Poland/West Pomeranian Voivodeship/Kolobrzeski (West Pomeranian Voivodeship)
+Europe/Poland/Greater Poland Voivodeship/Krotoszynski	Europe/Poland/Greater Poland Voivodeship/Krotoszynski (Greater Poland Voivodeship)
 Europe/Italy/Apulia/Bat	Europe/Italy/Apulia/Barletta-Andria-Trani
 Europe/Italy/Apulia/Potenza	Europe/Italy/Basilicata/Potenza
 Europe/Italy/Apulia/Matera	Europe/Italy/Basilicata/Matera
-Europe/Italy/Apulia/Milano	Europe/Italy/Lombardy/Milano
+Europe/Italy/Apulia/Milano	Europe/Italy/Lombardy/Milano (Lombardy)
 Europe/Italy/Apulia/Treviso	Europe/Italy/Apulia/Treviso (Apulia)
 Europe/Italy/Apulia/Ruvo di Puglia	Europe/Italy/Apulia/Ruvo di Puglia (Apulia)
 Europe/Italy/Apulia/Roma	Europe/Italy/Apulia/Roma (Apulia)
 Europe/Italy/Apulia/Sava	Europe/Italy/Apulia/Sava IT
 Europe/Italy/Apulia/Alezio	Europe/Italy/Apulia/Alezio (Apulia)
+Europe/Italy/Apulia/Barletta	Europe/Italy/Apulia/Barletta (Apulia)
 Europe/Italy/Padova/	Europe/Italy/Veneto/Padova
 Europe/Italy/Puglia/*	Europe/Italy/Apulia/*
 Europe/Italy/Bozen/	Europe/Italy/Trentino-Alto Adige/Autonomous Province of Bolzano
@@ -7653,6 +7686,7 @@ Europe/Italy/Toscana/*	Europe/Italy/Tuscany/*
 Europe/Italy/Trentino Alto Adige/*	Europe/Italy/Trentino-Alto Adige/*
 Europe/Italy/Campania/Napoli	Europe/Italy/Campania/Naples
 Europe/Italy/Campania/Campobasso	Europe/Italy/Campania/Campobasso (Campania)
+Europe/Italy/Campania/Salerno	Europe/Italy/Campania/Salerno (Campania)
 Europe/Italy/Molise/Padova	Europe/Italy/Veneto/Padova
 Europe/Italy/Molise/Bojano	Europe/Italy/Molise/Bojano IT
 Europe/Italy/Molise/Roma	Europe/Italy/Lazio/Rome
@@ -7667,6 +7701,7 @@ Europe/Italy/Piemonte/*	Europe/Italy/Piedmont/*
 Europe/Italy/Sicilia/*	Europe/Italy/Sicily/*
 Europe/Italy/Veneto/Treviso	Europe/Italy/Veneto/Treviso (Veneto)
 Europe/Italy/Veneto/Treviso IT	Europe/Italy/Veneto/Treviso (Veneto)
+Europe/Italy/Veneto/Padua	Europe/Italy/Veneto/Padua (Veneto)
 Europe/Italy/Emilia - Romagna/*	Europe/Italy/Emilia-Romagna/*
 Europe/Italy/Valle D Aosta/*	Europe/Italy/Valle D'Aosta/*
 Europe/Italy/Lazio/Roma	Europe/Italy/Lazio/Roma (Lazio)
@@ -7674,9 +7709,17 @@ Europe/Italy/Lazio/Roma IT	Europe/Italy/Lazio/Roma (Lazio)
 Europe/Italy/Trentino-Alto Adige/Brescia	Europe/Italy/Trentino-Alto Adige/Brescia (Trentino-Alto Adige)
 Europe/Italy/Trentino-Alto Adige/Genova	Europe/Italy/Trentino-Alto Adige/Genova IT
 Europe/Italy/Trentino-Alto Adige/Ruvo di Puglia	Europe/Italy/Trentino-Alto Adige/Ruvo di Puglia (Trentino-Alto Adige)
+Europe/Italy/Trentino-Alto Adige/Barletta	Europe/Italy/Trentino-Alto Adige/Barletta (Trentino-Alto Adige)
+Europe/Italy/Trentino-Alto Adige/L'Aquila	Europe/Italy/Trentino-Alto Adige/L'Aquila (Trentino-Alto Adige)
+Europe/Italy/Trentino-Alto Adige/Padua	Europe/Italy/Trentino-Alto Adige/Padua (Trentino-Alto Adige)
+Europe/Italy/Trentino-Alto Adige/Milano	Europe/Italy/Trentino-Alto Adige/Milano (Trentino-Alto Adige)
+Europe/Italy/Trentino-Alto Adige/Treviso	Europe/Italy/Trentino-Alto Adige/Treviso (Trentino-Alto Adige)
+Europe/Italy/Trentino-Alto Adige/Salerno	Europe/Italy/Trentino-Alto Adige/Salerno (Trentino-Alto Adige)
 Europe/Italy/Lombardy/Brescia	Europe/Italy/Lombardy/Brescia (Lombardy)
+Europe/Italy/Lombardy/Milano	Europe/Italy/Lombardy/Milano (Lombardy)
 Europe/Italy/The Marches/*	Europe/Italy/Marche/*
 Europe/Italy/Basilicata/Alezio	Europe/Italy/Basilicata/Alezio (Basilicata)
+Europe/Italy/Abruzzo/L'Aquila	Europe/Italy/Abruzzo/L'Aquila (Abruzzo)
 Europe/Finland/Lapland/	Europe/Finland/Finland/Rovaniemi
 Europe/Finland/Kanta-Hame/*	Europe/Finland/Kanta-Häme/*
 Europe/Finland/Vaasa/	Europe/Finland/Ostrobothnia/Vaasa
@@ -7973,6 +8016,7 @@ Europe/Bosnia and Herzegovina/Siroki Brijeg/	Europe/Bosnia and Herzegovina/West 
 Europe/Bosnia and Herzegovina/Stolac/	Europe/Bosnia and Herzegovina/Herzegowina-Neretva/Stolac
 Europe/Bosnia and Herzegovina/Ljubuski/	Europe/Bosnia and Herzegovina/West Herzegovina/Ljubuski
 Europe/Bosnia and Herzegovina/Grude/	Europe/Bosnia and Herzegovina/West Herzegovina/Grude
+Europe/Bosnia and Herzegovina/Citluk/	Europe/Bosnia and Herzegovina/Herzegowina-Neretva/Citluk
 Europe/Greece/Livadia/	Europe/Greece/Central Greece/Livadeia
 Europe/Greece/Livadia/*	Europe/Greece/Livadeia/*
 Europe/Greece/Central Greece/Livadia	Europe/Greece/Central Greece/Livadeia
@@ -9425,11 +9469,13 @@ Asia/India/Gujarat/Sandhadal	Asia/India/Gujarat/Sandhasal
 Asia/India/Gujarat/New Delhi	Asia/India/Delhi/New Delhi
 Asia/India/Gujarat/Faridabad	Asia/India/Haryana/Faridabad
 Asia/India/Gujarat/Gadhinagar	Asia/India/Gujarat/Gandhinagar
-Asia/India/Gujarat/Mansa	Asia/India/Gujarat/Mansa IN
+Asia/India/Gujarat/Mansa	Asia/India/Gujarat/Mansa (Gujarat)
 Asia/India/Gujarat/Una	Asia/India/Gujarat/Una IN
 Asia/India/Gujarat/Rajpara	Asia/India/Gujarat/Rajpara IN
 Asia/India/Gujarat/Mumbai	Asia/India/Maharashtra/Mumbai
 Asia/India/Gujarat/Na	Asia/India/Gujarat/
+Asia/India/Gujarat/Mansa IN	Asia/India/Gujarat/Mansa (Gujarat)
+Asia/India/Gujarat/Undefined	Asia/India/Gujarat/
 Asia/India/Punjab/*	Asia/India/Punjab IN/*
 Asia/India/West Bengal/Hoogly	Asia/India/West Bengal/Hooghly
 Asia/India/West Bengal/East Medinipur	Asia/India/West Bengal/Purba Medinipur
@@ -9456,7 +9502,7 @@ Asia/India/Daskroi/	Asia/India/Gujarat/Daskroi
 Asia/India/Khambhaliya/	Asia/India/Gujarat/Khambhaliya
 Asia/India/Mehsana/	Asia/India/Gujarat/Mehsana
 Asia/India/Dahegam/	Asia/India/Gujarat/Dahegam
-Asia/India/Mansa/	Asia/India/Gujarat/Mansa IN
+Asia/India/Mansa/	Asia/India/Gujarat/Mansa (Gujarat)
 Asia/India/Dhandhuka/	Asia/India/Gujarat/Dhandhuka
 Asia/India/Patan/	Asia/India/Gujarat/Patan
 Asia/India/Siddhpur/	Asia/India/Gujarat/Siddhpur
@@ -9499,7 +9545,9 @@ Asia/India/Gujart/*	Asia/India/Gujarat/*
 Asia/India/Bihar/Gopalganj	Asia/India/Bihar/Gopalganj IN
 Asia/India/Tamilnadu/*	Asia/India/Tamil Nadu/*
 Asia/India/Punjab IN/Rupnagar	Asia/India/Punjab IN/Rupnagar IN
+Asia/India/Punjab IN/Mansa	Asia/India/Punjab IN/Mansa (Punjab IN)
 Asia/India/Maharashtra/Goa	Asia/India/Goa/
+Asia/India/Rajasthan/Undefined	Asia/India/Rajasthan/
 Asia/Bangladesh/Chittagong/Cox'S Bazar	Asia/Bangladesh/Chattogram/Cox's Bazar
 Asia/Bangladesh/Chittagong/Nimtola	Asia/Bangladesh/Dhaka/Nimtola
 Asia/Bangladesh/Khulna/Jessore	Asia/Bangladesh/Khulna/Jashore
@@ -9706,6 +9754,7 @@ Asia/Thailand/Nongbualamphu/*	Asia/Thailand/Nong Bua Lam Phu/*
 Asia/Thailand/Sisaket/*	Asia/Thailand/Si Sa Ket/*
 Asia/Thailand/Samutsongkhram/*	Asia/Thailand/Samut Songkhram/*
 Asia/Thailand/Ubon Ratchathani/*	Asia/Thailand/Ubonratchathani/*
+Asia/Thailand/Nan/	Asia/Thailand/Thailand/
 Asia/Oman/Musca/	Asia/Oman/Muscat/
 Asia/Oman/Muscta/	Asia/Oman/Muscat/
 Asia/Oman/Buraymi/Buraymi	Asia/Oman/Buraimi/Buraimi
@@ -9899,6 +9948,8 @@ Asia/Sri Lanka/Southern Province/*	Asia/Sri Lanka/Southern Province LK/*
 Asia/Sri Lanka/Northern Province/*	Asia/Sri Lanka/Northern Province LK/*
 Asia/Sri Lanka/Sothern Province/*	Asia/Sri Lanka/Southern Province LK/*
 Asia/Sri Lanka/Minuwangoda/	Asia/Sri Lanka/Western Province/Minuwangoda
+Asia/Sri Lanka/Ja-Ela/*	Asia/Sri Lanka/Ja Ela/*
+Asia/Sri Lanka/Bia Airport/	Asia/Sri Lanka/Western Province/Bia Airport
 Asia/Palestine/Tulkarem/	Asia/Palestine/West Bank/Tulkarem
 Asia/Palestine/West Bank/Jericho	Asia/Palestine/Jericho/
 Asia/Palestine/West Bank/Ramallah	Asia/Palestine/Ramallah and al-Bireh Governorate/Ramallah
@@ -9940,6 +9991,7 @@ Asia/Malaysia/Dengkil/	Asia/Malaysia/Selangor/Dengkil
 Asia/Malaysia/Wp Kuala Lumpur/*	Asia/Malaysia/Kuala Lumpur/*
 Asia/Malaysia/Pulau Pinang/*	Asia/Malaysia/Penang/*
 Asia/Malaysia/Asia/Malaysia	Asia/Malaysia/Malaysia/
+Asia/Malaysia/Wp Labuan/*	Asia/Malaysia/Labuan/*
 Asia/Bangaldesh/*/*	Asia/Bangladesh/*/*
 Asia/Georgia/Georgia/*	Asia/Georgia/Georgia (Asia)/*
 Asia/Georgia//	Asia/Georgia/Georgia (Asia)/
@@ -13705,6 +13757,8 @@ North America/USA/Ohio/Pike County	North America/USA/Ohio/Pike County OH
 North America/USA/Ohio/Highland County	North America/USA/Ohio/Highland County OH
 North America/USA/Ohio/Warren	North America/USA/Ohio/Warren OH
 North America/USA/Ohio/Logan	North America/USA/Ohio/Logan OH
+North America/USA/Ohio/Brown County	North America/USA/Ohio/Brown County OH
+North America/USA/Ohio/Logan County	North America/USA/Ohio/Logan County OH
 North America/USA/Colorado/El Paso County	North America/USA/Colorado/El Paso County CO
 North America/USA/Colorado/Mesa	North America/USA/Colorado/Mesa County
 North America/USA/Colorado/Denver	North America/USA/Colorado/Denver County
@@ -14157,6 +14211,8 @@ North America/USA/Colorado/Jefferson	North America/USA/Colorado/Jefferson County
 North America/USA/Colorado/Adams	North America/USA/Colorado/Adams County CO
 North America/USA/Colorado/Arapahoe	North America/USA/Colorado/Arapahoe County
 North America/USA/Colorado/Garfield County	North America/USA/Colorado/Garfield County CO
+North America/USA/Colorado/Adams County	North America/USA/Colorado/Adams County CO
+North America/USA/Colorado/Summit County	North America/USA/Colorado/Summit County CO
 North America/USA/Washington/Pierce County	North America/USA/Washington/Pierce County WA
 North America/USA/Washington/Umatilla County	North America/USA/Oregon/Umatilla County
 North America/USA/Washington/Grant County	North America/USA/Washington/Grant County WA
@@ -16261,6 +16317,8 @@ North America/USA/Arizona/Wayne	North America/USA/Arizona/Wayne AZ
 North America/USA/Arizona/Henrico County	North America/USA/Arizona/Henrico County AZ
 North America/USA/Arizona/Harris County	North America/USA/Arizona/Harris County AZ
 North America/USA/Arizona/Doa Ana County	North America/USA/Arizona/Doa Ana County AZ
+North America/USA/Arizona/King	North America/USA/Arizona/King AZ
+North America/USA/Arizona/Mckinley County	North America/USA/Arizona/Mckinley County AZ
 North America/USA/Indiana/Marion County	North America/USA/Indiana/Marion County IN
 North America/USA/Indiana/Lake County	North America/USA/Indiana/Lake County IN
 North America/USA/Indiana/Jefferson County	North America/USA/Indiana/Jefferson County IN
@@ -16945,7 +17003,7 @@ North America/USA/Indiana/Knox	North America/USA/Indiana/Knox IN
 North America/USA/California/Orange County	North America/USA/California/Orange County CA
 North America/USA/California/Kings County	North America/USA/California/Kings County CA
 North America/USA/California/Lake County	North America/USA/California/Lake County CA
-North America/USA/California/Los Angeles	North America/USA/California/Los Angeles County
+North America/USA/California/Los Angeles	North America/USA/California/Los Angeles County CA
 North America/USA/California/Santa Barbara	North America/USA/California/Santa Barbara County
 North America/USA/California/San Bernadino	North America/USA/California/San Bernardino County
 North America/USA/California/Kern	North America/USA/California/Kern County
@@ -16976,7 +17034,7 @@ North America/USA/California/Unavailable County	North America/USA/California/
 North America/USA/California/San Mateo	North America/USA/California/San Mateo County
 North America/USA/California/Southern San Joaquin Valley	North America/USA/California/
 North America/USA/California/Trinity County	North America/USA/California/Trinity County CA
-North America/USA/California/Long Beach City	North America/USA/California/Los Angeles County
+North America/USA/California/Long Beach City	North America/USA/California/Los Angeles County CA
 North America/USA/California/Marin	North America/USA/California/Marin County
 North America/USA/California/Madera	North America/USA/California/Madera County
 North America/USA/California/Alameda	North America/USA/California/Alameda County CA
@@ -17022,7 +17080,7 @@ North America/USA/California/Concord	North America/USA/California/Contra Costa C
 North America/USA/California/Mission Viejo	North America/USA/California/Orange County CA
 North America/USA/California/Bakersfield	North America/USA/California/Kern County
 North America/USA/California/Murrieta	North America/USA/California/Riverside County
-North America/USA/California/Long Beach	North America/USA/California/Los Angeles County
+North America/USA/California/Long Beach	North America/USA/California/Los Angeles County CA
 North America/USA/California/Oakland	North America/USA/California/Alameda County CA
 North America/USA/California/Indio	North America/USA/California/Riverside County
 North America/USA/California/Stockton	North America/USA/California/San Joaquin County
@@ -17030,10 +17088,10 @@ North America/USA/California/Oxnard	North America/USA/California/Ventura County
 North America/USA/California/Modesto	North America/USA/California/Stanislaus County
 North America/USA/California/Anaheim	North America/USA/California/Orange County CA
 North America/USA/California/Victorville	North America/USA/California/San Bernardino County
-North America/USA/California/Lancaster	North America/USA/California/Los Angeles County
+North America/USA/California/Lancaster	North America/USA/California/Los Angeles County CA
 North America/USA/California/Santa Ana	North America/USA/California/Orange County CA
 North America/USA/California/Santa Rosa	North America/USA/California/Sonoma County
-North America/USA/California/Santa Clarita	North America/USA/California/Los Angeles County
+North America/USA/California/Santa Clarita	North America/USA/California/Los Angeles County CA
 North America/USA/California/Antioch	North America/USA/California/Contra Costa County
 North America/USA/California/Irvine	North America/USA/California/Orange County CA
 North America/USA/California/Chula Vista	North America/USA/California/San Diego County
@@ -17042,7 +17100,7 @@ North America/USA/California/Visalia	North America/USA/California/Tulare County
 North America/USA/California/Thousand Oaks	North America/USA/California/Ventura County
 North America/USA/California/Fontana	North America/USA/California/San Bernardino County
 North America/USA/California/Moreno Valley	North America/USA/California/Riverside County
-North America/USA/California/Glendale	North America/USA/California/Los Angeles County
+North America/USA/California/Glendale	North America/USA/California/Los Angeles County CA
 North America/USA/California/Huntington Beach	North America/USA/California/Orange County CA
 North America/USA/California/Salinas	North America/USA/California/Monterey County CA
 North America/USA/California/Ontario	North America/USA/California/San Bernardino County
@@ -17054,82 +17112,82 @@ North America/USA/California/Vallejo	North America/USA/California/Solano County
 North America/USA/California/Garden Grove	North America/USA/California/Orange County CA
 North America/USA/California/Corona	North America/USA/California/Riverside County
 North America/USA/California/Hayward	North America/USA/California/Alameda County CA
-North America/USA/California/Palmdale	North America/USA/California/Los Angeles County
+North America/USA/California/Palmdale	North America/USA/California/Los Angeles County CA
 North America/USA/California/Sunnyvale	North America/USA/California/Santa Clara County
-North America/USA/California/Pomona	North America/USA/California/Los Angeles County
+North America/USA/California/Pomona	North America/USA/California/Los Angeles County CA
 North America/USA/California/Escondido	North America/USA/California/San Diego County
 North America/USA/California/Fairfield	North America/USA/California/Solano County
-North America/USA/California/Torrance	North America/USA/California/Los Angeles County
+North America/USA/California/Torrance	North America/USA/California/Los Angeles County CA
 North America/USA/California/Roseville	North America/USA/California/Placer County
-North America/USA/California/Pasadena	North America/USA/California/Los Angeles County
+North America/USA/California/Pasadena	North America/USA/California/Los Angeles County CA
 North America/USA/California/Santa Maria	North America/USA/California/Santa Barbara County
 North America/USA/California/Fullerton	North America/USA/California/Orange County CA
 North America/USA/California/Simi Valley	North America/USA/California/Ventura County
 North America/USA/California/Berkeley	North America/USA/California/Alameda County CA
 North America/USA/California/Redding	North America/USA/California/Shasta County
-North America/USA/California/East Los Angeles	North America/USA/California/Los Angeles County
+North America/USA/California/East Los Angeles	North America/USA/California/Los Angeles County CA
 North America/USA/California/Yuba City	North America/USA/California/Sutter County
 North America/USA/California/Gilroy	North America/USA/California/Santa Clara County
 North America/USA/California/Chico	North America/USA/California/Butte County CA
 North America/USA/California/Seaside	North America/USA/California/Monterey County CA
-North America/USA/California/El Monte	North America/USA/California/Los Angeles County
+North America/USA/California/El Monte	North America/USA/California/Los Angeles County CA
 North America/USA/California/Carlsbad	North America/USA/California/San Diego County
 North America/USA/California/Temecula	North America/USA/California/Riverside County
 North America/USA/California/Clovis	North America/USA/California/Fresno County
 North America/USA/California/Costa Mesa	North America/USA/California/Orange County CA
 North America/USA/California/El Centro	North America/USA/California/Imperial County CA
-North America/USA/California/Downey	North America/USA/California/Los Angeles County
+North America/USA/California/Downey	North America/USA/California/Los Angeles County CA
 North America/USA/California/Richmond	North America/USA/California/Contra Costa County
 North America/USA/California/Jurupa Valley	North America/USA/California/Riverside County
 North America/USA/California/San Buenaventura	North America/USA/California/Ventura County
-North America/USA/California/Inglewood	North America/USA/California/Los Angeles County
+North America/USA/California/Inglewood	North America/USA/California/Los Angeles County CA
 North America/USA/California/Turlock	North America/USA/California/Stanislaus County
 North America/USA/California/Daly City	North America/USA/California/San Mateo County
-North America/USA/California/West Covina	North America/USA/California/Los Angeles County
-North America/USA/California/Norwalk	North America/USA/California/Los Angeles County
+North America/USA/California/West Covina	North America/USA/California/Los Angeles County CA
+North America/USA/California/Norwalk	North America/USA/California/Los Angeles County CA
 North America/USA/California/Rialto	North America/USA/California/San Bernardino County
 North America/USA/California/Manteca	North America/USA/California/San Joaquin County
 North America/USA/California/Arden-Arcade	North America/USA/California/Sacramento County
 North America/USA/California/El Cajon	North America/USA/California/San Diego County
-North America/USA/California/Burbank	North America/USA/California/Los Angeles County
+North America/USA/California/Burbank	North America/USA/California/Los Angeles County CA
 North America/USA/California/Vista	North America/USA/California/San Diego County
 North America/USA/California/Vacaville	North America/USA/California/Solano County
 North America/USA/California/Tracy	North America/USA/California/San Joaquin County
 North America/USA/California/San Marcos	North America/USA/California/San Diego County
 North America/USA/California/Hesperia	North America/USA/California/San Bernardino County
-North America/USA/California/Compton	North America/USA/California/Los Angeles County
+North America/USA/California/Compton	North America/USA/California/Los Angeles County CA
 North America/USA/California/Menifee	North America/USA/California/Riverside County
 North America/USA/California/Chino	North America/USA/California/San Bernardino County
 North America/USA/California/Hanford	North America/USA/California/Kings County CA
-North America/USA/California/South Gate	North America/USA/California/Los Angeles County
-North America/USA/California/Carson	North America/USA/California/Los Angeles County
+North America/USA/California/South Gate	North America/USA/California/Los Angeles County CA
+North America/USA/California/Carson	North America/USA/California/Los Angeles County CA
 North America/USA/California/Livermore	North America/USA/California/Alameda County CA
 North America/USA/California/Westminster	North America/USA/California/Orange County CA
-North America/USA/California/Santa Monica	North America/USA/California/Los Angeles County
+North America/USA/California/Santa Monica	North America/USA/California/Los Angeles County CA
 North America/USA/California/San Leandro	North America/USA/California/Alameda County CA
 North America/USA/California/Citrus Heights	North America/USA/California/Sacramento County
-North America/USA/California/Hawthorne	North America/USA/California/Los Angeles County
+North America/USA/California/Hawthorne	North America/USA/California/Los Angeles County CA
 North America/USA/California/Redwood City	North America/USA/California/San Mateo County
 North America/USA/California/Lake Forest	North America/USA/California/Orange County CA
-North America/USA/California/Whittier	North America/USA/California/Los Angeles County
+North America/USA/California/Whittier	North America/USA/California/Los Angeles County CA
 North America/USA/California/Newport Beach	North America/USA/California/Orange County CA
 North America/USA/California/Milpitas	North America/USA/California/Santa Clara County
 North America/USA/California/Chino Hills	North America/USA/California/San Bernardino County
-North America/USA/California/Alhambra	North America/USA/California/Los Angeles County
+North America/USA/California/Alhambra	North America/USA/California/Los Angeles County CA
 North America/USA/California/Mountain View	North America/USA/California/Santa Clara County
 North America/USA/California/Buena Park	North America/USA/California/Orange County CA
 North America/USA/California/Pleasanton	North America/USA/California/Alameda County CA
 North America/USA/California/Folsom	North America/USA/California/Sacramento County
 North America/USA/California/Tustin	North America/USA/California/Orange County CA
-North America/USA/California/Lakewood	North America/USA/California/Los Angeles County
+North America/USA/California/Lakewood	North America/USA/California/Los Angeles County CA
 North America/USA/California/Perris	North America/USA/California/Riverside County
 North America/USA/California/Watsonville	North America/USA/California/Santa Cruz County CA
 North America/USA/California/Porterville	North America/USA/California/Tulare County
 North America/USA/California/Upland	North America/USA/California/San Bernardino County
 North America/USA/California/Camarillo	North America/USA/California/Ventura County
-North America/USA/California/Bellflower	North America/USA/California/Los Angeles County
+North America/USA/California/Bellflower	North America/USA/California/Los Angeles County CA
 North America/USA/California/San Ramon	North America/USA/California/Contra Costa County
-North America/USA/California/Baldwin Park	North America/USA/California/Los Angeles County
+North America/USA/California/Baldwin Park	North America/USA/California/Los Angeles County CA
 North America/USA/California/Rancho Cordova	North America/USA/California/Sacramento County
 North America/USA/California/Lodi	North America/USA/California/San Joaquin County
 North America/USA/California/Union City	North America/USA/California/Alameda County CA
@@ -17138,15 +17196,15 @@ North America/USA/California/Pittsburg	North America/USA/California/Contra Costa
 North America/USA/California/Redlands	North America/USA/California/San Bernardino County
 North America/USA/California/El Paso de Robles	North America/USA/California/San Luis Obispo County
 North America/USA/California/Walnut Creek	North America/USA/California/Contra Costa County
-North America/USA/California/Lynwood	North America/USA/California/Los Angeles County
+North America/USA/California/Lynwood	North America/USA/California/Los Angeles County CA
 North America/USA/California/Lake Elsinore	North America/USA/California/Riverside County
 North America/USA/California/Rocklin	North America/USA/California/Placer County
 North America/USA/California/South San Francisco	North America/USA/California/San Mateo County
 North America/USA/California/Yorba Linda	North America/USA/California/Orange County CA
 North America/USA/California/Petaluma	North America/USA/California/Sonoma County
-North America/USA/California/Redondo Beach	North America/USA/California/Los Angeles County
+North America/USA/California/Redondo Beach	North America/USA/California/Los Angeles County CA
 North America/USA/California/Laguna Niguel	North America/USA/California/Orange County CA
-North America/USA/California/Florence-Graham	North America/USA/California/Los Angeles County
+North America/USA/California/Florence-Graham	North America/USA/California/Los Angeles County CA
 North America/USA/California/Palo Alto	North America/USA/California/Santa Clara County
 North America/USA/California/Dublin	North America/USA/California/Alameda County CA
 North America/USA/California/San Clemente	North America/USA/California/Orange County CA
@@ -17155,42 +17213,42 @@ North America/USA/California/Carmichael	North America/USA/California/Sacramento 
 North America/USA/California/Eastvale	North America/USA/California/Riverside County
 North America/USA/California/Castro Valley	North America/USA/California/Alameda County CA
 North America/USA/California/Encinitas	North America/USA/California/San Diego County
-North America/USA/California/Pico Rivera	North America/USA/California/Los Angeles County
-North America/USA/California/Montebello	North America/USA/California/Los Angeles County
+North America/USA/California/Pico Rivera	North America/USA/California/Los Angeles County CA
+North America/USA/California/Montebello	North America/USA/California/Los Angeles County CA
 North America/USA/California/National City	North America/USA/California/San Diego County
 North America/USA/California/Woodland	North America/USA/California/Yolo County
 North America/USA/California/La Habra	North America/USA/California/Orange County CA
-North America/USA/California/South Whittier	North America/USA/California/Los Angeles County
-North America/USA/California/Monterey Park	North America/USA/California/Los Angeles County
-North America/USA/California/Gardena	North America/USA/California/Los Angeles County
+North America/USA/California/South Whittier	North America/USA/California/Los Angeles County CA
+North America/USA/California/Monterey Park	North America/USA/California/Los Angeles County CA
+North America/USA/California/Gardena	North America/USA/California/Los Angeles County CA
 North America/USA/California/Cupertino	North America/USA/California/Santa Clara County
 North America/USA/California/La Mesa	North America/USA/California/San Diego County
 North America/USA/California/San Rafael	North America/USA/California/Marin County
 North America/USA/California/Santee	North America/USA/California/San Diego County
-North America/USA/California/Arcadia	North America/USA/California/Los Angeles County
-North America/USA/California/Huntington Park	North America/USA/California/Los Angeles County
-North America/USA/California/Diamond Bar	North America/USA/California/Los Angeles County
+North America/USA/California/Arcadia	North America/USA/California/Los Angeles County CA
+North America/USA/California/Huntington Park	North America/USA/California/Los Angeles County CA
+North America/USA/California/Diamond Bar	North America/USA/California/Los Angeles County CA
 North America/USA/California/Novato	North America/USA/California/Marin County
 North America/USA/California/Highland	North America/USA/California/San Bernardino County
 North America/USA/California/Fountain Valley	North America/USA/California/Orange County CA
-North America/USA/California/Hacienda Heights	North America/USA/California/Los Angeles County
+North America/USA/California/Hacienda Heights	North America/USA/California/Los Angeles County CA
 North America/USA/California/Cathedral City	North America/USA/California/Riverside County
 North America/USA/California/Delano	North America/USA/California/Kern County
 North America/USA/California/Colton	North America/USA/California/San Bernardino County
 North America/USA/California/Arroyo Grande	North America/USA/California/San Luis Obispo County
-North America/USA/California/Rosemead	North America/USA/California/Los Angeles County
-North America/USA/California/Paramount	North America/USA/California/Los Angeles County
+North America/USA/California/Rosemead	North America/USA/California/Los Angeles County CA
+North America/USA/California/Paramount	North America/USA/California/Los Angeles County CA
 North America/USA/California/Yucaipa	North America/USA/California/San Bernardino County
 North America/USA/California/West Sacramento	North America/USA/California/Yolo County
 North America/USA/California/Palm Desert	North America/USA/California/Riverside County
 North America/USA/California/Lompoc	North America/USA/California/Santa Barbara County
-North America/USA/California/Glendora	North America/USA/California/Los Angeles County
+North America/USA/California/Glendora	North America/USA/California/Los Angeles County CA
 North America/USA/California/Placentia	North America/USA/California/Orange County CA
 North America/USA/California/Beaumont	North America/USA/California/Riverside County
 North America/USA/California/Aliso Viejo	North America/USA/California/Orange County CA
-North America/USA/California/Rowland Heights	North America/USA/California/Los Angeles County
-North America/USA/California/Azusa	North America/USA/California/Los Angeles County
-North America/USA/California/Cerritos	North America/USA/California/Los Angeles County
+North America/USA/California/Rowland Heights	North America/USA/California/Los Angeles County CA
+North America/USA/California/Azusa	North America/USA/California/Los Angeles County CA
+North America/USA/California/Cerritos	North America/USA/California/Los Angeles County CA
 North America/USA/California/Oroville	North America/USA/California/Butte County CA
 North America/USA/California/Poway	North America/USA/California/San Diego County
 North America/USA/California/San Jacinto	North America/USA/California/Riverside County
@@ -17202,15 +17260,15 @@ North America/USA/California/Ceres	North America/USA/California/Stanislaus Count
 North America/USA/California/Palm Springs	North America/USA/California/Riverside County
 North America/USA/California/Antelope	North America/USA/California/Sacramento County
 North America/USA/California/Lincoln	North America/USA/California/Placer County
-North America/USA/California/La Mirada	North America/USA/California/Los Angeles County
+North America/USA/California/La Mirada	North America/USA/California/Los Angeles County CA
 North America/USA/California/Rancho Santa Margarita	North America/USA/California/Orange County CA
 North America/USA/California/North Highlands	North America/USA/California/Sacramento County
 North America/USA/California/Florin	North America/USA/California/Sacramento County
-North America/USA/California/Covina	North America/USA/California/Los Angeles County
+North America/USA/California/Covina	North America/USA/California/Los Angeles County CA
 North America/USA/California/El Dorado Hills	North America/USA/California/El Dorado County
 North America/USA/California/Morgan Hill	North America/USA/California/Santa Clara County
 North America/USA/California/Coachella	North America/USA/California/Riverside County
-North America/USA/California/Altadena	North America/USA/California/Los Angeles County
+North America/USA/California/Altadena	North America/USA/California/Los Angeles County CA
 North America/USA/California/Selma	North America/USA/California/Fresno County
 North America/USA/California/Danville	North America/USA/California/Contra Costa County
 North America/USA/California/Eureka	North America/USA/California/Humboldt County CA
@@ -17219,33 +17277,33 @@ North America/USA/California/Rohnert Park	North America/USA/California/Sonoma Co
 North America/USA/California/Brea	North America/USA/California/Orange County CA
 North America/USA/California/San Bruno	North America/USA/California/San Mateo County
 North America/USA/California/Oakley	North America/USA/California/Contra Costa County
-North America/USA/California/Bell Gardens	North America/USA/California/Los Angeles County
+North America/USA/California/Bell Gardens	North America/USA/California/Los Angeles County CA
 North America/USA/California/Campbell	North America/USA/California/Santa Clara County
 North America/USA/California/La Quinta	North America/USA/California/Riverside County
-North America/USA/California/Rancho Palos Verdes	North America/USA/California/Los Angeles County
+North America/USA/California/Rancho Palos Verdes	North America/USA/California/Los Angeles County CA
 North America/USA/California/Los Banos	North America/USA/California/Merced County
 North America/USA/California/Montclair	North America/USA/California/San Bernardino County
-North America/USA/California/San Gabriel	North America/USA/California/Los Angeles County
+North America/USA/California/San Gabriel	North America/USA/California/Los Angeles County CA
 North America/USA/California/Calexico	North America/USA/California/Imperial County CA
-North America/USA/California/La Puente	North America/USA/California/Los Angeles County
-North America/USA/California/Culver City	North America/USA/California/Los Angeles County
+North America/USA/California/La Puente	North America/USA/California/Los Angeles County CA
+North America/USA/California/Culver City	North America/USA/California/Los Angeles County CA
 North America/USA/California/Pacifica	North America/USA/California/San Mateo County
 North America/USA/California/Martinez	North America/USA/California/Contra Costa County
 North America/USA/California/La Presa	North America/USA/California/San Diego County
 North America/USA/California/Stanton	North America/USA/California/Orange County CA
 North America/USA/California/Wildomar	North America/USA/California/Riverside County
-North America/USA/California/West Hollywood	North America/USA/California/Los Angeles County
+North America/USA/California/West Hollywood	North America/USA/California/Los Angeles County CA
 North America/USA/California/Moorpark	North America/USA/California/Ventura County
-North America/USA/California/Monrovia	North America/USA/California/Los Angeles County
-North America/USA/California/Claremont	North America/USA/California/Los Angeles County
+North America/USA/California/Monrovia	North America/USA/California/Los Angeles County CA
+North America/USA/California/Claremont	North America/USA/California/Los Angeles County CA
 North America/USA/California/French Valley	North America/USA/California/Riverside County
 North America/USA/California/San Juan Capistrano	North America/USA/California/Orange County CA
 North America/USA/California/Foothill Farms	North America/USA/California/Sacramento County
-North America/USA/California/Temple City	North America/USA/California/Los Angeles County
-North America/USA/California/Bell	North America/USA/California/Los Angeles County
+North America/USA/California/Temple City	North America/USA/California/Los Angeles County CA
+North America/USA/California/Bell	North America/USA/California/Los Angeles County CA
 North America/USA/California/Auburn	North America/USA/California/Placer County
-North America/USA/California/Westmont	North America/USA/California/Los Angeles County
-North America/USA/California/Manhattan Beach	North America/USA/California/Los Angeles County
+North America/USA/California/Westmont	North America/USA/California/Los Angeles County CA
+North America/USA/California/Manhattan Beach	North America/USA/California/Los Angeles County CA
 North America/USA/California/Pleasant Hill	North America/USA/California/Contra Costa County
 North America/USA/California/Orangevale	North America/USA/California/Sacramento County
 North America/USA/California/Oildale	North America/USA/California/Kern County
@@ -17254,12 +17312,12 @@ North America/USA/California/Arcata	North America/USA/California/Humboldt County
 North America/USA/California/Grass Valley	North America/USA/California/Nevada County CA
 North America/USA/California/Adelanto	North America/USA/California/San Bernardino County
 North America/USA/California/Foster City	North America/USA/California/San Mateo County
-North America/USA/California/Beverly Hills	North America/USA/California/Los Angeles County
-North America/USA/California/San Dimas	North America/USA/California/Los Angeles County
+North America/USA/California/Beverly Hills	North America/USA/California/Los Angeles County CA
+North America/USA/California/San Dimas	North America/USA/California/Los Angeles County CA
 North America/USA/California/Dana Point	North America/USA/California/Orange County CA
 North America/USA/California/Ridgecrest	North America/USA/California/Kern County
-North America/USA/California/Lawndale	North America/USA/California/Los Angeles County
-North America/USA/California/La Verne	North America/USA/California/Los Angeles County
+North America/USA/California/Lawndale	North America/USA/California/Los Angeles County CA
+North America/USA/California/La Verne	North America/USA/California/Los Angeles County CA
 North America/USA/California/Placerville	North America/USA/California/El Dorado County
 North America/USA/California/Fallbrook	North America/USA/California/San Diego County
 North America/USA/California/Spring Valley	North America/USA/California/San Diego County
@@ -17278,7 +17336,7 @@ North America/USA/California/San Carlos	North America/USA/California/San Mateo C
 North America/USA/California/Saratoga	North America/USA/California/Santa Clara County
 North America/USA/California/Los Altos	North America/USA/California/Santa Clara County
 North America/USA/California/Atascadero	North America/USA/California/San Luis Obispo County
-North America/USA/California/Walnut	North America/USA/California/Los Angeles County
+North America/USA/California/Walnut	North America/USA/California/Los Angeles County CA
 North America/USA/California/Suisun City	North America/USA/California/Solano County
 North America/USA/California/Ukiah	North America/USA/California/Mendocino County
 North America/USA/California/Atwater	North America/USA/California/Merced County
@@ -17294,11 +17352,11 @@ North America/USA/California/Temescal Valley	North America/USA/California/Rivers
 North America/USA/California/Imperial Beach	North America/USA/California/San Diego County
 North America/USA/California/Ladera Ranch	North America/USA/California/Orange County CA
 North America/USA/California/Windsor	North America/USA/California/Sonoma County
-North America/USA/California/Maywood	North America/USA/California/Los Angeles County
+North America/USA/California/Maywood	North America/USA/California/Los Angeles County CA
 North America/USA/California/Belmont	North America/USA/California/San Mateo County
 North America/USA/California/Lemon Grove	North America/USA/California/San Diego County
 North America/USA/California/Lemoore	North America/USA/California/Kings County CA
-North America/USA/California/West Whittier-Los Nietos	North America/USA/California/Los Angeles County
+North America/USA/California/West Whittier-Los Nietos	North America/USA/California/Los Angeles County CA
 North America/USA/California/Lafayette	North America/USA/California/Contra Costa County
 North America/USA/California/Norco	North America/USA/California/Riverside County
 North America/USA/California/Brawley	North America/USA/California/Imperial County CA
@@ -17308,7 +17366,7 @@ North America/USA/California/Twentynine Palms	North America/USA/California/San B
 North America/USA/California/Bay Point	North America/USA/California/Contra Costa County
 North America/USA/California/San Lorenzo	North America/USA/California/Alameda County CA
 North America/USA/California/El Cerrito	North America/USA/California/Contra Costa County
-North America/USA/California/South Pasadena	North America/USA/California/Los Angeles County
+North America/USA/California/South Pasadena	North America/USA/California/Los Angeles County CA
 North America/USA/California/Yucca Valley	North America/USA/California/San Bernardino County
 North America/USA/California/Riverbank	North America/USA/California/Stanislaus County
 North America/USA/California/North Tustin	North America/USA/California/Orange County CA
@@ -17316,56 +17374,56 @@ North America/USA/California/Lathrop	North America/USA/California/San Joaquin Co
 North America/USA/California/Loma Linda	North America/USA/California/San Bernardino County
 North America/USA/California/Dinuba	North America/USA/California/Tulare County
 North America/USA/California/Ashland	North America/USA/California/Alameda County CA
-North America/USA/California/San Fernando	North America/USA/California/Los Angeles County
+North America/USA/California/San Fernando	North America/USA/California/Los Angeles County CA
 North America/USA/California/Seal Beach	North America/USA/California/Orange County CA
-North America/USA/California/Calabasas	North America/USA/California/Los Angeles County
+North America/USA/California/Calabasas	North America/USA/California/Los Angeles County CA
 North America/USA/California/Coronado	North America/USA/California/San Diego County
-North America/USA/California/Valinda	North America/USA/California/Los Angeles County
+North America/USA/California/Valinda	North America/USA/California/Los Angeles County CA
 North America/USA/California/Half Moon Bay	North America/USA/California/San Mateo County
 North America/USA/California/Rosemont	North America/USA/California/Sacramento County
 North America/USA/California/Oakdale	North America/USA/California/Stanislaus County
-North America/USA/California/Cudahy	North America/USA/California/Los Angeles County
+North America/USA/California/Cudahy	North America/USA/California/Los Angeles County CA
 North America/USA/California/Winter Gardens	North America/USA/California/San Diego County
-North America/USA/California/West Puente Valley	North America/USA/California/Los Angeles County
+North America/USA/California/West Puente Valley	North America/USA/California/Los Angeles County CA
 North America/USA/California/Granite Bay	North America/USA/California/Placer County
 North America/USA/California/Patterson	North America/USA/California/Stanislaus County
-North America/USA/California/West Rancho Dominguez	North America/USA/California/Los Angeles County
+North America/USA/California/West Rancho Dominguez	North America/USA/California/Los Angeles County CA
 North America/USA/California/Laguna Beach	North America/USA/California/Orange County CA
-North America/USA/California/Willowbrook	North America/USA/California/Los Angeles County
+North America/USA/California/Willowbrook	North America/USA/California/Los Angeles County CA
 North America/USA/California/Marina	North America/USA/California/Monterey County CA
 North America/USA/California/Corcoran	North America/USA/California/Kings County CA
 North America/USA/California/Millbrae	North America/USA/California/San Mateo County
 North America/USA/California/Arvin	North America/USA/California/Kern County
-North America/USA/California/West Carson	North America/USA/California/Los Angeles County
+North America/USA/California/West Carson	North America/USA/California/Los Angeles County CA
 North America/USA/California/Port Hueneme	North America/USA/California/Ventura County
 North America/USA/California/Lakeside	North America/USA/California/San Diego County
 North America/USA/California/Bloomington	North America/USA/California/San Bernardino County
-North America/USA/California/Lennox	North America/USA/California/Los Angeles County
+North America/USA/California/Lennox	North America/USA/California/Los Angeles County CA
 North America/USA/California/Rancho San Diego	North America/USA/California/San Diego County
 North America/USA/California/Shafter	North America/USA/California/Kern County
 North America/USA/California/Ramona	North America/USA/California/San Diego County
-North America/USA/California/Duarte	North America/USA/California/Los Angeles County
+North America/USA/California/Duarte	North America/USA/California/Los Angeles County CA
 North America/USA/California/Rosamond	North America/USA/California/Kern County
 North America/USA/California/Dixon	North America/USA/California/Solano County
-North America/USA/California/South El Monte	North America/USA/California/Los Angeles County
+North America/USA/California/South El Monte	North America/USA/California/Los Angeles County CA
 North America/USA/California/American Canyon	North America/USA/California/Napa County
 North America/USA/California/Prunedale	North America/USA/California/Monterey County CA
-North America/USA/California/Lomita	North America/USA/California/Los Angeles County
+North America/USA/California/Lomita	North America/USA/California/Los Angeles County CA
 North America/USA/California/Linda	North America/USA/California/Yuba County
-North America/USA/California/Agoura Hills	North America/USA/California/Los Angeles County
+North America/USA/California/Agoura Hills	North America/USA/California/Los Angeles County CA
 North America/USA/California/East Hemet	North America/USA/California/Riverside County
 North America/USA/California/Mead Valley	North America/USA/California/Riverside County
-North America/USA/California/La Cañada Flintridge	North America/USA/California/Los Angeles County
-North America/USA/California/South San Jose Hills	North America/USA/California/Los Angeles County
+North America/USA/California/La Cañada Flintridge	North America/USA/California/Los Angeles County CA
+North America/USA/California/South San Jose Hills	North America/USA/California/Los Angeles County CA
 North America/USA/California/Orinda	North America/USA/California/Contra Costa County
 North America/USA/California/Casa de Oro-Mount Helix	North America/USA/California/San Diego County
 North America/USA/California/Albany	North America/USA/California/Alameda County CA
-North America/USA/California/La Crescenta-Montrose	North America/USA/California/Los Angeles County
+North America/USA/California/La Crescenta-Montrose	North America/USA/California/Los Angeles County CA
 North America/USA/California/Blythe	North America/USA/California/Riverside County
-North America/USA/California/Castaic	North America/USA/California/Los Angeles County
-North America/USA/California/Hermosa Beach	North America/USA/California/Los Angeles County
+North America/USA/California/Castaic	North America/USA/California/Los Angeles County CA
+North America/USA/California/Hermosa Beach	North America/USA/California/Los Angeles County CA
 North America/USA/California/Pinole	North America/USA/California/Contra Costa County
-North America/USA/California/Stevenson Ranch	North America/USA/California/Los Angeles County
+North America/USA/California/Stevenson Ranch	North America/USA/California/Los Angeles County CA
 North America/USA/California/Cameron Park	North America/USA/California/El Dorado County
 North America/USA/California/Red Bluff	North America/USA/California/Tehama County
 North America/USA/California/Rancho Mirage	North America/USA/California/Riverside County
@@ -17375,7 +17433,7 @@ North America/USA/California/Woodcrest	North America/USA/California/Riverside Co
 North America/USA/California/Moraga	North America/USA/California/Contra Costa County
 North America/USA/California/Valle Vista	North America/USA/California/Riverside County
 North America/USA/California/Greenfield	North America/USA/California/Monterey County CA
-North America/USA/California/Santa Fe Springs	North America/USA/California/Los Angeles County
+North America/USA/California/Santa Fe Springs	North America/USA/California/Los Angeles County CA
 North America/USA/California/Nipomo	North America/USA/California/San Luis Obispo County
 North America/USA/California/Lakeport	North America/USA/California/Lake County CA
 North America/USA/California/McKinleyville	North America/USA/California/Humboldt County CA
@@ -17385,30 +17443,30 @@ North America/USA/California/Live Oak	North America/USA/California/Santa Cruz Co
 North America/USA/California/Rosedale	North America/USA/California/Kern County
 North America/USA/California/Truckee	North America/USA/California/Nevada County CA
 North America/USA/California/Lindsay	North America/USA/California/Tulare County
-North America/USA/California/El Segundo	North America/USA/California/Los Angeles County
+North America/USA/California/El Segundo	North America/USA/California/Los Angeles County CA
 North America/USA/California/Bostonia	North America/USA/California/San Diego County
-North America/USA/California/Artesia	North America/USA/California/Los Angeles County
+North America/USA/California/Artesia	North America/USA/California/Los Angeles County CA
 North America/USA/California/Solvang	North America/USA/California/Santa Barbara County
 North America/USA/California/Los Osos	North America/USA/California/San Luis Obispo County
 North America/USA/California/Ripon	North America/USA/California/San Joaquin County
 North America/USA/California/Rio Linda	North America/USA/California/Sacramento County
 North America/USA/California/Stanford	North America/USA/California/Santa Clara County
-North America/USA/California/East San Gabriel	North America/USA/California/Los Angeles County
-North America/USA/California/Vincent	North America/USA/California/Los Angeles County
+North America/USA/California/East San Gabriel	North America/USA/California/Los Angeles County CA
+North America/USA/California/Vincent	North America/USA/California/Los Angeles County CA
 North America/USA/California/Discovery Bay	North America/USA/California/Contra Costa County
 North America/USA/California/Cherryland	North America/USA/California/Alameda County CA
 North America/USA/California/Phelan	North America/USA/California/San Bernardino County
 North America/USA/California/Clearlake	North America/USA/California/Lake County CA
 North America/USA/California/Fillmore	North America/USA/California/Ventura County
-North America/USA/California/Walnut Park	North America/USA/California/Los Angeles County
+North America/USA/California/Walnut Park	North America/USA/California/Los Angeles County CA
 North America/USA/California/King City	North America/USA/California/Monterey County CA
 North America/USA/California/Laguna Woods	North America/USA/California/Orange County CA
 North America/USA/California/Parkway	North America/USA/California/Sacramento County
-North America/USA/California/East Rancho Dominguez	North America/USA/California/Los Angeles County
+North America/USA/California/East Rancho Dominguez	North America/USA/California/Los Angeles County CA
 North America/USA/California/McFarland	North America/USA/California/Kern County
 North America/USA/California/Parlier	North America/USA/California/Fresno County
 North America/USA/California/La Palma	North America/USA/California/Orange County CA
-North America/USA/California/Avocado Heights	North America/USA/California/Los Angeles County
+North America/USA/California/Avocado Heights	North America/USA/California/Los Angeles County CA
 North America/USA/California/Pacific Grove	North America/USA/California/Monterey County CA
 North America/USA/California/Kerman	North America/USA/California/Fresno County
 North America/USA/California/Coto de Caza	North America/USA/California/Orange County CA
@@ -17424,10 +17482,10 @@ North America/USA/California/North Auburn	North America/USA/California/Placer Co
 North America/USA/California/Mill Valley	North America/USA/California/Marin County
 North America/USA/California/Salida	North America/USA/California/Stanislaus County
 North America/USA/California/California City	North America/USA/California/Kern County
-North America/USA/California/Hawaiian Gardens	North America/USA/California/Los Angeles County
+North America/USA/California/Hawaiian Gardens	North America/USA/California/Los Angeles County CA
 North America/USA/California/El Sobrante	North America/USA/California/Riverside County
 North America/USA/California/Oak Park	North America/USA/California/Ventura County
-North America/USA/California/Sun Village	North America/USA/California/Los Angeles County
+North America/USA/California/Sun Village	North America/USA/California/Los Angeles County CA
 North America/USA/California/Avenal	North America/USA/California/Kings County CA
 North America/USA/California/Olivehurst	North America/USA/California/Yuba County
 North America/USA/California/Big Bear City	North America/USA/California/San Bernardino County
@@ -17435,11 +17493,11 @@ North America/USA/California/Grover Beach	North America/USA/California/San Luis 
 North America/USA/California/Fortuna	North America/USA/California/Humboldt County CA
 North America/USA/California/Carpinteria	North America/USA/California/Santa Barbara County
 North America/USA/California/Solana Beach	North America/USA/California/San Diego County
-North America/USA/California/Palos Verdes Estates	North America/USA/California/Los Angeles County
-North America/USA/California/San Marino	North America/USA/California/Los Angeles County
+North America/USA/California/Palos Verdes Estates	North America/USA/California/Los Angeles County CA
+North America/USA/California/San Marino	North America/USA/California/Los Angeles County CA
 North America/USA/California/Lakeland Village	North America/USA/California/Riverside County
 North America/USA/California/Bonita	North America/USA/California/San Diego County
-North America/USA/California/Commerce	North America/USA/California/Los Angeles County
+North America/USA/California/Commerce	North America/USA/California/Los Angeles County CA
 North America/USA/California/Grand Terrace	North America/USA/California/San Bernardino County
 North America/USA/California/Muscoy	North America/USA/California/San Bernardino County
 North America/USA/California/San Anselmo	North America/USA/California/Marin County
@@ -17452,17 +17510,17 @@ North America/USA/California/Kingsburg	North America/USA/California/Fresno Count
 North America/USA/California/Emeryville	North America/USA/California/Alameda County CA
 North America/USA/California/Camp Pendleton South	North America/USA/California/San Diego County
 North America/USA/California/Healdsburg	North America/USA/California/Sonoma County
-North America/USA/California/Malibu	North America/USA/California/Los Angeles County
+North America/USA/California/Malibu	North America/USA/California/Los Angeles County CA
 North America/USA/California/Newman	North America/USA/California/Stanislaus County
 North America/USA/California/Scotts Valley	North America/USA/California/Santa Cruz County CA
-North America/USA/California/View Park-Windsor Hills	North America/USA/California/Los Angeles County
-North America/USA/California/Lake Los Angeles	North America/USA/California/Los Angeles County
+North America/USA/California/View Park-Windsor Hills	North America/USA/California/Los Angeles County CA
+North America/USA/California/Lake Los Angeles	North America/USA/California/Los Angeles County CA
 North America/USA/California/Diamond Springs	North America/USA/California/El Dorado County
 North America/USA/California/Mendota	North America/USA/California/Fresno County
 North America/USA/California/Tamalpais-Homestead Valley	North America/USA/California/Marin County
 North America/USA/California/Alum Rock	North America/USA/California/Santa Clara County
 North America/USA/California/Magalia	North America/USA/California/Butte County CA
-North America/USA/California/Signal Hill	North America/USA/California/Los Angeles County
+North America/USA/California/Signal Hill	North America/USA/California/Los Angeles County CA
 North America/USA/California/Los Alamitos	North America/USA/California/Orange County CA
 North America/USA/California/Hillsborough	North America/USA/California/San Mateo County
 North America/USA/California/Winton	North America/USA/California/Merced County
@@ -17473,7 +17531,7 @@ North America/USA/California/Valley Center	North America/USA/California/San Dieg
 North America/USA/California/Orange Cove	North America/USA/California/Fresno County
 North America/USA/California/Soquel	North America/USA/California/Santa Cruz County CA
 North America/USA/California/La Riviera	North America/USA/California/Sacramento County
-North America/USA/California/Sierra Madre	North America/USA/California/Los Angeles County
+North America/USA/California/Sierra Madre	North America/USA/California/Los Angeles County CA
 North America/USA/California/Farmersville	North America/USA/California/Tulare County
 North America/USA/California/Anderson	North America/USA/California/Shasta County
 North America/USA/California/Morro Bay	North America/USA/California/San Luis Obispo County
@@ -17484,22 +17542,22 @@ North America/USA/California/Oak Hills	North America/USA/California/San Bernardi
 North America/USA/California/Shasta Lake	North America/USA/California/Shasta County
 North America/USA/California/Rodeo	North America/USA/California/Contra Costa County
 North America/USA/California/Fort Bragg	North America/USA/California/Mendocino County
-North America/USA/California/East Whittier	North America/USA/California/Los Angeles County
-North America/USA/California/Citrus	North America/USA/California/Los Angeles County
-North America/USA/California/Charter Oak	North America/USA/California/Los Angeles County
+North America/USA/California/East Whittier	North America/USA/California/Los Angeles County CA
+North America/USA/California/Citrus	North America/USA/California/Los Angeles County CA
+North America/USA/California/Charter Oak	North America/USA/California/Los Angeles County CA
 North America/USA/California/Capitola	North America/USA/California/Santa Cruz County CA
-North America/USA/California/Quartz Hill	North America/USA/California/Los Angeles County
-North America/USA/California/Del Aire	North America/USA/California/Los Angeles County
+North America/USA/California/Quartz Hill	North America/USA/California/Los Angeles County CA
+North America/USA/California/Del Aire	North America/USA/California/Los Angeles County CA
 North America/USA/California/Country Club	North America/USA/California/San Joaquin County
 North America/USA/California/Garden Acres	North America/USA/California/San Joaquin County
 North America/USA/California/Orland	North America/USA/California/Glenn County
 North America/USA/California/Fort Irwin	North America/USA/California/San Bernardino County
 North America/USA/California/Madera Acres	North America/USA/California/Madera County
-North America/USA/California/Marina del Rey	North America/USA/California/Los Angeles County
+North America/USA/California/Marina del Rey	North America/USA/California/Los Angeles County CA
 North America/USA/California/Mentone	North America/USA/California/San Bernardino County
 North America/USA/California/Corte Madera	North America/USA/California/Marin County
 North America/USA/California/Rio Vista	North America/USA/California/Solano County
-North America/USA/California/West Athens	North America/USA/California/Los Angeles County
+North America/USA/California/West Athens	North America/USA/California/Los Angeles County CA
 North America/USA/California/Rio del Mar	North America/USA/California/Santa Cruz County CA
 North America/USA/California/Waterford	North America/USA/California/Stanislaus County
 North America/USA/California/Blackhawk	North America/USA/California/Contra Costa County
@@ -17524,17 +17582,17 @@ North America/USA/California/Larkfield-Wikiup	North America/USA/California/Sonom
 North America/USA/California/Gonzales	North America/USA/California/Monterey County CA
 North America/USA/California/Orosi	North America/USA/California/Tulare County
 North America/USA/California/Firebaugh	North America/USA/California/Fresno County
-North America/USA/California/Alondra Park	North America/USA/California/Los Angeles County
+North America/USA/California/Alondra Park	North America/USA/California/Los Angeles County CA
 North America/USA/California/Montecito	North America/USA/California/Santa Barbara County
 North America/USA/California/Mammoth Lakes	North America/USA/California/Mono County
-North America/USA/California/Westlake Village	North America/USA/California/Los Angeles County
+North America/USA/California/Westlake Village	North America/USA/California/Los Angeles County CA
 North America/USA/California/Pismo Beach	North America/USA/California/San Luis Obispo County
-North America/USA/California/South San Gabriel	North America/USA/California/Los Angeles County
+North America/USA/California/South San Gabriel	North America/USA/California/Los Angeles County CA
 North America/USA/California/Cherry Valley	North America/USA/California/Riverside County
 North America/USA/California/Vandenberg Village	North America/USA/California/Santa Barbara County
-North America/USA/California/Rolling Hills Estates	North America/USA/California/Los Angeles County
+North America/USA/California/Rolling Hills Estates	North America/USA/California/Los Angeles County CA
 North America/USA/California/Willits	North America/USA/California/Mendocino County
-North America/USA/California/Topanga	North America/USA/California/Los Angeles County
+North America/USA/California/Topanga	North America/USA/California/Los Angeles County CA
 North America/USA/California/Woodlake	North America/USA/California/Tulare County
 North America/USA/California/Templeton	North America/USA/California/San Luis Obispo County
 North America/USA/California/Winters	North America/USA/California/Yolo County
@@ -17563,7 +17621,7 @@ North America/USA/California/University of California-Davis	North America/USA/Ca
 North America/USA/California/Huron	North America/USA/California/Fresno County
 North America/USA/California/Alta Sierra	North America/USA/California/Nevada County CA
 North America/USA/California/Willows	North America/USA/California/Glenn County
-North America/USA/California/Acton	North America/USA/California/Los Angeles County
+North America/USA/California/Acton	North America/USA/California/Los Angeles County CA
 North America/USA/California/Nuevo	North America/USA/California/Riverside County
 North America/USA/California/Pollock Pines	North America/USA/California/El Dorado County
 North America/USA/California/Atherton	North America/USA/California/San Mateo County
@@ -17587,19 +17645,19 @@ North America/USA/California/Bermuda Dunes	North America/USA/California/Riversid
 North America/USA/California/Lucas Valley-Marinwood	North America/USA/California/Marin County
 North America/USA/California/Mecca	North America/USA/California/Riverside County
 North America/USA/California/Mira Monte	North America/USA/California/Ventura County
-North America/USA/California/Ladera Heights	North America/USA/California/Los Angeles County
-North America/USA/California/South Monrovia Island	North America/USA/California/Los Angeles County
+North America/USA/California/Ladera Heights	North America/USA/California/Los Angeles County CA
+North America/USA/California/South Monrovia Island	North America/USA/California/Los Angeles County CA
 North America/USA/California/Contra Costa Centre	North America/USA/California/Contra Costa County
 North America/USA/California/Keyes	North America/USA/California/Stanislaus County
 North America/USA/California/Castroville	North America/USA/California/Monterey County CA
-North America/USA/California/La Habra Heights	North America/USA/California/Los Angeles County
+North America/USA/California/La Habra Heights	North America/USA/California/Los Angeles County CA
 North America/USA/California/Aptos	North America/USA/California/Santa Cruz County CA
 North America/USA/California/El Rio	North America/USA/California/Ventura County
 North America/USA/California/East Porterville	North America/USA/California/Tulare County
 North America/USA/California/Salton City	North America/USA/California/Imperial County CA
 North America/USA/California/East Foothills	North America/USA/California/Santa Clara County
 North America/USA/California/Saranap	North America/USA/California/Contra Costa County
-North America/USA/California/East Pasadena	North America/USA/California/Los Angeles County
+North America/USA/California/East Pasadena	North America/USA/California/Los Angeles County CA
 North America/USA/California/Eucalyptus Hills	North America/USA/California/San Diego County
 North America/USA/California/Fruitridge Pocket	North America/USA/California/Sacramento County
 North America/USA/California/El Granada	North America/USA/California/San Mateo County
@@ -17609,7 +17667,7 @@ North America/USA/California/Lucerne Valley	North America/USA/California/San Ber
 North America/USA/California/Paradise	North America/USA/California/Butte County CA
 North America/USA/California/Greenacres	North America/USA/California/Kern County
 North America/USA/California/Gustine	North America/USA/California/Merced County
-North America/USA/California/Mayflower Village	North America/USA/California/Los Angeles County
+North America/USA/California/Mayflower Village	North America/USA/California/Los Angeles County CA
 North America/USA/California/Las Flores	North America/USA/California/Orange County CA
 North America/USA/California/Old Fig Garden	North America/USA/California/Fresno County
 North America/USA/California/Silver Lakes	North America/USA/California/San Bernardino County
@@ -17682,7 +17740,7 @@ North America/USA/California/Empire	North America/USA/California/Stanislaus Coun
 North America/USA/California/Wrightwood	North America/USA/California/San Bernardino County
 North America/USA/California/Burney	North America/USA/California/Shasta County
 North America/USA/California/Angels	North America/USA/California/Calaveras County
-North America/USA/California/North El Monte	North America/USA/California/Los Angeles County
+North America/USA/California/North El Monte	North America/USA/California/Los Angeles County CA
 North America/USA/California/Clearlake Riviera	North America/USA/California/Lake County CA
 North America/USA/California/Vine Hill	North America/USA/California/Contra Costa County
 North America/USA/California/Wheatland	North America/USA/California/Yuba County
@@ -17696,8 +17754,8 @@ North America/USA/California/Brooktrails	North America/USA/California/Mendocino 
 North America/USA/California/Freedom	North America/USA/California/Santa Cruz County CA
 North America/USA/California/Forestville	North America/USA/California/Sonoma County
 North America/USA/California/Bystrom	North America/USA/California/Stanislaus County
-North America/USA/California/Agua Dulce	North America/USA/California/Los Angeles County
-North America/USA/California/Avalon	North America/USA/California/Los Angeles County
+North America/USA/California/Agua Dulce	North America/USA/California/Los Angeles County CA
+North America/USA/California/Avalon	North America/USA/California/Los Angeles County CA
 North America/USA/California/Meadow Vista	North America/USA/California/Placer County
 North America/USA/California/Auburn Lake Trails	North America/USA/California/El Dorado County
 North America/USA/California/Squaw Valley	North America/USA/California/Fresno County
@@ -17782,18 +17840,18 @@ North America/USA/California/East Oakdale	North America/USA/California/Stanislau
 North America/USA/California/Bayview	North America/USA/California/Humboldt County CA
 North America/USA/California/Penngrove	North America/USA/California/Sonoma County
 North America/USA/California/Pine Mountain Lake	North America/USA/California/Tuolumne County
-North America/USA/California/Rose Hills	North America/USA/California/Los Angeles County
+North America/USA/California/Rose Hills	North America/USA/California/Los Angeles County CA
 North America/USA/California/Crest	North America/USA/California/San Diego County
 North America/USA/California/North Shore	North America/USA/California/Riverside County
 North America/USA/California/Vista Santa Rosa	North America/USA/California/Riverside County
-North America/USA/California/Val Verde	North America/USA/California/Los Angeles County
+North America/USA/California/Val Verde	North America/USA/California/Los Angeles County CA
 North America/USA/California/West Bishop	North America/USA/California/Inyo County
 North America/USA/California/Weed	North America/USA/California/Siskiyou County
 North America/USA/California/Hayfork	North America/USA/California/Trinity County CA
 North America/USA/California/Collierville	North America/USA/California/San Joaquin County
 North America/USA/California/Lexington Hills	North America/USA/California/Santa Clara County
 North America/USA/California/La Selva Beach	North America/USA/California/Santa Cruz County CA
-North America/USA/California/Desert View Highlands	North America/USA/California/Los Angeles County
+North America/USA/California/Desert View Highlands	North America/USA/California/Los Angeles County CA
 North America/USA/California/Dixon Lane-Meadow Creek	North America/USA/California/Inyo County
 North America/USA/California/Dogtown	North America/USA/California/San Joaquin County
 North America/USA/California/Lakeview	North America/USA/California/Riverside County
@@ -17863,16 +17921,16 @@ North America/USA/California/Auberry	North America/USA/California/Fresno County
 North America/USA/California/Laton	North America/USA/California/Fresno County
 North America/USA/California/Taft Heights	North America/USA/California/Kern County
 North America/USA/California/Bertsch-Oceanview	North America/USA/California/Del Norte County
-North America/USA/California/San Pasqual	North America/USA/California/Los Angeles County
+North America/USA/California/San Pasqual	North America/USA/California/Los Angeles County CA
 North America/USA/California/Quincy	North America/USA/California/Plumas County
 North America/USA/California/Brookdale	North America/USA/California/Santa Cruz County CA
 North America/USA/California/Camino	North America/USA/California/El Dorado County
-North America/USA/California/Hidden Hills	North America/USA/California/Los Angeles County
+North America/USA/California/Hidden Hills	North America/USA/California/Los Angeles County CA
 North America/USA/California/Graton	North America/USA/California/Sonoma County
 North America/USA/California/Biggs	North America/USA/California/Butte County CA
 North America/USA/California/Warm Springs	North America/USA/California/Riverside County
 North America/USA/California/Foresthill	North America/USA/California/Placer County
-North America/USA/California/Rolling Hills	North America/USA/California/Los Angeles County
+North America/USA/California/Rolling Hills	North America/USA/California/Los Angeles County CA
 North America/USA/California/Lone Pine	North America/USA/California/Inyo County
 North America/USA/California/Piru	North America/USA/California/Ventura County
 North America/USA/California/Red Corral	North America/USA/California/Amador County
@@ -17884,7 +17942,7 @@ North America/USA/California/Pine Grove	North America/USA/California/Amador Coun
 North America/USA/California/South Dos Palos	North America/USA/California/Merced County
 North America/USA/California/Pine Mountain Club	North America/USA/California/Kern County
 North America/USA/California/Los Molinos	North America/USA/California/Tehama County
-North America/USA/California/Elizabeth Lake	North America/USA/California/Los Angeles County
+North America/USA/California/Elizabeth Lake	North America/USA/California/Los Angeles County CA
 North America/USA/California/Le Grand	North America/USA/California/Merced County
 North America/USA/California/Toro Canyon	North America/USA/California/Santa Barbara County
 North America/USA/California/Lost Hills	North America/USA/California/Kern County
@@ -17904,7 +17962,7 @@ North America/USA/California/Ladera	North America/USA/California/San Mateo Count
 North America/USA/California/Del Rio	North America/USA/California/Stanislaus County
 North America/USA/California/Coarsegold	North America/USA/California/Madera County
 North America/USA/California/Tuolumne City	North America/USA/California/Tuolumne County
-North America/USA/California/Leona Valley	North America/USA/California/Los Angeles County
+North America/USA/California/Leona Valley	North America/USA/California/Los Angeles County CA
 North America/USA/California/Descanso	North America/USA/California/San Diego County
 North America/USA/California/Dunsmuir	North America/USA/California/Siskiyou County
 North America/USA/California/Linden	North America/USA/California/San Joaquin County
@@ -17919,7 +17977,7 @@ North America/USA/California/Green Valley	North America/USA/California/Solano Co
 North America/USA/California/Lebec	North America/USA/California/Kern County
 North America/USA/California/Monument Hills	North America/USA/California/Yolo County
 North America/USA/California/Dunnigan	North America/USA/California/Yolo County
-North America/USA/California/Irwindale	North America/USA/California/Los Angeles County
+North America/USA/California/Irwindale	North America/USA/California/Los Angeles County CA
 North America/USA/California/Buttonwillow	North America/USA/California/Kern County
 North America/USA/California/Midpines	North America/USA/California/Mariposa County
 North America/USA/California/Castle Hill	North America/USA/California/Contra Costa County
@@ -17965,7 +18023,7 @@ North America/USA/California/Tahoe Vista	North America/USA/California/Placer Cou
 North America/USA/California/Elkhorn	North America/USA/California/Monterey County CA
 North America/USA/California/Big River	North America/USA/California/San Bernardino County
 North America/USA/California/Alpaugh	North America/USA/California/Tulare County
-North America/USA/California/Hasley Canyon	North America/USA/California/Los Angeles County
+North America/USA/California/Hasley Canyon	North America/USA/California/Los Angeles County CA
 North America/USA/California/Palo Cedro	North America/USA/California/Shasta County
 North America/USA/California/Mountain Ranch	North America/USA/California/Calaveras County
 North America/USA/California/Gerber	North America/USA/California/Tehama County
@@ -17988,7 +18046,7 @@ North America/USA/California/Plymouth	North America/USA/California/Amador County
 North America/USA/California/Maxwell	North America/USA/California/Colusa County
 North America/USA/California/Bolinas	North America/USA/California/Marin County
 North America/USA/California/West Park	North America/USA/California/Fresno County
-North America/USA/California/Bradbury	North America/USA/California/Los Angeles County
+North America/USA/California/Bradbury	North America/USA/California/Los Angeles County CA
 North America/USA/California/Hydesville	North America/USA/California/Humboldt County CA
 North America/USA/California/McClellan Park	North America/USA/California/Sacramento County
 North America/USA/California/Parklawn	North America/USA/California/Stanislaus County
@@ -18065,7 +18123,7 @@ North America/USA/California/Zayante	North America/USA/California/Santa Cruz Cou
 North America/USA/California/Manila	North America/USA/California/Humboldt County CA
 North America/USA/California/Clyde	North America/USA/California/Contra Costa County
 North America/USA/California/Los Olivos	North America/USA/California/Santa Barbara County
-North America/USA/California/Littlerock	North America/USA/California/Los Angeles County
+North America/USA/California/Littlerock	North America/USA/California/Los Angeles County CA
 North America/USA/California/Alhambra Valley	North America/USA/California/Contra Costa County
 North America/USA/California/Indio Hills	North America/USA/California/Riverside County
 North America/USA/California/Forest Ranch	North America/USA/California/Butte County CA
@@ -18142,7 +18200,7 @@ North America/USA/California/Ballico	North America/USA/California/Merced County
 North America/USA/California/Graeagle	North America/USA/California/Plumas County
 North America/USA/California/Ballard	North America/USA/California/Santa Barbara County
 North America/USA/California/Los Berros	North America/USA/California/San Luis Obispo County
-North America/USA/California/Lake Hughes	North America/USA/California/Los Angeles County
+North America/USA/California/Lake Hughes	North America/USA/California/Los Angeles County CA
 North America/USA/California/Wilkerson	North America/USA/California/Inyo County
 North America/USA/California/Lockwood	North America/USA/California/Monterey County CA
 North America/USA/California/Yettem	North America/USA/California/Tulare County
@@ -18289,7 +18347,7 @@ North America/USA/California/Rackerby	North America/USA/California/Butte County 
 North America/USA/California/Milford	North America/USA/California/Lassen County
 North America/USA/California/Litchfield	North America/USA/California/Lassen County
 North America/USA/California/Acampo	North America/USA/California/San Joaquin County
-North America/USA/California/Industry	North America/USA/California/Los Angeles County
+North America/USA/California/Industry	North America/USA/California/Los Angeles County CA
 North America/USA/California/Big Creek	North America/USA/California/Fresno County
 North America/USA/California/Taylorsville	North America/USA/California/Plumas County
 North America/USA/California/Coffee Creek	North America/USA/California/Trinity County CA
@@ -18364,7 +18422,7 @@ North America/USA/California/Honcut	North America/USA/California/Butte County CA
 North America/USA/California/Hyampom	North America/USA/California/Trinity County CA
 North America/USA/California/Bradley	North America/USA/California/Monterey County CA
 North America/USA/California/Monmouth	North America/USA/California/Fresno County
-North America/USA/California/Vernon	North America/USA/California/Los Angeles County
+North America/USA/California/Vernon	North America/USA/California/Los Angeles County CA
 North America/USA/California/Spaulding	North America/USA/California/Lassen County
 North America/USA/California/Furnace Creek	North America/USA/California/Inyo County
 North America/USA/California/Paskenta	North America/USA/California/Tehama County
@@ -18469,6 +18527,7 @@ North America/USA/California/Alameda County	North America/USA/California/Alameda
 North America/USA/California/Spokane County	North America/USA/California/Spokane County CA
 North America/USA/California/Other County	North America/USA/California/
 North America/USA/California/Montgomery County	North America/USA/California/Montgomery County CA
+North America/USA/California/Los Angeles County	North America/USA/California/Los Angeles County CA
 North America/USA/New Jersey/Essex County	North America/USA/New Jersey/Essex County NJ
 North America/USA/New Jersey/Hudson	North America/USA/New Jersey/Hudson County NJ
 North America/USA/New Jersey/Morris County	North America/USA/New Jersey/Morris County NJ
@@ -22595,7 +22654,7 @@ North America/USA/Texas/San Fernando	North America/USA/Texas/Starr County
 North America/USA/Texas/Somervell	North America/USA/Texas/Somervell County
 North America/USA/Texas/Jackson	North America/USA/Texas/Jackson County TX
 North America/USA/Texas/Clark	North America/USA/Texas/
-North America/USA/Texas/Hall	North America/USA/Texas/Hall County
+North America/USA/Texas/Hall	North America/USA/Texas/Hall County TX
 North America/USA/Texas/Hildago	North America/USA/Texas/Hidalgo County TX
 North America/USA/Texas/El Paso County	North America/USA/Texas/El Paso County TX
 North America/USA/Texas/Guadalupe County	North America/USA/Texas/Guadalupe County TX
@@ -22636,6 +22695,7 @@ North America/USA/Texas/Cherokee County	North America/USA/Texas/Cherokee County 
 North America/USA/Texas/Harris County	North America/USA/Texas/Harris County TX
 North America/USA/Texas/Kendall County	North America/USA/Texas/Kendall County TX
 North America/USA/Texas/Clay County	North America/USA/Texas/Clay County TX
+North America/USA/Texas/Hall County	North America/USA/Texas/Hall County TX
 North America/USA/Louisiana/Desoto Parish	North America/USA/Louisiana/DeSoto Parish
 North America/USA/Louisiana/St. Tammany Parish	North America/USA/Louisiana/St Tammany Parish
 North America/USA/Louisiana/St. Bernard Parish	North America/USA/Louisiana/St Bernard Parish
@@ -24318,6 +24378,7 @@ North America/USA/Missouri/Knox County	North America/USA/Missouri/Knox County MO
 North America/USA/Missouri/Christian County	North America/USA/Missouri/Christian County MO
 North America/USA/Missouri/Polk	North America/USA/Missouri/Polk MO
 North America/USA/Missouri/Jackson County	North America/USA/Missouri/Jackson County MO
+North America/USA/Missouri/Franklin County	North America/USA/Missouri/Franklin County MO
 North America/USA/South Carolina/Richland County	North America/USA/South Carolina/Richland County SC
 North America/USA/South Carolina/Fairfield County	North America/USA/South Carolina/Fairfield County SC
 North America/USA/South Carolina/Du Bois	North America/USA/South Carolina/
@@ -27766,6 +27827,11 @@ North America/USA/Idaho/Washington County	North America/USA/Idaho/Washington Cou
 North America/USA/Idaho/Kootenai County	North America/USA/Idaho/Kootenai County ID
 North America/USA/Idaho/Na	North America/USA/Idaho/
 North America/USA/Idaho/Asotin County	North America/USA/Idaho/Asotin County ID
+North America/USA/Idaho/King	North America/USA/Idaho/King ID
+North America/USA/Idaho/Los Angeles County	North America/USA/Idaho/Los Angeles County ID
+North America/USA/Idaho/Blaine County	North America/USA/Idaho/Blaine County ID
+North America/USA/Idaho/Norfolk County	North America/USA/Idaho/Norfolk County ID
+North America/USA/Idaho/Clark	North America/USA/Idaho/Clark ID
 North America/USA/Nevada/Clark County	North America/USA/Nevada/Clark County NV
 North America/USA/Nevada/Douglas County	North America/USA/Nevada/Douglas County NV
 North America/USA/Nevada/Casron	North America/USA/Nevada/Carson NV
@@ -29939,6 +30005,7 @@ North America/USA/Maryland/Harford	North America/USA/Maryland/Harford County
 North America/USA/Maryland/Somerset	North America/USA/Maryland/Somerset County MD
 North America/USA/Maryland/Montgomery	North America/USA/Maryland/Montgomery MD
 North America/USA/Maryland/Howard County	North America/USA/Maryland/Howard County MD
+North America/USA/Maryland/Frederick County	North America/USA/Maryland/Frederick County MD
 North America/USA/New York County/*	North America/USA/New York/*
 North America/USA/Tennessee/Shelby	North America/USA/Tennessee/Shelby County TN
 North America/USA/Tennessee/Shelby County	North America/USA/Tennessee/Shelby County TN
@@ -31681,6 +31748,7 @@ North America/USA/Florida/Okaloosa	North America/USA/Florida/Okaloosa County
 North America/USA/Florida/Indian River	North America/USA/Florida/Indian River County
 North America/USA/Florida/Santa Rosa	North America/USA/Florida/Santa Rosa FL
 North America/USA/Florida/Seminole County	North America/USA/Florida/Seminole County FL
+North America/USA/Florida/Polk County	North America/USA/Florida/Polk County FL
 North America/USA/DC/*	North America/USA/Washington DC/*
 North America/USA/Virgin Islands of the U.S./*	North America/USA/Virgin Islands/*
 North America/USA/Ae/	North America/USA/USA/
@@ -32956,9 +33024,10 @@ North America/USA/New Mexico/Conchas Dam	North America/USA/New Mexico/San Miguel
 North America/USA/New Mexico/San Antonio	North America/USA/New Mexico/Socorro County
 North America/USA/New Mexico/Pastura	North America/USA/New Mexico/Guadalupe County NM
 North America/USA/New Mexico/Santa Fe County	North America/USA/New Mexico/Santa Fe County NM
-North America/USA/New Mexico/Mckinley	North America/USA/New Mexico/Mckinley County
+North America/USA/New Mexico/Mckinley	North America/USA/New Mexico/Mckinley County NM
 North America/USA/New Mexico/San Juan County	North America/USA/New Mexico/San Juan County NM
 North America/USA/New Mexico/Doa Ana County	North America/USA/New Mexico/Doa Ana County NM
+North America/USA/New Mexico/Mckinley County	North America/USA/New Mexico/Mckinley County NM
 North America/USA/Maine/Penobscot	North America/USA/Maine/Penobscot County
 North America/USA/Maine/Oxford	North America/USA/Maine/Oxford County
 North America/USA/Maine/Kennebec	North America/USA/Maine/Kennebec County
@@ -33608,6 +33677,8 @@ North America/USA/Georgia/Dekalb County	North America/USA/Georgia/Dekalb County 
 North America/USA/Georgia/Bibb County	North America/USA/Georgia/Bibb County GA
 North America/USA/Georgia/Fayette County	North America/USA/Georgia/Fayette County GA
 North America/USA/Georgia/Clayton County	North America/USA/Georgia/Clayton County GA
+North America/USA/Georgia/Jackson County	North America/USA/Georgia/Jackson County GA
+North America/USA/Georgia/Hall County	North America/USA/Georgia/Hall County GA
 North America/USA/District Of Columbia/District Of Columbia County	North America/USA/Washington DC/District of Columbia County
 North America/USA/District Of Columbia/*	North America/USA/Washington DC/*
 North America/USA/Kansas/Shawnee	North America/USA/Kansas/Johnson County KS
@@ -34270,7 +34341,7 @@ North America/USA/Kansas/Oklahoma	North America/USA/Kansas/
 North America/USA/Kansas/Johnson	North America/USA/Kansas/Johnson KS
 North America/USA/Kansas/Ottawa	North America/USA/Kansas/Ottawa KS
 North America/USA/New York, New York County/	North America/USA/New York/New York County
-North America/USA/California, los Angeles County/*	North America/USA/California/Los Angeles County
+North America/USA/California, los Angeles County/*	North America/USA/California/Los Angeles County CA
 North America/USA/Michigan/Ingham	North America/USA/Michigan/Ingham County
 North America/USA/Michigan/Detroit	North America/USA/Michigan/Wayne County MI
 North America/USA/Michigan/Grand Rapids	North America/USA/Michigan/Kent County MI
@@ -34963,6 +35034,9 @@ North America/USA/Michigan/Wayne County	North America/USA/Michigan/Wayne County 
 North America/USA/Michigan/Chippewa County	North America/USA/Michigan/Chippewa County MI
 North America/USA/Michigan/Ottawa County	North America/USA/Michigan/Ottawa County MI
 North America/USA/Michigan/Moultrie County	North America/USA/Michigan/Moultrie County MI
+North America/USA/Michigan/Kent County	North America/USA/Michigan/Kent County MI
+North America/USA/Michigan/Midland County	North America/USA/Michigan/Midland County MI
+North America/USA/Michigan/Livingston County	North America/USA/Michigan/Livingston County MI
 North America/USA/Ontario/	North America/USA/USA/
 North America/USA/Conneticut/	North America/USA/Connecticut/
 North America/USA/Conneticut/Hartford	North America/USA/Connecticut/Hartford County
@@ -35873,6 +35947,7 @@ North America/USA/Arkansas/Victoria	North America/USA/Arkansas/Mississippi Count
 North America/USA/Arkansas/Gilbert	North America/USA/Arkansas/Searcy County
 North America/USA/Arkansas/Columbia County	North America/USA/Arkansas/Columbia County AR
 North America/USA/Arkansas/Pulaski County	North America/USA/Arkansas/Pulaski County AR
+North America/USA/Arkansas/Washington County	North America/USA/Arkansas/Washington County AR
 North America/USA/North America/Oregon, Lane County	North America/USA/Oregon/Lane County OR
 North America/USA/North America/Oregon, Polk County	North America/USA/Oregon/Polk County OR
 North America/USA/North America/Oregon, Douglas County	North America/USA/Oregon/Douglas County OR
@@ -36485,7 +36560,7 @@ North America/USA/Virginia/Virginia Beach County	North America/USA/Virginia/Virg
 North America/USA/Virginia/Chesterfield County	North America/USA/Virginia/Chesterfield County VA
 North America/USA/Virginia/Henrico County	North America/USA/Virginia/Henrico County VA
 North America/USA/Virginia/Norfolk County	North America/USA/Virginia/Norfolk VA
-North America/USA/Los Angeles/	North America/USA/California/Los Angeles County
+North America/USA/Los Angeles/	North America/USA/California/Los Angeles County CA
 North America/USA/Puerto Rico/Florida	North America/USA/Puerto Rico/Florida PR
 North America/USA/Puerto Rico/San Juan	North America/USA/Puerto Rico/San Juan PR
 North America/USA/Puerto Rico/Levittown	North America/USA/Puerto Rico/Toa Baja
@@ -39040,6 +39115,7 @@ North America/USA/South Dakota/Prairie City	North America/USA/South Dakota/Perki
 North America/USA/South Dakota/Hillsview	North America/USA/South Dakota/McPherson County SD
 North America/USA/South Dakota/White Rock	North America/USA/South Dakota/Roberts County SD
 North America/USA/South Dakota/Minnehaha	North America/USA/South Dakota/Minnehaha SD
+North America/USA/South Dakota/Union County	North America/USA/South Dakota/Union County SD
 North America/USA/West Virginia/Huntington	North America/USA/West Virginia/Cabell County
 North America/USA/West Virginia/Charleston	North America/USA/West Virginia/Kanawha County
 North America/USA/West Virginia/Wheeling	North America/USA/West Virginia/Ohio County WV
@@ -39674,6 +39750,7 @@ North America/USA/Wyoming/Fox Park	North America/USA/Wyoming/Albany County WY
 North America/USA/Wyoming/Hawk Springs	North America/USA/Wyoming/Goshen County
 North America/USA/Wyoming/Lost Springs	North America/USA/Wyoming/Converse County
 North America/USA/Wyoming/Teton County	North America/USA/Wyoming/Teton County WY
+North America/USA/Wyoming/Lincoln County	North America/USA/Wyoming/Lincoln County WY
 North America/USA/Na/Santa Isabel	North America/USA/USA/
 North America/USA/Dominican Republic/	North America/Dominican Republic/Dominican Republic/
 North America/USA/Middlesex County/	North America/USA/USA/
@@ -39712,6 +39789,7 @@ North America/USA/Tennessee\Marshall County/	North America/USA/Tennessee/Marshal
 North America/USA/Lousiana/*	North America/USA/Louisiana/*
 North America/USA/Missourri/*	North America/USA/Missouri/*
 North America/USA/Arkansa/*	North America/USA/Arkansas/*
+North America/USA/Nan/	North America/USA/USA/
 North America/Costa Rica/Tibas/	North America/Costa Rica/San Jose/Tibas
 North America/Costa Rica/Cartago/Tres Rios	North America/Costa Rica/Cartago CR/Tres Rios CR
 North America/Costa Rica/Cartago/Cartago	North America/Costa Rica/Cartago CR/Cartago CR
@@ -40099,6 +40177,7 @@ South America/Brazil/São Paulo/Sao Carlos	South America/Brazil/São Paulo/Sao C
 South America/Brazil/São Paulo/Andradina	South America/Brazil/São Paulo/Andradina (São Paulo)
 South America/Brazil/São Paulo/Guaira	South America/Brazil/São Paulo/Guaira (São Paulo)
 South America/Brazil/São Paulo/Pitangueiras	South America/Brazil/São Paulo/Pitangueiras (São Paulo)
+South America/Brazil/São Paulo/Borborema	South America/Brazil/São Paulo/Borborema (São Paulo)
 South America/Brazil/Paraíba/*	South America/Brazil/Paraiba/*
 South America/Brazil/Rio de Janeiro/Nova Iguaçu	South America/Brazil/Rio de Janeiro/Nova Iguacu
 South America/Brazil/Rio de Janeiro/São Gonçalo	South America/Brazil/Rio de Janeiro/Sao Goncalo
@@ -40189,6 +40268,7 @@ South America/Brazil/Paraiba/Santa Helena	South America/Brazil/Paraiba/Santa Hel
 South America/Brazil/Paraiba/Triunfo	South America/Brazil/Paraiba/Triunfo (Paraiba)
 South America/Brazil/Paraiba/Santa Luzia	South America/Brazil/Paraiba/Santa Luzia (Paraiba)
 South America/Brazil/Paraiba/Jacarau	South America/Brazil/Paraiba/Jacarau (Paraiba)
+South America/Brazil/Paraiba/Borborema	South America/Brazil/Paraiba/Borborema (Paraiba)
 South America/Brazil/Parana/*	South America/Brazil/Paraná/*
 South America/Brazil/Southeast/Minas Gerais	South America/Brazil/Minas Gerais/
 South America/Brazil/Southeast/*	South America/Brazil/Southeast Region/*
@@ -40767,6 +40847,10 @@ South America/Chile/Araucanía/Los Sauces	South America/Chile/Araucanía/Los Sau
 South America/Chile/Araucanía/Temuco	South America/Chile/Araucanía/Temuco (Araucanía)
 South America/Chile/Arica and Parinacote/*	South America/Chile/Arica and Parinacota/*
 South America/Chile/La Araucanía/Temuco	South America/Chile/La Araucanía/Temuco (La Araucanía)
+South America/Chile/Arica and Parinacota/Arica	South America/Chile/Arica and Parinacota/Arica (Arica and Parinacota)
+South America/Chile/Arica and Parinacota/Putre	South America/Chile/Arica and Parinacota/Putre (Arica and Parinacota)
+South America/Chile/Arica y Parinacota Region/Arica	South America/Chile/Arica y Parinacota Region/Arica (Arica y Parinacota Region)
+South America/Chile/Arica y Parinacota Region/Putre	South America/Chile/Arica y Parinacota Region/Putre (Arica y Parinacota Region)
 South America/Colombia/Cundinamarca/Madrid	South America/Colombia/Cundinamarca/Madrid CO
 South America/Colombia/Cundinamarca/Tolemaida	South America/Colombia/Tolima/Tolemaida
 South America/Colombia/Cundinamarca/Cajicá	South America/Colombia/Cundinamarca/Cajica
@@ -41272,6 +41356,7 @@ Africa/Nigeria/Nassarawa/*	Africa/Nigeria/Nasarawa State/*
 Africa/Nigeria/Kwara/*	Africa/Nigeria/Kwara State/*
 Africa/Nigeria/Kano Municipal/	Africa/Nigeria/Kano State/Kano Municipal
 Africa/Nigeria/Cross River/*	Africa/Nigeria/Cross River State/*
+Africa/Nigeria/Benue/*	Africa/Nigeria/Benue State/*
 Africa/Côte D'Ivoire/Boauké/	Africa/Côte d'Ivoire/Bouaké/
 Africa/Côte D'Ivoire/Brobo/	Africa/Côte d'Ivoire/Bouaké/Brobo
 Africa/Côte D'Ivoire/*/*	Africa/Côte d'Ivoire/*/*
@@ -41418,6 +41503,7 @@ Africa/Angola/Bengo/Dande	Africa/Angola/Bengo/Dande (Bengo)
 Africa/Uganda/Central/*	Africa/Uganda/Central Uganda/*
 Africa/Uganda/Central Region/*	Africa/Uganda/Central Region UG/*
 Africa/Uganda/Northern Region/*	Africa/Uganda/Northern Region UG/*
+Africa/Uganda/Eastern/*	Africa/Uganda/Eastern Region UG/*
 Africa/Zambia/Central/*	Africa/Zambia/Central Zambia/*
 Africa/Zambia/Southern/*	Africa/Zambia/Southern Zambia/*
 Africa/Zambia/Luapula/Mansa	Africa/Zambia/Luapula/Mansa ZM
@@ -41452,13 +41538,14 @@ Africa/Botswana/Mathethe/	Africa/Botswana/Southern District/Mmathethe
 Africa/Botswana/Serowe/	Africa/Botswana/Central District BW/Serowe
 Africa/Botswana/Ramotswa/	Africa/Botswana/Southern East/Ramotswa
 Africa/Botswana/Mabete/	Africa/Botswana/Botswana/
-Africa/Botswana/Masunga/	Africa/Botswana/North-East District/Masunga
+Africa/Botswana/Masunga/	Africa/Botswana/North-East District/Masunga (North-East District)
 Africa/Botswana/Ramokgwebana/	Africa/Botswana/North-East District/Ramokgwebana
 Africa/Botswana/Tatisiding/	Africa/Botswana/North-East District/Tati Siding
 Africa/Botswana/Sowa/	Africa/Botswana/Central District BW/Sowa
 Africa/Botswana/Mamuno/	Africa/Botswana/Ghanzi District/Mamuno
 Africa/Botswana/Mmashoro/	Africa/Botswana/Central District BW/Mmashoro
 Africa/Botswana/Selebi Phikwe/	Africa/Botswana/Central District BW/Selebi Phikwe
+Africa/Botswana/Selebi Phikwe/Selebi Phikwe	Africa/Botswana/Central District BW/Selebi Phikwe
 Africa/Botswana/Paje/	Africa/Botswana/Central District BW/Paje
 Africa/Botswana/Malatswai/	Africa/Botswana/Central District BW/Malatswai
 Africa/Botswana/Mabeleapudi/	Africa/Botswana/Central District BW/Mabeleapudi
@@ -41470,7 +41557,7 @@ Africa/Botswana/Hukuntsi/	Africa/Botswana/Kgalagadi District/Hukuntsi
 Africa/Botswana/Rasesa/	Africa/Botswana/Kgatleng District/Rasesa
 Africa/Botswana/Modipane/	Africa/Botswana/Kgatleng District/Modipane
 Africa/Botswana/Oodi/	Africa/Botswana/Kgatleng District/Oodi
-Africa/Botswana/Kanye/	Africa/Botswana/Southern District/Kanye
+Africa/Botswana/Kanye/	Africa/Botswana/Southern District/Kanye (Southern District)
 Africa/Botswana/Mahalapye/	Africa/Botswana/Central District BW/Mahalapye
 Africa/Botswana/Kopong/	Africa/Botswana/Kweneng District/Kopong
 Africa/Botswana/Kgalagadi/	Africa/Botswana/Kgalagadi District/
@@ -41494,7 +41581,9 @@ Africa/Botswana/Mathangwane/	Africa/Botswana/Central District BW/Mathangwane
 Africa/Botswana/Central/*	Africa/Botswana/Central District BW/*
 Africa/Botswana/Sekakakngwe/	Africa/Botswana/Botswana/
 Africa/Botswana/Southern East/Greater Gaborone	Africa/Botswana/Southern East/Greater Gaborone (Southern East)
+Africa/Botswana/Southern East/Kanye	Africa/Botswana/Southern East/Kanye (Southern East)
 Africa/Botswana/Kweneng District/Greater Gaborone	Africa/Botswana/Kweneng District/Greater Gaborone (Kweneng District)
+Africa/Botswana/Kweneng District/Thamaga	Africa/Botswana/Kweneng District/Thamaga (Kweneng District)
 Africa/Botswana/Southern/Greater Gaborone	Africa/Botswana/Southern/Greater Gaborone (Southern)
 Africa/Botswana/Sojwe/	Africa/Botswana/Kweneng District/Sojwe
 Africa/Botswana/Boatle/	Africa/Botswana/Southern East/Boatle
@@ -41516,6 +41605,15 @@ Africa/Botswana/Kasane/	Africa/Botswana/Chobe District/Kasane
 Africa/Botswana/Lentsweletau/	Africa/Botswana/Kweneng District/Lentsweletau
 Africa/Botswana/Chobe/*	Africa/Botswana/Chobe District/*
 Africa/Botswana/North East/*	Africa/Botswana/North-East District/*
+Africa/Botswana/Ghanzi/*	Africa/Botswana/Ghanzi District/*
+Africa/Botswana/Ccentral/*	Africa/Botswana/Central District BW/*
+Africa/Botswana/Bobirwa/Bobonong	Africa/Botswana/Central District BW/Bobirwa
+Africa/Botswana/Charles Hill/	Africa/Botswana/Ghanzi District/Charles Hill
+Africa/Botswana/Central District BW/Kanye	Africa/Botswana/Central District BW/Kanye (Central District BW)
+Africa/Botswana/Central District BW/Masunga	Africa/Botswana/Central District BW/Masunga (Central District BW)
+Africa/Botswana/Central District BW/Thamaga	Africa/Botswana/Central District BW/Thamaga (Central District BW)
+Africa/Botswana/Southern District/Kanye	Africa/Botswana/Southern District/Kanye (Southern District)
+Africa/Botswana/North-East District/Masunga	Africa/Botswana/North-East District/Masunga (North-East District)
 Africa/Congo/*/*	Africa/Republic of the Congo/*/*
 Africa/Guyane/Cayenne/	Europe/France/French Guiana/Cayenne (French Guiana)
 Africa/Mauritius/Plaine Wilhems/*	Africa/Mauritius/Plaine-Wilhems/*
@@ -41597,6 +41695,7 @@ Africa/Algeria/Eddis/	Africa/Algeria/M'Sila Province/Eddis
 Africa/Liberia/Maryland/	Africa/Liberia/Maryland LR/
 Africa/Zimbabwe/Mash. East/*	Africa/Zimbabwe/Mashonaland East Province/*
 Africa/Zimbabwe/Hre/*	Africa/Zimbabwe/Harare/*
+Africa/Zimbabwe/Mashonalandwest/*	Africa/Zimbabwe/Mashonaland West Province/*
 Africa/Gabon/Central Africa/	Africa/Gabon/Gabon/
 Africa/Eswatini/Piggs Peak/	Africa/Eswatini/Hhohho/Piggs Peak
 Africa/Eswatini/Siteki/	Africa/Eswatini/Lubombo/Siteki
