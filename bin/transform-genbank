@@ -9,6 +9,7 @@ import sys
 from pathlib import Path
 from collections import defaultdict
 import pandas as pd
+from xopen import xopen
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "lib"))
 from utils.transform import (
@@ -128,7 +129,7 @@ if __name__ == '__main__':
 
     accessions = UserProvidedAnnotations()
     if args.accessions:
-        with open(args.accessions, "r") as accessions_fh:
+        with xopen(args.accessions, "r") as accessions_fh:
             for row in csv.DictReader(accessions_fh, delimiter='\t'):
                 accessions.add_user_annotation(
                     row["genbank_accession"],
