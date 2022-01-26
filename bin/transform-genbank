@@ -66,7 +66,7 @@ if __name__ == '__main__':
         "MN994467	country_exposure	China\n\t"
         "MN908947	collection_date 2019-12-26 # Manually corrected date")
     parser.add_argument("--accessions",
-        default=base / "source-data/accessions.tsv",
+        default=base / "source-data/accessions.tsv.gz",
         help="Optional manually curated TSV cross-referencing accessions between databases (e.g. GISAID and GenBank/INSDC).")
     parser.add_argument("--biosample",
         default=base / "data/genbank/biosample.tsv",
