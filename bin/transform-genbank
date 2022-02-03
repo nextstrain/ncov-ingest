@@ -9,6 +9,7 @@ import sys
 from pathlib import Path
 from collections import defaultdict
 import pandas as pd
+from xopen import xopen
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "lib"))
 from utils.transform import (
@@ -65,7 +66,7 @@ if __name__ == '__main__':
         "MN994467	country_exposure	China\n\t"
         "MN908947	collection_date 2019-12-26 # Manually corrected date")
     parser.add_argument("--accessions",
-        default=base / "source-data/accessions.tsv",
+        default=base / "source-data/accessions.tsv.gz",
         help="Optional manually curated TSV cross-referencing accessions between databases (e.g. GISAID and GenBank/INSDC).")
     parser.add_argument("--biosample",
         default=base / "data/genbank/biosample.tsv",
@@ -128,7 +129,7 @@ if __name__ == '__main__':
 
     accessions = UserProvidedAnnotations()
     if args.accessions:
-        with open(args.accessions, "r") as accessions_fh:
+        with xopen(args.accessions, "r") as accessions_fh:
             for row in csv.DictReader(accessions_fh, delimiter='\t'):
                 accessions.add_user_annotation(
                     row["genbank_accession"],

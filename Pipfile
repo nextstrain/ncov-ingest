@@ -15,6 +15,7 @@ aiobotocore = {version = "*", extras = ["awscli","boto3"]}
 biopython = "*"
 regex = "*"
 envdir = "*"
+xopen = "*"
 
 [requires]
 python_version = "3.7"
