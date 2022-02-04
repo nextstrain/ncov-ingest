@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
+bin="$(dirname "$0")"
+
 main() {
     local src="${1:?A source s3:// URL is required as the first argument.}"
     local dst="${2:?A destination file path is required as the second argument.}"
@@ -10,7 +12,7 @@ main() {
     local key="${s3path#*/}"
 
     local src_hash dst_hash no_hash=0000000000000000000000000000000000000000000000000000000000000000
-    dst_hash="$(sha256sum "$dst" 2>/dev/null | awk '{ print $1 }' || true)"
+    dst_hash="$("$bin/sha256sum" < "$dst" || true)"
     src_hash="$(aws s3api head-object --bucket "$bucket" --key "$key" --query Metadata.sha256sum --output text 2>/dev/null || echo "$no_hash")"
 
     echo "[ INFO] Downloading $src → $dst"
