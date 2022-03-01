@@ -4,8 +4,8 @@ on:
   schedule:
     # Note times are in UTC, which is 1 or 2 hours behind CET depending on daylight savings.
     #
-    # Currently, we aim to trigger ingest every day at 14:07 UTC which is 15:07 CET (as of Nov 2021).
-    # Note the actual runs might be late. As of right now, the action starts only around 14:22 UTC.
+    # Currently, we aim to trigger ingest every day at 18:07 UTC which is 19:07 CET (as of Mar 2022).
+    # Note the actual runs might be late. As of right now, the action starts around 20 past the hour.
     # Numerous people were confused, about that, including me:
     #  - https://github.community/t/scheduled-action-running-consistently-late/138025/11
     #  - https://github.com/github/docs/issues/3059
@@ -20,7 +20,7 @@ on:
     #
     # Looks like you are about to modify this schedule? Make sure you also modify the schedule for the
     # sister GISAID job, so that we don't need to keep two schedules in our heads.
-    - cron:  '7 14 * * *'
+    - cron:  '7 18 * * *'
 
   # Manually triggered using `./bin/trigger genbank/fetch-and-ingest` (or `fetch-and-ingest`, which
   # includes GISAID)
