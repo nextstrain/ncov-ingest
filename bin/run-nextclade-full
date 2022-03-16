@@ -260,7 +260,12 @@ main() {
     NUM_OUTPUT_FASTA_BATCHES="$(ls -Ubad1 -- ${FASTA_OUTPUT_WILDCARD} 2>/dev/null | wc -l)"
     echo "[ INFO] ${0}:${LINENO}: There are now ${NUM_OUTPUT_FASTA_BATCHES} output FASTA batches to concatenate (batch size is ${BATCH_SIZE})"
     echo "[ INFO] ${0}:${LINENO}: Concatenating Nextclade output FASTA batches from '${FASTA_OUTPUT_WILDCARD}' into '${OUTPUT_FASTA}'"
-    cat ${FASTA_OUTPUT_WILDCARD} >"${OUTPUT_FASTA}"
+    cat /dev/null >"${OUTPUT_FASTA}"
+    for fasta in ${FASTA_OUTPUT_WILDCARD}; do
+        echo "[ INFO] ${0}:${LINENO}: Concatenating Nextclade output FASTA '$fasta' to '${OUTPUT_FASTA}'"
+        cat "$fasta" >>"${OUTPUT_FASTA}"
+        rm "$fasta"
+    done
   else
     echo "[ERROR] ${0}:${LINENO}: Output FASTA batches are not found: '${FASTA_OUTPUT_WILDCARD}'. Nextclade jobs must have failed to write their results."
     exit 1
@@ -304,7 +309,7 @@ main() {
     echo "[ INFO] ${0}:${LINENO}: Concatenating Nextclade output mutation-summary.tsv batches from '${MUTATION_SUMMARY_OUTPUT_WILDCARD}' into '${OUTPUT_MUTATION_SUMMARY}'"
     csvstack --tabs ${MUTATION_SUMMARY_OUTPUT_WILDCARD} | csvformat --out-tabs >"${OUTPUT_MUTATION_SUMMARY}"
   else
-    echo "[ERROR] ${0}:${LINENO}: Output mutation-summary.tsv batches are not found: '${FASTA_OUTPUT_WILDCARD}'. ./bin/mutation-summary must have failed to write their results."
+    echo "[ERROR] ${0}:${LINENO}: Output mutation-summary.tsv batches are not found: '${MUTATION_SUMMARY_OUTPUT_WILDCARD}'. ./bin/mutation-summary must have failed to write their results."
     exit 1
   fi
 
