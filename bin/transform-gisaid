@@ -24,6 +24,7 @@ from utils.transformpipeline.transforms import (
     FillDefaultLocationData,
     FixLabs,
     MergeUserAnnotatedMetadata,
+    MaskBadCollectionDate,
     ParsePatientAge,
     ParseSex,
     RenameAndAddColumns,
@@ -162,6 +163,7 @@ if __name__ == '__main__':
             | AbbreviateAuthors()
             | ParsePatientAge()
             | ParseSex()
+            | MaskBadCollectionDate()
             | AddHardcodedMetadata()
         )
 
