@@ -82,7 +82,7 @@ if __name__ == '__main__':
             "e.g.\n\t"
             "Europe/Spain/Catalunya/Mataró\tEurope/Spain/Catalunya/Mataro\n\t")
     parser.add_argument("--output-metadata",
-        default=str( base / "data/gisaid/metadata.tsv" ), 
+        default=str( base / "data/gisaid/metadata.tsv" ),
         help="Output location of generated metadata tsv. Defaults to `data/gisaid/metadata.tsv`")
     parser.add_argument("--output-fasta",
         default=str( base / "data/gisaid/sequences.fasta" ) ,
@@ -154,7 +154,7 @@ if __name__ == '__main__':
 
         if not args.sorted_fasta:
             pipeline = pipeline | DropSequenceData()
-        
+
         pipeline = (
             pipeline
             | ExpandLocation()
@@ -162,22 +162,22 @@ if __name__ == '__main__':
             | AbbreviateAuthors()
             | ParsePatientAge()
             | ParseSex()
-            | AddHardcodedMetadata() 
+            | AddHardcodedMetadata()
         )
 
         # writing the raw metadata in a tsv file
-        pipeline = ( pipeline  | WriteCSV(RAW_METADATA_FILENAME, 
-                                            METADATA_COLUMNS , 
-                                            restval = '?' , 
-                                            extrasaction ='ignore' , 
-                                            delimiter  = '\t', 
+        pipeline = ( pipeline  | WriteCSV(RAW_METADATA_FILENAME,
+                                            METADATA_COLUMNS ,
+                                            restval = '?' ,
+                                            extrasaction ='ignore' ,
+                                            delimiter  = '\t',
                                             dict_writer_kwargs  = {'lineterminator': args.newline} ) )
 
 
         # applying the substitution rules (temporary : writing the intermediary data to verify effect )
         dict_writer_kwargs = {'lineterminator': args.newline}
 
-        
+
         pipeline = (pipeline
             | ApplyUserGeoLocationSubstitutionRules(geoRules)
             | MergeUserAnnotatedMetadata(annotations)
