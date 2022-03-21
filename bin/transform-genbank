@@ -25,6 +25,7 @@ from utils.transformpipeline.transforms import (
     DropSequenceData,
     FillDefaultLocationData,
     FixLabs,
+    MaskBadCollectionDate,
     MergeBiosampleMetadata,
     MergeUserAnnotatedMetadata,
     ParseGeographicColumnsGenbank,
@@ -169,6 +170,7 @@ if __name__ == '__main__':
                               | FixLabs()
                               | ParsePatientAge()
                               | ParseSex()
+                              | MaskBadCollectionDate()
                               | StandardizeGenbankStrainNames()
                               | ParseGeographicColumnsGenbank( base / 'source-data/us-state-codes.tsv' )
                               | AbbreviateAuthors()

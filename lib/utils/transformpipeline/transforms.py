@@ -4,6 +4,7 @@ import unicodedata
 from collections import defaultdict
 from typing import Any, Collection, List, MutableMapping, Sequence, Tuple , Dict , Union
 import pandas as pd
+from datetime import datetime
 
 
 from utils.transform import format_date, titlecase
@@ -387,6 +388,27 @@ class ParseSex(Transformer):
         entry['sex'] = re.sub(r"^(female|F|Femal)$", "Female", entry['sex'])
         # Cleanup unknowns
         entry['sex'] = re.sub(r"^(unknown|N/A|NA|not applicable)$", "?", entry['sex'])
+        return entry
+
+
+class MaskBadCollectionDate(Transformer):
+    """
+    Masks collection date with 'XXXX-XX-XX' if the collection date is the same
+    day as or after the submission date.
+
+    Only masks the collection date if both dates are properly formatted as
+    ISO 8601 date (YYYY-MM-DD).
+    """
+    def transform_value(self, entry: dict) -> dict:
+        expected_date_format = '%Y-%m-%d'
+        try:
+            collection_date = datetime.strptime(entry['date'], expected_date_format)
+            submission_date = datetime.strptime(entry['date_submitted'], expected_date_format)
+            if collection_date >= submission_date:
+                entry['date'] = 'XXXX-XX-XX'
+        except ValueError:
+            pass
+
         return entry
 
 
