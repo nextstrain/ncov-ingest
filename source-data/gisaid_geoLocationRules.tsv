@@ -6760,7 +6760,10 @@ Europe/Russia/Perm Region/*	Europe/Russia/Perm Krai/*
 Europe/Russia/Kabardino-Balkaria Republic/*	Europe/Russia/Kabardino-Balkaria/*
 Europe/Russia/Tula Region/Sokolniki	Europe/Russia/Tula Region/Sokolniki RU
 Europe/Russia/Tula Region/Pervomaysky	Europe/Russia/Tula Region/Pervomaysky (Tula Region)
+Europe/Russia/Tula Region/Podolsk	Europe/Russia/Tula Region/Podolsk (Tula Region)
 Europe/Russia/Orenburg/Pervomaysky	Europe/Russia/Orenburg/Pervomaysky (Orenburg)
+Europe/Russia/Podolsk/	Europe/Russia/Moscow Oblast/Podolsk (Moscow Oblast)
+Europe/Russia/Moscow Oblast/Podolsk	Europe/Russia/Moscow Oblast/Podolsk (Moscow Oblast)
 Europe/Hungary/Baranya/*	Europe/Hungary/Baranya County/*
 Europe/Hungary/Budapest/	Europe/Hungary/Central Hungary/Budapest
 Europe/Hungary/Borsod-Abauj-Zemplen County/*	Europe/Hungary/Borsod-Abaúj-Zemplén County/*
@@ -6823,6 +6826,7 @@ Europe/Czech Republic/Olomouc Region/Pisarov	Europe/Czech Republic/Olomouc Regio
 Europe/Czech Republic/Olomouc Region/Prerov	Europe/Czech Republic/Olomouc Region/Prerov (Olomouc Region)
 Europe/Czech Republic/Olomouc Region/Kojetin	Europe/Czech Republic/Olomouc Region/Kojetin (Olomouc Region)
 Europe/Czech Republic/Olomouc Region/Jesenik	Europe/Czech Republic/Olomouc Region/Jesenik (Olomouc Region)
+Europe/Czech Republic/Olomouc Region/Naklo	Europe/Czech Republic/Olomouc Region/Naklo CZ
 Europe/Czech Republic/Central Bohemia Region/Prague	Europe/Czech Republic/Prague/
 Europe/Czech Republic/Central Bohemia Region/*	Europe/Czech Republic/Central Bohemian Region/*
 Europe/Czech Republic/Northern Bohemia Region/Litomerice	Europe/Czech Republic/Usti nad Labem/Litomerice
@@ -6870,6 +6874,7 @@ Europe/Czech Republic/Moravian-Silesian Region/Horni Sucha	Europe/Czech Republic
 Europe/Czech Republic/Moravian-Silesian Region/Horni Bludovice	Europe/Czech Republic/Moravian-Silesian Region/Horni Bludovice (Moravian-Silesian Region)
 Europe/Czech Republic/Moravian-Silesian Region/Jesenik	Europe/Czech Republic/Moravian-Silesian Region/Jesenik (Moravian-Silesian Region)
 Europe/Czech Republic/Moravian-Silesian Region/Ostrava	Europe/Czech Republic/Moravian-Silesian Region/Ostrava (Moravian-Silesian Region)
+Europe/Czech Republic/Moravian-Silesian Region/Hradek	Europe/Czech Republic/Moravian-Silesian Region/Hradek (Moravian-Silesian Region)
 Europe/Czech Republic/Hradec Kralove Region/*	Europe/Czech Republic/Hradec Králové Region/*
 Europe/Czech Republic/Trutnov/	Europe/Czech Republic/Hradec Králové Region/Trutnov
 Europe/Czech Republic/Pardubice/	Europe/Czech Republic/Pardubice Region/Pardubice (Pardubice Region)
@@ -6933,6 +6938,7 @@ Europe/Czech Republic/South Moravian Region/Jirikovice	Europe/Czech Republic/Sou
 Europe/Czech Republic/South Moravian Region/Zbysov	Europe/Czech Republic/South Moravian Region/Zbysov (South Moravian Region)
 Europe/Czech Republic/South Moravian Region/Ricany	Europe/Czech Republic/South Moravian Region/Ricany (South Moravian Region)
 Europe/Czech Republic/South Moravian Region/Holubice	Europe/Czech Republic/South Moravian Region/Holubice (South Moravian Region)
+Europe/Czech Republic/South Moravian Region/Hradek	Europe/Czech Republic/South Moravian Region/Hradek (South Moravian Region)
 Europe/Czech Republic/Jihlava/	Europe/Czech Republic/Vysocina Region/Jihlava
 Europe/Czech Republic/Liberecregion/*	Europe/Czech Republic/Liberec Region/*
 Europe/Czech Republic/Vysocina Region/Pribyslavice	Europe/Czech Republic/Vysocina Region/Pribyslavice (Vysocina Region)
@@ -7011,6 +7017,7 @@ Europe/Czech Republic/Brno Region/Rosice	Europe/Czech Republic/South Moravian Re
 Europe/Czech Republic/Brno Region/Bystrice Pod Hostynem	Europe/Czech Republic/South Moravian Region/
 Europe/Czech Republic/Ostrava Region/Horni Sucha	Europe/Czech Republic/Ostrava Region/Horni Sucha (Ostrava Region)
 Europe/Czech Republic/Ostrava Region/Ostrava	Europe/Czech Republic/Ostrava Region/Ostrava (Ostrava Region)
+Europe/Czech Republic/Caslavice/	Europe/Czech Republic/Vysocina Region/Caslavice
 Europe/Crimea//	Europe/Ukraine/Crimea/Crimea
 Europe/Crimea/Simpheropol/	Europe/Ukraine/Crimea/Simpheropol
 Europe/Crimea/Alushta/	Europe/Ukraine/Crimea/Alushta
@@ -7204,6 +7211,7 @@ Europe/Spain/Balear Islands/Llucmajor	Europe/Spain/Balear Islands/Lluchmayor
 Europe/Spain/Balear Islands/Marratxi	Europe/Spain/Balear Islands/Marratxí
 Europe/Spain/Balear Islands/Palma	Europe/Spain/Balear Islands/Palma ES
 Europe/Spain/Balear Islands/Marrachi	Europe/Spain/Balear Islands/Marratxí
+Europe/Spain/Balear Islands/Palmanova	Europe/Spain/Balear Islands/Palmanova ES
 Europe/Spain/Cantabria/Penacastillo	Europe/Spain/Cantabria/Peñacastillo
 Europe/Spain/Cantabria/Santillana	Europe/Spain/Cantabria/Santillana Del Mar
 Europe/Spain/Islas Canarias/*	Europe/Spain/Canary Islands/*
@@ -7239,6 +7247,7 @@ Europe/Spain/Albacete/	Europe/Spain/Castilla la Mancha/Albacete
 Europe/Spain/Cuenca/	Europe/Spain/Castilla la Mancha/Cuenca ES
 Europe/Spain/Castilla–la Mancha/*	Europe/Spain/Castilla la Mancha/*
 Europe/Spain/La Rioja ES/Cardenas	Europe/Spain/La Rioja ES/Cardenas ES
+Europe/Spain/La Rioja ES/Navarra	Europe/Spain/La Rioja ES/
 Europe/Spain/Sevilla/	Europe/Spain/Andalusia/Sevilla
 Europe/Sweden/Västerbotten/	Europe/Sweden/Vasterbotten/
 Europe/Sweden/Västra Götaland/*	Europe/Sweden/Vastra Gotaland/*
@@ -7629,6 +7638,7 @@ Europe/Poland/Opolskie/Klodzko	Europe/Poland/Opolskie/Klodzko (Opolskie)
 Europe/Poland/Opolskie/Zawada	Europe/Poland/Opolskie/Zawada (Opolskie)
 Europe/Poland/Opolskie/Raciborz	Europe/Poland/Opolskie/Raciborz (Opolskie)
 Europe/Poland/Opolskie/Bodzanow	Europe/Poland/Opolskie/Bodzanow (Opolskie)
+Europe/Poland/Opolskie/Naklo	Europe/Poland/Opolskie/Naklo PL
 Europe/Poland/Zuid-Holland/*	Europe/Netherlands/South Holland/*
 Europe/Poland/Małopolska/*	Europe/Poland/Malopolskie/*
 Europe/Poland/Mujawsko-Pomorskie/*	Europe/Poland/Kujawsko-Pomorskie/*
@@ -7800,12 +7810,12 @@ Europe/Poland/Ma?Opolskie/*	Europe/Poland/Malopolskie/*
 Europe/Poland/Malpolskie/*	Europe/Poland/Malopolskie/*
 Europe/Poland/Kuyavian-Pomeranian/Nakielski	Europe/Poland/Kuyavian-Pomeranian/Nakielski (Kuyavian-Pomeranian)
 Europe/Poland/Woj. Slaskie/*	Europe/Poland/Slaskie/*
-Europe/Poland/Slask/Cieszyn	Europe/Poland/Slaskie/Cieszyn (Slask)
-Europe/Poland/Slask/Lodygowice	Europe/Poland/Slaskie/Lodygowice (Slask)
-Europe/Poland/Slask/Bytom	Europe/Poland/Slaskie/Bytom (Slask)
-Europe/Poland/Slask/Jastrzebie-Zdroj	Europe/Poland/Slaskie/Jastrzebie-Zdroj (Slask)
+Europe/Poland/Slask/Cieszyn	Europe/Poland/Slaskie/Cieszyn (Slaskie)
+Europe/Poland/Slask/Lodygowice	Europe/Poland/Slaskie/Lodygowice (Slaskie)
+Europe/Poland/Slask/Bytom	Europe/Poland/Slaskie/Bytom (Slaskie)
+Europe/Poland/Slask/Jastrzebie-Zdroj	Europe/Poland/Slaskie/Jastrzebie-Zdroj (Slaskie)
 Europe/Poland/Slask/*	Europe/Poland/Slaskie/*
-Europe/Poland/Slask/Gostyn	Europe/Poland/Slaskie/Gostyn (Slask)
+Europe/Poland/Slask/Gostyn	Europe/Poland/Slaskie/Gostyn (Slaskie)
 Europe/Poland/West Pomeranian Voivodeship/Kolobrzeski	Europe/Poland/West Pomeranian Voivodeship/Kolobrzeski (West Pomeranian Voivodeship)
 Europe/Poland/Greater Poland Voivodeship/Krotoszynski	Europe/Poland/Greater Poland Voivodeship/Krotoszynski (Greater Poland Voivodeship)
 Europe/Poland/Swietokrzyskie Voivodeship/*	Europe/Poland/Swietokrzyskie/*
@@ -7864,6 +7874,7 @@ Europe/Italy/Campania/Ercolano (Na)	Europe/Italy/Campania/Ercolano
 Europe/Italy/Campania/Boscoreale (Na)	Europe/Italy/Campania/Boscoreale
 Europe/Italy/Campania/Sant Egidio del Monte Albino (Sa)	Europe/Italy/Campania/Sant Egidio del Monte Albino
 Europe/Italy/Campania/Catanzaro	Europe/Italy/Campania/Catanzaro (Campania)
+Europe/Italy/Campania/Siracusa	Europe/Italy/Campania/Siracusa (Campania)
 Europe/Italy/Molise/Padova	Europe/Italy/Veneto/Padova
 Europe/Italy/Molise/Bojano	Europe/Italy/Molise/Bojano IT
 Europe/Italy/Molise/Roma	Europe/Italy/Lazio/Rome
@@ -7893,13 +7904,19 @@ Europe/Italy/Trentino-Alto Adige/Milano	Europe/Italy/Trentino-Alto Adige/Milano 
 Europe/Italy/Trentino-Alto Adige/Treviso	Europe/Italy/Trentino-Alto Adige/Treviso (Trentino-Alto Adige)
 Europe/Italy/Trentino-Alto Adige/Salerno	Europe/Italy/Trentino-Alto Adige/Salerno (Trentino-Alto Adige)
 Europe/Italy/Trentino-Alto Adige/Funes	Europe/Italy/Trentino-Alto Adige/Funes IT
+Europe/Italy/Trentino-Alto Adige/Bergamo	Europe/Italy/Trentino-Alto Adige/Bergamo (Trentino-Alto Adige)
 Europe/Italy/Lombardy/Brescia	Europe/Italy/Lombardy/Brescia (Lombardy)
 Europe/Italy/Lombardy/Milano	Europe/Italy/Lombardy/Milano (Lombardy)
+Europe/Italy/Lombardy/Bergamo	Europe/Italy/Lombardy/Bergamo (Lombardy)
 Europe/Italy/The Marches/*	Europe/Italy/Marche/*
 Europe/Italy/Basilicata/Alezio	Europe/Italy/Basilicata/Alezio (Basilicata)
 Europe/Italy/Abruzzo/L'Aquila	Europe/Italy/Abruzzo/L'Aquila (Abruzzo)
 Europe/Italy/Varese/	Europe/Italy/Lombardy/Varese
 Europe/Italy/Calabria/Catanzaro	Europe/Italy/Calabria/Catanzaro (Calabria)
+Europe/Italy/Friuli Venezia Giulia/Roma	Europe/Italy/Friuli Venezia Giulia/Roma (Friuli Venezia Giulia)
+Europe/Italy/Friuli Venezia Giulia/Palmanova	Europe/Italy/Friuli Venezia Giulia/Palmanova IT
+Europe/Italy/Sicily/Siracusa	Europe/Italy/Sicily/Siracusa (Sicily)
+Europe/Italy/Marche/Loreto	Europe/Italy/Marche/Loreto IT
 Europe/Finland/Lapland/	Europe/Finland/Finland/Rovaniemi
 Europe/Finland/Kanta-Hame/*	Europe/Finland/Kanta-Häme/*
 Europe/Finland/Vaasa/	Europe/Finland/Ostrobothnia/Vaasa
@@ -9487,6 +9504,10 @@ Asia/Vietnam/Central Region/	Asia/Vietnam/Vietnam/
 Asia/Vietnam/Hochiminh/	Asia/Vietnam/Southeast Region/Ho Chi Minh City
 Asia/Vietnam/Tayninh/*	Asia/Vietnam/Tay Ninh/*
 Asia/Vietnam/Baclieu/*	Asia/Vietnam/Bac Lieu/*
+Asia/Vietnam/Angiang/*	Asia/Vietnam/An Giang/*
+Asia/Vietnam/Dongnai/*	Asia/Vietnam/Dong Nai/*
+Asia/Vietnam/Camau/*	Asia/Vietnam/Ca Mau/*
+Asia/Vietnam/Brvt/*	Asia/Vietnam/Ba Ria Vung Tau/*
 Asia/Pakistan/Gilgit/	Asia/Pakistan/Gilgit Baltistan/Gilgit
 Asia/Pakistan/Kpk/	Asia/Pakistan/Khyber Pakhtunkhwa/
 Asia/Pakistan/Punjab/*	Asia/Pakistan/Punjab PK/*
@@ -9765,6 +9786,7 @@ Asia/India/Pondicherry/*	Asia/India/Puducherry/*
 Asia/India/Gujart/*	Asia/India/Gujarat/*
 Asia/India/Bihar/Gopalganj	Asia/India/Bihar/Gopalganj IN
 Asia/India/Bihar/Gaya	Asia/India/Bihar/Gaya (Bihar)
+Asia/India/Bihar/East Khasi Hills	Asia/India/Bihar/East Khasi Hills (Bihar)
 Asia/India/Tamilnadu/*	Asia/India/Tamil Nadu/*
 Asia/India/Punjab IN/Rupnagar	Asia/India/Punjab IN/Rupnagar IN
 Asia/India/Punjab IN/Mansa	Asia/India/Punjab IN/Mansa (Punjab IN)
@@ -9781,8 +9803,16 @@ Asia/India/Kerala/Thrissur	Asia/India/Kerala/Thrissur (Kerala)
 Asia/India/Kerala/Palakkad	Asia/India/Kerala/Palakkad (Kerala)
 Asia/India/Kerala/Kozhikode	Asia/India/Kerala/Kozhikode (Kerala)
 Asia/India/Meghalaya/Kamrup Metropolitan	Asia/India/Meghalaya/Kamrup Metropolitan (Meghalaya)
+Asia/India/Meghalaya/East Khasi Hills	Asia/India/Meghalaya/East Khasi Hills (Meghalaya)
 Asia/India/Uttarakhand/Haridwar	Asia/India/Uttarakhand/Haridwar (Uttarakhand)
+Asia/India/Uttarakhand/Rishikesh	Asia/India/Uttarakhand/Rishikesh (Uttarakhand)
 Asia/India/Madhya Pradesh/Mandsaur	Asia/India/Madhya Pradesh/Mandsaur (Madhya Pradesh)
+Asia/India/Madhya Pradesh/Raipur	Asia/India/Madhya Pradesh/Raipur (Madhya Pradesh)
+Asia/India/Madhya Pradesh/Indore	Asia/India/Madhya Pradesh/Indore (Madhya Pradesh)
+Asia/India/Jammu/	Asia/India/Jammu and Kashmir/Jammu
+Asia/India/Chhattisgarh/Raipur	Asia/India/Chhattisgarh/Raipur (Chhattisgarh)
+Asia/India/Himachal Pradesh/Rishikesh	Asia/India/Himachal Pradesh/Rishikesh (Himachal Pradesh)
+Asia/India/Himachal Pradesh/Indore	Asia/India/Himachal Pradesh/Indore (Himachal Pradesh)
 Asia/Bangladesh/Chittagong/Cox'S Bazar	Asia/Bangladesh/Chattogram/Cox's Bazar
 Asia/Bangladesh/Chittagong/Nimtola	Asia/Bangladesh/Dhaka/Nimtola
 Asia/Bangladesh/Khulna/Jessore	Asia/Bangladesh/Khulna/Jashore
@@ -9828,6 +9858,7 @@ Asia/Bangladesh/Dhaka/Gopalganj	Asia/Bangladesh/Dhaka/Gopalganj BD
 Asia/Bangladesh/Dhaka/Rupnagar	Asia/Bangladesh/Dhaka/Rupnagar BD
 Asia/Bangladesh/Dhaka/Saidabad	Asia/Bangladesh/Dhaka/Saidabad BD
 Asia/Bangladesh/Dhaka/Srinagar	Asia/Bangladesh/Dhaka/Srinagar BD
+Asia/Bangladesh/Dhaka/Sutrapur	Asia/Bangladesh/Dhaka/Sutrapur (Dhaka)
 Asia/Bangladesh/Unknown/	Asia/Bangladesh/Bangladesh/
 Asia/Bangladesh/Sylthet/*	Asia/Bangladesh/Sylhet/*
 Asia/Bangladesh/Habiganj/*	Asia/Bangladesh/Sylhet/Habiganj
@@ -9850,7 +9881,7 @@ Asia/Bangladesh/Faridpur/	Asia/Bangladesh/Dhaka/Faridpur
 Asia/Bangladesh/Faridpur/Boalmari	Asia/Bangladesh/Dhaka/Boalmari
 Asia/Bangladesh/Kishorgonj/*	Asia/Bangladesh/Dhaka/Kishoreganj
 Asia/Bangladesh/Jashore/	Asia/Bangladesh/Khulna/Jashore
-Asia/Bangladesh/Jashore/Keshabpur	Asia/Bangladesh/Khulna/Keshabpur
+Asia/Bangladesh/Jashore/*	Asia/Bangladesh/Khulna/*
 Asia/Bangladesh/Rajbari/Goalanda Ghat Upazila	Asia/Bangladesh/Dhaka/Goalanda
 Asia/Bangladesh/Rajbari/	Asia/Bangladesh/Dhaka/Rajbari
 Asia/Bangladesh/Rajbari/*	Asia/Bangladesh/Dhaka/*
@@ -9876,6 +9907,7 @@ Asia/Bangladesh/Rangamati/*	Asia/Bangladesh/Chattogram/*
 Asia/Bangladesh/Dinajpur/	Asia/Bangladesh/Rangpur/Dinajpur
 Asia/Bangladesh/Kishoregonj/	Asia/Bangladesh/Dhaka/Kishoreganj
 Asia/Bangladesh/Tangail/	Asia/Bangladesh/Dhaka/Tangail
+Asia/Bangladesh/Tangail/*	Asia/Bangladesh/Dhaka/*
 Asia/Bangladesh/Natore/	Asia/Bangladesh/Rajshahi/Natore
 Asia/Bangladesh/Natore/*	Asia/Bangladesh/Rajshahi/*
 Asia/Bangladesh/Thakurgaon/	Asia/Bangladesh/Rangpur/Thakurgaon
@@ -9893,6 +9925,7 @@ Asia/Bangladesh/Madaripur/	Asia/Bangladesh/Dhaka/Madaripur
 Asia/Bangladesh/Madaripur/Kalkini	Asia/Bangladesh/Dhaka/Kalkini
 Asia/Bangladesh/Brahmanbaria/	Asia/Bangladesh/Chattogram/Brahmanbaria
 Asia/Bangladesh/Sirajganj/	Asia/Bangladesh/Rajshahi/Sirajganj
+Asia/Bangladesh/Sirajganj/*	Asia/Bangladesh/Rajshahi/*
 Asia/Bangladesh/Cox'S Bazar/	Asia/Bangladesh/Chattogram/Cox's Bazar
 Asia/Bangladesh/Cox'S Bazar/Sadar	Asia/Bangladesh/Chattogram/Cox's Bazar
 Asia/Bangladesh/Cox'S Bazar/Pekua	Asia/Bangladesh/Chattogram/Pekua
@@ -9920,6 +9953,7 @@ Asia/Bangladesh/Kurigram/*	Asia/Bangladesh/Rangpur/*
 Asia/Bangladesh/Rajshahi/Rajpara	Asia/Bangladesh/Rajshahi/Rajpara BD
 Asia/Bangladesh/Rajshahi/Shahjahanpur	Asia/Bangladesh/Rajshahi/Shahjahanpur (Rajshahi)
 Asia/Bangladesh/Rajshahi/Sherpur	Asia/Bangladesh/Rajshahi/Sherpur (Rajshahi)
+Asia/Bangladesh/Rajshahi/Sutrapur	Asia/Bangladesh/Rajshahi/Sutrapur (Rajshahi)
 Asia/Bangladesh/Mymensingh/Jamalpur	Asia/Bangladesh/Mymensingh/Jamalpur (Mymensingh)
 Asia/Bangladesh/Mymensingh/Sherpur	Asia/Bangladesh/Mymensingh/Sherpur (Mymensingh)
 Asia/Bangladesh/Sirajgonj/	Asia/Bangladesh/Rajshahi/Sirajgonj
@@ -9969,6 +10003,7 @@ Asia/Bangladesh/Maulvibazar/Kamalgonj	Asia/Bangladesh/Sylhet/Kamalgonj
 Asia/Bangladesh/Patuakhali/	Asia/Bangladesh/Barishal/Patuakhali
 Asia/Bangladesh/Patuakhali/*	Asia/Bangladesh/Barishal/*
 Asia/Bangladesh/Jhalokati/	Asia/Bangladesh/Khulna/Jhalokati
+Asia/Bangladesh/Netrakona/	Asia/Bangladesh/Mymensingh/Netrakona
 Asia/Thailand/Phatum Thani/	Asia/Thailand/Pathum Thani/
 Asia/Thailand/Samut Sakorn/*	Asia/Thailand/Samut Sakhon/*
 Asia/Thailand/Angthong/*	Asia/Thailand/Ang Thong/*
@@ -18854,6 +18889,8 @@ North America/USA/California/California	North America/USA/California/California 
 North America/USA/California/Richmond County	North America/USA/California/Richmond County CA
 North America/USA/California/Arapahoe County	North America/USA/California/Arapahoe County CA
 North America/USA/California/Washoe County	North America/USA/California/Washoe County CA
+North America/USA/California/Yamhill County	North America/USA/California/Yamhill County CA
+North America/USA/California/Denton County	North America/USA/California/Denton County CA
 North America/USA/New Jersey/Essex County	North America/USA/New Jersey/Essex County NJ
 North America/USA/New Jersey/Hudson	North America/USA/New Jersey/Hudson County NJ
 North America/USA/New Jersey/Morris County	North America/USA/New Jersey/Morris County NJ
@@ -20406,6 +20443,7 @@ North America/USA/Iowa/Clayton County	North America/USA/Iowa/Clayton County IA
 North America/USA/Iowa/Linn County	North America/USA/Iowa/Linn County IA
 North America/USA/Iowa/Webster County	North America/USA/Iowa/Webster County IA
 North America/USA/Iowa/Rock Island	North America/USA/Iowa/Rock Island IA
+North America/USA/Iowa/Hardin County	North America/USA/Iowa/Hardin County IA
 North America/USA/Alaska/Southeast	North America/USA/Alaska/Southeast Alaska
 North America/USA/Alaska/Gulf Coast	North America/USA/Alaska/Gulf Coast Alaska
 North America/USA/Alaska/South West	North America/USA/Alaska/Southwest Alaska
@@ -20754,7 +20792,7 @@ North America/USA/Oregon/Jackson County	North America/USA/Oregon/Jackson County 
 North America/USA/Oregon/Douglas County	North America/USA/Oregon/Douglas County OR
 North America/USA/Oregon/Polk County	North America/USA/Oregon/Polk County OR
 North America/USA/Oregon/Willsonville	North America/USA/Oregon/Clackamas County
-North America/USA/Oregon/Sharidan	North America/USA/Oregon/Yamhill County
+North America/USA/Oregon/Sharidan	North America/USA/Oregon/Yamhill County OR
 North America/USA/Oregon/Union County	North America/USA/Oregon/Union County OR
 North America/USA/Oregon/Clackamas	North America/USA/Oregon/Clackamas County
 North America/USA/Oregon/Jefferson County	North America/USA/Oregon/Jefferson County OR
@@ -20768,7 +20806,7 @@ North America/USA/Oregon/Multnomah	North America/USA/Oregon/Multnomah County
 North America/USA/Oregon/Coos	North America/USA/Oregon/Coos County
 North America/USA/Oregon/Deschutes	North America/USA/Oregon/Deschutes County
 North America/USA/Oregon/Douglas	North America/USA/Oregon/Douglas County OR
-North America/USA/Oregon/Yamhill	North America/USA/Oregon/Yamhill County
+North America/USA/Oregon/Yamhill	North America/USA/Oregon/Yamhill County OR
 North America/USA/Oregon/Washington	North America/USA/Oregon/Washington County OR
 North America/USA/Oregon/Lincoln County	North America/USA/Oregon/Lincoln County OR
 North America/USA/Oregon/Grant	North America/USA/Oregon/Grant County OR
@@ -20807,7 +20845,7 @@ North America/USA/Oregon/Grants Pass	North America/USA/Oregon/Josephine County
 North America/USA/Oregon/Aloha	North America/USA/Oregon/Washington County OR
 North America/USA/Oregon/Roseburg	North America/USA/Oregon/Douglas County OR
 North America/USA/Oregon/Klamath Falls	North America/USA/Oregon/Klamath County
-North America/USA/Oregon/McMinnville	North America/USA/Oregon/Yamhill County
+North America/USA/Oregon/McMinnville	North America/USA/Oregon/Yamhill County OR
 North America/USA/Oregon/Lake Oswego	North America/USA/Oregon/Clackamas County
 North America/USA/Oregon/Keizer	North America/USA/Oregon/Marion County OR
 North America/USA/Oregon/Oregon City	North America/USA/Oregon/Clackamas County
@@ -20815,7 +20853,7 @@ North America/USA/Oregon/Woodburn	North America/USA/Oregon/Marion County OR
 North America/USA/Oregon/Redmond	North America/USA/Oregon/Deschutes County
 North America/USA/Oregon/Coos Bay	North America/USA/Oregon/Coos County OR
 North America/USA/Oregon/Hermiston	North America/USA/Oregon/Umatilla County
-North America/USA/Oregon/Newberg	North America/USA/Oregon/Yamhill County
+North America/USA/Oregon/Newberg	North America/USA/Oregon/Yamhill County OR
 North America/USA/Oregon/Tualatin	North America/USA/Oregon/Washington County OR
 North America/USA/Oregon/St. Helens	North America/USA/Oregon/Columbia County OR
 North America/USA/Oregon/West Linn	North America/USA/Oregon/Clackamas County
@@ -20871,7 +20909,7 @@ North America/USA/Oregon/Sutherlin	North America/USA/Oregon/Douglas County OR
 North America/USA/Oregon/Seaside	North America/USA/Oregon/Clatsop County
 North America/USA/Oregon/Cedar Hills	North America/USA/Oregon/Washington County OR
 North America/USA/Oregon/West Haven-Sylvan	North America/USA/Oregon/Washington County OR
-North America/USA/Oregon/Sheridan	North America/USA/Oregon/Yamhill County
+North America/USA/Oregon/Sheridan	North America/USA/Oregon/Yamhill County OR
 North America/USA/Oregon/Tillamook	North America/USA/Oregon/Tillamook County
 North America/USA/Oregon/Jennings Lodge	North America/USA/Oregon/Clackamas County
 North America/USA/Oregon/Green	North America/USA/Oregon/Douglas County OR
@@ -20897,7 +20935,7 @@ North America/USA/Oregon/Reedsport	North America/USA/Oregon/Douglas County OR
 North America/USA/Oregon/Coquille	North America/USA/Oregon/Coos County OR
 North America/USA/Oregon/King City	North America/USA/Oregon/Washington County OR
 North America/USA/Oregon/Aumsville	North America/USA/Oregon/Marion County OR
-North America/USA/Oregon/Lafayette	North America/USA/Oregon/Yamhill County
+North America/USA/Oregon/Lafayette	North America/USA/Oregon/Yamhill County OR
 North America/USA/Oregon/Tri-City	North America/USA/Oregon/Douglas County OR
 North America/USA/Oregon/Burns	North America/USA/Oregon/Harney County
 North America/USA/Oregon/Wood Village	North America/USA/Oregon/Multnomah County
@@ -20912,10 +20950,10 @@ North America/USA/Oregon/Toledo	North America/USA/Oregon/Lincoln County OR
 North America/USA/Oregon/Shady Cove	North America/USA/Oregon/Jackson County OR
 North America/USA/Oregon/Hubbard	North America/USA/Oregon/Marion County OR
 North America/USA/Oregon/Myrtle Creek	North America/USA/Oregon/Douglas County OR
-North America/USA/Oregon/Carlton	North America/USA/Oregon/Yamhill County
+North America/USA/Oregon/Carlton	North America/USA/Oregon/Yamhill County OR
 North America/USA/Oregon/Nyssa	North America/USA/Oregon/Malheur County
 North America/USA/Oregon/Oakridge	North America/USA/Oregon/Lane County OR
-North America/USA/Oregon/Dundee	North America/USA/Oregon/Yamhill County
+North America/USA/Oregon/Dundee	North America/USA/Oregon/Yamhill County OR
 North America/USA/Oregon/Warm Springs	North America/USA/Oregon/Jefferson County OR
 North America/USA/Oregon/Three Rivers	North America/USA/Oregon/Deschutes County
 North America/USA/Oregon/Bandon	North America/USA/Oregon/Coos County OR
@@ -20926,7 +20964,7 @@ North America/USA/Oregon/Gold Beach	North America/USA/Oregon/Curry County OR
 North America/USA/Oregon/Eagle Crest	North America/USA/Oregon/Deschutes County
 North America/USA/Oregon/Sisters	North America/USA/Oregon/Deschutes County
 North America/USA/Oregon/Gervais	North America/USA/Oregon/Marion County OR
-North America/USA/Oregon/Dayton	North America/USA/Oregon/Yamhill County
+North America/USA/Oregon/Dayton	North America/USA/Oregon/Yamhill County OR
 North America/USA/Oregon/Irrigon	North America/USA/Oregon/Morrow County OR
 North America/USA/Oregon/Myrtle Point	North America/USA/Oregon/Coos County OR
 North America/USA/Oregon/Millersburg	North America/USA/Oregon/Linn County OR
@@ -20935,7 +20973,7 @@ North America/USA/Oregon/Odell	North America/USA/Oregon/Hood River County
 North America/USA/Oregon/Mulino	North America/USA/Oregon/Clackamas County
 North America/USA/Oregon/Rogue River	North America/USA/Oregon/Jackson County OR
 North America/USA/Oregon/Vernonia	North America/USA/Oregon/Columbia County OR
-North America/USA/Oregon/Willamina	North America/USA/Oregon/Yamhill County
+North America/USA/Oregon/Willamina	North America/USA/Oregon/Yamhill County OR
 North America/USA/Oregon/North Plains	North America/USA/Oregon/Washington County OR
 North America/USA/Oregon/Turner	North America/USA/Oregon/Marion County OR
 North America/USA/Oregon/Stanfield	North America/USA/Oregon/Umatilla County
@@ -20961,7 +20999,7 @@ North America/USA/Oregon/Lakeside	North America/USA/Oregon/Coos County OR
 North America/USA/Oregon/Elgin	North America/USA/Oregon/Union County OR
 North America/USA/Oregon/Cannon Beach	North America/USA/Oregon/Clatsop County
 North America/USA/Oregon/Stafford	North America/USA/Oregon/Clackamas County
-North America/USA/Oregon/Amity	North America/USA/Oregon/Yamhill County
+North America/USA/Oregon/Amity	North America/USA/Oregon/Yamhill County OR
 North America/USA/Oregon/Culver	North America/USA/Oregon/Jefferson County OR
 North America/USA/Oregon/John Day	North America/USA/Oregon/Grant County OR
 North America/USA/Oregon/Terrebonne	North America/USA/Oregon/Deschutes County
@@ -21172,6 +21210,7 @@ North America/USA/Oregon/Linn County	North America/USA/Oregon/Linn County OR
 North America/USA/Oregon/Crook County	North America/USA/Oregon/Crook County OR
 North America/USA/Oregon/Curry County	North America/USA/Oregon/Curry County OR
 North America/USA/Oregon/Clark County	North America/USA/Oregon/Clark County OR
+North America/USA/Oregon/Yamhill County	North America/USA/Oregon/Yamhill County OR
 North America/USA/Texas/Houston County	North America/USA/Texas/Harris County TX
 North America/USA/Texas/Washington County	North America/USA/Texas/Washington County TX
 North America/USA/Texas/Williamson County	North America/USA/Texas/Williamson County TX
@@ -21232,7 +21271,7 @@ North America/USA/Texas/Brewster	North America/USA/Texas/Brewster County
 North America/USA/Texas/Lubbock	North America/USA/Texas/Lubbock County
 North America/USA/Texas/Jim Wells	North America/USA/Texas/Jim Wells County
 North America/USA/Texas/Jefferson	North America/USA/Texas/Jefferson County TX
-North America/USA/Texas/Denton	North America/USA/Texas/Denton County
+North America/USA/Texas/Denton	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Tarrant	North America/USA/Texas/Tarrant County
 North America/USA/Texas/Jim Hogg	North America/USA/Texas/Jim Hogg County
 North America/USA/Texas/Terry	North America/USA/Texas/Terry County
@@ -21440,7 +21479,7 @@ North America/USA/Texas/Pearland	North America/USA/Texas/Brazoria County
 North America/USA/Texas/Richardson	North America/USA/Texas/Dallas County TX
 North America/USA/Texas/Sugar Land	North America/USA/Texas/Fort Bend County
 North America/USA/Texas/Texas City	North America/USA/Texas/Galveston County
-North America/USA/Texas/Lewisville	North America/USA/Texas/Denton County
+North America/USA/Texas/Lewisville	North America/USA/Texas/Denton County TX
 North America/USA/Texas/League City	North America/USA/Texas/Galveston County
 North America/USA/Texas/Temple	North America/USA/Texas/Bell County TX
 North America/USA/Texas/Wichita Falls	North America/USA/Texas/Wichita County TX
@@ -21451,7 +21490,7 @@ North America/USA/Texas/New Braunfels	North America/USA/Texas/Comal County
 North America/USA/Texas/Mission	North America/USA/Texas/Hidalgo County TX
 North America/USA/Texas/Atascocita	North America/USA/Texas/Harris County TX
 North America/USA/Texas/Cedar Park	North America/USA/Texas/Williamson County TX
-North America/USA/Texas/Flower Mound	North America/USA/Texas/Denton County
+North America/USA/Texas/Flower Mound	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Pharr	North America/USA/Texas/Hidalgo County TX
 North America/USA/Texas/Texarkana	North America/USA/Texas/Bowie County
 North America/USA/Texas/Baytown	North America/USA/Texas/Harris County TX
@@ -21463,7 +21502,7 @@ North America/USA/Texas/North Richland Hills	North America/USA/Texas/Tarrant Cou
 North America/USA/Texas/Rowlett	North America/USA/Texas/Dallas County TX
 North America/USA/Texas/Eagle Pass	North America/USA/Texas/Maverick County
 North America/USA/Texas/Grapevine	North America/USA/Texas/Tarrant County
-North America/USA/Texas/Little Elm	North America/USA/Texas/Denton County
+North America/USA/Texas/Little Elm	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Wylie	North America/USA/Texas/Collin County
 North America/USA/Texas/DeSoto	North America/USA/Texas/Dallas County TX
 North America/USA/Texas/Forney	North America/USA/Texas/Kaufman County
@@ -21475,7 +21514,7 @@ North America/USA/Texas/Cedar Hill	North America/USA/Texas/Dallas County TX
 North America/USA/Texas/Keller	North America/USA/Texas/Tarrant County
 North America/USA/Texas/Weatherford	North America/USA/Texas/Parker County
 North America/USA/Texas/Lufkin	North America/USA/Texas/Angelina County
-North America/USA/Texas/The Colony	North America/USA/Texas/Denton County
+North America/USA/Texas/The Colony	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Del Rio	North America/USA/Texas/Val Verde County
 North America/USA/Texas/Haltom City	North America/USA/Texas/Tarrant County
 North America/USA/Texas/Channelview	North America/USA/Texas/Harris County TX
@@ -21526,7 +21565,7 @@ North America/USA/Texas/Benbrook	North America/USA/Texas/Tarrant County
 North America/USA/Texas/Plainview	North America/USA/Texas/Hale County TX
 North America/USA/Texas/Belton	North America/USA/Texas/Bell County TX
 North America/USA/Texas/Marshall	North America/USA/Texas/Harrison County TX
-North America/USA/Texas/Corinth	North America/USA/Texas/Denton County
+North America/USA/Texas/Corinth	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Brownwood	North America/USA/Texas/Brown County TX
 North America/USA/Texas/Stephenville	North America/USA/Texas/Erath County
 North America/USA/Texas/Dickinson	North America/USA/Texas/Galveston County
@@ -21562,7 +21601,7 @@ North America/USA/Texas/Pampa	North America/USA/Texas/Gray County TX
 North America/USA/Texas/Buda	North America/USA/Texas/Hays County
 North America/USA/Texas/Gainesville	North America/USA/Texas/Cooke County
 North America/USA/Texas/Seagoville	North America/USA/Texas/Dallas County TX
-North America/USA/Texas/Highland Village	North America/USA/Texas/Denton County
+North America/USA/Texas/Highland Village	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Mercedes	North America/USA/Texas/Hidalgo County TX
 North America/USA/Texas/Crowley	North America/USA/Texas/Tarrant County
 North America/USA/Texas/Cinco Ranch	North America/USA/Texas/Fort Bend County
@@ -21608,7 +21647,7 @@ North America/USA/Texas/Borger	North America/USA/Texas/Hutchinson County TX
 North America/USA/Texas/Manvel	North America/USA/Texas/Brazoria County
 North America/USA/Texas/Port Neches	North America/USA/Texas/Jefferson County TX
 North America/USA/Texas/Fredericksburg	North America/USA/Texas/Gillespie County
-North America/USA/Texas/Trophy Club	North America/USA/Texas/Denton County
+North America/USA/Texas/Trophy Club	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Gatesville	North America/USA/Texas/Coryell County
 North America/USA/Texas/Leon Valley	North America/USA/Texas/Bexar County TX
 North America/USA/Texas/Wells Branch	North America/USA/Texas/Travis County
@@ -21645,9 +21684,9 @@ North America/USA/Texas/Commerce	North America/USA/Texas/Hunt County
 North America/USA/Texas/West Tawakoni	North America/USA/Texas/Hunt County
 North America/USA/Texas/Silsbee	North America/USA/Texas/Hardin County TX
 North America/USA/Texas/Fort Stockton	North America/USA/Texas/Pecos County
-North America/USA/Texas/Lantana	North America/USA/Texas/Denton County
+North America/USA/Texas/Lantana	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Hondo	North America/USA/Texas/Medina County TX
-North America/USA/Texas/Roanoke	North America/USA/Texas/Denton County
+North America/USA/Texas/Roanoke	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Brownfield	North America/USA/Texas/Terry County
 North America/USA/Texas/Heath	North America/USA/Texas/Rockwall County
 North America/USA/Texas/Liberty	North America/USA/Texas/Liberty County TX
@@ -21657,7 +21696,7 @@ North America/USA/Texas/Highland Park	North America/USA/Texas/Dallas County TX
 North America/USA/Texas/Aledo	North America/USA/Texas/Parker County
 North America/USA/Texas/Whitehouse	North America/USA/Texas/Smith County TX
 North America/USA/Texas/Graham	North America/USA/Texas/Young County
-North America/USA/Texas/Sanger	North America/USA/Texas/Denton County
+North America/USA/Texas/Sanger	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Kirby	North America/USA/Texas/Bexar County TX
 North America/USA/Texas/Kennedale	North America/USA/Texas/Tarrant County
 North America/USA/Texas/Monahans	North America/USA/Texas/Ward County TX
@@ -21671,9 +21710,9 @@ North America/USA/Texas/Hempstead	North America/USA/Texas/Waller County
 North America/USA/Texas/West Livingston	North America/USA/Texas/Polk County TX
 North America/USA/Texas/Dalhart	North America/USA/Texas/Dallam County
 North America/USA/Texas/Joshua	North America/USA/Texas/Johnson County TX
-North America/USA/Texas/Lake Dallas	North America/USA/Texas/Denton County
+North America/USA/Texas/Lake Dallas	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Floresville	North America/USA/Texas/Wilson County TX
-North America/USA/Texas/Paloma Creek South	North America/USA/Texas/Denton County
+North America/USA/Texas/Paloma Creek South	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Lampasas	North America/USA/Texas/Lampasas County
 North America/USA/Texas/Richland Hills	North America/USA/Texas/Tarrant County
 North America/USA/Texas/Hitchcock	North America/USA/Texas/Galveston County
@@ -21681,13 +21720,13 @@ North America/USA/Texas/Jersey Village	North America/USA/Texas/Harris County TX
 North America/USA/Texas/Seminole	North America/USA/Texas/Gaines County
 North America/USA/Texas/Bridge City	North America/USA/Texas/Orange County TX
 North America/USA/Texas/Los Fresnos	North America/USA/Texas/Cameron County TX
-North America/USA/Texas/Aubrey	North America/USA/Texas/Denton County
+North America/USA/Texas/Aubrey	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Rio Bravo	North America/USA/Texas/Webb County
 North America/USA/Texas/Highlands	North America/USA/Texas/Harris County TX
 North America/USA/Texas/Hornsby Bend	North America/USA/Texas/Travis County
 North America/USA/Texas/River Oaks	North America/USA/Texas/Tarrant County
 North America/USA/Texas/Lago Vista	North America/USA/Texas/Travis County
-North America/USA/Texas/Providence Village	North America/USA/Texas/Denton County
+North America/USA/Texas/Providence Village	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Mexia	North America/USA/Texas/Limestone County TX
 North America/USA/Texas/Murillo	North America/USA/Texas/Hidalgo County TX
 North America/USA/Texas/Crystal City	North America/USA/Texas/Zavala County
@@ -21721,7 +21760,7 @@ North America/USA/Texas/Alpine	North America/USA/Texas/Brewster County
 North America/USA/Texas/Childress	North America/USA/Texas/Childress County
 North America/USA/Texas/Carrizo Springs	North America/USA/Texas/Dimmit County
 North America/USA/Texas/Pinehurst	North America/USA/Texas/Montgomery County TX
-North America/USA/Texas/Savannah	North America/USA/Texas/Denton County
+North America/USA/Texas/Savannah	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Mila Doce	North America/USA/Texas/Hidalgo County TX
 North America/USA/Texas/Progreso	North America/USA/Texas/Hidalgo County TX
 North America/USA/Texas/Sullivan City	North America/USA/Texas/Hidalgo County TX
@@ -21738,7 +21777,7 @@ North America/USA/Texas/Brookshire	North America/USA/Texas/Waller County
 North America/USA/Texas/Edna	North America/USA/Texas/Jackson County TX
 North America/USA/Texas/Granite Shoals	North America/USA/Texas/Burnet County
 North America/USA/Texas/Palmview	North America/USA/Texas/Hidalgo County TX
-North America/USA/Texas/Oak Point	North America/USA/Texas/Denton County
+North America/USA/Texas/Oak Point	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Sansom Park	North America/USA/Texas/Tarrant County
 North America/USA/Texas/Sinton	North America/USA/Texas/San Patricio County
 North America/USA/Texas/Fabens	North America/USA/Texas/El Paso County TX
@@ -21776,7 +21815,7 @@ North America/USA/Texas/Homestead Meadows North	North America/USA/Texas/El Paso 
 North America/USA/Texas/Canutillo	North America/USA/Texas/El Paso County TX
 North America/USA/Texas/Post	North America/USA/Texas/Garza County
 North America/USA/Texas/Rio Hondo	North America/USA/Texas/Cameron County TX
-North America/USA/Texas/Krum	North America/USA/Texas/Denton County
+North America/USA/Texas/Krum	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Muleshoe	North America/USA/Texas/Bailey County
 North America/USA/Texas/Hudson	North America/USA/Texas/Angelina County
 North America/USA/Texas/Pittsburg	North America/USA/Texas/Camp County
@@ -21785,7 +21824,7 @@ North America/USA/Texas/Lake Worth	North America/USA/Texas/Tarrant County
 North America/USA/Texas/West Columbia	North America/USA/Texas/Brazoria County
 North America/USA/Texas/Hunters Creek Village	North America/USA/Texas/Harris County TX
 North America/USA/Texas/Falfurrias	North America/USA/Texas/Brooks County TX
-North America/USA/Texas/Hickory Creek	North America/USA/Texas/Denton County
+North America/USA/Texas/Hickory Creek	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Midway North	North America/USA/Texas/Hidalgo County TX
 North America/USA/Texas/Wilmer	North America/USA/Texas/Dallas County TX
 North America/USA/Texas/New Boston	North America/USA/Texas/Bowie County
@@ -21803,7 +21842,7 @@ North America/USA/Texas/Perezville	North America/USA/Texas/Hidalgo County TX
 North America/USA/Texas/Dilley	North America/USA/Texas/Frio County
 North America/USA/Texas/Palacios	North America/USA/Texas/Matagorda County
 North America/USA/Texas/Laureles	North America/USA/Texas/Cameron County TX
-North America/USA/Texas/Pilot Point	North America/USA/Texas/Denton County
+North America/USA/Texas/Pilot Point	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Smithville	North America/USA/Texas/Bastrop County
 North America/USA/Texas/San Diego	North America/USA/Texas/Duval County TX
 North America/USA/Texas/Shady Hollow	North America/USA/Texas/Travis County
@@ -21812,14 +21851,14 @@ North America/USA/Texas/Woodville	North America/USA/Texas/Tyler County TX
 North America/USA/Texas/Jourdanton	North America/USA/Texas/Atascosa County
 North America/USA/Texas/Hallsville	North America/USA/Texas/Harrison County TX
 North America/USA/Texas/Jacksboro	North America/USA/Texas/Jack County
-North America/USA/Texas/Argyle	North America/USA/Texas/Denton County
+North America/USA/Texas/Argyle	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Van Alstyne	North America/USA/Texas/Grayson County TX
 North America/USA/Texas/Hearne	North America/USA/Texas/Robertson County TX
 North America/USA/Texas/Spring Valley Village	North America/USA/Texas/Harris County TX
 North America/USA/Texas/Whitesboro	North America/USA/Texas/Grayson County TX
 North America/USA/Texas/La Joya	North America/USA/Texas/Hidalgo County TX
 North America/USA/Texas/Crane	North America/USA/Texas/Crane County
-North America/USA/Texas/Justin	North America/USA/Texas/Denton County
+North America/USA/Texas/Justin	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Lytle	North America/USA/Texas/Atascosa County
 North America/USA/Texas/Coleman	North America/USA/Texas/Coleman County
 North America/USA/Texas/Port Aransas	North America/USA/Texas/Nueces County
@@ -21878,14 +21917,14 @@ North America/USA/Texas/Piney Point Village	North America/USA/Texas/Harris Count
 North America/USA/Texas/Karnes City	North America/USA/Texas/Karnes County
 North America/USA/Texas/Big Lake	North America/USA/Texas/Reagan County
 North America/USA/Texas/Cactus	North America/USA/Texas/Moore County TX
-North America/USA/Texas/Northlake	North America/USA/Texas/Denton County
+North America/USA/Texas/Northlake	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Howe	North America/USA/Texas/Grayson County TX
 North America/USA/Texas/Reno	North America/USA/Texas/Lamar County TX
 North America/USA/Texas/Shallowater	North America/USA/Texas/Lubbock County
 North America/USA/Texas/Hollywood Park	North America/USA/Texas/Bexar County TX
 North America/USA/Texas/Edcouch	North America/USA/Texas/Hidalgo County TX
 North America/USA/Texas/Winnsboro	North America/USA/Texas/Wood County TX
-North America/USA/Texas/Paloma Creek	North America/USA/Texas/Denton County
+North America/USA/Texas/Paloma Creek	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Balcones Heights	North America/USA/Texas/Bexar County TX
 North America/USA/Texas/Citrus City	North America/USA/Texas/Hidalgo County TX
 North America/USA/Texas/West Lake Hills	North America/USA/Texas/Travis County
@@ -21914,7 +21953,7 @@ North America/USA/Texas/Oak Trail Shores	North America/USA/Texas/Hood County
 North America/USA/Texas/Olney	North America/USA/Texas/Young County
 North America/USA/Texas/Sonora	North America/USA/Texas/Sutton County
 North America/USA/Texas/Clarksville	North America/USA/Texas/Red River County TX
-North America/USA/Texas/Double Oak	North America/USA/Texas/Denton County
+North America/USA/Texas/Double Oak	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Bishop	North America/USA/Texas/Nueces County
 North America/USA/Texas/DeCordova	North America/USA/Texas/Hood County
 North America/USA/Texas/Edgecliff Village	North America/USA/Texas/Tarrant County
@@ -21939,7 +21978,7 @@ North America/USA/Texas/Schulenburg	North America/USA/Texas/Fayette County TX
 North America/USA/Texas/Grape Creek	North America/USA/Texas/Tom Green County
 North America/USA/Texas/Bartlett	North America/USA/Texas/Williamson County TX
 North America/USA/Texas/La Villa	North America/USA/Texas/Hidalgo County TX
-North America/USA/Texas/Shady Shores	North America/USA/Texas/Denton County
+North America/USA/Texas/Shady Shores	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Brackettville	North America/USA/Texas/Kinney County
 North America/USA/Texas/Canadian	North America/USA/Texas/Hemphill County
 North America/USA/Texas/Rosita	North America/USA/Texas/Maverick County
@@ -21998,7 +22037,7 @@ North America/USA/Texas/Midway South	North America/USA/Texas/Hidalgo County TX
 North America/USA/Texas/Shepherd	North America/USA/Texas/San Jacinto County
 North America/USA/Texas/Junction	North America/USA/Texas/Kimble County
 North America/USA/Texas/Dalworthington Gardens	North America/USA/Texas/Tarrant County
-North America/USA/Texas/Ponder	North America/USA/Texas/Denton County
+North America/USA/Texas/Ponder	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Llano Grande	North America/USA/Texas/Hidalgo County TX
 North America/USA/Texas/East Bernard	North America/USA/Texas/Wharton County
 North America/USA/Texas/Anahuac	North America/USA/Texas/Chambers County TX
@@ -22079,7 +22118,7 @@ North America/USA/Texas/Gregory	North America/USA/Texas/San Patricio County
 North America/USA/Texas/Southside Place	North America/USA/Texas/Harris County TX
 North America/USA/Texas/Van Horn	North America/USA/Texas/Culberson County
 North America/USA/Texas/Ingram	North America/USA/Texas/Kerr County
-North America/USA/Texas/Krugerville	North America/USA/Texas/Denton County
+North America/USA/Texas/Krugerville	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Goldthwaite	North America/USA/Texas/Mills County TX
 North America/USA/Texas/Jarrell	North America/USA/Texas/Williamson County TX
 North America/USA/Texas/Fort Hancock	North America/USA/Texas/Hudspeth County
@@ -22090,7 +22129,7 @@ North America/USA/Texas/Morton	North America/USA/Texas/Cochran County
 North America/USA/Texas/Sunray	North America/USA/Texas/Moore County TX
 North America/USA/Texas/Ralls	North America/USA/Texas/Crosby County
 North America/USA/Texas/Grandview	North America/USA/Texas/Johnson County TX
-North America/USA/Texas/Bartonville	North America/USA/Texas/Denton County
+North America/USA/Texas/Bartonville	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Las Palmas II	North America/USA/Texas/Cameron County TX
 North America/USA/Texas/Evadale	North America/USA/Texas/Jasper County TX
 North America/USA/Texas/Bloomington	North America/USA/Texas/Victoria County
@@ -22147,14 +22186,14 @@ North America/USA/Texas/Kerens	North America/USA/Texas/Navarro County
 North America/USA/Texas/Seven Points	North America/USA/Texas/Henderson County TX
 North America/USA/Texas/Boyd	North America/USA/Texas/Wise County TX
 North America/USA/Texas/Laguna Park	North America/USA/Texas/Bosque County
-North America/USA/Texas/Cross Roads	North America/USA/Texas/Denton County
+North America/USA/Texas/Cross Roads	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Meridian	North America/USA/Texas/Bosque County
 North America/USA/Texas/Bells	North America/USA/Texas/Grayson County TX
 North America/USA/Texas/Sebastian	North America/USA/Texas/Willacy County
 North America/USA/Texas/Aurora	North America/USA/Texas/Wise County TX
 North America/USA/Texas/Granger	North America/USA/Texas/Williamson County TX
 North America/USA/Texas/Booker	North America/USA/Texas/Lipscomb County
-North America/USA/Texas/Copper Canyon	North America/USA/Texas/Denton County
+North America/USA/Texas/Copper Canyon	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Seadrift	North America/USA/Texas/Calhoun County TX
 North America/USA/Texas/Baird	North America/USA/Texas/Callahan County
 North America/USA/Texas/Oak Leaf	North America/USA/Texas/Ellis County TX
@@ -22283,7 +22322,7 @@ North America/USA/Texas/Paducah	North America/USA/Texas/Cottle County
 North America/USA/Texas/Coyote Acres	North America/USA/Texas/Jim Wells County
 North America/USA/Texas/Tom Bean	North America/USA/Texas/Grayson County TX
 North America/USA/Texas/Jamaica Beach	North America/USA/Texas/Galveston County
-North America/USA/Texas/Hackberry	North America/USA/Texas/Denton County
+North America/USA/Texas/Hackberry	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Rio Vista	North America/USA/Texas/Johnson County TX
 North America/USA/Texas/New Waverly	North America/USA/Texas/Walker County TX
 North America/USA/Texas/Tiki Island	North America/USA/Texas/Galveston County
@@ -22325,7 +22364,7 @@ North America/USA/Texas/Thrall	North America/USA/Texas/Williamson County TX
 North America/USA/Texas/Rice	North America/USA/Texas/Navarro County
 North America/USA/Texas/Earth	North America/USA/Texas/Lamb County
 North America/USA/Texas/Bremond	North America/USA/Texas/Robertson County TX
-North America/USA/Texas/Lakewood Village	North America/USA/Texas/Denton County
+North America/USA/Texas/Lakewood Village	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Louise	North America/USA/Texas/Wharton County
 North America/USA/Texas/Hargill	North America/USA/Texas/Hidalgo County TX
 North America/USA/Texas/Coahoma	North America/USA/Texas/Howard County TX
@@ -22511,7 +22550,7 @@ North America/USA/Texas/Paradise	North America/USA/Texas/Wise County TX
 North America/USA/Texas/Cove	North America/USA/Texas/Chambers County TX
 North America/USA/Texas/Wickett	North America/USA/Texas/Ward County TX
 North America/USA/Texas/Deport	North America/USA/Texas/Lamar County TX
-North America/USA/Texas/Lincoln Park	North America/USA/Texas/Denton County
+North America/USA/Texas/Lincoln Park	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Hawk Cove	North America/USA/Texas/Hunt County
 North America/USA/Texas/Buffalo Gap	North America/USA/Texas/Taylor County TX
 North America/USA/Texas/San Perlita	North America/USA/Texas/Willacy County
@@ -22598,7 +22637,7 @@ North America/USA/Texas/Follett	North America/USA/Texas/Lipscomb County
 North America/USA/Texas/Bigfoot	North America/USA/Texas/Frio County
 North America/USA/Texas/Tierra Verde	North America/USA/Texas/Nueces County
 North America/USA/Texas/Oak Island	North America/USA/Texas/Chambers County TX
-North America/USA/Texas/DISH	North America/USA/Texas/Denton County
+North America/USA/Texas/DISH	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Leakey	North America/USA/Texas/Real County
 North America/USA/Texas/Manuel Garcia	North America/USA/Texas/Starr County
 North America/USA/Texas/San Pedro	North America/USA/Texas/Cameron County TX
@@ -22794,7 +22833,7 @@ North America/USA/Texas/Welch	North America/USA/Texas/Dawson County TX
 North America/USA/Texas/Loma Linda West	North America/USA/Texas/Starr County
 North America/USA/Texas/Douglassville	North America/USA/Texas/Cass County TX
 North America/USA/Texas/Perrin	North America/USA/Texas/Jack County
-North America/USA/Texas/Hebron	North America/USA/Texas/Denton County
+North America/USA/Texas/Hebron	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Villa Verde	North America/USA/Texas/Hidalgo County TX
 North America/USA/Texas/Realitos	North America/USA/Texas/Duval County TX
 North America/USA/Texas/Delmita	North America/USA/Texas/Starr County
@@ -22936,7 +22975,7 @@ North America/USA/Texas/Quesada	North America/USA/Texas/Starr County
 North America/USA/Texas/Colorado Acres	North America/USA/Texas/Webb County
 North America/USA/Texas/Paisano Park	North America/USA/Texas/San Patricio County
 North America/USA/Texas/La Victoria	North America/USA/Texas/Starr County
-North America/USA/Texas/Corral City	North America/USA/Texas/Denton County
+North America/USA/Texas/Corral City	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Evergreen	North America/USA/Texas/Starr County
 North America/USA/Texas/Nina	North America/USA/Texas/Starr County
 North America/USA/Texas/Salineño North	North America/USA/Texas/Starr County
@@ -23027,6 +23066,7 @@ North America/USA/Texas/Clay County	North America/USA/Texas/Clay County TX
 North America/USA/Texas/Hall County	North America/USA/Texas/Hall County TX
 North America/USA/Texas/Wichita County	North America/USA/Texas/Wichita County TX
 North America/USA/Texas/Desoto	North America/USA/Texas/Desoto TX
+North America/USA/Texas/Denton County	North America/USA/Texas/Denton County TX
 North America/USA/Louisiana/Desoto Parish	North America/USA/Louisiana/DeSoto Parish
 North America/USA/Louisiana/St. Tammany Parish	North America/USA/Louisiana/St Tammany Parish
 North America/USA/Louisiana/St. Bernard Parish	North America/USA/Louisiana/St Bernard Parish
@@ -25166,6 +25206,7 @@ North America/USA/South Carolina/Dorchester County	North America/USA/South Carol
 North America/USA/South Carolina/Oconee County	North America/USA/South Carolina/Oconee County SC
 North America/USA/South Carolina/Pickens County	North America/USA/South Carolina/Pickens County SC
 North America/USA/South Carolina/Henry	North America/USA/South Carolina/Henry SC
+North America/USA/South Carolina/Cleveland	North America/USA/South Carolina/Cleveland SC
 North America/USA/Pennsylvania/Montgomery County	North America/USA/Pennsylvania/Montgomery County PA
 North America/USA/Pennsylvania/Philadelphia	North America/USA/Pennsylvania/Philadelphia County
 North America/USA/Pennsylvania/Delaware County	North America/USA/Pennsylvania/Delaware County PA
@@ -32906,6 +32947,11 @@ North America/USA/North Carolina/Henderson	North America/USA/North Carolina/Hend
 North America/USA/North Carolina/Cedar Grove	North America/USA/North Carolina/Cedar Grove NC
 North America/USA/North Carolina/Forsyth	North America/USA/North Carolina/Forsyth NC
 North America/USA/North Carolina/Orange	North America/USA/North Carolina/Orange NC
+North America/USA/North Carolina/Madison County	North America/USA/North Carolina/Madison County NC
+North America/USA/North Carolina/Jackson County	North America/USA/North Carolina/Jackson County NC
+North America/USA/North Carolina/Macon County	North America/USA/North Carolina/Macon County NC
+North America/USA/North Carolina/Henderson County	North America/USA/North Carolina/Henderson County NC
+North America/USA/North Carolina/Haywood County	North America/USA/North Carolina/Haywood County NC
 North America/USA/Californi/*	North America/USA/California/*
 North America/USA/U.S. Virgin Islands/*	North America/USA/Virgin Islands/*
 North America/USA/Newyork/*	North America/USA/New York/*
@@ -36378,7 +36424,7 @@ North America/USA/North America/Oregon,Unknown County	North America/USA/Oregon/
 North America/USA/North America/Oregon,Baker County	North America/USA/Oregon/Baker County OR
 North America/USA/North America/Oregon,Columbia County	North America/USA/Oregon/Columbia County OR
 North America/USA/North America/Oregon,Curry County	North America/USA/Oregon/Curry County OR
-North America/USA/North America/Oregon,Yamhill County	North America/USA/Oregon/Yamhill County
+North America/USA/North America/Oregon,Yamhill County	North America/USA/Oregon/Yamhill County OR
 North America/USA/North America/Oregon,Crook County	North America/USA/Oregon/Crook County OR
 North America/USA/North America/Oregon,Lake County	North America/USA/Oregon/Lake County OR
 North America/USA/North America/Oregon,Hood River County	North America/USA/Oregon/Hood River County
@@ -38770,6 +38816,7 @@ North America/USA/Oklahoma/Noble	North America/USA/Oklahoma/Noble OK
 North America/USA/Oklahoma/Crawford	North America/USA/Oklahoma/Crawford OK
 North America/USA/Oklahoma/Finley	North America/USA/Oklahoma/Finley OK
 North America/USA/Oklahoma/Choctaw	North America/USA/Oklahoma/Choctaw OK
+North America/USA/Oklahoma/Cleveland	North America/USA/Oklahoma/Cleveland OK
 North America/USA/North Dakota/Fargo	North America/USA/North Dakota/Cass County ND
 North America/USA/North Dakota/Bismarck	North America/USA/North Dakota/Burleigh County ND
 North America/USA/North Dakota/Grand Forks	North America/USA/North Dakota/Grand Forks County
@@ -40755,6 +40802,7 @@ South America/Brazil/Tocantins/Natividade	South America/Brazil/Tocantins/Nativid
 South America/Brazil/Tocantins/Palmas	South America/Brazil/Tocantins/Palmas (Tocantins)
 South America/Brazil/Tocantins/Cachoeirinha	South America/Brazil/Tocantins/Cachoeirinha (Tocantins)
 South America/Brazil/Tocantins/Peixe	South America/Brazil/Tocantins/Peixe (Tocantins)
+South America/Brazil/Tocantins/Lajeado	South America/Brazil/Tocantins/Lajeado (Tocantins)
 South America/Brazil/Espirito Santos/*	South America/Brazil/Espirito Santo/*
 South America/Brazil/Paraná/Astorga	South America/Brazil/Paraná/Astorga BR
 South America/Brazil/Paraná/Florianopolis	South America/Brazil/Santa Catarina/Florianopolis
@@ -41418,7 +41466,7 @@ South America/Colombia/Antioquia/La Estrella	South America/Colombia/Antioquia/La
 South America/Colombia/Antioquia/Caldas	South America/Colombia/Antioquia/Caldas (Antioquia)
 South America/Colombia/Antioquia/San Roque	South America/Colombia/Antioquia/San Roque CO
 South America/Colombia/Antioquia/Retiro	South America/Colombia/Antioquia/Retiro CO
-South America/Colombia/Antioquia/San Pedro	South America/Colombia/Antioquia/San Pedro CO
+South America/Colombia/Antioquia/San Pedro	South America/Colombia/Antioquia/San Pedro (Antioquia)
 South America/Colombia/Antioquia/Amaga	South America/Colombia/Antioquia/Amagá
 South America/Colombia/Antioquia/Peñol	South America/Colombia/Antioquia/El Peñol
 South America/Colombia/Antioquia/Zaragoza	South America/Colombia/Antioquia/Zaragoza CO
@@ -41441,12 +41489,12 @@ South America/Colombia/Antioquia/San Vicente	South America/Colombia/Antioquia/Sa
 South America/Colombia/Antioquia/Santuario	South America/Colombia/Antioquia/Santuario (Antioquia)
 South America/Colombia/Antioquia/San Luis	South America/Colombia/Antioquia/San Luis CO
 South America/Colombia/Antioquia/Santa Barbara	South America/Colombia/Antioquia/Santa Barbara CO
-South America/Colombia/Antioquia/San Pedro (Antioquia)	South America/Colombia/Antioquia/San Pedro CO
 South America/Colombia/Antioquia/Concordia CO	South America/Colombia/Antioquia/Concordia (Antioquia)
 South America/Colombia/Antioquia/Leticia	South America/Colombia/Antioquia/Leticia (Antioquia)
 South America/Colombia/Antioquia/Quibdo	South America/Colombia/Antioquia/Quibdo (Antioquia)
 South America/Colombia/Antioquia/Corozal	South America/Colombia/Antioquia/Corozal (Antioquia)
 South America/Colombia/Antioquia/Monteria	South America/Colombia/Antioquia/Monteria (Antioquia)
+South America/Colombia/Antioquia/San Pedro CO	South America/Colombia/Antioquia/San Pedro (Antioquia)
 South America/Colombia/Boyaca/Santana	South America/Colombia/Boyaca/Santana CO
 South America/Colombia/Boyaca/Sogamoso	South America/Colombia/Boyaca/Sogamoso (Boyaca)
 South America/Colombia/Caquetá/*	South America/Colombia/Caqueta/*
@@ -41482,6 +41530,7 @@ South America/Colombia/Quindio/Cordoba (Quindio)	South America/Colombia/Quindio/
 South America/Colombia/Quindio/Risaralda	South America/Colombia/Quindio/
 South America/Colombia/Quindio/Genova	South America/Colombia/Quindio/Genova CO
 South America/Colombia/Quindio/Manizales	South America/Colombia/Quindio/Manizales (Quindio)
+South America/Colombia/Quindio/Quinchia	South America/Colombia/Quindio/Quinchia (Quindio)
 South America/Colombia/Vaupez/*	South America/Colombia/Vaupes/*
 South America/Colombia/Bolivar CO/San Cristobal	South America/Colombia/Bolivar CO/San Cristobal CO
 South America/Colombia/Bolivar CO/Cartagena	South America/Colombia/Bolivar CO/Cartagena CO
@@ -41522,10 +41571,12 @@ South America/Colombia/Putumayo/Colon CO	South America/Colombia/Putumayo/Colon (
 South America/Colombia/Putumayo/Villagarzon	South America/Colombia/Putumayo/Villagarzon (Putumayo)
 South America/Colombia/Montenegro/Quindio	South America/Colombia/Quindio/Montenegro CO
 South America/Colombia/Barranquilla/Atlantico	South America/Colombia/Atlantico/Barranquilla
+South America/Colombia/Barranquilla/	South America/Colombia/Atlantico/Barranquilla
 South America/Colombia/Neiva/Huila	South America/Colombia/Huila CO/Neiva
 South America/Colombia/Risaralda/Belen	South America/Colombia/Risaralda/Belen (Risaralda)
 South America/Colombia/Risaralda/Santuario	South America/Colombia/Risaralda/Santuario (Risaralda)
 South America/Colombia/Risaralda/Belen CO	South America/Colombia/Risaralda/Belen (Risaralda)
+South America/Colombia/Risaralda/Quinchia	South America/Colombia/Risaralda/Quinchia (Risaralda)
 South America/Colombia/Colombia/Quindio	South America/Colombia/Quindio/
 South America/Colombia/Colombia/Caldas	South America/Colombia/Antioquia/Caldas (Antioquia)
 South America/Colombia/Distrito Capital/*	South America/Colombia/Cundinamarca/Bogota D.C.
@@ -41540,6 +41591,16 @@ South America/Colombia/La Guajira/Maicao	South America/Colombia/La Guajira/Maica
 South America/Colombia/La Guajira/Riohacha	South America/Colombia/La Guajira/Riohacha (La Guajira)
 South America/Colombia/Guiania/Maicao	South America/Colombia/Guiania/Maicao (Guiania)
 South America/Colombia/Guiania/Riohacha	South America/Colombia/Guiania/Riohacha (Guiania)
+South America/Colombia/Santa Fe/	South America/Colombia/Distrito Capital de Bogota/Santa Fe CO
+South America/Colombia/Espinal/	South America/Colombia/Tolima/Espinal
+South America/Colombia/Medellin/	South America/Colombia/Antioquia/Medellin
+South America/Colombia/Bello/	South America/Colombia/Antioquia/Bello
+South America/Colombia/Itagui/	South America/Colombia/Antioquia/Itagui
+South America/Colombia/Barbosa/	South America/Colombia/Antioquia/Barbosa
+South America/Colombia/Soledad/	South America/Colombia/Atlantico/Soledad
+South America/Colombia/Piedecuesta/	South America/Colombia/Santander/Piedecuesta
+South America/Colombia/Soacha/	South America/Colombia/Cundinamarca/Soacha
+South America/Colombia/Distrito Capital de Bogota/Santa Fe	South America/Colombia/Distrito Capital de Bogota/Santa Fe CO
 South America/Peru/Cusco/*	South America/Peru/Cuzco/*
 South America/Peru/Lima/Canete	South America/Peru/Lima/Cañete
 South America/Peru/Lima/San Isidro	South America/Peru/Lima/San Isidro PE
@@ -41667,8 +41728,9 @@ South America/Paraguay/Limpio/	South America/Paraguay/Central Paraguay/Limpio
 South America/Paraguay/Capiata/	South America/Paraguay/Central Paraguay/Capiata
 South America/Paraguay/Guarambare/	South America/Paraguay/Central Paraguay/Guarambare
 South America/Paraguay/Central Paraguay/Ita	South America/Paraguay/Central Paraguay/Ita PY
-South America/Paraguay/Loreto/	South America/Paraguay/Concepción/Loreto
+South America/Paraguay/Loreto/	South America/Paraguay/Concepción/Loreto PY
 South America/Paraguay/Itagua/	South America/Paraguay/Central Paraguay/Itagua
+South America/Paraguay/Concepción/Loreto	South America/Paraguay/Concepción/Loreto PY
 South America/Antigua/Caribbean/*	North America/Antigua and Barbuda/Antigua and Barbuda/*
 South America/Antigua/*/*	North America/Antigua and Barbuda/*/*
 South America/Anguilla//	Europe/United Kingdom/Anguilla/
@@ -42118,7 +42180,7 @@ Africa/Zambia/Marapondi/	Africa/Zambia/Lusaka/Marapondi
 Africa/Zambia/Northern/*	Africa/Zambia/Northern Zambia/*
 Africa/Botswana/Palapye/	Africa/Botswana/Central District BW/Palapye
 Africa/Botswana/Jwaneng/	Africa/Botswana/Southern District/Jwaneng
-Africa/Botswana/Mathethe/	Africa/Botswana/Southern District/Mmathethe
+Africa/Botswana/Mathethe/	Africa/Botswana/Southern District/Mmathethe (Southern District)
 Africa/Botswana/Serowe/	Africa/Botswana/Central District BW/Serowe
 Africa/Botswana/Ramotswa/	Africa/Botswana/Southern East/Ramotswa
 Africa/Botswana/Mabete/	Africa/Botswana/Botswana/
@@ -42168,6 +42230,7 @@ Africa/Botswana/Southern East/Greater Gaborone	Africa/Botswana/Southern East/Gre
 Africa/Botswana/Southern East/Kanye	Africa/Botswana/Southern East/Kanye (Southern East)
 Africa/Botswana/Southern East/Ramatlabama	Africa/Botswana/Southern East/Ramatlabama (Southern East)
 Africa/Botswana/Southern East/Moshupa	Africa/Botswana/Southern East/Moshupa (Southern East)
+Africa/Botswana/Southern East/Mmathethe	Africa/Botswana/Southern East/Mmathethe (Southern East)
 Africa/Botswana/Kweneng District/Greater Gaborone	Africa/Botswana/Kweneng District/Greater Gaborone (Kweneng District)
 Africa/Botswana/Kweneng District/Thamaga	Africa/Botswana/Kweneng District/Thamaga (Kweneng District)
 Africa/Botswana/Southern/Greater Gaborone	Africa/Botswana/Southern District/
@@ -42186,7 +42249,7 @@ Africa/Botswana/Lechaneng/	Africa/Botswana/Central District BW/Lechaneng
 Africa/Botswana/Good Hope/*	Africa/Botswana/Goodhope/*
 Africa/Botswana/Africa/Botswana	Africa/Botswana/Botswana/
 Africa/Botswana/Lobatse/	Africa/Botswana/Southern East/Lobatse
-Africa/Botswana/Lobatse/Lobatse	Africa/Botswana/Southern East/Lobatse
+Africa/Botswana/Lobatse/*	Africa/Botswana/Southern East/*
 Africa/Botswana/Gaborone/	Africa/Botswana/Southern East/Gaborone
 Africa/Botswana/Francistown/	Africa/Botswana/North-East District/Francistown
 Africa/Botswana/Kasane/	Africa/Botswana/Chobe District/Kasane
@@ -42203,6 +42266,7 @@ Africa/Botswana/Central District BW/Thamaga	Africa/Botswana/Central District BW/
 Africa/Botswana/Southern District/Kanye	Africa/Botswana/Southern District/Kanye (Southern District)
 Africa/Botswana/Southern District/Ramatlabama	Africa/Botswana/Southern District/Ramatlabama (Southern District)
 Africa/Botswana/Southern District/Moshupa	Africa/Botswana/Southern District/Moshupa (Southern District)
+Africa/Botswana/Southern District/Mmathethe	Africa/Botswana/Southern District/Mmathethe (Southern District)
 Africa/Botswana/North-East District/Masunga	Africa/Botswana/North-East District/Masunga (North-East District)
 Africa/Botswana/Kgatleng/*	Africa/Botswana/Kgatleng District/*
 Africa/Botswana/Maunatlala/	Africa/Botswana/Central District BW/Maunatlala
@@ -42215,7 +42279,9 @@ Africa/Botswana/Greater Gaborone/Otse	Africa/Botswana/Southern East/Otse
 Africa/Botswana/Greater Palapye/	Africa/Botswana/Central District BW/
 Africa/Botswana/Maun/	Africa/Botswana/North-West District/Maun
 Africa/Botswana/Greater Phikwe/	Africa/Botswana/Central District BW/Greater Phikwe
+Africa/Botswana/Greater Phikwe/Selebi Phikwe	Africa/Botswana/Central District BW/Selebi Phikwe
 Africa/Botswana/Kweneng East/Molepolole	Africa/Botswana/Kweneng District/Molepolole
+Africa/Botswana/Kweneng East/Thamaga	Africa/Botswana/Kweneng East/Thamaga (Kweneng East)
 Africa/Botswana/Moshupa/Moshupa	Africa/Botswana/Southern District/Moshupa (Southern District)
 Africa/Botswana/Greater Francistown/Francistown	Africa/Botswana/North-East District/Francistown
 Africa/Botswana/Rakops/	Africa/Botswana/Boteti/Rakops
