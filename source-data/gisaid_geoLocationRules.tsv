@@ -6474,6 +6474,8 @@ Europe/Belgium/Wallonia Or Brussels/	Europe/Belgium/Brussels/
 Europe/Belgium/Ardennes/	Europe/Belgium/Wallonia/Ardennes BE
 Europe/Belgium/Nan/	Europe/Belgium/Belgium/
 Europe/Belgium/Dublin/	Europe/Belgium/Belgium/
+Europe/Belgium/St-Jans-Molenbeek/*	Europe/Belgium/St Jans Molenbeek/*
+Europe/Belgium/Strassen/*	Europe/Belgium/Strassen BE/*
 Europe/Switzerland/Graubunden/*	Europe/Switzerland/Graubünden/*
 Europe/Switzerland/Graubã¼Nden/*	Europe/Switzerland/Graubünden/*
 Europe/Switzerland/Basel/	Europe/Switzerland/Basel-Stadt/
@@ -7976,6 +7978,7 @@ Europe/Serbia/Belgrade-Zemun/	Europe/Serbia/Belgrade/Zemun
 Europe/Serbia/Zemun/	Europe/Serbia/Belgrade/Zemun
 Europe/Serbia/Prizren/*	Europe/Serbia/Prizren RS/*
 Europe/Serbia/Zlatibor District/Uzice	Europe/Serbia/Zlatibor District/Uzice RS
+Europe/Serbia/Beograad/*	Europe/Serbia/Beograd/*
 Europe/Austria/Ischgl/	Europe/Austria/Tyrol/Ischgl
 Europe/Austria/Innsbruck/	Europe/Austria/Tyrol/Innsbruck
 Europe/Austria/Matrei Am Brenner/	Europe/Austria/Tyrol/Matrei am Brenner
@@ -8256,6 +8259,7 @@ Europe/Greece/Sporades/	Europe/Greece/Thessaly/Sporades
 Europe/Greece/Alexandria/	Europe/Greece/Central Macedonia/Alexandria GR
 Europe/Greece/Central Macedonia/Alexandria	Europe/Greece/Central Macedonia/Alexandria GR
 Europe/Greece/Kavala/	Europe/Greece/Eastern Macedonia and Thrace/Kavala
+Europe/Greece/Western Macedonia Region/*	Europe/Greece/Western Macedonia/*
 Europe/North Macedonia/Prilep/	Europe/North Macedonia/Pelagonia/Prilep
 Europe/North Macedonia/Kumanovo/	Europe/North Macedonia/Northeastern Region MK/Kumanovo
 Europe/North Macedonia/Shtip/	Europe/North Macedonia/Eastern Region MK/Shtip
@@ -9161,7 +9165,6 @@ Europe/Belarus/Gomel/*	Europe/Belarus/Gomel Region/*
 Europe/Belarus/Rrcem/	Europe/Belarus/Belarus/
 Europe/Belarus/Mogilev/*	Europe/Belarus/Mogilev Region/*
 Europe/Belarus/Grodno/*	Europe/Belarus/Grodno Region/*
-Europe/Belarus/Brest/	Europe/Belarus/Brest Region/Brest BY
 Europe/Belarus/Brest Region/Brest	Europe/Belarus/Brest Region/Brest BY
 Europe/Belarus/Vitebsk/*	Europe/Belarus/Vitebsk Region/*
 Europe/Blegium/*/*	Europe/Belgium/*/*
@@ -9321,6 +9324,7 @@ Europe/Canary Islands/Canary Islands/	Europe/Spain/Canary Islands/
 Europe/Canary Islands/Las Palmas/	Europe/Spain/Canary Islands/Las Palmas de Gran Canaria
 Europe/Canary Islands/Madrid/Madrid ES	Europe/Spain/Canary Islands/
 Europe/Canary Islands//	Europe/Spain/Canary Islands/
+Europe/Luxembourg/Strassen/*	Europe/Luxembourg/Strassen LU/*
 */Switzerland/Basel Land/*	Europe/Switzerland/Basel-Land/*
 */Switzerland/Basel Stadt/*	Europe/Switzerland/Basel-Stadt/*
 */Switzerland/Genève/*	Europe/Switzerland/Geneva/*
@@ -9489,6 +9493,7 @@ Asia/China/Chengdu/Sichuan Province	Asia/China/Sichuan/Chengdu
 Asia/China/Yiwu/	Asia/China/Zhejiang/Yiwu
 Asia/China/Foshan/	Asia/China/Guangdong/Foshan
 Asia/China/Zhanjiang/	Asia/China/Guangdong/Zhanjiang
+Asia/China/Shenzhen/	Asia/China/Guangdong/Shenzhen
 Asia/South Korea/Gyeonggi-do/	Asia/South Korea/Gyeonggi Province/Gyeonggi
 Asia/South Korea/Chungcheongnam-do/	Asia/South Korea/Chungcheongnam/Chungcheongnam
 Asia/South Korea/Uijeongbu/	Asia/South Korea/Gyeonggi Province/Uijeongbu
@@ -9528,6 +9533,8 @@ Asia/Vietnam/Dongnai/*	Asia/Vietnam/Dong Nai/*
 Asia/Vietnam/Camau/*	Asia/Vietnam/Ca Mau/*
 Asia/Vietnam/Brvt/*	Asia/Vietnam/Ba Ria-Vung Tau/*
 Asia/Vietnam/Ba Ria Vung Tau/*	Asia/Vietnam/Ba Ria-Vung Tau/*
+Asia/Vietnam/Vinhlong/*	Asia/Vietnam/Vinh Long/*
+Asia/Vietnam/Longan/*	Asia/Vietnam/Long An/*
 Asia/Pakistan/Gilgit/	Asia/Pakistan/Gilgit Baltistan/Gilgit
 Asia/Pakistan/Kpk/	Asia/Pakistan/Khyber Pakhtunkhwa/
 Asia/Pakistan/Punjab/*	Asia/Pakistan/Punjab PK/*
@@ -9571,6 +9578,7 @@ Asia/Pakistan/Karachi/Al Khidmat	Asia/Pakistan/Karachi/Al Khidmat (Karachi)
 Asia/Pakistan/Karachi/	Asia/Pakistan/Sindh/Karachi
 Asia/Pakistan/Multan/Al Khidmat	Asia/Pakistan/Multan/Al Khidmat (Multan)
 Asia/Pakistan/Peshawar/Al Khidmat	Asia/Pakistan/Peshawar/Al Khidmat (Peshawar)
+Asia/Pakistan/Peshawar/	Asia/Pakistan/Khyber Pakhtunkhwa/Peshawar
 Asia/Pakistan/Unknown/	Asia/Pakistan/Pakistan/
 Asia/Pakistan/Karak/	Asia/Pakistan/Khyber Pakhtunkhwa/Karak
 Asia/Israel/Ramat Gan/	Asia/Israel/Tel Aviv District/Ramat Gan
@@ -40436,6 +40444,7 @@ North America/Panama/Metropolitan/*	North America/Panama/Panama Center/*
 North America/Panama/Darien/La Palma	North America/Panama/Darien/La Palma PA
 North America/Panama/Comarca Ngobe Bugle/Unknown	North America/Panama/Comarca Ngobe Bugle/
 North America/Panama/Colon Province/Buena Vista	North America/Panama/Colon Province/Buena Vista PA
+North America/Panama/Las Tablas/	North America/Panama/Los Santos/Las Tablas
 North America/El Salvador/San Salvado/*	North America/El Salvador/San Salvador/*
 North America/El Salvador/La Libertad/*	North America/El Salvador/La Libertad SV/*
 North America/El Salvador/La Paz/*	North America/El Salvador/La Paz SV/*
@@ -41667,6 +41676,7 @@ South America/Colombia/Soledad/	South America/Colombia/Atlantico/Soledad
 South America/Colombia/Piedecuesta/	South America/Colombia/Santander/Piedecuesta
 South America/Colombia/Soacha/	South America/Colombia/Cundinamarca/Soacha
 South America/Colombia/Distrito Capital de Bogota/Santa Fe	South America/Colombia/Distrito Capital de Bogota/Santa Fe CO
+South America/Colombia/Galeras/	South America/Colombia/Sucre CO/Galeras
 South America/Peru/Cusco/*	South America/Peru/Cuzco/*
 South America/Peru/Lima/Canete	South America/Peru/Lima/Cañete
 South America/Peru/Lima/San Isidro	South America/Peru/Lima/San Isidro PE
@@ -42113,6 +42123,7 @@ Africa/Côte d'Ivoire/Niakara/*	Africa/Côte d'Ivoire/Niakara/*
 Africa/Côte d'Ivoire/Katiola/*	Africa/Côte d'Ivoire/Katiola/*
 Africa/Côte d'Ivoire/Guiglo/*	Africa/Côte d'Ivoire/Guiglo/*
 Africa/Côte d'Ivoire/Cote D'Ivoire/*	Africa/Côte d'Ivoire/Côte d'Ivoire/*
+Africa/Côte d'Ivoire/Ghana/*	Africa/Côte d'Ivoire/Ghana CI/*
 Africa/Côte D’Ivoire/*/*	Africa/Côte d'Ivoire/*/*
 Africa/Cote Divoire/*/*	Africa/Côte d'Ivoire/*/*
 Africa/Togo/West Africa/*	Africa/Togo/Togo/*
@@ -42248,6 +42259,7 @@ Africa/Botswana/Palapye/	Africa/Botswana/Central District BW/Palapye
 Africa/Botswana/Jwaneng/	Africa/Botswana/Southern District/Jwaneng
 Africa/Botswana/Mathethe/	Africa/Botswana/Southern District/Mmathethe (Southern District)
 Africa/Botswana/Serowe/	Africa/Botswana/Central District BW/Serowe
+Africa/Botswana/Serowe/*	Africa/Botswana/Central District BW/*
 Africa/Botswana/Ramotswa/	Africa/Botswana/Southern East/Ramotswa
 Africa/Botswana/Mabete/	Africa/Botswana/Botswana/
 Africa/Botswana/Masunga/	Africa/Botswana/North-East District/Masunga (North-East District)
@@ -42356,6 +42368,7 @@ Africa/Botswana/Greater Francistown/Francistown	Africa/Botswana/North-East Distr
 Africa/Botswana/Rakops/	Africa/Botswana/Boteti/Rakops
 Africa/Botswana/Kgatleng District/Bokaa	Africa/Botswana/Kgatleng District/Bokaa (Kgatleng District)
 Africa/Botswana/Katleng/Bokaa	Africa/Botswana/Katleng/Bokaa (Katleng)
+Africa/Botswana/Malotwane/	Africa/Botswana/Katleng/Malotwane
 Africa/Congo/*/*	Africa/Republic of the Congo/*/*
 Africa/Guyane/Cayenne/	Europe/France/French Guiana/Cayenne (French Guiana)
 Africa/Mauritius/Plaine Wilhems/*	Africa/Mauritius/Plaine-Wilhems/*
