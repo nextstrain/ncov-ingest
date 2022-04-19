@@ -20,6 +20,8 @@ all_targets = [f"data/{database}/upload.done"]
 
 if config.get("trigger_rebuild", False):
     all_targets.append(f"data/{database}/trigger-rebuild.done")
+if config.get("trigger_counts", False):
+    all_targets.append(f"data/{database}/trigger-counts.done")
 if send_notifications:
     all_targets.append(f"data/{database}/notify.done")
 if config.get("fetch_from_database", False):
@@ -454,6 +456,19 @@ rule trigger_rebuild_pipeline:
     shell:
         """
         ./bin/trigger ncov {params.dispatch_type}
+        """
+
+rule trigger_counts_pipeline:
+    message: "Triggering nextstrain/counts clade counts action (via repository dispatch)"
+    input:
+        f"data/{database}/upload.done"
+    output:
+        touch(f"data/{database}/trigger-counts.done")
+    params:
+        dispatch_type = f"{database}/clade-counts"
+    shell:
+        """
+        ./bin/trigger counts {params.dispatch_type}
         """
 
 ################################################################
