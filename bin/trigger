@@ -3,15 +3,16 @@ set -euo pipefail
 
 TOKEN="${PAT_GITHUB_DISPATCH:-}"
 
-event_type="${1:?An event type (fetch-and-ingest, ingest, rebuild, or update-image) is required as the first argument.}"
-shift
+repo="${1:?A repository name is required as the first argument.}"
+event_type="${2:?An event type is required as the second argument.}"
+shift 2
 
 if [[ $# -eq 0 && -z $TOKEN ]]; then
     cat >&2 <<.
 You must specify options to curl for your GitHub credentials.  For example, you
 can specify your GitHub username, and will be prompted for your password:
 
-  $0 $event_type --user <your-github-username>
+  $0 $repo $event_type --user <your-github-username>
 
 Be sure to enter a personal access token¹ as your password since GitHub has
 discontinued password authentication to the API starting on November 13, 2020².
@@ -25,7 +26,7 @@ file³:
 
 and then tell curl to use it:
 
-  $0 $event_type --netrc
+  $0 $repo $event_type --netrc
 
 which will then not require you to type your password every time.
 
@@ -41,7 +42,7 @@ if [[ $TOKEN ]]; then
   auth="Authorization: Bearer ${TOKEN}"
 fi
 
-if curl -fsS https://api.github.com/repos/nextstrain/ncov-ingest/dispatches \
+if curl -fsS "https://api.github.com/repos/nextstrain/${repo}/dispatches" \
     -H 'Accept: application/vnd.github.v3+json' \
     -H 'Content-Type: application/json' \
     -H "$auth" \
