@@ -450,18 +450,11 @@ rule trigger_rebuild_pipeline:
     output:
         touch(f"data/{database}/trigger-rebuild.done")
     params:
-        dispatch_type = f"{database}/rebuild",
-        token = os.environ.get("PAT_GITHUB_DISPATCH", "")
-    run:
-        import requests
-        headers = {
-                'Content-type': 'application/json',
-                'authorization': f"Bearer {params.token}",
-                'Accept': 'application/vnd.github.v3+json'}
-        data = {"event_type": params.dispatch_type}
-        print(f"Triggering ncov rebuild GitHub action via repository dispatch type: {params.dispatch_type}")
-        response = requests.post("https://api.github.com/repos/nextstrain/ncov/dispatches", headers=headers, data=json.dumps(data))
-        response.raise_for_status()
+        dispatch_type = f"{database}/rebuild"
+    shell:
+        """
+        ./bin/trigger ncov {params.dispatch_type}
+        """
 
 ################################################################
 ################################################################
