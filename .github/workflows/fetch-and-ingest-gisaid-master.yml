@@ -34,6 +34,10 @@ on:
 jobs:
   ingest:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_RUN_ID: ${{ github.run_id }}
+      SLACK_CHANNELS: ncov-gisaid-updates
+      SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
     steps:
     - uses: actions/checkout@v2
     - uses: nextstrain/.github/actions/setup-nextstrain-cli@master
@@ -76,7 +80,8 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         GISAID_API_ENDPOINT: ${{ secrets.GISAID_API_ENDPOINT }}
         GISAID_USERNAME_AND_PASSWORD: ${{ secrets.GISAID_USERNAME_AND_PASSWORD }}
-        GITHUB_RUN_ID: ${{ github.run_id }}
-        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-        SLACK_CHANNELS: ncov-gisaid-updates
         PAT_GITHUB_DISPATCH: ${{ secrets.PAT_GITHUB_DISPATCH }}
+
+    - name: notify_pipeline_failed
+      if: ${{ failure() }}
+      run: ./bin/notify-on-job-fail
