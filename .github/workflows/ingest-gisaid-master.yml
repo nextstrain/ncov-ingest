@@ -16,9 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-
-    - name: setup
-      run: ./bin/setup-github-workflow
+    - uses: nextstrain/.github/actions/setup-nextstrain-cli@master
 
     - name: run_pipeline
       run: |
