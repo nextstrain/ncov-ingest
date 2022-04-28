@@ -359,28 +359,12 @@ rule flag_metadata:
         ./bin/flag-metadata {input.metadata} > {output.metadata}
         """
 
-rule check_locations:
-    input:
-        metadata = f"data/{database}/metadata.tsv"
-    params:
-        unique_id = "gisaid_epi_isl" if database=="gisaid" else "genbank_accession"
-    output:
-        location_hierarchy = f"data/{database}/location_hierarchy.tsv"
-    resources:
-        # Memory use scales primarily with the size of the metadata file.
-        mem_mb=20000
-    shell:
-        """
-        ./bin/check-locations {input.metadata} {output.location_hierarchy} {params.unique_id}
-        """
-
 rule notify_gisaid:
     input:
         flagged_annotations = rules.transform_gisaid_data.output.flagged_annotations,
         # metadata = "data/gisaid/metadata.tsv",
         additional_info = "data/gisaid/additional_info.tsv",
-        flagged_metadata = "data/gisaid/flagged_metadata.txt",
-        location_hierarchy = "data/gisaid/location_hierarchy.tsv"
+        flagged_metadata = "data/gisaid/flagged_metadata.txt"
     params:
         s3_bucket = config["s3_src"]
     output:
@@ -391,12 +375,10 @@ rule notify_gisaid:
         # shell("./bin/notify-on-metadata-change {input.metadata} {params.s3_bucket}/metadata.tsv.gz gisaid_epi_isl")
         shell("./bin/notify-on-additional-info-change {input.additional_info} {params.s3_bucket}/additional_info.tsv.gz")
         shell("./bin/notify-on-flagged-metadata-change {input.flagged_metadata}  {params.s3_bucket}/flagged_metadata.txt.gz")
-        shell("./bin/notify-on-location-hierarchy-addition {input.location_hierarchy} source-data/location_hierarchy.tsv")
 
 rule notify_genbank:
     input:
         flagged_annotations = rules.transform_genbank_data.output.flagged_annotations,
-        location_hierarchy = "data/genbank/location_hierarchy.tsv",
         duplicate_biosample = "data/genbank/duplicate_biosample.txt"
     params:
         s3_bucket = config["s3_src"]
@@ -406,7 +388,6 @@ rule notify_genbank:
         shell("./bin/notify-slack --upload flagged-annotations < {input.flagged_annotations}")
         # TODO - which rule produces data/genbank/problem_data.tsv? (was not explicit in `ingest-genbank` bash script)
         shell("./bin/notify-on-problem-data data/genbank/problem_data.tsv")
-        shell("./bin/notify-on-location-hierarchy-addition {input.location_hierarchy} source-data/location_hierarchy.tsv")
         shell("./bin/notify-on-duplicate-biosample-change {input.duplicate_biosample} {params.s3_bucket}/duplicate_biosample.txt.gz")
 
 
