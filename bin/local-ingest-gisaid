@@ -36,10 +36,6 @@ ADDITIONAL_INFO_OLD="${INPUT_DIR}/additional_info.tsv"
 ADDITIONAL_INFO_NEW="${OUTPUT_DIR}/additional_info.tsv"
 ADDITIONAL_INFO_CHANGES="${OUTPUT_DIR}/additional-info-changes.txt"
 
-LOCATION_HIERARCHY_NEW="${OUTPUT_DIR}/location_hierarchy.tsv"
-LOCATION_HIERARCHY_REFERENCE="source-data/location_hierarchy.tsv"
-LOCATION_HIERARCHY_ADDITIONS="${OUTPUT_DIR}/location-hierarchy-additions.tsv"
-
 S3_BUCKET="s3://nextstrain-ncov-private"
 
 KEY="gisaid_epi_isl"
@@ -159,12 +155,7 @@ ingest() {
     >${ADDITIONAL_INFO_CHANGES}
 
   ./bin/flag-metadata "${OUTPUT_DIR}/metadata.tsv" >"${OUTPUT_DIR}/flagged_metadata.txt"
-  ./bin/check-locations "${OUTPUT_DIR}/metadata.tsv" "${OUTPUT_DIR}/location_hierarchy.tsv" "gisaid_epi_isl"
 
-  comm -13 \
-    <(sort "${LOCATION_HIERARCHY_REFERENCE}") \
-    <(sort "${LOCATION_HIERARCHY_NEW}") \
-    >"${LOCATION_HIERARCHY_ADDITIONS}"
 }
 
 upload-outputs() {

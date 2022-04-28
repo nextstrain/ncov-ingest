@@ -47,14 +47,6 @@ A common pattern is expected to be:
  3. Update `source-data/gisaid_annotations.tsv`.
  4. Push changes to `master` and re-download `gisaid/metadata.tsv`.
 
-## Updating manual location hierarchy
-New location hierarchies should be manually added to `source-data/location_hierarchy.tsv`.
-A common pattern is expected to be:
-
- 1. Run the ingest.
- 2. Discover new location hierarchies via Slack that need review.
- 3. Update `source-data/location_hierarchy.tsv`.
- 4. Push changes to `master` so the next ingest will have an updated "source of truth" to draw from.
 
 ## Configuring alerts for new GISAID data from specific location hierarchy areas
 Some Nextstrain team members may be interested in receiving alerts when new GISAID strains are added from specific locations, e.g. Portugal or Louisiana.
