@@ -1,11 +1,7 @@
 name: GISAID fetch and ingest (on branch)
 
-on:
-  push:
-    branches-ignore:
-      - master
-    tags-ignore:
-      - '**'
+# Manually triggered using GitHub's UI
+on: workflow_dispatch
 
 jobs:
   ingest:
