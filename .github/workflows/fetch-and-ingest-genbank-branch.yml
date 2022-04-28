@@ -1,11 +1,7 @@
 name: GenBank fetch and ingest (on branch)
 
-on:
-  push:
-    branches-ignore:
-      - master
-    tags-ignore:
-      - '**'
+# Manually triggered using GitHub's UI
+on: workflow_dispatch
 
 jobs:
   ingest:
@@ -19,7 +15,7 @@ jobs:
         ./bin/write-envdir env.d \
           AWS_DEFAULT_REGION \
           GITHUB_RUN_ID
-  
+
         GITHUB_BRANCH=${GITHUB_REF#refs/heads/}
         declare -a config
         config+=(
