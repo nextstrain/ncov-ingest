@@ -10,7 +10,7 @@ aws_batch_job_id="${AWS_BATCH_JOB_ID:-}"
 github_run_id="${GITHUB_RUN_ID:-}"
 
 echo "Notifying Slack about failed ingest job."
-message=":x: Ingest job failed. "
+message="❌ Ingest job has FAILED 😞 "
 
 if [ -n "${aws_batch_job_id}" ]; then
     message+="See AWS Batch job \`${aws_batch_job_id}\` (<https://console.aws.amazon.com/batch/v2/home?region=us-east-1#jobs/detail/${aws_batch_job_id}|link>) for error details. "
