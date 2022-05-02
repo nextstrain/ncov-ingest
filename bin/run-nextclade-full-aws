@@ -104,6 +104,7 @@ main() {
 
   nextstrain build \
     --aws-batch \
+    --detach \
     --no-download \
     --image nextstrain/ncov-ingest \
     --cpus "$AWS_BATCH_CPUS" \

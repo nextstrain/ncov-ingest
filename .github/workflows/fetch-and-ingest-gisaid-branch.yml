@@ -27,6 +27,7 @@ jobs:
 
         nextstrain build \
           --aws-batch \
+          --detach \
           --no-download \
           --image nextstrain/ncov-ingest \
           --cpus 16 \
