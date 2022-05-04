@@ -1,13 +1,13 @@
 #!/bin/bash
 set -euo pipefail
 
-TOKEN="${PAT_GITHUB_DISPATCH:-}"
+: "${PAT_GITHUB_DISPATCH:=}"
 
 repo="${1:?A repository name is required as the first argument.}"
 event_type="${2:?An event type is required as the second argument.}"
 shift 2
 
-if [[ $# -eq 0 && -z $TOKEN ]]; then
+if [[ $# -eq 0 && -z $PAT_GITHUB_DISPATCH ]]; then
     cat >&2 <<.
 You must specify options to curl for your GitHub credentials.  For example, you
 can specify your GitHub username, and will be prompted for your password:
@@ -38,8 +38,8 @@ which will then not require you to type your password every time.
 fi
 
 auth=':'
-if [[ $TOKEN ]]; then
-  auth="Authorization: Bearer ${TOKEN}"
+if [[ -n $PAT_GITHUB_DISPATCH ]]; then
+  auth="Authorization: Bearer ${PAT_GITHUB_DISPATCH}"
 fi
 
 if curl -fsS "https://api.github.com/repos/nextstrain/${repo}/dispatches" \
