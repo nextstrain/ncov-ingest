@@ -56,6 +56,7 @@ jobs:
         config+=(
           fetch_from_database=True
           trigger_rebuild=True
+          trigger_counts=True
         )
 
         nextstrain build \

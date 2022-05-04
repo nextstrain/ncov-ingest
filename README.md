@@ -19,24 +19,32 @@ AWS credentials are stored in this repository's secrets and are associated with 
 
 ## Manually triggering the automation
 A full run is a now done in 3 steps via manual triggers:
-1. Fetch new sequences and ingest them by running `./bin/trigger gisaid/fetch-and-ingest --user <your-github-username>`.
+1. Fetch new sequences and ingest them by running `./bin/trigger ncov-ingest gisaid/fetch-and-ingest --user <your-github-username>`.
 2. Add manual annotations, update location hierarchy as needed, and run ingest without fetching new sequences.
     * Pushes of `source-data/*-annotations.tsv` to the master branch will automatically trigger a run of ingest.
-    * You can also run ingest manually by running `./bin/trigger gisaid/ingest --user <your-github-username>`.
-3. Once all manual fixes are complete, trigger a rebuild of [nextstrain/ncov](https://github.com/nextstrain/ncov) by running `./bin/trigger rebuild --user <your-github-username>`.
+    * You can also run ingest manually by running `./bin/trigger ncov-ingest gisaid/ingest --user <your-github-username>`.
+3. Once all manual fixes are complete, trigger a rebuild of [nextstrain/ncov](https://github.com/nextstrain/ncov) by running `./bin/trigger ncov-ingest rebuild --user <your-github-username>`.
 
-See the output of `./bin/trigger gisaid/fetch-and-ingest --user <your-github-username>`, `./bin/trigger gisaid/ingest` or `./bin/trigger rebuild` for more information about authentication with GitHub.
+See the output of `./bin/trigger ncov-ingest gisaid/fetch-and-ingest --user <your-github-username>`, `./bin/trigger ncov-ingest gisaid/ingest` or `./bin/trigger ncov-ingest rebuild` for more information about authentication with GitHub.
 
-Note: running `./bin/trigger` posts a GitHub `repository_dispatch`.
+Note: running `./bin/trigger ncov-ingest` posts a GitHub `repository_dispatch`.
 Regardless of which branch you are on, it will trigger the specified action on the master branch.
 
-Valid dispatch types for `./bin/trigger` are:
+Valid dispatch types for `./bin/trigger ncov-ingest` are:
 
   - `ingest` (both GISAID and GenBank)
   - `gisaid/ingest`
   - `genbank/ingest`
+  - `fetch-and-ingest` (both GISAID and GenBank)
   - `gisaid/fetch-and-ingest`
+  - `genbank/fetch-and-ingest`
   - `rebuild`
+  - `gisaid/rebuild`
+  - `open/rebuild`
+  - `genbank/rebuild`
+  - `nextclade-full-run` (both GISAID and GenBank)
+  - `gisaid/nextclade-full-run`
+  - `genbank/nextclade-full-run`
 
 ## Updating manual annotations
 Manual annotations should be added to `source-data/gisaid_annotations.tsv`.
