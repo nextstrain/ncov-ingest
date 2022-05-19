@@ -449,7 +449,7 @@ rule trigger_counts_pipeline:
         dispatch_type = f"{database}/clade-counts"
     shell:
         """
-        ./bin/trigger counts {params.dispatch_type}
+        ./bin/trigger forecasts-ncov {params.dispatch_type}
         """
 
 ################################################################
