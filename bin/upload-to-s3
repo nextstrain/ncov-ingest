@@ -38,7 +38,7 @@ main() {
             xz -2 -T0 -c "$src"
         else
             cat "$src"
-        fi | aws s3 cp --no-progress - "$dst" --metadata sha256sum="$src_hash",recordCount="$src_record_count" "$(content-type "$dst")"
+        fi | aws s3 cp --no-progress - "$dst" --metadata sha256sum="$src_hash",recordcount="$src_record_count" "$(content-type "$dst")"
 
         if [[ $quiet == 1 ]]; then
             echo "Quiet mode. No Slack notification sent."
