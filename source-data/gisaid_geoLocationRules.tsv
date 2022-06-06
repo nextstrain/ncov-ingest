@@ -169,6 +169,7 @@ Europe/France/Auvergne-Rhône-Alpes/Manson	Europe/France/Auvergne-Rhône-Alpes/M
 Europe/France/Auvergne-Rhône-Alpes/Les Martres D'Artieres	Europe/France/Auvergne-Rhône-Alpes/Les Martres D'Artiere
 Europe/France/Auvergne-Rhône-Alpes/Perignat Les Sarliervres	Europe/France/Auvergne-Rhône-Alpes/Perignat Les Sarlieve
 Europe/France/Auvergne-Rhône-Alpes/Nantes	Europe/France/Auvergne-Rhône-Alpes/Nantes (Auvergne-Rhône-Alpes)
+Europe/France/Auvergne-Rhône-Alpes/Colombier	Europe/France/Auvergne-Rhône-Alpes/Colombiers
 Europe/France/Provence-Alpes-Côte-D’Azur/*	Europe/France/Provence-Alpes-Côte d'Azur/*
 Europe/France/Centre-Val de Loire/Angers	Europe/France/Pays de la Loire/Angers (Pays de la Loire)
 Europe/France/Centre-Val de Loire/Rouziers de Touraine	Europe/France/Centre-Val de Loire/Rouziers-de-Touraine
@@ -9978,6 +9979,10 @@ Asia/India/Tamil Nadu/Kozhikode	Asia/India/Tamil Nadu/Kozhikode (Tamil Nadu)
 Asia/India/Tamil Nadu/Wayanad	Asia/India/Tamil Nadu/Wayanad (Tamil Nadu)
 Asia/India/Tamil Nadu/Dindugul	Asia/India/Tamil Nadu/Dindigul
 Asia/India/Tamil Nadu/Perambulur	Asia/India/Tamil Nadu/Perambalur
+Asia/India/Tamil Nadu/Chegalpattu	Asia/India/Tamil Nadu/Chengalpattu
+Asia/India/Tamil Nadu/Chengalpatu	Asia/India/Tamil Nadu/Chengalpattu
+Asia/India/Tamil Nadu/Chengalpet	Asia/India/Tamil Nadu/Chengalpattu
+Asia/India/Tamil Nadu/Chengalpettu	Asia/India/Tamil Nadu/Chengalpattu
 Asia/India/New Delhi/	Asia/India/Delhi/New Delhi
 Asia/India/Assam/Kamrup Municipal	Asia/India/Assam/Kamrup
 Asia/India/Assam/Kamrup Rural	Asia/India/Assam/Kamrup
@@ -14366,6 +14371,8 @@ North America/USA/Ohio/Huron	North America/USA/Ohio/Huron OH
 North America/USA/Ohio/Mercer	North America/USA/Ohio/Mercer OH
 North America/USA/Ohio/Richland	North America/USA/Ohio/Richland OH
 North America/USA/Ohio/Madison County	North America/USA/Ohio/Madison County OH
+North America/USA/Ohio/Fulton	North America/USA/Ohio/Fulton OH
+North America/USA/Ohio/Clinton	North America/USA/Ohio/Clinton OH
 North America/USA/Colorado/El Paso County	North America/USA/Colorado/El Paso County CO
 North America/USA/Colorado/Mesa	North America/USA/Colorado/Mesa County
 North America/USA/Colorado/Denver	North America/USA/Colorado/Denver County
@@ -16423,6 +16430,15 @@ North America/USA/New York/Sullivan County	North America/USA/New York/Sullivan C
 North America/USA/New York/Orange	North America/USA/New York/Orange NY
 North America/USA/New York/Oneida	North America/USA/New York/Oneida NY
 North America/USA/New York/Westchester County	North America/USA/New York/Westchester County NY
+North America/USA/New York/Wayne	North America/USA/New York/Wayne NY
+North America/USA/New York/Livingston	North America/USA/New York/Livingston NY
+North America/USA/New York/Montgomery	North America/USA/New York/Montgomery NY
+North America/USA/New York/Franklin	North America/USA/New York/Franklin NY
+North America/USA/New York/Monroe	North America/USA/New York/Monroe NY
+North America/USA/New York/Fulton	North America/USA/New York/Fulton NY
+North America/USA/New York/Clinton	North America/USA/New York/Clinton NY
+North America/USA/New York/Madison	North America/USA/New York/Madison NY
+North America/USA/New York/Washington	North America/USA/New York/Washington NY
 North America/USA/Arizona/Phoenix County	North America/USA/Arizona/Maricopa County
 North America/USA/Arizona/Tucson	North America/USA/Arizona/Pima County
 North America/USA/Arizona/Navajo	North America/USA/Arizona/Navajo County
@@ -16950,6 +16966,7 @@ North America/USA/Arizona/Kings	North America/USA/Arizona/Kings AZ
 North America/USA/Arizona/Orange	North America/USA/Arizona/Orange AZ
 North America/USA/Arizona/Montgomery	North America/USA/Arizona/Montgomery AZ
 North America/USA/Arizona/Chester	North America/USA/Arizona/Chester AZ
+North America/USA/Arizona/Livingston	North America/USA/Arizona/Livingston AZ
 North America/USA/Indiana/Marion County	North America/USA/Indiana/Marion County IN
 North America/USA/Indiana/Lake County	North America/USA/Indiana/Lake County IN
 North America/USA/Indiana/Jefferson County	North America/USA/Indiana/Jefferson County IN
@@ -19170,6 +19187,8 @@ North America/USA/California/Yamhill County	North America/USA/California/Yamhill
 North America/USA/California/Denton County	North America/USA/California/Denton County CA
 North America/USA/California/Madison County	North America/USA/California/Madison County CA
 North America/USA/California/Suffolk County	North America/USA/California/Suffolk County CA
+North America/USA/California/Alameda Coutny	North America/USA/California/Alameda County CA
+North America/USA/California/Yuma County	North America/USA/California/Yuma County CA
 North America/USA/New Jersey/Essex County	North America/USA/New Jersey/Essex County NJ
 North America/USA/New Jersey/Hudson	North America/USA/New Jersey/Hudson County NJ
 North America/USA/New Jersey/Morris County	North America/USA/New Jersey/Morris County NJ
@@ -21491,6 +21510,7 @@ North America/USA/Oregon/Curry County	North America/USA/Oregon/Curry County OR
 North America/USA/Oregon/Clark County	North America/USA/Oregon/Clark County OR
 North America/USA/Oregon/Yamhill County	North America/USA/Oregon/Yamhill County OR
 North America/USA/Oregon/Moore	North America/USA/Oregon/Moore OR
+North America/USA/Oregon/Wheeler County	North America/USA/Oregon/Wheeler County OR
 North America/USA/Texas/Houston County	North America/USA/Texas/Harris County TX
 North America/USA/Texas/Washington County	North America/USA/Texas/Washington County TX
 North America/USA/Texas/Williamson County	North America/USA/Texas/Williamson County TX
@@ -21517,7 +21537,7 @@ North America/USA/Texas/Hunt	North America/USA/Texas/Hunt County
 North America/USA/Texas/Van Zandt	North America/USA/Texas/Van Zandt County
 North America/USA/Texas/Gregg	North America/USA/Texas/Gregg County
 North America/USA/Texas/Oldham	North America/USA/Texas/Oldham County
-North America/USA/Texas/Wheeler	North America/USA/Texas/Wheeler County
+North America/USA/Texas/Wheeler	North America/USA/Texas/Wheeler County TX
 North America/USA/Texas/Gray	North America/USA/Texas/Gray County
 North America/USA/Texas/Bowie	North America/USA/Texas/Bowie County
 North America/USA/Texas/Upshur	North America/USA/Texas/Upshur County
@@ -23349,6 +23369,7 @@ North America/USA/Texas/Desoto	North America/USA/Texas/Desoto TX
 North America/USA/Texas/Denton County	North America/USA/Texas/Denton County TX
 North America/USA/Texas/Dawson	North America/USA/Texas/Dawson TX
 North America/USA/Texas/Moore	North America/USA/Texas/Moore TX
+North America/USA/Texas/Wheeler County	North America/USA/Texas/Wheeler County TX
 North America/USA/Louisiana/Desoto Parish	North America/USA/Louisiana/DeSoto Parish
 North America/USA/Louisiana/St. Tammany Parish	North America/USA/Louisiana/St Tammany Parish
 North America/USA/Louisiana/St. Bernard Parish	North America/USA/Louisiana/St Bernard Parish
@@ -34446,6 +34467,7 @@ North America/USA/Georgia/Effingham County	North America/USA/Georgia/Effingham C
 North America/USA/Georgia/Forsyth	North America/USA/Georgia/Forsyth GA
 North America/USA/Georgia/Lagrange	North America/USA/Georgia/Lagrange GA
 North America/USA/Georgia/Forsyth County	North America/USA/Georgia/Forsyth County GA
+North America/USA/Georgia/Chatham County	North America/USA/Georgia/Chatham County GA
 North America/USA/District Of Columbia/District Of Columbia County	North America/USA/Washington DC/District of Columbia County
 North America/USA/District Of Columbia/*	North America/USA/Washington DC/*
 North America/USA/Kansas/Shawnee	North America/USA/Kansas/Johnson County KS
@@ -41487,6 +41509,13 @@ South America/Brazil/Rondonia/Maraba	South America/Brazil/Rondonia/Maraba (Rondo
 South America/Brazil/Rondonia/Tangara Da Serra	South America/Brazil/Rondonia/Tangara Da Serra (Rondonia)
 South America/Brazil/Rondonia/Buritis	South America/Brazil/Rondonia/Buritis (Rondonia)
 South America/Brazil/Rondonia/Nova Uniao	South America/Brazil/Rondonia/Nova Uniao (Rondonia)
+South America/Brazil/Rondonia/Alvorada D' Oeste	South America/Brazil/Rondonia/Alvorada D Oeste
+South America/Brazil/Rondonia/Espigao do Oeste	South America/Brazil/Rondonia/Espigao D Oeste
+South America/Brazil/Rondonia/Espigao D'Oeste	South America/Brazil/Rondonia/Espigao D Oeste
+South America/Brazil/Rondonia/Ji Parana	South America/Brazil/Rondonia/Ji-Parana
+South America/Brazil/Rondonia/Santa Luzia D'Oeste	South America/Brazil/Rondonia/Santa Luzia D Oeste
+South America/Brazil/Rondonia/Santa Luzia Do Oeste	South America/Brazil/Rondonia/Santa Luzia D Oeste
+South America/Brazil/Rondonia/Teixeropolis	South America/Brazil/Rondonia/Teixeiropolis
 South America/Brazil/Brasilia/Federal District	South America/Brazil/Distrito Federal/Brasilia
 South America/Argentina/Cordoba/Cordoba	South America/Argentina/Cordoba AR/Cordoba AR
 South America/Argentina/Cordoba/Brikman	South America/Argentina/Cordoba AR/Brinkmann
@@ -42327,6 +42356,7 @@ Africa/South Africa/Cape Town/	Africa/South Africa/Western Cape Province/Cape To
 Africa/South Africa/Cape Town/City of Cape Town	Africa/South Africa/Western Cape Province/Cape Town
 Africa/South Africa/Gauteng/Johannesburg	Africa/South Africa/Gauteng/Johannesburg Metro
 Africa/South Africa/Gauteng/Amathole	Africa/South Africa/Gauteng/Amathole (Gauteng)
+Africa/South Africa/Gauteng/City of Ekurhulen	Africa/South Africa/Gauteng/City of Ekurhuleni
 Africa/South Africa/Unknown/	Africa/South Africa/South Africa/
 Africa/South Africa/North-West/*	Africa/South Africa/North-West ZA/
 Africa/Democratic Republic of the Congo/Sud-Kivu/*	Africa/Democratic Republic of the Congo/Sud Kivu/*
@@ -42587,6 +42617,7 @@ Africa/Uganda/Northern Region/*	Africa/Uganda/Northern Region UG/*
 Africa/Uganda/Eastern/*	Africa/Uganda/Eastern Region UG/*
 Africa/Uganda/North/*	Africa/Uganda/Northern Region UG/*
 Africa/Uganda/North Uganda/*	Africa/Uganda/Northern Region UG/*
+Africa/Uganda/Busia/*	Africa/Uganda/Busia UG/*
 Africa/Zambia/Central/*	Africa/Zambia/Central Zambia/*
 Africa/Zambia/Southern/*	Africa/Zambia/Southern Zambia/*
 Africa/Zambia/Luapula/Mansa	Africa/Zambia/Luapula/Mansa ZM
@@ -42760,11 +42791,11 @@ Africa/Somalia/Mogadishu/	Africa/Somalia/Benadir/Mogadishu
 Africa/Burkinafaso/*/*	Africa/Burkina Faso/*/*
 Africa/Burkinafaso/Boromo/*	Africa/Burkina Faso/Boucle du Mouhoun Region/Boromo
 Africa/Niogeria/*/*	Africa/Nigeria/*/*
-Africa/Kenya/Malaba/	Africa/Kenya/Busia/Malaba
+Africa/Kenya/Malaba/	Africa/Kenya/Busia KE/Malaba
 Africa/Kenya/Nyando/	Africa/Kenya/Kisumu/
 Africa/Kenya/Nyamira/	Africa/Kenya/Kisii/
 Africa/Kenya/Trans Nzoia/*	Africa/Kenya/Trans-Nzoia/*
-Africa/Kenya/Buisa/*	Africa/Kenya/Busia/*
+Africa/Kenya/Buisa/*	Africa/Kenya/Busia KE/*
 Africa/Kenya/Wakiso/	Africa/Kenya/Kenya/
 Africa/Kenya/Mukono/	Africa/Kenya/Kenya/
 Africa/Kenya/Kampala/	Africa/Kenya/Kenya/
@@ -42798,6 +42829,7 @@ Africa/Kenya/Kapsabet/	Africa/Kenya/Nandi/Kapsabet
 Africa/Kenya/Muranga/	Africa/Kenya/Muranga County/Muranga
 Africa/Kenya/Muranga County/	Africa/Kenya/Murang'a County/Muranga
 Africa/Kenya/Kuria West/	Africa/Kenya/Migori/Kuria West
+Africa/Kenya/Busia/*	Africa/Kenya/Busia KE/*
 Africa/Canary Islands/Madrid/*	Europe/Spain/Madrid/*
 Africa/Canary Islands/Canary Islands/*	Europe/Spain/Canary Islands/*
 Africa/Canary Islands//	Europe/Spain/Canary Islands/
