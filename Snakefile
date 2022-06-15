@@ -109,10 +109,11 @@ rule upload_raw_ndjson:
         touch(f"data/{database}/raw.upload.done")
     params:
         quiet = "" if send_notifications else "--quiet",
-        s3_bucket = config["s3_dst"]
+        s3_bucket = config["s3_dst"],
+        cloudfront_domain = config.get("cloudfront_domain", "")
     run:
         for remote, local in input.items():
-            shell("./bin/upload-to-s3 {params.quiet} {local:q} {params.s3_bucket:q}/{remote:q}")
+            shell("./bin/upload-to-s3 {params.quiet} {local:q} {params.s3_bucket:q}/{remote:q} {params.cloudfront_domain}")
 
 rule transform_biosample:
     input:
@@ -420,10 +421,11 @@ rule upload:
         touch(f"data/{database}/upload.done")
     params:
         quiet = "" if send_notifications else "--quiet",
-        s3_bucket = config["s3_dst"]
+        s3_bucket = config["s3_dst"],
+        cloudfront_domain = config.get("cloudfront_domain", "")
     run:
         for remote, local in input.items():
-            shell("./bin/upload-to-s3 {params.quiet} {local:q} {params.s3_bucket:q}/{remote:q}")
+            shell("./bin/upload-to-s3 {params.quiet} {local:q} {params.s3_bucket:q}/{remote:q} {params.cloudfront_domain}")
 
 
 rule trigger_rebuild_pipeline:

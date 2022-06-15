@@ -6,5 +6,6 @@ trigger_counts: false
 
 s3_src: "s3://nextstrain-data/files/ncov/open"
 s3_dst: "s3://nextstrain-data/files/ncov/open"
+cloudfront_domain: "data.nextstrain.org"
 
 keep_all_files: False
