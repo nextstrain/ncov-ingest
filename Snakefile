@@ -81,8 +81,8 @@ rule download_biosample:
     message:
         """Obtaining Biosample data (GenBank only)"""
     params:
-        file_on_s3_dst = config["s3_dst"] + '/biosample.ndjson.xz',
-        file_on_s3_src = config["s3_src"] + '/biosample.ndjson.xz',
+        file_on_s3_dst = config["s3_dst"] + '/biosample.ndjson.gz',
+        file_on_s3_src = config["s3_src"] + '/biosample.ndjson.gz',
     output:
         biosample = "data/biosample.ndjson"
     run:
