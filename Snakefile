@@ -33,7 +33,10 @@ if config.get("s3_dst"):
     if config.get("trigger_counts", False):
         all_targets.append(f"data/{database}/trigger-counts.done")
 
-if send_notifications:
+# Include targets for Slack notifications if Slack env variables are provided
+# and the `s3_src` is provided in config since some notify scripts depend
+# do diffs with files on S3 from previous runs
+if send_notifications and config.get("s3_src"):
     all_targets.append(f"data/{database}/notify.done")
 
 rule all:
@@ -49,7 +52,8 @@ include: "workflow/snakemake_rules/curate.smk"
 
 include: "workflow/snakemake_rules/nextclade.smk"
 
-include: "workflow/snakemake_rules/slack_notifications.smk"
+if send_notifications and config.get("s3_src"):
+    include: "workflow/snakemake_rules/slack_notifications.smk"
 
 if config.get("s3_dst"):
     include: "workflow/snakemake_rules/upload.smk"
