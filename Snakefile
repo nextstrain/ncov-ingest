@@ -16,16 +16,25 @@ send_notifications = "SLACK_CHANNELS" in os.environ and "SLACK_TOKEN" in os.envi
 ################ work out what steps to run #####################
 #################################################################
 
-all_targets = [f"data/{database}/upload.done"]
+all_targets = [f"data/{database}/metadata.tsv", f"data/{database}/sequences.fasta"]
 
-if config.get("trigger_rebuild", False):
-    all_targets.append(f"data/{database}/trigger-rebuild.done")
-if config.get("trigger_counts", False):
-    all_targets.append(f"data/{database}/trigger-counts.done")
+# Include targets for uploading to S3 if `s3_dst` is provided in config
+if config.get("s3_dst"):
+    all_targets.append(f"data/{database}/upload.done")
+
+    # Include upload of raw NDJSON if we are fetching new sequences from database
+    if config.get("fetch_from_database", False):
+        all_targets.append(f"data/{database}/raw.upload.done")
+
+    # Only check for trigger config if `s3_dst` is provided because we only
+    # want to trigger builds if we've uploaded the output files to S3.
+    if config.get("trigger_rebuild", False):
+        all_targets.append(f"data/{database}/trigger-rebuild.done")
+    if config.get("trigger_counts", False):
+        all_targets.append(f"data/{database}/trigger-counts.done")
+
 if send_notifications:
     all_targets.append(f"data/{database}/notify.done")
-if config.get("fetch_from_database", False):
-    all_targets.append(f"data/{database}/raw.upload.done")
 
 rule all:
     input: all_targets
@@ -42,9 +51,11 @@ include: "workflow/snakemake_rules/nextclade.smk"
 
 include: "workflow/snakemake_rules/slack_notifications.smk"
 
-include: "workflow/snakemake_rules/upload.smk"
-
-include: "workflow/snakemake_rules/trigger.smk"
+if config.get("s3_dst"):
+    include: "workflow/snakemake_rules/upload.smk"
+    # Only include rules for trigger if uploading files since the trigger
+    # rules depend on the outputs from upload.
+    include: "workflow/snakemake_rules/trigger.smk"
 
 ################################################################
 ################################################################
