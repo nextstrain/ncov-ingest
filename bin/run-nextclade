@@ -34,7 +34,7 @@ elif [ $# -gt 8 ]; then
 fi
 
 echo "[ INFO] ${0}:${LINENO}: Downloading latest Nextclade version"
-curl -fsSL "https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-Linux-x86_64" -o "nextclade"
+curl -fsSL "https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-x86_64-unknown-linux-gnu" -o "nextclade"
 chmod +x nextclade
 
 if ! command -v ./nextclade &>/dev/null; then
@@ -51,13 +51,13 @@ echo "[ INFO] ${0}:${LINENO}: Downloading Nextclade dataset \"sars-cov-2\""
 
 echo "[ INFO] ${0}:${LINENO}: Running Nextclade"
 ./nextclade run \
+  "${INPUT_FASTA}" \
   --in-order \
   --verbosity=error \
-  --input-fasta="${INPUT_FASTA}" \
   --input-dataset="${NEXTCLADE_DATASET_DIR}" \
   --output-tsv="${OUTPUT_TSV}" \
   --genes="${GENES}" \
-  --output-dir="${NEXTCLADE_OUTPUTS_DIR}" \
+  --output-translations="${NEXTCLADE_OUTPUTS_DIR}/nextclade.gene.{gene}.fasta" \
   --output-basename="nextclade" \
   --output-fasta="${OUTPUT_FASTA}" \
   --output-insertions="${OUTPUT_INSERTIONS}" \

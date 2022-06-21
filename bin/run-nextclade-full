@@ -106,7 +106,7 @@ main() {
   FASTA_OUTPUT_WILDCARD="${TMP_OUTPUT_FASTA_DIR}/*.fasta"
   MUTATION_SUMMARY_OUTPUT_WILDCARD="${TMP_OUTPUT_MUTATION_SUMMARY_DIR}/*.tsv"
 
-  NEXTCLADE_BIN_URL="https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-Linux-x86_64"
+  NEXTCLADE_BIN_URL="https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-x86_64-unknown-linux-gnu"
   NEXTCLADE_BIN="nextclade"
 
   GENES=E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S
@@ -215,15 +215,15 @@ main() {
 
     echo "[ INFO] ${0}:${LINENO}: Running Nextclade for batch ${input} as a background job"
     ./${NEXTCLADE_BIN} run \
+      "${input}" \
       --jobs="${N_NEXTCLADE_THREADS}" \
       --in-order \
       --verbosity=error \
-      --input-fasta="${input}" \
       --input-dataset="${TMP_DIR_NEXTCLADE_DATASET}" \
       --output-tsv="${output_tsv_filename}" \
       --output-fasta="${output_fasta_filename}" \
       --genes="${GENES}" \
-      --output-dir="${output_dir}" \
+      --output-translations="${output_dir}/nextclade.gene.{gene}.fasta" \
       --output-basename="nextclade" \
       &
   done
