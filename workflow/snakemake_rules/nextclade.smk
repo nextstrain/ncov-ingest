@@ -6,6 +6,12 @@ Expects the following inputs:
     fasta = "data/{database}/sequences.fasta"
     existing_metadata = f"data/{database}/metadata_transformed.tsv"
 
+    OPTIONAL INPUTS
+    If not downloading NextClade cache files from AWS S3 (not providing `s3_dst` and `s3_src` in config),
+    then users must include local cache files:
+        old_info = f"data/{database}/nextclade_old.tsv"
+        old_alignment = f"data/{database}/nextclade.aligned.old.fasta"
+
 Produces the following outputs:
     metadata = f"data/{database}/metadata.tsv"
     OPTIONAL OUTPUTS
@@ -15,17 +21,36 @@ Produces the following outputs:
         alignment = f"data/{database}/aligned.fasta"
 """
 
-rule download_nextclade:
-    params:
-        dst_source = config["s3_dst"] + '/nextclade.tsv.gz',
-        src_source = config["s3_src"] + '/nextclade.tsv.gz',
-    output:
-        nextclade = f"data/{database}/nextclade_old.tsv"
-    shell:
-        """
-        ./bin/download-from-s3 {params.dst_source} {output.nextclade} ||  \
-        ./bin/download-from-s3 {params.src_source} {output.nextclade}
-        """
+# Only include rules to fetch from S3 if S3 config params are provided
+if config.get("s3_dst") and config.get("s3_src"):
+
+    rule download_nextclade:
+        params:
+            dst_source = config["s3_dst"] + '/nextclade.tsv.gz',
+            src_source = config["s3_src"] + '/nextclade.tsv.gz',
+        output:
+            nextclade = f"data/{database}/nextclade_old.tsv"
+        shell:
+            """
+            ./bin/download-from-s3 {params.dst_source} {output.nextclade} ||  \
+            ./bin/download-from-s3 {params.src_source} {output.nextclade}
+            """
+
+    rule download_previous_alignment:
+        ## NOTE two potential bugs with this implementation:
+        ## (1) race condition. This file may be updated on the remote after download_nextclade has run but before this rule
+        ## (2) we may get `download_nextclade` and `download_previous_alignment` from different s3 buckets
+        params:
+            dst_source = config["s3_dst"] + '/aligned.fasta.xz',
+            src_source = config["s3_src"] + '/aligned.fasta.xz',
+        output:
+            alignment = temp(f"data/{database}/nextclade.aligned.old.fasta")
+        shell:
+            """
+            ./bin/download-from-s3 {params.dst_source} {output.alignment} ||  \
+            ./bin/download-from-s3 {params.src_source} {output.alignment}
+            """
+
 
 checkpoint get_sequences_without_nextclade_annotations:
     """Find sequences in FASTA which don't have clades assigned yet"""
@@ -91,21 +116,6 @@ rule nextclade_info:
             {input.old_info:q} \
             {input.new_info:q} \
             -o {output.nextclade_info:q}
-        """
-
-rule download_previous_alignment:
-    ## NOTE two potential bugs with this implementation:
-    ## (1) race condition. This file may be updated on the remote after download_nextclade has run but before this rule
-    ## (2) we may get `download_nextclade` and `download_previous_alignment` from different s3 buckets
-    params:
-        dst_source = config["s3_dst"] + '/aligned.fasta.xz',
-        src_source = config["s3_src"] + '/aligned.fasta.xz',
-    output:
-        alignment = temp(f"data/{database}/nextclade.aligned.old.fasta")
-    shell:
-        """
-        ./bin/download-from-s3 {params.dst_source} {output.alignment} ||  \
-        ./bin/download-from-s3 {params.src_source} {output.alignment}
         """
 
 rule combine_alignments:
