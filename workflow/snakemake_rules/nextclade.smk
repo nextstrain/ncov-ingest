@@ -162,18 +162,26 @@ rule combine_alignments:
         fi
         """
 
-def _get_nextclade_info(wildcards):
+def _get_nextclade_output(wildcards):
     ## the nextclade metadata should represent the entire dataset. If there are new sequences
     ## this has to be generated; if not then we can use the previous (cached) file.
     nextclade_sequences_path = checkpoints.get_sequences_without_nextclade_annotations.get().output.fasta
+    output = {
+        "nextclade_tsv": f"data/{database}/nextclade_old.tsv",
+        "aligned_fasta": f"data/{database}/nextclade.aligned.old.fasta",
+    }
     if os.path.getsize(nextclade_sequences_path) > 0:
-        return f"data/{database}/nextclade.tsv"
-    return f"data/{database}/nextclade_old.tsv"
+        # Return all two output files here so that they get pulled through
+        # the Snakemake DAG even if we are not uploading them to S3.
+        output["nextclade_tsv"] = f"data/{database}/nextclade.tsv"
+        output["aligned_fasta"] = f"data/{database}/aligned.fasta"
+
+    return output
 
 rule generate_metadata:
     input:
+        unpack(_get_nextclade_output),
         existing_metadata = f"data/{database}/metadata_transformed.tsv",
-        new_metadata = _get_nextclade_info
     output:
         metadata = f"data/{database}/metadata.tsv"
     # note: the shell scripts which predated this snakemake workflow
@@ -182,6 +190,6 @@ rule generate_metadata:
         """
         ./bin/join-metadata-and-clades \
             {input.existing_metadata} \
-            {input.new_metadata} \
+            {input.nextclade_tsv} \
             -o {output.metadata}
         """
