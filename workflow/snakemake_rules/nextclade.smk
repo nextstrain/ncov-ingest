@@ -133,10 +133,14 @@ rule nextclade_info:
         nextclade_info = f"data/{database}/nextclade.tsv"
     shell:
         """
-        ./bin/join-rows \
-            {input.old_info:q} \
-            {input.new_info:q} \
-            -o {output.nextclade_info:q}
+        if [[ -s {input.old_info} ]]; then
+            ./bin/join-rows \
+                {input.old_info:q} \
+                {input.new_info:q} \
+                -o {output.nextclade_info:q}
+        else
+            cp {input.new_info} {output.nextclade_info}
+        fi
         """
 
 rule combine_alignments:
@@ -151,7 +155,11 @@ rule combine_alignments:
         alignment = f"data/{database}/aligned.fasta"
     shell:
         """
-        cat {input.old_alignment} {input.new_alignment} > {output.alignment}
+        if [[ -s {input.old_alignment} ]]; then
+            cat {input.old_alignment} {input.new_alignment} > {output.alignment}
+        else
+            cp {input.new_alignment} {output.alignment}
+        fi
         """
 
 def _get_nextclade_info(wildcards):
