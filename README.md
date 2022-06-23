@@ -4,11 +4,42 @@ Internal tooling for the Nextstrain team to ingest and curate SARS-CoV-2 genome 
 Relies on data from https://simplemaps.com/data/us-cities.
 
 ## Running locally
-If you're using Pipenv (see below), then run commands from `./bin/…` inside a `pipenv shell` or wrapped with `pipenv run ./bin/…`.
+> NOTE: The full set of sequences from GISAID/GenBank will most likely require more compute resources than what is available on your local computer.
 
-1. Run `./bin/fetch-from-gisaid data/gisaid.ndjson`
-2. Run `./bin/transform-gisaid data/gisaid.ndjson`
-3. Look at `data/gisaid/sequences.fasta` and `data/gisaid/metadata.tsv`
+Follow these instructions to run the ncov-ingest pipeline _without_ all the bells and whistles used by internal Nextstrain runs that involve AWS S3, Slack notifications, and GitHub Action triggers:
+
+
+### GISAID
+To pull sequences directly from GISAID, you are required to set two environment variables:
+- `GISAID_API_ENDPOINT`
+- `GISAID_USERNAME_AND_PASSWORD`
+
+Make these environment variable available to the Docker runner environment by creating an `env.d/` directory:
+```
+./bin/write-envdir env.d \
+  GISAID_API_ENDPOINT \
+  GISAID_USERNAME_AND_PASSWORD
+```
+Then run the ncov-ingest pipeline with the nextstrain CLI:
+```
+nextstrain build \
+  --image nextstrain/ncov-ingest \
+  --exec env \
+  . \
+    envdir env.d snakemake \
+      --configfile config/local_gisaid.yaml
+```
+
+### GenBank
+Sequences can be pulled from GenBank without any environment variables.
+Run the ncov-ingest pipeline with the nextstrain CLI:
+```
+nextstrain build \
+  --image nextstrain/ncov-ingest \
+  .
+  --configfile config/local_genbank.yaml
+```
+
 
 ## Running automatically
 The ingest pipelines are triggered from the GitHub workflows `.github/workflows/ingest-master-*.yml` and `…/ingest-branch-*.yml` but run on AWS Batch via the `nextstrain build --aws-batch` infrastructure.
