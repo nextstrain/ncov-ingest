@@ -64,7 +64,7 @@ env_variables = {
 
 onstart:
     print(f"Pipeline starting.")
-    print(f"Source s3 bucket: {config['s3_src']}, destination: {config['s3_dst']}")
+    print(f"Source s3 bucket: {config.get('s3_src', 'N/A')}, destination: {config.get('s3_dst', 'N/A')}")
     print("Environment variables present:")
     for var, description in env_variables.items():
         print(f"\t${{{var}}}: " + ("YES" if os.environ.get(var, "") else "NO") + f"({description})")
