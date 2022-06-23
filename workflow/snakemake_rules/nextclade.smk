@@ -8,7 +8,8 @@ Expects the following inputs:
 
     OPTIONAL INPUTS
     If not downloading NextClade cache files from AWS S3 (not providing `s3_dst` and `s3_src` in config),
-    then users must include local cache files:
+    then empty cache file will be generated. Users can optionally include local
+    cache files to satisfy the Snakemake input requirements:
         old_info = f"data/{database}/nextclade_old.tsv"
         old_alignment = f"data/{database}/nextclade.aligned.old.fasta"
 
@@ -20,9 +21,25 @@ Produces the following outputs:
         nextclade_info = f"data/{database}/nextclade.tsv"
         alignment = f"data/{database}/aligned.fasta"
 """
+rule create_empty_nextclade_info:
+    message:
+        """Creating empty NextClade info cache file"""
+    output:
+        touch(f"data/{database}/nextclade_old.tsv")
+
+rule create_empty_nextclade_aligned:
+    message:
+        """Creating empty NextClade aligned cache file"""
+    output:
+        touch(f"data/{database}/nextclade.aligned.old.fasta")
 
 # Only include rules to fetch from S3 if S3 config params are provided
 if config.get("s3_dst") and config.get("s3_src"):
+    # Set ruleorder since these rules have the same output
+    # Allows us to only download the NextClade cache from S3 only if the
+    # S3 parameters are provided in the config.
+    ruleorder: download_nextclade > create_empty_nextclade_info
+    ruleorder: download_previous_alignment > create_empty_nextclade_aligned
 
     rule download_nextclade:
         params:
@@ -61,10 +78,14 @@ checkpoint get_sequences_without_nextclade_annotations:
         fasta = f"data/{database}/nextclade.sequences.fasta"
     shell:
         """
-        ./bin/filter-fasta \
-            --input_fasta={input.fasta} \
-            --input_tsv={input.nextclade} \
-            --output_fasta={output.fasta} \
+        if [[ -s {input.nextclade} ]]; then
+            ./bin/filter-fasta \
+                --input_fasta={input.fasta} \
+                --input_tsv={input.nextclade} \
+                --output_fasta={output.fasta}
+        else
+            cp {input.fasta} {output.fasta}
+        fi
         """
 
 GENES = "E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S"
