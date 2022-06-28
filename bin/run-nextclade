@@ -57,12 +57,13 @@ echo "[ INFO] ${0}:${LINENO}: Downloading Nextclade dataset \"sars-cov-2\""
 echo "[ INFO] ${0}:${LINENO}: Running Nextclade"
 ./nextclade run \
   "${INPUT_FASTA}" \
+  --retry-reverse-complement \
   --in-order \
   --verbosity=error \
   --input-dataset="${NEXTCLADE_DATASET_DIR}" \
   --output-tsv="${OUTPUT_TSV}" \
   --genes="${GENES}" \
   --output-translations="${NEXTCLADE_OUTPUTS_DIR}/nextclade.gene.{gene}.fasta" \
-  --output-fasta="${OUTPUT_FASTA}" \
+  --output-fasta=- \
   --output-insertions="${OUTPUT_INSERTIONS}" \
-  ${NEXTCLADE_THREADS}
+  "${NEXTCLADE_THREADS}" | seqkit seq -i >"${OUTPUT_FASTA}" #seqkit seq -i removes (reverse complemented) from the sequence names
