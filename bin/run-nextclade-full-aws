@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# usage: run-nextclade-full --database=gisaid|genbank [--aws_batch_cpus] [--aws_batch_memory] [--n_processors] [--n_nextclade_threads] [--batch_size]
-#        run-nextclade-full --help
+# usage: run-nextclade-full-aws --database=gisaid|genbank [--aws_batch_cpus] [--aws_batch_memory] [--jobs]
+#        run-nextclade-full-aws --help
 #
 # Make a full Nextclade run, recomputing clades and other metrics
 # for all sequences. This version schedules run on AWS batch.
@@ -15,18 +15,10 @@
 #
 # --aws_batch_memory=180GiB   Amount of memory to request from AWS Batch
 #
-# --n_processors              Maximum number of threads all instances of
-#                             Nextclade are allowed to use.
+# --jobs                      Number of threads Nextclade is allowed to use.
 #
-# --n_nextclade_threads       Maximum number of threads each individual instance
-#                             of Nextclade is allowed to use
-#
-# --batch_size                Maximum number of sequences fed to an individual
-#                             instance of Nextclade
-#
-set -o errexit
-set -o nounset
-set -o pipefail
+
+set -euo pipefail
 trap "exit" INT
 
 export AWS_DEFAULT_REGION="${AWS_DEFAULT_REGION:-us-east-1}"
@@ -42,8 +34,6 @@ main() {
   # as corresponding CLi flags
   DATABASE=
   N_PROCESSORS=
-  N_NEXTCLADE_THREADS=
-  BATCH_SIZE=
 
 
   AWS_BATCH_CPUS=96
@@ -67,16 +57,8 @@ main() {
       AWS_BATCH_MEMORY="${arg#*=}"
       shift
       ;;
-    --n_processors=*)
+    --jobs=*)
       N_PROCESSORS="${arg#*=}"
-      shift
-      ;;
-    --n_nextclade_threads=*)
-      N_NEXTCLADE_THREADS="${arg#*=}"
-      shift
-      ;;
-    --batch_size=*)
-      BATCH_SIZE="${arg#*=}"
       shift
       ;;
     esac
@@ -99,8 +81,6 @@ main() {
   echo "[ INFO] ${0}:${LINENO}:   AWS_BATCH_CPUS=${AWS_BATCH_CPUS}"
   echo "[ INFO] ${0}:${LINENO}:   AWS_BATCH_MEMORY=${AWS_BATCH_MEMORY}"
   echo "[ INFO] ${0}:${LINENO}:   N_PROCESSORS=${N_PROCESSORS}"
-  echo "[ INFO] ${0}:${LINENO}:   N_NEXTCLADE_THREADS=${N_NEXTCLADE_THREADS}"
-  echo "[ INFO] ${0}:${LINENO}:   BATCH_SIZE=${BATCH_SIZE}"
 
   nextstrain build \
     --aws-batch \
@@ -113,9 +93,8 @@ main() {
     . \
     envdir env.d run-nextclade-full \
       --database="${DATABASE}" \
-      ${N_PROCESSORS:+--n_processors=$N_PROCESSORS} \
-      ${N_NEXTCLADE_THREADS:+--n_nextclade_threads=$N_NEXTCLADE_THREADS} \
-      ${BATCH_SIZE:+--batch_size=$BATCH_SIZE}
+      ${N_PROCESSORS:+--jobs=$N_PROCESSORS} \
+
 }
 
 print-help() {

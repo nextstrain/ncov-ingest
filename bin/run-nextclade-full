@@ -1,16 +1,11 @@
 #!/bin/bash
-# usage: run-nextclade-full --database=gisaid|genbank [--n_processors] [--n_nextclade_threads] [--batch_size]
+# usage: run-nextclade-full --database=gisaid|genbank [--jobs]
 #        run-nextclade-full --help
 #
 # Make a full Nextclade run, recomputing clades and other metrics
 # for all sequences. This is necessary every time when new clades are defined or
 # when upgrading to the new version of Nextclade with breaking changes.
-#
-# Implementation details: sequence data is split into batches of given size.
-# A number of Nextclade instances is launched concurrently, depending on
-# given number of processors and number of threads each instance is allowed to
-#
-#
+
 # Note: this might take very long time to run (hours to days), depending on
 # number of sequences to be processed and available computational resources.
 #
@@ -18,15 +13,11 @@
 #                             be downloaded and where the results will be
 #                             uploaded.
 #
-# --n_processors              Maximum number of threads all instances of
-#                             Nextclade are allowed to use.
-#
-# --n_nextclade_threads       Maximum number of threads each individual instance
-#                             of Nextclade is allowed to use
-#
-# --batch_size                Maximum number of sequences fed to an individual
-#                             instance of Nextclade
+# --jobs                      Maximum number of threads Nextclade is allowed to
+#                             use.
+
 set -euo pipefail
+trap "exit" INT
 
 disk_info() {
   echo "[ INFO] ${0}:${LINENO}: Summary of block devices:"
@@ -44,12 +35,6 @@ main() {
   # Default equals to the number of threads on all CPUs combined.
   N_PROCESSORS=${N_PROCESSORS:-$(getconf _NPROCESSORS_ONLN)}
 
-  # Each invocation of Nextclade will use this number of threads
-  N_NEXTCLADE_THREADS=${N_NEXTCLADE_THREADS:-8}
-
-  # Each invocation of Nextclade will be given this number of sequences
-  BATCH_SIZE=${BATCH_SIZE:-100000}
-
   DATABASE=
 
   silent=0
@@ -64,16 +49,8 @@ main() {
       DATABASE="${arg#*=}"
       shift
       ;;
-    --n_processors=*)
+    --jobs=*)
       N_PROCESSORS="${arg#*=}"
-      shift
-      ;;
-    --n_nextclade_threads=*)
-      N_NEXTCLADE_THREADS="${arg#*=}"
-      shift
-      ;;
-    --batch_size=*)
-      BATCH_SIZE="${arg#*=}"
       shift
       ;;
     esac
@@ -91,46 +68,27 @@ main() {
   DATE_UTC=$(date -u "+%Y-%m-%d--%H-%M-%S--%Z")
   S3_DST="$S3_SRC/nextclade-full-run-${DATE_UTC}"
 
-  INPUT_FASTA="data/${DATABASE}/sequences.fasta"
-  OUTPUT_TSV="data/${DATABASE}/nextclade.tsv"
+  INPUT_FASTA="data/${DATABASE}/sequences.fasta.xz"
   OUTPUT_FASTA="data/${DATABASE}/aligned.fasta"
-  OUTPUT_MUTATION_SUMMARY="data/${DATABASE}/mutation-summary.tsv"
-  TMP_INPUT_FASTA_DIR="tmp/${DATABASE}/fasta"
-  TMP_OUTPUT_TSV_DIR="tmp/${DATABASE}/clades"
-  TMP_OUTPUT_FASTA_DIR="tmp/${DATABASE}/aligned"
-  TMP_OUTPUT_MUTATION_SUMMARY_DIR="tmp/${DATABASE}/mutation-summary"
-  TMP_DIR_NEXTCLADE_DATASET="tmp/dataset"
-  TMP_NEXTCLADE_OUTPUT_DIR="tmp/${DATABASE}/output"
-  INPUT_WILDCARD="${TMP_INPUT_FASTA_DIR}/*.fasta"
-  TSV_OUTPUT_WILDCARD="${TMP_OUTPUT_TSV_DIR}/*.tsv"
-  FASTA_OUTPUT_WILDCARD="${TMP_OUTPUT_FASTA_DIR}/*.fasta"
-  MUTATION_SUMMARY_OUTPUT_WILDCARD="${TMP_OUTPUT_MUTATION_SUMMARY_DIR}/*.tsv"
+  OUTPUT_TSV="data/${DATABASE}/nextclade.tsv"
 
-  NEXTCLADE_BIN_URL="https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-Linux-x86_64"
-  NEXTCLADE_BIN="nextclade"
+  TMP_DIR_NEXTCLADE_DATASET="tmp/dataset"
+
+  NEXTCLADE_BIN_URL="https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-x86_64-unknown-linux-gnu"
+  NEXTCLADE_BIN="./nextclade"
 
   GENES=E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S
-  GENES_SPACE_DELIMITED="$(echo ${GENES} | tr "," " ")"
-
-  # Maximum number of Nextclade invocations that can run concurrently
-  N_CONCURRENT_JOBS_MAX=$((N_PROCESSORS / N_NEXTCLADE_THREADS + 1))
-  if [ $N_CONCURRENT_JOBS_MAX == 0 ]; then
-    N_CONCURRENT_JOBS_MAX=1
-  fi
 
   echo "[ INFO] ${0}:${LINENO}: Nextclade full run is starting"
   echo "[ INFO] ${0}:${LINENO}:   DATABASE=${DATABASE}"
   echo "[ INFO] ${0}:${LINENO}:   N_PROCESSORS=${N_PROCESSORS}"
-  echo "[ INFO] ${0}:${LINENO}:   N_NEXTCLADE_THREADS=${N_NEXTCLADE_THREADS}"
-  echo "[ INFO] ${0}:${LINENO}:   N_CONCURRENT_JOBS_MAX=${N_CONCURRENT_JOBS_MAX}"
-  echo "[ INFO] ${0}:${LINENO}:   BATCH_SIZE=${BATCH_SIZE}"
   echo "[ INFO] ${0}:${LINENO}:   S3_SRC=${S3_SRC}"
   echo "[ INFO] ${0}:${LINENO}:   S3_DST=${S3_DST}"
   echo "[ INFO] ${0}:${LINENO}:   NEXTCLADE_BIN_URL=${NEXTCLADE_BIN_URL}"
 
   disk_info
 
-  ./bin/notify-on-job-start "🦬 'Nextclade full run: ${DATABASE}'" "The job involves ${N_PROCESSORS} CPUs and will run ${N_CONCURRENT_JOBS_MAX} Nextclade instances in parallel, each processing ${BATCH_SIZE} sequences at a time. The results will be uploaded to \`${S3_DST}\`. Someone needs to inspect these results and then copy them over to the S3 directory where the next scheduled ingest can find them, replacing the old files. For more details, see PR #218 in ncov-ingest."
+  ./bin/notify-on-job-start "🦬 'Nextclade full run: ${DATABASE}'" "The job involves ${N_PROCESSORS} CPUs. The results will be uploaded to \`${S3_DST}\`. Someone needs to inspect these results and then copy them over to the S3 directory where the next scheduled ingest can find them, replacing the old files. For more details, see PR #218 in ncov-ingest."
 
   if [ ! -f "${NEXTCLADE_BIN}" ]; then
     echo "[ INFO] ${0}:${LINENO}: Downloading latest Nextclade version from '${NEXTCLADE_BIN_URL}' to '${NEXTCLADE_BIN}'"
@@ -140,178 +98,39 @@ main() {
     echo "[ INFO] ${0}:${LINENO}: ⚠️Using existing Nextclade binary '${NEXTCLADE_BIN}' from the working directory. Skipping downloading the latest version. If this was not intended, cancel this run, remove '${NEXTCLADE_BIN}' from your working directory and rerun."
   fi
 
-  echo "[ INFO] ${0}:${LINENO}: installing csvkit"
-  if ! command -v "csvstack"; then
-    pip3 install --upgrade --quiet csvkit
-    BIN="/tmp/.local/bin"
-    export PATH=${BIN}${PATH:+:$PATH}
-  fi
-
-  echo "[ INFO] ${0}:${LINENO}: Downloading '${S3_SRC}/sequences.fasta.xz' to '${INPUT_FASTA}'"
-  aws s3 cp --no-progress "${S3_SRC}/sequences.fasta.xz" - | xz -T0 -cdfq >"${INPUT_FASTA}"
-
-  echo "[ INFO] ${0}:${LINENO}: Splitting '${INPUT_FASTA}' into batches of size ${BATCH_SIZE} sequences and storing them in '${INPUT_WILDCARD}'"
-  # Split fasta file to multiple batches
-  mkdir -p "${TMP_INPUT_FASTA_DIR}"
-  ./bin/split-fasta \
-    "${INPUT_FASTA}" \
-    --batch_size="${BATCH_SIZE}" \
-    --output_dir="${TMP_INPUT_FASTA_DIR}"
-
-  # Check if batches exist and report
-  # shellcheck disable=SC2086 # We want globbing here
-  if ls ${INPUT_WILDCARD} 1>/dev/null 2>&1; then
-    # shellcheck disable=SC2086,SC2012 # We want globbing here
-    NUM_BATCHES="$(ls -Ubad1 -- ${INPUT_WILDCARD} 2>/dev/null | wc -l)"
-    echo "[ INFO] ${0}:${LINENO}: There are now ${NUM_BATCHES} batches of sequences to process with Nextclade (batch size is ${BATCH_SIZE})"
-  else
-    echo "[ INFO] ${0}:${LINENO}: There are no sequences to process. Skipping Nextclade step."
-    rm -rf "${INPUT_FASTA} ${TMP_INPUT_FASTA_DIR} ${TMP_NEXTCLADE_OUTPUT_DIR}"
-    exit 0
-  fi
-
   if ! command -v ./${NEXTCLADE_BIN} &>/dev/null; then
     echo "[ERROR] ${0}:${LINENO}: Nextclade executable not found"
     exit 1
   fi
+
+  echo "[ INFO] ${0}:${LINENO}: Downloading '${S3_SRC}/sequences.fasta.xz' to '${INPUT_FASTA}'"
+  aws s3 cp --no-progress "${S3_SRC}/sequences.fasta.xz" "${INPUT_FASTA}"
 
   NEXTCLADE_VERSION="$(./${NEXTCLADE_BIN} --version)"
   echo "[ INFO] ${0}:${LINENO}: Nextclade version: ${NEXTCLADE_VERSION}"
 
   if [ ! -f "${TMP_DIR_NEXTCLADE_DATASET}/tree.json" ] || [ ! -f "${TMP_DIR_NEXTCLADE_DATASET}/reference.fasta" ]; then
     echo "[ INFO] ${0}:${LINENO}: Downloading Nextclade dataset \"sars-cov-2\" into '${TMP_DIR_NEXTCLADE_DATASET}'"
-    ./${NEXTCLADE_BIN} dataset get --name="sars-cov-2" --output-dir="${TMP_DIR_NEXTCLADE_DATASET}" --verbose
+    "${NEXTCLADE_BIN}" dataset get --name="sars-cov-2" --output-dir="${TMP_DIR_NEXTCLADE_DATASET}" --verbose
   else
     echo "[ INFO] ${0}:${LINENO}: ⚠️Using existing Nextclade dataset '${TMP_DIR_NEXTCLADE_DATASET}' from the working directory. Skipping downloading the latest dataset. If this was not intended, cancel this run, remove '${TMP_DIR_NEXTCLADE_DATASET}' from your working directory and rerun."
   fi
 
-  # Run batches in parallel
-  echo "[ INFO] ${0}:${LINENO}: Nextclade is allowed to use ${N_PROCESSORS} threads. Each invocation of Nextclade is allowed to use ${N_NEXTCLADE_THREADS} threads."
-  echo "[ INFO] ${0}:${LINENO}: Will run ${NUM_BATCHES} total Nextclade jobs, at most ${N_CONCURRENT_JOBS_MAX} concurrent jobs at a time."
-  mkdir -p "${TMP_OUTPUT_TSV_DIR}"
-  N_JOBS_CURRENT="\j"
-  for input in ${INPUT_WILDCARD}; do
-    if [ ! -e "${input}" ]; then
-      # If ${input} does not exist, this means that INPUT_WILDCARD was not expanded,
-      # there are no batch files and we should not attempt to run the processing.
-      # If we would, then it will crash.
-      break
-    fi
+  echo "[ INFO] ${0}:${LINENO}: Nextclade is allowed to use ${N_PROCESSORS} threads."
 
-    input_basename="$(basename "${input}")"
-
-    output_tsv_basename="${input_basename%.fasta}.tsv"
-    output_tsv_filename="${TMP_OUTPUT_TSV_DIR}/${output_tsv_basename}"
-
-    output_fasta_basename="${input_basename%.fasta}.aligned.fasta"
-    output_fasta_filename="${TMP_OUTPUT_FASTA_DIR}/${output_fasta_basename}"
-    output_dir="${TMP_NEXTCLADE_OUTPUT_DIR}/${input_basename%.fasta}"
-
-    # Wait until there is an empty job slot to run. This is to avoid oversubscription.
-    # shellcheck disable=SC2004  # It does not seem to be working without the '$'
-    while ((${N_JOBS_CURRENT@P} >= $N_CONCURRENT_JOBS_MAX)); do
-      wait -n
-    done
-
-    echo "[ INFO] ${0}:${LINENO}: Running Nextclade for batch ${input} as a background job"
-    ./${NEXTCLADE_BIN} run \
-      --jobs="${N_NEXTCLADE_THREADS}" \
-      --in-order \
-      --verbosity=error \
-      --input-fasta="${input}" \
-      --input-dataset="${TMP_DIR_NEXTCLADE_DATASET}" \
-      --output-tsv="${output_tsv_filename}" \
-      --output-fasta="${output_fasta_filename}" \
-      --genes="${GENES}" \
-      --output-dir="${output_dir}" \
-      --output-basename="nextclade" \
-      &
-  done
-
-  for job in $(jobs -p); do
-    echo "[ INFO] ${0}:${LINENO}: Waiting until all Nextclade background jobs finish"
-    wait "$job"
-  done
-
-  # Check if output TSV batches exist and report
-  # shellcheck disable=SC2086 # We want globbing here
-  if ls ${TSV_OUTPUT_WILDCARD} 1>/dev/null 2>&1; then
-    # shellcheck disable=SC2012 # We want globbing here
-    NUM_OUTPUT_TSV_BATCHES="$(ls -Ubad1 -- ${TSV_OUTPUT_WILDCARD} 2>/dev/null | wc -l)"
-    echo "[ INFO] ${0}:${LINENO}: There are now ${NUM_OUTPUT_TSV_BATCHES} output TSV batches to concatenate (batch size is ${BATCH_SIZE})"
-    echo "[ INFO] ${0}:${LINENO}: Concatenating Nextclade output TSV batches from '${TSV_OUTPUT_WILDCARD}' into '${OUTPUT_TSV}'"
-    csvstack --tabs ${TSV_OUTPUT_WILDCARD} | csvformat --out-tabs >"${OUTPUT_TSV}"
-  else
-    echo "[ERROR] ${0}:${LINENO}: Output TSV batches are not found: '${TSV_OUTPUT_WILDCARD}'. Nextclade jobs must have failed to write their results."
-    exit 1
-  fi
-
-  # Check if output TSV result exist
-  # shellcheck disable=SC2086 # We want globbing here
-  if ! ls ${OUTPUT_TSV} 1>/dev/null 2>&1; then
-    echo "[ERROR] ${0}:${LINENO}: Concatenated TSV result not found: '${OUTPUT_TSV}'. Concatenation of output TSV batches must have failed."
-    exit 1
-  fi
-
-  # Check if output FASTA batches exist and report
-  # shellcheck disable=SC2086 # We want globbing here
-  if ls ${FASTA_OUTPUT_WILDCARD} 1>/dev/null 2>&1; then
-    # shellcheck disable=SC2012 # We want globbing here
-    NUM_OUTPUT_FASTA_BATCHES="$(ls -Ubad1 -- ${FASTA_OUTPUT_WILDCARD} 2>/dev/null | wc -l)"
-    echo "[ INFO] ${0}:${LINENO}: There are now ${NUM_OUTPUT_FASTA_BATCHES} output FASTA batches to concatenate (batch size is ${BATCH_SIZE})"
-    echo "[ INFO] ${0}:${LINENO}: Concatenating Nextclade output FASTA batches from '${FASTA_OUTPUT_WILDCARD}' into '${OUTPUT_FASTA}'"
-    cat ${FASTA_OUTPUT_WILDCARD} >"${OUTPUT_FASTA}"
-  else
-    echo "[ERROR] ${0}:${LINENO}: Output FASTA batches are not found: '${FASTA_OUTPUT_WILDCARD}'. Nextclade jobs must have failed to write their results."
-    exit 1
-  fi
-
-  echo "[ INFO] ${0}:${LINENO}: Calculate mutation-summary.tsv for every batch"
-  for input in ${INPUT_WILDCARD}; do
-    if [ ! -e "${input}" ]; then
-      # If ${input} does not exist, this means that INPUT_WILDCARD was not expanded,
-      # there are no batch files and we should not attempt to run the processing.
-      # If we would, then it will crash.
-      break
-    fi
-
-    input_basename="$(basename "${input}")"
-    output_fasta_basename="${input_basename%.fasta}.aligned.fasta"
-    output_fasta_filename="${TMP_OUTPUT_FASTA_DIR}/${output_fasta_basename}"
-    output_dir="${TMP_NEXTCLADE_OUTPUT_DIR}/${input_basename%.fasta}"
-    output_mutation_summary="${TMP_OUTPUT_MUTATION_SUMMARY_DIR}/${input_basename%.fasta}.mutation-summary.tsv"
-
-    mkdir -p "${TMP_OUTPUT_MUTATION_SUMMARY_DIR}"
-
-    # Note we need genes variable to be unquoted
-    # shellcheck disable=SC2086
-    ./bin/mutation-summary \
-      --directory="${output_dir}" \
-      --alignment="${output_fasta_filename}" \
-      --basename="nextclade" \
-      --genes ${GENES_SPACE_DELIMITED} \
-      --reference="${TMP_DIR_NEXTCLADE_DATASET}/reference.fasta" \
-      --genemap="${TMP_DIR_NEXTCLADE_DATASET}/genemap.gff" \
-      --output="${output_mutation_summary}"
-  done
-
-  # Check if output FASTA batches exist and report
-  # shellcheck disable=SC2086 # We want globbing here
-  if ls ${MUTATION_SUMMARY_OUTPUT_WILDCARD} 1>/dev/null 2>&1; then
-    # shellcheck disable=SC2012 # We want globbing here
-    NUM_OUTPUT_MUTATION_SUMMARY_BATCHES="$(ls -Ubad1 -- ${MUTATION_SUMMARY_OUTPUT_WILDCARD} 2>/dev/null | wc -l)"
-    echo "[ INFO] ${0}:${LINENO}: There are now ${NUM_OUTPUT_MUTATION_SUMMARY_BATCHES} output mutation-summary.tsv batches to concatenate (batch size is ${BATCH_SIZE})"
-    echo "[ INFO] ${0}:${LINENO}: Concatenating Nextclade output mutation-summary.tsv batches from '${MUTATION_SUMMARY_OUTPUT_WILDCARD}' into '${OUTPUT_MUTATION_SUMMARY}'"
-    csvstack --tabs ${MUTATION_SUMMARY_OUTPUT_WILDCARD} | csvformat --out-tabs >"${OUTPUT_MUTATION_SUMMARY}"
-  else
-    echo "[ERROR] ${0}:${LINENO}: Output mutation-summary.tsv batches are not found: '${FASTA_OUTPUT_WILDCARD}'. ./bin/mutation-summary must have failed to write their results."
-    exit 1
-  fi
+  "${NEXTCLADE_BIN}" run \
+    "${INPUT_FASTA}" \
+    --jobs="${N_PROCESSORS}" \
+    --in-order \
+    --verbosity=error \
+    --input-dataset="${TMP_DIR_NEXTCLADE_DATASET}" \
+    --genes="${GENES}" \
+    --output-tsv="${OUTPUT_TSV}" \
+    --output-fasta="${OUTPUT_FASTA}" \
 
   echo "[ INFO] ${0}:${LINENO}: Upload results"
   ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_TSV}" "$S3_DST/nextclade.tsv.gz"
   ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_FASTA}" "$S3_DST/aligned.fasta.xz"
-  ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_MUTATION_SUMMARY}" "$S3_DST/mutation-summary.tsv.xz"
 
   # Cut the running time by deleting working directory and avoiding zipping it.
   # We are unlikely to inspect it anyways. But keep the TSV result file, just in

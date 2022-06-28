@@ -254,18 +254,6 @@ rule download_previous_alignment:
         ./bin/download-from-s3 {params.src_source} {output.alignment}
         """
 
-rule download_previous_mutation_summary:
-    ## NOTE see note in `download_previous_alignment`
-    params:
-        dst_source = config["s3_dst"] + '/mutation-summary.tsv.xz',
-        src_source = config["s3_src"] + '/mutation-summary.tsv.xz',
-    output:
-        alignment = temp(f"data/{database}/nextclade.mutation-summary.old.tsv")
-    shell:
-        """
-        ./bin/download-from-s3 {params.dst_source} {output.alignment} ||  \
-        ./bin/download-from-s3 {params.src_source} {output.alignment}
-        """
 
 rule combine_alignments:
     message:
@@ -280,48 +268,6 @@ rule combine_alignments:
     shell:
         """
         cat {input.old_alignment} {input.new_alignment} > {output.alignment}
-        """
-
-rule mutation_summary:
-    message:
-        """
-        Computing the mutation summary for new sequences
-        """
-    input:
-        alignment = f"data/{database}/nextclade.aligned.upd.fasta",
-        insertions = f"data/{database}/nextclade.insertions.csv",
-    params:
-        nextclade_input_dir = f"data/{database}/nextclade_inputs",
-        nextclade_output_dir = f"data/{database}/nextclade",
-    output:
-        summary = temp(f"data/{database}/nextclade.mutation-summary.upd.tsv")
-    shell:
-        """
-        ./bin/mutation-summary \
-            --basename="nextclade" \
-            --directory={params.nextclade_output_dir} \
-            --alignment={input.alignment} \
-            --insertions={input.insertions} \
-            --reference={params.nextclade_input_dir}/reference.fasta \
-            --genemap={params.nextclade_input_dir}/genemap.gff \
-            --genes {GENES_SPACE_DELIMITED} \
-            --output={output.summary}
-        """
-
-
-rule combine_mutation_summaries:
-    message:
-        """
-        Generating full mutation summary by combining with previous (cached) summary
-        """
-    input:
-        old_mutation_summary = f"data/{database}/nextclade.mutation-summary.old.tsv",
-        upd_mutation_summary = f"data/{database}/nextclade.mutation-summary.upd.tsv"
-    output:
-        new_mutation_summary = f"data/{database}/mutation-summary.tsv"
-    shell:
-        """
-        ./bin/join-rows {input.old_mutation_summary} {input.upd_mutation_summary} > {output.new_mutation_summary}
         """
 
 def _get_nextclade_info(wildcards):
@@ -407,9 +353,8 @@ def compute_files_to_upload(wildcards):
 
     nextclade_sequences_path = checkpoints.get_sequences_without_nextclade_annotations.get().output.fasta
     if os.path.getsize(nextclade_sequences_path) > 0:
-        files_to_upload["nextclade.tsv.gz"] =                  f"data/{database}/nextclade.tsv"
-        files_to_upload["mutation-summary.tsv.xz"] = f"data/{database}/mutation-summary.tsv"
-        files_to_upload["aligned.fasta.xz"] =        f"data/{database}/aligned.fasta"
+        files_to_upload["nextclade.tsv.gz"] =           f"data/{database}/nextclade.tsv"
+        files_to_upload["aligned.fasta.xz"] =           f"data/{database}/aligned.fasta"
 
     return files_to_upload
 

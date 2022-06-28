@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# usage: run-nextclade-full --database=gisaid|genbank [--n_processors] [--n_nextclade_threads] [--batch_size]
-#        run-nextclade-full --help
+# usage: run-nextclade-full-docker --database=gisaid|genbank [--jobs]
+#        run-nextclade-full-docker --help
 #
 # Make a full Nextclade run, recomputing clades and other metrics
 # for all sequences. This version runs in a Docker container.
@@ -9,9 +9,8 @@
 #
 # This script accepts the same arguments as `./bin/run-nextclade-full`
 #
-set -o errexit
-set -o nounset
-set -o pipefail
+
+set -euo pipefail
 trap "exit" INT
 
 DOCKER_IMAGE_NAME="nextstrain/ncov-ingest"
