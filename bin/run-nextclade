@@ -58,7 +58,6 @@ echo "[ INFO] ${0}:${LINENO}: Running Nextclade"
   --output-tsv="${OUTPUT_TSV}" \
   --genes="${GENES}" \
   --output-translations="${NEXTCLADE_OUTPUTS_DIR}/nextclade.gene.{gene}.fasta" \
-  --output-basename="nextclade" \
   --output-fasta="${OUTPUT_FASTA}" \
   --output-insertions="${OUTPUT_INSERTIONS}" \
   ${NEXTCLADE_THREADS}
