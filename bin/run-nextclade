@@ -59,5 +59,6 @@ echo "[ INFO] ${0}:${LINENO}: Running Nextclade"
   --genes="${GENES}" \
   --output-translations="${NEXTCLADE_OUTPUTS_DIR}/nextclade.gene.{gene}.fasta" \
   --output-fasta="${OUTPUT_FASTA}" \
+  --retry-reverse-complement \
   --output-insertions="${OUTPUT_INSERTIONS}" \
   ${NEXTCLADE_THREADS}
