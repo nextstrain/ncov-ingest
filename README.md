@@ -6,6 +6,10 @@ Relies on data from https://simplemaps.com/data/us-cities.
 ## Running locally
 > NOTE: The full set of sequences from GISAID/GenBank will most likely require more compute resources than what is available on your local computer.
 
+> **Warning**
+> If you are running the pipeline without a Nextclade cache, it will do a full Nextclade run that aligns _all_ sequences,
+> which will take significant time and resources!
+
 Follow these instructions to run the ncov-ingest pipeline _without_ all the bells and whistles used by internal Nextstrain runs that involve AWS S3, Slack notifications, and GitHub Action triggers:
 
 
