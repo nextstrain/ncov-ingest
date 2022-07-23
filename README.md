@@ -113,7 +113,7 @@ gzcat open.tsv.gz | tsv-summarize -H --group-by clade --count | sort
 gzcat private.tsv.gz | tsv-summarize -H --group-by clade --count | sort
 ```
 
-If all went well, after agreeing with ingest team, the nextclade.tsv.gz should then be copied to the location where the daily ingest can find it, overwriting the old one. These locations are:
+If all went well, after agreeing with ingest team, the `nextclade.tsv.gz` **and** `aligned.fasta.xz` should then be copied to the location where the daily ingest can find it, overwriting the old one. These locations are:
 
 ```txt
 s3://nextstrain-ncov-private/nextclade.tsv.gz
@@ -122,11 +122,11 @@ s3://nextstrain-data/files/ncov/open/nextclade.tsv.gz
 
 (just omit the subdirectory nextclade-full-run)
 
-You can use the following commands:
+You can use the following command:
 
 ```bash
-aws s3 cp private.tsv.gz s3://nextstrain-ncov-private/nextclade.tsv.gz
-aws s3 cp open.tsv.gz s3://nextstrain-data/files/ncov/open/nextclade.tsv.gz
+aws s3 sync s3://nextstrain-ncov-private/nextclade-full-run-DATE-TIME/ s3://nextstrain-ncov-private
+aws s3 sync s3://nextstrain-data/files/ncov/open/nextclade-full-run-DATE-TIME/ s3://nextstrain-data/files/ncov/open
 ```
 
 For detailed explanation see PR [#218](https://github.com/nextstrain/ncov-ingest/pull/218).
