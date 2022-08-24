@@ -88,7 +88,7 @@ main() {
 
   disk_info
 
-  ./bin/notify-on-job-start "🦬 'Nextclade full run: ${DATABASE}'" "The job involves ${N_PROCESSORS} CPUs. The results will be uploaded to \`${S3_DST}\`. Someone needs to inspect these results and then copy them over to the S3 directory where the next scheduled ingest can find them, replacing the old files. For more details, see PR #218 in ncov-ingest."
+  ./bin/notify-on-job-start "🦬 'Nextclade full run: ${DATABASE}'" "The job involves ${N_PROCESSORS} CPUs. The results will be uploaded to \`${S3_DST}\`. Someone needs to inspect these results and then copy them over to the S3 directory where the next scheduled ingest can find them, replacing the old files. For more details, see https://github.com/nextstrain/ncov-ingest/pull/218 ."
 
   if [ ! -f "${NEXTCLADE_BIN}" ]; then
     echo "[ INFO] ${0}:${LINENO}: Downloading latest Nextclade version from '${NEXTCLADE_BIN_URL}' to '${NEXTCLADE_BIN}'"
