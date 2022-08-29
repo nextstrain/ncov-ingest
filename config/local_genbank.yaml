@@ -1,0 +1,7 @@
+# All the config parameters needed to run ncov-ingest for GenBank sequences
+# without all the bells and whistles used by internal Nextstrain runs that
+# involve AWS S3, Slack notifications, and GitHub Action triggers.
+database_name: "genbank"
+
+fetch_from_database: True
+keep_all_files: True
