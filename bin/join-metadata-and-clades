@@ -19,6 +19,7 @@ column_map = {
     "totalMissing": "missing_data",
     "totalSubstitutions": "divergence",
     "totalNonACGTNs": "nonACGTN",
+    "coverage": "coverage",
     "privateNucMutations.totalUnlabeledSubstitutions":  "rare_mutations",
     "privateNucMutations.totalReversionSubstitutions": "reversion_mutations",
     "privateNucMutations.totalLabeledSubstitutions": "potential_contaminants",
