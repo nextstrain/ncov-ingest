@@ -73,6 +73,12 @@ if __name__ == '__main__':
         default=base / "data/genbank/biosample.tsv",
         help="Optional BioSample metadata TSV.\n"
             "The TSV file should be the output of `transform-biosample.py`")
+    parser.add_argument("--cog-uk-accessions",
+        default="https://cog-uk.s3.climb.ac.uk/accessions/latest.tsv",
+        help="The COG-UK sample accessions linkage TSV to help link COG-UK metadata with BioSample metadata.")
+    parser.add_argument("--cog-uk-metadata",
+        default="https://cog-uk.s3.climb.ac.uk/phylogenetics/latest/cog_metadata.csv.gz",
+        help="The COG-UK metadata CSV.")
     parser.add_argument("--output-metadata",
         default=base / "data/genbank/metadata.tsv",
         help="Output location of generated metadata tsv. Defaults to `data/genbank/metadata.tsv`")
@@ -178,7 +184,7 @@ if __name__ == '__main__':
                               | MergeUserAnnotatedMetadata(annotations, idKey = 'genbank_accession' )
                               | MergeUserAnnotatedMetadata(accessions, idKey = 'genbank_accession_rev' )
                               | FillDefaultLocationData()
-                              | patchUKData("https://cog-uk.s3.climb.ac.uk/accessions/latest.tsv", "https://cog-uk.s3.climb.ac.uk/phylogenetics/latest/cog_metadata.csv.gz")
+                              | patchUKData(args.cog_uk_accessions, args.cog_uk_metadata)
                               | GenbankProblematicFilter( args.problem_data,
                                                           ['genbank_accession', 'strain', 'region', 'country', 'url'],
                                                           restval = '?' ,
