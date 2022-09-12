@@ -1,0 +1,6 @@
+#!/bin/bash
+set -euo pipefail
+
+curl "https://cog-uk.s3.climb.ac.uk/phylogenetics/latest/cog_metadata.csv.gz" \
+    --fail --silent --show-error --http1.1 \
+    --header 'User-Agent: https://github.com/nextstrain/ncov-ingest (hello@nextstrain.org)'

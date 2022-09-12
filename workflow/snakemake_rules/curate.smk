@@ -36,7 +36,9 @@ rule transform_biosample:
 rule transform_genbank_data:
     input:
         biosample = "data/genbank/biosample.tsv",
-        ndjson = "data/genbank.ndjson"
+        ndjson = "data/genbank.ndjson",
+        cog_uk_accessions = "data/cog_uk_accessions.tsv",
+        cog_uk_metadata = "data/cog_uk_metadata.csv.gz"
     output:
         fasta = "data/genbank/sequences.fasta",
         metadata = "data/genbank/metadata_transformed.tsv",
@@ -47,6 +49,8 @@ rule transform_genbank_data:
         ./bin/transform-genbank {input.ndjson} \
             --biosample {input.biosample} \
             --duplicate-biosample {output.duplicate_biosample} \
+            --cog-uk-accessions {input.cog_uk_accessions} \
+            --cog-uk-metadata {input.cog_uk_metadata} \
             --output-metadata {output.metadata} \
             --output-fasta {output.fasta} > {output.flagged_annotations}
         """
