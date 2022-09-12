@@ -116,8 +116,8 @@ if config.get("s3_dst") and config.get("s3_src"):
         message:
             """Fetching BioSample NDJSON from AWS S3"""
         params:
-            file_on_s3_dst= f"{config['s3_dst']}/{database}.ndjson.gz",
-            file_on_s3_src= f"{config['s3_src']}/{database}.ndjson.gz"
+            file_on_s3_dst= f"{config['s3_dst']}/biosample.ndjson.gz",
+            file_on_s3_src= f"{config['s3_src']}/biosample.ndjson.gz"
         output:
             biosample = temp("data/biosample.ndjson")
         shell:
