@@ -13,6 +13,8 @@ Produces different final outputs for GISAID vs GenBank:
     GenBank:
         ndjson = "data/genbank.ndjson"
         biosample = "data/biosample.ndjson"
+        cog_uk_accessions = "data/cog_uk_accessions.tsv"
+        cog_uk_metadata = "data/cog_uk_metadata.csv.gz"
 """
 
 def run_shell_command_n_times(cmd, msg, cleanup_failed_cmd, retry_num=5):
@@ -59,6 +61,30 @@ rule fetch_biosample:
             f"rm {output.biosample}"
         )
 
+rule fetch_cog_uk_accessions:
+    message:
+        """Fetching COG-UK sample accesions (GenBank only)"""
+    output:
+        cog_uk_accessions = temp("data/cog_uk_accessions.tsv")
+    run:
+        run_shell_command_n_times(
+            f"./bin/fetch-from-cog-uk-accessions > {output.cog_uk_accessions}",
+            "Fetch COG-UK sample accessions",
+            f"rm {output.cog_uk_accessions}"
+        )
+
+rule fetch_cog_uk_metadata:
+    message:
+        """Fetching COG-UK metadata (GenBank only)"""
+    output:
+        cog_uk_metadata = temp("data/cog_uk_metadata.csv.gz")
+    run:
+        run_shell_command_n_times(
+            f"./bin/fetch-from-cog-uk-metadata > {output.cog_uk_metadata}",
+            "Fetch COG-UK metadata",
+            f"rm {output.cog_uk_metadata}"
+        )
+
 # Only include rules to fetch from S3 if S3 config params are provided
 if config.get("s3_dst") and config.get("s3_src"):
 
@@ -90,8 +116,8 @@ if config.get("s3_dst") and config.get("s3_src"):
         message:
             """Fetching BioSample NDJSON from AWS S3"""
         params:
-            file_on_s3_dst= f"{config['s3_dst']}/{database}.ndjson.gz",
-            file_on_s3_src= f"{config['s3_src']}/{database}.ndjson.gz"
+            file_on_s3_dst= f"{config['s3_dst']}/biosample.ndjson.gz",
+            file_on_s3_src= f"{config['s3_src']}/biosample.ndjson.gz"
         output:
             biosample = temp("data/biosample.ndjson")
         shell:
