@@ -132,6 +132,10 @@ main() {
   ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_TSV}" "$S3_DST/nextclade.tsv.gz"
   ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_FASTA}" "$S3_DST/aligned.fasta.xz"
 
+  # Parallel uploads of zstd compressed files to slowly transition to this format
+  ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_TSV}" "$S3_DST/nextclade.tsv.zst"
+  ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_FASTA}" "$S3_DST/aligned.fasta.zst"
+
   # Cut the running time by deleting working directory and avoiding zipping it.
   # We are unlikely to inspect it anyways. But keep the TSV result file, just in
   # case.
