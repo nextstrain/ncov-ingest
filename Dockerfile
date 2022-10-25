@@ -25,14 +25,12 @@
 # updates can be far less frequent.
 FROM nextstrain/base
 
-# Install Python package for which Python 3.7 wheels do not yet exist on PyPI.
+# Install extra system packages for compression and parallel downloads
 RUN apt-get update && apt-get install -y --no-install-recommends \
     aria2 \
-    build-essential \
     lbzip2 \
     pigz \
     pixz \
-    python3-netifaces \
     time \
     xz-utils
 
