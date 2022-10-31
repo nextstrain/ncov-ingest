@@ -24,7 +24,7 @@ disk_info() {
   lsblk -o MOUNTPOINT,FSSIZE,FSAVAIL,TYPE,NAME,ROTA,SIZE,MODEL || true
 
   echo "[ INFO] ${0}:${LINENO}: Summary of disk space usage:"
-  df -Th  || true | awk 'NR == 1; NR > 1 {print $0 | "sort -n"}'
+  df -Th || true | awk 'NR == 1; NR > 1 {print $0 | "sort -n"}'
 
   echo "[ INFO] ${0}:${LINENO}: Summary of occupied disk space:"
   du -bsch ./* 2>/dev/null || true | sort -h
@@ -69,8 +69,8 @@ main() {
   S3_DST="$S3_SRC/nextclade-full-run-${DATE_UTC}"
 
   INPUT_FASTA="data/${DATABASE}/sequences.fasta.xz"
-  OUTPUT_FASTA="data/${DATABASE}/aligned.fasta"
-  OUTPUT_TSV="data/${DATABASE}/nextclade.tsv"
+  OUTPUT_FASTA="data/${DATABASE}/aligned.fasta.xz"
+  OUTPUT_TSV="data/${DATABASE}/nextclade.tsv.gz"
 
   TMP_DIR_NEXTCLADE_DATASET="tmp/dataset"
 
@@ -129,12 +129,18 @@ main() {
     --output-fasta="${OUTPUT_FASTA}" \
 
   echo "[ INFO] ${0}:${LINENO}: Upload results"
-  ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_TSV}" "$S3_DST/nextclade.tsv.gz"
-  ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_FASTA}" "$S3_DST/aligned.fasta.xz"
+  ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_TSV}" "$S3_DST/nextclade.tsv.gz" &
+  P1=$!
+  ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_FASTA}" "$S3_DST/aligned.fasta.xz" &
+  P2=$!
 
   # Parallel uploads of zstd compressed files to slowly transition to this format
-  ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_TSV}" "$S3_DST/nextclade.tsv.zst"
-  ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_FASTA}" "$S3_DST/aligned.fasta.zst"
+  ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_TSV}" "$S3_DST/nextclade.tsv.zst" &
+  P3=$!
+  ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_FASTA}" "$S3_DST/aligned.fasta.zst" &
+  P4=$!
+
+  wait $P1 $P2 $P3 $P4
 
   # Cut the running time by deleting working directory and avoiding zipping it.
   # We are unlikely to inspect it anyways. But keep the TSV result file, just in
