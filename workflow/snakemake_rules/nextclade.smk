@@ -156,9 +156,10 @@ rule combine_alignments:
     shell:
         """
         if [[ -s {input.old_alignment} ]]; then
-            cat {input.old_alignment} {input.new_alignment} > {output.alignment}
+            mv {input.old_alignment} {output.alignment}
+            cat {input.new_alignment} >> {output.alignment}
         else
-            cp {input.new_alignment} {output.alignment}
+            mv {input.new_alignment} {output.alignment}
         fi
         """
 
