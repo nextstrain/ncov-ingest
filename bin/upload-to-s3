@@ -32,13 +32,13 @@ main() {
         # The record count may have changed
         src_record_count="$(wc -l <"$src")"
 
-        local src_filename=$(basename -- "$src")
-        local src_extension="${src_filename##*.}"
-        local src_filename="${src_filename%.*}"
+        src_filename=$(basename -- "$src")
+        src_extension="${src_filename##*.}"
+        src_filename="${src_filename%.*}"
 
-        local dst_filename=$(basename -- "$dst")
-        local dst_extension="${dst_filename##*.}"
-        local dst_filename="${dst_filename%.*}"
+        dst_filename=$(basename -- "$dst")
+        dst_extension="${dst_filename##*.}"
+        dst_filename="${dst_filename%.*}"
 
         echo "Uploading $src → $dst"
         if [[ "$src_extension" != "$dst_extension" ]]; then
