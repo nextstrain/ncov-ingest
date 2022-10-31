@@ -41,17 +41,30 @@ main() {
         dst_filename="${dst_filename%.*}"
 
         echo "Uploading $src → $dst"
-        if [[ "$src_extension" != "$dst_extension" ]]; then
-            cat "$src"
-        elif [[ "$dst" == *.gz ]]; then
-            gzip -c "$src"
-        elif [[ "$dst" == *.xz ]]; then
-            xz -2 -T0 -c "$src"
-        elif [[ "$dst" == *.zst ]]; then
-            zstd -T0 -c "$src"
+
+        if [[ "$src_extension" == "$dst_extension" ]]; then
+            aws s3 cp --no-progress "$src" "$dst" --metadata sha256sum="$src_hash",recordcount="$src_record_count" "$(content-type "$dst")"cat "$src"
         else
-            cat "$src"
-        fi | aws s3 cp --no-progress - "$dst" --metadata sha256sum="$src_hash",recordcount="$src_record_count" "$(content-type "$dst")"
+            # Uncompress input if compressed
+            if "$src" == "*.gz"; then
+                gunzip -c
+            elif [[ "$dst" == *.xz ]]; then
+                xz --decompress -c
+            elif [[ "$dst" == *.zst ]]; then
+                zstdcat -c
+            else
+                cat
+            fi "$src" | \
+            if [[ "$dst" == *.gz ]]; then
+                gzip -c
+            elif [[ "$dst" == *.xz ]]; then
+                xz -2 -T0 -c
+            elif [[ "$dst" == *.zst ]]; then
+                zstd -T0 -c
+            else
+                cat
+            fi | aws s3 cp --no-progress - "$dst" --metadata sha256sum="$src_hash",recordcount="$src_record_count" "$(content-type "$dst")"
+        fi
 
         if [[ -n $cloudfront_domain ]]; then
             echo "Creating CloudFront invalidation for $cloudfront_domain/$key"
