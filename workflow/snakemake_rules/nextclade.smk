@@ -103,7 +103,6 @@ rule run_nextclade:
     params:
         nextclade_input_dir = temp(directory(f"data/{database}/nextclade_inputs")),
         nextclade_output_dir = temp(directory(f"data/{database}/nextclade")),
-    threads: 64
     output:
         info = f"data/{database}/nextclade_new.tsv",
         alignment = temp(f"data/{database}/nextclade.aligned.upd.fasta"),
@@ -117,8 +116,7 @@ rule run_nextclade:
             {params.nextclade_output_dir} \
             {output.alignment} \
             {output.insertions} \
-            {GENES} \
-            {threads}
+            {GENES}
         """
 
 rule nextclade_info:
