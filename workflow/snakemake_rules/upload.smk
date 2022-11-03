@@ -29,7 +29,7 @@ rule upload_raw_ndjson:
         touch(f"data/{database}/raw.upload.done")
     params:
         quiet = "" if send_notifications else "--quiet",
-        s3_bucket = config["s3_dst"],
+        s3_bucket = config.get("s3_dst",""),
         cloudfront_domain = config.get("cloudfront_domain", "")
     run:
         for remote, local in input.items():
@@ -66,16 +66,29 @@ def compute_files_to_upload(wildcards):
 
     return files_to_upload
 
+def files_to_upload(wildcards):
+    files_to_upload_dict = compute_files_to_upload(wildcards)
+    return [f"data/{database}/{remote_file}.upload" for remote_file in files_to_upload_dict.keys()]
 
-rule upload:
-    input:
-        unpack(compute_files_to_upload)
+
+rule upload_single:
+    input: lambda wildcards: compute_files_to_upload(wildcards)[wildcards.remote_filename]
     output:
-        touch(f"data/{database}/upload.done")
+        touch("data/{database}/{remote_filename}.upload")
     params:
         quiet = "" if send_notifications else "--quiet",
-        s3_bucket = config["s3_dst"],
-        cloudfront_domain = config.get("cloudfront_domain", "")
-    run:
-        for remote, local in input.items():
-            shell("./bin/upload-to-s3 {params.quiet} {local:q} {params.s3_bucket:q}/{remote:q} {params.cloudfront_domain}")
+        s3_bucket = config.get("s3_dst",""),
+        cloudfront_domain = config.get("cloudfront_domain", ""),
+        local_filename = lambda wildcards: compute_files_to_upload(wildcards)[wildcards.remote_filename]
+    shell:
+        "./bin/upload-to-s3 {params.quiet} {input:q} {params.s3_bucket:q}/{wildcards.remote_filename:q} {params.cloudfront_domain}"
+
+rule upload:
+    """
+    Requests one touch file for each uploaded remote file
+    Dynamically determines that list of files
+    """
+    input:
+        files_to_upload
+    output:
+        touch(f"data/{database}/upload.done")
