@@ -6845,7 +6845,9 @@ Europe/Russia/Smolensk Oblast/Smolensk	Europe/Russia/Smolensk Oblast/Smolensk (S
 Europe/Russia/Volgograd Region/Volgograd	Europe/Russia/Volgograd Region/Volgograd (Volgograd Region)
 Europe/Russia/Volgograd Oblast/Volgograd	Europe/Russia/Volgograd Oblast/Volgograd (Volgograd Oblast)
 Europe/Russia/Vladimir Region/Kovrov	Europe/Russia/Vladimir Region/Kovrov (Vladimir Region)
+Europe/Russia/Vladimir Region/Vyazniki	Europe/Russia/Vladimir Region/Vyazniki (Vladimir Region)
 Europe/Russia/Vladimir Oblast/Kovrov	Europe/Russia/Vladimir Oblast/Kovrov (Vladimir Oblast)
+Europe/Russia/Vladimir Oblast/Vyazniki	Europe/Russia/Vladimir Oblast/Vyazniki (Vladimir Oblast)
 Europe/Russia/Khabarovsk Krai/*	Europe/Russia/Khabarovsk/*
 Europe/Russia/Adygea/Maykop	Europe/Russia/Adygea/Maykop (Adygea)
 Europe/Russia/Mari El/Sovetsky	Europe/Russia/Mari El/Sovetsky (Mari El)
@@ -7416,6 +7418,7 @@ Europe/Spain/Castilla–la Mancha/*	Europe/Spain/Castilla la Mancha/*
 Europe/Spain/La Rioja ES/Cardenas	Europe/Spain/La Rioja ES/Cardenas ES
 Europe/Spain/La Rioja ES/Navarra	Europe/Spain/La Rioja ES/
 Europe/Spain/La Rioja ES/Viana	Europe/Spain/La Rioja ES/Viana (La Rioja ES)
+Europe/Spain/La Rioja ES/Aragon	Europe/Spain/La Rioja ES/
 Europe/Spain/Sevilla/	Europe/Spain/Andalusia/Sevilla
 Europe/Sweden/Västerbotten/	Europe/Sweden/Vasterbotten/
 Europe/Sweden/Västra Götaland/*	Europe/Sweden/Vastra Gotaland/*
@@ -7602,6 +7605,7 @@ Europe/Poland/Wielkopolskie/Ostrow Wielkopolski (Teryt: 0937132)	Europe/Poland/W
 Europe/Poland/Wielkopolskie/Pabianicki	Europe/Poland/Wielkopolskie/Pabianicki (Wielkopolskie)
 Europe/Poland/Wielkopolskie/Pilski	Europe/Poland/Wielkopolskie/Pilski (Wielkopolskie)
 Europe/Poland/Wielkopolskie/Walecki	Europe/Poland/Wielkopolskie/Walecki (Wielkopolskie)
+Europe/Poland/Wielkopolskie/Unk	Europe/Poland/Wielkopolskie/Unk PL
 Europe/Poland/Warminsko-Mazurskie/Olsztynski	Europe/Poland/Warminsko-Mazurskie/Olsztyn (Warminsko-Mazurskie)
 Europe/Poland/Warminsko-Mazurskie/Komorniki	Europe/Poland/Warminsko-Mazurskie/Komorniki (Warminsko-Mazurskie)
 Europe/Poland/Warminsko-Mazurskie/Lutry	Europe/Poland/Warminsko-Mazurskie/Lutry PL
@@ -8128,7 +8132,7 @@ Europe/Poland/Podlaskie Voivodeship/Tomaszowski	Europe/Poland/Podlaskie Voivodes
 Europe/Poland/Warminsko - Mazurskie/Dybowo	Europe/Poland/Warminsko - Mazurskie/Dybowo (Warminsko - Mazurskie)
 Europe/Poland/Pabianice/	Europe/Poland/Łódzkie/Pabianice
 Europe/Poland/Kielecki/	Europe/Poland/Swietokrzyskie/Kielecki
-Europe/Poland/Unk/*	Europe/Poland/Wielkopolskie/Unk
+Europe/Poland/Unk/*	Europe/Poland/Wielkopolskie/Unk PL
 Europe/Poland/Warmia/Braniewo	Europe/Poland/Warmia/Braniewo (Warmia)
 Europe/Poland/Warmia/Elblag	Europe/Poland/Warmia/Elblag (Warmia)
 Europe/Poland/Masovia/Sochaczew	Europe/Poland/Masovia/Sochaczew (Masovia)
@@ -13490,6 +13494,7 @@ North America/USA/Wisconsin/Rock County	North America/USA/Wisconsin/Rock County 
 North America/USA/Wisconsin/Vernon County	North America/USA/Wisconsin/Vernon County WI
 North America/USA/Wisconsin/Green County	North America/USA/Wisconsin/Green County WI
 North America/USA/Wisconsin/Juneau County	North America/USA/Wisconsin/Juneau County WI
+North America/USA/Wisconsin/Lake County	North America/USA/Wisconsin/Lake County WI
 North America/USA/Ohio/Columbus	North America/USA/Ohio/Columbus OH
 North America/USA/Ohio/Franklin County	North America/USA/Ohio/Franklin County OH
 North America/USA/Ohio/Colombus	North America/USA/Ohio/Columbus OH
@@ -16871,6 +16876,7 @@ North America/USA/New York/Harmony	North America/USA/New York/Harmony NY
 North America/USA/New York/Enfield	North America/USA/New York/Enfield NY
 North America/USA/New York/Thompson	North America/USA/New York/Thompson NY
 North America/USA/New York/Rye	North America/USA/New York/Rye NY
+North America/USA/New York/Trenton	North America/USA/New York/Trenton NY
 North America/USA/Arizona/Phoenix County	North America/USA/Arizona/Maricopa County AZ
 North America/USA/Arizona/Tucson	North America/USA/Arizona/Pima County
 North America/USA/Arizona/Navajo	North America/USA/Arizona/Navajo County
@@ -18097,6 +18103,7 @@ North America/USA/Indiana/Warren	North America/USA/Indiana/Warren IN
 North America/USA/Indiana/Allen County	North America/USA/Indiana/Allen County IN
 North America/USA/Indiana/Decatur	North America/USA/Indiana/Decatur IN
 North America/USA/Indiana/St. Joseph County	North America/USA/Indiana/St. Joseph County IN
+North America/USA/Indiana/Noble	North America/USA/Indiana/Noble IN
 North America/USA/California/Orange County	North America/USA/California/Orange County CA
 North America/USA/California/Kings County	North America/USA/California/Kings County CA
 North America/USA/California/Lake County	North America/USA/California/Lake County CA
@@ -19647,6 +19654,7 @@ North America/USA/California/Humboldt County	North America/USA/California/Humbol
 North America/USA/California/Multnomah County	North America/USA/California/Multnomah County CA
 North America/USA/California/Fulton County	North America/USA/California/Fulton County CA
 North America/USA/California/Lawton	North America/USA/California/Lawton CA
+North America/USA/California/Ng	North America/USA/California/Ng CA
 North America/USA/New Jersey/Essex County	North America/USA/New Jersey/Essex County NJ
 North America/USA/New Jersey/Hudson	North America/USA/New Jersey/Hudson County NJ
 North America/USA/New Jersey/Morris County	North America/USA/New Jersey/Morris County NJ
@@ -21995,6 +22003,9 @@ North America/USA/Oregon/Walton	North America/USA/Oregon/Walton OR
 North America/USA/Oregon/St Helens	North America/USA/Oregon/St Helens OR
 North America/USA/Oregon/Mcminnville	North America/USA/Oregon/Mcminnville OR
 North America/USA/Oregon/Coos County	North America/USA/Oregon/Coos County OR
+North America/USA/Oregon/Unk	North America/USA/Oregon/Unk OR
+North America/USA/Oregon/Jefferson	North America/USA/Oregon/Jefferson OR
+North America/USA/Oregon/Columbia	North America/USA/Oregon/Columbia OR
 North America/USA/Texas/Houston County	North America/USA/Texas/Harris County TX
 North America/USA/Texas/Washington County	North America/USA/Texas/Washington County TX
 North America/USA/Texas/Williamson County	North America/USA/Texas/Williamson County TX
@@ -24585,6 +24596,7 @@ North America/USA/Connecticut/Groton	North America/USA/Connecticut/Groton CT
 North America/USA/Connecticut/Preston	North America/USA/Connecticut/Preston CT
 North America/USA/Connecticut/Woodbridge	North America/USA/Connecticut/Woodbridge CT
 North America/USA/Connecticut/Dallas	North America/USA/Connecticut/Dallas CT
+North America/USA/Connecticut/Lisbon	North America/USA/Connecticut/Lisbon CT
 North America/USA/Missouri/St. Louis	North America/USA/Missouri/St. Louis MO
 North America/USA/Missouri/Kansas City	North America/USA/Missouri/Jackson County MO
 North America/USA/Missouri/Springfield	North America/USA/Missouri/Greene County MO
@@ -26065,6 +26077,7 @@ North America/USA/South Carolina/Chatham	North America/USA/South Carolina/Chatha
 North America/USA/South Carolina/Mt Pleasant	North America/USA/South Carolina/Mt Pleasant SC
 North America/USA/South Carolina/Williamsburg County	North America/USA/South Carolina/Williamsburg County SC
 North America/USA/South Carolina/Hampton County	North America/USA/South Carolina/Hampton County SC
+North America/USA/South Carolina/Missing	North America/USA/South Carolina/Missing SC
 North America/USA/Pennsylvania/Montgomery County	North America/USA/Pennsylvania/Montgomery County PA
 North America/USA/Pennsylvania/Philadelphia	North America/USA/Pennsylvania/Philadelphia County
 North America/USA/Pennsylvania/Delaware County	North America/USA/Pennsylvania/Delaware County PA
@@ -33933,6 +33946,7 @@ North America/USA/North Carolina/Halifax County	North America/USA/North Carolina
 North America/USA/North Carolina/Jones County	North America/USA/North Carolina/Jones County NC
 North America/USA/North Carolina/Brunswick	North America/USA/North Carolina/Brunswick NC
 North America/USA/North Carolina/Richmond	North America/USA/North Carolina/Richmond NC
+North America/USA/North Carolina/Missing	North America/USA/North Carolina/Missing NC
 North America/USA/Californi/*	North America/USA/California/*
 North America/USA/U.S. Virgin Islands/*	North America/USA/Virgin Islands/*
 North America/USA/Newyork/*	North America/USA/New York/*
@@ -34045,6 +34059,7 @@ North America/USA/New Hampshire/Walpole	North America/USA/New Hampshire/Walpole 
 North America/USA/New Hampshire/Northfield	North America/USA/New Hampshire/Northfield NH
 North America/USA/New Hampshire/Milford	North America/USA/New Hampshire/Milford NH
 North America/USA/New Hampshire/Nelson	North America/USA/New Hampshire/Nelson NH
+North America/USA/New Hampshire/Pelham	North America/USA/New Hampshire/Pelham NH
 North America/USA/New Mexico/Santa Fe	North America/USA/New Mexico/Santa Fe County NM
 North America/USA/New Mexico/Santa Fe NM	North America/USA/New Mexico/Santa Fe County NM
 North America/USA/New Mexico/San Juan	North America/USA/New Mexico/San Juan County NM
@@ -35838,6 +35853,7 @@ North America/USA/Kansas/Oklahoma	North America/USA/Kansas/
 North America/USA/Kansas/Johnson	North America/USA/Kansas/Johnson KS
 North America/USA/Kansas/Ottawa	North America/USA/Kansas/Ottawa KS
 North America/USA/Kansas/Sedgwick County	North America/USA/Kansas/Sedgwick County KS
+North America/USA/Kansas/Wichita	North America/USA/Kansas/Wichita KS
 North America/USA/New York, New York County/	North America/USA/New York/New York County
 North America/USA/California, los Angeles County/*	North America/USA/California/Los Angeles County CA
 North America/USA/Michigan/Ingham	North America/USA/Michigan/Ingham County
@@ -39903,6 +39919,16 @@ North America/USA/Oklahoma/Blaine County	North America/USA/Oklahoma/Blaine Count
 North America/USA/Oklahoma/Carter	North America/USA/Oklahoma/Carter OK
 North America/USA/Oklahoma/Not Hispanic Or Latino	North America/USA/Oklahoma/Not Hispanic Or Latino OK
 North America/USA/Oklahoma/Preston	North America/USA/Oklahoma/Preston OK
+North America/USA/Oklahoma/Delaware	North America/USA/Oklahoma/
+North America/USA/Oklahoma/Washington	North America/USA/Oklahoma/
+North America/USA/Oklahoma/Beaumont	North America/USA/Oklahoma/Beaumont OK
+North America/USA/Oklahoma/Ng	North America/USA/Oklahoma/Ng OK
+North America/USA/Oklahoma/Charlotte	North America/USA/Oklahoma/Charlotte OK
+North America/USA/Oklahoma/Mansfield	North America/USA/Oklahoma/Mansfield OK
+North America/USA/Oklahoma/Trenton	North America/USA/Oklahoma/Trenton OK
+North America/USA/Oklahoma/Lisbon	North America/USA/Oklahoma/Lisbon OK
+North America/USA/Oklahoma/Wichita	North America/USA/Oklahoma/Wichita OK
+North America/USA/Oklahoma/Pelham	North America/USA/Oklahoma/Pelham OK
 North America/USA/North Dakota/Fargo	North America/USA/North Dakota/Cass County ND
 North America/USA/North Dakota/Bismarck	North America/USA/North Dakota/Burleigh County ND
 North America/USA/North Dakota/Grand Forks	North America/USA/North Dakota/Grand Forks County
@@ -42003,6 +42029,7 @@ South America/Brazil/Tocantins/Cachoeirinha	South America/Brazil/Tocantins/Cacho
 South America/Brazil/Tocantins/Peixe	South America/Brazil/Tocantins/Peixe (Tocantins)
 South America/Brazil/Tocantins/Lajeado	South America/Brazil/Tocantins/Lajeado (Tocantins)
 South America/Brazil/Tocantins/Gurupi	South America/Brazil/Tocantins/Gurupi (Tocantins)
+South America/Brazil/Tocantins/Esperantina	South America/Brazil/Tocantins/Esperantina (Tocantins)
 South America/Brazil/Espirito Santos/*	South America/Brazil/Espirito Santo/*
 South America/Brazil/Paraná/Astorga	South America/Brazil/Paraná/Astorga BR
 South America/Brazil/Paraná/Florianopolis	South America/Brazil/Santa Catarina/Florianopolis
@@ -42045,6 +42072,7 @@ South America/Brazil/Paraná/Curitiba	South America/Brazil/Paraná/Curitiba (Par
 South America/Brazil/Paraná/Planalto	South America/Brazil/Paraná/Planalto (Paraná)
 South America/Brazil/Paraná/Bom Sucesso	South America/Brazil/Paraná/Bom Sucesso (Paraná)
 South America/Brazil/Paraná/Pinhao	South America/Brazil/Paraná/Pinhao (Paraná)
+South America/Brazil/Paraná/Serranopolis	South America/Brazil/Paraná/Serranopolis (Paraná)
 South America/Brazil/Minas Gerais/Esmeraldas	South America/Brazil/Minas Gerais/Esmeraldas BR
 South America/Brazil/Minas Gerais/Guaira	South America/Brazil/São Paulo/Guaira (São Paulo)
 South America/Brazil/Minas Gerais/Pocos de Calda	South America/Brazil/Minas Gerais/Pocos de Caldas
@@ -42085,6 +42113,7 @@ South America/Brazil/Minas Gerais/Ipatinga	South America/Brazil/Minas Gerais/Ipa
 South America/Brazil/Minas Gerais/Rio de Janeiro	South America/Brazil/Minas Gerais/
 South America/Brazil/Minas Gerais/Tocantins	South America/Brazil/Minas Gerais/Tocantins (Minas Gerais)
 South America/Brazil/Minas Gerais/Presidente Juscelino	South America/Brazil/Minas Gerais/Presidente Juscelino (Minas Gerais)
+South America/Brazil/Minas Gerais/Mantena	South America/Brazil/Minas Gerais/Mantena (Minas Gerais)
 South America/Brazil/Espirito Santo/Lorena	South America/Brazil/São Paulo/Lorena
 South America/Brazil/Espirito Santo/Laranjeiras	South America/Brazil/Espirito Santo/Laranjeiras (Espirito Santo)
 South America/Brazil/Espirito Santo/Barra de Sao Francisco	South America/Brazil/Espirito Santo/Barra do Sao Francisco
@@ -42107,6 +42136,7 @@ South America/Brazil/Espirito Santo/Santa	South America/Brazil/Espirito Santo/Sa
 South America/Brazil/Espirito Santo/Nova Iguacu	South America/Brazil/Espirito Santo/Nova Iguacu (Espirito Santo)
 South America/Brazil/Espirito Santo/Medeiros Neto	South America/Brazil/Espirito Santo/Medeiros Neto (Espirito Santo)
 South America/Brazil/Espirito Santo/Belo Horizonte	South America/Brazil/Espirito Santo/Belo Horizonte (Espirito Santo)
+South America/Brazil/Espirito Santo/Mantena	South America/Brazil/Espirito Santo/Mantena (Espirito Santo)
 South America/Brazil/Distrito Federal/Santa Maria	South America/Brazil/Distrito Federal/Santa Maria (Distrito Federal)
 South America/Brazil/Distrito Federal/Planaltina	South America/Brazil/Goiás/Planaltina
 South America/Brazil/Distrito Federal/Sao Sebastiao	South America/Brazil/Distrito Federal/Sao Sebastiao (Distrito Federal)
@@ -42200,6 +42230,7 @@ South America/Brazil/Goiás/Brasilia	South America/Brazil/Goiás/Brasilia (Goiá
 South America/Brazil/Goiás/Uberlandia	South America/Brazil/Goiás/Uberlandia (Goiás)
 South America/Brazil/Goiás/Goiania	South America/Brazil/Goiás/Goiania (Goiás)
 South America/Brazil/Goiás/Formosa	South America/Brazil/Goiás/Formosa (Goiás)
+South America/Brazil/Goiás/Serranopolis	South America/Brazil/Goiás/Serranopolis (Goiás)
 South America/Brazil/Santa Catarina/Mafra	South America/Brazil/Santa Catarina/Mafra BR
 South America/Brazil/Santa Catarina/Concordia	South America/Brazil/Santa Catarina/Concordia BR
 South America/Brazil/Santa Catarina/Balneario Camboriu	South America/Brazil/Santa Catarina/Balneario Camburiu
@@ -42279,6 +42310,7 @@ South America/Brazil/Piaui/Pedreiras	South America/Brazil/Maranhão/Pedreiras
 South America/Brazil/Piaui/Altos	South America/Brazil/Piaui/Altos BR
 South America/Brazil/Piaui/Oeiras	South America/Brazil/Piaui/Oeiras BR
 South America/Brazil/Piaui/Timon	South America/Brazil/Maranhão/Timon
+South America/Brazil/Piaui/Esperantina	South America/Brazil/Piaui/Esperantina (Piaui)
 South America/Brazil/Amapa/Macapa	South America/Brazil/Amapa/Macapá
 South America/Brazil/Amapa/Santana	South America/Brazil/Amapa/Santana (Amapa)
 South America/Brazil/Amapa/Sao Francisco	South America/Brazil/São Paulo/Sao Francisco (São Paulo)
@@ -42745,6 +42777,7 @@ South America/Chile/Ñuble/San Carlos CL	South America/Chile/Ñuble/San Carlos (
 South America/Chile/Ñuble/San Ignacio	South America/Chile/Ñuble/San Ignacio CL
 South America/Chile/Ñuble/Coihueco	South America/Chile/Ñuble/Coihueco (Ñuble)
 South America/Chile/Ñuble/San Nicolas CL	South America/Chile/Ñuble/San Nicolas (Ñuble)
+South America/Chile/Ñuble/A	South America/Chile/Ñuble/A (Ñuble)
 South America/Chile/Los Rios CL/La Union	South America/Chile/Los Rios CL/La Union CL
 South America/Chile/Los Rios CL/Los Lagos	South America/Chile/Los Rios CL/Los Lagos (Los Rios CL)
 South America/Chile/Los Rios CL/Cisnes	South America/Chile/Los Rios CL/Cisnes (Los Rios CL)
@@ -43137,6 +43170,8 @@ South America/Paraguay/Loreto/	South America/Paraguay/Concepción/Loreto PY
 South America/Paraguay/Itagua/	South America/Paraguay/Central Paraguay/Itagua
 South America/Paraguay/Concepción/Loreto	South America/Paraguay/Concepción/Loreto PY
 South America/Paraguay/San Salvador/*	South America/Paraguay/San Salvador PY/*
+South America/Paraguay/Concepcion/*	South America/Paraguay/Concepción/*
+South America/Paraguay/Villarrica/*	South America/Paraguay/Villa Rica/*
 South America/Antigua/Caribbean/*	North America/Antigua and Barbuda/Antigua and Barbuda/*
 South America/Antigua/*/*	North America/Antigua and Barbuda/*/*
 South America/Anguilla//	Europe/United Kingdom/Anguilla/
@@ -43598,6 +43633,7 @@ Africa/Uganda/Busia/*	Africa/Uganda/Busia UG/*
 Africa/Uganda/Northern/*	Africa/Uganda/Northern Region UG/*
 Africa/Uganda/Kampala/	Africa/Uganda/Central Uganda/Kampala
 Africa/Uganda/Wakiso/	Africa/Uganda/Central Uganda/Wakiso
+Africa/Uganda/East Africa/*	Africa/Uganda/Uganda/
 Africa/Zambia/Central/*	Africa/Zambia/Central Zambia/*
 Africa/Zambia/Southern/*	Africa/Zambia/Southern Zambia/*
 Africa/Zambia/Luapula/Mansa	Africa/Zambia/Luapula/Mansa ZM
@@ -43910,6 +43946,7 @@ Africa/Republic of the Congo/Mfilou/	Africa/Republic of the Congo/Kouilou/Mfilou
 Africa/Republic of the Congo/Madibou/	Africa/Republic of the Congo/Brazzaville/Madibou
 Africa/Republic of the Congo/Potopoto/	Africa/Republic of the Congo/Brazzaville/Poto-Poto
 Africa/Seychelles/Baie Ste Anne Praslin/*	Africa/Seychelles/Baie St Anne Praslin/*
+Africa/Seychelles/Anse Aux Pins/*	Africa/Seychelles/Anse Au Pins/*
 Africa/Niger/Dosso/Gaya	Africa/Niger/Dosso/Gaya NE
 Italy/Apulia/Bari/	Europe/Italy/Apulia/Bari
 North Macedonia/Kochani/Kochani/	Europe/North Macedonia/Eastern Region MK/Kochani
