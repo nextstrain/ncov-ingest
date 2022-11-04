@@ -79,7 +79,6 @@ rule upload_single:
         quiet = "" if send_notifications else "--quiet",
         s3_bucket = config.get("s3_dst",""),
         cloudfront_domain = config.get("cloudfront_domain", ""),
-        local_filename = lambda wildcards: compute_files_to_upload(wildcards)[wildcards.remote_filename]
     shell:
         "./bin/upload-to-s3 {params.quiet} {input:q} {params.s3_bucket:q}/{wildcards.remote_filename:q} {params.cloudfront_domain}"
 
