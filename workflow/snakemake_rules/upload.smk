@@ -29,7 +29,7 @@ rule upload_raw_ndjson:
         touch(f"data/{database}/raw.upload.done")
     params:
         quiet = "" if send_notifications else "--quiet",
-        s3_bucket = config["s3_dst"],
+        s3_bucket = config.get("s3_dst",""),
         cloudfront_domain = config.get("cloudfront_domain", "")
     run:
         for remote, local in input.items():
@@ -41,7 +41,16 @@ def compute_files_to_upload(wildcards):
                         "sequences.fasta.xz":           f"data/{database}/sequences.fasta",
 
                         "metadata.tsv.zst":             f"data/{database}/metadata.tsv",
-                        "sequences.fasta.zst":          f"data/{database}/sequences.fasta"}
+                        "sequences.fasta.zst":          f"data/{database}/sequences.fasta",
+
+                        # It shouldn't harm to upload these as upload-to-s3 only updates if hashes differ
+                        "nextclade.tsv.gz":           f"data/{database}/nextclade.tsv",
+                        "aligned.fasta.xz":           f"data/{database}/aligned.fasta",
+
+                        "nextclade.tsv.zst":           f"data/{database}/nextclade.tsv",
+                        "aligned.fasta.zst":           f"data/{database}/aligned.fasta",
+                    }
+
     if database=="genbank":
         files_to_upload["biosample.tsv.gz"] =           f"data/{database}/biosample.tsv"
         files_to_upload["duplicate_biosample.txt.gz"] = f"data/{database}/duplicate_biosample.txt"
@@ -55,25 +64,30 @@ def compute_files_to_upload(wildcards):
         files_to_upload["additional_info.tsv.zst"] =     f"data/{database}/additional_info.tsv"
         files_to_upload["flagged_metadata.txt.zst"] =    f"data/{database}/flagged_metadata.txt"
 
-    nextclade_sequences_path = checkpoints.get_sequences_without_nextclade_annotations.get().output.fasta
-    if os.path.getsize(nextclade_sequences_path) > 0:
-        files_to_upload["nextclade.tsv.gz"] =           f"data/{database}/nextclade.tsv"
-        files_to_upload["aligned.fasta.xz"] =           f"data/{database}/aligned.fasta"
-
-        files_to_upload["nextclade.tsv.zst"] =           f"data/{database}/nextclade.tsv"
-        files_to_upload["aligned.fasta.zst"] =           f"data/{database}/aligned.fasta"
     return files_to_upload
 
+def files_to_upload(wildcards):
+    files_to_upload_dict = compute_files_to_upload(wildcards)
+    return [f"data/{database}/{remote_file}.upload" for remote_file in files_to_upload_dict.keys()]
 
-rule upload:
-    input:
-        unpack(compute_files_to_upload)
+
+rule upload_single:
+    input: lambda wildcards: compute_files_to_upload(wildcards)[wildcards.remote_filename]
     output:
-        touch(f"data/{database}/upload.done")
+        touch("data/{database}/{remote_filename}.upload")
     params:
         quiet = "" if send_notifications else "--quiet",
-        s3_bucket = config["s3_dst"],
-        cloudfront_domain = config.get("cloudfront_domain", "")
-    run:
-        for remote, local in input.items():
-            shell("./bin/upload-to-s3 {params.quiet} {local:q} {params.s3_bucket:q}/{remote:q} {params.cloudfront_domain}")
+        s3_bucket = config.get("s3_dst",""),
+        cloudfront_domain = config.get("cloudfront_domain", ""),
+    shell:
+        "./bin/upload-to-s3 {params.quiet} {input:q} {params.s3_bucket:q}/{wildcards.remote_filename:q} {params.cloudfront_domain}"
+
+rule upload:
+    """
+    Requests one touch file for each uploaded remote file
+    Dynamically determines that list of files
+    """
+    input:
+        files_to_upload
+    output:
+        touch(f"data/{database}/upload.done")

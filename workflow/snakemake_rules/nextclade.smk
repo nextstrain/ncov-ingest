@@ -69,7 +69,7 @@ if config.get("s3_dst") and config.get("s3_src"):
             """
 
 
-checkpoint get_sequences_without_nextclade_annotations:
+rule get_sequences_without_nextclade_annotations:
     """Find sequences in FASTA which don't have clades assigned yet"""
     input:
         fasta = f"data/{database}/sequences.fasta",
@@ -103,7 +103,6 @@ rule run_nextclade:
     params:
         nextclade_input_dir = temp(directory(f"data/{database}/nextclade_inputs")),
         nextclade_output_dir = temp(directory(f"data/{database}/nextclade")),
-    threads: 64
     output:
         info = f"data/{database}/nextclade_new.tsv",
         alignment = temp(f"data/{database}/nextclade.aligned.upd.fasta"),
@@ -117,8 +116,7 @@ rule run_nextclade:
             {params.nextclade_output_dir} \
             {output.alignment} \
             {output.insertions} \
-            {GENES} \
-            {threads}
+            {GENES}
         """
 
 rule nextclade_info:
@@ -139,7 +137,7 @@ rule nextclade_info:
                 {input.new_info:q} \
                 -o {output.nextclade_info:q}
         else
-            cp {input.new_info} {output.nextclade_info}
+            mv {input.new_info} {output.nextclade_info}
         fi
         """
 
@@ -156,31 +154,17 @@ rule combine_alignments:
     shell:
         """
         if [[ -s {input.old_alignment} ]]; then
-            cat {input.old_alignment} {input.new_alignment} > {output.alignment}
+            mv {input.old_alignment} {output.alignment}
+            cat {input.new_alignment} >> {output.alignment}
         else
-            cp {input.new_alignment} {output.alignment}
+            mv {input.new_alignment} {output.alignment}
         fi
         """
 
-def _get_nextclade_output(wildcards):
-    ## the nextclade metadata should represent the entire dataset. If there are new sequences
-    ## this has to be generated; if not then we can use the previous (cached) file.
-    nextclade_sequences_path = checkpoints.get_sequences_without_nextclade_annotations.get().output.fasta
-    output = {
-        "nextclade_tsv": f"data/{database}/nextclade_old.tsv",
-        "aligned_fasta": f"data/{database}/nextclade.aligned.old.fasta",
-    }
-    if os.path.getsize(nextclade_sequences_path) > 0:
-        # Return all two output files here so that they get pulled through
-        # the Snakemake DAG even if we are not uploading them to S3.
-        output["nextclade_tsv"] = f"data/{database}/nextclade.tsv"
-        output["aligned_fasta"] = f"data/{database}/aligned.fasta"
-
-    return output
-
 rule generate_metadata:
     input:
-        unpack(_get_nextclade_output),
+        nextclade_tsv = f"data/{database}/nextclade.tsv",
+        aligned_fasta = f"data/{database}/aligned.fasta",
         existing_metadata = f"data/{database}/metadata_transformed.tsv",
     output:
         metadata = f"data/{database}/metadata.tsv"
