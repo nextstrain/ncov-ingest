@@ -40,17 +40,37 @@ rule transform_rki_data_to_ndjson:
         """
 
 
-rule transform_genbank_data:
+rule unzstd_ndjson:
     input:
         ndjson="data/rki.ndjson.zst",
     output:
-        fasta="data/rki/sequences.fasta.zst",
-        metadata="data/genbank/metadata_transformed.tsv.zst",
+        ndjson="data/rki.ndjson",
+    params:
+        subsampled=config.get("subsampled", False),
     shell:
         """
-        ./bin/transform-rki {input.ndjson} \
-            --output-metadata {output.metadata} \
-            --output-fasta {output.fasta} > {output.flagged_annotations}
+        if [ {params.subsampled} = True ]; then
+            (zstdcat {input.ndjson} | head -1000 > {output.ndjson}) || true
+        else
+            zstdcat {input.ndjson} >{output.ndjson}
+        fi
+        """
+
+
+rule transform_rki_data:
+    input:
+        ndjson="data/rki.ndjson",
+    output:
+        fasta="data/rki/sequences.fasta",
+        metadata="data/rki/metadata_transformed.tsv",
+    params:
+        subsampled=config.get("subsampled", False),
+    shell:
+        """
+        ./bin/transform-rki \
+            {input.ndjson} \
+            --output-fasta {output.fasta} \
+            --output-metadata {output.metadata}
         """
 
 

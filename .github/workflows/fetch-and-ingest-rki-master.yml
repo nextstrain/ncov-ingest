@@ -1,0 +1,85 @@
+name: RKI fetch and ingest
+
+on:
+  schedule:
+    # Note times are in UTC, which is 1 or 2 hours behind CET depending on daylight savings.
+    #
+    # Currently, we aim to trigger ingest every day at 18:07 UTC which is 19:07 CET (as of Mar 2022).
+    # Note the actual runs might be late. As of right now, the action starts around 20 past the hour.
+    # Numerous people were confused, about that, including me:
+    #  - https://github.community/t/scheduled-action-running-consistently-late/138025/11
+    #  - https://github.com/github/docs/issues/3059
+    #
+    # Note, '*' is a special character in YAML, so you have to quote this string.
+    #
+    # Docs:
+    #  - https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows#schedule
+    #
+    # Tool that deciphers this particular format of crontab string:
+    #  - https://crontab.guru/
+    #
+    # Looks like you are about to modify this schedule? Make sure you also modify the schedule for the
+    # sister GISAID job, so that we don't need to keep two schedules in our heads.
+    - cron: "7 18 * * *"
+
+  # Manually triggered using `./bin/trigger rki/fetch-and-ingest` (or `fetch-and-ingest`, which
+  # includes GISAID and Genbank as well)
+  repository_dispatch:
+    types:
+      - rki/fetch-and-ingest
+      - fetch-and-ingest
+
+  # Manually triggered using GitHub's UI
+  workflow_dispatch:
+
+jobs:
+  fetch-and-ingest:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_RUN_ID: ${{ github.run_id }}
+      SLACK_CHANNELS: ncov-genbank-updates
+      SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: nextstrain/.github/actions/setup-nextstrain-cli@master
+
+      - name: run_pipeline
+        run: |
+          ./bin/write-envdir env.d \
+            AWS_DEFAULT_REGION \
+            GITHUB_RUN_ID \
+            SLACK_TOKEN \
+            SLACK_CHANNELS \
+            PAT_GITHUB_DISPATCH
+
+          declare -a config
+          config+=(
+            fetch_from_database=True
+            trigger_rebuild=False
+            trigger_counts=False
+          )
+
+          nextstrain build \
+            --aws-batch \
+            --detach \
+            --no-download \
+            --image nextstrain/ncov-ingest \
+            --cpus 16 \
+            --memory 30GiB \
+            --exec env \
+            . \
+              envdir env.d snakemake \
+                --configfile config/rki.yaml \
+                --config "${config[@]}" \
+                --cores 16 \
+                --resources mem_mb=30000 \
+                --printshellcmds
+        env:
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          PAT_GITHUB_DISPATCH: ${{ secrets.PAT_GITHUB_DISPATCH }}
+
+      - name: notify_pipeline_failed
+        if: ${{ failure() }}
+        run: ./bin/notify-on-job-fail

@@ -96,7 +96,7 @@ rule fetch_rki_sequences:
     message:
         """Fetching RKI sequences (GenBank only)"""
     output:
-        rki_sequences=temp("data/rki_sequences.fasta.xz"),
+        rki_sequences="data/rki_sequences.fasta.xz",
     run:
         run_shell_command_n_times(
             f"./bin/fetch-from-rki-sequences > {output.rki_sequences}",
@@ -109,7 +109,7 @@ rule fetch_rki_metadata:
     message:
         """Fetching RKI metadata (GenBank only)"""
     output:
-        rki_metadata=temp("data/rki_metadata.csv.xz"),
+        rki_metadata="data/rki_metadata.csv.xz",
     run:
         run_shell_command_n_times(
             f"./bin/fetch-from-rki-metadata > {output.rki_metadata}",
@@ -122,13 +122,17 @@ rule fetch_rki_lineages:
     message:
         """Fetching RKI lineages (GenBank only)"""
     output:
-        rki_lineages=temp("data/rki_lineages.csv.xz"),
+        rki_lineages="data/rki_lineages.csv.xz",
     run:
         run_shell_command_n_times(
             f"./bin/fetch-from-rki-lineages > {output.rki_lineages}",
             "Fetch RKI lineages",
             f"rm {output.rki_lineages}",
         )
+
+
+# Make sure ndjson is always fetched correctly for RKI
+ruleorder: unzstd_ndjson > fetch_main_ndjson
 
 
 # Only include rules to fetch from S3 if S3 config params are provided
@@ -141,6 +145,7 @@ if config.get("s3_dst") and config.get("s3_src"):
 
         ruleorder: fetch_main_ndjson > fetch_main_ndjson_from_s3
         ruleorder: fetch_biosample > fetch_biosample_from_s3
+        ruleorder: unzstd_ndjson > fetch_main_ndjson_from_s3
 
 
     else:

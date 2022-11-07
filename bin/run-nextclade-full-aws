@@ -35,7 +35,6 @@ main() {
   DATABASE=
   N_PROCESSORS=
 
-
   AWS_BATCH_CPUS=96
   AWS_BATCH_MEMORY=180GiB
 
@@ -64,7 +63,7 @@ main() {
     esac
   done
 
-  if [ "${DATABASE}" != "gisaid" ] && [ "${DATABASE}" != "genbank" ]; then
+  if [ "${DATABASE}" != "gisaid" ] && [ "${DATABASE}" != "genbank" ] && [ "${DATABASE}" != "rki"]; then
     echo "[ERROR] ${0}:${LINENO}: Unknown database: The '--database' flag should be set to either 'gisaid' or 'genbank'"
     exit 1
   fi
@@ -74,7 +73,7 @@ main() {
     AWS_ACCESS_KEY_ID \
     AWS_SECRET_ACCESS_KEY \
     SLACK_TOKEN \
-    SLACK_CHANNELS \
+    SLACK_CHANNELS
 
   echo "[ INFO] ${0}:${LINENO}: Submitting Nextclade full run on AWS Batch"
   echo "[ INFO] ${0}:${LINENO}:   DATABASE=${DATABASE}"
@@ -92,8 +91,8 @@ main() {
     --exec env \
     . \
     envdir env.d run-nextclade-full \
-      --database="${DATABASE}" \
-      ${N_PROCESSORS:+--jobs=$N_PROCESSORS} \
+    --database="${DATABASE}" \
+    ${N_PROCESSORS:+--jobs=$N_PROCESSORS}
 
 }
 

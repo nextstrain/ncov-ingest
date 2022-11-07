@@ -21,20 +21,25 @@ Produces the following outputs:
         nextclade_info = f"data/{database}/nextclade.tsv"
         alignment = f"data/{database}/aligned.fasta"
 """
+
+
 rule create_empty_nextclade_info:
     message:
         """Creating empty NextClade info cache file"""
     output:
-        touch(f"data/{database}/nextclade_old.tsv")
+        touch(f"data/{database}/nextclade_old.tsv"),
+
 
 rule create_empty_nextclade_aligned:
     message:
         """Creating empty NextClade aligned cache file"""
     output:
-        touch(f"data/{database}/nextclade.aligned.old.fasta")
+        touch(f"data/{database}/nextclade.aligned.old.fasta"),
+
 
 # Only include rules to fetch from S3 if S3 config params are provided
-if config.get("s3_dst") and config.get("s3_src"):
+if config.get("s3_dst") and config.get("s3_src") and not config["fetch_from_database"]:
+
     # Set ruleorder since these rules have the same output
     # Allows us to only download the NextClade cache from S3 only if the
     # S3 parameters are provided in the config.
@@ -43,10 +48,10 @@ if config.get("s3_dst") and config.get("s3_src"):
 
     rule download_nextclade:
         params:
-            dst_source = config["s3_dst"] + '/nextclade.tsv.gz',
-            src_source = config["s3_src"] + '/nextclade.tsv.gz',
+            dst_source=config["s3_dst"] + "/nextclade.tsv.xz",
+            src_source=config["s3_src"] + "/nextclade.tsv.xz",
         output:
-            nextclade = f"data/{database}/nextclade_old.tsv"
+            nextclade=f"data/{database}/nextclade_old.tsv",
         shell:
             """
             ./bin/download-from-s3 {params.dst_source} {output.nextclade} ||  \
@@ -54,14 +59,11 @@ if config.get("s3_dst") and config.get("s3_src"):
             """
 
     rule download_previous_alignment:
-        ## NOTE two potential bugs with this implementation:
-        ## (1) race condition. This file may be updated on the remote after download_nextclade has run but before this rule
-        ## (2) we may get `download_nextclade` and `download_previous_alignment` from different s3 buckets
         params:
-            dst_source = config["s3_dst"] + '/aligned.fasta.xz',
-            src_source = config["s3_src"] + '/aligned.fasta.xz',
+            dst_source=config["s3_dst"] + "/aligned.fasta.xz",
+            src_source=config["s3_src"] + "/aligned.fasta.xz",
         output:
-            alignment = temp(f"data/{database}/nextclade.aligned.old.fasta")
+            alignment=temp(f"data/{database}/nextclade.aligned.old.fasta"),
         shell:
             """
             ./bin/download-from-s3 {params.dst_source} {output.alignment} ||  \
@@ -69,13 +71,20 @@ if config.get("s3_dst") and config.get("s3_src"):
             """
 
 
+"""
+NOTE two potential bugs with this implementation:
+(1) race condition. This file may be updated on the remote after download_nextclade has run but before this rule
+(2) we may get `download_nextclade` and `download_previous_alignment` from different s3 buckets
+"""
+
+
 rule get_sequences_without_nextclade_annotations:
     """Find sequences in FASTA which don't have clades assigned yet"""
     input:
-        fasta = f"data/{database}/sequences.fasta",
-        nextclade = f"data/{database}/nextclade_old.tsv",
+        fasta=f"data/{database}/sequences.fasta",
+        nextclade=f"data/{database}/nextclade_old.tsv",
     output:
-        fasta = f"data/{database}/nextclade.sequences.fasta"
+        fasta=f"data/{database}/nextclade.sequences.fasta",
     shell:
         """
         if [[ -s {input.nextclade} ]]; then
@@ -88,8 +97,12 @@ rule get_sequences_without_nextclade_annotations:
         fi
         """
 
+
 GENES = "E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S"
+
+
 GENES_SPACE_DELIMITED = GENES.replace(",", " ")
+
 
 rule run_nextclade:
     message:
@@ -99,14 +112,14 @@ rule run_nextclade:
         metrics which will ultimately end up in metadata.tsv.
         """
     input:
-        sequences = f"data/{database}/nextclade.sequences.fasta"
+        sequences=f"data/{database}/nextclade.sequences.fasta",
     params:
-        nextclade_input_dir = temp(directory(f"data/{database}/nextclade_inputs")),
-        nextclade_output_dir = temp(directory(f"data/{database}/nextclade")),
+        nextclade_input_dir=temp(directory(f"data/{database}/nextclade_inputs")),
+        nextclade_output_dir=temp(directory(f"data/{database}/nextclade")),
     output:
-        info = f"data/{database}/nextclade_new.tsv",
-        alignment = temp(f"data/{database}/nextclade.aligned.upd.fasta"),
-        insertions = temp(f"data/{database}/nextclade.insertions.csv")
+        info=f"data/{database}/nextclade_new.tsv",
+        alignment=temp(f"data/{database}/nextclade.aligned.upd.fasta"),
+        insertions=temp(f"data/{database}/nextclade.insertions.csv"),
     shell:
         """
         ./bin/run-nextclade \
@@ -119,16 +132,17 @@ rule run_nextclade:
             {GENES}
         """
 
+
 rule nextclade_info:
     message:
         """
         Generates nextclade info TSV for all sequences (new + old)
         """
     input:
-        old_info = f"data/{database}/nextclade_old.tsv",
-        new_info = f"data/{database}/nextclade_new.tsv"
+        old_info=f"data/{database}/nextclade_old.tsv",
+        new_info=f"data/{database}/nextclade_new.tsv",
     output:
-        nextclade_info = f"data/{database}/nextclade.tsv"
+        nextclade_info=f"data/{database}/nextclade.tsv",
     shell:
         """
         if [[ -s {input.old_info} ]]; then
@@ -141,16 +155,17 @@ rule nextclade_info:
         fi
         """
 
+
 rule combine_alignments:
     message:
         """
         Generating full alignment by combining newly aligned sequences with previous (cached) alignment
         """
     input:
-        old_alignment = f"data/{database}/nextclade.aligned.old.fasta",
-        new_alignment = f"data/{database}/nextclade.aligned.upd.fasta"
+        old_alignment=f"data/{database}/nextclade.aligned.old.fasta",
+        new_alignment=f"data/{database}/nextclade.aligned.upd.fasta",
     output:
-        alignment = f"data/{database}/aligned.fasta"
+        alignment=f"data/{database}/aligned.fasta",
     shell:
         """
         if [[ -s {input.old_alignment} ]]; then
@@ -161,13 +176,14 @@ rule combine_alignments:
         fi
         """
 
+
 rule generate_metadata:
     input:
-        nextclade_tsv = f"data/{database}/nextclade.tsv",
-        aligned_fasta = f"data/{database}/aligned.fasta",
-        existing_metadata = f"data/{database}/metadata_transformed.tsv",
+        nextclade_tsv=f"data/{database}/nextclade.tsv",
+        aligned_fasta=f"data/{database}/aligned.fasta",
+        existing_metadata=f"data/{database}/metadata_transformed.tsv",
     output:
-        metadata = f"data/{database}/metadata.tsv"
+        metadata=f"data/{database}/metadata.tsv",
     # note: the shell scripts which predated this snakemake workflow
     # overwrote the existing_metadata here
     shell:

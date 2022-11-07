@@ -24,7 +24,7 @@ disk_info() {
   lsblk -o MOUNTPOINT,FSSIZE,FSAVAIL,TYPE,NAME,ROTA,SIZE,MODEL || true
 
   echo "[ INFO] ${0}:${LINENO}: Summary of disk space usage:"
-  df -Th  || true | awk 'NR == 1; NR > 1 {print $0 | "sort -n"}'
+  df -Th || true | awk 'NR == 1; NR > 1 {print $0 | "sort -n"}'
 
   echo "[ INFO] ${0}:${LINENO}: Summary of occupied disk space:"
   du -bsch ./* 2>/dev/null || true | sort -h
@@ -60,6 +60,8 @@ main() {
     S3_SRC="s3://nextstrain-ncov-private"
   elif [ "${DATABASE}" == "genbank" ]; then
     S3_SRC="s3://nextstrain-data/files/ncov/open"
+  elif [ "${DATABASE}" == "rki" ]; then
+    S3_SRC="s3://nextstrain-data/files/ncov/rki"
   else
     echo "[ERROR] ${0}:${LINENO}: Unknown database: The '--database' flag should be set to either 'gisaid' or 'genbank'"
     exit 1
@@ -126,7 +128,7 @@ main() {
     --input-dataset="${TMP_DIR_NEXTCLADE_DATASET}" \
     --genes="${GENES}" \
     --output-tsv="${OUTPUT_TSV}" \
-    --output-fasta="${OUTPUT_FASTA}" \
+    --output-fasta="${OUTPUT_FASTA}"
 
   echo "[ INFO] ${0}:${LINENO}: Upload results"
   ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_TSV}" "$S3_DST/nextclade.tsv.gz"

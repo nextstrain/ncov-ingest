@@ -1,0 +1,11 @@
+database_name: "rki"
+
+fetch_from_database: true
+trigger_rebuild: false
+trigger_counts: false
+
+s3_src: "s3://nextstrain-data/files/ncov/rki"
+s3_dst: "s3://nextstrain-data/files/ncov/rki"
+cloudfront_domain: "data.nextstrain.org"
+
+keep_all_files: False

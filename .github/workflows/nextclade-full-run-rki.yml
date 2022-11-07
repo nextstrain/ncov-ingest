@@ -1,0 +1,37 @@
+name: GenBank full Nextclade run
+
+on:
+  # Manually triggered using:
+  #  - ./bin/trigger genbank/nextclade-full-run   (only GenBank)
+  #  - ./bin/trigger nextclade-full-run           (GISAID and GenBank)
+  repository_dispatch:
+    types:
+      - rki/nextclade-full-run
+      - nextclade-full-run
+
+  # Manually triggered using GitHub's UI
+  workflow_dispatch:
+
+jobs:
+  GenBank-Full-Nextclade-Run:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_RUN_ID: ${{ github.run_id }}
+      SLACK_CHANNELS: ncov-genbank-updates
+      SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: nextstrain/.github/actions/setup-nextstrain-cli@master
+
+      - name: "./bin/run-nextclade-full-aws --database=rki"
+        run: |
+          ./bin/run-nextclade-full-aws --database=rki
+
+        env:
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: notify_pipeline_failed
+        if: ${{ failure() }}
+        run: ./bin/notify-on-job-fail

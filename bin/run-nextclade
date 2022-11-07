@@ -26,15 +26,16 @@ GENES="${7}"
 
 NEXTCLADE_THREADS=""
 if [ $# -eq 8 ]; then
-    echo "[ INFO] ${0}:${LINENO}: Nextclade will be limited to ${8} threads"
-    NEXTCLADE_THREADS="--jobs ${8}"
+  echo "[ INFO] ${0}:${LINENO}: Nextclade will be limited to ${8} threads"
+  NEXTCLADE_THREADS="--jobs ${8}"
 elif [ $# -gt 8 ]; then
-    echo "[ INFO] ${0}:${LINENO}: Too many arguments provided"
-    exit 1
+  echo "[ INFO] ${0}:${LINENO}: Too many arguments provided"
+  exit 1
 fi
 
 echo "[ INFO] ${0}:${LINENO}: Downloading latest Nextclade version"
-curl -fsSL "https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-x86_64-unknown-linux-gnu" -o "nextclade"
+# curl -fsSL "https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-x86_64-unknown-linux-gnu" -o "nextclade"
+curl -fSL "https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-aarch64-apple-darwin" -o "nextclade"
 chmod +x nextclade
 
 if ! command -v ./nextclade &>/dev/null; then
@@ -47,7 +48,6 @@ echo "[ INFO] ${0}:${LINENO}: Nextclade version: ${NEXTCLADE_VERSION}"
 
 echo "[ INFO] ${0}:${LINENO}: Downloading Nextclade dataset \"sars-cov-2\""
 ./nextclade dataset get --name=sars-cov-2 --output-dir="${NEXTCLADE_DATASET_DIR}" --verbose
-
 
 echo "[ INFO] ${0}:${LINENO}: Running Nextclade"
 ./nextclade run \
