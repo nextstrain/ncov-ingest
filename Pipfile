@@ -16,6 +16,7 @@ biopython = "*"
 regex = "*"
 envdir = "*"
 xopen = "*"
+typer = "*"
 
 [requires]
 python_version = "3.10"
