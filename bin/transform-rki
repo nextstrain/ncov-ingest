@@ -10,7 +10,7 @@ from pathlib import Path
 from collections import defaultdict
 import pandas as pd
 from xopen import xopen
-from tqdm import tqdm
+# from tqdm import tqdm
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent.parent) + "/lib")
@@ -131,10 +131,10 @@ if __name__ == '__main__':
                 print("WARNING: couldn't parse annotations file " + args.annotations)
 
     with xopen(args.rki_data, "r") as rki_fh:
-        with tqdm() as pbar:
+        # with tqdm() as pbar:
             pipeline = (
                 LineToJsonDataSource(rki_fh)
-                | UpdateProgress(pbar)
+                # | UpdateProgress(pbar)
                 | RenameAndAddColumns(column_map=COLUMN_MAP)
                 | StandardizeDataRki()
                 | SequenceLengthFilter(15000)
@@ -194,7 +194,7 @@ if __name__ == '__main__':
                 metadata_csv.writerow(entry)
 
     with xopen(args.rki_data, "r") as genbank_IN, xopen(args.output_fasta, "wt", newline=args.newline) as fasta_OUT:
-        for entry in tqdm(
+        for entry in (
                 LineToJsonDataSource(genbank_IN)
                 | RenameAndAddColumns(column_map=COLUMN_MAP)
                 | StandardizeDataRki()
