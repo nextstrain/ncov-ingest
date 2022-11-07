@@ -40,6 +40,20 @@ rule transform_rki_data_to_ndjson:
         """
 
 
+rule transform_genbank_data:
+    input:
+        ndjson="data/rki.ndjson.zst",
+    output:
+        fasta="data/rki/sequences.fasta.zst",
+        metadata="data/genbank/metadata_transformed.tsv.zst",
+    shell:
+        """
+        ./bin/transform-rki {input.ndjson} \
+            --output-metadata {output.metadata} \
+            --output-fasta {output.fasta} > {output.flagged_annotations}
+        """
+
+
 rule transform_biosample:
     input:
         biosample="data/biosample.ndjson",
