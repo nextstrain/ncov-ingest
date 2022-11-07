@@ -1,0 +1,47 @@
+name: RKI fetch and ingest (on branch)
+
+# Manually triggered using GitHub's UI
+on: workflow_dispatch
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: nextstrain/.github/actions/setup-nextstrain-cli@master
+
+      - name: run_pipeline
+        run: |
+          ./bin/write-envdir env.d \
+            AWS_DEFAULT_REGION \
+            GITHUB_RUN_ID
+
+          GITHUB_BRANCH=${GITHUB_REF#refs/heads/}
+          declare -a config
+          config+=(
+            fetch_from_database=True
+            s3_dst=s3://nextstrain-staging/files/ncov/open/branch/"${GITHUB_BRANCH}"
+            cloudfront_domain=staging.nextstrain.org
+          )
+
+          nextstrain build \
+            --aws-batch \
+            --detach \
+            --no-download \
+            --image nextstrain/ncov-ingest \
+            --cpus 16 \
+            --memory 30GiB \
+            --exec env \
+            . \
+              envdir env.d snakemake \
+                --configfile config/rki.yaml \
+                --config "${config[@]}" \
+                --cores 16 \
+                --resources mem_mb=30000 \
+                --printshellcmds
+        env:
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          GITHUB_REF: ${{ github.ref }}
