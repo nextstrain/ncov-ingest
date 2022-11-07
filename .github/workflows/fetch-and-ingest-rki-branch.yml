@@ -22,6 +22,7 @@ jobs:
             fetch_from_database=True
             s3_dst=s3://nextstrain-staging/files/ncov/open/branch/"${GITHUB_BRANCH}"
             cloudfront_domain=staging.nextstrain.org
+            keep_all_files=True
           )
 
           nextstrain build \
