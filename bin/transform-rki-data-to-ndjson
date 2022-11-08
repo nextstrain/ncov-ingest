@@ -21,6 +21,8 @@ def main(
 
     with xopen(input_rki_metadata, "r") as fin:
         metadata = pd.read_csv(fin, low_memory=False, index_col="IMS_ID")
+        # Yes there are duplicate lines
+        metadata = metadata[~metadata.index.duplicated(keep='first')]
 
     with xopen(input_rki_lineages, "r") as fin:
         lineages = pd.read_csv(fin, low_memory=False, index_col="IMS_ID")
@@ -40,6 +42,8 @@ def main(
                 **metadata.loc[record.id].to_dict(),
                 "sequence": str(record.seq),
             }
+            # if type(output["lineage"]) == dict:
+            #     import ipdb; ipdb.set_trace()
             fout.write(json.dumps(output) + "\n")
 
 
