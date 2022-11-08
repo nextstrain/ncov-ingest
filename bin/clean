@@ -6,6 +6,7 @@ find data/ \
     -mindepth 1 \
     -not -path data/genbank \
     -not -path data/gisaid \
+    -not -path data/rki \
     -not -name .gitignore \
     -print \
     -delete
