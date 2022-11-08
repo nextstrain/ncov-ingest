@@ -166,6 +166,7 @@ rule unzstd_ndjson:
 
 # Make sure ndjson is always fetched correctly for RKI
 ruleorder: unzstd_ndjson > fetch_main_ndjson
+ruleorder: unzstd_ndjson > fetch_main_ndjson_from_s3
 
 
 # Only include rules to fetch from S3 if S3 config params are provided
@@ -179,6 +180,7 @@ if config.get("s3_dst") and config.get("s3_src"):
         ruleorder: fetch_main_ndjson > fetch_main_ndjson_from_s3
         ruleorder: fetch_biosample > fetch_biosample_from_s3
         ruleorder: unzstd_ndjson > fetch_main_ndjson_from_s3
+        ruleorder: unzstd_ndjson > fetch_main_ndjson
 
 
     else:
