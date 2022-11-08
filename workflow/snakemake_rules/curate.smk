@@ -8,7 +8,7 @@ Expects different inputs for GISAID vs GenBank:
         ndjson = "data/genbank.ndjson"
         biosample = "data/biosample.ndjson"
 
-Produces different output files for GISAID vs GenBank:
+Produces different output files for GISAID vs GenBank vs RKI:
     GISAID:
         fasta = "data/gisaid/sequences.fasta"
         metadata = "data/gisaid/metadata_transformed.tsv"
@@ -20,41 +20,10 @@ Produces different output files for GISAID vs GenBank:
         metadata = "data/genbank/metadata_transformed.tsv"
         flagged_annotations = temp("data/genbank/flagged-annotations")
         duplicate_biosample = "data/genbank/duplicate_biosample.txt"
+    RKI:
+        fasta = "data/rki/sequences.fasta"
+        metadata = "data/rki/metadata_transformed.tsv"
 """
-
-
-rule transform_rki_data_to_ndjson:
-    input:
-        rki_sequences="data/rki_sequences.fasta.xz",
-        rki_metadata="data/rki_metadata.csv.xz",
-        rki_lineages="data/rki_lineages.csv.xz",
-    output:
-        ndjson="data/rki.ndjson.zst",
-    shell:
-        """
-        ./bin/transform-rki-data-to-ndjson \
-            --input-rki-sequences {input.rki_sequences} \
-            --input-rki-metadata {input.rki_metadata} \
-            --input-rki-lineages {input.rki_lineages} \
-            --output-ndjson {output.ndjson}
-        """
-
-
-rule unzstd_ndjson:
-    input:
-        ndjson="data/rki.ndjson.zst",
-    output:
-        ndjson="data/rki.ndjson",
-    params:
-        subsampled=config.get("subsampled", False),
-    shell:
-        """
-        if [ {params.subsampled} = True ]; then
-            (zstdcat {input.ndjson} | head -1000 > {output.ndjson}) || true
-        else
-            zstdcat {input.ndjson} >{output.ndjson}
-        fi
-        """
 
 
 rule transform_rki_data:

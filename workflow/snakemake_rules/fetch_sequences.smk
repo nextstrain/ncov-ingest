@@ -7,7 +7,7 @@ If the config contains `s3_dst`,`s3_src`, and `fetch_from_database=False`,
 then files will be fetched from the AWS S3 bucket. Or else, the data is fetched
 directly from the databases.
 
-Produces different final outputs for GISAID vs GenBank:
+Produces different final outputs for GISAID vs GenBank vs RKI:
     GISAID:
         ndjson = "data/gisaid.ndjson"
     GenBank:
@@ -15,9 +15,8 @@ Produces different final outputs for GISAID vs GenBank:
         biosample = "data/biosample.ndjson"
         cog_uk_accessions = "data/cog_uk_accessions.tsv"
         cog_uk_metadata = "data/cog_uk_metadata.csv.gz"
-        rki_sequences = "data/rki_sequences.fasta.xz"
-        rki_metadata = "data/rki_metadata.csv.xz"
-        rki_lineages = "data/rki_lineages.csv.xz"
+    RKI:
+        ndjson = "data/rki.ndjson"
 """
 
 
@@ -129,6 +128,40 @@ rule fetch_rki_lineages:
             "Fetch RKI lineages",
             f"rm {output.rki_lineages}",
         )
+
+
+rule transform_rki_data_to_ndjson:
+    input:
+        rki_sequences="data/rki_sequences.fasta.xz",
+        rki_metadata="data/rki_metadata.csv.xz",
+        rki_lineages="data/rki_lineages.csv.xz",
+    output:
+        ndjson="data/rki.ndjson.zst",
+    shell:
+        """
+        ./bin/transform-rki-data-to-ndjson \
+            --input-rki-sequences {input.rki_sequences} \
+            --input-rki-metadata {input.rki_metadata} \
+            --input-rki-lineages {input.rki_lineages} \
+            --output-ndjson {output.ndjson}
+        """
+
+
+rule unzstd_ndjson:
+    input:
+        ndjson="data/rki.ndjson.zst",
+    output:
+        ndjson="data/rki.ndjson",
+    params:
+        subsampled=config.get("subsampled", False),
+    shell:
+        """
+        if [ {params.subsampled} = True ]; then
+            (zstdcat {input.ndjson} | head -1000 > {output.ndjson}) || true
+        else
+            zstdcat {input.ndjson} >{output.ndjson}
+        fi
+        """
 
 
 # Make sure ndjson is always fetched correctly for RKI
