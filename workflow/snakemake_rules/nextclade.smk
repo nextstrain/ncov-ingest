@@ -38,7 +38,7 @@ rule create_empty_nextclade_aligned:
 
 
 # Only include rules to fetch from S3 if S3 config params are provided
-if config.get("s3_dst") and config.get("s3_src") and not config["fetch_from_database"]:
+if config.get("s3_dst") and config.get("s3_src"):
 
     # Set ruleorder since these rules have the same output
     # Allows us to only download the NextClade cache from S3 only if the
@@ -95,6 +95,18 @@ rule get_sequences_without_nextclade_annotations:
         else
             cp {input.fasta} {output.fasta}
         fi
+        """
+
+
+rule print_number_of_sequences_without_nextclade_annotations:
+    """Print number of sequences in FASTA which don't have clades assigned yet"""
+    input:
+        fasta=f"data/{database}/nextclade.sequences.fasta",
+    output:
+        touch(f"data/{database}/nextclade.sequences.fasta.count"),
+    shell:
+        """
+        echo "[ INFO] Number of sequences to run Nextclade on: $(grep -c '^>' {input.fasta})"
         """
 
 
@@ -182,6 +194,7 @@ rule generate_metadata:
         nextclade_tsv=f"data/{database}/nextclade.tsv",
         aligned_fasta=f"data/{database}/aligned.fasta",
         existing_metadata=f"data/{database}/metadata_transformed.tsv",
+        trigger_count=f"data/{database}/nextclade.sequences.fasta.count",
     output:
         metadata=f"data/{database}/metadata.tsv",
     # note: the shell scripts which predated this snakemake workflow
