@@ -48,8 +48,8 @@ if config.get("s3_dst") and config.get("s3_src"):
 
     rule download_nextclade:
         params:
-            dst_source=config["s3_dst"] + "/nextclade.tsv.xz",
-            src_source=config["s3_src"] + "/nextclade.tsv.xz",
+            dst_source=config["s3_dst"] + "/nextclade.tsv.zst",
+            src_source=config["s3_src"] + "/nextclade.tsv.zst",
         output:
             nextclade=f"data/{database}/nextclade_old.tsv",
         shell:
@@ -60,8 +60,8 @@ if config.get("s3_dst") and config.get("s3_src"):
 
     rule download_previous_alignment:
         params:
-            dst_source=config["s3_dst"] + "/aligned.fasta.xz",
-            src_source=config["s3_src"] + "/aligned.fasta.xz",
+            dst_source=config["s3_dst"] + "/aligned.fasta.zst",
+            src_source=config["s3_src"] + "/aligned.fasta.zst",
         output:
             alignment=temp(f"data/{database}/nextclade.aligned.old.fasta"),
         shell:

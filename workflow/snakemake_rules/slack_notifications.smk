@@ -27,7 +27,7 @@ rule notify_on_record_change:
     input:
         ndjson = f"data/{database}.ndjson"
     params:
-        ndjson_on_s3 = f"{config['s3_src']}/{database}.ndjson.xz"
+        ndjson_on_s3 = f"{config['s3_src']}/{database}.ndjson.zst"
     output:
         touch(f"data/{database}/notify-on-record-change.done")
     shell:

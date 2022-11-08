@@ -70,7 +70,7 @@ main() {
   DATE_UTC=$(date -u "+%Y-%m-%d--%H-%M-%S--%Z")
   S3_DST="$S3_SRC/nextclade-full-run-${DATE_UTC}"
 
-  INPUT_FASTA="data/${DATABASE}/sequences.fasta.xz"
+  INPUT_FASTA="data/${DATABASE}/sequences.fasta.zst"
   OUTPUT_FASTA="data/${DATABASE}/aligned.fasta"
   OUTPUT_TSV="data/${DATABASE}/nextclade.tsv"
 
@@ -105,7 +105,7 @@ main() {
     exit 1
   fi
 
-  echo "[ INFO] ${0}:${LINENO}: Downloading '${S3_SRC}/sequences.fasta.xz' to '${INPUT_FASTA}'"
+  echo "[ INFO] ${0}:${LINENO}: Downloading '${S3_SRC}/sequences.fasta.zst' to '${INPUT_FASTA}'"
   aws s3 cp --no-progress "${S3_SRC}/sequences.fasta.xz" "${INPUT_FASTA}"
 
   NEXTCLADE_VERSION="$(./${NEXTCLADE_BIN} --version)"
