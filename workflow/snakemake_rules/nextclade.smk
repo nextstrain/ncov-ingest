@@ -43,8 +43,8 @@ if config.get("s3_dst") and config.get("s3_src"):
 
     rule download_nextclade:
         params:
-            dst_source = config["s3_dst"] + '/nextclade.tsv.gz',
-            src_source = config["s3_src"] + '/nextclade.tsv.gz',
+            dst_source=config["s3_dst"] + "/nextclade.tsv.zst",
+            src_source=config["s3_src"] + "/nextclade.tsv.zst",
         output:
             nextclade = f"data/{database}/nextclade_old.tsv"
         shell:
@@ -58,8 +58,8 @@ if config.get("s3_dst") and config.get("s3_src"):
         ## (1) race condition. This file may be updated on the remote after download_nextclade has run but before this rule
         ## (2) we may get `download_nextclade` and `download_previous_alignment` from different s3 buckets
         params:
-            dst_source = config["s3_dst"] + '/aligned.fasta.xz',
-            src_source = config["s3_src"] + '/aligned.fasta.xz',
+            dst_source=config["s3_dst"] + "/aligned.fasta.zst",
+            src_source=config["s3_src"] + "/aligned.fasta.zst",
         output:
             alignment = temp(f"data/{database}/nextclade.aligned.old.fasta")
         shell:
@@ -87,6 +87,19 @@ rule get_sequences_without_nextclade_annotations:
             cp {input.fasta} {output.fasta}
         fi
         """
+
+
+rule print_number_of_sequences_without_nextclade_annotations:
+    """Print number of sequences in FASTA which don't have clades assigned yet"""
+    input:
+        fasta=f"data/{database}/nextclade.sequences.fasta",
+    output:
+        touch(f"data/{database}/nextclade.sequences.fasta.count"),
+    shell:
+        """
+        echo "[ INFO] Number of sequences to run Nextclade on: $(grep -c '^>' {input.fasta})"
+        """
+
 
 GENES = "E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S"
 GENES_SPACE_DELIMITED = GENES.replace(",", " ")
@@ -166,6 +179,7 @@ rule generate_metadata:
         nextclade_tsv = f"data/{database}/nextclade.tsv",
         aligned_fasta = f"data/{database}/aligned.fasta",
         existing_metadata = f"data/{database}/metadata_transformed.tsv",
+        trigger_count=f"data/{database}/nextclade.sequences.fasta.count",
     output:
         metadata = f"data/{database}/metadata.tsv"
     # note: the shell scripts which predated this snakemake workflow
