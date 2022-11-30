@@ -1,0 +1,72 @@
+#!/usr/bin/env python3
+"""
+Turn Genbank and RKI metadata & sequences into merged open data
+"""
+
+import typer
+
+
+def main(
+    input_rki_sequences: str = typer.Option(...),
+    input_rki_metadata: str = typer.Option(...),
+    input_genbank_sequences: str = typer.Option(...),
+    input_genbank_biosample: str = typer.Option(...),
+    input_genbank_metadata: str = typer.Option(...),
+    output_sequences: str = typer.Option(...),
+    output_metadata: str = typer.Option(...),
+):
+    import pandas as pd
+    from Bio import SeqIO
+    from xopen import xopen
+
+    # Load metadata files
+    with xopen(input_rki_metadata, "r") as fin:
+        rki = pd.read_csv(fin, index_col="strain", low_memory=False, sep="\t")
+
+    with xopen(input_genbank_metadata, "r") as fin:
+        genbank = pd.read_csv(
+            fin, index_col="strain", low_memory=False, sep="\t"
+        )
+
+    with xopen(input_genbank_biosample, "r") as fin:
+        biosample = pd.read_csv(
+            fin, index_col="biosample_accession", low_memory=False, sep="\t"
+        )
+
+    # Get biosample accessions that are in genbank metadata
+    biosample_accessions = genbank["biosample_accession"].dropna().tolist()
+
+    # Get internal_ids from the biosample accessions that are in genbank metadata
+    internal_ids = biosample[
+        biosample.index.isin(biosample_accessions)
+    ]["internal_id"].dropna()
+
+    # Select rki rows that are not in the genbank internal_ids -> not already in Genbank
+    new_rki = rki[~rki.index.isin(internal_ids)]
+
+    # Add source database column to metadata
+    genbank.loc[:, "database"] = "genbank"
+    new_rki.loc[:, "database"] = "rki"
+
+    # Create new merged open data dataframe
+    open = pd.concat(
+        [genbank.drop("biosample_accession", axis=1), new_rki],
+        ignore_index=False,
+        sort=False,
+    )
+
+    # Output merged metadata
+    with xopen(output_metadata, "w") as fout:
+        open.to_csv(fout, sep="\t")
+
+    # Output merged sequences
+    with xopen(output_sequences, "wt") as sequences_out:
+        for input_path in [input_genbank_sequences, input_rki_sequences]:
+            for record in SeqIO.parse(xopen(input_path, "r"), "fasta"):
+                if record.id in open.index:
+                    sequences_out.write(f">{record.id}\n")
+                    sequences_out.write(f"{str(record.seq)}\n")
+
+
+if __name__ == "__main__":
+    typer.run(main)
