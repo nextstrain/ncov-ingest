@@ -1,0 +1,51 @@
+#!/usr/bin/env python3
+"""
+Turn RKI files into ndjson format
+"""
+
+import typer
+
+def main(
+    input_rki_sequences: str = typer.Option(..., help="Input file"),
+    input_rki_metadata: str = typer.Option(..., help="Input file"),
+    input_rki_lineages: str = typer.Option(..., help="Input file"),
+    output_ndjson: str = typer.Option(..., help="Output file"),
+):
+    """
+    Turn RKI files into ndjson format
+    """
+    import json
+    import pandas as pd
+    from xopen import xopen
+    from Bio import SeqIO
+
+    with xopen(input_rki_metadata, "r") as fin:
+        metadata = pd.read_csv(fin, low_memory=False, index_col="IMS_ID")
+        # Yes there are duplicate lines
+        metadata = metadata[~metadata.index.duplicated(keep='first')]
+
+    with xopen(input_rki_lineages, "r") as fin:
+        lineages = pd.read_csv(fin, low_memory=False, index_col="IMS_ID").fillna("?")
+
+    metadata = pd.merge(
+        metadata,
+        lineages["lineage"],
+        how="left",
+        left_index=True,
+        right_index=True,
+    )
+
+    with xopen(output_ndjson, "w") as fout:
+        for record in SeqIO.parse(xopen(input_rki_sequences), "fasta"):
+            output = {
+                "rki_accession": record.id,
+                **metadata.loc[record.id].to_dict(),
+                "sequence": str(record.seq),
+            }
+            # if type(output["lineage"]) == dict:
+            #     import ipdb; ipdb.set_trace()
+            fout.write(json.dumps(output) + "\n")
+
+
+if __name__ == "__main__":
+    typer.run(main)
