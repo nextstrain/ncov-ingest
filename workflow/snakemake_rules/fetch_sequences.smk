@@ -102,8 +102,8 @@ if config.get("s3_dst") and config.get("s3_src"):
         message:
             """Fetching main NDJSON from AWS S3"""
         params:
-            file_on_s3_dst= f"{config['s3_dst']}/{database}.ndjson.xz",
-            file_on_s3_src= f"{config['s3_src']}/{database}.ndjson.xz"
+            file_on_s3_dst=f"{config['s3_dst']}/{database}.ndjson.zst",
+            file_on_s3_src=f"{config['s3_src']}/{database}.ndjson.zst",
         output:
             ndjson = temp(f"data/{database}.ndjson")
         shell:
@@ -116,8 +116,8 @@ if config.get("s3_dst") and config.get("s3_src"):
         message:
             """Fetching BioSample NDJSON from AWS S3"""
         params:
-            file_on_s3_dst= f"{config['s3_dst']}/biosample.ndjson.gz",
-            file_on_s3_src= f"{config['s3_src']}/biosample.ndjson.gz"
+            file_on_s3_dst=f"{config['s3_dst']}/biosample.ndjson.zst",
+            file_on_s3_src=f"{config['s3_src']}/biosample.ndjson.zst",
         output:
             biosample = temp("data/biosample.ndjson")
         shell:
