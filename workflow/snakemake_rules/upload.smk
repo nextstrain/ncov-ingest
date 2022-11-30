@@ -74,7 +74,7 @@ def files_to_upload(wildcards):
 rule upload_single:
     input: lambda wildcards: compute_files_to_upload(wildcards)[wildcards.remote_filename]
     output:
-        touch("data/{database}/{remote_filename}.upload")
+        "data/{database}/{remote_filename}.upload"
     params:
         quiet = "" if send_notifications else "--quiet",
         s3_bucket = config.get("s3_dst",""),
@@ -85,7 +85,7 @@ rule upload_single:
             {params.quiet} \
             {input:q} \
             {params.s3_bucket:q}/{wildcards.remote_filename:q} \
-            {params.cloudfront_domain}
+            {params.cloudfront_domain} 2>&1 | tee {output}
         """
 
 rule upload:
