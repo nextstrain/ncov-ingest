@@ -967,6 +967,7 @@ class ParseBiosample(Transformer):
         new_entry['age'] = attributes.get('host_age')
         new_entry['sex'] = attributes.get('host_sex')
         new_entry['date'] = attributes.get('collection_date')
+        new_entry['internal_id'] = attributes.get('sample_name')
 
         new_entry['location'] = self.parse_location({ attr: attributes.get(attr) for attr in ParseBiosample.LOCATION_ATTR })
 
