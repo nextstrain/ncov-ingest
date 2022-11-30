@@ -22,6 +22,24 @@ Produces different output files for GISAID vs GenBank:
         duplicate_biosample = "data/genbank/duplicate_biosample.txt"
 """
 
+
+rule transform_rki_data:
+    input:
+        ndjson="data/rki.ndjson",
+    output:
+        fasta="data/rki_sequences.fasta",
+        metadata="data/rki_metadata_transformed.tsv",
+    params:
+        subsampled=config.get("subsampled", False),
+    shell:
+        """
+        ./bin/transform-rki \
+            {input.ndjson} \
+            --output-fasta {output.fasta} \
+            --output-metadata {output.metadata}
+        """
+
+
 rule transform_biosample:
     input:
         biosample = "data/biosample.ndjson"
