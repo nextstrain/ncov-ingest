@@ -34,7 +34,12 @@ elif [ $# -gt 8 ]; then
 fi
 
 echo "[ INFO] ${0}:${LINENO}: Downloading latest Nextclade version"
-curl -fsSL "https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-x86_64-unknown-linux-gnu" -o "nextclade"
+if [ "$(uname)" = "Darwin" ]; then
+  curl -fsSL "https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-x86_64-apple-darwin" -o "nextclade"
+else
+  curl -fsSL "https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-x86_64-unknown-linux-gnu" -o "nextclade"
+fi
+
 chmod +x nextclade
 
 if ! command -v ./nextclade &>/dev/null; then
