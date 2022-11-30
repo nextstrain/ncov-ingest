@@ -19,7 +19,6 @@ jobs:
           GITHUB_BRANCH=${GITHUB_REF#refs/heads/}
           declare -a config
           config+=(
-            fetch_from_database=True
             s3_dst=s3://nextstrain-ncov-private/branch/"${GITHUB_BRANCH}"
           )
 
