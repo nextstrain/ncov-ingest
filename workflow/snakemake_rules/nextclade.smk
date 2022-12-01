@@ -119,7 +119,6 @@ rule run_nextclade:
     output:
         info = f"data/{database}/nextclade_new.tsv",
         alignment = temp(f"data/{database}/nextclade.aligned.upd.fasta"),
-        insertions = temp(f"data/{database}/nextclade.insertions.csv")
     shell:
         """
         ./bin/run-nextclade \
@@ -128,7 +127,6 @@ rule run_nextclade:
             {params.nextclade_input_dir} \
             {params.nextclade_output_dir} \
             {output.alignment} \
-            {output.insertions} \
             {GENES}
         """
 

@@ -12,23 +12,21 @@ trap "exit" INT
 : "${3:?\"[ERROR] ${0}: Directory for Nextclade input data as the 3rd argument is required.\"}"
 : "${4:?\"[ERROR] ${0}: Output directory as the 4th argument is required.\"}"
 : "${5:?\"[ERROR] ${0}: Output fasta filename as the 5th argument is required.\"}"
-: "${6:?\"[ERROR] ${0}: Output insertions csv filename as the 6th argument is required.\"}"
-: "${7:?\"[ERROR] ${0}: List of genes as 7th argument is required.\"}"
-# Note: 8th argument is the (max) number of threads for nextclade and is optional
+: "${6:?\"[ERROR] ${0}: List of genes as 6th argument is required.\"}"
+# Note: 7th argument is the (max) number of threads for nextclade and is optional
 
 INPUT_FASTA="${1}"
 OUTPUT_TSV="${2}"
 NEXTCLADE_DATASET_DIR="${3}" # external data required for nextclade to function will be downloaded there
 NEXTCLADE_OUTPUTS_DIR="${4}" # files other than TSV will be written by Nextclade there (aligned sequences, peptides, etc.)
 OUTPUT_FASTA="${5}"
-OUTPUT_INSERTIONS="${6}"
-GENES="${7}"
+GENES="${6}"
 
 NEXTCLADE_THREADS=""
-if [ $# -eq 8 ]; then
-    echo "[ INFO] ${0}:${LINENO}: Nextclade will be limited to ${8} threads"
-    NEXTCLADE_THREADS="--jobs ${8}"
-elif [ $# -gt 8 ]; then
+if [ $# -eq 7 ]; then
+    echo "[ INFO] ${0}:${LINENO}: Nextclade will be limited to ${7} threads"
+    NEXTCLADE_THREADS="--jobs ${7}"
+elif [ $# -gt 7 ]; then
     echo "[ INFO] ${0}:${LINENO}: Too many arguments provided"
     exit 1
 fi
@@ -63,7 +61,5 @@ echo "[ INFO] ${0}:${LINENO}: Running Nextclade"
   --input-dataset="${NEXTCLADE_DATASET_DIR}" \
   --output-tsv="${OUTPUT_TSV}" \
   --genes="${GENES}" \
-  --output-translations="${NEXTCLADE_OUTPUTS_DIR}/nextclade.gene.{gene}.fasta" \
   --output-fasta=- \
-  --output-insertions="${OUTPUT_INSERTIONS}" \
   "${NEXTCLADE_THREADS}" | seqkit seq -i >"${OUTPUT_FASTA}" #seqkit seq -i removes (reverse complemented) from the sequence names
