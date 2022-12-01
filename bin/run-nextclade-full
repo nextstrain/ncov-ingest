@@ -24,7 +24,7 @@ disk_info() {
   lsblk -o MOUNTPOINT,FSSIZE,FSAVAIL,TYPE,NAME,ROTA,SIZE,MODEL || true
 
   echo "[ INFO] ${0}:${LINENO}: Summary of disk space usage:"
-  df -Th  || true | awk 'NR == 1; NR > 1 {print $0 | "sort -n"}'
+  df -Th || true | awk 'NR == 1; NR > 1 {print $0 | "sort -n"}'
 
   echo "[ INFO] ${0}:${LINENO}: Summary of occupied disk space:"
   du -bsch ./* 2>/dev/null || true | sort -h
@@ -121,12 +121,14 @@ main() {
   "${NEXTCLADE_BIN}" run \
     "${INPUT_FASTA}" \
     --jobs="${N_PROCESSORS}" \
+    --retry-reverse-complement \
     --in-order \
     --verbosity=error \
     --input-dataset="${TMP_DIR_NEXTCLADE_DATASET}" \
     --genes="${GENES}" \
     --output-tsv="${OUTPUT_TSV}" \
-    --output-fasta="${OUTPUT_FASTA}" \
+    --output-fasta=- |
+    seqkit seq -i >"${OUTPUT_FASTA}" #seqkit seq -i removes (reverse complemented) from the sequence names
 
   echo "[ INFO] ${0}:${LINENO}: Upload results"
   ./bin/upload-to-s3 ${silent:+--quiet} "${OUTPUT_TSV}" "$S3_DST/nextclade.tsv.gz"
