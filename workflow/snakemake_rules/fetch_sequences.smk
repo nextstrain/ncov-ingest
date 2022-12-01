@@ -104,12 +104,13 @@ if config.get("s3_dst") and config.get("s3_src"):
         params:
             file_on_s3_dst=f"{config['s3_dst']}/{database}.ndjson.zst",
             file_on_s3_src=f"{config['s3_src']}/{database}.ndjson.zst",
+            lines = config.get("subsample",{}).get("main_ndjson", 0)
         output:
             ndjson = temp(f"data/{database}.ndjson")
         shell:
             """
-            ./bin/download-from-s3 {params.file_on_s3_dst} {output.ndjson} ||  \
-            ./bin/download-from-s3 {params.file_on_s3_src} {output.ndjson}
+            ./bin/download-from-s3 {params.file_on_s3_dst} {output.ndjson} {params.lines} ||  \
+            ./bin/download-from-s3 {params.file_on_s3_src} {output.ndjson} {params.lines}
             """
 
     rule fetch_biosample_from_s3:
@@ -118,10 +119,11 @@ if config.get("s3_dst") and config.get("s3_src"):
         params:
             file_on_s3_dst=f"{config['s3_dst']}/biosample.ndjson.zst",
             file_on_s3_src=f"{config['s3_src']}/biosample.ndjson.zst",
+            lines = config.get("subsample",{}).get("biosample", 0)
         output:
             biosample = temp("data/biosample.ndjson")
         shell:
             """
-            ./bin/download-from-s3 {params.file_on_s3_dst} {output.biosample} ||  \
-            ./bin/download-from-s3 {params.file_on_s3_src} {output.biosample}
+            ./bin/download-from-s3 {params.file_on_s3_dst} {output.biosample} {params.lines} ||  \
+            ./bin/download-from-s3 {params.file_on_s3_src} {output.biosample} {params.lines}
             """
