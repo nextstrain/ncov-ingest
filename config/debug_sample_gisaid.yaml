@@ -1,0 +1,20 @@
+# Running ingest using raw data from s3 and subsampling
+# This is useful for debugging and testing 
+# Data output should not be trusted, though
+database_name: "gisaid"
+
+s3_src: "s3://nextstrain-ncov-private"
+s3_dst: "s3://nextstrain-ncov-private/branch/subsample"
+
+keep_all_files: True
+fetch_from_database: false
+trigger_rebuild: false
+trigger_counts: false
+
+# Use --nt flag to keep all temp files as snakemake 
+keep_temp: true
+
+# How many lines to extract from s3 fetch
+subsample:
+  main_ndjson: 1000
+  nextclade: 1000

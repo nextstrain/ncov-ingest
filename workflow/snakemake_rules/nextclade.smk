@@ -166,6 +166,8 @@ rule combine_alignments:
         new_alignment = f"data/{database}/nextclade.aligned.upd.fasta"
     output:
         alignment = f"data/{database}/aligned.fasta"
+    params:
+        keep_temp=config.get("keep_temp","false")
     shell:
         """
         if [[ -s {input.old_alignment} ]]; then
@@ -175,6 +177,8 @@ rule combine_alignments:
                 mv {input.old_alignment} {output.alignment}
             fi
             cat {input.new_alignment} >> {output.alignment}
+        elif [[ "{params.keep_temp}" == "True" ]]; then
+            cp {input.new_alignment} {output.alignment}
         else
             mv {input.new_alignment} {output.alignment}
         fi
