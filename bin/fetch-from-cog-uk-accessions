@@ -3,4 +3,5 @@ set -euo pipefail
 
 curl "https://cog-uk.s3.climb.ac.uk/accessions/latest.tsv" \
     --fail --silent --show-error --http1.1 \
-    --header 'User-Agent: https://github.com/nextstrain/ncov-ingest (hello@nextstrain.org)'
+    --header 'User-Agent: https://github.com/nextstrain/ncov-ingest (hello@nextstrain.org)' | \
+dos2unix
