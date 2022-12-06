@@ -62,9 +62,11 @@ def main(
 
     # Output merged sequences
     with xopen(output_sequences, "wt") as sequences_out:
+        output_ids = set()
         for input_path in [input_genbank_sequences, input_rki_sequences]:
             for record in SeqIO.parse(xopen(input_path, "r"), "fasta"):
-                if record.id in open.index:
+                if record.id in open.index and record.id not in output_ids:
+                    output_ids.add(record.id)
                     sequences_out.write(f">{record.id}\n")
                     sequences_out.write(f"{str(record.seq)}\n")
 
