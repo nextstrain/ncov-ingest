@@ -76,7 +76,6 @@ rule transform_genbank_data:
 
 rule merge_open_data:
     input:
-        biosample="data/genbank/biosample.tsv",
         genbank_metadata="data/genbank_metadata_transformed.tsv",
         rki_metadata="data/rki_metadata_transformed.tsv",
         rki_sequences="data/rki_sequences.fasta",
@@ -87,7 +86,6 @@ rule merge_open_data:
     shell:
         """
         ./bin/merge-open \
-            --input-genbank-biosample {input.biosample} \
             --input-genbank-metadata {input.genbank_metadata} \
             --input-rki-metadata {input.rki_metadata} \
             --input-genbank-sequences {input.genbank_sequences} \

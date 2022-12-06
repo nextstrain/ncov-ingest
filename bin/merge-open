@@ -10,7 +10,6 @@ def main(
     input_rki_sequences: str = typer.Option(...),
     input_rki_metadata: str = typer.Option(...),
     input_genbank_sequences: str = typer.Option(...),
-    input_genbank_biosample: str = typer.Option(...),
     input_genbank_metadata: str = typer.Option(...),
     output_sequences: str = typer.Option(...),
     output_metadata: str = typer.Option(...),
@@ -28,30 +27,20 @@ def main(
             fin, index_col="strain", low_memory=True, sep="\t"
         )
 
-    with xopen(input_genbank_biosample, "r") as fin:
-        biosample = pd.read_csv(
-            fin, index_col="biosample_accession", low_memory=False, sep="\t"
-        )
-
-    # Get biosample accessions that are in genbank metadata
-    biosample_accessions = genbank["biosample_accession"].dropna().tolist()
+    # Add source database column to metadata
+    genbank.loc[:, "database"] = "genbank"
+    rki.loc[:, "database"] = "rki"
 
     # Get internal_ids from the biosample accessions that are in genbank metadata
-    internal_ids = biosample[
-        biosample.index.isin(biosample_accessions)
-    ]["internal_id"].dropna()
+    internal_ids = genbank["internal_id"].dropna()
 
     # Select rki rows that are not in the genbank internal_ids -> not already in Genbank
     new_rki = rki[~rki.index.isin(internal_ids)]
     print(f"All RKI sequences: {len(rki)}, already in Genbank and hence removed: {len(rki) - len(new_rki)}")
 
-    # Add source database column to metadata
-    genbank.loc[:, "database"] = "genbank"
-    new_rki.loc[:, "database"] = "rki"
-
     # Create new merged open data dataframe
     open = pd.concat(
-        [genbank.drop("biosample_accession", axis=1), new_rki],
+        [genbank.drop("internal_id", axis=1), new_rki],
         ignore_index=False,
         sort=False,
     )
