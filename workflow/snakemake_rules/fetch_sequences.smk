@@ -85,6 +85,14 @@ rule fetch_cog_uk_metadata:
             f"rm {output.cog_uk_metadata}"
         )
 
+rule uncompress_cog_uk_metadata:
+    input:
+        "data/cog_uk_metadata.csv.gz"
+    output:
+        cog_uk_metadata = temp("data/cog_uk_metadata.csv")
+    shell:
+        "gunzip -c {input} > {output}"
+
 # Only include rules to fetch from S3 if S3 config params are provided
 if config.get("s3_dst") and config.get("s3_src"):
 
@@ -94,9 +102,15 @@ if config.get("s3_dst") and config.get("s3_src"):
     if config.get("fetch_from_database", False):
         ruleorder: fetch_main_ndjson > fetch_main_ndjson_from_s3
         ruleorder: fetch_biosample > fetch_biosample_from_s3
+        ruleorder: fetch_cog_uk_accessions > fetch_cog_uk_accessions_from_s3
+        ruleorder: fetch_cog_uk_metadata > compress_cog_uk_metadata
+        ruleorder: uncompress_cog_uk_metadata > fetch_cog_uk_metadata_from_s3
     else:
         ruleorder: fetch_main_ndjson_from_s3 > fetch_main_ndjson
-        ruleorder:  fetch_biosample_from_s3 > fetch_biosample
+        ruleorder: fetch_biosample_from_s3 > fetch_biosample
+        ruleorder: fetch_cog_uk_accessions_from_s3 > fetch_cog_uk_accessions
+        ruleorder: fetch_cog_uk_metadata_from_s3 > uncompress_cog_uk_metadata
+        ruleorder: compress_cog_uk_metadata > fetch_cog_uk_metadata
 
     rule fetch_main_ndjson_from_s3:
         message:
@@ -104,12 +118,13 @@ if config.get("s3_dst") and config.get("s3_src"):
         params:
             file_on_s3_dst=f"{config['s3_dst']}/{database}.ndjson.zst",
             file_on_s3_src=f"{config['s3_src']}/{database}.ndjson.zst",
+            lines = config.get("subsample",{}).get("main_ndjson", 0)
         output:
             ndjson = temp(f"data/{database}.ndjson")
         shell:
             """
-            ./bin/download-from-s3 {params.file_on_s3_dst} {output.ndjson} ||  \
-            ./bin/download-from-s3 {params.file_on_s3_src} {output.ndjson}
+            ./bin/download-from-s3 {params.file_on_s3_dst} {output.ndjson} {params.lines} ||  \
+            ./bin/download-from-s3 {params.file_on_s3_src} {output.ndjson} {params.lines}
             """
 
     rule fetch_biosample_from_s3:
@@ -118,10 +133,45 @@ if config.get("s3_dst") and config.get("s3_src"):
         params:
             file_on_s3_dst=f"{config['s3_dst']}/biosample.ndjson.zst",
             file_on_s3_src=f"{config['s3_src']}/biosample.ndjson.zst",
+            lines = config.get("subsample",{}).get("biosample", 0)
         output:
             biosample = temp("data/biosample.ndjson")
         shell:
             """
-            ./bin/download-from-s3 {params.file_on_s3_dst} {output.biosample} ||  \
-            ./bin/download-from-s3 {params.file_on_s3_src} {output.biosample}
+            ./bin/download-from-s3 {params.file_on_s3_dst} {output.biosample} {params.lines} ||  \
+            ./bin/download-from-s3 {params.file_on_s3_src} {output.biosample} {params.lines}
             """
+
+    rule fetch_cog_uk_accessions_from_s3:
+        params:
+            file_on_s3_dst=f"{config['s3_dst']}/cog_uk_accessions.tsv",
+            file_on_s3_src=f"{config['s3_src']}/cog_uk_accessions.tsv",
+            lines = config.get("subsample",{}).get("cog_uk_accessions", 0)
+        output:
+            biosample = "data/cog_uk_accessions.tsv" if config.get("keep_temp",False) else temp("data/cog_uk_accessions.tsv")
+        shell:
+            """
+            ./bin/download-from-s3 {params.file_on_s3_dst} {output.biosample} {params.lines} ||  \
+            ./bin/download-from-s3 {params.file_on_s3_src} {output.biosample} {params.lines}
+            """
+
+    rule fetch_cog_uk_metadata_from_s3:
+        params:
+            file_on_s3_dst=f"{config['s3_dst']}/cog_uk_metadata.csv.gz",
+            file_on_s3_src=f"{config['s3_src']}/cog_uk_metadata.csv.gz",
+            lines = config.get("subsample",{}).get("cog_uk_metadata", 0)
+        output:
+            biosample = temp("data/cog_uk_metadata.csv")
+        shell:
+            """
+            ./bin/download-from-s3 {params.file_on_s3_dst} {output.biosample} {params.lines} ||  \
+            ./bin/download-from-s3 {params.file_on_s3_src} {output.biosample} {params.lines}
+            """
+    
+    rule compress_cog_uk_metadata:
+        input:
+            "data/cog_uk_metadata.csv"
+        output:
+            cog_uk_metadata = "data/cog_uk_metadata.csv.gz" if config.get("keep_temp",False) else temp("data/cog_uk_metadata.csv.gz")
+        shell:
+            "gzip -c {input} > {output}"

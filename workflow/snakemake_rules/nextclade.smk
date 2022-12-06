@@ -45,12 +45,13 @@ if config.get("s3_dst") and config.get("s3_src"):
         params:
             dst_source=config["s3_dst"] + "/nextclade.tsv.zst",
             src_source=config["s3_src"] + "/nextclade.tsv.zst",
+            lines=config.get("subsample",{}).get("nextclade", 0),
         output:
             nextclade = f"data/{database}/nextclade_old.tsv"
         shell:
             """
-            ./bin/download-from-s3 {params.dst_source} {output.nextclade} ||  \
-            ./bin/download-from-s3 {params.src_source} {output.nextclade}
+            ./bin/download-from-s3 {params.dst_source} {output.nextclade} {params.lines} ||  \
+            ./bin/download-from-s3 {params.src_source} {output.nextclade} {params.lines}
             """
 
     rule download_previous_alignment:
@@ -60,12 +61,13 @@ if config.get("s3_dst") and config.get("s3_src"):
         params:
             dst_source=config["s3_dst"] + "/aligned.fasta.zst",
             src_source=config["s3_src"] + "/aligned.fasta.zst",
+            lines=config.get("subsample",{}).get("nextclade", 0),
         output:
             alignment = temp(f"data/{database}/nextclade.aligned.old.fasta")
         shell:
             """
-            ./bin/download-from-s3 {params.dst_source} {output.alignment} ||  \
-            ./bin/download-from-s3 {params.src_source} {output.alignment}
+            ./bin/download-from-s3 {params.dst_source} {output.alignment} {params.lines} ||  \
+            ./bin/download-from-s3 {params.src_source} {output.alignment} {params.lines}
             """
 
 
@@ -164,11 +166,19 @@ rule combine_alignments:
         new_alignment = f"data/{database}/nextclade.aligned.upd.fasta"
     output:
         alignment = f"data/{database}/aligned.fasta"
+    params:
+        keep_temp=config.get("keep_temp","false")
     shell:
         """
         if [[ -s {input.old_alignment} ]]; then
-            mv {input.old_alignment} {output.alignment}
+            if [[ "{params.keep_temp}" == "True" ]]; then
+                cp {input.old_alignment} {output.alignment}
+            else
+                mv {input.old_alignment} {output.alignment}
+            fi
             cat {input.new_alignment} >> {output.alignment}
+        elif [[ "{params.keep_temp}" == "True" ]]; then
+            cp {input.new_alignment} {output.alignment}
         else
             mv {input.new_alignment} {output.alignment}
         fi

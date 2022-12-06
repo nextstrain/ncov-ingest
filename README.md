@@ -7,6 +7,17 @@ Relies on data from <https://simplemaps.com/data/us-cities>.
 
 > NOTE: The full set of sequences from GISAID/GenBank will most likely require more compute resources than what is available on your local computer.
 
+To debug all rules on a subset of the data, you can use the `config/debug_sample_genbank.yaml` and `config/debug_sample_gisaid.yaml` config files.
+These will download raw data from AWS s3, randomly keeping only a subset of lines of the input files (configurable in the config file).
+This way, the pipeline completes in a matter of minutes and acceptable storage requirements for local compute.
+However, the output data should not be trusted, as biosample and cog-uk input lines are randomly selected independently of the main ndjson.
+
+To get started, you can run the following:
+
+```sh
+snakemake -j all --configfile config/debug_sample_genbank.yaml  -pF --ri --nt
+```
+
 > **Warning**
 > If you are running the pipeline without a Nextclade cache, it will do a full Nextclade run that aligns _all_ sequences,
 > which will take significant time and resources!
