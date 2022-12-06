@@ -86,6 +86,14 @@ rule fetch_cog_uk_metadata:
             f"rm {output.cog_uk_metadata}"
         )
 
+rule uncompress_cog_uk_metadata:
+    input:
+        "data/cog_uk_metadata.csv.gz"
+    output:
+        cog_uk_metadata = temp("data/cog_uk_metadata.csv")
+    shell:
+        "gunzip -c {input} > {output}"
+
 
 rule fetch_rki_sequences:
     output:
@@ -147,14 +155,11 @@ if config.get("s3_dst") and config.get("s3_src"):
         ruleorder: fetch_main_ndjson > fetch_main_ndjson_from_s3
         ruleorder: fetch_biosample > fetch_biosample_from_s3
         ruleorder: transform_rki_data_to_ndjson > fetch_rki_ndjson_from_s3
-    else:
-        ruleorder: fetch_main_ndjson_from_s3 > fetch_main_ndjson
-        ruleorder: fetch_biosample_from_s3 > fetch_biosample
-        ruleorder: fetch_rki_ndjson_from_s3 > transform_rki_data_to_ndjson 
         ruleorder: fetch_cog_uk_accessions > fetch_cog_uk_accessions_from_s3
         ruleorder: fetch_cog_uk_metadata > compress_cog_uk_metadata
         ruleorder: uncompress_cog_uk_metadata > fetch_cog_uk_metadata_from_s3
     else:
+        ruleorder: fetch_rki_ndjson_from_s3 > transform_rki_data_to_ndjson 
         ruleorder: fetch_main_ndjson_from_s3 > fetch_main_ndjson
         ruleorder: fetch_biosample_from_s3 > fetch_biosample
         ruleorder: fetch_cog_uk_accessions_from_s3 > fetch_cog_uk_accessions
