@@ -58,6 +58,12 @@ def compute_files_to_upload():
             files_to_upload.update({
                 "biosample.ndjson.gz": f"data/biosample.ndjson",
                 "biosample.ndjson.zst": f"data/biosample.ndjson",
+
+                "cog_uk_accessions.tsv.gz": f"data/cog_uk_accessions.tsv",
+                "cog_uk_accessions.tsv.zst": f"data/cog_uk_accessions.tsv",
+
+                "cog_uk_metadata.csv.gz": f"data/cog_uk_metadata.csv",
+                "cog_uk_metadata.csv.zst": f"data/cog_uk_metadata.csv",
             })
     return files_to_upload
 
