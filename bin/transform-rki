@@ -24,7 +24,6 @@ from lib.utils.transformpipeline.transforms import (AddHardcodedMetadataRki,
                                                     MaskBadCollectionDate,
                                                     MergeUserAnnotatedMetadata,
                                                     RenameAndAddColumns,
-                                                    RkiZipToGeography,
                                                     SetStrainNameRki,
                                                     StandardizeDataRki,
                                                     UserProvidedAnnotations)
@@ -134,7 +133,6 @@ if __name__ == "__main__":
                 )
 
     with xopen(args.rki_data, "r") as rki_fh:
-        # with tqdm() as pbar:
         pipeline = (
             LineToJsonDataSource(rki_fh)
             | RenameAndAddColumns(column_map=COLUMN_MAP)
@@ -149,7 +147,6 @@ if __name__ == "__main__":
             | AddHardcodedMetadataRki()
             | MaskBadCollectionDate()
             | SetStrainNameRki()
-            | RkiZipToGeography()
             | MergeUserAnnotatedMetadata(annotations, idKey="rki_accession")
             | FillDefaultLocationData()
         )

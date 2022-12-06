@@ -676,60 +676,6 @@ class ParseGeographicColumnsGenbank(Transformer):
 
         return entry
 
-class RkiZipToGeography(Transformer):
-    """
-    Turns German zip code in the column named `postcode_sending`
-    into division and location using a mapping file
-    of known German zip codes
-    """
-    # def __init__(self, us_state_code_file_name ):
-    #     # Create dict of US state codes and their full names
-    #     self.us_states = pd.read_csv( us_state_code_file_name , header=None, sep='\t', comment="#")
-    #     self.us_states = dict(zip(self.us_states[0], self.us_states[1]))
-
-
-    def transform_value(self, entry : dict) -> dict :
-
-        # geographic_data = entry['location'].split(':')
-
-        # country = geographic_data[0].strip()
-        division = '?'
-        location = '?'
-
-        # if len(geographic_data) == 2 :
-        #     division , j , location = geographic_data[1].partition(',')
-
-        # elif len(geographic_data) > 2:
-        #     assert False, f"Found unknown format for geographic data: {value}"
-
-
-        # # Special parsing for US locations because the format varies
-        # if country == 'USA' and division:
-        #     # Switch location & division if location is a US state
-        #     if location and any(location.strip() in s for s in self.us_states.items()):
-        #         state = location
-        #         location = division
-        #         division = state
-        #     # Convert US state codes to full names
-        #     if self.us_states.get(division.strip().upper()):
-        #         division = self.us_states[division.strip().upper()]
-
-
-        # location = location.strip().lower().title() if location else ''
-        # division = division.strip().lower().title() if division else ''
-
-        # # fix German divisions
-        # for stripstr in ['Europe/', 'Germany/']:
-        #     if division.startswith(stripstr):
-        #         division = division[len(stripstr):]
-
-        # #print(entry , '->' , geographic_data , country, division, location)
-        # entry['country']     = country
-        entry['division']    = division
-        entry['location']    = location
-
-        return entry
-
 
 class AddHardcodedMetadataGenbank(Transformer):
     """
@@ -775,6 +721,8 @@ class AddHardcodedMetadataRki(Transformer):
         entry['url']               = "?"
         entry['region']            = "Europe"
         entry['country']           = "Germany"
+        entry['division']          = "?"
+        entry['location']          = "?"
         return entry
 
 class Tracker(Transformer):

@@ -20,31 +20,32 @@ def main(
     from Bio import SeqIO
 
     with xopen(input_rki_metadata, "r") as fin:
-        metadata = pd.read_csv(fin, low_memory=False, index_col="IMS_ID")
-        # Yes there are duplicate lines
+        metadata = pd.read_csv(fin, low_memory=False, dtype=str, na_values="NaN", index_col="IMS_ID")
+        # Yes there are duplicate lines, TODO: check if duplicates are identical or not
         metadata = metadata[~metadata.index.duplicated(keep='first')]
 
     with xopen(input_rki_lineages, "r") as fin:
-        lineages = pd.read_csv(fin, low_memory=False, index_col="IMS_ID").fillna("?")
-
+        # Not all IMS_IDs are in the lineages file!
+        # We only read in the pango lineage (probably Usher), not confidence etc.
+        lineages = pd.read_csv(fin, usecols=["IMS_ID", "lineage"], dtype=str, na_values="NaN", index_col="IMS_ID").fillna("?")
+    
     metadata = pd.merge(
         metadata,
         lineages["lineage"],
         how="left",
         left_index=True,
         right_index=True,
-    )
+    ).fillna("?")
 
     with xopen(output_ndjson, "w") as fout:
         for record in SeqIO.parse(xopen(input_rki_sequences), "fasta"):
-            output = {
-                "rki_accession": record.id,
-                **metadata.loc[record.id].to_dict(),
-                "sequence": str(record.seq),
-            }
-            # if type(output["lineage"]) == dict:
-            #     import ipdb; ipdb.set_trace()
-            fout.write(json.dumps(output) + "\n")
+            if record.id in metadata.index:
+                output = {
+                    "rki_accession": record.id,
+                    **metadata.loc[record.id].to_dict(),
+                    "sequence": str(record.seq),
+                }
+                fout.write(json.dumps(output) + "\n")
 
 
 if __name__ == "__main__":

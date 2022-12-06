@@ -25,7 +25,7 @@ def main(
 
     with xopen(input_genbank_metadata, "r") as fin:
         genbank = pd.read_csv(
-            fin, index_col="strain", low_memory=False, sep="\t"
+            fin, index_col="strain", low_memory=True, sep="\t"
         )
 
     with xopen(input_genbank_biosample, "r") as fin:
