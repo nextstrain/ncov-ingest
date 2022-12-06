@@ -22,10 +22,6 @@ all_targets = [f"data/{database}/metadata.tsv", f"data/{database}/sequences.fast
 if config.get("s3_dst"):
     all_targets.append(f"data/{database}/upload.done")
 
-    # Include upload of raw NDJSON if we are fetching new sequences from database
-    if config.get("fetch_from_database", False):
-        all_targets.append(f"data/{database}/raw.upload.done")
-
     # Only check for trigger config if `s3_dst` is provided because we only
     # want to trigger builds if we've uploaded the output files to S3.
     if config.get("trigger_rebuild", False):

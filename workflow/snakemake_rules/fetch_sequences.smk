@@ -144,8 +144,8 @@ if config.get("s3_dst") and config.get("s3_src"):
 
     rule fetch_cog_uk_accessions_from_s3:
         params:
-            file_on_s3_dst=f"{config['s3_dst']}/cog_uk_accessions.tsv",
-            file_on_s3_src=f"{config['s3_src']}/cog_uk_accessions.tsv",
+            file_on_s3_dst=f"{config['s3_dst']}/cog_uk_accessions.tsv.zst",
+            file_on_s3_src=f"{config['s3_src']}/cog_uk_accessions.tsv.zst",
             lines = config.get("subsample",{}).get("cog_uk_accessions", 0)
         output:
             biosample = "data/cog_uk_accessions.tsv" if config.get("keep_temp",False) else temp("data/cog_uk_accessions.tsv")
@@ -157,8 +157,8 @@ if config.get("s3_dst") and config.get("s3_src"):
 
     rule fetch_cog_uk_metadata_from_s3:
         params:
-            file_on_s3_dst=f"{config['s3_dst']}/cog_uk_metadata.csv.gz",
-            file_on_s3_src=f"{config['s3_src']}/cog_uk_metadata.csv.gz",
+            file_on_s3_dst=f"{config['s3_dst']}/cog_uk_metadata.csv.zst",
+            file_on_s3_src=f"{config['s3_src']}/cog_uk_metadata.csv.zst",
             lines = config.get("subsample",{}).get("cog_uk_metadata", 0)
         output:
             biosample = temp("data/cog_uk_metadata.csv")
