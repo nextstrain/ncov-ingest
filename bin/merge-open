@@ -43,6 +43,7 @@ def main(
 
     # Select rki rows that are not in the genbank internal_ids -> not already in Genbank
     new_rki = rki[~rki.index.isin(internal_ids)]
+    print(f"All RKI sequences: {len(rki)}, already in Genbank and hence removed: {len(rki) - len(new_rki)}")
 
     # Add source database column to metadata
     genbank.loc[:, "database"] = "genbank"
