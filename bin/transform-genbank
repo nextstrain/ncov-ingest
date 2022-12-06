@@ -42,6 +42,10 @@ from utils.transformpipeline.transforms import (
 
 assert 'sequence' not in METADATA_COLUMNS, "Sequences should not appear in metadata!"
 
+# Include `internal_id` for RKI deduplication
+# This column is removed in merge-open
+METADATA_COLUMNS.append('internal_id')
+
 
 if __name__ == '__main__':
     base = Path(__file__).resolve().parent.parent

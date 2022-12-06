@@ -23,6 +23,7 @@ BIOSAMPLE_COLUMNS = [
     'location',
     'age',
     'sex',
+    'internal_id',
 ]
 
 

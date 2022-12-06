@@ -1,0 +1,212 @@
+#!/usr/bin/env python3
+"""
+Parse RKI NDJSON, turn into metadata.tsv and a sequences.fasta file
+"""
+import argparse
+import csv
+import os
+import sys
+from pathlib import Path
+
+from xopen import xopen
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
+sys.path.insert(0, str(Path(__file__).parent.parent) + "/lib")
+
+from lib.utils.transform import METADATA_COLUMNS
+from lib.utils.transformpipeline import LINE_NUMBER_KEY
+from lib.utils.transformpipeline.datasource import LineToJsonDataSource
+from lib.utils.transformpipeline.filters import (LineNumberFilter,
+                                                 SequenceLengthFilter)
+from lib.utils.transformpipeline.transforms import (AddHardcodedMetadataRki,
+                                                    DropSequenceData,
+                                                    FillDefaultLocationData,
+                                                    MaskBadCollectionDate,
+                                                    MergeUserAnnotatedMetadata,
+                                                    RenameAndAddColumns,
+                                                    SetStrainNameRki,
+                                                    StandardizeDataRki,
+                                                    UserProvidedAnnotations)
+
+COLUMN_MAP = {
+    "DATE_DRAW": "date",
+    "RECEIVE_DATE": "date_submitted",
+    "PROCESSING_DATE": "date_released",
+    "SENDING_LAB_PC": "originating_lab",
+    "SEQUENCING_LAB_PC": "submitting_lab",
+    "GISAID_ACCESSION": "strain_gisaid",
+    "lineage": "pango_lineage",
+    "SEQ_REASON": "sampling_strategy",
+}
+
+
+assert (
+    "sequence" not in METADATA_COLUMNS
+), "Sequences should not appear in metadata!"
+
+
+if __name__ == "__main__":
+    base = Path(__file__).resolve().parent.parent
+
+    parser = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawTextHelpFormatter
+    )
+    parser.add_argument(
+        "rki_data",
+        default="s3://nextstrain-data/files/ncov/open/rki.ndjson.zst",
+        nargs="?",
+        help="Newline-delimited RKI JSON data",
+    )
+    parser.add_argument(
+        "--annotations",
+        default=base / "source-data/rki_annotations.tsv",
+        help="Optional manually curated annotations TSV.\n"
+        "The TSV file should have no header and exactly three columns which contain:\n\t"
+        "1. the RKI accession ID \n\t"
+        "2. the column name to replace from the generated `metadata.tsv` file\n\t"
+        "3. the replacement data\n"
+        "Lines or parts of lines starting with '#' are treated as comments.\n"
+        "e.g.\n\t"
+        "MT039888	location    Boston\n\t"
+        "# First Californian sample\n\t"
+        "MN994467	country_exposure	China\n\t"
+        "MN908947	collection_date 2019-12-26 # Manually corrected date",
+    )
+    parser.add_argument(
+        "--accessions",
+        default=base / "source-data/rki_accessions.tsv",
+        help="Optional manually curated TSV cross-referencing accessions between databases (e.g. GISAID and GenBank/INSDC).",
+    )
+    parser.add_argument(
+        "--output-metadata",
+        default=base / "data/rki/metadata.tsv",
+        help="Output location of generated metadata tsv. Defaults to `data/rki/metadata.tsv`",
+    )
+    parser.add_argument(
+        "--output-fasta",
+        default=base / "data/rki/sequences.fasta",
+        help="Output location of generated FASTA file. Defaults to `data/rki/sequences.fasta`",
+    )
+    parser.add_argument(
+        "--problem-data",
+        default=base / "data/rki/problem_data.tsv",
+        help="Output location of generated tsv of problem records missing geography region or country",
+    )
+    parser.add_argument(
+        "--output-unix-newline",
+        dest="newline",
+        action="store_const",
+        const="\n",
+        default=os.linesep,
+        help="When specified, always use unix newlines in output files.",
+    )
+    args = parser.parse_args()
+
+    # parsing curated annotations
+    annotations = UserProvidedAnnotations()
+    if args.annotations:
+        # Use the curated annotations tsv to update any column values
+        with open(args.annotations, "r") as gisaid_fh:
+            try:
+                csvreader = csv.reader(gisaid_fh, delimiter="\t")
+
+                for row in csvreader:
+                    if row[0].lstrip()[0] == "#":
+                        continue
+                    elif len(row) != 3:
+                        print(
+                            "WARNING: couldn't decode annotation line "
+                            + "\t".join(row)
+                        )
+                        continue
+                    strainId, key, value = row
+                    annotations.add_user_annotation(
+                        strainId,
+                        key,
+                        # remove the comment and the extra ws from the value
+                        value.split("#")[0].rstrip(),
+                    )
+            except:
+                print(
+                    "WARNING: couldn't parse annotations file "
+                    + args.annotations
+                )
+
+    with xopen(args.rki_data, "r") as rki_fh:
+        pipeline = (
+            LineToJsonDataSource(rki_fh)
+            | RenameAndAddColumns(column_map=COLUMN_MAP)
+            | StandardizeDataRki()
+            | SequenceLengthFilter(15000)
+        )
+
+        pipeline = pipeline | DropSequenceData()
+
+        pipeline = (
+            pipeline
+            | AddHardcodedMetadataRki()
+            | MaskBadCollectionDate()
+            | SetStrainNameRki()
+            | MergeUserAnnotatedMetadata(annotations, idKey="rki_accession")
+            | FillDefaultLocationData()
+        )
+
+        sorted_metadata = sorted(
+            pipeline,
+            key=lambda obj: (
+                obj["strain"],
+                -obj["length"],
+                obj["rki_accession"],
+                obj[LINE_NUMBER_KEY],
+            ),
+        )
+
+    # this should be moved further down
+    # dedup by strain and compile a list of relevant line numbers.
+    seen_strains = set()
+    line_numbers = set()
+    updated_strain_names_by_line_no = {}
+
+    for entry in sorted_metadata:
+
+        if entry["strain"] in seen_strains:
+            continue
+
+        seen_strains.add(entry["strain"])
+        line_numbers.add(entry[LINE_NUMBER_KEY])
+        updated_strain_names_by_line_no[entry[LINE_NUMBER_KEY]] = entry[
+            "strain"
+        ]
+
+    with xopen(args.output_metadata, "wt") as metadata_OUT:
+        dict_writer_kwargs = {"lineterminator": args.newline}
+
+        metadata_csv = csv.DictWriter(
+            metadata_OUT,
+            METADATA_COLUMNS,
+            restval="",
+            extrasaction="ignore",
+            delimiter="\t",
+            **dict_writer_kwargs,
+        )
+        metadata_csv.writeheader()
+
+        for entry in sorted_metadata:
+            if entry[LINE_NUMBER_KEY] in line_numbers:
+                metadata_csv.writerow(entry)
+
+    with xopen(args.rki_data, "r") as genbank_IN, xopen(
+        args.output_fasta, "wt", newline=args.newline
+    ) as fasta_OUT:
+        for entry in (
+            LineToJsonDataSource(genbank_IN)
+            | RenameAndAddColumns(column_map=COLUMN_MAP)
+            | StandardizeDataRki()
+            | SetStrainNameRki()
+            | LineNumberFilter(line_numbers)
+        ):
+            strain_name = updated_strain_names_by_line_no[
+                entry[LINE_NUMBER_KEY]
+            ]
+            print(">", strain_name, sep="", file=fasta_OUT)
+            print(entry["sequence"], file=fasta_OUT)

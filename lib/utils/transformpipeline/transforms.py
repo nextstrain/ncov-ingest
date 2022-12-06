@@ -236,7 +236,7 @@ class StandardizeData(Transformer):
     1. Removes newlines from the sequence and measures its length.
     2. Strip whitespace and convert to Unicode Normalization Form C for all strings.
     3. Standardize date formats.
-    4. Abbreviate and remove whitespace from strain names3
+    4. Abbreviate and remove whitespace from strain names
     5. Add a line number.
     """
 
@@ -265,6 +265,42 @@ class StandardizeData(Transformer):
         # Abbreviate strain names by removing the prefix. Strip spaces, too.
         entry['strain'] = re.sub(
             r'(^[hn]CoV-19/)|\s+', '', entry['strain'], flags=re.IGNORECASE)
+
+        entry[LINE_NUMBER_KEY] = self.line_count
+        self.line_count += 1
+
+        return entry
+
+class StandardizeDataRki(Transformer):
+    """This transformer standardizes the data format:
+
+    1. Removes newlines from the sequence and measures its length.
+    2. Strip whitespace and convert to Unicode Normalization Form C for all strings.
+    3. Standardize date formats.
+    4. Add a line number.
+    """
+
+    def __init__(self):
+        self.line_count = 1
+
+    def transform_value(self, entry: dict) -> dict:
+        entry['sequence'] = entry['sequence'].replace('\n', '')
+        entry['length'] = len(entry['sequence'])
+
+        # Normalize all string data to Unicode Normalization Form C, for
+        # consistent, predictable string comparisons.
+        str_kvs = {
+            key: unicodedata.normalize('NFC', value).strip()
+            for key, value in entry.items()
+            if isinstance(value, str)
+        }
+        entry.update(str_kvs)
+
+        # Standardize date format to ISO 8601 date
+        date_columns = {'date', 'date_submitted'}
+        date_formats = {'%Y-%m-%d', '%Y-%m-%dT%H:%M:%SZ'}
+        for column in date_columns:
+            entry[column] = format_date(entry[column], date_formats)
 
         entry[LINE_NUMBER_KEY] = self.line_count
         self.line_count += 1
@@ -571,6 +607,15 @@ class StandardizeGenbankStrainNames(Transformer):
 
         return entry
 
+class SetStrainNameRki(Transformer):
+    """
+    Set the strain name to the value of the `rki_strain_name` field if it is not
+    empty.
+    """
+    def transform_value(self, entry: dict) -> dict:
+        entry['strain'] = entry['rki_accession']
+        return entry
+
 class ParseGeographicColumnsGenbank(Transformer):
     """
     Expands string found in the column named `location` in the given
@@ -631,6 +676,7 @@ class ParseGeographicColumnsGenbank(Transformer):
 
         return entry
 
+
 class AddHardcodedMetadataGenbank(Transformer):
     """
     Adds a key-value for strain ID plus additional key-values containing harcoded
@@ -652,6 +698,32 @@ class AddHardcodedMetadataGenbank(Transformer):
         entry['url'] = "https://www.ncbi.nlm.nih.gov/nuccore/" + entry['genbank_accession']
         return entry
 
+class AddHardcodedMetadataRki(Transformer):
+    """
+    Adds a key-value for strain ID plus additional key-values containing harcoded
+    metadata.
+    """
+    def transform_value(self, entry: dict) -> dict:
+        entry['strain']            = '?'
+        entry['virus']             = 'ncov'
+        entry['gisaid_epi_isl']    = '?'
+        entry['genbank_accession'] = '?'
+        entry['sra_accession']     = '?'
+        entry['segment']           = 'genome'
+        entry['age']               = '?'
+        entry['sex']               = '?'
+        entry['host']              = '?'
+        entry['authors']           = '?'
+        entry['GISAID_clade']      = '?'
+        entry['originating_lab']   = '?'
+        entry['submitting_lab']    = '?'
+        entry['paper_url']         = '?'
+        entry['url']               = "?"
+        entry['region']            = "Europe"
+        entry['country']           = "Germany"
+        entry['division']          = "?"
+        entry['location']          = "?"
+        return entry
 
 class Tracker(Transformer):
     """
@@ -843,6 +915,7 @@ class ParseBiosample(Transformer):
         new_entry['age'] = attributes.get('host_age')
         new_entry['sex'] = attributes.get('host_sex')
         new_entry['date'] = attributes.get('collection_date')
+        new_entry['internal_id'] = attributes.get('sample_name')
 
         new_entry['location'] = self.parse_location({ attr: attributes.get(attr) for attr in ParseBiosample.LOCATION_ATTR })
 

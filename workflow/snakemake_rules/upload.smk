@@ -59,6 +59,8 @@ def compute_files_to_upload():
                 "biosample.ndjson.gz": f"data/biosample.ndjson",
                 "biosample.ndjson.zst": f"data/biosample.ndjson",
 
+                "rki.ndjson.zst": f"data/rki.ndjson",
+
                 "cog_uk_accessions.tsv.gz": f"data/cog_uk_accessions.tsv",
                 "cog_uk_accessions.tsv.zst": f"data/cog_uk_accessions.tsv",
 

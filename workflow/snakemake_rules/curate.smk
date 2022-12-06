@@ -22,6 +22,24 @@ Produces different output files for GISAID vs GenBank:
         duplicate_biosample = "data/genbank/duplicate_biosample.txt"
 """
 
+
+rule transform_rki_data:
+    input:
+        ndjson="data/rki.ndjson",
+    output:
+        fasta="data/rki_sequences.fasta",
+        metadata="data/rki_metadata_transformed.tsv",
+    params:
+        subsampled=config.get("subsampled", False),
+    shell:
+        """
+        ./bin/transform-rki \
+            {input.ndjson} \
+            --output-fasta {output.fasta} \
+            --output-metadata {output.metadata}
+        """
+
+
 rule transform_biosample:
     input:
         biosample = "data/biosample.ndjson"
@@ -40,8 +58,8 @@ rule transform_genbank_data:
         cog_uk_accessions = "data/cog_uk_accessions.tsv",
         cog_uk_metadata = "data/cog_uk_metadata.csv.gz"
     output:
-        fasta = "data/genbank/sequences.fasta",
-        metadata = "data/genbank/metadata_transformed.tsv",
+        fasta = "data/genbank_sequences.fasta",
+        metadata = "data/genbank_metadata_transformed.tsv",
         flagged_annotations = temp("data/genbank/flagged-annotations"),
         duplicate_biosample = "data/genbank/duplicate_biosample.txt"
     shell:
@@ -54,6 +72,28 @@ rule transform_genbank_data:
             --output-metadata {output.metadata} \
             --output-fasta {output.fasta} > {output.flagged_annotations}
         """
+
+
+rule merge_open_data:
+    input:
+        genbank_metadata="data/genbank_metadata_transformed.tsv",
+        rki_metadata="data/rki_metadata_transformed.tsv",
+        rki_sequences="data/rki_sequences.fasta",
+        genbank_sequences="data/genbank_sequences.fasta",
+    output:
+        metadata="data/genbank/metadata_transformed.tsv",
+        sequences="data/genbank/sequences.fasta",
+    shell:
+        """
+        ./bin/merge-open \
+            --input-genbank-metadata {input.genbank_metadata} \
+            --input-rki-metadata {input.rki_metadata} \
+            --input-genbank-sequences {input.genbank_sequences} \
+            --input-rki-sequences {input.rki_sequences} \
+            --output-metadata {output.metadata} \
+            --output-sequences {output.sequences}
+        """
+
 
 rule transform_gisaid_data:
     input:
