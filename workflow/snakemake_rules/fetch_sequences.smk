@@ -200,12 +200,13 @@ if config.get("s3_dst") and config.get("s3_src"):
         params:
             file_on_s3_dst=f"{config['s3_dst']}/rki.ndjson.zst",
             file_on_s3_src=f"{config['s3_src']}/rki.ndjson.zst",
+            lines = config.get("subsample",{}).get("rki_ndjson", 0)
         output:
             rki_ndjson = temp("data/rki.ndjson")
         shell:
             """
-            ./bin/download-from-s3 {params.file_on_s3_dst} {output.rki_ndjson} ||  \
-            ./bin/download-from-s3 {params.file_on_s3_src} {output.rki_ndjson}
+            ./bin/download-from-s3 {params.file_on_s3_dst} {output.rki_ndjson} {params.lines} ||  \
+            ./bin/download-from-s3 {params.file_on_s3_src} {output.rki_ndjson} {params.lines}
             """
     rule fetch_cog_uk_accessions_from_s3:
         params:
