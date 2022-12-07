@@ -33,22 +33,97 @@ def run_shell_command_n_times(cmd, msg, cleanup_failed_cmd, retry_num=5):
         print(msg + f" has FAILED {retry_num} times. Exiting.")
         raise Exception("function run_shell_command_n_times has failed")
 
-rule fetch_main_ndjson:
-    message:
-        """Fetching data using the database API"""
+rule fetch_main_gisaid_ndjson:
     output:
-        ndjson = temp(f"data/{database}.ndjson")
+        ndjson = temp(f"data/gisaid.ndjson")
     run:
-        if database == "gisaid":
-            cmd = f"./bin/fetch-from-gisaid {output.ndjson}"
-        else:
-            cmd = f"./bin/fetch-from-genbank > {output.ndjson}"
-
         run_shell_command_n_times(
-            cmd,
+            f"./bin/fetch-from-gisaid {output.ndjson}"
             f"Fetching from {database}",
             f"rm {output.ndjson}"
         )
+
+rule fetch_ncbi_dataset_package:
+    output:
+        dataset_package = temp("data/ncbi_dataset.zip")
+    run:
+        run_shell_command_n_times(
+            f"datasets download virus genome taxon SARS-CoV-2 --no-progressbar --filename {output.dataset_package}",
+            f"Fetching from {database} with NCBI Datasets",
+            f"rm -f {output.dataset_package}"
+        )
+
+rule extract_ncbi_dataset_sequences:
+    input:
+        dataset_package = "data/ncbi_dataset.zip"
+    output:
+        ncbi_dataset_sequences = temp("data/ncbi_dataset_sequences.fasta")
+    shell:
+        """
+        unzip -jp {input.dataset_package} \
+            ncbi_dataset/data/genomic.fna > {output.ncbi_dataset_sequences}
+        """
+
+def _get_ncbi_dataset_field_mnemonics(wildcard):
+    """
+    Return list of NCBI Dataset report field mnemonics for fields that we want
+    to parse out of the dataset report. The column names in the output TSV
+    are different from the mnemonics.
+
+    See NCBI Dataset docs for full list of available fields and their column
+    names in the output:
+    https://www.ncbi.nlm.nih.gov/datasets/docs/v2/reference-docs/command-line/dataformat/tsv/dataformat_tsv_virus-genome/#fields
+    """
+    fields = [
+        "accession",
+        "sourcedb",
+        "sra-accs",
+        "isolate-lineage",
+        "geo-region",
+        "geo-location",
+        "isolate-collection-date",
+        "release-date",
+        "update-date",
+        "virus-pangolin",
+        "length",
+        "host-common-name",
+        "isolate-lineage-source",
+        "biosample-acc",
+        "submitter-names",
+        "submitter-affiliation",
+        "submitter-country",
+    ]
+    return ",".join(fields)
+
+rule format_ncbi_dataset_report:
+    input:
+        dataset_package = "data/ncbi_dataset.zip"
+    output:
+        ncbi_dataset_tsv = temp("data/ncbi_dataset_report.tsv")
+    params:
+        fields_to_include = _get_ncbi_dataset_field_mnemonics
+    shell:
+        """
+        dataformat tsv virus-genome \
+            --package {input.dataset_package} \
+            --fields {params.fields_to_include} \
+            > {output.ncbi_dataset_tsv}
+        """
+
+rule create_genbank_ndjson:
+    input:
+        ncbi_dataset_sequences = "data/ncbi_dataset_sequences.fasta",
+        ncbi_dataset_tsv = "data/ncbi_dataset_report.tsv",
+    output:
+        ndjson = temp("data/genbank.ndjson")
+    shell:
+        """
+        augur curate passthru \
+            --metadata {input.ncbi_dataset_tsv} \
+            --fasta {input.ncbi_dataset_sequences} \
+            --seq-id-column Accession \
+            --seq-field sequence > {output.ndjson}
+        """
 
 rule fetch_biosample:
     message:
@@ -152,19 +227,21 @@ if config.get("s3_dst") and config.get("s3_src"):
     # Fetch directly from databases when `fetch_from_database=True`
     # or else fetch files from AWS S3 buckets
     if config.get("fetch_from_database", False):
-        ruleorder: fetch_main_ndjson > fetch_main_ndjson_from_s3
+        ruleorder: fetch_main_gisaid_ndjson > fetch_main_ndjson_from_s3
         ruleorder: fetch_biosample > fetch_biosample_from_s3
         ruleorder: transform_rki_data_to_ndjson > fetch_rki_ndjson_from_s3
         ruleorder: fetch_cog_uk_accessions > fetch_cog_uk_accessions_from_s3
         ruleorder: fetch_cog_uk_metadata > compress_cog_uk_metadata
         ruleorder: uncompress_cog_uk_metadata > fetch_cog_uk_metadata_from_s3
+        ruleorder: create_genbank_ndjson > fetch_main_ndjson_from_s3
     else:
         ruleorder: fetch_rki_ndjson_from_s3 > transform_rki_data_to_ndjson
-        ruleorder: fetch_main_ndjson_from_s3 > fetch_main_ndjson
+        ruleorder: fetch_main_ndjson_from_s3 > fetch_main_gisaid_ndjson
         ruleorder: fetch_biosample_from_s3 > fetch_biosample
         ruleorder: fetch_cog_uk_accessions_from_s3 > fetch_cog_uk_accessions
         ruleorder: fetch_cog_uk_metadata_from_s3 > uncompress_cog_uk_metadata
         ruleorder: compress_cog_uk_metadata > fetch_cog_uk_metadata
+        ruleorder: fetch_main_ndjson_from_s3 > create_genbank_ndjson
 
     rule fetch_main_ndjson_from_s3:
         message:
