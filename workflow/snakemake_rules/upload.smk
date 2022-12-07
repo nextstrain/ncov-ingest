@@ -32,6 +32,7 @@ def compute_files_to_upload():
 
                         "nextclade.tsv.zst":           f"data/{database}/nextclade.tsv",
                         "aligned.fasta.zst":           f"data/{database}/aligned.fasta",
+                        "nextclade_21L.tsv.zst":       f"data/{database}/nextclade_21L.tsv",
                     }
 
     if database=="genbank":

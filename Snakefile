@@ -16,7 +16,11 @@ send_notifications = "SLACK_CHANNELS" in os.environ and "SLACK_TOKEN" in os.envi
 ################ work out what steps to run #####################
 #################################################################
 
-all_targets = [f"data/{database}/metadata.tsv", f"data/{database}/sequences.fasta"]
+all_targets = [
+    f"data/{database}/metadata.tsv",
+    f"data/{database}/sequences.fasta",
+    f"data/{database}/aligned.fasta",
+]
 
 # Include targets for uploading to S3 if `s3_dst` is provided in config
 if config.get("s3_dst"):

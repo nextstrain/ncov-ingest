@@ -16,6 +16,8 @@ reference_day = datetime(2020,1,1).toordinal()
 column_map = {
     "clade": "Nextstrain_clade",
     "Nextclade_pango": "Nextclade_pango",
+    "immune_escape": "immune_escape",
+    "ace2_binding": "ace2_binding",
     "totalMissing": "missing_data",
     "totalSubstitutions": "divergence",
     "totalNonACGTNs": "nonACGTN",
@@ -63,6 +65,7 @@ def parse_args():
     )
     parser.add_argument("first_file")
     parser.add_argument("second_file")
+    parser.add_argument("nextclade_21L")
     parser.add_argument("-o", default=sys.stdout)
     return parser.parse_args()
 
@@ -89,6 +92,21 @@ def main():
     clades = pd.read_csv(args.second_file, index_col=NEXTCLADE_JOIN_COLUMN_NAME,
                          sep='\t', low_memory=False, na_filter = False) \
             .rename(columns=column_map)
+
+    clades_21L = pd.read_csv(args.nextclade_21L, index_col=NEXTCLADE_JOIN_COLUMN_NAME,
+                         sep='\t', low_memory=False,
+                         usecols=[NEXTCLADE_JOIN_COLUMN_NAME,"immune_escape","ace2_binding"],
+                         dtype={"immune_escape":float, "ace2_binding":float}) \
+            .rename(columns=column_map)
+    
+    # Reduce false precision in immune_escape and ace2_binding
+    clades_21L = clades_21L.round(3)
+    
+    clades = pd.merge(clades, clades_21L, left_index=True, right_index=True, how='left')
+
+    # Remove immune_escape and ace2_binding when clade <21L and not recombinant
+    clades.loc[clades.Nextstrain_clade < "21L",["immune_escape","ace2_binding"]] = float('nan')
+
 
     clades = clades[list(column_map.values())]
 

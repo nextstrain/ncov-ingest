@@ -2,6 +2,11 @@
 This part of the workflow handles all rules related to NextClade.
 Depends on the main Snakefile to define the variable `database`, which is NOT a wildcard.
 
+We run Nextclade twice, once on the normal sars-cov-2 dataset and once on the 21L sars-cov-2-21L dataset.
+To keep the Snakefile dry, we use a wildcard `{reference}` that is either empty or `_21L`.
+Since alignments are identical, we don't merge and upload the 21L alignments to S3.
+21L outputs are used for `immune_escape` and `ace2_binding` columns.
+
 Expects the following inputs:
     fasta = "data/{database}/sequences.fasta"
     existing_metadata = f"data/{database}/metadata_transformed.tsv"
@@ -21,11 +26,15 @@ Produces the following outputs:
         nextclade_info = f"data/{database}/nextclade.tsv"
         alignment = f"data/{database}/aligned.fasta"
 """
+
+wildcard_constraints:
+    reference = "|_21L"
+
 rule create_empty_nextclade_info:
     message:
         """Creating empty NextClade info cache file"""
     output:
-        touch(f"data/{database}/nextclade_old.tsv")
+        touch(f"data/{database}/nextclade{{reference}}_old.tsv")
 
 rule create_empty_nextclade_aligned:
     message:
@@ -38,23 +47,24 @@ if config.get("s3_dst") and config.get("s3_src"):
     # Set ruleorder since these rules have the same output
     # Allows us to only download the NextClade cache from S3 only if the
     # S3 parameters are provided in the config.
-    ruleorder: download_nextclade > create_empty_nextclade_info
-    ruleorder: download_previous_alignment > create_empty_nextclade_aligned
+    ruleorder: download_nextclade_tsv_from_s3 > create_empty_nextclade_info
+    ruleorder: download_previous_alignment_from_s3 > create_empty_nextclade_aligned
 
-    rule download_nextclade:
+    rule download_nextclade_tsv_from_s3:
         params:
-            dst_source=config["s3_dst"] + "/nextclade.tsv.zst",
-            src_source=config["s3_src"] + "/nextclade.tsv.zst",
+            dst_source=config["s3_dst"] + "/nextclade{reference}.tsv.zst",
+            src_source=config["s3_src"] + "/nextclade{reference}.tsv.zst",
             lines=config.get("subsample",{}).get("nextclade", 0),
         output:
-            nextclade = f"data/{database}/nextclade_old.tsv"
+            nextclade = f"data/{database}/nextclade{{reference}}_old.tsv"
         shell:
             """
             ./bin/download-from-s3 {params.dst_source} {output.nextclade} {params.lines} ||  \
-            ./bin/download-from-s3 {params.src_source} {output.nextclade} {params.lines}
+            ./bin/download-from-s3 {params.src_source} {output.nextclade} {params.lines} ||  \
+            touch {output.nextclade}
             """
 
-    rule download_previous_alignment:
+    rule download_previous_alignment_from_s3:
         ## NOTE two potential bugs with this implementation:
         ## (1) race condition. This file may be updated on the remote after download_nextclade has run but before this rule
         ## (2) we may get `download_nextclade` and `download_previous_alignment` from different s3 buckets
@@ -67,7 +77,8 @@ if config.get("s3_dst") and config.get("s3_src"):
         shell:
             """
             ./bin/download-from-s3 {params.dst_source} {output.alignment} {params.lines} ||  \
-            ./bin/download-from-s3 {params.src_source} {output.alignment} {params.lines}
+            ./bin/download-from-s3 {params.src_source} {output.alignment} {params.lines} ||  \
+            touch {output.alignment}
             """
 
 
@@ -75,9 +86,9 @@ rule get_sequences_without_nextclade_annotations:
     """Find sequences in FASTA which don't have clades assigned yet"""
     input:
         fasta = f"data/{database}/sequences.fasta",
-        nextclade = f"data/{database}/nextclade_old.tsv",
+        nextclade = f"data/{database}/nextclade{{reference}}_old.tsv",
     output:
-        fasta = f"data/{database}/nextclade.sequences.fasta"
+        fasta = f"data/{database}/nextclade{{reference}}.sequences.fasta"
     shell:
         """
         if [[ -s {input.nextclade} ]]; then
@@ -88,18 +99,7 @@ rule get_sequences_without_nextclade_annotations:
         else
             cp {input.fasta} {output.fasta}
         fi
-        """
-
-
-rule print_number_of_sequences_without_nextclade_annotations:
-    """Print number of sequences in FASTA which don't have clades assigned yet"""
-    input:
-        fasta=f"data/{database}/nextclade.sequences.fasta",
-    output:
-        touch(f"data/{database}/nextclade.sequences.fasta.count"),
-    shell:
-        """
-        echo "[ INFO] Number of sequences to run Nextclade on: $(grep -c '^>' {input.fasta})"
+        echo "[ INFO] Number of {wildcards.reference} sequences to run Nextclade on: $(grep -c '^>' {output.fasta})"
         """
 
 
@@ -114,24 +114,31 @@ rule run_nextclade:
         metrics which will ultimately end up in metadata.tsv.
         """
     input:
-        sequences = f"data/{database}/nextclade.sequences.fasta"
+        sequences = f"data/{database}/nextclade{{reference}}.sequences.fasta"
     params:
-        nextclade_input_dir = temp(directory(f"data/{database}/nextclade_inputs")),
-        nextclade_output_dir = temp(directory(f"data/{database}/nextclade")),
+        nextclade_input_dir = temp(directory(f"data/{database}/nextclade{{reference}}_inputs")),
+        nextclade_output_dir = temp(directory(f"data/{database}/nextclade{{reference}}")),
+        dataset_name = lambda w: "sars-cov-2-21L" if w.reference == "_21L" else "sars-cov-2",
     output:
-        info = f"data/{database}/nextclade_new.tsv",
-        alignment = temp(f"data/{database}/nextclade.aligned.upd.fasta"),
-        insertions = temp(f"data/{database}/nextclade.insertions.csv")
+        info = f"data/{database}/nextclade{{reference}}_new.tsv",
+        alignment = temp(f"data/{database}/nextclade{{reference}}.aligned.upd.fasta"),
+        insertions = temp(f"data/{database}/nextclade{{reference}}.insertions.csv")
     shell:
         """
-        ./bin/run-nextclade \
-            {input.sequences:q} \
-            {output.info} \
-            {params.nextclade_input_dir} \
-            {params.nextclade_output_dir} \
-            {output.alignment} \
-            {output.insertions} \
-            {GENES}
+        if [[ -s {input.sequences} ]]; then
+            ./bin/run-nextclade \
+                {input.sequences:q} \
+                {output.info} \
+                {params.nextclade_input_dir} \
+                {params.nextclade_output_dir} \
+                {output.alignment} \
+                {output.insertions} \
+                {GENES} \
+                {params.dataset_name}
+        else
+            touch {output.info} {output.alignment} {output.insertions}
+            echo "[ INFO] Skipping Nextclade run as there are no new sequences"
+        fi
         """
 
 rule nextclade_info:
@@ -140,17 +147,21 @@ rule nextclade_info:
         Generates nextclade info TSV for all sequences (new + old)
         """
     input:
-        old_info = f"data/{database}/nextclade_old.tsv",
-        new_info = f"data/{database}/nextclade_new.tsv"
+        old_info = f"data/{database}/nextclade{{reference}}_old.tsv",
+        new_info = f"data/{database}/nextclade{{reference}}_new.tsv"
     output:
-        nextclade_info = f"data/{database}/nextclade.tsv"
+        nextclade_info = f"data/{database}/nextclade{{reference}}.tsv"
     shell:
         """
         if [[ -s {input.old_info} ]]; then
-            ./bin/join-rows \
-                {input.old_info:q} \
-                {input.new_info:q} \
-                -o {output.nextclade_info:q}
+            if [[ -s {input.new_info} ]]; then
+                ./bin/join-rows \
+                    {input.old_info:q} \
+                    {input.new_info:q} \
+                    -o {output.nextclade_info:q}
+            else
+                mv {input.old_info} {output.nextclade_info}
+            fi
         else
             mv {input.new_info} {output.nextclade_info}
         fi
@@ -187,9 +198,8 @@ rule combine_alignments:
 rule generate_metadata:
     input:
         nextclade_tsv = f"data/{database}/nextclade.tsv",
-        aligned_fasta = f"data/{database}/aligned.fasta",
+        nextclade_21L_tsv = f"data/{database}/nextclade_21L.tsv",
         existing_metadata = f"data/{database}/metadata_transformed.tsv",
-        trigger_count=f"data/{database}/nextclade.sequences.fasta.count",
     output:
         metadata = f"data/{database}/metadata.tsv"
     # note: the shell scripts which predated this snakemake workflow
@@ -199,5 +209,6 @@ rule generate_metadata:
         ./bin/join-metadata-and-clades \
             {input.existing_metadata} \
             {input.nextclade_tsv} \
+            {input.nextclade_21L_tsv} \
             -o {output.metadata}
         """

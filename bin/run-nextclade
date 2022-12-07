@@ -14,7 +14,8 @@ trap "exit" INT
 : "${5:?\"[ERROR] ${0}: Output fasta filename as the 5th argument is required.\"}"
 : "${6:?\"[ERROR] ${0}: Output insertions csv filename as the 6th argument is required.\"}"
 : "${7:?\"[ERROR] ${0}: List of genes as 7th argument is required.\"}"
-# Note: 8th argument is the (max) number of threads for nextclade and is optional
+: "${8:?\"[ERROR] ${0}: Dataset as the 8th argument is required.\"}"
+# Note: 9th argument is the (max) number of threads for nextclade and is optional
 
 INPUT_FASTA="${1}"
 OUTPUT_TSV="${2}"
@@ -23,12 +24,13 @@ NEXTCLADE_OUTPUTS_DIR="${4}" # files other than TSV will be written by Nextclade
 OUTPUT_FASTA="${5}"
 OUTPUT_INSERTIONS="${6}"
 GENES="${7}"
+NEXTCLADE_DATASET_NAME="${8}"
 
 NEXTCLADE_THREADS=""
-if [ $# -eq 8 ]; then
-    echo "[ INFO] ${0}:${LINENO}: Nextclade will be limited to ${8} threads"
-    NEXTCLADE_THREADS="--jobs ${8}"
-elif [ $# -gt 8 ]; then
+if [ $# -eq 9 ]; then
+    echo "[ INFO] ${0}:${LINENO}: Nextclade will be limited to ${9} threads"
+    NEXTCLADE_THREADS="--jobs ${9}"
+elif [ $# -gt 9 ]; then
     echo "[ INFO] ${0}:${LINENO}: Too many arguments provided"
     exit 1
 fi
@@ -51,7 +53,7 @@ NEXTCLADE_VERSION="$(./nextclade --version)"
 echo "[ INFO] ${0}:${LINENO}: Nextclade version: ${NEXTCLADE_VERSION}"
 
 echo "[ INFO] ${0}:${LINENO}: Downloading Nextclade dataset \"sars-cov-2\""
-./nextclade dataset get --name=sars-cov-2 --output-dir="${NEXTCLADE_DATASET_DIR}" --verbose
+./nextclade dataset get --name="${NEXTCLADE_DATASET_NAME}" --output-dir="${NEXTCLADE_DATASET_DIR}" --verbose
 
 
 echo "[ INFO] ${0}:${LINENO}: Running Nextclade"
