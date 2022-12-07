@@ -159,7 +159,7 @@ if config.get("s3_dst") and config.get("s3_src"):
         ruleorder: fetch_cog_uk_metadata > compress_cog_uk_metadata
         ruleorder: uncompress_cog_uk_metadata > fetch_cog_uk_metadata_from_s3
     else:
-        ruleorder: fetch_rki_ndjson_from_s3 > transform_rki_data_to_ndjson 
+        ruleorder: fetch_rki_ndjson_from_s3 > transform_rki_data_to_ndjson
         ruleorder: fetch_main_ndjson_from_s3 > fetch_main_ndjson
         ruleorder: fetch_biosample_from_s3 > fetch_biosample
         ruleorder: fetch_cog_uk_accessions_from_s3 > fetch_cog_uk_accessions
@@ -233,7 +233,7 @@ if config.get("s3_dst") and config.get("s3_src"):
             ./bin/download-from-s3 {params.file_on_s3_dst} {output.biosample} {params.lines} ||  \
             ./bin/download-from-s3 {params.file_on_s3_src} {output.biosample} {params.lines}
             """
-    
+
     rule compress_cog_uk_metadata:
         input:
             "data/cog_uk_metadata.csv"
