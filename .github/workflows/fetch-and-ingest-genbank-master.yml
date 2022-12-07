@@ -65,7 +65,7 @@ jobs:
           --no-download \
           --image nextstrain/ncov-ingest \
           --cpus 16 \
-          --memory 30GiB \
+          --memory 64GiB \
           --exec env \
           . \
             envdir env.d snakemake \
