@@ -81,7 +81,7 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         GISAID_API_ENDPOINT: ${{ secrets.GISAID_API_ENDPOINT }}
         GISAID_USERNAME_AND_PASSWORD: ${{ secrets.GISAID_USERNAME_AND_PASSWORD }}
-        PAT_GITHUB_DISPATCH: ${{ secrets.PAT_GITHUB_DISPATCH }}
+        PAT_GITHUB_DISPATCH: ${{ secrets.GH_TOKEN_NEXTSTRAIN_BOT_WORKFLOW_DISPATCH }}
 
     - name: notify_pipeline_failed
       if: ${{ failure() }}
