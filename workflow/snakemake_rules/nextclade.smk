@@ -102,6 +102,37 @@ rule get_sequences_without_nextclade_annotations:
         echo "[ INFO] Number of {wildcards.reference} sequences to run Nextclade on: $(grep -c '^>' {output.fasta})"
         """
 
+rule download_nextclade_executable:
+    """Download Nextclade"""
+    output:
+        nextclade = "nextclade"
+    shell:
+        """
+        if [ "$(uname)" = "Darwin" ]; then
+            curl -fsSL "https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-x86_64-apple-darwin" -o "nextclade"
+        else
+            curl -fsSL "https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-x86_64-unknown-linux-gnu" -o "nextclade"
+        fi
+        chmod +x nextclade
+
+        if ! command -v ./nextclade &>/dev/null; then
+            echo "[ERROR] Nextclade executable not found"
+            exit 1
+        fi
+
+        NEXTCLADE_VERSION="$(./nextclade --version)"
+        echo "[ INFO] Nextclade version: $NEXTCLADE_VERSION" 
+        """
+
+rule download_nextclade_dataset:
+    """Download Nextclade dataset"""
+    input: "nextclade"
+    output:
+        dataset = "data/nextclade_data/{dataset_name}.zip"
+    shell:
+        """
+        ./nextclade dataset get --name="{wildcards.dataset_name}" --output-zip={output.dataset} --verbose
+        """
 
 GENES = "E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S"
 GENES_SPACE_DELIMITED = GENES.replace(",", " ")
@@ -114,29 +145,25 @@ rule run_nextclade:
         metrics which will ultimately end up in metadata.tsv.
         """
     input:
+        nextclade = "nextclade",
+        dataset = lambda w: f"data/nextclade_data/sars-cov-2{w.reference.replace('_','-')}.zip",
         sequences = f"data/{database}/nextclade{{reference}}.sequences.fasta"
     params:
-        nextclade_input_dir = temp(directory(f"data/{database}/nextclade{{reference}}_inputs")),
-        nextclade_output_dir = temp(directory(f"data/{database}/nextclade{{reference}}")),
-        dataset_name = lambda w: "sars-cov-2-21L" if w.reference == "_21L" else "sars-cov-2",
+        genes = GENES_SPACE_DELIMITED
     output:
         info = f"data/{database}/nextclade{{reference}}_new.tsv",
         alignment = temp(f"data/{database}/nextclade{{reference}}.aligned.upd.fasta"),
-        insertions = temp(f"data/{database}/nextclade{{reference}}.insertions.csv")
     shell:
         """
         if [[ -s {input.sequences} ]]; then
-            ./bin/run-nextclade \
-                {input.sequences:q} \
-                {output.info} \
-                {params.nextclade_input_dir} \
-                {params.nextclade_output_dir} \
-                {output.alignment} \
-                {output.insertions} \
-                {GENES} \
-                {params.dataset_name}
+            ./nextclade run \
+            {input.sequences}\
+            --input-dataset={input.dataset} \
+            --output-tsv={output.info} \
+            --genes {params.genes} \
+            --output-fasta={output.alignment}
         else
-            touch {output.info} {output.alignment} {output.insertions}
+            touch {output.info} {output.alignment}
             echo "[ INFO] Skipping Nextclade run as there are no new sequences"
         fi
         """
