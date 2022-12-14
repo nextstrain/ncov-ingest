@@ -180,18 +180,9 @@ rule nextclade_info:
         nextclade_info = f"data/{database}/nextclade{{reference}}.tsv"
     shell:
         """
-        if [[ -s {input.old_info} ]]; then
-            if [[ -s {input.new_info} ]]; then
-                ./bin/join-rows \
-                    {input.old_info:q} \
-                    {input.new_info:q} \
-                    -o {output.nextclade_info:q}
-            else
-                mv {input.old_info} {output.nextclade_info}
-            fi
-        else
-            mv {input.new_info} {output.nextclade_info}
-        fi
+        # Header taken from first non-empty file
+        keep-header {input.old_info:q} {input.new_info:q} -- \
+        tsv-uniq -f 1 > {output.nextclade_info}
         """
 
 rule combine_alignments:
