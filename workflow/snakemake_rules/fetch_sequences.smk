@@ -115,14 +115,18 @@ rule create_genbank_ndjson:
         ncbi_dataset_sequences = "data/ncbi_dataset_sequences.fasta",
         ncbi_dataset_tsv = "data/ncbi_dataset_report.tsv",
     output:
-        ndjson = temp("data/genbank.ndjson")
+        ndjson = temp("data/genbank.ndjson"),
+    log: "logs/create_genbank_ndjson.txt"
     shell:
         """
         augur curate passthru \
             --metadata {input.ncbi_dataset_tsv} \
             --fasta {input.ncbi_dataset_sequences} \
             --seq-id-column Accession \
-            --seq-field sequence > {output.ndjson}
+            --seq-field sequence \
+            --unmatched-reporting warn \
+            --duplicate-reporting warn \
+            2> {log} > {output.ndjson}
         """
 
 rule fetch_biosample:
