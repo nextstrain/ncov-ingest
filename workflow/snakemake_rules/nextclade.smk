@@ -89,6 +89,8 @@ rule get_sequences_without_nextclade_annotations:
         nextclade = f"data/{database}/nextclade{{reference}}_old.tsv",
     output:
         fasta = f"data/{database}/nextclade{{reference}}.sequences.fasta"
+    benchmark:
+        f"benchmarks/get_sequences_without_nextclade_annotations_{database}{{reference}}.txt"
     shell:
         """
         if [[ -s {input.nextclade} ]]; then
@@ -220,8 +222,8 @@ rule generate_metadata:
         existing_metadata = f"data/{database}/metadata_transformed.tsv",
     output:
         metadata = f"data/{database}/metadata.tsv"
-    # note: the shell scripts which predated this snakemake workflow
-    # overwrote the existing_metadata here
+    benchmark:
+        f"benchmarks/generate_metadata_{database}.txt"
     shell:
         """
         ./bin/join-metadata-and-clades \
