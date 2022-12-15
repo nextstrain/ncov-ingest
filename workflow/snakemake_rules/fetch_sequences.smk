@@ -46,6 +46,8 @@ rule fetch_main_gisaid_ndjson:
 rule fetch_ncbi_dataset_package:
     output:
         dataset_package = temp("data/ncbi_dataset.zip")
+    benchmark:
+        "benchmarks/fetch_ncbi_dataset_package.txt"
     run:
         run_shell_command_n_times(
             f"datasets download virus genome taxon SARS-CoV-2 --no-progressbar --filename {output.dataset_package}",
@@ -58,6 +60,8 @@ rule extract_ncbi_dataset_sequences:
         dataset_package = "data/ncbi_dataset.zip"
     output:
         ncbi_dataset_sequences = temp("data/ncbi_dataset_sequences.fasta")
+    benchmark:
+        "benchmarks/extract_ncbi_dataset_sequences.txt"
     shell:
         """
         unzip -jp {input.dataset_package} \
@@ -102,6 +106,8 @@ rule format_ncbi_dataset_report:
         ncbi_dataset_tsv = temp("data/ncbi_dataset_report.tsv")
     params:
         fields_to_include = _get_ncbi_dataset_field_mnemonics
+    benchmark:
+        "benchmarks/format_ncbi_dataset_report.txt"
     shell:
         """
         dataformat tsv virus-genome \
@@ -117,6 +123,8 @@ rule create_genbank_ndjson:
     output:
         ndjson = temp("data/genbank.ndjson"),
     log: "logs/create_genbank_ndjson.txt"
+    benchmark:
+        "benchmarks/create_genbank_ndjson.txt"
     shell:
         """
         augur curate passthru \
