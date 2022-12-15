@@ -127,67 +127,37 @@ Then, click on 'More'.
 You can then copy your Slack member ID from the menu that appears.
 Enter this into the `slack_member_id` field of your alert configuration.
 
-## Nextclade full run after Nextclade dataset is updated
+## Rerunning Nextclade ignoring cache after Nextclade dataset is updated
 
 Clade assignments and other QC metadata output by Nextclade are currently cached in `nextclade.tsv` in the S3 bucket and only incremental additions for the new sequences are performed during the daily ingests.
 Whenever the underlying nextclade dataset (reference tree, QC rules) and/or nextclade software are updated, it is necessary to perform a full update of `nextclade.tsv`, rerunning for all of the GISAID and GenBank sequences all over again, to account for changes in the data and Nextclade algorithms.
 
-The most convenient option is to trigger it through the corresponding GitHub Action:
-
-- [GISAID full Nextclade run](https://github.com/nextstrain/ncov-ingest/actions/workflows/nextclade-full-run-gisaid.yml)
-- [GenBank full Nextclade run](https://github.com/nextstrain/ncov-ingest/actions/workflows/nextclade-full-run-genbank.yml)
-
-They will simply run `./bin/run-nextclade-full-aws --database=<name of the database>` and will announce the beginning of the job and the AWS Batch Job ID on Nextstrain Slack.
-
-For that, go to the GitHub Actions UI using one of the links above, click the button "Run workflow", choose "branch: master" from the list and confirm.
-
-If needed, the runs can be also launched from a local machine, by one of these scripts, depending on whether you want to run the computation locally, in docker, or to schedule an AWS Batch Job (the latter is what GitHub Actions do):
+In order to tell ingest to not use the cached `nextclade.tsv` and instead perform a full rerun, you need to add an (empty) touchfile to the s3 bucket:
 
 ```bash
-./bin/run-nextclade-full           # Runs locally (requires significant computational resources)
-./bin/run-nextclade-full-aws       # Runs in docker (requires significant computational resources)
-./bin/run-nextclade-full-docker    # Schedules an AWS Batch Job and runs there
+touch nextclade.tsv.zst.renew
+aws s3 cp nextclade.tsv.zst.renew s3://nextstrain-ncov-private/nextclade.tsv.zst.renew
+aws s3 cp nextclade.tsv.zst.renew s3://nextstrain-data/files/ncov/open/nextclade.tsv.zst.renew
 ```
 
-The resulting nextclade.tsv.gz should be then available in the subdirectory nextclade-full-run in the usual S3 location for the particular database:
+Ingest will automatically remove the touchfiles after it has completed the rerun.
+
+To rerun Nextclade using the `sars-cov-2-21L` dataset - which is only necessary when the calculation of `immune_escape` and `ace2_binding` changes - you need to add an (empty) touchfile to the s3 bucket:
 
 ```bash
-aws s3 ls s3://nextstrain-data/files/ncov/open/nextclade-full-run
-aws s3 ls s3://nextstrain-ncov-private/nextclade-full-run
+touch nextclade.tsv.zst.renew
+aws s3 cp nextclade.tsv.zst.renew s3://nextstrain-ncov-private/nextclade_21L.tsv.zst.renew
+aws s3 cp nextclade.tsv.zst.renew s3://nextstrain-data/files/ncov/open/nextclade_21L.tsv.zst.renew
 ```
 
-Copy the output files to your local machine by using the path returned by `aws s3 ls` or using tab completion from `aws s3 cp s3://nextstrain-data/files/ncov/open/nextclade-full-run`:
+If Nextclade's alignment algorithm has changed or the alignment parameters have been changed in a dataset release, the alignment needs to be rerun as well.
+To do this, you need to add an (empty) touchfile to the s3 bucket:
 
 ```bash
-# enter aws s3 cp s3://nextstrain-data/files/ncov/open/nextclade-full-run and use tab completion for exact date
-aws s3 cp s3://nextstrain-data/files/ncov/open/nextclade-full-run-2021-11-19--02-34-23--UTC/nextclade.tsv.gz open.tsv.gz
-aws s3 cp s3://nextstrain-ncov-private/nextclade-full-run-2021-11-18--23-37-14--UTC/nextclade.tsv.gz private.tsv.gz
+touch aligned.fasta.zst.renew
+aws s3 cp aligned.fasta.zst.renew s3://nextstrain-ncov-private/aligned.fasta.zst.renew
+aws s3 cp aligned.fasta.zst.renew s3://nextstrain-data/files/ncov/open/aligned.fasta.zst.renew
 ```
-
-The nextclade.tsv.gz should be manually inspected for scientific correctness, compared to the old one, if necessary. Check that clades aren't broken by running for example:
-
-```bash
-gzcat open.tsv.gz | tsv-summarize -H --group-by clade --count | sort
-gzcat private.tsv.gz | tsv-summarize -H --group-by clade --count | sort
-```
-
-If all went well, after agreeing with ingest team, the `nextclade.tsv.gz` **and** `aligned.fasta.xz` should then be copied to the location where the daily ingest can find it, overwriting the old one. These locations are:
-
-```txt
-s3://nextstrain-ncov-private/nextclade.tsv.gz
-s3://nextstrain-data/files/ncov/open/nextclade.tsv.gz
-```
-
-(just omit the subdirectory nextclade-full-run)
-
-You can use the following command:
-
-```bash
-aws s3 sync s3://nextstrain-ncov-private/nextclade-full-run-DATE-TIME/ s3://nextstrain-ncov-private
-aws s3 sync s3://nextstrain-data/files/ncov/open/nextclade-full-run-DATE-TIME/ s3://nextstrain-data/files/ncov/open
-```
-
-For a detailed explanation see PR [#218](https://github.com/nextstrain/ncov-ingest/pull/218).
 
 ## Required environment variables
 
