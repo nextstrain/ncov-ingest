@@ -3,6 +3,8 @@
 Internal tooling for the Nextstrain team to ingest and curate SARS-CoV-2 genome sequences. The pipeline is open source, but we are not intending to support it for use by outside groups.
 Relies on data from <https://simplemaps.com/data/us-cities>.
 
+Outputs documented here are part of `ncov-ingest`'s public API: https://docs.nextstrain.org/projects/ncov/en/latest/reference/remote_inputs.html
+
 ## Running locally
 
 > NOTE: The full set of sequences from GISAID/GenBank will most likely require more compute resources than what is available on your local computer.
