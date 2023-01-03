@@ -8177,13 +8177,14 @@ Europe/Poland/Masovia/Zabki	Europe/Poland/Masovia/Zabki (Masovia)
 Europe/Poland/Masovia/Nowy Dwor Mazowiecki	Europe/Poland/Masovia/Nowy Dwor Mazowiecki (Masovia)
 Europe/Poland/Warmia and Mazury/Elblag	Europe/Poland/Warmia and Mazury/Elblag (Warmia and Mazury)
 Europe/Poland/Kujawskopomorskie/Bydgoszcz	Europe/Poland/Kujawskopomorskie/Bydgoszcz (Kujawskopomorskie)
-Europe/Poland/Poznanski/	Europe/Poland/Welkopolskie/Poznanski (Welkopolskie)
-Europe/Poland/Welkopolskie/Poznan	Europe/Poland/Welkopolskie/Poznan (Welkopolskie)
-Europe/Poland/Welkopolskie/Poznanski	Europe/Poland/Welkopolskie/Poznanski (Welkopolskie)
-Europe/Poland/Welkopolskie/Kolski	Europe/Poland/Welkopolskie/Kolski (Welkopolskie)
-Europe/Poland/Welkopolskie/Gnieznienski	Europe/Poland/Welkopolskie/Gnieznienski (Welkopolskie)
-Europe/Poland/Welkopolskie/Koscianski	Europe/Poland/Welkopolskie/Koscianski (Welkopolskie)
-Europe/Poland/Welkopolskie/Jarocinski	Europe/Poland/Welkopolskie/Jarocinski (Welkopolskie)
+Europe/Poland/Poznanski/	Europe/Poland/Wielkopolskie/Poznanski (Welkopolskie)
+Europe/Poland/Welkopolskie/Poznan	Europe/Poland/Wielkopolskie/Poznan (Welkopolskie)
+Europe/Poland/Welkopolskie/Poznanski	Europe/Poland/Wielkopolskie/Poznanski (Welkopolskie)
+Europe/Poland/Welkopolskie/Kolski	Europe/Poland/Wielkopolskie/Kolski (Welkopolskie)
+Europe/Poland/Welkopolskie/Gnieznienski	Europe/Poland/Wielkopolskie/Gnieznienski (Welkopolskie)
+Europe/Poland/Welkopolskie/Koscianski	Europe/Poland/Wielkopolskie/Koscianski (Welkopolskie)
+Europe/Poland/Welkopolskie/Jarocinski	Europe/Poland/Wielkopolskie/Jarocinski (Welkopolskie)
+Europe/Poland/Welkopolskie/*	Europe/Poland/Wielkopolskie/*
 Europe/Poland/Wielkopolskie Voivodeship/Pleszewski	Europe/Poland/Wielkopolskie Voivodeship/Pleszewski (Wielkopolskie Voivodeship)
 Europe/Italy/Apulia/Bat	Europe/Italy/Apulia/Barletta-Andria-Trani
 Europe/Italy/Apulia/Potenza	Europe/Italy/Basilicata/Potenza
@@ -8354,6 +8355,9 @@ Europe/Serbia/Srem District/Ruma	Europe/Serbia/Srem District/Ruma (Srem District
 Europe/Serbia/Srem District/Stara Pazova	Europe/Serbia/Srem District/Stara Pazova (Srem District)
 Europe/Serbia/North Banat District/Kikinda	Europe/Serbia/North Banat District/Kikinda (North Banat District)
 Europe/Serbia/Aleksinac/	Europe/Serbia/Central Serbia/Aleksinac
+Europe/Serbia/Paracin/	Europe/Serbia/Central Serbia/Paracin
+Europe/Serbia/Jagodina/	Europe/Serbia/Central Serbia/Jagodina
+Europe/Serbia/Rakovac/	Europe/Serbia/South Bačka District/Rakovac
 Europe/Austria/Ischgl/	Europe/Austria/Tyrol/Ischgl
 Europe/Austria/Innsbruck/	Europe/Austria/Tyrol/Innsbruck
 Europe/Austria/Matrei Am Brenner/	Europe/Austria/Tyrol/Matrei am Brenner
@@ -10373,6 +10377,7 @@ Asia/India/Odisha/Kendujhar	Asia/India/Odisha/Kendujhar (Odisha)
 Asia/India/Lucknow/	Asia/India/Uttar Pradesh/Lucknow
 Asia/India/Dadra and Nagar Haveli and Daman and Diu/Silvassa	Asia/India/Dadra and Nagar Haveli and Daman and Diu/Silvassa (Dadra and Nagar Haveli and Daman and Diu)
 Asia/India/Dadra & Nagar Haveli/Silvassa	Asia/India/Dadra & Nagar Haveli/Silvassa (Dadra & Nagar Haveli)
+Asia/India/Western Uttar Pradesh/	Asia/India/Uttar Pradesh/Western Uttar Pradesh
 Asia/Bangladesh/Chittagong/Cox'S Bazar	Asia/Bangladesh/Chattogram/Cox's Bazar
 Asia/Bangladesh/Chittagong/Nimtola	Asia/Bangladesh/Dhaka/Nimtola
 Asia/Bangladesh/Khulna/Jessore	Asia/Bangladesh/Khulna/Jashore
@@ -41502,6 +41507,7 @@ North America/USA/Unknown County/	North America/USA/USA/
 North America/USA/Oklahomamusta/*	North America/USA/Oklahoma/*
 North America/USA/Oklahomasprier/*	North America/USA/Oklahoma/*
 North America/USA/Oklahomaoklahoma City/*	North America/USA/Oklahoma/*
+North America/USA/Tennessee. Shelby County/	North America/USA/Tennessee/Shelby County TN
 North America/Costa Rica/Tibas/	North America/Costa Rica/San Jose/Tibas
 North America/Costa Rica/Cartago/Tres Rios	North America/Costa Rica/Cartago CR/Tres Rios CR
 North America/Costa Rica/Cartago/Cartago	North America/Costa Rica/Cartago CR/Cartago CR
@@ -41579,6 +41585,11 @@ North America/Panama/Panama Center/Betania	North America/Panama/Panama Center/Be
 North America/Panama/Panama Center/Bella Vista	North America/Panama/Panama Center/Bella Vista PA
 North America/Panama/Panama Center/Don Bosco	North America/Panama/Panama Center/Don Bosco (Panama Center)
 North America/Panama/Panama Center/San Felipe	North America/Panama/Panama Center/San Felipe PA
+North America/Panama/Panama Center/Panama	North America/Panama/Panama Center/
+North America/Panama/Panama Center/San Antonio	North America/Panama/Panama Center/San Antonio (Panama Center)
+North America/Panama/Panama Center/Boqueron	North America/Panama/Panama Center/Boqueron (Panama Center)
+North America/Panama/Panama Center/Pacora	North America/Panama/Panama Center/Pacora (Panama Center)
+North America/Panama/Panama Center/Chepo	North America/Panama/Panama Center/Chepo (Panama Center)
 North America/Panama/Panama West/Chorrera	North America/Panama/Panama Oeste/La Chorrera
 North America/Panama/Panama West/Herrera	North America/Panama/Panama Oeste/Herrera (Panama Oeste)
 North America/Panama/Panama West/Desconocido	North America/Panama/Panama Oeste/
@@ -41606,6 +41617,7 @@ North America/Panama/Cocle/Santa Rita	North America/Panama/Chiriqui/Santa Rita P
 North America/Panama/Cocle/La Pintada	North America/Panama/Cocle/La Pintada PA
 North America/Panama/Cocle/Don Bosco	North America/Panama/Cocle/Don Bosco (Cocle)
 North America/Panama/Cocle/San Jose del General	North America/Panama/Cocle/San Jose del General (Cocle)
+North America/Panama/Cocle/San Antonio	North America/Panama/Cocle/San Antonio (Cocle)
 North America/Panama/Guna Yala/Bugaba	North America/Panama/Chiriqui/Bugaba
 North America/Panama/Guna Yala/Pinogana	North America/Panama/Darien/Pinogana
 North America/Panama/Guna Yala/Finca 30	North America/Panama/Bocas del Toro/Finca 30
@@ -41629,6 +41641,8 @@ North America/Panama/Panama Oeste/Herrera	North America/Panama/Panama Oeste/Herr
 North America/Panama/Panama Oeste/Veracruz	North America/Panama/Panama Oeste/Veracruz PA
 North America/Panama/Panama Oeste/Vista Alegre	North America/Panama/Panama Oeste/Vista Alegre PA
 North America/Panama/Panama Oeste/Villa Rosario	North America/Panama/Panama Oeste/Villa Rosario PA
+North America/Panama/Panama Oeste/Pacora	North America/Panama/Panama Oeste/Pacora (Panama Oeste)
+North America/Panama/Panama Oeste/Chepo	North America/Panama/Panama Oeste/Chepo (Panama Oeste)
 North America/Panama/Panama Este/*	North America/Panama/Panama Oeste/*
 North America/Panama/Unspecified/	North America/Panama/Panama Center/
 North America/Panama/Metropolitana/*	North America/Panama/Panama Center/*
@@ -41638,14 +41652,18 @@ North America/Panama/Darien/La Palma	North America/Panama/Darien/La Palma PA
 North America/Panama/Darien/Santa Fe	North America/Panama/Darien/Santa Fe PA
 North America/Panama/Comarca Ngobe Bugle/Unknown	North America/Panama/Comarca Ngobe Bugle/
 North America/Panama/Colon Province/Buena Vista	North America/Panama/Colon Province/Buena Vista PA
-North America/Panama/Colon Province/San Antonio	North America/Panama/Colon Province/San Antonio PA
+North America/Panama/Colon Province/San Antonio	North America/Panama/Colon Province/San Antonio (Colon Province)
 North America/Panama/Colon Province/San Jose del General	North America/Panama/Colon Province/San Jose del General (Colon Province)
+North America/Panama/Colon Province/San Antonio PA	North America/Panama/Colon Province/San Antonio (Colon Province)
+North America/Panama/Colon Province/San Benito	North America/Panama/Colon Province/San Benito PA
 North America/Panama/Las Tablas/	North America/Panama/Los Santos/Las Tablas
 North America/Panama/South Africa/	North America/Panama/Panama Center/
 North America/Panama/Colombia/	North America/Panama/Panama Center/
 North America/Panama/Peru/	North America/Panama/Panama Center/
 North America/Panama/Chile/	North America/Panama/Panama Center/
 North America/Panama/Panama City/Panama	North America/Panama/Panama City/
+North America/Panama/Coclesito/	North America/Panama/Colon Province/Coclesito
+North America/Panama/Chiriqui/Boqueron	North America/Panama/Chiriqui/Boqueron (Chiriqui)
 North America/El Salvador/San Salvado/*	North America/El Salvador/El Salvador/*
 North America/El Salvador/La Libertad/*	North America/El Salvador/La Libertad SV/*
 North America/El Salvador/La Paz/*	North America/El Salvador/La Paz SV/*
@@ -41774,7 +41792,8 @@ North America/Guatemala/Guatemala/No Refiere	North America/Guatemala/Guatemala/N
 North America/Guatemala/Zacapa/La Union	North America/Guatemala/Zacapa/La Union GT
 North America/Guatemala/Zacapa/No Refiere	North America/Guatemala/Zacapa/No Refiere (Zacapa)
 North America/Guatemala/Zacapa/San Diego	North America/Guatemala/Zacapa/San Diego GT
-North America/Guatemala/Zacapa/La Reforma	North America/Guatemala/Zacapa/La Reforma GT
+North America/Guatemala/Zacapa/La Reforma	North America/Guatemala/Zacapa/La Reforma (Zacapa)
+North America/Guatemala/Zacapa/La Reforma GT	North America/Guatemala/Zacapa/La Reforma (Zacapa)
 North America/Guatemala/San Marcos/Malacatancito	North America/Guatemala/Huehuetenango/Malacatancito
 North America/Guatemala/San Marcos/San Lorenzo	North America/Guatemala/San Marcos/San Lorenzo GT
 North America/Guatemala/San Marcos/San Miguel	North America/Guatemala/San Marcos/San Miguel GT
@@ -41784,6 +41803,7 @@ North America/Guatemala/San Marcos/No Refiere	North America/Guatemala/San Marcos
 North America/Guatemala/San Marcos/San Sebastian	North America/Guatemala/San Marcos/San Sebastian (San Marcos)
 North America/Guatemala/San Marcos/San Pedro	North America/Guatemala/San Marcos/San Pedro GT
 North America/Guatemala/San Marcos/San Rafael	North America/Guatemala/San Marcos/San Rafael GT
+North America/Guatemala/San Marcos/La Reforma	North America/Guatemala/San Marcos/La Reforma (San Marcos)
 North America/Guatemala/Santa Lucía Cotzumalguapa/	North America/Guatemala/Escuintla/Santa Lucía Cotzumalguapa
 North America/Guatemala/San Raymundo/	North America/Guatemala/Guatemala/San Raymundo
 North America/Guatemala/Chimaltenango/Zaragoza	North America/Guatemala/Chimaltenango/Zaragoza GT
@@ -41807,11 +41827,15 @@ North America/Guatemala/Chiquimula/Quetzaltepeque	North America/Guatemala/Chiqui
 North America/Guatemala/Chiquimula/Quezaltepeque	North America/Guatemala/Chiquimula/Quezaltepeque GT
 North America/Guatemala/Chiquimula/San Jacinto	North America/Guatemala/Chiquimula/San Jacinto GT
 North America/Guatemala/Escuintla/San Jose	North America/Guatemala/Escuintla/San Jose GT
+North America/Guatemala/Escuintla/Escuintla	North America/Guatemala/Escuintla/Escuintla (Escuintla)
 North America/Guatemala/Peten/Santa Ana	North America/Guatemala/Peten/Santa Ana GT
 North America/Guatemala/Peten/San Luis	North America/Guatemala/Peten/San Luis GT
 North America/Guatemala/Peten/Santa Elena	North America/Guatemala/Peten/Santa Elena GT
+North America/Guatemala/Peten/Flores	North America/Guatemala/Peten/Flores GT
+North America/Guatemala/Peten/San Benito	North America/Guatemala/Peten/San Benito GT
 North America/Guatemala/Quetzaltenango/Coatepeque	North America/Guatemala/Quetzaltenango/Coatepeque GT
 North America/Guatemala/Quetzaltenango/No Refiere	North America/Guatemala/Quetzaltenango/No Refiere (Quetzaltenango)
+North America/Guatemala/Quetzaltenango/Genova	North America/Guatemala/Quetzaltenango/Genova GT
 North America/Guatemala/Ixcan/	North America/Guatemala/Quiche/Ixcan
 North America/Guatemala/Guatemala Nor Occidente/*	North America/Guatemala/Guatemala Nor Oriente/*
 North America/Guatemala/Guatemala Nor Oriente/	North America/Guatemala/Guatemala/
@@ -41819,6 +41843,7 @@ North America/Guatemala/No Refiere/No Refiere	North America/Guatemala/Guatemala/
 North America/Guatemala/Retalhuleu/San Sebastian	North America/Guatemala/Retalhuleu/San Sebastian (Retalhuleu)
 North America/Guatemala/Retalhuleu/San Sebastian GT	North America/Guatemala/Retalhuleu/San Sebastian (Retalhuleu)
 North America/Guatemala/Retalhuleu/San Felipe	North America/Guatemala/Retalhuleu/San Felipe GT
+North America/Guatemala/Retalhuleu/Escuintla	North America/Guatemala/Retalhuleu/Escuintla (Retalhuleu)
 North America/Guatemala/Izabal/No Refiere	North America/Guatemala/Izabal/No Refiere (Izabal)
 North America/Guatemala/Santa Catarina Pinula/	North America/Guatemala/Guatemala/Santa Catarina Pinula
 North America/Guatemala/Villa Canales/	North America/Guatemala/Guatemala/Villa Canales
@@ -41829,6 +41854,10 @@ North America/Guatemala/Huehuetenango/No Refiere	North America/Guatemala/Huehuet
 North America/Guatemala/Huehuetenango/La Libertad	North America/Guatemala/Huehuetenango/La Libertad GT
 North America/Guatemala/Departamento de El Progreso/No Refiere	North America/Guatemala/Departamento de El Progreso/No Refiere (Departamento de El Progreso)
 North America/Guatemala/Suchitepequez/Pueblo Nuevo	North America/Guatemala/Suchitepequez/Pueblo Nuevo (Suchitepequez)
+North America/Guatemala/Suchitepequez/Santo Domingo	North America/Guatemala/Suchitepequez/Santo Domingo GT
+North America/Guatemala/Suchitepequez/San Francisco	North America/Guatemala/Suchitepequez/San Francisco GT
+North America/Guatemala/Suchitepequez/San Antonio	North America/Guatemala/Suchitepequez/San Antonio GT
+North America/Guatemala/Suchitepequez/Santa Barbara	North America/Guatemala/Suchitepequez/Santa Barbara GT
 North America/Guatemala/San Juan Sacatepequez/	North America/Guatemala/Guatemala/San Juan Sacatepequez
 North America/Guatemala/Amatitlan/	North America/Guatemala/Guatemala/Amatitlan
 North America/Guatemala/San Jose Pinula/	North America/Guatemala/Guatemala/San Jose Pinula
@@ -43023,6 +43052,7 @@ South America/Chile/Region de Nuble/*	South America/Chile/Ñuble/*
 South America/Chile/Region del Maule/*	South America/Chile/Maule/*
 South America/Chile/Region de la Araucania/Victoria	South America/Chile/Region de la Araucania/Victoria CL
 South America/Chile/Region de la Araucania/Temuco	South America/Chile/Region de la Araucania/Temuco (Region de la Araucania)
+South America/Chile/Region de la Araucania/Los Sauces	South America/Chile/Region de la Araucania/Los Sauces (Region de la Araucania)
 South America/Chile/Region de los Rios/La Union	South America/Chile/Region de los Rios/La Union (Region de los Rios)
 South America/Chile/Region de los Rios/Valdivia	South America/Chile/Region de los Rios/Valdivia (Region de los Rios)
 South America/Chile/Region de los Rios/Paillaco	South America/Chile/Region de los Rios/Paillaco (Region de los Rios)
@@ -44014,6 +44044,7 @@ Africa/Botswana/Greater Gaborone/Gaborone	Africa/Botswana/Southern East/Gaborone
 Africa/Botswana/Greater Gaborone/Ramotswa	Africa/Botswana/Southern East/Ramotswa
 Africa/Botswana/Greater Gaborone/Otse	Africa/Botswana/Southern East/Otse (Southern East)
 Africa/Botswana/Greater Gaborone/Lobatse	Africa/Botswana/Greater Gaborone/Lobatse (Greater Gaborone)
+Africa/Botswana/Greater Gaborone/Mmathethe	Africa/Botswana/Greater Gaborone/Mmathethe (Greater Gaborone)
 Africa/Botswana/Greater Palapye/*	Africa/Botswana/Central District BW/*
 Africa/Botswana/Maun/	Africa/Botswana/North-West District/Maun
 Africa/Botswana/Greater Phikwe/	Africa/Botswana/Central District BW/Greater Phikwe
@@ -44240,3 +44271,4 @@ Czech Republic/Usti Region/Usti nad Labem/Chabarovice	Europe/Czech Republic/Usti
 Czech Republic/Usti Region/Usti nad Labem/Litvinov	Europe/Czech Republic/Usti nad Labem/Litvinov
 Czech Republic/Usti Region/Usti nad Labem/Usti nad Labem	Europe/Czech Republic/Usti nad Labem/Usti nad Labem
 Chminianska Nova Ves///	Europe/Slovakia/Prešov/Chminianska Nova Ves
+East North America/*/*/*	North America/*/*/*
