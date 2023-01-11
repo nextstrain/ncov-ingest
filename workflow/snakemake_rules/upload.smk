@@ -26,7 +26,6 @@ def compute_files_to_upload():
                         "metadata.tsv.zst":             f"data/{database}/metadata.tsv",
                         "sequences.fasta.zst":          f"data/{database}/sequences.fasta",
 
-                        # It shouldn't harm to upload these as upload-to-s3 only updates if hashes differ
                         "nextclade.tsv.gz":           f"data/{database}/nextclade.tsv",
                         "aligned.fasta.xz":           f"data/{database}/aligned.fasta",
 
@@ -90,11 +89,35 @@ rule upload_single:
             {params.cloudfront_domain} 2>&1 | tee {output}
         """
 
+rule remove_rerun_touchfile:
+    """
+    Remove the rerun touchfile if such a file is present
+    """
+    input: 
+        f"data/{database}/{{remote_filename}}.upload",
+    output:
+        f"data/{database}/{{remote_filename}}.renew.deleted",
+    params:
+        dst_rerun_touchfile=config["s3_dst"] + "/{remote_filename}.renew",
+    shell:
+        """
+        aws s3 rm {params.dst_rerun_touchfile:q} || echo "No rerun touchfile {params.dst_rerun_touchfile:q} to remove or failed to remove"
+        touch {output}
+        """
+
 rule upload:
     """
     Requests one touch file for each uploaded remote file
     Dynamically determines that list of files
     """
-    input: [f"data/{database}/{remote_file}.upload" for remote_file in files_to_upload.keys()]
+    input: 
+        uploads = [f"data/{database}/{remote_file}.upload" for remote_file in files_to_upload.keys()],
+        touchfile_removes=[
+            f"data/{database}/{remote_file}.renew.deleted" for remote_file in [
+                "aligned.fasta.zst",
+                "nextclade.tsv.zst",
+                "nextclade_21L.tsv.zst",
+            ]
+        ]
     output:
         touch(f"data/{database}/upload.done")

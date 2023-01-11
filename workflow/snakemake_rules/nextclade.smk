@@ -51,14 +51,21 @@ if config.get("s3_dst") and config.get("s3_src"):
     ruleorder: download_previous_alignment_from_s3 > create_empty_nextclade_aligned
 
     rule download_nextclade_tsv_from_s3:
+        """
+        If there's a .renew touchfile, do not use the cache
+        """
         params:
             dst_source=config["s3_dst"] + "/nextclade{reference}.tsv.zst",
             src_source=config["s3_src"] + "/nextclade{reference}.tsv.zst",
+            dst_rerun_touchfile=config["s3_dst"] + "/nextclade{reference}.tsv.zst.renew",
+            src_rerun_touchfile=config["s3_dst"] + "/nextclade{reference}.tsv.zst.renew",
             lines=config.get("subsample",{}).get("nextclade", 0),
         output:
             nextclade = f"data/{database}/nextclade{{reference}}_old.tsv"
         shell:
             """
+            ./bin/download-from-s3 {params.dst_rerun_touchfile} {output.nextclade} 0 ||  \
+            ./bin/download-from-s3 {params.src_rerun_touchfile} {output.nextclade} 0 ||  \
             ./bin/download-from-s3 {params.dst_source} {output.nextclade} {params.lines} ||  \
             ./bin/download-from-s3 {params.src_source} {output.nextclade} {params.lines} ||  \
             touch {output.nextclade}
@@ -71,11 +78,15 @@ if config.get("s3_dst") and config.get("s3_src"):
         params:
             dst_source=config["s3_dst"] + "/aligned.fasta.zst",
             src_source=config["s3_src"] + "/aligned.fasta.zst",
+            dst_rerun_touchfile=config["s3_dst"] + "/aligned.fasta.zst.renew",
+            src_rerun_touchfile=config["s3_dst"] + "/aligned.fasta.zst.renew",
             lines=config.get("subsample",{}).get("nextclade", 0),
         output:
             alignment = temp(f"data/{database}/nextclade.aligned.old.fasta")
         shell:
             """
+            ./bin/download-from-s3 {params.dst_rerun_touchfile} {output.alignment} 0 ||  \
+            ./bin/download-from-s3 {params.src_rerun_touchfile} {output.alignment} 0 ||  \
             ./bin/download-from-s3 {params.dst_source} {output.alignment} {params.lines} ||  \
             ./bin/download-from-s3 {params.src_source} {output.alignment} {params.lines} ||  \
             touch {output.alignment}
