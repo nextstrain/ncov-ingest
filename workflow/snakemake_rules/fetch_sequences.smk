@@ -38,7 +38,7 @@ rule fetch_main_gisaid_ndjson:
         ndjson = temp(f"data/gisaid.ndjson")
     run:
         run_shell_command_n_times(
-            f"./bin/fetch-from-gisaid {output.ndjson}"
+            f"./bin/fetch-from-gisaid {output.ndjson}",
             f"Fetching from {database}",
             f"rm {output.ndjson}"
         )
