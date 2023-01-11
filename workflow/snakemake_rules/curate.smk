@@ -62,6 +62,8 @@ rule transform_genbank_data:
         metadata = "data/genbank_metadata_transformed.tsv",
         flagged_annotations = temp("data/genbank/flagged-annotations"),
         duplicate_biosample = "data/genbank/duplicate_biosample.txt"
+    benchmark:
+        "benchmarks/transform_genbank_data.txt"
     shell:
         """
         ./bin/transform-genbank {input.ndjson} \

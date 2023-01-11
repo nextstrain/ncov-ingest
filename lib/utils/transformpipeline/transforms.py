@@ -257,10 +257,11 @@ class StandardizeData(Transformer):
         entry.update(str_kvs)
 
         # Standardize date format to ISO 8601 date
-        date_columns = {'date', 'date_submitted'}
+        date_columns = {'date', 'date_submitted', 'date_updated'}
         date_formats = {'%Y-%m-%d', '%Y-%m-%dT%H:%M:%SZ'}
         for column in date_columns:
-            entry[column] = format_date(entry[column], date_formats)
+            if column in entry:
+                entry[column] = format_date(entry[column], date_formats)
 
         # Abbreviate strain names by removing the prefix. Strip spaces, too.
         entry['strain'] = re.sub(
@@ -583,7 +584,7 @@ class StandardizeGenbankStrainNames(Transformer):
 
 
         # Parse strain name from title to fill in strains that are empty strings
-        entry['strain_from_title'] = self.parse_strain_from_title( entry['title'] )
+        entry['strain_from_title'] = self.parse_strain_from_title( entry.get('title','') )
 
         if entry['strain'] == '':
             entry['strain'] = entry['strain_from_title']
@@ -691,9 +692,12 @@ class AddHardcodedMetadataGenbank(Transformer):
         entry['sex']               = '?'
         entry['GISAID_clade']      = '?'
         entry['originating_lab']   = '?'
-        entry['submitting_lab']    = '?'
         entry['paper_url']         = '?'
         entry['sampling_strategy']         = '?'
+
+        # Get the GenBank accession from the versioned accession if available
+        if not entry.get('genbank_accession') and entry.get('genbank_accession_rev'):
+            entry['genbank_accession'] = entry['genbank_accession_rev'].split('.')[0]
 
         entry['url'] = "https://www.ncbi.nlm.nih.gov/nuccore/" + entry['genbank_accession']
         return entry
