@@ -61,7 +61,7 @@ NCBI_COLUMN_MAP = {
     "Update date": "date_updated",
     "Virus Pangolin Classification": "pango_lineage",
     "Length": "length",
-    "Host Common Name": "host",
+    "Host Name": "host",
     "Isolate Lineage source": "isolation_source",
     "BioSample accession": "biosample_accession",
     "Submitter Names": "authors",

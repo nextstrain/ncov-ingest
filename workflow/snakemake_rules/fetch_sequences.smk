@@ -90,7 +90,7 @@ def _get_ncbi_dataset_field_mnemonics(wildcard):
         "update-date",
         "virus-pangolin",
         "length",
-        "host-common-name",
+        "host-name",
         "isolate-lineage-source",
         "biosample-acc",
         "submitter-names",
