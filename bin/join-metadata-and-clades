@@ -14,8 +14,11 @@ rate_per_day = 0.0007 * 29903 / 365
 reference_day = datetime(2020,1,1).toordinal()
 
 column_map = {
-    "clade": "Nextstrain_clade",
+    "clade_legacy": "Nextstrain_clade",
     "Nextclade_pango": "Nextclade_pango",
+    "clade_nextstrain": "year_letter_clade",
+    "clade_who": "who_variant",
+    "clade_display_name": "clade_display_name",
     "immune_escape": "immune_escape",
     "ace2_binding": "ace2_binding",
     "totalMissing": "missing_data",
@@ -53,9 +56,9 @@ def reorder_columns(result: pd.DataFrame):
     Moves the new clade column after a specified column
     """
     columns = list(result.columns)
-    columns.remove(column_map['clade'])
+    columns.remove(column_map['clade_legacy'])
     insert_at = columns.index(INSERT_BEFORE_THIS_COLUMN)
-    columns.insert(insert_at, column_map['clade'])
+    columns.insert(insert_at, column_map['clade_legacy'])
     return result[columns]
 
 
@@ -107,6 +110,11 @@ def main():
     # Remove immune_escape and ace2_binding when clade <21L and not recombinant
     clades.loc[clades.Nextstrain_clade < "21L",["immune_escape","ace2_binding"]] = float('nan')
 
+    # Calculate `clade_display_name` column, we can make this more sophisticated later
+    clades["clade_display_name"] = clades.apply(
+        lambda x: f"{x.year_letter_clade}" + (f" ({x.who_variant})" if x.who_variant.istitle() else ""),
+        axis=1
+    )
 
     clades = clades[list(column_map.values())]
 
