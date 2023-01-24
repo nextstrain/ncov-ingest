@@ -65,14 +65,14 @@ jobs:
           --no-download \
           --image nextstrain/ncov-ingest \
           --cpus 16 \
-          --memory 70GiB \
+          --memory 68GiB \
           --exec env \
           . \
             envdir env.d snakemake \
               --configfile config/genbank.yaml \
               --config "${config[@]}" \
               --cores 16 \
-              --resources mem_mb=70000 \
+              --resources mem_mb=68000 \
               --printshellcmds
       env:
         AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
