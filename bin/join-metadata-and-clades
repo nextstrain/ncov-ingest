@@ -40,6 +40,7 @@ column_map = {
     "aaSubstitutions": "aaSubstitutions"
 }
 
+clades_21L_columns = {"immune_escape","ace2_binding"}
 
 def reorder_columns(result: pd.DataFrame):
     """
@@ -83,12 +84,13 @@ def main():
 
     # Read and rename clade column to be more descriptive
     clades = pd.read_csv(args.second_file, index_col=NEXTCLADE_JOIN_COLUMN_NAME,
+                         usecols=[NEXTCLADE_JOIN_COLUMN_NAME, *(set(column_map.keys()) - clades_21L_columns)],
                          sep='\t', low_memory=False, na_filter = False) \
             .rename(columns=column_map)
 
     clades_21L = pd.read_csv(args.nextclade_21L, index_col=NEXTCLADE_JOIN_COLUMN_NAME,
                          sep='\t', low_memory=False,
-                         usecols=[NEXTCLADE_JOIN_COLUMN_NAME,"immune_escape","ace2_binding"],
+                         usecols=[NEXTCLADE_JOIN_COLUMN_NAME, *clades_21L_columns],
                          dtype={"immune_escape":float, "ace2_binding":float}) \
             .rename(columns=column_map)
 
