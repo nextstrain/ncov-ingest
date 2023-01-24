@@ -98,10 +98,10 @@ def main():
                          usecols=[NEXTCLADE_JOIN_COLUMN_NAME,"immune_escape","ace2_binding"],
                          dtype={"immune_escape":float, "ace2_binding":float}) \
             .rename(columns=column_map)
-    
+
     # Reduce false precision in immune_escape and ace2_binding
     clades_21L = clades_21L.round(3)
-    
+
     clades = pd.merge(clades, clades_21L, left_index=True, right_index=True, how='left')
 
     # Remove immune_escape and ace2_binding when clade <21L and not recombinant
