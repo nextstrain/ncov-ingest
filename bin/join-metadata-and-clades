@@ -40,13 +40,6 @@ column_map = {
     "aaSubstitutions": "aaSubstitutions"
 }
 
-preferred_types = {
-    "divergence": "int32",
-    "nonACGTN": "int32",
-    "missing_data": "int32",
-    "snp_clusters": "int32",
-    "rare_mutations": "int32"
-}
 
 def reorder_columns(result: pd.DataFrame):
     """
@@ -138,7 +131,7 @@ def main():
         result[col] = result[col].fillna(VALUE_MISSING_DATA)
 
     # Move the new column so that it's next to other clade columns
-    result = reorder_columns(result) #.astype(preferred_types)
+    result = reorder_columns(result)
 
     result.to_csv(args.o, index_label=METADATA_JOIN_COLUMN_NAME, sep='\t')
 
