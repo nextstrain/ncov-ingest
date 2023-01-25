@@ -132,12 +132,13 @@ Enter this into the `slack_member_id` field of your alert configuration.
 Clade assignments and other QC metadata output by Nextclade are currently cached in `nextclade.tsv` in the S3 bucket and only incremental additions for the new sequences are performed during the daily ingests.
 Whenever the underlying nextclade dataset (reference tree, QC rules) and/or nextclade software are updated, it is necessary to perform a full update of `nextclade.tsv`, rerunning for all of the GISAID and GenBank sequences all over again, to account for changes in the data and Nextclade algorithms.
 
-In order to tell ingest to not use the cached `nextclade.tsv` and instead perform a full rerun, you need to add an (empty) touchfile to the s3 bucket:
+In order to tell ingest to not use the cached `nextclade.tsv`/`aligned.fasta` and instead perform a full rerun, you need to add an (empty) touchfile to the s3 bucket:
 
 ```bash
-touch nextclade.tsv.zst.renew
-aws s3 cp nextclade.tsv.zst.renew s3://nextstrain-ncov-private/nextclade.tsv.zst.renew
-aws s3 cp nextclade.tsv.zst.renew s3://nextstrain-data/files/ncov/open/nextclade.tsv.zst.renew
+aws s3 cp - s3://nextstrain-ncov-private/nextclade.tsv.zst.renew < /dev/null
+aws s3 cp - s3://nextstrain-ncov-private/aligned.fasta.zst.renew < /dev/null
+aws s3 cp - s3://nextstrain-data/files/ncov/open/nextclade.tsv.zst.renew < /dev/null
+aws s3 cp - s3://nextstrain-data/files/ncov/open/aligned.fasta.zst.renew < /dev/null
 ```
 
 Ingest will automatically remove the touchfiles after it has completed the rerun.
@@ -145,18 +146,8 @@ Ingest will automatically remove the touchfiles after it has completed the rerun
 To rerun Nextclade using the `sars-cov-2-21L` dataset - which is only necessary when the calculation of `immune_escape` and `ace2_binding` changes - you need to add an (empty) touchfile to the s3 bucket:
 
 ```bash
-touch nextclade.tsv.zst.renew
-aws s3 cp nextclade.tsv.zst.renew s3://nextstrain-ncov-private/nextclade_21L.tsv.zst.renew
-aws s3 cp nextclade.tsv.zst.renew s3://nextstrain-data/files/ncov/open/nextclade_21L.tsv.zst.renew
-```
-
-If Nextclade's alignment algorithm has changed or the alignment parameters have been changed in a dataset release, the alignment needs to be rerun as well.
-To do this, you need to add an (empty) touchfile to the s3 bucket:
-
-```bash
-touch aligned.fasta.zst.renew
-aws s3 cp aligned.fasta.zst.renew s3://nextstrain-ncov-private/aligned.fasta.zst.renew
-aws s3 cp aligned.fasta.zst.renew s3://nextstrain-data/files/ncov/open/aligned.fasta.zst.renew
+aws s3 cp - s3://nextstrain-ncov-private/nextclade_21L.tsv.zst.renew < /dev/null
+aws s3 cp - s3://nextstrain-data/files/ncov/open/nextclade_21L.tsv.zst.renew < /dev/null
 ```
 
 ## Required environment variables

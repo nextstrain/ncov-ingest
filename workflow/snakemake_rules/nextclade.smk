@@ -110,7 +110,7 @@ rule get_sequences_without_nextclade_annotations:
                 --input_tsv={input.nextclade} \
                 --output_fasta={output.fasta}
         else
-            cp {input.fasta} {output.fasta}
+            ln {input.fasta} {output.fasta}
         fi
         echo "[ INFO] Number of {wildcards.reference} sequences to run Nextclade on: $(grep -c '^>' {output.fasta})"
         """
