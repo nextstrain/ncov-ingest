@@ -40,13 +40,7 @@ column_map = {
     "aaSubstitutions": "aaSubstitutions"
 }
 
-preferred_types = {
-    "divergence": "int32",
-    "nonACGTN": "int32",
-    "missing_data": "int32",
-    "snp_clusters": "int32",
-    "rare_mutations": "int32"
-}
+clades_21L_columns = {"immune_escape","ace2_binding"}
 
 def reorder_columns(result: pd.DataFrame):
     """
@@ -90,18 +84,19 @@ def main():
 
     # Read and rename clade column to be more descriptive
     clades = pd.read_csv(args.second_file, index_col=NEXTCLADE_JOIN_COLUMN_NAME,
-                         sep='\t', low_memory=False, na_filter = False) \
+                         usecols=[NEXTCLADE_JOIN_COLUMN_NAME, *(set(column_map.keys()) - clades_21L_columns)],
+                         sep='\t', low_memory=True, dtype="object", na_filter = False) \
             .rename(columns=column_map)
 
     clades_21L = pd.read_csv(args.nextclade_21L, index_col=NEXTCLADE_JOIN_COLUMN_NAME,
-                         sep='\t', low_memory=False,
-                         usecols=[NEXTCLADE_JOIN_COLUMN_NAME,"immune_escape","ace2_binding"],
-                         dtype={"immune_escape":float, "ace2_binding":float}) \
+                         sep='\t', low_memory=True,
+                         usecols=[NEXTCLADE_JOIN_COLUMN_NAME, *clades_21L_columns],
+                         dtype={NEXTCLADE_JOIN_COLUMN_NAME: "string", "immune_escape":float, "ace2_binding":float}) \
             .rename(columns=column_map)
-    
+
     # Reduce false precision in immune_escape and ace2_binding
     clades_21L = clades_21L.round(3)
-    
+
     clades = pd.merge(clades, clades_21L, left_index=True, right_index=True, how='left')
 
     # Remove immune_escape and ace2_binding when clade <21L and not recombinant
@@ -138,7 +133,7 @@ def main():
         result[col] = result[col].fillna(VALUE_MISSING_DATA)
 
     # Move the new column so that it's next to other clade columns
-    result = reorder_columns(result) #.astype(preferred_types)
+    result = reorder_columns(result)
 
     result.to_csv(args.o, index_label=METADATA_JOIN_COLUMN_NAME, sep='\t')
 
