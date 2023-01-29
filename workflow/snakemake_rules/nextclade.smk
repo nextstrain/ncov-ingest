@@ -78,8 +78,8 @@ if config.get("s3_dst") and config.get("s3_src"):
         params:
             dst_source=config["s3_dst"] + "/aligned.fasta.zst",
             src_source=config["s3_src"] + "/aligned.fasta.zst",
-            dst_rerun_touchfile=config["s3_dst"] + "/aligned.fasta.zst.renew",
-            src_rerun_touchfile=config["s3_dst"] + "/aligned.fasta.zst.renew",
+            dst_rerun_touchfile=config["s3_dst"] + "/nextclade.tsv.zst.renew",
+            src_rerun_touchfile=config["s3_dst"] + "/nextclade.tsv.zst.renew",
             lines=config.get("subsample",{}).get("nextclade", 0),
         output:
             alignment = temp(f"data/{database}/nextclade.aligned.old.fasta")

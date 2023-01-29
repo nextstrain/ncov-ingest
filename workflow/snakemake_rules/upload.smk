@@ -114,7 +114,6 @@ rule upload:
         uploads = [f"data/{database}/{remote_file}.upload" for remote_file in files_to_upload.keys()],
         touchfile_removes=[
             f"data/{database}/{remote_file}.renew.deleted" for remote_file in [
-                "aligned.fasta.zst",
                 "nextclade.tsv.zst",
                 "nextclade_21L.tsv.zst",
             ]

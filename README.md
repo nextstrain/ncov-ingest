@@ -136,9 +136,7 @@ In order to tell ingest to not use the cached `nextclade.tsv`/`aligned.fasta` an
 
 ```bash
 aws s3 cp - s3://nextstrain-ncov-private/nextclade.tsv.zst.renew < /dev/null
-aws s3 cp - s3://nextstrain-ncov-private/aligned.fasta.zst.renew < /dev/null
 aws s3 cp - s3://nextstrain-data/files/ncov/open/nextclade.tsv.zst.renew < /dev/null
-aws s3 cp - s3://nextstrain-data/files/ncov/open/aligned.fasta.zst.renew < /dev/null
 ```
 
 Ingest will automatically remove the touchfiles after it has completed the rerun.
