@@ -193,9 +193,8 @@ rule nextclade_info:
         nextclade_info = f"data/{database}/nextclade{{reference}}.tsv"
     shell:
         """
-        # Header taken from first non-empty file
-        keep-header {input.old_info:q} {input.new_info:q} -- \
-        tsv-uniq -f 1 > {output.nextclade_info}
+        tsv-append -H {input.old_info} {input.new_info} \
+        | tsv-uniq -H -f seqName > {output.nextclade_info}
         """
 
 rule combine_alignments:
