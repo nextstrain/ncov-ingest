@@ -6,6 +6,7 @@ import pandas as pd
 import numpy as np
 
 INSERT_BEFORE_THIS_COLUMN = "pango_lineage"
+COLUMN_TO_REORDER = "Nextstrain_clade"
 METADATA_JOIN_COLUMN_NAME = 'strain'
 NEXTCLADE_JOIN_COLUMN_NAME = 'seqName'
 VALUE_MISSING_DATA = '?'
@@ -14,7 +15,7 @@ rate_per_day = 0.0007 * 29903 / 365
 reference_day = datetime(2020,1,1).toordinal()
 
 column_map = {
-    "clade": "Nextstrain_clade",
+    "clade_legacy": "Nextstrain_clade",
     "Nextclade_pango": "Nextclade_pango",
     "immune_escape": "immune_escape",
     "ace2_binding": "ace2_binding",
@@ -44,12 +45,16 @@ clades_21L_columns = {"immune_escape","ace2_binding"}
 
 def reorder_columns(result: pd.DataFrame):
     """
-    Moves the new clade column after a specified column
+    Moves COLUMN_TO_REORDER right before INSERT_BEFORE_THIS_COLUMN
     """
+    if COLUMN_TO_REORDER not in list(column_map.values()):
+        raise ValueError(f"Column {COLUMN_TO_REORDER} not found in values of column_map {column_map}")
     columns = list(result.columns)
-    columns.remove(column_map['clade'])
+    if INSERT_BEFORE_THIS_COLUMN not in columns:
+        raise ValueError(f"Column {INSERT_BEFORE_THIS_COLUMN} not found in metadata columns {columns}")
+    columns.remove(COLUMN_TO_REORDER)
     insert_at = columns.index(INSERT_BEFORE_THIS_COLUMN)
-    columns.insert(insert_at, column_map['clade'])
+    columns.insert(insert_at, COLUMN_TO_REORDER)
     return result[columns]
 
 
