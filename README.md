@@ -135,8 +135,10 @@ Whenever the underlying nextclade dataset (reference tree, QC rules) and/or next
 In order to tell ingest to not use the cached `nextclade.tsv`/`aligned.fasta` and instead perform a full rerun, you need to add an (empty) touchfile to the s3 bucket:
 
 ```bash
-aws s3 cp - s3://nextstrain-ncov-private/nextclade.tsv.zst.renew < /dev/null
-aws s3 cp - s3://nextstrain-data/files/ncov/open/nextclade.tsv.zst.renew < /dev/null
+for file in [ "nextclade.tsv.zst.renew", "version_sars-cov-2.txt" ]; do
+  aws s3 cp - s3://nextstrain-ncov-private/$file < /dev/null
+  aws s3 cp - s3://nextstrain-data/files/ncov/open/$file < /dev/null
+done
 ```
 
 Ingest will automatically remove the touchfiles after it has completed the rerun.
@@ -144,8 +146,10 @@ Ingest will automatically remove the touchfiles after it has completed the rerun
 To rerun Nextclade using the `sars-cov-2-21L` dataset - which is only necessary when the calculation of `immune_escape` and `ace2_binding` changes - you need to add an (empty) touchfile to the s3 bucket:
 
 ```bash
-aws s3 cp - s3://nextstrain-ncov-private/nextclade_21L.tsv.zst.renew < /dev/null
-aws s3 cp - s3://nextstrain-data/files/ncov/open/nextclade_21L.tsv.zst.renew < /dev/null
+for file in [ "nextclade_21L.tsv.zst.renew", "version_sars-cov-2-21L.txt" ]; do
+  aws s3 cp - s3://nextstrain-ncov-private/$file < /dev/null
+  aws s3 cp - s3://nextstrain-data/files/ncov/open/$file < /dev/null
+done
 ```
 
 ## Required environment variables
@@ -157,3 +161,7 @@ aws s3 cp - s3://nextstrain-data/files/ncov/open/nextclade_21L.tsv.zst.renew < /
 - `AWS_SECRET_ACCESS_KEY`
 - `SLACK_TOKEN`
 - `SLACK_CHANNELS`
+
+## Unstable files produced by workflow
+
+- `version_sars-cov-2.txt` and `version_sars-cov-2-21L.txt`: used to track the version of the nextclade dataset used to generate the `nextclade.tsv` and `nextclade_21L.tsv` files. Format: `timestamp dataset_version` (e.g. `2023-02-06T14:40:23Z 2023-02-01T12:00:00Z`) for each run since and including the last full run.

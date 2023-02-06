@@ -105,6 +105,29 @@ rule remove_rerun_touchfile:
         touch {output}
         """
 
+rule upload_dataset_version:
+    """
+    Upload the Nextclade dataset version file
+    """
+    input: 
+        metadata_upload = f"data/{database}/metadata.tsv.zst.upload",
+        version_file = "data/nextclade_data/version_{dataset_name}.txt"
+    output:
+        touch("data/nextclade_data/version_{dataset_name}.upload")
+    params:
+        quiet = "" if send_notifications else "--quiet",
+        s3_bucket = config.get("s3_dst",""),
+        cloudfront_domain = config.get("cloudfront_domain", ""),
+        remote_filename = "version_{dataset_name}.txt",
+    shell:
+        """
+        ./bin/upload-to-s3 \
+            {params.quiet} \
+            {input.version_file:q} \
+            {params.s3_bucket:q}/{params.remote_filename:q} \
+            {params.cloudfront_domain} 2>&1 | tee {output}
+        """
+
 rule upload:
     """
     Requests one touch file for each uploaded remote file
@@ -117,6 +140,7 @@ rule upload:
                 "nextclade.tsv.zst",
                 "nextclade_21L.tsv.zst",
             ]
-        ]
+        ],
+        dataset_version = [f"data/nextclade_data/version_{dataset_name}.upload" for dataset_name in ["sars-cov-2", "sars-cov-2-21L"]],
     output:
         touch(f"data/{database}/upload.done")

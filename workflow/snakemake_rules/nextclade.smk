@@ -138,13 +138,26 @@ rule download_nextclade_executable:
         """
 
 rule download_nextclade_dataset:
-    """Download Nextclade dataset"""
+    """
+    Download Nextclade dataset
+    Append the dataset version used for this run to the version file with timestamp of download time 
+    """
     input: "nextclade"
     output:
-        dataset = "data/nextclade_data/{dataset_name}.zip"
+        dataset = "data/nextclade_data/{dataset_name}.zip",
+        version = "data/nextclade_data/version_{dataset_name}.txt",
+    params:
+        dst_version_file=config["s3_dst"] + "/version_{dataset_name}.txt",
+        src_version_file=config["s3_src"] + "/version_{dataset_name}.txt",
     shell:
         """
+        ./bin/download-from-s3 {params.dst_version_file} {output.version} 0 ||  \
+        ./bin/download-from-s3 {params.src_version_file} {output.version} 0 ||  \
+        touch {output.version}
+
         ./nextclade dataset get --name="{wildcards.dataset_name}" --output-zip={output.dataset} --verbose
+        printf %s "$(date --utc +%FT%TZ) " >> {output.version}
+        nextclade dataset list --name="{wildcards.dataset_name}" --json | jq -r '.[0].attributes.tag.value' >>{output.version}
         """
 
 GENES = "E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S"
