@@ -174,7 +174,7 @@ rule run_nextclade:
     params:
         genes=GENES_SPACE_DELIMITED,
     output:
-        info=f"data/{database}/nextclade{{reference}}_new.tsv",
+        info=f"data/{database}/nextclade{{reference}}_new_raw.tsv",
         alignment=temp(f"data/{database}/nextclade{{reference}}.aligned.upd.fasta"),
     shell:
         """
@@ -192,6 +192,37 @@ rule run_nextclade:
         """
 
 
+rule nextclade_tsv_concat_versions:
+    input:
+        tsv=f"data/{database}/nextclade{{reference}}_new_raw.tsv",
+        dataset=lambda w: f"data/nextclade_data/sars-cov-2{w.reference.replace('_','-')}.zip",
+    output:
+        tsv=f"data/{database}/nextclade{{reference}}_new.tsv",
+    shell:
+        """
+        if [ -s {input.tsv} ]; then
+            # Get version numbers
+            nextclade_version="$(./nextclade --version)"
+            dataset_version="$(unzip -p {input.dataset} tag.json | jq -r '.tag')"
+            timestamp="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+
+            # Combine input file with version numbers and write to output
+            printf "%s\tnextclade_version\tdataset_version\trun_timestamp\n" \
+                "$(head -n 1 {input.tsv})" \
+                > {output.tsv}
+
+            tail -n +2 {input.tsv} | \
+            awk -v v1="$nextclade_version" \
+                -v v2="$dataset_version" \
+                -v v3="$timestamp" \
+                -v OFS='\t' '{{print $0, v1, v2, v3}}' \
+                >> {output.tsv}
+        else
+            cp {input.tsv} {output.tsv}
+        fi
+        """
+
+
 rule nextclade_info:
     message:
         """
@@ -199,7 +230,7 @@ rule nextclade_info:
         """
     input:
         old_info=f"data/{database}/nextclade{{reference}}_old.tsv",
-        new_info=f"data/{database}/nextclade{{reference}}_new.tsv",
+        new_info=rules.nextclade_tsv_concat_versions.output.tsv,
     output:
         nextclade_info=f"data/{database}/nextclade{{reference}}.tsv",
     shell:
