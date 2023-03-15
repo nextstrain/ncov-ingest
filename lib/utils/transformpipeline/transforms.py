@@ -389,6 +389,11 @@ class AbbreviateAuthors(Transformer):
             if not entry['authors'].strip('. ').endswith(" et al"): # if it does not already finishes with " et al.", add it
                 entry['authors'] += ' et al'
 
+            # Strip all double quotes from the authors value to prevent
+            # unclosed quotes from causing errors in table readers when reading
+            # the transformed metadata TSV
+            entry['authors'] = entry['authors'].replace('"', '')
+
         return entry
 
 
