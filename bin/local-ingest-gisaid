@@ -15,6 +15,7 @@
 #
 #  --upload-outputs   Upload output files to AWS S3 bucket
 #
+# shellcheck disable=SC1091
 
 set -o errexit
 set -o nounset
