@@ -80,7 +80,7 @@ A full run is now done in 3 steps via manual triggers:
 2. Add manual annotations, update location hierarchy as needed, and run ingest without fetching new sequences.
     - Pushes of `source-data/*-annotations.tsv` to the master branch will automatically trigger a run of ingest.
     - You can also run ingest manually by running `./bin/trigger ncov-ingest gisaid/ingest --user <your-github-username>`.
-3. Once all manual fixes are complete, trigger a rebuild of [nextstrain/ncov](https://github.com/nextstrain/ncov) by running `./bin/trigger ncov-ingest rebuild --user <your-github-username>`.
+3. Once all manual fixes are complete, trigger a rebuild of [nextstrain/ncov](https://github.com/nextstrain/ncov) by running `./bin/trigger ncov gisaid/rebuild --user <your-github-username>`.
 
 See the output of `./bin/trigger ncov-ingest gisaid/fetch-and-ingest --user <your-github-username>`, `./bin/trigger ncov-ingest gisaid/ingest` or `./bin/trigger ncov-ingest rebuild` for more information about authentication with GitHub.
 
@@ -95,10 +95,6 @@ Valid dispatch types for `./bin/trigger ncov-ingest` are:
 - `fetch-and-ingest` (both GISAID and GenBank)
 - `gisaid/fetch-and-ingest`
 - `genbank/fetch-and-ingest`
-- `rebuild`
-- `gisaid/rebuild`
-- `open/rebuild`
-- `genbank/rebuild`
 - `nextclade-full-run` (both GISAID and GenBank)
 - `gisaid/nextclade-full-run`
 - `genbank/nextclade-full-run`
