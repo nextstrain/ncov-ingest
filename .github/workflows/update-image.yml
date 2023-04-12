@@ -15,7 +15,7 @@ on:
       - yarn.lock
       - .github/workflows/update-image.yml
 
-  # Manually triggered using bin/trigger update-image
+  # Manually triggered using `./bin/trigger ncov-ingest update-image`
   repository_dispatch:
     types: update-image
 

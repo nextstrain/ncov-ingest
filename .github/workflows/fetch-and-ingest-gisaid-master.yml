@@ -22,7 +22,7 @@ on:
     # sister GenBank job, so that we don't need to keep two schedules in our heads.
     - cron:  '7 18 * * *'
 
-  # Manually triggered using `./bin/trigger gisaid/fetch-and-ingest`
+  # Manually triggered using `./bin/trigger ncov-ingest gisaid/fetch-and-ingest`
   repository_dispatch:
     types:
       - gisaid/fetch-and-ingest

@@ -2,8 +2,8 @@ name: GISAID full Nextclade run
 
 on:
   # Manually triggered using:
-  #  - ./bin/trigger gisaid/nextclade-full-run`   (only GISAID)
-  #  - ./bin/trigger nextclade-full-run           (GISAID and GenBank)
+  #  - ./bin/trigger ncov-ingest gisaid/nextclade-full-run`   (only GISAID)
+  #  - ./bin/trigger ncov-ingest nextclade-full-run           (GISAID and GenBank)
   repository_dispatch:
     types:
       - gisaid/nextclade-full-run
