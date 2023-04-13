@@ -55,6 +55,8 @@ include: "workflow/snakemake_rules/curate.smk"
 
 include: "workflow/snakemake_rules/nextclade.smk"
 
+include: "workflow/snakemake_rules/partition.smk"
+
 if send_notifications and config.get("s3_src"):
     include: "workflow/snakemake_rules/slack_notifications.smk"
 

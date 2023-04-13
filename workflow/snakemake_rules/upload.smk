@@ -12,6 +12,8 @@ These output files are empty flag files to force Snakemake to run the upload rul
 Note: we are doing parallel uploads of zstd compressed files to slowly make the transition to this format.
 """
 
+import datetime
+
 def compute_files_to_upload():
     """
     Compute files to upload
@@ -33,6 +35,30 @@ def compute_files_to_upload():
                         "aligned.fasta.zst":           f"data/{database}/aligned.fasta",
                         "nextclade_21L.tsv.zst":       f"data/{database}/nextclade_21L.tsv",
                     }
+    
+    now = datetime.datetime.now()
+    months_since_2020_01 = {f"{year}-{month:02d}" for year in range(2020, now.year+1) for month in range(1, 12+1) if year < now.year or month <= now.month}
+    regions={"europe", "north-america", "south-america", "asia", "africa", "oceania"}
+
+    max_per_year = {"19": "B", "20":"K", "21":"M", "22":"F","23":"A"}
+    clades = set()
+    for year, max_letter in max_per_year.items():
+            for letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+                if letter > max_letter:
+                    break
+                clades.add(f"{year}{letter}")
+    
+    for clade in clades:
+        files_to_upload[f"metadata_{clade}.tsv.zst"] = f"data/{database}/metadata_clade_{clade}.tsv"
+        files_to_upload[f"sequences_{clade}.fasta.zst"] = f"data/{database}/sequences_clade_{clade}.fasta"
+
+    for region in regions:
+        files_to_upload[f"metadata_{region}.tsv.zst"] = f"data/{database}/metadata_region_{region}.tsv"
+        files_to_upload[f"sequences_{region}.fasta.zst"] = f"data/{database}/sequences_region_{region}.fasta"
+    
+    for year_month in months_since_2020_01:
+        files_to_upload[f"metadata_{year_month}.tsv.zst"] = f"data/{database}/metadata_year-month_{year_month}.tsv"
+        files_to_upload[f"sequences_{year_month}.fasta.zst"] = f"data/{database}/sequences_year-month_{year_month}.fasta"
 
     if database=="genbank":
         files_to_upload["biosample.tsv.gz"] =           f"data/{database}/biosample.tsv"
