@@ -16,6 +16,8 @@ reference_day = datetime(2020,1,1).toordinal()
 
 column_map = {
     "clade_legacy": "Nextstrain_clade",
+    "clade_nextstrain": "clade_nextstrain",
+    "clade_who": "clade_who",
     "Nextclade_pango": "Nextclade_pango",
     "immune_escape": "immune_escape",
     "ace2_binding": "ace2_binding",
