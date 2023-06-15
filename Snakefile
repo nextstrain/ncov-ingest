@@ -1,6 +1,10 @@
 from subprocess import CalledProcessError
 import os
 
+GENES = "E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S"
+GENES_SPACE_DELIMITED = GENES.replace(",", " ")
+GENE_LIST = GENES.split(",")
+
 #################################################################
 ####################### general setup ###########################
 #################################################################

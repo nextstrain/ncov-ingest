@@ -30,6 +30,7 @@ Produces the following outputs:
 
 wildcard_constraints:
     reference="|_21L",
+    seqtype="[^.]+",
 
 
 rule create_empty_nextclade_info:
@@ -43,7 +44,15 @@ rule create_empty_nextclade_aligned:
     message:
         """Creating empty NextClade aligned cache file"""
     output:
-        touch(f"data/{database}/nextclade.aligned.old.fasta"),
+        alignment=f"data/{database}/nextclade.aligned.old.fasta",
+        translations=[
+            f"data/{database}/nextclade.translation_{gene}.old.fasta"
+            for gene in GENE_LIST
+        ],
+    shell:
+        """
+        touch {output}
+        """
 
 
 # Only include rules to fetch from S3 if S3 config params are provided
@@ -81,13 +90,13 @@ if config.get("s3_dst") and config.get("s3_src"):
         ## (1) race condition. This file may be updated on the remote after download_nextclade has run but before this rule
         ## (2) we may get `download_nextclade` and `download_previous_alignment` from different s3 buckets
         params:
-            dst_source=config["s3_dst"] + "/aligned.fasta.zst",
-            src_source=config["s3_src"] + "/aligned.fasta.zst",
+            dst_source=config["s3_dst"] + "/{seqtype}.fasta.zst",
+            src_source=config["s3_src"] + "/{seqtype}.fasta.zst",
             dst_rerun_touchfile=config["s3_dst"] + "/nextclade.tsv.zst.renew",
             src_rerun_touchfile=config["s3_dst"] + "/nextclade.tsv.zst.renew",
             lines=config.get("subsample", {}).get("nextclade", 0),
         output:
-            alignment=temp(f"data/{database}/nextclade.aligned.old.fasta"),
+            alignment=temp(f"data/{database}/nextclade.{{seqtype}}.old.fasta"),
         shell:
             """
             ./bin/download-from-s3 {params.dst_rerun_touchfile} {output.alignment} 0 ||  \
@@ -156,10 +165,6 @@ rule download_nextclade_dataset:
         """
 
 
-GENES = "E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S"
-GENES_SPACE_DELIMITED = GENES.replace(",", " ")
-
-
 rule run_nextclade:
     message:
         """
@@ -173,9 +178,19 @@ rule run_nextclade:
         sequences=f"data/{database}/nextclade{{reference}}.sequences.fasta",
     params:
         genes=GENES_SPACE_DELIMITED,
+        translation_arg=lambda w: (
+            f"--output-translations=data/{database}/nextclade{w.reference}.translation_{{gene}}.upd.fasta"
+            if w.reference == ""
+            else ""
+        ),
+        translations=lambda w: [
+            f"data/{database}/nextclade{w.reference}.translation_{gene}.upd.fasta"
+            for gene in GENE_LIST
+        ],
     output:
         info=f"data/{database}/nextclade{{reference}}_new_raw.tsv",
-        alignment=temp(f"data/{database}/nextclade{{reference}}.aligned.upd.fasta"),
+        alignment=f"data/{database}/nextclade{{reference}}.aligned.upd.fasta",
+        touchfile=touch(f"data/{database}/nextclade{{reference}}.touch"),
     shell:
         """
         if [[ -s {input.sequences} ]]; then
@@ -184,9 +199,10 @@ rule run_nextclade:
             --input-dataset={input.dataset} \
             --output-tsv={output.info} \
             --genes {params.genes} \
+            {params.translation_arg} \
             --output-fasta={output.alignment}
         else
-            touch {output.info} {output.alignment}
+            touch {output.info} {output.alignment} {params.translations} {output.touchfile}
             echo "[ INFO] Skipping Nextclade run as there are no new sequences"
         fi
         """
@@ -241,17 +257,17 @@ rule nextclade_info:
 
 
 rule combine_alignments:
-    message:
-        """
-        Generating full alignment by combining newly aligned sequences with previous (cached) alignment
-        """
+    """
+    Generating full alignment by combining newly aligned sequences with previous (cached) alignment
+    """
     input:
-        old_alignment=f"data/{database}/nextclade.aligned.old.fasta",
-        new_alignment=f"data/{database}/nextclade.aligned.upd.fasta",
+        nextclade_finished=f"data/{database}/nextclade.touch"
+        old_alignment=f"data/{database}/nextclade.{{seqtype}}.old.fasta",
     output:
-        alignment=f"data/{database}/aligned.fasta",
+        alignment=f"data/{database}/{{seqtype}}.fasta",
     params:
         keep_temp=config.get("keep_temp", "false"),
+        new_alignment=f"data/{database}/nextclade.{{seqtype}}.upd.fasta",
     shell:
         """
         if [[ -s {input.old_alignment} ]]; then
@@ -260,11 +276,11 @@ rule combine_alignments:
             else
                 mv {input.old_alignment} {output.alignment}
             fi
-            cat {input.new_alignment} >> {output.alignment}
+            cat {params.new_alignment} >> {output.alignment}
         elif [[ "{params.keep_temp}" == "True" ]]; then
-            cp {input.new_alignment} {output.alignment}
+            cp {params.new_alignment} {output.alignment}
         else
-            mv {input.new_alignment} {output.alignment}
+            mv {params.new_alignment} {output.alignment}
         fi
         """
 
