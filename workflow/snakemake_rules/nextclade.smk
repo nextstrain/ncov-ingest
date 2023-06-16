@@ -26,6 +26,7 @@ Produces the following outputs:
         nextclade_info = f"data/{database}/nextclade.tsv"
         alignment = f"data/{database}/aligned.fasta"
 """
+from shlex import quote as shellquote
 
 
 wildcard_constraints:
@@ -179,18 +180,19 @@ rule run_nextclade:
     params:
         genes=GENES_SPACE_DELIMITED,
         translation_arg=lambda w: (
-            f"--output-translations=data/{database}/nextclade{w.reference}.translation_{{gene}}.upd.fasta"
+            # Nextclade takes a filename template in which it replaces {gene}
+            # itself, so we want to pass thru {gene} literally to it and make
+            # sure it isn't interpretted by the shell as a glob.  We shellquote
+            # here instead of with :q below because we don't want to pass an
+            # empty string argument when this param is empty.
+            shellquote(f"--output-translations=data/{database}/nextclade{w.reference}.translation_{{gene}}.upd.fasta")
             if w.reference == ""
             else ""
         ),
-        translations=lambda w: [
-            f"data/{database}/nextclade{w.reference}.translation_{gene}.upd.fasta"
-            for gene in GENE_LIST
-        ],
     output:
         info=f"data/{database}/nextclade{{reference}}_new_raw.tsv",
-        alignment=f"data/{database}/nextclade{{reference}}.aligned.upd.fasta",
-        touchfile=touch(f"data/{database}/nextclade{{reference}}.touch"),
+        alignment=temp(f"data/{database}/nextclade{{reference}}.aligned.upd.fasta"),
+        translations=[temp(f"data/{database}/nextclade{{reference}}.translation_{gene}.upd.fasta") for gene in GENE_LIST],
     shell:
         """
         if [[ -s {input.sequences} ]]; then
@@ -202,7 +204,7 @@ rule run_nextclade:
             {params.translation_arg} \
             --output-fasta={output.alignment}
         else
-            touch {output.info} {output.alignment} {params.translations} {output.touchfile}
+            touch {output.info} {output.alignment} {output.translations}
             echo "[ INFO] Skipping Nextclade run as there are no new sequences"
         fi
         """
@@ -261,13 +263,12 @@ rule combine_alignments:
     Generating full alignment by combining newly aligned sequences with previous (cached) alignment
     """
     input:
-        nextclade_finished=f"data/{database}/nextclade.touch"
         old_alignment=f"data/{database}/nextclade.{{seqtype}}.old.fasta",
+        new_alignment=f"data/{database}/nextclade.{{seqtype}}.upd.fasta",
     output:
         alignment=f"data/{database}/{{seqtype}}.fasta",
     params:
         keep_temp=config.get("keep_temp", "false"),
-        new_alignment=f"data/{database}/nextclade.{{seqtype}}.upd.fasta",
     shell:
         """
         if [[ -s {input.old_alignment} ]]; then
@@ -276,11 +277,11 @@ rule combine_alignments:
             else
                 mv {input.old_alignment} {output.alignment}
             fi
-            cat {params.new_alignment} >> {output.alignment}
+            cat {input.new_alignment} >> {output.alignment}
         elif [[ "{params.keep_temp}" == "True" ]]; then
-            cp {params.new_alignment} {output.alignment}
+            cp {input.new_alignment} {output.alignment}
         else
-            mv {params.new_alignment} {output.alignment}
+            mv {input.new_alignment} {output.alignment}
         fi
         """
 
