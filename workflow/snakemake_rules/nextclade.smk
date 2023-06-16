@@ -45,15 +45,8 @@ rule create_empty_nextclade_aligned:
     message:
         """Creating empty NextClade aligned cache file"""
     output:
-        alignment=f"data/{database}/nextclade.aligned.old.fasta",
-        translations=[
-            f"data/{database}/nextclade.translation_{gene}.old.fasta"
-            for gene in GENE_LIST
-        ],
-    shell:
-        """
-        touch {output}
-        """
+        touch(f"data/{database}/nextclade.aligned.old.fasta"),
+        *[touch(f"data/{database}/nextclade.translation_{gene}.old.fasta") for gene in GENE_LIST],
 
 
 # Only include rules to fetch from S3 if S3 config params are provided
