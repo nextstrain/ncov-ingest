@@ -31,7 +31,7 @@ from shlex import quote as shellquote
 
 wildcard_constraints:
     reference="|_21L",
-    seqtype="[^.]+",
+    seqtype="aligned|translation_[^.]+",
 
 
 rule create_empty_nextclade_info:
