@@ -162,53 +162,59 @@ rule download_nextclade_dataset:
         """
 
 
-rule run_nextclade:
+rule run_wuhan_nextclade:
     """
     Runs nextclade on sequences which were not in the previously cached nextclade run.
     This alignes sequences, assigns clades and calculates some of the other useful
     metrics which will ultimately end up in metadata.tsv.
     """
     input:
-        nextclade="nextclade",
-        dataset=lambda w: f"data/nextclade_data/sars-cov-2{w.reference.replace('_','-')}.zip",
-        sequences=f"data/{database}/nextclade{{reference}}.sequences.fasta",
+        nextclade_path="nextclade",
+        dataset=lambda w: f"data/nextclade_data/sars-cov-2.zip",
+        sequences=f"data/{database}/nextclade.sequences.fasta",
     params:
         genes=GENES_SPACE_DELIMITED,
-        # Nextclade takes a filename template in which it replaces {gene}
-        # itself, so we want to pass thru {gene} literally to it and make
-        # sure it isn't interpretted by the shell as a glob.  We shellquote
-        # here instead of with :q below because we don't want to pass an
-        # empty string argument when this param is empty.
         translation_arg=lambda w: (
-            shellquote(
-                f"--output-translations=data/{database}/nextclade{w.reference}.translation_{{gene}}.upd.fasta"
-            )
-            if w.reference == ""
-            else ""
+            f"--output-translations=data/{database}/nextclade.translation_{{gene}}.upd.fasta"
         ),
     output:
-        info=f"data/{database}/nextclade{{reference}}_new_raw.tsv",
-        alignment=temp(f"data/{database}/nextclade{{reference}}.aligned.upd.fasta"),
+        info=f"data/{database}/nextclade_new_raw.tsv",
+        alignment=temp(f"data/{database}/nextclade.aligned.upd.fasta"),
         translations=[
-            temp(
-                f"data/{database}/nextclade{{reference}}.translation_{gene}.upd.fasta"
-            )
+            temp(f"data/{database}/nextclade.translation_{gene}.upd.fasta")
             for gene in GENE_LIST
         ],
     shell:
         """
-        if [[ -s {input.sequences} ]]; then
-            ./nextclade run \
-            {input.sequences}\
-            --input-dataset={input.dataset} \
-            --output-tsv={output.info} \
-            --genes {params.genes} \
-            {params.translation_arg} \
-            --output-fasta={output.alignment}
-        else
-            touch {output.info} {output.alignment} {output.translations}
-            echo "[ INFO] Skipping Nextclade run as there are no new sequences"
-        fi
+        ./{input.nextclade_path} run \
+        {input.sequences}\
+        --input-dataset={input.dataset} \
+        --output-tsv={output.info} \
+        --genes {params.genes} \
+        {params.translation_arg} \
+        --output-fasta={output.alignment}
+        """
+
+
+rule run_21L_nextclade:
+    """
+    Like wuhan nextclade, but TSV only, no alignments output
+    """
+    input:
+        nextclade_path="nextclade",
+        dataset=lambda w: f"data/nextclade_data/sars-cov-2-21L.zip",
+        sequences=f"data/{database}/nextclade_21L.sequences.fasta",
+    params:
+        genes=GENES_SPACE_DELIMITED,
+    output:
+        info=f"data/{database}/nextclade_21L_new_raw.tsv",
+    shell:
+        """
+        ./{input.nextclade_path} run \
+        {input.sequences} \
+        --input-dataset={input.dataset} \
+        --output-tsv={output.info} \
+        --genes {params.genes}
         """
 
 
