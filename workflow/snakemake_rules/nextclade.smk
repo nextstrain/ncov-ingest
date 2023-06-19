@@ -46,7 +46,10 @@ rule create_empty_nextclade_aligned:
         """Creating empty NextClade aligned cache file"""
     output:
         touch(f"data/{database}/nextclade.aligned.old.fasta"),
-        *[touch(f"data/{database}/nextclade.translation_{gene}.old.fasta") for gene in GENE_LIST],
+        *[
+            touch(f"data/{database}/nextclade.translation_{gene}.old.fasta")
+            for gene in GENE_LIST
+        ],
 
 
 # Only include rules to fetch from S3 if S3 config params are provided
@@ -160,32 +163,38 @@ rule download_nextclade_dataset:
 
 
 rule run_nextclade:
-    message:
-        """
-        Runs nextclade on sequences which were not in the previously cached nextclade run.
-        This alignes sequences, assigns clades and calculates some of the other useful
-        metrics which will ultimately end up in metadata.tsv.
-        """
+    """
+    Runs nextclade on sequences which were not in the previously cached nextclade run.
+    This alignes sequences, assigns clades and calculates some of the other useful
+    metrics which will ultimately end up in metadata.tsv.
+    """
     input:
         nextclade="nextclade",
         dataset=lambda w: f"data/nextclade_data/sars-cov-2{w.reference.replace('_','-')}.zip",
         sequences=f"data/{database}/nextclade{{reference}}.sequences.fasta",
     params:
         genes=GENES_SPACE_DELIMITED,
+        # Nextclade takes a filename template in which it replaces {gene}
+        # itself, so we want to pass thru {gene} literally to it and make
+        # sure it isn't interpretted by the shell as a glob.  We shellquote
+        # here instead of with :q below because we don't want to pass an
+        # empty string argument when this param is empty.
         translation_arg=lambda w: (
-            # Nextclade takes a filename template in which it replaces {gene}
-            # itself, so we want to pass thru {gene} literally to it and make
-            # sure it isn't interpretted by the shell as a glob.  We shellquote
-            # here instead of with :q below because we don't want to pass an
-            # empty string argument when this param is empty.
-            shellquote(f"--output-translations=data/{database}/nextclade{w.reference}.translation_{{gene}}.upd.fasta")
+            shellquote(
+                f"--output-translations=data/{database}/nextclade{w.reference}.translation_{{gene}}.upd.fasta"
+            )
             if w.reference == ""
             else ""
         ),
     output:
         info=f"data/{database}/nextclade{{reference}}_new_raw.tsv",
         alignment=temp(f"data/{database}/nextclade{{reference}}.aligned.upd.fasta"),
-        translations=[temp(f"data/{database}/nextclade{{reference}}.translation_{gene}.upd.fasta") for gene in GENE_LIST],
+        translations=[
+            temp(
+                f"data/{database}/nextclade{{reference}}.translation_{gene}.upd.fasta"
+            )
+            for gene in GENE_LIST
+        ],
     shell:
         """
         if [[ -s {input.sequences} ]]; then
