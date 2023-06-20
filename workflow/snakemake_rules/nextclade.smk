@@ -274,6 +274,7 @@ rule generate_metadata:
         nextclade_tsv=f"data/{database}/nextclade.tsv",
         nextclade_21L_tsv=f"data/{database}/nextclade_21L.tsv",
         existing_metadata=f"data/{database}/metadata_transformed.tsv",
+        clade_legacy_mapping="defaults/clade-legacy-mapping.yml",
     output:
         metadata=f"data/{database}/metadata.tsv",
     benchmark:
@@ -281,8 +282,9 @@ rule generate_metadata:
     shell:
         """
         ./bin/join-metadata-and-clades \
-            {input.existing_metadata} \
-            {input.nextclade_tsv} \
-            {input.nextclade_21L_tsv} \
+            --metadata {input.existing_metadata} \
+            --nextclade-tsv {input.nextclade_tsv} \
+            --nextclade-21L-tsv {input.nextclade_21L_tsv} \
+            --clade-legacy-mapping {input.clade_legacy_mapping} \
             -o {output.metadata}
         """

@@ -4,6 +4,7 @@ import sys
 from datetime import datetime
 import pandas as pd
 import numpy as np
+import yaml
 
 INSERT_BEFORE_THIS_COLUMN = "pango_lineage"
 COLUMN_TO_REORDER = "Nextstrain_clade"
@@ -15,7 +16,6 @@ rate_per_day = 0.0007 * 29903 / 365
 reference_day = datetime(2020,1,1).toordinal()
 
 column_map = {
-    "clade_legacy": "Nextstrain_clade",
     "clade_nextstrain": "clade_nextstrain",
     "clade_who": "clade_who",
     "Nextclade_pango": "Nextclade_pango",
@@ -43,13 +43,16 @@ column_map = {
     "aaSubstitutions": "aaSubstitutions"
 }
 
+# Nextstrain_clade is added later based on clade_nextstrain and a yml mapping
+new_columns = list(column_map.values()) + ["Nextstrain_clade"]
+
 clades_21L_columns = {"immune_escape","ace2_binding"}
 
 def reorder_columns(result: pd.DataFrame):
     """
     Moves COLUMN_TO_REORDER right before INSERT_BEFORE_THIS_COLUMN
     """
-    if COLUMN_TO_REORDER not in list(column_map.values()):
+    if COLUMN_TO_REORDER not in new_columns:
         raise ValueError(f"Column {COLUMN_TO_REORDER} not found in values of column_map {column_map}")
     columns = list(result.columns)
     if INSERT_BEFORE_THIS_COLUMN not in columns:
@@ -62,11 +65,12 @@ def reorder_columns(result: pd.DataFrame):
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Joins metadata file with Nextclade clade output",
+        description="Joins metadata file with Nextclade tsvs. Adds clade_legacy column.",
     )
-    parser.add_argument("first_file")
-    parser.add_argument("second_file")
-    parser.add_argument("nextclade_21L")
+    parser.add_argument("--metadata", required=True)
+    parser.add_argument("--nextclade-tsv", required=True)
+    parser.add_argument("--nextclade-21L-tsv", required=True)
+    parser.add_argument("--clade-legacy-mapping", required=True)
     parser.add_argument("-o", default=sys.stdout)
     return parser.parse_args()
 
@@ -86,16 +90,16 @@ def isfloat(value):
 def main():
     args = parse_args()
 
-    metadata = pd.read_csv(args.first_file, index_col=METADATA_JOIN_COLUMN_NAME,
+    metadata = pd.read_csv(args.metadata, index_col=METADATA_JOIN_COLUMN_NAME,
                            sep='\t', low_memory=False, na_filter = False)
 
     # Read and rename clade column to be more descriptive
-    clades = pd.read_csv(args.second_file, index_col=NEXTCLADE_JOIN_COLUMN_NAME,
+    clades = pd.read_csv(args.nextclade_tsv, index_col=NEXTCLADE_JOIN_COLUMN_NAME,
                          usecols=[NEXTCLADE_JOIN_COLUMN_NAME, *(set(column_map.keys()) - clades_21L_columns)],
                          sep='\t', low_memory=True, dtype="object", na_filter = False) \
             .rename(columns=column_map)
 
-    clades_21L = pd.read_csv(args.nextclade_21L, index_col=NEXTCLADE_JOIN_COLUMN_NAME,
+    clades_21L = pd.read_csv(args.nextclade_21L_tsv, index_col=NEXTCLADE_JOIN_COLUMN_NAME,
                          sep='\t', low_memory=True,
                          usecols=[NEXTCLADE_JOIN_COLUMN_NAME, *clades_21L_columns],
                          dtype={NEXTCLADE_JOIN_COLUMN_NAME: "string", "immune_escape":float, "ace2_binding":float}) \
@@ -106,11 +110,16 @@ def main():
 
     clades = pd.merge(clades, clades_21L, left_index=True, right_index=True, how='left')
 
+    # Add clade_legacy column as Nextstrain_clade
+    # Use yml mapping
+    clade_legacy_mapping= yaml.safe_load(open(args.clade_legacy_mapping))
+    clades["Nextstrain_clade"] = clades["clade_nextstrain"].map(clade_legacy_mapping)
+
     # Remove immune_escape and ace2_binding when clade <21L and not recombinant
     clades.loc[clades.Nextstrain_clade < "21L",["immune_escape","ace2_binding"]] = float('nan')
 
 
-    clades = clades[list(column_map.values())]
+    clades = clades[new_columns]
 
     # Concatenate on columns
     result = pd.merge(
@@ -136,7 +145,7 @@ def main():
     result["clock_deviation"] = np.array(div_array - ((t-reference_day)*rate_per_day + offset), dtype=int)
     result.loc[np.isnan(div_array)|np.isnan(t), "clock_deviation"] = np.nan
 
-    for col in list(column_map.values()) + ["clock_deviation"]:
+    for col in new_columns + ["clock_deviation"]:
         result[col] = result[col].fillna(VALUE_MISSING_DATA)
 
     # Move the new column so that it's next to other clade columns
