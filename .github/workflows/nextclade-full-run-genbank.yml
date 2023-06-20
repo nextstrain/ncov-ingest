@@ -2,8 +2,8 @@ name: GenBank full Nextclade run
 
 on:
   # Manually triggered using:
-  #  - ./bin/trigger genbank/nextclade-full-run   (only GenBank)
-  #  - ./bin/trigger nextclade-full-run           (GISAID and GenBank)
+  #  - ./bin/trigger ncov-ingest genbank/nextclade-full-run   (only GenBank)
+  #  - ./bin/trigger ncov-ingest nextclade-full-run           (GISAID and GenBank)
   repository_dispatch:
     types:
       - genbank/nextclade-full-run
