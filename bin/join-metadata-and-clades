@@ -112,7 +112,8 @@ def main():
 
     # Add clade_legacy column as Nextstrain_clade
     # Use yml mapping
-    clade_legacy_mapping= yaml.safe_load(open(args.clade_legacy_mapping))
+    with open(args.clade_legacy_mapping, 'r') as legacy_mapping_file:
+         clade_legacy_mapping = yaml.safe_load(legacy_mapping_file)
     clades["Nextstrain_clade"] = clades["clade_nextstrain"].map(clade_legacy_mapping)
 
     # Remove immune_escape and ace2_binding when clade <21L and not recombinant
