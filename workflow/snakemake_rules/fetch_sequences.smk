@@ -195,7 +195,7 @@ rule fetch_rki_sequences:
 
 rule fetch_rki_metadata:
     output:
-        rki_metadata=temp("data/rki_metadata.csv.xz"),
+        rki_metadata=temp("data/rki_metadata.tsv.xz"),
     run:
         run_shell_command_n_times(
             f"./bin/fetch-from-rki-metadata > {output.rki_metadata}",
@@ -206,7 +206,7 @@ rule fetch_rki_metadata:
 
 rule fetch_rki_lineages:
     output:
-        rki_lineages=temp("data/rki_lineages.csv.xz"),
+        rki_lineages=temp("data/rki_lineages.tsv.xz"),
     run:
         run_shell_command_n_times(
             f"./bin/fetch-from-rki-lineages > {output.rki_lineages}",
@@ -218,8 +218,7 @@ rule fetch_rki_lineages:
 rule transform_rki_data_to_ndjson:
     input:
         rki_sequences="data/rki_sequences.fasta.xz",
-        rki_metadata="data/rki_metadata.csv.xz",
-        rki_lineages="data/rki_lineages.csv.xz",
+        rki_metadata="data/rki_metadata.1sv.xz"
     output:
         ndjson="data/rki.ndjson",
     shell:
@@ -227,7 +226,6 @@ rule transform_rki_data_to_ndjson:
         ./bin/transform-rki-data-to-ndjson \
             --input-rki-sequences {input.rki_sequences} \
             --input-rki-metadata {input.rki_metadata} \
-            --input-rki-lineages {input.rki_lineages} \
             --output-ndjson {output.ndjson}
         """
 
