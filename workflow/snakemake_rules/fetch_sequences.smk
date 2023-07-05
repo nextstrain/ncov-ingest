@@ -204,17 +204,6 @@ rule fetch_rki_metadata:
         )
 
 
-rule fetch_rki_lineages:
-    output:
-        rki_lineages=temp("data/rki_lineages.tsv.xz"),
-    run:
-        run_shell_command_n_times(
-            f"./bin/fetch-from-rki-lineages > {output.rki_lineages}",
-            "Fetch RKI lineages",
-            f"rm {output.rki_lineages}",
-        )
-
-
 rule transform_rki_data_to_ndjson:
     input:
         rki_sequences="data/rki_sequences.fasta.xz",
