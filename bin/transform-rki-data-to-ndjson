@@ -5,6 +5,8 @@ Turn RKI files into ndjson format
 
 import typer
 
+RKI_INDEX_COL = "SEQUENCE.ID"
+
 def main(
     input_rki_sequences: str = typer.Option(..., help="Input file"),
     input_rki_metadata: str = typer.Option(..., help="Input file"),
@@ -19,7 +21,7 @@ def main(
     from Bio import SeqIO
 
     with xopen(input_rki_metadata, "r") as fin:
-        metadata = pd.read_csv(fin, low_memory=False, dtype=str, na_values="NaN", index_col="IMS_ID", sep='\t')
+        metadata = pd.read_csv(fin, low_memory=False, dtype=str, na_values="NaN", index_col=RKI_INDEX_COL, sep='\t')
         # Yes there are duplicate lines, TODO: check if duplicates are identical or not
         metadata = metadata[~metadata.index.duplicated(keep='first')]
 
