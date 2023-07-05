@@ -29,14 +29,12 @@ from lib.utils.transformpipeline.transforms import (AddHardcodedMetadataRki,
                                                     UserProvidedAnnotations)
 
 COLUMN_MAP = {
-    "DATE_DRAW": "date",
-    "RECEIVE_DATE": "date_submitted",
-    "PROCESSING_DATE": "date_released",
-    "SENDING_LAB_PC": "originating_lab",
-    "SEQUENCING_LAB_PC": "submitting_lab",
-    "GISAID_ACCESSION": "strain_gisaid",
-    "lineage": "pango_lineage",
-    "SEQ_REASON": "sampling_strategy",
+    "SEQUENCE.DATE_OF_SAMPLING": "date",
+    "SEQUENCE.PUSHED_TO_DWH": "date_submitted",
+    "DL.ID": "originating_lab",
+    "SL.ID": "submitting_lab",
+    "PANGOLIN.LINEAGE_LATEST": "pango_lineage",
+    "SEQUENCE.SEQUENCING_REASON": "sampling_strategy",
 }
 
 
