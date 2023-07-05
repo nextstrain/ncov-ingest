@@ -24,6 +24,10 @@ def main(
         metadata = pd.read_csv(fin, low_memory=False, dtype=str, na_values="NaN", index_col=RKI_INDEX_COL, sep='\t')
         # Yes there are duplicate lines, TODO: check if duplicates are identical or not
         metadata = metadata[~metadata.index.duplicated(keep='first')]
+        # Fill NA values with empty strings since NaN is technically not JSON compliant
+        # Including 'nan' values in the output will result in type errors
+        # when processing the NDJSON file in `bin/transform-rki`
+        metadata = metadata.fillna("")
 
     with xopen(output_ndjson, "w") as fout:
         for record in SeqIO.parse(xopen(input_rki_sequences), "fasta"):
