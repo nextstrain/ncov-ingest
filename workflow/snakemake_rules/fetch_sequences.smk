@@ -207,7 +207,7 @@ rule fetch_rki_metadata:
 rule transform_rki_data_to_ndjson:
     input:
         rki_sequences="data/rki_sequences.fasta.xz",
-        rki_metadata="data/rki_metadata.1sv.xz"
+        rki_metadata="data/rki_metadata.tsv.xz"
     output:
         ndjson="data/rki.ndjson",
     shell:
