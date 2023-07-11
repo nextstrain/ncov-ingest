@@ -299,7 +299,7 @@ class StandardizeDataRki(Transformer):
 
         # Standardize date format to ISO 8601 date
         date_columns = {'date', 'date_submitted'}
-        date_formats = {'%Y-%m-%d', '%Y-%m-%dT%H:%M:%SZ'}
+        date_formats = {'%Y-%m-%d', '%Y-%m-%dT%H:%M:%SZ', '%Y-%m-%d %H:%M:%S %z'}
         for column in date_columns:
             entry[column] = format_date(entry[column], date_formats)
 

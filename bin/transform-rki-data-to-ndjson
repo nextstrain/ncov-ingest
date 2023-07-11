@@ -5,10 +5,11 @@ Turn RKI files into ndjson format
 
 import typer
 
+RKI_INDEX_COL = "SEQUENCE.ID"
+
 def main(
     input_rki_sequences: str = typer.Option(..., help="Input file"),
     input_rki_metadata: str = typer.Option(..., help="Input file"),
-    input_rki_lineages: str = typer.Option(..., help="Input file"),
     output_ndjson: str = typer.Option(..., help="Output file"),
 ):
     """
@@ -20,22 +21,13 @@ def main(
     from Bio import SeqIO
 
     with xopen(input_rki_metadata, "r") as fin:
-        metadata = pd.read_csv(fin, low_memory=False, dtype=str, na_values="NaN", index_col="IMS_ID")
+        metadata = pd.read_csv(fin, low_memory=False, dtype=str, na_values="NaN", index_col=RKI_INDEX_COL, sep='\t')
         # Yes there are duplicate lines, TODO: check if duplicates are identical or not
         metadata = metadata[~metadata.index.duplicated(keep='first')]
-
-    with xopen(input_rki_lineages, "r") as fin:
-        # Not all IMS_IDs are in the lineages file!
-        # We only read in the pango lineage (probably Usher), not confidence etc.
-        lineages = pd.read_csv(fin, usecols=["IMS_ID", "lineage"], dtype=str, na_values="NaN", index_col="IMS_ID").fillna("?")
-    
-    metadata = pd.merge(
-        metadata,
-        lineages["lineage"],
-        how="left",
-        left_index=True,
-        right_index=True,
-    ).fillna("?")
+        # Fill NA values with empty strings since NaN is technically not JSON compliant
+        # Including 'nan' values in the output will result in type errors
+        # when processing the NDJSON file in `bin/transform-rki`
+        metadata = metadata.fillna("")
 
     with xopen(output_ndjson, "w") as fout:
         for record in SeqIO.parse(xopen(input_rki_sequences), "fasta"):
