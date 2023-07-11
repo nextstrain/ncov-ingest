@@ -26,10 +26,12 @@ Produces the following outputs:
         nextclade_info = f"data/{database}/nextclade.tsv"
         alignment = f"data/{database}/aligned.fasta"
 """
+from shlex import quote as shellquote
 
 
 wildcard_constraints:
     reference="|_21L",
+    seqtype="aligned|translation_[^.]+",
 
 
 rule create_empty_nextclade_info:
@@ -44,6 +46,10 @@ rule create_empty_nextclade_aligned:
         """Creating empty NextClade aligned cache file"""
     output:
         touch(f"data/{database}/nextclade.aligned.old.fasta"),
+        *[
+            touch(f"data/{database}/nextclade.translation_{gene}.old.fasta")
+            for gene in GENE_LIST
+        ],
 
 
 # Only include rules to fetch from S3 if S3 config params are provided
@@ -81,13 +87,13 @@ if config.get("s3_dst") and config.get("s3_src"):
         ## (1) race condition. This file may be updated on the remote after download_nextclade has run but before this rule
         ## (2) we may get `download_nextclade` and `download_previous_alignment` from different s3 buckets
         params:
-            dst_source=config["s3_dst"] + "/aligned.fasta.zst",
-            src_source=config["s3_src"] + "/aligned.fasta.zst",
+            dst_source=config["s3_dst"] + "/{seqtype}.fasta.zst",
+            src_source=config["s3_src"] + "/{seqtype}.fasta.zst",
             dst_rerun_touchfile=config["s3_dst"] + "/nextclade.tsv.zst.renew",
             src_rerun_touchfile=config["s3_dst"] + "/nextclade.tsv.zst.renew",
             lines=config.get("subsample", {}).get("nextclade", 0),
         output:
-            alignment=temp(f"data/{database}/nextclade.aligned.old.fasta"),
+            alignment=temp(f"data/{database}/nextclade.{{seqtype}}.old.fasta"),
         shell:
             """
             ./bin/download-from-s3 {params.dst_rerun_touchfile} {output.alignment} 0 ||  \
@@ -156,39 +162,59 @@ rule download_nextclade_dataset:
         """
 
 
-GENES = "E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S"
-GENES_SPACE_DELIMITED = GENES.replace(",", " ")
-
-
-rule run_nextclade:
-    message:
-        """
-        Runs nextclade on sequences which were not in the previously cached nextclade run.
-        This alignes sequences, assigns clades and calculates some of the other useful
-        metrics which will ultimately end up in metadata.tsv.
-        """
+rule run_wuhan_nextclade:
+    """
+    Runs nextclade on sequences which were not in the previously cached nextclade run.
+    This alignes sequences, assigns clades and calculates some of the other useful
+    metrics which will ultimately end up in metadata.tsv.
+    """
     input:
-        nextclade="nextclade",
-        dataset=lambda w: f"data/nextclade_data/sars-cov-2{w.reference.replace('_','-')}.zip",
-        sequences=f"data/{database}/nextclade{{reference}}.sequences.fasta",
+        nextclade_path="nextclade",
+        dataset=lambda w: f"data/nextclade_data/sars-cov-2.zip",
+        sequences=f"data/{database}/nextclade.sequences.fasta",
+    params:
+        genes=GENES_SPACE_DELIMITED,
+        translation_arg=lambda w: (
+            f"--output-translations=data/{database}/nextclade.translation_{{gene}}.upd.fasta"
+        ),
+    output:
+        info=f"data/{database}/nextclade_new_raw.tsv",
+        alignment=temp(f"data/{database}/nextclade.aligned.upd.fasta"),
+        translations=[
+            temp(f"data/{database}/nextclade.translation_{gene}.upd.fasta")
+            for gene in GENE_LIST
+        ],
+    shell:
+        """
+        ./{input.nextclade_path} run \
+        {input.sequences}\
+        --input-dataset={input.dataset} \
+        --output-tsv={output.info} \
+        --genes {params.genes} \
+        {params.translation_arg} \
+        --output-fasta={output.alignment}
+        """
+
+
+rule run_21L_nextclade:
+    """
+    Like wuhan nextclade, but TSV only, no alignments output
+    """
+    input:
+        nextclade_path="nextclade",
+        dataset=lambda w: f"data/nextclade_data/sars-cov-2-21L.zip",
+        sequences=f"data/{database}/nextclade_21L.sequences.fasta",
     params:
         genes=GENES_SPACE_DELIMITED,
     output:
-        info=f"data/{database}/nextclade{{reference}}_new_raw.tsv",
-        alignment=temp(f"data/{database}/nextclade{{reference}}.aligned.upd.fasta"),
+        info=f"data/{database}/nextclade_21L_new_raw.tsv",
     shell:
         """
-        if [[ -s {input.sequences} ]]; then
-            ./nextclade run \
-            {input.sequences}\
-            --input-dataset={input.dataset} \
-            --output-tsv={output.info} \
-            --genes {params.genes} \
-            --output-fasta={output.alignment}
-        else
-            touch {output.info} {output.alignment}
-            echo "[ INFO] Skipping Nextclade run as there are no new sequences"
-        fi
+        ./{input.nextclade_path} run \
+        {input.sequences} \
+        --input-dataset={input.dataset} \
+        --output-tsv={output.info} \
+        --genes {params.genes}
         """
 
 
@@ -241,15 +267,14 @@ rule nextclade_info:
 
 
 rule combine_alignments:
-    message:
-        """
-        Generating full alignment by combining newly aligned sequences with previous (cached) alignment
-        """
+    """
+    Generating full alignment by combining newly aligned sequences with previous (cached) alignment
+    """
     input:
-        old_alignment=f"data/{database}/nextclade.aligned.old.fasta",
-        new_alignment=f"data/{database}/nextclade.aligned.upd.fasta",
+        old_alignment=f"data/{database}/nextclade.{{seqtype}}.old.fasta",
+        new_alignment=f"data/{database}/nextclade.{{seqtype}}.upd.fasta",
     output:
-        alignment=f"data/{database}/aligned.fasta",
+        alignment=f"data/{database}/{{seqtype}}.fasta",
     params:
         keep_temp=config.get("keep_temp", "false"),
     shell:

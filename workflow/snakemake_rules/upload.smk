@@ -32,7 +32,12 @@ def compute_files_to_upload():
                         "nextclade.tsv.zst":           f"data/{database}/nextclade.tsv",
                         "aligned.fasta.zst":           f"data/{database}/aligned.fasta",
                         "nextclade_21L.tsv.zst":       f"data/{database}/nextclade_21L.tsv",
+
                     }
+    files_to_upload = files_to_upload | {
+        f"translation_{gene}.fasta.zst" : f"data/{database}/translation_{gene}.fasta" 
+        for gene in GENE_LIST
+    }
 
     if database=="genbank":
         files_to_upload["biosample.tsv.gz"] =           f"data/{database}/biosample.tsv"
