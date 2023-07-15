@@ -95,9 +95,6 @@ Valid dispatch types for `./bin/trigger ncov-ingest` are:
 - `fetch-and-ingest` (both GISAID and GenBank)
 - `gisaid/fetch-and-ingest`
 - `genbank/fetch-and-ingest`
-- `nextclade-full-run` (both GISAID and GenBank)
-- `gisaid/nextclade-full-run`
-- `genbank/nextclade-full-run`
 
 ## Updating manual annotations
 
