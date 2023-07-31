@@ -29,8 +29,8 @@ comm -13 \
 if [[ -s "$diff" ]]; then
     echo
     echo "Notifying Slack about flagged metadata additions."
-    "$bin"/notify-slack ":waving_black_flag: Newly flagged metadata"
-    "$bin"/notify-slack --upload "flagged-metadata-additions.txt" < "$diff"
+    "$vendored"/notify-slack ":waving_black_flag: Newly flagged metadata"
+    "$vendored"/notify-slack --upload "flagged-metadata-additions.txt" < "$diff"
 else
     echo "No flagged metadata additions."
 fi

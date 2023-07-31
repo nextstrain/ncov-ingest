@@ -29,8 +29,8 @@ comm -13 \
 if [[ -s "$diff" ]]; then
     echo
     echo "Notifying Slack about duplicate BioSample additions."
-    "$bin"/notify-slack ":warning: Newly flagged duplicate BioSample strains"
-    "$bin"/notify-slack --upload "duplicate-biosample-additions.txt" < "$diff"
+    "$vendored"/notify-slack ":warning: Newly flagged duplicate BioSample strains"
+    "$vendored"/notify-slack --upload "duplicate-biosample-additions.txt" < "$diff"
 else
     echo "No flagged duplicate BioSample additions."
 fi

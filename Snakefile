@@ -92,7 +92,7 @@ onstart:
         print(f"\t${{{var}}}: " + ("YES" if os.environ.get(var, "") else "NO") + f"({description})")
     if send_notifications:
         message="🥗 GISAID ingest" if database=="gisaid" else "🥣 GenBank ingest"
-        shell(f"./bin/notify-on-job-start \"{message}\"")
+        shell(f"./vendored/notify-on-job-start \"{message}\" nextstrain/ncov-ingest")
 
 onsuccess:
     message = "✅ This pipeline has successfully finished 🎉"
@@ -104,7 +104,7 @@ onsuccess:
 onerror:
     print("Pipeline failed.")
     if send_notifications:
-        shell("./bin/notify-on-job-fail")
+        shell("./vendored/notify-on-job-fail Ingest nextstrain/ncov-ingest")
     if not config.get("keep_all_files", False):
         print("Removing intermediate files (set config option keep_all_files to skip this)")
         shell("./bin/clean")

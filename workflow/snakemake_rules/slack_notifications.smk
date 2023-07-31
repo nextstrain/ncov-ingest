@@ -46,7 +46,7 @@ rule notify_gisaid:
     output:
         touch("data/gisaid/notify.done")
     run:
-        shell("./bin/notify-slack --upload flagged-annotations < {input.flagged_annotations}")
+        shell("./vendored/notify-slack --upload flagged-annotations < {input.flagged_annotations}")
         shell("./bin/notify-on-additional-info-change {input.additional_info} {params.s3_bucket}/additional_info.tsv.gz")
         shell("./bin/notify-on-flagged-metadata-change {input.flagged_metadata}  {params.s3_bucket}/flagged_metadata.txt.gz")
 
@@ -59,7 +59,7 @@ rule notify_genbank:
     output:
         touch("data/genbank/notify.done")
     run:
-        shell("./bin/notify-slack --upload flagged-annotations < {input.flagged_annotations}")
+        shell("./vendored/notify-slack --upload flagged-annotations < {input.flagged_annotations}")
         # TODO - which rule produces data/genbank/problem_data.tsv? (was not explicit in `ingest-genbank` bash script)
         shell("./bin/notify-on-problem-data data/genbank/problem_data.tsv")
         shell("./bin/notify-on-duplicate-biosample-change {input.duplicate_biosample} {params.s3_bucket}/duplicate_biosample.txt.gz")
