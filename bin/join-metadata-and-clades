@@ -114,6 +114,17 @@ def main():
     # Use yml mapping
     with open(args.clade_legacy_mapping, 'r') as legacy_mapping_file:
          clade_legacy_mapping = yaml.safe_load(legacy_mapping_file)
+
+    # For any clade not in the mapping, map it to itself
+    # Still better to update clade-legacy-mapping.yml when new clades are added
+    clade_legacy_mapping = {
+        **clade_legacy_mapping,
+        **{
+            clade: clade
+            for clade in clades["clade_nextstrain"].unique()
+            if clade not in clade_legacy_mapping
+        },
+    }
     clades["Nextstrain_clade"] = clades["clade_nextstrain"].map(clade_legacy_mapping)
 
     # Remove immune_escape and ace2_binding when clade <21L and not recombinant
