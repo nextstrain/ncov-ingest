@@ -32,7 +32,7 @@ rule notify_on_record_change:
         touch(f"data/{database}/notify-on-record-change.done")
     shell:
         """
-        ./bin/notify-on-record-change {input.ndjson} {params.ndjson_on_s3} {database}
+        ./vendored/notify-on-record-change {input.ndjson} {params.ndjson_on_s3} {database}
         """
 
 

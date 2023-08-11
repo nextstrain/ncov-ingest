@@ -253,8 +253,8 @@ if config.get("s3_dst") and config.get("s3_src"):
             ndjson = temp(f"data/{database}.ndjson")
         shell:
             """
-            ./bin/download-from-s3 {params.file_on_s3_dst} {output.ndjson} {params.lines} ||  \
-            ./bin/download-from-s3 {params.file_on_s3_src} {output.ndjson} {params.lines}
+            ./vendored/download-from-s3 {params.file_on_s3_dst} {output.ndjson} {params.lines} ||  \
+            ./vendored/download-from-s3 {params.file_on_s3_src} {output.ndjson} {params.lines}
             """
 
     rule fetch_biosample_from_s3:
@@ -268,8 +268,8 @@ if config.get("s3_dst") and config.get("s3_src"):
             biosample = temp("data/biosample.ndjson")
         shell:
             """
-            ./bin/download-from-s3 {params.file_on_s3_dst} {output.biosample} {params.lines} ||  \
-            ./bin/download-from-s3 {params.file_on_s3_src} {output.biosample} {params.lines}
+            ./vendored/download-from-s3 {params.file_on_s3_dst} {output.biosample} {params.lines} ||  \
+            ./vendored/download-from-s3 {params.file_on_s3_src} {output.biosample} {params.lines}
             """
 
     rule fetch_rki_ndjson_from_s3:
@@ -281,8 +281,8 @@ if config.get("s3_dst") and config.get("s3_src"):
             rki_ndjson = temp("data/rki.ndjson")
         shell:
             """
-            ./bin/download-from-s3 {params.file_on_s3_dst} {output.rki_ndjson} {params.lines} ||  \
-            ./bin/download-from-s3 {params.file_on_s3_src} {output.rki_ndjson} {params.lines}
+            ./vendored/download-from-s3 {params.file_on_s3_dst} {output.rki_ndjson} {params.lines} ||  \
+            ./vendored/download-from-s3 {params.file_on_s3_src} {output.rki_ndjson} {params.lines}
             """
     rule fetch_cog_uk_accessions_from_s3:
         params:
@@ -293,8 +293,8 @@ if config.get("s3_dst") and config.get("s3_src"):
             biosample = "data/cog_uk_accessions.tsv" if config.get("keep_temp",False) else temp("data/cog_uk_accessions.tsv")
         shell:
             """
-            ./bin/download-from-s3 {params.file_on_s3_dst} {output.biosample} {params.lines} ||  \
-            ./bin/download-from-s3 {params.file_on_s3_src} {output.biosample} {params.lines}
+            ./vendored/download-from-s3 {params.file_on_s3_dst} {output.biosample} {params.lines} ||  \
+            ./vendored/download-from-s3 {params.file_on_s3_src} {output.biosample} {params.lines}
             """
 
     rule fetch_cog_uk_metadata_from_s3:
@@ -306,8 +306,8 @@ if config.get("s3_dst") and config.get("s3_src"):
             biosample = temp("data/cog_uk_metadata.csv")
         shell:
             """
-            ./bin/download-from-s3 {params.file_on_s3_dst} {output.biosample} {params.lines} ||  \
-            ./bin/download-from-s3 {params.file_on_s3_src} {output.biosample} {params.lines}
+            ./vendored/download-from-s3 {params.file_on_s3_dst} {output.biosample} {params.lines} ||  \
+            ./vendored/download-from-s3 {params.file_on_s3_src} {output.biosample} {params.lines}
             """
 
     rule compress_cog_uk_metadata:

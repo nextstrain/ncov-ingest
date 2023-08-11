@@ -79,8 +79,8 @@ main() {
 download-inputs() {
   mkdir -p "${INPUT_DIR}"
 
-  ./bin/download-from-s3 "${S3_BUCKET}/additional_info.tsv.gz" "data/gisaid/inputs/additional_info.tsv"
-  ./bin/download-from-s3 "${S3_BUCKET}/metadata.tsv.gz" "data/gisaid/inputs/metadata.tsv"
+  ./vendored/download-from-s3 "${S3_BUCKET}/additional_info.tsv.gz" "data/gisaid/inputs/additional_info.tsv"
+  ./vendored/download-from-s3 "${S3_BUCKET}/metadata.tsv.gz" "data/gisaid/inputs/metadata.tsv"
 }
 
 download-gisaid() {
@@ -160,16 +160,16 @@ ingest() {
 }
 
 upload-outputs() {
-  ./bin/upload-to-s3 "${OUTPUT_DIR}/metadata.tsv" "${S3_BUCKET}/metadata.tsv.gz"
-  ./bin/upload-to-s3 "${OUTPUT_DIR}/additional_info.tsv" "${S3_BUCKET}/additional_info.tsv.gz"
-  ./bin/upload-to-s3 "${OUTPUT_DIR}/flagged_metadata.txt" "${S3_BUCKET}/flagged_metadata.txt.gz"
-  ./bin/upload-to-s3 "${OUTPUT_DIR}/sequences.fasta" "${S3_BUCKET}/sequences.fasta.xz"
+  ./vendored/upload-to-s3 "${OUTPUT_DIR}/metadata.tsv" "${S3_BUCKET}/metadata.tsv.gz"
+  ./vendored/upload-to-s3 "${OUTPUT_DIR}/additional_info.tsv" "${S3_BUCKET}/additional_info.tsv.gz"
+  ./vendored/upload-to-s3 "${OUTPUT_DIR}/flagged_metadata.txt" "${S3_BUCKET}/flagged_metadata.txt.gz"
+  ./vendored/upload-to-s3 "${OUTPUT_DIR}/sequences.fasta" "${S3_BUCKET}/sequences.fasta.xz"
 
   # Parallel uploads of zstd compressed files to slowly transition to this format
-  ./bin/upload-to-s3 "${OUTPUT_DIR}/metadata.tsv" "${S3_BUCKET}/metadata.tsv.zst"
-  ./bin/upload-to-s3 "${OUTPUT_DIR}/additional_info.tsv" "${S3_BUCKET}/additional_info.tsv.zst"
-  ./bin/upload-to-s3 "${OUTPUT_DIR}/flagged_metadata.txt" "${S3_BUCKET}/flagged_metadata.txt.zst"
-  ./bin/upload-to-s3 "${OUTPUT_DIR}/sequences.fasta" "${S3_BUCKET}/sequences.fasta.zst"
+  ./vendored/upload-to-s3 "${OUTPUT_DIR}/metadata.tsv" "${S3_BUCKET}/metadata.tsv.zst"
+  ./vendored/upload-to-s3 "${OUTPUT_DIR}/additional_info.tsv" "${S3_BUCKET}/additional_info.tsv.zst"
+  ./vendored/upload-to-s3 "${OUTPUT_DIR}/flagged_metadata.txt" "${S3_BUCKET}/flagged_metadata.txt.zst"
+  ./vendored/upload-to-s3 "${OUTPUT_DIR}/sequences.fasta" "${S3_BUCKET}/sequences.fasta.zst"
 }
 
 print-help() {

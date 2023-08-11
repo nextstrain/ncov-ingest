@@ -87,7 +87,7 @@ rule upload_single:
         cloudfront_domain = config.get("cloudfront_domain", ""),
     shell:
         """
-        ./bin/upload-to-s3 \
+        ./vendored/upload-to-s3 \
             {params.quiet} \
             {input:q} \
             {params.s3_bucket:q}/{wildcards.remote_filename:q} \

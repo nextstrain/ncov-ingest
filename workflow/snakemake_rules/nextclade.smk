@@ -75,10 +75,10 @@ if config.get("s3_dst") and config.get("s3_src"):
             nextclade=f"data/{database}/nextclade{{reference}}_old.tsv",
         shell:
             """
-            ./bin/download-from-s3 {params.dst_rerun_touchfile} {output.nextclade} 0 ||  \
-            ./bin/download-from-s3 {params.src_rerun_touchfile} {output.nextclade} 0 ||  \
-            ./bin/download-from-s3 {params.dst_source} {output.nextclade} {params.lines} ||  \
-            ./bin/download-from-s3 {params.src_source} {output.nextclade} {params.lines} ||  \
+            ./vendored/download-from-s3 {params.dst_rerun_touchfile} {output.nextclade} 0 ||  \
+            ./vendored/download-from-s3 {params.src_rerun_touchfile} {output.nextclade} 0 ||  \
+            ./vendored/download-from-s3 {params.dst_source} {output.nextclade} {params.lines} ||  \
+            ./vendored/download-from-s3 {params.src_source} {output.nextclade} {params.lines} ||  \
             touch {output.nextclade}
             """
 
@@ -96,10 +96,10 @@ if config.get("s3_dst") and config.get("s3_src"):
             alignment=temp(f"data/{database}/nextclade.{{seqtype}}.old.fasta"),
         shell:
             """
-            ./bin/download-from-s3 {params.dst_rerun_touchfile} {output.alignment} 0 ||  \
-            ./bin/download-from-s3 {params.src_rerun_touchfile} {output.alignment} 0 ||  \
-            ./bin/download-from-s3 {params.dst_source} {output.alignment} {params.lines} ||  \
-            ./bin/download-from-s3 {params.src_source} {output.alignment} {params.lines} ||  \
+            ./vendored/download-from-s3 {params.dst_rerun_touchfile} {output.alignment} 0 ||  \
+            ./vendored/download-from-s3 {params.src_rerun_touchfile} {output.alignment} 0 ||  \
+            ./vendored/download-from-s3 {params.dst_source} {output.alignment} {params.lines} ||  \
+            ./vendored/download-from-s3 {params.src_source} {output.alignment} {params.lines} ||  \
             touch {output.alignment}
             """
 
