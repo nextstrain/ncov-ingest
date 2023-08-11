@@ -1,7 +1,7 @@
 name: GISAID ingest
 
 on:
-  # Manually triggered using `./bin/trigger ncov-ingest gisaid/ingest` (or `ingest`, which
+  # Manually triggered using `./vendored/trigger nextstrain/ncov-ingest gisaid/ingest` (or `ingest`, which
   # includes GenBank)
   repository_dispatch:
     types:
