@@ -39,7 +39,6 @@ rule notify_on_record_change:
 rule notify_gisaid:
     input:
         flagged_annotations = rules.transform_gisaid_data.output.flagged_annotations,
-        # metadata = "data/gisaid/metadata.tsv",
         additional_info = "data/gisaid/additional_info.tsv",
         flagged_metadata = "data/gisaid/flagged_metadata.txt"
     params:
@@ -48,8 +47,6 @@ rule notify_gisaid:
         touch("data/gisaid/notify.done")
     run:
         shell("./bin/notify-slack --upload flagged-annotations < {input.flagged_annotations}")
-        # notify-on-metadata-change disabled as csv-diff runs out of memory
-        # shell("./bin/notify-on-metadata-change {input.metadata} {params.s3_bucket}/metadata.tsv.gz gisaid_epi_isl")
         shell("./bin/notify-on-additional-info-change {input.additional_info} {params.s3_bucket}/additional_info.tsv.gz")
         shell("./bin/notify-on-flagged-metadata-change {input.flagged_metadata}  {params.s3_bucket}/flagged_metadata.txt.gz")
 
