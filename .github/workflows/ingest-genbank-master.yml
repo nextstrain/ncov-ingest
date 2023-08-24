@@ -1,7 +1,7 @@
 name: GenBank ingest
 
 on:
-  # Manually triggered using `./bin/trigger ncov-ingest genbank/ingest` (or `ingest`, which
+  # Manually triggered using `./vendored/trigger nextstrain/ncov-ingest genbank/ingest` (or `ingest`, which
   # includes GISAID)
   repository_dispatch:
     types:
@@ -51,4 +51,4 @@ jobs:
 
     - name: notify_pipeline_failed
       if: ${{ failure() }}
-      run: ./bin/notify-on-job-fail
+      run: ./vendored/notify-on-job-fail Ingest nextstrain/ncov-ingest

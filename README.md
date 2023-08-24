@@ -76,18 +76,18 @@ AWS credentials are stored in this repository's secrets and are associated with 
 
 A full run is now done in 3 steps via manual triggers:
 
-1. Fetch new sequences and ingest them by running `./bin/trigger ncov-ingest gisaid/fetch-and-ingest --user <your-github-username>`.
+1. Fetch new sequences and ingest them by running `./vendored/trigger nextstrain/ncov-ingest gisaid/fetch-and-ingest --user <your-github-username>`.
 2. Add manual annotations, update location hierarchy as needed, and run ingest without fetching new sequences.
     - Pushes of `source-data/*-annotations.tsv` to the master branch will automatically trigger a run of ingest.
-    - You can also run ingest manually by running `./bin/trigger ncov-ingest gisaid/ingest --user <your-github-username>`.
-3. Once all manual fixes are complete, trigger a rebuild of [nextstrain/ncov](https://github.com/nextstrain/ncov) by running `./bin/trigger ncov gisaid/rebuild --user <your-github-username>`.
+    - You can also run ingest manually by running `./vendored/trigger nextstrain/ncov-ingest gisaid/ingest --user <your-github-username>`.
+3. Once all manual fixes are complete, trigger a rebuild of [nextstrain/ncov](https://github.com/nextstrain/ncov) by running `./vendored/trigger ncov gisaid/rebuild --user <your-github-username>`.
 
-See the output of `./bin/trigger ncov-ingest gisaid/fetch-and-ingest --user <your-github-username>`, `./bin/trigger ncov-ingest gisaid/ingest` or `./bin/trigger ncov-ingest rebuild` for more information about authentication with GitHub.
+See the output of `./vendored/trigger nextstrain/ncov-ingest gisaid/fetch-and-ingest --user <your-github-username>`, `./vendored/trigger nextstrain/ncov-ingest gisaid/ingest` or `./vendored/trigger nextstrain/ncov-ingest rebuild` for more information about authentication with GitHub.
 
-Note: running `./bin/trigger ncov-ingest` posts a GitHub `repository_dispatch`.
+Note: running `./vendored/trigger nextstrain/ncov-ingest` posts a GitHub `repository_dispatch`.
 Regardless of which branch you are on, it will trigger the specified action on the master branch.
 
-Valid dispatch types for `./bin/trigger ncov-ingest` are:
+Valid dispatch types for `./vendored/trigger nextstrain/ncov-ingest` are:
 
 - `ingest` (both GISAID and GenBank)
 - `gisaid/ingest`
@@ -150,3 +150,16 @@ aws s3 cp - s3://nextstrain-data/files/ncov/open/nextclade_21L.tsv.zst.renew < /
 - `AWS_SECRET_ACCESS_KEY`
 - `SLACK_TOKEN`
 - `SLACK_CHANNELS`
+
+## `vendored`
+
+This repository uses [`git subrepo`](https://github.com/ingydotnet/git-subrepo) to manage copies of ingest scripts in `vendored`, from [nextstrain/ingest](https://github.com/nextstrain/ingest). To pull new changes from the central ingest repository, first install `git subrepo`, then run:
+
+```sh
+git subrepo pull vendored
+```
+
+Changes should not be pushed using `git subrepo push`.
+
+1. For pathogen-specific changes, make them in this repository via a pull request.
+2. For pathogen-agnostic changes, make them on [nextstrain/ingest](https://github.com/nextstrain/ingest) via pull request there, then use `git subrepo pull` to add those changes to this repository.

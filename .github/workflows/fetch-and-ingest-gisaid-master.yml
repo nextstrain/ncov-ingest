@@ -22,7 +22,7 @@ on:
     # sister GenBank job, so that we don't need to keep two schedules in our heads.
     - cron:  '7 18 * * *'
 
-  # Manually triggered using `./bin/trigger ncov-ingest gisaid/fetch-and-ingest`
+  # Manually triggered using `./vendored/trigger nextstrain/ncov-ingest gisaid/fetch-and-ingest`
   repository_dispatch:
     types:
       - gisaid/fetch-and-ingest
@@ -85,4 +85,4 @@ jobs:
 
     - name: notify_pipeline_failed
       if: ${{ failure() }}
-      run: ./bin/notify-on-job-fail
+      run: ./vendored/notify-on-job-fail Ingest nextstrain/ncov-ingest

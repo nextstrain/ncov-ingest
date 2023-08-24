@@ -4,7 +4,7 @@ set -euo pipefail
 : "${SLACK_TOKEN:?The SLACK_TOKEN environment variable is required.}"
 : "${SLACK_CHANNELS:?The SLACK_CHANNELS environment variable is required.}"
 
-bin="$(dirname "$0")"
+vendored="$(dirname "$0")"/../vendored
 
 src="${1:?A source flagged metadata txt file is required as the first argument.}"
 dst="${2:?A destination flagged metadata txt s3:// URL is required as the second argument.}"
@@ -16,9 +16,9 @@ diff="$(mktemp -t flagged-metadata-additions-XXXXXX)"
 trap "rm -f '$dst_local' '$diff'" EXIT
 
 # if the file is not already present, just exit
-"$bin"/s3-object-exists "$dst" || exit 0
+"$vendored"/s3-object-exists "$dst" || exit 0
 
-"$bin"/download-from-s3 "$dst" "$dst_local"
+"$vendored"/download-from-s3 "$dst" "$dst_local"
 
 comm -13 \
     <(sort "$dst_local") \
@@ -28,8 +28,8 @@ comm -13 \
 if [[ -s "$diff" ]]; then
     echo
     echo "Notifying Slack about flagged metadata additions."
-    "$bin"/notify-slack ":waving_black_flag: Newly flagged metadata"
-    "$bin"/notify-slack --upload "flagged-metadata-additions.txt" < "$diff"
+    "$vendored"/notify-slack ":waving_black_flag: Newly flagged metadata"
+    "$vendored"/notify-slack --upload "flagged-metadata-additions.txt" < "$diff"
 else
     echo "No flagged metadata additions."
 fi

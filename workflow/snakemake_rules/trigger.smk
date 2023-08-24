@@ -22,8 +22,8 @@ rule trigger_rebuild_pipeline:
         dispatch_type = f"{database}/rebuild"
     shell:
         """
-        ./bin/trigger-on-new-data \
-            ncov \
+        ./vendored/trigger-on-new-data \
+            nextstrain/ncov \
             {params.dispatch_type} \
             {input.metadata_upload} \
             {input.fasta_upload}
@@ -39,5 +39,5 @@ rule trigger_counts_pipeline:
         dispatch_type = f"{database}/clade-counts"
     shell:
         """
-        ./bin/trigger forecasts-ncov {params.dispatch_type}
+        ./vendored/trigger nextstrain/forecasts-ncov {params.dispatch_type}
         """

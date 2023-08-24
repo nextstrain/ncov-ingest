@@ -6,7 +6,14 @@ bin="$(dirname "$0")"
 main() {
     local src="${1:?A source s3:// URL is required as the first argument.}"
     local dst="${2:?A destination file path is required as the second argument.}"
-    local n="${3:-0}" # How many lines to subsample to. 0 means no subsampling. Optional.
+    # How many lines to subsample to. 0 means no subsampling. Optional.
+    # It is not advised to use this for actual subsampling! This is intended to be
+    # used for debugging workflows with large datasets such as ncov-ingest as
+    # described in https://github.com/nextstrain/ncov-ingest/pull/367
+
+    # Uses `tsv-sample` to subsample, so it will not work as expected with files
+    # that have a single record split across multiple lines (i.e. FASTA sequences)
+    local n="${3:-0}"
 
     local s3path="${src#s3://}"
     local bucket="${s3path%%/*}"
