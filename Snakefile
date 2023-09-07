@@ -92,7 +92,7 @@ onstart:
         print(f"\t${{{var}}}: " + ("YES" if os.environ.get(var, "") else "NO") + f"({description})")
     if send_notifications:
         message="🥗 GISAID ingest" if database=="gisaid" else "🥣 GenBank ingest"
-        shell(f"./vendored/notify-on-job-start \"{message}\" nextstrain/ncov-ingest")
+        shell(f"./vendored/notify-on-job-start \"{message}\" nextstrain/ncov-ingest '.'")
 
 onsuccess:
     message = "✅ This pipeline has successfully finished 🎉"
