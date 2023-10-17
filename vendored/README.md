@@ -25,6 +25,31 @@ Any future updates of ingest scripts can be pulled in with:
 git subrepo pull ingest/vendored
 ```
 
+If you run into merge conflicts and would like to pull in a fresh copy of the
+latest ingest scripts, pull with the `--force` flag:
+
+```
+git subrepo pull ingest/vendored --force
+```
+
+> **Warning**
+> Beware of rebasing/dropping the parent commit of a `git subrepo` update
+
+`git subrepo` relies on metadata in the `ingest/vendored/.gitrepo` file,
+which includes the hash for the parent commit in the pathogen repos.
+If this hash no longer exists in the commit history, there will be errors when
+running future `git subrepo pull` commands.
+
+If you run into an error similar to the following:
+```
+$ git subrepo pull ingest/vendored
+git-subrepo: Command failed: 'git branch subrepo/ingest/vendored '.
+fatal: not a valid object name: ''
+```
+Check the parent commit hash in the `ingest/vendored/.gitrepo` file and make
+sure the commit exists in the commit history. Update to the appropriate parent
+commit hash if needed.
+
 ## History
 
 Much of this tooling originated in
@@ -69,6 +94,13 @@ Scripts for supporting ingest workflow automation that don’t really belong in 
 - [trigger-on-new-data](trigger-on-new-data) - Triggers downstream GitHub Actions if the provided `upload-to-s3` outputs do not contain the `identical_file_message`
   A hacky way to ensure that we only trigger downstream phylogenetic builds if the S3 objects have been updated.
 
+NCBI interaction scripts that are useful for fetching public metadata and sequences.
+
+- [fetch-from-ncbi-entrez](fetch-from-ncbi-entrez) - Fetch metadata and nucleotide sequences from [NCBI Entrez](https://www.ncbi.nlm.nih.gov/books/NBK25501/) and output to a GenBank file.
+  Useful for pathogens with metadata and annotations in custom fields that are not part of the standard [NCBI Datasets](https://www.ncbi.nlm.nih.gov/datasets/) outputs.
+
+Historically, some pathogen repos used the undocumented NCBI Virus API through [fetch-from-ncbi-virus](https://github.com/nextstrain/ingest/blob/c97df238518171c2b1574bec0349a55855d1e7a7/fetch-from-ncbi-virus) to fetch data. However we've opted to drop the NCBI Virus scripts due to https://github.com/nextstrain/ingest/issues/18.
+
 Potential Nextstrain CLI scripts
 
 - [sha256sum](sha256sum) - Used to check if files are identical in upload-to-s3 and download-from-s3 scripts.
@@ -89,3 +121,17 @@ Potential augur curate scripts
 - [transform-authors](transform-authors) - Abbreviates full author lists to '<first author> et al.'
 - [transform-field-names](transform-field-names) - Rename fields of NDJSON records
 - [transform-genbank-location](transform-genbank-location) - Parses `location` field with the expected pattern `"<country_value>[:<region>][, <locality>]"` based on [GenBank's country field](https://www.ncbi.nlm.nih.gov/genbank/collab/country/)
+- [transform-strain-names](transform-strain-names) - Ordered search for strain names across several fields.
+
+## Software requirements
+
+Some scripts may require Bash ≥4. If you are running these scripts on macOS, the builtin Bash (`/bin/bash`) does not meet this requirement. You can install [Homebrew's Bash](https://formulae.brew.sh/formula/bash) which is more up to date.
+
+## Testing
+
+Most scripts are untested within this repo, relying on "testing in production". That is the only practical testing option for some scripts such as the ones interacting with S3 and Slack.
+
+For more locally testable scripts, Cram-style functional tests live in `tests` and are run as part of CI. To run these locally,
+
+1. Download Cram: `pip install cram`
+2. Run the tests: `cram tests/`
