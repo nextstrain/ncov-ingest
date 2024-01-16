@@ -134,9 +134,10 @@ rule download_nextclade_executable:
     shell:
         """
         if [ "$(uname)" = "Darwin" ]; then
-            curl -fsSL "https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-x86_64-apple-darwin" -o "nextclade"
+            curl -fsSL "https://github.com/nextstrain/nextclade/releases/download/2.14.0/nextclade-x86_64-apple-darwin" -o "nextclade"
+
         else
-            curl -fsSL "https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-x86_64-unknown-linux-gnu" -o "nextclade"
+            curl -fsSL "https://github.com/nextstrain/nextclade/releases/download/2.14.0/nextclade-x86_64-unknown-linux-gnu" -o "nextclade"
         fi
         chmod +x nextclade
 
