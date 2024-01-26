@@ -76,9 +76,15 @@ def compute_files_to_upload():
 
 files_to_upload = compute_files_to_upload()
 
-
 rule upload_single:
-    input: lambda w: files_to_upload[w.remote_filename]
+    input:
+        file_to_upload = lambda w: files_to_upload[w.remote_filename],
+        # Include the notifications touch file as an input to ensure that
+        # uploads only run after the notifications rules have run.
+        # This prevents the race condition between diffs and uploads described
+        # in https://github.com/nextstrain/ncov-ingest/issues/423
+        #   -Jover, 2024-01-26
+        notifications_flag = f"data/{database}/notify.done" if send_notifications else [],
     output:
         "data/{database}/{remote_filename}.upload",
     params:
@@ -89,7 +95,7 @@ rule upload_single:
         """
         ./vendored/upload-to-s3 \
             {params.quiet} \
-            {input:q} \
+            {input.file_to_upload:q} \
             {params.s3_bucket:q}/{wildcards.remote_filename:q} \
             {params.cloudfront_domain} 2>&1 | tee {output}
         """
