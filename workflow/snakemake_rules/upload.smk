@@ -35,7 +35,7 @@ def compute_files_to_upload():
 
                     }
     files_to_upload = files_to_upload | {
-        f"translation_{gene}.fasta.zst" : f"data/{database}/translation_{gene}.fasta" 
+        f"translation_{gene}.fasta.zst" : f"data/{database}/translation_{gene}.fasta"
         for gene in GENE_LIST
     }
 
@@ -52,7 +52,7 @@ def compute_files_to_upload():
 
         files_to_upload["additional_info.tsv.zst"] =     f"data/{database}/additional_info.tsv"
         files_to_upload["flagged_metadata.txt.zst"] =    f"data/{database}/flagged_metadata.txt"
-        
+
     # Include upload of raw NDJSON if we are fetching new sequences from database
     if config.get("fetch_from_database", False):
         files_to_upload.update({
@@ -98,7 +98,7 @@ rule remove_rerun_touchfile:
     """
     Remove the rerun touchfile if such a file is present
     """
-    input: 
+    input:
         f"data/{database}/{{remote_filename}}.upload",
     output:
         f"data/{database}/{{remote_filename}}.renew.deleted",
@@ -115,7 +115,7 @@ rule upload:
     Requests one touch file for each uploaded remote file
     Dynamically determines that list of files
     """
-    input: 
+    input:
         uploads = [f"data/{database}/{remote_file}.upload" for remote_file in files_to_upload.keys()],
         touchfile_removes=[
             f"data/{database}/{remote_file}.renew.deleted" for remote_file in [
