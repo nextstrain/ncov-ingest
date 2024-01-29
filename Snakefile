@@ -41,10 +41,7 @@ if config.get("s3_dst"):
 # and the `s3_src` is provided in config since some notify scripts depend
 # do diffs with files on S3 from previous runs
 if send_notifications and config.get("s3_src"):
-    all_targets.extend([
-        f"data/{database}/notify-on-record-change.done",
-        f"data/{database}/notify.done"
-    ])
+    all_targets.append(f"data/{database}/notify.done")
 
 rule all:
     input: all_targets

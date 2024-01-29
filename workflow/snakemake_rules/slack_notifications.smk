@@ -38,6 +38,7 @@ rule notify_on_record_change:
 
 rule notify_gisaid:
     input:
+        notify_on_record_change = "data/gisaid/notify-on-record-change.done",
         flagged_annotations = rules.transform_gisaid_data.output.flagged_annotations,
         additional_info = "data/gisaid/additional_info.tsv",
         flagged_metadata = "data/gisaid/flagged_metadata.txt"
@@ -52,6 +53,7 @@ rule notify_gisaid:
 
 rule notify_genbank:
     input:
+        notify_on_record_change = "data/genbank/notify-on-record-change.done",
         flagged_annotations = rules.transform_genbank_data.output.flagged_annotations,
         duplicate_biosample = "data/genbank/duplicate_biosample.txt"
     params:
@@ -63,4 +65,3 @@ rule notify_genbank:
         # TODO - which rule produces data/genbank/problem_data.tsv? (was not explicit in `ingest-genbank` bash script)
         shell("./bin/notify-on-problem-data data/genbank/problem_data.tsv")
         shell("./bin/notify-on-duplicate-biosample-change {input.duplicate_biosample} {params.s3_bucket}/duplicate_biosample.txt.gz")
-

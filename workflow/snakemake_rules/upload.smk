@@ -35,7 +35,7 @@ def compute_files_to_upload():
 
                     }
     files_to_upload = files_to_upload | {
-        f"translation_{gene}.fasta.zst" : f"data/{database}/translation_{gene}.fasta" 
+        f"translation_{gene}.fasta.zst" : f"data/{database}/translation_{gene}.fasta"
         for gene in GENE_LIST
     }
 
@@ -52,7 +52,7 @@ def compute_files_to_upload():
 
         files_to_upload["additional_info.tsv.zst"] =     f"data/{database}/additional_info.tsv"
         files_to_upload["flagged_metadata.txt.zst"] =    f"data/{database}/flagged_metadata.txt"
-        
+
     # Include upload of raw NDJSON if we are fetching new sequences from database
     if config.get("fetch_from_database", False):
         files_to_upload.update({
@@ -76,9 +76,15 @@ def compute_files_to_upload():
 
 files_to_upload = compute_files_to_upload()
 
-
 rule upload_single:
-    input: lambda w: files_to_upload[w.remote_filename]
+    input:
+        file_to_upload = lambda w: files_to_upload[w.remote_filename],
+        # Include the notifications touch file as an input to ensure that
+        # uploads only run after the notifications rules have run.
+        # This prevents the race condition between diffs and uploads described
+        # in https://github.com/nextstrain/ncov-ingest/issues/423
+        #   -Jover, 2024-01-26
+        notifications_flag = f"data/{database}/notify.done" if send_notifications else [],
     output:
         "data/{database}/{remote_filename}.upload",
     params:
@@ -89,7 +95,7 @@ rule upload_single:
         """
         ./vendored/upload-to-s3 \
             {params.quiet} \
-            {input:q} \
+            {input.file_to_upload:q} \
             {params.s3_bucket:q}/{wildcards.remote_filename:q} \
             {params.cloudfront_domain} 2>&1 | tee {output}
         """
@@ -98,7 +104,7 @@ rule remove_rerun_touchfile:
     """
     Remove the rerun touchfile if such a file is present
     """
-    input: 
+    input:
         f"data/{database}/{{remote_filename}}.upload",
     output:
         f"data/{database}/{{remote_filename}}.renew.deleted",
@@ -115,7 +121,7 @@ rule upload:
     Requests one touch file for each uploaded remote file
     Dynamically determines that list of files
     """
-    input: 
+    input:
         uploads = [f"data/{database}/{remote_file}.upload" for remote_file in files_to_upload.keys()],
         touchfile_removes=[
             f"data/{database}/{remote_file}.renew.deleted" for remote_file in [
