@@ -7,7 +7,7 @@ jobs:
   ingest:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: nextstrain/.github/actions/setup-nextstrain-cli@master
 
       - name: run_pipeline
