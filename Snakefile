@@ -1,5 +1,9 @@
 from subprocess import CalledProcessError
+from snakemake.utils import min_version
 import os
+
+# Snakemake 7.7.0 introduced `retries` directive used in fetch_sequences
+min_version("7.7.0")
 
 GENES = "E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S"
 GENES_SPACE_DELIMITED = GENES.replace(",", " ")

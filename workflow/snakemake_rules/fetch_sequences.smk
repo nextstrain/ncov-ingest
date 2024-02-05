@@ -18,42 +18,28 @@ Produces different final outputs for GISAID vs GenBank/RKI:
         rki_ndjson = "data/rki.ndjson"
 """
 
-def run_shell_command_n_times(cmd, msg, cleanup_failed_cmd, retry_num=5):
-    attempt = 0
-    while attempt < retry_num:
-        print(f"{msg} attempt number {attempt}")
-        try:
-            shell(cmd)
-            break
-        except CalledProcessError:
-            print("...FAILED")
-            attempt+=1
-            shell("{cleanup_failed_cmd} && sleep 10")
-    else:
-        print(msg + f" has FAILED {retry_num} times. Exiting.")
-        raise Exception("function run_shell_command_n_times has failed")
-
 rule fetch_main_gisaid_ndjson:
     output:
         ndjson = temp(f"data/gisaid.ndjson")
-    run:
-        run_shell_command_n_times(
-            f"./bin/fetch-from-gisaid {output.ndjson}",
-            f"Fetching from {database}",
-            f"rm {output.ndjson}"
-        )
+    retries: 5
+    shell:
+        """
+        ./bin/fetch-from-gisaid {output.ndjson}
+        """
+
 
 rule fetch_ncbi_dataset_package:
     output:
         dataset_package = temp("data/ncbi_dataset.zip")
+    retries: 5
     benchmark:
         "benchmarks/fetch_ncbi_dataset_package.txt"
-    run:
-        run_shell_command_n_times(
-            f"datasets download virus genome taxon SARS-CoV-2 --no-progressbar --filename {output.dataset_package}",
-            f"Fetching from {database} with NCBI Datasets",
-            f"rm -f {output.dataset_package}"
-        )
+    shell:
+        """
+        datasets download virus genome taxon SARS-CoV-2 \
+            --no-progressbar \
+            --filename {output.dataset_package}
+        """
 
 rule extract_ncbi_dataset_sequences:
     input:
@@ -142,36 +128,36 @@ rule fetch_biosample:
         """Fetching BioSample data (GenBank only)"""
     output:
         biosample = temp("data/biosample.ndjson")
-    run:
-        run_shell_command_n_times(
-            f"./bin/fetch-from-biosample > {output.biosample}",
-            "Fetch BioSample",
-            f"rm {output.biosample}"
-        )
+    retries: 5
+    shell:
+        """
+        ./bin/fetch-from-biosample > {output.biosample}
+        """
+
 
 rule fetch_cog_uk_accessions:
     message:
         """Fetching COG-UK sample accesions (GenBank only)"""
     output:
         cog_uk_accessions = temp("data/cog_uk_accessions.tsv")
-    run:
-        run_shell_command_n_times(
-            f"./bin/fetch-from-cog-uk-accessions > {output.cog_uk_accessions}",
-            "Fetch COG-UK sample accessions",
-            f"rm {output.cog_uk_accessions}"
-        )
+    retries: 5
+    shell:
+        """
+        ./bin/fetch-from-cog-uk-accessions > {output.cog_uk_accessions}
+        """
+
 
 rule fetch_cog_uk_metadata:
     message:
         """Fetching COG-UK metadata (GenBank only)"""
     output:
         cog_uk_metadata = temp("data/cog_uk_metadata.csv.gz")
-    run:
-        run_shell_command_n_times(
-            f"./bin/fetch-from-cog-uk-metadata > {output.cog_uk_metadata}",
-            "Fetch COG-UK metadata",
-            f"rm {output.cog_uk_metadata}"
-        )
+    retries: 5
+    shell:
+        """
+        ./bin/fetch-from-cog-uk-metadata > {output.cog_uk_metadata}
+        """
+
 
 rule uncompress_cog_uk_metadata:
     input:
@@ -185,23 +171,21 @@ rule uncompress_cog_uk_metadata:
 rule fetch_rki_sequences:
     output:
         rki_sequences=temp("data/rki_sequences.fasta.xz"),
-    run:
-        run_shell_command_n_times(
-            f"./bin/fetch-from-rki-sequences > {output.rki_sequences}",
-            "Fetch RKI sequences",
-            f"rm {output.rki_sequences}",
-        )
+    retries: 5
+    shell:
+        """
+        ./bin/fetch-from-rki-sequences > {output.rki_sequences}
+        """
 
 
 rule fetch_rki_metadata:
     output:
         rki_metadata=temp("data/rki_metadata.tsv.xz"),
-    run:
-        run_shell_command_n_times(
-            f"./bin/fetch-from-rki-metadata > {output.rki_metadata}",
-            "Fetch RKI metadata",
-            f"rm {output.rki_metadata}",
-        )
+    retries: 5
+    shell:
+        """
+        ./bin/fetch-from-rki-metadata > {output.rki_metadata}
+        """
 
 
 rule transform_rki_data_to_ndjson:
