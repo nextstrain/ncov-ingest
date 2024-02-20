@@ -226,7 +226,7 @@ rule nextclade_tsv_concat_versions:
         if [ -s {input.tsv} ]; then
             # Get version numbers
             nextclade_version="$(./nextclade --version)"
-            dataset_version="$(unzip -p {input.dataset} tag.json | jq -r '.tag')"
+            dataset_version="$(unzip -p {input.dataset} pathogen.json | jq -r '.version.tag')"
             timestamp="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
 
             # Combine input file with version numbers and write to output
