@@ -187,6 +187,14 @@ rule run_wuhan_nextclade:
         ],
     shell:
         """
+        # If there are no sequences to run Nextclade on, create empty output files
+        if [[ ! -s {input.sequences} ]]; then
+            touch {output.info}
+            touch {output.alignment}
+            touch {output.translations}
+            exit 0
+        fi
+
         ./{input.nextclade_path} run \
         {input.sequences}\
         --input-dataset={input.dataset} \
@@ -208,6 +216,12 @@ rule run_21L_nextclade:
         info=f"data/{database}/nextclade_21L_new_raw.tsv",
     shell:
         """
+        # If there are no sequences to run Nextclade on, create empty output files
+        if [[ ! -s {input.sequences} ]]; then
+            touch {output.info}
+            exit 0
+        fi
+
         ./{input.nextclade_path} run \
         {input.sequences} \
         --input-dataset={input.dataset} \
