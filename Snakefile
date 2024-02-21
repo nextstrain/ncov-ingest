@@ -5,9 +5,12 @@ import os
 # Snakemake 7.7.0 introduced `retries` directive used in fetch_sequences
 min_version("7.7.0")
 
-GENES = "E,M,N,ORF1a,ORF1b,ORF3a,ORF6,ORF7a,ORF7b,ORF8,ORF9b,S"
-GENES_SPACE_DELIMITED = GENES.replace(",", " ")
-GENE_LIST = GENES.split(",")
+# Hardcoded gene list used to create the DAG for both nextclade.smk and upload.smk
+# It does _not_ need to be supplied to the `nextclade run` invocations because
+# it matches the genes listed in the SARS-CoV-2 Nextclade dataset genome_annotations.gff
+# https://github.com/nextstrain/nextclade_data/blob/244058e7d599a8295d748b12cffdd25cec6d3e7b/data/nextstrain/sars-cov-2/wuhan-hu-1/orfs/genome_annotation.gff3
+#   - Jover, 21 Feb 2024
+GENE_LIST = ['E', 'M', 'N', 'ORF1a', 'ORF1b', 'ORF3a', 'ORF6', 'ORF7a', 'ORF7b', 'ORF8', 'ORF9b', 'S']
 
 #################################################################
 ####################### general setup ###########################
