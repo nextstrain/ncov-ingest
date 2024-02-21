@@ -37,7 +37,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Install Python deps
 COPY requirements.txt /nextstrain/ncov-ingest/
 
-RUN python3 -m pip install -r /nextstrain/ncov-ingest/requirements.txt
+# Must remove ~/.cache after pip install
+# See https://github.com/nextstrain/ncov-ingest/commit/fd2b922c0b88d21c8245ab8c45797d93f2de4706
+RUN python3 -m pip install -r /nextstrain/ncov-ingest/requirements.txt \
+ && rm -rf ~/.cache
 
 # Put any bin/ dir in the cwd on the path for more convenient invocation of
 # ncov-ingest's programs.
