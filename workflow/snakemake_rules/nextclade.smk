@@ -26,6 +26,7 @@ Produces the following outputs:
         nextclade_info = f"data/{database}/nextclade.tsv"
         alignment = f"data/{database}/aligned.fasta"
 """
+
 from shlex import quote as shellquote
 
 
@@ -134,10 +135,10 @@ rule download_nextclade_executable:
     shell:
         """
         if [ "$(uname)" = "Darwin" ]; then
-            curl -fsSL "https://github.com/nextstrain/nextclade/releases/download/2.14.0/nextclade-x86_64-apple-darwin" -o "nextclade"
+            curl -fsSL "https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-x86_64-apple-darwin" -o "nextclade"
 
         else
-            curl -fsSL "https://github.com/nextstrain/nextclade/releases/download/2.14.0/nextclade-x86_64-unknown-linux-gnu" -o "nextclade"
+            curl -fsSL "https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-x86_64-unknown-linux-gnu" -o "nextclade"
         fi
         chmod +x nextclade
 
@@ -171,12 +172,11 @@ rule run_wuhan_nextclade:
     """
     input:
         nextclade_path="nextclade",
-        dataset=lambda w: f"data/nextclade_data/sars-cov-2.zip",
+        dataset="data/nextclade_data/sars-cov-2.zip",
         sequences=f"data/{database}/nextclade.sequences.fasta",
     params:
-        genes=GENES_SPACE_DELIMITED,
         translation_arg=lambda w: (
-            f"--output-translations=data/{database}/nextclade.translation_{{gene}}.upd.fasta"
+            f"--output-translations=data/{database}/nextclade.translation_{{cds}}.upd.fasta"
         ),
     output:
         info=f"data/{database}/nextclade_new_raw.tsv",
@@ -187,11 +187,18 @@ rule run_wuhan_nextclade:
         ],
     shell:
         """
+        # If there are no sequences to run Nextclade on, create empty output files
+        if [[ ! -s {input.sequences} ]]; then
+            touch {output.info}
+            touch {output.alignment}
+            touch {output.translations}
+            exit 0
+        fi
+
         ./{input.nextclade_path} run \
         {input.sequences}\
         --input-dataset={input.dataset} \
         --output-tsv={output.info} \
-        --genes {params.genes} \
         {params.translation_arg} \
         --output-fasta={output.alignment}
         """
@@ -205,17 +212,20 @@ rule run_21L_nextclade:
         nextclade_path="nextclade",
         dataset=lambda w: f"data/nextclade_data/sars-cov-2-21L.zip",
         sequences=f"data/{database}/nextclade_21L.sequences.fasta",
-    params:
-        genes=GENES_SPACE_DELIMITED,
     output:
         info=f"data/{database}/nextclade_21L_new_raw.tsv",
     shell:
         """
+        # If there are no sequences to run Nextclade on, create empty output files
+        if [[ ! -s {input.sequences} ]]; then
+            touch {output.info}
+            exit 0
+        fi
+
         ./{input.nextclade_path} run \
         {input.sequences} \
         --input-dataset={input.dataset} \
         --output-tsv={output.info} \
-        --genes {params.genes}
         """
 
 
@@ -230,7 +240,7 @@ rule nextclade_tsv_concat_versions:
         if [ -s {input.tsv} ]; then
             # Get version numbers
             nextclade_version="$(./nextclade --version)"
-            dataset_version="$(unzip -p {input.dataset} tag.json | jq -r '.tag')"
+            dataset_version="$(unzip -p {input.dataset} pathogen.json | jq -r '.version.tag')"
             timestamp="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
 
             # Combine input file with version numbers and write to output
