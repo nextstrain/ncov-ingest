@@ -35,13 +35,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     xz-utils
 
 # Install Python deps
-RUN python3 -m pip install pipenv \
- && rm -rf ~/.cache
+COPY requirements.txt /nextstrain/ncov-ingest/
 
-COPY Pipfile Pipfile.lock /nextstrain/ncov-ingest/
-
-RUN PIPENV_PIPFILE=/nextstrain/ncov-ingest/Pipfile pipenv sync --system \
- && rm -rf ~/.cache
+RUN python3 -m pip install -r /nextstrain/ncov-ingest/requirements.txt
 
 # Put any bin/ dir in the cwd on the path for more convenient invocation of
 # ncov-ingest's programs.

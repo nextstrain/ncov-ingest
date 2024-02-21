@@ -8,9 +8,6 @@ on:
       - '**'
     paths:
       - Dockerfile
-      - .dockerignore
-      - Pipfile
-      - Pipfile.lock
       - package.json
       - yarn.lock
       - .github/workflows/update-image.yml
