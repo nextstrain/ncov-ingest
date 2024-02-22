@@ -45,7 +45,7 @@ jobs:
           fi
           echo "IMAGE_TAG=$IMAGE_TAG" | tee -a "$GITHUB_ENV"
 
-      - uses: docker/build-push-action@v3
+      - uses: docker/build-push-action@v5
         with:
           context: .
           file: ./Dockerfile
