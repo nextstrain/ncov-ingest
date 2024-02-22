@@ -8,6 +8,7 @@ on:
       - '**'
     paths:
       - Dockerfile
+      - requirements.txt
       - package.json
       - yarn.lock
       - .github/workflows/update-image.yml
