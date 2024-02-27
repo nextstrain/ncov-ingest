@@ -31,6 +31,14 @@ on:
 
   # Manually triggered using GitHub's UI
   workflow_dispatch:
+    inputs:
+      trial_name:
+        description: >-
+          Short name for a trial run.
+          If provided, files will be uploaded to s3://nextstrain-data/files/ncov/open/trial/${TRIAL_NAME}/
+          and downstream ncov and forecasts-ncov workflows will not be triggered.
+          WARNING: without the trial name, workflow will upload files to s3://nextstrain-data/files/ncov/open/
+        required: false
 
 jobs:
   fetch-and-ingest:
@@ -55,9 +63,20 @@ jobs:
         declare -a config
         config+=(
           fetch_from_database=True
-          trigger_rebuild=True
-          trigger_counts=True
         )
+
+        if [[ -n "$TRIAL_NAME" ]]; then
+          config+=(
+            trigger_rebuild=False
+            trigger_counts=False
+            s3_dst="s3://nextstrain-data/files/ncov/open/trial/${TRIAL_NAME}"
+          )
+        else
+          config+=(
+            trigger_rebuild=True
+            trigger_counts=True
+          )
+        fi
 
         nextstrain build \
           --aws-batch \
@@ -79,6 +98,7 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         PAT_GITHUB_DISPATCH: ${{ secrets.GH_TOKEN_NEXTSTRAIN_BOT_WORKFLOW_DISPATCH }}
+        TRIAL_NAME: ${{ inputs.trial_name }}
 
     - name: notify_pipeline_failed
       if: ${{ failure() }}
