@@ -45,6 +45,11 @@ on:
         type: boolean
         required: false
         default: true
+      image:
+        description: >-
+          Specific container image to use for build.
+          This will override the default image (nextstrain/ncov-ingest).
+        required: false
 
 jobs:
   set_config_overrides:
@@ -88,13 +93,13 @@ jobs:
       env: |
         CONFIG_OVERRIDES: ${{ needs.set_config_overrides.outputs.config_overrides }}
         GITHUB_RUN_ID: ${{ github.run_id }}
+        NEXTSTRAIN_DOCKER_IMAGE: ${{ inputs.image || 'nextstrain/ncov-ingest' }}
         SLACK_CHANNELS: ncov-gisaid-updates
       run: |
         nextstrain build \
           --aws-batch \
           --detach \
           --no-download \
-          --image nextstrain/ncov-ingest \
           --cpus 16 \
           --memory 68GiB \
           --env AWS_ACCESS_KEY_ID \
