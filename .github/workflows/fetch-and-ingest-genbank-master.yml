@@ -39,6 +39,13 @@ on:
           and downstream ncov and forecasts-ncov workflows will not be triggered.
           WARNING: without the trial name, workflow will upload files to s3://nextstrain-data/files/ncov/open/
         required: false
+      fetch_from_database:
+        description: >-
+          Whether the workflow should fetch from upstream database.
+          If not selected (false), the workflow will start from existing data on S3.
+        type: boolean
+        required: false
+        default: true
 
 jobs:
   fetch-and-ingest:
@@ -61,9 +68,16 @@ jobs:
           PAT_GITHUB_DISPATCH
 
         declare -a config
-        config+=(
-          fetch_from_database=True
-        )
+
+        if [[ "$FETCH_FROM_DATABASE" ]]; then
+          config+=(
+            fetch_from_database=True
+          )
+        else
+          config+=(
+            fetch_from_database=False
+          )
+        fi
 
         if [[ -n "$TRIAL_NAME" ]]; then
           config+=(
@@ -99,6 +113,7 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         PAT_GITHUB_DISPATCH: ${{ secrets.GH_TOKEN_NEXTSTRAIN_BOT_WORKFLOW_DISPATCH }}
         TRIAL_NAME: ${{ inputs.trial_name }}
+        FETCH_FROM_DATABASE: ${{ inputs.fetch_from_database != '' && inputs.fetch_from_database || true }}
 
     - name: notify_pipeline_failed
       if: ${{ failure() }}
