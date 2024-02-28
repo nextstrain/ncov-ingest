@@ -33,23 +33,15 @@ To pull sequences directly from GISAID, you are required to set two environment 
 - `GISAID_API_ENDPOINT`
 - `GISAID_USERNAME_AND_PASSWORD`
 
-Make these environment variables available to the Docker runner environment by creating an `env.d/` directory:
-
-```sh
-./bin/write-envdir env.d \
-  GISAID_API_ENDPOINT \
-  GISAID_USERNAME_AND_PASSWORD
-```
-
 Then run the ncov-ingest pipeline with the nextstrain CLI:
 
 ```sh
 nextstrain build \
   --image nextstrain/ncov-ingest \
-  --exec env \
+  --env GISAID_API_ENDPOINT \
+  --env GISAID_USERNAME_AND_PASSWORD \
   . \
-    envdir env.d snakemake \
-      --configfile config/local_gisaid.yaml
+    --configfile config/local_gisaid.yaml
 ```
 
 ### GenBank
