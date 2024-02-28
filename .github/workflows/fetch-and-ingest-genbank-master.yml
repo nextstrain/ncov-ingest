@@ -48,45 +48,49 @@ on:
         default: true
 
 jobs:
-  fetch-and-ingest:
+  set_config_overrides:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_RUN_ID: ${{ github.run_id }}
-      SLACK_CHANNELS: ncov-genbank-updates
-      SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
     steps:
-    - uses: actions/checkout@v4
-    - uses: nextstrain/.github/actions/setup-nextstrain-cli@master
-      with:
-        cli-version: ">=7.1.0"
+      - id: config
+        name: Set config overrides
+        env:
+          TRIAL_NAME: ${{ inputs.trial_name }}
+          FETCH_FROM_DATABASE: ${{ inputs.fetch_from_database != '' && inputs.fetch_from_database || true }}
+        run: |
+          config="--config"
 
-    - name: run_pipeline
+          if [[ "$FETCH_FROM_DATABASE" ]]; then
+            config+=" fetch_from_database=True"
+          else
+            config+=" fetch_from_database=False"
+          fi
+
+          if [[ "$TRIAL_NAME" ]]; then
+            config+=" trigger_rebuild=False"
+            config+=" trigger_counts=False"
+            config+=" s3_dst=s3://nextstrain-data/files/ncov/open/trial/${TRIAL_NAME}"
+          else
+            config+=" trigger_rebuild=True"
+            config+=" trigger_counts=True"
+          fi
+
+          echo "config=$config" >> "$GITHUB_OUTPUT"
+    outputs:
+      config_overrides: ${{ steps.config.outputs.config }}
+
+  fetch_and_ingest:
+    needs: [set_config_overrides]
+    permissions:
+      id-token: write
+    uses: nextstrain/.github/.github/workflows/pathogen-repo-build.yaml@master
+    secrets: inherit
+    with:
+      runtime: aws-batch
+      env: |
+        CONFIG_OVERRIDES: ${{ needs.set_config_overrides.outputs.config_overrides }}
+        GITHUB_RUN_ID: ${{ github.run_id }}
+        SLACK_CHANNELS: ncov-genbank-updates
       run: |
-        declare -a config
-
-        if [[ "$FETCH_FROM_DATABASE" ]]; then
-          config+=(
-            fetch_from_database=True
-          )
-        else
-          config+=(
-            fetch_from_database=False
-          )
-        fi
-
-        if [[ -n "$TRIAL_NAME" ]]; then
-          config+=(
-            trigger_rebuild=False
-            trigger_counts=False
-            s3_dst="s3://nextstrain-data/files/ncov/open/trial/${TRIAL_NAME}"
-          )
-        else
-          config+=(
-            trigger_rebuild=True
-            trigger_counts=True
-          )
-        fi
-
         nextstrain build \
           --aws-batch \
           --detach \
@@ -96,22 +100,10 @@ jobs:
           --memory 68GiB \
           --env AWS_ACCESS_KEY_ID \
           --env AWS_SECRET_ACCESS_KEY \
-          --env AWS_DEFAULT_REGION \
           --env GITHUB_RUN_ID \
           --env SLACK_TOKEN \
           --env SLACK_CHANNELS \
-          --env PAT_GITHUB_DISPATCH \
+          --env PAT_GITHUB_DISPATCH="$GH_TOKEN_NEXTSTRAIN_BOT_WORKFLOW_DISPATCH" \
           . \
             --configfile config/genbank.yaml \
-            --config "${config[@]}"
-      env:
-        AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        PAT_GITHUB_DISPATCH: ${{ secrets.GH_TOKEN_NEXTSTRAIN_BOT_WORKFLOW_DISPATCH }}
-        TRIAL_NAME: ${{ inputs.trial_name }}
-        FETCH_FROM_DATABASE: ${{ inputs.fetch_from_database != '' && inputs.fetch_from_database || true }}
-
-    - name: notify_pipeline_failed
-      if: ${{ failure() }}
-      run: ./vendored/notify-on-job-fail Ingest nextstrain/ncov-ingest
+            $CONFIG_OVERRIDES
