@@ -59,11 +59,11 @@ jobs:
         name: Set config overrides
         env:
           TRIAL_NAME: ${{ inputs.trial_name }}
-          FETCH_FROM_DATABASE: ${{ inputs.fetch_from_database != '' && inputs.fetch_from_database || true }}
+          FETCH_FROM_DATABASE: ${{ github.event_name != 'workflow_dispatch' && true || inputs.fetch_from_database }}
         run: |
           config="--config"
 
-          if [[ "$FETCH_FROM_DATABASE" ]]; then
+          if "$FETCH_FROM_DATABASE"; then
             config+=" fetch_from_database=True"
           else
             config+=" fetch_from_database=False"
