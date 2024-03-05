@@ -30,59 +30,86 @@ on:
 
   # Manually triggered using GitHub's UI
   workflow_dispatch:
+    inputs:
+      trial_name:
+        description: >-
+          Short name for a trial run.
+          If provided, files will be uploaded to s3://nextstrain-ncov-private/trial/${TRIAL_NAME}/
+          and downstream ncov and forecasts-ncov workflows will not be triggered.
+          WARNING: without the trial name, workflow will upload files to s3://nextstrain-ncov-private/
+        required: false
+      fetch_from_database:
+        description: >-
+          Whether the workflow should fetch from upstream database.
+          If not selected (false), the workflow will start from existing data on S3.
+        type: boolean
+        required: false
+        default: true
+      image:
+        description: >-
+          Specific container image to use for build.
+          This will override the default image (nextstrain/ncov-ingest).
+        required: false
 
 jobs:
-  ingest:
+  set_config_overrides:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_RUN_ID: ${{ github.run_id }}
-      SLACK_CHANNELS: ncov-gisaid-updates
-      SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
     steps:
-    - uses: actions/checkout@v4
-    - uses: nextstrain/.github/actions/setup-nextstrain-cli@master
+      - id: config
+        name: Set config overrides
+        env:
+          TRIAL_NAME: ${{ inputs.trial_name }}
+          FETCH_FROM_DATABASE: ${{ github.event_name != 'workflow_dispatch' && true || inputs.fetch_from_database }}
+        run: |
+          config="--config"
 
-    - name: run_pipeline
+          if "$FETCH_FROM_DATABASE"; then
+            config+=" fetch_from_database=True"
+          else
+            config+=" fetch_from_database=False"
+          fi
+
+          if [[ "$TRIAL_NAME" ]]; then
+            config+=" trigger_rebuild=False"
+            config+=" trigger_counts=False"
+            config+=" s3_dst=s3://nextstrain-ncov-private/trial/${TRIAL_NAME}"
+          else
+            config+=" trigger_rebuild=True"
+            config+=" trigger_counts=True"
+          fi
+
+          echo "config=$config" >> "$GITHUB_OUTPUT"
+    outputs:
+      config_overrides: ${{ steps.config.outputs.config }}
+
+  fetch_and_ingest:
+    needs: [set_config_overrides]
+    permissions:
+      id-token: write
+    uses: nextstrain/.github/.github/workflows/pathogen-repo-build.yaml@master
+    secrets: inherit
+    with:
+      runtime: aws-batch
+      env: |
+        CONFIG_OVERRIDES: ${{ needs.set_config_overrides.outputs.config_overrides }}
+        GITHUB_RUN_ID: ${{ github.run_id }}
+        NEXTSTRAIN_DOCKER_IMAGE: ${{ inputs.image || 'nextstrain/ncov-ingest' }}
+        SLACK_CHANNELS: ${{ inputs.trial_name && vars.TEST_SLACK_CHANNEL || 'ncov-gisaid-updates' }}
       run: |
-        ./bin/write-envdir env.d \
-          AWS_DEFAULT_REGION \
-          GISAID_API_ENDPOINT \
-          GISAID_USERNAME_AND_PASSWORD \
-          GITHUB_RUN_ID \
-          SLACK_TOKEN \
-          SLACK_CHANNELS \
-          PAT_GITHUB_DISPATCH
-
-        declare -a config
-        config+=(
-          fetch_from_database=True
-          trigger_rebuild=True
-          trigger_counts=True
-        )
-
         nextstrain build \
           --aws-batch \
           --detach \
           --no-download \
-          --image nextstrain/ncov-ingest \
           --cpus 16 \
           --memory 68GiB \
-          --exec env \
+          --env AWS_ACCESS_KEY_ID \
+          --env AWS_SECRET_ACCESS_KEY \
+          --env GISAID_API_ENDPOINT \
+          --env GISAID_USERNAME_AND_PASSWORD \
+          --env GITHUB_RUN_ID \
+          --env SLACK_TOKEN \
+          --env SLACK_CHANNELS \
+          --env PAT_GITHUB_DISPATCH="$GH_TOKEN_NEXTSTRAIN_BOT_WORKFLOW_DISPATCH" \
           . \
-            envdir env.d snakemake \
-              --configfile config/gisaid.yaml \
-              --config "${config[@]}" \
-              --cores 16 \
-              --resources mem_mb=68000 \
-              --printshellcmds
-      env:
-        AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        GISAID_API_ENDPOINT: ${{ secrets.GISAID_API_ENDPOINT }}
-        GISAID_USERNAME_AND_PASSWORD: ${{ secrets.GISAID_USERNAME_AND_PASSWORD }}
-        PAT_GITHUB_DISPATCH: ${{ secrets.GH_TOKEN_NEXTSTRAIN_BOT_WORKFLOW_DISPATCH }}
-
-    - name: notify_pipeline_failed
-      if: ${{ failure() }}
-      run: ./vendored/notify-on-job-fail Ingest nextstrain/ncov-ingest
+            --configfile config/gisaid.yaml \
+            $CONFIG_OVERRIDES
