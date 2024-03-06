@@ -14,8 +14,8 @@ These output files are empty flag files to force Snakemake to run the trigger ru
 rule trigger_rebuild_pipeline:
     message: "Triggering nextstrain/ncov rebuild action (via repository dispatch)"
     input:
-        metadata_upload = f"data/{database}/metadata.tsv.gz.upload",
-        fasta_upload = f"data/{database}/sequences.fasta.xz.upload",
+        metadata_upload = f"data/{database}/metadata.tsv.zst.upload",
+        fasta_upload = f"data/{database}/aligned.fasta.zst.upload",
     output:
         touch(f"data/{database}/trigger-rebuild.done")
     params:
