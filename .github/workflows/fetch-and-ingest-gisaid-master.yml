@@ -63,7 +63,7 @@ jobs:
         run: |
           config="--config"
 
-          if "$FETCH_FROM_DATABASE"; then
+          if [[ "$FETCH_FROM_DATABASE" == true ]]; then
             config+=" fetch_from_database=True"
           else
             config+=" fetch_from_database=False"
