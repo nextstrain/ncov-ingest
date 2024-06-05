@@ -102,8 +102,6 @@ jobs:
           --no-download \
           --cpus 16 \
           --memory 90GiB \
-          --env AWS_ACCESS_KEY_ID \
-          --env AWS_SECRET_ACCESS_KEY \
           --env GISAID_API_ENDPOINT \
           --env GISAID_USERNAME_AND_PASSWORD \
           --env GITHUB_RUN_ID \
