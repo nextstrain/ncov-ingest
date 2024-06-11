@@ -101,7 +101,7 @@ jobs:
           --aws-batch \
           --detach \
           --no-download \
-          --cpus 16 \
+          --cpus 36 \
           --memory 68GiB \
           --env GITHUB_RUN_ID \
           --env SLACK_TOKEN \

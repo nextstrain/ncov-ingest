@@ -100,7 +100,7 @@ jobs:
           --aws-batch \
           --detach \
           --no-download \
-          --cpus 16 \
+          --cpus 48 \
           --memory 90GiB \
           --env GISAID_API_ENDPOINT \
           --env GISAID_USERNAME_AND_PASSWORD \
