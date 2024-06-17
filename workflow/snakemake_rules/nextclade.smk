@@ -27,8 +27,6 @@ Produces the following outputs:
         alignment = f"data/{database}/aligned.fasta"
 """
 
-from shlex import quote as shellquote
-
 
 wildcard_constraints:
     reference="|_21L",
@@ -158,7 +156,7 @@ rule download_nextclade_executable:
         fi
 
         NEXTCLADE_VERSION="$(./nextclade --version)"
-        echo "[ INFO] Nextclade version: $NEXTCLADE_VERSION" 
+        echo "[ INFO] Nextclade version: $NEXTCLADE_VERSION"
         """
 
 
