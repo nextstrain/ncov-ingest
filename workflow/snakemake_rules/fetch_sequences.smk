@@ -126,8 +126,7 @@ rule create_genbank_ndjson:
         """
 
 rule fetch_biosample:
-    message:
-        """Fetching BioSample data (GenBank only)"""
+    """Fetching BioSample data (GenBank only)"""
     output:
         biosample = temp("data/biosample.ndjson")
     benchmark:
@@ -140,8 +139,7 @@ rule fetch_biosample:
 
 
 rule fetch_cog_uk_accessions:
-    message:
-        """Fetching COG-UK sample accesions (GenBank only)"""
+    """Fetching COG-UK sample accesions (GenBank only)"""
     output:
         cog_uk_accessions = temp("data/cog_uk_accessions.tsv")
     benchmark:
@@ -154,8 +152,7 @@ rule fetch_cog_uk_accessions:
 
 
 rule fetch_cog_uk_metadata:
-    message:
-        """Fetching COG-UK metadata (GenBank only)"""
+    """Fetching COG-UK metadata (GenBank only)"""
     output:
         cog_uk_metadata = temp("data/cog_uk_metadata.csv.gz")
     benchmark:
@@ -243,8 +240,7 @@ if config.get("s3_dst") and config.get("s3_src"):
         ruleorder: fetch_main_ndjson_from_s3 > create_genbank_ndjson
 
     rule fetch_main_ndjson_from_s3:
-        message:
-            """Fetching main NDJSON from AWS S3"""
+        """Fetching main NDJSON from AWS S3"""
         params:
             file_on_s3_dst=f"{config['s3_dst']}/{database}.ndjson.zst",
             file_on_s3_src=f"{config['s3_src']}/{database}.ndjson.zst",
@@ -260,8 +256,7 @@ if config.get("s3_dst") and config.get("s3_src"):
             """
 
     rule fetch_biosample_from_s3:
-        message:
-            """Fetching BioSample NDJSON from AWS S3"""
+        """Fetching BioSample NDJSON from AWS S3"""
         params:
             file_on_s3_dst=f"{config['s3_dst']}/biosample.ndjson.zst",
             file_on_s3_src=f"{config['s3_src']}/biosample.ndjson.zst",

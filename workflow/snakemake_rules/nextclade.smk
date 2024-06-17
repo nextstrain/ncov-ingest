@@ -34,8 +34,7 @@ wildcard_constraints:
 
 
 rule create_empty_nextclade_info:
-    message:
-        """Creating empty NextClade info cache file"""
+    """Creating empty NextClade info cache file"""
     output:
         touch(f"data/{database}/nextclade{{reference}}_old.tsv"),
     benchmark:
@@ -43,8 +42,7 @@ rule create_empty_nextclade_info:
 
 
 rule create_empty_nextclade_aligned:
-    message:
-        """Creating empty NextClade aligned cache file"""
+    """Creating empty NextClade aligned cache file"""
     output:
         touch(f"data/{database}/nextclade.aligned.old.fasta"),
         *[
@@ -277,10 +275,9 @@ rule nextclade_tsv_concat_versions:
 
 
 rule nextclade_info:
-    message:
-        """
-        Generates nextclade info TSV for all sequences (new + old)
-        """
+    """
+    Generates nextclade info TSV for all sequences (new + old)
+    """
     input:
         old_info=f"data/{database}/nextclade{{reference}}_old.tsv",
         new_info=rules.nextclade_tsv_concat_versions.output.tsv,

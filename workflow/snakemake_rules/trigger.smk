@@ -12,7 +12,7 @@ These output files are empty flag files to force Snakemake to run the trigger ru
 """
 
 rule trigger_rebuild_pipeline:
-    message: "Triggering nextstrain/ncov rebuild action (via repository dispatch)"
+    """Triggering nextstrain/ncov rebuild action (via repository dispatch)"""
     input:
         metadata_upload = f"data/{database}/metadata.tsv.zst.upload",
         fasta_upload = f"data/{database}/aligned.fasta.zst.upload",
@@ -32,7 +32,7 @@ rule trigger_rebuild_pipeline:
         """
 
 rule trigger_counts_pipeline:
-    message: "Triggering nextstrain/counts clade counts action (via repository dispatch)"
+    """Triggering nextstrain/counts clade counts action (via repository dispatch)"""
     input:
         f"data/{database}/upload.done"
     output:
