@@ -18,6 +18,8 @@ rule trigger_rebuild_pipeline:
         fasta_upload = f"data/{database}/aligned.fasta.zst.upload",
     output:
         touch(f"data/{database}/trigger-rebuild.done")
+    benchmark:
+        f"benchmarks/trigger_rebuild_pipeline_{database}.txt"
     params:
         dispatch_type = f"{database}/rebuild"
     shell:
@@ -35,6 +37,8 @@ rule trigger_counts_pipeline:
         f"data/{database}/upload.done"
     output:
         touch(f"data/{database}/trigger-counts.done")
+    benchmark:
+        f"benchmarks/trigger_counts_pipeline_{database}.txt"
     params:
         dispatch_type = f"{database}/clade-counts"
     shell:

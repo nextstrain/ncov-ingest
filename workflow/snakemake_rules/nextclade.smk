@@ -40,6 +40,8 @@ rule create_empty_nextclade_info:
         """Creating empty NextClade info cache file"""
     output:
         touch(f"data/{database}/nextclade{{reference}}_old.tsv"),
+    benchmark:
+        f"benchmarks/create_empty_nextclade_info_{database}{{reference}}.txt"
 
 
 rule create_empty_nextclade_aligned:
@@ -51,6 +53,8 @@ rule create_empty_nextclade_aligned:
             touch(f"data/{database}/nextclade.translation_{gene}.old.fasta")
             for gene in GENE_LIST
         ],
+    benchmark:
+        f"benchmarks/create_empty_nextclade_aligned_{database}.txt"
 
 
 # Only include rules to fetch from S3 if S3 config params are provided
@@ -74,6 +78,8 @@ if config.get("s3_dst") and config.get("s3_src"):
             lines=config.get("subsample", {}).get("nextclade", 0),
         output:
             nextclade=f"data/{database}/nextclade{{reference}}_old.tsv",
+        benchmark:
+            f"benchmarks/download_nextclade_tsv_from_s3_{database}{{reference}}.txt"
         shell:
             """
             ./vendored/download-from-s3 {params.dst_rerun_touchfile} {output.nextclade} 0 ||  \
@@ -95,6 +101,8 @@ if config.get("s3_dst") and config.get("s3_src"):
             lines=config.get("subsample", {}).get("nextclade", 0),
         output:
             alignment=temp(f"data/{database}/nextclade.{{seqtype}}.old.fasta"),
+        benchmark:
+            f"benchmarks/download_previous_alignment_from_s3_{database}{{seqtype}}.txt"
         shell:
             """
             ./vendored/download-from-s3 {params.dst_rerun_touchfile} {output.alignment} 0 ||  \
@@ -132,6 +140,8 @@ rule download_nextclade_executable:
     """Download Nextclade"""
     output:
         nextclade="nextclade",
+    benchmark:
+        f"benchmarks/download_nextclade_executable_{database}.txt"
     shell:
         """
         if [ "$(uname)" = "Darwin" ]; then
@@ -158,6 +168,8 @@ rule download_nextclade_dataset:
         "nextclade",
     output:
         dataset="data/nextclade_data/{dataset_name}.zip",
+    benchmark:
+        f"benchmarks/download_nextclade_dataset_{database}_{{dataset_name}}.txt"
     shell:
         """
         ./nextclade dataset get --name="{wildcards.dataset_name}" --output-zip={output.dataset} --verbose
@@ -185,6 +197,8 @@ rule run_wuhan_nextclade:
             temp(f"data/{database}/nextclade.translation_{gene}.upd.fasta")
             for gene in GENE_LIST
         ],
+    benchmark:
+        f"benchmarks/run_wuhan_nextclade_{database}.txt"
     shell:
         """
         # If there are no sequences to run Nextclade on, create empty output files
@@ -214,6 +228,8 @@ rule run_21L_nextclade:
         sequences=f"data/{database}/nextclade_21L.sequences.fasta",
     output:
         info=f"data/{database}/nextclade_21L_new_raw.tsv",
+    benchmark:
+        f"benchmarks/run_21L_nextclade_{database}.txt"
     shell:
         """
         # If there are no sequences to run Nextclade on, create empty output files
@@ -235,6 +251,8 @@ rule nextclade_tsv_concat_versions:
         dataset=lambda w: f"data/nextclade_data/sars-cov-2{w.reference.replace('_','-')}.zip",
     output:
         tsv=f"data/{database}/nextclade{{reference}}_new.tsv",
+    benchmark:
+        f"benchmarks/nextclade_tsv_concat_versions_{database}{{reference}}.txt"
     shell:
         """
         if [ -s {input.tsv} ]; then
@@ -270,6 +288,8 @@ rule nextclade_info:
         new_info=rules.nextclade_tsv_concat_versions.output.tsv,
     output:
         nextclade_info=f"data/{database}/nextclade{{reference}}.tsv",
+    benchmark:
+        f"benchmarks/nextclade_info_{database}{{reference}}.txt"
     shell:
         """
         tsv-append -H {input.old_info} {input.new_info} \
@@ -286,6 +306,8 @@ rule combine_alignments:
         new_alignment=f"data/{database}/nextclade.{{seqtype}}.upd.fasta",
     output:
         alignment=f"data/{database}/{{seqtype}}.fasta",
+    benchmark:
+        f"benchmarks/combine_alignments_{database}{{seqtype}}.txt"
     params:
         keep_temp=config.get("keep_temp", "false"),
     shell:

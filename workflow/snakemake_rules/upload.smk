@@ -87,6 +87,8 @@ rule upload_single:
         notifications_flag = f"data/{database}/notify.done" if send_notifications else [],
     output:
         "data/{database}/{remote_filename}.upload",
+    benchmark:
+        "benchmarks/upload_single_{database}_{remote_filename}.txt"
     params:
         quiet = "" if send_notifications else "--quiet",
         s3_bucket = config.get("s3_dst",""),
@@ -108,6 +110,8 @@ rule remove_rerun_touchfile:
         f"data/{database}/{{remote_filename}}.upload",
     output:
         f"data/{database}/{{remote_filename}}.renew.deleted",
+    benchmark:
+        f"benchmarks/remove_rerun_touchfile_{database}_{{remote_filename}}.txt"
     params:
         dst_rerun_touchfile=config["s3_dst"] + "/{remote_filename}.renew",
     shell:
@@ -131,3 +135,5 @@ rule upload:
         ]
     output:
         touch(f"data/{database}/upload.done")
+    benchmark:
+        f"benchmarks/upload_{database}.txt"

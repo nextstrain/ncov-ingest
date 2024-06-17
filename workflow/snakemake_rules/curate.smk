@@ -29,6 +29,8 @@ rule transform_rki_data:
     output:
         fasta="data/rki_sequences.fasta",
         metadata="data/rki_metadata_transformed.tsv",
+    benchmark:
+        "benchmarks/transform_rki_data.txt"
     params:
         subsampled=config.get("subsampled", False),
     shell:
@@ -45,6 +47,8 @@ rule transform_biosample:
         biosample = "data/biosample.ndjson"
     output:
         biosample = "data/genbank/biosample.tsv"
+    benchmark:
+        "benchmarks/transform_biosample.txt"
     shell:
         """
         ./bin/transform-biosample {input.biosample} \
@@ -85,6 +89,8 @@ rule merge_open_data:
     output:
         metadata="data/genbank/metadata_transformed.tsv",
         sequences="data/genbank/sequences.fasta",
+    benchmark:
+        "benchmarks/merge_open_data.txt"
     shell:
         """
         ./bin/merge-open \
@@ -105,6 +111,8 @@ rule transform_gisaid_data:
         metadata = "data/gisaid/metadata_transformed.tsv",
         flagged_annotations = temp("data/gisaid/flagged-annotations"),
         additional_info = "data/gisaid/additional_info.tsv"
+    benchmark:
+        "benchmarks/transform_gisaid_data.txt"
     shell:
         """
         ./bin/transform-gisaid {input.ndjson} \
@@ -120,6 +128,8 @@ rule flag_metadata:
         metadata = "data/gisaid/metadata.tsv"
     output:
         metadata = "data/gisaid/flagged_metadata.txt"
+    benchmark:
+        "benchmarks/flag_metadata.txt"
     resources:
         # Memory use scales primarily with the size of the metadata file.
         mem_mb=20000
