@@ -21,6 +21,8 @@ Produces different final outputs for GISAID vs GenBank/RKI:
 rule fetch_main_gisaid_ndjson:
     output:
         ndjson = temp(f"data/gisaid.ndjson")
+    benchmark:
+        "benchmarks/fetch_main_gisaid_ndjson.txt"
     retries: 5
     shell:
         """
@@ -124,10 +126,11 @@ rule create_genbank_ndjson:
         """
 
 rule fetch_biosample:
-    message:
-        """Fetching BioSample data (GenBank only)"""
+    """Fetching BioSample data (GenBank only)"""
     output:
         biosample = temp("data/biosample.ndjson")
+    benchmark:
+        "benchmarks/fetch_biosample.txt"
     retries: 5
     shell:
         """
@@ -136,10 +139,11 @@ rule fetch_biosample:
 
 
 rule fetch_cog_uk_accessions:
-    message:
-        """Fetching COG-UK sample accesions (GenBank only)"""
+    """Fetching COG-UK sample accesions (GenBank only)"""
     output:
         cog_uk_accessions = temp("data/cog_uk_accessions.tsv")
+    benchmark:
+        "benchmarks/fetch_cog_uk_accessions.txt"
     retries: 5
     shell:
         """
@@ -148,10 +152,11 @@ rule fetch_cog_uk_accessions:
 
 
 rule fetch_cog_uk_metadata:
-    message:
-        """Fetching COG-UK metadata (GenBank only)"""
+    """Fetching COG-UK metadata (GenBank only)"""
     output:
         cog_uk_metadata = temp("data/cog_uk_metadata.csv.gz")
+    benchmark:
+        "benchmarks/fetch_cog_uk_metadata.txt"
     retries: 5
     shell:
         """
@@ -164,6 +169,8 @@ rule uncompress_cog_uk_metadata:
         "data/cog_uk_metadata.csv.gz"
     output:
         cog_uk_metadata = temp("data/cog_uk_metadata.csv")
+    benchmark:
+        "benchmarks/uncompress_cog_uk_metadata.txt"
     shell:
         "gunzip -c {input} > {output}"
 
@@ -171,6 +178,8 @@ rule uncompress_cog_uk_metadata:
 rule fetch_rki_sequences:
     output:
         rki_sequences=temp("data/rki_sequences.fasta.xz"),
+    benchmark:
+        "benchmarks/fetch_rki_sequences.txt"
     retries: 5
     shell:
         """
@@ -181,6 +190,8 @@ rule fetch_rki_sequences:
 rule fetch_rki_metadata:
     output:
         rki_metadata=temp("data/rki_metadata.tsv.xz"),
+    benchmark:
+        "benchmarks/fetch_rki_metadata.txt"
     retries: 5
     shell:
         """
@@ -194,6 +205,8 @@ rule transform_rki_data_to_ndjson:
         rki_metadata="data/rki_metadata.tsv.xz"
     output:
         ndjson="data/rki.ndjson",
+    benchmark:
+        "benchmarks/transform_rki_data_to_ndjson.txt"
     shell:
         """
         ./bin/transform-rki-data-to-ndjson \
@@ -227,14 +240,15 @@ if config.get("s3_dst") and config.get("s3_src"):
         ruleorder: fetch_main_ndjson_from_s3 > create_genbank_ndjson
 
     rule fetch_main_ndjson_from_s3:
-        message:
-            """Fetching main NDJSON from AWS S3"""
+        """Fetching main NDJSON from AWS S3"""
         params:
             file_on_s3_dst=f"{config['s3_dst']}/{database}.ndjson.zst",
             file_on_s3_src=f"{config['s3_src']}/{database}.ndjson.zst",
             lines = config.get("subsample",{}).get("main_ndjson", 0)
         output:
             ndjson = temp(f"data/{database}.ndjson")
+        benchmark:
+            "benchmarks/fetch_main_ndjson_from_s3.txt"
         shell:
             """
             ./vendored/download-from-s3 {params.file_on_s3_dst} {output.ndjson} {params.lines} ||  \
@@ -242,14 +256,15 @@ if config.get("s3_dst") and config.get("s3_src"):
             """
 
     rule fetch_biosample_from_s3:
-        message:
-            """Fetching BioSample NDJSON from AWS S3"""
+        """Fetching BioSample NDJSON from AWS S3"""
         params:
             file_on_s3_dst=f"{config['s3_dst']}/biosample.ndjson.zst",
             file_on_s3_src=f"{config['s3_src']}/biosample.ndjson.zst",
             lines = config.get("subsample",{}).get("biosample", 0)
         output:
             biosample = temp("data/biosample.ndjson")
+        benchmark:
+            "benchmarks/fetch_biosample_from_s3.txt"
         shell:
             """
             ./vendored/download-from-s3 {params.file_on_s3_dst} {output.biosample} {params.lines} ||  \
@@ -263,6 +278,8 @@ if config.get("s3_dst") and config.get("s3_src"):
             lines = config.get("subsample",{}).get("rki_ndjson", 0)
         output:
             rki_ndjson = temp("data/rki.ndjson")
+        benchmark:
+            "benchmarks/fetch_rki_ndjson_from_s3.txt"
         shell:
             """
             ./vendored/download-from-s3 {params.file_on_s3_dst} {output.rki_ndjson} {params.lines} ||  \
@@ -275,6 +292,8 @@ if config.get("s3_dst") and config.get("s3_src"):
             lines = config.get("subsample",{}).get("cog_uk_accessions", 0)
         output:
             biosample = "data/cog_uk_accessions.tsv" if config.get("keep_temp",False) else temp("data/cog_uk_accessions.tsv")
+        benchmark:
+            "benchmarks/fetch_cog_uk_accessions_from_s3.txt"
         shell:
             """
             ./vendored/download-from-s3 {params.file_on_s3_dst} {output.biosample} {params.lines} ||  \
@@ -288,6 +307,8 @@ if config.get("s3_dst") and config.get("s3_src"):
             lines = config.get("subsample",{}).get("cog_uk_metadata", 0)
         output:
             biosample = temp("data/cog_uk_metadata.csv")
+        benchmark:
+            "benchmarks/fetch_cog_uk_metadata_from_s3.txt"
         shell:
             """
             ./vendored/download-from-s3 {params.file_on_s3_dst} {output.biosample} {params.lines} ||  \
@@ -299,5 +320,7 @@ if config.get("s3_dst") and config.get("s3_src"):
             "data/cog_uk_metadata.csv"
         output:
             cog_uk_metadata = "data/cog_uk_metadata.csv.gz" if config.get("keep_temp",False) else temp("data/cog_uk_metadata.csv.gz")
+        benchmark:
+            "benchmarks/compress_cog_uk_metadata.txt"
         shell:
             "gzip -c {input} > {output}"

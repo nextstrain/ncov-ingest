@@ -109,5 +109,6 @@ jobs:
           --env SLACK_CHANNELS \
           --env PAT_GITHUB_DISPATCH="$GH_TOKEN_NEXTSTRAIN_BOT_WORKFLOW_DISPATCH" \
           . \
+            --stats snakemake_stats.json \
             --configfile config/gisaid.yaml \
             $CONFIG_OVERRIDES

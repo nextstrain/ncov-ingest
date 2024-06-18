@@ -30,6 +30,8 @@ rule notify_on_record_change:
         ndjson_on_s3 = f"{config['s3_src']}/{database}.ndjson.xz"
     output:
         touch(f"data/{database}/notify-on-record-change.done")
+    benchmark:
+        f"benchmarks/notify_on_record_change_{database}.txt"
     shell:
         """
         ./vendored/notify-on-record-change {input.ndjson} {params.ndjson_on_s3} {database}
@@ -46,6 +48,8 @@ rule notify_gisaid:
         s3_bucket = config["s3_src"]
     output:
         touch("data/gisaid/notify.done")
+    benchmark:
+        "benchmarks/notify_gisaid.txt"
     run:
         shell("./vendored/notify-slack --upload flagged-annotations < {input.flagged_annotations}")
         shell("./bin/notify-on-additional-info-change {input.additional_info} {params.s3_bucket}/additional_info.tsv.gz")
@@ -60,6 +64,8 @@ rule notify_genbank:
         s3_bucket = config["s3_src"]
     output:
         touch("data/genbank/notify.done")
+    benchmark:
+        "benchmarks/notify_genbank.txt"
     run:
         shell("./vendored/notify-slack --upload flagged-annotations < {input.flagged_annotations}")
         # TODO - which rule produces data/genbank/problem_data.tsv? (was not explicit in `ingest-genbank` bash script)
