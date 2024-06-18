@@ -18,7 +18,9 @@ main() {
 
     local src="${1:?A source file is required as the first argument.}"
     local dst="${2:?A destination s3:// URL is required as the second argument.}"
-    local cloudfront_domain="${3:-}"
+    # local cloudfront_domain="${3:-}"
+    local cloudfront_domain=""
+    local threads="${3:?Need 3 positional arguments for this prototype.}"
 
     local s3path="${dst#s3://}"
     local bucket="${s3path%%/*}"
@@ -32,13 +34,13 @@ main() {
         # The record count may have changed
         src_record_count="$(wc -l < "$src")"
 
-        echo "Uploading $src → $dst"
+        echo "Uploading $src → $dst using ${threads} threads"
         if [[ "$dst" == *.gz ]]; then
             gzip -c "$src"
         elif  [[ "$dst" == *.xz ]]; then
-            xz -2 -T0 -c "$src"
+            xz -2 -T${threads} -c "$src"
         elif [[ "$dst" == *.zst ]]; then
-            zstd -T0 -c "$src"
+            zstd -T${threads} -c "$src"
         else
             cat "$src"
         fi | aws s3 cp --no-progress - "$dst" --metadata sha256sum="$src_hash",recordcount="$src_record_count" "$(content-type "$dst")"

@@ -76,6 +76,13 @@ def compute_files_to_upload():
 
 files_to_upload = compute_files_to_upload()
 
+def compression_threads(w):
+    ## PROTOTYPE ##
+    if w.remote_filename.startswith("aligned.fasta"): return 7
+    if w.remote_filename.startswith("sequences.fasta"): return 7
+    if w.remote_filename.startswith("gisaid.ndjson"): return 7
+    return 1
+
 rule upload_single:
     input:
         file_to_upload = lambda w: files_to_upload[w.remote_filename],
@@ -91,13 +98,15 @@ rule upload_single:
         quiet = "" if send_notifications else "--quiet",
         s3_bucket = config.get("s3_dst",""),
         cloudfront_domain = config.get("cloudfront_domain", ""),
+    threads: compression_threads
     shell:
         """
         ./vendored/upload-to-s3 \
             {params.quiet} \
             {input.file_to_upload:q} \
             {params.s3_bucket:q}/{wildcards.remote_filename:q} \
-            {params.cloudfront_domain} 2>&1 | tee {output}
+            {params.cloudfront_domain} \
+            {threads} 2>&1 | tee {output}
         """
 
 rule remove_rerun_touchfile:
