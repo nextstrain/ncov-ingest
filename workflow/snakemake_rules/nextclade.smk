@@ -193,6 +193,8 @@ rule run_wuhan_nextclade:
             temp(f"data/{database}/nextclade.translation_{gene}.upd.fasta")
             for gene in GENE_LIST
         ],
+    threads:
+        workflow.cores * 0.5
     benchmark:
         f"benchmarks/run_wuhan_nextclade_{database}.txt"
     shell:
@@ -224,6 +226,8 @@ rule run_21L_nextclade:
         sequences=f"data/{database}/nextclade_21L.sequences.fasta",
     output:
         info=f"data/{database}/nextclade_21L_new_raw.tsv",
+    threads:
+        workflow.cores * 0.5
     benchmark:
         f"benchmarks/run_21L_nextclade_{database}.txt"
     shell:
