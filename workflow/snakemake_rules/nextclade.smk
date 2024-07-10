@@ -208,6 +208,7 @@ rule run_wuhan_nextclade:
         fi
 
         ./{input.nextclade_path} run \
+        -j {threads} \
         {input.sequences}\
         --input-dataset={input.dataset} \
         --output-tsv={output.info} \
@@ -239,6 +240,7 @@ rule run_21L_nextclade:
         fi
 
         ./{input.nextclade_path} run \
+        -j {threads} \
         {input.sequences} \
         --input-dataset={input.dataset} \
         --output-tsv={output.info} \
