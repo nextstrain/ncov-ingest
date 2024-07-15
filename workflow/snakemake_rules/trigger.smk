@@ -22,6 +22,7 @@ rule trigger_rebuild_pipeline:
         f"benchmarks/trigger_rebuild_pipeline_{database}.txt"
     params:
         dispatch_type = f"{database}/rebuild"
+    retries: 5
     shell:
         """
         ./vendored/trigger-on-new-data \
@@ -41,6 +42,7 @@ rule trigger_counts_pipeline:
         f"benchmarks/trigger_counts_pipeline_{database}.txt"
     params:
         dispatch_type = f"{database}/clade-counts"
+    retries: 5
     shell:
         """
         ./vendored/trigger nextstrain/forecasts-ncov {params.dispatch_type}
