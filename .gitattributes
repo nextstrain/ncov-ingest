@@ -1,2 +1,5 @@
 *.csv diff=daff-csv
 *.tsv diff=daff-tsv
+# Allow Git to decide if file is text or binary
+# Always use LF line endings even on Windows.
+* text=auto eol=lf
