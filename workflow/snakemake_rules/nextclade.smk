@@ -62,15 +62,31 @@ if config.get("s3_dst") and config.get("s3_src"):
     ruleorder: download_nextclade_tsv_from_s3 > create_empty_nextclade_info
     ruleorder: download_previous_alignment_from_s3 > create_empty_nextclade_aligned
 
+    rule use_nextclade_cache:
+        params:
+            dst_source=config["s3_dst"],
+            src_source=config["s3_src"],
+        output:
+            use_nextclade_cache=f"data/{database}/use_nextclade_cache{{reference}}.txt",
+        shell:
+            """
+            ./bin/use-nextclade-cache \
+                {params.dst_source:q} \
+                {params.src_source:q} \
+                {wildcards.reference:q} \
+                > {output.use_nextclade_cache}
+            """
+
+
     rule download_nextclade_tsv_from_s3:
         """
         If there's a .renew touchfile, do not use the cache
         """
+        input:
+            use_nextclade_cache=f"data/{database}/use_nextclade_cache{{reference}}.txt",
         params:
             dst_source=config["s3_dst"] + "/nextclade{reference}.tsv.zst",
             src_source=config["s3_src"] + "/nextclade{reference}.tsv.zst",
-            dst_rerun_touchfile=config["s3_dst"] + "/nextclade{reference}.tsv.zst.renew",
-            src_rerun_touchfile=config["s3_dst"] + "/nextclade{reference}.tsv.zst.renew",
             lines=config.get("subsample", {}).get("nextclade", 0),
         output:
             nextclade=f"data/{database}/nextclade{{reference}}_old.tsv",
@@ -78,22 +94,27 @@ if config.get("s3_dst") and config.get("s3_src"):
             f"benchmarks/download_nextclade_tsv_from_s3_{database}{{reference}}.txt"
         shell:
             """
-            ./vendored/download-from-s3 {params.dst_rerun_touchfile} {output.nextclade} 0 ||  \
-            ./vendored/download-from-s3 {params.src_rerun_touchfile} {output.nextclade} 0 ||  \
-            ./vendored/download-from-s3 {params.dst_source} {output.nextclade} {params.lines} ||  \
-            ./vendored/download-from-s3 {params.src_source} {output.nextclade} {params.lines} ||  \
-            touch {output.nextclade}
+            use_nextclade_cache=$(cat {input.use_nextclade_cache})
+
+            if [[ "$use_nextclade_cache" == 'true' ]]; then
+                echo "[INFO] Downloading cached nextclade{wildcards.reference}.tsv.zst"
+                ./vendored/download-from-s3 {params.dst_source} {output.nextclade} {params.lines} ||  \
+                ./vendored/download-from-s3 {params.src_source} {output.nextclade} {params.lines}
+            else
+                echo "[INFO] Ignoring cached nextclade{wildcards.reference}.tsv.zst"
+                touch {output.nextclade}
+            fi
             """
 
     rule download_previous_alignment_from_s3:
         ## NOTE two potential bugs with this implementation:
         ## (1) race condition. This file may be updated on the remote after download_nextclade has run but before this rule
         ## (2) we may get `download_nextclade` and `download_previous_alignment` from different s3 buckets
+        input:
+            use_nextclade_cache=f"data/{database}/use_nextclade_cache.txt",
         params:
             dst_source=config["s3_dst"] + "/{seqtype}.fasta.zst",
             src_source=config["s3_src"] + "/{seqtype}.fasta.zst",
-            dst_rerun_touchfile=config["s3_dst"] + "/nextclade.tsv.zst.renew",
-            src_rerun_touchfile=config["s3_dst"] + "/nextclade.tsv.zst.renew",
             lines=config.get("subsample", {}).get("nextclade", 0),
         output:
             alignment=temp(f"data/{database}/nextclade.{{seqtype}}.old.fasta"),
@@ -101,13 +122,17 @@ if config.get("s3_dst") and config.get("s3_src"):
             f"benchmarks/download_previous_alignment_from_s3_{database}{{seqtype}}.txt"
         shell:
             """
-            ./vendored/download-from-s3 {params.dst_rerun_touchfile} {output.alignment} 0 ||  \
-            ./vendored/download-from-s3 {params.src_rerun_touchfile} {output.alignment} 0 ||  \
-            ./vendored/download-from-s3 {params.dst_source} {output.alignment} {params.lines} ||  \
-            ./vendored/download-from-s3 {params.src_source} {output.alignment} {params.lines} ||  \
-            touch {output.alignment}
-            """
+            use_nextclade_cache=$(cat {input.use_nextclade_cache})
 
+            if [[ "$use_nextclade_cache" == 'true' ]]; then
+                echo "[INFO] Downloading cached Nextclade {wildcards.seqtype}.fasta.zst"
+                ./vendored/download-from-s3 {params.dst_source} {output.alignment} {params.lines} ||  \
+                ./vendored/download-from-s3 {params.src_source} {output.alignment} {params.lines}
+            else
+                echo "[INFO] Ignoring cached Nextclade {wildcards.seqtype}.fasta.zst"
+                touch {output.alignment}
+            fi
+            """
 
 rule get_sequences_without_nextclade_annotations:
     """Find sequences in FASTA which don't have clades assigned yet"""

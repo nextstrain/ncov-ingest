@@ -1,0 +1,28 @@
+#!/bin/bash
+set -euo pipefail
+
+vendored="$(dirname "$0")"/../vendored
+
+main() {
+    s3_dst="${1:?A destination s3:// URL where the renew file is hosted is required as the first argument.}"
+    s3_src="${2:?A source s3:// URL where the fallback renew file is hosted is required as the second argument.}"
+    # Nextclade dataset reference wildcard
+    reference="${3:-}"
+    if renew-flag-exists; then
+        echo "[INFO] Found renew flag" >&2
+        echo "false"
+        exit 0
+    fi
+
+    echo "true"
+}
+
+renew-flag-exists() {
+    local renew_file="nextclade$reference.tsv.zst.renew"
+    local dst_renew_file="$s3_dst/$renew_file"
+    local src_renew_file="$s3_src/$renew_file"
+
+    "$vendored"/s3-object-exists "$dst_renew_file" || "$vendored"/s3-object-exists "$src_renew_file"
+}
+
+main "$@"
