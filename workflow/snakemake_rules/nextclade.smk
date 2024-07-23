@@ -62,7 +62,22 @@ if config.get("s3_dst") and config.get("s3_src"):
     ruleorder: download_nextclade_tsv_from_s3 > create_empty_nextclade_info
     ruleorder: download_previous_alignment_from_s3 > create_empty_nextclade_aligned
 
+    def _convert_dataset_name(wildcards):
+        if wildcards.reference == '':
+            dataset_name="sars-cov-2"
+        elif wildcards.reference == '_21L':
+            dataset_name="sars-cov-2-21L"
+        else:
+            # We shouldn't run into this since we have wildcard_constraints,
+            # but doesn't hurt to include it in case that changes
+            raise ValueError(f"Cannot convert unsupported reference {wildcards.reference!r} to Nextclade dataset name")
+
+        return f"data/nextclade_data/{dataset_name}.zip",
+
     rule use_nextclade_cache:
+        input:
+            nextclade="./nextclade",
+            nextclade_dataset=_convert_dataset_name,
         params:
             dst_source=config["s3_dst"],
             src_source=config["s3_src"],
@@ -73,6 +88,8 @@ if config.get("s3_dst") and config.get("s3_src"):
             ./bin/use-nextclade-cache \
                 {params.dst_source:q} \
                 {params.src_source:q} \
+                {input.nextclade:q} \
+                {input.nextclade_dataset:q} \
                 {wildcards.reference:q} \
                 > {output.use_nextclade_cache}
             """
