@@ -199,14 +199,6 @@ rule run_wuhan_nextclade:
         f"benchmarks/run_wuhan_nextclade_{database}.txt"
     shell:
         """
-        # If there are no sequences to run Nextclade on, create empty output files
-        if [[ ! -s {input.sequences} ]]; then
-            touch {output.info}
-            touch {output.alignment}
-            touch {output.translations}
-            exit 0
-        fi
-
         ./{input.nextclade_path} run \
         -j {threads} \
         {input.sequences}\
@@ -233,12 +225,6 @@ rule run_21L_nextclade:
         f"benchmarks/run_21L_nextclade_{database}.txt"
     shell:
         """
-        # If there are no sequences to run Nextclade on, create empty output files
-        if [[ ! -s {input.sequences} ]]; then
-            touch {output.info}
-            exit 0
-        fi
-
         ./{input.nextclade_path} run \
         -j {threads} \
         {input.sequences} \
