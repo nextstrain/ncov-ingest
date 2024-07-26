@@ -65,7 +65,7 @@ if config.get("s3_dst") and config.get("s3_src"):
 
     rule use_nextclade_cache:
         input:
-            nextclade="./nextclade",
+            nextclade="data/nextclade",
             nextclade_dataset=lambda w: f"data/nextclade_data/sars-cov-2{w.reference.replace('_','-')}.zip",
         params:
             dst_source=config["s3_dst"],
@@ -166,25 +166,25 @@ rule get_sequences_without_nextclade_annotations:
 rule download_nextclade_executable:
     """Download Nextclade"""
     output:
-        nextclade="nextclade",
+        nextclade="data/nextclade",
     benchmark:
         f"benchmarks/download_nextclade_executable_{database}.txt"
     shell:
         """
         if [ "$(uname)" = "Darwin" ]; then
-            curl -fsSL "https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-x86_64-apple-darwin" -o "nextclade"
+            curl -fsSL "https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-x86_64-apple-darwin" -o {output.nextclade:q}
 
         else
-            curl -fsSL "https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-x86_64-unknown-linux-gnu" -o "nextclade"
+            curl -fsSL "https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-x86_64-unknown-linux-gnu" -o {output.nextclade:q}
         fi
-        chmod +x nextclade
+        chmod +x {output.nextclade:q}
 
-        if ! command -v ./nextclade &>/dev/null; then
+        if ! command -v {output.nextclade:q} &>/dev/null; then
             echo "[ERROR] Nextclade executable not found"
             exit 1
         fi
 
-        NEXTCLADE_VERSION="$(./nextclade --version)"
+        NEXTCLADE_VERSION="$({output.nextclade:q} --version)"
         echo "[ INFO] Nextclade version: $NEXTCLADE_VERSION"
         """
 
@@ -192,14 +192,14 @@ rule download_nextclade_executable:
 rule download_nextclade_dataset:
     """Download Nextclade dataset"""
     input:
-        "nextclade",
+        nextclade="data/nextclade",
     output:
         dataset="data/nextclade_data/{dataset_name}.zip",
     benchmark:
         f"benchmarks/download_nextclade_dataset_{database}_{{dataset_name}}.txt"
     shell:
         """
-        ./nextclade dataset get --name="{wildcards.dataset_name}" --output-zip={output.dataset} --verbose
+        {input.nextclade:q} dataset get --name="{wildcards.dataset_name}" --output-zip={output.dataset} --verbose
         """
 
 
@@ -210,7 +210,7 @@ rule run_wuhan_nextclade:
     metrics which will ultimately end up in metadata.tsv.
     """
     input:
-        nextclade_path="nextclade",
+        nextclade_path="data/nextclade",
         dataset="data/nextclade_data/sars-cov-2.zip",
         sequences=f"data/{database}/nextclade.sequences.fasta",
     params:
@@ -245,7 +245,7 @@ rule run_21L_nextclade:
     Like wuhan nextclade, but TSV only, no alignments output
     """
     input:
-        nextclade_path="nextclade",
+        nextclade_path="data/nextclade",
         dataset=lambda w: f"data/nextclade_data/sars-cov-2-21L.zip",
         sequences=f"data/{database}/nextclade_21L.sequences.fasta",
     output:
@@ -266,6 +266,7 @@ rule run_21L_nextclade:
 
 rule nextclade_tsv_concat_versions:
     input:
+        nextclade="data/nextclade",
         tsv=f"data/{database}/nextclade{{reference}}_new_raw.tsv",
         dataset=lambda w: f"data/nextclade_data/sars-cov-2{w.reference.replace('_','-')}.zip",
     output:
@@ -276,7 +277,7 @@ rule nextclade_tsv_concat_versions:
         """
         if [ -s {input.tsv} ]; then
             # Get version numbers
-            nextclade_version="$(./nextclade --version)"
+            nextclade_version="$({input.nextclade:q} --version)"
             dataset_version="$(unzip -p {input.dataset} pathogen.json | jq -r '.version.tag')"
             timestamp="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
 
