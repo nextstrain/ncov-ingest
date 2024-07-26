@@ -316,6 +316,26 @@ rule nextclade_info:
         """
 
 
+rule nextclade_version_json:
+    """
+    Generates a version JSON for the Nextclade TSV.
+    """
+    input:
+        nextclade_path="data/nextclade",
+        nextclade_dataset=lambda w: f"data/nextclade_data/sars-cov-2{w.reference.replace('_','-')}.zip",
+        nextclade_tsv=f"data/{database}/nextclade{{reference}}.tsv",
+    output:
+        nextclade_version_json=f"data/{database}/nextclade{{reference}}_version.json",
+    shell:
+        """
+        ./bin/generate-nextclade-version-json \
+            {input.nextclade_path} \
+            {input.nextclade_dataset} \
+            {input.nextclade_tsv} \
+            > {output.nextclade_version_json}
+        """
+
+
 rule combine_alignments:
     """
     Generating full alignment by combining newly aligned sequences with previous (cached) alignment
@@ -364,4 +384,28 @@ rule generate_metadata:
             --nextclade-21L-tsv {input.nextclade_21L_tsv} \
             --clade-legacy-mapping {input.clade_legacy_mapping} \
             -o {output.metadata}
+        """
+
+
+rule metadata_version_json:
+    """
+    Generates the metadata version JSON by adding the metadata TSV sha256sum
+    to the Nextclade version JSON.
+
+    TODO: Merge the 21L Nextclade version JSON to track data provenence for
+    specific columns
+    """
+    input:
+        metadata=f"data/{database}/metadata.tsv",
+        nextclade_version_json=f"data/{database}/nextclade_version.json",
+    output:
+        metadata_version_json=f"data/{database}/metadata_version.json",
+    shell:
+        """
+        metadata_tsv_sha256sum="$(./vendored/sha256sum < {input.metadata})"
+
+        cat {input.nextclade_version_json} \
+            | jq -c --arg METADATA_TSV_SHA256SUM "$metadata_tsv_sha256sum" \
+                '.metadata_tsv_sha256sum = $METADATA_TSV_SHA256SUM' \
+                > {output.metadata_version_json}
         """

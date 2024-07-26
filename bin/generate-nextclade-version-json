@@ -1,0 +1,30 @@
+#!/bin/bash
+
+set -euo pipefail
+
+vendored="$(dirname "$0")"/../vendored
+
+
+nextclade="${1:?A path to the Nextclade executable is required as the first argument}"
+nextclade_dataset="${2:?A path to the Nextclade dataset is required as the second argument}"
+nextclade_tsv="${3:?A path to the Nextclade TSV is required as the third argument}"
+
+
+nextclade_version="$("$nextclade" --version)"
+dataset_pathogen_json="$(unzip -p "$nextclade_dataset" pathogen.json)"
+dataset_name="$(echo "$dataset_pathogen_json" | jq -r '.attributes.name')"
+dataset_version="$(echo "$dataset_pathogen_json" | jq -r '.version.tag')"
+nextclade_tsv_sha256sum="$("$vendored/sha256sum" < "$nextclade_tsv")"
+
+jq -c --null-input \
+    --arg NEXTCLADE_VERSION "$nextclade_version" \
+    --arg DATASET_NAME "$dataset_name" \
+    --arg DATASET_VERSION "$dataset_version" \
+    --arg NEXTCLADE_TSV_SHA256SUM "$nextclade_tsv_sha256sum" \
+    '{
+        "schema_version": "v1",
+        "nextclade_version": $NEXTCLADE_VERSION,
+        "nextclade_dataset_name": $DATASET_NAME,
+        "nextclade_dataset_version": $DATASET_VERSION,
+        "nextclade_tsv_sha256sum": $NEXTCLADE_TSV_SHA256SUM
+     }'
