@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# this script intentionally doesn't `set -euo pipefail`
+# because otherwise the `head -n 2` step triggers SIGPIPE
+# causing the script to exit before it is done.
+
 s3_url="${1:?An S3 URL is required as the first argument}"
 
 
