@@ -1,0 +1,59 @@
+#!/bin/bash
+set -euo pipefail
+
+bin="$(dirname "$0")"
+vendored="$bin"/../vendored
+
+main() {
+    s3_dst="${1:?A destination s3:// URL where the renew file is hosted is required as the first argument.}"
+    s3_src="${2:?A source s3:// URL where the fallback renew file is hosted is required as the second argument.}"
+    nextclade="${3:?A path to the Nextclade executable is required as the third argument}"
+    nextclade_dataset="${4:?A path to a Nextclade dataset ZIP archive is required as the fourth argument}"
+    # Nextclade dataset reference wildcard
+    reference="${5:-}"
+
+    if renew-flag-exists; then
+        echo "[INFO] Found renew flag" >&2
+        echo "false"
+        exit 0
+    fi
+
+    cache_versions="$(get-cache-version-info)"
+    cache_nextclade_version="$(echo "$cache_versions" | jq -r .nextclade_version)"
+    current_nextclade_version="$("$nextclade" --version)"
+    if [[ "$cache_nextclade_version" != "$current_nextclade_version" ]]; then
+        echo "[INFO] Current Nextclade version ($current_nextclade_version) is different from cache version ($cache_nextclade_version)" >&2
+        echo "false"
+        exit 0
+    fi
+
+    cache_dataset_version="$(echo "$cache_versions" | jq -r .nextclade_dataset_version)"
+    current_dataset_version="$(unzip -p "$nextclade_dataset" pathogen.json | jq -r '.version.tag')"
+    if [[ "$cache_dataset_version" != "$current_dataset_version" ]]; then
+        echo "[INFO] Current Nextclade dataset version ($current_dataset_version) is different from cache version ($cache_dataset_version)" >&2
+        echo "false"
+        exit 0
+    fi
+
+    echo "true"
+}
+
+renew-flag-exists() {
+    local renew_file="nextclade$reference.tsv.zst.renew"
+    local dst_renew_file="$s3_dst/$renew_file"
+    local src_renew_file="$s3_src/$renew_file"
+
+    "$vendored"/s3-object-exists "$dst_renew_file" || "$vendored"/s3-object-exists "$src_renew_file"
+}
+
+get-cache-version-info() {
+    # TODO: Update check a separate file for version info
+    # Currently just checks the first row of the nextclade.tsv file
+    local version_file="nextclade$reference.tsv.zst"
+    local dst_version_file="$s3_dst/$version_file"
+    local src_version_file="$s3_src/$version_file"
+
+    "$bin"/fetch-cache-version "$dst_version_file" || "$bin"/cache-version "$src_version_file"
+}
+
+main "$@"

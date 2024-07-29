@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# this script intentionally doesn't `set -euo pipefail`
+# because otherwise the `head -n 2` step triggers SIGPIPE
+# causing the script to exit before it is done.
+
+s3_url="${1:?An S3 URL is required as the first argument}"
+
+
+trap '' SIGPIPE
+
+(aws s3 cp "$s3_url" - \
+    | zstd -T0 -dcq \
+    | head -n 2 \
+    | tsv-select -H -f 'nextclade_version,dataset_version' \
+    | tail -n 1 \
+    | jq --raw-input -c '
+        split("\t")
+        | { "nextclade_version": .[0], "nextclade_dataset_version": .[1] }') \
+     2> /dev/null
