@@ -115,7 +115,7 @@ def main():
         clade_legacy_mapping_dict: dict[str, str] = yaml.safe_load(legacy_mapping_file)
 
     def clade_legacy_mapping(clade_nextstrain: str) -> str:
-        return clade_legacy_mapping_dict.get(clade_nextstrain, f"{clade_nextstrain} Omicron")
+        return clade_legacy_mapping_dict.get(clade_nextstrain, f"{clade_nextstrain} (Omicron)")
         
     clades["Nextstrain_clade"] = clades["clade_nextstrain"].map(clade_legacy_mapping)
 
