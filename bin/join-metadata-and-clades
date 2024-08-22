@@ -93,7 +93,6 @@ def main():
     metadata = pd.read_csv(args.metadata, index_col=METADATA_JOIN_COLUMN_NAME,
                            sep='\t', low_memory=False, na_filter = False)
 
-    # Read and rename clade column to be more descriptive
     clades = pd.read_csv(args.nextclade_tsv, index_col=NEXTCLADE_JOIN_COLUMN_NAME,
                          usecols=[NEXTCLADE_JOIN_COLUMN_NAME, *(set(column_map.keys()) - clades_21L_columns)],
                          sep='\t', low_memory=True, dtype="object", na_filter = False) \
@@ -113,7 +112,11 @@ def main():
     # Add clade_legacy column as Nextstrain_clade
     # Use yml mapping
     with open(args.clade_legacy_mapping, 'r') as legacy_mapping_file:
-         clade_legacy_mapping = yaml.safe_load(legacy_mapping_file)
+        clade_legacy_mapping_dict: dict[str, str] = yaml.safe_load(legacy_mapping_file)
+
+    def clade_legacy_mapping(clade_nextstrain: str) -> str:
+        return clade_legacy_mapping_dict.get(clade_nextstrain, f"{clade_nextstrain} Omicron")
+        
     clades["Nextstrain_clade"] = clades["clade_nextstrain"].map(clade_legacy_mapping)
 
     # Remove immune_escape and ace2_binding when clade <21L and not recombinant
