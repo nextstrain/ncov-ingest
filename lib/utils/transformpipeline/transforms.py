@@ -1,6 +1,7 @@
 import csv
 import re
 import unicodedata
+import json
 from collections import defaultdict
 from typing import Any, Collection, List, MutableMapping, Sequence, Tuple , Dict , Union
 import pandas as pd
@@ -287,6 +288,8 @@ class StandardizeDataRki(Transformer):
     def transform_value(self, entry: dict) -> dict:
         entry['sequence'] = entry['sequence'].replace('\n', '')
         entry['length'] = len(entry['sequence'])
+        lineage_dict = json.loads(entry['pango_lineage'])
+        entry['pango_lineage'] = lineage_dict[0]['lineage']
 
         # Normalize all string data to Unicode Normalization Form C, for
         # consistent, predictable string comparisons.
