@@ -5,7 +5,7 @@ Turn RKI files into ndjson format
 
 import typer
 
-RKI_INDEX_COL = "SEQUENCE.ID"
+RKI_INDEX_COL = "igs_id"
 
 def main(
     input_rki_sequences: str = typer.Option(..., help="Input file"),
