@@ -1,6 +1,7 @@
 import csv
 import re
 import unicodedata
+import json
 from collections import defaultdict
 from typing import Any, Collection, List, MutableMapping, Sequence, Tuple , Dict , Union
 import pandas as pd
@@ -288,6 +289,13 @@ class StandardizeDataRki(Transformer):
         entry['sequence'] = entry['sequence'].replace('\n', '')
         entry['length'] = len(entry['sequence'])
 
+        # Pull out latest pango lineage from json blob
+        # Currently this pulls the first entry, but we've added an assert statement to see if there are ever more than one entry
+        # At that time, we can loop over the json blob to find the latest pango lineage assignment
+        lineage_json_blob = json.loads(entry['pango_lineage'])
+        entry['pango_lineage'] = lineage_json_blob[0]['lineage']
+        assert len(lineage_json_blob)==1, f"RKI pango_lineage unexpectedly had more than one entry. rki_accession: {entry['rki_accession']}"
+
         # Normalize all string data to Unicode Normalization Form C, for
         # consistent, predictable string comparisons.
         str_kvs = {
@@ -299,7 +307,7 @@ class StandardizeDataRki(Transformer):
 
         # Standardize date format to ISO 8601 date
         date_columns = {'date', 'date_submitted'}
-        date_formats = {'%Y-%m-%d', '%Y-%m-%dT%H:%M:%SZ', '%Y-%m-%d %H:%M:%S %z'}
+        date_formats = {'%Y-%m-%d', '%Y-%m-%dT%H:%M:%SZ', '%Y-%m-%d %H:%M:%S %z', '%Y-%m-%dT%H:%M:%S'}
         for column in date_columns:
             entry[column] = format_date(entry[column], date_formats)
 
