@@ -288,8 +288,13 @@ class StandardizeDataRki(Transformer):
     def transform_value(self, entry: dict) -> dict:
         entry['sequence'] = entry['sequence'].replace('\n', '')
         entry['length'] = len(entry['sequence'])
-        lineage_dict = json.loads(entry['pango_lineage'])
-        entry['pango_lineage'] = lineage_dict[0]['lineage']
+
+        # Pull out latest pango lineage from json blob
+        # Currently this pulls the first entry, but we've added an assert statement to see if there are ever more than one entry
+        # At that time, we can loop over the json blob to find the latest pango lineage assignment
+        lineage_json_blob = json.loads(entry['pango_lineage'])
+        entry['pango_lineage'] = lineage_json_blob[0]['lineage']
+        assert len(lineage_json_blob)==1, f"RKI pango_lineage unexpectedly had more than one entry. rki_accession: {entry['rki_accession']}"
 
         # Normalize all string data to Unicode Normalization Form C, for
         # consistent, predictable string comparisons.
