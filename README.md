@@ -115,9 +115,13 @@ Enter this into the `slack_member_id` field of your alert configuration.
 ## Rerunning Nextclade ignoring cache after Nextclade dataset is updated
 
 Clade assignments and other QC metadata output by Nextclade are currently cached in `nextclade.tsv` in the S3 bucket and only incremental additions for the new sequences are performed during the daily ingests.
-Whenever the underlying nextclade dataset (reference tree, QC rules) and/or nextclade software are updated, it is necessary to perform a full update of `nextclade.tsv`, rerunning for all of the GISAID and GenBank sequences all over again, to account for changes in the data and Nextclade algorithms.
+Whenever the underlying nextclade dataset (reference tree, QC rules) and/or nextclade software are updated,
+the automated workflow should automatically ignore the cache and do a full re-run of Nextclade
+since https://github.com/nextstrain/ncov-ingest/pull/466 was merged.
 
-In order to tell ingest to not use the cached `nextclade.tsv`/`aligned.fasta` and instead perform a full rerun, you need to add an (empty) touchfile to the s3 bucket (available as `./scripts/developer_scripts/rerun-nextclade.sh`):
+However, if something goes wrong, it is possible to manually force a full update of `nextclade.tsv`.
+In order to tell ingest to not use the cached `nextclade.tsv`/`aligned.fasta` and instead perform a full rerun,
+you need to add an (empty) touchfile to the s3 bucket (available as `./scripts/developer_scripts/rerun-nextclade.sh`):
 
 ```bash
 aws s3 cp - s3://nextstrain-ncov-private/nextclade.tsv.zst.renew < /dev/null
