@@ -40,6 +40,7 @@ rule fetch_ncbi_dataset_package:
         """
         datasets download virus genome taxon SARS-CoV-2 \
             --no-progressbar \
+            --include "genome,biosample" \
             --filename {output.dataset_package}
         """
 
@@ -125,16 +126,17 @@ rule create_genbank_ndjson:
             2> {log} > {output.ndjson}
         """
 
-rule fetch_biosample:
-    """Fetching BioSample data (GenBank only)"""
+rule extract_ncbi_dataset_biosample:
+    input:
+        dataset_package = "data/ncbi_dataset.zip"
     output:
         biosample = temp("data/biosample.ndjson")
     benchmark:
-        "benchmarks/fetch_biosample.txt"
-    retries: 5
+        "benchmarks/extract_ncbi_dataset_biosample.txt"
     shell:
         """
-        ./bin/fetch-from-biosample > {output.biosample}
+        unzip -jp {input.dataset_package} \
+            ncbi_dataset/data/biosample_report.jsonl > {output.biosample}
         """
 
 
@@ -224,7 +226,7 @@ if config.get("s3_dst") and config.get("s3_src"):
     # or else fetch files from AWS S3 buckets
     if config.get("fetch_from_database", False):
         ruleorder: fetch_main_gisaid_ndjson > fetch_main_ndjson_from_s3
-        ruleorder: fetch_biosample > fetch_biosample_from_s3
+        ruleorder: extract_ncbi_dataset_biosample > fetch_biosample_from_s3
         ruleorder: transform_rki_data_to_ndjson > fetch_rki_ndjson_from_s3
         ruleorder: fetch_cog_uk_accessions > fetch_cog_uk_accessions_from_s3
         ruleorder: fetch_cog_uk_metadata > compress_cog_uk_metadata
@@ -233,7 +235,7 @@ if config.get("s3_dst") and config.get("s3_src"):
     else:
         ruleorder: fetch_rki_ndjson_from_s3 > transform_rki_data_to_ndjson
         ruleorder: fetch_main_ndjson_from_s3 > fetch_main_gisaid_ndjson
-        ruleorder: fetch_biosample_from_s3 > fetch_biosample
+        ruleorder: fetch_biosample_from_s3 > extract_ncbi_dataset_biosample
         ruleorder: fetch_cog_uk_accessions_from_s3 > fetch_cog_uk_accessions
         ruleorder: fetch_cog_uk_metadata_from_s3 > uncompress_cog_uk_metadata
         ruleorder: compress_cog_uk_metadata > fetch_cog_uk_metadata
