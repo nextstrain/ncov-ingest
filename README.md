@@ -69,7 +69,7 @@ AWS credentials are stored in this repository's secrets and are associated with 
 A full run is now done in 3 steps via manual triggers:
 
 1. Fetch new sequences and ingest them by running `./vendored/trigger nextstrain/ncov-ingest gisaid/fetch-and-ingest --user <your-github-username>`.
-2. Add manual annotations, update location hierarchy as needed, and run ingest without fetching new sequences.
+2. Add manual annotations as needed, and run ingest without fetching new sequences.
     - Pushes of `source-data/*-annotations.tsv` to the master branch will automatically trigger a run of ingest.
     - You can also run ingest manually by running `./vendored/trigger nextstrain/ncov-ingest gisaid/ingest --user <your-github-username>`.
 3. Once all manual fixes are complete, trigger a rebuild of [nextstrain/ncov](https://github.com/nextstrain/ncov) by running `./vendored/trigger ncov gisaid/rebuild --user <your-github-username>`.
@@ -97,20 +97,6 @@ A common pattern is expected to be:
  2. Discover metadata that needs fixing.
  3. Update `source-data/gisaid_annotations.tsv`.
  4. Push changes to `master` and re-download `gisaid/metadata.tsv`.
-
-## Configuring alerts for new GISAID data from specific location hierarchy areas
-
-Some Nextstrain team members may be interested in receiving alerts when new GISAID strains are added from specific locations, e.g. Portugal or Louisiana.
-To add a custom alert configuration, create a new entry in `new-sequence-alerts-config.json`.
-Each resolution (region, division, country, location) accepts a list of strings of areas of interest.
-Note that these strings must match the area name exactly.
-
-To set up custom alerts, you'll need to retrieve your Slack member ID.
-Note that the `user` field in each alert configuration is for human use only -- it need not match your Slack display name or username.
-To view your Slack member ID, open up the Slack menu by clicking your name at the top, and then click on 'View profile'.
-Then, click on 'More'.
-You can then copy your Slack member ID from the menu that appears.
-Enter this into the `slack_member_id` field of your alert configuration.
 
 ## Rerunning Nextclade ignoring cache after Nextclade dataset is updated
 
