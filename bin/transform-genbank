@@ -207,8 +207,8 @@ if __name__ == '__main__':
                               | ParseGeographicColumnsGenbank( base / 'source-data/us-state-codes.tsv' )
                               | AbbreviateAuthors()
                               | ApplyUserGeoLocationSubstitutionRules(geoRules)
-                              | MergeUserAnnotatedMetadata(annotations, idKey = 'genbank_accession' )
                               | MergeUserAnnotatedMetadata(accessions, idKey = 'genbank_accession_rev' )
+                              | MergeUserAnnotatedMetadata(annotations, idKey = 'genbank_accession' )
                               | FillDefaultLocationData()
                               | patchUKData(args.cog_uk_accessions, args.cog_uk_metadata)
                               | GenbankProblematicFilter( args.problem_data,
@@ -301,4 +301,3 @@ if __name__ == '__main__':
                     strain_name = updated_strain_names_by_line_no[entry[LINE_NUMBER_KEY]]
                     print( '>' , strain_name , sep='' , file= fasta_OUT)
                     print( entry['sequence'] , file= fasta_OUT)
-

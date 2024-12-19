@@ -182,8 +182,8 @@ if __name__ == '__main__':
 
         pipeline = (pipeline
             | ApplyUserGeoLocationSubstitutionRules(geoRules)
-            | MergeUserAnnotatedMetadata(annotations)
             | MergeUserAnnotatedMetadata(accessions)
+            | MergeUserAnnotatedMetadata(annotations)
             | FillDefaultLocationData()
         )
 

@@ -1,0 +1,8 @@
+#!/bin/bash
+set -euo pipefail
+
+curl "https://hgwdev.gi.ucsc.edu/~angie/epiToPublicAndDate.latest" \
+    --fail --silent --show-error \
+    --header 'User-Agent: https://github.com/nextstrain/ncov-ingest (hello@nextstrain.org)' \
+    | csvtk -t add-header --names gisaid_epi_isl,genbank_accession,strain,date \
+    | csvtk -t cut --fields genbank_accession,gisaid_epi_isl
