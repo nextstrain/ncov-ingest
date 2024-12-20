@@ -23,6 +23,34 @@ Produces different output files for GISAID vs GenBank:
 """
 
 
+rule fetch_accession_links:
+    """
+    Fetch the accession links between GISAID and GenBank
+    """
+    output:
+        accessions=temp("data/accessions.tsv"),
+    retries: 5
+    shell:
+        """
+        ./bin/fetch-accession-links > {output.accessions:q}
+        """
+
+
+rule concat_accession_links:
+    input:
+        source_data="source-data/accessions.tsv.gz",
+        accessions="data/accessions.tsv",
+    output:
+        all_accessions="data/all_accessions.tsv.gz"
+    shell:
+        r"""
+        gunzip -kcfq {input.source_data:q} \
+            | csvtk concat -t - {input.accessions:q} \
+            | csvtk uniq -t -f genbank_accession,gisaid_epi_isl \
+            | gzip -c > {output.all_accessions:q}
+        """
+
+
 rule transform_rki_data:
     input:
         ndjson="data/rki.ndjson",
@@ -60,7 +88,8 @@ rule transform_genbank_data:
         biosample = "data/genbank/biosample.tsv",
         ndjson = "data/genbank.ndjson",
         cog_uk_accessions = "data/cog_uk_accessions.tsv",
-        cog_uk_metadata = "data/cog_uk_metadata.csv.gz"
+        cog_uk_metadata = "data/cog_uk_metadata.csv.gz",
+        accessions = "data/all_accessions.tsv.gz",
     output:
         fasta = "data/genbank_sequences.fasta",
         metadata = "data/genbank_metadata_transformed.tsv",
@@ -75,6 +104,7 @@ rule transform_genbank_data:
             --duplicate-biosample {output.duplicate_biosample} \
             --cog-uk-accessions {input.cog_uk_accessions} \
             --cog-uk-metadata {input.cog_uk_metadata} \
+            --accessions {input.accessions} \
             --output-metadata {output.metadata} \
             --output-fasta {output.fasta} > {output.flagged_annotations}
         """
@@ -105,7 +135,8 @@ rule merge_open_data:
 
 rule transform_gisaid_data:
     input:
-        ndjson = "data/gisaid.ndjson"
+        ndjson = "data/gisaid.ndjson",
+        accessions = "data/all_accessions.tsv.gz",
     output:
         fasta = "data/gisaid/sequences.fasta",
         metadata = "data/gisaid/metadata_transformed.tsv",
@@ -116,6 +147,7 @@ rule transform_gisaid_data:
     shell:
         """
         ./bin/transform-gisaid {input.ndjson} \
+            --accessions {input.accessions} \
             --output-metadata {output.metadata} \
             --output-fasta {output.fasta}  \
             --output-additional-info {output.additional_info} \
