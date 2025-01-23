@@ -1,6 +1,6 @@
 #!/bin/bash
 set -euo pipefail
 
-curl "https://raw.githubusercontent.com/robert-koch-institut/SARS-CoV-2-Sequenzdaten_aus_Deutschland/master/SARS-CoV-2-Sequenzdaten_Deutschland.fasta.xz" \
-    --fail --silent --show-error --http1.1 \
+curl "https://github.com/robert-koch-institut/SARS-CoV-2-Sequenzdaten_aus_Deutschland/raw/HEAD/SARS-CoV-2-Sequenzdaten_Deutschland.fasta.xz" \
+    --fail --silent --show-error --http1.1 --location \
     --header 'User-Agent: https://github.com/nextstrain/ncov-ingest (hello@nextstrain.org)'
