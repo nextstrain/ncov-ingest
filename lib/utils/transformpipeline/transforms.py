@@ -284,17 +284,37 @@ class StandardizeDataRki(Transformer):
 
     def __init__(self):
         self.line_count = 1
+        self.pango_method = "PANGOLIN_LATEST"
 
     def transform_value(self, entry: dict) -> dict:
         entry['sequence'] = entry['sequence'].replace('\n', '')
         entry['length'] = len(entry['sequence'])
 
         # Pull out latest pango lineage from json blob
-        # Currently this pulls the first entry, but we've added an assert statement to see if there are ever more than one entry
-        # At that time, we can loop over the json blob to find the latest pango lineage assignment
+        # Defaults to '?' if no lineages are available
+        # If there are multiple "latest" lineages, then output a warning and just use the first one.
         lineage_json_blob = json.loads(entry['pango_lineage'])
-        entry['pango_lineage'] = lineage_json_blob[0]['lineage']
-        assert len(lineage_json_blob)==1, f"RKI pango_lineage unexpectedly had more than one entry. rki_accession: {entry['rki_accession']}"
+
+        if len(lineage_json_blob) == 0:
+            entry['pango_lineage'] = '?'
+        else:
+            latest_lineage = [
+                lineage["lineage"]
+                for lineage in lineage_json_blob
+                if (lineage.get("method", "") == self.pango_method and
+                    lineage.get("lineage") is not None)
+            ]
+
+            if len(latest_lineage) == 0:
+                print(f"WARNING: RKI pango_lineage does not include the {self.pango_method!r} lineage, using first lineage in the list.")
+                entry['pango_lineage'] = lineage_json_blob[0]['lineage']
+            else:
+                if len(latest_lineage) > 1:
+                    print(f"WARNING: RKI pango_lineage had more than one {self.pango_method!r} lineage "
+                          f"for rki_accession {entry['rki_accession']!r}. "
+                           "Using the first lineage in the list.")
+
+                entry['pango_lineage'] = latest_lineage[0]
 
         # Normalize all string data to Unicode Normalization Form C, for
         # consistent, predictable string comparisons.
