@@ -981,7 +981,9 @@ class MergeBiosampleMetadata(Transformer):
 
     This transformer updates the GenBank entry with the extra BioSample
     metadata. Only fill in the values from BioSample if the GenBank value is
-    empty or '?'.
+    empty or '?', except the special handling for the 'location' field since the
+    BioSample record may contain more detailed location data than the GenBank
+    record.
     """
     def __init__(self, biosample_metadata: dict):
         self.biosample_metadata = biosample_metadata
@@ -991,5 +993,16 @@ class MergeBiosampleMetadata(Transformer):
         for key,value in extra_metadata.items():
             if not entry.get(key) or entry.get(key) == '?':
                 entry[key] = value
+            # Special handling for 'location' since BioSample may contain
+            # more detailed location data than the GenBank record.
+            # See <https://github.com/nextstrain/ncov-ingest/issues/496>
+            # Only uses the BioSample location if the GenBank location has the
+            # same country to ensure they are not completely different locations.
+            elif key == 'location':
+                genbank_location = entry[key].split(':')
+                biosample_location = value.split(':')
+                if (len(biosample_location) > len(genbank_location) and
+                    biosample_location[0] == genbank_location[0]):
+                    entry[key] = value
 
         return entry
