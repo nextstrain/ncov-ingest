@@ -655,6 +655,10 @@ class ParseGeographicColumnsGenbank(Transformer):
         * "country"
         * "country: division"
         * "country: division, location"
+        * "country: region, division, location"
+
+    Note: region might be any value after the colon and will be stripped from
+    the location if it matches the `region` field in the entry.
     """
     def __init__(self, us_state_code_file_name ):
         # Create dict of US state codes and their full names
@@ -671,6 +675,14 @@ class ParseGeographicColumnsGenbank(Transformer):
         location = ''
 
         if len(geographic_data) == 2 :
+            # Remove potential region value in the location
+            # See <https://github.com/nextstrain/ncov-ingest/pull/497#issuecomment-2779337493>
+            region = entry['region'].strip()
+            detailed_locations = [loc.strip() for loc in geographic_data[1].split(',')]
+            if region in detailed_locations:
+                detailed_locations.remove(region)
+                geographic_data[1] = ','.join(detailed_locations)
+
             division , j , location = geographic_data[1].partition(',')
 
         elif len(geographic_data) > 2:
