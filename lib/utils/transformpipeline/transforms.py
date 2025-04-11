@@ -655,6 +655,10 @@ class ParseGeographicColumnsGenbank(Transformer):
         * "country"
         * "country: division"
         * "country: division, location"
+        * "country: region, division, location"
+
+    Note: region might be any value after the colon and will be stripped from
+    the location if it matches the `region` field in the entry.
     """
     def __init__(self, us_state_code_file_name ):
         # Create dict of US state codes and their full names
@@ -671,6 +675,14 @@ class ParseGeographicColumnsGenbank(Transformer):
         location = ''
 
         if len(geographic_data) == 2 :
+            # Remove potential region value in the location
+            # See <https://github.com/nextstrain/ncov-ingest/pull/497#issuecomment-2779337493>
+            region = entry['region'].strip()
+            detailed_locations = [loc.strip() for loc in geographic_data[1].split(',')]
+            if region in detailed_locations:
+                detailed_locations.remove(region)
+                geographic_data[1] = ','.join(detailed_locations)
+
             division , j , location = geographic_data[1].partition(',')
 
         elif len(geographic_data) > 2:
@@ -981,7 +993,9 @@ class MergeBiosampleMetadata(Transformer):
 
     This transformer updates the GenBank entry with the extra BioSample
     metadata. Only fill in the values from BioSample if the GenBank value is
-    empty or '?'.
+    empty or '?', except the special handling for the 'location' field since the
+    BioSample record may contain more detailed location data than the GenBank
+    record.
     """
     def __init__(self, biosample_metadata: dict):
         self.biosample_metadata = biosample_metadata
@@ -991,5 +1005,16 @@ class MergeBiosampleMetadata(Transformer):
         for key,value in extra_metadata.items():
             if not entry.get(key) or entry.get(key) == '?':
                 entry[key] = value
+            # Special handling for 'location' since BioSample may contain
+            # more detailed location data than the GenBank record.
+            # See <https://github.com/nextstrain/ncov-ingest/issues/496>
+            # Only uses the BioSample location if the GenBank location has the
+            # same country to ensure they are not completely different locations.
+            elif key == 'location':
+                genbank_location = entry[key].split(':')
+                biosample_location = value.split(':')
+                if (len(biosample_location) > len(genbank_location) and
+                    biosample_location[0] == genbank_location[0]):
+                    entry[key] = value
 
         return entry
