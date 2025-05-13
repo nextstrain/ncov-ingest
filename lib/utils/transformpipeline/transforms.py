@@ -686,7 +686,7 @@ class ParseGeographicColumnsGenbank(Transformer):
             division , j , location = geographic_data[1].partition(',')
 
         elif len(geographic_data) > 2:
-            assert False, f"Found unknown format for geographic data: {value}"
+            print(f"WARNING: Unable to parse division and location because of unknown format for geographic data: {entry['location']!r}")
 
 
         # Special parsing for US locations because the format varies
