@@ -284,7 +284,8 @@ class StandardizeDataRki(Transformer):
 
     def __init__(self):
         self.line_count = 1
-        self.pango_method = "PANGOLIN_LATEST"
+        # RKI's hard-coded method for pango in `genome.gtrs.[].genomic_method.name`
+        self.pango_method = "Pangolin Lineage"
 
     def transform_value(self, entry: dict) -> dict:
         entry['sequence'] = entry['sequence'].replace('\n', '')
@@ -292,29 +293,23 @@ class StandardizeDataRki(Transformer):
 
         # Pull out latest pango lineage from json blob
         # Defaults to '?' if no lineages are available
-        # If there are multiple "latest" lineages, then output a warning and just use the first one.
-        lineage_json_blob = json.loads(entry['pango_lineage'])
+        lineage_json_blob = json.loads(entry['genomic_typing_results'])
 
-        if len(lineage_json_blob) == 0:
+        # Filter for Pangolin Lineage assignments
+        pango_lineages = [
+            lineage
+            for lineage in lineage_json_blob
+            if (lineage.get("genomic_method", {}).get("name", "") == self.pango_method and
+                lineage.get("genomic_typing_result") is not None)
+        ]
+        # Sort by date of assignment to get the latest assignment
+        pango_lineages.sort(key=lambda lineage: lineage["date_of_assignment"], reverse=True)
+
+        if len(pango_lineages) == 0:
+            print(f"WARNING: RKI genomic_typing_results does not include the {self.pango_method!r} method, setting pango_lineage to '?'.")
             entry['pango_lineage'] = '?'
         else:
-            latest_lineage = [
-                lineage["lineage"]
-                for lineage in lineage_json_blob
-                if (lineage.get("method", "") == self.pango_method and
-                    lineage.get("lineage") is not None)
-            ]
-
-            if len(latest_lineage) == 0:
-                print(f"WARNING: RKI pango_lineage does not include the {self.pango_method!r} lineage, using first lineage in the list.")
-                entry['pango_lineage'] = lineage_json_blob[0]['lineage']
-            else:
-                if len(latest_lineage) > 1:
-                    print(f"WARNING: RKI pango_lineage had more than one {self.pango_method!r} lineage "
-                          f"for rki_accession {entry['rki_accession']!r}. "
-                           "Using the first lineage in the list.")
-
-                entry['pango_lineage'] = latest_lineage[0]
+            entry['pango_lineage'] = pango_lineages[0]["genomic_typing_result"]
 
         # Normalize all string data to Unicode Normalization Form C, for
         # consistent, predictable string comparisons.
