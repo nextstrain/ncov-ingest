@@ -33,7 +33,7 @@ COLUMN_MAP = {
     "date_of_submission": "date_submitted",
     "prime_diagnostic_lab.demis_lab_id": "originating_lab",
     "sequencing_lab.demis_lab_id": "submitting_lab",
-    "lineages": "pango_lineage",
+    "genome.gtrs": "genomic_typing_results",
     "sequencing_reason": "sampling_strategy",
 }
 
