@@ -1,20 +1,6 @@
 name: GISAID fetch and ingest
 
 on:
-  schedule:
-    # Note times are in UTC, which is 1 or 2 hours behind CET depending on daylight savings.
-    #
-    # Currently, we aim to trigger runs at 6pm UTC on Saturday
-    #
-    # Note, '*' is a special character in YAML, so you have to quote this string.
-    #
-    # Docs:
-    #  - https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows#schedule
-    #
-    # Looks like you are about to modify this schedule? Make sure you also modify the schedule for the
-    # sister GenBank job, so that we don't need to keep two schedules in our heads.
-    - cron: '0 18 * * 6'
-
   # Manually triggered using `./vendored/trigger nextstrain/ncov-ingest gisaid/fetch-and-ingest`
   repository_dispatch:
     types:
