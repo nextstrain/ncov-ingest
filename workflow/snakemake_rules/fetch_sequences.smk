@@ -18,17 +18,6 @@ Produces different final outputs for GISAID vs GenBank/RKI:
         rki_ndjson = "data/rki.ndjson"
 """
 
-rule fetch_main_gisaid_ndjson:
-    output:
-        ndjson = temp(f"data/gisaid.ndjson")
-    benchmark:
-        "benchmarks/fetch_main_gisaid_ndjson.txt"
-    retries: 5
-    shell:
-        """
-        ./bin/fetch-from-gisaid {output.ndjson}
-        """
-
 
 rule fetch_ncbi_dataset_package:
     output:
@@ -225,7 +214,6 @@ if config.get("s3_dst") and config.get("s3_src"):
     # Fetch directly from databases when `fetch_from_database=True`
     # or else fetch files from AWS S3 buckets
     if config.get("fetch_from_database", False):
-        ruleorder: fetch_main_gisaid_ndjson > fetch_main_ndjson_from_s3
         ruleorder: extract_ncbi_dataset_biosample > fetch_biosample_from_s3
         ruleorder: transform_rki_data_to_ndjson > fetch_rki_ndjson_from_s3
         ruleorder: fetch_cog_uk_accessions > fetch_cog_uk_accessions_from_s3
@@ -234,7 +222,6 @@ if config.get("s3_dst") and config.get("s3_src"):
         ruleorder: create_genbank_ndjson > fetch_main_ndjson_from_s3
     else:
         ruleorder: fetch_rki_ndjson_from_s3 > transform_rki_data_to_ndjson
-        ruleorder: fetch_main_ndjson_from_s3 > fetch_main_gisaid_ndjson
         ruleorder: fetch_biosample_from_s3 > extract_ncbi_dataset_biosample
         ruleorder: fetch_cog_uk_accessions_from_s3 > fetch_cog_uk_accessions
         ruleorder: fetch_cog_uk_metadata_from_s3 > uncompress_cog_uk_metadata
