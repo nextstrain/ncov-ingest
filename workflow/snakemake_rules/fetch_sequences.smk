@@ -18,6 +18,65 @@ Produces different final outputs for GISAID vs GenBank/RKI:
         rki_ndjson = "data/rki.ndjson"
 """
 
+wildcard_constraints:
+    # Constrain GISAID pair names to YYYY-MM-DD-N
+    gisaid_pair = r'\d{4}-\d{2}-\d{2}(-\d+)?'
+
+rule link_gisaid_metadata_and_fasta:
+    input:
+        metadata="data/gisaid/{gisaid_pair}-metadata.tsv",
+        sequences="data/gisaid/{gisaid_pair}-sequences.fasta",
+    output:
+        ndjson=temp("data/gisaid/{gisaid_pair}.ndjson"),
+    params:
+        seq_id_column="strain",
+        seq_field="sequence",
+    log: "logs/link_gisaid_metadata_and_fasta/{gisaid_pair}.txt"
+    shell:
+        r"""
+        augur curate passthru \
+            --metadata {input.metadata:q} \
+            --fasta {input.sequences:q} \
+            --seq-id-column {params.seq_id_column:q} \
+            --seq-field {params.seq_field:q} \
+            | ./bin/transform-to-gisaid-cache \
+                > {output.ndjson:q} \
+                2> {log:q}
+        """
+
+def aggregate_gisaid_ndjsons(wildcards):
+    """
+    Input function for rule concatenate_gisaid_ndjsons to check which
+    GISAID pairs to include the output.
+    """
+    if len(config.get("gisaid_pairs", [])):
+        GISAID_PAIRS = config["gisaid_pairs"]
+    else:
+        # Create wildcards for pairs of GISAID downloads
+        GISAID_PAIRS, = glob_wildcards("data/gisaid/{gisaid_pair}-metadata.tsv")
+        # Reverse sort to list latest downloads first
+        GISAID_PAIRS.sort(reverse=True)
+
+    assert len(GISAID_PAIRS), "No GISAID metadata and sequences inputs were found"
+
+    return expand("data/gisaid/{gisaid_pair}.ndjson", gisaid_pair=GISAID_PAIRS)
+
+
+rule concatenate_gisaid_ndjsons:
+    input:
+        ndjsons=aggregate_gisaid_ndjsons,
+    output:
+        ndjson=temp("data/gisaid.ndjson"),
+    params:
+        gisaid_id_field="covv_accession_id",
+    log: "logs/concatenate_gisaid_ndjsons.txt"
+    shell:
+        r"""
+        (cat {input.ndjsons:q} \
+            | ./bin/dedup-by-gisaid-id \
+                --id-field {params.gisaid_id_field:q} \
+            > {output.ndjson:q}) 2> {log:q}
+        """
 
 rule fetch_ncbi_dataset_package:
     output:
@@ -220,6 +279,7 @@ if config.get("s3_dst") and config.get("s3_src"):
         ruleorder: fetch_cog_uk_metadata > compress_cog_uk_metadata
         ruleorder: uncompress_cog_uk_metadata > fetch_cog_uk_metadata_from_s3
         ruleorder: create_genbank_ndjson > fetch_main_ndjson_from_s3
+        ruleorder: concatenate_gisaid_ndjsons > fetch_main_ndjson_from_s3
     else:
         ruleorder: fetch_rki_ndjson_from_s3 > transform_rki_data_to_ndjson
         ruleorder: fetch_biosample_from_s3 > extract_ncbi_dataset_biosample
@@ -227,6 +287,7 @@ if config.get("s3_dst") and config.get("s3_src"):
         ruleorder: fetch_cog_uk_metadata_from_s3 > uncompress_cog_uk_metadata
         ruleorder: compress_cog_uk_metadata > fetch_cog_uk_metadata
         ruleorder: fetch_main_ndjson_from_s3 > create_genbank_ndjson
+        ruleorder: fetch_main_ndjson_from_s3 > concatenate_gisaid_ndjsons
 
     rule fetch_main_ndjson_from_s3:
         """Fetching main NDJSON from AWS S3"""
