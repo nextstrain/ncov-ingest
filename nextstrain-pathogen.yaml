@@ -1,0 +1,13 @@
+# This file's *existence* marks the top level of a Nextstrain pathogen repo,
+# which allows `nextstrain build` to be run from any subdirectory of the repo
+# regardless of runtime.  For more details, see
+# <https://github.com/nextstrain/cli/releases/tag/8.2.0>.
+#
+# This file's *contents* is the "registration metadata" for the pathogen repo,
+# used by `nextstrain setup` and `nextstrain run`.
+---
+$schema: https://nextstrain.org/schemas/pathogen/v0
+workflows:
+  manual-upload:
+    compatibility:
+      nextstrain run: true

@@ -12,7 +12,7 @@ This workflow uploads files which have been manually downloaded from GISAID to S
 This workflow is expected to be run manually after downloading files from GISAID.
 The GISAID files are expected to be saved as
 
-- `<YYYY-MM-DD-N>-metadata.xls`
+- `<YYYY-MM-DD-N>-metadata.tsv`
 - `<YYYY-MM-DD-N>-sequences.fasta`
 
 `<YYYY-MM-DD>` is the date the files were downloaded from GISAID.
@@ -20,9 +20,9 @@ The GISAID files are expected to be saved as
 
 For example, if you had to split the data between two downloads on 2025-04-11,
 then save the files as
-- `2025-04-11-1-metadata.xls`
+- `2025-04-11-1-metadata.tsv`
 - `2025-04-11-1-sequences.fasta`
-- `2025-04-11-2-metadata.xls`
+- `2025-04-11-2-metadata.tsv`
 - `2025-04-11-2-sequences.fasta`
 
 The directory in which you save the GISAID files depends on which command you are
@@ -39,9 +39,9 @@ Continuing the example above, your analysis directory should look like
 <analysis-dir>
 ├── config.yaml
 └── data
-    ├── 2025-04-11-1-metadata.xls
+    ├── 2025-04-11-1-metadata.tsv
     ├── 2025-04-11-1-sequences.fasta
-    ├── 2025-04-11-2-metadata.xls
+    ├── 2025-04-11-2-metadata.tsv
     └── 2025-04-11-2-sequences.fasta
 ```
 
@@ -53,18 +53,18 @@ gisaid_pairs:
  - 2025-04-11-2
 ```
 
-Make sure you have the latest seasonal flu pathogen setup.
+Make sure you have the latest ncov-ingest pathogen setup.
 
 ```shell
-$ nextstrain update seasonal-flu@master
+$ nextstrain update ncov-ingest@master
 Checking for newer versions of Nextstrain CLI…
 
 nextstrain-cli is up to date!
 
-Updating seasonal-flu@master pathogen version…
-'seasonal-flu@master' already up-to-date.
+Updating ncov-ingest@master pathogen version…
+'ncov-ingest@master' already up-to-date.
 
-Updated seasonal-flu@master pathogen version!
+Updated ncov-ingest@master pathogen version!
 
 All updates successful!
 ```
@@ -74,33 +74,33 @@ Then run the workflow
 nextstrain run \
     --env AWS_ACCESS_KEY_ID \
     --env AWS_SECRET_ACCESS_KEY \
-    seasonal-flu@master \
-    ingest/build-configs/manual-upload \
+    ncov-ingest@master \
+    manual-upload \
     <analysis-directory>
 ```
 
 ### With `nextstrain build`
 
 When running with `nextstrain build` the files must be saved _within_ the
-seasonal-flu repo.
+ncov-ingest repo.
 
 Save the downloaded GISAID metadata and sequences as:
-- `ingest/build-configs/manual-upload/data/<YYYY-MM-DD-N>-metadata.xls`
-- `ingest/build-configs/manual-upload/data/<YYYY-MM-DD-N>-sequences.fasta`
+- `manual-upload/data/<YYYY-MM-DD-N>-metadata.tsv`
+- `manual-upload/data/<YYYY-MM-DD-N>-sequences.fasta`
 
 The workflow can be run from the top level pathogen repo directory with:
 ```
 nextstrain build \
     --env AWS_ACCESS_KEY_ID \
     --env AWS_SECRET_ACCESS_KEY \
-    ingest/build-configs/manual-upload \
+    manual-upload \
         --config gisaid_pairs=["2025-04-11-1", "2025-04-11-2"]
 ```
 
 ### Required environment variables
 
 You need to have AWS credentials with permissions to upload to the private
-AWS S3 bucket `nextstrain-data-private`
+AWS S3 bucket `nextstrain-ncov-private`
 
 - `AWS_ACCESS_KEY_ID`
 - `AWS_SECRET_ACCESS_KEY`

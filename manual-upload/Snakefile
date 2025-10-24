@@ -27,17 +27,17 @@ rule upload_gisaid_pairs:
 
 rule upload_gisaid_metadata:
     input:
-        metadata="data/{gisaid_pair}-metadata.xls",
+        metadata="data/{gisaid_pair}-metadata.tsv",
     output:
         flag="data/{gisaid_pair}-metadata.upload",
     params:
         s3_dst=config["s3_dst"],
     shell:
         r"""
-        {workflow.basedir}/../../vendored/upload-to-s3 \
+        {workflow.basedir}/../vendored/upload-to-s3 \
             --quiet \
             {input.metadata:q} \
-            {params.s3_dst:q}/{wildcards.gisaid_pair}-metadata.xls.zst \
+            {params.s3_dst:q}/{wildcards.gisaid_pair}-metadata.tsv.zst \
             2>&1 | tee {output.flag:q}
         """
 
@@ -51,7 +51,7 @@ rule upload_gisaid_sequences:
         s3_dst=config["s3_dst"],
     shell:
         r"""
-        {workflow.basedir}/../../vendored/upload-to-s3 \
+        {workflow.basedir}/../vendored/upload-to-s3 \
             --quiet \
             {input.sequences:q} \
             {params.s3_dst:q}/{wildcards.gisaid_pair}-sequences.fasta.zst \
