@@ -1,0 +1,2 @@
+# AWS S3 destination for the downloaded GISAID files
+s3_dst: "s3://nextstrain-ncov-private/gisaid-downloads/unprocessed"

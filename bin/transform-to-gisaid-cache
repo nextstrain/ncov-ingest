@@ -1,0 +1,57 @@
+#!/usr/bin/env python3
+"""
+Transform records from manual downloads of "Input to Augur pipeline" option to
+match existing GISAID cache NDJSON.
+- rename and add fields
+- combine region,country,division,location as single location field
+"""
+from sys import stdin
+from typing import Iterable
+from augur.io.json import dump_ndjson, load_ndjson
+
+
+FIELD_MAP = {
+    "gisaid_epi_isl":               "covv_accession_id",
+    "covv_add_host_info":           "covv_add_host_info",
+    "covv_add_location":            "covv_add_location",
+    "authors":                      "covv_authors",
+    "date":                         "covv_collection_date",
+    "sex":                          "covv_gender",
+    "host":                         "covv_host",
+    "covv_location":                "covv_location",
+    "originating_lab":              "covv_orig_lab",
+    "age":                          "covv_patient_age",
+    "date_submitted":               "covv_subm_date",
+    "submitting_lab":               "covv_subm_lab",
+    "virus":                        "covv_type",
+    "strain":                       "covv_virus_name",
+    "pangolin_lineage":             "covv_lineage",
+    "pangolin_lineages_version":    "pangolin_lineages_version",
+    "GISAID_clade":                 "covv_clade",
+    "url":                          "link",
+    "covv_variant":                 "covv_variant",
+    "sequence":                     "sequence",
+    "length":                       "sequence_length",
+}
+
+
+def transform(records: Iterable[dict]) -> Iterable:
+    location_fields = ["region", "country", "division", "location"]
+    for record in records:
+        new_record = {}
+        # Rename and add fields to match existing GISAID cache
+        for metadata_field, cache_field in FIELD_MAP.items():
+            if metadata_field not in record:
+                new_record[cache_field] = ""
+            else:
+                new_record[cache_field] = record.pop(metadata_field)
+
+        # Join location fields to match existing cache
+        new_record["covv_location"] = " / ".join(record[field] for field in location_fields)
+        yield new_record
+
+
+if __name__ == "__main__":
+    records = load_ndjson(stdin)
+    transformed_records = transform(records)
+    dump_ndjson(transformed_records)
