@@ -41,6 +41,8 @@ jobs:
           FETCH_FROM_DATABASE: ${{ github.event_name != 'workflow_dispatch' && true || inputs.fetch_from_database }}
         run: |
           config="--config"
+          config+=" trigger_rebuild=False"
+          config+=" trigger_counts=False"
 
           if [[ "$FETCH_FROM_DATABASE" == true ]]; then
             config+=" fetch_from_database=True"
@@ -49,12 +51,7 @@ jobs:
           fi
 
           if [[ "$TRIAL_NAME" ]]; then
-            config+=" trigger_rebuild=False"
-            config+=" trigger_counts=False"
             config+=" s3_dst=s3://nextstrain-ncov-private/trial/${TRIAL_NAME}"
-          else
-            config+=" trigger_rebuild=True"
-            config+=" trigger_counts=True"
           fi
 
           echo "config=$config" >> "$GITHUB_OUTPUT"
