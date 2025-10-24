@@ -19,8 +19,66 @@ Produces different final outputs for GISAID vs GenBank/RKI:
 """
 
 wildcard_constraints:
-    # Constrain GISAID pair names to YYYY-MM-DD-N
-    gisaid_pair = r'\d{4}-\d{2}-\d{2}(-\d+)?'
+    # Constrain GISAID pair names to "gisaid_cache" or YYYY-MM-DD-N
+    gisaid_pair = r'gisaid_cache|\d{4}-\d{2}-\d{2}(-\d+)?'
+
+
+if config.get("s3_src"):
+
+    rule fetch_gisaid_ndjson:
+        """
+        Fetch previously uploaded gisaid.ndjson if it exists.
+        This is a cache of the raw data from previous GISAID ingest(s).
+        If it doesn't exist, then just create an empty file.
+        """
+        output:
+            ndjson=temp("data/gisaid/gisaid_cache.ndjson"),
+        params:
+            s3_file=f"{config['s3_src']}/gisaid.ndjson.zst",
+        shell:
+            r"""
+            if $(./vendored/s3-object-exists {params.s3_file:q}); then
+                ./vendored/download-from-s3 {params.s3_file:q} {output.ndjson:q}
+            else
+                echo "{params.s3_file:q} does not exist, creating empty file."
+                touch {output.ndjson:q}
+            fi
+            """
+
+    checkpoint fetch_unprocessed_files:
+        """
+        Fetch unprocessed GISAID files.
+        These are pairs of metadata.tsv.zst and sequences.fasta.zst files.
+
+        This is a checkpoint because the DAG needs to be re-evaluated to determine
+        which `gisaid_pair` need to be processed.
+        """
+        output:
+            directory("data/unprocessed-gisaid-downloads/"),
+        params:
+            s3_prefix=f"{config['s3_src']}/gisaid-downloads/unprocessed/"
+        shell:
+            r"""
+            aws s3 cp {params.s3_prefix:q} {output:q} \
+                --recursive \
+                --exclude "*" \
+                --include "*-metadata.tsv.zst" \
+                --include "*-sequences.fasta.zst"
+            """
+
+    rule decompress_unprocessed_files:
+        input:
+            metadata="data/unprocessed-gisaid-downloads/{gisaid_pair}-metadata.tsv.zst",
+            sequences="data/unprocessed-gisaid-downloads/{gisaid_pair}-sequences.fasta.zst",
+        output:
+            metadata=temp("data/gisaid/{gisaid_pair}-metadata.tsv"),
+            sequences=temp("data/gisaid/{gisaid_pair}-sequences.fasta"),
+        shell:
+            r"""
+            zstd --decompress --stdout {input.metadata:q} > {output.metadata:q}
+            zstd --decompress --stdout {input.sequences:q} > {output.sequences:q}
+            """
+
 
 rule link_gisaid_metadata_and_fasta:
     input:
@@ -51,6 +109,14 @@ def aggregate_gisaid_ndjsons(wildcards):
     """
     if len(config.get("gisaid_pairs", [])):
         GISAID_PAIRS = config["gisaid_pairs"]
+    elif config.get('s3_src') and hasattr(checkpoints, "fetch_unprocessed_files"):
+        # Use checkpoint for the Nextstrain automation
+        checkpoint_output = checkpoints.fetch_unprocessed_files.get(**wildcards).output[0]
+        GISAID_PAIRS, = glob_wildcards(os.path.join(checkpoint_output, "{gisaid_pair}-metadata.tsv.zst"))
+        # Reverse sort to list latest downloads first
+        GISAID_PAIRS.sort(reverse=True)
+        # Add the GISAID cache last to prioritize the latest downloads
+        GISAID_PAIRS.append("gisaid_cache")
     else:
         # Create wildcards for pairs of GISAID downloads
         GISAID_PAIRS, = glob_wildcards("data/gisaid/{gisaid_pair}-metadata.tsv")
