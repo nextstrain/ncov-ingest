@@ -27,9 +27,8 @@ if config.get("s3_src"):
 
     rule fetch_gisaid_ndjson:
         """
-        Fetch previously uploaded gisaid.ndjson if it exists.
+        Fetch previously uploaded gisaid.ndjson.
         This is a cache of the raw data from previous GISAID ingest(s).
-        If it doesn't exist, then just create an empty file.
         """
         output:
             ndjson=temp("data/gisaid/gisaid_cache.ndjson"),
@@ -37,12 +36,7 @@ if config.get("s3_src"):
             s3_file=f"{config['s3_src']}/gisaid.ndjson.zst",
         shell:
             r"""
-            if $(./vendored/s3-object-exists {params.s3_file:q}); then
-                ./vendored/download-from-s3 {params.s3_file:q} {output.ndjson:q}
-            else
-                echo "{params.s3_file:q} does not exist, creating empty file."
-                touch {output.ndjson:q}
-            fi
+            ./vendored/download-from-s3 {params.s3_file:q} {output.ndjson:q}
             """
 
     checkpoint fetch_unprocessed_files:
