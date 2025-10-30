@@ -18,17 +18,125 @@ Produces different final outputs for GISAID vs GenBank/RKI:
         rki_ndjson = "data/rki.ndjson"
 """
 
-rule fetch_main_gisaid_ndjson:
-    output:
-        ndjson = temp(f"data/gisaid.ndjson")
-    benchmark:
-        "benchmarks/fetch_main_gisaid_ndjson.txt"
-    retries: 5
-    shell:
+wildcard_constraints:
+    # Constrain GISAID pair names to "gisaid_cache" or YYYY-MM-DD-N
+    gisaid_pair = r'gisaid_cache|\d{4}-\d{2}-\d{2}(-\d+)?'
+
+
+if config.get("s3_src"):
+
+    rule fetch_gisaid_ndjson:
         """
-        ./bin/fetch-from-gisaid {output.ndjson}
+        Fetch previously uploaded gisaid.ndjson.
+        This is a cache of the raw data from previous GISAID ingest(s).
+        """
+        output:
+            ndjson=temp("data/gisaid/gisaid_cache.ndjson"),
+        params:
+            s3_file=f"{config['s3_src']}/gisaid.ndjson.zst",
+        shell:
+            r"""
+            ./vendored/download-from-s3 {params.s3_file:q} {output.ndjson:q}
+            """
+
+    checkpoint fetch_unprocessed_files:
+        """
+        Fetch unprocessed GISAID files.
+        These are pairs of metadata.tsv.zst and sequences.fasta.zst files.
+
+        This is a checkpoint because the DAG needs to be re-evaluated to determine
+        which `gisaid_pair` need to be processed.
+        """
+        output:
+            directory("data/unprocessed-gisaid-downloads/"),
+        params:
+            s3_prefix=f"{config['s3_src']}/gisaid-downloads/unprocessed/"
+        shell:
+            r"""
+            aws s3 cp {params.s3_prefix:q} {output:q} \
+                --recursive \
+                --exclude "*" \
+                --include "*-metadata.tsv.zst" \
+                --include "*-sequences.fasta.zst"
+            """
+
+    rule decompress_unprocessed_files:
+        input:
+            metadata="data/unprocessed-gisaid-downloads/{gisaid_pair}-metadata.tsv.zst",
+            sequences="data/unprocessed-gisaid-downloads/{gisaid_pair}-sequences.fasta.zst",
+        output:
+            metadata=temp("data/gisaid/{gisaid_pair}-metadata.tsv"),
+            sequences=temp("data/gisaid/{gisaid_pair}-sequences.fasta"),
+        shell:
+            r"""
+            zstd --decompress --stdout {input.metadata:q} > {output.metadata:q}
+            zstd --decompress --stdout {input.sequences:q} > {output.sequences:q}
+            """
+
+
+rule link_gisaid_metadata_and_fasta:
+    input:
+        metadata="data/gisaid/{gisaid_pair}-metadata.tsv",
+        sequences="data/gisaid/{gisaid_pair}-sequences.fasta",
+    output:
+        ndjson=temp("data/gisaid/{gisaid_pair}.ndjson"),
+    params:
+        seq_id_column="strain",
+        seq_field="sequence",
+    log: "logs/link_gisaid_metadata_and_fasta/{gisaid_pair}.txt"
+    shell:
+        r"""
+        augur curate passthru \
+            --metadata {input.metadata:q} \
+            --fasta {input.sequences:q} \
+            --seq-id-column {params.seq_id_column:q} \
+            --seq-field {params.seq_field:q} \
+            | ./bin/transform-to-gisaid-cache \
+                > {output.ndjson:q} \
+                2> {log:q}
         """
 
+def aggregate_gisaid_ndjsons(wildcards):
+    """
+    Input function for rule concatenate_gisaid_ndjsons to check which
+    GISAID pairs to include the output.
+    """
+    if len(config.get("gisaid_pairs", [])):
+        GISAID_PAIRS = config["gisaid_pairs"]
+    elif config.get('s3_src') and hasattr(checkpoints, "fetch_unprocessed_files"):
+        # Use checkpoint for the Nextstrain automation
+        checkpoint_output = checkpoints.fetch_unprocessed_files.get(**wildcards).output[0]
+        GISAID_PAIRS, = glob_wildcards(os.path.join(checkpoint_output, "{gisaid_pair}-metadata.tsv.zst"))
+        # Reverse sort to list latest downloads first
+        GISAID_PAIRS.sort(reverse=True)
+        # Add the GISAID cache last to prioritize the latest downloads
+        GISAID_PAIRS.append("gisaid_cache")
+    else:
+        # Create wildcards for pairs of GISAID downloads
+        GISAID_PAIRS, = glob_wildcards("data/gisaid/{gisaid_pair}-metadata.tsv")
+        # Reverse sort to list latest downloads first
+        GISAID_PAIRS.sort(reverse=True)
+
+    assert len(GISAID_PAIRS), "No GISAID metadata and sequences inputs were found"
+
+    return expand("data/gisaid/{gisaid_pair}.ndjson", gisaid_pair=GISAID_PAIRS)
+
+
+rule concatenate_gisaid_ndjsons:
+    input:
+        ndjsons=aggregate_gisaid_ndjsons,
+    output:
+        ndjson=temp("data/gisaid.ndjson"),
+    params:
+        gisaid_id_field="covv_accession_id",
+    log: "logs/concatenate_gisaid_ndjsons.txt"
+    shell:
+        r"""
+        (cat {input.ndjsons:q} \
+            | ./bin/dedup-by-gisaid-id \
+                --id-field {params.gisaid_id_field:q} \
+            > {output.ndjson:q}) 2> {log:q}
+        """
 
 rule fetch_ncbi_dataset_package:
     output:
@@ -225,21 +333,21 @@ if config.get("s3_dst") and config.get("s3_src"):
     # Fetch directly from databases when `fetch_from_database=True`
     # or else fetch files from AWS S3 buckets
     if config.get("fetch_from_database", False):
-        ruleorder: fetch_main_gisaid_ndjson > fetch_main_ndjson_from_s3
         ruleorder: extract_ncbi_dataset_biosample > fetch_biosample_from_s3
         ruleorder: transform_rki_data_to_ndjson > fetch_rki_ndjson_from_s3
         ruleorder: fetch_cog_uk_accessions > fetch_cog_uk_accessions_from_s3
         ruleorder: fetch_cog_uk_metadata > compress_cog_uk_metadata
         ruleorder: uncompress_cog_uk_metadata > fetch_cog_uk_metadata_from_s3
         ruleorder: create_genbank_ndjson > fetch_main_ndjson_from_s3
+        ruleorder: concatenate_gisaid_ndjsons > fetch_main_ndjson_from_s3
     else:
         ruleorder: fetch_rki_ndjson_from_s3 > transform_rki_data_to_ndjson
-        ruleorder: fetch_main_ndjson_from_s3 > fetch_main_gisaid_ndjson
         ruleorder: fetch_biosample_from_s3 > extract_ncbi_dataset_biosample
         ruleorder: fetch_cog_uk_accessions_from_s3 > fetch_cog_uk_accessions
         ruleorder: fetch_cog_uk_metadata_from_s3 > uncompress_cog_uk_metadata
         ruleorder: compress_cog_uk_metadata > fetch_cog_uk_metadata
         ruleorder: fetch_main_ndjson_from_s3 > create_genbank_ndjson
+        ruleorder: fetch_main_ndjson_from_s3 > concatenate_gisaid_ndjsons
 
     rule fetch_main_ndjson_from_s3:
         """Fetching main NDJSON from AWS S3"""
