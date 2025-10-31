@@ -137,7 +137,7 @@ def all_processed_gisaid_pairs(wildcards):
         checkpoint_output = checkpoints.fetch_unprocessed_files.get(**wildcards).output[0]
         return expand(
             "data/mv-processed/{gisaid_pair}.done",
-            gisaid_pair=glob_wildcards(os.path.join(checkpoint_output, "{gisaid_pair}-metadata.xls.zst")).gisaid_pair
+            gisaid_pair=glob_wildcards(os.path.join(checkpoint_output, "{gisaid_pair}-metadata.tsv.zst")).gisaid_pair
         )
     else:
         return []
