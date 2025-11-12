@@ -47,13 +47,15 @@ renew-flag-exists() {
 }
 
 get-cache-version-info() {
-    # TODO: Update check a separate file for version info
-    # Currently just checks the first row of the nextclade.tsv file
-    local version_file="nextclade$reference.tsv.zst"
+    local version_file="nextclade${reference}_version.json"
+    local nextclade_tsv="nextclade$reference.tsv.zst"
     local dst_version_file="$s3_dst/$version_file"
+    local dst_nextclade_tsv="$s3_dst/$nextclade_tsv"
     local src_version_file="$s3_src/$version_file"
+    local src_nextclade_tsv="$s3_src/$nextclade_tsv"
 
-    "$bin"/fetch-cache-version "$dst_version_file" || "$bin"/cache-version "$src_version_file"
+    "$bin"/fetch-cache-version "$dst_version_file" "$dst_nextclade_tsv" \
+        || "$bin"/cache-version "$src_version_file" "$src_nextclade_tsv"
 }
 
 main "$@"
