@@ -43,7 +43,10 @@ def main():
         Path(manifest_file).write_text("")
         return
 
-    print(f"Found {len(tar_files)} tar files", file=sys.stderr)
+    print(f"Found {len(tar_files)} tar files to process:", file=sys.stderr)
+    for tar in sorted(tar_files):
+        print(f"  - {tar.name}", file=sys.stderr)
+    print("", file=sys.stderr)
 
     processed_tars = []
     all_records = []
@@ -109,20 +112,32 @@ def main():
             continue
 
     # Write combined NDJSON
-    print(f"Writing {len(all_records)} total records to {output_ndjson}", file=sys.stderr)
+    print(f"\nWriting {len(all_records)} total records to {output_ndjson}", file=sys.stderr)
+    lines_written = 0
     with open(output_ndjson, 'w') as f:
         # dump_ndjson writes to stdout by default, so we need to redirect
         import json
         for record in all_records:
             json.dump(record, f)
             f.write('\n')
+            lines_written += 1
+
+    print(f"Wrote {lines_written} lines to {output_ndjson}", file=sys.stderr)
 
     # Write manifest
     with open(manifest_file, 'w') as f:
         for tar_name in processed_tars:
             f.write(f"{tar_name}\n")
 
-    print(f"Successfully processed {len(processed_tars)} tar files", file=sys.stderr)
+    print(f"\nSuccessfully processed {len(processed_tars)}/{len(tar_files)} tar files", file=sys.stderr)
+    if processed_tars:
+        print("Processed tars:", file=sys.stderr)
+        for tar_name in processed_tars:
+            print(f"  ✓ {tar_name}", file=sys.stderr)
+
+    failed_count = len(tar_files) - len(processed_tars)
+    if failed_count > 0:
+        print(f"\nWarning: {failed_count} tar files failed to process", file=sys.stderr)
 
 if __name__ == "__main__":
     main()
