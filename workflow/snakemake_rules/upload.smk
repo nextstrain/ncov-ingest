@@ -152,10 +152,16 @@ rule mv_all_processed_tars:
         fi
 
         while IFS= read -r tar_name; do
+            # Reject tar names with potentially dangerous characters to avoid shell injection
+            if [[ "$tar_name" =~ [^A-Za-z0-9._/+-] ]]; then
+                echo "Error: unsafe characters in tar name '$tar_name'; aborting."
+                exit 1
+            fi
+
             echo "Moving $tar_name to processed/"
-            aws s3 mv \
-                {params.s3_src:q}$tar_name \
-                {params.s3_dst:q}$tar_name
+            aws s3 mv -- \
+                {params.s3_src:q}"$tar_name" \
+                {params.s3_dst:q}"$tar_name"
         done < {input.manifest:q}
         """
 
