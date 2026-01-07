@@ -140,12 +140,6 @@ rule mv_all_processed_tars:
         s3_src=f"{config['s3_src']}/gisaid-downloads/unprocessed/",
     shell:
         r"""
-        # Only run if s3_src == s3_dst (not a trial run)
-        if [[ "{params.s3_src}" != "{params.s3_dst}" ]]; then
-            echo "Skipping move (trial run: s3_src != s3_dst)"
-            exit 0
-        fi
-
         if [[ ! -s {input.manifest:q} ]]; then
             echo "No tars to move (empty manifest)"
             exit 0
