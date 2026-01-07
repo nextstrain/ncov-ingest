@@ -1,0 +1,128 @@
+#!/usr/bin/env python3
+"""
+Download all unprocessed GISAID tar files from S3, process them to NDJSON,
+and output a manifest of successfully processed tars.
+"""
+import subprocess
+import sys
+import tempfile
+import tarfile
+from pathlib import Path
+from augur.io.json import dump_ndjson, load_ndjson
+import os
+
+def main():
+    source_path = sys.argv[1]  # e.g., s3://nextstrain-ncov-private/gisaid-downloads/unprocessed/ OR local path
+    output_ndjson = sys.argv[2]  # e.g., data/gisaid/unprocessed-combined.ndjson
+    manifest_file = sys.argv[3]  # e.g., data/gisaid/processed-manifest.txt
+
+    # Check if source is S3 or local path
+    if source_path.startswith("s3://"):
+        # Download all tar files from S3
+        tmp_dir = Path("tmp/unprocessed-tars")
+        tmp_dir.mkdir(parents=True, exist_ok=True)
+
+        print(f"Downloading tar files from {source_path}...", file=sys.stderr)
+        subprocess.run([
+            "aws", "s3", "cp", source_path, str(tmp_dir),
+            "--recursive", "--exclude", "*", "--include", "*.tar"
+        ], check=True)
+    else:
+        # Use local path directly
+        tmp_dir = Path(source_path)
+        print(f"Using local tar files from {source_path}...", file=sys.stderr)
+        if not tmp_dir.exists():
+            print(f"ERROR: Local path does not exist: {source_path}", file=sys.stderr)
+            sys.exit(1)
+
+    tar_files = list(tmp_dir.glob("*.tar"))
+    if not tar_files:
+        print("No tar files found", file=sys.stderr)
+        # Create empty outputs so Snakemake doesn't fail
+        Path(output_ndjson).touch()
+        Path(manifest_file).write_text("")
+        return
+
+    print(f"Found {len(tar_files)} tar files", file=sys.stderr)
+
+    processed_tars = []
+    all_records = []
+
+    # Sort by filename to ensure consistent ordering
+    # Process oldest first so newer records overwrite during deduplication
+    for tar_path in sorted(tar_files):
+        print(f"Processing {tar_path.name}...", file=sys.stderr)
+        try:
+            # Extract and process
+            with tempfile.TemporaryDirectory() as extract_dir:
+                extract_path = Path(extract_dir)
+
+                # Extract tar (strip leading slashes from absolute paths)
+                with tarfile.open(tar_path, 'r') as tar:
+                    # Strip leading slashes to avoid extracting to root filesystem
+                    members = tar.getmembers()
+                    for member in members:
+                        if member.name.startswith('/'):
+                            member.name = member.name.lstrip('/')
+                    tar.extractall(extract_path, members=members)
+
+                # Find metadata and sequences
+                metadata_files = list(extract_path.glob("**/*.metadata.tsv"))
+                sequence_files = list(extract_path.glob("**/*.sequences.fasta"))
+
+                if not metadata_files or not sequence_files:
+                    print(f"  WARNING: Missing metadata or sequences in {tar_path.name}", file=sys.stderr)
+                    continue
+
+                metadata_file = metadata_files[0]
+                sequence_file = sequence_files[0]
+
+                # Process through augur curate + transform
+                proc = subprocess.Popen([
+                    "augur", "curate", "passthru",
+                    "--metadata", str(metadata_file),
+                    "--fasta", str(sequence_file),
+                    "--seq-id-column", "strain",
+                    "--seq-field", "sequence"
+                ], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=False)
+
+                proc2 = subprocess.Popen([
+                    "./bin/transform-to-gisaid-cache"
+                ], stdin=proc.stdout, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=False)
+
+                proc.stdout.close()
+                stdout, stderr = proc2.communicate()
+
+                if proc2.returncode != 0:
+                    print(f"  WARNING: Transform failed for {tar_path.name}: {stderr.decode()}", file=sys.stderr)
+                    continue
+
+                # Parse records
+                import io
+                records = list(load_ndjson(io.BytesIO(stdout)))
+                all_records.extend(records)
+                processed_tars.append(tar_path.name)
+                print(f"  Processed {len(records)} records", file=sys.stderr)
+
+        except Exception as e:
+            print(f"  ERROR processing {tar_path.name}: {e}", file=sys.stderr)
+            continue
+
+    # Write combined NDJSON
+    print(f"Writing {len(all_records)} total records to {output_ndjson}", file=sys.stderr)
+    with open(output_ndjson, 'w') as f:
+        # dump_ndjson writes to stdout by default, so we need to redirect
+        import json
+        for record in all_records:
+            json.dump(record, f)
+            f.write('\n')
+
+    # Write manifest
+    with open(manifest_file, 'w') as f:
+        for tar_name in processed_tars:
+            f.write(f"{tar_name}\n")
+
+    print(f"Successfully processed {len(processed_tars)} tar files", file=sys.stderr)
+
+if __name__ == "__main__":
+    main()
