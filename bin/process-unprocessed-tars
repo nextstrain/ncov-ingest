@@ -25,7 +25,8 @@ def main():
         print(f"Downloading tar files from {source_path}...", file=sys.stderr)
         subprocess.run([
             "aws", "s3", "cp", source_path, str(tmp_dir),
-            "--recursive", "--exclude", "*", "--include", "*.tar"
+            "--recursive", "--exclude", "*", "--include", "*.tar",
+            "--no-progress"
         ], check=True)
     else:
         # Use local path directly
