@@ -31,8 +31,8 @@ Follow these instructions to run the ncov-ingest pipeline _without_ all the bell
 To add new GISAID sequences:
 
 1. Download them from GISAID using the "Input for the Augur pipeline" option. This results in a file of the form `gisaid_auspice_input_hcov-19_2026_01_07_11.tar` (exact date will vary).
-2. Upload this file to s3: `aws s3 cp /path/to/downloads/gisaid_auspice_input_hcov-19_2026_01_07_11.tar s3://nextstrain-ncov-private/gisaid-downloads/unprocessed/`
-3. Trigger the ncov-ingest GISAID action.
+2. Upload this file to s3: `aws s3 cp /path/to/downloads/gisaid_auspice_input_hcov-19_2026_01_07_11.tar s3://nextstrain-ncov-private/gisaid-tars/unprocessed/`
+3. Trigger the ncov-ingest GISAID action. After successful processing, tars are compressed with zstd and moved to `s3://nextstrain-ncov-private/gisaid-tars/processed/` (as `.tar.zst` files).
 
 ### GenBank
 

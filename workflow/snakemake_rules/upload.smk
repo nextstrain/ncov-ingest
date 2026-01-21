@@ -126,18 +126,19 @@ rule remove_rerun_touchfile:
 
 rule mv_all_processed_tars:
     """
-    Move all processed tars from /unprocessed to /processed on S3.
+    Compress and move all processed tars from /unprocessed to /processed on S3.
+    Compresses with zstd before moving to save storage costs.
     Only runs after successful upload, reads manifest to know which files to move.
     Skips if this is a trial run (s3_src != s3_dst).
     """
     input:
         ndjson_flag="data/gisaid/gisaid.ndjson.zst.upload",
-        manifest="data/gisaid/processed-manifest.txt",
+        manifest="data/gisaid/tar-processed-manifest.txt",
     output:
         flag=touch("data/mv-processed/all-tars.done")
     params:
-        s3_dst=f"{config['s3_dst']}/gisaid-downloads/processed/",
-        s3_src=f"{config['s3_src']}/gisaid-downloads/unprocessed/",
+        s3_dst=f"{config['s3_dst']}/gisaid-tars/processed/",
+        s3_src=f"{config['s3_src']}/gisaid-tars/unprocessed/",
     shell:
         r"""
         if [[ ! -s {input.manifest:q} ]]; then
@@ -152,10 +153,12 @@ rule mv_all_processed_tars:
                 exit 1
             fi
 
-            echo "Moving $tar_name to processed/"
-            aws s3 mv -- \
-                {params.s3_src:q}"$tar_name" \
-                {params.s3_dst:q}"$tar_name"
+            echo "Compressing and moving $tar_name to processed/"
+            aws s3 cp -- {params.s3_src:q}"$tar_name" - \
+                | zstd \
+                | aws s3 cp - {params.s3_dst:q}"$tar_name.zst" \
+                && aws s3 rm -- {params.s3_src:q}"$tar_name" \
+                && echo "  Moved $tar_name -> $tar_name.zst"
         done < {input.manifest:q}
         """
 

@@ -3,23 +3,86 @@
 Download all unprocessed GISAID tar files from S3, process them to NDJSON,
 and output a manifest of successfully processed tars.
 """
+import io
+import json
+import shlex
 import subprocess
 import sys
-import tempfile
 import tarfile
+import tempfile
 from pathlib import Path
-from augur.io.json import dump_ndjson, load_ndjson
-import os
+
+from augur.io.json import load_ndjson
+
+
+def process_tar_file(tar_path, output_file):
+    """
+    Extract and process a single tar file, streaming records to output_file.
+    Returns the number of records processed, or None if processing failed.
+    """
+    with tempfile.TemporaryDirectory() as extract_dir:
+        extract_path = Path(extract_dir)
+
+        # Extract tar (strip leading slashes from absolute paths)
+        with tarfile.open(tar_path, 'r') as tar:
+            # Strip leading slashes to avoid extracting to root filesystem
+            members = tar.getmembers()
+            for member in members:
+                if member.name.startswith('/'):
+                    member.name = member.name.lstrip('/')
+            # Use filter='data' to safely extract archives (Python 3.12+)
+            # Falls back to no filter for older Python versions
+            try:
+                tar.extractall(extract_path, members=members, filter='data')
+            except TypeError:
+                # Python < 3.12 doesn't support filter parameter
+                tar.extractall(extract_path, members=members)
+
+        # Find metadata and sequences
+        metadata_files = list(extract_path.glob("**/*.metadata.tsv"))
+        sequence_files = list(extract_path.glob("**/*.sequences.fasta"))
+
+        if not metadata_files or not sequence_files:
+            print(f"  WARNING: Missing metadata or sequences in {tar_path.name}", file=sys.stderr)
+            return None
+
+        if len(metadata_files) > 1 or len(sequence_files) > 1:
+            print(f"  WARNING: Multiple metadata or sequence files found in {tar_path.name}, using first", file=sys.stderr)
+
+        metadata_file = metadata_files[0]
+        sequence_file = sequence_files[0]
+
+        # Process through augur curate + transform pipeline
+        cmd = (
+            f'augur curate passthru --metadata {shlex.quote(str(metadata_file))} '
+            f'--fasta {shlex.quote(str(sequence_file))} '
+            f'--seq-id-column strain --seq-field sequence | ./bin/transform-to-gisaid-cache'
+        )
+        result = subprocess.run(cmd, shell=True, capture_output=True, text=False)
+
+        if result.returncode != 0:
+            print(f"  WARNING: Transform failed for {tar_path.name}: {result.stderr.decode()}", file=sys.stderr)
+            return None
+
+        # Stream records directly to output file
+        record_count = 0
+        for record in load_ndjson(io.BytesIO(result.stdout)):
+            json.dump(record, output_file)
+            output_file.write('\n')
+            record_count += 1
+
+        return record_count
+
 
 def main():
-    source_path = sys.argv[1]  # e.g., s3://nextstrain-ncov-private/gisaid-downloads/unprocessed/ OR local path
-    output_ndjson = sys.argv[2]  # e.g., data/gisaid/unprocessed-combined.ndjson
-    manifest_file = sys.argv[3]  # e.g., data/gisaid/processed-manifest.txt
+    source_path = sys.argv[1]  # e.g., s3://nextstrain-ncov-private/gisaid-tars/unprocessed/ OR local path
+    output_ndjson = sys.argv[2]  # e.g., data/gisaid/tar-combined.ndjson
+    manifest_file = sys.argv[3]  # e.g., data/gisaid/tar-processed-manifest.txt
 
     # Check if source is S3 or local path
     if source_path.startswith("s3://"):
-        # Download all tar files from S3
-        tmp_dir = Path("tmp/unprocessed-tars")
+        # Download all unprocessed tar files from S3
+        tmp_dir = Path("tmp/gisaid-tars-unprocessed")
         tmp_dir.mkdir(parents=True, exist_ok=True)
 
         print(f"Downloading tar files from {source_path}...", file=sys.stderr)
@@ -50,80 +113,29 @@ def main():
     print("", file=sys.stderr)
 
     processed_tars = []
-    all_records = []
+    failed_tars = []
+    total_records = 0
 
-    # Sort by filename to ensure consistent ordering
-    # Process oldest first so newer records overwrite during deduplication
-    for tar_path in sorted(tar_files):
-        print(f"Processing {tar_path.name}...", file=sys.stderr)
-        try:
-            # Extract and process
-            with tempfile.TemporaryDirectory() as extract_dir:
-                extract_path = Path(extract_dir)
+    # Open output file for streaming
+    with open(output_ndjson, 'w') as output_file:
+        # Sort by filename to ensure consistent ordering
+        # Process newest first so dedup-by-gisaid-id keeps the newest record (it keeps first)
+        for tar_path in sorted(tar_files, reverse=True):
+            print(f"Processing {tar_path.name}...", file=sys.stderr)
+            try:
+                record_count = process_tar_file(tar_path, output_file)
+                if record_count is not None:
+                    total_records += record_count
+                    processed_tars.append(tar_path.name)
+                    print(f"  Processed {record_count} records", file=sys.stderr)
+                else:
+                    failed_tars.append(tar_path.name)
+            except Exception as e:
+                print(f"  ERROR processing {tar_path.name}: {e}", file=sys.stderr)
+                failed_tars.append(tar_path.name)
+                continue
 
-                # Extract tar (strip leading slashes from absolute paths)
-                with tarfile.open(tar_path, 'r') as tar:
-                    # Strip leading slashes to avoid extracting to root filesystem
-                    members = tar.getmembers()
-                    for member in members:
-                        if member.name.startswith('/'):
-                            member.name = member.name.lstrip('/')
-                    tar.extractall(extract_path, members=members)
-
-                # Find metadata and sequences
-                metadata_files = list(extract_path.glob("**/*.metadata.tsv"))
-                sequence_files = list(extract_path.glob("**/*.sequences.fasta"))
-
-                if not metadata_files or not sequence_files:
-                    print(f"  WARNING: Missing metadata or sequences in {tar_path.name}", file=sys.stderr)
-                    continue
-
-                metadata_file = metadata_files[0]
-                sequence_file = sequence_files[0]
-
-                # Process through augur curate + transform
-                proc = subprocess.Popen([
-                    "augur", "curate", "passthru",
-                    "--metadata", str(metadata_file),
-                    "--fasta", str(sequence_file),
-                    "--seq-id-column", "strain",
-                    "--seq-field", "sequence"
-                ], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=False)
-
-                proc2 = subprocess.Popen([
-                    "./bin/transform-to-gisaid-cache"
-                ], stdin=proc.stdout, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=False)
-
-                proc.stdout.close()
-                stdout, stderr = proc2.communicate()
-
-                if proc2.returncode != 0:
-                    print(f"  WARNING: Transform failed for {tar_path.name}: {stderr.decode()}", file=sys.stderr)
-                    continue
-
-                # Parse records
-                import io
-                records = list(load_ndjson(io.BytesIO(stdout)))
-                all_records.extend(records)
-                processed_tars.append(tar_path.name)
-                print(f"  Processed {len(records)} records", file=sys.stderr)
-
-        except Exception as e:
-            print(f"  ERROR processing {tar_path.name}: {e}", file=sys.stderr)
-            continue
-
-    # Write combined NDJSON
-    print(f"\nWriting {len(all_records)} total records to {output_ndjson}", file=sys.stderr)
-    lines_written = 0
-    with open(output_ndjson, 'w') as f:
-        # dump_ndjson writes to stdout by default, so we need to redirect
-        import json
-        for record in all_records:
-            json.dump(record, f)
-            f.write('\n')
-            lines_written += 1
-
-    print(f"Wrote {lines_written} lines to {output_ndjson}", file=sys.stderr)
+    print(f"\nWrote {total_records} total records to {output_ndjson}", file=sys.stderr)
 
     # Write manifest
     with open(manifest_file, 'w') as f:
@@ -136,9 +148,10 @@ def main():
         for tar_name in processed_tars:
             print(f"  ✓ {tar_name}", file=sys.stderr)
 
-    failed_count = len(tar_files) - len(processed_tars)
-    if failed_count > 0:
-        print(f"\nWarning: {failed_count} tar files failed to process", file=sys.stderr)
+    if failed_tars:
+        print(f"\nWarning: {len(failed_tars)} tar files failed to process:", file=sys.stderr)
+        for tar_name in failed_tars:
+            print(f"  ✗ {tar_name}", file=sys.stderr)
 
 if __name__ == "__main__":
     main()

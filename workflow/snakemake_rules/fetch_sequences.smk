@@ -40,18 +40,18 @@ if config.get("s3_src"):
     rule process_all_unprocessed_tars:
         """
         Download all unprocessed tar files from S3 and process them to a single NDJSON.
-        Outputs a manifest of successfully processed tars for later moving.
+        Outputs a manifest of successfully processed tars.
         """
         output:
-            ndjson=temp("data/gisaid/unprocessed-combined.ndjson"),
-            manifest="data/gisaid/processed-manifest.txt",
+            ndjson=temp("data/gisaid/tar-combined.ndjson"),
+            manifest="data/gisaid/tar-processed-manifest.txt",
         params:
-            s3_prefix=f"{config['s3_src']}/gisaid-downloads/unprocessed/"
+            s3_unprocessed=f"{config['s3_src']}/gisaid-tars/unprocessed/"
         log: "logs/process_all_unprocessed_tars.txt"
         shell:
             r"""
             ./bin/process-unprocessed-tars \
-                {params.s3_prefix:q} \
+                {params.s3_unprocessed:q} \
                 {output.ndjson:q} \
                 {output.manifest:q} \
                 2> {log:q}
@@ -59,12 +59,12 @@ if config.get("s3_src"):
 
 rule concatenate_gisaid_ndjsons:
     """
-    Concatenate the cached GISAID NDJSON with newly processed unprocessed tars,
+    Concatenate the cached GISAID NDJSON with newly processed tar files,
     then deduplicate to keep the newest record for each GISAID ID.
     """
     input:
         gisaid_cache="data/gisaid/gisaid_cache.ndjson" if config.get('s3_src') else [],
-        unprocessed="data/gisaid/unprocessed-combined.ndjson" if config.get('s3_src') else [],
+        tar_records="data/gisaid/tar-combined.ndjson" if config.get('s3_src') else [],
     output:
         ndjson=temp("data/gisaid.ndjson"),
     params:
@@ -72,10 +72,9 @@ rule concatenate_gisaid_ndjsons:
     log: "logs/concatenate_gisaid_ndjsons.txt"
     shell:
         r"""
-        (cat {input.gisaid_cache:q} {input.unprocessed:q} \
-            | ./bin/dedup-by-gisaid-id \
-                --id-field {params.gisaid_id_field:q} \
-            > {output.ndjson:q}) 2> {log:q}
+        cat {input.tar_records:q} {input.gisaid_cache:q} \
+            | ./bin/dedup-by-gisaid-id --id-field {params.gisaid_id_field:q} \
+            > {output.ndjson:q} 2> {log:q}
         """
 
 rule fetch_ncbi_dataset_package:
