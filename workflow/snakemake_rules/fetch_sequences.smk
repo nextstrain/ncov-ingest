@@ -54,7 +54,7 @@ if config.get("s3_src"):
                 {params.s3_unprocessed:q} \
                 {output.ndjson:q} \
                 {output.manifest:q} \
-                2> {log:q}
+                2>&1 | tee {log:q} >&2
             """
 
 rule concatenate_gisaid_ndjsons:
@@ -72,9 +72,16 @@ rule concatenate_gisaid_ndjsons:
     log: "logs/concatenate_gisaid_ndjsons.txt"
     shell:
         r"""
+        tar_count=$(if [[ -s {input.tar_records:q} ]]; then wc -l < {input.tar_records:q}; else echo 0; fi)
+        cache_count=$(if [[ -s {input.gisaid_cache:q} ]]; then wc -l < {input.gisaid_cache:q}; else echo 0; fi)
+        echo "Concatenating: tar_records=$tar_count lines, gisaid_cache=$cache_count lines" >&2
+
         cat {input.tar_records:q} {input.gisaid_cache:q} \
             | ./bin/dedup-by-gisaid-id --id-field {params.gisaid_id_field:q} \
             > {output.ndjson:q} 2> {log:q}
+
+        output_count=$(wc -l < {output.ndjson:q})
+        echo "Deduplication complete: output=$output_count lines (removed $((tar_count + cache_count - output_count)) duplicates)" >&2
         """
 
 rule fetch_ncbi_dataset_package:
