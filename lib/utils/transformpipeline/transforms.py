@@ -685,12 +685,19 @@ class ParseGeographicColumnsGenbank(Transformer):
 
 
         # Special parsing for US locations because the format varies
-        if country == 'USA' and division:
+        if country == 'USA':
+            # Parse state from strain name (eg. 'USA/MA-…')
+            # See <https://github.com/nextstrain/ncov-ingest/issues/518>
+            if division == '':
+                if match := re.match(r'^USA/(?P<state_code>[A-Z]{2})-', entry['strain']):
+                    division = match.group('state_code')
+
             # Switch location & division if location is a US state
-            if location and any(location.strip() in s for s in self.us_states.items()):
+            elif location and any(location.strip() in s for s in self.us_states.items()):
                 state = location
                 location = division
                 division = state
+
             # Convert US state codes to full names
             if self.us_states.get(division.strip().upper()):
                 division = self.us_states[division.strip().upper()]
