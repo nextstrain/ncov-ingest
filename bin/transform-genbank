@@ -28,7 +28,7 @@ from utils.transformpipeline.transforms import (
     MaskBadCollectionDate,
     MergeBiosampleMetadata,
     MergeUserAnnotatedMetadata,
-    ParseGeographicColumnsGenbank,
+    ExtractGeographicMetadataGenbank,
     ParsePatientAge,
     ParseSex,
     RenameAndAddColumns,
@@ -204,7 +204,7 @@ if __name__ == '__main__':
                               | ParseSex()
                               | MaskBadCollectionDate()
                               | StandardizeGenbankStrainNames()
-                              | ParseGeographicColumnsGenbank( base / 'source-data/us-state-codes.tsv' )
+                              | ExtractGeographicMetadataGenbank( base / 'source-data/us-state-codes.tsv' )
                               | AbbreviateAuthors()
                               | ApplyUserGeoLocationSubstitutionRules(geoRules)
                               | MergeUserAnnotatedMetadata(accessions, idKey = 'genbank_accession_rev' )

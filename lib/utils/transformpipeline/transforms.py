@@ -640,11 +640,10 @@ class SetStrainNameRki(Transformer):
         entry['strain'] = entry['rki_accession']
         return entry
 
-class ParseGeographicColumnsGenbank(Transformer):
+class ExtractGeographicMetadataGenbank(Transformer):
     """
-    Expands string found in the column named `location` in the given
-    *genbank_data* DataFrame, creating 3 new columns. Returns the modified
-    DataFrame.
+    Sets values for `country`, `division`, and `location` based on various
+    fields.
 
     Expected formats of the location string are:
         * "country"
@@ -654,6 +653,14 @@ class ParseGeographicColumnsGenbank(Transformer):
 
     Note: region might be any value after the colon and will be stripped from
     the location if it matches the `region` field in the entry.
+
+    Additional enrichment for USA entries:
+        * If division is missing, attempts to parse a US state code from
+          `strain` (eg. 'USA/MA-…').
+        * If location is a US state code, swaps division and location.
+        * Expands US state codes to full names.
+
+    Also removes prefixes 'Europe/' and 'Germany/' from division.
     """
     def __init__(self, us_state_code_file_name ):
         # Create dict of US state codes and their full names
