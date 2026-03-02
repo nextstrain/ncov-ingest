@@ -104,3 +104,16 @@ AWS S3 bucket `nextstrain-ncov-private`
 
 - `AWS_ACCESS_KEY_ID`
 - `AWS_SECRET_ACCESS_KEY`
+
+## Trigger GitHub Action
+
+The above workflow will populate s3://nextstrain-ncov-private/gisaid-downloads/unprocessed/. With this 
+populated, you can then trigger GitHub Action to run the full ingest pipeline remotely. Go to
+
+https://github.com/nextstrain/ncov-ingest/actions/workflows/fetch-and-ingest-gisaid-master.yml
+
+and click "Run workflow". Make sure that the checkbox for "Whether the workflow should fetch from upstream 
+database. If not selected (false), the workflow will start from existing data on S3." is selected. This is
+counterintuitive, but unselecting this checkbox will cause the workflow to hang.
+
+This should then proceed as normal and update s3://nextstrain-ncov-private/.
