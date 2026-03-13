@@ -697,7 +697,9 @@ class ExtractGeographicMetadataGenbank(Transformer):
             # See <https://github.com/nextstrain/ncov-ingest/issues/518>
             if division == '':
                 if match := re.match(r'^USA/(?P<state_code>[A-Z]{2})-', entry['strain']):
-                    division = match.group('state_code')
+                    state_code = match.group('state_code')
+                    print(f"Inferred division={state_code!r} from strain={entry['strain']!r}.")
+                    division = state_code
 
             # Switch location & division if location is a US state
             elif location and any(location.strip() in s for s in self.us_states.items()):
