@@ -701,9 +701,7 @@ class ExtractGeographicMetadataGenbank(Transformer):
 
             # Switch location & division if location is a US state
             elif location and any(location.strip() in s for s in self.us_states.items()):
-                state = location
-                location = division
-                division = state
+                location, division = division, location
 
             # Convert US state codes to full names
             if self.us_states.get(division.strip().upper()):
