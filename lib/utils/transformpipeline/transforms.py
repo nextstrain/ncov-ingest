@@ -655,9 +655,9 @@ class ExtractGeographicMetadataGenbank(Transformer):
     the location if it matches the `region` field in the entry.
 
     Additional enrichment for USA entries:
+        * If location is a US state code, swaps division and location.
         * If division is missing, attempts to parse a US state code from
           `strain` (eg. 'USA/MA-…').
-        * If location is a US state code, swaps division and location.
         * Expands US state codes to full names.
 
     Also removes prefixes 'Europe/' and 'Germany/' from division.
@@ -693,6 +693,10 @@ class ExtractGeographicMetadataGenbank(Transformer):
 
         # Special parsing for US locations because the format varies
         if country == 'USA':
+            # Switch location & division if location is a US state
+            if location and any(location.strip() in s for s in self.us_states.items()):
+                location, division = division, location
+
             # Parse state from strain name (eg. 'USA/MA-…')
             # See <https://github.com/nextstrain/ncov-ingest/issues/518>
             if division == '':
@@ -701,9 +705,6 @@ class ExtractGeographicMetadataGenbank(Transformer):
                         print(f"Inferred division={state_code!r} from strain={entry['strain']!r}.")
                         division = state_code
 
-            # Switch location & division if location is a US state
-            elif location and any(location.strip() in s for s in self.us_states.items()):
-                location, division = division, location
 
             # Convert US state codes to full names
             if self.us_states.get(division.strip().upper()):
