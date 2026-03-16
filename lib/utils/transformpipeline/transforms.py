@@ -640,11 +640,10 @@ class SetStrainNameRki(Transformer):
         entry['strain'] = entry['rki_accession']
         return entry
 
-class ParseGeographicColumnsGenbank(Transformer):
+class ExtractGeographicMetadataGenbank(Transformer):
     """
-    Expands string found in the column named `location` in the given
-    *genbank_data* DataFrame, creating 3 new columns. Returns the modified
-    DataFrame.
+    Sets values for `country`, `division`, and `location` based on various
+    fields.
 
     Expected formats of the location string are:
         * "country"
@@ -654,6 +653,14 @@ class ParseGeographicColumnsGenbank(Transformer):
 
     Note: region might be any value after the colon and will be stripped from
     the location if it matches the `region` field in the entry.
+
+    Additional enrichment for USA entries:
+        * If location is a US state code, swaps division and location.
+        * If division is missing, attempts to parse a US state code from
+          `strain` (eg. 'USA/MA-…').
+        * Expands US state codes to full names.
+
+    Also removes prefixes 'Europe/' and 'Germany/' from division.
     """
     def __init__(self, us_state_code_file_name ):
         # Create dict of US state codes and their full names
@@ -686,17 +693,18 @@ class ParseGeographicColumnsGenbank(Transformer):
 
         # Special parsing for US locations because the format varies
         if country == 'USA':
+            # Switch location & division if location is a US state
+            if location and any(location.strip() in s for s in self.us_states.items()):
+                location, division = division, location
+
             # Parse state from strain name (eg. 'USA/MA-…')
             # See <https://github.com/nextstrain/ncov-ingest/issues/518>
             if division == '':
                 if match := re.match(r'^USA/(?P<state_code>[A-Z]{2})-', entry['strain']):
-                    division = match.group('state_code')
+                    if (state_code := match.group('state_code')) in self.us_states:
+                        print(f"Inferred division={state_code!r} from strain={entry['strain']!r}.")
+                        division = state_code
 
-            # Switch location & division if location is a US state
-            elif location and any(location.strip() in s for s in self.us_states.items()):
-                state = location
-                location = division
-                division = state
 
             # Convert US state codes to full names
             if self.us_states.get(division.strip().upper()):
