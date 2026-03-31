@@ -345,8 +345,10 @@ rule combine_alignments:
         new_alignment=f"data/{database}/nextclade.{{seqtype}}.upd.fasta",
     output:
         alignment=f"data/{database}/{{seqtype}}.fasta",
-    benchmark:
-        f"benchmarks/combine_alignments_{database}{{seqtype}}.txt"
+    # Not using benchmark for this rule because the inputs potentially get
+    # renamed to output which could lead to error described in
+    # <https://github.com/nextstrain/ncov-ingest/issues/524>
+    #     -Jover, 30 March 2026
     params:
         keep_temp=config.get("keep_temp", "false"),
     shell:
