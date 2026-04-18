@@ -124,49 +124,36 @@ rule remove_rerun_touchfile:
         """
 
 
-def all_processed_gisaid_pairs(wildcards):
+rule mv_all_processed_tars:
     """
-    Check which unprocessed files were fetched so that we only move the
-    `gisaid_pairs` that were processed in this run of the workflow.
-
-    Only returns the unprocessed files if `s3_src` is the same as `s3_dst` so
-    that trials runs don't accidentally mark files as processed.
-    """
-    if (hasattr(checkpoints, "fetch_unprocessed_files") and
-        config["s3_src"] == config["s3_dst"]):
-        checkpoint_output = checkpoints.fetch_unprocessed_files.get(**wildcards).output[0]
-        return expand(
-            "data/mv-processed/{gisaid_pair}.done",
-            gisaid_pair=glob_wildcards(os.path.join(checkpoint_output, "{gisaid_pair}-metadata.tsv.zst")).gisaid_pair
-        )
-    else:
-        return []
-
-rule mv_processed_gisaid_pair:
-    """
-    Move the processed gisaid_pair from /unprocessed to /processed on AWS S3
-    so that they are not reprocessed in the next run of the automated ingest.
-
-    The records in the processed gisaid_pair should be included in the cached
-    gisaid.ndjson, so only move it after the gisaid.ndjson was successfully
-    uploaded to S3.
+    Compress and move all processed tars from /unprocessed to /processed on S3.
+    Compresses with zstd before moving to save storage costs.
+    Only runs after successful upload, reads manifest to know which files to move.
+    Skips if this is a trial run (s3_src != s3_dst).
     """
     input:
         ndjson_flag="data/gisaid/gisaid.ndjson.zst.upload",
+        manifest="data/gisaid/tar-processed-manifest.txt",
     output:
-        flag=touch("data/mv-processed/{gisaid_pair}.done")
+        flag=touch("data/mv-processed/all-tars.done")
     params:
-        s3_dst=f"{config['s3_dst']}/gisaid-downloads/processed/",
-        s3_src=f"{config['s3_src']}/gisaid-downloads/unprocessed/",
+        s3_dst=f"{config['s3_dst']}/gisaid-tars/processed/",
+        s3_src=f"{config['s3_src']}/gisaid-tars/unprocessed/",
     shell:
         r"""
-        aws s3 mv \
-            {params.s3_src:q} \
-            {params.s3_dst:q} \
-            --recursive \
-            --exclude "*" \
-            --include "{wildcards.gisaid_pair}-metadata.tsv.zst" \
-            --include "{wildcards.gisaid_pair}-sequences.fasta.zst"
+        if [[ ! -s {input.manifest:q} ]]; then
+            echo "No tars to move (empty manifest)"
+            exit 0
+        fi
+
+        while IFS= read -r tar_name; do
+            echo "Compressing and moving $tar_name to processed/"
+            aws s3 cp -- "{params.s3_src}$tar_name" - \
+                | zstd \
+                | aws s3 cp - "{params.s3_dst}$tar_name.zst" \
+                && aws s3 rm -- "{params.s3_src}$tar_name" \
+                && echo "  Moved $tar_name -> $tar_name.zst"
+        done < {input.manifest:q}
         """
 
 
@@ -183,7 +170,7 @@ rule upload:
                 "nextclade_21L.tsv.zst",
             ]
         ],
-        mv_processed=all_processed_gisaid_pairs,
+        mv_processed=["data/mv-processed/all-tars.done"] if (config.get("s3_src") and config.get("s3_dst") and config["s3_src"] == config["s3_dst"]) else [],
     output:
         touch(f"data/{database}/upload.done")
     benchmark:
