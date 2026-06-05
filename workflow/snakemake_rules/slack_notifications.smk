@@ -27,7 +27,7 @@ rule notify_on_record_change:
     input:
         ndjson = f"data/{database}.ndjson"
     params:
-        ndjson_on_s3 = f"{config['s3_src']}/{database}.ndjson.xz"
+        ndjson_on_s3 = f"{config['s3_src']}/{database}.ndjson.zst"
     output:
         touch(f"data/{database}/notify-on-record-change.done")
     benchmark:
@@ -52,8 +52,8 @@ rule notify_gisaid:
         "benchmarks/notify_gisaid.txt"
     run:
         shell("./vendored/notify-slack --upload flagged-annotations < {input.flagged_annotations}")
-        shell("./bin/notify-on-additional-info-change {input.additional_info} {params.s3_bucket}/additional_info.tsv.gz")
-        shell("./bin/notify-on-flagged-metadata-change {input.flagged_metadata}  {params.s3_bucket}/flagged_metadata.txt.gz")
+        shell("./bin/notify-on-additional-info-change {input.additional_info} {params.s3_bucket}/additional_info.tsv.zst")
+        shell("./bin/notify-on-flagged-metadata-change {input.flagged_metadata}  {params.s3_bucket}/flagged_metadata.txt.zst")
 
 rule notify_genbank:
     input:
@@ -70,4 +70,4 @@ rule notify_genbank:
         shell("./vendored/notify-slack --upload flagged-annotations < {input.flagged_annotations}")
         # TODO - which rule produces data/genbank/problem_data.tsv? (was not explicit in `ingest-genbank` bash script)
         shell("./bin/notify-on-problem-data data/genbank/problem_data.tsv")
-        shell("./bin/notify-on-duplicate-biosample-change {input.duplicate_biosample} {params.s3_bucket}/duplicate_biosample.txt.gz")
+        shell("./bin/notify-on-duplicate-biosample-change {input.duplicate_biosample} {params.s3_bucket}/duplicate_biosample.txt.zst")

@@ -55,7 +55,7 @@ if __name__ == '__main__':
         formatter_class=argparse.RawTextHelpFormatter
     )
     parser.add_argument("gisaid_data",
-        default="s3://nextstrain-ncov-private/gisaid.ndjson.gz",
+        default="s3://nextstrain-ncov-private/gisaid.ndjson.zst",
         help="Newline-delimited GISAID JSON data")
     parser.add_argument("--annotations",
         default=str( base / "source-data/gisaid_annotations.tsv" ),
