@@ -52,6 +52,8 @@ jobs:
 
           if [[ "$TRIAL_NAME" ]]; then
             config+=" s3_dst=s3://nextstrain-ncov-private/trial/${TRIAL_NAME}"
+          else
+            config+=" s3_archive_dst=s3://nextstrain-archive/ncov"
           fi
 
           echo "config=$config" >> "$GITHUB_OUTPUT"

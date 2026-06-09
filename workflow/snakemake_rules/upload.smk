@@ -79,6 +79,19 @@ def compute_files_to_upload():
 
 files_to_upload = compute_files_to_upload()
 
+def archive_targets(wildcards):
+    if (
+        config.get("fetch_from_database", False) and
+        config.get("s3_archive_dst")
+    ):
+        remote_files = [f"{database}.ndjson.zst"]
+        return [
+            f"data/{database}/{remote_file}.archive.upload"
+            for remote_file in remote_files
+        ]
+    else:
+        return []
+
 rule upload_single:
     input:
         file_to_upload = lambda w: files_to_upload[w.remote_filename],
@@ -103,6 +116,28 @@ rule upload_single:
             {input.file_to_upload:q} \
             {params.s3_bucket:q}/{wildcards.remote_filename:q} \
             {params.cloudfront_domain} 2>&1 | tee {output}
+        """
+
+rule archive:
+    input:
+        file_to_upload=lambda w: files_to_upload[w.remote_filename],
+        upload_single_touchfile="data/{database}/{remote_filename}.upload",
+    output:
+        "data/{database}/{remote_filename}.archive.upload",
+    benchmark:
+        "benchmarks/archive_{database}_{remote_filename}.txt"
+    params:
+        s3_bucket=config.get("s3_archive_dst", ""),
+    shell:
+        """
+        if grep -Fq "files are identical, skipping upload" {input.upload_single_touchfile:q}; then
+            echo "files are identical, skipping archive" | tee {output}
+        else
+            ./vendored/upload-to-s3 \
+                --quiet \
+                {input.file_to_upload:q} \
+                {params.s3_bucket:q}/{wildcards.remote_filename:q} 2>&1 | tee {output}
+        fi
         """
 
 rule remove_rerun_touchfile:
@@ -177,6 +212,7 @@ rule upload:
     """
     input:
         uploads = [f"data/{database}/{remote_file}.upload" for remote_file in files_to_upload.keys()],
+        archive = archive_targets,
         touchfile_removes=[
             f"data/{database}/{remote_file}.renew.deleted" for remote_file in [
                 "nextclade.tsv.zst",
