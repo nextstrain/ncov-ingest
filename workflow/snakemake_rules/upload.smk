@@ -20,14 +20,8 @@ def compute_files_to_upload():
     """
 
     files_to_upload = {
-                        "metadata.tsv.gz":              f"data/{database}/metadata.tsv",
-                        "sequences.fasta.xz":           f"data/{database}/sequences.fasta",
-
                         "metadata.tsv.zst":             f"data/{database}/metadata.tsv",
                         "sequences.fasta.zst":          f"data/{database}/sequences.fasta",
-
-                        "nextclade.tsv.gz":           f"data/{database}/nextclade.tsv",
-                        "aligned.fasta.xz":           f"data/{database}/aligned.fasta",
 
                         "nextclade.tsv.zst":           f"data/{database}/nextclade.tsv",
                         "aligned.fasta.zst":           f"data/{database}/aligned.fasta",
@@ -43,36 +37,25 @@ def compute_files_to_upload():
     }
 
     if database=="genbank":
-        files_to_upload["biosample.tsv.gz"] =           f"data/{database}/biosample.tsv"
-        files_to_upload["duplicate_biosample.txt.gz"] = f"data/{database}/duplicate_biosample.txt"
-
         files_to_upload["biosample.tsv.zst"] =           f"data/{database}/biosample.tsv"
         files_to_upload["duplicate_biosample.txt.zst"] = f"data/{database}/duplicate_biosample.txt"
 
     elif database=="gisaid":
-        files_to_upload["additional_info.tsv.gz"] =     f"data/{database}/additional_info.tsv"
-        files_to_upload["flagged_metadata.txt.gz"] =    f"data/{database}/flagged_metadata.txt"
-
         files_to_upload["additional_info.tsv.zst"] =     f"data/{database}/additional_info.tsv"
         files_to_upload["flagged_metadata.txt.zst"] =    f"data/{database}/flagged_metadata.txt"
 
     # Include upload of raw NDJSON if we are fetching new sequences from database
     if config.get("fetch_from_database", False):
         files_to_upload.update({
-            f"{database}.ndjson.xz": f"data/{database}.ndjson",
             f"{database}.ndjson.zst": f"data/{database}.ndjson",
         })
         if database=="genbank":
             files_to_upload.update({
-                "biosample.ndjson.gz": f"data/biosample.ndjson",
                 "biosample.ndjson.zst": f"data/biosample.ndjson",
 
                 "rki.ndjson.zst": f"data/rki.ndjson",
 
-                "cog_uk_accessions.tsv.gz": f"data/cog_uk_accessions.tsv",
                 "cog_uk_accessions.tsv.zst": f"data/cog_uk_accessions.tsv",
-
-                "cog_uk_metadata.csv.gz": f"data/cog_uk_metadata.csv",
                 "cog_uk_metadata.csv.zst": f"data/cog_uk_metadata.csv",
             })
     return files_to_upload
