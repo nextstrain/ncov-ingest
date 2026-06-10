@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+main() {
+    local src="${1:?A source file is required as the first argument.}"
+    local s3_prefix="${2:?A destination s3:// prefix is required as the second argument.}"
+    local remote_filename="${3:?A remote filename is required as the third argument.}"
+    local filename archive_filename dst
+
+    s3_prefix="${s3_prefix%/}"
+    filename="$(basename "$remote_filename")"
+    archive_filename="$(make_archive_filename "$filename")"
+
+    dst="$s3_prefix/$archive_filename"
+    if archived_this_month "$s3_prefix" "$filename"; then
+        echo "Found existing archive for $filename this month, skipping upload"
+        return
+    fi
+
+    # TODO: Upload with an if-none-match header to prevent accidental overriding
+    # in the non-versioned bucket. This would require using lower-level aws
+    # s3api calls and handling of multipart uploads. It is blocked by Nextstrain
+    # Docker image being stuck on AWS CLI v1, but the chance of collision is
+    # slim with the timestamped filenames.
+    # <https://github.com/nextstrain/docker-base/issues/216>
+    "$(dirname "$0")/../vendored/upload-to-s3" --quiet "$src" "$dst"
+}
+
+make_archive_filename() {
+    # Return the timestamped filename.
+
+    local filename="$1"
+    local timestamp basename extension
+
+    timestamp="$(date -u +"%Y-%m-%dT%H:%M:%S")"
+
+    if [[ "$filename" == *.* ]]; then
+        basename="${filename%%.*}"
+        extension="${filename#*.}"
+        echo "${basename}_${timestamp}.${extension}"
+    else
+        echo "${filename}_${timestamp}"
+    fi
+}
+
+archived_this_month() {
+    # Return true if the S3 prefix already has an archive for the given file in
+    # the current month.
+
+    local s3_prefix="$1"
+    local filename="$2"
+    local timestamp month basename s3path bucket prefix_path prefix existing_key
+
+    timestamp="$(date -u +"%Y-%m-%dT%H:%M:%S")"
+    month="${timestamp:0:7}"
+    basename="${filename%%.*}"
+
+    s3path="${s3_prefix#s3://}"
+    if [[ "$s3path" == */* ]]; then
+        bucket="${s3path%%/*}"
+        prefix_path="${s3path#*/}"
+        prefix="$prefix_path/${basename}_${month}"
+    else
+        bucket="$s3path"
+        prefix="${basename}_${month}"
+    fi
+    if ! existing_key="$(
+        # NOTE: The ListObjectsV2 action does *not* move objects back to the
+        # Frequent Access tier.
+        # <https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering-overview.html>
+        aws s3api list-objects-v2 \
+            --bucket "$bucket" \
+            --prefix "$prefix" \
+            --max-items 1 \
+            --query 'Contents[0].Key' \
+            --output text
+    )"; then
+        exit 2
+    fi
+
+    [[ "$existing_key" != "None" ]]
+}
+
+main "$@"

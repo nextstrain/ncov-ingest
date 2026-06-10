@@ -133,10 +133,10 @@ rule archive:
         if grep -Fq "files are identical, skipping upload" {input.upload_single_touchfile:q}; then
             echo "files are identical, skipping archive" | tee {output}
         else
-            ./vendored/upload-to-s3 \
-                --quiet \
+            ./bin/archive-to-s3 \
                 {input.file_to_upload:q} \
-                {params.s3_bucket:q}/{wildcards.remote_filename:q} 2>&1 | tee {output}
+                {params.s3_bucket:q} \
+                {wildcards.remote_filename:q} 2>&1 | tee {output}
         fi
         """
 
