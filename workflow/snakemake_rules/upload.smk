@@ -107,7 +107,16 @@ rule remove_rerun_touchfile:
         """
 
 
-rule mv_all_processed_tars:
+def should_move_processed_gisaid_tars():
+    return (
+        database == "gisaid"
+        and config.get("s3_src")
+        and config.get("s3_dst")
+        and config["s3_src"] == config["s3_dst"]
+    )
+
+
+rule mv_all_processed_gisaid_tars:
     """
     Compress and move all processed tars from /unprocessed to /processed on S3.
     Compresses with zstd before moving to save storage costs.
@@ -118,7 +127,7 @@ rule mv_all_processed_tars:
         ndjson_flag="data/gisaid/gisaid.ndjson.zst.upload",
         manifest="data/gisaid/tar-processed-manifest.txt",
     output:
-        flag=touch("data/mv-processed/all-tars.done")
+        flag=touch("data/mv-processed/all-gisaid-tars.done")
     params:
         s3_dst=f"{config['s3_dst']}/gisaid-tars/processed/",
         s3_src=f"{config['s3_src']}/gisaid-tars/unprocessed/",
@@ -153,7 +162,7 @@ rule upload:
                 "nextclade_21L.tsv.zst",
             ]
         ],
-        mv_processed=["data/mv-processed/all-tars.done"] if (config.get("s3_src") and config.get("s3_dst") and config["s3_src"] == config["s3_dst"]) else [],
+        mv_processed=["data/mv-processed/all-gisaid-tars.done"] if should_move_processed_gisaid_tars() else [],
     output:
         touch(f"data/{database}/upload.done")
     benchmark:
