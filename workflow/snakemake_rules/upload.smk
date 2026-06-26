@@ -145,6 +145,7 @@ rule remove_rerun_touchfile:
 def should_move_processed_gisaid_tars():
     return (
         database == "gisaid"
+        and config.get("fetch_from_database", False)
         and config.get("s3_src")
         and config.get("s3_dst")
         and config["s3_src"] == config["s3_dst"]
