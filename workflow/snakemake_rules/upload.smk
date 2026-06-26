@@ -69,7 +69,7 @@ def archive_targets(wildcards):
     ):
         remote_files = [f"{database}.ndjson.zst"]
         return [
-            f"data/{database}/{remote_file}.archive.upload"
+            f"data/{database}/{remote_file}.archive"
             for remote_file in remote_files
         ]
     else:
@@ -106,7 +106,7 @@ rule archive:
         file_to_upload=lambda w: files_to_upload[w.remote_filename],
         upload_single_touchfile="data/{database}/{remote_filename}.upload",
     output:
-        "data/{database}/{remote_filename}.archive.upload",
+        "data/{database}/{remote_filename}.archive",
     benchmark:
         "benchmarks/archive_{database}_{remote_filename}.txt"
     params:
@@ -145,6 +145,7 @@ rule remove_rerun_touchfile:
 def should_move_processed_gisaid_tars():
     return (
         database == "gisaid"
+        and config.get("fetch_from_database", False)
         and config.get("s3_src")
         and config.get("s3_dst")
         and config["s3_src"] == config["s3_dst"]
