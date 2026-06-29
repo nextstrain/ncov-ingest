@@ -218,7 +218,7 @@ rule run_wuhan_nextclade:
             f"--output-translations=data/{database}/nextclade.translation_{{cds}}.upd.fasta"
         ),
     output:
-        info=f"data/{database}/nextclade_new_raw.tsv",
+        info=f"data/{database}/nextclade_new.tsv",
         alignment=temp(f"data/{database}/nextclade.aligned.upd.fasta"),
         translations=[
             temp(f"data/{database}/nextclade.translation_{gene}.upd.fasta")
@@ -249,7 +249,7 @@ rule run_21L_nextclade:
         dataset=lambda w: f"data/nextclade_data/sars-cov-2-21L.zip",
         sequences=f"data/{database}/nextclade_21L.sequences.fasta",
     output:
-        info=f"data/{database}/nextclade_21L_new_raw.tsv",
+        info=f"data/{database}/nextclade_21L_new.tsv",
     threads:
         workflow.cores * 0.5
     benchmark:
@@ -264,47 +264,13 @@ rule run_21L_nextclade:
         """
 
 
-rule nextclade_tsv_concat_versions:
-    input:
-        nextclade="data/nextclade",
-        tsv=f"data/{database}/nextclade{{reference}}_new_raw.tsv",
-        dataset=lambda w: f"data/nextclade_data/sars-cov-2{w.reference.replace('_','-')}.zip",
-    output:
-        tsv=f"data/{database}/nextclade{{reference}}_new.tsv",
-    benchmark:
-        f"benchmarks/nextclade_tsv_concat_versions_{database}{{reference}}.txt"
-    shell:
-        """
-        if [ -s {input.tsv} ]; then
-            # Get version numbers
-            nextclade_version="$({input.nextclade:q} --version)"
-            dataset_version="$(unzip -p {input.dataset} pathogen.json | jq -r '.version.tag')"
-            timestamp="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
-
-            # Combine input file with version numbers and write to output
-            printf "%s\tnextclade_version\tdataset_version\trun_timestamp\n" \
-                "$(head -n 1 {input.tsv})" \
-                > {output.tsv}
-
-            tail -n +2 {input.tsv} | \
-            awk -v v1="$nextclade_version" \
-                -v v2="$dataset_version" \
-                -v v3="$timestamp" \
-                -v OFS='\t' '{{print $0, v1, v2, v3}}' \
-                >> {output.tsv}
-        else
-            cp {input.tsv} {output.tsv}
-        fi
-        """
-
-
 rule nextclade_info:
     """
     Generates nextclade info TSV for all sequences (new + old)
     """
     input:
         old_info=f"data/{database}/nextclade{{reference}}_old.tsv",
-        new_info=rules.nextclade_tsv_concat_versions.output.tsv,
+        new_info=f"data/{database}/nextclade{{reference}}_new.tsv",
     output:
         nextclade_info=f"data/{database}/nextclade{{reference}}.tsv",
     benchmark:

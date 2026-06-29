@@ -1,20 +1,21 @@
 #!/bin/bash
+set -euo pipefail
 
-# this script intentionally doesn't `set -euo pipefail`
-# because otherwise the `head -n 2` step triggers SIGPIPE
-# causing the script to exit before it is done.
+nextclade_version="${1:?An S3 URL for the Nextclade version JSON is required as the first argument}"
+nextclade_tsv="${2:?An S3 URL for the Nextclade TSV is requried as the second argument}"
 
-s3_url="${1:?An S3 URL is required as the first argument}"
+no_hash=0000000000000000000000000000000000000000000000000000000000000000
+s3path="${nextclade_tsv#s3://}"
+bucket="${s3path%%/*}"
+key="${s3path#*/}"
 
+nextclade_tsv_sha256sum="$(aws s3api head-object --bucket "$bucket" --key "$key" --query Metadata.sha256sum --output text 2>/dev/null || echo "$no_hash")"
+nextclade_version_json="$(aws s3 cp "$nextclade_version" -)"
+version_json_sha256sum="$(echo nextclade_version_json | jq '.nextclade_tsv_sha256sum')"
 
-trap '' SIGPIPE
-
-(aws s3 cp "$s3_url" - \
-    | zstd -T0 -dcq \
-    | head -n 2 \
-    | tsv-select -H -f 'nextclade_version,dataset_version' \
-    | tail -n 1 \
-    | jq --raw-input -c '
-        split("\t")
-        | { "nextclade_version": .[0], "nextclade_dataset_version": .[1] }') \
-     2> /dev/null
+if [[ "$nextclade_tsv_sha256sum" != "$version_json_sha256sum" ]]; then
+    echo "[INFO] Ignoring version JSON because the Nextclade TSV sha256sum values do not match" >&2
+    echo "{}"
+else
+    echo "$nextclade_version_json"
+fi
