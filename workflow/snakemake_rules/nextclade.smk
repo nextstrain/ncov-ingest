@@ -2,10 +2,7 @@
 This part of the workflow handles all rules related to NextClade.
 Depends on the main Snakefile to define the variable `database`, which is NOT a wildcard.
 
-We run Nextclade twice, once on the normal sars-cov-2 dataset and once on the 21L sars-cov-2-21L dataset.
-To keep the Snakefile dry, we use a wildcard `{reference}` that is either empty or `_21L`.
-Since alignments are identical, we don't merge and upload the 21L alignments to S3.
-21L outputs are used for `immune_escape` and `ace2_binding` columns.
+We run Nextclade on the sars-cov-2 dataset to align sequences and assign clades.
 
 Expects the following inputs:
     fasta = "data/{database}/sequences.fasta"
@@ -29,16 +26,15 @@ Produces the following outputs:
 
 
 wildcard_constraints:
-    reference="|_21L",
     seqtype="aligned|translation_[^.]+",
 
 
 rule create_empty_nextclade_info:
     """Creating empty NextClade info cache file"""
     output:
-        touch(f"data/{database}/nextclade{{reference}}_old.tsv"),
+        touch(f"data/{database}/nextclade_old.tsv"),
     benchmark:
-        f"benchmarks/create_empty_nextclade_info_{database}{{reference}}.txt"
+        f"benchmarks/create_empty_nextclade_info_{database}.txt"
 
 
 rule create_empty_nextclade_aligned:
@@ -66,12 +62,12 @@ if config.get("s3_dst") and config.get("s3_src"):
     rule use_nextclade_cache:
         input:
             nextclade="data/nextclade",
-            nextclade_dataset=lambda w: f"data/nextclade_data/sars-cov-2{w.reference.replace('_','-')}.zip",
+            nextclade_dataset="data/nextclade_data/sars-cov-2.zip",
         params:
             dst_source=config["s3_dst"],
             src_source=config["s3_src"],
         output:
-            use_nextclade_cache=f"data/{database}/use_nextclade_cache{{reference}}.txt",
+            use_nextclade_cache=f"data/{database}/use_nextclade_cache.txt",
         shell:
             """
             ./bin/use-nextclade-cache \
@@ -79,7 +75,6 @@ if config.get("s3_dst") and config.get("s3_src"):
                 {params.src_source:q} \
                 {input.nextclade:q} \
                 {input.nextclade_dataset:q} \
-                {wildcards.reference:q} \
                 > {output.use_nextclade_cache}
             """
 
@@ -89,25 +84,25 @@ if config.get("s3_dst") and config.get("s3_src"):
         If there's a .renew touchfile, do not use the cache
         """
         input:
-            use_nextclade_cache=f"data/{database}/use_nextclade_cache{{reference}}.txt",
+            use_nextclade_cache=f"data/{database}/use_nextclade_cache.txt",
         params:
-            dst_source=config["s3_dst"] + "/nextclade{reference}.tsv.zst",
-            src_source=config["s3_src"] + "/nextclade{reference}.tsv.zst",
+            dst_source=config["s3_dst"] + "/nextclade.tsv.zst",
+            src_source=config["s3_src"] + "/nextclade.tsv.zst",
             lines=config.get("subsample", {}).get("nextclade", 0),
         output:
-            nextclade=f"data/{database}/nextclade{{reference}}_old.tsv",
+            nextclade=f"data/{database}/nextclade_old.tsv",
         benchmark:
-            f"benchmarks/download_nextclade_tsv_from_s3_{database}{{reference}}.txt"
+            f"benchmarks/download_nextclade_tsv_from_s3_{database}.txt"
         shell:
             """
             use_nextclade_cache=$(cat {input.use_nextclade_cache})
 
             if [[ "$use_nextclade_cache" == 'true' ]]; then
-                echo "[INFO] Downloading cached nextclade{wildcards.reference}.tsv.zst"
+                echo "[INFO] Downloading cached nextclade.tsv.zst"
                 ./vendored/download-from-s3 {params.dst_source} {output.nextclade} {params.lines} ||  \
                 ./vendored/download-from-s3 {params.src_source} {output.nextclade} {params.lines}
             else
-                echo "[INFO] Ignoring cached nextclade{wildcards.reference}.tsv.zst"
+                echo "[INFO] Ignoring cached nextclade.tsv.zst"
                 touch {output.nextclade}
             fi
             """
@@ -144,11 +139,11 @@ rule get_sequences_without_nextclade_annotations:
     """Find sequences in FASTA which don't have clades assigned yet"""
     input:
         fasta=f"data/{database}/sequences.fasta",
-        nextclade=f"data/{database}/nextclade{{reference}}_old.tsv",
+        nextclade=f"data/{database}/nextclade_old.tsv",
     output:
-        fasta=f"data/{database}/nextclade{{reference}}.sequences.fasta",
+        fasta=f"data/{database}/nextclade.sequences.fasta",
     benchmark:
-        f"benchmarks/get_sequences_without_nextclade_annotations_{database}{{reference}}.txt"
+        f"benchmarks/get_sequences_without_nextclade_annotations_{database}.txt"
     shell:
         """
         if [[ -s {input.nextclade} ]]; then
@@ -159,7 +154,7 @@ rule get_sequences_without_nextclade_annotations:
         else
             ln {input.fasta} {output.fasta}
         fi
-        echo "[ INFO] Number of {wildcards.reference} sequences to run Nextclade on: $(grep -c '^>' {output.fasta})"
+        echo "[ INFO] Number of sequences to run Nextclade on: $(grep -c '^>' {output.fasta})"
         """
 
 
@@ -240,39 +235,15 @@ rule run_wuhan_nextclade:
         """
 
 
-rule run_21L_nextclade:
-    """
-    Like wuhan nextclade, but TSV only, no alignments output
-    """
-    input:
-        nextclade_path="data/nextclade",
-        dataset=lambda w: f"data/nextclade_data/sars-cov-2-21L.zip",
-        sequences=f"data/{database}/nextclade_21L.sequences.fasta",
-    output:
-        info=f"data/{database}/nextclade_21L_new_raw.tsv",
-    threads:
-        workflow.cores * 0.5
-    benchmark:
-        f"benchmarks/run_21L_nextclade_{database}.txt"
-    shell:
-        """
-        ./{input.nextclade_path} run \
-        -j {threads} \
-        {input.sequences} \
-        --input-dataset={input.dataset} \
-        --output-tsv={output.info} \
-        """
-
-
 rule nextclade_tsv_concat_versions:
     input:
         nextclade="data/nextclade",
-        tsv=f"data/{database}/nextclade{{reference}}_new_raw.tsv",
-        dataset=lambda w: f"data/nextclade_data/sars-cov-2{w.reference.replace('_','-')}.zip",
+        tsv=f"data/{database}/nextclade_new_raw.tsv",
+        dataset="data/nextclade_data/sars-cov-2.zip",
     output:
-        tsv=f"data/{database}/nextclade{{reference}}_new.tsv",
+        tsv=f"data/{database}/nextclade_new.tsv",
     benchmark:
-        f"benchmarks/nextclade_tsv_concat_versions_{database}{{reference}}.txt"
+        f"benchmarks/nextclade_tsv_concat_versions_{database}.txt"
     shell:
         """
         if [ -s {input.tsv} ]; then
@@ -303,12 +274,12 @@ rule nextclade_info:
     Generates nextclade info TSV for all sequences (new + old)
     """
     input:
-        old_info=f"data/{database}/nextclade{{reference}}_old.tsv",
+        old_info=f"data/{database}/nextclade_old.tsv",
         new_info=rules.nextclade_tsv_concat_versions.output.tsv,
     output:
-        nextclade_info=f"data/{database}/nextclade{{reference}}.tsv",
+        nextclade_info=f"data/{database}/nextclade.tsv",
     benchmark:
-        f"benchmarks/nextclade_info_{database}{{reference}}.txt"
+        f"benchmarks/nextclade_info_{database}.txt"
     shell:
         """
         tsv-append -H {input.old_info} {input.new_info} \
@@ -322,10 +293,10 @@ rule nextclade_version_json:
     """
     input:
         nextclade_path="data/nextclade",
-        nextclade_dataset=lambda w: f"data/nextclade_data/sars-cov-2{w.reference.replace('_','-')}.zip",
-        nextclade_tsv=f"data/{database}/nextclade{{reference}}.tsv",
+        nextclade_dataset="data/nextclade_data/sars-cov-2.zip",
+        nextclade_tsv=f"data/{database}/nextclade.tsv",
     output:
-        nextclade_version_json=f"data/{database}/nextclade{{reference}}_version.json",
+        nextclade_version_json=f"data/{database}/nextclade_version.json",
     shell:
         """
         ./bin/generate-nextclade-version-json \
@@ -371,7 +342,6 @@ rule combine_alignments:
 rule generate_metadata:
     input:
         nextclade_tsv=f"data/{database}/nextclade.tsv",
-        nextclade_21L_tsv=f"data/{database}/nextclade_21L.tsv",
         existing_metadata=f"data/{database}/metadata_transformed.tsv",
         clade_legacy_mapping="defaults/clade-legacy-mapping.yml",
     output:
@@ -383,7 +353,6 @@ rule generate_metadata:
         ./bin/join-metadata-and-clades \
             --metadata {input.existing_metadata} \
             --nextclade-tsv {input.nextclade_tsv} \
-            --nextclade-21L-tsv {input.nextclade_21L_tsv} \
             --clade-legacy-mapping {input.clade_legacy_mapping} \
             -o {output.metadata}
         """
@@ -393,9 +362,6 @@ rule metadata_version_json:
     """
     Generates the metadata version JSON by adding the metadata TSV sha256sum
     to the Nextclade version JSON.
-
-    TODO: Merge the 21L Nextclade version JSON to track data provenence for
-    specific columns
     """
     input:
         metadata=f"data/{database}/metadata.tsv",
