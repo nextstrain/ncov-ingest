@@ -84,8 +84,6 @@ env_variables = {
     "SLACK_TOKEN": "Required for sending slack notifications",
     "SLACK_CHANNELS": "Required for sending slack notifications",
     "PAT_GITHUB_DISPATCH": "Required for triggering GitHub actions (e.g. to rebuild nextstrain/ncov)",
-    "GISAID_API_ENDPOINT": "Required for GISAID API access",
-    "GISAID_USERNAME_AND_PASSWORD": "Required for GISAID API access"
 }
 
 onstart:
