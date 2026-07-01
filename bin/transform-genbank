@@ -5,10 +5,7 @@ Parse the GenBank JSON load into a metadata tsv and a FASTA file.
 import os
 import argparse
 import csv
-import json
-import subprocess
 import sys
-import tempfile
 from pathlib import Path
 from collections import defaultdict
 import pandas as pd
@@ -19,6 +16,7 @@ from utils.transform import (
     METADATA_COLUMNS,
 )
 from utils.transformpipeline import LINE_NUMBER_KEY
+from utils.transformpipeline.externalsort import spill_to_sorted_tempfile, read_sorted_records
 from utils.transformpipeline.datasource import LineToJsonDataSource
 from utils.transformpipeline.filters import SequenceLengthFilter, LineNumberFilter, GenbankProblematicFilter
 from utils.transformpipeline.transforms import (
@@ -222,32 +220,13 @@ if __name__ == '__main__':
                                                           dict_writer_kwargs  = {'lineterminator': args.newline} )
         )
 
-        # Stream the pipeline out to a temp file, tagging each record with its
-        # sort keys as leading TSV columns and the whole record as a trailing
-        # JSON blob.  We sort this file externally (below) instead of holding
-        # ~9M record dicts in memory as the previous in-memory sorted() did.
-        sort_tmp = tempfile.NamedTemporaryFile(
-            mode='w', encoding='utf-8', newline='\n', suffix='.presort.tsv',
-            dir=os.path.dirname(os.path.abspath(args.output_metadata)) or '.',
-            delete=False)
-        with sort_tmp:
-            for obj in pipeline:
-                sort_tmp.write(
-                    f"{obj['strain']}\t{obj['length']}\t"
-                    f"{obj['genbank_accession']}\t{obj[LINE_NUMBER_KEY]}\t"
-                    f"{json.dumps(obj, default=str)}\n"
-                )
-
-    # External sort matching the previous key: strain asc, length desc (numeric),
-    # genbank_accession asc, line number asc (numeric).  `sort` spills to disk so
-    # memory stays flat.  LC_ALL=C makes byte order == Python's code-point order
-    # over the UTF-8 strain/accession fields.
-    subprocess.run(
-        ["sort", "-t", "\t", "-k1,1", "-k2,2nr", "-k3,3", "-k4,4n",
-         "-o", sort_tmp.name, sort_tmp.name],
-        check=True,
-        env={**os.environ, "LC_ALL": "C"},
-    )
+        # Sort the whole pipeline on disk (was an in-memory sorted() of ~9M
+        # record dicts, the dominant driver of this rule's peak memory).
+        sort_tmp_path = spill_to_sorted_tempfile(
+            pipeline,
+            id_key='genbank_accession',
+            output_dir=os.path.dirname(os.path.abspath(args.output_metadata)),
+        )
 
     # Stream the sorted records once: dedup by strain (keeping the first, i.e.
     # highest-priority, occurrence), write metadata, and collect the info needed
@@ -261,8 +240,7 @@ if __name__ == '__main__':
 
     sorted_fasta_OUT = open(args.output_fasta, 'wt') if args.sorted_fasta else None
     try:
-        with open(sort_tmp.name, 'r', encoding='utf-8') as sorted_IN, \
-             open(args.output_metadata, 'wt') as metadata_OUT:
+        with open(args.output_metadata, 'wt') as metadata_OUT:
 
             metadata_csv = csv.DictWriter(
                 metadata_OUT,
@@ -274,8 +252,7 @@ if __name__ == '__main__':
             )
             metadata_csv.writeheader()
 
-            for line in sorted_IN:
-                entry = json.loads(line.split('\t', 4)[4])
+            for entry in read_sorted_records(sort_tmp_path):
 
                 if entry['strain'] in seen_strains:
                     continue
@@ -295,7 +272,7 @@ if __name__ == '__main__':
     finally:
         if sorted_fasta_OUT is not None:
             sorted_fasta_OUT.close()
-        os.unlink(sort_tmp.name)
+        os.unlink(sort_tmp_path)
 
 
     with open( args.duplicate_biosample, 'wt' ) as biosample_OUT:

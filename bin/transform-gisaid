@@ -14,6 +14,7 @@ from utils.transform import (
     METADATA_COLUMNS,
 )
 from utils.transformpipeline import LINE_NUMBER_KEY
+from utils.transformpipeline.externalsort import spill_to_sorted_tempfile, read_sorted_records
 from utils.transformpipeline.datasource import LineToJsonDataSource
 from utils.transformpipeline.filters import LineNumberFilter, SequenceLengthFilter
 from utils.transformpipeline.transforms import (
@@ -187,57 +188,56 @@ if __name__ == '__main__':
             | FillDefaultLocationData()
         )
 
-        sorted_metadata = sorted(
+        # Sort the whole pipeline on disk (was an in-memory sorted() of every
+        # record, the dominant driver of this rule's peak memory).
+        sort_tmp_path = spill_to_sorted_tempfile(
             pipeline,
-            key=lambda obj: (
-                obj['strain'],
-                -obj['length'],
-                obj['gisaid_epi_isl'],
-                obj[LINE_NUMBER_KEY]
-            )
+            id_key='gisaid_epi_isl',
+            output_dir=os.path.dirname(os.path.abspath(args.output_metadata)),
         )
 
     #for unused_gisaid_epi_isl in annotations.get_unused_annotations():
     #    print(f"WARNING: annotation for {unused_gisaid_epi_isl} was not used.")
 
-    # dedup by strain and compile a list of relevant line numbers.
+    # Stream the sorted records once: dedup by strain (keeping the first, i.e.
+    # highest-priority, occurrence) and write the metadata + additional-info rows.
     seen_strains = set()
     line_numbers = set()
-    for entry in sorted_metadata:
-        if entry['strain'] in seen_strains:
-            continue
+    updated_strain_names_by_line_no = {}
 
-        seen_strains.add(entry['strain'])
-        line_numbers.add(entry[LINE_NUMBER_KEY])
+    try:
+        with open(args.output_fasta, "wt", newline=args.newline) as fasta_fh:
+            with open(args.output_additional_info, "wt", newline="") as additional_info_fh, \
+                 open(args.output_metadata, "wt", newline="") as metadata_fh:
+                dict_writer_kwargs = {'lineterminator': args.newline}
 
-    with open(args.output_fasta, "wt", newline=args.newline) as fasta_fh:
-        with open(args.output_additional_info, "wt", newline="") as additional_info_fh, \
-             open(args.output_metadata, "wt", newline="") as metadata_fh:
-            dict_writer_kwargs = {'lineterminator': args.newline}
+                # set up the CSV output files
+                additional_info_csv = csv.DictWriter(
+                    additional_info_fh,
+                    ADDITIONAL_INFO_COLUMNS,
+                    restval="?",
+                    extrasaction='ignore',
+                    delimiter='\t',
+                    **dict_writer_kwargs
+                )
+                additional_info_csv.writeheader()
+                metadata_csv = csv.DictWriter(
+                    metadata_fh,
+                    METADATA_COLUMNS,
+                    restval="?",
+                    extrasaction='ignore',
+                    delimiter='\t',
+                    **dict_writer_kwargs
+                )
+                metadata_csv.writeheader()
 
-            # set up the CSV output files
-            additional_info_csv = csv.DictWriter(
-                additional_info_fh,
-                ADDITIONAL_INFO_COLUMNS,
-                restval="?",
-                extrasaction='ignore',
-                delimiter='\t',
-                **dict_writer_kwargs
-            )
-            additional_info_csv.writeheader()
-            metadata_csv = csv.DictWriter(
-                metadata_fh,
-                METADATA_COLUMNS,
-                restval="?",
-                extrasaction='ignore',
-                delimiter='\t',
-                **dict_writer_kwargs
-            )
-            metadata_csv.writeheader()
+                for entry in read_sorted_records(sort_tmp_path):
+                    if entry['strain'] in seen_strains:
+                        continue
 
-            updated_strain_names_by_line_no = {}
-            for entry in sorted_metadata:
-                if entry[LINE_NUMBER_KEY] in line_numbers:
+                    seen_strains.add(entry['strain'])
+                    line_numbers.add(entry[LINE_NUMBER_KEY])
+
                     additional_info_csv.writerow(entry)
                     metadata_csv.writerow(entry)
 
@@ -247,15 +247,17 @@ if __name__ == '__main__':
                     else:
                         updated_strain_names_by_line_no[entry[LINE_NUMBER_KEY]] = entry['strain']
 
-        if not args.sorted_fasta:
-            with open(args.gisaid_data, "r") as gisaid_fh:
-                for entry in (
-                        LineToJsonDataSource(gisaid_fh)
-                        | RenameAndAddColumns()
-                        | StandardizeData()
-                        | SequenceLengthFilter(15000)
-                        | LineNumberFilter(line_numbers)
-                ):
-                    strain_name = updated_strain_names_by_line_no[entry[LINE_NUMBER_KEY]]
-                    fasta_fh.write(f">{strain_name}\n")
-                    fasta_fh.write(f"{entry['sequence']}\n")
+            if not args.sorted_fasta:
+                with open(args.gisaid_data, "r") as gisaid_fh:
+                    for entry in (
+                            LineToJsonDataSource(gisaid_fh)
+                            | RenameAndAddColumns()
+                            | StandardizeData()
+                            | SequenceLengthFilter(15000)
+                            | LineNumberFilter(line_numbers)
+                    ):
+                        strain_name = updated_strain_names_by_line_no[entry[LINE_NUMBER_KEY]]
+                        fasta_fh.write(f">{strain_name}\n")
+                        fasta_fh.write(f"{entry['sequence']}\n")
+    finally:
+        os.unlink(sort_tmp_path)
