@@ -115,8 +115,6 @@ aws s3 cp - s3://nextstrain-data/files/ncov/open/nextclade_21L.tsv.zst.renew < /
 
 ## Required environment variables
 
-- `GISAID_API_ENDPOINT`
-- `GISAID_USERNAME_AND_PASSWORD`
 - `AWS_DEFAULT_REGION`
 - `AWS_ACCESS_KEY_ID`
 - `AWS_SECRET_ACCESS_KEY`

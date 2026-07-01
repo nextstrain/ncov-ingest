@@ -53,7 +53,7 @@ get-cache-version-info() {
     local dst_version_file="$s3_dst/$version_file"
     local src_version_file="$s3_src/$version_file"
 
-    "$bin"/fetch-cache-version "$dst_version_file" || "$bin"/cache-version "$src_version_file"
+    "$bin"/fetch-cache-version "$dst_version_file" || "$bin"/fetch-cache-version "$src_version_file"
 }
 
 main "$@"
