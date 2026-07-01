@@ -16,6 +16,7 @@ from utils.transform import (
     METADATA_COLUMNS,
 )
 from utils.transformpipeline import LINE_NUMBER_KEY
+from utils.transformpipeline.externalsort import spill_to_sorted_tempfile, read_sorted_records
 from utils.transformpipeline.datasource import LineToJsonDataSource
 from utils.transformpipeline.filters import SequenceLengthFilter, LineNumberFilter, GenbankProblematicFilter
 from utils.transformpipeline.transforms import (
@@ -219,18 +220,17 @@ if __name__ == '__main__':
                                                           dict_writer_kwargs  = {'lineterminator': args.newline} )
         )
 
-        sorted_metadata = sorted(
+        # Sort the whole pipeline on disk (was an in-memory sorted() of ~9M
+        # record dicts, the dominant driver of this rule's peak memory).
+        sort_tmp_path = spill_to_sorted_tempfile(
             pipeline,
-            key=lambda obj: (
-                obj['strain'],
-                -obj['length'],
-                obj['genbank_accession'],
-                obj[LINE_NUMBER_KEY]
-            )
+            id_key='genbank_accession',
+            output_dir=os.path.dirname(os.path.abspath(args.output_metadata)),
         )
 
-    # this should be moved further down
-    # dedup by strain and compile a list of relevant line numbers.
+    # Stream the sorted records once: dedup by strain (keeping the first, i.e.
+    # highest-priority, occurrence), write metadata, and collect the info needed
+    # for the duplicate-biosample and FASTA outputs.
     seen_strains = set()
     line_numbers = set()
     updated_strain_names_by_line_no = {}
@@ -238,17 +238,41 @@ if __name__ == '__main__':
     # Used to flag sequences that have duplicate BioSample accessions
     biosamples = defaultdict(list)
 
-    for entry in sorted_metadata:
+    sorted_fasta_OUT = open(args.output_fasta, 'wt') if args.sorted_fasta else None
+    try:
+        with open(args.output_metadata, 'wt') as metadata_OUT:
 
-        if entry['strain'] in seen_strains:
-            continue
+            metadata_csv = csv.DictWriter(
+                metadata_OUT,
+                METADATA_COLUMNS,
+                restval="",
+                extrasaction='ignore',
+                delimiter='\t',
+                lineterminator=args.newline,
+            )
+            metadata_csv.writeheader()
 
-        seen_strains.add(entry['strain'])
-        line_numbers.add(entry[LINE_NUMBER_KEY])
-        updated_strain_names_by_line_no[entry[LINE_NUMBER_KEY]] = entry['strain']
+            for entry in read_sorted_records(sort_tmp_path):
 
-        if entry['biosample_accession']:
-            biosamples[entry['biosample_accession']].append(entry['strain'])
+                if entry['strain'] in seen_strains:
+                    continue
+
+                seen_strains.add(entry['strain'])
+                line_numbers.add(entry[LINE_NUMBER_KEY])
+                updated_strain_names_by_line_no[entry[LINE_NUMBER_KEY]] = entry['strain']
+
+                if entry['biosample_accession']:
+                    biosamples[entry['biosample_accession']].append(entry['strain'])
+
+                metadata_csv.writerow(entry)
+
+                if sorted_fasta_OUT is not None:
+                    print('>', entry['strain'], sep='', file=sorted_fasta_OUT)
+                    print(entry['sequence'], file=sorted_fasta_OUT)
+    finally:
+        if sorted_fasta_OUT is not None:
+            sorted_fasta_OUT.close()
+        os.unlink(sort_tmp_path)
 
 
     with open( args.duplicate_biosample, 'wt' ) as biosample_OUT:
@@ -260,33 +284,6 @@ if __name__ == '__main__':
                 for strain in strains:
                     reason = f"# Strain has same BioSample accession ({biosample}) as {strain_to_keep}"
                     biosample_OUT.write(f"{strain}\t{reason}{args.newline}")
-
-
-    with open( args.output_metadata , 'wt' ) as metadata_OUT:
-        dict_writer_kwargs = {'lineterminator': args.newline}
-
-        metadata_csv = csv.DictWriter(
-            metadata_OUT,
-            METADATA_COLUMNS,
-            restval="",
-            extrasaction='ignore',
-            delimiter='\t',
-            **dict_writer_kwargs
-        )
-        metadata_csv.writeheader()
-
-        for entry in sorted_metadata :
-            if entry[LINE_NUMBER_KEY] in line_numbers:
-                metadata_csv.writerow(entry)
-
-    if args.sorted_fasta:
-        with open( args.output_fasta , 'wt' ) as fasta_OUT:
-            for entry in sorted_metadata :
-                if entry[LINE_NUMBER_KEY] in line_numbers:
-                    strain_name = updated_strain_names_by_line_no[entry[LINE_NUMBER_KEY]]
-                    print( '>' , strain_name , sep='' , file= fasta_OUT)
-                    print( entry['sequence'] , file= fasta_OUT)
-
 
 
     if not args.sorted_fasta:

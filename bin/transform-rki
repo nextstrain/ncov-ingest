@@ -15,6 +15,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent) + "/lib")
 
 from lib.utils.transform import METADATA_COLUMNS
 from lib.utils.transformpipeline import LINE_NUMBER_KEY
+from lib.utils.transformpipeline.externalsort import spill_to_sorted_tempfile, read_sorted_records
 from lib.utils.transformpipeline.datasource import LineToJsonDataSource
 from lib.utils.transformpipeline.filters import (LineNumberFilter,
                                                  SequenceLengthFilter)
@@ -149,49 +150,48 @@ if __name__ == "__main__":
             | FillDefaultLocationData()
         )
 
-        sorted_metadata = sorted(
+        # Sort the whole pipeline on disk (was an in-memory sorted() of every
+        # record, the dominant driver of this rule's peak memory).
+        sort_tmp_path = spill_to_sorted_tempfile(
             pipeline,
-            key=lambda obj: (
-                obj["strain"],
-                -obj["length"],
-                obj["rki_accession"],
-                obj[LINE_NUMBER_KEY],
-            ),
+            id_key="rki_accession",
+            output_dir=os.path.dirname(os.path.abspath(args.output_metadata)),
         )
 
-    # this should be moved further down
-    # dedup by strain and compile a list of relevant line numbers.
+    # Stream the sorted records once: dedup by strain (keeping the first, i.e.
+    # highest-priority, occurrence) and write the metadata rows.
     seen_strains = set()
     line_numbers = set()
     updated_strain_names_by_line_no = {}
 
-    for entry in sorted_metadata:
+    try:
+        with xopen(args.output_metadata, "wt") as metadata_OUT:
+            dict_writer_kwargs = {"lineterminator": args.newline}
 
-        if entry["strain"] in seen_strains:
-            continue
+            metadata_csv = csv.DictWriter(
+                metadata_OUT,
+                METADATA_COLUMNS,
+                restval="",
+                extrasaction="ignore",
+                delimiter="\t",
+                **dict_writer_kwargs,
+            )
+            metadata_csv.writeheader()
 
-        seen_strains.add(entry["strain"])
-        line_numbers.add(entry[LINE_NUMBER_KEY])
-        updated_strain_names_by_line_no[entry[LINE_NUMBER_KEY]] = entry[
-            "strain"
-        ]
+            for entry in read_sorted_records(sort_tmp_path):
 
-    with xopen(args.output_metadata, "wt") as metadata_OUT:
-        dict_writer_kwargs = {"lineterminator": args.newline}
+                if entry["strain"] in seen_strains:
+                    continue
 
-        metadata_csv = csv.DictWriter(
-            metadata_OUT,
-            METADATA_COLUMNS,
-            restval="",
-            extrasaction="ignore",
-            delimiter="\t",
-            **dict_writer_kwargs,
-        )
-        metadata_csv.writeheader()
+                seen_strains.add(entry["strain"])
+                line_numbers.add(entry[LINE_NUMBER_KEY])
+                updated_strain_names_by_line_no[entry[LINE_NUMBER_KEY]] = entry[
+                    "strain"
+                ]
 
-        for entry in sorted_metadata:
-            if entry[LINE_NUMBER_KEY] in line_numbers:
                 metadata_csv.writerow(entry)
+    finally:
+        os.unlink(sort_tmp_path)
 
     with xopen(args.rki_data, "r") as genbank_IN, xopen(
         args.output_fasta, "wt", newline=args.newline
