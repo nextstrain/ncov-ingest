@@ -108,8 +108,6 @@ Ingest will automatically remove the touchfiles after it has completed the rerun
 
 ## Required environment variables
 
-- `GISAID_API_ENDPOINT`
-- `GISAID_USERNAME_AND_PASSWORD`
 - `AWS_DEFAULT_REGION`
 - `AWS_ACCESS_KEY_ID`
 - `AWS_SECRET_ACCESS_KEY`

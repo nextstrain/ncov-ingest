@@ -65,6 +65,7 @@ rule notify_genbank:
         "benchmarks/notify_genbank.txt"
     run:
         shell("./vendored/notify-slack --upload flagged-annotations < {input.flagged_annotations}")
-        # TODO - which rule produces data/genbank/problem_data.tsv? (was not explicit in `ingest-genbank` bash script)
+        # transform-genbank writes data/genbank/problem_data.tsv via its --problem-data default;
+        # notify-on-problem-data no-ops when the file is empty or absent.
         shell("./bin/notify-on-problem-data data/genbank/problem_data.tsv")
         shell("./bin/notify-on-duplicate-biosample-change {input.duplicate_biosample} {params.s3_bucket}/duplicate_biosample.txt.zst")
