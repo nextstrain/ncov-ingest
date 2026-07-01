@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 import argparse
+import sys
+from pathlib import Path
 
 import pandas as pd
-from Bio import SeqIO
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "lib"))
+from utils.fasta import stream_fasta
 
 
 def parse_args():
@@ -33,11 +37,10 @@ def main():
     tsv = pd.read_csv(args.input_tsv, sep="\t", usecols=["seqName"], dtype=str)
     tsv_ids = set(tsv['seqName'])
 
-    with open(args.input_fasta) as f_input:
-        with open(args.output_fasta, "w") as f_output:
-            for seq in SeqIO.parse(f_input, "fasta"):
-                if seq.id not in tsv_ids:
-                    SeqIO.write(seq, f_output, "fasta")
+    with open(args.input_fasta) as f_input, open(args.output_fasta, "w") as f_output:
+        for seq_id, sequence in stream_fasta(f_input):
+            if seq_id not in tsv_ids:
+                f_output.write(f">{seq_id}\n{sequence}\n")
 
 
 if __name__ == '__main__':
