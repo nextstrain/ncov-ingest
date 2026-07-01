@@ -42,7 +42,6 @@ def compute_files_to_upload():
 
     elif database=="gisaid":
         files_to_upload["additional_info.tsv.zst"] =     f"data/{database}/additional_info.tsv"
-        files_to_upload["flagged_metadata.txt.zst"] =    f"data/{database}/flagged_metadata.txt"
 
     # Include upload of raw NDJSON if we are fetching new sequences from database
     if config.get("fetch_from_database", False):

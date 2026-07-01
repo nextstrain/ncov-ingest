@@ -12,7 +12,6 @@ Expects different inputs for GISAID vs GenBank:
         ndjson = "data/gisaid.ndjson"
         flagged_annotations = "data/gisaid/flagged-annotations"
         additional_info = "data/gisaid/additional_info.tsv"
-        flagged_metadata = "data/gisaid/flagged_metadata.txt"
     GenBank:
         ndjson = "data/gisaid.ndjson"
         flagged_annotations = "data/genbank/flagged-annotations"
@@ -43,7 +42,6 @@ rule notify_gisaid:
         notify_on_record_change = "data/gisaid/notify-on-record-change.done",
         flagged_annotations = rules.transform_gisaid_data.output.flagged_annotations,
         additional_info = "data/gisaid/additional_info.tsv",
-        flagged_metadata = "data/gisaid/flagged_metadata.txt"
     params:
         s3_bucket = config["s3_src"]
     output:
@@ -53,7 +51,6 @@ rule notify_gisaid:
     run:
         shell("./vendored/notify-slack --upload flagged-annotations < {input.flagged_annotations}")
         shell("./bin/notify-on-additional-info-change {input.additional_info} {params.s3_bucket}/additional_info.tsv.zst")
-        shell("./bin/notify-on-flagged-metadata-change {input.flagged_metadata}  {params.s3_bucket}/flagged_metadata.txt.zst")
 
 rule notify_genbank:
     input:
