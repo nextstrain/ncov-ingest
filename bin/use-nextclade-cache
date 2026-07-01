@@ -53,7 +53,19 @@ get-cache-version-info() {
     local dst_version_file="$s3_dst/$version_file"
     local src_version_file="$s3_src/$version_file"
 
-    "$bin"/fetch-cache-version "$dst_version_file" || "$bin"/cache-version "$src_version_file"
+    # Prefer a cache already at the destination (e.g. a previous trial run of this
+    # branch); fall back to the source (production) cache when the destination has
+    # none. Without this fallback a first-time trial run — whose s3_dst is an empty
+    # per-branch prefix — gets an empty version, treats the cache as stale, and
+    # reruns Nextclade from scratch over the whole corpus. (The old `|| cache-version`
+    # fallback never fired: fetch-cache-version exits 0 on a missing object and
+    # bin/cache-version does not exist.)
+    local info
+    info="$("$bin"/fetch-cache-version "$dst_version_file")"
+    if [[ -z "$info" ]]; then
+        info="$("$bin"/fetch-cache-version "$src_version_file")"
+    fi
+    echo "$info"
 }
 
 main "$@"
