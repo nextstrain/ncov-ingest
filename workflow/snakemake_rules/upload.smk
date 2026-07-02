@@ -25,10 +25,8 @@ def compute_files_to_upload():
 
                         "nextclade.tsv.zst":           f"data/{database}/nextclade.tsv",
                         "aligned.fasta.zst":           f"data/{database}/aligned.fasta",
-                        "nextclade_21L.tsv.zst":       f"data/{database}/nextclade_21L.tsv",
 
                         "nextclade_version.json":          f"data/{database}/nextclade_version.json",
-                        "nextclade_21L_version.json":      f"data/{database}/nextclade_21L_version.json",
                         "metadata_version.json":           f"data/{database}/metadata_version.json",
                     }
     files_to_upload = files_to_upload | {
@@ -196,7 +194,6 @@ rule upload:
         touchfile_removes=[
             f"data/{database}/{remote_file}.renew.deleted" for remote_file in [
                 "nextclade.tsv.zst",
-                "nextclade_21L.tsv.zst",
             ]
         ],
         mv_processed=["data/mv-processed/all-gisaid-tars.done"] if should_move_processed_gisaid_tars() else [],
