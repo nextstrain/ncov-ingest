@@ -1,0 +1,98 @@
+#!/usr/bin/env python3
+"""
+Append a `clock_deviation` column to the joined metadata.
+
+`clock_deviation` is a per-clade molecular-clock QC metric: each sequence's
+divergence minus its clade's clock-expected divergence for its collection date.
+It only needs three columns -- `date`, `divergence`, `Nextstrain_clade` -- so
+computing it in its own step keeps the (much larger) metadata/Nextclade join a
+flat-memory streaming operation. The calculation here is the one that used to
+live in `bin/join-metadata-and-clades`, unchanged.
+"""
+import argparse
+import sys
+from datetime import datetime
+
+import numpy as np
+import pandas as pd
+
+CLADE_COLUMN = "Nextstrain_clade"
+CLOCK_DEVIATION_COLUMN = "clock_deviation"
+VALUE_MISSING_DATA = '?'
+
+rate_per_day = 0.0007 * 29903 / 365
+reference_day = datetime(2020, 1, 1).toordinal()
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Append a clock_deviation column to the joined metadata TSV.",
+    )
+    parser.add_argument("--metadata", required=True,
+                        help="Joined metadata TSV (output of join-metadata-and-clades)")
+    parser.add_argument("-o", default=sys.stdout,
+                        help="Output metadata TSV with clock_deviation appended")
+    return parser.parse_args()
+
+
+def datestr_to_ordinal(x):
+    try:
+        return datetime.strptime(x, "%Y-%m-%d").toordinal()
+    except:
+        return np.nan
+
+
+def isfloat(value):
+    try:
+        float(value)
+        return True
+    except ValueError:
+        return False
+
+
+def main():
+    args = parse_args()
+
+    # Pass 1: read only the three columns needed and compute clock_deviation
+    # (verbatim from the former join-metadata-and-clades logic).
+    result = pd.read_csv(args.metadata, sep='\t',
+                         usecols=["date", "divergence", CLADE_COLUMN],
+                         dtype="object", na_filter=False)
+
+    all_clades = result[CLADE_COLUMN].unique()
+    t = result["date"].apply(datestr_to_ordinal)
+    div_array = np.array([float(x) if isfloat(x) else np.nan for x in result.divergence])
+    offset_by_clade = {}
+    for clade in all_clades:
+        ind = result[CLADE_COLUMN] == clade
+        if ind.sum() > 100:
+            deviation = div_array[ind] - (t[ind] - reference_day) * rate_per_day
+            offset_by_clade[clade] = np.mean(deviation[~np.isnan(deviation)])
+
+    offset = result[CLADE_COLUMN].apply(lambda x: offset_by_clade.get(x, 2.0))
+    clock_deviation = np.array(div_array - ((t - reference_day) * rate_per_day + offset), dtype=int)
+    # Match the former int->float upcast (nan assignment) so e.g. 5 renders as "5.0".
+    clock_deviation = clock_deviation.astype(float)
+    clock_deviation[np.isnan(div_array) | np.isnan(t)] = np.nan
+
+    clock_strings = [VALUE_MISSING_DATA if np.isnan(v) else str(v) for v in clock_deviation]
+    del result, t, div_array, offset
+
+    # Pass 2: stream the input and append clock_deviation as the last column.
+    # Appending raw bytes preserves the join output exactly; '?' / '5.0' never
+    # need quoting.
+    out_is_path = isinstance(args.o, str)
+    out_fh = open(args.o, 'w', newline='') if out_is_path else args.o
+    try:
+        with open(args.metadata, newline='') as fin:
+            header = fin.readline().rstrip('\n')
+            out_fh.write(f"{header}\t{CLOCK_DEVIATION_COLUMN}\n")
+            for value, line in zip(clock_strings, fin):
+                out_fh.write(f"{line.rstrip(chr(10))}\t{value}\n")
+    finally:
+        if out_is_path:
+            out_fh.close()
+
+
+if __name__ == '__main__':
+    main()

@@ -345,7 +345,7 @@ rule generate_metadata:
         existing_metadata=f"data/{database}/metadata_transformed.tsv",
         clade_legacy_mapping="defaults/clade-legacy-mapping.yml",
     output:
-        metadata=f"data/{database}/metadata.tsv",
+        metadata=temp(f"data/{database}/metadata_without_clock_deviation.tsv"),
     benchmark:
         f"benchmarks/generate_metadata_{database}.txt"
     shell:
@@ -354,6 +354,21 @@ rule generate_metadata:
             --metadata {input.existing_metadata} \
             --nextclade-tsv {input.nextclade_tsv} \
             --clade-legacy-mapping {input.clade_legacy_mapping} \
+            -o {output.metadata}
+        """
+
+
+rule compute_clock_deviation:
+    input:
+        metadata=f"data/{database}/metadata_without_clock_deviation.tsv",
+    output:
+        metadata=f"data/{database}/metadata.tsv",
+    benchmark:
+        f"benchmarks/compute_clock_deviation_{database}.txt"
+    shell:
+        """
+        ./bin/compute-clock-deviation \
+            --metadata {input.metadata} \
             -o {output.metadata}
         """
 
