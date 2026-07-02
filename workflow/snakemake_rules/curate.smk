@@ -14,7 +14,6 @@ Produces different output files for GISAID vs GenBank:
         metadata = "data/gisaid/metadata_transformed.tsv"
         flagged_annotations = temp("data/gisaid/flagged-annotations")
         duplicate_biosample = "data/gisaid/duplicate_biosample.txt"
-        flagged_metadata = "data/gisaid/flagged_metadata.txt"
     GenBank:
         fasta = "data/genbank/sequences.fasta"
         metadata = "data/genbank/metadata_transformed.tsv"
@@ -152,20 +151,4 @@ rule transform_gisaid_data:
             --output-fasta {output.fasta}  \
             --output-additional-info {output.additional_info} \
             --output-unix-newline > {output.flagged_annotations};
-        """
-
-rule flag_metadata:
-    ### only applicable for GISAID
-    input:
-        metadata = "data/gisaid/metadata.tsv"
-    output:
-        metadata = "data/gisaid/flagged_metadata.txt"
-    benchmark:
-        "benchmarks/flag_metadata.txt"
-    resources:
-        # Memory use scales primarily with the size of the metadata file.
-        mem_mb=20000
-    shell:
-        """
-        ./bin/flag-metadata {input.metadata} > {output.metadata}
         """
