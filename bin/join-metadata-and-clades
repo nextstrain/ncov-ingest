@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 import argparse
+import csv
+import os
+import subprocess
 import sys
-from datetime import datetime
-import pandas as pd
-import numpy as np
+import tempfile
 import yaml
 
 INSERT_BEFORE_THIS_COLUMN = "pango_lineage"
@@ -12,8 +13,8 @@ METADATA_JOIN_COLUMN_NAME = 'strain'
 NEXTCLADE_JOIN_COLUMN_NAME = 'seqName'
 VALUE_MISSING_DATA = '?'
 
-rate_per_day = 0.0007 * 29903 / 365
-reference_day = datetime(2020,1,1).toordinal()
+# Nextclade mutation lists (e.g. aaSubstitutions) can be long; lift the csv limit.
+csv.field_size_limit(10 ** 7)
 
 column_map = {
     "clade_nextstrain": "clade_nextstrain",
@@ -41,24 +42,6 @@ column_map = {
     "aaSubstitutions": "aaSubstitutions"
 }
 
-# Nextstrain_clade is added later based on clade_nextstrain and a yml mapping
-new_columns = list(column_map.values()) + ["Nextstrain_clade"]
-
-
-def reorder_columns(result: pd.DataFrame):
-    """
-    Moves COLUMN_TO_REORDER right before INSERT_BEFORE_THIS_COLUMN
-    """
-    if COLUMN_TO_REORDER not in new_columns:
-        raise ValueError(f"Column {COLUMN_TO_REORDER} not found in values of column_map {column_map}")
-    columns = list(result.columns)
-    if INSERT_BEFORE_THIS_COLUMN not in columns:
-        raise ValueError(f"Column {INSERT_BEFORE_THIS_COLUMN} not found in metadata columns {columns}")
-    columns.remove(COLUMN_TO_REORDER)
-    insert_at = columns.index(INSERT_BEFORE_THIS_COLUMN)
-    columns.insert(insert_at, COLUMN_TO_REORDER)
-    return result[columns]
-
 
 def parse_args():
     parser = argparse.ArgumentParser(
@@ -70,73 +53,110 @@ def parse_args():
     parser.add_argument("-o", default=sys.stdout)
     return parser.parse_args()
 
-def datestr_to_ordinal(x):
-    try:
-        return datetime.strptime(x,"%Y-%m-%d").toordinal()
-    except:
-        return np.nan
 
-def isfloat(value):
-  try:
-    float(value)
-    return True
-  except ValueError:
-    return False
+def read_header(path):
+    with open(path, newline='') as fh:
+        return next(csv.reader(fh, delimiter='\t'))
+
+
+def sort_tsv_by_column(path, key_index, out_dir):
+    """
+    Sort a TSV by its (0-based) `key_index` column, keeping the header first,
+    using an external `LC_ALL=C sort` (bytewise, spills to disk → flat memory).
+    Returns the path to a temp file the caller must unlink.
+    """
+    fd, out_path = tempfile.mkstemp(suffix='.sorted.tsv', dir=out_dir)
+    os.close(fd)
+    with open(path, newline='') as fin, open(out_path, 'w', newline='') as fout:
+        fout.write(fin.readline())  # header
+    with open(out_path, 'a', newline='') as fout:
+        tail = subprocess.Popen(["tail", "-n", "+2", path], stdout=subprocess.PIPE)
+        subprocess.run(
+            ["sort", "-t", "\t", f"-k{key_index + 1},{key_index + 1}"],
+            stdin=tail.stdout, stdout=fout,
+            env={**os.environ, "LC_ALL": "C"}, check=True,
+        )
+        tail.stdout.close()
+        tail.wait()
+    return out_path
+
 
 def main():
     args = parse_args()
 
-    metadata = pd.read_csv(args.metadata, index_col=METADATA_JOIN_COLUMN_NAME,
-                           sep='\t', low_memory=False, na_filter = False)
+    out_is_path = isinstance(args.o, str)
+    out_dir = os.path.dirname(os.path.abspath(args.o)) if out_is_path else "."
 
-    clades = pd.read_csv(args.nextclade_tsv, index_col=NEXTCLADE_JOIN_COLUMN_NAME,
-                         usecols=[NEXTCLADE_JOIN_COLUMN_NAME, *column_map.keys()],
-                         sep='\t', low_memory=True, dtype="object", na_filter = False) \
-            .rename(columns=column_map)
+    metadata_header = read_header(args.metadata)
+    nextclade_header = read_header(args.nextclade_tsv)
 
-    # Add clade_legacy column as Nextstrain_clade
-    # Use yml mapping
-    with open(args.clade_legacy_mapping, 'r') as legacy_mapping_file:
-        clade_legacy_mapping_dict: dict[str, str] = yaml.safe_load(legacy_mapping_file)
+    strain_idx = metadata_header.index(METADATA_JOIN_COLUMN_NAME)
+    seqname_idx = nextclade_header.index(NEXTCLADE_JOIN_COLUMN_NAME)
+    # Source column indices of the mapped Nextclade columns, in column_map order.
+    clade_src_idx = [nextclade_header.index(k) for k in column_map.keys()]
 
-    def clade_legacy_mapping(clade_nextstrain: str) -> str:
-        return clade_legacy_mapping_dict.get(clade_nextstrain, f"{clade_nextstrain} (Omicron)")
-        
-    clades["Nextstrain_clade"] = clades["clade_nextstrain"].map(clade_legacy_mapping)
+    # Metadata columns (header order, minus the strain index column) and where to
+    # read each from a metadata row.
+    metadata_cols = [c for c in metadata_header if c != METADATA_JOIN_COLUMN_NAME]
+    metadata_src_idx = [i for i, c in enumerate(metadata_header) if c != METADATA_JOIN_COLUMN_NAME]
+    # Nextstrain_clade is spliced into the metadata block, right before pango_lineage.
+    splice_at = metadata_cols.index(INSERT_BEFORE_THIS_COLUMN)
 
-    clades = clades[new_columns]
-
-    # Concatenate on columns
-    result = pd.merge(
-        metadata, clades,
-        left_index=True,
-        right_index=True,
-        how='left'
+    output_header = (
+        [METADATA_JOIN_COLUMN_NAME]
+        + metadata_cols[:splice_at] + [COLUMN_TO_REORDER] + metadata_cols[splice_at:]
+        + list(column_map.values())
     )
 
-    all_clades = result.Nextstrain_clade.unique()
-    t = result["date"].apply(datestr_to_ordinal)
-    div_array = np.array([float(x) if isfloat(x) else np.nan for x in result.divergence])
-    offset_by_clade = {}
-    for clade in all_clades:
-        ind = result.Nextstrain_clade==clade
-        if ind.sum()>100:
-            deviation = div_array[ind] - (t[ind] - reference_day)*rate_per_day
-            offset_by_clade[clade] = np.mean(deviation[~np.isnan(deviation)])
+    with open(args.clade_legacy_mapping, 'r') as legacy_mapping_file:
+        clade_legacy_mapping_dict = yaml.safe_load(legacy_mapping_file)
 
-    # extract divergence, time and offset information into vectors or series
-    offset = result["Nextstrain_clade"].apply(lambda x: offset_by_clade.get(x, 2.0))
-    # calculate divergence
-    result["clock_deviation"] = np.array(div_array - ((t-reference_day)*rate_per_day + offset), dtype=int)
-    result.loc[np.isnan(div_array)|np.isnan(t), "clock_deviation"] = np.nan
+    missing_clades = [VALUE_MISSING_DATA] * len(column_map)
 
-    for col in new_columns + ["clock_deviation"]:
-        result[col] = result[col].fillna(VALUE_MISSING_DATA)
+    metadata_sorted = sort_tsv_by_column(args.metadata, strain_idx, out_dir)
+    nextclade_sorted = sort_tsv_by_column(args.nextclade_tsv, seqname_idx, out_dir)
+    try:
+        out_fh = open(args.o, 'w', newline='') if out_is_path else args.o
+        try:
+            writer = csv.writer(out_fh, delimiter='\t', lineterminator='\n')
+            writer.writerow(output_header)
 
-    # Move the new column so that it's next to other clade columns
-    result = reorder_columns(result)
+            with open(metadata_sorted, newline='') as mfh, open(nextclade_sorted, newline='') as nfh:
+                metadata_rows = csv.reader(mfh, delimiter='\t')
+                nextclade_rows = csv.reader(nfh, delimiter='\t')
+                next(metadata_rows)   # skip header
+                next(nextclade_rows)  # skip header
 
-    result.to_csv(args.o, index_label=METADATA_JOIN_COLUMN_NAME, sep='\t')
+                # Streaming left merge-join: both inputs sorted by their join key,
+                # unique keys on each side (transform dedups strain; nextclade is
+                # tsv-uniq'd on seqName), so it's a 1:1 / 1:0 match with no fan-out.
+                clade_row = next(nextclade_rows, None)
+                for metadata_row in metadata_rows:
+                    strain = metadata_row[strain_idx]
+                    while clade_row is not None and clade_row[seqname_idx] < strain:
+                        clade_row = next(nextclade_rows, None)
+
+                    if clade_row is not None and clade_row[seqname_idx] == strain:
+                        clade_values = [clade_row[i] for i in clade_src_idx]
+                        clade_nextstrain = clade_values[0]
+                        nextstrain_clade = clade_legacy_mapping_dict.get(
+                            clade_nextstrain, f"{clade_nextstrain} (Omicron)")
+                    else:
+                        clade_values = missing_clades
+                        nextstrain_clade = VALUE_MISSING_DATA
+
+                    metadata_values = [metadata_row[i] for i in metadata_src_idx]
+                    writer.writerow(
+                        [strain]
+                        + metadata_values[:splice_at] + [nextstrain_clade] + metadata_values[splice_at:]
+                        + clade_values
+                    )
+        finally:
+            if out_is_path:
+                out_fh.close()
+    finally:
+        os.unlink(metadata_sorted)
+        os.unlink(nextclade_sorted)
 
 
 if __name__ == '__main__':
