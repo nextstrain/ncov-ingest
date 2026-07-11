@@ -1,6 +1,0 @@
-#!/bin/bash
-set -euo pipefail
-
-nextstrain build --aws-batch --cpus 96 --memory 180GiB --detach \
-    "$@" \
-    --set-threads tree=16

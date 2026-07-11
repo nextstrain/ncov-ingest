@@ -25,12 +25,8 @@
 # updates can be far less frequent.
 FROM nextstrain/base
 
-# Install extra system packages for compression and parallel downloads
+# Install extra system packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    aria2 \
-    lbzip2 \
-    pigz \
-    pixz \
     time \
     xz-utils
 
