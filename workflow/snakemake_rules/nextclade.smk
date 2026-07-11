@@ -99,8 +99,8 @@ if config.get("s3_dst") and config.get("s3_src"):
 
             if [[ "$use_nextclade_cache" == 'true' ]]; then
                 echo "[INFO] Downloading cached nextclade.tsv.zst"
-                ./vendored/download-from-s3 {params.dst_source} {output.nextclade} {params.lines} ||  \
-                ./vendored/download-from-s3 {params.src_source} {output.nextclade} {params.lines}
+                ./shared/vendored/scripts/download-from-s3 {params.dst_source} {output.nextclade} {params.lines} ||  \
+                ./shared/vendored/scripts/download-from-s3 {params.src_source} {output.nextclade} {params.lines}
             else
                 echo "[INFO] Ignoring cached nextclade.tsv.zst"
                 touch {output.nextclade}
@@ -127,8 +127,8 @@ if config.get("s3_dst") and config.get("s3_src"):
 
             if [[ "$use_nextclade_cache" == 'true' ]]; then
                 echo "[INFO] Downloading cached Nextclade {wildcards.seqtype}.fasta.zst"
-                ./vendored/download-from-s3 {params.dst_source} {output.alignment} {params.lines} ||  \
-                ./vendored/download-from-s3 {params.src_source} {output.alignment} {params.lines}
+                ./shared/vendored/scripts/download-from-s3 {params.dst_source} {output.alignment} {params.lines} ||  \
+                ./shared/vendored/scripts/download-from-s3 {params.src_source} {output.alignment} {params.lines}
             else
                 echo "[INFO] Ignoring cached Nextclade {wildcards.seqtype}.fasta.zst"
                 touch {output.alignment}
@@ -385,7 +385,7 @@ rule metadata_version_json:
         metadata_version_json=f"data/{database}/metadata_version.json",
     shell:
         """
-        metadata_tsv_sha256sum="$(./vendored/sha256sum < {input.metadata})"
+        metadata_tsv_sha256sum="$(./shared/vendored/scripts/sha256sum < {input.metadata})"
 
         cat {input.nextclade_version_json} \
             | jq -c --arg METADATA_TSV_SHA256SUM "$metadata_tsv_sha256sum" \

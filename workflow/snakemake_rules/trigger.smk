@@ -25,7 +25,7 @@ rule trigger_rebuild_pipeline:
     retries: 5
     shell:
         """
-        ./vendored/trigger-on-new-data \
+        ./shared/vendored/scripts/trigger-on-new-data \
             nextstrain/ncov \
             {params.dispatch_type} \
             {input.metadata_upload} \
@@ -45,5 +45,5 @@ rule trigger_counts_pipeline:
     retries: 5
     shell:
         """
-        ./vendored/trigger nextstrain/forecasts-ncov {params.dispatch_type}
+        ./shared/vendored/scripts/trigger nextstrain/forecasts-ncov {params.dispatch_type}
         """

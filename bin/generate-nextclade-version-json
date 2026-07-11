@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-vendored="$(dirname "$0")"/../vendored
+vendored="$(dirname "$0")"/../shared/vendored/scripts
 
 
 nextclade="${1:?A path to the Nextclade executable is required as the first argument}"

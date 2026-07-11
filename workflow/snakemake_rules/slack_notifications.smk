@@ -33,7 +33,7 @@ rule notify_on_record_change:
         f"benchmarks/notify_on_record_change_{database}.txt"
     shell:
         """
-        ./vendored/notify-on-record-change {input.ndjson} {params.ndjson_on_s3} {database}
+        ./shared/vendored/scripts/notify-on-record-change {input.ndjson} {params.ndjson_on_s3} {database}
         """
 
 
@@ -49,7 +49,7 @@ rule notify_gisaid:
     benchmark:
         "benchmarks/notify_gisaid.txt"
     run:
-        shell("./vendored/notify-slack --upload flagged-annotations < {input.flagged_annotations}")
+        shell("./shared/vendored/scripts/notify-slack --upload flagged-annotations < {input.flagged_annotations}")
         shell("./bin/notify-on-additional-info-change {input.additional_info} {params.s3_bucket}/additional_info.tsv.zst")
 
 rule notify_genbank:
@@ -64,7 +64,7 @@ rule notify_genbank:
     benchmark:
         "benchmarks/notify_genbank.txt"
     run:
-        shell("./vendored/notify-slack --upload flagged-annotations < {input.flagged_annotations}")
+        shell("./shared/vendored/scripts/notify-slack --upload flagged-annotations < {input.flagged_annotations}")
         # transform-genbank writes data/genbank/problem_data.tsv via its --problem-data default;
         # notify-on-problem-data no-ops when the file is empty or absent.
         shell("./bin/notify-on-problem-data data/genbank/problem_data.tsv")
