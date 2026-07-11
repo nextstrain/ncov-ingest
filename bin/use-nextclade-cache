@@ -2,7 +2,7 @@
 set -euo pipefail
 
 bin="$(dirname "$0")"
-vendored="$bin"/../vendored
+vendored="$bin"/../shared/vendored/scripts
 
 main() {
     s3_dst="${1:?A destination s3:// URL where the renew file is hosted is required as the first argument.}"

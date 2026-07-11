@@ -23,7 +23,7 @@ main() {
     # Docker image being stuck on AWS CLI v1, but the chance of collision is
     # slim with the timestamped filenames.
     # <https://github.com/nextstrain/docker-base/issues/216>
-    "$(dirname "$0")/../vendored/upload-to-s3" --quiet "$src" "$dst"
+    "$(dirname "$0")/../shared/vendored/scripts/upload-to-s3" --quiet "$src" "$dst"
 }
 
 make_archive_filename() {

@@ -34,7 +34,7 @@ if config.get("s3_src"):
             s3_file=f"{config['s3_src']}/gisaid.ndjson.zst",
         shell:
             r"""
-            ./vendored/download-from-s3 {params.s3_file:q} {output.ndjson:q}
+            ./shared/vendored/scripts/download-from-s3 {params.s3_file:q} {output.ndjson:q}
             """
 
     rule process_all_unprocessed_tars:
@@ -307,8 +307,8 @@ if config.get("s3_dst") and config.get("s3_src"):
             "benchmarks/fetch_main_ndjson_from_s3.txt"
         shell:
             """
-            ./vendored/download-from-s3 {params.file_on_s3_dst} {output.ndjson} {params.lines} ||  \
-            ./vendored/download-from-s3 {params.file_on_s3_src} {output.ndjson} {params.lines}
+            ./shared/vendored/scripts/download-from-s3 {params.file_on_s3_dst} {output.ndjson} {params.lines} ||  \
+            ./shared/vendored/scripts/download-from-s3 {params.file_on_s3_src} {output.ndjson} {params.lines}
             """
 
     rule fetch_biosample_from_s3:
@@ -323,8 +323,8 @@ if config.get("s3_dst") and config.get("s3_src"):
             "benchmarks/fetch_biosample_from_s3.txt"
         shell:
             """
-            ./vendored/download-from-s3 {params.file_on_s3_dst} {output.biosample} {params.lines} ||  \
-            ./vendored/download-from-s3 {params.file_on_s3_src} {output.biosample} {params.lines}
+            ./shared/vendored/scripts/download-from-s3 {params.file_on_s3_dst} {output.biosample} {params.lines} ||  \
+            ./shared/vendored/scripts/download-from-s3 {params.file_on_s3_src} {output.biosample} {params.lines}
             """
 
     rule fetch_rki_ndjson_from_s3:
@@ -338,8 +338,8 @@ if config.get("s3_dst") and config.get("s3_src"):
             "benchmarks/fetch_rki_ndjson_from_s3.txt"
         shell:
             """
-            ./vendored/download-from-s3 {params.file_on_s3_dst} {output.rki_ndjson} {params.lines} ||  \
-            ./vendored/download-from-s3 {params.file_on_s3_src} {output.rki_ndjson} {params.lines}
+            ./shared/vendored/scripts/download-from-s3 {params.file_on_s3_dst} {output.rki_ndjson} {params.lines} ||  \
+            ./shared/vendored/scripts/download-from-s3 {params.file_on_s3_src} {output.rki_ndjson} {params.lines}
             """
     rule fetch_cog_uk_accessions_from_s3:
         params:
@@ -352,8 +352,8 @@ if config.get("s3_dst") and config.get("s3_src"):
             "benchmarks/fetch_cog_uk_accessions_from_s3.txt"
         shell:
             """
-            ./vendored/download-from-s3 {params.file_on_s3_dst} {output.biosample} {params.lines} ||  \
-            ./vendored/download-from-s3 {params.file_on_s3_src} {output.biosample} {params.lines}
+            ./shared/vendored/scripts/download-from-s3 {params.file_on_s3_dst} {output.biosample} {params.lines} ||  \
+            ./shared/vendored/scripts/download-from-s3 {params.file_on_s3_src} {output.biosample} {params.lines}
             """
 
     rule fetch_cog_uk_metadata_from_s3:
@@ -367,8 +367,8 @@ if config.get("s3_dst") and config.get("s3_src"):
             "benchmarks/fetch_cog_uk_metadata_from_s3.txt"
         shell:
             """
-            ./vendored/download-from-s3 {params.file_on_s3_dst} {output.biosample} {params.lines} ||  \
-            ./vendored/download-from-s3 {params.file_on_s3_src} {output.biosample} {params.lines}
+            ./shared/vendored/scripts/download-from-s3 {params.file_on_s3_dst} {output.biosample} {params.lines} ||  \
+            ./shared/vendored/scripts/download-from-s3 {params.file_on_s3_src} {output.biosample} {params.lines}
             """
 
     rule compress_cog_uk_metadata:
