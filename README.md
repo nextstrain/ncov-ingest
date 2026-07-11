@@ -106,13 +106,6 @@ aws s3 cp - s3://nextstrain-data/files/ncov/open/nextclade.tsv.zst.renew < /dev/
 
 Ingest will automatically remove the touchfiles after it has completed the rerun.
 
-To rerun Nextclade using the `sars-cov-2-21L` dataset - which is only necessary when the calculation of `immune_escape` and `ace2_binding` changes - you need to add an (empty) touchfile to the s3 bucket (available as `./scripts/developer_scripts/rerun-nextclade-21L.sh`:
-
-```bash
-aws s3 cp - s3://nextstrain-ncov-private/nextclade_21L.tsv.zst.renew < /dev/null
-aws s3 cp - s3://nextstrain-data/files/ncov/open/nextclade_21L.tsv.zst.renew < /dev/null
-```
-
 ## Required environment variables
 
 - `GISAID_API_ENDPOINT`
