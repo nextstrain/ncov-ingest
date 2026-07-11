@@ -1,0 +1,71 @@
+#!/bin/bash
+# usage: clean-source-data-tsvs [--sort]
+#        clean-source-data-tsvs--help
+#
+# Cleans the two biggest, manually maintained source-data TSVs:
+# gisaid_anontations.tsv and location_hierarchy.tsv. Optionally sorts the files
+# with the --sort option.
+#
+set -euo pipefail
+
+main() {
+    local sort=0
+
+    for arg; do
+        case "$arg" in
+            -h|--help)
+                print-help
+                exit
+                ;;
+            --sort)
+                sort=1
+                shift
+                break
+                ;;
+        esac
+    done
+
+    cd "$(dirname "$0")/.."
+
+    # Paper and non-paper annotations should be processed separately, because
+    # the build maintainers have kept title and paper_url at the bottom half of
+    # the file. This makes it easier for build maintainers to add other stuff at
+    # the top.
+    nonpaper_annotations="$(mktemp -t nonpaper-annotations-XXXXXX.tsv)"
+    paper_annotations="$(mktemp -t paper-annotations-XXXXXX.tsv)"
+
+    trap "rm -f '$nonpaper_annotations' '$paper_annotations'" EXIT
+    grep -v "paper\|title" ./source-data/gisaid_annotations.tsv > "$nonpaper_annotations"
+    grep "paper\|title" ./source-data/gisaid_annotations.tsv > "$paper_annotations"
+
+    if [[ "$sort" == 1 ]]; then
+        ./bin/clean-tsv "$nonpaper_annotations" --output-tsv "$nonpaper_annotations" --n-cols 4 --sort --no-header
+        ./bin/clean-tsv "$paper_annotations" --output-tsv "$paper_annotations" --n-cols 4 --sort-col 1 --no-header
+        ./bin/clean-tsv ./source-data/location_hierarchy.tsv --output-tsv source-data/location_hierarchy.tsv --n-cols 4 --sort
+    else
+        ./bin/clean-tsv "$nonpaper_annotations" --output-tsv "$nonpaper_annotations" --n-cols 4 --no-header
+        ./bin/clean-tsv "$paper_annotations" --output-tsv "$paper_annotations" --n-cols 4 --no-header
+        ./bin/clean-tsv ./source-data/location_hierarchy.tsv --output-tsv source-data/location_hierarchy.tsv --n-cols 4
+    fi
+
+    cat "$nonpaper_annotations" > ./source-data/gisaid_annotations.tsv
+    cat "$paper_annotations" >> ./source-data/gisaid_annotations.tsv
+}
+
+print-help() {
+    # Print the help comments at the top of this file ($0)
+    local line
+    while read -r line; do
+        if [[ $line =~ ^#! ]]; then
+            continue
+        elif [[ $line =~ ^# ]]; then
+            line="${line/##/}"
+            line="${line/# /}"
+            echo "$line"
+        else
+            break
+        fi
+    done < "$0"
+}
+
+main "$@"

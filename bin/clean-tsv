@@ -1,0 +1,126 @@
+#!/usr/bin/env python3
+import pandas as pd
+import argparse
+import csv
+import sys
+
+
+def positive_integer(string: str) -> int:
+    """
+    Custom type checker for argparse. Throws an
+    :class:`argparse.ArgumentTypeError` if the given *string* is not a valid int
+    or if it's less than or equal to zero.
+    """
+    try:
+        value = int(string)
+        assert value > 0
+
+    except (ValueError, AssertionError):
+        raise argparse.ArgumentTypeError("--n-cols must be an integer > 0")
+
+    return value
+
+def clean_tsv_file(input_file: str, output: str, n_cols: positive_integer,
+    header: bool, sort: bool, sort_col: str):
+    """
+    1. Read the tsv file
+    2. Sort alphabetically and make sure n columns (n-1 tabs) each row (if n_cols is passed)
+    3. Write out tsv file
+    """
+    try:
+        data = pd.read_csv(input_file,
+                           sep="\t",
+                           header=None,
+                           names=range(n_cols) if n_cols else None,
+                           usecols=range(n_cols) if n_cols else None)
+
+    except pd.errors.ParserError as e:
+        if n_cols is None:
+            raise Exception(f"Error decoding tsv «{input_file}». Please provide an argument for "
+                "--n-cols specifying the number of columns to enforce. This number must not exceed "
+                "the total number of columns in the tsv.")
+        else:
+            raise Exception(f"Error decoding tsv: {e}. \n\n Did you specify too many columns with "
+                "--n-cols? --n-cols can't add extra columns, it just enforces up to the existing "
+                "number of columns in the tsv.")
+
+    if n_cols:
+        # Drop excess columns as specified by --n-cols
+        data = data[data.columns[0:n_cols]]
+
+    col_names = list(data.columns)
+
+    if header:
+        # "Pop" first row and replace column names with it
+        first_row = data.iloc[0]
+        assert first_row.notnull().all(), "Error: You have missing values in your tsv header. " \
+            "Did you mean to specify --no-header?"
+        col_names = list(first_row)
+        data.columns = col_names
+        data = data.drop(0).reset_index(drop=True)
+
+    if sort_col is not None:
+        try:
+            if not header:
+                sort_col = int(sort_col)
+            col_names.remove(sort_col)
+        except ValueError:
+            raise ValueError(f"«{sort_col}» is not a column name in file, or if --no-header was "
+                "used, there are not this many columns in the file.")
+        col_names = [sort_col] + col_names
+
+    if sort:
+        data = data.sort_values(col_names)
+
+    data.to_csv(output, sep="\t", index=False, header=header, quoting=csv.QUOTE_NONE)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="""Sort tsv and clean tabs.""",
+        formatter_class=argparse.RawTextHelpFormatter
+    )
+
+    parser.add_argument(
+            "tsv",
+            type=str,
+            help="Path to file in TSV format to be cleaned and sorted.\n")
+
+    parser.add_argument(
+            "--output-tsv",
+            type=str,
+            dest="output",
+            default=sys.stdout,
+            help="Path to write cleaned and sorted output TSV. Defaults to stdout.")
+
+    parser.add_argument(
+            "--n-cols",
+            type=positive_integer,
+            help="Number of columns to enforce. Extra tabs will be added for rows with fewer than "
+                "this number, and rows with more than this number will be truncated to this number "
+                "of columns/tabs.\n")
+
+    parser.add_argument(
+            "--sort",
+            action='store_true',
+            help="Sort output TSV alphabetically by columns in the order they appear. This is the "
+                "default sorting behavior, and it can be overriden with --sort-col.")
+
+    parser.add_argument(
+            "--sort-col",
+            type=str,
+            help="A column name (or 0-based index for headerless tsvs) to prioritize sorting; "
+                "overrides the --sort option.\n")
+
+    parser.add_argument(
+            "--no-header",
+            action='store_true',
+            help="Do not read in the first line of the file as the column names.\n")
+
+    args = parser.parse_args()
+    clean_tsv_file(input_file=args.tsv,
+        output=args.output,
+        n_cols=args.n_cols,
+        header=not args.no_header,
+        sort=args.sort or (args.sort_col is not None),
+        sort_col=args.sort_col)
