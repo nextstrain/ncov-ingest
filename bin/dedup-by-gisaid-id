@@ -4,19 +4,34 @@ Deduplicate records by GISAID EPI ISL.
 Only keeps the first record of duplicates.
 """
 import argparse
-from sys import stdin
-from typing import Iterable
+from sys import stdin, stderr
+from typing import Iterable, List, TextIO
 from augur.io.json import dump_ndjson, load_ndjson
 from augur.io.print import print_err
 
 
+def load_inputs(handles: List[TextIO], counts: List[int]) -> Iterable[dict]:
+    """
+    Yield records from each of *handles* in order, recording the number of
+    records read from each into *counts* (which is extended in place, one entry
+    per handle, so it can be reported once the stream is exhausted).
+    """
+    for position, handle in enumerate(handles):
+        counts.append(0)
+        for record in load_ndjson(handle):
+            counts[position] += 1
+            yield record
+
+
 def deduplicate_records(records: Iterable[dict],
-                        id_field: str) -> Iterable:
+                        id_field: str,
+                        stats: dict) -> Iterable:
     """
     Deduplicate *records* by *id_field*, will only keeping the first record of
     duplicate ids.
 
-    Yields records with unique ids.
+    Yields records with unique ids, counting the kept and dropped records into
+    *stats*.
     """
     seen_ids = set()
     for index, record in enumerate(records):
@@ -29,9 +44,11 @@ def deduplicate_records(records: Iterable[dict],
             print_err(
                 f"Dropping record (index {index!r}) with duplicate record id {record_id!r}"
             )
+            stats["dropped"] += 1
             continue
 
         seen_ids.add(record_id)
+        stats["kept"] += 1
         yield record
 
 
@@ -40,9 +57,26 @@ if __name__ == "__main__":
 
     parser.add_argument("--id-field", default="gisaid_epi_isl",
         help="The record field containing a record id. ")
+    parser.add_argument("ndjson", nargs="*", metavar="NDJSON",
+        help="NDJSON files to deduplicate, concatenated in the order given. "
+             "Reads stdin if no files are given. Passing the files here instead "
+             "of piping them in lets us report a record count per file without "
+             "a separate pass over each one.")
 
     args = parser.parse_args()
 
-    records = load_ndjson(stdin)
-    deduped_records = deduplicate_records(records, args.id_field)
+    handles = [open(path) for path in args.ndjson] or [stdin]
+    counts: List[int] = []
+    stats = {"kept": 0, "dropped": 0}
+
+    records = load_inputs(handles, counts)
+    deduped_records = deduplicate_records(records, args.id_field, stats)
     dump_ndjson(deduped_records)
+
+    names = args.ndjson or ["<stdin>"]
+    inputs = ", ".join(f"{name}={count} lines" for name, count in zip(names, counts))
+    print_err(f"Concatenating: {inputs}")
+    print_err(
+        f"Deduplication complete: output={stats['kept']} lines "
+        f"(removed {stats['dropped']} duplicates)"
+    )
