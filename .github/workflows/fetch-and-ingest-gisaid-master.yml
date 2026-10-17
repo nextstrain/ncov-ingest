@@ -76,11 +76,10 @@ jobs:
       run: |
         nextstrain build \
           --aws-batch \
-          --aws-batch-queue nextstrain-job-queue-c7a-12xlarge \
           --detach \
           --no-download \
-          --cpus 48 \
-          --memory 90GiB \
+          --cpus 16 \
+          --memory 28GiB \
           --env GITHUB_RUN_ID \
           --env SLACK_TOKEN \
           --env SLACK_CHANNELS \
